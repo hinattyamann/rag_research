@@ -1,11 +1,11 @@
 # 自己制御型RAG研究計画書
 
-## Version 6.0
+## Version 6.1
 
 ## 外部実装依頼用 最終研究仕様書
 
 本書はVersion
-5.0を基礎とし、既存内容を削除せず、外部実装依頼時に必要となる研究仕様を追加した最終版である。
+6.0を基礎とし、使用データセットであるJDocQAの仕様と、本研究における利用方針を追加した版である。
 
 ------------------------------------------------------------------------
 
@@ -345,71 +345,105 @@ Recovery Success条件:
 
 # 9. Dataset設計
 
-目的:
+## 基盤Dataset: JDocQA
 
-失敗原因別Recovery性能評価。
+本研究では、基盤DatasetとしてJDocQA（Japanese Document Question Answering）を使用する。
 
-構成:
+JDocQAは、日本語の行政・公共文書を中心とするDocument Question Answering Datasetであり、
+5,504件のPDF文書と11,600件の日本語QAペアから構成される。
 
-  種類                  件数
-  ------------------- ------
-  Normal QA              150
-  Unanswerable QA        150
-  Retrieval Failure      150
-  Distractor             150
+文書形式には、Pamphlet、Slide、Report、Websiteが含まれる。
 
+QAの質問形式は以下の4種類である。
 
-## Dataset生成思想
+| 質問形式 | 件数 |
+|---|---:|
+| Yes/No | 1,855 |
+| Factoid | 2,052 |
+| Numerical | 1,866 |
+| Open-ended | 5,827 |
 
-本研究Datasetは単純なQA性能評価を目的としない。
+また、論文本文では、複数ページの参照を必要とするMulti-page QAが1,788件、
+文書内に回答根拠が存在しないUnanswerable QAが1,000件含まれると報告されている。
 
-目的は、Failure Diagnosis能力およびAdaptive Recovery能力を評価することである。
+公式分割は以下のとおりである。同一PDFが複数のSplitにまたがらないよう分割されている。
 
-そのため、正常データだけではなく、意図的にFailure状態を生成したデータを含める。
+| Split | QA件数 |
+|---|---:|
+| Train | 9,290 |
+| Validation | 1,134 |
+| Test | 1,176 |
+
+主な参照先:
+
+- 論文: https://aclanthology.org/2024.lrec-main.830/
+- 公式Repository: https://github.com/mizuumi/JDocQA
+- Hugging Face Dataset: https://huggingface.co/datasets/shunk031/JDocQA
+
+JDocQAのAnnotationはCC BY-SA 4.0で配布されている。派生Datasetや研究成果では、
+JDocQA論文を引用する。元PDF文書については、それぞれの配布元が定める利用条件も確認し、
+大容量の原本PDFを本Repositoryへ直接格納しない。
+
+## 本研究におけるJDocQAの利用範囲
+
+JDocQAは本来、テキスト情報と図表・画像などの視覚情報を組み合わせたDocument QAを
+想定したDatasetである。一方、本研究の対象はText-based RAGである。
+
+そのため、本研究では以下の方針で利用する。
+
+- PDFに埋め込まれたテキスト、またはOCRによって抽出されたテキストを検索Corpusとして使用する。
+- PDF画像、回答根拠Bounding Box、図表のLayout情報はRetrieverおよびGeneratorの入力に使用しない。
+- `answer`、`normalized_answer`、`question_page_number`、`reason_of_answer_bbox` などの正解情報は、評価とDataset監査にのみ使用し、検索・回答生成時には参照しない。
+- 視覚情報がなければ回答できないQAは、主実験の対象外または別の診断用Subsetとして扱う。
+- Text-onlyで回答可能かを判定する選定基準はPilot調査で定義し、除外理由と件数を記録して再現可能にする。
+
+この制限により、JDocQAを利用しつつ、本研究の焦点を自己評価、Failure Diagnosis、
+Adaptive Recoveryの検証に維持する。
+
+## Split利用方針
+
+- Train Split: Pipeline開発、Prompt検討およびDataset構築手順の確認に使用する。
+- Validation Split: Confidence重み、Failure閾値、検索パラメータなどの調整に使用する。
+- Test Split: 設計とパラメータを固定した後の最終評価に使用する。
+- Test Splitの結果を確認してから閾値やPromptを調整し、同じ結果を最終評価として再利用しない。
+
+検索CorpusをSplit単位で構築する場合は、対象Splitに属する全文書を候補とし、
+質問に対応する正解文書だけを直接Generatorへ与えない。これによりRetrievalそのものを評価する。
+
+## Failure評価用Dataset
+
+本研究Datasetは単純なQA性能評価だけを目的としない。
+
+JDocQAを基盤として、Failure Diagnosis能力およびAdaptive Recovery能力を評価するため、
+以下の条件を持つ固定Subsetを構築する。
+
+| 種類 | 目標件数 | JDocQAからの構築方針 |
+|---|---:|---|
+| Normal QA | 150 | Text-onlyで回答可能なAnswerable QA |
+| Unanswerable QA | 150 | JDocQAに含まれるUnanswerable QA |
+| Retrieval Failure | 150 | Answerable QAを基に、検索困難な条件を再現した派生例 |
+| Distractor | 150 | 正解文書に類似する別文書Chunkを混入した派生例 |
+
+合計600件を初期目標とする。ただし、公式Test Split内のText-only適格例と
+Unanswerable QAの実数を監査し、条件を満たす例が不足する場合は、研究目的と
+Split独立性を損なわない形で件数または研究用Splitを見直し、その変更を本書に反映する。
+
+派生例の生成手順、乱数Seed、元のQA ID、正解文書ID、追加したDistractor文書IDを保存し、
+同一条件を再生成できるようにする。
 
 Dataset分類:
 
 Normal QA:
-通常性能評価
+通常性能評価。
 
-Unanswerable QA: 文書内に答えがない問題
-Hallucination評価
+Unanswerable QA:
+文書内に答えがない問題を用いたHallucination評価。
 
-Retrieval Failure: 必要な文書を取得しにくい状態,検索そのものの失敗
-検索失敗Recovery評価
+Retrieval Failure:
+必要な文書を取得しにくい状態を再現し、Query Rewriteによる検索Recoveryを評価する。
 
-例: 
-質問：
-
-商品Aの保存期間は？
-
-正しい文書：
-
-商品A仕様書
-賞味期限：30日
-
-検索しやすい文書：
-
-商品B仕様書
-保存期間：60日
-
-Distractor: 関係ありそうだが、間違った情報が混入する
-誤検索耐性評価
-
-例:
-質問：
-
-商品Aの価格を教えてください。
-
-正しい：
-
-商品A
-価格500円
-
-邪魔な文書：
-
-商品Aキャンペーン
-通常価格1000円
+Distractor:
+関係がありそうだが回答根拠として不適切な文書を混入し、誤検索耐性を評価する。
 
 
 ------------------------------------------------------------------------
@@ -497,14 +531,22 @@ Failure発生時のみRecoveryを実行する提案方式。
 
 対象:
 
-Text-based RAG
+Text-based RAG。
+
+JDocQAのPDF文書から抽出された埋め込みテキストまたはOCRテキストを入力とする。
+OCR済みテキストの利用はText-based処理に含めるが、本研究内で画像認識モデルによる
+OCR性能そのものは評価対象としない。
 
 対象外:
 
--   PDF画像
--   図表
--   Layout情報
+-   PDFページ画像を直接入力する処理
+-   図表の視覚的理解
+-   Layout情報およびBounding Boxを利用した推論
+-   Multimodal Modelによる回答生成
 
 理由:
 
 Multimodal処理を導入すると研究目的が自己制御機構評価から逸れるため。
+
+JDocQAのうち視覚情報が不可欠なQAは、主実験から除外するか、Text-only RAGの限界を
+確認する診断用Subsetとして主実験とは分離して報告する。

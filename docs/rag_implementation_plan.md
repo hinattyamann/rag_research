@@ -1,11 +1,11 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.0
+## Version 7.1
 
 ## 外部実装依頼用 最終実装仕様書
 
 本書はVersion
-6.0を基礎に、外部開発者が質問なく実装できる粒度まで詳細化した最終仕様書である。
+7.0を基礎に、使用データセットであるJDocQAの取得、前処理、分割、Text-only利用方針を追加した版である。
 
 ------------------------------------------------------------------------
 
@@ -55,6 +55,15 @@ LangGraph Workflowとは、LLMアプリケーションの処理を、ノード�
     configs/
     ├ config.yaml
     └ prompts.yaml
+
+    data/
+    ├ raw/jdocqa/          # Git管理対象外
+    ├ processed/jdocqa/    # 再生成可能な中間データ
+    └ manifests/           # Dataset revision、件数、hash、生成条件
+
+    scripts/
+    ├ prepare_jdocqa.py
+    └ inspect_jdocqa.py
 
     experiments/
     ├ baseline.py
@@ -203,6 +212,13 @@ retrieval:
 
 confidence:
   threshold: 0.7
+
+dataset:
+  name: JDocQA
+  source: shunk031/JDocQA
+  split: train
+  text_only: true
+  seed: 42
 ```
 ------------------------------------------------------------------------
 
@@ -415,47 +431,169 @@ Output:
 
 # 6. Data Schema
 
-Dataset:
+## JDocQA取得元
+
+JDocQAは以下を参照して取得する。
+
+- 公式Repository: https://github.com/mizuumi/JDocQA
+- Hugging Face Dataset: `shunk031/JDocQA`
+- 論文: https://aclanthology.org/2024.lrec-main.830/
+
+AnnotationのLicenseはCC BY-SA 4.0である。Datasetの派生物および研究成果では
+原論文を引用する。元PDFは各配布元の利用条件にも従い、`data/raw/jdocqa/` に保存して
+Git管理対象外とする。
+
+Dataset取得時には、取得日、Hugging FaceまたはGit RepositoryのRevision、
+Split別件数、ファイルHashをManifestへ記録する。`main` のような可変Revisionだけに
+依存せず、実験で使用したDataset状態を再現可能にする。
+
+## JDocQA前処理
+
+JDocQAの公式Splitを保持する。
+
+| Split | QA件数 |
+|---|---:|
+| Train | 9,290 |
+| Validation | 1,134 |
+| Test | 1,176 |
+
+同一の `pdf_name` が複数Splitへ混入していないことを前処理時に検証する。
+
+処理フロー:
+
+JDocQA取得
+
+↓
+
+Dataset RevisionおよびLicense情報記録
+
+↓
+
+PDF単位・Page単位のText抽出
+
+↓
+
+埋め込みTextを優先し、取得できないPageはOCR Textを利用
+
+↓
+
+Text正規化およびChunk分割
+
+↓
+
+Split別Retrieval Corpus構築
+
+↓
+
+Text-only適格性監査
+
+↓
+
+QA RecordおよびFailure評価用派生Record生成
+
+PDFページ画像、Bounding Box、Layout情報はRetrieverおよびGeneratorへ入力しない。
+OCRはText取得の前処理としてのみ使用し、OCR精度そのものは本研究の評価対象外とする。
+
+JDocQAが提供する回答根拠PageやBounding Boxのみから検索Contextを作ると、正解情報が
+Retrieverへ漏洩する。そのため、Corpusは対象Splitに属する全PDFの全文Pageから構築し、
+正解情報は評価処理へ分離する。
+
+## 内部Dataset Schema
+
+JDocQAの元Fieldを正規化し、以下の内部Schemaへ変換する。
 
 ``` json
 {
-"question":"",
-"answer":"",
-"documents":[],
-"type":"normal"
+  "id":"",
+  "source_dataset":"JDocQA",
+  "source_revision":"",
+  "split":"train|validation|test",
+  "question":"",
+  "reference_answer":"",
+  "answer_type":"yes_no|factoid|numerical|open_ended",
+  "is_answerable":true,
+  "is_multi_page":false,
+  "pdf_name":"",
+  "reference_pages":[],
+  "dataset_type":"normal|unanswerable|retrieval_failure|distractor",
+  "derived_from_id":null,
+  "derivation_seed":null,
+  "distractor_document_ids":[]
 }
 ```
+
+Retrieval用Document Schema:
+
+``` json
+{
+  "document_id":"",
+  "pdf_name":"",
+  "page_number":0,
+  "chunk_index":0,
+  "text":"",
+  "text_source":"embedded|ocr",
+  "split":"train|validation|test"
+}
+```
+
+元Fieldとの主な対応:
+
+- `question` → `question`
+- `normalized_answer` を優先し、必要時は `answer` または `original_answer` → `reference_answer`
+- `answer_type` → 内部の4種類の `answer_type`
+- `no_reason` → `is_answerable` および `is_multi_page`
+- `pdf_name` → `pdf_name`
+- `question_page_number` → `reference_pages`
+- `text_from_pdf`、`text_from_ocr_pdf` → Text抽出結果の検証およびFallback
+
+`no_reason` はUnanswerable、Answerable、Multi-pageの状態を表し、複合状態を含み得るため、
+Loaderで正規化して2つのBooleanへ分離する。
+
+## 正解情報の分離
+
+以下のFieldは評価およびDataset監査でのみ使用し、Retriever、Generator、
+Query Rewriteへ渡すStateには含めない。
+
+- `reference_answer`
+- `reference_pages`
+- `reason_of_answer_bbox`
+- `derived_from_id`
+- 正解文書を直接特定できる評価用Label
+
+これにより、正解Pageや回答根拠を検索結果として直接与えるData Leakageを防止する。
+
+## Failure Dataset Metadata
+
+Failure原因評価のため、`dataset_type` と派生元情報を保持する。
+
+- Normal QA: JDocQAのText-onlyで回答可能なAnswerable QA
+- Unanswerable QA: JDocQAのUnanswerable QA
+- Retrieval Failure: Answerable QAから決定的手順で作成し、元QA IDとSeedを保存
+- Distractor: 追加した文書ID、選択方法、Seedを保存
+
+派生Datasetは、同一入力とSeedから再生成できることを要件とする。
 
 Log:
 
 ``` json
 {
-"question":"",
-"answer":"",
-"R":0.0,
-"F":0.0,
-"A":0.0,
-"confidence":0.0,
-"failure_type":"",
-"recovery_count":0
+  "dataset_id":"",
+  "split":"",
+  "question":"",
+  "answer":"",
+  "retrieved_document_ids":[],
+  "R":0.0,
+  "F":0.0,
+  "A":0.0,
+  "confidence":0.0,
+  "failure_type":"",
+  "recovery_count":0,
+  "model_name":"",
+  "config_hash":"",
+  "latency_seconds":0.0,
+  "llm_calls":0
 }
 ```
-
-## Failure Dataset Metadata
-
-Failure原因評価のため、DatasetにはFailure Typeを保持する。
-
-例:
-
-{
-"question":"",
-"answer":"",
-"documents":[],
-"type":"Retrieval Failure"
-}
-
-
-これにより、Failure別評価およびRecovery成功率計算を可能にする。
 
 ------------------------------------------------------------------------
 
@@ -465,15 +603,28 @@ Failure原因評価のため、DatasetにはFailure Typeを保持する。
 
 対象:
 
+-   JDocQA Loader
+-   Dataset Schema変換
+-   Text正規化およびChunk分割
 -   Retrieval
 -   Evaluation
 -   Confidence
+
+JDocQA関連Test条件:
+
+-   公式Split件数がTrain 9,290、Validation 1,134、Test 1,176である
+-   同一 `pdf_name` が複数Splitに出現しない
+-   同一Seedから同一のFailure評価用Subsetを再生成できる
+-   RetrieverおよびGeneratorへ正解情報が渡らない
+-   埋め込みTextが空の場合にOCR TextへFallbackできる
+-   Text-only対象外と判定した理由が記録される
 
 ## Integration Test
 
 対象:
 
 -   LangGraph workflow
+-   JDocQA取得からCorpus構築、Retrieval、GenerationまでのPipeline
 
 ## Experiment Test
 
@@ -488,6 +639,9 @@ Failure原因評価のため、DatasetにはFailure Typeを保持する。
 変更する要素はRecovery制御のみとする。
 
 これにより、Adaptive Recovery機構そのものの効果を評価する。
+
+Test Splitを用いた最終実験では、事前に固定したDataset Manifest、Config、Prompt、
+Model revisionを使用する。Test結果を確認した後の設定変更は別実験として記録する。
 
 ------------------------------------------------------------------------
 
@@ -512,7 +666,22 @@ Failure原因評価のため、DatasetにはFailure Typeを保持する。
 
 Phase0: 環境構築
 
-Phase1: Baseline RAG
+Phase1: JDocQA前処理およびBaseline RAG
+
+実装内容:
+
+- JDocQA Loader
+- Dataset revisionおよびLicense Manifest
+- PDF全文Text抽出とOCR Fallback
+- Page単位Metadata保持とChunk分割
+- Text-only適格性監査
+- Split別Retrieval Corpus
+- Embedding Retrievalを用いたBaseline RAG
+
+完了条件:
+
+JDocQAの公式Splitを保持したまま、正解情報をRetrieverへ漏洩させず、
+質問から関連Chunkを検索して回答生成まで実行できる。
 
 Phase2: Hybrid Retrieval
 
