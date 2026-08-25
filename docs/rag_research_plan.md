@@ -1,13 +1,12 @@
 # 自己制御型RAG研究計画書
 
-## Version 6.2
+## Version 6.3
 
 ## 外部実装依頼用 最終研究仕様書
 
-本書はVersion
-6.1を基礎とし、JDocQA論文と現行Annotationの再監査結果を反映した版である。
-JDocQAのField、Text-only選別、Corpus構築および派生Datasetの詳細は
-`docs/jdocqa_dataset_guide.md`を正本とする。
+本書はVersion 6.2を基礎とし、基盤DatasetをJDocQAからCLAPNQへ変更した版である。
+CLAPNQのField、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法の
+詳細は`docs/clapnq_dataset_guide.md`を正本とする。
 
 ------------------------------------------------------------------------
 
@@ -347,93 +346,101 @@ Recovery Success条件:
 
 # 9. Dataset設計
 
-## 基盤Dataset: JDocQA
+## 基盤Dataset: CLAPNQ
 
-本研究では、基盤DatasetとしてJDocQA（Japanese Document Question Answering）を使用する。
+本研究では、基盤DatasetとしてCLAPNQ（Cohesive Long-form Answers from Passages in
+Natural Questions）を使用する。
 
-JDocQAは、日本語の行政・公共文書を中心とするDocument Question Answering Datasetであり、
-5,504件のPDF文書と11,600件の日本語QAペアから構成される。
+CLAPNQはNatural Questionsの英語質問とWikipedia Passageから構築された、Long-form QAおよび
+Full RAG Pipeline向けDatasetである。人手作成のReference Answer、Gold Passage、回答作成に使われた
+Selected Sentences、検索Corpusを備え、Retrieval、Gold Passage Generation、Full RAGを分離して
+評価できる。
 
-文書形式には、Pamphlet、Slide、Report、Websiteが含まれる。
+公式Datasetの構成は次のとおりである。
 
-QAの質問形式は以下の4種類である。
+| Split | Answerable | Unanswerable | 合計 | 公開状態 |
+|---|---:|---:|---:|---|
+| Train | 1,954 | 1,791 | 3,745 | 公開 |
+| Dev | 300 | 300 | 600 | 公開 |
+| Test | 301 | 300 | 601 | Answer非公開 |
+| 合計 | 2,555 | 2,391 | 4,946 | 一部非公開 |
 
-| 質問形式 | 件数 |
-|---|---:|
-| Yes/No | 1,855 |
-| Factoid | 2,052 |
-| Numerical | 1,866 |
-| Open-ended | 5,827 |
-
-論文Table 1では、複数ページの参照を必要とするMulti-page QAが1,000件、
-文書内に回答根拠が存在しないUnanswerable QAが1,788件含まれると報告されている。
-2026年8月25日に固定した公式Repository RevisionのAnnotationを再集計した結果では、
-Multi-pageは1,000件、Unanswerableは1,791件であり、論文値と3件の差がある。
-実験ではDataset RevisionとHashを固定し、現行AnnotationのLabelを使用する。
-
-公式分割は以下のとおりである。同一PDFが複数のSplitにまたがらないよう分割されている。
-
-| Split | QA件数 |
-|---|---:|
-| Train | 9,290 |
-| Validation | 1,134 |
-| Test | 1,176 |
+Retrieval Corpusは4,293 Wikipedia Documentsから作られた178,891 Passagesで構成される。
+回答は平均約56.8語、2.3文で、平均約156語のGold Passage内にある複数の非連続な根拠文を統合する
+例が中心である。この性質は、回答のCorrectnessだけでなくFaithfulness、Completeness、Concisenessを
+評価する本研究と整合する。
 
 主な参照先:
 
-- 論文: https://aclanthology.org/2024.lrec-main.830/
-- 公式Repository: https://github.com/mizuumi/JDocQA
-- Hugging Face Dataset: https://huggingface.co/datasets/shunk031/JDocQA
-- Dataset詳細仕様: `docs/jdocqa_dataset_guide.md`
+- CLAPNQ論文: https://aclanthology.org/2025.tacl-1.3/
+- 公式Repository: https://github.com/primeqa/clapnq
+- Hugging Face Annotation: https://huggingface.co/datasets/PrimeQA/clapnq
+- Hugging Face Retrieval Corpus: https://huggingface.co/datasets/PrimeQA/clapnq_passages
+- Natural Questions公式配布ページ: https://ai.google.com/research/NaturalQuestions/download
+- Dataset詳細仕様: `docs/clapnq_dataset_guide.md`
 
-JDocQAのAnnotationはCC BY-SA 4.0で配布されている。派生Datasetや研究成果では、
-JDocQA論文を引用する。元PDF文書については、それぞれの配布元が定める利用条件も確認し、
-大容量の原本PDFを本Repositoryへ直接格納しない。
+本研究では、CLAPNQ公式Repository Revision
+`c508d78d8c5c2eecbf172fcf5f789004206e11fb`を初期基準とし、取得日、File Hash、件数、Schema、
+LicenseをSource Manifestへ保存する。
 
-## 本研究におけるJDocQAの利用範囲
+CLAPNQはApache License 2.0として公開される。一方、元Natural Questions DataはGoogle公式ページで
+CC BY-SA 3.0とされるため、本研究では両方をLicense Lineageとして記録し、CLAPNQ論文とNQ論文の
+両方を引用する。Raw Dataは本Repositoryへ直接格納せず、取得・変換ScriptとManifestで再現する。
 
-JDocQAは本来、テキスト情報と図表・画像などの視覚情報を組み合わせたDocument QAを
-想定したDatasetである。一方、本研究の対象はText-based RAGである。
+## 本研究におけるCLAPNQの利用範囲
 
-そのため、本研究では以下の方針で利用する。
+- 公開Train/Devの最終Round Annotationを使用する。
+- 公式178,891 Passagesを共通の検索Corpusとして使用する。
+- Annotation内のGold PassageをGeneratorへ直接与える処理はOracle Generationとして分離する。
+- Full RAG主実験では、Retrieverが取得したTop-k PassageだけをGeneratorへ渡す。
+- Gold Passage ID、Reference Answer、Selected Sentences、Answerability Labelは評価専用とし、
+  Retriever、Generator、Query Rewriteへ渡さない。
+- Optional CLAPNQ-R1はAnnotation品質条件が異なるため、主実験には使用しない。
+- 公式Test Answerは非公開であるため、著者から正式に取得しない限り主実験には使用しない。
 
-- PDFに埋め込まれたテキスト、またはOCRによって抽出されたテキストを検索Corpusとして使用する。
-- PDF画像、回答根拠Bounding Box、図表のLayout情報はRetrieverおよびGeneratorの入力に使用しない。
-- `answer`、`normalized_answer`、`question_page_number`、`reason_of_answer_bbox` などの正解情報は、評価とDataset監査にのみ使用し、検索・回答生成時には参照しない。
-- 視覚情報がなければ回答できないQAは、主実験の対象外または別の診断用Subsetとして扱う。
-- Text-onlyで回答可能かを判定する選定基準はPilot調査で定義し、除外理由と件数を記録して再現可能にする。
+これにより、OCR、PDF Layout、図表理解などを研究対象から除外し、Text-based RAGの自己評価、
+Failure Diagnosis、Adaptive Recoveryへ焦点を維持する。
 
-この制限により、JDocQAを利用しつつ、本研究の焦点を自己評価、Failure Diagnosis、
-Adaptive Recoveryの検証に維持する。
+## 研究用Split
 
-## Split利用方針
+公開Train/Devには同じWikipedia Titleが含まれるため、Source Splitを保持したうえで、公開4,345件を
+Title単位で再分割する。同一Titleの全QAを同じ研究用Splitへ配置し、Answerability比を可能な限り
+維持する。Seedは42とし、目標比率は次とする。
 
-- Train Split: Pipeline開発、Prompt検討およびDataset構築手順の確認に使用する。
-- Validation Split: Confidence重み、Failure閾値、検索パラメータなどの調整に使用する。
-- Test Split: 設計とパラメータを固定した後の最終評価に使用する。
-- Test Splitの結果を確認してから閾値やPromptを調整し、同じ結果を最終評価として再利用しない。
+| 研究用Split | 目標比率 | 用途 |
+|---|---:|---|
+| Development | 65% | Pipeline、Prompt、Retrieverの開発 |
+| Calibration | 10% | Confidence重み、閾値、検索Parameterの固定 |
+| Evaluation | 25% | 設計固定後の最終評価 |
 
-検索CorpusをSplit単位で構築する場合は、対象Splitに属する全文書を候補とし、
-質問に対応する正解文書だけを直接Generatorへ与えない。これによりRetrievalそのものを評価する。
+Group Sizeにより比率は厳密には一致しないため、実数をSplit Manifestへ記録する。Evaluation結果を
+確認してからPrompt、閾値、Weight、`top_k`等を調整し、同じ結果を最終評価として再利用しない。
+
+研究用Splitが分離するのはQA Annotation、Gold Label、Few-shot例である。Full RAGでは全方式が同じ
+公式Corpusを検索し、Evaluation質問のGold Passageも検索候補に含める。ただし、EvaluationのQrelや
+Reference AnswerをRetrieverの学習・Parameter調整に使用しない。
 
 ## Failure評価用Dataset
 
 本研究Datasetは単純なQA性能評価だけを目的としない。
 
-JDocQAを基盤として、Failure Diagnosis能力およびAdaptive Recovery能力を評価するため、
+CLAPNQを基盤として、Failure Diagnosis能力およびAdaptive Recovery能力を評価するため、
 以下の条件を持つ固定Subsetを構築する。
 
-| 種類 | 目標件数 | JDocQAからの構築方針 |
+| 種類 | 目標件数 | CLAPNQからの構築方針 |
 |---|---:|---|
-| Normal QA | 150 | Text-onlyで回答可能なAnswerable QA |
-| Unanswerable QA | Text-only適格例の全件 | 公式Test Splitに含まれるUnanswerable QAを監査し、適格例をすべて使用 |
-| Retrieval Failure | 150 | Answerable QAを基に、検索困難な条件を再現した派生例 |
-| Distractor | 150 | 正解文書に類似する別文書Chunkを混入した派生例 |
+| Normal QA | 150 | EvaluationのAnswerableを通常条件で使用 |
+| Unanswerable QA | 監査済み150 | EvaluationのUnanswerableをCorpus-levelで監査して使用 |
+| Retrieval Failure | 150以下 | 固定RetrieverのTop-kにGold PassageがないAnswerable |
+| Distractor | 150 | 異なるTitleの高類似度非Gold Passageを混入したAnswerable |
 
-Normal QA、Retrieval Failure、Distractorは各150件を初期目標とする。
-Unanswerable QAは件数を150件に固定せず、公式Test Split内でText-only適格と判定された
-例をすべて使用する。公式Test Annotationには選別前のUnanswerable QAが145件含まれるため、
-最終件数はText-only適格性監査後に145件以下となる。採用件数と除外理由をDataset Manifestへ記録する。
+Normal QA、Retrieval Failure、Distractorは各150件を初期目標とし、Base QAは重複させない。
+Retrieval Failureの自然発生例が150件未満なら水増しせず、実数を報告する。検索困難化した派生質問を
+補助分析に使う場合は、自然発生Failureと分けて集計する。
+
+Unanswerableは、NQで提示されたDocumentに回答がないLabelであり、検索Corpus全体での回答不能を
+保証しない。固定Retrieverの上位PassageとProvided Passageを監査し、`corpus_unanswerable`と確認した
+150件を主評価へ採用する。回答根拠を発見した例、曖昧例、時点依存例は除外理由とともに報告する。
 
 派生例の生成手順、乱数Seed、元のQA ID、正解文書ID、追加したDistractor文書IDを保存し、
 同一条件を再生成できるようにする。
@@ -483,7 +490,11 @@ Failure原因に応じてRecovery適用
 
 # 11. 評価指標
 
--   Answer F1
+-   Token-level Answer F1
+-   ROUGE-L F1
+-   ROUGE-1 Recall
+-   Retrieval Recall@k / nDCG@10
+-   Answerability F1
 -   Faithfulness
 -   Hallucination Rate
 -   Failure Detection F1
@@ -492,7 +503,10 @@ Failure原因に応じてRecovery適用
 -   Average LLM Calls
 -   Latency
 
-Answer F1とは、最終回答の正確性を見る指標。一般的なQA評価。
+Token-level Answer F1、ROUGE-L F1、ROUGE-1 Recallは、複数表現を許すCLAPNQの長文回答について、
+語の一致、まとまり、必要情報の網羅性を補完的に測る。複数Referenceには最大Scoreを用いる。
+Retrieval Recall@kとnDCG@10はGold Passage取得性能、Answerability F1は回答すべき質問と拒否すべき
+質問の識別性能を見る。
 Faithfulnessとは、回答が取得した根拠文書に忠実化を見る指標。LLMが勝手に情報を追加していないか。
 Hallucination Rateとは、根拠のない情報を生成した割合。
 Failure Detection F1とは、RAGがこの回答は問題があると正しく判断できるかを測ります。
@@ -538,22 +552,22 @@ Failure発生時のみRecoveryを実行する提案方式。
 
 対象:
 
-Text-based RAG。
-
-JDocQAのPDF文書から抽出された埋め込みテキストまたはOCRテキストを入力とする。
-OCR済みテキストの利用はText-based処理に含めるが、本研究内で画像認識モデルによる
-OCR性能そのものは評価対象としない。
+CLAPNQの英語質問と公式Wikipedia Passage Corpusを用いるText-based RAG。
+本研究の中心は、特定言語の処理性能ではなく、Retrieval、Generation、Answer Relevanceの失敗を
+自己評価し、Failure原因に対応したRecoveryを選択する制御機構の有効性である。
 
 対象外:
 
--   PDFページ画像を直接入力する処理
--   図表の視覚的理解
--   Layout情報およびBounding Boxを利用した推論
+-   PDF/OCR、Page画像、図表、Layoutを入力する処理
 -   Multimodal Modelによる回答生成
+-   複数文書の情報を必須とするMulti-document Synthesis
+-   日本語を含む言語横断性能の実証
 
 理由:
 
-Multimodal処理を導入すると研究目的が自己制御機構評価から逸れるため。
+CLAPNQは1 Gold Passageを基本とするText Datasetであり、視覚処理や複数文書統合を導入すると
+研究目的が自己制御機構評価から逸れるため。
 
-JDocQAのうち視覚情報が不可欠なQAは、主実験から除外するか、Text-only RAGの限界を
-確認する診断用Subsetとして主実験とは分離して報告する。
+CLAPNQだけを用いた結果から「提案手法が言語に依存しないことを実証した」とは主張しない。
+主張できる範囲は、英語Wikipediaを対象とするText-based RAGにおいて、提案する制御機構が
+日本語固有のPDF/OCR処理を前提とせず機能したかどうかである。

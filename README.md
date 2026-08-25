@@ -6,7 +6,27 @@
 
 - `docs/rag_research_plan.md`
 - `docs/rag_implementation_plan.md`
-- `docs/jdocqa_dataset_guide.md`
+- `docs/clapnq_dataset_guide.md`
+
+## 基盤データセット
+
+本研究では、Text-basedのFull RAG Pipelineを評価するため、CLAPNQを基盤データセットとして
+使用します。CLAPNQはNatural Questionsの英語質問とWikipedia Passageから構築され、
+Long-form Reference Answer、Gold Passage、Selected Evidence Sentences、および検索Corpusを
+提供します。
+
+- 公式Repository: <https://github.com/primeqa/clapnq>
+- 論文: <https://aclanthology.org/2025.tacl-1.3/>
+- Hugging Face Annotation: <https://huggingface.co/datasets/PrimeQA/clapnq>
+- Hugging Face Retrieval Corpus: <https://huggingface.co/datasets/PrimeQA/clapnq_passages>
+
+初期基準Revisionは`c508d78d8c5c2eecbf172fcf5f789004206e11fb`です。Raw DataはRepositoryへ
+Commitせず、取得元、Revision、取得日、File Hash、件数、LicenseをManifestへ保存します。
+
+CLAPNQはApache License 2.0として公開されています。一方、元Natural Questions Dataは
+CC BY-SA 3.0で公開されているため、本研究では両方のLicense表示を保持し、CLAPNQ論文と
+Natural Questions論文の両方を引用します。再配布、派生Data、論文・発表資料で必要な表示の詳細は
+`docs/clapnq_dataset_guide.md`を参照してください。
 
 ## 開発環境の基本方針
 

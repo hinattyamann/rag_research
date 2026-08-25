@@ -1,13 +1,12 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.2
+## Version 7.3
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion
-7.1を基礎に、JDocQAの実データ監査で判明したFieldの注意点と詳細Dataset仕様への参照を
-追加した版である。JDocQAの取得、選別、Corpus構築および派生Datasetの詳細は
-`docs/jdocqa_dataset_guide.md`を正本とする。
+本書はVersion 7.2を基礎とし、基盤DatasetをJDocQAからCLAPNQへ変更した版である。
+CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
+`docs/clapnq_dataset_guide.md`を正本とする。
 
 ------------------------------------------------------------------------
 
@@ -59,13 +58,15 @@ LangGraph Workflowとは、LLMアプリケーションの処理を、ノード�
     └ prompts.yaml
 
     data/
-    ├ raw/jdocqa/          # Git管理対象外
-    ├ processed/jdocqa/    # 再生成可能な中間データ
-    └ manifests/           # Dataset revision、件数、hash、生成条件
+    ├ raw/clapnq/          # 公式配布物、Git管理対象外
+    ├ processed/clapnq/    # 再生成可能な正規化Dataと研究用Split
+    └ manifests/           # Dataset revision、License、件数、hash、生成条件
 
     scripts/
-    ├ prepare_jdocqa.py
-    └ inspect_jdocqa.py
+    ├ prepare_clapnq.py
+    ├ inspect_clapnq.py
+    ├ split_clapnq.py
+    └ audit_unanswerable.py
 
     experiments/
     ├ baseline.py
@@ -75,7 +76,7 @@ LangGraph Workflowとは、LLMアプリケーションの処理を、ノード�
     docs/
     ├ rag_research_plan.md
     ├ rag_implementation_plan.md
-    └ jdocqa_dataset_guide.md
+    └ clapnq_dataset_guide.md
 
     tests/
     logs/
@@ -217,10 +218,14 @@ confidence:
   threshold: 0.7
 
 dataset:
-  name: JDocQA
-  source: shunk031/JDocQA
-  split: train
-  text_only: true
+  name: CLAPNQ
+  source_repository: https://github.com/primeqa/clapnq
+  source_revision: c508d78d8c5c2eecbf172fcf5f789004206e11fb
+  annotation_source: PrimeQA/clapnq
+  corpus_source: PrimeQA/clapnq_passages
+  research_split: development
+  split_group_key: source_title
+  split_ratios: [0.65, 0.10, 0.25]
   seed: 42
 ```
 ------------------------------------------------------------------------
@@ -434,112 +439,115 @@ Output:
 
 # 6. Data Schema
 
-## JDocQA取得元
+## CLAPNQ取得元
 
-JDocQAは以下を参照して取得する。
+CLAPNQは以下を参照して取得する。
 
-- 公式Repository: https://github.com/mizuumi/JDocQA
-- Hugging Face Dataset: `shunk031/JDocQA`
-- 論文: https://aclanthology.org/2024.lrec-main.830/
-- Dataset詳細仕様: `docs/jdocqa_dataset_guide.md`
+- 公式Repository: https://github.com/primeqa/clapnq
+- Hugging Face Annotation: `PrimeQA/clapnq`
+- Hugging Face Retrieval Corpus: `PrimeQA/clapnq_passages`
+- 論文: https://aclanthology.org/2025.tacl-1.3/
+- Natural Questions配布ページ: https://ai.google.com/research/NaturalQuestions/download
+- Dataset詳細仕様: `docs/clapnq_dataset_guide.md`
 
-AnnotationのLicenseはCC BY-SA 4.0である。Datasetの派生物および研究成果では
-原論文を引用する。元PDFは各配布元の利用条件にも従い、`data/raw/jdocqa/` に保存して
-Git管理対象外とする。
+初期基準Revisionは`c508d78d8c5c2eecbf172fcf5f789004206e11fb`とする。Dataset取得時には、
+取得日、GitまたはHugging Face Revision、Split別件数、File Hash、License LineageをManifestへ
+記録する。`main`のような可変Revisionだけに依存しない。
 
-Dataset取得時には、取得日、Hugging FaceまたはGit RepositoryのRevision、
-Split別件数、ファイルHashをManifestへ記録する。`main` のような可変Revisionだけに
-依存せず、実験で使用したDataset状態を再現可能にする。
+CLAPNQはApache License 2.0として公開され、元Natural Questions DataはCC BY-SA 3.0で公開される。
+本研究では両方のLicense情報を保持し、CLAPNQ論文とNQ論文の両方を引用する。Raw Dataは
+`data/raw/clapnq/{revision}/`へ保存してGit管理対象外とする。公開時の詳細はDataset Guideに従う。
 
-## JDocQA前処理
+## CLAPNQ前処理
 
-JDocQAの公式Splitを保持する。
+公開Source SplitをRaw Metadataとして保持する。
 
-| Split | QA件数 |
-|---|---:|
-| Train | 9,290 |
-| Validation | 1,134 |
-| Test | 1,176 |
+| Source Split | Answerable | Unanswerable | 合計 |
+|---|---:|---:|---:|
+| Train | 1,954 | 1,791 | 3,745 |
+| Dev | 300 | 300 | 600 |
 
-同一の `pdf_name` が複数Splitへ混入していないことを前処理時に検証する。
+公式Test 601件はAnswerが非公開であるため、著者から正式に取得しない限り処理対象にしない。
 
 処理フロー:
 
-JDocQA取得
+CLAPNQ取得・Revision固定
 
 ↓
 
-Dataset RevisionおよびLicense情報記録
+File Hash、Schema、件数、License Lineage検証
 
 ↓
 
-PDF単位・Page単位のText抽出
+Annotation JSONLとRetrieval TSVのLoad
 
 ↓
 
-埋め込みTextを優先し、取得できないPageはOCR Textを利用
+無効Reference除外・内部Schema正規化
 
 ↓
 
-Text正規化およびChunk分割
+Gold Passage IDと公式178,891 Passage Corpusの対応検証
 
 ↓
 
-Split別Retrieval Corpus構築
+Wikipedia Title単位のGroup-aware研究用Split生成
 
 ↓
 
-Text-only適格性監査
+DevelopmentでPipeline開発
 
 ↓
 
-QA RecordおよびFailure評価用派生Record生成
+CalibrationでRetriever・Prompt・閾値固定
 
-PDFページ画像、Bounding Box、Layout情報はRetrieverおよびGeneratorへ入力しない。
-OCRはText取得の前処理としてのみ使用し、OCR精度そのものは本研究の評価対象外とする。
+↓
 
-JDocQAが提供する回答根拠PageやBounding Boxのみから検索Contextを作ると、正解情報が
-Retrieverへ漏洩する。そのため、Corpusは対象Splitに属する全PDFの全文Pageから構築し、
-正解情報は評価処理へ分離する。
+Evaluation QAとFailure評価用派生Record生成
 
-### Text Fieldの役割
+Annotation内の`passages`はAnswerableではGold Passage、UnanswerableではRandom Provided Passageである。
+Full RAG主実験では、いずれもGeneratorへ直接渡さず、公式CorpusからRetrieverが取得したTop-kだけを
+Contextにする。Gold Passageを直接与える実験は`oracle_generation`として分離する。
 
-- `text_from_pdf`: 質問に対応付けられたPageから取得したPDF埋め込みText。
-- `text_from_ocr_pdf`: 同じPage画像からOCRで取得したText。
-- `original_context`: 公式説明上、PDFから抽出された質問単位のText。
-- `context`: 公式説明上、`original_context`からNoiseを除去したText。
+### Annotation Fieldの役割
 
-これらは独立した根拠文書ではなく、同じ質問対応Page内容の取得方法または加工段階が異なるFieldである。
-固定した現行Annotation Revisionでは、`context`と`original_context`は11,600件すべてで完全一致する。
-Answerable QAでは通常、回答根拠Pageに対応するが、Unanswerable QAでは文書内に回答根拠が存在しない。
-また、`context` は質問に対応付けられたAnnotation側のContextであり、PDF全文Corpusの代替にはしない。
+- `id`: 元Natural Questions ID。Source IDとして保持する。
+- `input`: 質問本文。内部`question`へ変換する。
+- `passages[].title`: Wikipedia Title。Group-aware Splitに使用する。
+- `passages[].text`: AnswerableではGold Passage、UnanswerableではRandom Provided Passage。
+- `passages[].sentences`: Passageの文分割。
+- `output[].answer`: 人手作成Reference Answer。
+- `output[].selected_sentences`: Reference作成に使われたGold Evidence。
+- `output[].meta`: Annotation Round、Annotator、`skip`等の監査情報。
 
-実際のRAG処理では、質問単位の `context` をRetrieverまたはGeneratorへ直接渡さず、全PDFの
-各Pageについて埋め込みTextを優先し、品質不足または取得不能の場合にOCR TextへFallbackして
-検索Corpusを構築する。3つのFieldはText-only適格性監査と抽出品質の検証に使用する。
+Answerableの`output`には複数Referenceや`skip=true`の空Answer、Devには`NA`が含まれる。
+Loaderは無効Referenceを除外するがRaw値を保持し、Answerableの各Recordに少なくとも1つ有効Referenceが
+残ることを検証する。Unanswerableの`null`または空文字Answerは内部で空Listへ統一する。
 
 ## 内部Dataset Schema
 
-JDocQAの元Fieldを正規化し、以下の内部Schemaへ変換する。
+CLAPNQの元Fieldを正規化し、以下の内部Schemaへ変換する。
 
 ``` json
 {
-  "id":"",
-  "source_dataset":"JDocQA",
-  "source_revision":"",
-  "split":"train|validation|test",
+  "record_id":"clapnq:c508d78:train:source-id:answerable",
+  "source_dataset":"CLAPNQ",
+  "source_revision":"c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+  "source_split":"train|dev",
+  "research_split":"development|calibration|evaluation",
+  "source_id":"",
+  "source_line_index":0,
+  "source_record_sha256":"",
+  "source_title":"",
   "question":"",
   "reference_answers":[],
-  "answer_type":"yes_no|factoid|numerical|open_ended",
+  "selected_sentences_by_reference":[],
   "is_answerable":true,
-  "is_unanswerable":false,
-  "is_multi_page":false,
-  "pdf_name":"",
-  "reference_pages":[],
+  "gold_passage_ids":[],
+  "provided_passage":null,
   "dataset_type":"normal|unanswerable|retrieval_failure|distractor",
   "derived_from_id":null,
-  "derivation_seed":null,
-  "distractor_document_ids":[]
+  "derivation":null
 }
 ```
 
@@ -547,62 +555,61 @@ Retrieval用Document Schema:
 
 ``` json
 {
-  "document_id":"",
-  "pdf_name":"",
-  "page_number":0,
-  "chunk_index":0,
+  "passage_id":"",
+  "source_dataset":"CLAPNQ",
+  "source_revision":"c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+  "title":"",
   "text":"",
-  "text_source":"embedded|ocr",
-  "split":"train|validation|test"
+  "text_sha256":""
 }
 ```
 
 元Fieldとの主な対応:
 
-- `question` → `question`
-- `normalized_answer`、`answer`、`original_answer` → `reference_answers`および監査用Raw Field
-- `answer_type` → 内部の4種類の `answer_type`
-- `no_reason` → `is_answerable` および `is_multi_page`
-- `pdf_name` → `pdf_name`
-- `question_page_number` → `reference_pages`。ただしUnanswerableでは質問作成時の対応Pageとして扱う
-- `text_from_pdf`、`text_from_ocr_pdf` → Text抽出結果の検証およびFallback
+- `id` → `source_id`。
+- `input` → `question`。
+- `passages[0].title` → `source_title`。
+- 有効な`output[].answer` → `reference_answers`。
+- 各`output[].selected_sentences` → 対応を保った`selected_sentences_by_reference`。
+- Retrieval Query TSVの`doc-id-list` → Answerableの`gold_passage_ids`。
+- Unanswerableの`passages[0]` → `provided_passage`。Goldとは扱わない。
 
-`normalized_answer`にはFactoidおよびNumericalを中心に、Python List表現に見える文字列が含まれる。
-Raw値を保存し、List形式候補だけを`ast.literal_eval`などで安全にParseして、内部では
-`reference_answers: list[str]`へ統一する。Pythonの`eval`は使用しない。
+無効Referenceは`skip=true`、`null`、空文字、`NA`とする。Raw `output`を失わず保持し、評価用Viewで
+除外する。複数Referenceへの文字列Metricは最大Scoreを用いる。
 
-`question_number`は単独でも`pdf_name`との組合せでも完全なUnique Keyではないため、
-固定Dataset Revision、Split、JSONLのLine番号、Raw Record HashからStable IDを生成する。
-
-`no_reason` はUnanswerable、Answerable、Multi-pageの状態を表し、複合状態を含み得るため、
-Loaderで正規化して`is_answerable`、`is_unanswerable`、`is_multi_page`へ分離する。
+Stable IDはDataset Revision、Source Split、NQ ID、Answerabilityを組み合わせて生成し、Line番号と
+Raw Record Hashも保存する。Research Splitを作り直してもSource Record IDは変えず、Split Manifestの
+Versionを変更する。
 
 ## 正解情報の分離
 
-以下のFieldは評価およびDataset監査でのみ使用し、Retriever、Generator、
-Query Rewriteへ渡すStateには含めない。
+以下のFieldは評価およびDataset監査でのみ使用し、Retriever、Generator、Query Rewriteへ渡す
+Inference Stateには含めない。
 
 - `reference_answers`
-- `reference_pages`
-- `reason_of_answer_bbox`
+- `selected_sentences_by_reference`
+- `gold_passage_ids`
+- `is_answerable`
+- `dataset_type`
 - `derived_from_id`
-- 正解文書を直接特定できる評価用Label
+- Unanswerable監査Label
 
-これにより、正解Pageや回答根拠を検索結果として直接与えるData Leakageを防止する。
+これにより、Gold Passage、Answerability、派生条件をPromptへ漏洩させない。
 
 ## Failure Dataset Metadata
 
 Failure原因評価のため、`dataset_type` と派生元情報を保持する。
 
-- Normal QA: JDocQAのText-onlyで回答可能なAnswerable QA
-- Unanswerable QA: 公式Test Split内でText-only適格と判定されたUnanswerable QAを全件使用
-- Retrieval Failure: Answerable QAから決定的手順で作成し、元QA IDとSeedを保存
-- Distractor: 追加した文書ID、選択方法、Seedを保存
+- Normal QA: Evaluation SplitのAnswerableからSeed 42で150件を抽出
+- Unanswerable QA: Evaluation SplitからCorpus-level監査を通過した150件を抽出
+- Retrieval Failure: 固定RetrieverのTop-kにGold PassageがないAnswerableから最大150件を抽出
+- Distractor: Gold Passageと検証済みHard Negativeを共存させた150件を抽出
 
 派生Datasetは、同一入力とSeedから再生成できることを要件とする。
 
-Unanswerable QAの件数は150件に固定しない。公式Test Annotationには選別前で145件含まれる。
-Text-only適格性監査後の採用件数、除外件数、除外理由をDataset Manifestへ記録する。
+Retrieval Failureが150件未満なら実数を採用する。派生した検索困難化質問を使う場合は、自然発生例と
+別Manifest・別集計にする。Unanswerableは固定候補順で監査し、回答根拠を発見した例、曖昧例、
+時点依存例を除外して理由を記録する。
 
 Log:
 
@@ -634,28 +641,32 @@ Log:
 
 対象:
 
--   JDocQA Loader
+-   CLAPNQ Annotation/Corpus Loader
 -   Dataset Schema変換
--   Text正規化およびChunk分割
+-   Reference正規化
+-   Title Group-aware Split
 -   Retrieval
 -   Evaluation
 -   Confidence
 
-JDocQA関連Test条件:
+CLAPNQ関連Test条件:
 
--   公式Split件数がTrain 9,290、Validation 1,134、Test 1,176である
--   同一 `pdf_name` が複数Splitに出現しない
--   同一Seedから同一のFailure評価用Subsetを再生成できる
--   RetrieverおよびGeneratorへ正解情報が渡らない
--   埋め込みTextが空の場合にOCR TextへFallbackできる
--   Text-only対象外と判定した理由が記録される
+-   公開Source件数がTrain 3,745、Dev 600である
+-   Answerable/Unanswerable件数がTrain 1,954/1,791、Dev 300/300である
+-   AnswerableのGold Passage IDが公式Corpusに存在する
+-   無効Reference除外後も各Answerableに有効Answerが残る
+-   UnanswerableのReference AnswerとGold Passage IDが空である
+-   同一Wikipedia Titleが複数の研究用Splitに出現しない
+-   同一Seedから同一のSplitとFailure評価用Subsetを再生成できる
+-   RetrieverおよびGeneratorへGold情報、Answerability、Dataset Typeが渡らない
+-   Unanswerable監査結果と除外理由が記録される
 
 ## Integration Test
 
 対象:
 
 -   LangGraph workflow
--   JDocQA取得からCorpus構築、Retrieval、GenerationまでのPipeline
+-   CLAPNQ取得からCorpus Load、Research Split、Retrieval、GenerationまでのPipeline
 
 ## Experiment Test
 
@@ -671,8 +682,8 @@ JDocQA関連Test条件:
 
 これにより、Adaptive Recovery機構そのものの効果を評価する。
 
-Test Splitを用いた最終実験では、事前に固定したDataset Manifest、Config、Prompt、
-Model revisionを使用する。Test結果を確認した後の設定変更は別実験として記録する。
+Evaluation Splitを用いた最終実験では、事前に固定したDataset Manifest、Config、Prompt、
+Model Revisionを使用する。Evaluation結果を確認した後の設定変更は別実験として記録する。
 
 ------------------------------------------------------------------------
 
@@ -698,68 +709,61 @@ Model revisionを使用する。Test結果を確認した後の設定変更は�
 【完了済み】
 研究テーマ・仮説・実装計画の作成
 GitHub・uv・Codex環境の整備
-JDocQA詳細仕様書の作成
+CLAPNQの調査と詳細仕様書の作成
         ↓
 ────────────────────────────
-【Phase 1】JDocQAを理解する
+【Phase 1】CLAPNQを取得・検証する
         ↓
-Field・Split・Text・Labelの意味を理解
-Text-only対象とData Leakageを理解
+公式Repositoryを固定Revisionで取得
+Annotation・Retrieval Corpus・Query TSVをLoad
+件数・Hash・Schema・License Lineageを検証
         ↓
 【Gate 1】
-JDocQAをどう研究へ利用するか説明できる
+使用したSourceを完全に再現できる
         ↓
 ────────────────────────────
-【Phase 2】JDocQAを取得・検証する
-        ↓
-公式Annotationを固定Revisionで取得
-公式手順で5,504件のPDFを取得
-件数・Hash・Schema・欠損・Splitを検証
+【Phase 2】CLAPNQ Loaderと内部Schemaを実装する
         ↓
 Annotation Loader
+Retrieval Corpus Loader
+無効Reference除外
 Source Manifest
 Stable ID
         ↓
 【Gate 2】
-使用したSourceを完全に再現できる
+QA、Reference、Gold Passage、Corpusの対応を検証できる
         ↓
 ────────────────────────────
-【Phase 3】PDFを検索Corpusへ変換する
+【Phase 3】研究用Splitを固定する
         ↓
-全PDF・全Pageから埋め込みTextを抽出
+公開Train/Devを結合
         ↓
-品質不足PageにOCR Fallback
+Wikipedia Title単位でGroup化
         ↓
-Text正規化
-        ↓
-Chunk分割
-        ↓
-Split別検索Corpusを構築
+Answerabilityを層別しSeed 42で
+Development/Calibration/Evaluationへ分割
         ↓
 【Gate 3】
-質問から検索可能なDocument Indexが完成
+Title LeakageのないSplit Manifestが完成
         ↓
 ────────────────────────────
-【Phase 4】Text-only QAを選別する
+【Phase 4】検索CorpusとIndexを構築する
         ↓
-Trainで選別基準をPilot
+公式178,891 PassagesをCanonical CorpusとしてLoad
         ↓
-Validationで基準を修正・固定
+BM25 IndexとEmbedding Indexを構築
         ↓
-Testへ固定基準を適用
-        ↓
-Normal QAを層別抽出
-Unanswerable 145候補を全件監査
+Gold Passage対応とLeakageを検証
         ↓
 【Gate 4】
-Normal・Unanswerable評価Datasetが完成
+質問から検索可能な共通Indexが完成
         ↓
 ────────────────────────────
 【Phase 5】開発用Baseline RAGを作る
         ↓
 Question
 → Embedding Retrieval
-→ Top-k Chunk
+→ Top-k Passage
 → LLMによる回答生成
         ↓
 検索性能・回答性能・Leakageを確認
@@ -776,7 +780,7 @@ Embedding Retrieval
         ↓
 RRFによる検索結果統合
         ↓
-Validationでtop-k・Chunk・検索設定を調整
+Calibrationでtop-k・検索設定を調整
         ↓
 実験で共通使用するRetrieverを固定
         ↓
@@ -785,6 +789,12 @@ Validationでtop-k・Chunk・検索設定を調整
         ↓
 ────────────────────────────
 【Phase 7】Failure評価用Datasetを完成させる
+        ↓
+Evaluation Answerableから
+Normal 150件を固定
+        ↓
+Evaluation Unanswerableを固定順で
+Corpus-level監査し150件を固定
         ↓
 固定Retrieverを使って
 Retrieval Failure候補を生成
@@ -813,7 +823,7 @@ Answer Relevance（A）
         ↓
 C = 0.25R + 0.50F + 0.25A
         ↓
-Validationで評価Prompt・閾値を調整
+Calibrationで評価Prompt・閾値を調整
         ↓
 【Gate 8】
 回答品質を数値化できる
@@ -871,18 +881,18 @@ Adaptive Recovery RAG
 ────────────────────────────
 【Phase 12】最終実験を行う
         ↓
-Train
+Development
 → 開発・動作確認
         ↓
-Validation
+Calibration
 → Parameter・閾値調整
         ↓
 設定を完全に固定
         ↓
-Test
+Evaluation
 → 最終評価
         ↓
-Test結果を見て同じ実験を再調整しない
+Evaluation結果を見て同じ実験を再調整しない
         ↓
 【Gate 12】
 最終実験結果が確定
@@ -891,6 +901,9 @@ Test結果を見て同じ実験を再調整しない
 【Phase 13】結果を分析する
         ↓
 Answer F1
+ROUGE-L・ROUGE-1 Recall
+Retrieval Recall@k・nDCG@10
+Answerability F1
 Faithfulness
 Hallucination Rate
 Failure Detection F1
@@ -899,7 +912,7 @@ ECE
 LLM Calls
 Latency
         ↓
-Dataset種類別・Answer Type別に分析
+Dataset種類別・Question Style・Answer Length別に分析
         ↓
 失敗例・Recovery成功例・悪化例を分析
         ↓
@@ -915,7 +928,7 @@ Sensitivity Analysis・必要な追加実験
         ↓
 背景・関連研究
 研究目的・仮説
-JDocQAとText-only選別
+CLAPNQ、研究用Split、Unanswerable監査
 提案手法
 実装
 実験条件
