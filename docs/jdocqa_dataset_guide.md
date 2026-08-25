@@ -1,6 +1,6 @@
 # JDocQAデータセット理解・Text-only RAG利用仕様書
 
-## Version 1.0
+## Version 1.1
 
 最終確認日: 2026-08-25
 
@@ -58,6 +58,283 @@ JDocQAをそのまま質問回答Datasetとして使うのではなく、次の2
 
 Unanswerable QAだけは150件へ水増しも切り詰めも行わない。公式Test Annotationには選別前で
 145件あり、最終件数はText-only適格性監査後に145件以下となる。
+
+## 1.4 JDocQAを本研究で使用するうえで必要な工程
+
+### 1.4.1 全体像
+
+JDocQAは、DownloadしたDatasetをそのままRAGへ入力するのではない。Annotationと元PDFを取得し、
+内容を検証し、全PDF・全Pageから質問非依存の検索Corpusを作り、Text-only適格性を監査した後に
+Baseline RAGへ渡す。
+
+全工程の依存関係は次のとおりである。
+
+```text
+本書と公式資料の確認
+        ↓
+Annotation取得・Revision固定
+        ↓
+元PDF取得・完全性確認
+        ↓
+Annotation Loader・Source Manifest
+        ↓
+全PDF・全PageのText抽出
+        ↓
+PDF Text品質判定・OCR Fallback
+        ↓
+Text正規化・Chunk分割
+        ↓
+Split別検索Corpus・Index構築
+        ＋
+Text-only適格性の人手監査
+        ↓
+Normal/Unanswerable評価Subset
+        ↓
+Baseline Retriever・Baseline RAG
+        ↓
+Retrieval Failure/Distractor派生Dataset
+        ↓
+自己評価・Adaptive Recoveryの実装と比較実験
+```
+
+重要なのは、すべての派生DatasetをBaseline RAGより前に完成させるわけではない点である。
+NormalとUnanswerableの候補はBaseline前に固定できる。一方、Retrieval Failureは固定Retrieverの
+Top-k結果、Distractorは固定RetrieverによるHard Negative候補を利用するため、Baseline Retrieverと
+検索設定を固定した後に構築する。
+
+Split別検索Corpus・Index構築とText-only適格性監査は、どちらも検証済みPage Textを入力とするため、
+実装上は並行して進めてもよい。ただし、基本評価SubsetをBaselineへ渡す前に両方を完了させる。
+
+### 1.4.2 工程別の入力、処理、成果物
+
+| 工程 | 主な入力 | 実施内容 | 人手の有無 | 主な成果物 |
+|---|---|---|---|---|
+| 0. 方針確認 | 本書、研究・実装計画書 | Scope、Split、禁止するLeakageを確認 | 人手 | 固定した作業方針 |
+| 1. Annotation取得 | 公式Repository | 3 Splitを固定Revisionで取得 | 原則自動 | Raw JSONL、File Hash |
+| 2. PDF取得 | 公式のDownload案内 | Form入力、Download、配置 | 必須 | 5,504件の元PDF候補 |
+| 3. Source検証 | Raw JSONL、PDF | 件数、Schema、Hash、Split、欠損・破損を検証 | 原則自動 | Source Manifest、Error一覧 |
+| 4. Annotation整形 | 検証済みJSONL | Stable ID、型変換、回答正規化 | 自動 | 正規化QA Record |
+| 5. Page Text化 | 全PDF | 埋め込みText抽出、OCR Fallback | 一部確認 | Page Text、抽出品質Metadata |
+| 6. Corpus整形 | Page Text | 正規化、Chunk分割、Index作成 | 自動＋Sample確認 | Split別Chunk Corpus、Index |
+| 7. Text-only監査 | QA、抽出Text、必要時PDF Page | 文章だけで扱えるか判定 | 必須 | Eligibility Manifest |
+| 8. 基本Subset | 適格QA | Normal抽出、Unanswerable全適格例採用 | 一部確認 | 2種類の評価Manifest |
+| 9. Baseline | Corpus、基本Subset | Retrieval、Generation、基本評価 | 自動 | Baseline結果、固定Retriever |
+| 10. 派生Subset | 固定Retriever、適格QA | Retrieval Failure、Distractor生成 | 一部確認 | 2種類の派生Manifest |
+
+各工程の出力を次工程の入力として明示し、中間成果物を上書きだけで更新しない。Revision、Config、
+Hash、作成日時を記録し、どの入力から作られたかを追跡可能にする。
+
+### 1.4.3 工程0から3: Sourceの取得と完全性確認
+
+#### Annotation
+
+Annotationは公式Repositoryから固定Commitを指定して取得する。実装するScriptが次を行う。
+
+1. Train、Validation、Testの3 JSON Lines Fileを取得する。
+2. Download元URL、Repository Revision、取得日時、Byte数、SHA-256を記録する。
+3. 期待する件数と19 Raw Fieldを検証する。
+4. Split間の`pdf_name`重複、不明なLabel、壊れたJSON行を検出する。
+5. 検証に失敗したFileを後続処理へ渡さない。
+
+この工程は自動化する。利用者が11,600行を手作業で読む必要はない。
+
+#### 元PDF
+
+元PDFの取得には公式案内に従ったForm入力とDownloadが必要であり、この部分は利用者が行う。
+Download後はArchiveを指定場所へ配置し、ScriptがFile一覧とAnnotationの`pdf_name`を照合する。
+
+```text
+data/raw/jdocqa/
+├─ annotations/
+└─ pdfs/
+```
+
+実際の配布Archive構成が異なる場合は、原本を破壊的に移動・改名せず、ConfigでPathを指定するか、
+再生成可能な展開処理を用意する。原本PDFとAnnotationはRead-onlyのSourceとして扱う。
+
+PDF検証では次を記録する。
+
+- 期待PDF数と実在PDF数。
+- Annotationにあるが見つからない`pdf_name`。
+- Annotationにない余分なPDF。
+- 開けない、Page数を取得できない、Sizeが0のFile。
+- 各PDFのSHA-256とByte数。
+- 同名Fileまたは内容が同じ重複File。
+
+PDFが欠損した場合は、黙ってそのQAだけを除かない。欠損一覧をManifestへ保存し、再取得するか、
+欠損を含む別Dataset Revisionとして実験対象外にするかを決定する。
+
+### 1.4.4 工程4: Annotation Loaderと研究用QA Record
+
+最初に実装するProgramは、Annotation LoaderとSource Manifest生成処理である。LoaderはRaw Fieldを
+保持したまま、研究内で扱いやすい型へ変換する。
+
+主な処理:
+
+- 固定Revision、Split、JSONL Line番号、Raw Record HashからStable IDを作る。
+- `answer_type`を4種類の内部Enumへ変換する。
+- `no_reason`を`is_answerable`、`is_unanswerable`、`is_multi_page`へ分ける。
+- List風文字列を含む`normalized_answer`を安全にParseする。
+- 回答候補を`reference_answers: list[str]`へ統一する。
+- 元の値を`*_raw`として保持し、変換後も監査可能にする。
+- Gold情報を後のInference用Viewから除外できる構造にする。
+
+完了条件:
+
+- 同じRevisionから毎回同じStable IDとRecordを生成できる。
+- 件数、Hash、Schema、Split重複の異常を自動Testで検出できる。
+- Raw Recordと正規化Recordの対応を1件単位で追跡できる。
+- Pythonの`eval`を使わず、安全に回答候補をParseできる。
+
+### 1.4.5 工程5から6: 全PDFのText化と検索Corpus
+
+JDocQAの質問単位`context`ではなく、対象Splitに属する全PDF・全Pageを処理する。
+
+1. PDFごとに全Pageを列挙する。
+2. 各PageからPDF埋め込みTextを抽出する。
+3. 空文字、文字化け、異常反復などの品質を計測する。
+4. 埋め込みTextが使用可能なら`embedded`を採用する。
+5. 使用不能または品質不足なら同じPageへOCRを実行する。
+6. OCRも使用不能なら`unusable`とし、理由を保存する。
+7. 質問非依存の共通RuleでTextを正規化する。
+8. Page境界とMetadataを保持したままChunkへ分割する。
+9. BM25用CorpusとEmbedding用IndexをSplitごとに構築する。
+
+この工程は原則自動化するが、抽出品質Ruleを決めるPilotと、各品質区分のSample確認には人手が
+必要である。Gold Answerへ合うよう特定Pageだけを手修正してはならない。OCR訂正を導入する場合も、
+質問非依存の一般RuleとしてVersion管理し、全対象へ同じ処理を適用する。
+
+主な成果物:
+
+```text
+data/processed/jdocqa/{revision}/
+├─ train/documents.jsonl
+├─ validation/documents.jsonl
+├─ test/documents.jsonl
+└─ extraction_report.json
+```
+
+各Chunkには、Split、PDF名、PDF Hash、Page Index、Chunk Index、Text、Text Hash、Text Source、
+抽出Tool/OCR Version、正規化・Chunk Rule Versionを保存する。
+
+完了条件:
+
+- 全PDF・全Pageについて処理結果が存在する。
+- 各Pageが`embedded`、`ocr`、`unusable`のいずれかに分類される。
+- 同じSourceとConfigから同じChunk IDとCorpusを再生成できる。
+- Corpus構築がGold Answer、Gold Page、BBox、質問単位`context`を参照していない。
+
+### 1.4.6 工程7から8: 人手によるText-only監査と基本Subset
+
+Text-only最終判定は完全自動化しない。`type_of_image`や質問中のKeywordで候補をPrefilterできるが、
+Label欠損や、図表があるPageでも答えは本文にある例が存在するためである。
+
+人が行う作業:
+
+1. TrainのPilot標本について、質問、抽出Text、必要時にPDF Pageを確認する。
+2. 表、Graph、地図、色、位置、Layoutなしで回答できるか判定する。
+3. 抽出失敗と本来のUnanswerableを区別する。
+4. 不一致・曖昧例を基に選別Ruleと除外理由を修正する。
+5. ValidationでRuleを確認し、Testを見る前にRule Versionを固定する。
+6. 固定RuleでTestを監査し、採用・除外理由を全件保存する。
+
+人手負担を減らすため、実装側でReview用JSONL、CSVまたは簡易Interfaceを生成し、要確認Recordと
+必要な情報をまとめて提示する。11,600件すべてを無作為に目視するのではなく、自動Prefilterと
+層別Sampleを利用する。ただし、最終評価へ採用するRecordは固定Ruleに基づく判定を持たせる。
+
+Test監査時にGold AnswerやPDF Pageを確認することは、Text-only適格性というDataset属性を決める
+目的に限って許容する。ただし、Baselineや提案手法の正誤を見て採用・除外してはならず、Test結果を
+見た後に選別Ruleを変更して同じ結果を最終評価として使ってはならない。
+
+基本Subsetの構築:
+
+- Normal: Text-only適格なTest Answerableから層別抽出し、初期目標150件とする。
+- Unanswerable: Testの145候補を全件監査し、Text-only適格例をすべて採用する。
+
+完了条件:
+
+- 各QAにRule Version、判定、除外理由、確認情報がある。
+- 未決着の`needs_adjudication`を最終評価Manifestへ含めない。
+- 採用前後のAnswer Type、Category、Multi-page等の分布を報告できる。
+- TestのUnanswerableを任意に150件へ増減していない。
+
+### 1.4.7 工程9から10: Baseline RAGと派生Dataset
+
+検索Corpusと基本Subsetが完成したらBaseline RetrieverとBaseline RAGを実装する。初期Baselineでは
+まずEmbedding Retrievalから始め、その後BM25とRRFを追加して、比較実験で共通使用するRetrieverを
+固定する。
+
+Baseline RAGへ渡すもの:
+
+```text
+Question
+  + Split別検索Index
+  + 検索で取得したTop-k Chunk
+```
+
+Baseline RAGへ渡さないもの:
+
+```text
+Gold Answer
+Gold Page/BBox
+質問単位のcontext/original_context
+Text-only判定理由
+Unanswerableであることを直接示すLabel
+```
+
+固定Retrieverが完成した後、次を構築する。
+
+- Retrieval Failure: 意味を保った検索困難化質問を作り、固定RetrieverでGold根拠がTop-kにない例を
+  候補にする。Query Rewrite後に成功した例だけを選ばない。
+- Distractor: 異なるPDFから類似度の高いHard Negativeを抽出し、Gold根拠ではないことを確認する。
+  Gold ChunkもTop-kに残る条件とし、Goldが落ちた場合はRetrieval Failureへ分離する。
+
+派生生成、類似度計算、候補抽出は自動化できる。一方、派生質問が元質問と同じ意味・正解を保つか、
+Distractorが本当に誤根拠かという境界例は人手確認する。元QA ID、生成方法、Model/Prompt Revision、
+Seed、Retriever Config、取得Chunk ID、Distractor IDをManifestへ保存する。
+
+完了条件:
+
+- Normal、Unanswerable、Retrieval Failure、Distractorの固定Manifestが存在する。
+- 派生Datasetを同じ入力、Code、Config、Seedから再生成できる。
+- Baseline、Always Rewrite、Adaptive Recoveryが同じManifestとRetrieverを使用する。
+- Dataset条件と実際に観測したFailure Typeを別Fieldとして評価できる。
+
+### 1.4.8 自動化する工程と人が判断する工程
+
+| 作業 | 自動化 | 人手が必要な理由 |
+|---|---|---|
+| Annotation取得、Hash、件数、Schema検証 | 可能 | 通常は不要 |
+| PDF Form入力、利用条件確認、Download | 不可 | 利用者による申請・確認が必要 |
+| PDFとAnnotationのFile照合 | 可能 | 欠損時の扱いは研究上の判断 |
+| Annotation正規化、Stable ID、Manifest | 可能 | 変換仕様の承認のみ必要 |
+| PDF Text抽出、OCR、Chunk化 | 可能 | 品質RuleのPilotとSample監査が必要 |
+| Text-only Prefilter | 可能 | 最終的な文章回答可能性は意味判断が必要 |
+| Text-only最終判定 | 不可 | 図表・Layout依存を文脈から判断するため |
+| Normal/Unanswerable抽出 | 可能 | 境界例のAdjudicationが必要 |
+| Retrieval Failure候補生成 | 可能 | 派生質問の意味同一性確認が必要 |
+| Distractor候補生成 | 可能 | 誤根拠であることの最終確認が必要 |
+| RAG実験とMetric集計 | 可能 | 異常結果の原因分析は人が行う |
+
+### 1.4.9 直近で着手する実装
+
+直近の実装対象は、Annotation LoaderとSource Manifest生成処理である。この段階ではPDF、GPU、
+Embedding Model、LLMをまだ必要としない。
+
+実装後の順序は次とする。
+
+1. Loaderと自動Validation Testを完成させる。
+2. 利用者が公式手順でPDFを取得する。
+3. PDF完全性検証を実装・実行する。
+4. 全Page Text抽出とOCR Fallbackを実装する。
+5. Text-only判定用のReview Dataを生成し、Train Pilotを行う。
+6. ValidationでRuleを固定し、Split別Corpus/Indexを完成させる。
+7. Normal/Unanswerable基本Subsetを固定する。
+8. Baseline RAGを実装する。
+9. 固定Retrieverを使ってRetrieval Failure/Distractorを構築する。
+
+これにより、「どのSourceから、どの処理と人手判断を経て、どのChunkとQAがRAGへ渡されたか」を
+1 Record単位で説明できる状態にする。
 
 ---
 
@@ -737,6 +1014,10 @@ Parameter変更時はConfig、Corpus Revision、Index、結果をすべて別Ver
 
 JDocQAのRaw Labelだけでは、Normal、Retrieval Failure、Distractorの比較条件は完成しない。
 本研究用の固定Datasetを新たに作成する必要がある。
+
+NormalとUnanswerableはText-only監査後、Baseline実装前に固定できる。Retrieval Failureと
+Distractorは固定Retrieverの検索結果に依存するため、Baseline Retrieverと検索Configを固定した後に
+構築する。詳しい工程順は1.4節に従う。
 
 ## 10.1 共通ルール
 
