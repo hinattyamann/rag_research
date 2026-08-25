@@ -6,6 +6,7 @@
 
 - `docs/rag_research_plan.md`
 - `docs/rag_implementation_plan.md`
+- `docs/jdocqa_dataset_guide.md`
 
 ## 開発環境の基本方針
 

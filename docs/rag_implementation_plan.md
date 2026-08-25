@@ -1,11 +1,13 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.1
+## Version 7.2
 
 ## 外部実装依頼用 最終実装仕様書
 
 本書はVersion
-7.0を基礎に、使用データセットであるJDocQAの取得、前処理、分割、Text-only利用方針を追加した版である。
+7.1を基礎に、JDocQAの実データ監査で判明したFieldの注意点と詳細Dataset仕様への参照を
+追加した版である。JDocQAの取得、選別、Corpus構築および派生Datasetの詳細は
+`docs/jdocqa_dataset_guide.md`を正本とする。
 
 ------------------------------------------------------------------------
 
@@ -72,7 +74,8 @@ LangGraph Workflowとは、LLMアプリケーションの処理を、ノード�
 
     docs/
     ├ rag_research_plan.md
-    └ rag_implementation_plan.md
+    ├ rag_implementation_plan.md
+    └ jdocqa_dataset_guide.md
 
     tests/
     logs/
@@ -438,6 +441,7 @@ JDocQAは以下を参照して取得する。
 - 公式Repository: https://github.com/mizuumi/JDocQA
 - Hugging Face Dataset: `shunk031/JDocQA`
 - 論文: https://aclanthology.org/2024.lrec-main.830/
+- Dataset詳細仕様: `docs/jdocqa_dataset_guide.md`
 
 AnnotationのLicenseはCC BY-SA 4.0である。Datasetの派生物および研究成果では
 原論文を引用する。元PDFは各配布元の利用条件にも従い、`data/raw/jdocqa/` に保存して
@@ -502,10 +506,12 @@ Retrieverへ漏洩する。そのため、Corpusは対象Splitに属する全PDF
 
 - `text_from_pdf`: 質問に対応付けられたPageから取得したPDF埋め込みText。
 - `text_from_ocr_pdf`: 同じPage画像からOCRで取得したText。
-- `context`: 上記の候補から選択され、必要に応じてノイズ除去されたモデル入力用Context。
+- `original_context`: 公式説明上、PDFから抽出された質問単位のText。
+- `context`: 公式説明上、`original_context`からNoiseを除去したText。
 
-これらは3つの独立した根拠文書ではなく、同じPage内容の取得方法または加工段階が異なるFieldである。
-Answerable QAでは回答根拠Pageに対応するが、Unanswerable QAでは文書内に回答根拠が存在しない。
+これらは独立した根拠文書ではなく、同じ質問対応Page内容の取得方法または加工段階が異なるFieldである。
+固定した現行Annotation Revisionでは、`context`と`original_context`は11,600件すべてで完全一致する。
+Answerable QAでは通常、回答根拠Pageに対応するが、Unanswerable QAでは文書内に回答根拠が存在しない。
 また、`context` は質問に対応付けられたAnnotation側のContextであり、PDF全文Corpusの代替にはしない。
 
 実際のRAG処理では、質問単位の `context` をRetrieverまたはGeneratorへ直接渡さず、全PDFの
@@ -523,9 +529,10 @@ JDocQAの元Fieldを正規化し、以下の内部Schemaへ変換する。
   "source_revision":"",
   "split":"train|validation|test",
   "question":"",
-  "reference_answer":"",
+  "reference_answers":[],
   "answer_type":"yes_no|factoid|numerical|open_ended",
   "is_answerable":true,
+  "is_unanswerable":false,
   "is_multi_page":false,
   "pdf_name":"",
   "reference_pages":[],
@@ -553,22 +560,29 @@ Retrieval用Document Schema:
 元Fieldとの主な対応:
 
 - `question` → `question`
-- `normalized_answer` を優先し、必要時は `answer` または `original_answer` → `reference_answer`
+- `normalized_answer`、`answer`、`original_answer` → `reference_answers`および監査用Raw Field
 - `answer_type` → 内部の4種類の `answer_type`
 - `no_reason` → `is_answerable` および `is_multi_page`
 - `pdf_name` → `pdf_name`
-- `question_page_number` → `reference_pages`
+- `question_page_number` → `reference_pages`。ただしUnanswerableでは質問作成時の対応Pageとして扱う
 - `text_from_pdf`、`text_from_ocr_pdf` → Text抽出結果の検証およびFallback
 
+`normalized_answer`にはFactoidおよびNumericalを中心に、Python List表現に見える文字列が含まれる。
+Raw値を保存し、List形式候補だけを`ast.literal_eval`などで安全にParseして、内部では
+`reference_answers: list[str]`へ統一する。Pythonの`eval`は使用しない。
+
+`question_number`は単独でも`pdf_name`との組合せでも完全なUnique Keyではないため、
+固定Dataset Revision、Split、JSONLのLine番号、Raw Record HashからStable IDを生成する。
+
 `no_reason` はUnanswerable、Answerable、Multi-pageの状態を表し、複合状態を含み得るため、
-Loaderで正規化して2つのBooleanへ分離する。
+Loaderで正規化して`is_answerable`、`is_unanswerable`、`is_multi_page`へ分離する。
 
 ## 正解情報の分離
 
 以下のFieldは評価およびDataset監査でのみ使用し、Retriever、Generator、
 Query Rewriteへ渡すStateには含めない。
 
-- `reference_answer`
+- `reference_answers`
 - `reference_pages`
 - `reason_of_answer_bbox`
 - `derived_from_id`

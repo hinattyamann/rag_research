@@ -1,11 +1,13 @@
 # 自己制御型RAG研究計画書
 
-## Version 6.1
+## Version 6.2
 
 ## 外部実装依頼用 最終研究仕様書
 
 本書はVersion
-6.0を基礎とし、使用データセットであるJDocQAの仕様と、本研究における利用方針を追加した版である。
+6.1を基礎とし、JDocQA論文と現行Annotationの再監査結果を反映した版である。
+JDocQAのField、Text-only選別、Corpus構築および派生Datasetの詳細は
+`docs/jdocqa_dataset_guide.md`を正本とする。
 
 ------------------------------------------------------------------------
 
@@ -363,8 +365,11 @@ QAの質問形式は以下の4種類である。
 | Numerical | 1,866 |
 | Open-ended | 5,827 |
 
-また、論文本文では、複数ページの参照を必要とするMulti-page QAが1,788件、
-文書内に回答根拠が存在しないUnanswerable QAが1,000件含まれると報告されている。
+論文Table 1では、複数ページの参照を必要とするMulti-page QAが1,000件、
+文書内に回答根拠が存在しないUnanswerable QAが1,788件含まれると報告されている。
+2026年8月25日に固定した公式Repository RevisionのAnnotationを再集計した結果では、
+Multi-pageは1,000件、Unanswerableは1,791件であり、論文値と3件の差がある。
+実験ではDataset RevisionとHashを固定し、現行AnnotationのLabelを使用する。
 
 公式分割は以下のとおりである。同一PDFが複数のSplitにまたがらないよう分割されている。
 
@@ -379,6 +384,7 @@ QAの質問形式は以下の4種類である。
 - 論文: https://aclanthology.org/2024.lrec-main.830/
 - 公式Repository: https://github.com/mizuumi/JDocQA
 - Hugging Face Dataset: https://huggingface.co/datasets/shunk031/JDocQA
+- Dataset詳細仕様: `docs/jdocqa_dataset_guide.md`
 
 JDocQAのAnnotationはCC BY-SA 4.0で配布されている。派生Datasetや研究成果では、
 JDocQA論文を引用する。元PDF文書については、それぞれの配布元が定める利用条件も確認し、
