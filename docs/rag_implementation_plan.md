@@ -693,51 +693,243 @@ Model revisionを使用する。Test結果を確認した後の設定変更は�
 
 ------------------------------------------------------------------------
 
-# 9. 実装Phase
+# 9. 実装計画
 
-Phase0: 環境構築
-
-Phase1: JDocQA前処理およびBaseline RAG
-
-実装内容:
-
-- JDocQA Loader
-- Dataset revisionおよびLicense Manifest
-- PDF全文Text抽出とOCR Fallback
-- Page単位Metadata保持とChunk分割
-- Text-only適格性監査
-- Split別Retrieval Corpus
-- Embedding Retrievalを用いたBaseline RAG
-
-完了条件:
-
-JDocQAの公式Splitを保持したまま、正解情報をRetrieverへ漏洩させず、
-質問から関連Chunkを検索して回答生成まで実行できる。
-
-Phase2: Hybrid Retrieval
-
-Phase3: Evaluation
-
-Phase4: Confidence制御
-
-Phase5:
-Adaptive Recovery
-
-実装内容:
-
-- Failure Diagnosis
-- Recovery Router
-- Query Rewrite
-- Constrainted Regeneration
-- Answer Rewrite
-
-完了条件:
-
-Failure Typeに応じて適切なRecovery処理が実行され、
-再評価まで完了できる。
-
-Phase6: 比較実験
-
-完了条件:
-
-3方式比較可能。
+【完了済み】
+研究テーマ・仮説・実装計画の作成
+GitHub・uv・Codex環境の整備
+JDocQA詳細仕様書の作成
+        ↓
+────────────────────────────
+【Phase 1】JDocQAを理解する
+        ↓
+Field・Split・Text・Labelの意味を理解
+Text-only対象とData Leakageを理解
+        ↓
+【Gate 1】
+JDocQAをどう研究へ利用するか説明できる
+        ↓
+────────────────────────────
+【Phase 2】JDocQAを取得・検証する
+        ↓
+公式Annotationを固定Revisionで取得
+公式手順で5,504件のPDFを取得
+件数・Hash・Schema・欠損・Splitを検証
+        ↓
+Annotation Loader
+Source Manifest
+Stable ID
+        ↓
+【Gate 2】
+使用したSourceを完全に再現できる
+        ↓
+────────────────────────────
+【Phase 3】PDFを検索Corpusへ変換する
+        ↓
+全PDF・全Pageから埋め込みTextを抽出
+        ↓
+品質不足PageにOCR Fallback
+        ↓
+Text正規化
+        ↓
+Chunk分割
+        ↓
+Split別検索Corpusを構築
+        ↓
+【Gate 3】
+質問から検索可能なDocument Indexが完成
+        ↓
+────────────────────────────
+【Phase 4】Text-only QAを選別する
+        ↓
+Trainで選別基準をPilot
+        ↓
+Validationで基準を修正・固定
+        ↓
+Testへ固定基準を適用
+        ↓
+Normal QAを層別抽出
+Unanswerable 145候補を全件監査
+        ↓
+【Gate 4】
+Normal・Unanswerable評価Datasetが完成
+        ↓
+────────────────────────────
+【Phase 5】開発用Baseline RAGを作る
+        ↓
+Question
+→ Embedding Retrieval
+→ Top-k Chunk
+→ LLMによる回答生成
+        ↓
+検索性能・回答性能・Leakageを確認
+        ↓
+【Gate 5】
+検索から回答生成までEnd-to-Endで動作
+        ↓
+────────────────────────────
+【Phase 6】Hybrid Retrievalを実装する
+        ↓
+BM25 Retrieval
+        ＋
+Embedding Retrieval
+        ↓
+RRFによる検索結果統合
+        ↓
+Validationでtop-k・Chunk・検索設定を調整
+        ↓
+実験で共通使用するRetrieverを固定
+        ↓
+【Gate 6】
+実験用Baseline RAGが完成
+        ↓
+────────────────────────────
+【Phase 7】Failure評価用Datasetを完成させる
+        ↓
+固定Retrieverを使って
+Retrieval Failure候補を生成
+        ↓
+Hard Negativeによる
+Distractor候補を生成
+        ↓
+意味・正解・誤根拠を人手確認
+        ↓
+4種類のDataset Manifestを固定
+        ↓
+Normal
+Unanswerable
+Retrieval Failure
+Distractor
+        ↓
+【Gate 7】
+Failure検出・Recoveryを評価できる
+        ↓
+────────────────────────────
+【Phase 8】R/F/A自己評価を実装する
+        ↓
+Retrieval Quality（R）
+Faithfulness（F）
+Answer Relevance（A）
+        ↓
+C = 0.25R + 0.50F + 0.25A
+        ↓
+Validationで評価Prompt・閾値を調整
+        ↓
+【Gate 8】
+回答品質を数値化できる
+        ↓
+────────────────────────────
+【Phase 9】Failure Diagnosisを実装する
+        ↓
+Rが低い
+→ Retrieval Failure
+        ↓
+Fが低い
+→ Generation Failure
+        ↓
+Aが低い
+→ Answer Relevance Failure
+        ↓
+【Gate 9】
+失敗の有無と原因を分類できる
+        ↓
+────────────────────────────
+【Phase 10】Adaptive Recoveryを実装する
+        ↓
+Retrieval Failure
+→ Query Rewrite・再検索
+        ↓
+Generation Failure
+→ 根拠制約付き再生成
+        ↓
+Answer Relevance Failure
+→ Answer Rewrite
+        ↓
+再評価
+        ↓
+最終回答
+        ↓
+【Gate 10】
+最大1回のRecoveryを含む提案手法が完成
+        ↓
+────────────────────────────
+【Phase 11】比較実験を固定する
+        ↓
+使用Model・Prompt・Datasetを固定
+Retriever・Generatorを固定
+閾値・Seed・Configを固定
+        ↓
+Baseline RAG
+Always Rewrite RAG
+Adaptive Recovery RAG
+        ↓
+変更するのはRecovery制御だけ
+        ↓
+【Gate 11】
+公平な比較実験を実行できる
+        ↓
+────────────────────────────
+【Phase 12】最終実験を行う
+        ↓
+Train
+→ 開発・動作確認
+        ↓
+Validation
+→ Parameter・閾値調整
+        ↓
+設定を完全に固定
+        ↓
+Test
+→ 最終評価
+        ↓
+Test結果を見て同じ実験を再調整しない
+        ↓
+【Gate 12】
+最終実験結果が確定
+        ↓
+────────────────────────────
+【Phase 13】結果を分析する
+        ↓
+Answer F1
+Faithfulness
+Hallucination Rate
+Failure Detection F1
+Recovery Success Rate
+ECE
+LLM Calls
+Latency
+        ↓
+Dataset種類別・Answer Type別に分析
+        ↓
+失敗例・Recovery成功例・悪化例を分析
+        ↓
+Sensitivity Analysis・必要な追加実験
+        ↓
+仮説H1・H2・H3を検証
+        ↓
+【Gate 13】
+研究Questionに結論を出せる
+        ↓
+────────────────────────────
+【Phase 14】卒業論文を完成させる
+        ↓
+背景・関連研究
+研究目的・仮説
+JDocQAとText-only選別
+提案手法
+実装
+実験条件
+結果
+考察
+Limitations
+結論
+        ↓
+Code・Config・Manifest・結果を整理
+再現手順をREADMEへ記載
+        ↓
+指導教員からFeedback
+        ↓
+修正・最終提出
+        ↓
+────────────────────────────
+【卒業研究完了】
