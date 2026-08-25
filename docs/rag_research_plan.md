@@ -420,13 +420,14 @@ JDocQAを基盤として、Failure Diagnosis能力およびAdaptive Recovery能�
 | 種類 | 目標件数 | JDocQAからの構築方針 |
 |---|---:|---|
 | Normal QA | 150 | Text-onlyで回答可能なAnswerable QA |
-| Unanswerable QA | 150 | JDocQAに含まれるUnanswerable QA |
+| Unanswerable QA | Text-only適格例の全件 | 公式Test Splitに含まれるUnanswerable QAを監査し、適格例をすべて使用 |
 | Retrieval Failure | 150 | Answerable QAを基に、検索困難な条件を再現した派生例 |
 | Distractor | 150 | 正解文書に類似する別文書Chunkを混入した派生例 |
 
-合計600件を初期目標とする。ただし、公式Test Split内のText-only適格例と
-Unanswerable QAの実数を監査し、条件を満たす例が不足する場合は、研究目的と
-Split独立性を損なわない形で件数または研究用Splitを見直し、その変更を本書に反映する。
+Normal QA、Retrieval Failure、Distractorは各150件を初期目標とする。
+Unanswerable QAは件数を150件に固定せず、公式Test Split内でText-only適格と判定された
+例をすべて使用する。公式Test Annotationには選別前のUnanswerable QAが145件含まれるため、
+最終件数はText-only適格性監査後に145件以下となる。採用件数と除外理由をDataset Manifestへ記録する。
 
 派生例の生成手順、乱数Seed、元のQA ID、正解文書ID、追加したDistractor文書IDを保存し、
 同一条件を再生成できるようにする。

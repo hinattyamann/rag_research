@@ -498,6 +498,20 @@ JDocQAが提供する回答根拠PageやBounding Boxのみから検索Contextを
 Retrieverへ漏洩する。そのため、Corpusは対象Splitに属する全PDFの全文Pageから構築し、
 正解情報は評価処理へ分離する。
 
+### Text Fieldの役割
+
+- `text_from_pdf`: 質問に対応付けられたPageから取得したPDF埋め込みText。
+- `text_from_ocr_pdf`: 同じPage画像からOCRで取得したText。
+- `context`: 上記の候補から選択され、必要に応じてノイズ除去されたモデル入力用Context。
+
+これらは3つの独立した根拠文書ではなく、同じPage内容の取得方法または加工段階が異なるFieldである。
+Answerable QAでは回答根拠Pageに対応するが、Unanswerable QAでは文書内に回答根拠が存在しない。
+また、`context` は質問に対応付けられたAnnotation側のContextであり、PDF全文Corpusの代替にはしない。
+
+実際のRAG処理では、質問単位の `context` をRetrieverまたはGeneratorへ直接渡さず、全PDFの
+各Pageについて埋め込みTextを優先し、品質不足または取得不能の場合にOCR TextへFallbackして
+検索Corpusを構築する。3つのFieldはText-only適格性監査と抽出品質の検証に使用する。
+
 ## 内部Dataset Schema
 
 JDocQAの元Fieldを正規化し、以下の内部Schemaへ変換する。
@@ -567,11 +581,14 @@ Query Rewriteへ渡すStateには含めない。
 Failure原因評価のため、`dataset_type` と派生元情報を保持する。
 
 - Normal QA: JDocQAのText-onlyで回答可能なAnswerable QA
-- Unanswerable QA: JDocQAのUnanswerable QA
+- Unanswerable QA: 公式Test Split内でText-only適格と判定されたUnanswerable QAを全件使用
 - Retrieval Failure: Answerable QAから決定的手順で作成し、元QA IDとSeedを保存
 - Distractor: 追加した文書ID、選択方法、Seedを保存
 
 派生Datasetは、同一入力とSeedから再生成できることを要件とする。
+
+Unanswerable QAの件数は150件に固定しない。公式Test Annotationには選別前で145件含まれる。
+Text-only適格性監査後の採用件数、除外件数、除外理由をDataset Manifestへ記録する。
 
 Log:
 
