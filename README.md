@@ -80,6 +80,16 @@ Referenceを保持して`provided_passage=null`とし、UnanswerableではGold�
 公式Annotation内のRandom Passageを`provided_passage`へ保持します。`research_split`はPhase 3で
 Title単位の分割を行うまで`null`です。Processed Dataは再生成可能なためGit管理対象外です。
 
+固定Retrieval Corpusを内部Document Schemaへ変換するには、次を実行します。
+
+```powershell
+uv run python scripts/build_clapnq_corpus.py
+```
+
+成果物は同じDataset Version内の`passages.jsonl`です。ZIP内のTSVを展開せずStreamingで読み、178,890件の
+Passageを`passage_id`、Source情報、Title、Text、Text SHA-256へ変換します。生成時にはQA側の全Unique
+Gold Passage IDがCorpus内に存在することも検証します。
+
 ## 開発環境の基本方針
 
 このプロジェクトでは、Python本体、仮想環境、依存ライブラリをuvで管理します。

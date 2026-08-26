@@ -1,11 +1,11 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.7
+## Version 7.8
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion 7.6を基礎とし、Stable ID、Phase 2時点の内部QA Schema、Provided Passageの分離、
-決定的JSONL出力を具体化した版である。
+本書はVersion 7.7を基礎とし、Streaming Retrieval Corpus Loader、内部Document Schema、Gold Passage
+参照整合性検証、決定的Corpus JSONL出力を具体化した版である。
 CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
 `docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -580,6 +580,15 @@ Retrieval用Document Schema:
   "text_sha256":""
 }
 ```
+
+`passages.tsv.zip`はDiskへ展開せず、ZIP Entry `passages.tsv`をCSV/TSV ParserでLogical Record単位に
+Streaming Loadする。ZIP内のFile構成、Header、列数、UTF-8、空ID・本文・Title、Passage ID重複、件数を
+検証する。`text_sha256`はTSV Parse後の`text`をUTF-8へEncodeしたByte列から計算し、Retrieverへ渡す
+本文とHash対象を一致させる。
+
+DocumentはUTF-8、Key辞書順、不要な空白なし、LF終端で
+`data/processed/clapnq/c508d78-base-v1/passages.jsonl`へStreaming Serializeする。一時Fileへの書き込みが
+完了し、2,074 Unique Gold Passage IDの全件存在を確認した後だけ出力先を置換する。
 
 元Fieldとの主な対応:
 

@@ -1,6 +1,6 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 1.4
+## Version 1.5
 
 最終確認日: 2026-08-26
 
@@ -292,6 +292,10 @@ Corpusに含まれる。
 本研究では公式PassageをCanonical Retrieval Unitとし、最初の主実験では再Chunkしない。再Chunkを
 試す場合は追加実験として、元Passage ID、Chunk Rule、Gold Mappingの再構築方法を別Versionで保存する。
 
+固定Corpus LoaderはZIPを展開せず`passages.tsv`をStreamingで読み、ZIP Entry、Header、列数、UTF-8、
+空Field、Passage ID重複、期待件数を検証する。固定Dataでは全178,890件が1物理行のLogical Recordで、
+空ID、空本文、空Titleは0件だった。Loaderは引用符付き改行を含む将来のTSVにも対応する。
+
 ## 4.4 Retrieval Query TSV
 
 ```text
@@ -524,6 +528,9 @@ Research Splitや出力DirectoryをIDへ含めないため、Phase 3で再分割
 }
 ```
 
+`text_sha256`は、TSV Parserが返した`text`をUTF-8へEncodeしたByte列のSHA-256である。元ZIP File自体の
+同一性はSource ManifestのFile SHA-256で確認し、各Retrieval Unitの本文同一性は`text_sha256`で確認する。
+
 ## 7.3 Stable ID
 
 Source NQ IDだけでAnswerableとUnanswerableの役割を推測せず、次を組み合わせる。
@@ -560,6 +567,20 @@ LF終端を固定し、同じSourceから同じByte列とSHA-256を生成する�
 9,954,217 Bytes、SHA-256
 `233800e4cafadec8ebfdf185e28f4e7eb26efa924d68e592735b24cb8b937209`である。Processed Dataは公式Sourceから
 再生成できるためGitへCommitしない。
+
+## 7.6 Retrieval Corpus JSONL
+
+次のコマンドで固定Corpusを内部Document Schemaへ変換する。
+
+```powershell
+uv run python scripts/build_clapnq_corpus.py
+```
+
+出力先は`data/processed/clapnq/c508d78-base-v1/passages.jsonl`である。変換はStreamingで行い、同時にQA
+Recordが参照する2,074 Unique Gold Passage IDの全件存在を検証する。固定Dataの実生成結果は178,890
+Records、4,293 Unique Titles、156,262,889 Bytes、SHA-256
+`c847751985c2f95987628800a3a8a12aa274da37dee088310f74b6bddb1ea103`である。同じ入力から2回生成して同じ
+Hashになることを確認済みである。
 
 ---
 
