@@ -69,6 +69,17 @@ Selected Sentencesの対応および元Output Indexを維持します。この�
 出力しません。Queryは`Source Split + Answerability + Source ID`でAnnotationへ結合し、質問文も完全一致
 することを検証します。AnswerableにはGold Passage IDを1件、Unanswerableには空Listを付与します。
 
+結合済みDataをStable ID付きの内部QA Schemaへ変換するには、次を実行します。
+
+```powershell
+uv run python scripts/build_clapnq_qa.py
+```
+
+成果物は`data/processed/clapnq/c508d78-base-v1/qa.jsonl`です。AnswerableではGold Passage IDと
+Referenceを保持して`provided_passage=null`とし、UnanswerableではGoldとReferenceを空Listにしたうえで、
+公式Annotation内のRandom Passageを`provided_passage`へ保持します。`research_split`はPhase 3で
+Title単位の分割を行うまで`null`です。Processed Dataは再生成可能なためGit管理対象外です。
+
 ## 開発環境の基本方針
 
 このプロジェクトでは、Python本体、仮想環境、依存ライブラリをuvで管理します。

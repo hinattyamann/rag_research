@@ -1,11 +1,11 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.6
+## Version 7.7
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion 7.5を基礎とし、Retrieval Query Loader、Logical TSV Recordの扱い、Annotationとの
-1対1対応条件を具体化した版である。
+本書はVersion 7.6を基礎とし、Stable ID、Phase 2時点の内部QA Schema、Provided Passageの分離、
+決定的JSONL出力を具体化した版である。
 CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
 `docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -535,7 +535,7 @@ CLAPNQの元Fieldを正規化し、以下の内部Schemaへ変換する。
   "source_dataset":"CLAPNQ",
   "source_revision":"c508d78d8c5c2eecbf172fcf5f789004206e11fb",
   "source_split":"train|dev",
-  "research_split":"development|calibration|evaluation",
+  "research_split":null,
   "source_id":"",
   "source_line_index":0,
   "source_record_sha256":"",
@@ -549,6 +549,22 @@ CLAPNQの元Fieldを正規化し、以下の内部Schemaへ変換する。
   "dataset_type":"normal|unanswerable|retrieval_failure|distractor",
   "derived_from_id":null,
   "derivation":null
+}
+```
+
+Phase 2のBase QA生成時点では、`research_split`は未割当のため`null`とする。Phase 3でTitle単位の
+Group-aware Splitを固定した後に`development|calibration|evaluation`を設定する。Base QAの
+`dataset_type`はAnswerableを`normal`、Unanswerableを`unanswerable`とする。ただし、後者は
+Corpus-level Unanswerable監査の通過を意味しない。`retrieval_failure`と`distractor`は固定Retrieverと
+派生条件を確定する後続工程でのみ設定する。
+
+Unanswerableの`provided_passage`は次の構造で、公式Annotationの値を保持する。
+
+``` json
+{
+  "title":"",
+  "text":"",
+  "sentences":[]
 }
 ```
 
@@ -587,6 +603,11 @@ Stable IDはDataset Revision、Source Split、NQ ID、Answerabilityを組み合�
 Raw Record Hashも保存する。Line番号は各Source File内の0始まりIndexとし、Raw Record HashはJSONLの
 行末を除いたUTF-8 JSON BytesからSHA-256で生成する。Research Splitを作り直してもSource Record IDは
 変えず、Split ManifestのVersionを変更する。
+
+Base QAのStable ID形式は
+`clapnq:{revision先頭7文字}:{source_split}:{source_id}:{answerable|unanswerable}`とする。内部Recordは
+UTF-8、Key辞書順、不要な空白なし、LF終端のJSONLへ決定的にSerializeし、Base Dataset Version
+`c508d78-base-v1`の`qa.jsonl`として生成する。
 
 ## 正解情報の分離
 

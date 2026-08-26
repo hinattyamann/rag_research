@@ -1,6 +1,6 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 1.3
+## Version 1.4
 
 最終確認日: 2026-08-26
 
@@ -478,8 +478,10 @@ Title Groupingを適用しても、LLMがNQ質問・Wikipedia本文を事前学�
   "source_dataset": "CLAPNQ",
   "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
   "source_split": "train",
-  "research_split": "development|calibration|evaluation",
+  "research_split": null,
   "source_id": "8045984229282682032",
+  "source_line_index": 0,
+  "source_record_sha256": "...",
   "source_title": "Love the One You're With",
   "question": "...",
   "reference_answers": ["..."],
@@ -495,6 +497,19 @@ Title Groupingを適用しても、LLMがNQ質問・Wikipedia本文を事前学�
 
 Unanswerableでは`reference_answers=[]`、`gold_passage_ids=[]`とし、公式Annotationに含まれるRandom
 Passageは`provided_passage`へ保存する。空Answer文字列を正解文字列として扱わない。
+
+Phase 2のBase QAでは`research_split=null`とし、Phase 3のTitle単位分割後に値を設定する。
+`dataset_type`はBase Answerableを`normal`、Base Unanswerableを`unanswerable`とするが、Base
+Unanswerableという値だけではCorpus全体で回答不能と確認済みであることを意味しない。主評価に使う
+Unanswerableは後続のCorpus-level監査を別途通過させる。
+
+`provided_passage`は`title`、`text`、`sentences`を持つObjectである。AnswerableのAnnotation Passageは
+Gold Passage本文だが、Full RAGへの誤投入を防ぐため`provided_passage`へ複製せず`null`とし、評価用の
+`gold_passage_ids`だけを保持する。
+
+Stable IDは
+`clapnq:{revision先頭7文字}:{source_split}:{source_id}:{answerable|unanswerable}`で生成する。
+Research Splitや出力DirectoryをIDへ含めないため、Phase 3で再分割しても元QAの識別子は変化しない。
 
 ## 7.2 Retrieval Document
 
@@ -531,6 +546,20 @@ Raw JSONLのLine番号、Raw Record SHA-256も保存する。Revision変更時�
 5. Unanswerableは有効Referenceが0であることを確認する。
 6. 複数Referenceに対する自動Metricは、原則として最大Scoreを使用する。
 7. Selected Sentencesは対応するReferenceとのPairを崩さない。
+
+## 7.5 Base QA JSONL
+
+次のコマンドで、固定Sourceから内部QA Schemaを決定的に再生成する。
+
+```powershell
+uv run python scripts/build_clapnq_qa.py
+```
+
+出力先は`data/processed/clapnq/c508d78-base-v1/qa.jsonl`である。JSON ObjectのKey順、区切り、UTF-8、
+LF終端を固定し、同じSourceから同じByte列とSHA-256を生成する。固定Dataの実生成結果は4,345 Records、
+9,954,217 Bytes、SHA-256
+`233800e4cafadec8ebfdf185e28f4e7eb26efa924d68e592735b24cb8b937209`である。Processed Dataは公式Sourceから
+再生成できるためGitへCommitしない。
 
 ---
 
