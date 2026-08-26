@@ -54,6 +54,19 @@ uv run python scripts/build_clapnq_manifest.py
 CLAPNQ論文の178,891 Passagesという記載とは1件差がありますが、公式Hugging Face配布の
 `num_examples`も178,890件であるため、本研究では178,890件をCanonical Corpusの実Record数とします。
 
+## CLAPNQ Annotationの確認
+
+取得済みの最終Round Annotation 4ファイルは、次のコマンドでLoadとReference正規化を確認できます。
+
+```powershell
+uv run python scripts/inspect_clapnq.py
+```
+
+LoaderはRaw JSON Recordを保持し、`skip=true`、`null`、空白のみ、`NA`のAnswerを評価Referenceから
+除外します。Answerableは有効Referenceが1件以上、Unanswerableは0件であることを検証し、Answerと
+Selected Sentencesの対応および元Output Indexを維持します。この確認処理はProcessed Dataをまだ
+出力しません。
+
 ## 開発環境の基本方針
 
 このプロジェクトでは、Python本体、仮想環境、依存ライブラリをuvで管理します。

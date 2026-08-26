@@ -1,11 +1,11 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.4
+## Version 7.5
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion 7.3を基礎とし、固定Git配布物の実監査に基づいてRetrieval Corpusの実Record数を
-178,890件へ訂正した版である。
+本書はVersion 7.4を基礎とし、Annotation Loader、Reference正規化、Raw Record Hashの計算規則を
+具体化した版である。
 CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
 `docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -579,8 +579,9 @@ Retrieval用Document Schema:
 除外する。複数Referenceへの文字列Metricは最大Scoreを用いる。
 
 Stable IDはDataset Revision、Source Split、NQ ID、Answerabilityを組み合わせて生成し、Line番号と
-Raw Record Hashも保存する。Research Splitを作り直してもSource Record IDは変えず、Split Manifestの
-Versionを変更する。
+Raw Record Hashも保存する。Line番号は各Source File内の0始まりIndexとし、Raw Record HashはJSONLの
+行末を除いたUTF-8 JSON BytesからSHA-256で生成する。Research Splitを作り直してもSource Record IDは
+変えず、Split ManifestのVersionを変更する。
 
 ## 正解情報の分離
 
@@ -656,6 +657,8 @@ CLAPNQ関連Test条件:
 -   Answerable/Unanswerable件数がTrain 1,954/1,791、Dev 300/300である
 -   AnswerableのGold Passage IDが公式Corpusに存在する
 -   無効Reference除外後も各Answerableに有効Answerが残る
+-   正規化後の有効Reference数がTrain Answerable 2,667件、Dev Answerable 475件である
+-   重複する有効Answerと空Selected Sentencesを順序どおり保持できる
 -   UnanswerableのReference AnswerとGold Passage IDが空である
 -   同一Wikipedia Titleが複数の研究用Splitに出現しない
 -   同一Seedから同一のSplitとFailure評価用Subsetを再生成できる

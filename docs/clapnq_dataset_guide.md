@@ -1,6 +1,6 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 1.1
+## Version 1.2
 
 最終確認日: 2026-08-26
 
@@ -260,6 +260,11 @@ UnanswerableにはGold Passageが存在しない。Annotationに含まれるPass
 - Unanswerableの公開実Fileでは、README例の`null`ではなく空文字Answerが格納される。Loaderは
   `null`と空文字の両方を受理し、内部ではReference Answerを空Listへ統一する。
 - Answerableには1～2 Referenceが中心だが、Pilot由来の少数例には4～7 Referenceがある。
+- 正規化後の有効ReferenceはTrain Answerable 2,667件、Dev Answerable 475件、合計3,142件である。
+- 同一Record内で同じ有効Answerが重複する例が2件ある。Raw Annotationの順序を維持して両方を残し、
+  元`output` Indexを保持する。最大Score方式では重複によってScoreは変わらない。
+- 有効Answerだが`selected_sentences=[]`のReferenceが2件ある。Answerを無効化せず、空Evidenceとの対応を
+  保持してEvidence監査時に識別する。
 - Optional R1 FileはREADME表の12,657件に対して実Fileが12,039行だった。主実験では使用せず、
   使用する場合は別Dataset Revisionとして件数差を明記する。
 
@@ -503,7 +508,9 @@ clapnq:{revision_short}:{source_split}:{source_id}:{answerability}
 ```
 
 Raw JSONLのLine番号、Raw Record SHA-256も保存する。Revision変更時に同じNQ IDの内容が同一だと
-仮定しない。
+仮定しない。`source_line_index`は各Source File内の0始まりIndexとする。Raw Record SHA-256はJSONLの
+行末`LF`または`CRLF`を除いた、UTF-8 JSON Bytesに対して計算する。JSONの再Serialize結果へHashを
+計算せず、元配布RecordのByte表現を識別できるようにする。
 
 ## 7.4 Reference正規化
 
@@ -876,7 +883,7 @@ License表示を追記する。CLAPNQをそのまま使用したとだけ書き�
 - [x] File Hash、件数、Schema、LicenseをSource Manifestへ保存した。
 - [x] 公開Train 3,745件、Dev 600件を検証した。
 - [x] Corpus 178,890 Passage RecordsとGold Passage対応を検証した。
-- [ ] 無効Referenceを除外し、Answerableに有効Answerが残ることを確認した。
+- [x] 無効Referenceを除外し、Answerableに有効Answerが残ることを確認した。
 - [x] Apache 2.0とCC BY-SA 3.0の表示を保存した。
 - [ ] Title Group-aware SplitをSeed 42で固定した。
 - [ ] Gold情報をInference Stateから分離した。
