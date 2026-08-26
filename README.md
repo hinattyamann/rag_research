@@ -28,6 +28,21 @@ CC BY-SA 3.0で公開されているため、本研究では両方のLicense表�
 Natural Questions論文の両方を引用します。再配布、派生Data、論文・発表資料で必要な表示の詳細は
 `docs/clapnq_dataset_guide.md`を参照してください。
 
+## CLAPNQ Raw Dataの取得
+
+CLAPNQは、研究仕様で固定した公式RepositoryのCommitから次のコマンドで取得します。
+
+```powershell
+uv run python scripts/prepare_clapnq.py
+```
+
+取得先は`data/raw/clapnq/{revision}/`です。Raw Dataは`.gitignore`の対象で、GitHubへは保存しません。
+このコマンドは40文字の固定Commit Hashだけを受け付け、一時Directoryへの取得が完了してから正式な
+取得先へ移動します。既に取得先がある場合は上書きせず、Commitと必須Fileを検証して再利用します。
+
+この段階で検証するのはCommitと必須Fileの存在です。File Hash、件数、Schema、Licenseを記録する
+Source Manifestは、次の実装工程で生成します。
+
 ## 開発環境の基本方針
 
 このプロジェクトでは、Python本体、仮想環境、依存ライブラリをuvで管理します。
