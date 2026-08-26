@@ -6,7 +6,7 @@ from pathlib import PurePosixPath
 
 CLAPNQ_REPOSITORY_URL = "https://github.com/primeqa/clapnq.git"
 CLAPNQ_REVISION = "c508d78d8c5c2eecbf172fcf5f789004206e11fb"
-CLAPNQ_CORPUS_PASSAGE_COUNT = 178_891
+CLAPNQ_CORPUS_PASSAGE_COUNT = 178_890
 
 
 class SourceFileRole(StrEnum):
@@ -125,4 +125,3 @@ CLAPNQ_LICENSE_LINEAGE = (
         source_url="https://ai.google.com/research/NaturalQuestions/download",
     ),
 )
-

@@ -1,6 +1,6 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 1.0
+## Version 1.1
 
 最終確認日: 2026-08-26
 
@@ -98,7 +98,7 @@ Datasetである。
 | 回答 | 人手で作成された簡潔で根拠付きの長文回答 |
 | Gold Evidence | 1つを基本とするGold PassageとSelected Sentences |
 | Answerability | AnswerableとUnanswerable |
-| Retrieval Corpus | 4,293文書、178,891 Passages |
+| Retrieval Corpus | 4,293文書、178,890 Passage Records |
 | 主用途 | Retrieval、Gold Passage Generation、Full RAG |
 
 CLAPNQは、NQのうちLong AnswerはあるがShort Answerがなく、表・Listを除き、Passageが5文より長い
@@ -275,8 +275,14 @@ id    text    title
 - `text`: Retrieverへ投入する本文。
 - `title`: Wikipedia Article Title。
 
-公式論文では178,891 Passages、4,293 Documentsと報告される。極端に長い3,000語超または短い15語未満の
-非Gold Passageは除かれている。Gold Answerable PassageはCorpusに含まれる。
+公式論文では178,891 Passages、4,293 Documentsと報告される。一方、固定Revisionの
+`retrieval/passages.tsv.zip`を実監査すると、`passages.tsv`はHeader込み178,891物理行であり、
+Data Recordは178,890件だった。Passage IDは178,890件すべて一意で、公式Hugging Face配布の
+`num_examples`も178,890件である。このため、本研究では実際にRetrieverへ投入する178,890 Recordsを
+Corpus件数の正本とし、論文記載値との差をSource Manifestと論文のDataset説明に注記する。
+
+極端に長い3,000語超または短い15語未満の非Gold Passageは除かれている。Gold Answerable Passageは
+Corpusに含まれる。
 
 本研究では公式PassageをCanonical Retrieval Unitとし、最初の主実験では再Chunkしない。再Chunkを
 試す場合は追加実験として、元Passage ID、Chunk Rule、Gold Mappingの再構築方法を別Versionで保存する。
@@ -434,7 +440,7 @@ Title Groupingを適用しても、LLMがNQ質問・Wikipedia本文を事前学�
 ## 6.3 Leakage防止
 
 - 研究用SplitはQA Annotation、Gold Label、Few-shot例を分離するためのものである。Full RAGでは全方式が
-  同じ公式178,891 Passage Corpusを検索し、Evaluation質問のGold Passageも検索候補に含める。これは
+  同じ固定配布物の178,890 Passage Recordsを検索し、Evaluation質問のGold Passageも検索候補に含める。これは
   Retrieval Taskの要件でありLeakageではない。ただし、EvaluationのQrelやReferenceをRetrieverの
   学習・Parameter調整へ使用してはならない。
 - `source_split`と`research_split`を別々に保存する。
@@ -515,7 +521,7 @@ Raw JSONLのLine番号、Raw Record SHA-256も保存する。Revision変更時�
 
 ## 8.1 Canonical Corpus
 
-公式178,891 Passagesをすべて同じIndexへ投入する。質問に対応するTitleやProvided Passageだけへ検索範囲を
+固定配布物の178,890 Passage Recordsをすべて同じIndexへ投入する。質問に対応するTitleやProvided Passageだけへ検索範囲を
 制限しない。BM25、Embedding Retrieval、RRFはいずれも同じPassage集合を使用する。
 
 ## 8.2 Gold Mapping
@@ -866,12 +872,12 @@ License表示を追記する。CLAPNQをそのまま使用したとだけ書き�
 
 # 17. 実装開始前Checklist
 
-- [ ] CLAPNQを固定Revisionで取得した。
-- [ ] File Hash、件数、Schema、LicenseをSource Manifestへ保存した。
-- [ ] 公開Train 3,745件、Dev 600件を検証した。
-- [ ] Corpus 178,891 PassagesとGold Passage対応を検証した。
+- [x] CLAPNQを固定Revisionで取得した。
+- [x] File Hash、件数、Schema、LicenseをSource Manifestへ保存した。
+- [x] 公開Train 3,745件、Dev 600件を検証した。
+- [x] Corpus 178,890 Passage RecordsとGold Passage対応を検証した。
 - [ ] 無効Referenceを除外し、Answerableに有効Answerが残ることを確認した。
-- [ ] Apache 2.0とCC BY-SA 3.0の表示を保存した。
+- [x] Apache 2.0とCC BY-SA 3.0の表示を保存した。
 - [ ] Title Group-aware SplitをSeed 42で固定した。
 - [ ] Gold情報をInference Stateから分離した。
 - [ ] Unanswerable候補をCorpus-levelで監査した。

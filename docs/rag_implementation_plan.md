@@ -1,10 +1,11 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.3
+## Version 7.4
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion 7.2を基礎とし、基盤DatasetをJDocQAからCLAPNQへ変更した版である。
+本書はVersion 7.3を基礎とし、固定Git配布物の実監査に基づいてRetrieval Corpusの実Record数を
+178,890件へ訂正した版である。
 CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
 `docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -487,7 +488,7 @@ Annotation JSONLとRetrieval TSVのLoad
 
 ↓
 
-Gold Passage IDと公式178,891 Passage Corpusの対応検証
+Gold Passage IDと固定配布物の178,890 Passage Recordsの対応検証
 
 ↓
 
@@ -749,7 +750,7 @@ Title LeakageのないSplit Manifestが完成
 ────────────────────────────
 【Phase 4】検索CorpusとIndexを構築する
         ↓
-公式178,891 PassagesをCanonical CorpusとしてLoad
+固定配布物の178,890 Passage RecordsをCanonical CorpusとしてLoad
         ↓
 BM25 IndexとEmbedding Indexを構築
         ↓

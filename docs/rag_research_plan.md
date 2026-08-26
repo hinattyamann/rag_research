@@ -1,10 +1,11 @@
 # 自己制御型RAG研究計画書
 
-## Version 6.3
+## Version 6.4
 
 ## 外部実装依頼用 最終研究仕様書
 
-本書はVersion 6.2を基礎とし、基盤DatasetをJDocQAからCLAPNQへ変更した版である。
+本書はVersion 6.3を基礎とし、固定Git配布物の実監査に基づいてRetrieval Corpusの実Record数を
+178,890件へ訂正した版である。
 CLAPNQのField、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法の
 詳細は`docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -365,7 +366,10 @@ Selected Sentences、検索Corpusを備え、Retrieval、Gold Passage Generation
 | Test | 301 | 300 | 601 | Answer非公開 |
 | 合計 | 2,555 | 2,391 | 4,946 | 一部非公開 |
 
-Retrieval Corpusは4,293 Wikipedia Documentsから作られた178,891 Passagesで構成される。
+Retrieval Corpusは4,293 Wikipedia Documentsから作られた178,890 Passage Recordsで構成される。
+CLAPNQ論文は178,891 Passagesと報告するが、固定Git配布TSVはHeader込み178,891物理行、Data部分
+178,890 Recordsであり、公式Hugging Face配布の`num_examples`も178,890件である。本研究では実際に
+Retrieverへ投入するData Record数178,890件をCorpus件数として使用する。
 回答は平均約56.8語、2.3文で、平均約156語のGold Passage内にある複数の非連続な根拠文を統合する
 例が中心である。この性質は、回答のCorrectnessだけでなくFaithfulness、Completeness、Concisenessを
 評価する本研究と整合する。
@@ -390,7 +394,7 @@ CC BY-SA 3.0とされるため、本研究では両方をLicense Lineageとし�
 ## 本研究におけるCLAPNQの利用範囲
 
 - 公開Train/Devの最終Round Annotationを使用する。
-- 公式178,891 Passagesを共通の検索Corpusとして使用する。
+- 固定配布物の178,890 Passage Recordsを共通の検索Corpusとして使用する。
 - Annotation内のGold PassageをGeneratorへ直接与える処理はOracle Generationとして分離する。
 - Full RAG主実験では、Retrieverが取得したTop-k PassageだけをGeneratorへ渡す。
 - Gold Passage ID、Reference Answer、Selected Sentences、Answerability Labelは評価専用とし、

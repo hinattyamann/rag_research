@@ -74,7 +74,7 @@ def test_source_contract_includes_corpus_and_license() -> None:
 
     assert len(corpus) == 1
     assert corpus[0].relative_path == "retrieval/passages.tsv.zip"
-    assert corpus[0].expected_record_count == 178_891
+    assert corpus[0].expected_record_count == 178_890
     assert [spec.relative_path for spec in licenses] == ["LICENSE"]
 
 

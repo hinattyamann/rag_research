@@ -40,8 +40,19 @@ uv run python scripts/prepare_clapnq.py
 このコマンドは40文字の固定Commit Hashだけを受け付け、一時Directoryへの取得が完了してから正式な
 取得先へ移動します。既に取得先がある場合は上書きせず、Commitと必須Fileを検証して再利用します。
 
-この段階で検証するのはCommitと必須Fileの存在です。File Hash、件数、Schema、Licenseを記録する
-Source Manifestは、次の実装工程で生成します。
+取得後、次のコマンドでFile Hash、件数、Schema、Gold Passage対応、License Lineageを検証し、
+Source Manifestを生成します。
+
+```powershell
+uv run python scripts/build_clapnq_manifest.py
+```
+
+成果物は`data/manifests/clapnq_source_manifest.json`です。ManifestはGit管理し、Raw Dataを別PCで
+再取得した場合の同一性確認に使用します。
+
+固定Git配布の`passages.tsv`はHeader込み178,891物理行、実際のPassage Recordは178,890件です。
+CLAPNQ論文の178,891 Passagesという記載とは1件差がありますが、公式Hugging Face配布の
+`num_examples`も178,890件であるため、本研究では178,890件をCanonical Corpusの実Record数とします。
 
 ## 開発環境の基本方針
 
