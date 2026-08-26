@@ -1,6 +1,6 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 1.2
+## Version 1.3
 
 最終確認日: 2026-08-26
 
@@ -300,6 +300,16 @@ id    question    doc-id-list    answers
 
 `doc-id-list`はAnswerableのGold Passage IDである。Unanswerableでは空である。Gold Passage IDと
 Reference AnswerはRetriever、Generator、Query Rewriteへ渡さず、評価処理だけが参照する。
+
+固定公開Dataでは、Answerable 2,254件の`doc-id-list`は全てGold Passage ID 1件、Unanswerable 2,091件は
+全て空である。Unique Gold Passage IDは2,074件で、全てCanonical Corpusに存在する。Annotationとの結合は
+`source_split`、`is_answerable`、`source_id`の3要素をKeyとし、質問文の完全一致も検証する。4,345件で
+欠損、余剰、重複、不一致は0件である。
+
+`answers`列には引用符内の改行によって複数物理行にまたがるLogical TSV Recordが200件ある。そのため、
+物理行ごとの`split("\t")`ではなく、引用符と改行を扱えるCSV/TSV Parserで読み込む。Queryの
+`source_line_index`はHeaderを除くLogical Recordの0始まりIndexとする。出所の同一性はSource Manifestの
+TSV File SHA-256とLogical Indexで追跡し、物理行単位のRow Hashは作らない。
 
 ---
 

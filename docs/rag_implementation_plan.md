@@ -1,11 +1,11 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.5
+## Version 7.6
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion 7.4を基礎とし、Annotation Loader、Reference正規化、Raw Record Hashの計算規則を
-具体化した版である。
+本書はVersion 7.5を基礎とし、Retrieval Query Loader、Logical TSV Recordの扱い、Annotationとの
+1対1対応条件を具体化した版である。
 CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
 `docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -575,6 +575,11 @@ Retrieval用Document Schema:
 - Retrieval Query TSVの`doc-id-list` → Answerableの`gold_passage_ids`。
 - Unanswerableの`passages[0]` → `provided_passage`。Goldとは扱わない。
 
+Retrieval Query TSVは`answers`内の引用符付き改行を含むため、物理行ではなくCSV Parserが返すLogical
+Record単位でLoadする。QueryのLine IndexはHeaderを除くLogical Recordの0始まりとする。Annotationとは
+`source_split`、`is_answerable`、`source_id`で1対1に結合し、質問文も完全一致することを検証する。
+AnswerableはGold Passage ID 1件、Unanswerableは空Listとする。
+
 無効Referenceは`skip=true`、`null`、空文字、`NA`とする。Raw `output`を失わず保持し、評価用Viewで
 除外する。複数Referenceへの文字列Metricは最大Scoreを用いる。
 
@@ -660,6 +665,10 @@ CLAPNQ関連Test条件:
 -   正規化後の有効Reference数がTrain Answerable 2,667件、Dev Answerable 475件である
 -   重複する有効Answerと空Selected Sentencesを順序どおり保持できる
 -   UnanswerableのReference AnswerとGold Passage IDが空である
+-   AnnotationとRetrieval Query 4,345件が欠損・余剰・重複なく1対1で対応する
+-   AnnotationとQueryの質問文が全件完全一致する
+-   引用符内に改行を含む200件のQuery AnswerをLogical TSV RecordとしてLoadできる
+-   Answerable 2,254件にGold Passage ID 1件、Unanswerable 2,091件に空Listを付与できる
 -   同一Wikipedia Titleが複数の研究用Splitに出現しない
 -   同一Seedから同一のSplitとFailure評価用Subsetを再生成できる
 -   RetrieverおよびGeneratorへGold情報、Answerability、Dataset Typeが渡らない
