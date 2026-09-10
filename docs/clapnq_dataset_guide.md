@@ -1,8 +1,8 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 1.5
+## Version 1.6
 
-最終確認日: 2026-08-26
+最終確認日: 2026-09-10
 
 本書は、CLAPNQそのものの仕様と、本研究「評価駆動型自己制御RAGによる回答信頼性向上手法」
 での利用方法を一か所に集約したDataset仕様書である。CLAPNQの取得、研究用Split、検索Corpus、
@@ -60,8 +60,13 @@ CLAPNQの導入によって、OCR品質や視覚情報依存がRetrieval Failure
 | `retrieval/passages.tsv.zip` | Full RAGの検索Corpusとして使用する |
 | Retrieval Query TSVのGold Passage ID | Retrieval評価にのみ使用し、Inferenceへ渡さない |
 | Original NQ Document | Dataset監査に使用し、主Retrieval Corpusには直接追加しない |
-| 公式Test | Answerが非公開のため、著者から正式に取得しない限り主実験では使用しない |
+| 公式Test | Access依頼への返信・Data提供がないため、本研究では使用しない |
 | CLAPNQ-R1 | 品質条件が異なる補助Train Dataであるため、主実験には使用しない |
+
+2026年8月26日に公式README記載の著者連絡先へTest Accessを依頼したが、2026年9月10日時点で返信も
+Data提供もない。そのため、非公開Testの取得を待たず、公開Train/Dev 4,345件だけで研究を継続する。
+この決定後に返信があった場合も、現行主実験のDatasetへ途中追加しない。利用を検討する場合は、現行結果と
+混在させず、別Dataset Version・別実験として利用条件と評価目的を記録する。
 
 ## 1.3 本研究で固定する評価条件
 
@@ -114,9 +119,9 @@ Passage全体の約3分の1である。複数の非連続な根拠文を自然�
 | Test | 301 | 300 | 601 | Answer非公開 |
 | 合計 | 2,555 | 2,391 | 4,946 | 一部非公開 |
 
-研究で直ちに利用できる公開範囲はTrainとDevの4,345件で、Answerable 2,254件、
-Unanswerable 2,091件である。公式Testを利用する必要がある場合は、公式READMEに従って著者へ
-研究目的と利用理由を連絡し、許可されたFile、利用条件、取得日をManifestへ記録する。
+本研究で利用する範囲は公開TrainとDevの4,345件で、Answerable 2,254件、Unanswerable 2,091件である。
+公式Testは使用しない。公開Train/Devから作る研究用Evaluation Splitは内部評価用であり、公式Testまたは
+公式Leaderboard相当の評価とは区別する。
 
 ## 2.3 Annotation品質
 
@@ -327,7 +332,8 @@ Apache License 2.0を掲示し、利用、複製、変更、配布を無償・Ro
 ただし、次は別である。
 
 - LLM API、GPU、Storage、通信などの実験費用。
-- 非公開TestへのAccess。料金は記載されていないが、著者への申請が必要である。
+- 非公開TestへのAccess。料金は記載されていないが著者への申請が必要であり、本研究ではAccess未取得のため
+  使用対象外とする。
 - 元となるNatural QuestionsおよびWikipedia由来ContentのLicense条件。
 
 「無料で利用できる」と「出典やLicense表示なしで再配布できる」は同義ではない。
@@ -945,6 +951,7 @@ License表示を追記する。CLAPNQをそのまま使用したとだけ書き�
 - [x] Corpus 178,890 Passage RecordsとGold Passage対応を検証した。
 - [x] 無効Referenceを除外し、Answerableに有効Answerが残ることを確認した。
 - [x] Apache 2.0とCC BY-SA 3.0の表示を保存した。
+- [x] 公式Testを使用せず、公開Train/Devだけで研究を継続する条件を固定した。
 - [ ] Title Group-aware SplitをSeed 42で固定した。
 - [ ] Gold情報をInference Stateから分離した。
 - [ ] Unanswerable候補をCorpus-levelで監査した。

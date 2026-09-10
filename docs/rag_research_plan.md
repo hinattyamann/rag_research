@@ -1,11 +1,11 @@
 # 自己制御型RAG研究計画書
 
-## Version 6.4
+## Version 6.5
 
 ## 外部実装依頼用 最終研究仕様書
 
-本書はVersion 6.3を基礎とし、固定Git配布物の実監査に基づいてRetrieval Corpusの実Record数を
-178,890件へ訂正した版である。
+本書はVersion 6.4を基礎とし、非公開Test Dataを使用せず、公開Train/Devだけで研究を継続する
+評価条件を固定した版である。
 CLAPNQのField、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法の
 詳細は`docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -400,7 +400,12 @@ CC BY-SA 3.0とされるため、本研究では両方をLicense Lineageとし�
 - Gold Passage ID、Reference Answer、Selected Sentences、Answerability Labelは評価専用とし、
   Retriever、Generator、Query Rewriteへ渡さない。
 - Optional CLAPNQ-R1はAnnotation品質条件が異なるため、主実験には使用しない。
-- 公式Test Answerは非公開であるため、著者から正式に取得しない限り主実験には使用しない。
+- 公式Test 601件は非公開Dataを必要とするため、本研究の主実験には使用しない。
+
+2026年8月26日に著者へTest Accessを問い合わせたが、2026年9月10日時点で返信およびData提供を
+受けていない。このため、Test Accessを研究進行上の前提から外し、公開Train/Dev 4,345件だけで
+Development、Calibration、Evaluationを構成する。今後返信またはData提供があっても、現行の主実験へ
+途中追加せず、利用する場合は別Versionの追加実験として目的、利用条件、Data Versionを改めて固定する。
 
 これにより、OCR、PDF Layout、図表理解などを研究対象から除外し、Text-based RAGの自己評価、
 Failure Diagnosis、Adaptive Recoveryへ焦点を維持する。
@@ -419,6 +424,9 @@ Title単位で再分割する。同一Titleの全QAを同じ研究用Splitへ配
 
 Group Sizeにより比率は厳密には一致しないため、実数をSplit Manifestへ記録する。Evaluation結果を
 確認してからPrompt、閾値、Weight、`top_k`等を調整し、同じ結果を最終評価として再利用しない。
+
+ここでいうEvaluationは公開Train/Devから作る本研究独自の内部評価Splitであり、CLAPNQ公式Testや
+公式Leaderboard相当のHeld-out評価ではない。この制約を結果、考察、Limitationsで明記する。
 
 研究用Splitが分離するのはQA Annotation、Gold Label、Few-shot例である。Full RAGでは全方式が同じ
 公式Corpusを検索し、Evaluation質問のGold Passageも検索候補に含める。ただし、EvaluationのQrelや

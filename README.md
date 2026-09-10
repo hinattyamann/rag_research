@@ -28,6 +28,11 @@ CC BY-SA 3.0で公開されているため、本研究では両方のLicense表�
 Natural Questions論文の両方を引用します。再配布、派生Data、論文・発表資料で必要な表示の詳細は
 `docs/clapnq_dataset_guide.md`を参照してください。
 
+公式Test 601件は非公開であり、2026年8月26日のAccess問い合わせに対して2026年9月10日時点で返信・
+Data提供がないため、本研究では使用しません。公開Train/Dev 4,345件をWikipedia Title単位で
+Development、Calibration、内部Evaluationへ再分割して研究を継続します。内部EvaluationはCLAPNQ
+公式Testまたは公式Leaderboard相当の評価ではありません。
+
 ## CLAPNQ Raw Dataの取得
 
 CLAPNQは、研究仕様で固定した公式RepositoryのCommitから次のコマンドで取得します。

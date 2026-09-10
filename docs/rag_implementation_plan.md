@@ -1,11 +1,11 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.8
+## Version 7.9
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion 7.7を基礎とし、Streaming Retrieval Corpus Loader、内部Document Schema、Gold Passage
-参照整合性検証、決定的Corpus JSONL出力を具体化した版である。
+本書はVersion 7.8を基礎とし、非公開Test Dataを実装対象から除外し、公開Train/Devだけで研究用Splitと
+主実験を構成する方針を固定した版である。
 CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
 `docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -224,6 +224,8 @@ dataset:
   source_revision: c508d78d8c5c2eecbf172fcf5f789004206e11fb
   annotation_source: PrimeQA/clapnq
   corpus_source: PrimeQA/clapnq_passages
+  source_splits: [train, dev]
+  official_test_policy: excluded_no_access
   research_split: development
   split_group_key: source_title
   split_ratios: [0.65, 0.10, 0.25]
@@ -468,7 +470,10 @@ CLAPNQはApache License 2.0として公開され、元Natural Questions DataはC
 | Train | 1,954 | 1,791 | 3,745 |
 | Dev | 300 | 300 | 600 |
 
-公式Test 601件はAnswerが非公開であるため、著者から正式に取得しない限り処理対象にしない。
+公式Test 601件は非公開Dataを必要とし、2026年8月26日のAccess問い合わせに対して2026年9月10日時点で
+返信およびData提供がないため、本実装の処理対象から除外する。Loader、Manifest、Split処理、実験Configは
+公開Train/Dev 4,345件だけを入力とし、Test Accessを実装開始または最終実験の前提にしない。将来Dataを
+受領した場合も現行Dataset Versionへ追加せず、別Versionの追加実験として実装・利用条件を再定義する。
 
 処理フロー:
 
@@ -727,6 +732,7 @@ CLAPNQ関連Test条件:
 
 Evaluation Splitを用いた最終実験では、事前に固定したDataset Manifest、Config、Prompt、
 Model Revisionを使用する。Evaluation結果を確認した後の設定変更は別実験として記録する。
+このEvaluation Splitは公開Train/Devから作る内部Splitであり、CLAPNQ公式Testとして扱わない。
 
 ------------------------------------------------------------------------
 
