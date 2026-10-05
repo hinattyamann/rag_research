@@ -420,3 +420,61 @@ git status --short
 
 完了条件は第4.5節と同じ。これらのUbuntuコマンドは手順として作成したもので、購入PC上では未実行である。
 Data再現後にPhase 3のSplitへ進む。推論基盤とModelの具体化は、実機のVRAMとMemory使用量を確認してから行う。
+
+## 7. 開発用ノートPCの実測仕様
+
+確認日: 2026年10月5日。ノートPC上でPowerShellの`Get-CimInstance`、`Get-PhysicalDisk`、Windowsの
+`dxdiag`を実行して確認した。研究室PCの購入仕様とは区別し、次は実機で認識された情報を記録する。
+確認による設定変更は行っていない。
+
+| 項目 | 確認結果 |
+|---|---|
+| メーカー・機種 | HP Pavilion Aero Laptop 13-be2xxx |
+| OS | Microsoft Windows 11 Home、64bit、Version 10.0.26200 |
+| CPU | AMD Ryzen 7 7735U with Radeon Graphics |
+| CPU Core / Logical Processor | 8 Core / 16 Logical Processors |
+| 物理RAM | 16GiB（Memory情報上は4GiBのEntryが4件） |
+| OSが利用可能な総RAM | 約15.21GiB |
+| 確認時のAvailable RAM | 約4.70GiB |
+| GPUのOS表示 | AMD Radeon(TM) Graphics、Status OK |
+| GPUの種類 | Integrated（`dxdiag`で確認） |
+| GPU Driver | 31.0.22048.7002、WDDM 3.1 |
+| GPU Dedicated Memory表示 | 485MB |
+| GPU Shared Memory表示 | 7,786MB |
+| GPU Display Memory表示 | 8,272MB |
+| 物理Storage | KIOXIA KBG50ZNV512G、SSD、NVMe、約476.94GiB（約512GB） |
+| C Drive容量 | 約475.71GiB |
+| 確認時のC Drive空き容量 | 約89.94GiB |
+
+Available RAMとDisk空き容量は確認時点の値であり、固定仕様ではない。物理RAM 16GiBとOSが利用可能な
+15.21GiBは区別する。差の全量をGPU予約分だとは断定しない。
+
+CPUの[AMD公式仕様](https://www.amd.com/en/products/processors/laptop/ryzen/7000-series/amd-ryzen-7-7735u.html)
+では内蔵GraphicsはRadeon 680Mとされる。OS上の一般名表示と公式仕様の対応として記録する。
+NVIDIA GPUは今回のDevice列挙では認識されず、`nvidia-smi`もPATH上に見つからなかった。
+
+内蔵GPUのDedicated/Shared/Display MemoryはWindows診断の表示値であり、独立した約8GBのVRAMが
+搭載されていることを意味しない。Shared MemoryはメインRAMと共有する枠であり、常時その全量を使用している
+ことも意味しない。専用表示の485MBも、独立GPU上の専用Memory Chipの容量として扱わない。
+
+## 8. ノートPCと研究室PCの比較・役割
+
+この比較は実機での速度Benchmarkではなく、ノートPCの確認結果と研究室PCの購入仕様に基づく見通しである。
+
+| 観点 | ノートPC | 研究室PC | 研究上の判断 |
+|---|---|---|---|
+| CPU | Ryzen 7 7735U、8 Core / 16 Thread | Core i5-14400、公式仕様は10 Core / 16 Thread（P-Core 6 + E-Core 4） | 長時間の並列CPU処理は研究室PCが有利と予想。ただし処理内容、電力設定、冷却、RAM不足で変わるため実測する |
+| GPU | 内蔵Radeon 680M相当、RAM共有 | 独立GPUのRTX 5060 Ti、VRAM 8GB/16GBは未確認 | 対応する推論基盤でLLM・EmbeddingをGPU実行する用途は研究室PCを優先する |
+| RAM | 16GiB | 購入仕様8GB | RAM容量はノートPCが上。研究室PCのRAM不足がModel LoadやIndex構築の制約となり得る |
+| SSD | NVMe、約512GB、確認時空き約90GiB | NVMe、購入仕様500GB、空き容量不明 | 公称容量は同程度。速度の優劣は仕様だけでは決めない |
+| 想定する役割 | コード開発、Test、前処理、Split、文書作成 | GPU推論、Embedding生成、比較実験 | 開発と計算実験を分担する。実験設定の固定後は同一条件で比較する |
+
+CPUに関する見通しは、Desktop向けi5-14400と省電力Notebook向け7735Uの仕様からの推測である。
+Core数や「i5」「Ryzen 7」という名称だけで速度を断定せず、研究用処理で所要時間とPeak Memoryを測る。
+[Intel公式仕様](https://www.intel.com/content/www/us/en/products/sku/236788/intel-core-i5-processor-14400-20m-cache-up-to-4-70-ghz.html)、
+[AMD公式仕様](https://www.amd.com/en/products/processors/laptop/ryzen/7000-series/amd-ryzen-7-7735u.html)
+
+研究室PCはGPUでのModel推論に適した構成と考えられるが、全項目でノートPCより上とは表現しない。
+購入仕様のRAM 8GBはノートPCより小さいため、VRAMの実容量とRAM使用量を確認してからModel条件を決める。
+現行前処理とPhase 3はノートPCでも進められる。CPU/GPUの速度差、Model動作、Index構築時のMemory上限は
+未測定であり、Modelや閾値の変更・固定を本比較だけで行わない。
