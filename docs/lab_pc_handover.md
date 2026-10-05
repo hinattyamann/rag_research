@@ -3,6 +3,10 @@
 確認日: 2026年10月5日。対象はこの日の作業開始時点のCommit `9bfe8ac` と、研究計画Version 6.5、
 実装計画Version 7.9である。以後の実装に応じて到達点と手順を更新する。
 
+2026年10月6日追記: 現行の研究計画はVersion 6.6、実装計画はVersion 7.10、Dataset GuideはVersion 1.7。
+ユーザー承認に基づき制御・比較・独立評価の仕様を具体化したが、実装の到達点と10月5日の検証結果は
+変わらない。以下の実測値・Hash・Test結果は記載された確認日時の記録として扱う。
+
 購入PCはUbuntu 24.04 LTSと判明したため、そのPCでは[第6節のUbuntu手順](#6-購入pcの仕様とubuntu向け手順)を
 使用する。Windows手順は現在のPCでの参照用として残す。
 
@@ -275,9 +279,15 @@ Title Leakage防止を優先し、実数とAnswerability比を記録する。
 Split Manifestを再生成できることである。この工程は現時点では未実装で、`scripts/split_clapnq.py`もまだない。
 
 その後に検索Index、開発用Baseline、Hybrid Retrieval、R/F/A評価、Failure Diagnosis、Recoveryを順に実装する。
-実装計画の生成用`qwen2.5-14b`、評価用`qwen2.5-7b`、`top_k=5`、Confidence Threshold `0.7`はConfig例であり、
-実際の`configs/config.yaml`やModel実行基盤はまだ存在しない。Confidence重み`0.25/0.50/0.25`、Failure Threshold
-初期値`0.5`、Recovery最大1回は研究方針として定義されている。
+実装計画の生成用`qwen2.5-14b`、評価用`qwen2.5-7b`、`top_k=5`はConfig例であり、実際の
+`configs/config.yaml`やModel実行基盤はまだ存在しない。Confidence重み`0.25/0.50/0.25`、採用閾値`0.7`、
+個別Failure閾値`0.5`、Recovery最大1回は承認済みの初期研究条件である。
+
+10月6日に確定したDecisionは、個別FailureをR → F → Aの順に優先し、個別Failureなし・C<0.7なら
+`low_confidence`として重み付き不足分が最大のRecoveryを選ぶ。Always Rewriteは共通初回回答の後に
+全質問でQuery Rewrite・再検索・再生成を1回実行する。独立品質Label Yによる主RSR・ECEと回答単位の
+Hallucinationを採用し、制御用自己評価と実験後の人手確認を分離する。詳細は現行仕様書を参照する。
+これらは未実装であり、次の実装は引き続きGPU不要のPhase 3とする。
 
 PC確認後にModel Revision、Embedding Model、量子化、Context Length、Batch Size、推論基盤を具体化する。
 変更が必要なら仕様書と実装・設定を同時に更新し、比較3方式ではRetriever・Generator・Datasetを共通にする。

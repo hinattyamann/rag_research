@@ -1,11 +1,12 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.9
+## Version 7.10
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion 7.8を基礎とし、非公開Test Dataを実装対象から除外し、公開Train/Devだけで研究用Splitと
-主実験を構成する方針を固定した版である。
+本書はVersion 7.9の公開Train/Devのみを使う方針を維持し、2026年10月6日にユーザーが承認した
+Decision Rule、Always Rewrite、独立品質評価および主RSRの定義を実装仕様へ反映した版である。
+本変更は文書上の仕様確定であり、これらのModule・Config・Test・比較実験はまだ実装・実施していない。
 CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
 `docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -110,8 +111,12 @@ generate(question:str, context:list)->str
 ## Evaluator
 
 ``` python
-evaluate(answer:str, documents:list)->dict
+evaluate(question:str, answer:str, documents:list)->dict
 ```
+
+ここでのEvaluatorは制御用の自己評価であり、Reference、Gold、Answerability Labelを入力しない。
+元の質問を必須とし、Query Rewrite後もAnswer Relevanceは元の質問との適合性を評価する。
+実験後の独立品質評価は別の処理・保存先とし、Dataset Guide第10.6〜10.10節に従う。
 
 返却:
 
@@ -172,12 +177,15 @@ failure_type:
     Retrieval Failure
     Generation Failure
     Answer Relevance Failure
+    low_confidence
 
 
 state:
     question
+    search_query
     documents
     answer
+    recovery_action
 
 
 Output:
@@ -201,6 +209,11 @@ elif failure_type == "Answer Relevance Failure":
 
     answer_rewrite()
 
+elif failure_type == "low_confidence":
+
+    # 原因Labelを変更せず、Decision Ruleが選択したrecovery_actionを実行する
+    execute_selected_recovery_action()
+
 ------------------------------------------------------------------------
 
 # 4. Config仕様
@@ -216,7 +229,19 @@ retrieval:
   top_k: 5
 
 confidence:
+  weights: [0.25, 0.50, 0.25]  # R, F, A
   threshold: 0.7
+
+failure:
+  retrieval_threshold: 0.5
+  faithfulness_threshold: 0.5
+  relevance_threshold: 0.5
+
+recovery:
+  max_recoveries: 1
+  max_answer_generations: 2
+  low_confidence_policy: weighted_deficit
+  tie_break_order: [retrieval, generation, answer_relevance]
 
 dataset:
   name: CLAPNQ
@@ -231,6 +256,10 @@ dataset:
   split_ratios: [0.65, 0.10, 0.25]
   seed: 42
 ```
+
+上記は将来作成するConfigの例であり、現時点ではConfig Fileと推論基盤は未実装である。
+重み、採用閾値0.7、個別閾値0.5、Recovery上限は承認済みの初期条件とする。Model名とtop-kは
+導入済み・Calibration済みの条件を意味しない。変更時には仕様・Config・Test・実験条件を更新する。
 ------------------------------------------------------------------------
 
 ## Failure Threshold設定
@@ -240,14 +269,45 @@ config.yamlでFailure判定閾値を管理する。
 例:
 
 confidence:
-  threshold:0.7
+  threshold: 0.7
 
 failure:
-  retrieval_threshold:0.5
-  faithfulness_threshold:0.5
-  relevance_threshold:0.5
+  retrieval_threshold: 0.5
+  faithfulness_threshold: 0.5
+  relevance_threshold: 0.5
 
-各評価値が対応する閾値を下回った場合、Failure Diagnosisを実行する。
+個別Failureは厳密な`<`で判定する。0.5はFailureに含めず、C=0.7は個別Failureがなければ採用する。
+
+## Decision Ruleと低Confidence時のRouting
+
+R/F/Aは0〜1の制御用Scoreとし、C = wR*R + wF*F + wA*Aを計算する。
+以下の疑似Codeの順序で判断する。実行Codeはまだ存在しない。
+
+```text
+if R < retrieval_threshold:
+    failure_type = retrieval_failure
+    recovery_action = query_rewrite
+elif F < faithfulness_threshold:
+    failure_type = generation_failure
+    recovery_action = constrained_generation
+elif A < relevance_threshold:
+    failure_type = answer_relevance_failure
+    recovery_action = answer_rewrite
+elif C < confidence_threshold:
+    failure_type = low_confidence
+    deficits = [wR*max(0, confidence_threshold-R),
+                wF*max(0, confidence_threshold-F),
+                wA*max(0, confidence_threshold-A)]
+    recovery_action = 最大のdeficitに対応する処理（同点はR → F → A）
+else:
+    failure_type = none
+    recovery_action = none
+```
+
+低Confidenceの原因を3種類のFailureへ読み替えず、`failure_type`と`recovery_action`を別々に保存する。
+R=F=A=0.6ではC=0.6となり、重み付き不足分0.025/0.050/0.025から`constrained_generation`を選ぶ。
+Cが0.7以上でも個別FailureがあればRecoveryを起動する。補助Ruleは原因を保証する診断ではなく、
+Calibrationで挙動を確認して最終Evaluation前に固定するHeuristicである。
 
 ------------------------------------------------------------------------
 
@@ -304,26 +364,34 @@ Recovery Router
 
 ↓
 
-Failure Type別Recovery
+選択したRecovery処理（回答候補を1つ作る）
 
 ↓
 
-Re-Generation
+修正後回答
 
 ↓
 
 Re-Evaluation
+
+Acceptなら初回回答を返し、Recoveryした場合は修正後回答を返す。初回・修正後の選別はしない。
+再評価後に同じ採用条件を満たさなければ`unresolved=true`として記録して終了する。Recoveryは
+最大1回で、閾値だけを理由とする強制拒否や追加Recoveryは行わない。
 
 
 ## Retrieval Failure Recovery
 
 ### 判定条件
 
-Retrieval Quality Score(R)が閾値以下の場合。
+Retrieval Quality Score(R)が閾値未満の場合。または低Confidence Ruleがこの処理を選んだ場合。
 
 ### 処理
 
 Query Rewriteを実行する。
+
+Rewriteの入力は元の質問だけとし、自己評価結果、初回回答、Reference、Gold情報を渡さない。
+`question`は元のまま保持し、`search_query`だけをRewrite結果へ変更する。再検索は同じCorpus・
+Retriever・top-kを使い、初回Contextと結合せず、新しい検索結果から元の質問への回答を生成する。
 
 Flow:
 
@@ -354,11 +422,14 @@ Generation
 
 ### 判定条件
 
-Faithfulness Score(F)が閾値以下の場合。
+上流の個別Failureがなく、Faithfulness Score(F)が閾値未満の場合。
+または低Confidence Ruleがこの処理を選んだ場合。
 
 ### 処理
 
 制約付き再生成を実行する。
+
+元の質問と初回と同じ取得Contextを使う。検索結果は変更しない。
 
 追加制約例:
 
@@ -386,11 +457,15 @@ Regeneration
 
 ### 判定条件
 
-Answer Relevance Score(A)が閾値以下の場合。
+上流の個別Failureがなく、Answer Relevance Score(A)が閾値未満の場合。
+または低Confidence Ruleがこの処理を選んだ場合。
 
 ### 処理
 
 Answer Rewriteを実行する。
+
+入力は元の質問・取得Context・初回回答とする。この呼び出し自体が2回目の回答生成であり、
+後段に別の再生成を追加しない。Query Rewrite等の補助呼び出しは回答生成回数とは別に数える。
 
 Flow:
 
@@ -408,6 +483,26 @@ Answer Refinement
 目的:
 
 質問意図に適合した回答へ修正する。
+
+## Always Rewriteの実行仕様
+
+全方式で共通の初回検索・初回回答を作った後、Always Rewriteは制御用Scoreに関係なく
+Query Rewrite → 再検索 → 再生成を1回実行する。2回目の回答を最終回答とし、初回との選別はしない。
+Adaptiveの検索Recoveryと同じQuery Rewrite Module、Model、Prompt、生成設定を使う。
+元の質問の保持、検索Contextの置換、Gold情報の分離も同じ仕様とする。
+
+Baselineは初回回答を返す。Adaptiveだけが制御用自己評価から起動の有無・修正方法を選ぶ。
+初回結果を共有・再利用する場合も、各方式の推論コストには初回処理を1回ずつ含める。
+
+## 推論コストとOffline評価
+
+推論に必要なLLM呼び出し・Token・Latencyを集計する。Adaptiveの自己評価、Query Rewrite、Claim抽出、
+根拠検証等も含め、実際の呼び出し回数を保存する。回答生成2回という上限を総LLM Callsの上限と
+解釈しない。全方式の独立品質採点はOffline評価として別集計する。
+
+Baseline・AlwaysのCをECE用に取得する自己評価も、制御には使わずOffline評価に含める。
+Adaptiveの制御用Scoreをそのまま初回/最終ECEへ使用し、同じ条件の評価を他方式にも適用する。
+推論とOffline評価の区分・実行条件を実験ConfigとLogへ保存する。
 ------------------------------------------------------------------------
 
 
@@ -419,6 +514,10 @@ Answer Refinement
 -   faithfulness_prompt(忠実性評価用)
 -   relevance_prompt(回答関連性評価用)
 -   rewrite_prompt(Recovery処理の修正用)
+
+Query Rewrite、制約付き再生成、Answer RewriteのPromptは区別して管理する。Query Rewrite Promptは
+AlwaysとAdaptiveで共通にする。共通資産のHashと各方式が実際に呼び出したPromptの履歴を記録する。
+独立評価用の判定基準・Promptは制御用Promptと分離し、主Labelは人手確認で確定する。
 
 ------------------------------------------------------------------------
 
@@ -635,6 +734,7 @@ Inference Stateには含めない。
 - `dataset_type`
 - `derived_from_id`
 - Unanswerable監査Label
+- 独立品質Label Y、独立Failure Label、Claim判定、評価理由
 
 これにより、Gold Passage、Answerability、派生条件をPromptへ漏洩させない。
 
@@ -667,13 +767,25 @@ Log:
   "A":0.0,
   "confidence":0.0,
   "failure_type":"",
+  "recovery_action":"none",
   "recovery_count":0,
+  "search_query":"",
+  "answer_generation_count":1,
+  "unresolved":false,
   "model_name":"",
   "config_hash":"",
   "latency_seconds":0.0,
   "llm_calls":0
 }
 ```
+
+上記は将来のLog例であり、現行実装の出力ではない。初回・修正後を区別して、質問、検索Query、
+取得文書ID、回答、R/F/A、C、採用条件の成立、処理履歴を保存する。未計測Scoreは0で埋めず未計測と
+区別する。方式ごとの推論LLM Calls・Token・LatencyとOffline評価コストも分離する。
+
+独立評価RecordはInference Stateと別に保存し、Run/QA/回答段階のID、Y、複数Failure Label、代表原因、
+Gold取得の有無、Context根拠充足、Claim本文・判定・根拠箇所、判定理由、判定不能理由、評価基準の
+Versionを保持する。元質問・回答・Contextが同一なら評価を再利用し、比較時のQA対応は失わない。
 
 ------------------------------------------------------------------------
 
@@ -691,7 +803,22 @@ Log:
 -   Evaluation
 -   Confidence
 
-CLAPNQ関連Test条件:
+## Decision・Recovery・独立評価の追加Test条件（未実装）
+
+- R/F/Aの個別閾値で`<`、Cの採用閾値で`>=`を使い、境界値を区別できる。
+- Cが採用閾値以上でも、個別Failureを優先する。
+- 複数個別Failureの優先順位はR → F → Aである。
+- R=F=A=0.6は`low_confidence`と`constrained_generation`を別々に保存する。
+- 重み付き不足分が同点ならR → F → Aの順で処理を選ぶ。
+- Query Rewriteの入力は元質問のみ、再検索後の生成・A評価も元質問を使う。
+- 制約付き再生成・Answer Rewriteは初回Contextを保持し、Answer Rewrite後に再生成しない。
+- Recovery最大1回、回答候補の生成最大2回、補助呼び出しを含む総LLM Callsを区別する。
+- 修正後も不採用なら未解決を記録して修正後回答を返し、追加Recovery・選別・強制拒否をしない。
+- Alwaysは全質問でQuery Rewriteを1回実行し、Adaptiveと共通設定を使う。
+- 独立LabelがInferenceへ漏れず、主RSR、10区間ECE、回答/Claim単位Hallucinationを定義どおり集計する。
+- 判定不能・0 Recovery・0 Claim・空ECE区間は0点と混同せず適用対象外や件数を扱える。
+
+## CLAPNQ関連Test条件
 
 -   公開Source件数がTrain 3,745、Dev 600である
 -   Answerable/Unanswerable件数がTrain 1,954/1,791、Dev 300/300である
@@ -726,9 +853,12 @@ CLAPNQ関連Test条件:
 
 3方式ではRetriever、Generator、Datasetを固定する。
 
-変更する要素はRecovery制御のみとする。
+初回生成Promptと各共通Moduleの設定を固定し、変更する要素はRecoveryの起動と修正方法を含む
+制御方針とする。Promptの実行履歴が方式間で同じである必要はないが、共通Prompt資産は一致させる。
 
-これにより、Adaptive Recovery機構そのものの効果を評価する。
+主比較は常時Query RewriteとAdaptiveの仕組み全体の品質・コスト差を評価するものであり、起動判断
+だけの因果効果とは解釈しない。起動判断のみを調べる補助実験は、常時Query Rewriteと、Adaptiveの
+起動条件でQuery Rewriteを実行する方式を比較する。条件・結果を主比較とは別に記録する。
 
 Evaluation Splitを用いた最終実験では、事前に固定したDataset Manifest、Config、Prompt、
 Model Revisionを使用する。Evaluation結果を確認した後の設定変更は別実験として記録する。

@@ -1,8 +1,12 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 1.6
+## Version 1.7
 
-最終確認日: 2026-09-10
+最終確認日: 2026-10-06（研究仕様の更新。公式Sourceの再取得・再監査日は変更しない）
+
+Version 1.7では、2026年10月6日にユーザーが承認した独立品質Label、Failure正解Label、ECE、
+Hallucinationの集計単位、主RSR、および比較条件を具体化した。これらの評価実装・人手判定・
+Calibration・比較実験は未実施である。公式Source、研究用Split比率、Base Dataset Versionは変更しない。
 
 本書は、CLAPNQそのものの仕様と、本研究「評価駆動型自己制御RAGによる回答信頼性向上手法」
 での利用方法を一か所に集約したDataset仕様書である。CLAPNQの取得、研究用Split、検索Corpus、
@@ -637,6 +641,7 @@ UnanswerableではGold Passage IDを作らない。Random Provided PassageをGol
 - Candidate順、Seed、採否理由をModelの最終Answerを見る前に固定する。
 - Baseline、Always Rewrite、Adaptive Recoveryで同一Manifestを使用する。
 - `dataset_type`と、実行後に観測した`observed_failure_type`を分ける。
+- 制御用の`failure_type`と`recovery_action`、独立評価の複数Failure Label・代表原因も分離する。
 
 ## 9.2 Normal QA
 
@@ -687,6 +692,10 @@ Primary評価では`corpus_unanswerable`だけを使用する。その他はData
 
 GoldはOffline評価にだけ使い、本番のFailure DiagnosisはR Scoreから判断する。
 
+このSubsetの抽出条件であるGold未取得と、独立評価のRetrieval Failureは同一ではない。
+Gold以外の取得Passageで十分に回答できる場合があるため、Gold取得の有無とContextの根拠充足を
+別々に記録する。Subset名をFailureの正解Labelへ直接変換しない。
+
 ## 9.5 Distractor
 
 1. 他Subsetと重複しないEvaluation Answerableを候補とする。
@@ -722,11 +731,12 @@ GoldはOffline評価にだけ使い、本番のFailure DiagnosisはR Scoreから
 
 - Retrieved Contextに対するClaim Support Ratio。
 - Gold Selected Sentencesに対するEvidence Coverage。
-- Unsupported Claim RatioまたはHallucination Rate。
+- Claim単位Unsupported Claim Ratio（補助）と回答単位Hallucination Rate（主）。
 - AnswerとRetrieved PassageのROUGE-LはExtractiveness補助指標として使用する。
 
 Faithfulnessが高くても、誤ったDistractorへ忠実な回答は正しくない。Answer Correctness、
 Faithfulness、Answer Relevanceを独立して報告する。
+制御用Fの上昇を独立評価の改善として流用しない。主張の独立判定と分母は第10.9節に従う。
 
 ## 10.4 Unanswerable
 
@@ -740,11 +750,143 @@ Faithfulness、Answer Relevanceを独立して報告する。
 ## 10.5 本研究固有指標
 
 - Failure Detection F1。
+- 原因分類Macro-F1。
 - Recovery Success Rate。
 - ConfidenceのECE。
 - Average LLM Calls。
 - Latency。
 - Recovery前後の各Metric差。
+
+以下の第10.6〜10.10節を、本研究固有の独立評価・集計方法の詳細仕様とする。
+制御のDecision RuleとAlways Rewriteの処理順序は研究計画第6・7・11節および実装計画を参照する。
+
+## 10.6 独立品質Labelと人手確認
+
+制御用R/F/AはInference時に使用し、独立品質Labelは実験後に別処理で確定する。
+独立評価には質問、Reference、Gold根拠、取得Context、回答を使えるが、その結果をRetriever、
+Generator、Query Rewrite、自己評価やRecoveryへ戻してはならない。
+
+主評価Labelは人手確認で確定する。LLM判定は下書きの補助に限定し、自己評価をもう一度実行しただけの
+結果を正解Labelにしない。判定時は方式名、C、制御用R/F/Aを隠す。初回と修正後は順序を入れ替えて
+個別に判定し、判定理由と根拠箇所を保存する。Referenceとの表現一致は必須とせず意味を確認する。
+
+| 対象 | Y=1（信頼できる回答） | Y=0 |
+|---|---|---|
+| Answerable | 質問の必須要点を満たす、重大な事実誤りなし、事実Claimが取得Contextで裏付けられる、のすべてを満たす | 不完全、誤答、根拠のないClaim、誤った拒否等 |
+| 監査済みUnanswerable | 回答不能を明確に伝え、回答を捏造しない | 回答の捏造、曖昧・無関係な応答等 |
+
+必須要点や重大な誤りの判定基準はDevelopment/Calibrationで具体化し、評価基準のVersionを
+最終Evaluation前に固定する。Evaluation結果を見て合否基準を変更しない。
+判定不能は`indeterminate`とし、Y=0やY=1へ強制変換しない。
+
+同じ質問・回答・Contextは再採点せず、Labelを再利用できる。ただし、回答文字列が同じでも質問や
+Contextが違う場合は別評価とする。共通初回回答を含むRun/QA/回答段階の対応を保持する。
+主評価の対象を自己評価Scoreや成功例に基づいて選別しない。人手作業量と確認済み件数を記録する。
+
+判定不能は該当Labelを必要とする主指標から除外し、全対象数・判定可能数・除外数・理由を
+方式別/Dataset種類別に併記する。RSRでは初回・修正後の両方のYが判定可能なRecoveryを分母とし、
+元のRecovery総数と除外数も示す。比較では判定可能な共通QAでの対応付き結果も報告し、除外による
+方式間の対象差を隠さない。評価失敗を都合よく成功・失敗へ振り分けない。
+
+## 10.7 Failureの正解Labelと検出・原因分類
+
+初回検索・初回回答を独立に確認し、次の複数Labelを保存する。Dataset種類、制御用閾値やScoreを
+Label確定に使わない。
+
+| 独立Label | 定義 |
+|---|---|
+| `retrieval_failure` | Answerableについて、取得Contextだけでは必須要点に答える根拠が不足している |
+| `generation_failure` | 回答に、取得Contextで裏付けられない事実Claimが含まれる |
+| `answer_relevance_failure` | 質問に答えていない、必須要点を欠く、誤った拒否、質問への意味的な誤答のいずれかがある |
+
+監査済みUnanswerableのRetrieval Failureは適用対象外とし、0/falseと区別する。Gold Passage未取得は
+客観的な検索Metricとして保持するが、それだけで独立Retrieval Failureを確定しない。
+複数Labelが成立した場合、代表原因はRetrieval → Generation → Answer Relevanceの順とする。
+原因自体を判定できない場合も判定不能と理由を保存する。
+
+- Failure Detection F1: 初回Y=0をPositive、初回Y=1をNegativeとし、AdaptiveのRecovery起動の有無を
+  予測として評価する。`low_confidence`による起動もPositive予測に含める。
+- 原因分類Macro-F1: 初回Y=0で独立代表原因が確定した例に対し、3原因ごとのF1とMacro平均を報告する。
+  `low_confidence`と`none`は3原因のいずれかへ読み替えない。正解原因がある場合は原因未特定として
+  該当原因のFalse Negativeに数える。各原因のSupportと未特定件数を示す。
+
+回答が信頼できるかの検出と、処理工程の問題の検出は異なる。Gold未取得、根拠充足、複数原因Labelを
+別に保存することで、検索の問題があっても回答が妥当な例等を分析できる。
+
+## 10.8 ConfidenceのECE
+
+Cと独立品質Label Yを使う。[0,1]を10個の等幅区間へ分け、[0,0.1)、[0.1,0.2)、…、[0.9,1]とする。
+空区間の寄与は0であり、区間平均を0として解釈しない。
+
+```text
+N = Yが判定可能で対応するCがある回答数
+ECE = sum_m((|B_m| / N) * abs(mean(C in B_m) - mean(Y in B_m)))
+```
+
+N=0なら適用対象外とする。初回回答のECEを主指標、最終回答のECEを別指標とし、Dataset種類別の結果、
+区間件数、平均C、Y=1の割合も報告する。Recoveryした例だけに絞った値を全体ECEと呼ばない。
+
+Cは加重Scoreであり、C=0.8を事前に「80%の確率で正しい」と解釈しない。その対応が成立するかを
+評価する。初回/最終Cは同じ制御用評価条件で取得し、Baseline・Alwaysの採点は推論後にOfflineで行う。
+そのScoreをBaseline・Alwaysの出力選別に使わない。標準的なECEの式は
+[Guo et al. (2017), On Calibration of Modern Neural Networks](https://proceedings.mlr.press/v70/guo17a/guo17a.pdf)
+に基づく。10区間およびYの定義は本研究上の決定である。
+
+## 10.9 Claim判定とHallucination集計
+
+回答を検証可能な最小の事実Claimへ分解し、各Claimを独立に判定する。
+
+| Claim Label | 意味 |
+|---|---|
+| `supported` | 取得Contextに裏付けがある |
+| `contradicted` | 取得Contextと矛盾する |
+| `not_supported` | 取得Contextでは裏付けられない |
+
+`contradicted`と`not_supported`を根拠のないClaimとする。判定不能の扱いは第10.6節に従う。
+
+```text
+主Hallucination Rate = 根拠のないClaimが1つ以上ある回答数 / 評価回答数
+補助Unsupported Claim Ratio = 根拠のないClaim総数 / 全事実Claim数
+独立Claim Support Ratio = supported Claim総数 / 全事実Claim数
+```
+
+回答単位の主指標と、全Claimをまとめた補助指標は分母を区別し、Dataset種類別の値も出す。
+これは取得Contextによる裏付け不足の操作的定義であり、世界知識上の真偽とは同一でない。
+Contextに忠実でも誤答する場合があるため、Referenceに対するCorrectnessも独立に報告する。
+
+事実Claimのない適切な拒否はHallucinationなしとする。Claim単位Faithfulnessは適用対象外で、
+満点に変換しない。Claimがない回答数、拒否数、Claim分母を示し、全Claim数が0なら補助比率は
+適用対象外とする。空回答・無関係な回答はHallucinationなしでもY=0である。
+
+## 10.10 Recovery成功・比較条件・コスト
+
+```text
+主RSR = Recoveryした例のうち初回Y=0かつ修正後Y=1となった件数 / Recovery実行件数
+```
+
+Recoveryが0件なら適用対象外とする。判定不能時の分母と除外報告は第10.6節に従う。
+初回Y=1を維持した例は修復成功に数えず、Y=1→1の維持、Y=1→0の悪化、Y=0→0の未修復を
+分けて報告する。各品質Metricの差も併記する。
+
+旧定義の「Faithfulness上昇・Answer Relevance非低下・Hallucination非増加」は独立評価値を使う
+Faithfulness改善の補助分析として残し、主RSRへ混在させない。補助評価の採点基準もCalibrationで
+固定する。変更理由は、Faithfulnessが満点でも検索・質問適合性の改善を修復成功と評価するためである。
+
+3方式は同じ初回検索・初回回答から分岐する。Baselineは初回回答、Always Rewriteは全質問で
+Query Rewrite・再検索・再生成を1回行った回答、AdaptiveはAcceptなら初回、Recoveryしたら修正後を
+返す。AlwaysとAdaptiveのQuery Rewriteは同じModel/Prompt/設定を使う。
+
+Rewriteした質問は検索だけに使い、回答生成・A評価には元質問を使う。再検索Contextは初回と結合
+しない。Answer Rewrite自体を2回目の回答生成と数え、その後に別の生成を追加しない。
+Adaptiveの未解決記録は独立Yと別であり、制御の採用/不採用を品質の正解Labelにしない。
+
+LLM Calls、Token、Latencyは実際の推論処理を集計し、Adaptiveの自己評価と補助呼び出しも含める。
+初回結果を共有しても各方式へ初回コストを計上する。独立採点やBaseline・AlwaysのECE用Score取得は
+Offline評価として別集計する。
+
+主比較は起動判断と修正方法の両方が異なる仕組み全体の比較であり、起動判断だけの効果とは主張
+しない。起動判断を切り分ける場合は、常時Query RewriteとAdaptiveの起動条件でQuery Rewriteする
+方式を同じ修正方法で比較する補助実験とし、主比較とは条件・結果を分ける。
 
 ---
 
@@ -771,6 +913,10 @@ Source ManifestにはRevision、取得日、License、File Hash、Byte数、Row�
 Split ManifestにはGrouping Key、比率、Seed、Algorithm Version、各Split件数、Title重複検査結果を保存する。
 派生ManifestにはBase ID、生成条件、Retriever Config Hash、Prompt/Model Revision、Seed、Gold/Distractor
 Passage ID、監査結果を保存する。
+
+独立評価RecordはInference Stateと別に保存し、Run/QA/回答段階のID、評価基準Version、Y、複数原因Label、
+代表原因、Gold取得、Context根拠充足、Claim判定と根拠箇所、判定理由・判定不能理由を保持する。
+制御Logの`failure_type`・`recovery_action`・採用条件・未解決と独立Labelを混同しない。
 
 ---
 
@@ -807,7 +953,9 @@ Passage ID、監査結果を保存する。
 - Unanswerable LabelがGeneratorへ渡らない。
 - Full RAGでAnnotation内Gold Passageを直接Contextへ入れない。
 - Evaluation質問をFew-shot例に使用しない。
-- 3比較方式でDataset、Corpus、Retriever、Generator、PromptのHashが一致する。
+- 3比較方式でDataset、Corpus、Retriever、Generator、初回生成Promptと共通Prompt資産のHashが一致する。
+  Recoveryにより実行されるPrompt履歴は異なるため、資産の同一性と呼び出し履歴を区別する。
+- 独立品質Label、独立Failure Label、Claim判定、評価理由がInferenceへ渡らない。
 
 ## 12.5 派生条件検証
 
@@ -816,6 +964,16 @@ Passage ID、監査結果を保存する。
 - DistractorでGold Passageと検証済みHard NegativeがTop-kに共存する。
 - Unanswerableは`corpus_unanswerable`監査を通過している。
 - 派生例にSeed、元ID、生成条件、採否理由がある。
+
+## 12.6 制御・独立評価の検証条件（未実装）
+
+- Decisionは個別Failureを先に判定し、低Confidenceで原因未特定でも処理が一意に決まる。
+- `low_confidence`のLabelと実際のRecovery処理を別々に記録する。
+- 元質問の保持、Context置換、回答生成回数・Recovery回数を仕様どおり検証する。
+- Dataset種類、Gold未取得、独立根拠不足を別に保持する。
+- 人手評価画面・Recordで方式名、C、制御用R/F/Aを判定者へ見せない。
+- RSRの初回/修正後対応、10区間ECEの境界、回答/Claim分母、判定不能の除外・件数報告を検証する。
+- Offline評価コストと実際の推論コストを分離できる。
 
 ---
 
@@ -830,6 +988,9 @@ Passage ID、監査結果を保存する。
 - Reference Answerは高品質だが、手動Annotationなので誤りや曖昧さを完全には排除できない。
 - 回答は比較的Extractiveであり、完全にAbstractiveな回答生成を代表しない。
 - Gold Answerと異なるが正しい回答が、文字列Metricで過小評価される可能性がある。
+- 低Confidence時の補助Routingは設計上のHeuristicであり、失敗原因を保証するものではない。
+- 3方式の主比較だけでは、Recovery起動判断と修正方法の個別効果を分離できない。
+- 人手の独立評価にも主観や作業量の制約があるため、基準、理由、確認数、判定不能数を記録する。
 - CLAPNQのApache 2.0表示とNQ DataのCC BY-SA 3.0を併せて管理する必要がある。
 
 本研究では、研究目的を「特定言語での有効性」ではなく「Text-based RAGにおける自己評価と

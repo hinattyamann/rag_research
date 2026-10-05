@@ -1,11 +1,12 @@
 # 自己制御型RAG研究計画書
 
-## Version 6.5
+## Version 6.6
 
 ## 外部実装依頼用 最終研究仕様書
 
-本書はVersion 6.4を基礎とし、非公開Test Dataを使用せず、公開Train/Devだけで研究を継続する
-評価条件を固定した版である。
+本書はVersion 6.5の公開Train/Devだけで研究を継続する方針を維持し、2026年10月6日にユーザーが
+承認したConfidenceとFailure判定の接続、Always Rewrite、独立品質評価およびRecovery成功の定義を
+反映した版である。これらは研究上の決定であり、実装・Calibration・比較実験は未実施である。
 CLAPNQのField、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法の
 詳細は`docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -77,7 +78,7 @@ Decision
        ↓
     Adaptive Recovery
        ↓
-    Re-Generation
+    修正後の回答（Answer Rewriteも回答生成1回に含む）
        ↓
     Re-Evaluation
        ↓
@@ -207,6 +208,10 @@ Accept / Recovery Decision
 
 したがって、本研究ではConfidence Scoreを回答品質評価と制御判断を接続する中間層として位置付ける。
 
+初期の採用閾値は0.7とする。ただし、Confidenceだけでは採用せず、R/F/Aの各値が個別Failure閾値
+以上であることも必要とする。重み付きScoreは校正済みの正解確率ではなく、確率的な品質との対応は
+独立品質Labelを使うECEで検証する。
+
 ------------------------------------------------------------------------
 
 # 6. Failure判定仕様
@@ -215,7 +220,7 @@ Failure判定優先順位:
 
 1.  Retrieval Failure
 2.  Generation Failure
-3.  Answer Failure
+3.  Answer Relevance Failure
 
 判定:
 
@@ -226,7 +231,7 @@ Failure判定優先順位:
     → Generation Failure
 
     A < threshold
-    → Answer Failure
+    → Answer Relevance Failure
 
 ## Failure判定閾値
 
@@ -249,7 +254,9 @@ A < 0.5
 → Answer Relevance Failure
 
 
-なお、閾値については実験結果に基づきSensitivity Analysisによる検討を行う。
+比較演算は厳密な`<`とし、0.5は個別Failureに含めない。閾値の調整はDevelopment/Calibrationで
+行い、最終Evaluation前に固定する。Sensitivity Analysisは条件を明示した追加分析として扱い、
+Evaluation結果を見た変更を同じ最終評価へ混在させない。
 
 ## Failure Diagnosis優先順位
 
@@ -269,6 +276,38 @@ RAGではRetrievalがGenerationの入力情報を決定するため、
 
 そのため、処理パイプライン上流から順番にFailure原因を診断する。
 
+## ConfidenceとFailure判定を接続するDecision Rule
+
+以下を上から順に適用する。加重平均によって個別の低評価が隠れることを防ぐため、Cが採用閾値以上
+でも個別Failureを優先する。R/F/Aは0以上1以下の制御用Scoreを前提とする。
+
+| 優先順位 | 条件 | `failure_type` | `recovery_action` |
+|---|---|---|---|
+| 1 | R < 0.5 | `retrieval_failure` | `query_rewrite` |
+| 2 | 1に該当せずF < 0.5 | `generation_failure` | `constrained_generation` |
+| 3 | 1・2に該当せずA < 0.5 | `answer_relevance_failure` | `answer_rewrite` |
+| 4 | 個別Failureなし、C < 0.7 | `low_confidence` | 下記の補助Ruleで選択 |
+| 5 | 個別Failureなし、C >= 0.7 | `none` | `none`（Accept） |
+
+`low_confidence`は原因を断定できない状態であり、3種類のFailureのいずれかを正しく診断したという
+意味を持たない。修正方法は、採用閾値までの不足分にConfidence重みを掛けた値が最大の項目から選ぶ。
+
+```text
+dR = 0.25 * max(0, 0.7 - R)
+dF = 0.50 * max(0, 0.7 - F)
+dA = 0.25 * max(0, 0.7 - A)
+
+最大項目R → query_rewrite
+最大項目F → constrained_generation
+最大項目A → answer_rewrite
+同点の優先順位: R → F → A
+```
+
+R/F/Aがすべて0.6ならC=0.6、dR=0.025、dF=0.050、dA=0.025となり、根拠制約付き再生成を選ぶ。
+この補助RuleはFaithfulnessを重視する設計上のHeuristicであり、原因診断の正しさは未実証である。
+Calibrationで挙動を確認し、最終Evaluation前に固定する。閾値・重みを変更する場合は式にも同じ
+設定値を使い、仕様・Config・Test・実験条件を合わせて更新する。
+
 ------------------------------------------------------------------------
 
 # 7. Adaptive Recovery
@@ -276,7 +315,10 @@ RAGではRetrievalがGenerationの入力情報を決定するため、
 制約:
 
 -   Recovery最大1回
--   最大生成試行2回
+-   最終回答候補を作る生成は最大2回（初回回答と修正後回答）
+
+Query Rewrite、Claim抽出、根拠検証等の補助LLM呼び出しは、この回答生成回数とは区別し、LLM Callsに
+別途計上する。Answer Rewrite自体を2回目の回答生成と数え、その後に別の再生成を追加しない。
 
 理由:
 
@@ -304,44 +346,35 @@ Answer Rewriteとは、LLMの回答を修正すること。
 このように、本研究のRecoveryは生成結果の単純な再生成ではなく、
 失敗原因に応じて異なる修正戦略を適用する点に特徴がある。
 
+Query Rewriteの入力は元の質問だけとし、自己評価結果、Reference、Gold情報を渡さない。
+Rewriteした質問は検索にだけ使い、回答生成とAnswer Relevance評価には元の質問を使う。
+再検索は共通Corpus・Retriever・top-kを使い、初回Contextとの結合は行わない。
+制約付き再生成は同じ検索結果を使い、Answer Rewriteは元の質問・取得Context・初回回答を使う。
+
+Recoveryした場合は修正後の回答を最終回答とし、再評価して終了する。初回回答との選別は行わない。
+修正後も採用条件を満たさない場合は`unresolved=true`として記録するが、追加Recoveryや閾値だけに
+よる強制拒否は行わない。拒否の妥当性も独立品質評価の対象とする。Acceptなら初回回答を返す。
+
 ------------------------------------------------------------------------
 
 # 8. Recovery Success Rate
 
-Recovery成功はConfidence上昇のみでは判断しない。
-Confidence Scoreはあくまで、R/F/Aの統合結果であるため。
-内部的な評価値が向上しただけで、本当に良い回答になったとは限らないから。
-
-成功条件:
-
--   Answer品質向上
--   Faithfulness向上
--   Hallucination低減
-
-Confidence ScoreはRecovery判断に利用するが、Recovery成功評価では最終回答品質を基準とする。
+Recovery成功は制御用ConfidenceやR/F/Aの上昇だけでは判断しない。第11節およびDataset Guide
+第10節の独立品質Label Yを使い、信頼できない初回回答を信頼できる回答へ修復できたかを測る。
 
 ## Recovery Success Rateの具体的定義
 
-Recovery Success Rate（RSR）は、Recoveryによって回答品質が改善した割合を示す。
+```text
+RSR = Recoveryした例のうち初回Y=0かつ修正後Y=1となった件数 / Recovery実行件数
+```
 
-RSR:
+Recoveryが0件なら適用対象外とする。初回Y=1を維持した例は修復成功に数えず、維持と悪化を
+別途報告する。判定不能の除外方法・件数はDataset Guide第10.6節に従う。
 
-RSR = Recovery Success数 / Recovery実行数
-
-
-Recovery Success条件:
-
-以下をすべて満たす場合、Recovery成功と判定する。
-
-1. Faithfulness ScoreがRecovery前より向上する
-
-2. Answer Relevance Scoreが低下しない
-
-3. Hallucinationが増加しない
-
-
-つまり、Recoveryによって根拠性を維持または向上させながら、
-質問適合性を維持した回答改善が達成された場合のみ成功とする。
+Version 6.5の「Faithfulness上昇、Answer Relevance非低下、Hallucination非増加」という条件は
+Faithfulness改善の補助分析として残し、主RSRと区別する。その判定にも制御用Scoreを流用せず、
+独立評価値を使う。主定義を変更する理由は、Faithfulnessが満点でも検索・質問適合性の改善を
+修復成功として評価できるようにするためである。
 
 ------------------------------------------------------------------------
 
@@ -491,12 +524,12 @@ Baseline RAG:
 Recoveryなし
 
 Always Rewrite:
-全質問にRewrite適用
+全質問に、初回回答の後でQuery Rewrite・再検索・再生成を1回適用
 
 Adaptive Recovery:
-Failure原因に応じてRecovery適用
+個別Failureまたは低Confidence時だけ、定義したRuleに従ってRecovery適用
 
-これにより、常時修正ではなく必要時のみ修正する方式の有効性を評価する。
+3方式の具体的な共通条件と比較の解釈は第11節に従う。
 
 ------------------------------------------------------------------------
 
@@ -510,6 +543,7 @@ Failure原因に応じてRecovery適用
 -   Faithfulness
 -   Hallucination Rate
 -   Failure Detection F1
+-   原因分類Macro-F1
 -   Recovery Success Rate
 -   ECE
 -   Average LLM Calls
@@ -519,13 +553,45 @@ Token-level Answer F1、ROUGE-L F1、ROUGE-1 Recallは、複数表現を許すCL
 語の一致、まとまり、必要情報の網羅性を補完的に測る。複数Referenceには最大Scoreを用いる。
 Retrieval Recall@kとnDCG@10はGold Passage取得性能、Answerability F1は回答すべき質問と拒否すべき
 質問の識別性能を見る。
-Faithfulnessとは、回答が取得した根拠文書に忠実化を見る指標。LLMが勝手に情報を追加していないか。
-Hallucination Rateとは、根拠のない情報を生成した割合。
-Failure Detection F1とは、RAGがこの回答は問題があると正しく判断できるかを測ります。
-Recovery Success Rateは、Recoveryが実際に改善につながった割合。
-ECEとは、Confidence Scoreの信頼性の指標。
-Average LLM Callsとは、平均LLM呼び出し回数を測る指標。
-Latencyとは、処理時間。
+Faithfulnessは取得Contextに対するClaimの裏付けを独立評価する。Hallucination Rateの主単位は回答
+であり、根拠のないClaimが1つ以上ある回答の割合とする。Claim単位の割合は補助指標とする。
+Failure Detection F1は初回Y=0をRecovery起動判断が検出したか、原因分類Macro-F1は独立Labelの
+代表原因と自己診断が一致したかを測る。RSRは第8節、ECEは下記の定義に従う。
+
+## 制御用自己評価と独立品質評価の分離
+
+制御用R/F/AはInference時に使う。主評価のLabelは、質問、Reference、Gold根拠、取得Context、回答を
+使って実験後に人手確認で確定する。LLMによる独立評価は下書きの補助に限定する。評価結果を生成や
+Recoveryへ戻してはならない。判定時には方式名、Confidence、制御用R/F/Aを隠し、初回・修正後の
+順序を入れ替えて個別に評価する。根拠箇所と判定理由を保存する。
+
+AnswerableのY=1は、必須要点を満たし、重大な事実誤りがなく、事実主張が取得Contextで裏付けられる
+回答とする。監査済みUnanswerableのY=1は、回答不能を明確に伝え、回答を捏造しない応答とする。
+それ以外はY=0、判定不能は別Labelとする。Referenceとの表現一致は必須にしない。
+
+Dataset種類をFailureの正解Labelに流用しない。Retrieved Contextの根拠不足、回答Claimの裏付け
+不足、質問への意味的な誤答・不完全さ等を実際の検索・回答から判定する。複数Labelを保存し、
+代表原因はRetrieval → Generation → Answer Relevanceの順とする。Gold未取得と根拠不足は区別し、
+監査済みUnanswerableにはRetrieval Failureを適用しない。詳細はDataset Guide第10.7節による。
+
+## ECEとHallucinationの集計
+
+ECEは独立Label YとCを使い、[0,1]を10個の等幅区間に分けて計算する。区間は左端を含み右端を
+含まないが、最後だけ1を含む。空区間の寄与は0とする。
+
+```text
+ECE = sum((区間件数 / 全判定可能件数) * abs(区間平均C - 区間内のY=1の割合))
+```
+
+初回回答のECEを主指標、最終回答のECEを別指標とし、区間件数とDataset種類別の結果も報告する。
+Cを事前に校正済み正解確率と解釈しない。標準的なECEの式は
+[Guo et al. (2017)](https://proceedings.mlr.press/v70/guo17a/guo17a.pdf)に基づく。
+
+各事実Claimは`supported`、`contradicted`、`not_supported`へ分類し、後二者を根拠のないClaimとする。
+主Hallucination Rateは該当Claimを1つ以上含む回答数 / 評価回答数、補助指標は該当Claim総数 /
+全Claim数とする。これは取得Contextによる裏付け不足の操作的定義であり、世界知識上の真偽や
+Referenceに対するCorrectnessとは区別する。事実Claimのない適切な拒否はHallucinationなしだが、
+Claim単位Faithfulnessは適用対象外とする。空回答・無関係な回答はHallucinationなしでもY=0である。
 
 
 # 比較実験設計思想
@@ -542,7 +608,7 @@ Recovery機構を持たない通常RAG。
 
 ## Always Rewrite RAG
 
-全質問に対してRewriteを適用する方式。
+初回回答の後に、全質問へQuery Rewrite・再検索・再生成を1回適用し、2回目の回答を返す方式。
 
 目的:
 常時修正による性能変化確認。
@@ -550,13 +616,29 @@ Recovery機構を持たない通常RAG。
 
 ## Adaptive Recovery RAG
 
-Failure発生時のみRecoveryを実行する提案方式。
+個別Failureまたは低Confidence時だけ、第6節に従ってRecoveryを実行する提案方式。
 
 目的:
 不要な修正を避けながら品質改善する効果を検証する。
 
 
-この比較により、Adaptive Recoveryによる必要時のみの制御効果を評価する。
+## 共通条件・コスト・主張できる範囲
+
+- 3方式は同じ初回検索・初回回答から分岐し、Dataset、Corpus、Retriever、Generatorと初回生成Promptを
+  共通にする。初回結果を共有する場合も各方式の推論コストへ初回処理を1回ずつ計上する。
+- AlwaysとAdaptiveのQuery Rewriteは同じModel、Prompt、生成設定を使う。Rewriteの入力、元質問の
+  保持、再検索Contextの扱いは第7節に従う。
+- Average LLM Calls、Token、Latencyは推論に実際に必要な処理を集計し、Adaptiveの自己評価や補助
+  呼び出しも含める。全方式を採点するOffline評価は別集計する。Baseline・Alwaysの初回/最終Cを
+  ECE用に取得する処理も制御へ使わず、Offline評価として分離する。
+- 主比較は「常時Query Rewrite」と「必要時に原因に応じて修正する仕組み全体」の品質・コスト差を
+  測る。修正方法も異なるため、差のすべてをRecovery起動判断だけの効果とは解釈しない。
+- 起動判断だけの効果を切り分ける補助実験では、Query Rewriteという修正方法を共通にしたまま、
+  常時実行とAdaptiveの起動条件で実行する方式を比較する。主比較3方式とは別の追加分析として
+  条件を事前固定し、実施状況と結果を分けて記録する。
+
+この具体化は、H2の効率評価に自己評価コストを含め、H1/H3を自己評価値だけで検証しないための
+変更である。研究目的、公開Source、Split比率、初期Confidence重みは変更しない。
 
 ------------------------------------------------------------------------
 
