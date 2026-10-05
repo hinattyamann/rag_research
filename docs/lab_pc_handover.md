@@ -3,9 +3,9 @@
 確認日: 2026年10月5日。対象はこの日の作業開始時点のCommit `9bfe8ac` と、研究計画Version 6.5、
 実装計画Version 7.9である。以後の実装に応じて到達点と手順を更新する。
 
-2026年10月6日追記: 現行の研究計画はVersion 6.6、実装計画はVersion 7.10、Dataset GuideはVersion 1.7。
-ユーザー承認に基づき制御・比較・独立評価の仕様を具体化したが、実装の到達点と10月5日の検証結果は
-変わらない。以下の実測値・Hash・Test結果は記載された確認日時の記録として扱う。
+2026年10月6日追記: 現行の研究計画はVersion 6.7、実装計画はVersion 7.11、Dataset GuideはVersion 1.8。
+制御・比較・独立評価の仕様承認後、ノートPCでPhase 3を実装し、Gate 3を通過した。
+10月5日の実測値・Hash・Test結果はその日時の記録として保持し、Phase 3の最新結果を以下へ追記する。
 
 購入PCはUbuntu 24.04 LTSと判明したため、そのPCでは[第6節のUbuntu手順](#6-購入pcの仕様とubuntu向け手順)を
 使用する。Windows手順は現在のPCでの参照用として残す。
@@ -17,7 +17,7 @@
 | 研究テーマ・仮説・比較条件の設計 | 作成済み | 研究計画・実装計画・Dataset Guide |
 | Phase 1: CLAPNQ取得・Source検証 | 完了、Gate 1通過 | 取得Script、固定Revision、Source Manifest |
 | Phase 2: Loader・内部Schema変換 | 完了、Gate 2通過 | QA 4,345件、Corpus 178,890件のJSONL生成 |
-| Phase 3: Title単位の研究用Split | 未実施、次の作業 | Split Script・Split Manifestはまだない |
+| Phase 3: Title単位の研究用Split | 完了、Gate 3通過 | Split Script、割当済みQA、Split Manifest、再現検証 |
 | Phase 4以降: Index・RAG・自己評価・Recovery | 未実装 | 検索・回答生成の実行コマンドはまだない |
 | 比較実験・結果分析・卒業論文の完成 | 未実施 | 提案手法の性能向上を示す実験結果はまだない |
 
@@ -28,12 +28,19 @@
 | `data/processed/clapnq/c508d78-base-v1/qa.jsonl` | 4,345 | 9,954,217 | `233800e4cafadec8ebfdf185e28f4e7eb26efa924d68e592735b24cb8b937209` |
 | `data/processed/clapnq/c508d78-base-v1/passages.jsonl` | 178,890 | 156,262,889 | `c847751985c2f95987628800a3a8a12aa274da37dee088310f74b6bddb1ea103` |
 
-QA側の2,074 Unique Gold Passage IDは全件Corpus内に存在する。`research_split`はまだ全件未割当である。
+QA側の2,074 Unique Gold Passage IDは全件Corpus内に存在する。Base QAの`research_split`は全件未割当のまま
+保持し、別Versionの`c508d78-split-v1`へ全件割当済みQAを生成した。
 Unanswerable 2,091件のCorpus全体に対する回答不能監査も未実施である。
 
 同日に`uv run pytest`は43件成功、Skipなし、`uv run ruff check .`は問題なしだった。
 Manifest生成とAnnotation確認CLIも実データで再実行し、既存Manifestの10 FileとHashが一致した。
 研究室PCでの実行はまだ行っていない。
+
+2026年10月6日にPhase 3を実装・検証し、Development 2,824件（1,465/1,359）、Calibration 434件
+（225/209）、Evaluation 1,087件（564/523）へ割り当てた。括弧内はAnswerable/Unanswerable。
+原文Titleは3,799種類、casefold・NFC正規化Groupは3,798件で、Split間重複・欠損・重複QAは0である。
+別出力先で全5成果物とManifestがByte単位で一致し、Base QA・Corpusの上記Hashも維持した。
+最新の全Test結果は61件成功・Skipなし、ruff問題なしである。
 
 公開Train/Devのみを使用し、非公開Test 601件は主実験に使用しない。Test Accessの返信は研究再開の条件に
 しない。最後のAccess状況の記録日は2026年9月10日であり、その後のメール状況はこの確認の対象外である。
@@ -265,20 +272,28 @@ uv run --locked ruff check .
 git status --short
 ```
 
-Hashが本書の表と一致し、43 Testsが成功、Skipなし、ruffが問題なしなら、現時点の実装の再現確認が完了する。
-Raw Dataを取得する前は実データを使う4 TestsがSkipされ得るため、単に失敗がないだけで完了としない。
+Hashが本書の表と一致し、61 Testsが成功、Skipなし、ruffが問題なしなら、Phase 1・2のDataと
+現行Testの再現確認が完了する。続いて第5節でPhase 3の成果物と固定Manifestの一致を確認する。
+Raw Data未取得では実データを使う4 Tests、Base QA未生成ではPhase 3の実データTestがSkipされ得るため、
+単に失敗がないだけで完了としない。
 別出力のManifestはGit管理対象外なので、Data再生成だけなら追跡Fileに変更は生じない想定である。
 
 ## 5. 次に研究として行うこと
 
-最優先はPhase 3の研究用Splitである。4,345件をWikipedia Title単位でGroup化し、Seed 42でDevelopment
-65%、Calibration 10%、Evaluation 25%を目標に割り当てる。TitleごとのQA件数が異なるため厳密な比率より
-Title Leakage防止を優先し、実数とAnswerability比を記録する。
+Phase 3はノートPCで完了した。研究室PCでは既存Data処理の再現後、次のCLIを実行してSplitを再現する。
 
-完了条件は、全QAの重複・欠損がなく、Split間Title重複0件、同じ入力・Seed・Algorithm Versionから同じ
-Split Manifestを再生成できることである。この工程は現時点では未実装で、`scripts/split_clapnq.py`もまだない。
+```powershell
+uv run python scripts/split_clapnq.py
+```
 
-その後に検索Index、開発用Baseline、Hybrid Retrieval、R/F/A評価、Failure Diagnosis、Recoveryを順に実装する。
+割当済みQAは`data/processed/clapnq/c508d78-split-v1/`、固定Manifestは
+`data/manifests/clapnq_split_manifest.json`である。QA SHA-256は
+`6913d7a37b1938e6649c3609aa0b71e63dd2c62e8a717a470b41aaf2e912601d`。
+既存Fileが同じByte列なら再利用し、異なれば上書きせず停止する。詳細はDataset Guide第7.7節による。
+
+次はPhase 4のBM25・Embedding Index構築である。ノートPCではBM25等のCPU処理を進められるが、
+Embedding Modelと実行条件は実機のMemory条件も確認して具体化する。その後に開発用Baseline、
+Hybrid Retrieval、R/F/A評価、Failure Diagnosis、Recoveryを順に実装する。
 実装計画の生成用`qwen2.5-14b`、評価用`qwen2.5-7b`、`top_k=5`はConfig例であり、実際の
 `configs/config.yaml`やModel実行基盤はまだ存在しない。Confidence重み`0.25/0.50/0.25`、採用閾値`0.7`、
 個別Failure閾値`0.5`、Recovery最大1回は承認済みの初期研究条件である。
@@ -287,7 +302,7 @@ Split Manifestを再生成できることである。この工程は現時点で
 `low_confidence`として重み付き不足分が最大のRecoveryを選ぶ。Always Rewriteは共通初回回答の後に
 全質問でQuery Rewrite・再検索・再生成を1回実行する。独立品質Label Yによる主RSR・ECEと回答単位の
 Hallucinationを採用し、制御用自己評価と実験後の人手確認を分離する。詳細は現行仕様書を参照する。
-これらは未実装であり、次の実装は引き続きGPU不要のPhase 3とする。
+これらの制御・評価Moduleは未実装であり、今回完了したPhase 3の成果物とは区別する。
 
 PC確認後にModel Revision、Embedding Model、量子化、Context Length、Batch Size、推論基盤を具体化する。
 変更が必要なら仕様書と実装・設定を同時に更新し、比較3方式ではRetriever・Generator・Datasetを共通にする。
@@ -296,8 +311,9 @@ PC確認後にModel Revision、Embedding Model、量子化、Context Length、Ba
 研究室PCでCodexへ引き継ぐ際は、次の依頼文を利用できる。
 
 > AGENTS.md、研究計画、実装計画、研究日誌、docs/lab_pc_handover.mdを読み、現在の実装を確認してください。
-> Phase 1・2のData再現確認後、Phase 3のTitle単位Group-aware研究用Splitを小工程に分けて実装してください。
-> 全4,345件の欠損・重複0、Split間Title重複0、Seed 42での再現性を検証し、仕様書と研究日誌を更新してください。
+> Phase 1〜3のData再現を確認し、Split成果物と固定ManifestのHashを照合してください。
+> Phase 3はノートPCで完了済みです。次のPhase 4を小工程に分けて進め、BM25から検証してください。
+> 実機情報を確認してEmbedding Model・Index設定を具体化し、仕様書と研究日誌を更新してください。
 > 各工程の成果を説明し、git add・commit・pushは実行しないでください。
 
 持ち帰る情報は、OS、CPU、RAM、GPU型番・枚数・VRAM総量/空き容量、Driver、Disk空き容量、Network条件、
@@ -421,6 +437,7 @@ PY
 uv run --locked python scripts/inspect_clapnq.py
 uv run --locked python scripts/build_clapnq_qa.py
 uv run --locked python scripts/build_clapnq_corpus.py
+uv run --locked python scripts/split_clapnq.py
 sha256sum data/processed/clapnq/c508d78-base-v1/qa.jsonl
 sha256sum data/processed/clapnq/c508d78-base-v1/passages.jsonl
 uv run --locked pytest
@@ -429,7 +446,8 @@ git status --short
 ```
 
 完了条件は第4.5節と同じ。これらのUbuntuコマンドは手順として作成したもので、購入PC上では未実行である。
-Data再現後にPhase 3のSplitへ進む。推論基盤とModelの具体化は、実機のVRAMとMemory使用量を確認してから行う。
+DataとSplit再現後にPhase 4へ進む。最新完了条件は61 Tests成功・Skipなし、ruff問題なし、Splitの
+全出力Hash一致である。推論基盤とModelの具体化は、実機のVRAMとMemory使用量を確認してから行う。
 
 ## 7. 開発用ノートPCの実測仕様
 

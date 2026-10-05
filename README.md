@@ -98,6 +98,33 @@ uv run python scripts/build_clapnq_corpus.py
 Passageを`passage_id`、Source情報、Title、Text、Text SHA-256へ変換します。生成時にはQA側の全Unique
 Gold Passage IDがCorpus内に存在することも検証します。
 
+## 研究用Splitの生成（Phase 3）
+
+Phase 2で生成したBase QAから、次のコマンドで研究用Splitを生成します。GPUや追加Libraryは不要です。
+
+```powershell
+uv run python scripts/split_clapnq.py
+```
+
+Seed 42、Title単位Group、目標65%/10%/25%で分割します。大小文字・Unicode表記差を同じGroupとして
+扱いますが、元のTitleやReference等は保持します。質問・回答内容やModel成績は割当判断に使いません。
+
+| Split | QA数 | Answerable | Unanswerable | 正規化Title Group数 |
+|---|---:|---:|---:|---:|
+| Development | 2,824 | 1,465 | 1,359 | 2,277 |
+| Calibration | 434 | 225 | 209 | 434 |
+| Evaluation | 1,087 | 564 | 523 | 1,087 |
+
+成果物は`data/processed/clapnq/c508d78-split-v1/`の`qa.jsonl`、`development.jsonl`、
+`calibration.jsonl`、`evaluation.jsonl`、`split_report.json`と、Git管理する
+`data/manifests/clapnq_split_manifest.json`です。Base QA・Corpusは変更しません。
+欠損・重複・GroupのSplit間重複は0件、別出力先での再生成はManifestを含めByte単位で一致しています。
+
+同じ条件での再実行は同一成果物を再利用します。既存Fileと内容が異なる場合は上書きせず停止します。
+Seed等を変更する追加分割は新しいDataset Version、出力Directory、Manifestを指定してください。
+ManifestのLF改行は`.gitattributes`で固定しています。分割AlgorithmとValidationの詳細は
+`docs/clapnq_dataset_guide.md`第6.2節・第7.7節を参照してください。
+
 ## 開発環境の基本方針
 
 このプロジェクトでは、Python本体、仮想環境、依存ライブラリをuvで管理します。

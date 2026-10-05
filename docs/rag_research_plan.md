@@ -1,12 +1,13 @@
 # 自己制御型RAG研究計画書
 
-## Version 6.6
+## Version 6.7
 
 ## 外部実装依頼用 最終研究仕様書
 
-本書はVersion 6.5の公開Train/Devだけで研究を継続する方針を維持し、2026年10月6日にユーザーが
+本書はVersion 6.6を基礎とし、Phase 3のTitle単位Splitの実装・固定結果を反映した版である。
+公開Train/Devだけで研究を継続する方針を維持し、2026年10月6日にユーザーが
 承認したConfidenceとFailure判定の接続、Always Rewrite、独立品質評価およびRecovery成功の定義を
-反映した版である。これらは研究上の決定であり、実装・Calibration・比較実験は未実施である。
+維持する。制御・評価Module、Calibration、比較実験は未実施である。
 CLAPNQのField、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法の
 詳細は`docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -457,6 +458,29 @@ Title単位で再分割する。同一Titleの全QAを同じ研究用Splitへ配
 
 Group Sizeにより比率は厳密には一致しないため、実数をSplit Manifestへ記録する。Evaluation結果を
 確認してからPrompt、閾値、Weight、`top_k`等を調整し、同じ結果を最終評価として再利用しない。
+
+### Phase 3の固定結果（2026-10-06、Gate 3通過）
+
+Title Group Keyは`source_title`をcasefold後にUnicode NFCへ正規化した文字列とする。原文のTitleは
+QAへ保持する。原文Titleは3,799種類だが、`The Dragon (Beowulf)`と`The dragon (Beowulf)`を同じ
+Groupへ置くため、正規化後は3,798 Groupである。これは表記差による漏洩を安全側で防ぐための具体化で、
+質問・正解・Answerabilityの変更やQAの除外は行わない。表記の正規化は異なるTitleを保守的に同一Groupへ
+まとめ得るため、このRuleを全方式共通のDataset条件として記録する。
+
+| Split | QA数 | 実比率 | Answerable | Unanswerable | Group数 |
+|---|---:|---:|---:|---:|---:|
+| Development | 2,824 | 64.99% | 1,465 | 1,359 | 2,277 |
+| Calibration | 434 | 9.99% | 225 | 209 | 434 |
+| Evaluation | 1,087 | 25.02% | 564 | 523 | 1,087 |
+
+Dataset Versionは`c508d78-split-v1`、Algorithm Versionは
+`title-nfc-casefold-stratified-greedy-sha256-v1`とする。Group内件数の大きい順に処理し、同じSizeの順序を
+Seed付きSHA-256で固定する。総件数・Answerable件数・Unanswerable件数の目標からの二乗誤差を
+減らすSplitへGroupを割り当てる。詳細な目的関数・同点RuleはDataset Guide第6.2節を正本とする。
+
+4,345件の欠損・重複0、原文Titleおよび正規化GroupのSplit間重複0、Split以外の全QA Metadata保持を
+検証済みである。別出力先でQA・レポート・ManifestがByte単位で一致した。Base Datasetは保持し、
+Git管理する`data/manifests/clapnq_split_manifest.json`に割当・実数・Hash・条件を固定した。
 
 ここでいうEvaluationは公開Train/Devから作る本研究独自の内部評価Splitであり、CLAPNQ公式Testや
 公式Leaderboard相当のHeld-out評価ではない。この制約を結果、考察、Limitationsで明記する。

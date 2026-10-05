@@ -1,12 +1,12 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.10
+## Version 7.11
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion 7.9の公開Train/Devのみを使う方針を維持し、2026年10月6日にユーザーが承認した
-Decision Rule、Always Rewrite、独立品質評価および主RSRの定義を実装仕様へ反映した版である。
-本変更は文書上の仕様確定であり、これらのModule・Config・Test・比較実験はまだ実装・実施していない。
+本書はVersion 7.10の制御・比較・独立品質評価仕様を維持し、2026年10月6日のPhase 3の実装と
+研究用Splitの固定結果を反映した版である。Phase 3は実装・検証済みであるが、Decision Rule、
+Always Rewrite、独立品質評価等のModule・Config・Test・比較実験はまだ実装・実施していない。
 CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
 `docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -791,6 +791,40 @@ Versionを保持する。元質問・回答・Contextが同一なら評価を再
 
 # 7. Test仕様
 
+## Phase 3の実装と成果物
+
+Moduleは`src/rag_research/data/clapnq_split.py`、CLIは`scripts/split_clapnq.py`である。
+Phase 2の`c508d78-base-v1/qa.jsonl`だけを入力とし、Raw再取得・GPU・追加依存Libraryを必要としない。
+
+```powershell
+uv run python scripts/split_clapnq.py
+```
+
+原文Titleを保持し、casefold後にUnicode NFCへ正規化したTitleをGroup Keyとする。
+固定Algorithmの目的関数と同点RuleはDataset Guide第6.2節、Manifestの内容は第7.7節に従う。
+割当はTitle・Group内Answerability数・Seedだけで決まり、質問・回答・Gold・Model成績を参照しない。
+
+出力Directoryは`data/processed/clapnq/c508d78-split-v1/`で、全件の`qa.jsonl`、各Split名のJSONL、
+`split_report.json`を生成する。全QAをStable ID順でSerializeし、`research_split`以外のFieldを変更しない。
+`data/manifests/clapnq_split_manifest.json`へ入力・出力Hash、条件、割当、実数、Validationを記録する。
+JSON/JSONLはUTF-8・Key辞書順・LF終端とし、Manifestの改行は`.gitattributes`でも固定する。
+
+公開Train/Devの4区分件数、固定Revision、Stable ID、Base QA状態を検証してから分割する。
+出力前に欠損・重複・Title/GroupのSplit間重複と全Metadata保持を検証する。
+全出力の競合を事前確認し、同じByte列なら再利用、異なる場合は上書きせず停止する。
+各Fileは同じDirectory内の一時Fileへ書き終えてからHard Linkで原子的に公開し、Manifestは最後に公開する。
+出力一式全体を1つのTransactionとしては扱わない。途中でI/O障害が起きた場合は同じ条件で再実行し、
+全出力の存在・HashとManifestを確認して完了判定する。
+
+Seed等を変える分割は新しいDataset Versionと出力先・Manifestを使う。
+CLIは`--input`、`--output-dir`、`--manifest`、`--seed`、`--dataset-version`を受け付ける。
+Seed 42以外を`c508d78-split-v1`として生成することは拒否する。CLIは公開4,345件の件数検証を省略できない。
+
+実測はDevelopment 2,824件、Calibration 434件、Evaluation 1,087件で、正規化Group重複0である。
+別出力先での再生成もByte単位で一致した。`tests/data/test_clapnq_split.py`に、混在・不均等Group、
+表記差、入力順非依存、回答内容非依存、異常入力、欠損・重複・漏洩・Metadata改変、出力保護、
+再生成・実データを確認する18 Testsを追加した。全体61 Tests成功・Skipなし、ruff問題なし。
+
 ## Unit Test
 
 対象:
@@ -914,16 +948,18 @@ QA、Reference、Gold Passage、Corpusの対応を検証できる
         ↓
 ────────────────────────────
 【Phase 3】研究用Splitを固定する
+（2026-10-06完了。c508d78-split-v1、Seed 42、QA 4,345件）
         ↓
 公開Train/Devを結合
         ↓
-Wikipedia Title単位でGroup化
+Wikipedia Titleをcasefold・NFC正規化してGroup化（原文Titleは保持）
         ↓
 Answerabilityを層別しSeed 42で
 Development/Calibration/Evaluationへ分割
         ↓
 【Gate 3】
 Title LeakageのないSplit Manifestが完成
+（Gate 3通過: 欠損・重複0、正規化Group重複0、別出力でByte一致）
         ↓
 ────────────────────────────
 【Phase 4】検索CorpusとIndexを構築する

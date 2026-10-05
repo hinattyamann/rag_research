@@ -1,12 +1,12 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 1.7
+## Version 1.8
 
-最終確認日: 2026-10-06（研究仕様の更新。公式Sourceの再取得・再監査日は変更しない）
+最終確認日: 2026-10-06（Phase 3の実装・固定結果を更新。公式Source条件は変更しない）
 
-Version 1.7では、2026年10月6日にユーザーが承認した独立品質Label、Failure正解Label、ECE、
-Hallucinationの集計単位、主RSR、および比較条件を具体化した。これらの評価実装・人手判定・
-Calibration・比較実験は未実施である。公式Source、研究用Split比率、Base Dataset Versionは変更しない。
+Version 1.8では、Version 1.7の制御・独立評価仕様を維持し、Phase 3のGroup正規化、分割Algorithm、
+Manifestおよび固定実数を記録した。Splitは実装・検証済みで、独立評価実装・人手判定・Calibration・
+比較実験は未実施である。公式Source、研究用Split比率、Base Dataset Versionは変更しない。
 
 本書は、CLAPNQそのものの仕様と、本研究「評価駆動型自己制御RAGによる回答信頼性向上手法」
 での利用方法を一か所に集約したDataset仕様書である。CLAPNQの取得、研究用Split、検索Corpus、
@@ -451,8 +451,9 @@ Devの間に同じWikipedia Titleが91件存在した。
 
 ## 6.2 Group-aware Split
 
-公開4,345件を結合し、`passages[0].title`をGroup Keyとして、同一Titleの全Recordを同じ研究用Splitへ
-配置する。Answerable/Unanswerable比を可能な限り維持し、Seed 42で次を目標に分割する。
+公開4,345件を結合し、元の`passages[0].title`を保持する内部`source_title`をcasefold後にUnicode NFCへ
+正規化した文字列をGroup Keyとして、同一Groupの全Recordを同じ研究用Splitへ配置する。
+Answerable/Unanswerable比を可能な限り維持し、Seed 42で次を目標に分割する。
 
 | 研究用Split | 目標比率 | 用途 |
 |---|---:|---|
@@ -462,6 +463,42 @@ Devの間に同じWikipedia Titleが91件存在した。
 
 Group Sizeのため厳密な比率にはならない。実数はManifestで報告する。Split作成Algorithmは、Recordの
 内容やModel成績を見ず、Title、Answerability、Seedだけで決定する。
+
+### 正規化と決定的Algorithm（Phase 3実装済み）
+
+正規化は`unicodedata.normalize("NFC", source_title.casefold())`とする。原文Titleは変更しない。
+原文Titleは3,799種類、正規化Groupは3,798件である。差は`The Dragon (Beowulf)`と
+`The dragon (Beowulf)`で、同一Groupへ置く。以前のPowerShell集計では大小文字を区別せず3,798件と
+数えていたため、原文Title数とGroup数を区別して記録する。大小文字差で別Titleを保守的にまとめる
+可能性はあるが、QAやLabelは除外・変更せず、全方式に同じ条件を適用する。
+
+Algorithm Versionは`title-nfc-casefold-stratified-greedy-sha256-v1`とする。
+
+1. 正規化TitleでGroup化し、各Groupの総件数・Answerable件数・Unanswerable件数だけを数える。
+2. Group総件数の降順で処理する。同じSizeでは`[seed, 正規化Title]`をUTF-8・Key辞書順・Compact JSON・
+   LF終端でSerializeしたByte列のSHA-256昇順、さらに同点なら正規化TitleのUnicode辞書順とする。
+3. Groupを追加したときに下記Jが最も減るSplitへ割り当てる。同点はDevelopment → Calibration →
+   Evaluationの順とする。判断はFractionによる有理数演算とし、浮動小数点の丸めに依存しない。
+4. Stable ID順に出力し、`research_split`だけを設定する。入力順や質問・回答・Goldの内容を割当判断に
+   使わない。全割当をValidationしてから成果物を出力する。
+
+```text
+J = sum_s sum_d ((n[s,d] - ratio[s] * N[d]) / N[d]) ** 2
+s: development / calibration / evaluation
+d: 総件数 / Answerable件数 / Unanswerable件数
+N[d]: 入力全体の件数。N[d]=0の次元は計算から除く
+n[s,d]: 現在そのSplitに割り当てた件数
+ratio[s]: 65/100、10/100、25/100
+```
+
+これはGroupを分割しないGreedy近似であり、比率の完全一致や大域的最適性は保証しない。
+固定公開Dataの実数は次のとおりで、欠損・重複・原文Title/正規化GroupのSplit間重複は0である。
+
+| Split | QA | 実比率 | Answerable | Unanswerable | 原文Title数 | Group数 |
+|---|---:|---:|---:|---:|---:|---:|
+| Development | 2,824 | 64.99% | 1,465 | 1,359 | 2,278 | 2,277 |
+| Calibration | 434 | 9.99% | 225 | 209 | 434 | 434 |
+| Evaluation | 1,087 | 25.02% | 564 | 523 | 1,087 | 1,087 |
 
 Title Groupingを適用しても、LLMがNQ質問・Wikipedia本文を事前学習で見ている可能性は残る。
 これはLimitationsに明記し、絶対性能よりも同じQAに対する3方式の相対差を主要な解釈対象とする。
@@ -474,6 +511,7 @@ Title Groupingを適用しても、LLMがNQ質問・Wikipedia本文を事前学�
   学習・Parameter調整へ使用してはならない。
 - `source_split`と`research_split`を別々に保存する。
 - 同じTitleを複数の研究用Splitへ入れない。
+- 原文Titleだけでなく、casefold・NFC正規化したGroupのSplit間重複も0にする。
 - Evaluationの質問、Reference Answer、Gold PassageをFew-shot Promptへ入れない。
 - Evaluation結果を見てPrompt、閾値、Weight、Retriever、`top_k`を調整しない。
 - Gold Passage ID、Reference Answer、Selected Sentences、Answerability LabelをInference Stateへ渡さない。
@@ -593,6 +631,36 @@ Records、4,293 Unique Titles、156,262,889 Bytes、SHA-256
 Hashになることを確認済みである。
 
 ---
+
+## 7.7 研究用Split JSONLとManifest
+
+Phase 2のBase QAを入力に、GPU・追加Libraryなしで次を実行する。
+
+```powershell
+uv run python scripts/split_clapnq.py
+```
+
+出力は`data/processed/clapnq/c508d78-split-v1/`の`qa.jsonl`、`development.jsonl`、
+`calibration.jsonl`、`evaluation.jsonl`、`split_report.json`である。Base QA・Corpusを上書きしない。
+割当済み全件QAのSHA-256は
+`6913d7a37b1938e6649c3609aa0b71e63dd2c62e8a717a470b41aaf2e912601d`である。
+
+Git管理する`data/manifests/clapnq_split_manifest.json`にはDataset/Algorithm Version、Source Revision、
+Seed、正規化Rule、目標比率、実数、入力・全出力のSHA-256とByte数、SplitごとのStable ID、原文Titleと
+正規化Groupの割当、欠損・重複・漏洩・Metadata保持のValidation結果を保存する。
+絶対Pathと生成日時は含めず、別Directoryでも同じInput・Seed・Versionから同じByte列を再生成する。
+JSON/JSONLはUTF-8・Key辞書順・LF終端であり、Git Checkout後のManifestのLFも`.gitattributes`で固定する。
+
+公開Train/Devの件数・Revision・Stable ID・未割当Base状態を検証してから処理する。
+既存成果物はByte一致なら再利用し、不一致なら上書きせず停止する。Seed等を変更する場合は新Version・
+出力Directory・Manifestを使う。途中のI/O失敗は同じ条件で再実行し、全出力Hashを確認して完了とする。
+検証用の再生成例は次のとおりである。
+
+```powershell
+uv run python scripts/split_clapnq.py --output-dir data/processed/clapnq/c508d78-split-v1-verification --manifest data/processed/clapnq/clapnq_split_manifest_verification.json
+```
+
+2026-10-06に別出力先で全5 FileとManifestのByte一致を確認した。現在61 Tests成功・Skipなし、ruff問題なし。
 
 # 8. 検索CorpusとRetriever
 
@@ -898,6 +966,9 @@ data/
 ├─ processed/clapnq/{dataset_version}/
 │  ├─ qa.jsonl
 │  ├─ passages.jsonl
+│  ├─ development.jsonl                # split-v1のみ
+│  ├─ calibration.jsonl                # split-v1のみ
+│  ├─ evaluation.jsonl                 # split-v1のみ
 │  └─ split_report.json
 └─ manifests/
    ├─ clapnq_source_manifest.json
@@ -943,6 +1014,7 @@ Passage ID、監査結果を保存する。
 ## 12.3 Split検証
 
 - 同じTitleが複数の研究用Splitに存在しない。
+- casefold・NFC正規化後のGroupもSplit間重複0である。
 - Development/Calibration/Evaluation間でRecord IDが重複しない。
 - Split作成が同じInput、Seed、Versionから再現できる。
 - Answerability比と実数をReportできる。
@@ -1113,7 +1185,7 @@ License表示を追記する。CLAPNQをそのまま使用したとだけ書き�
 - [x] 無効Referenceを除外し、Answerableに有効Answerが残ることを確認した。
 - [x] Apache 2.0とCC BY-SA 3.0の表示を保存した。
 - [x] 公式Testを使用せず、公開Train/Devだけで研究を継続する条件を固定した。
-- [ ] Title Group-aware SplitをSeed 42で固定した。
+- [x] Title Group-aware SplitをSeed 42で固定した（c508d78-split-v1、2026-10-06）。
 - [ ] Gold情報をInference Stateから分離した。
 - [ ] Unanswerable候補をCorpus-levelで監査した。
 - [ ] 4種類の評価Manifestを固定した。
