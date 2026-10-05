@@ -8,6 +8,9 @@
 - `docs/rag_implementation_plan.md`
 - `docs/clapnq_dataset_guide.md`
 
+現在の到達点、研究室PCで確認する項目、Data再生成を含む引継ぎ手順は
+[`docs/lab_pc_handover.md`](docs/lab_pc_handover.md)を参照してください。
+
 ## 基盤データセット
 
 本研究では、Text-basedのFull RAG Pipelineを評価するため、CLAPNQを基盤データセットとして

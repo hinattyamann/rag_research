@@ -1,0 +1,422 @@
+# 研究室PCへの引継ぎと実行手順
+
+確認日: 2026年10月5日。対象はこの日の作業開始時点のCommit `9bfe8ac` と、研究計画Version 6.5、
+実装計画Version 7.9である。以後の実装に応じて到達点と手順を更新する。
+
+購入PCはUbuntu 24.04 LTSと判明したため、そのPCでは[第6節のUbuntu手順](#6-購入pcの仕様とubuntu向け手順)を
+使用する。Windows手順は現在のPCでの参照用として残す。
+
+## 1. 現在の到達点
+
+| 工程 | 状況 | 確認できる成果物 |
+|---|---|---|
+| 研究テーマ・仮説・比較条件の設計 | 作成済み | 研究計画・実装計画・Dataset Guide |
+| Phase 1: CLAPNQ取得・Source検証 | 完了、Gate 1通過 | 取得Script、固定Revision、Source Manifest |
+| Phase 2: Loader・内部Schema変換 | 完了、Gate 2通過 | QA 4,345件、Corpus 178,890件のJSONL生成 |
+| Phase 3: Title単位の研究用Split | 未実施、次の作業 | Split Script・Split Manifestはまだない |
+| Phase 4以降: Index・RAG・自己評価・Recovery | 未実装 | 検索・回答生成の実行コマンドはまだない |
+| 比較実験・結果分析・卒業論文の完成 | 未実施 | 提案手法の性能向上を示す実験結果はまだない |
+
+現在のPCには次の生成物が存在し、2026年10月5日に研究日誌のHashと一致することを再確認した。
+
+| File | 件数 | Byte数 | SHA-256 |
+|---|---:|---:|---|
+| `data/processed/clapnq/c508d78-base-v1/qa.jsonl` | 4,345 | 9,954,217 | `233800e4cafadec8ebfdf185e28f4e7eb26efa924d68e592735b24cb8b937209` |
+| `data/processed/clapnq/c508d78-base-v1/passages.jsonl` | 178,890 | 156,262,889 | `c847751985c2f95987628800a3a8a12aa274da37dee088310f74b6bddb1ea103` |
+
+QA側の2,074 Unique Gold Passage IDは全件Corpus内に存在する。`research_split`はまだ全件未割当である。
+Unanswerable 2,091件のCorpus全体に対する回答不能監査も未実施である。
+
+同日に`uv run pytest`は43件成功、Skipなし、`uv run ruff check .`は問題なしだった。
+Manifest生成とAnnotation確認CLIも実データで再実行し、既存Manifestの10 FileとHashが一致した。
+研究室PCでの実行はまだ行っていない。
+
+公開Train/Devのみを使用し、非公開Test 601件は主実験に使用しない。Test Accessの返信は研究再開の条件に
+しない。最後のAccess状況の記録日は2026年9月10日であり、その後のメール状況はこの確認の対象外である。
+
+## 2. 研究室PCで確認する項目
+
+特にGPUの型番・枚数・専用Memoryの総量と空き容量、RAM、OSを持ち帰る。
+
+| 優先度 | 項目 | 確認する値・条件 | 使用目的 |
+|---|---|---|---|
+| 最優先 | OS | Windows/Linux、Version、64bitか | 実行環境とコマンドの選択 |
+| 最優先 | GPU | メーカー、型番、枚数 | ローカルLLMとEmbeddingの実行方法を決める |
+| 最優先 | GPU Memory | GPUごとの専用VRAM総量・空き容量、他の利用者の使用状況 | モデル規模、量子化、同時起動、Batch Sizeを決める |
+| 最優先 | RAM | 総容量と使用可能容量 | Corpus、Index構築、CPU処理の計画 |
+| 高 | CPU | 型番、物理Core数、Logical Processor数 | BM25と前処理の並列化・実行時間の見積り |
+| 高 | Storage | 保存先、空き容量、SSD/HDD | Data・Model・Index・Logの保存 |
+| 高 | NVIDIA環境 | Driver Version、`nvidia-smi`の出力、Toolkitが既にある場合は`nvcc --version` | 後で導入する推論Libraryとの互換性確認 |
+| 高 | Network | GitHub、Python Package配布先、Hugging Faceへの接続可否、Proxyの有無 | Source・依存Library・将来のModel取得 |
+| 高 | 運用条件 | Software導入権限、GPU利用時間、連続実行可能時間、Sleep設定、Remote利用可否 | 長時間のIndex構築・比較実験を継続する |
+| 中 | 既存Software | Git、uv、WSL、既存のLLM実行環境とVersion | 環境の再利用可否を判断 |
+
+現在の前処理とPhase 3のSplit作成にはGPUは不要である。Modelの必要VRAMは、Model Revision、精度・量子化、
+Context Length、Batch Size、同時起動するModel数によって変わるため、現時点で一律の必須容量は定めない。
+生成済みJSONLだけで約166 MBだが、Raw Checkout、仮想環境、将来のModelとIndexは別途容量を使う。
+
+### Windowsでの確認コマンド
+
+PowerShellで実行する。導入済みでないコマンドのErrorも、環境確認の結果として記録する。
+
+```powershell
+# OS
+Get-CimInstance Win32_OperatingSystem |
+    Select-Object Caption, Version, OSArchitecture
+
+# CPU
+Get-CimInstance Win32_Processor |
+    Select-Object Name, NumberOfCores, NumberOfLogicalProcessors
+
+# RAM: 単位はGiB
+Get-CimInstance Win32_OperatingSystem |
+    Select-Object @{Name='TotalRAM_GiB';Expression={[math]::Round($_.TotalVisibleMemorySize / 1MB, 1)}},
+                  @{Name='FreeRAM_GiB';Expression={[math]::Round($_.FreePhysicalMemory / 1MB, 1)}}
+
+# GPU型番: NVIDIA以外も表示
+Get-CimInstance Win32_VideoController | Select-Object Name, DriverVersion
+
+# Driveの容量: 単位はGiB
+Get-CimInstance Win32_LogicalDisk -Filter 'DriveType=3' |
+    Select-Object DeviceID,
+                  @{Name='Size_GiB';Expression={[math]::Round($_.Size / 1GB, 1)}},
+                  @{Name='Free_GiB';Expression={[math]::Round($_.FreeSpace / 1GB, 1)}}
+
+# Storageの種類: MediaTypeが不明の場合はPCの仕様等で確認
+Get-PhysicalDisk | Select-Object FriendlyName, MediaType, Size
+
+# NVIDIA GPUがある場合
+nvidia-smi
+nvidia-smi --query-gpu=index,name,memory.total,memory.free,driver_version --format=csv
+
+# Toolkitが既にある場合。未導入なら今すぐ導入する必要はない
+nvcc --version
+
+# 開発用Tool
+git --version
+uv --version
+```
+
+`nvidia-smi`が見つからなくても、NVIDIA GPUがないとは断定しない。GPUの有無とDriver/Pathの状態を分けて
+確認する。NVIDIA以外のGPUではタスクマネージャー等で専用Memory容量を確認する。
+`Win32_VideoController.AdapterRAM`は`uint32`なので、大容量VRAMの確認値には使用しない。
+[Microsoftの仕様](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-videocontroller)
+
+`nvidia-smi`のCUDA Version等はDriver側の対応情報であり、Toolkitの導入Versionと同一とは限らない。
+[NVIDIAの仕様](https://docs.nvidia.com/deploy/nvidia-smi/index.html)
+
+### Linuxだった場合
+
+```bash
+cat /etc/os-release
+uname -m
+lscpu
+free -h
+df -h .
+lsblk -d -o NAME,MODEL,ROTA,SIZE
+nvidia-smi
+nvidia-smi --query-gpu=index,name,memory.total,memory.free,driver_version --format=csv
+git --version
+uv --version
+```
+
+OSが異なってもPython Scriptは同じものを使う。以下の`Get-FileHash`などPowerShell固有の確認は、Linuxでは
+`sha256sum`等に置き換える。Softwareの導入方法はOSに合わせる。
+
+## 3. 引継ぎ前に現在のPCで行うこと
+
+コード、仕様書、`pyproject.toml`、`uv.lock`、Source ManifestをGitHub経由で引き継ぐ。
+今回作成した手順書を研究室へ引き継ぐ場合も、ユーザーがCommit・Pushしてから研究室PCで取得する。
+Codexは`git add`、`git commit`、`git push`を実行しない。
+
+```powershell
+git status --short
+git diff
+git rev-parse HEAD
+```
+
+未Commitの変更がある場合は、内容を確認し、必要な変更をユーザーがCommit・Pushする。研究室PCでは
+引き継いだCommit Hashが一致することを確認する。`.venv`、`data/raw/`、`data/processed/`、
+`data/indexes/`はGit管理対象外であり、`git clone`だけでは移らない。
+
+`.venv`は各PCで再作成し、Dataは固定Revisionから再取得・再生成する。Git管理対象外のDataをUSB等で
+運ぶ場合、Raw Checkoutの`.git`も必要である。既存の取得・検証ScriptはRawのCommitを検証するためである。
+
+## 4. 研究室PCでのセットアップ
+
+以下はWindows PowerShell向け。各コマンドの終了を確認し、Errorが出た場合は次の工程へ進む前に原因を確認する。
+
+### 4.1 Gitとuvを準備する
+
+未導入の場合に実行する。インストール後はPowerShellを開き直す。
+
+```powershell
+winget install --id Git.Git -e
+winget install --id astral-sh.uv -e
+git --version
+uv --version
+```
+
+uvのWinGet導入は[uv公式の導入手順](https://docs.astral.sh/uv/getting-started/installation/)でも案内されている。
+
+### 4.2 RepositoryとPython環境を取得する
+
+保存先のDirectoryへ移動してから、初回のみ次を実行する。
+
+```powershell
+git clone https://github.com/hinattyamann/rag_research.git
+cd rag_research
+git rev-parse HEAD
+uv sync --locked
+uv run --locked python --version
+```
+
+Pythonは3.12系を使用する。`uv.lock`は依存Libraryを固定するが、PythonのPatch Versionは固定していない。
+今回の検証環境はPython 3.12.14だった。最終実験ではPythonの具体的なVersionも記録する。
+`--locked`はLock FileとProject設定に不整合がある場合に、Lock Fileを更新せずErrorにする。
+[uv公式の環境同期の説明](https://docs.astral.sh/uv/concepts/projects/sync/)
+
+既にRepositoryがある場合は、そのRootへ移動して`git status --short`を確認する。作業中の変更がなく、
+取り込むBranchが正しいことを確認してから`git pull --ff-only`、`uv sync --locked`を実行する。
+
+### 4.3 CLAPNQを取得する
+
+```powershell
+uv run --locked python scripts/prepare_clapnq.py
+```
+
+固定Revisionは`c508d78d8c5c2eecbf172fcf5f789004206e11fb`である。
+取得済みDirectoryは上書きせず、Commitと必須Fileを検証して再利用する。
+
+**改行設定の注意:** 現行Source Manifestは`core.autocrlf=true`のWindows環境で取得したRaw Fileから作られた。
+Source取得時の改行設定は現行取得Scriptでは固定されていない。別PCでRaw Hashが違う場合は、件数が同じでも
+同一Sourceの確認完了と扱わず、Git改行設定とFile差分を確認する。
+
+新しいPowerShellセッションで、初回取得前に既存Manifestの改行条件を明示して取得する場合は、上の取得コマンドを
+次に置き換えられる。これらのEnvironment変数が既に設定されているセッションでは、既存設定を確認してから扱う。
+
+```powershell
+$env:GIT_CONFIG_COUNT = '1'
+$env:GIT_CONFIG_KEY_0 = 'core.autocrlf'
+$env:GIT_CONFIG_VALUE_0 = 'true'
+try {
+    uv run --locked python scripts/prepare_clapnq.py
+    if ($LASTEXITCODE -ne 0) { throw 'CLAPNQ取得失敗' }
+} finally {
+    Remove-Item Env:GIT_CONFIG_COUNT, Env:GIT_CONFIG_KEY_0, Env:GIT_CONFIG_VALUE_0
+}
+```
+
+Gitの設定Fileは変更せず、取得Processにのみ設定を渡す。
+[GitのEnvironment設定仕様](https://git-scm.com/docs/git-config#Documentation/git-config.txt-GITCONFIGCOUNT)
+既に取得したDataの改行はこの操作では変わらないため、不一致時に既存Dataを無条件に削除・上書きしない。
+
+### 4.4 Sourceを検証し、保存済みManifestと比較する
+
+既存Manifestを保持するため、検証結果をGit管理対象外の別Fileへ出力する。
+
+```powershell
+uv run --locked python scripts/build_clapnq_manifest.py --output data/processed/clapnq/source_manifest_lab.json
+```
+
+次に、固定Revisionと10 FileのHash・Size・件数を比較する。取得日時はPC間で異なるため比較しない。
+
+```powershell
+$baseline = Get-Content data/manifests/clapnq_source_manifest.json -Raw -Encoding UTF8 | ConvertFrom-Json
+$actual = Get-Content data/processed/clapnq/source_manifest_lab.json -Raw -Encoding UTF8 | ConvertFrom-Json
+if ($baseline.dataset.revision -ne $actual.dataset.revision) { throw 'Source Revision不一致' }
+if ($baseline.files.Count -ne $actual.files.Count) { throw 'Source File数不一致' }
+foreach ($expectedFile in $baseline.files) {
+    $matchedFiles = @($actual.files | Where-Object { $_.relative_path -eq $expectedFile.relative_path })
+    if ($matchedFiles.Count -ne 1) { throw "Source File対応不一致: $($expectedFile.relative_path)" }
+    $actualFile = $matchedFiles[0]
+    if ($actualFile.sha256 -ne $expectedFile.sha256 -or
+        $actualFile.size_bytes -ne $expectedFile.size_bytes -or
+        $actualFile.record_count -ne $expectedFile.record_count) {
+        throw "Source不一致: $($expectedFile.relative_path)"
+    }
+}
+Write-Output 'Source Revisionと全FileのHash・Size・件数が一致'
+```
+
+### 4.5 内部Dataを生成する
+
+```powershell
+uv run --locked python scripts/inspect_clapnq.py
+uv run --locked python scripts/build_clapnq_qa.py
+uv run --locked python scripts/build_clapnq_corpus.py
+```
+
+順に、AnnotationとQueryの対応確認、QA JSONL生成、Corpus JSONL生成を行う。CorpusはZIPを全展開せず、
+Streamingで変換する。QA・Corpus生成コマンドは成功時に既存の生成JSONLを置換する。
+
+確認する値はQA 4,345件、Answerable 2,254件、Unanswerable 2,091件、有効Reference 3,142件、Corpus
+178,890件、Unique Gold Passage ID 2,074件である。
+
+```powershell
+Get-FileHash -Algorithm SHA256 -LiteralPath data/processed/clapnq/c508d78-base-v1/qa.jsonl
+Get-FileHash -Algorithm SHA256 -LiteralPath data/processed/clapnq/c508d78-base-v1/passages.jsonl
+uv run --locked pytest
+uv run --locked ruff check .
+git status --short
+```
+
+Hashが本書の表と一致し、43 Testsが成功、Skipなし、ruffが問題なしなら、現時点の実装の再現確認が完了する。
+Raw Dataを取得する前は実データを使う4 TestsがSkipされ得るため、単に失敗がないだけで完了としない。
+別出力のManifestはGit管理対象外なので、Data再生成だけなら追跡Fileに変更は生じない想定である。
+
+## 5. 次に研究として行うこと
+
+最優先はPhase 3の研究用Splitである。4,345件をWikipedia Title単位でGroup化し、Seed 42でDevelopment
+65%、Calibration 10%、Evaluation 25%を目標に割り当てる。TitleごとのQA件数が異なるため厳密な比率より
+Title Leakage防止を優先し、実数とAnswerability比を記録する。
+
+完了条件は、全QAの重複・欠損がなく、Split間Title重複0件、同じ入力・Seed・Algorithm Versionから同じ
+Split Manifestを再生成できることである。この工程は現時点では未実装で、`scripts/split_clapnq.py`もまだない。
+
+その後に検索Index、開発用Baseline、Hybrid Retrieval、R/F/A評価、Failure Diagnosis、Recoveryを順に実装する。
+実装計画の生成用`qwen2.5-14b`、評価用`qwen2.5-7b`、`top_k=5`、Confidence Threshold `0.7`はConfig例であり、
+実際の`configs/config.yaml`やModel実行基盤はまだ存在しない。Confidence重み`0.25/0.50/0.25`、Failure Threshold
+初期値`0.5`、Recovery最大1回は研究方針として定義されている。
+
+PC確認後にModel Revision、Embedding Model、量子化、Context Length、Batch Size、推論基盤を具体化する。
+変更が必要なら仕様書と実装・設定を同時に更新し、比較3方式ではRetriever・Generator・Datasetを共通にする。
+調整はDevelopment/Calibrationで行い、最終Evaluationを見て同じ評価の設定を調整しない。
+
+研究室PCでCodexへ引き継ぐ際は、次の依頼文を利用できる。
+
+> AGENTS.md、研究計画、実装計画、研究日誌、docs/lab_pc_handover.mdを読み、現在の実装を確認してください。
+> Phase 1・2のData再現確認後、Phase 3のTitle単位Group-aware研究用Splitを小工程に分けて実装してください。
+> 全4,345件の欠損・重複0、Split間Title重複0、Seed 42での再現性を検証し、仕様書と研究日誌を更新してください。
+> 各工程の成果を説明し、git add・commit・pushは実行しないでください。
+
+持ち帰る情報は、OS、CPU、RAM、GPU型番・枚数・VRAM総量/空き容量、Driver、Disk空き容量、Network条件、
+連続利用可能時間である。ModelやIndexの具体的な設定は、その結果を踏まえて決める。
+
+## 6. 購入PCの仕様とUbuntu向け手順
+
+2026年10月5日にユーザーから次の購入仕様を受領した。これは実機計測結果ではない。
+
+| 項目 | 購入仕様 | 研究での見通し |
+|---|---|---|
+| OS | Ubuntu 24.04 LTS、64bit | LinuxのTerminalからGit・uvを使用する |
+| CPU | Intel Core i5-14400 | 前処理、Split、BM25実装を進める構成として使用する |
+| RAM | 8GB | 現行前処理は試せるが、Index構築とLLM実行のMemory予算に注意が必要 |
+| Storage | 500GB M.2 NVMe SSD、500GB Partition | 実際の空き容量を確認する。初期のData・Model保存先として使用する |
+| GPU | GeForce RTX 5060 Ti | VRAM容量、Driver、実際の認識状態は未確認 |
+
+RTX 5060 Tiの公式Memory構成は16GB/8GBの2種類であり、型番だけでは判断できない。
+[NVIDIA公式仕様](https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/)
+RAM 8GBと専用GPU Memoryは別の容量である。
+
+Model選定の見通しは次のとおり。いずれも実機での実行成功を保証するものではない。
+
+- VRAM 16GBの場合: Qwen2.5-14Bの4bit量子化を生成用候補として検証できる。ただし、RAM 8GBでのLoad、
+  Context用Memory、評価用Modelとの切替を確認する。生成・評価Modelの同時常駐は前提にしない。
+- VRAM 8GBの場合: 7Bの4bit量子化を先に試す候補とする。14B Q4_K_Mの重みは約8.99GBで、全重みと推論用
+  Memoryを8GB VRAMへ収める構成は想定できない。CPUへの一部退避もRAM 8GBでは余裕が少ない。
+- RAM: ローカルLLM実験に向けた構成上の推奨は32GB。16GBもModelと処理方法次第で検討できるが、必須条件
+  として確定したものではない。増設する場合はMotherboardの対応規格と現在のModule構成を先に確認する。
+
+公式GGUF配布のQ4_K_Mの重みSizeは、7Bが約4.68GB、14Bが約8.99GBである。これはModel FileのSizeであり、
+実行時のRAM・VRAM要件そのものではない。推論ではKV Cacheと作業領域等も必要となる。
+[Qwen公式7B配布](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF)、
+[Qwen公式14B配布](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF)
+
+Model・量子化・推論基盤はまだ変更・固定していない。変更が必要なら研究仕様と実装条件を合わせて更新し、
+Baseline、Always Rewrite、Adaptiveの全方式へ共通に適用する。
+
+### 6.1 実機で先に確認する
+
+```bash
+nvidia-smi
+nvidia-smi --query-gpu=name,memory.total,memory.free,driver_version --format=csv
+free -h
+swapon --show
+df -h .
+```
+
+これらの出力に加え、Network接続と導入権限を確認する。SwapはRAMと同等の性能を持つMemoryとして見積もらない。
+`nvidia-smi`が動かない場合は、そのErrorとGPU/Driver認識状態を先に調べる。前処理にはNVIDIA Driverは不要である。
+Driverを導入する必要がある場合は[Ubuntu公式手順](https://ubuntu.com/server/docs/how-to/graphics/install-nvidia-drivers/)
+に従い、購入時のDriver構成を確認してから行う。
+
+RTX 5060 TiはBlackwell世代なので、LLM実行基盤を導入するときは対応するDriver・CUDA Backendを確認する。
+今はToolkitや推論Libraryを一律に導入しない。
+[NVIDIA Blackwell互換性ガイド](https://docs.nvidia.com/cuda/blackwell-compatibility-guide/)
+
+### 6.2 Gitとuvを準備する
+
+未導入の場合に実行する。`sudo`が必要なPackage導入は、このPCで導入権限がある場合に行う。
+
+```bash
+sudo apt update
+sudo apt install -y git curl ca-certificates
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+uv導入後はTerminalを開き直し、`git --version`と`uv --version`を確認する。
+[uv公式Linux導入手順](https://docs.astral.sh/uv/getting-started/installation/)
+
+### 6.3 RepositoryとDataを再現する
+
+今回の手順書を含む変更をユーザーがCommit・Pushした後、保存先のDirectoryで初回のみCloneする。
+各コマンドが成功してから次に進む。
+
+```bash
+git clone https://github.com/hinattyamann/rag_research.git
+cd rag_research
+git rev-parse HEAD
+uv sync --locked
+uv run --locked python --version
+```
+
+現行ManifestのWindows取得時のRaw Hashに合わせるため、初回Data取得にはProcess単位で改行設定を渡す。
+Project全体やPC全体のGit設定は変更しない。既に取得済みのRaw Fileは、このコマンドでは改行変換されない。
+
+```bash
+GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=core.autocrlf GIT_CONFIG_VALUE_0=true \
+  uv run --locked python scripts/prepare_clapnq.py
+
+uv run --locked python scripts/build_clapnq_manifest.py --output data/processed/clapnq/source_manifest_lab.json
+```
+
+Source比較はLinuxでもuv経由のPythonで実行できる。取得日時は比較しない。
+
+```bash
+uv run --locked python - <<'PY'
+import json
+from pathlib import Path
+
+baseline = json.loads(Path('data/manifests/clapnq_source_manifest.json').read_text(encoding='utf-8'))
+actual = json.loads(Path('data/processed/clapnq/source_manifest_lab.json').read_text(encoding='utf-8'))
+if baseline['dataset']['revision'] != actual['dataset']['revision']:
+    raise SystemExit('Source Revision不一致')
+expected = {item['relative_path']: item for item in baseline['files']}
+observed = {item['relative_path']: item for item in actual['files']}
+if (len(expected) != len(baseline['files']) or len(observed) != len(actual['files'])
+        or expected.keys() != observed.keys()):
+    raise SystemExit('Source File対応不一致')
+for path, item in expected.items():
+    for field in ('sha256', 'size_bytes', 'record_count'):
+        if item[field] != observed[path][field]:
+            raise SystemExit(f'Source不一致: {path}: {field}')
+print('Source Revisionと全FileのHash・Size・件数が一致')
+PY
+```
+
+一致後に内部Dataを生成し、検証する。
+
+```bash
+uv run --locked python scripts/inspect_clapnq.py
+uv run --locked python scripts/build_clapnq_qa.py
+uv run --locked python scripts/build_clapnq_corpus.py
+sha256sum data/processed/clapnq/c508d78-base-v1/qa.jsonl
+sha256sum data/processed/clapnq/c508d78-base-v1/passages.jsonl
+uv run --locked pytest
+uv run --locked ruff check .
+git status --short
+```
+
+完了条件は第4.5節と同じ。これらのUbuntuコマンドは手順として作成したもので、購入PC上では未実行である。
+Data再現後にPhase 3のSplitへ進む。推論基盤とModelの具体化は、実機のVRAMとMemory使用量を確認してから行う。
