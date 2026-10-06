@@ -7,6 +7,7 @@
 - `docs/rag_research_plan.md`
 - `docs/rag_implementation_plan.md`
 - `docs/clapnq_dataset_guide.md`
+- [先行研究との関係・本研究の立ち位置と有用性](docs/related_research_positioning.md)
 
 現在の到達点、研究室PCで確認する項目、Data再生成を含む引継ぎ手順は
 [`docs/lab_pc_handover.md`](docs/lab_pc_handover.md)を参照してください。

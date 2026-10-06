@@ -3,8 +3,9 @@
 確認日: 2026年10月5日。対象はこの日の作業開始時点のCommit `9bfe8ac` と、研究計画Version 6.5、
 実装計画Version 7.9である。以後の実装に応じて到達点と手順を更新する。
 
-2026年10月6日追記: 現行の研究計画はVersion 6.9、実装計画はVersion 7.13、Dataset GuideはVersion 1.9。
+2026年10月6日追記: 現行の研究計画はVersion 6.10、実装計画はVersion 7.14、Dataset GuideはVersion 1.9。
 制御・比較・独立評価の仕様承認後、ノートPCでPhase 3〜5を実装し、Gate 5まで通過した。
+先行研究との関係・貢献候補・有用性は[研究の立ち位置](related_research_positioning.md)へ記録した。
 10月5日の実測値・Hash・Test結果はその日時の記録として保持し、Phase 3・4の結果を以下へ追記する。
 
 購入PCはUbuntu 24.04 LTSと判明したため、そのPCでは[第6節のUbuntu手順](#6-購入pcの仕様とubuntu向け手順)を
