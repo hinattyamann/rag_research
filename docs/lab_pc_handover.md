@@ -3,8 +3,8 @@
 確認日: 2026年10月5日。対象はこの日の作業開始時点のCommit `9bfe8ac` と、研究計画Version 6.5、
 実装計画Version 7.9である。以後の実装に応じて到達点と手順を更新する。
 
-2026年10月6日追記: 現行の研究計画はVersion 6.8、実装計画はVersion 7.12、Dataset GuideはVersion 1.9。
-制御・比較・独立評価の仕様承認後、ノートPCでPhase 3・4を実装し、Gate 4まで通過した。
+2026年10月6日追記: 現行の研究計画はVersion 6.9、実装計画はVersion 7.13、Dataset GuideはVersion 1.9。
+制御・比較・独立評価の仕様承認後、ノートPCでPhase 3〜5を実装し、Gate 5まで通過した。
 10月5日の実測値・Hash・Test結果はその日時の記録として保持し、Phase 3・4の結果を以下へ追記する。
 
 購入PCはUbuntu 24.04 LTSと判明したため、そのPCでは[第6節のUbuntu手順](#6-購入pcの仕様とubuntu向け手順)を
@@ -19,7 +19,8 @@
 | Phase 2: Loader・内部Schema変換 | 完了、Gate 2通過 | QA 4,345件、Corpus 178,890件のJSONL生成 |
 | Phase 3: Title単位の研究用Split | 完了、Gate 3通過 | Split Script、割当済みQA、Split Manifest、再現検証 |
 | Phase 4: 共通Corpusの検索Index | 完了、Gate 4通過 | 全178,890件のBM25/Embedding、質問検索CLI、固定Manifest |
-| Phase 5以降: RAG・自己評価・Recovery | 未実装 | LLM回答生成・制御・独立品質評価の実行コマンドはまだない |
+| Phase 5: 開発用Baseline RAG | 完了、Gate 5通過 | Embedding→Qwen CPU生成、質問/Development CLI、Prompt/実測ログ |
+| Phase 6以降: RRF・自己評価・Recovery | 未実装 | 最終Retriever・制御・独立品質評価は未完成 |
 | 比較実験・結果分析・卒業論文の完成 | 未実施 | 提案手法の性能向上を示す実験結果はまだない |
 
 現在のPCには次の生成物が存在し、2026年10月5日に研究日誌のHashと一致することを再確認した。
@@ -47,10 +48,18 @@ Phase 4ではBM25とCPU用の固定MiniLM ONNX ModelでEmbedding Indexを全178,
 両IndexのCorpus/ID順一致、全2,074 Unique Gold IDsの欠損0、同じDevelopment 50問の検索を確認した。
 BM25は別DirectoryでByte再生成一致、Embeddingは60,349件のcheckpointから再開して完了した。
 固定Manifestは`data/manifests/clapnq_retrieval_manifest.json`。条件と実測値は
-[`phase4_retrieval.md`](phase4_retrieval.md)による。最新の全Testは86件成功・Skipなし、ruff問題なし。
+[`phase4_retrieval.md`](phase4_retrieval.md)による。Phase 4時点の全Testは86件成功・Skipなし、ruff問題なし。
 
 公開Train/Devのみを使用し、非公開Test 601件は主実験に使用しない。Test Accessの返信は研究再開の条件に
 しない。最後のAccess状況の記録日は2026年9月10日であり、その後のメール状況はこの確認の対象外である。
+
+Phase 5ではQwen2.5-3B-Instruct GGUF Q4_K_Mとllama.cpp b11433 Windows CPUを採用した。
+固定Embedding Top-5から実回答を生成し、Development 5問が各1回の生成で完了した。
+実測は1問18.77〜28.96秒、合計Peak RSS 2.453GiB。全116 Tests成功、ruff問題なし。
+条件/実行手順は[`phase5_baseline.md`](phase5_baseline.md)、固定情報は
+`data/manifests/phase5_generation_manifest.json`、実測要約は`phase5_smoke_report.json`。
+これはWindowsノートPCでの確認であり、Ubuntu用Runtime/GPU、独立品質評価・比較実験は未実施。
+生成Moduleへの切替えは別条件として記録し、最終比較の3方式へ共通適用する。
 
 ## 2. 研究室PCで確認する項目
 
@@ -299,9 +308,9 @@ uv run python scripts/split_clapnq.py
 既存Fileが同じByte列なら再利用し、異なれば上書きせず停止する。詳細はDataset Guide第7.7節による。
 
 Phase 4はノートPCで完了し、Gate 4を通過した。CPU条件・全件結果・再生成手順は
-[`phase4_retrieval.md`](phase4_retrieval.md)を参照する。次はPhase 5の開発用Baseline
-（Embedding検索→Top-k Context→LLM回答生成）である。研究室PCでは同じ固定CorpusとModel Revision・
-量子化条件でIndexを再現する。続いてHybrid Retrieval、R/F/A評価、Failure Diagnosis、Recoveryを実装する。
+[`phase4_retrieval.md`](phase4_retrieval.md)を参照する。Phase 5の開発用BaselineもノートPCで完了した。
+生成条件は[`phase5_baseline.md`](phase5_baseline.md)を参照する。研究室PCでは同じ固定CorpusとModel Revision・
+量子化条件でIndexを再現する。次はPhase 6のHybrid RetrievalとCalibration固定である。
 
 ```powershell
 uv run python scripts/download_embedding_model.py
@@ -313,17 +322,18 @@ uv run python scripts/build_retrieval_manifest.py
 ノートPCの固定Indexを転送して共有してもよい。他PCでのEmbedding再生成はFloat計算の差でHashが
 変わり得るため、固定Manifestを上書きせず、別VersionでHash/数値/順位差を記録する。
 実装計画の生成用`qwen2.5-14b`、評価用`qwen2.5-7b`、`top_k=5`はConfig例であり、実際の
-`configs/config.yaml`やModel実行基盤はまだ存在しない。Confidence重み`0.25/0.50/0.25`、採用閾値`0.7`、
+`configs/config.yaml`はまだ存在しないが、Phase 5では`configs/phase5.yaml`とローカルCPU実行基盤を追加した。
+開発用GeneratorはQwen2.5-3B-Instruct Q4_K_M。Confidence重み`0.25/0.50/0.25`、採用閾値`0.7`、
 個別Failure閾値`0.5`、Recovery最大1回は承認済みの初期研究条件である。
 
 10月6日に確定したDecisionは、個別FailureをR → F → Aの順に優先し、個別Failureなし・C<0.7なら
 `low_confidence`として重み付き不足分が最大のRecoveryを選ぶ。Always Rewriteは共通初回回答の後に
 全質問でQuery Rewrite・再検索・再生成を1回実行する。独立品質Label Yによる主RSR・ECEと回答単位の
 Hallucinationを採用し、制御用自己評価と実験後の人手確認を分離する。詳細は現行仕様書を参照する。
-これらの制御・評価Moduleは未実装であり、今回完了したPhase 3・4の成果物とは区別する。
+これらの制御・評価Moduleは未実装であり、今回完了したPhase 3〜5の成果物とは区別する。
 
 EmbeddingはCPU用の固定Revision・公式quint8 AVX2 ONNXを選定済みである。
-PC確認後にGenerator/EvaluatorのRevision、量子化、Context Length、Batch Size、推論基盤を具体化する。
+ノートPC用Generatorは具体化済み。研究室PCの確認後に、移行するGenerator条件とEvaluatorを具体化する。
 変更が必要なら仕様書と実装・設定を同時に更新し、比較3方式ではRetriever・Generator・Datasetを共通にする。
 調整はDevelopment/Calibrationで行い、最終Evaluationを見て同じ評価の設定を調整しない。
 
@@ -369,7 +379,7 @@ Model選定の見通しは次のとおり。いずれも実機での実行成功
 [Qwen公式7B配布](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF)、
 [Qwen公式14B配布](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-GGUF)
 
-Model・量子化・推論基盤はまだ変更・固定していない。変更が必要なら研究仕様と実装条件を合わせて更新し、
+研究室PC用Model・量子化・推論基盤はまだ固定していない。変更が必要なら研究仕様と実装条件を合わせて更新し、
 Baseline、Always Rewrite、Adaptiveの全方式へ共通に適用する。
 
 ### 6.1 実機で先に確認する
@@ -466,9 +476,10 @@ git status --short
 ```
 
 完了条件は第4.5節と同じ。これらのUbuntuコマンドは手順として作成したもので、購入PC上では未実行である。
-DataとSplit再現後にPhase 4のCPU Index手順を再現する。最新の全Testは86件成功・Skipなし、ruff問題なし。
+DataとSplit再現後にPhase 4のCPU Index手順を再現する。最新の全Testは116件成功・Skipなし、ruff問題なし。
 Source/SplitのHash一致、両Indexの共通Corpus/Gold対応とEmbeddingの数値/Hash差を確認する。
-LLM推論基盤とGenerator/Evaluatorの具体化は、実機のVRAMとMemory使用量を確認してから行う。
+ノートPC用GeneratorはPhase 5で具体化したが、Ubuntu側のRuntime/GPU設定とEvaluatorは未確定である。
+実機のVRAM/Memoryを確認し、移行条件を新しく記録する。Windows用RuntimeをUbuntuで実行しない。
 
 ## 7. 開発用ノートPCの実測仕様
 
@@ -525,6 +536,6 @@ Core数や「i5」「Ryzen 7」という名称だけで速度を断定せず、�
 
 研究室PCはGPUでのModel推論に適した構成と考えられるが、全項目でノートPCより上とは表現しない。
 購入仕様のRAM 8GBはノートPCより小さいため、VRAMの実容量とRAM使用量を確認してからModel条件を決める。
-現行前処理・Phase 3に加え、Phase 4のCPU検索はノートPCでも進められる。BM25/Embeddingの実測は
-[`phase4_retrieval.md`](phase4_retrieval.md)へ記録する。両PCの速度差・GPU/LLM動作は未測定であり、
-Modelや閾値の変更・固定を本比較だけで行わない。
+現行前処理・Phase 3に加え、Phase 4のCPU検索とPhase 5の小型LLM生成をノートPCで確認した。BM25/Embeddingの実測は
+[`phase4_retrieval.md`](phase4_retrieval.md)、LLM実測は[`phase5_baseline.md`](phase5_baseline.md)へ記録する。
+両PCの速度差・研究室PCのGPU/LLM動作は未測定であり、Modelや閾値を本比較だけで固定しない。

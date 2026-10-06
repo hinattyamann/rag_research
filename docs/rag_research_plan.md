@@ -1,10 +1,10 @@
 # 自己制御型RAG研究計画書
 
-## Version 6.8
+## Version 6.9
 
 ## 外部実装依頼用 最終研究仕様書
 
-本書はVersion 6.6を基礎とし、Phase 3の固定SplitとPhase 4の検索実装条件を反映した版である。
+本書はVersion 6.8を基礎とし、Phase 5のノートPC用Generatorと開発用Baseline条件を反映した版である。
 公開Train/Devだけで研究を継続する方針を維持し、2026年10月6日にユーザーが
 承認したConfidenceとFailure判定の接続、Always Rewrite、独立品質評価およびRecovery成功の定義を
 維持する。制御・評価Module、Calibration、比較実験は未実施である。
@@ -677,7 +677,22 @@ Library Versionを記録する。詳細と実測結果は[`phase4_retrieval.md`]
 この選択はノートPCで検索基盤を構築するための具体化であり、研究目的・仮説・Split・3方式比較・
 独立品質評価の定義は変更しない。Model変更は検索性能へ影響するため、変更時は新Index条件を記録し、
 3方式に共通適用する。Developmentの50問によるSmoke結果から最終性能や提案手法の効果は主張しない。
-RRFと最終RetrieverのCalibration固定はPhase 6、回答生成と制御・品質比較は後続Phaseで実施する。
+RRFと最終RetrieverのCalibration固定はPhase 6、制御・品質比較は後続Phaseで実施する。
+
+# Phase 5のGenerator条件と研究上の扱い
+
+2026-10-06にユーザーがノートPC向け小型LLMを承認したため、開発用Generatorを
+`Qwen/Qwen2.5-3B-Instruct-GGUF` Q4_K_M、Revision
+`7dabda4d13d513e3e842b20f0d435c732f172cbe`として具体化した。
+llama.cpp b11433 Windows CPU、6 Threads、重み再配置なし。固定EmbeddingのTop-5、合計4,096/出力512/
+本文各512 Token、Temperature 0/Seed 42、固定英語Promptを使う。全条件とFile Hashを記録する。
+
+これは16GiB RAMのノートPCで開発を進めるための選択であり、例示の14Bを最終実験用に固定したものではない。
+Model規模・量子化・切詰め・Promptは品質へ影響するため、変更時は理由と条件を記録し、比較3方式へ
+共通適用する。研究目的・仮説・Split・Confidence/Failure・Recovery・独立評価の定義は変更しない。
+Gold/Reference/Answerabilityを推論へ渡さず、実行成功と品質Yを区別する。
+Developmentの少数問でGate 5を通過したが、H1/H2/H3やECE/Hallucination率の改善は検証していない。
+実装と実測は[`phase5_baseline.md`](phase5_baseline.md)を参照する。
 
 # 12. 研究範囲
 

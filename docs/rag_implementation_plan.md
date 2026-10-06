@@ -1,11 +1,11 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.12
+## Version 7.13
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion 7.10の制御・比較・独立品質評価仕様を維持し、2026年10月6日のPhase 4の検索実装と
-実行条件を反映した版である。Phase 4の両IndexをノートPCで全件生成・検証し、Gate 4を通過した。
+本書はVersion 7.12の制御・比較・独立品質評価仕様を維持し、2026年10月6日のPhase 5の開発用Baselineと
+ノートPC用Generator条件を反映した版である。固定検索と実LLMを接続し、Gate 5を通過した。
 Decision Rule、
 Always Rewrite、独立品質評価等のModule・Config・Test・比較実験はまだ実装・実施していない。
 CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
@@ -219,7 +219,11 @@ elif failure_type == "low_confidence":
 
 # 4. Config仕様
 
-config.yaml:
+以下は後続Phaseを含む構成例で、全項目の実装済みを意味しない。例示の14B/7Bは最終Modelの決定ではない。
+現行Phase 5は`configs/phase5.yaml`、`configs/prompts.yaml`、
+`data/manifests/phase5_generation_manifest.json`の条件を使う。
+
+config.yaml（将来構成の例）:
 
 ``` yaml
 model:
@@ -847,7 +851,24 @@ Index File Hash、Model File Hash、Library Version、Corpus/ID順HashをManifes
 
 2026-10-06にノートPCで両Indexを全件生成し、Gold欠損0、同じDevelopment 50問での検索と
 共通Manifest固定を検証した。BM25は別Directoryで全FileのByte再現を確認し、Embeddingは
-60,349件から実Corpusで再開して完了した。Gate 4通過。LLMを含む後続Phaseは未実施である。
+60,349件から実Corpusで再開して完了した。Gate 4通過。回答生成の条件は次節を参照する。
+
+## Phase 5の開発用Baseline条件
+
+元質問→固定Embedding Top-5→ローカルLLM生成1回をLangGraphの2ノードで実装した。
+Stateは元質問、取得文書、時間、生成記録だけを持ち、正解情報は外のOffline確認へ分離する。
+GeneratorはQwen2.5-3B-Instruct-GGUF Q4_K_M、固定Revision、llama.cpp b11433 Windows CPU。
+合計4,096/出力512/本文各512 Token、6 Threads、Temperature 0/Seed 42、Batch 128、重み再配置なし。
+実GGUF TokenizerとChat Templateで入力予算を確認し、数えたToken IDsで生成を要求する。
+
+CLIは`scripts/prepare_generation.py`と`scripts/run_baseline.py`。Model/Runtimeは公式Hashで検証し、
+既存Runを上書きしない。取得全文/使用Context、Prompt/Hash、回答、Token、生成要求数、Latency、
+100ms間隔のPython/Server RSSを保存する。Timeout、空回答、予期しない切詰め、出力上限到達はErrorにし、
+暗黙に再試行しない。`status=ok`は実行成功であり、回答の正しさを意味しない。
+
+固定Development Answerable 3問/Unanswerable 2問のEnd-to-Endが完了し、Gate 5を通過した。
+Gold/Reference確認は生成後に別保存する。Calibration/Evaluation、独立品質Y/Failureの正解付け、
+ECE/Hallucination集計、自己評価/Recoveryは未実施。詳細は[`phase5_baseline.md`](phase5_baseline.md)による。
 
 ## Unit Test
 

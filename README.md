@@ -130,7 +130,7 @@ ManifestのLF改行は`.gitattributes`で固定しています。分割Algorithm
 BM25とEmbeddingの両方で、固定Corpusの全178,890件を検索します。検索APIへの入力は質問文字列のみです。
 ノートPCで両Indexの構築・検索・Gold ID対応を検証し、Gate 4を通過しました。
 設定・中断再開・検証結果は[`docs/phase4_retrieval.md`](docs/phase4_retrieval.md)を参照してください。
-LLM生成・RRF・自己評価・Recoveryは後続Phaseで実装します。
+LLM生成はPhase 5で接続済みです。RRF・自己評価・Recoveryは後続Phaseで実装します。
 
 ```powershell
 uv run python scripts/download_embedding_model.py
@@ -150,6 +150,25 @@ Developmentの固定50問を動作確認に使用し、Calibration/Evaluationで
 uv run python scripts/search_corpus.py "who does the voice of plankton from spongebob" --kind bm25
 uv run python scripts/search_corpus.py "who does the voice of plankton from spongebob" --kind embedding
 ```
+
+## 開発用Baseline RAG（Phase 5）
+
+固定Embedding検索の上位5件を、ノートPC上のQwen2.5-3B-Instruct Q4_K_Mへ渡して回答を生成します。
+llama.cppの公式Windows x64 CPU版をプロジェクト内へ置き、外部LLM APIを使わず実行します。
+固定Development 5問で検索→生成→記録を確認し、Gate 5を通過しました。
+
+```powershell
+uv run --locked python scripts/prepare_generation.py
+uv run --locked python scripts/run_baseline.py "who does the voice of plankton from spongebob"
+uv run --locked python scripts/run_baseline.py --smoke --limit 5
+```
+
+モデルは約2.1GBです。準備済みなら最初のコマンドは検証・再利用します。
+回答・実Prompt・取得全文と使用Context・設定・時間・Memoryは`data/runs/phase5/`へ保存します。
+実測では1問約19〜29秒、検索とLLMの合計Peak RSS約2.45GiBでした（固定5問、読込を除く）。
+動作成功は回答の正しさを意味しません。独立品質評価や最終比較は未実施です。
+条件と実行結果は[`docs/phase5_baseline.md`](docs/phase5_baseline.md)を参照してください。
+Ubuntu/GPU向けRuntimeの導入・実行は未確認です。
 
 ## 開発環境の基本方針
 

@@ -1,0 +1,16 @@
+schema_version: 1
+purpose: phase5-development-only
+retrieval:
+  kind: embedding
+  top_k: 5
+generation:
+  context_tokens: 4096
+  max_output_tokens: 512
+  passage_tokens: 512
+  temperature: 0.0
+  seed: 42
+  threads: 6
+  batch_tokens: 128
+  repack: false
+  timeout_seconds: 300
+  startup_timeout_seconds: 120
