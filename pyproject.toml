@@ -4,7 +4,14 @@ version = "0.1.0"
 description = "Evaluation-driven self-controlled RAG research project"
 readme = "README.md"
 requires-python = "==3.12.*"
-dependencies = []
+dependencies = [
+    "bm25s>=0.3.12",
+    "huggingface-hub>=1.33.0",
+    "numpy>=2.5.3",
+    "onnxruntime>=1.30.0",
+    "psutil>=7.2.2",
+    "tokenizers>=0.23.2",
+]
 
 [dependency-groups]
 dev = [

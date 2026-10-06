@@ -1,10 +1,10 @@
 # 自己制御型RAG研究計画書
 
-## Version 6.7
+## Version 6.8
 
 ## 外部実装依頼用 最終研究仕様書
 
-本書はVersion 6.6を基礎とし、Phase 3のTitle単位Splitの実装・固定結果を反映した版である。
+本書はVersion 6.6を基礎とし、Phase 3の固定SplitとPhase 4の検索実装条件を反映した版である。
 公開Train/Devだけで研究を継続する方針を維持し、2026年10月6日にユーザーが
 承認したConfidenceとFailure判定の接続、Always Rewrite、独立品質評価およびRecovery成功の定義を
 維持する。制御・評価Module、Calibration、比較実験は未実施である。
@@ -665,6 +665,19 @@ Recovery機構を持たない通常RAG。
 変更である。研究目的、公開Source、Split比率、初期Confidence重みは変更しない。
 
 ------------------------------------------------------------------------
+
+# Phase 4の検索条件と研究上の扱い
+
+2026-10-06にノートPCで両検索Indexを全件生成・検証し、Gate 4を通過した。
+BM25とEmbeddingは固定Corpusの全178,890件を対象に、QAのGold・Reference・Labelを入力せず
+質問文字列だけから検索する。初期EmbeddingはCPU用の公式量子化`all-MiniLM-L6-v2`を固定Revisionで
+使用する。Modelの量子化、最大256 Tokenへの切詰め、Pooling/Normalization、BM25 Parameterと
+Library Versionを記録する。詳細と実測結果は[`phase4_retrieval.md`](phase4_retrieval.md)による。
+
+この選択はノートPCで検索基盤を構築するための具体化であり、研究目的・仮説・Split・3方式比較・
+独立品質評価の定義は変更しない。Model変更は検索性能へ影響するため、変更時は新Index条件を記録し、
+3方式に共通適用する。Developmentの50問によるSmoke結果から最終性能や提案手法の効果は主張しない。
+RRFと最終RetrieverのCalibration固定はPhase 6、回答生成と制御・品質比較は後続Phaseで実施する。
 
 # 12. 研究範囲
 

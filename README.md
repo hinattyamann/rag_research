@@ -125,6 +125,32 @@ Seed等を変更する追加分割は新しいDataset Version、出力Directory�
 ManifestのLF改行は`.gitattributes`で固定しています。分割AlgorithmとValidationの詳細は
 `docs/clapnq_dataset_guide.md`第6.2節・第7.7節を参照してください。
 
+## 検索Indexの構築（Phase 4）
+
+BM25とEmbeddingの両方で、固定Corpusの全178,890件を検索します。検索APIへの入力は質問文字列のみです。
+ノートPCで両Indexの構築・検索・Gold ID対応を検証し、Gate 4を通過しました。
+設定・中断再開・検証結果は[`docs/phase4_retrieval.md`](docs/phase4_retrieval.md)を参照してください。
+LLM生成・RRF・自己評価・Recoveryは後続Phaseで実装します。
+
+```powershell
+uv run python scripts/download_embedding_model.py
+uv run python scripts/build_retrieval_index.py --kind bm25
+uv run python scripts/build_retrieval_index.py --kind embedding
+uv run python scripts/validate_retrieval.py --kind bm25
+uv run python scripts/validate_retrieval.py --kind embedding
+uv run python scripts/build_retrieval_manifest.py
+```
+
+CPU用の公式量子化ONNXモデルを固定Revisionで取得し、Batch 1・6 Threadsで生成します。
+Embeddingは同じ条件のコマンドで中断後に再開できます。完成済みIndexは検証して再利用し、上書きしません。
+モデル・Index本体はGit管理せず、`data/manifests/clapnq_retrieval_manifest.json`で条件とHashを管理します。
+Developmentの固定50問を動作確認に使用し、Calibration/Evaluationでの調整・最終評価は実施しません。
+
+```powershell
+uv run python scripts/search_corpus.py "who does the voice of plankton from spongebob" --kind bm25
+uv run python scripts/search_corpus.py "who does the voice of plankton from spongebob" --kind embedding
+```
+
 ## 開発環境の基本方針
 
 このプロジェクトでは、Python本体、仮想環境、依存ライブラリをuvで管理します。

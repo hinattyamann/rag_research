@@ -1,11 +1,12 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.11
+## Version 7.12
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion 7.10の制御・比較・独立品質評価仕様を維持し、2026年10月6日のPhase 3の実装と
-研究用Splitの固定結果を反映した版である。Phase 3は実装・検証済みであるが、Decision Rule、
+本書はVersion 7.10の制御・比較・独立品質評価仕様を維持し、2026年10月6日のPhase 4の検索実装と
+実行条件を反映した版である。Phase 4の両IndexをノートPCで全件生成・検証し、Gate 4を通過した。
+Decision Rule、
 Always Rewrite、独立品質評価等のModule・Config・Test・比較実験はまだ実装・実施していない。
 CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
 `docs/clapnq_dataset_guide.md`を正本とする。
@@ -823,7 +824,30 @@ Seed 42以外を`c508d78-split-v1`として生成することは拒否する。C
 実測はDevelopment 2,824件、Calibration 434件、Evaluation 1,087件で、正規化Group重複0である。
 別出力先での再生成もByte単位で一致した。`tests/data/test_clapnq_split.py`に、混在・不均等Group、
 表記差、入力順非依存、回答内容非依存、異常入力、欠損・重複・漏洩・Metadata改変、出力保護、
-再生成・実データを確認する18 Testsを追加した。全体61 Tests成功・Skipなし、ruff問題なし。
+再生成・実データを確認する18 Testsを追加した。Phase 3完了時点で全体61 Tests成功・Skipなし、ruff問題なし。
+
+## Phase 4の実装と固定条件
+
+実装・CLI・再開条件・実測結果は[`phase4_retrieval.md`](phase4_retrieval.md)に記録する。
+Index Versionは`c508d78-retrieval-v1`、共通Corpusは全178,890件である。本文のみを検索対象とし、
+QAのGold・Reference・Answerability等は検索入力へ渡さない。Return値はPassage ID・Title・本文・
+Source Revision・Score・Rankで、ScoreはConfidenceや正解確率ではない。
+
+BM25はbm25sのLucene方式、k1=1.2、b=0.75、lower、Unicode単語Token、Stopword/Stemmerなし。
+Embeddingは`sentence-transformers/all-MiniLM-L6-v2`の固定Revision
+`1110a243fdf4706b3f48f1d95db1a4f5529b4d41`、公式quint8 AVX2 ONNX、CPU 6 Threads・Batch 1、
+最大256 Token、Attention Mask Mean Pooling、L2正規化、384次元float32である。
+NumPyのmmapとBlock内積で全件Cosine検索し、同ScoreはCanonical Corpus順に返す。
+Token切詰め・量子化の影響を実験条件として扱い、3方式で同じ確定Retrieverを共有する。
+
+Index File Hash、Model File Hash、Library Version、Corpus/ID順HashをManifestへ保存し、
+完成済みIndexは上書きしない。Embeddingは条件・完了Vector領域Hashが一致するcheckpointだけから
+再開する。Developmentの固定Answerable 50問をSmoke検証に使い、Calibration/Evaluationの性能は
+ここで測定しない。最終Parameterの調整・固定とRRFはPhase 6で行う。
+
+2026-10-06にノートPCで両Indexを全件生成し、Gold欠損0、同じDevelopment 50問での検索と
+共通Manifest固定を検証した。BM25は別Directoryで全FileのByte再現を確認し、Embeddingは
+60,349件から実Corpusで再開して完了した。Gate 4通過。LLMを含む後続Phaseは未実施である。
 
 ## Unit Test
 

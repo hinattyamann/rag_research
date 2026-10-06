@@ -1,11 +1,11 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 1.8
+## Version 1.9
 
-最終確認日: 2026-10-06（Phase 3の実装・固定結果を更新。公式Source条件は変更しない）
+最終確認日: 2026-10-06（Phase 4の検索条件を更新。公式Source条件は変更しない）
 
-Version 1.8では、Version 1.7の制御・独立評価仕様を維持し、Phase 3のGroup正規化、分割Algorithm、
-Manifestおよび固定実数を記録した。Splitは実装・検証済みで、独立評価実装・人手判定・Calibration・
+Version 1.9では、Version 1.7の制御・独立評価仕様とPhase 3の固定結果を維持し、Phase 4の検索条件と
+Index Manifestを記録した。Split・両検索Indexは実装・検証済みで、独立評価実装・人手判定・Calibration・
 比較実験は未実施である。公式Source、研究用Split比率、Base Dataset Versionは変更しない。
 
 本書は、CLAPNQそのものの仕様と、本研究「評価駆動型自己制御RAGによる回答信頼性向上手法」
@@ -660,7 +660,8 @@ JSON/JSONLはUTF-8・Key辞書順・LF終端であり、Git Checkout後のManife
 uv run python scripts/split_clapnq.py --output-dir data/processed/clapnq/c508d78-split-v1-verification --manifest data/processed/clapnq/clapnq_split_manifest_verification.json
 ```
 
-2026-10-06に別出力先で全5 FileとManifestのByte一致を確認した。現在61 Tests成功・Skipなし、ruff問題なし。
+2026-10-06に別出力先で全5 FileとManifestのByte一致を確認した。Phase 3完了時点では
+61 Tests成功・Skipなし、ruff問題なしだった。Phase 4完了後の全Testは86件成功・Skipなしである。
 
 # 8. 検索CorpusとRetriever
 
@@ -699,6 +700,26 @@ UnanswerableではGold Passage IDを作らない。Random Provided PassageをGol
 - Corpus Revisionと全Passage IDのHash。
 
 ---
+
+## 8.4 Phase 4の具体的な検索条件
+
+固定条件・実行手順・実測値は[`phase4_retrieval.md`](phase4_retrieval.md)による。
+BM25はbm25s 0.3.12のLucene方式、k1=1.2/b=0.75、本文のみ、lower/Unicode単語Token、
+Stopword/Stemmerなし。Embeddingは`sentence-transformers/all-MiniLM-L6-v2`、Revision
+`1110a243fdf4706b3f48f1d95db1a4f5529b4d41`の公式quint8 AVX2 ONNX、CPU 6 Threads・Batch 1、
+特殊Token込み256 Tokenで切詰め、Attention Mask Mean Pooling/L2正規化、384次元float32である。
+検索はNumPyで全件Cosine内積、同点は原文Corpus順とする。初期Top-kは5で、Phase 6で最終条件を
+Calibration固定する。RRFはまだ実装しない。切詰め数とModel File Hashを記録する。
+
+両Indexは同じ全Passage集合・順序・Gold対応を使う。検索APIは質問文字列だけを受け取り、
+Reference/Gold/Selected Sentences/Answerability/Provided Passageを受け取らない。
+Development AnswerableのSeed付きHash順先頭50問で開発用Recall/MRR/nDCG・速度を確認する。
+Calibration/Evaluationは検索性能調整に使わない。全QAのGold ID存在確認はIndexの整合性確認だけに使う。
+
+2026-10-06にノートPCで両Indexを全178,890件生成し、2,074 Unique Gold IDsの欠損0を確認した。
+同じDevelopment Answerable 50問のRecall@5はBM25 0.40、Embedding 0.62である。最終性能ではない。
+共通Manifestの固定、BM25の別Directory再生成一致、Embeddingの実Corpusでの中断再開を確認し、
+Gate 4を通過した。詳細・Hash・時間・MemoryはPhase 4文書による。
 
 # 9. Failure評価用Dataset
 
@@ -973,6 +994,7 @@ data/
 └─ manifests/
    ├─ clapnq_source_manifest.json
    ├─ clapnq_split_manifest.json
+   ├─ clapnq_retrieval_manifest.json
    ├─ clapnq_unanswerable_audit.jsonl
    ├─ clapnq_eval_normal.jsonl
    ├─ clapnq_eval_unanswerable.jsonl
@@ -982,6 +1004,9 @@ data/
 
 Source ManifestにはRevision、取得日、License、File Hash、Byte数、Row数、Schemaを保存する。
 Split ManifestにはGrouping Key、比率、Seed、Algorithm Version、各Split件数、Title重複検査結果を保存する。
+Retrieval Manifestには共通Corpus/全ID順Hash、Model名・Revision・量子化・重みHash、Tokenizer、
+Pooling/Normalization、Library/Parameter/CPU条件、両Index File HashとGold対応検証を保存する。
+`data/indexes/`のIndex本体と`data/models/`の取得済みModelはGit管理せず、条件から再生成する。
 派生ManifestにはBase ID、生成条件、Retriever Config Hash、Prompt/Model Revision、Seed、Gold/Distractor
 Passage ID、監査結果を保存する。
 

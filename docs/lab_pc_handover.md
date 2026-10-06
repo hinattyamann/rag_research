@@ -3,9 +3,9 @@
 確認日: 2026年10月5日。対象はこの日の作業開始時点のCommit `9bfe8ac` と、研究計画Version 6.5、
 実装計画Version 7.9である。以後の実装に応じて到達点と手順を更新する。
 
-2026年10月6日追記: 現行の研究計画はVersion 6.7、実装計画はVersion 7.11、Dataset GuideはVersion 1.8。
-制御・比較・独立評価の仕様承認後、ノートPCでPhase 3を実装し、Gate 3を通過した。
-10月5日の実測値・Hash・Test結果はその日時の記録として保持し、Phase 3の最新結果を以下へ追記する。
+2026年10月6日追記: 現行の研究計画はVersion 6.8、実装計画はVersion 7.12、Dataset GuideはVersion 1.9。
+制御・比較・独立評価の仕様承認後、ノートPCでPhase 3・4を実装し、Gate 4まで通過した。
+10月5日の実測値・Hash・Test結果はその日時の記録として保持し、Phase 3・4の結果を以下へ追記する。
 
 購入PCはUbuntu 24.04 LTSと判明したため、そのPCでは[第6節のUbuntu手順](#6-購入pcの仕様とubuntu向け手順)を
 使用する。Windows手順は現在のPCでの参照用として残す。
@@ -18,7 +18,8 @@
 | Phase 1: CLAPNQ取得・Source検証 | 完了、Gate 1通過 | 取得Script、固定Revision、Source Manifest |
 | Phase 2: Loader・内部Schema変換 | 完了、Gate 2通過 | QA 4,345件、Corpus 178,890件のJSONL生成 |
 | Phase 3: Title単位の研究用Split | 完了、Gate 3通過 | Split Script、割当済みQA、Split Manifest、再現検証 |
-| Phase 4以降: Index・RAG・自己評価・Recovery | 未実装 | 検索・回答生成の実行コマンドはまだない |
+| Phase 4: 共通Corpusの検索Index | 完了、Gate 4通過 | 全178,890件のBM25/Embedding、質問検索CLI、固定Manifest |
+| Phase 5以降: RAG・自己評価・Recovery | 未実装 | LLM回答生成・制御・独立品質評価の実行コマンドはまだない |
 | 比較実験・結果分析・卒業論文の完成 | 未実施 | 提案手法の性能向上を示す実験結果はまだない |
 
 現在のPCには次の生成物が存在し、2026年10月5日に研究日誌のHashと一致することを再確認した。
@@ -40,7 +41,13 @@ Manifest生成とAnnotation確認CLIも実データで再実行し、既存Manif
 （225/209）、Evaluation 1,087件（564/523）へ割り当てた。括弧内はAnswerable/Unanswerable。
 原文Titleは3,799種類、casefold・NFC正規化Groupは3,798件で、Split間重複・欠損・重複QAは0である。
 別出力先で全5成果物とManifestがByte単位で一致し、Base QA・Corpusの上記Hashも維持した。
-最新の全Test結果は61件成功・Skipなし、ruff問題なしである。
+Phase 3時点の全Test結果は61件成功・Skipなし、ruff問題なしだった。
+
+Phase 4ではBM25とCPU用の固定MiniLM ONNX ModelでEmbedding Indexを全178,890件生成した。
+両IndexのCorpus/ID順一致、全2,074 Unique Gold IDsの欠損0、同じDevelopment 50問の検索を確認した。
+BM25は別DirectoryでByte再生成一致、Embeddingは60,349件のcheckpointから再開して完了した。
+固定Manifestは`data/manifests/clapnq_retrieval_manifest.json`。条件と実測値は
+[`phase4_retrieval.md`](phase4_retrieval.md)による。最新の全Testは86件成功・Skipなし、ruff問題なし。
 
 公開Train/Devのみを使用し、非公開Test 601件は主実験に使用しない。Test Accessの返信は研究再開の条件に
 しない。最後のAccess状況の記録日は2026年9月10日であり、その後のメール状況はこの確認の対象外である。
@@ -272,7 +279,7 @@ uv run --locked ruff check .
 git status --short
 ```
 
-Hashが本書の表と一致し、61 Testsが成功、Skipなし、ruffが問題なしなら、Phase 1・2のDataと
+Hashが本書の表と一致し、86 Testsが成功、Skipなし、ruffが問題なしなら、Phase 1・2のDataと
 現行Testの再現確認が完了する。続いて第5節でPhase 3の成果物と固定Manifestの一致を確認する。
 Raw Data未取得では実データを使う4 Tests、Base QA未生成ではPhase 3の実データTestがSkipされ得るため、
 単に失敗がないだけで完了としない。
@@ -291,9 +298,20 @@ uv run python scripts/split_clapnq.py
 `6913d7a37b1938e6649c3609aa0b71e63dd2c62e8a717a470b41aaf2e912601d`。
 既存Fileが同じByte列なら再利用し、異なれば上書きせず停止する。詳細はDataset Guide第7.7節による。
 
-次はPhase 4のBM25・Embedding Index構築である。ノートPCではBM25等のCPU処理を進められるが、
-Embedding Modelと実行条件は実機のMemory条件も確認して具体化する。その後に開発用Baseline、
-Hybrid Retrieval、R/F/A評価、Failure Diagnosis、Recoveryを順に実装する。
+Phase 4はノートPCで完了し、Gate 4を通過した。CPU条件・全件結果・再生成手順は
+[`phase4_retrieval.md`](phase4_retrieval.md)を参照する。次はPhase 5の開発用Baseline
+（Embedding検索→Top-k Context→LLM回答生成）である。研究室PCでは同じ固定CorpusとModel Revision・
+量子化条件でIndexを再現する。続いてHybrid Retrieval、R/F/A評価、Failure Diagnosis、Recoveryを実装する。
+
+```powershell
+uv run python scripts/download_embedding_model.py
+uv run python scripts/build_retrieval_index.py --kind bm25
+uv run python scripts/build_retrieval_index.py --kind embedding
+uv run python scripts/build_retrieval_manifest.py
+```
+
+ノートPCの固定Indexを転送して共有してもよい。他PCでのEmbedding再生成はFloat計算の差でHashが
+変わり得るため、固定Manifestを上書きせず、別VersionでHash/数値/順位差を記録する。
 実装計画の生成用`qwen2.5-14b`、評価用`qwen2.5-7b`、`top_k=5`はConfig例であり、実際の
 `configs/config.yaml`やModel実行基盤はまだ存在しない。Confidence重み`0.25/0.50/0.25`、採用閾値`0.7`、
 個別Failure閾値`0.5`、Recovery最大1回は承認済みの初期研究条件である。
@@ -302,22 +320,24 @@ Hybrid Retrieval、R/F/A評価、Failure Diagnosis、Recoveryを順に実装す�
 `low_confidence`として重み付き不足分が最大のRecoveryを選ぶ。Always Rewriteは共通初回回答の後に
 全質問でQuery Rewrite・再検索・再生成を1回実行する。独立品質Label Yによる主RSR・ECEと回答単位の
 Hallucinationを採用し、制御用自己評価と実験後の人手確認を分離する。詳細は現行仕様書を参照する。
-これらの制御・評価Moduleは未実装であり、今回完了したPhase 3の成果物とは区別する。
+これらの制御・評価Moduleは未実装であり、今回完了したPhase 3・4の成果物とは区別する。
 
-PC確認後にModel Revision、Embedding Model、量子化、Context Length、Batch Size、推論基盤を具体化する。
+EmbeddingはCPU用の固定Revision・公式quint8 AVX2 ONNXを選定済みである。
+PC確認後にGenerator/EvaluatorのRevision、量子化、Context Length、Batch Size、推論基盤を具体化する。
 変更が必要なら仕様書と実装・設定を同時に更新し、比較3方式ではRetriever・Generator・Datasetを共通にする。
 調整はDevelopment/Calibrationで行い、最終Evaluationを見て同じ評価の設定を調整しない。
 
 研究室PCでCodexへ引き継ぐ際は、次の依頼文を利用できる。
 
 > AGENTS.md、研究計画、実装計画、研究日誌、docs/lab_pc_handover.mdを読み、現在の実装を確認してください。
-> Phase 1〜3のData再現を確認し、Split成果物と固定ManifestのHashを照合してください。
-> Phase 3はノートPCで完了済みです。次のPhase 4を小工程に分けて進め、BM25から検証してください。
-> 実機情報を確認してEmbedding Model・Index設定を具体化し、仕様書と研究日誌を更新してください。
+> Phase 1〜4のData/Index再現を確認し、固定ManifestのHashと条件を照合してください。
+> Phase 4までノートPCで完了済みです。次のPhase 5を小工程に分けて進めてください。
+> Generatorの実行条件を実機Memoryに合わせて具体化し、開発用Embedding RAGを実装してください。
+> Embedding再生成のHash差は既存Manifestへ上書きせず、別Versionで記録してください。
 > 各工程の成果を説明し、git add・commit・pushは実行しないでください。
 
 持ち帰る情報は、OS、CPU、RAM、GPU型番・枚数・VRAM総量/空き容量、Driver、Disk空き容量、Network条件、
-連続利用可能時間である。ModelやIndexの具体的な設定は、その結果を踏まえて決める。
+連続利用可能時間である。LLM条件の選定とIndexの再現確認は、その結果を踏まえて進める。
 
 ## 6. 購入PCの仕様とUbuntu向け手順
 
@@ -446,8 +466,9 @@ git status --short
 ```
 
 完了条件は第4.5節と同じ。これらのUbuntuコマンドは手順として作成したもので、購入PC上では未実行である。
-DataとSplit再現後にPhase 4へ進む。最新完了条件は61 Tests成功・Skipなし、ruff問題なし、Splitの
-全出力Hash一致である。推論基盤とModelの具体化は、実機のVRAMとMemory使用量を確認してから行う。
+DataとSplit再現後にPhase 4のCPU Index手順を再現する。最新の全Testは86件成功・Skipなし、ruff問題なし。
+Source/SplitのHash一致、両Indexの共通Corpus/Gold対応とEmbeddingの数値/Hash差を確認する。
+LLM推論基盤とGenerator/Evaluatorの具体化は、実機のVRAMとMemory使用量を確認してから行う。
 
 ## 7. 開発用ノートPCの実測仕様
 
@@ -504,5 +525,6 @@ Core数や「i5」「Ryzen 7」という名称だけで速度を断定せず、�
 
 研究室PCはGPUでのModel推論に適した構成と考えられるが、全項目でノートPCより上とは表現しない。
 購入仕様のRAM 8GBはノートPCより小さいため、VRAMの実容量とRAM使用量を確認してからModel条件を決める。
-現行前処理とPhase 3はノートPCでも進められる。CPU/GPUの速度差、Model動作、Index構築時のMemory上限は
-未測定であり、Modelや閾値の変更・固定を本比較だけで行わない。
+現行前処理・Phase 3に加え、Phase 4のCPU検索はノートPCでも進められる。BM25/Embeddingの実測は
+[`phase4_retrieval.md`](phase4_retrieval.md)へ記録する。両PCの速度差・GPU/LLM動作は未測定であり、
+Modelや閾値の変更・固定を本比較だけで行わない。
