@@ -222,6 +222,17 @@ def test_approved_config_loads():
     assert config.context_tokens == 4096
 
 
+def test_hybrid_signals_are_recorded_but_not_in_generator_prompt():
+    from rag_research.retrieval.hybrid import fuse_rankings
+
+    documents = fuse_rankings([hit()], [hit()], {"p0": 0}, rrf_constant=60, top_k=5)
+    result = build_context("Q", documents, FakeClient(), GenerationConfig(), PROMPT)
+    assert result["used_context"][0]["passage_id"] == "p0"
+    assert "bm25_rank" not in result["rendered_prompt"]
+    assert "embedding_score" not in result["rendered_prompt"]
+    assert "score" not in result["used_context"][0]
+
+
 def test_runtime_transport_error_preserves_failure(monkeypatch):
     client = LlamaClient(12345)
 

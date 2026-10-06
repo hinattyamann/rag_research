@@ -12,6 +12,7 @@ class BaselineState(TypedDict, total=False):
     question: str
     documents: list[RetrievalHit]
     retrieval_seconds: float
+    retrieval_details: dict
     generation: dict
 
 
@@ -32,7 +33,11 @@ class BaselinePipeline:
     def _retrieve(self, state):
         started = time.perf_counter()
         documents = self.retriever.search(state["question"], top_k=self.top_k)
-        return {"documents": documents, "retrieval_seconds": time.perf_counter() - started}
+        return {
+            "documents": documents,
+            "retrieval_seconds": time.perf_counter() - started,
+            "retrieval_details": dict(getattr(self.retriever, "last_search_details", {})),
+        }
 
     def _generate(self, state):
         return {"generation": self.generator.generate_record(state["question"], state["documents"])}
@@ -45,6 +50,7 @@ class BaselinePipeline:
             "question": question,
             "retrieved_context": [hit.to_dict() for hit in state["documents"]],
             "retrieval_seconds": state["retrieval_seconds"],
+            "retrieval_details": state["retrieval_details"],
             **state["generation"],
             "pipeline_seconds": time.perf_counter() - started,
         }

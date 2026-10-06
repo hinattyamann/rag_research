@@ -1,0 +1,10 @@
+schema_version: 1
+purpose: phase6-retrieval-calibration
+candidate_counts: [20, 50, 100]
+rrf_constants: [20, 60, 100]
+top_k_candidates: [3, 5, 10]
+selection_metric: ndcg_at_10
+tie_break: [success_at_10, smaller_candidate_count, rrf_closest_to_60, smaller_rrf_constant]
+top_k_max_success_drop: 0.05
+seed: 42
+reranker: null

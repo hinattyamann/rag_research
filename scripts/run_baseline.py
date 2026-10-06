@@ -1,4 +1,4 @@
-"""Run local Embedding -> LLM baseline, saving exact inputs and execution conditions."""
+"""Run a fixed Embedding or Hybrid baseline with exact execution records."""
 
 import argparse
 import json
@@ -30,15 +30,12 @@ from rag_research.generation.smoke import (  # noqa: E402
 from rag_research.retrieval.common import (  # noqa: E402
     CORPUS_PATH,
     DEVELOPMENT_PATH,
-    INDEX_ROOT,
-    MODEL_ROOT,
     file_hash,
     json_bytes,
     package_versions,
-    read_json,
     write_json,
 )
-from rag_research.retrieval.dense import DenseRetriever, OnnxEncoder  # noqa: E402
+from rag_research.retrieval.factory import HYBRID_MANIFEST, load_retriever  # noqa: E402
 
 
 def main():
@@ -46,11 +43,11 @@ def main():
     # The baseline is local even if tracing was enabled in the caller's shell.
     os.environ["LANGSMITH_TRACING"] = "false"
     os.environ["LANGCHAIN_TRACING_V2"] = "false"
-    parser = argparse.ArgumentParser(description="Phase 5: ノートPC上の開発用Baseline RAG")
+    parser = argparse.ArgumentParser(description="ノートPC上の固定検索Baseline RAG")
     parser.add_argument("question", nargs="?")
     parser.add_argument("--smoke", action="store_true", help="固定Development少数問を実行")
     parser.add_argument("--limit", type=int, default=5, help="Smoke件数（1〜10、既定5）")
-    parser.add_argument("--config", type=Path, default=Path("configs/phase5.yaml"))
+    parser.add_argument("--config", type=Path, default=Path("configs/phase6.yaml"))
     parser.add_argument("--prompts", type=Path, default=Path("configs/prompts.yaml"))
     parser.add_argument("--output-dir", type=Path)
     args = parser.parse_args()
@@ -60,7 +57,8 @@ def main():
     prompt = PromptSpec(**yaml.safe_load(args.prompts.read_text(encoding="utf-8")))
     rows = select_development(DEVELOPMENT_PATH, limit=args.limit) if args.smoke else []
     questions = [inference_input(row) for row in rows] if args.smoke else [args.question]
-    output = args.output_dir or Path("data/runs/phase5") / (
+    phase = "phase6" if config["retrieval"]["kind"] == "hybrid" else "phase5"
+    output = args.output_dir or Path("data/runs") / phase / (
         datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:8]
     )
     output.mkdir(parents=True, exist_ok=False)
@@ -68,7 +66,7 @@ def main():
     started = time.perf_counter()
     report = {
         "schema_version": 1,
-        "purpose": "phase5-development-only",
+        "purpose": config["purpose"],
         "status": "running",
         "created_at_utc": datetime.now(UTC).isoformat(),
         "config": config,
@@ -93,20 +91,16 @@ def main():
                 Path(__file__),
                 Path("src/rag_research/baseline.py"),
                 *sorted(Path("src/rag_research/generation").glob("*.py")),
+                *sorted(Path("src/rag_research/retrieval").glob("*.py")),
             ]
         },
     }
     write_json(output / "run_manifest.json", report)
     results = []
     try:
-        # DenseRetriever verifies the frozen Corpus, vectors and encoder conditions.
-        retriever = DenseRetriever(CORPUS_PATH, INDEX_ROOT / "embedding", OnnxEncoder(MODEL_ROOT))
-        common = read_json(Path("data/manifests/clapnq_retrieval_manifest.json"))
-        if (
-            file_hash(INDEX_ROOT / "embedding" / "manifest.json")
-            != (common["indexes"]["embedding"]["manifest_sha256"])
-        ):
-            raise ValueError("Retriever differs from the frozen common manifest")
+        retriever = load_retriever(config["retrieval"], corpus=CORPUS_PATH)
+        if phase == "phase6":
+            report["hybrid_manifest_sha256"] = file_hash(HYBRID_MANIFEST)
         report["retriever_config"] = retriever.manifest["config"]
         report["corpus"] = retriever.manifest["corpus"]
         with LocalServer(generation_config, output / "server.log") as server:

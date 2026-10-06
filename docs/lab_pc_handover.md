@@ -3,8 +3,8 @@
 確認日: 2026年10月5日。対象はこの日の作業開始時点のCommit `9bfe8ac` と、研究計画Version 6.5、
 実装計画Version 7.9である。以後の実装に応じて到達点と手順を更新する。
 
-2026年10月6日追記: 現行の研究計画はVersion 6.10、実装計画はVersion 7.14、Dataset GuideはVersion 1.9。
-制御・比較・独立評価の仕様承認後、ノートPCでPhase 3〜5を実装し、Gate 5まで通過した。
+2026年10月6日追記: 現行の研究計画はVersion 6.11、実装計画はVersion 7.15、Dataset GuideはVersion 1.10。
+制御・比較・独立評価の仕様承認後、ノートPCでPhase 3〜6を実装し、Gate 6まで通過した。
 先行研究との関係・貢献候補・有用性は[研究の立ち位置](related_research_positioning.md)へ記録した。
 10月5日の実測値・Hash・Test結果はその日時の記録として保持し、Phase 3・4の結果を以下へ追記する。
 
@@ -21,7 +21,8 @@
 | Phase 3: Title単位の研究用Split | 完了、Gate 3通過 | Split Script、割当済みQA、Split Manifest、再現検証 |
 | Phase 4: 共通Corpusの検索Index | 完了、Gate 4通過 | 全178,890件のBM25/Embedding、質問検索CLI、固定Manifest |
 | Phase 5: 開発用Baseline RAG | 完了、Gate 5通過 | Embedding→Qwen CPU生成、質問/Development CLI、Prompt/実測ログ |
-| Phase 6以降: RRF・自己評価・Recovery | 未実装 | 最終Retriever・制御・独立品質評価は未完成 |
+| Phase 6: Hybrid Retrieval | 完了、Gate 6通過 | 候補50件/方式、RRF定数20、Top-10、Calibration/固定Manifest、Development生成 |
+| Phase 7以降: Failure Dataset・自己評価・Recovery | 未完了/未実装 | Corpus-level監査・制御・独立品質評価は未完成 |
 | 比較実験・結果分析・卒業論文の完成 | 未実施 | 提案手法の性能向上を示す実験結果はまだない |
 
 現在のPCには次の生成物が存在し、2026年10月5日に研究日誌のHashと一致することを再確認した。
@@ -311,7 +312,11 @@ uv run python scripts/split_clapnq.py
 Phase 4はノートPCで完了し、Gate 4を通過した。CPU条件・全件結果・再生成手順は
 [`phase4_retrieval.md`](phase4_retrieval.md)を参照する。Phase 5の開発用BaselineもノートPCで完了した。
 生成条件は[`phase5_baseline.md`](phase5_baseline.md)を参照する。研究室PCでは同じ固定CorpusとModel Revision・
-量子化条件でIndexを再現する。次はPhase 6のHybrid RetrievalとCalibration固定である。
+量子化条件でIndexを再現する。Phase 6の検索Calibrationと固定HybridはノートPCで完了した。
+次はPhase 7のFailure Dataset固定と人手監査である。
+HybridのSuccess@10はEmbeddingと同じで、nDCG@10は下回った。精度改善と解釈しない。
+条件と結果・手順は[`phase6_hybrid.md`](phase6_hybrid.md)による。全135 Tests成功・Skipなし、ruff問題なし。
+生成CLIの既定ConfigはPhase 6。従来のEmbedding実行は`--config configs/phase5.yaml`を指定する。
 
 ```powershell
 uv run python scripts/download_embedding_model.py
@@ -341,9 +346,10 @@ EmbeddingはCPU用の固定Revision・公式quint8 AVX2 ONNXを選定済みで�
 研究室PCでCodexへ引き継ぐ際は、次の依頼文を利用できる。
 
 > AGENTS.md、研究計画、実装計画、研究日誌、docs/lab_pc_handover.mdを読み、現在の実装を確認してください。
-> Phase 1〜4のData/Index再現を確認し、固定ManifestのHashと条件を照合してください。
-> Phase 4までノートPCで完了済みです。次のPhase 5を小工程に分けて進めてください。
-> Generatorの実行条件を実機Memoryに合わせて具体化し、開発用Embedding RAGを実装してください。
+> Phase 1〜6のData/Index/検索条件を確認し、固定ManifestのHashと条件を照合してください。
+> Phase 6までノートPCで完了済みです。Ubuntu用LLMの取得・検証・起動を小工程に分けて対応してください。
+> 実機RAM/VRAMとDriverを確認し、現行Baselineの検索→生成→保存を少数Development質問で検証してください。
+> Model/Runtime変更時は理由と条件を記録し、Phase 8の正式Calibration前に使用条件を確定してください。
 > Embedding再生成のHash差は既存Manifestへ上書きせず、別Versionで記録してください。
 > 各工程の成果を説明し、git add・commit・pushは実行しないでください。
 
@@ -477,9 +483,11 @@ git status --short
 ```
 
 完了条件は第4.5節と同じ。これらのUbuntuコマンドは手順として作成したもので、購入PC上では未実行である。
-DataとSplit再現後にPhase 4のCPU Index手順を再現する。最新の全Testは116件成功・Skipなし、ruff問題なし。
+DataとSplit再現後にPhase 4のCPU Index手順を再現する。最新の全Testは135件成功・Skipなし、ruff問題なし。
 Source/SplitのHash一致、両Indexの共通Corpus/Gold対応とEmbeddingの数値/Hash差を確認する。
 ノートPC用GeneratorはPhase 5で具体化したが、Ubuntu側のRuntime/GPU設定とEvaluatorは未確定である。
+Phase 6の検索条件・選定Reportも再現・移送して検証する。Embeddingの数値差で選定が変わる場合は
+固定成果物を上書きせず、影響を確認して別条件として記録する。
 実機のVRAM/Memoryを確認し、移行条件を新しく記録する。Windows用RuntimeをUbuntuで実行しない。
 
 ## 7. 開発用ノートPCの実測仕様

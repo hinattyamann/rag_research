@@ -6,7 +6,8 @@
 Datasetと独立品質評価の詳細は[Dataset Guide](clapnq_dataset_guide.md)を正本とする。
 
 本書は論文・発表に向けた関連研究と貢献の整理であり、網羅的な文献調査や新規性の確定ではない。
-現在はPhase 5のBaselineまで実装済みで、自己評価・Recovery・比較実験は未実施である。
+現在はPhase 6の固定Hybrid検索を使うBaselineまで実装済みで、自己評価・Recovery・比較実験は未実施である。
+検索CalibrationではHybridの精度改善を確認できていない。全結果と条件は[Phase 6記録](phase6_hybrid.md)による。
 以下の「貢献候補」は、実験で確認できた範囲に絞って最終的な論文の主張へ更新する。
 
 ## 1. 本研究の立ち位置

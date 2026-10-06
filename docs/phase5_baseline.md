@@ -87,11 +87,12 @@ Repository Rootで実行する。
 
 ```powershell
 uv run --locked python scripts/prepare_generation.py
-uv run --locked python scripts/run_baseline.py "who does the voice of plankton from spongebob"
-uv run --locked python scripts/run_baseline.py --smoke --limit 5
+uv run --locked python scripts/run_baseline.py "who does the voice of plankton from spongebob" --config configs/phase5.yaml
+uv run --locked python scripts/run_baseline.py --smoke --limit 5 --config configs/phase5.yaml
 ```
 
 準備コマンドは初回だけModel/Runtimeを取得し、以降は検証して再利用する。
+Phase 6実装後のCLI既定はHybridである。本節のEmbedding条件を再現するには上記の明示Configを使う。
 質問CLIは毎回日時とUUIDで新Directoryを作る。`--output-dir`を指定しても既存Directoryは上書きしない。
 検索CLIより時間がかかるため、少数問を1問ずつ処理し、不要なアプリを閉じてRAMを確保する。
 
@@ -149,7 +150,8 @@ PC全体の最小空きRAMは1.679GiBだった。最終`uv run --locked pytest`�
 
 ## 6. 次の工程
 
-Phase 6でBM25/EmbeddingをRRFで統合し、Calibrationで共通Retrieverを調整・固定する。
+Phase 6でBM25/EmbeddingをRRFで統合し、Calibrationで共通Retrieverを選定・固定した。
+結果と現在の実行手順は[`phase6_hybrid.md`](phase6_hybrid.md)を参照する。
 自己評価、Confidence、Failure判定、Recovery、独立品質評価、最終比較、Ubuntu再現は未実施。
 小型Generatorは開発用。最終Model変更時は理由・Revision・量子化・Runtime・Prompt・Context予算を
 記録し、比較3方式へ共通適用する。異なるGenerator条件の結果を混ぜて効果を主張しない。

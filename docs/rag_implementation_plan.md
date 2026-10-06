@@ -1,11 +1,11 @@
 # 自己制御型RAG実装計画書
 
-## Version 7.14
+## Version 7.15
 
 ## 外部実装依頼用 最終実装仕様書
 
-本書はVersion 7.13のPhase 5・制御・比較・独立品質評価仕様を維持し、先行研究との関係に基づく
-実装前の具体化事項と比較結果の解釈条件を追記した版である。固定検索と実LLMを接続し、Gate 5を通過した。
+本書はVersion 7.14の制御・比較・独立品質評価仕様を維持し、Phase 6のHybrid検索と検索Calibrationの
+選定結果を反映した版である。Phase 5のGenerator条件を維持する。
 Decision Rule、
 Always Rewrite、独立品質評価等のModule・Config・Test・比較実験はまだ実装・実施していない。
 CLAPNQの取得、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法は
@@ -880,8 +880,31 @@ CLIは`scripts/prepare_generation.py`と`scripts/run_baseline.py`。Model/Runtim
 暗黙に再試行しない。`status=ok`は実行成功であり、回答の正しさを意味しない。
 
 固定Development Answerable 3問/Unanswerable 2問のEnd-to-Endが完了し、Gate 5を通過した。
-Gold/Reference確認は生成後に別保存する。Calibration/Evaluation、独立品質Y/Failureの正解付け、
+Gold/Reference確認は生成後に別保存する。Phase 5時点ではCalibration/Evaluation、独立品質Y/Failureの正解付け、
 ECE/Hallucination集計、自己評価/Recoveryは未実施。詳細は[`phase5_baseline.md`](phase5_baseline.md)による。
+
+## Phase 6のHybrid検索と固定条件
+
+`retrieval/hybrid.py`に等重みRRFを実装し、`calibration.py`と`scripts/calibrate_retrieval.py`で
+固定Calibration全件のHash・Record IDを確認して検索条件を選定した。自己評価・回答品質の調整ではない。
+候補50件/方式、RRF定数20、top-k=10。Missing Rankは寄与0、重複はPassage IDでまとめ、同点はCorpus行順とする。
+Calibrationの候補・選定基準は測定前に`configs/phase6_calibration.yaml`へ固定した。
+
+選定結果は`configs/phase6.yaml`、`data/manifests/phase6_calibration_report.json`と
+`phase6_hybrid_manifest.json`に保存した。生成設定はPhase 5と共通で、共通Corpus/両Index/Modelを変更していない。
+Inferenceは固定条件・Protocol・Report・Hybrid実装Hashを検証し、QA正解情報を読み込まない。
+`scripts/run_baseline.py`の既定ConfigはPhase 6。Phase 5は`--config configs/phase5.yaml`で実行できる。
+検索CLIには`--kind hybrid`を追加し、元順位・元Scoreと統合Scoreを返す。
+Generation入力は元質問と取得Contextで、検索信号はPromptへ含めない。
+
+Calibration Answerable 225件、除外Unanswerable 209件。HybridのSuccess@10=0.7822はEmbeddingと同じだが、
+nDCG@10=0.5317はEmbeddingの0.5519を下回った。検索品質改善は実証していない。
+選定条件の実検索225件は探索結果と一致。検索のP50/P95は0.02247/0.02535秒（読込後）。
+取得成功率とGold Recallを区別し、UnanswerableのRandom Passageは検索正解Metricへ使わない。
+詳細、事前基準、成果物、実行手順、End-to-End検証は[`phase6_hybrid.md`](phase6_hybrid.md)による。
+固定Development 5問で生成計5回、全件保存が完了し、Gate 6を通過した。
+Pipeline平均56.96秒、合計Peak RSS約2.528GiB。全135 Tests成功・Skipなし、ruff問題なし。
+引用だけの回答等もあり、独立品質改善は未検証である。
 
 ## Unit Test
 
@@ -1056,6 +1079,7 @@ Question
         ↓
 ────────────────────────────
 【Phase 6】Hybrid Retrievalを実装する
+（2026-10-06完了。候補50件/方式、RRF定数20、top-k=10）
         ↓
 BM25 Retrieval
         ＋
@@ -1069,6 +1093,7 @@ Calibrationでtop-k・検索設定を調整
         ↓
 【Gate 6】
 実験用Baseline RAGが完成
+（Gate 6通過: 検索条件固定、実検索225件一致、固定Development 5問の生成・保存完了）
         ↓
 ────────────────────────────
 【Phase 7】Failure評価用Datasetを完成させる

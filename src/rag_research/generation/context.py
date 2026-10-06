@@ -5,6 +5,7 @@ import json
 from dataclasses import asdict, dataclass
 
 from rag_research.retrieval.common import RetrievalHit, validate_query
+from rag_research.retrieval.hybrid import HybridHit
 
 
 @dataclass(frozen=True)
@@ -20,7 +21,9 @@ def literal_json(value):
 
 def build_context(question, context, client, config, spec):
     validate_query(question, 1)
-    if not isinstance(context, list) or any(type(hit) is not RetrievalHit for hit in context):
+    if not isinstance(context, list) or any(
+        type(hit) not in (RetrievalHit, HybridHit) for hit in context
+    ):
         raise ValueError("context must be RetrievalHit objects, not QA/Gold dictionaries")
     if len({hit.passage_id for hit in context}) != len(context):
         raise ValueError("Duplicate retrieved Passage IDs")

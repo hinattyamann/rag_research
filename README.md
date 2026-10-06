@@ -131,7 +131,7 @@ ManifestのLF改行は`.gitattributes`で固定しています。分割Algorithm
 BM25とEmbeddingの両方で、固定Corpusの全178,890件を検索します。検索APIへの入力は質問文字列のみです。
 ノートPCで両Indexの構築・検索・Gold ID対応を検証し、Gate 4を通過しました。
 設定・中断再開・検証結果は[`docs/phase4_retrieval.md`](docs/phase4_retrieval.md)を参照してください。
-LLM生成はPhase 5で接続済みです。RRF・自己評価・Recoveryは後続Phaseで実装します。
+LLM生成はPhase 5、RRF統合はPhase 6で接続済みです。自己評価・Recoveryは後続Phaseで実装します。
 
 ```powershell
 uv run python scripts/download_embedding_model.py
@@ -160,8 +160,8 @@ llama.cppの公式Windows x64 CPU版をプロジェクト内へ置き、外部LL
 
 ```powershell
 uv run --locked python scripts/prepare_generation.py
-uv run --locked python scripts/run_baseline.py "who does the voice of plankton from spongebob"
-uv run --locked python scripts/run_baseline.py --smoke --limit 5
+uv run --locked python scripts/run_baseline.py "who does the voice of plankton from spongebob" --config configs/phase5.yaml
+uv run --locked python scripts/run_baseline.py --smoke --limit 5 --config configs/phase5.yaml
 ```
 
 モデルは約2.1GBです。準備済みなら最初のコマンドは検証・再利用します。
@@ -170,6 +170,28 @@ uv run --locked python scripts/run_baseline.py --smoke --limit 5
 動作成功は回答の正しさを意味しません。独立品質評価や最終比較は未実施です。
 条件と実行結果は[`docs/phase5_baseline.md`](docs/phase5_baseline.md)を参照してください。
 Ubuntu/GPU向けRuntimeの導入・実行は未確認です。
+
+## Hybrid検索を使うBaseline RAG（Phase 6）
+
+既存のBM25/Embedding Indexを等重みRRFで統合します。Calibration Answerable全225件で
+事前に定めた9組を比較し、候補50件/方式・RRF定数20・最終Top-10を固定しました。
+Unanswerable 209件は検索正解Metricから除外し、Evaluationでの調整は行っていません。
+現在のBaseline CLIの既定Configは`configs/phase6.yaml`です。Qwenと生成Prompt・Token予算はPhase 5と共通です。
+
+```powershell
+uv run --locked python scripts/calibrate_retrieval.py
+uv run --locked python scripts/search_corpus.py "who does the voice of plankton from spongebob" --kind hybrid
+uv run --locked python scripts/run_baseline.py "who does the voice of plankton from spongebob"
+uv run --locked python scripts/run_baseline.py --smoke --limit 5
+```
+
+準備済みのReport/Manifest/Configは同じByte列だけを再利用し、異なる内容で上書きしません。
+HybridのSuccess@10はEmbeddingと同じ78.22%ですが、nDCG@10は0.5317でEmbeddingの0.5519を下回りました。
+検索精度改善を示す結果ではありません。全条件・評価定義・実測・再現手順は
+[`docs/phase6_hybrid.md`](docs/phase6_hybrid.md)を参照してください。
+固定Development 5問で各1回の生成・保存が完了し、Gate 6を通過しました。
+平均約56.96秒、合計Peak RSS約2.528GiB。全135 Tests成功、ruff問題なし。
+回答品質の改善は未検証で、自己評価・Recovery、Ubuntu/GPU実行は後続作業です。
 
 ## 開発環境の基本方針
 

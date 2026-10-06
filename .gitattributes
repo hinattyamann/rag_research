@@ -1,3 +1,11 @@
 # Keep the frozen split manifest byte-identical across Windows/Linux checkouts.
 data/manifests/clapnq_split_manifest*.json text eol=lf
 data/manifests/clapnq_retrieval_manifest*.json text eol=lf
+
+# Phase 6 hashes must survive Windows/Linux checkouts without newline conversion.
+data/manifests/phase6_*.json text eol=lf
+configs/phase6*.yaml text eol=lf
+src/rag_research/retrieval/hybrid.py text eol=lf
+src/rag_research/retrieval/calibration.py text eol=lf
+src/rag_research/retrieval/factory.py text eol=lf
+scripts/calibrate_retrieval.py text eol=lf

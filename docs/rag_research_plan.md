@@ -1,14 +1,14 @@
 # 自己制御型RAG研究計画書
 
-## Version 6.10
+## Version 6.11
 
 ## 外部実装依頼用 最終研究仕様書
 
-本書はVersion 6.9を基礎とし、先行研究との関係、貢献候補、有用性および主張の限界を追記した版である。
-Phase 5のノートPC用Generatorと開発用Baseline条件を維持する。
+本書はVersion 6.10を基礎とし、Phase 6のHybrid検索とCalibrationで選定した条件を反映した版である。
+Phase 5のノートPC用Generator条件を維持し、初回検索を固定Hybridへ接続する。
 公開Train/Devだけで研究を継続する方針を維持し、2026年10月6日にユーザーが
 承認したConfidenceとFailure判定の接続、Always Rewrite、独立品質評価およびRecovery成功の定義を
-維持する。制御・評価Module、Calibration、比較実験は未実施である。
+維持する。検索のCalibrationは実施済みで、制御・評価Module、制御のCalibration、比較実験は未実施である。
 CLAPNQのField、研究用Split、Corpus、Unanswerable監査、派生Dataset、Licenseおよび引用方法の
 詳細は`docs/clapnq_dataset_guide.md`を正本とする。
 
@@ -72,7 +72,7 @@ R/F/Aによる分類は原因の代理指標であり、真の原因を特定で
 有用性は、限られた計算資源で「再検索が必要か」「取得済み根拠からの修正で足りるか」を判断するための
 実証的な知見を得ることである。小型LLM・ノートPCの採用、評価の独立性、実験条件の違いだけを
 新規性とはしない。効果が出ない場合も、その条件と誤判断の分析を示す。
-Phase 5時点でH1/H2/H3は未検証であり、新規性・先行手法への優位性・一般的な性能向上は未確立である。
+Phase 6時点でH1/H2/H3は未検証であり、新規性・先行手法への優位性・一般的な性能向上は未確立である。
 
 ------------------------------------------------------------------------
 
@@ -706,7 +706,7 @@ Library Versionを記録する。詳細と実測結果は[`phase4_retrieval.md`]
 この選択はノートPCで検索基盤を構築するための具体化であり、研究目的・仮説・Split・3方式比較・
 独立品質評価の定義は変更しない。Model変更は検索性能へ影響するため、変更時は新Index条件を記録し、
 3方式に共通適用する。Developmentの50問によるSmoke結果から最終性能や提案手法の効果は主張しない。
-RRFと最終RetrieverのCalibration固定はPhase 6、制御・品質比較は後続Phaseで実施する。
+RRFとRetrieverのCalibration固定結果はPhase 6節による。制御・品質比較は後続Phaseで実施する。
 
 # Phase 5のGenerator条件と研究上の扱い
 
@@ -722,6 +722,31 @@ Model規模・量子化・切詰め・Promptは品質へ影響するため、変
 Gold/Reference/Answerabilityを推論へ渡さず、実行成功と品質Yを区別する。
 Developmentの少数問でGate 5を通過したが、H1/H2/H3やECE/Hallucination率の改善は検証していない。
 実装と実測は[`phase5_baseline.md`](phase5_baseline.md)を参照する。
+
+# Phase 6のHybrid検索条件と研究上の扱い
+
+2026-10-06にユーザーが承認したPhase 6として、BM25とEmbeddingの等重みRRFを実装した。
+両方式の候補数20/50/100、RRF定数20/60/100の9組をCalibration Answerable全225件で比較した。
+Unanswerable 209件はGoldがないため検索精度から除外した。選定前の規則は
+`configs/phase6_calibration.yaml`へ固定し、Evaluationの検索性能や回答は参照していない。
+
+平均nDCG@10最大、同点時の成功率・候補数・定数の規則を用い、候補50件/方式・RRF定数20を選定した。
+最終文書数は3/5/10件から、Success@10との差が5ポイント以内に収まる最小数として10件を選んだ。
+この許容幅は計算資源上の設計基準であり、回答品質の同等性を保証するものではない。
+重複はPassage IDでまとめ、同点はCanonical Corpus順で返す。元順位・元Scoreは記録し、Promptには渡さない。
+
+HybridのSuccess@10は0.7822でEmbeddingと同じだが、nDCG@10は0.5317でEmbeddingの0.5519を下回った。
+Hybridが検索精度を向上させたとは主張しない。主比較の共通Retrieverとして事前規則に基づく条件を保持する。
+検索方式の変更を採用する場合は別条件として理由・影響を記録し、比較3方式へ共通適用する。
+
+Dataset Guideの取得成功は「Goldが1件でも取得できた質問の割合」(Success@k)として保存し、
+取得したGoldの割合(Gold Recall@k)とは区別する。今回225件はすべてGoldが1件なので値が一致する。
+Phase 4の過去Reportを再解釈・書換えせず、複数Gold時の定義の曖昧さを解消した。
+取得Top-10と、Token予算内でLLMへ実際に渡したContextは別に記録する。
+Qwen/Runtime/Prompt/生成予算を維持し、最終Modelや検索Modelの変更時は影響するCalibrationを再実施する。
+詳細、実行手順、固定Report/Manifest、検証結果は[`phase6_hybrid.md`](phase6_hybrid.md)による。
+固定Development 5問でHybrid検索→生成→保存が完了し、Gate 6を通過した。
+引用のみで回答しない例等も観察しており、End-to-End成功を独立品質の改善と解釈しない。
 
 # 12. 研究範囲
 

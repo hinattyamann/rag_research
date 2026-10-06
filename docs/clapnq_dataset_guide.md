@@ -1,12 +1,12 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 1.9
+## Version 1.10
 
-最終確認日: 2026-10-06（Phase 4の検索条件を更新。公式Source条件は変更しない）
+最終確認日: 2026-10-06（Phase 6の検索条件を更新。公式Source条件は変更しない）
 
-Version 1.9では、Version 1.7の制御・独立評価仕様とPhase 3の固定結果を維持し、Phase 4の検索条件と
-Index Manifestを記録した。Split・両検索Indexは実装・検証済みで、独立評価実装・人手判定・Calibration・
-比較実験は未実施である。公式Source、研究用Split比率、Base Dataset Versionは変更しない。
+Version 1.10では、Version 1.9のSource・Split・制御・独立評価仕様を維持し、Phase 6のHybrid条件と
+検索Calibrationを記録した。Split・両検索Index・Hybridは実装済みで、独立評価実装・人手判定・
+制御のCalibration・比較実験は未実施である。公式Source、研究用Split比率、Base Dataset Versionは変更しない。
 
 本書は、CLAPNQそのものの仕様と、本研究「評価駆動型自己制御RAGによる回答信頼性向上手法」
 での利用方法を一か所に集約したDataset仕様書である。CLAPNQの取得、研究用Split、検索Corpus、
@@ -678,7 +678,8 @@ AnswerableではRetrieval Query TSVの`doc-id-list`をGold Passage IDとして�
 retrieval_success@k = 1 if any gold_passage_id in top_k else 0
 ```
 
-複数Gold Passageがある場合は、いずれかを取得すればRecall成功とする。GenerationのReference Answerが
+複数Gold Passageがある場合は、いずれかを取得すれば質問単位の取得成功(Success@k)とする。
+取得Gold数/全Gold数を表すGold Recall@kとは区別し、両方を保存する。GenerationのReference Answerが
 特定のGold Passageにのみ対応する場合は、Passage-level Retrieval成功とAnswer Evidence充足を別に記録する。
 
 UnanswerableではGold Passage IDを作らない。Random Provided PassageをGoldとしてRetrieval評価しない。
@@ -709,17 +710,37 @@ Stopword/Stemmerなし。Embeddingは`sentence-transformers/all-MiniLM-L6-v2`、
 `1110a243fdf4706b3f48f1d95db1a4f5529b4d41`の公式quint8 AVX2 ONNX、CPU 6 Threads・Batch 1、
 特殊Token込み256 Tokenで切詰め、Attention Mask Mean Pooling/L2正規化、384次元float32である。
 検索はNumPyで全件Cosine内積、同点は原文Corpus順とする。初期Top-kは5で、Phase 6で最終条件を
-Calibration固定する。RRFはまだ実装しない。切詰め数とModel File Hashを記録する。
+Calibration固定する。Phase 4ではRRFは対象外。Phase 6の条件は第8.5節による。切詰め数とModel File Hashを記録する。
 
 両Indexは同じ全Passage集合・順序・Gold対応を使う。検索APIは質問文字列だけを受け取り、
 Reference/Gold/Selected Sentences/Answerability/Provided Passageを受け取らない。
 Development AnswerableのSeed付きHash順先頭50問で開発用Recall/MRR/nDCG・速度を確認する。
-Calibration/Evaluationは検索性能調整に使わない。全QAのGold ID存在確認はIndexの整合性確認だけに使う。
+Phase 4ではCalibration/Evaluationを検索性能調整に使わない。全QAのGold ID存在確認はIndexの整合性確認だけに使う。
 
 2026-10-06にノートPCで両Indexを全178,890件生成し、2,074 Unique Gold IDsの欠損0を確認した。
 同じDevelopment Answerable 50問のRecall@5はBM25 0.40、Embedding 0.62である。最終性能ではない。
 共通Manifestの固定、BM25の別Directory再生成一致、Embeddingの実Corpusでの中断再開を確認し、
 Gate 4を通過した。詳細・Hash・時間・MemoryはPhase 4文書による。
+
+## 8.5 Phase 6のHybrid検索条件とCalibration
+
+同じ両Indexを等重みRRFで統合する。候補50件/方式、RRF定数20、最終top-k=10、Rerankerなし。
+1始まりの順位に対し`sum(1/(20+rank))`、未取得の方式の寄与は0、同点はCanonical Corpus順とする。
+Passage IDで重複をまとめ、元順位・元Scoreは記録用に保持する。検索入力は元質問文字列のみである。
+
+事前規則で候補20/50/100とRRF定数20/60/100の9組を、Calibration Answerable全225件で比較した。
+Unanswerable 209件はGoldを持たないため正解Metricから除外した。固定Split Manifestと入力Hash・ID集合を照合し、
+Evaluationは調整に使わない。nDCG@10を主に選定し、top-k=3/5/10からSuccess@10との差が5ポイント以内の最小数を選ぶ。
+選定基準の意味、同点Rule、全結果は[`phase6_hybrid.md`](phase6_hybrid.md)による。
+
+HybridのSuccess@10=0.7822はEmbeddingと同じで、nDCG@10=0.5317はEmbeddingの0.5519を下回った。
+Hybridによる精度改善の結果として扱わない。選定条件の実検索は225/225件で探索結果と一致した。
+成功率とGold Recallは今回の単一Goldでは一致するが、複数Gold時は別指標である。
+Phase 4の既存Reportの`recall_at_k`はGold Recallの定義を保持し、過去数値を書き換えない。
+
+Config/Protocolと`data/manifests/phase6_calibration_report.json`、`phase6_hybrid_manifest.json`に条件を保存した。
+これらと共通Corpus・Index・Hybrid実装Hashの一致を推論時に確認する。生成に使用したContextは取得Top-10と区別する。
+最終Model・Embedding・Context条件等の変更時は影響を確認し、必要なCalibration/派生Datasetを新条件で再固定する。
 
 # 9. Failure評価用Dataset
 
