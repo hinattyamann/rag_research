@@ -44,11 +44,11 @@ QA選定（評価Metadataは別管理）
 既存Baselineへの条件分岐追加ではなく、保存済み結果を読み込む実験層を加える。
 評価器の操作とGeneratorの操作を分け、Gold入りQA辞書をそのまま評価器へ渡さない。
 
-### 新規配置（Phase 9まで実装。後続Moduleは予定）
+### 新規配置（Phase 10まで実装。最終実験用の拡張は後続工程）
 
 Phase 10では`pilot/selection.py`で既知Titleを除外した結果非依存選定、`baseline.py`で初回生成のJournal、
 `internal.py`で旧固定推論の実行と再開、`materials.py`で質問ごとの匿名資料出力、
-`assessment.py`でAI採点の記録、`report.py`で採点固定後の条件別照合を実装する。
+`assessment.py`でAI採点の記録、`report.py`で採点固定後の条件別照合を実装した。
 旧Phase 8/9のソース・設定は変更せず、`configs/phase10.yaml`と専用ProtocolでAI採点方針を定める。
 
 | 配置 | 責務 |
