@@ -8,7 +8,9 @@
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
 Phase 8の固定Trace・Claim抽出・Judge・順序/反復・判断と再開を実装した。
 Phase 9の一回書換え・独立採点Export/Import・候補選択・経路費用を実装し、開発2件の書換えを実走した。
-実品質Labelはpending。Gate 9は研究者本人の採点・照合待ち。本実験のModuleは後続工程である。
+独立した人手品質Labelはpending。Gate 9は研究者本人の採点・照合待ち。本実験のModuleは後続工程である。
+開発3候補の[AI代行採点JSON](phase9_ai_quality_review.md)は別保存し、既存Validatorで検証した。
+人手Importへは投入せず、元のModule・Schema・Run・基準Versionは変更していない。
 Phase 7の入力検証CLIは引き続きCompletion 0回である。
 
 ## 1. 既存実装と保存する境界

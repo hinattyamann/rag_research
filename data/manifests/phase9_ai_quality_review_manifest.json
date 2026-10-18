@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "purpose": "development_AI_delegated_review_not_independent_human_quality",
+  "created_at_utc": "2026-10-18T16:39:25.196798+00:00",
+  "annotator_display_name": "リサーチャー01",
+  "actual_assessor": "Codex AI assistant",
+  "human_reviewed": false,
+  "gui_completed": false,
+  "rubric_version": "order-quality-pilot-v1",
+  "packet_sha256": "b317b142809d150767b2e87789be4d02414360ce8e905d36f810dabf933a6678",
+  "annotation_path": "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/ai-review-20261019-v1/quality-annotations.json",
+  "annotation_status_counts": {
+    "indeterminate": 1,
+    "unreliable": 2
+  },
+  "validation": {
+    "candidates": 3,
+    "packet_matches_html": true,
+    "candidate_hashes_valid": true,
+    "all_exact_quotes_valid": true,
+    "all_criteria_labels_valid": true,
+    "pending_candidates": 0,
+    "roundtrip_valid": true,
+    "independent_human_labels_assigned": 0,
+    "manual_imports_modified": false
+  },
+  "quality_transitions_ai_only": {
+    "0->0": 1,
+    "0->1": 0,
+    "1->0": 0,
+    "1->1": 0,
+    "unknown": 1
+  },
+  "artifacts_sha256": {
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/ai-review-20261019-v1/quality-annotations.json": "2d1daba60786ed8bef61d9cabc7d4db0c757d5c0294705a7ee7847ba3b6b9350",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/ai-review-20261019-v1/review_manifest.json": "1ed17a74984419afae33912bd9f8eec28de1a7be550f1dfabda3b09be6aa33ec",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/ai-review-20261019-v1/analysis.ai.json": "9a4419025de23d897b17819e9a1651d5cad7891519f6dcca000d0ec1f6e52987",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/ai-review-20261019-v1/review_report.md": "6b1e95efd0812c8bb87db5d4f2d4a583a9d09ab835ab0d723851d86ccbc8bbb1",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/ai-review-20261019-v1/record_review.py": "4107994dfcb714654c5f274a3ba95b5ff8084aed92e9eaa3efa70ba9c097cddc",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/ai-review-20261019-v1/finalize_review.py": "51180a6fdc08f7ac627ea3d99a79b5fa3ffec64bbe571c6a4a7aa9ddd814e58a",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/ai-review-20261019-v1/decision_1.json": "be8a1f0214e95de5351448d24c106adfedcc2f87db3e345f65aa8df523116f4b",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/ai-review-20261019-v1/decision_2.json": "56b32413164dcddea7b4b436263dda9fbe334e094551c82dc4354bbd3a70be71",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/ai-review-20261019-v1/decision_3.json": "d8c15a3f4aa9a0915f3449346a20c00b3c8a4d4d93dc24a5742f79813dd85aa3"
+  },
+  "source_integrity": {
+    "original_phase9_manifest_unchanged": "587fa9923b4f93d6e01aea291335c4a6e2272dc1b0766a81b7bc964d03725b16",
+    "original_packet_unchanged": "b18cf5ece20d611f1d888321a3e0b143d3f97b5239eacf171964c8bd23b048a6",
+    "original_html_unchanged": "ad1dc1b1d6d5f2ec98cd885156b88e5e62c17132696d0d79e7252cddc8c784bd"
+  },
+  "limits": [
+    "Known Development examples, not an unseen sample",
+    "AI assigned labels, no human confirmation",
+    "No complete blinding: prior conversation exposed answer stages/Judge results",
+    "Elapsed seconds measure AI wall time, not human effort",
+    "No GUI entry or human import performed",
+    "No Phase 10 work performed"
+  ]
+}
