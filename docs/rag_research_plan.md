@@ -1,10 +1,10 @@
 # RAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.0 — 2026年10月18日 正式テーマ変更
+## Version 7.1 — 2026年10月18日 Phase 7の初期条件具体化
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.0](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.1](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -102,6 +102,12 @@ F = supported Claim数 / 固定Claim総数。支持割合であって正答確�
 主要Pilotの評価器候補はGeneratorと同じ固定Qwen2.5-3B条件。妥当性を確認してから本実験へ固定する。
 別系統の評価器による確認は追試として区別する。Modelの最新性や規模だけを有効性の根拠にしない。
 
+Phase 7の初期条件は[専用Protocol](phase7_order_protocol.md)、`configs/order_pilot.yaml`、
+`configs/order_prompts.yaml`へ具体化した。補助TaskのContextは8,192、最大出力は
+Claim抽出1,024・根拠検証1,536・書換え512とする。初回Baselineの4,096/512は変更しない。
+保存済み3問の21入力Probeで6件が4,096を超え、最大入力+出力予約が5,748だったため、
+本文を削らず比較するための予算として変更した。採点・Claim抽出の実応答は未検証で、実入力はPhase 8で都度監査する。
+
 初期閾値τ=0.7、F>=τで`accept`、F<τで`rewrite`とする。
 旧加重Cの0.7とは異なるRuleであり、Pilotの出発値である。維持/変更の理由と最終値をPhase 11で固定する。
 Evaluationで判断が最も揺れる値を選ばない。事前の感度分析候補は0.5/0.6/0.7/0.8/0.9。
@@ -183,4 +189,4 @@ Viewerは点検と説明の補助。参加者なしで使いやすさや理解�
 通常初回は2026年11月20日、英語4〜8ページ、通知12月11日、最終原稿2027年1月8日。
 会期は3月26〜30日。1月を初回要旨締切として計画しない。
 作業・成果物・Gate・期限は[ロードマップ](research_roadmap.md)による。
-**現在はPhase 1〜6完了、Phase 7の仕様具体化が進行中。Phase 8以降は未実装・未実施。**
+**現在はPhase 1〜7完了。次はPhase 8の実評価器・順序/反復実行の実装。新テーマのPilot/本実験は未実施。**

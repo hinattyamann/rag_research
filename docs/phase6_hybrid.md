@@ -148,7 +148,7 @@ Runは`data/runs/phase6/development-five-v1/`、実測集計とHashは
 
 ## 8. 次の工程
 
-2026年10月18日のテーマ変更に伴い、次はPhase 7の順序感度実験Protocolの具体化とする。
+2026年10月18日のテーマ変更後、Phase 7の順序感度実験Protocolを具体化した。現在の次工程はPhase 8である。
 Phase 1〜6の成果を維持し、四種類Failure Datasetと原因別三修復は主実験の必須条件から外す。
 [ロードマップ](research_roadmap.md)と[実装計画](rag_implementation_plan.md)に従い、固定Trace・評価器・
 順序操作、一回の回答書換え、独立品質確認を進める。本文の実測値は当時の結果として変更しない。

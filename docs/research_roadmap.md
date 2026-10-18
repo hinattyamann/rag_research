@@ -1,12 +1,12 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月18日。正本: [研究計画7.0](rag_research_plan.md)、[実装計画8.0](rag_implementation_plan.md)。
+更新日: 2026年10月18日。正本: [研究計画7.1](rag_research_plan.md)、[実装計画8.1](rag_implementation_plan.md)。
 テーマは「根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 
 ## 1. 今どこまで終わっているか
 
-**Phase 1〜6は完了。Phase 7の文書設計が進行中。自己評価・書換え・独立採点・新テーマのPilotは未着手。**
+**Phase 1〜7は完了。次はPhase 8の実装。自己評価・書換えの実応答、独立採点、新テーマのPilotは未実施。**
 
 既に動くものは「質問 → Hybrid検索 → Qwenによる回答生成 → 実入力・回答・費用の保存」。
 自己評価による採用/修復や、回答信頼性の改善を実証した段階ではない。
@@ -20,7 +20,7 @@
 | 4 | BM25/Embedding検索 | 完了 | 共通Corpusの両Index、質問検索CLI、固定Manifest |
 | 5 | 開発用Baseline RAG | 完了 | Embedding→Qwen CPU生成、Development 5問の実入力/回答保存 |
 | 6 | Hybrid Baseline固定 | 完了 | 検索Calibration 225件、固定Hybrid、Development 5問の生成・保存、Gate 6通過 |
-| 7 | 新テーマのProtocolとPilot仕様 | 進行中 | 計画改訂済み。専用Prompt/Configの実ファイルと採点基準の具体化が残る |
+| 7 | 新テーマのProtocolとPilot仕様 | 完了、Gate 7通過 | 専用Prompt/Config・採点基準・入力検証CLI・Hash Manifest。21入力のToken計測、Completion 0回 |
 | 8 | 固定Trace・評価器・根拠順序実験 | 未着手 | 同じ本文/回答/Claimで順序と反復だけを変え、実評価を保存できる |
 | 9 | 一回書換え・独立品質採点の入出力 | 未着手 | 固定候補、盲検化Export/Import、四遷移を検証できる |
 | 10 | Development予備実験 | 未実施 | 20〜30問を目安に現象・品質/費用・採点負担と障害を確認 |
@@ -40,14 +40,18 @@ Phase 6の全135 Tests成功は当時の検証実績であり、新機能のTest
 - [x] 主テーマの正式採用と研究目的・RQ1〜RQ3の明文化。
 - [x] 原因別三修復から、一回の固定Answer Rewriteへ研究範囲を変更。
 - [x] 旧仕様の保存、研究/実装計画とこの進捗表の更新。
-- [ ] 専用Promptを作る（回答のみのClaim抽出、固定Claimの根拠検証、初回回答の書換え）。
-- [ ] `configs/order_pilot.yaml`等へPilot初期値を実ファイル化し、Model/Runtimeの利用条件を検証。
-- [ ] 少数のDevelopment例で独立品質の必須要点・重大誤り・判定不能の例を作る。
-- [ ] 初期の主比較、順序/反復・Seed、適用不能/Fallback、保存Schema、Test条件を確認。
+- [x] 専用Promptを作る（回答のみのClaim抽出、固定Claimの根拠検証、初回回答の書換え）。
+- [x] `configs/order_pilot.yaml`等へPilot初期値を実ファイル化し、Model/Runtimeの利用条件を検証。
+- [x] 少数のDevelopment例で独立品質の必須要点・重大誤り・判定不能の例を作る。
+- [x] 初期の主比較、順序/反復・Seed、適用不能/Fallback、保存Schema、Test条件を確認。
 
 Gate 7: 専用Prompt/ConfigとProtocolのVersionがそろい、Goldを使わない実装の入出力を説明できる。
 本実験の最終凍結とは別であり、Pilot結果による変更は履歴を残してPhase 11までに確定する。
-**次に着手するのは、この未完了項目である。**
+2026年10月18日にGate 7を通過した。記録は[Phase 7 Protocol](phase7_order_protocol.md)、
+品質基準は[独立採点の基準案](order_quality_rubric.md)、固定情報は`data/manifests/phase7_protocol_manifest.json`。
+確認したのはModelの起動・入力予算までで、採点精度や書換え品質を検証したものではない。
+練習例の人手Labelはpendingであり、本実験の正解Annotationへ数えない。
+**次に着手するのはPhase 8である。**
 
 ## 3. Phase 8: 固定Trace・評価器・根拠順序
 
@@ -135,7 +139,7 @@ Gate 14: 提出可能な原稿と成果物がそろう。投稿操作は別途�
 
 | 目安 | 優先する工程 | 期限までに欲しい成果 |
 |---|---|---|
-| 10月19〜23日 | Phase 7〜9、執筆の背景・方法開始 | 最小の実評価・書換え・品質確認が動く |
+| 10月19〜23日 | Phase 8〜9、執筆の背景・方法開始 | 最小の実評価・書換え・品質確認が動く |
 | 10月24〜26日 | Phase 10 | Pilot Report、所要時間、主張と本実験規模の判断 |
 | 10月27〜29日 | Phase 11 | 凍結Protocol/Manifest |
 | 10月30日〜11月8日 | Phase 12 | 本実験と独立採点。別評価器は実行予算に合わせる |

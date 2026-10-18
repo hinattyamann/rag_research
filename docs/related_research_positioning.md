@@ -1,6 +1,6 @@
 # 先行研究との関係と、採用した研究テーマの位置付け
 
-更新日: 2026年10月18日。現行テーマは[研究計画 Version 7.0](rag_research_plan.md)による。
+更新日: 2026年10月18日。現行テーマは[研究計画 Version 7.1](rag_research_plan.md)による。
 旧原因別修復案の整理は[保存版](archive/related_research_positioning_before_pivot.md)を参照する。
 
 ## 1. 何を新しく明らかにしたいか
@@ -16,6 +16,7 @@
 | [ConsJudge（Findings of ACL 2025）](https://aclanthology.org/2025.findings-acl.301/) | RAG評価Promptへの感度・不一致と、一貫性を利用したJudge学習 | 評価次元を変えず、同じ根拠の順序を操作して修復起動へ接続する |
 | [RAGVUE（EACL 2026 Demo）](https://aclanthology.org/2026.eacl-demo.35/)・[本文3.1.7](https://arxiv.org/html/2601.04196v1) | Model/温度による評価幅、各Judgeの説明、可視化 | Score幅や画面自体でなく、固定候補の選択と品質・費用を測る |
 | [Stable-RAG（ACL 2026）](https://aclanthology.org/2026.acl-long.1188/) | 生成器の検索文書順序感度とその抑制 | 初回生成を固定し、評価器だけの提示順序を変える |
+| [On Positional Bias of Faithfulness for Long-form Summarization（NAACL 2025）](https://aclanthology.org/2025.naacl-long.442/) | 文書順序を操作した根拠性Metricの精度変化と位置依存性 | 評価器の文書順序感度自体は既存。通常検索順の修復判断・独立品質・費用への影響に焦点を置く |
 | [Doctor-RAG v2 Appendix D.2](https://arxiv.org/html/2604.00865v2) | 誤診別の修復率、診断訂正後の再振分け | 原因分類の正解化ではなく、同じ回答への評価条件による起動変化を調べる |
 | [When the Judge Should Not Decide](https://arxiv.org/html/2608.07813v1) | 固定候補群でJudgeの選択を制限し、最終正答率と悪化を比較 | 固定候補や下流影響自体は既存。評価順序の操作と、単一回答の書換え起動に絞る |
 | [AGO AI Quality Gate](https://arxiv.org/html/2610.01218v1) | Judgeの検証とSystem VersionのリリースGateの統計分析 | Version公開判断と、一質問内の回答修復を区別する |

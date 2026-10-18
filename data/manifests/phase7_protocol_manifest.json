@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "purpose": "phase7-development-protocol-not-final-experiment",
+  "study_version": "order-pilot-v1",
+  "gate": "Gate 7 passed: protocol assets and runtime input budget only",
+  "verified_at_utc": "2026-10-18T11:04:06Z",
+  "files": {
+    "configs/order_pilot.yaml": "f2d6c6b9ba1d4db07fbbd34dbaaf86c74d0be4f31fcf19f8ec0d56cffc7a0b63",
+    "configs/order_prompts.yaml": "47d26ed489d245aa2846560ce5a9212b9ca8368022aeb51a9d4c698950a8586b",
+    "scripts/check_order_protocol.py": "b5f9e0fc18a4935f4368c1e00880efcf2b2ba76b842697758bd9dfa9c5f698ec",
+    "docs/phase7_order_protocol.md": "5ed27b32a9f88e7f2b8f20729b78ef4563f549820d3383e47bad39b7e4d0c4e4",
+    "docs/order_quality_rubric.md": "11118d7840e616edb5ff2b999ce5b239a141c2747751e2cca13d26d10d040b79",
+    "configs/phase6.yaml": "327c0448b9af6ca8e21b89abce0e121bd0219fba60f536d706bed84760c33862",
+    "configs/prompts.yaml": "900374cea9a139c1150b9b9b94dd51a1511d715b35e8b24f2094c65f5c3ad87c"
+  },
+  "model": {
+    "bytes": 2104932768,
+    "file": "qwen2.5-3b-instruct-q4_k_m.gguf",
+    "license": "qwen-research",
+    "model_id": "Qwen/Qwen2.5-3B-Instruct-GGUF",
+    "quantization": "Q4_K_M",
+    "revision": "7dabda4d13d513e3e842b20f0d435c732f172cbe",
+    "sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d"
+  },
+  "runtime_tag": "b11433",
+  "preflight": {
+    "report_path": "data/runs/phase7/protocol-preflight-v2/report.json",
+    "report_sha256": "52822736d57faacff451d7b36dc8b4cbd416fa52252aa8d9c444afe78ef5f204",
+    "records": 3,
+    "input_probes": 21,
+    "completion_attempts": 0,
+    "overflow_4096": 6,
+    "maximum_required_tokens": 5748,
+    "server_context_tokens": 8192,
+    "claim_probe_kind": "whole_answer_as_one_placeholder_claim_not_extracted_claims",
+    "limitation": "Real claim lengths and judge quality are untested; check actual Phase 8 inputs."
+  },
+  "baseline_answers_sha256": "b6dd7dab3da4ec58cf50e7ed5f2be39e31699a8f34eda60e4748264a8b025d95",
+  "development_qa_sha256": "3769dfcd74903ad58d8d6faf9380a3ddcf2e46913449d7eaa9d466155bdc3cf2",
+  "validation": {
+    "pytest_passed": 142,
+    "pytest_skipped": 0,
+    "pytest_seconds": 17.1,
+    "ruff": "passed"
+  },
+  "unfinished": [
+    "real claim extraction",
+    "judge labels and score accuracy",
+    "repair generation",
+    "manual quality labels",
+    "new pilot",
+    "final evaluation"
+  ]
+}

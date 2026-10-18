@@ -1,11 +1,12 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.0 — 2026年10月18日
+## Version 8.1 — 2026年10月18日 Phase 7の具体化
 
-[研究計画 Version 7.0](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.1](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
-本版は計画の更新である。以下の新Module/CLI/Configは、明記した既存機能以外はまだ存在しない。
+Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
+評価器・書換え・本実験のModuleは未実装であり、入力検証CLIは採点・回答生成を行わない。
 
 ## 1. 既存実装と保存する境界
 
@@ -37,7 +38,7 @@ QA選定（評価Metadataは別管理）
 既存Baselineへの条件分岐追加ではなく、保存済み結果を読み込む実験層を加える。
 評価器の操作とGeneratorの操作を分け、Gold入りQA辞書をそのまま評価器へ渡さない。
 
-### 新規配置案（全て未作成）
+### 新規配置（Config/Promptは作成済み。研究実行Moduleは未作成）
 
 | 配置 | 責務 |
 |---|---|
@@ -51,6 +52,10 @@ QA選定（評価Metadataは別管理）
 | `src/rag_research/experiments/analysis.py` | 対応集計、信頼区間、品質遷移、費用の区別 |
 | `configs/order_pilot.yaml` / `configs/order_prompts.yaml` | 新実験専用設定・PromptのVersion/Hash |
 | `scripts/run_order_pilot.py` ほか | 選定・実行・Export/Import・分析のCLI。実装時に実名を確定 |
+
+作成済みの`scripts/check_order_protocol.py`はPhase 7の検証専用で、
+実ModelのChat Template/Tokenizerを使って入力を測り、Completionは0回とする。
+手順と検証範囲は[Phase 7記録](phase7_order_protocol.md)を参照する。
 
 本書の仮Pathは実装済みコマンドとしてREADMEへ掲載しない。
 Python実行・依存追加はuv。実装変更時に`uv run pytest`と`uv run ruff check .`を実施する。
@@ -108,7 +113,10 @@ Model名、固定Revision、量子化、Tokenizer、Runtime、温度、Seed、�
 
 初回回答を点検し、根拠外・矛盾・質問への不足を修正して、回答全体と根拠IDを返す指示にする。
 根拠が不十分ならその旨を述べ、情報を補って捏造しない。Scoreや診断は渡さない。
-初回と同じTokenizer・入力窓・最大出力を出発条件にするが、初回回答を加える分の入力超過を検査する。
+初回と同じTokenizer・書換え最大出力512を維持する。Phase 7の実測により、補助Runtimeの入力窓は8,192とした。
+Claim抽出の最大出力は1,024、根拠検証は1,536。初回生成の入力窓4,096は変更しない。
+21入力Probeで入力+出力予約が最大5,748、6 Probeが4,096を超えたため、情報量を保つ目的で変更した。
+実Claimの出力長・全QAの収まりは未確認であり、Phase 8で入力超過を都度検査する。
 超過時にContextを削らない。別予算へ変える場合は実装・計画・Configに理由を記載し、比較全条件へ共通適用する。
 Prompt文字列の最終形はPhase 7で専用Fileへ書き、実際のHashを得てから「固定済み」とする。
 
@@ -169,7 +177,7 @@ Cacheで共用しても、各方式へ必要な初回/書換え費用を計上�
 - 予備のDevelopment実入力でModel応答の妥当性・入力完全性・時間を確認する。Mock成功だけでGateを通さない。
 
 今後の実装Testには挙動の境界・漏洩・公平性を検証するものを用い、単にコードをなぞるTestを増やさない。
-文書更新だけの今回、これらのTestを実行・合格したとは記録しない。
+Phase 7では入力検証の境界Testを追加した。上記の研究実行ModuleのTestや実応答検証を完了したとは扱わない。
 
 ## 9. Phaseと成果物の対応
 

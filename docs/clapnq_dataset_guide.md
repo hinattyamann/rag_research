@@ -1,15 +1,16 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 2.0 — 2026年10月18日
+## Version 2.1 — 2026年10月18日 Phase 7に対応
 
-[研究計画7.0](rag_research_plan.md)の正式テーマ変更に対応するDataset仕様書。
+[研究計画7.1](rag_research_plan.md)の正式テーマ変更に対応するDataset仕様書。
 Source、License、Loader、内部Schema、Title単位Split、CorpusとPhase 6までの条件は維持する。
 主実験はAnswerable QAの固定回答に対する評価順序と修復判断の比較へ変更する。
 [旧Version 1.10](archive/clapnq_dataset_guide_v1_10.md)の四種類Failure Dataset、全R/F/A、原因分類、ECE中心の比較は必須工程から外す。
 
 本書の第2〜8節は公式情報・実監査・Source/Schema運用の正本。研究目的と指標の最終的な定義は
 [研究計画](rag_research_plan.md)、実装契約は[実装計画](rag_implementation_plan.md)、工程は[ロードマップ](research_roadmap.md)へそろえる。
-新しい評価用Manifest、評価器、書換え、品質採点は未作成・未実装・未実施である。
+Phase 7の[初期Protocol](phase7_order_protocol.md)・設定・入力検証は作成済み。
+実Trial用Manifest、評価器、書換え、独立品質の確定Labelは未作成・未実装・未実施である。
 公式情報と研究上の決定、実監査結果、未確定値を区別し、推論へ正解情報を渡さない。
 
 ---
@@ -825,7 +826,8 @@ Source件数・Schema・無効Reference・Gold対応・Stable ID・Split間重�
 - 固定書換え、盲検Export/Import、四遷移、共通QA、分母0、品質未知、費用の共用補正を確認する。
 - Source/既存BaselineのRegression、再開・Hash差停止を確認する。
 
-新Testは未実装。Phase 6の135件成功を新研究のTest結果と混同しない。
+Phase 7では入力検証CLIの境界Testを追加した。実Trialや品質集計のTestは未実装である。
+Phase 6の135件成功を新研究のTest結果と混同しない。
 
 ---
 # 13. 既知のRiskとLimitations
