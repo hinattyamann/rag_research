@@ -15,7 +15,7 @@ Phase 8で固定Trace/Claim/Judge Trial、条件Manifestと実評価CLIを実装
 Phase 9で元Contextによる一回書換え・条件を隠す品質Export/Import・経路比較を実装した。
 開発2問の3候補をAI代行採点し、以後の品質確認も[AI採点Protocol](ai_quality_protocol.md)へ切り替えた。
 Source/Schema/Splitは維持し、既知5問と同一Titleを除外した20問をPhase 10用に事前固定した。
-Phase 10の初回生成20問を終え、内部評価と匿名AI採点を進めている。Pilot集計と本実験は未完成である。
+Phase 10の初回20問・40候補AI採点・集計を終えた。測定系の修正・再確認待ちで、本実験は未実施である。
 公式情報と研究上の決定、実監査結果、未確定値を区別し、推論へ正解情報を渡さない。
 
 ---
@@ -851,6 +851,9 @@ Phase 6の135件成功を新研究のTest結果と混同しない。
 - 公式Test Answerは非公開で、公開Dataだけでは公式Leaderboard相当の評価にならない。
 - UnanswerableにAnswerが含まれる、または関連Passageが取得される例がある。
 - Reference Answerは高品質だが、手動Annotationなので誤りや曖昧さを完全には排除できない。
+- Phase 10の20問の対応監査では、犬の質問でReference/Selected Sentenceの14,700年と
+  Gold本文の14,200年に不一致があった。資料を黙って直さず、数値一致を品質正誤へ直結させなかった。
+  これはCorpus全体の不一致率の推定ではない。詳細は[Phase 10記録](phase10_pilot.md)による。
 - 回答は比較的Extractiveであり、完全にAbstractiveな回答生成を代表しない。
 - Gold Answerと異なるが正しい回答が、文字列Metricで過小評価される可能性がある。
 - Fによる採用/修復の境界は設計上のRuleであり、正解確率や真の原因を保証しない。

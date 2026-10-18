@@ -200,3 +200,40 @@ def test_health_stop_uses_validity_not_scores_or_flips():
     overflow = deepcopy(row)
     overflow["rewrite"]["error_code"] = "input_overflow"
     assert health_gate([overflow], rules)["status"] == "stopped"
+
+
+def test_cli_baseline_reuses_bound_provenance_without_rewriting(tmp_path, monkeypatch):
+    import importlib.util
+    from pathlib import Path
+
+    from rag_research.experiments.frozen_trace import digest
+    from rag_research.retrieval.common import file_hash
+
+    script = Path(__file__).resolve().parents[1] / "scripts/run_pilot.py"
+    spec = importlib.util.spec_from_file_location("pilot_cli_under_test", script)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    calls = []
+    monkeypatch.setattr(module, "run_baseline", lambda *args: calls.append(args) or {"status": "completed"})
+    selection = {"fixed": ["q1"]}
+    assert module.baseline_stage({}, selection, tmp_path)["status"] == "completed"
+    assert len(calls) == 1
+    (tmp_path / "baseline").mkdir()
+    (tmp_path / "internal").mkdir()
+    answers = tmp_path / "baseline/answers.jsonl"
+    provenance = tmp_path / "baseline/run_manifest.json"
+    answers.write_text('{"record_id":"q1","answer":"A"}\n', encoding="utf-8")
+    write_json(provenance, {"status": "completed", "completed_questions": 1})
+    write_json(tmp_path / "internal/manifest.json", {
+        "selection_sha256": digest(selection), "baseline_answers_sha256": file_hash(answers),
+        "baseline_provenance_sha256": file_hash(provenance)})
+    before = {p: p.read_bytes() for p in tmp_path.rglob("*") if p.is_file()}
+    reused = module.baseline_stage({}, selection, tmp_path)
+    assert reused["status"] == "frozen_baseline_reused"
+    assert reused["additional_completion_attempts"] == 0 and reused["provenance_changed"] is False
+    assert len(calls) == 1
+    assert before == {p: p.read_bytes() for p in tmp_path.rglob("*") if p.is_file()}
+    answers.write_text("corrupted", encoding="utf-8")
+    with pytest.raises(ValueError, match="artifacts changed"):
+        module.baseline_stage({}, selection, tmp_path)
+    assert answers.read_text("utf-8") == "corrupted" and len(calls) == 1

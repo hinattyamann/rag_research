@@ -10,6 +10,8 @@ Phase 8の固定Trace・Claim抽出・Judge・順序/反復・判断と再開を
 Phase 9の一回書換え・独立採点Export/Import・候補選択・経路費用を実装し、開発2件の書換えを実走した。
 ユーザーのAI採点委任により、Gate 9をAI代行による開発確認として通過した。人手確認済みとは記録しない。
 Phase 10は事前選定20問、固定Baseline、順序別Judge、一回書換え、匿名AI採点、Pilot Reportの実行層を追加した。
+初回20問・書換え20件・40候補の採点と集計を完了した。[結果と修正項目](phase10_pilot.md)による。
+完全比較11問、Fの順序変化1例、判断反転0例。事実本文の空Claim等の測定上の問題があり、最終凍結は未着手である。
 開発3候補の[AI代行採点JSON](phase9_ai_quality_review.md)は別保存し、既存Validatorで検証した。
 人手Importへは投入せず、元のModule・Schema・Run・基準Versionは変更していない。
 Phase 7の入力検証CLIは引き続きCompletion 0回である。
@@ -179,6 +181,9 @@ CLI・実出力・未確認事項は[Phase 9記録](phase9_answer_rewrite.md)に
 Phase 10では初回の質問ごとに匿名Packetを封印して採点を進め、全候補の採点JSONを固定してから
 内部結果と対応表を開示する。完全有効な順序群/反復群の共通QAで不一致率の差を記述集計する。
 最終統計、正式な信頼区間、本番の採点セッション固定は後続工程とする。
+実走後はCLIに固定済みBaselineの読取専用再利用を追加し、内部Manifestが参照する来歴Hashを変えない。
+推論Module・Prompt・Configは変えていない。実データの再参照・内部再開は追加Completion 0回、
+来歴不変の回帰確認を含む全223 TestとRuffが成功した。
 
 ## 7. 集計と計算量
 
