@@ -1,8 +1,8 @@
 # 研究室PCへの引継ぎと実行手順
 
 2026年10月18日更新: 正式テーマを「根拠提示順序に対するRAG自己評価の感度と修復判断への影響」へ変更した。
-現行は[研究計画7.1](rag_research_plan.md)、[実装計画8.1](rag_implementation_plan.md)、Dataset Guide 2.1。
-Phase 1〜7完了、次はPhase 8。[ロードマップ](research_roadmap.md)が次工程の正本である。
+現行は[研究計画7.2](rag_research_plan.md)、[実装計画8.2](rag_implementation_plan.md)、Dataset Guide 2.2。
+Phase 1〜8完了、次はPhase 9。[ロードマップ](research_roadmap.md)が次工程の正本である。
 以下の日付付き実測・旧Versionの記載は、その時点の履歴として読む。
 
 確認日: 2026年10月5日。対象はこの日の作業開始時点のCommit `9bfe8ac` と、研究計画Version 6.5、
@@ -28,7 +28,8 @@ Phase 1〜7完了、次はPhase 8。[ロードマップ](research_roadmap.md)が
 | Phase 5: 開発用Baseline RAG | 完了、Gate 5通過 | Embedding→Qwen CPU生成、質問/Development CLI、Prompt/実測ログ |
 | Phase 6: Hybrid Retrieval | 完了、Gate 6通過 | 候補50件/方式、RRF定数20、Top-10、Calibration/固定Manifest、Development生成 |
 | Phase 7: 新テーマのProtocol具体化 | 完了 | 専用Prompt/Config・品質基準案・入力予算検証・固定Manifest |
-| Phase 8以降: 固定評価・一回書換え・品質確認・実験 | 未着手/未実施 | 詳細は現行ロードマップ。旧四条件Datasetは必須工程から外れた |
+| Phase 8: 固定評価・根拠順序/反復 | 完了、Gate 8通過 | 開発2件、Judge 9回、再開追加0回、182 Tests成功。精度・品質改善の実証ではない |
+| Phase 9以降: 一回書換え・品質確認・実験 | 未着手/未実施 | 詳細は現行ロードマップ。旧四条件Datasetは必須工程から外れた |
 | 比較実験・結果分析・卒業論文の完成 | 未実施 | 提案手法の性能向上を示す実験結果はまだない |
 
 現在のPCには次の生成物が存在し、2026年10月5日に研究日誌のHashと一致することを再確認した。
@@ -305,7 +306,7 @@ Raw Data未取得では実データを使う4 Tests、Base QA未生成ではPhas
 ## 5. 次に研究として行うこと
 
 新テーマは自己評価の根拠順序感度と修復判断への影響の分析である。
-**Phase 1〜7完了、次はPhase 8。** 詳細は[ロードマップ](research_roadmap.md)を使う。
+**Phase 1〜8完了、次はPhase 9。** 詳細は[ロードマップ](research_roadmap.md)を使う。
 旧四条件Failure Dataset、全R/F/A、原因別三修復を次工程の前提にしない。
 
 研究室PCでは既存Data・Split・Indexを固定Manifestと照合し、少数DevelopmentでBaselineを再現する。
@@ -327,14 +328,18 @@ Ubuntu用Runtime対応後に検索→初回生成→保存を確認する。新�
 Hybridが検索精度を改善したとは主張しない。Source/基盤の詳細はPhase 4〜6記録による。
 
 専用Prompt/Configと[Phase 7 Protocol](phase7_order_protocol.md)は作成済み。
-今後は固定TraceとClaim、Judgeの順序操作、一回Answer Rewrite、独立品質Export/Import、Development Pilotの順で進める。
+固定TraceとClaim、Judgeの順序操作・反復・判断はPhase 8で実装した。
+この後は一回Answer Rewrite、独立品質Export/Import、Development Pilotの順で進める。
 Fの初期閾値0.7は旧加重Cとは別のRuleであり、旧R/F/A個別FailureやQuery Rewriteは実装対象から外す。
-入力予算確認CLIは作成済みだが、実採点/書換え/Pilot実行CLIは未実装。実装計画の仮名を既存コマンドとして実行しない。
+実評価CLIは`scripts/run_order_evaluation.py`、現行の開発用設定は`configs/order_phase8_v5.yaml`。
+実出力確認は`scripts/render_order_example.py`。詳細は[Phase 8記録](phase8_order_evaluation.md)による。
+書換え・盲検品質採点・新規Pilot選定CLIは後続工程。実装計画の仮名を既存コマンドとして実行しない。
 
 Codexへの引継ぎ例:
 
 > AGENTS.md、現行研究/実装計画、docs/research_roadmap.md、研究日誌を読んでください。
-> Phase 1〜7はノートPCで完了済みで、次はPhase 8の固定Trace・評価器・順序実験を実装します。
+> Phase 1〜8はノートPCで完了済みです。Phase 8の既知のJudge誤りと制約を読んでください。
+> 次はPhase 9の元順序による一回書換えと独立品質Export/Importを実装します。
 > 旧原因別三修復ではなく、固定回答に対する評価器の根拠順序感度と一回書換えの判断を検証します。
 > 研究室PCではOS/RAM/VRAM/Driverを確認し、固定Source・Index・Baselineを小工程で再現してください。
 > Runtime変更は別Versionで記録し、Phase 11の本実験凍結前に共通条件を確定してください。

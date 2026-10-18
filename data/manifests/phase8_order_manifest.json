@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "purpose": "phase8-development-software-gate-not-research-result",
+  "gate": "Gate 8 passed: fixed-input evaluation/order/repeat/decision/resume only",
+  "validated_at_utc": "2026-10-18T12:22:01.385373+00:00",
+  "study_version": "order-development-v5-bounded",
+  "model": {
+    "bytes": 2104932768,
+    "file": "qwen2.5-3b-instruct-q4_k_m.gguf",
+    "license": "qwen-research",
+    "model_id": "Qwen/Qwen2.5-3B-Instruct-GGUF",
+    "quantization": "Q4_K_M",
+    "revision": "7dabda4d13d513e3e842b20f0d435c732f172cbe",
+    "sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d"
+  },
+  "runtime_tag": "b11433",
+  "runtime_archive_sha256": "301943380e45deae3991d42dddd03fae65c6a4963a5d882328a60208b43aa9e0",
+  "config": "configs/order_phase8_v5.yaml",
+  "prompts": "configs/order_prompts_phase8_v5.yaml",
+  "output_constraints": "json_schema_source_spans_bounded_v2",
+  "output_bounds": {
+    "evidence_items_per_claim": 2,
+    "reason_characters": 200,
+    "claim_ids_and_order_fixed": true
+  },
+  "baseline_answers": "data/runs/phase6/development-five-v1/answers.jsonl",
+  "baseline_answers_sha256": "b6dd7dab3da4ec58cf50e7ed5f2be39e31699a8f34eda60e4748264a8b025d95",
+  "baseline_provenance_sha256": "12f277ac4fdbcdce9e6a21fc96d47f99963f410f0b9adb324649b8dda2c16bf8",
+  "development_qa_sha256": "3769dfcd74903ad58d8d6faf9380a3ddcf2e46913449d7eaa9d466155bdc3cf2",
+  "sample": {
+    "purpose": "previously_inspected_Phase7_rubric_examples_for_software_smoke",
+    "record_ids": [
+      "clapnq:c508d78:train:-2421097959159398117:answerable",
+      "clapnq:c508d78:train:-996127241617807228:answerable"
+    ],
+    "records": 2,
+    "scorable_records": 1,
+    "no_claims_records": 1,
+    "new_unseen_pilot": false
+  },
+  "current_run": {
+    "path": "data/runs/order_sensitivity/phase8-development-two-v5",
+    "artifacts": {
+      "data/runs/order_sensitivity/phase8-development-two-v5/manifest.json": "90ff1ccbe03f2a50f761d59d7784ac538d03f1585c9168b1ab31ad7d5f6fd881",
+      "data/runs/order_sensitivity/phase8-development-two-v5/report.json": "ffe4fe72b82dda9de1dc2c0d04acb2369a2f59d94d6e331bf16abd85a1a03fdd",
+      "data/runs/order_sensitivity/phase8-development-two-v5/validation.json": "51f94f7810dddcef01f4e644cdf47ee4372831ebedfeeaba9da8e7c542980267",
+      "data/runs/order_sensitivity/phase8-development-two-v5/examples.md": "b00caf67f834a90677ba2fe3d7e7281dd62f0815203b7f34098867828ab72c28",
+      "data/runs/order_sensitivity/phase8-development-two-v5/task_hashes_before_resume.json": "158c70edeb727b3d5cf4f62beb864f2948ac8dad5cd9673c19fcb9c8cd814ece",
+      "data/runs/order_sensitivity/phase8-development-two-v5/build_gate_manifest.py": "33e38265cce6981825ce4214f863860ccd5438d04173b112ea21dce18b96d90b"
+    },
+    "extraction_calls": 2,
+    "judge_calls": 9,
+    "all_valid_judge_scores": 1.0,
+    "all_valid_decisions": "accept",
+    "threshold": 0.7,
+    "validation": {
+      "task_files": 11,
+      "model_calls": 11,
+      "judge_calls": 9,
+      "same_order_calls": 5,
+      "distinct_evidence_orders": 5,
+      "distinct_judge_prompt_hashes": 5,
+      "distinct_decoder_schemas": 1,
+      "all_content_and_claims_fixed": true,
+      "all_input_budgets_valid": true,
+      "maximum_input_plus_reservation": 3997,
+      "source_hashes_match": true,
+      "judge_seconds_mean": 96.52228958889867,
+      "judge_seconds_min": 86.04708659998141,
+      "judge_seconds_max": 116.54692690004595,
+      "all_task_tokens": 26069,
+      "quality_labels_assigned": 0,
+      "resume_additional_completions": 0,
+      "resume_task_files_byte_identical": true,
+      "remaining_llama_servers": 0,
+      "tests_passed": 182,
+      "tests_skipped": 0,
+      "test_seconds": 31.98,
+      "ruff": "passed"
+    }
+  },
+  "assets_sha256": {
+    "configs/order_pilot.yaml": "f2d6c6b9ba1d4db07fbbd34dbaaf86c74d0be4f31fcf19f8ec0d56cffc7a0b63",
+    "configs/order_prompts.yaml": "47d26ed489d245aa2846560ce5a9212b9ca8368022aeb51a9d4c698950a8586b",
+    "configs/order_phase8.yaml": "aa634d187b47e3f9343431882972c5e9084c3597f78d3cbf00c46fe056119848",
+    "configs/order_phase8_v3.yaml": "0b9f7d855095dd2e877ed3f653b8f2bfba142eb339680fd5090b5b58667d4083",
+    "configs/order_phase8_v4.yaml": "ca6b10b05a38a58da3a36925c7a428908f6531c776233b2f508a1544cc890129",
+    "configs/order_phase8_v5.yaml": "7a0ac0409a869f3fde308166ebab6050e6dfc1b848a5cec329bd8e1180489def",
+    "configs/order_prompts_phase8.yaml": "0db1f5bc285b9e16fa3f59c8aae093cee39977cfce25bc81101c69d5e8a5ff1b",
+    "configs/order_prompts_phase8_v3.yaml": "d467fd58d90f4afaae7572ff6d0571f66075bdcbd41eafd5387c40f001d555ef",
+    "configs/order_prompts_phase8_v4.yaml": "9dae4a7a6de6b7280672e433f6450d96927a74007bb1104ebbb9bc7a43ece8aa",
+    "configs/order_prompts_phase8_v5.yaml": "2d21db98a66ee7ec603dc5c4a848d1163f4dd2bedca55b9eddf42df2eb2dd4cf",
+    "docs/phase8_order_evaluation.md": "2f25cb538ebac11ff22b7194d604250741533f3d6c7526aee8abb3868d658c65",
+    "docs/rag_research_plan.md": "2aa0d4051c6b81aa6a440eecad8e362cbc95cbc86350507a9e678e393246a902",
+    "docs/rag_implementation_plan.md": "c4c2377d576e1b186672b0a2f8db7766d6274ae3b82535c2af3b447eeabbe147",
+    "docs/research_roadmap.md": "ad93a712a688a3300490f047e72980838bf0fec2a116388a34ca8ba9849b27d6",
+    "docs/clapnq_dataset_guide.md": "699695d283851e20de5605943db40e2dfe90d2c84bf0b8c892f9b8a7379efe90",
+    "README.md": "e93df5927e1d388c48db0468bce053e685af7ed1767d057bbb3e4c84e1dee3d2",
+    "scripts/render_order_example.py": "85e9854cb69adccb41465723d2d81da972da89fb5702dcb647bff26fe44acaa5",
+    "tests/test_order_evaluation.py": "a6c167fbb372b15984175cd224530ec4f5a9df6dd1c80afd2de0da745ff76ceb"
+  },
+  "implementation_sha256": {
+    "src/rag_research/evaluation/__init__.py": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b",
+    "src/rag_research/evaluation/claims.py": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602",
+    "src/rag_research/evaluation/judge.py": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2",
+    "src/rag_research/evaluation/order.py": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e",
+    "src/rag_research/evaluation/schema.py": "1f66897de80ddcbb7532cc8c3703d5ddcb5106eccb497c884bae4d47193745c7",
+    "src/rag_research/evaluation/tasks.py": "34088dda5cb3c0f7085f7fb8785e66a9bf2e4741c99c43891baeb1549767f8c8",
+    "src/rag_research/experiments/__init__.py": "47047fe0079dd895316a10769822dde18800a51a1198d7731d736fa981d54296",
+    "src/rag_research/experiments/decisions.py": "20d9e2831fdbbaaf497e265ba7aba9e1e6cfbec98a23fa42d31c3b1765d860ab",
+    "src/rag_research/experiments/frozen_trace.py": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4",
+    "src/rag_research/experiments/order_runner.py": "d349f13037a03f58e21519d713ce3fbceaf1acec36b038f5a4967eb866947bea",
+    "src/rag_research/experiments/protocol.py": "e2486f753ea39b8c0c072c7cfad2de77bb1127de971d6e80ab40025030f345f8",
+    "src/rag_research/experiments/storage.py": "f32779f45c084276779b8f4a08b94c1197c703f6c2d5a67cc923390949c2f5a9",
+    "scripts/run_order_evaluation.py": "1579e741d0c579bba6e522e6b0d4c6ecebc199de6c3cca8f3ca42153a6c2c4b6",
+    "pyproject.toml": "c56ec43fef9940597edb26998c848838cc87a5f53d3b516fb0b4298c609150ae",
+    "uv.lock": "11660879153bf6d59af324f295ce3a76c80a09dd4acfb4eb0076b92ae54d348a",
+    "src/rag_research/retrieval/common.py": "49c624fa44f318714f92a6729c55b8436ca657efd013f5e4012fcf7442e1fd8f",
+    "src/rag_research/generation/local.py": "c9c5a0f5d30717c722b7f44cb7d6ebf00f0ea31954d33f58e6f6746233b4c30d",
+    "src/rag_research/generation/config.py": "a31864b3235969a9198cefbb65ddf18fb367c82663c1181d908c2a010f605ff9",
+    "src/rag_research/generation/context.py": "a86c5fda1a1d7747d3ce9087a732b70e700802b6142e4e5db6adeb1a64b6a63c",
+    "src/rag_research/generation/artifacts.py": "bb70ba77b944ecc23a07cc1865a3fafeee610dcd453caebc5a77b8fe79fc44b5"
+  },
+  "development_history": [
+    {
+      "run": "data/runs/order_sensitivity/phase8-development-three-v1",
+      "known_finished_completion_attempts": 12,
+      "possible_unknown_outcome_attempts": 0,
+      "task_status_counts": {
+        "error": 9,
+        "not_applicable": 2,
+        "ok": 1
+      },
+      "status": "completed_debug_not_current_protocol",
+      "artifacts": {
+        "data/runs/order_sensitivity/phase8-development-three-v1/manifest.json": "f34a2454f75c111c235f9e43a20ce660859d85a459ebc76078799b7aa448bacf"
+      }
+    },
+    {
+      "run": "data/runs/order_sensitivity/phase8-development-three-v2",
+      "known_finished_completion_attempts": 6,
+      "possible_unknown_outcome_attempts": 1,
+      "task_status_counts": {
+        "error": 5,
+        "ok": 1,
+        "started": 1
+      },
+      "status": "aborted_development_debug",
+      "artifacts": {
+        "data/runs/order_sensitivity/phase8-development-three-v2/manifest.json": "75a51672b611c5778c06ce409fae15c5bdcd8f956f9cf9d41cd5293f467ee51c",
+        "data/runs/order_sensitivity/phase8-development-three-v2/aborted.json": "150cfd22c22d32c3d537590e89721324c8a41743b9f93251ff82bb0b55ee5c77"
+      }
+    },
+    {
+      "run": "data/runs/order_sensitivity/phase8-development-two-v3",
+      "known_finished_completion_attempts": 3,
+      "possible_unknown_outcome_attempts": 0,
+      "task_status_counts": {
+        "error": 1,
+        "not_applicable": 1,
+        "ok": 1
+      },
+      "status": "preflight_stopped_before_order_trials",
+      "artifacts": {
+        "data/runs/order_sensitivity/phase8-development-two-v3/manifest.json": "21f261fb7bbac69bf59de3c0355ea2c850afb1119c78d10afbfbf9d648101f1a",
+        "data/runs/order_sensitivity/phase8-development-two-v3/development_check.json": "2e2d8d505d4ea4a403c08141e024fb1cec6d514648e309cb40287d3419ac9e99"
+      }
+    },
+    {
+      "run": "data/runs/order_sensitivity/phase8-development-two-v4",
+      "known_finished_completion_attempts": 3,
+      "possible_unknown_outcome_attempts": 1,
+      "task_status_counts": {
+        "error": 1,
+        "not_applicable": 1,
+        "ok": 1,
+        "started": 1
+      },
+      "status": "aborted_development_debug",
+      "artifacts": {
+        "data/runs/order_sensitivity/phase8-development-two-v4/manifest.json": "b0d7031cd8690a189dfd4d985908f7f8add10b2f9359dcbe3dbbc60cec067e14",
+        "data/runs/order_sensitivity/phase8-development-two-v4/aborted.json": "fe590c22af67d63c7ba88660440de32a2ca3f0ef29cc26ec30b96195c2b6ade5"
+      }
+    }
+  ],
+  "development_total_cost_complete": false,
+  "limits": [
+    "Only one scorable question; no inference of absent order effect",
+    "Claim c1 semantic over-support found on audit; accuracy not established",
+    "Longer third answer had missed claims in v1; not rechecked under v5",
+    "No rewrite, independent answer quality labels, fresh Pilot, or final Evaluation",
+    "Intermediate runs include failed/interrupted attempts; 11 calls are not development total",
+    "Latency during development is not a controlled performance comparison"
+  ]
+}

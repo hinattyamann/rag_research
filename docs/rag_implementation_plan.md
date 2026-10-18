@@ -1,12 +1,13 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.1 — 2026年10月18日 Phase 7の具体化
+## Version 8.2 — 2026年10月18日 Phase 8の実装
 
-[研究計画 Version 7.1](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.2](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
-評価器・書換え・本実験のModuleは未実装であり、入力検証CLIは採点・回答生成を行わない。
+Phase 8の固定Trace・Claim抽出・Judge・順序/反復・判断と再開を実装した。
+書換え・独立品質採点・本実験のModuleは未実装。Phase 7の入力検証CLIは引き続きCompletion 0回である。
 
 ## 1. 既存実装と保存する境界
 
@@ -38,20 +39,26 @@ QA選定（評価Metadataは別管理）
 既存Baselineへの条件分岐追加ではなく、保存済み結果を読み込む実験層を加える。
 評価器の操作とGeneratorの操作を分け、Gold入りQA辞書をそのまま評価器へ渡さない。
 
-### 新規配置（Config/Promptは作成済み。研究実行Moduleは未作成）
+### 新規配置（Phase 8まで実装。後続Moduleは予定）
 
 | 配置 | 責務 |
 |---|---|
 | `src/rag_research/experiments/frozen_trace.py` | Run対応、入力/回答/使用本文のHash、既存成功Recordの固定 |
-| `src/rag_research/evaluation/claims.py` | 回答だけから固定Claim抽出、Claim ID、抽出結果保存 |
+| `src/rag_research/evaluation/claims.py` | ClaimのJSON/連続ID/本文検証。実抽出と保存はtasks.py |
 | `src/rag_research/evaluation/order.py` | 元/逆/Shuffle・反復、安定ID、重複順序の検出 |
-| `src/rag_research/evaluation/judge.py` | 全文を保持した評価Prompt、Runtime呼出し、検証、F計算 |
-| `src/rag_research/recovery/answer_rewrite.py` | 固定1回書換え、同一予算・失敗記録 |
-| `src/rag_research/experiments/decisions.py` | F閾値、Fallback、同じ回答候補を選択 |
-| `src/rag_research/experiments/quality.py` | 条件を隠すExport/Import、独立Yと理由、整合確認 |
-| `src/rag_research/experiments/analysis.py` | 対応集計、信頼区間、品質遷移、費用の区別 |
-| `configs/order_pilot.yaml` / `configs/order_prompts.yaml` | 新実験専用設定・PromptのVersion/Hash |
-| `scripts/run_order_pilot.py` ほか | 選定・実行・Export/Import・分析のCLI。実装時に実名を確定 |
+| `src/rag_research/evaluation/judge.py` | Claim判定/原文引用の検証とF計算。実Prompt/呼出しはtasks.py |
+| `src/rag_research/evaluation/tasks.py` | 実Model呼出し、実Prompt/Token、出力検証・費用・Checkpoint |
+| `src/rag_research/experiments/protocol.py` | Phase 8設定の検証と推論入力のWhitelist |
+| `src/rag_research/experiments/storage.py` | Hash付き保存・原子的Checkpoint・Run単位排他Lock |
+| `src/rag_research/experiments/order_runner.py` | Development所属/元Baseline来歴確認、実行・再開、記述的集計 |
+| `src/rag_research/recovery/answer_rewrite.py`（Phase 9予定） | 固定1回書換え、同一予算・失敗記録 |
+| `src/rag_research/experiments/decisions.py` | F閾値、採用/書換え要求/FallbackのAction。候補本文の選択はPhase 9 |
+| `src/rag_research/experiments/quality.py`（Phase 9予定） | 条件を隠すExport/Import、独立Yと理由、整合確認 |
+| `src/rag_research/experiments/analysis.py`（後続予定） | 対応集計、信頼区間、品質遷移、費用の区別 |
+| `src/rag_research/evaluation/schema.py` | JSON/原文引用候補のDecoder制約。全順序で同じSchemaを使う |
+| `configs/order_phase8_v5.yaml` / `configs/order_prompts_phase8_v5.yaml` | 現在の制約付き開発用設定。初期版/v2/v3/v4は履歴として維持 |
+| `scripts/run_order_evaluation.py` | 保存済みDevelopment回答の実評価CLI。Pilot選定ではない |
+| `scripts/render_order_example.py` | 実出力を比較する説明用Markdown。盲検化した品質採点用ではない |
 
 作成済みの`scripts/check_order_protocol.py`はPhase 7の検証専用で、
 実ModelのChat Template/Tokenizerを使って入力を測り、Completionは0回とする。
@@ -62,12 +69,14 @@ Python実行・依存追加はuv。実装変更時に`uv run pytest`と`uv run r
 
 ## 3. 新しいデータ契約
 
-全Recordは`schema_version / study_version / record_id / run_id`等で結び、以下を分離保存する。
+Recordを`schema_version / study_version / record_id / run_id`、Trace/Manifest Hash等で結び、以下を分離保存する。
+本実験までの契約を含む表であり、Phase 8ではRun Manifest・固定Trace・Claim・Judge・判断を実装した。
+未見Sample選定、書換え・独立品質・本分析は後続工程である。
 
 | Record | 必須の内容 |
 |---|---|
 | Sample Manifest | Split、Title Group、選定Rule/Seed/ID、Source/Split/検索/Model/PromptのHash |
-| Frozen Trace | 質問、初回回答、取得全文と実使用Context、実入力Token列/Hash、元順序、初回の状態・費用 |
+| Frozen Trace | 質問、初回回答、実使用Context・元順序・Hash。取得全文、初回Prompt/Token/費用は元Baselineファイルを参照し、元回答・来歴のHashとrecord_idで対応 |
 | Fixed Claims | 初回回答Hash、抽出Prompt/Model/Seed、順序付きClaim ID/本文、抽出状態・費用 |
 | Judge Trial | Trace/Claim Hash、順序ID/実表示Passage ID列、反復番号、Model/温度/Seed、実Prompt/Token Hash |
 | Judge Result | ClaimごとのLabel・根拠ID/引用、F、採用/修復、エラー、処理時間・Input/Output Token/Calls |
@@ -76,7 +85,8 @@ Python実行・依存追加はuv。実装変更時に`uv run pytest`と`uv run r
 | Independent Quality | 採点用ID、基準Version、Y、必須要点/誤り/支持の確認、理由・根拠、判定不能理由 |
 | Analysis Manifest | 全入力Hash、主比較、分母・除外Rule、統計Seed/反復数、結果・図表のHash |
 
-想定保存先は`data/runs/order_sensitivity/{study_version}/`とし、Raw Runと採点結果はGit対象外。
+保存先は`data/runs/order_sensitivity/{run_id}/`とし、Manifestでstudy_versionとRunを対応させる。
+Raw Runと採点結果はGit対象外。
 小さい固定条件Manifest/集計のみ、既存のGit方針とLicense・公開範囲を確認して管理する。
 全候補本文を無断で新規Git対象にしない。既存Source/Phase 6 Manifestへ研究結果を追記しない。
 
@@ -116,9 +126,10 @@ Model名、固定Revision、量子化、Tokenizer、Runtime、温度、Seed、�
 初回と同じTokenizer・書換え最大出力512を維持する。Phase 7の実測により、補助Runtimeの入力窓は8,192とした。
 Claim抽出の最大出力は1,024、根拠検証は1,536。初回生成の入力窓4,096は変更しない。
 21入力Probeで入力+出力予約が最大5,748、6 Probeが4,096を超えたため、情報量を保つ目的で変更した。
-実Claimの出力長・全QAの収まりは未確認であり、Phase 8で入力超過を都度検査する。
+Phase 8で実Claimと根拠の入力予算を都度検査する。少数のSmokeを全QAの収まりの検証と扱わない。
 超過時にContextを削らない。別予算へ変える場合は実装・計画・Configに理由を記載し、比較全条件へ共通適用する。
-Prompt文字列の最終形はPhase 7で専用Fileへ書き、実際のHashを得てから「固定済み」とする。
+Phase 7の初期PromptとPhase 8の開発改訂を分けて保持し、各Runへ実際のHashを保存する。
+開発用の固定とPhase 11の最終凍結を区別する。
 
 ## 5. 試行・判断・再開
 
@@ -163,21 +174,23 @@ Cacheで共用しても、各方式へ必要な初回/書換え費用を計上�
 200問・9回・評価器2種類ならJudge 3,600回が出発目安。Claim抽出・候補生成等は別に加わる。
 本実験件数・別評価器の範囲はPilotの実測平均時間と採点負担から決める。
 
-## 8. 実装時に必要な確認・Test（全て今後）
+## 8. 確認・Testの実装範囲
 
 - 既存Baseline/Source/Manifestを変更せず再利用でき、推論へ評価専用Fieldが漏れない。
 - 同一Traceで文書集合と本文Hashは一致し、順序だけが変わる。重複順序・文書1件・Seed再現を扱える。
 - 逆順/Shuffleでも再Packing・再切詰めせず、実Prompt全体の超過を検知する。
 - 同一順序の5反復が実際に呼び出され、共通初回を除く評価の省略や二重計上がない。
 - 固定Claimの再利用、空Claim、JSON不正、未知ID/Label、欠損Claim、引用不一致を扱う。
-- Fの計算・閾値等号・採点不能Fallback・書換え失敗・再試行0・Hash差停止が仕様どおり。
+- Fの計算・閾値等号・採点不能Fallback・再試行0・Hash差停止が仕様どおり。
 - 書換えに元Contextと初回回答だけを渡し、Judge FeedbackやGoldを入れない。全条件で同じ候補を選ぶ。
 - 盲検Exportに条件/段階/Scoreがなく、Importは未採点・Hash不一致を検知する。
 - 四遷移、判断ペア分母、適用不能、共通QA、品質不明の感度分析、費用の共用補正を小さな手計算例と照合する。
 - 予備のDevelopment実入力でModel応答の妥当性・入力完全性・時間を確認する。Mock成功だけでGateを通さない。
 
 今後の実装Testには挙動の境界・漏洩・公平性を検証するものを用い、単にコードをなぞるTestを増やさない。
-Phase 7では入力検証の境界Testを追加した。上記の研究実行ModuleのTestや実応答検証を完了したとは扱わない。
+Phase 7は入力検証、Phase 8は固定Trace・順序/反復・Claim/引用/Score・失敗・再開・来歴照合の
+境界Testと少数Developmentの実応答確認を行う。独立品質Export/Import、書換え失敗、品質遷移、
+統計・方式別運用費用のTestは後続工程である。実績と既知の問題は[Phase 8記録](phase8_order_evaluation.md)へ残す。
 
 ## 9. Phaseと成果物の対応
 

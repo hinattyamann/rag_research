@@ -1,0 +1,99 @@
+schema_version: 1
+study_version: order-development-v2
+purpose: phase8-development-protocol
+status: phase8_development_smoke_not_final_evaluation
+baseline_config: configs/phase6.yaml
+prompts: configs/order_prompts_phase8.yaml
+quality_rubric_version: order-quality-pilot-v1
+data:
+  split: development
+  qa_path: data/processed/clapnq/c508d78-split-v1/development.jsonl
+  answerable_only: true
+  pilot_target_count: 30
+  selection_seed: 42
+  selection_rule: sha256_of_seed_and_record_id_ascending_before_model_results
+  group_key: source_title_casefold_nfc
+  reserve_protocol_examples: true
+  exclude_preflight_run_record_ids: true
+  preflight_baseline_answers: data/runs/phase6/development-five-v1/answers.jsonl
+  protocol_example_ids:
+  - clapnq:c508d78:train:-2421097959159398117:answerable
+  - clapnq:c508d78:train:-996127241617807228:answerable
+identity_manifest: data/manifests/phase5_generation_manifest.json
+auxiliary_runtime:
+  context_tokens: 8192
+  temperature: 0.0
+  seed: 42
+  threads: 6
+  batch_tokens: 128
+  repack: false
+  timeout_seconds: 300
+  startup_timeout_seconds: 120
+tasks:
+  extract_claims:
+    max_output_tokens: 1024
+  verify_claims:
+    max_output_tokens: 1536
+  rewrite_answer:
+    max_output_tokens: 512
+trials:
+  order_conditions:
+  - original
+  - reversed
+  - shuffle_1
+  - shuffle_2
+  - shuffle_3
+  shuffle_seed: 42
+  same_order_total_trials: 5
+  share_original_first_trial: true
+  execution_order_seed: 43
+  generation_seed_policy: same_fixed_seed_for_every_trial
+  deduplicate_order_permutations: true
+  repeated_prompt_result_cache: false
+  regenerate_claims_per_trial: false
+  regenerate_answer_per_trial: false
+  repack_or_truncate_per_trial: false
+decision:
+  score: supported_claims_divided_by_fixed_claims
+  threshold: 0.7
+  accept_when: score_greater_than_or_equal_to_threshold
+  unscorable_action: keep_initial_answer_with_separate_fallback_status
+  no_claims_score: null
+  sensitivity_thresholds:
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+rewrite:
+  input_document_order: original_used_context
+  include_initial_answer: true
+  include_judge_feedback: false
+  reuse_one_candidate_across_trials: true
+  retrieve_again: false
+  maximum_answer_candidates: 2
+  failure_action: keep_initial_answer_with_rewrite_failed_status
+errors:
+  automatic_retries: 0
+  input_overflow_action: record_error_without_truncating
+  preserve_failed_attempts: true
+  resume_only_missing_trials: true
+  reject_protocol_hash_mismatch: true
+quality:
+  annotator: researcher_manual_confirmation
+  llm_labels_are_final: false
+  hide:
+  - condition
+  - score
+  - decision
+  - answer_stage
+  - judge_claims
+  - judge_reasons
+  outcomes:
+  - reliable
+  - unreliable
+  - indeterminate
+  save_reasons_and_evidence: true
+costs:
+  separate_collection_route_and_offline_costs: true
+  charge_reused_candidates_to_each_operational_route: true

@@ -1,14 +1,14 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月18日。正本: [研究計画7.1](rag_research_plan.md)、[実装計画8.1](rag_implementation_plan.md)。
+更新日: 2026年10月18日。正本: [研究計画7.2](rag_research_plan.md)、[実装計画8.2](rag_implementation_plan.md)。
 テーマは「根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 
 ## 1. 今どこまで終わっているか
 
-**Phase 1〜7は完了。次はPhase 8の実装。自己評価・書換えの実応答、独立採点、新テーマのPilotは未実施。**
+**Phase 1〜8は完了。次はPhase 9の一回書換え・独立品質採点。新テーマのPilot/本実験は未実施。**
 
-既に動くものは「質問 → Hybrid検索 → Qwenによる回答生成 → 実入力・回答・費用の保存」。
+基盤に加え、固定回答のClaim抽出、根拠順序/反復ごとの自己評価と採用/書換え要求の保存を実装した。
 自己評価による採用/修復や、回答信頼性の改善を実証した段階ではない。
 テーマ変更で基盤を作り直す必要はなく、完了した工程をやり直す計画にはしない。
 
@@ -21,7 +21,7 @@
 | 5 | 開発用Baseline RAG | 完了 | Embedding→Qwen CPU生成、Development 5問の実入力/回答保存 |
 | 6 | Hybrid Baseline固定 | 完了 | 検索Calibration 225件、固定Hybrid、Development 5問の生成・保存、Gate 6通過 |
 | 7 | 新テーマのProtocolとPilot仕様 | 完了、Gate 7通過 | 専用Prompt/Config・採点基準・入力検証CLI・Hash Manifest。21入力のToken計測、Completion 0回 |
-| 8 | 固定Trace・評価器・根拠順序実験 | 未着手 | 同じ本文/回答/Claimで順序と反復だけを変え、実評価を保存できる |
+| 8 | 固定Trace・評価器・根拠順序実験 | 完了、Gate 8通過 | 開発2件、Judge 9回、固定内容/Schema同一・再開追加0回・182 Tests/ruff成功 |
 | 9 | 一回書換え・独立品質採点の入出力 | 未着手 | 固定候補、盲検化Export/Import、四遷移を検証できる |
 | 10 | Development予備実験 | 未実施 | 20〜30問を目安に現象・品質/費用・採点負担と障害を確認 |
 | 11 | Calibration・最終条件凍結 | 未着手 | 対象選定、Model/Prompt/閾値/反復数/分母/統計を固定したManifest |
@@ -51,7 +51,7 @@ Gate 7: 専用Prompt/ConfigとProtocolのVersionがそろい、Goldを使わな�
 品質基準は[独立採点の基準案](order_quality_rubric.md)、固定情報は`data/manifests/phase7_protocol_manifest.json`。
 確認したのはModelの起動・入力予算までで、採点精度や書換え品質を検証したものではない。
 練習例の人手Labelはpendingであり、本実験の正解Annotationへ数えない。
-**次に着手するのはPhase 8である。**
+Phase 8の実装は[実走・実装記録](phase8_order_evaluation.md)を参照する。
 
 ## 3. Phase 8: 固定Trace・評価器・根拠順序
 
@@ -65,6 +65,12 @@ Gate 7: 専用Prompt/ConfigとProtocolのVersionがそろい、Goldを使わな�
 
 Gate 8: 少数のDevelopment実入力で全文保持と評価出力を点検でき、必要なTest/ruffが通る。
 構造が正しいJSONでも意味上の判定が妥当とは限らない。品質監査は続ける。
+2026年10月18日にGate 8を通過した。具体的な入力順序・JSON・失敗履歴・監査は[Phase 8記録](phase8_order_evaluation.md)へ保存した。
+開発用の練習例2件のうち1件はClaimなし、1件は有効な9判定が全てF=1.0/採用だった。
+これはソフトウェアの動作確認で、順序の影響がないことやJudgeの精度を示す研究結果ではない。
+初期の自由出力は不正JSON/引用不一致/反復があり、現行は全条件共通のJSON/原文引用候補と出力上限制約を使う。
+意味上の過大支持が疑われる例と、長い別例の抽出の見落としを記録し、Phase 9〜10で妥当性を監査する。
+**次の工程はPhase 9。評価結果のScore/Feedbackを渡さず、元順序のContextと初回回答から一回書き直す。**
 
 ## 4. Phase 9: 固定書換えと独立採点
 

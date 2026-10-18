@@ -1,10 +1,10 @@
 # RAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.1 — 2026年10月18日 Phase 7の初期条件具体化
+## Version 7.2 — 2026年10月18日 Phase 8の実装
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.1](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.2](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -106,7 +106,15 @@ Phase 7の初期条件は[専用Protocol](phase7_order_protocol.md)、`configs/o
 `configs/order_prompts.yaml`へ具体化した。補助TaskのContextは8,192、最大出力は
 Claim抽出1,024・根拠検証1,536・書換え512とする。初回Baselineの4,096/512は変更しない。
 保存済み3問の21入力Probeで6件が4,096を超え、最大入力+出力予約が5,748だったため、
-本文を削らず比較するための予算として変更した。採点・Claim抽出の実応答は未検証で、実入力はPhase 8で都度監査する。
+本文を削らず比較するための予算として変更した。Phase 8で固定Trace・Claim抽出・Judge・順序/反復・判断を実装した。
+実走で初期Promptの空Claim/不正JSON/引用表記の不備を確認し、元の設定を維持したまま
+`configs/order_phase8_v5.yaml`と`configs/order_prompts_phase8_v5.yaml`へ開発版を分けた。
+JSON形式と引用候補のDecoder制約を全順序へ共通適用し、そのSchemaも順序から独立して固定する。
+この制約付きJudgeを測定対象とし、自由出力のJudge全般へ直接一般化しない。
+出力の反復を避けるためClaimごとに引用最大2件・理由最大200文字とし、この上限も妥当性監査の対象とする。
+変更理由・実走結果・意味上の監査範囲は[Phase 8記録](phase8_order_evaluation.md)による。
+構造上有効なClaim/引用でも、網羅性・支持判定・質問への適合性が正しいとは限らない。
+各実入力の予算を都度検査し、全文を保持する。全QAの収まりやJudge精度の検証は後続工程で行う。
 
 初期閾値τ=0.7、F>=τで`accept`、F<τで`rewrite`とする。
 旧加重Cの0.7とは異なるRuleであり、Pilotの出発値である。維持/変更の理由と最終値をPhase 11で固定する。
@@ -189,4 +197,4 @@ Viewerは点検と説明の補助。参加者なしで使いやすさや理解�
 通常初回は2026年11月20日、英語4〜8ページ、通知12月11日、最終原稿2027年1月8日。
 会期は3月26〜30日。1月を初回要旨締切として計画しない。
 作業・成果物・Gate・期限は[ロードマップ](research_roadmap.md)による。
-**現在はPhase 1〜7完了。次はPhase 8の実評価器・順序/反復実行の実装。新テーマのPilot/本実験は未実施。**
+**Phase 1〜8完了。次はPhase 9の一回書換え・独立品質採点。新規Pilot/本実験は未実施。**

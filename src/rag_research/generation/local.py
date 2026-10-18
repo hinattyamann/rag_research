@@ -52,12 +52,10 @@ class LlamaClient:
     def render(self, messages):
         return self.request("/apply-template", {"messages": messages})["prompt"]
 
-    def complete(self, prompt_tokens, config):
+    def complete(self, prompt_tokens, config, *, json_schema=None):
         # Passing exact counted IDs avoids hidden BOS insertion or retokenization.
         self.completion_attempts += 1
-        return self.request(
-            "/completion",
-            {
+        payload = {
                 "prompt": prompt_tokens,
                 "n_predict": config.max_output_tokens,
                 "temperature": config.temperature,
@@ -67,8 +65,10 @@ class LlamaClient:
                 "cache_prompt": False,
                 "stream": False,
                 "return_tokens": True,
-            },
-        )
+        }
+        if json_schema is not None:
+            payload["json_schema"] = json_schema
+        return self.request("/completion", payload)
 
 
 class LocalServer:

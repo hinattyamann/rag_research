@@ -6,15 +6,16 @@
 評価器への根拠順序を変えた場合と同一順序で繰り返した場合を比較します。
 より信頼できる自己修復の設計につながる知見を目指し、対策の開発は任意の追加成果とします。
 
-**現在はPhase 1〜7完了、次はPhase 8の評価器・順序実験の実装です。**
-Hybrid検索→回答生成→実入力・回答保存まで動作確認済みで、自己評価・書換え・新テーマの予備実験は未実施です。
+**Phase 1〜8完了。次はPhase 9の一回書換えと独立品質採点の実装です。**
+Hybrid検索→回答生成→実入力・回答保存を引き継ぎ、固定回答の自己評価・判断を実装しました。
+実際の書換え・独立品質確認・新テーマの予備実験は未実施です。
 [フェーズ別の現在地・次の作業・完了条件](docs/research_roadmap.md)を最初に確認してください。
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- [研究計画 Version 7.1](docs/rag_research_plan.md)
-- [実装計画 Version 8.1](docs/rag_implementation_plan.md)
-- [Dataset Guide Version 2.1](docs/clapnq_dataset_guide.md)
+- [研究計画 Version 7.2](docs/rag_research_plan.md)
+- [実装計画 Version 8.2](docs/rag_implementation_plan.md)
+- [Dataset Guide Version 2.2](docs/clapnq_dataset_guide.md)
 - [先行研究との関係・本研究の立ち位置と有用性](docs/related_research_positioning.md)
 
 現在の到達点、研究室PCで確認する項目、Data再生成を含む引継ぎ手順は
@@ -139,7 +140,7 @@ ManifestのLF改行は`.gitattributes`で固定しています。分割Algorithm
 BM25とEmbeddingの両方で、固定Corpusの全178,890件を検索します。検索APIへの入力は質問文字列のみです。
 ノートPCで両Indexの構築・検索・Gold ID対応を検証し、Gate 4を通過しました。
 設定・中断再開・検証結果は[`docs/phase4_retrieval.md`](docs/phase4_retrieval.md)を参照してください。
-LLM生成はPhase 5、RRF統合はPhase 6で接続済みです。自己評価・Recoveryは後続Phaseで実装します。
+LLM生成はPhase 5、RRF統合はPhase 6で接続済みです。自己評価はPhase 8の実験層で実装し、実際の書換えはPhase 9で行います。
 
 ```powershell
 uv run python scripts/download_embedding_model.py
@@ -199,14 +200,14 @@ HybridのSuccess@10はEmbeddingと同じ78.22%ですが、nDCG@10は0.5317でEmb
 [`docs/phase6_hybrid.md`](docs/phase6_hybrid.md)を参照してください。
 固定Development 5問で各1回の生成・保存が完了し、Gate 6を通過しました。
 平均約56.96秒、合計Peak RSS約2.528GiB。全135 Tests成功、ruff問題なし。
-回答品質の改善は未検証で、自己評価・Recovery、Ubuntu/GPU実行は後続作業です。
+回答品質の改善は未検証で、実際の書換えと独立品質確認、Ubuntu/GPU実行は後続作業です。
 
 ## 今後の研究工程
 
 | Phase | 作業 | 状況 |
 |---|---|---|
 | 7 | 新テーマのProtocol・専用Prompt/Config・採点基準 | 完了。入力予算を確認、採点・生成0回 |
-| 8 | 固定Trace、評価器、根拠順序と反復 | 未着手 |
+| 8 | 固定Trace、評価器、根拠順序と反復 | 完了。開発2件、Judge 9回、再開の追加Completion 0回 |
 | 9 | 一回書換え、独立品質のExport/Import | 未着手 |
 | 10 | Development 20〜30問を目安とする予備実験 | 未実施 |
 | 11 | Calibrationと本実験条件の凍結 | 未着手 |
@@ -215,7 +216,8 @@ HybridのSuccess@10はEmbeddingと同じ78.22%ですが、nDCG@10は0.5317でEmb
 | 14 | ICIAE原稿・投稿準備・卒論 | 未着手 |
 
 詳細とGateは[ロードマップ](docs/research_roadmap.md)を参照してください。
-新テーマの指示文と初期設定は作成済みですが、実採点・書換え・Pilot実行CLIは未実装です。
+実評価CLIと実出力を比較するMarkdown生成を実装しました。手順・既知の課題は[Phase 8記録](docs/phase8_order_evaluation.md)によります。
+書換え・盲検品質採点・新規Pilot選定/本実験のCLIは後続工程です。
 [Phase 7の記録](docs/phase7_order_protocol.md)と[品質採点基準](docs/order_quality_rubric.md)を参照してください。
 入力予算だけを確認するCLIは実行できます。新規の出力先を指定してください。
 
