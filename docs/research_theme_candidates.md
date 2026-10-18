@@ -1,5 +1,9 @@
 # RAG研究のテーマ変更候補と文献調査メモ
 
+採用状況（2026年10月18日）: 自己評価の根拠順序感度・修復判断分析に正式決定した。
+[現行研究計画](rag_research_plan.md)と[フェーズ別ロードマップ](research_roadmap.md)を今後の指示として参照する。
+以下は採用前の比較記録であり、候補Aの旧推奨や3〜4か月の日程を現行計画として使わない。
+
 調査日: 2026年10月9日。対象期間: 同日までに公開された原論文・著者公開資料。
 状態: **検討用の提案。テーマ変更、仕様変更、実験実施を決定した文書ではない。**
 ユーザーから共有された実装・実験期間: 3〜4か月程度。
@@ -10,9 +14,9 @@
 追加調査でD2R-RAG・GroundedCache等との重なりを確認し、本書の候補Aの優先度を下げた。
 以下は10月9日時点の候補記録として保持し、現在の優先度は新メモを参照する。
 
-現行仕様は[研究計画Version 6.11](rag_research_plan.md)、
-[実装計画Version 7.15](rag_implementation_plan.md)による。
-従来テーマの位置づけは[関連研究の整理](related_research_positioning.md)を参照する。
+調査当時の仕様は[研究計画Version 6.11](archive/rag_research_plan_v6_11.md)、
+[実装計画Version 7.15](archive/rag_implementation_plan_v7_15.md)による。
+従来テーマの位置づけは[関連研究の保存版](archive/related_research_positioning_before_pivot.md)を参照する。
 
 ## 1. 調査の目的・確認の範囲
 

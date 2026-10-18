@@ -1,12 +1,20 @@
 # rag_research
 
-評価駆動型自己制御RAGによる回答信頼性向上手法を検証する卒業研究プロジェクトです。
+根拠提示順序に対するRAG自己評価の感度と、修復判断・回答品質・処理コストへの影響を分析する卒業研究プロジェクトです。
+
+2026年10月18日にこのテーマへ正式に方向転換しました。同じ質問・根拠本文・初回回答について、
+評価器への根拠順序を変えた場合と同一順序で繰り返した場合を比較します。
+より信頼できる自己修復の設計につながる知見を目指し、対策の開発は任意の追加成果とします。
+
+**現在はPhase 1〜6完了、Phase 7の仕様具体化が進行中です。**
+Hybrid検索→回答生成→実入力・回答保存まで動作確認済みで、自己評価・書換え・新テーマの予備実験は未実施です。
+[フェーズ別の現在地・次の作業・完了条件](docs/research_roadmap.md)を最初に確認してください。
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- `docs/rag_research_plan.md`
-- `docs/rag_implementation_plan.md`
-- `docs/clapnq_dataset_guide.md`
+- [研究計画 Version 7.0](docs/rag_research_plan.md)
+- [実装計画 Version 8.0](docs/rag_implementation_plan.md)
+- [Dataset Guide Version 2.0](docs/clapnq_dataset_guide.md)
 - [先行研究との関係・本研究の立ち位置と有用性](docs/related_research_positioning.md)
 
 現在の到達点、研究室PCで確認する項目、Data再生成を含む引継ぎ手順は
@@ -192,6 +200,25 @@ HybridのSuccess@10はEmbeddingと同じ78.22%ですが、nDCG@10は0.5317でEmb
 固定Development 5問で各1回の生成・保存が完了し、Gate 6を通過しました。
 平均約56.96秒、合計Peak RSS約2.528GiB。全135 Tests成功、ruff問題なし。
 回答品質の改善は未検証で、自己評価・Recovery、Ubuntu/GPU実行は後続作業です。
+
+## 今後の研究工程
+
+| Phase | 作業 | 状況 |
+|---|---|---|
+| 7 | 新テーマのProtocol・専用Prompt/Config・採点基準 | 文書改訂済み、具体化が進行中 |
+| 8 | 固定Trace、評価器、根拠順序と反復 | 未着手 |
+| 9 | 一回書換え、独立品質のExport/Import | 未着手 |
+| 10 | Development 20〜30問を目安とする予備実験 | 未実施 |
+| 11 | Calibrationと本実験条件の凍結 | 未着手 |
+| 12 | 内部Evaluationと独立採点 | 未実施 |
+| 13 | 統計・条件別分析、任意の対策 | 未着手 |
+| 14 | ICIAE原稿・投稿準備・卒論 | 未着手 |
+
+詳細とGateは[ロードマップ](docs/research_roadmap.md)を参照してください。
+新しい評価用CLI/Configはまだ存在せず、上記のBaseline CLIだけが現時点の実行手順です。
+旧研究/実装計画とDataset仕様は`docs/archive/`へ保存しました。今後は現行計画を使います。
+ICIAEの通常初回締切は2026年11月20日のフルペーパーで、2027年1月8日は最終原稿締切です。
+詳細は[公式投稿要領](https://www2.ia-engineers.org/iciae2027/paper-submission/)を参照してください。
 
 ## 開発環境の基本方針
 

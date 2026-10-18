@@ -1,9 +1,14 @@
 # 研究室PCへの引継ぎと実行手順
 
+2026年10月18日更新: 正式テーマを「根拠提示順序に対するRAG自己評価の感度と修復判断への影響」へ変更した。
+現行は[研究計画7.0](rag_research_plan.md)、[実装計画8.0](rag_implementation_plan.md)、Dataset Guide 2.0。
+Phase 1〜6完了、Phase 7進行中。[ロードマップ](research_roadmap.md)が次工程の正本である。
+以下の日付付き実測・旧Versionの記載は、その時点の履歴として読む。
+
 確認日: 2026年10月5日。対象はこの日の作業開始時点のCommit `9bfe8ac` と、研究計画Version 6.5、
 実装計画Version 7.9である。以後の実装に応じて到達点と手順を更新する。
 
-2026年10月6日追記: 現行の研究計画はVersion 6.11、実装計画はVersion 7.15、Dataset GuideはVersion 1.10。
+2026年10月6日時点: 研究計画はVersion 6.11、実装計画はVersion 7.15、Dataset GuideはVersion 1.10だった。
 制御・比較・独立評価の仕様承認後、ノートPCでPhase 3〜6を実装し、Gate 6まで通過した。
 先行研究との関係・貢献候補・有用性は[研究の立ち位置](related_research_positioning.md)へ記録した。
 10月5日の実測値・Hash・Test結果はその日時の記録として保持し、Phase 3・4の結果を以下へ追記する。
@@ -22,7 +27,8 @@
 | Phase 4: 共通Corpusの検索Index | 完了、Gate 4通過 | 全178,890件のBM25/Embedding、質問検索CLI、固定Manifest |
 | Phase 5: 開発用Baseline RAG | 完了、Gate 5通過 | Embedding→Qwen CPU生成、質問/Development CLI、Prompt/実測ログ |
 | Phase 6: Hybrid Retrieval | 完了、Gate 6通過 | 候補50件/方式、RRF定数20、Top-10、Calibration/固定Manifest、Development生成 |
-| Phase 7以降: Failure Dataset・自己評価・Recovery | 未完了/未実装 | Corpus-level監査・制御・独立品質評価は未完成 |
+| Phase 7: 新テーマのProtocol具体化 | 進行中 | 新計画とロードマップ改訂済み。専用Prompt/Configは未作成 |
+| Phase 8以降: 固定評価・一回書換え・品質確認・実験 | 未着手/未実施 | 詳細は現行ロードマップ。旧四条件Datasetは必須工程から外れた |
 | 比較実験・結果分析・卒業論文の完成 | 未実施 | 提案手法の性能向上を示す実験結果はまだない |
 
 現在のPCには次の生成物が存在し、2026年10月5日に研究日誌のHashと一致することを再確認した。
@@ -298,64 +304,43 @@ Raw Data未取得では実データを使う4 Tests、Base QA未生成ではPhas
 
 ## 5. 次に研究として行うこと
 
-Phase 3はノートPCで完了した。研究室PCでは既存Data処理の再現後、次のCLIを実行してSplitを再現する。
+新テーマは自己評価の根拠順序感度と修復判断への影響の分析である。
+**Phase 1〜6完了、現在はPhase 7。** 詳細は[ロードマップ](research_roadmap.md)を使う。
+旧四条件Failure Dataset、全R/F/A、原因別三修復を次工程の前提にしない。
+
+研究室PCでは既存Data・Split・Indexを固定Manifestと照合し、少数DevelopmentでBaselineを再現する。
+既存Windows用Baseline CLIの既定Configは`configs/phase6.yaml`、旧Embedding条件は`configs/phase5.yaml`。
+Windows用RuntimeをUbuntuでそのまま起動できるとは扱わない。Ubuntu/GPUの実装と実測は未完了。
+Model/Runtime/量子化条件を変更した場合は、既存Manifestを上書きせず別Versionで条件と差を記録する。
 
 ```powershell
-uv run python scripts/split_clapnq.py
+uv run --locked python scripts/split_clapnq.py
+uv run --locked python scripts/download_embedding_model.py
+uv run --locked python scripts/build_retrieval_index.py --kind bm25
+uv run --locked python scripts/build_retrieval_index.py --kind embedding
+uv run --locked python scripts/build_retrieval_manifest.py
 ```
 
-割当済みQAは`data/processed/clapnq/c508d78-split-v1/`、固定Manifestは
-`data/manifests/clapnq_split_manifest.json`である。QA SHA-256は
-`6913d7a37b1938e6649c3609aa0b71e63dd2c62e8a717a470b41aaf2e912601d`。
-既存Fileが同じByte列なら再利用し、異なれば上書きせず停止する。詳細はDataset Guide第7.7節による。
+Ubuntu用Runtime対応後に検索→初回生成→保存を確認する。新実験の評価器・書換えPromptも入力予算を検証する。
+最終条件を凍結する新Phase 11より前に実行環境を確定する。
+生成条件を変えた場合は旧5問のRunと混ぜず、全比較条件へ共通適用する。
+Hybridが検索精度を改善したとは主張しない。Source/基盤の詳細はPhase 4〜6記録による。
 
-Phase 4はノートPCで完了し、Gate 4を通過した。CPU条件・全件結果・再生成手順は
-[`phase4_retrieval.md`](phase4_retrieval.md)を参照する。Phase 5の開発用BaselineもノートPCで完了した。
-生成条件は[`phase5_baseline.md`](phase5_baseline.md)を参照する。研究室PCでは同じ固定CorpusとModel Revision・
-量子化条件でIndexを再現する。Phase 6の検索Calibrationと固定HybridはノートPCで完了した。
-次はPhase 7のFailure Dataset固定と人手監査である。
-HybridのSuccess@10はEmbeddingと同じで、nDCG@10は下回った。精度改善と解釈しない。
-条件と結果・手順は[`phase6_hybrid.md`](phase6_hybrid.md)による。全135 Tests成功・Skipなし、ruff問題なし。
-生成CLIの既定ConfigはPhase 6。従来のEmbedding実行は`--config configs/phase5.yaml`を指定する。
+新研究では専用Prompt/Configの作成、固定TraceとClaim、Judgeの順序操作、
+一回Answer Rewrite、独立品質Export/Import、Development Pilotの順で進める。
+Fの初期閾値0.7は旧加重Cとは別のRuleであり、旧R/F/A個別FailureやQuery Rewriteは実装対象から外す。
+新しいCLI/Configはまだ存在しないため、実装計画の仮名を既存コマンドとして実行しない。
 
-```powershell
-uv run python scripts/download_embedding_model.py
-uv run python scripts/build_retrieval_index.py --kind bm25
-uv run python scripts/build_retrieval_index.py --kind embedding
-uv run python scripts/build_retrieval_manifest.py
-```
+Codexへの引継ぎ例:
 
-ノートPCの固定Indexを転送して共有してもよい。他PCでのEmbedding再生成はFloat計算の差でHashが
-変わり得るため、固定Manifestを上書きせず、別VersionでHash/数値/順位差を記録する。
-実装計画の生成用`qwen2.5-14b`、評価用`qwen2.5-7b`、`top_k=5`はConfig例であり、実際の
-`configs/config.yaml`はまだ存在しないが、Phase 5では`configs/phase5.yaml`とローカルCPU実行基盤を追加した。
-開発用GeneratorはQwen2.5-3B-Instruct Q4_K_M。Confidence重み`0.25/0.50/0.25`、採用閾値`0.7`、
-個別Failure閾値`0.5`、Recovery最大1回は承認済みの初期研究条件である。
+> AGENTS.md、現行研究/実装計画、docs/research_roadmap.md、研究日誌を読んでください。
+> Phase 1〜6はノートPCで完了済みで、現在はPhase 7の新テーマ仕様を具体化しています。
+> 旧原因別三修復ではなく、固定回答に対する評価器の根拠順序感度と一回書換えの判断を検証します。
+> 研究室PCではOS/RAM/VRAM/Driverを確認し、固定Source・Index・Baselineを小工程で再現してください。
+> Runtime変更は別Versionで記録し、Phase 11の本実験凍結前に共通条件を確定してください。
+> 各工程の成果と未実施事項を説明し、Git操作はAGENTS.mdに従ってください。pushは明示指示がある場合だけです。
 
-10月6日に確定したDecisionは、個別FailureをR → F → Aの順に優先し、個別Failureなし・C<0.7なら
-`low_confidence`として重み付き不足分が最大のRecoveryを選ぶ。Always Rewriteは共通初回回答の後に
-全質問でQuery Rewrite・再検索・再生成を1回実行する。独立品質Label Yによる主RSR・ECEと回答単位の
-Hallucinationを採用し、制御用自己評価と実験後の人手確認を分離する。詳細は現行仕様書を参照する。
-これらの制御・評価Moduleは未実装であり、今回完了したPhase 3〜5の成果物とは区別する。
-
-EmbeddingはCPU用の固定Revision・公式quint8 AVX2 ONNXを選定済みである。
-ノートPC用Generatorは具体化済み。研究室PCの確認後に、移行するGenerator条件とEvaluatorを具体化する。
-変更が必要なら仕様書と実装・設定を同時に更新し、比較3方式ではRetriever・Generator・Datasetを共通にする。
-調整はDevelopment/Calibrationで行い、最終Evaluationを見て同じ評価の設定を調整しない。
-
-研究室PCでCodexへ引き継ぐ際は、次の依頼文を利用できる。
-
-> AGENTS.md、研究計画、実装計画、研究日誌、docs/lab_pc_handover.mdを読み、現在の実装を確認してください。
-> Phase 1〜6のData/Index/検索条件を確認し、固定ManifestのHashと条件を照合してください。
-> Phase 6までノートPCで完了済みです。Ubuntu用LLMの取得・検証・起動を小工程に分けて対応してください。
-> 実機RAM/VRAMとDriverを確認し、現行Baselineの検索→生成→保存を少数Development質問で検証してください。
-> Model/Runtime変更時は理由と条件を記録し、Phase 8の正式Calibration前に使用条件を確定してください。
-> Embedding再生成のHash差は既存Manifestへ上書きせず、別Versionで記録してください。
-> 各工程の成果を説明し、git add・commit・pushは実行しないでください。
-
-持ち帰る情報は、OS、CPU、RAM、GPU型番・枚数・VRAM総量/空き容量、Driver、Disk空き容量、Network条件、
-連続利用可能時間である。LLM条件の選定とIndexの再現確認は、その結果を踏まえて進める。
-
+持ち帰る情報はOS、CPU、RAM、GPU型番/枚数/VRAM、Driver、Disk空き容量、Network条件、連続利用可能時間である。
 ## 6. 購入PCの仕様とUbuntu向け手順
 
 2026年10月5日にユーザーから次の購入仕様を受領した。これは実機計測結果ではない。

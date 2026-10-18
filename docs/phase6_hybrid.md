@@ -148,7 +148,9 @@ Runは`data/runs/phase6/development-five-v1/`、実測集計とHashは
 
 ## 8. 次の工程
 
-Phase 7で固定Retrieverを基にNormal/Unanswerable/Retrieval Failure/Distractorの評価用Datasetを
-人手監査して固定する。自己評価・Recoveryの実装とは区別し、Evaluation成績で条件を調整しない。
-研究室PCはPhase 6〜7の間にUbuntu用実行基盤を整備し、最終Modelを使うPhase 8の正式な
-Calibration前までに動作確認する。現在のWindows用LLM取得・起動処理はUbuntu/GPU未対応である。
+2026年10月18日のテーマ変更に伴い、次はPhase 7の順序感度実験Protocolの具体化とする。
+Phase 1〜6の成果を維持し、四種類Failure Datasetと原因別三修復は主実験の必須条件から外す。
+[ロードマップ](research_roadmap.md)と[実装計画](rag_implementation_plan.md)に従い、固定Trace・評価器・
+順序操作、一回の回答書換え、独立品質確認を進める。本文の実測値は当時の結果として変更しない。
+研究室PCへ移行する場合は最終条件を凍結する新Phase 11より前に動作を確認する。
+現在のWindows用LLM取得・起動処理はUbuntu/GPU未対応である。

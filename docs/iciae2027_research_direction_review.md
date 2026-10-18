@@ -1,5 +1,9 @@
 # ICIAE 2027に向けたRAG研究の新規性と方向転換案
 
+採用状況（2026年10月18日）: 案1の自己評価の順序感度・修復判断分析をユーザーが正式採用した。
+今後の作業は[研究計画7.0](rag_research_plan.md)と[ロードマップ](research_roadmap.md)に従う。
+以下の未決定・旧Version・推奨順位の記述は採用前の調査記録である。
+
 調査日: 2026年10月18日（JST）。状態: **テーマ選定用の提案。正式仕様の変更・実験結果ではない。**
 
 追加調査: [自己評価の揺れと修復判断の分析をICIAEへ投稿するための成立条件](iciae2027_pivot_feasibility_review.md)。
@@ -34,7 +38,7 @@ ICIAEの採択基準を数値化したものでも、採択可能性を保証す
 
 ## 2. 現在の研究と、実際に確認できていること
 
-確認した資料は[研究計画Version 6.11](rag_research_plan.md)、[実装計画Version 7.15](rag_implementation_plan.md)、
+確認した採用前の資料は[研究計画Version 6.11](archive/rag_research_plan_v6_11.md)、[実装計画Version 7.15](archive/rag_implementation_plan_v7_15.md)、
 [関連研究整理](related_research_positioning.md)、[10月9日の候補メモ](research_theme_candidates.md)、
 [Phase 6記録](phase6_hybrid.md)、Config、Prompt、Baseline実装、保存済みSmoke Reportである。
 

@@ -1,27 +1,16 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 1.10
+## Version 2.0 — 2026年10月18日
 
-最終確認日: 2026-10-06（Phase 6の検索条件を更新。公式Source条件は変更しない）
+[研究計画7.0](rag_research_plan.md)の正式テーマ変更に対応するDataset仕様書。
+Source、License、Loader、内部Schema、Title単位Split、CorpusとPhase 6までの条件は維持する。
+主実験はAnswerable QAの固定回答に対する評価順序と修復判断の比較へ変更する。
+[旧Version 1.10](archive/clapnq_dataset_guide_v1_10.md)の四種類Failure Dataset、全R/F/A、原因分類、ECE中心の比較は必須工程から外す。
 
-Version 1.10では、Version 1.9のSource・Split・制御・独立評価仕様を維持し、Phase 6のHybrid条件と
-検索Calibrationを記録した。Split・両検索Index・Hybridは実装済みで、独立評価実装・人手判定・
-制御のCalibration・比較実験は未実施である。公式Source、研究用Split比率、Base Dataset Versionは変更しない。
-
-本書は、CLAPNQそのものの仕様と、本研究「評価駆動型自己制御RAGによる回答信頼性向上手法」
-での利用方法を一か所に集約したDataset仕様書である。CLAPNQの取得、研究用Split、検索Corpus、
-派生評価条件、評価指標、License、論文での引用・表示方法について疑問が生じた場合は、まず本書を
-参照する。
-
-本書では、情報の性質を次の4種類に分ける。
-
-- **公式情報**: CLAPNQ論文、公式Repository、公式Dataset Cardに明記された内容。
-- **実データ監査結果**: 2026-08-26に固定Revisionの公開Fileを取得・再集計した結果。
-- **研究上の決定**: 本研究の目的に合わせて採用する運用。
-- **未確定**: PilotまたはCalibration Splitで検証後に固定する値。
-
-研究方針や実装を変更した場合は、本書、`rag_research_plan.md`、
-`rag_implementation_plan.md`、実装、Test、Dataset Manifestを同時に更新する。
+本書の第2〜8節は公式情報・実監査・Source/Schema運用の正本。研究目的と指標の最終的な定義は
+[研究計画](rag_research_plan.md)、実装契約は[実装計画](rag_implementation_plan.md)、工程は[ロードマップ](research_roadmap.md)へそろえる。
+新しい評価用Manifest、評価器、書換え、品質採点は未作成・未実装・未実施である。
+公式情報と研究上の決定、実監査結果、未確定値を区別し、推論へ正解情報を渡さない。
 
 ---
 
@@ -72,24 +61,20 @@ Data提供もない。そのため、非公開Testの取得を待たず、公開
 この決定後に返信があった場合も、現行主実験のDatasetへ途中追加しない。利用を検討する場合は、現行結果と
 混在させず、別Dataset Version・別実験として利用条件と評価目的を記録する。
 
-## 1.3 本研究で固定する評価条件
+## 1.3 新テーマで使用する対象
 
-| 種類 | 初期目標 | 用途 |
-|---|---:|---|
-| Normal QA | 150件 | 通常検索・生成条件の性能評価 |
-| Unanswerable QA | 監査済み150件 | 回答拒否、Hallucination、誤Recoveryの評価 |
-| Retrieval Failure | 150件以下 | Query Rewriteによる検索Recovery評価 |
-| Distractor | 150件 | 類似する誤根拠への耐性評価 |
+| Split | 用途 | 対象候補 |
+|---|---|---|
+| Development | 実装・採点基準作成・20〜30問のPilot | Answerable 1,465件 |
+| Calibration | Judge/閾値/予算/最終Protocolの確認 | Answerable 225件。検索調整へ既に使用した履歴を保持 |
+| 内部Evaluation | 凍結後の最終比較 | Answerable 564件から事前選定。公式Testではない |
 
-Normal、Retrieval Failure、DistractorのBase QAは重複させない。Retrieval Failureは固定Retrieverで
-条件を満たす例の実数が150件未満なら、水増しせず実数を報告する。件数を増やすために派生質問を
-作る場合は、自然発生したFailureと派生Failureを別集計する。
-
-Unanswerableは、事前に固定した候補順からCorpus-level監査を通過した150件を採用する。監査で
-除外した例は、Model結果を見ず、同じ固定順の次候補で補充する。
+本実験100〜200問程度は作業量の候補で、必要件数を保証しない。Pilotの発生率・推定精度・負担から確定する。
+Unanswerable、検索失敗・Distractor専用Subsetは今回の必須対象から外す。既存QAやLabelは削除・書換えしない。
+検索に自然発生するGold未取得を除かず、Gold未取得だけで回答不能と決めない。
+主実験のAnswerabilityは対象選定だけに使い、Generator/Judge/修復Promptへ渡さない。
 
 ---
-
 # 2. CLAPNQの概要
 
 ## 2.1 基本情報
@@ -443,9 +428,9 @@ Natural Questions DataのCC BY-SA 3.0を確認し、出典・License・変更内
 
 ## 6.1 公式Splitをそのまま最終評価に使わない理由
 
-公式Test Answerは非公開である。公開Devは600件のみでAnswerableが300件のため、互いに異なる
-Normal、Retrieval Failure、Distractorを各150件作るには不足する。また、実データ監査では、公開Trainと
-Devの間に同じWikipedia Titleが91件存在した。
+公式Test Answerは非公開であり、実データ監査では公開TrainとDevの間に同じWikipedia Titleが91件存在した。
+開発・Calibration・最終評価をTitle単位で分離するため、固定した内部Splitを使用する。
+旧四条件各150件の構築はテーマ変更後の分割理由や必須条件として扱わない。
 
 したがって、公開Train/DevのSource Splitを保持したまま、研究用Splitを別Fieldとして作る。
 
@@ -458,7 +443,7 @@ Answerable/Unanswerable比を可能な限り維持し、Seed 42で次を目標�
 | 研究用Split | 目標比率 | 用途 |
 |---|---:|---|
 | Development | 65% | Loader、Prompt、Retriever、Pipeline開発 |
-| Calibration | 10% | R/F/A重み、閾値、`top_k`等の固定 |
+| Calibration | 10% | 検索条件（実施済み）と評価器・閾値・Protocolの確認 |
 | Evaluation | 25% | 設定固定後の最終比較 |
 
 Group Sizeのため厳密な比率にはならない。実数はManifestで報告する。Split作成Algorithmは、Recordの
@@ -742,359 +727,107 @@ Config/Protocolと`data/manifests/phase6_calibration_report.json`、`phase6_hybr
 これらと共通Corpus・Index・Hybrid実装Hashの一致を推論時に確認する。生成に使用したContextは取得Top-10と区別する。
 最終Model・Embedding・Context条件等の変更時は影響を確認し、必要なCalibration/派生Datasetを新条件で再固定する。
 
-# 9. Failure評価用Dataset
+# 9. 新テーマの実験対象と派生Record
 
-## 9.1 共通Rule
+## 9.1 選定と固定回答
 
-- Evaluation Splitだけから最終評価例を選ぶ。
-- Normal、Retrieval Failure、DistractorのBase QA IDを重複させない。
-- Candidate順、Seed、採否理由をModelの最終Answerを見る前に固定する。
-- Baseline、Always Rewrite、Adaptive Recoveryで同一Manifestを使用する。
-- `dataset_type`と、実行後に観測した`observed_failure_type`を分ける。
-- 制御用の`failure_type`と`recovery_action`、独立評価の複数Failure Label・代表原因も分離する。
+対象は研究用SplitのAnswerable QA。通常の固定Hybrid検索と元順序で生成した回答を固定する。
+ID選定Rule・Seedを結果を見る前に保存し、成功例・反転例だけを最終対象へ採用しない。
+既存5問のSmokeは新テーマのPilotではない。Runtimeエラー、引用だけ、拒否、Claimなしを区別して記録する。
+実験選定の正解Metadataと、質問・取得文書だけを含むInference入力を分離する。
 
-## 9.2 Normal QA
+## 9.2 文書順序と同一順序対照
 
-1. EvaluationのAnswerableを母集団にする。
-2. Question Style、Answer Length、Passage Length、Source Titleの分布を取得する。
-3. Seed 42で150件を抽出する。
-4. 同じTitleへの偏りを避け、原則1 Title 1件とする。
-5. Baselineが成功するかどうかを採否条件にしない。
+`used_context`の本文・Title・Passage IDを固定し、配列順だけを変える。取得全文と混同しない。
+本文Hash・文書集合・初回回答Hash・固定Claim Hashが全条件で同じことを検証する。
+元/逆/Shuffleの順序IDと、同一順序の反復番号は別に保存する。
+入力超過時は条件ごとに切詰めず、理由を記録する。最終の適格条件とFallbackはEvaluation前に固定する。
 
-## 9.3 Unanswerable QA
+## 9.3 正解根拠と位置Label
 
-CLAPNQのUnanswerableは、NQ Annotatorが提示されたWikipedia Documentで回答なしと判断した質問である。
-Corpus全体のどこにも答えがないことを保証するLabelではない。また、公式AnnotationのProvided Passageは
-Random Passageであり、著者自身が一部には実際の答えが存在する場合を報告している。
+Selected SentencesはReferenceごとの対応を保持する。代替の根拠集合を無条件に合体させない。
+空Annotation・照合不能・代替支持を記録し、Goldの文字列一致と意味上の根拠充足を区別する。
+根拠位置・支持分散はOfflineの条件別分析用であり、Judge/修復器へGoldの位置を教えない。
 
-構築手順:
+## 9.4 対象外とする旧派生条件
 
-1. EvaluationのUnanswerableをSeed 42で固定順に並べる。
-2. 固定RetrieverのBM25、Embedding、Hybridそれぞれで上位Passageを取得する。
-3. Provided Passage、上位Retrieval Passage、必要時Original NQ Documentを確認する。
-4. 質問に答える根拠がCorpus内にあるかを判定する。
-5. `corpus_unanswerable`を150件採用するまで固定順に監査する。
-6. 除外例と理由をすべてManifestへ残す。
-
-監査Label:
-
-```text
-unanswerable_audit:
-  corpus_unanswerable
-  answer_found_in_provided_passage
-  answer_found_in_retrieved_corpus
-  ambiguous_or_time_sensitive
-  insufficient_evidence_for_judgment
-```
-
-Primary評価では`corpus_unanswerable`だけを使用する。その他はData品質分析として別報告する。
-
-## 9.4 Retrieval Failure
-
-目的は、初回検索でGold Passageを取得できない条件に対するQuery Rewriteの効果を測ることである。
-
-1. Normal/Distractorと重複しないEvaluation Answerableを検索する。
-2. 固定RetrieverのTop-kにGold Passageがない例を自然発生Failure候補とする。
-3. 最大150件を固定する。150件未満なら実数を主結果として報告する。
-4. 補助的に検索困難化質問を作る場合は、意味と正解が変わらないことを人手確認する。
-5. 自然発生Failureと派生Failureを同じ平均へ混ぜない。
-6. Query Rewrite後に成功した例だけを採用しない。
-
-GoldはOffline評価にだけ使い、本番のFailure DiagnosisはR Scoreから判断する。
-
-このSubsetの抽出条件であるGold未取得と、独立評価のRetrieval Failureは同一ではない。
-Gold以外の取得Passageで十分に回答できる場合があるため、Gold取得の有無とContextの根拠充足を
-別々に記録する。Subset名をFailureの正解Labelへ直接変換しない。
-
-## 9.5 Distractor
-
-1. 他Subsetと重複しないEvaluation Answerableを候補とする。
-2. 異なるTitleからBM25またはEmbedding類似度の高いPassageをHard Negative候補にする。
-3. Gold Answer文字列や同等の回答根拠を含む候補を除外する。
-4. 人手または固定Ruleで誤根拠であることを確認する。
-5. 最終ContextにGold Passageと1件以上のDistractorが残るようにする。
-6. GoldがTop-kから落ちた例はRetrieval Failureへ分離する。
-7. 150件を固定し、挿入位置、個数、Score、Passage ID、Seedを保存する。
+四種類の各150件固定、Corpus-level Unanswerable監査、人工Distractor作成、原因分類Labelは今回の主実験の必須条件ではない。
+旧手順は保存版第9節に残す。将来採用するなら別VersionでSource・生成条件・監査を記録する。
+Unanswerableの元LabelがCorpus全体の回答不能を保証しないという注意は維持する。
 
 ---
 
-# 10. 評価指標
+# 10. 評価指標と独立品質
 
-## 10.1 Retrieval
+## 10.1 検索・文字列Metric
 
-- Recall@k。
-- nDCG@10。
-- MRRまたはGold Passage Rank。
-- Query Rewrite前後のGold Passage到達率。
+既存のGold Success@k、Recall、nDCG等は基盤の説明用。検索改善は主研究質問にしない。
+長文ReferenceとのF1/ROUGEは補助にできるが、文字列一致だけでYを決めない。
 
-## 10.2 Answer Correctness
+## 10.2 制御用F
 
-- Token-level Answer F1。
-- ROUGE-L F1。
-- Completenessを補うROUGE-1 Recall。
-- 必要に応じて固定Model/PromptによるSemantic Correctness評価。
+初回回答だけから固定したClaimを、実使用Contextに対して検証する。
+Fはsupported数/固定Claim数。Scoreは正答確率ではない。
+Claimなしや失敗を満点/0点へ変換しない。独立品質の正解にも使わない。
+初期τ=0.7、F>=τで採用、F<τで一回書換え。採点不能は初回保持Fallbackを別記録。
 
-長文回答には複数の正しい表現があるため、Exact MatchをPrimary Metricにしない。複数Referenceがある
-場合は最大Scoreを採用し、Micro/Macro集計方法を固定する。
+## 10.3 判断の揺れ
 
-## 10.3 Faithfulness
+主指標は質問内の有効な固定ペアで採用/書換えが異なる割合を求めた質問平均と、順序群−反復群の差。
+補助として少なくとも一度判断が反転した質問の割合を示す。試行数・異なる順序数への依存を明記する。
+同じ質問の試行を独立QAへ水増ししない。
 
-- Retrieved Contextに対するClaim Support Ratio。
-- Gold Selected Sentencesに対するEvidence Coverage。
-- Claim単位Unsupported Claim Ratio（補助）と回答単位Hallucination Rate（主）。
-- AnswerとRetrieved PassageのROUGE-LはExtractiveness補助指標として使用する。
+## 10.4 主品質Label
 
-Faithfulnessが高くても、誤ったDistractorへ忠実な回答は正しくない。Answer Correctness、
-Faithfulness、Answer Relevanceを独立して報告する。
-制御用Fの上昇を独立評価の改善として流用しない。主張の独立判定と分母は第10.9節に従う。
+Y=1は、質問の必須要点、重大誤りなし、実使用Contextでの事実の支持を全て満たす回答。
+Y=0は不完全・誤答・根拠外情報・不適切な拒否等。それ自体を判定できなければindeterminateと理由を記録する。
+研究者本人が条件/段階/Scoreを隠した無作為順の候補を、Referenceと根拠で確認する。
+自己評価のClaimや理由は品質採点の正解に流用しない。単独採点の制約を明記する。
+初回Y0/書換えY1を組にして1→1、1→0、0→1、0→0を報告する。
+初回誤答を全て修復可能と仮定しない。
 
-## 10.4 Unanswerable
+## 10.5 品質と費用への影響
 
-- Answerability Accuracy/F1。
-- Unanswerable Recall。
-- Answerableを誤って拒否するFalse Refusal Rate。
-- Unanswerableへ具体的事実を生成するHallucination Rate。
+修復なし、常時Answer Rewrite、評価条件別判断は同じ初回/書換え候補から選択する。
+正答悪化は全対象あたりと初回正答あたり、改善見逃しは全対象あたりと0→1例あたりを区別する。
+評価器の不正出力・採点不能と、書換え失敗のFallbackを品質と費用へ反映する。
+Calls/Token/Latencyには抽出・評価・補助・再試行を含める。Cacheによる実験共用を運用費用0としない。
+実収集費用、方式別経路費用、Offline採点費用を分ける。
 
-表現一致だけで拒否判定せず、事前に固定したCanonical Labelと判定Ruleを使用する。
+## 10.6 判定不能・統計・分母
 
-## 10.5 本研究固有指標
-
-- Failure Detection F1。
-- 原因分類Macro-F1。
-- Recovery Success Rate。
-- ConfidenceのECE。
-- Average LLM Calls。
-- Latency。
-- Recovery前後の各Metric差。
-
-以下の第10.6〜10.10節を、本研究固有の独立評価・集計方法の詳細仕様とする。
-制御のDecision RuleとAlways Rewriteの処理順序は研究計画第6・7・11節および実装計画を参照する。
-
-## 10.6 独立品質Labelと人手確認
-
-制御用R/F/AはInference時に使用し、独立品質Labelは実験後に別処理で確定する。
-独立評価には質問、Reference、Gold根拠、取得Context、回答を使えるが、その結果をRetriever、
-Generator、Query Rewrite、自己評価やRecoveryへ戻してはならない。
-
-主評価Labelは人手確認で確定する。LLM判定は下書きの補助に限定し、自己評価をもう一度実行しただけの
-結果を正解Labelにしない。判定時は方式名、C、制御用R/F/Aを隠す。初回と修正後は順序を入れ替えて
-個別に判定し、判定理由と根拠箇所を保存する。Referenceとの表現一致は必須とせず意味を確認する。
-
-| 対象 | Y=1（信頼できる回答） | Y=0 |
-|---|---|---|
-| Answerable | 質問の必須要点を満たす、重大な事実誤りなし、事実Claimが取得Contextで裏付けられる、のすべてを満たす | 不完全、誤答、根拠のないClaim、誤った拒否等 |
-| 監査済みUnanswerable | 回答不能を明確に伝え、回答を捏造しない | 回答の捏造、曖昧・無関係な応答等 |
-
-必須要点や重大な誤りの判定基準はDevelopment/Calibrationで具体化し、評価基準のVersionを
-最終Evaluation前に固定する。Evaluation結果を見て合否基準を変更しない。
-判定不能は`indeterminate`とし、Y=0やY=1へ強制変換しない。
-
-同じ質問・回答・Contextは再採点せず、Labelを再利用できる。ただし、回答文字列が同じでも質問や
-Contextが違う場合は別評価とする。共通初回回答を含むRun/QA/回答段階の対応を保持する。
-主評価の対象を自己評価Scoreや成功例に基づいて選別しない。人手作業量と確認済み件数を記録する。
-
-判定不能は該当Labelを必要とする主指標から除外し、全対象数・判定可能数・除外数・理由を
-方式別/Dataset種類別に併記する。RSRでは初回・修正後の両方のYが判定可能なRecoveryを分母とし、
-元のRecovery総数と除外数も示す。比較では判定可能な共通QAでの対応付き結果も報告し、除外による
-方式間の対象差を隠さない。評価失敗を都合よく成功・失敗へ振り分けない。
-
-## 10.7 Failureの正解Labelと検出・原因分類
-
-初回検索・初回回答を独立に確認し、次の複数Labelを保存する。Dataset種類、制御用閾値やScoreを
-Label確定に使わない。
-
-| 独立Label | 定義 |
-|---|---|
-| `retrieval_failure` | Answerableについて、取得Contextだけでは必須要点に答える根拠が不足している |
-| `generation_failure` | 回答に、取得Contextで裏付けられない事実Claimが含まれる |
-| `answer_relevance_failure` | 質問に答えていない、必須要点を欠く、誤った拒否、質問への意味的な誤答のいずれかがある |
-
-監査済みUnanswerableのRetrieval Failureは適用対象外とし、0/falseと区別する。Gold Passage未取得は
-客観的な検索Metricとして保持するが、それだけで独立Retrieval Failureを確定しない。
-複数Labelが成立した場合、代表原因はRetrieval → Generation → Answer Relevanceの順とする。
-原因自体を判定できない場合も判定不能と理由を保存する。
-
-- Failure Detection F1: 初回Y=0をPositive、初回Y=1をNegativeとし、AdaptiveのRecovery起動の有無を
-  予測として評価する。`low_confidence`による起動もPositive予測に含める。
-- 原因分類Macro-F1: 初回Y=0で独立代表原因が確定した例に対し、3原因ごとのF1とMacro平均を報告する。
-  `low_confidence`と`none`は3原因のいずれかへ読み替えない。正解原因がある場合は原因未特定として
-  該当原因のFalse Negativeに数える。各原因のSupportと未特定件数を示す。
-
-回答が信頼できるかの検出と、処理工程の問題の検出は異なる。Gold未取得、根拠充足、複数原因Labelを
-別に保存することで、検索の問題があっても回答が妥当な例等を分析できる。
-
-## 10.8 ConfidenceのECE
-
-Cと独立品質Label Yを使う。[0,1]を10個の等幅区間へ分け、[0,0.1)、[0.1,0.2)、…、[0.9,1]とする。
-空区間の寄与は0であり、区間平均を0として解釈しない。
-
-```text
-N = Yが判定可能で対応するCがある回答数
-ECE = sum_m((|B_m| / N) * abs(mean(C in B_m) - mean(Y in B_m)))
-```
-
-N=0なら適用対象外とする。初回回答のECEを主指標、最終回答のECEを別指標とし、Dataset種類別の結果、
-区間件数、平均C、Y=1の割合も報告する。Recoveryした例だけに絞った値を全体ECEと呼ばない。
-
-Cは加重Scoreであり、C=0.8を事前に「80%の確率で正しい」と解釈しない。その対応が成立するかを
-評価する。初回/最終Cは同じ制御用評価条件で取得し、Baseline・Alwaysの採点は推論後にOfflineで行う。
-そのScoreをBaseline・Alwaysの出力選別に使わない。標準的なECEの式は
-[Guo et al. (2017), On Calibration of Modern Neural Networks](https://proceedings.mlr.press/v70/guo17a/guo17a.pdf)
-に基づく。10区間およびYの定義は本研究上の決定である。
-
-## 10.9 Claim判定とHallucination集計
-
-回答を検証可能な最小の事実Claimへ分解し、各Claimを独立に判定する。
-
-| Claim Label | 意味 |
-|---|---|
-| `supported` | 取得Contextに裏付けがある |
-| `contradicted` | 取得Contextと矛盾する |
-| `not_supported` | 取得Contextでは裏付けられない |
-
-`contradicted`と`not_supported`を根拠のないClaimとする。判定不能の扱いは第10.6節に従う。
-
-```text
-主Hallucination Rate = 根拠のないClaimが1つ以上ある回答数 / 評価回答数
-補助Unsupported Claim Ratio = 根拠のないClaim総数 / 全事実Claim数
-独立Claim Support Ratio = supported Claim総数 / 全事実Claim数
-```
-
-回答単位の主指標と、全Claimをまとめた補助指標は分母を区別し、Dataset種類別の値も出す。
-これは取得Contextによる裏付け不足の操作的定義であり、世界知識上の真偽とは同一でない。
-Contextに忠実でも誤答する場合があるため、Referenceに対するCorrectnessも独立に報告する。
-
-事実Claimのない適切な拒否はHallucinationなしとする。Claim単位Faithfulnessは適用対象外で、
-満点に変換しない。Claimがない回答数、拒否数、Claim分母を示し、全Claim数が0なら補助比率は
-適用対象外とする。空回答・無関係な回答はHallucinationなしでもY=0である。
-
-## 10.10 Recovery成功・比較条件・コスト
-
-```text
-主RSR = Recoveryした例のうち初回Y=0かつ修正後Y=1となった件数 / Recovery実行件数
-```
-
-Recoveryが0件なら適用対象外とする。判定不能時の分母と除外報告は第10.6節に従う。
-初回Y=1を維持した例は修復成功に数えず、Y=1→1の維持、Y=1→0の悪化、Y=0→0の未修復を
-分けて報告する。各品質Metricの差も併記する。
-
-旧定義の「Faithfulness上昇・Answer Relevance非低下・Hallucination非増加」は独立評価値を使う
-Faithfulness改善の補助分析として残し、主RSRへ混在させない。補助評価の採点基準もCalibrationで
-固定する。変更理由は、Faithfulnessが満点でも検索・質問適合性の改善を修復成功と評価するためである。
-
-3方式は同じ初回検索・初回回答から分岐する。Baselineは初回回答、Always Rewriteは全質問で
-Query Rewrite・再検索・再生成を1回行った回答、AdaptiveはAcceptなら初回、Recoveryしたら修正後を
-返す。AlwaysとAdaptiveのQuery Rewriteは同じModel/Prompt/設定を使う。
-
-Rewriteした質問は検索だけに使い、回答生成・A評価には元質問を使う。再検索Contextは初回と結合
-しない。Answer Rewrite自体を2回目の回答生成と数え、その後に別の生成を追加しない。
-Adaptiveの未解決記録は独立Yと別であり、制御の採用/不採用を品質の正解Labelにしない。
-
-LLM Calls、Token、Latencyは実際の推論処理を集計し、Adaptiveの自己評価と補助呼び出しも含める。
-初回結果を共有しても各方式へ初回コストを計上する。独立採点やBaseline・AlwaysのECE用Score取得は
-Offline評価として別集計する。
-
-主比較は起動判断と修正方法の両方が異なる仕組み全体の比較であり、起動判断だけの効果とは主張
-しない。起動判断を切り分ける場合は、常時Query RewriteとAdaptiveの起動条件でQuery Rewriteする
-方式を同じ修正方法で比較する補助実験とし、主比較とは条件・結果を分ける。
+全対象数、有効Trial、両群有効な共通QA、品質判定可能QA、エラー・不適格・判定不能の件数と理由を記録する。
+品質の未知を除いた対応比較に加え、未知を良い/悪い側へ振った感度を報告する。
+分母0を0%としない。元質問/Title単位の依存と、共通初回を持つ群の対応を維持して95%信頼区間を求める。
+主比較と閾値・少数の条件別分析を最終評価前に固定する。詳細は研究計画第7節による。
+旧原因分類Macro-F1、旧CのECE、旧Query Rewrite比較は主指標から外す。
 
 ---
 
-# 11. ManifestとDirectory
+# 11. Manifestと保存先
 
-```text
-data/
-├─ raw/clapnq/{revision}/              # 公式配布物、Git対象外
-├─ processed/clapnq/{dataset_version}/
-│  ├─ qa.jsonl
-│  ├─ passages.jsonl
-│  ├─ development.jsonl                # split-v1のみ
-│  ├─ calibration.jsonl                # split-v1のみ
-│  ├─ evaluation.jsonl                 # split-v1のみ
-│  └─ split_report.json
-└─ manifests/
-   ├─ clapnq_source_manifest.json
-   ├─ clapnq_split_manifest.json
-   ├─ clapnq_retrieval_manifest.json
-   ├─ clapnq_unanswerable_audit.jsonl
-   ├─ clapnq_eval_normal.jsonl
-   ├─ clapnq_eval_unanswerable.jsonl
-   ├─ clapnq_eval_retrieval_failure.jsonl
-   └─ clapnq_eval_distractor.jsonl
-```
-
-Source ManifestにはRevision、取得日、License、File Hash、Byte数、Row数、Schemaを保存する。
-Split ManifestにはGrouping Key、比率、Seed、Algorithm Version、各Split件数、Title重複検査結果を保存する。
-Retrieval Manifestには共通Corpus/全ID順Hash、Model名・Revision・量子化・重みHash、Tokenizer、
-Pooling/Normalization、Library/Parameter/CPU条件、両Index File HashとGold対応検証を保存する。
-`data/indexes/`のIndex本体と`data/models/`の取得済みModelはGit管理せず、条件から再生成する。
-派生ManifestにはBase ID、生成条件、Retriever Config Hash、Prompt/Model Revision、Seed、Gold/Distractor
-Passage ID、監査結果を保存する。
-
-独立評価RecordはInference Stateと別に保存し、Run/QA/回答段階のID、評価基準Version、Y、複数原因Label、
-代表原因、Gold取得、Context根拠充足、Claim判定と根拠箇所、判定理由・判定不能理由を保持する。
-制御Logの`failure_type`・`recovery_action`・採用条件・未解決と独立Labelを混同しない。
+Source/Split/検索/生成の既存ManifestとRaw/Processed Dataは変更しない。
+新実験用Recordは`data/runs/order_sensitivity/{study_version}/`へ分離する計画で、まだ生成していない。
+Sample/固定Trace/Claim/Judge Trial/書換え候補/独立品質/分析Manifestの契約は実装計画第3節による。
+全Recordを質問・候補Hash・Protocol Versionで結び、既存Manifestを上書きしない。
+Raw Data、Model、Index、Runの本文をGitへ追加しない。公開範囲とLicense表示を確認して成果物を整理する。
 
 ---
 
-# 12. 自動ValidationとTest
+# 12. ValidationとTest
 
-## 12.1 Source検証
+Source件数・Schema・無効Reference・Gold対応・Stable ID・Split間重複0・再生成Hashの既存検証は維持する。
+新実験では次を実装し、実DataのPilotと分けて確認する。
 
-- 公開Trainが3,745件、Devが600件である。
-- Train Answerable/Unanswerableが1,954/1,791件である。
-- Dev Answerable/Unanswerableが300/300件である。
-- JSONL各行に`id`、`input`、`passages`、`output`がある。
-- AnswerableのGold Passage IDがRetrieval Corpusに存在する。
-- Corpus Passage IDが一意である。
-- File HashがManifestと一致する。
+- 推論へのGold/Reference/Answerability/Y漏洩がない。
+- 順序以外の文書内容と固定回答・Claimが一致し、再Packingしない。
+- 既知ID・Claim対応・JSON・Label・F計算・閾値等号・採点不能Fallbackを検証する。
+- 固定書換え、盲検Export/Import、四遷移、共通QA、分母0、品質未知、費用の共用補正を確認する。
+- Source/既存BaselineのRegression、再開・Hash差停止を確認する。
 
-## 12.2 正規化検証
-
-- Answerableに有効Referenceが1件以上ある。
-- `skip`、空Answer、`NA`を評価Referenceから除外する。
-- UnanswerableのReference Answerは空Listである。
-- Selected SentencesとReference Answerの対応を保持する。
-- Stable IDとRaw Record Hashが全Recordにある。
-
-## 12.3 Split検証
-
-- 同じTitleが複数の研究用Splitに存在しない。
-- casefold・NFC正規化後のGroupもSplit間重複0である。
-- Development/Calibration/Evaluation間でRecord IDが重複しない。
-- Split作成が同じInput、Seed、Versionから再現できる。
-- Answerability比と実数をReportできる。
-
-## 12.4 Leakage検証
-
-- Inference PromptにReference Answer、Gold Passage ID、Selected Sentencesが含まれない。
-- Unanswerable LabelがGeneratorへ渡らない。
-- Full RAGでAnnotation内Gold Passageを直接Contextへ入れない。
-- Evaluation質問をFew-shot例に使用しない。
-- 3比較方式でDataset、Corpus、Retriever、Generator、初回生成Promptと共通Prompt資産のHashが一致する。
-  Recoveryにより実行されるPrompt履歴は異なるため、資産の同一性と呼び出し履歴を区別する。
-- 独立品質Label、独立Failure Label、Claim判定、評価理由がInferenceへ渡らない。
-
-## 12.5 派生条件検証
-
-- Normal/Retrieval Failure/DistractorのBase IDが重複しない。
-- Retrieval Failureで初回Top-kにGold Passageがない。
-- DistractorでGold Passageと検証済みHard NegativeがTop-kに共存する。
-- Unanswerableは`corpus_unanswerable`監査を通過している。
-- 派生例にSeed、元ID、生成条件、採否理由がある。
-
-## 12.6 制御・独立評価の検証条件（未実装）
-
-- Decisionは個別Failureを先に判定し、低Confidenceで原因未特定でも処理が一意に決まる。
-- `low_confidence`のLabelと実際のRecovery処理を別々に記録する。
-- 元質問の保持、Context置換、回答生成回数・Recovery回数を仕様どおり検証する。
-- Dataset種類、Gold未取得、独立根拠不足を別に保持する。
-- 人手評価画面・Recordで方式名、C、制御用R/F/Aを判定者へ見せない。
-- RSRの初回/修正後対応、10区間ECEの境界、回答/Claim分母、判定不能の除外・件数報告を検証する。
-- Offline評価コストと実際の推論コストを分離できる。
+新Testは未実装。Phase 6の135件成功を新研究のTest結果と混同しない。
 
 ---
-
 # 13. 既知のRiskとLimitations
 
 - 英語Wikipedia Domainだけであり、日本語、行政文書、専門Domainへの一般化を直接実証しない。
@@ -1106,31 +839,20 @@ Passage ID、監査結果を保存する。
 - Reference Answerは高品質だが、手動Annotationなので誤りや曖昧さを完全には排除できない。
 - 回答は比較的Extractiveであり、完全にAbstractiveな回答生成を代表しない。
 - Gold Answerと異なるが正しい回答が、文字列Metricで過小評価される可能性がある。
-- 低Confidence時の補助Routingは設計上のHeuristicであり、失敗原因を保証するものではない。
-- 3方式の主比較だけでは、Recovery起動判断と修正方法の個別効果を分離できない。
+- Fによる採用/修復の境界は設計上のRuleであり、正解確率や真の原因を保証しない。
+- 固定書換え候補の比較は、その修復方式・Seedの下での起動判断の効果に限定される。
 - 人手の独立評価にも主観や作業量の制約があるため、基準、理由、確認数、判定不能数を記録する。
 - CLAPNQのApache 2.0表示とNQ DataのCC BY-SA 3.0を併せて管理する必要がある。
 
-本研究では、研究目的を「特定言語での有効性」ではなく「Text-based RAGにおける自己評価と
-Failure別Recoveryの有効性」とする。ただし、CLAPNQだけを用いた結果から「言語に依存しないことを
-実証した」とは主張しない。
+本研究の対象は、Text-based RAGの自己評価における根拠提示順序への感度と修復判断への影響である。
+CLAPNQだけを用いた結果から、言語に依存しないことを実証したとは主張しない。
 
 ---
 
 # 14. 実装順序
 
-1. 固定RevisionでCLAPNQ公開Dataを取得する。
-2. Source ManifestとLicense Lineageを作成する。
-3. Annotation LoaderとRetrieval Corpus Loaderを実装する。
-4. Reference正規化とGold Passage対応を検証する。
-5. Title Group-aware Splitを生成・固定する。
-6. BM25、Embedding、RRFによるBaseline Retrieverを実装する。
-7. CalibrationでRetriever、Prompt、R/F/A、閾値を固定する。
-8. EvaluationからNormalとUnanswerable候補を固定する。
-9. UnanswerableをCorpus-levelで監査する。
-10. 固定RetrieverからRetrieval FailureとDistractorを構築する。
-11. Baseline、Always Rewrite、Adaptive Recoveryを同じManifestで実行する。
-12. Metric、Limitations、License表示を含む論文用Tableを出力する。
+Phase 1〜6は完了済み。新Phase 7以降は[ロードマップ](research_roadmap.md)を正本とする。
+旧四条件Datasetや全R/F/Aの実装を次工程の前提にしない。
 
 ---
 
@@ -1148,7 +870,7 @@ PDF画像やLayout解析は不要である。
 
 ## Q3. 公式DevをそのままTestとして使えるか
 
-小規模な再現実験には使えるが、本研究の4条件を互いに異なるBase QAで各150件作るには不足する。
+本研究では開発用の例と最終評価を分け、Title単位で固定した内部Splitを使う。
 またTrainとのTitle重複があるため、本研究では公開Train/DevをTitle単位で再分割する。
 
 ## Q4. UnanswerableのProvided PassageはGold Passageか
@@ -1222,24 +944,21 @@ License表示を追記する。CLAPNQをそのまま使用したとだけ書き�
 
 ---
 
-# 17. 実装開始前Checklist
+# 17. 現在の確認状況
 
-- [x] CLAPNQを固定Revisionで取得した。
-- [x] File Hash、件数、Schema、LicenseをSource Manifestへ保存した。
-- [x] 公開Train 3,745件、Dev 600件を検証した。
-- [x] Corpus 178,890 Passage RecordsとGold Passage対応を検証した。
-- [x] 無効Referenceを除外し、Answerableに有効Answerが残ることを確認した。
-- [x] Apache 2.0とCC BY-SA 3.0の表示を保存した。
-- [x] 公式Testを使用せず、公開Train/Devだけで研究を継続する条件を固定した。
-- [x] Title Group-aware SplitをSeed 42で固定した（c508d78-split-v1、2026-10-06）。
-- [ ] Gold情報をInference Stateから分離した。
-- [ ] Unanswerable候補をCorpus-levelで監査した。
-- [ ] 4種類の評価Manifestを固定した。
-- [ ] 3比較方式でDataset、Corpus、Model、Prompt、Seedが同一かTestした。
-- [ ] 論文用Dataset統計、変更点、License、Limitationsを出力した。
+- [x] 固定Revision、Source/Schema/件数、License Lineageを検証した。
+- [x] QA/Corpus/Gold ID対応とTitle単位Splitを固定した。
+- [x] 共通検索・初回生成と実入力/回答保存まで動作確認した（Phase 6）。
+- [x] 新テーマのData運用と研究/実装計画を更新した。
+- [ ] 新しい対象選定と固定Trace/Claim/Judge TrialのManifestを作成した。
+- [ ] 新評価器/修復器に正解が漏れないことを実装Testで確認した。
+- [ ] 新テーマのPilotと独立品質採点を完了した。
+- [ ] 最終Protocolを凍結してEvaluationを実施した。
+- [ ] 論文用統計・欠測・Limitations・License表示を出力した。
+
+Corpus-level Unanswerable監査は未実施だが、新テーマの主実験の必須Gateではない。
 
 ---
-
 # 18. 変更時に更新する場所
 
 | 変更内容 | 更新対象 |

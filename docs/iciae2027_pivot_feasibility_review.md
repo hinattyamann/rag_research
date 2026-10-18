@@ -1,5 +1,9 @@
 # 自己評価の揺れを調べるRAG研究のICIAE投稿可能性
 
+採用状況（2026年10月18日）: 本テーマへ正式に方向転換した。
+[研究計画7.0](rag_research_plan.md)、[実装計画8.0](rag_implementation_plan.md)、[ロードマップ](research_roadmap.md)を正本とする。
+以下は採用判断のために作成した調査時点の記録で、実験結果ではない。
+
 調査日: 2026年10月18日（JST）。状態: **方向転換の判断資料。採用決定、実験結果、採択の保証ではない。**
 
 前提は、[現行研究計画](rag_research_plan.md)、[実装計画](rag_implementation_plan.md)、
