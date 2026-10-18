@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "purpose": "phase9-development-implementation-not-quality-result",
+  "study_version": "rewrite-development-v1",
+  "current_run": "data\\runs\\answer_rewrite\\phase9-development-two-v1",
+  "sample": "same two previously inspected Development examples; not unseen pilot",
+  "config": "configs/phase9.yaml",
+  "source_order_run": "data\\runs\\order_sensitivity\\phase8-development-two-v5",
+  "run_manifest_sha256": "3344619d2d74d8acda018c3d89f93abf7dd314f231d4a3e3ac2ab069f48968cd",
+  "validation": {
+    "validated_at_utc": "2026-10-18T15:20:18.666689+00:00",
+    "record_count": 2,
+    "rewrite_calls": 2,
+    "source_judge_calls_added": 0,
+    "resume_additional_completions": 0,
+    "resume_task_files_byte_identical": true,
+    "phase8_raw_artifacts_unchanged": true,
+    "original_context_and_answer_only": true,
+    "all_input_budgets_valid": true,
+    "unique_annotation_candidates": 3,
+    "manual_annotation_status_counts": {
+      "pending": 3
+    },
+    "quality_transitions": {
+      "0->0": 0,
+      "0->1": 0,
+      "1->0": 0,
+      "1->1": 0,
+      "unknown": 2
+    },
+    "gate9_status": "pending_human_quality_confirmation",
+    "records": [
+      {
+        "record_id": "clapnq:c508d78:train:-2421097959159398117:answerable",
+        "same_answer": false,
+        "input_tokens": 2033,
+        "output_tokens": 99,
+        "elapsed_seconds": 51.05211079999572,
+        "audit_warnings": []
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-996127241617807228:answerable",
+        "same_answer": true,
+        "input_tokens": 2071,
+        "output_tokens": 60,
+        "elapsed_seconds": 48.892603699991014,
+        "audit_warnings": [
+          "unknown_citations_require_manual_review"
+        ]
+      }
+    ],
+    "remaining_llama_server_processes_observed": [],
+    "tests_passed": 216,
+    "tests_skipped": 0,
+    "test_seconds": 23.48,
+    "ruff": "passed",
+    "browser_manual_interaction_tested": false
+  },
+  "assets_sha256": {
+    "configs/phase9.yaml": "bb2d9d9641a572af46e8971e14f459eb44188b9a126ef4b7ec7efbe28afa8839",
+    "scripts/run_answer_rewrite.py": "6edfdf3b81713bb5bb217579ece4f93d301aa67aa56e4f3019b762587f80ccee",
+    "scripts/answer_quality.py": "122299b052b0a356bbbf7c47948885f2bf6af527ac55d0c56ada78b6954bd922",
+    "tests/test_answer_rewrite.py": "71571c1798461909c152febc09ca8d52a4a81807ae1a20d284275da274921293",
+    "src/rag_research/experiments/repair_runner.py": "aeb26f350f52453d4ddc7bc306780c59c9247140c7e80b89e9a2821edd54c254",
+    "src/rag_research/experiments/quality.py": "f0cb2e2298443e86adb470451d42328067b00066b978e14d9decbfc615415c71",
+    "src/rag_research/experiments/quality_form.py": "89cb98cf433950ea3b66c2151712617c938bff557ce6d2871b9d1d1eac541d00",
+    "src/rag_research/recovery/answer_rewrite.py": "e82a79085716b0c8527a5f710ed4e54addfb9b6160ec06a3e5fbd91f9bd0478e",
+    "docs/phase9_answer_rewrite.md": "9e3179490ea33a10eebaf405cfcfc437670744257a16fe7053d000c6f1741b62",
+    "docs/rag_research_plan.md": "f7292ced1d81fd38dd74287dc7743b270967e67880be38f71413b64df0506679",
+    "docs/rag_implementation_plan.md": "26f06d9d1ab08c72609bba707496177589bd59e767a23f6dae39509e0be0a759",
+    "docs/research_roadmap.md": "cf7153c3b0dbf713247478792bb858cd3f7f7396c4f83f1e1622846e43086cb3",
+    "README.md": "590e04fc36769492552f745a7ef06cff0e7010fb3a405a9652a9cd5165c6fdc4"
+  },
+  "artifacts_sha256": {
+    "data/runs/answer_rewrite/phase9-development-two-v1/manifest.json": "587fa9923b4f93d6e01aea291335c4a6e2272dc1b0766a81b7bc964d03725b16",
+    "data/runs/answer_rewrite/phase9-development-two-v1/report.json": "95aa20c46f26f5d0556d666752a3d3855510953d9727a748bd14632f703adf02",
+    "data/runs/answer_rewrite/phase9-development-two-v1/validation.json": "86b4304ab39d69f6cd2e828f06fac45c7fd12deea119122bd5946ae9f98d49ad",
+    "data/runs/answer_rewrite/phase9-development-two-v1/examples.md": "aeab0e9123b37112ea0cd6cc9b1021dbdfdd3753b5200c6256f99d1392edb3e9",
+    "data/runs/answer_rewrite/phase9-development-two-v1/build_phase9_record.py": "8d813c338a15912b1af900ac84fd479f27a878284c275e8d2ba20485356fb054",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/packet.json": "b18cf5ece20d611f1d888321a3e0b143d3f97b5239eacf171964c8bd23b048a6",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/mapping.private.json": "ae72849abff137ae8eb2833814b67d2924b2bfdf86b3b9af56c68dd50339b758",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/採点画面.html": "ad1dc1b1d6d5f2ec98cd885156b88e5e62c17132696d0d79e7252cddc8c784bd",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/export_manifest.json": "ae6df527a996dc94bcaf0966a8dc240a7d17543b129a39b81b2eca9724e61b2c",
+    "data/runs/answer_rewrite/phase9-development-two-v1/quality-v2/imports/20261018T151603256683Z/analysis.json": "bca3daf12572a3fca38aec811e2aaf94bb8370eb503cbf2bff497ff68decc125",
+    "data/runs/answer_rewrite/phase9-development-two-v1/a80d1b9b25e76848f2e6c729/rewrite.json": "4d4e286d5f7459f36ace2b3a81079a3f68522e4402157d6b249db3ca3cdab56b",
+    "data/runs/answer_rewrite/phase9-development-two-v1/453b8ed6a8fd228581e56c5c/rewrite.json": "72d23e0f85da184102e0a03ff49542084bff1d59f1c93b3ca81568940fc04e70"
+  },
+  "limits": [
+    "No manual quality labels assigned",
+    "Gate 9 pending researcher confirmation",
+    "No unseen pilot or final evaluation",
+    "No order-dependent decision flip in these two examples",
+    "No measured quality improvement; single-annotator limitation",
+    "Browser interaction not tested"
+  ]
+}

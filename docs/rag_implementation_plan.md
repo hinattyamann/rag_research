@@ -1,13 +1,15 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.2 — 2026年10月18日 Phase 8の実装
+## Version 8.3 — 2026年10月19日 Phase 9の実装と開発実走
 
-[研究計画 Version 7.2](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.3](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
 Phase 8の固定Trace・Claim抽出・Judge・順序/反復・判断と再開を実装した。
-書換え・独立品質採点・本実験のModuleは未実装。Phase 7の入力検証CLIは引き続きCompletion 0回である。
+Phase 9の一回書換え・独立採点Export/Import・候補選択・経路費用を実装し、開発2件の書換えを実走した。
+実品質Labelはpending。Gate 9は研究者本人の採点・照合待ち。本実験のModuleは後続工程である。
+Phase 7の入力検証CLIは引き続きCompletion 0回である。
 
 ## 1. 既存実装と保存する境界
 
@@ -39,7 +41,7 @@ QA選定（評価Metadataは別管理）
 既存Baselineへの条件分岐追加ではなく、保存済み結果を読み込む実験層を加える。
 評価器の操作とGeneratorの操作を分け、Gold入りQA辞書をそのまま評価器へ渡さない。
 
-### 新規配置（Phase 8まで実装。後続Moduleは予定）
+### 新規配置（Phase 9まで実装。後続Moduleは予定）
 
 | 配置 | 責務 |
 |---|---|
@@ -51,9 +53,11 @@ QA選定（評価Metadataは別管理）
 | `src/rag_research/experiments/protocol.py` | Phase 8設定の検証と推論入力のWhitelist |
 | `src/rag_research/experiments/storage.py` | Hash付き保存・原子的Checkpoint・Run単位排他Lock |
 | `src/rag_research/experiments/order_runner.py` | Development所属/元Baseline来歴確認、実行・再開、記述的集計 |
-| `src/rag_research/recovery/answer_rewrite.py`（Phase 9予定） | 固定1回書換え、同一予算・失敗記録 |
+| `src/rag_research/recovery/answer_rewrite.py` | 固定1回書換え、同一予算・失敗・再開記録 |
+| `src/rag_research/experiments/repair_runner.py` | Phase 8保存結果の来歴照合、質問ごとに1候補を収集 |
 | `src/rag_research/experiments/decisions.py` | F閾値、採用/書換え要求/FallbackのAction。候補本文の選択はPhase 9 |
-| `src/rag_research/experiments/quality.py`（Phase 9予定） | 条件を隠すExport/Import、独立Yと理由、整合確認 |
+| `src/rag_research/experiments/quality.py` | 条件を隠すExport/Import、独立Yと理由、整合確認、候補選択・四遷移・経路費用 |
+| `src/rag_research/experiments/quality_form.py` | 外部送信のない採点HTML、JSONの途中保存・再読込 |
 | `src/rag_research/experiments/analysis.py`（後続予定） | 対応集計、信頼区間、品質遷移、費用の区別 |
 | `src/rag_research/evaluation/schema.py` | JSON/原文引用候補のDecoder制約。全順序で同じSchemaを使う |
 | `configs/order_phase8_v5.yaml` / `configs/order_prompts_phase8_v5.yaml` | 現在の制約付き開発用設定。初期版/v2/v3/v4は履歴として維持 |
@@ -156,6 +160,14 @@ Importで候補Hash/基準Version/採点用IDを検証し、未採点をY=0へ�
 研究者本人の採点時間・判定理由・不一致や再確認履歴を残す。二者一致度を報告したことにはしない。
 Yと判定不能の定義は研究計画第6節、分母は同第7節にそろえる。
 
+Phase 9実装では匿名IDをSeed 44で決定し、別対応表を保存する。同一の質問/候補/Context/Referenceは一度採点する。
+基準本文の練習例は表示しない。採点基準Version、Packet/Candidate Hash、ID集合、引用の原文一致、
+3観点とLabelの整合、理由・要点・確認者・秒数・日時を検証する。
+Importは日付付き新Directoryへ保存し、過去のAnnotationを上書きしない。
+未採点と判定不能を分け、既知の四遷移へ算入するのは初回/書換え双方のYが確定したQAだけである。
+書換え失敗時の候補は採点対象へ追加せず、最終出力は初回Fallbackに対応付ける。
+CLI・実出力・未確認事項は[Phase 9記録](phase9_answer_rewrite.md)による。
+
 ## 7. 集計と計算量
 
 質問内の全ペア不一致を一つの質問の値へまとめ、元質問/Titleの対応を保持する。
@@ -189,8 +201,10 @@ Cacheで共用しても、各方式へ必要な初回/書換え費用を計上�
 
 今後の実装Testには挙動の境界・漏洩・公平性を検証するものを用い、単にコードをなぞるTestを増やさない。
 Phase 7は入力検証、Phase 8は固定Trace・順序/反復・Claim/引用/Score・失敗・再開・来歴照合の
-境界Testと少数Developmentの実応答確認を行う。独立品質Export/Import、書換え失敗、品質遷移、
-統計・方式別運用費用のTestは後続工程である。実績と既知の問題は[Phase 8記録](phase8_order_evaluation.md)へ残す。
+境界Testと少数Developmentの実応答確認を行った。Phase 9で独立品質Export/Import、書換え失敗、
+品質遷移、方式別運用費用、保存データ改変検知の34 Testを追加した。
+全216 Test成功。実際の品質採点と統計・信頼区間は後続工程である。
+実績と既知の問題は[Phase 8記録](phase8_order_evaluation.md)と[Phase 9記録](phase9_answer_rewrite.md)へ残す。
 
 ## 9. Phaseと成果物の対応
 

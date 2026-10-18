@@ -1,8 +1,8 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 2.2 — 2026年10月18日 Phase 8に対応
+## Version 2.3 — 2026年10月19日 Phase 9に対応
 
-[研究計画7.2](rag_research_plan.md)に対応するDataset仕様書。
+[研究計画7.3](rag_research_plan.md)に対応するDataset仕様書。
 Source、License、Loader、内部Schema、Title単位Split、CorpusとPhase 6までの条件は維持する。
 主実験はAnswerable QAの固定回答に対する評価順序と修復判断の比較へ変更する。
 [旧Version 1.10](archive/clapnq_dataset_guide_v1_10.md)の四種類Failure Dataset、全R/F/A、原因分類、ECE中心の比較は必須工程から外す。
@@ -12,7 +12,9 @@ Source、License、Loader、内部Schema、Title単位Split、CorpusとPhase 6�
 Phase 7の[初期Protocol](phase7_order_protocol.md)・設定・入力検証は作成済み。
 Phase 8で固定Trace/Claim/Judge Trial、条件Manifestと実評価CLIを実装した。
 実走での指示文・構造化出力の調整、検証範囲は[Phase 8記録](phase8_order_evaluation.md)による。
-書換え、独立品質の確定Label、新規Pilot/本実験は未実装・未実施である。
+Phase 9で元Contextによる一回書換え・条件を隠す品質Export/Import・経路比較を実装した。
+開発2問の3候補は人手採点待ちであり、手順と現在地は[Phase 9記録](phase9_answer_rewrite.md)による。
+独立品質の確定Label、新規Pilot/本実験は未実施である。
 公式情報と研究上の決定、実監査結果、未確定値を区別し、推論へ正解情報を渡さない。
 
 ---
@@ -814,6 +816,9 @@ Source/Split/検索/生成の既存ManifestとRaw/Processed Dataは変更しな�
 Run Manifest内のstudy_versionでProtocol系列を、run_idで実走を識別する。Phase 8の開発用Runを生成した。
 Sample/固定Trace/Claim/Judge Trial/書換え候補/独立品質/分析Manifestの契約は実装計画第3節による。
 全Recordを質問・候補Hash・Protocol Versionで結び、既存Manifestを上書きしない。
+Phase 9は`data/runs/answer_rewrite/{run_id}/`、採点票はその子Directoryへ分離する。
+Reference/Goldは採点用Exportにのみ追加し、書換えの推論入力へ入れない。
+採点対応表は`mapping.private.json`へ別保存、Import結果は日付付きDirectoryへ追記する。
 Raw Data、Model、Index、Runの本文をGitへ追加しない。公開範囲とLicense表示を確認して成果物を整理する。
 
 ---
@@ -830,7 +835,8 @@ Source件数・Schema・無効Reference・Gold対応・Stable ID・Split間重�
 - Source/既存BaselineのRegression、再開・Hash差停止を確認する。
 
 Phase 7は入力検証、Phase 8は固定入力・順序/反復・Claim/引用/判断・再開/排他・Baseline来歴・
-出力制約の順序非依存性を検証するTestを追加した。書換え・独立品質・最終集計のTestは後続工程である。
+出力制約の順序非依存性を検証するTestを追加した。Phase 9で書換え・独立品質入出力・候補選択・
+四遷移・費用のTestを追加し、全216件成功。実品質採点と最終統計は後続工程である。
 Phase 6の135件成功を新研究のTest結果と混同しない。
 
 ---

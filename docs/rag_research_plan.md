@@ -1,10 +1,10 @@
 # RAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.2 — 2026年10月18日 Phase 8の実装
+## Version 7.3 — 2026年10月19日 Phase 9の実装と開発実走
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.2](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.3](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -197,4 +197,8 @@ Viewerは点検と説明の補助。参加者なしで使いやすさや理解�
 通常初回は2026年11月20日、英語4〜8ページ、通知12月11日、最終原稿2027年1月8日。
 会期は3月26〜30日。1月を初回要旨締切として計画しない。
 作業・成果物・Gate・期限は[ロードマップ](research_roadmap.md)による。
-**Phase 1〜8完了。次はPhase 9の一回書換え・独立品質採点。新規Pilot/本実験は未実施。**
+**Phase 1〜8完了。Phase 9は一回書換え・独立採点入出力・経路比較を実装し、開発2件を実走した。**
+品質Labelは全てpendingで、人手確認とGate 9の照合が残る。新規Pilot/本実験は未実施。
+[Phase 9記録](phase9_answer_rewrite.md)に実出力・採点手順・検証範囲を示す。
+全条件が採用/採点不能でも比較用書換えを1つ収集し、判断に応じて同じ二候補から出力を選ぶ。
+初回と書換えが完全に同じ質問・回答・Contextの場合は、品質Labelを共用して重複採点を避ける。

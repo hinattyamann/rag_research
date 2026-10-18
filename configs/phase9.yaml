@@ -1,0 +1,12 @@
+schema_version: 1
+purpose: phase9-development-smoke
+study_version: rewrite-development-v1
+evaluation_config: configs/order_phase8_v5.yaml
+source_order_run: data/runs/order_sensitivity/phase8-development-two-v5
+baseline_answers: data/runs/phase6/development-five-v1/answers.jsonl
+quality_rubric: docs/order_quality_rubric.md
+quality_rubric_version: order-quality-pilot-v1
+annotation_seed: 44
+# Generate a counterfactual candidate even if every Judge accepts or is unscorable.
+generate_for_every_question: true
+automatic_retries: 0

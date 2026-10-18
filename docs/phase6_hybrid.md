@@ -149,7 +149,8 @@ Runは`data/runs/phase6/development-five-v1/`、実測集計とHashは
 ## 8. 次の工程
 
 2026年10月18日のテーマ変更後、Phase 7のProtocolとPhase 8の固定回答評価・順序/反復を実装・確認した。
-現在の次工程はPhase 9の一回書換えと独立品質採点である。
+2026年10月19日にPhase 9の一回書換え・品質採点入出力を実装した。
+現在の次工程は[Phase 9の3候補の人手採点とGate 9照合](phase9_answer_rewrite.md)である。
 Phase 1〜6の成果を維持し、四種類Failure Datasetと原因別三修復は主実験の必須条件から外す。
 [ロードマップ](research_roadmap.md)と[実装計画](rag_implementation_plan.md)に従い、固定Trace・評価器・
 順序操作、一回の回答書換え、独立品質確認を進める。本文の実測値は当時の結果として変更しない。

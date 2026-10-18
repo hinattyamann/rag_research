@@ -3,6 +3,8 @@
 作成日: 2026年10月18日。Study Version: `order-pilot-v1`。
 本書はPhase 8〜10を実装・検証するための初期条件であり、Phase 11の本実験凍結ではない。
 研究目的は[研究計画](rag_research_plan.md)、全工程は[ロードマップ](research_roadmap.md)による。
+以下はPhase 7時点の記録。Phase 9の書換え・品質Export/Importは2026年10月19日に実装し、
+現在は[Phase 9記録](phase9_answer_rewrite.md)の3候補の人手採点待ちである。
 
 ## 1. 今回できたものと、まだできていないもの
 
