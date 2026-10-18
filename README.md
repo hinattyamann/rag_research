@@ -6,18 +6,19 @@
 評価器への根拠順序を変えた場合と同一順序で繰り返した場合を比較します。
 より信頼できる自己修復の設計につながる知見を目指し、対策の開発は任意の追加成果とします。
 
-**Phase 1〜8完了。Phase 9は実装・開発2例の実走完了、人手品質確認待ちです。**
+**Phase 1〜9の開発確認を完了。Phase 10の未見Development 20問を事前固定し、実走中です。**
 固定回答の自己評価・判断に加え、元順序による一回書換え、採点画面、採点JSONのImport、経路比較を実装しました。
 開発3候補は、ユーザーの委任により[AIが代行採点してJSONを保存](docs/phase9_ai_quality_review.md)しました。
-独立した人手品質確認、正式Gate 9、新テーマの予備実験は未実施です。
+ユーザーの委任により、以後は[AI品質採点Protocol](docs/ai_quality_protocol.md)を使います。
+Gate 9はAI採点による開発確認として通過し、人手確認の達成とは区別します。予備実験の完了・本実験はまだです。
 [Phase 9の実走結果と採点手順](docs/phase9_answer_rewrite.md)を参照してください。
 [フェーズ別の現在地・次の作業・完了条件](docs/research_roadmap.md)を最初に確認してください。
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- [研究計画 Version 7.3](docs/rag_research_plan.md)
-- [実装計画 Version 8.3](docs/rag_implementation_plan.md)
-- [Dataset Guide Version 2.3](docs/clapnq_dataset_guide.md)
+- [研究計画 Version 7.4](docs/rag_research_plan.md)
+- [実装計画 Version 8.4](docs/rag_implementation_plan.md)
+- [Dataset Guide Version 2.4](docs/clapnq_dataset_guide.md)
 - [先行研究との関係・本研究の立ち位置と有用性](docs/related_research_positioning.md)
 
 現在の到達点、研究室PCで確認する項目、Data再生成を含む引継ぎ手順は
@@ -210,8 +211,8 @@ HybridのSuccess@10はEmbeddingと同じ78.22%ですが、nDCG@10は0.5317でEmb
 |---|---|---|
 | 7 | 新テーマのProtocol・専用Prompt/Config・採点基準 | 完了。入力予算を確認、採点・生成0回 |
 | 8 | 固定Trace、評価器、根拠順序と反復 | 完了。開発2件、Judge 9回、再開の追加Completion 0回 |
-| 9 | 一回書換え、独立品質のExport/Import | 実装・開発2例実走完了。人手採点とGate 9の照合待ち |
-| 10 | Development 20〜30問を目安とする予備実験 | 未実施 |
+| 9 | 一回書換え、品質のExport/Import | AI採点委任に合わせた開発Gate通過。人手評価とはしない |
+| 10 | Development予備実験 | 20問を結果非依存で固定、実行中。Pilot Reportは未完成 |
 | 11 | Calibrationと本実験条件の凍結 | 未着手 |
 | 12 | 内部Evaluationと独立採点 | 未実施 |
 | 13 | 統計・条件別分析、任意の対策 | 未着手 |

@@ -1,14 +1,15 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.3 — 2026年10月19日 Phase 9の実装と開発実走
+## Version 8.4 — 2026年10月19日 AI品質採点とPhase 10
 
-[研究計画 Version 7.3](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.4](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
 Phase 8の固定Trace・Claim抽出・Judge・順序/反復・判断と再開を実装した。
 Phase 9の一回書換え・独立採点Export/Import・候補選択・経路費用を実装し、開発2件の書換えを実走した。
-独立した人手品質Labelはpending。Gate 9は研究者本人の採点・照合待ち。本実験のModuleは後続工程である。
+ユーザーのAI採点委任により、Gate 9をAI代行による開発確認として通過した。人手確認済みとは記録しない。
+Phase 10は事前選定20問、固定Baseline、順序別Judge、一回書換え、匿名AI採点、Pilot Reportの実行層を追加した。
 開発3候補の[AI代行採点JSON](phase9_ai_quality_review.md)は別保存し、既存Validatorで検証した。
 人手Importへは投入せず、元のModule・Schema・Run・基準Versionは変更していない。
 Phase 7の入力検証CLIは引き続きCompletion 0回である。
@@ -44,6 +45,11 @@ QA選定（評価Metadataは別管理）
 評価器の操作とGeneratorの操作を分け、Gold入りQA辞書をそのまま評価器へ渡さない。
 
 ### 新規配置（Phase 9まで実装。後続Moduleは予定）
+
+Phase 10では`pilot/selection.py`で既知Titleを除外した結果非依存選定、`baseline.py`で初回生成のJournal、
+`internal.py`で旧固定推論の実行と再開、`materials.py`で質問ごとの匿名資料出力、
+`assessment.py`でAI採点の記録、`report.py`で採点固定後の条件別照合を実装する。
+旧Phase 8/9のソース・設定は変更せず、`configs/phase10.yaml`と専用ProtocolでAI採点方針を定める。
 
 | 配置 | 責務 |
 |---|---|
@@ -159,7 +165,8 @@ Exportは質問・候補本文・同じ実使用Context・Reference/Gold根拠�
 方式名、順序、Score、判断、初回/修復の区別を隠す。初回と修復は無作為順に並べ、対応表は別保存。
 自己評価のClaim分解・検証理由も表示せず、回答全体の誤りと欠落を独立に調べる。
 Importで候補Hash/基準Version/採点用IDを検証し、未採点をY=0へ変換しない。
-研究者本人の採点時間・判定理由・不一致や再確認履歴を残す。二者一致度を報告したことにはしない。
+AIの確認経過時間・判定理由・再確認履歴・実採点者を残す。人間の採点時間や独立した二者一致度とはしない。
+来歴にhuman_reviewed=falseとモデル識別子の取得可否を保存する。旧人手ImportへAI Labelを流し込まない。
 Yと判定不能の定義は研究計画第6節、分母は同第7節にそろえる。
 
 Phase 9実装では匿名IDをSeed 44で決定し、別対応表を保存する。同一の質問/候補/Context/Referenceは一度採点する。
@@ -169,6 +176,9 @@ Importは日付付き新Directoryへ保存し、過去のAnnotationを上書き�
 未採点と判定不能を分け、既知の四遷移へ算入するのは初回/書換え双方のYが確定したQAだけである。
 書換え失敗時の候補は採点対象へ追加せず、最終出力は初回Fallbackに対応付ける。
 CLI・実出力・未確認事項は[Phase 9記録](phase9_answer_rewrite.md)による。
+Phase 10では初回の質問ごとに匿名Packetを封印して採点を進め、全候補の採点JSONを固定してから
+内部結果と対応表を開示する。完全有効な順序群/反復群の共通QAで不一致率の差を記述集計する。
+最終統計、正式な信頼区間、本番の採点セッション固定は後続工程とする。
 
 ## 7. 集計と計算量
 

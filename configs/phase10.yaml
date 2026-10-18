@@ -1,0 +1,22 @@
+schema_version: 1
+purpose: phase10-development-pilot
+study_version: order-ai-pilot-v1
+count: 20
+selection_seed: 42
+qa_path: data/processed/clapnq/c508d78-split-v1/development.jsonl
+exclude_baseline: data/runs/phase6/development-five-v1/answers.jsonl
+internal_protocol: configs/order_phase8_v5.yaml
+baseline_config: configs/phase6.yaml
+baseline_prompts: configs/prompts.yaml
+quality_protocol: docs/ai_quality_protocol.md
+quality_rubric_version: order-quality-ai-pilot-v1
+annotation_seed: 44
+quality_assessor: Codex_AI
+human_reviewed: false
+automatic_retries: 0
+replace_failed_questions: false
+health_gate:
+  after_questions: 5
+  minimum_complete_scorable_questions: 3
+  maximum_judge_error_fraction: 0.25
+  stop_on_input_overflow: true

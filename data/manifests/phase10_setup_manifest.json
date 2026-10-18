@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "purpose": "phase10-selection-software-and-baseline-audit-not-completed-pilot",
+  "validated_at_utc": "2026-10-18T17:22:12.803896+00:00",
+  "study_version": "order-ai-pilot-v1",
+  "selection_sha256": "f40dfbad27eb458125033e1c1612f9f106bbf2e0356e0f73d7cf8e05f5c252aa",
+  "planned_questions": 20,
+  "baseline_completed": 20,
+  "baseline_calls": 20,
+  "baseline_input_budgets_valid": true,
+  "historical_phase9_artifacts_unchanged": true,
+  "human_reviewed": false,
+  "gate9_scope": "AI-delegated-development-gate; not independent human annotation",
+  "phase10_status": "internal_execution_in_progress_quality_not_yet_complete",
+  "tests_passed": 222,
+  "test_seconds": 27.21,
+  "tests_skipped": 0,
+  "ruff": "passed",
+  "assets_sha256": {
+    "configs/phase10.yaml": "bab76454dbfd5c190f19c5907af15a2af1cbeb9cff10acffbf6457004382916f",
+    "configs/quality_ai_prompt_v1.txt": "e801d32291766a27f952690762160d0139ca87b26dee258c2e610a64882a668c",
+    "data/manifests/phase10_selection_manifest.json": "f40dfbad27eb458125033e1c1612f9f106bbf2e0356e0f73d7cf8e05f5c252aa",
+    "docs/ai_quality_protocol.md": "d956446a59b066e5fcea19e4329ddf10650dec298e6865675b5205cc0bbbbd7a",
+    "scripts/run_pilot.py": "3b789f706d34c0aae47f9fec258a712c74b41cd9db38eb5b75579181c0877aff",
+    "scripts/assess_pilot.py": "3ecac353a796ca81609d2637704cb7c55e27f393f58fc2b100cebc5f1170452c",
+    "tests/test_pilot.py": "7b7bda73bcce44ec76aa5dd40781f95962dfc058c3a351ac42b6ad2dad559f0d",
+    "src/rag_research/pilot/__init__.py": "ca181baf17b3acfb1dedc3fc8f0364f272437a9a26051e29f8faf2d8c14274d5",
+    "src/rag_research/pilot/assessment.py": "213d12000a7b94b38cf9c49609fb96005cfd21c9f4d3f6686fe62346c0607ea4",
+    "src/rag_research/pilot/baseline.py": "8bf6136060d7439ee901065b547068a567245b16af5651b9f07f9c9cce669352",
+    "src/rag_research/pilot/internal.py": "0783566421a1b72bd74ef68296f70d711034bb82d0f6aa2b79b593b905ff061b",
+    "src/rag_research/pilot/materials.py": "ef55d2bb52efed008fdcf7bd69192ec3fb6754fab048fec6f74b4ec9a6fdc977",
+    "src/rag_research/pilot/report.py": "3ce2e22af32f85e55fb69b3d4193e307955bb83a5b0d5503acb71380976449e2",
+    "src/rag_research/pilot/selection.py": "dd4474d8df1751e66ef5fb25edc701a118d4a89c95002d45c07c15537838dc59"
+  },
+  "artifacts_sha256": {
+    "data/runs/pilot/phase10-twenty-v1/baseline/identity.json": "3f0afed863430eb3a53f59b2bb6948efabf9af26137ebbd863d295f99cd09422",
+    "data/runs/pilot/phase10-twenty-v1/baseline/run_manifest.json": "11913f776ccc9381f3c2f9d9446bf7d85c8fca0843f42b963e0dbec0f2500902",
+    "data/runs/pilot/phase10-twenty-v1/baseline/answers.jsonl": "2cf6f36bdbc2aee37c2ef91d1d9bc4ef2b5eeb911f3e06945c5d69a058e45a0c",
+    "data/runs/pilot/phase10-twenty-v1/internal/manifest.json": "6950501a0211144b71be61a51c2515a303341cc39b5e028c433aad80931fe886",
+    "data/runs/pilot/phase10-twenty-v1/audit_setup.py": "b2b294519528ea40eb9076c5de89aac486944decffb23f76bd995ffb0c03cbeb"
+  }
+}

@@ -1,8 +1,8 @@
 # CLAPNQデータセット理解・Text-based RAG利用仕様書
 
-## Version 2.3 — 2026年10月19日 Phase 9に対応
+## Version 2.4 — 2026年10月19日 AI採点とPhase 10に対応
 
-[研究計画7.3](rag_research_plan.md)に対応するDataset仕様書。
+[研究計画7.4](rag_research_plan.md)に対応するDataset仕様書。
 Source、License、Loader、内部Schema、Title単位Split、CorpusとPhase 6までの条件は維持する。
 主実験はAnswerable QAの固定回答に対する評価順序と修復判断の比較へ変更する。
 [旧Version 1.10](archive/clapnq_dataset_guide_v1_10.md)の四種類Failure Dataset、全R/F/A、原因分類、ECE中心の比較は必須工程から外す。
@@ -13,7 +13,8 @@ Phase 7の[初期Protocol](phase7_order_protocol.md)・設定・入力検証は�
 Phase 8で固定Trace/Claim/Judge Trial、条件Manifestと実評価CLIを実装した。
 実走での指示文・構造化出力の調整、検証範囲は[Phase 8記録](phase8_order_evaluation.md)による。
 Phase 9で元Contextによる一回書換え・条件を隠す品質Export/Import・経路比較を実装した。
-開発2問の3候補は人手採点待ちであり、手順と現在地は[Phase 9記録](phase9_answer_rewrite.md)による。
+開発2問の3候補をAI代行採点し、以後の品質確認も[AI採点Protocol](ai_quality_protocol.md)へ切り替えた。
+Source/Schema/Splitは維持し、既知5問と同一Titleを除外した20問をPhase 10用に事前固定した。
 独立品質の確定Label、新規Pilot/本実験は未実施である。
 公式情報と研究上の決定、実監査結果、未確定値を区別し、推論へ正解情報を渡さない。
 
@@ -786,7 +787,8 @@ Claimなしや失敗を満点/0点へ変換しない。独立品質の正解に�
 
 Y=1は、質問の必須要点、重大誤りなし、実使用Contextでの事実の支持を全て満たす回答。
 Y=0は不完全・誤答・根拠外情報・不適切な拒否等。それ自体を判定できなければindeterminateと理由を記録する。
-研究者本人が条件/段階/Scoreを隠した無作為順の候補を、Referenceと根拠で確認する。
+ユーザーの委任によりCodex AIが条件/段階/Scoreを隠した候補を、Referenceと根拠で確認する。
+人手確認済みLabelと混同せず、完全な履歴分離の達成範囲とモデル固定の可否を記録する。
 自己評価のClaimや理由は品質採点の正解に流用しない。単独採点の制約を明記する。
 初回Y0/書換えY1を組にして1→1、1→0、0→1、0→0を報告する。
 初回誤答を全て修復可能と仮定しない。
