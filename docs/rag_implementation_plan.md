@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.5 — 2026年10月19日 Phase 10測定系の修正
+## Version 8.6 — 2026年10月19日 Phase 10修正後の再確認
 
-[研究計画 Version 7.5](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.6](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -12,6 +12,9 @@ Phase 9の一回書換え・独立採点Export/Import・候補選択・経路費
 Phase 10は事前選定20問、固定Baseline、順序別Judge、一回書換え、匿名AI採点、Pilot Reportの実行層を追加した。
 初回20問・書換え20件・40候補の採点と集計を完了した。[結果と修正項目](phase10_pilot.md)による。
 完全比較11問、Fの順序変化1例、判断反転0例。事実本文の空Claim等の測定上の問題があり、最終凍結は未着手である。
+測定系をv14へ改訂し、明確な判定15例・書換え5例・長い7主張の診断を完了した。
+新規10問の内部実験と匿名AI採点を実行中で、両Cohortの全Label固定後に集計する。
+既知の正しい日付結論の誤棄却は限界として残し、診断成功を一般精度100%とは扱わない。
 開発3候補の[AI代行採点JSON](phase9_ai_quality_review.md)は別保存し、既存Validatorで検証した。
 人手Importへは投入せず、元のModule・Schema・Run・基準Versionは変更していない。
 Phase 7の入力検証CLIは引き続きCompletion 0回である。

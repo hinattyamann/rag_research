@@ -6,20 +6,20 @@
 評価器への根拠順序を変えた場合と同一順序で繰り返した場合を比較します。
 より信頼できる自己修復の設計につながる知見を目指し、対策の開発は任意の追加成果とします。
 
-**Phase 1〜9の開発確認と、Phase 10の初回20問Pilot・40候補のAI採点・集計を完了しました。現在は測定系を修正・再確認しています。**
+**Phase 1〜9、Phase 10の初回20問・40候補AI採点・集計と、測定系修正の既知診断を完了しました。新規10問の再実験・匿名採点を実施中です。**
 固定回答の自己評価・判断に加え、元順序による一回書換え、採点画面、採点JSONのImport、経路比較を実装しました。
 開発3候補は、ユーザーの委任により[AIが代行採点してJSONを保存](docs/phase9_ai_quality_review.md)しました。
 ユーザーの委任により、以後は[AI品質採点Protocol](docs/ai_quality_protocol.md)を使います。
 Gate 9はAI採点による開発確認として通過し、人手確認の達成とは区別します。
 [Phase 10結果](docs/phase10_pilot.md)ではFの順序変化が1例、主比較11問の修復判断反転は0件でした。
-主張抽出漏れとJudgeの意味判定の問題があり、Gate 10は修正・再確認待ちです。Phase 11以降は未着手です。
+主張抽出・Judge・書換え・出力予算を修正し、明確な15判定と5書換えを診断しました。Gate 10は新規10問の全採点・集計後に判断します。Phase 11以降は未着手です。
 [Phase 9の実走結果と採点手順](docs/phase9_answer_rewrite.md)を参照してください。
 [フェーズ別の現在地・次の作業・完了条件](docs/research_roadmap.md)を最初に確認してください。
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- [研究計画 Version 7.5](docs/rag_research_plan.md)
-- [実装計画 Version 8.5](docs/rag_implementation_plan.md)
+- [研究計画 Version 7.6](docs/rag_research_plan.md)
+- [実装計画 Version 8.6](docs/rag_implementation_plan.md)
 - [Dataset Guide Version 2.4](docs/clapnq_dataset_guide.md)
 - [先行研究との関係・本研究の立ち位置と有用性](docs/related_research_positioning.md)
 
@@ -214,7 +214,7 @@ HybridのSuccess@10はEmbeddingと同じ78.22%ですが、nDCG@10は0.5317でEmb
 | 7 | 新テーマのProtocol・専用Prompt/Config・採点基準 | 完了。入力予算を確認、採点・生成0回 |
 | 8 | 固定Trace、評価器、根拠順序と反復 | 完了。開発2件、Judge 9回、再開の追加Completion 0回 |
 | 9 | 一回書換え、品質のExport/Import | AI採点委任に合わせた開発Gate通過。人手評価とはしない |
-| 10 | Development予備実験 | 初回20問・40候補採点・Report完了。測定系の修正・再確認待ち |
+| 10 | Development予備実験 | 初回20問・40候補採点・Report、修正後の既知診断完了。新規10問の再実験・採点中 |
 | 11 | Calibrationと本実験条件の凍結 | 未着手 |
 | 12 | 内部Evaluationと独立採点 | 未実施 |
 | 13 | 統計・条件別分析、任意の対策 | 未着手 |

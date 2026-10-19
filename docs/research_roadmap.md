@@ -1,6 +1,6 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月19日。正本: [研究計画7.5](rag_research_plan.md)、[実装計画8.5](rag_implementation_plan.md)。
+更新日: 2026年10月19日。正本: [研究計画7.6](rag_research_plan.md)、[実装計画8.6](rag_implementation_plan.md)。
 テーマは「根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 
