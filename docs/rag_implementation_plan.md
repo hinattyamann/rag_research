@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.6 — 2026年10月19日 Phase 10修正後の再確認
+## Version 8.7 — 2026年10月20日 Phase 11の準備実装開始
 
-[研究計画 Version 7.6](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.7](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -260,6 +260,18 @@ Phase 7は入力検証、Phase 8は固定Trace・順序/反復・Claim/引用/Sc
 実績と既知の問題は[Phase 8記録](phase8_order_evaluation.md)と[Phase 9記録](phase9_answer_rewrite.md)へ残す。
 
 ## 9. Phaseと成果物の対応
+
+Phase 11の初期実装は`calibration/preparation.py`・`calibration/report.py`と
+`scripts/run_calibration.py`、`configs/phase11_calibration.yaml`・`order_phase11_calibration.yaml`。
+既存のProtocol/Trace読込・Baseline・内部実行は、明示的な`split="calibration"`のときだけ
+Calibrationへ対応する。既定のDevelopment条件を維持し、Evaluationは許可しない。
+初回生成は`--max-new-questions`で未実施件数だけを制限でき、全選定ID・失敗・未実施を保持する。
+内部実行は全Baselineの試行終了後に開始し、匿名品質の全Label固定前には内部結果を開示しない。
+候補ManifestはConfig/Prompt/Model Manifest/全研究Module/依存定義のHashに結び、
+変更時には既存Runを上書きせず新Versionとする。旧Runの来歴Hashも更新しない。
+`status`は公開進捗と未確認事項だけを示し、`report`は品質採点後にだけ内部結果を照合する。
+どちらも`gate11_passed=false`・`phase12_allowed=false`。最終凍結CLIは今回の実装範囲に含まない。
+具体的な実行手順・確認済み/未実施の区分は[Phase 11記録](phase11_calibration.md)による。
 
 Phase 1〜6は完了済み、Phase 7で専用Protocol・Prompt・設定を具体化、Phase 8で固定Trace/Judge/順序、
 Phase 9で書換えと独立採点の入出力、Phase 10でPilot、Phase 11で最終凍結、Phase 12で本実験、

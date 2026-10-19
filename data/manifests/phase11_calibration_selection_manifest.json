@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-calibration-preselected-before-inference",
+  "study_version": "order-calibration-cpu-v1",
+  "split": "calibration",
+  "qa_sha256": "ac5db1cd270c17c93f47b7572148cf20242f1b806698fc178852bb907055559f",
+  "split_manifest_sha256": "148c0f95736faa8eb9a7ac6cd538988c9f31054468376d2ef9678fcdc958d330",
+  "count": 5,
+  "selection_seed": 42,
+  "selection_rule": "sha256(seed:record_id)_ascending_first_unique_NFC_casefold_title",
+  "one_question_per_title": true,
+  "replace_failed_questions": false,
+  "retrieval_calibration_previously_used_answerable_questions": 225,
+  "records": [
+    {
+      "record_id": "clapnq:c508d78:train:9056475546207977249:answerable",
+      "question": "who discovered that infectious disease was spread by bacteria",
+      "source_title": "Germ theory of disease"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-3199444299686671305:answerable",
+      "question": "does buffy's mom know she's a slayer",
+      "source_title": "Joyce Summers"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8588759487587082103:answerable",
+      "question": "french song at end of tinker tailor soldier spy",
+      "source_title": "La Mer (song)"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:390278020698615219:answerable",
+      "question": "massaging the uterus to make it hard is important in",
+      "source_title": "Fundal massage"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:3533164973473713881:answerable",
+      "question": "story behind the song joy to the world",
+      "source_title": "Joy to the World"
+    }
+  ],
+  "result_sha256": "2eb27d25c10f297e3f823c4cbd4a04b696e8dc26618d1fc48ee745e5b0672b9f"
+}

@@ -73,7 +73,13 @@ def baseline_once(client, retriever, generation, prompt, top_k, spec, folder, bi
     return checkpoint(path, journal)
 
 
-def run_baseline(config, selection, output):
+def run_baseline(config, selection, output, *, split="development", max_new_questions=None):
+    require(split in {"development", "calibration"}, "Evaluation is not available for calibration")
+    require(max_new_questions is None or (split == "calibration" and
+            type(max_new_questions) is int and max_new_questions > 0), "Invalid baseline execution limit")
+    if split == "calibration":
+        require(config["purpose"] == "phase11-calibration" and
+                selection["split"] == split, "Calibration selection required")
     os.environ["LANGSMITH_TRACING"] = "false"
     os.environ["LANGCHAIN_TRACING_V2"] = "false"
     original, generation = load_config(ROOT / config["baseline_config"])
@@ -82,10 +88,13 @@ def run_baseline(config, selection, output):
     sources = [ROOT / "src/rag_research/pilot/baseline.py", ROOT / "src/rag_research/baseline.py",
                *sorted((ROOT / "src/rag_research/generation").glob("*.py")),
                *sorted((ROOT / "src/rag_research/retrieval").glob("*.py"))]
-    identity = {"schema_version": 1, "purpose": "phase10-fixed-phase6-baseline",
+    if split == "calibration":
+        sources.extend(sorted((ROOT / "src/rag_research/calibration").glob("*.py")))
+    identity = {"schema_version": 1, "purpose": ("phase10-fixed-phase6-baseline" if split == "development"
+                                                else "phase11-calibration-phase6-baseline"),
                 "config": original, "config_sha256": file_hash(ROOT / config["baseline_config"]),
                 "prompts_sha256": file_hash(prompts_path), "generator": model_identity(),
-                "development_sha256": file_hash(ROOT / config["qa_path"]), "split": "development",
+                f"{split}_sha256": file_hash(ROOT / config["qa_path"]), "split": split,
                 "questions": [{"question": r["question"], "record_id": r["record_id"]}
                               for r in selection["records"]], "selection_sha256": digest(selection),
                 "source_sha256": {p.relative_to(ROOT).as_posix(): file_hash(p) for p in sources}}
@@ -102,8 +111,13 @@ def run_baseline(config, selection, output):
         records = []
 
         def collect(client, retriever):
+            new_questions = 0
             for index, spec in enumerate(selection["records"]):
                 folder = output / digest(spec["record_id"])[:24]
+                if not (folder / "record.json").exists():
+                    if max_new_questions is not None and new_questions >= max_new_questions:
+                        break
+                    new_questions += 1
                 folder.mkdir(exist_ok=True)
                 result = baseline_once(client, retriever, generation, prompt, original["retrieval"]["top_k"],
                                        spec, folder, {"identity_sha256": digest(identity)})
@@ -129,7 +143,8 @@ def run_baseline(config, selection, output):
             handle.flush()
             os.fsync(handle.fileno())
         temporary.replace(output / "answers.jsonl")
-        report = {**identity, "status": "completed", "completed_questions": len(records),
+        report = {**identity, "status": ("completed" if len(records) == len(selection["records"])
+                                        else "in_progress"), "completed_questions": len(records),
                   "successful_questions": sum(r["status"] == "ok" for r in records),
                   "answer_generation_calls": sum(r.get("answer_generation_calls", 0) for r in records),
                   "sessions": [read_json(p) for p in sorted(output.glob("session-*.json"))]}

@@ -47,19 +47,23 @@ def health_gate(records, rules):
             "judge_error_fraction": fraction}
 
 
-def pilot_identity(config_path, config, selection, baseline, traces):
+def pilot_identity(config_path, config, selection, baseline, traces, split="development"):
     paths = [config_path, ROOT / config["internal_protocol"],
              ROOT / config["quality_protocol"], ROOT / "configs/quality_ai_prompt_v1.txt",
              ROOT / "src/rag_research/generation/local.py", ROOT / "pyproject.toml", ROOT / "uv.lock"]
     for directory in ("pilot", "experiments", "evaluation", "recovery"):
         paths.extend(sorted((ROOT / "src/rag_research" / directory).glob("*.py")))
-    protocol, _, prompt_path = load_protocol(ROOT / config["internal_protocol"])
+    if split == "calibration":
+        paths.extend(sorted((ROOT / "src/rag_research/calibration").glob("*.py")))
+        paths.append(ROOT / "scripts/run_calibration.py")
+    protocol, _, prompt_path = load_protocol(ROOT / config["internal_protocol"], split=split)
     if "auxiliary_model_manifest" in protocol:
         paths.append(ROOT / protocol["auxiliary_model_manifest"])
         paths.append(ROOT / "src/rag_research/generation/auxiliary.py")
         if "sampling" in protocol:
             paths.append(ROOT / "src/rag_research/generation/auxiliary_config.py")
-    return {"schema_version": 1, "purpose": "phase10-development-pilot-not-final-evaluation",
+    return {"schema_version": 1, "purpose": ("phase10-development-pilot-not-final-evaluation"
+            if split == "development" else "phase11-calibration-not-final-evaluation"),
             "study_version": config["study_version"], "selection_sha256": digest(selection),
             "config": config, "baseline_answers_sha256": file_hash(baseline),
             "baseline_provenance_sha256": file_hash(baseline.parent / "run_manifest.json"),
@@ -74,7 +78,11 @@ def pilot_identity(config_path, config, selection, baseline, traces):
                        for t in traces]}
 
 
-def run_internal(config_path, config, selection, output):
+def run_internal(config_path, config, selection, output, *, split="development"):
+    require(split in {"development", "calibration"}, "Evaluation is not available for calibration")
+    if split == "calibration":
+        require(config["purpose"] == "phase11-calibration" and selection["split"] == split,
+                "Calibration selection required")
     baseline_path = output / "baseline/answers.jsonl"
     provenance = read_json(output / "baseline/run_manifest.json")
     require(provenance["status"] == "completed", "Baseline not completed")
@@ -83,12 +91,12 @@ def run_internal(config_path, config, selection, output):
     require({r["record_id"] for r in baseline_rows} == selected_ids, "Baseline selection differs")
     successful = [r["record_id"] for r in baseline_rows if r["status"] == "ok"]
     require(bool(successful), "No successful baseline: preserve failures, do not replace questions")
-    protocol, prompts, _ = load_protocol(ROOT / config["internal_protocol"])
-    traces, _ = load_traces(protocol, baseline_path, successful)
+    protocol, prompts, _ = load_protocol(ROOT / config["internal_protocol"], split=split)
+    traces, _ = load_traces(protocol, baseline_path, successful, split=split)
     trace_map = {t["record_id"]: t for t in traces}
     baseline_map = {r["record_id"]: r for r in baseline_rows}
     traces = [trace_map[s["record_id"]] for s in selection["records"] if s["record_id"] in trace_map]
-    manifest = pilot_identity(config_path, config, selection, baseline_path, traces)
+    manifest = pilot_identity(config_path, config, selection, baseline_path, traces, split)
     internal = output / "internal"
     qa, gold = load_offline(config, selected_ids)
     with run_lock(internal):

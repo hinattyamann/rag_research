@@ -26,22 +26,23 @@ from rag_research.generation.local import LocalServer
 from rag_research.retrieval.common import file_hash
 
 
-def load_traces(config, baseline_path, identifiers=None):
+def load_traces(config, baseline_path, identifiers=None, *, split="development"):
+    require(split in {"development", "calibration"}, "Evaluation is not available for calibration")
     qa_path = ROOT / config["data"]["qa_path"]
     qa = {}
     for line in qa_path.read_text("utf-8").splitlines():
         row = json.loads(line)
-        require(row["research_split"] == "development", "Non-Development QA encountered")
+        require(row["research_split"] == split, "QA split differs from requested stage")
         qa[row["record_id"]] = row
     rows = [json.loads(line) for line in baseline_path.read_text("utf-8").splitlines()]
     provenance = read_json(baseline_path.parent / "run_manifest.json")
     baseline_config = yaml.safe_load((ROOT / config["baseline_config"]).read_text("utf-8"))
-    require(provenance["status"] == "completed" and provenance["split"] == "development",
-            "Baseline provenance is not completed Development")
+    require(provenance["status"] == "completed" and provenance["split"] == split,
+            "Baseline provenance is not completed requested split")
     require(provenance["config"] == baseline_config and
             provenance["config_sha256"] == file_hash(ROOT / config["baseline_config"]),
             "Baseline conditions differ from Phase 6")
-    require(provenance["development_sha256"] == file_hash(qa_path) and
+    require(provenance[f"{split}_sha256"] == file_hash(qa_path) and
             provenance["generator"] == model_identity(), "Baseline data/model identity differs")
     require(provenance["prompts_sha256"] == file_hash(ROOT / "configs/prompts.yaml"),
             "Baseline prompt identity differs")
@@ -56,7 +57,7 @@ def load_traces(config, baseline_path, identifiers=None):
     selected = []
     for row in rows:
         identifier = row["record_id"]
-        require(identifier in qa, "Baseline record is not in Development")
+        require(identifier in qa, "Baseline record is not in requested split")
         require(qa[identifier]["question"] == row["question"], "Baseline question differs from QA")
         if qa[identifier]["is_answerable"] and (not identifiers or identifier in identifiers):
             selected.append(freeze_record(row))

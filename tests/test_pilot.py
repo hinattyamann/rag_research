@@ -78,7 +78,8 @@ def test_baseline_resume_never_calls_model_again(tmp_path, monkeypatch):
         baseline_once(None, None, GenerationConfig(), prompt, 10, spec, tmp_path, {"run": "other"})
 
 
-def test_internal_end_to_end_reuses_all_raw_calls_and_publishes_blind_materials(tmp_path, monkeypatch):
+@pytest.mark.parametrize("split", ["development", "calibration"])
+def test_internal_end_to_end_reuses_all_raw_calls_and_publishes_blind_materials(tmp_path, monkeypatch, split):
     import json
 
     from rag_research.evaluation.order import trial_plan
@@ -91,11 +92,18 @@ def test_internal_end_to_end_reuses_all_raw_calls_and_publishes_blind_materials(
               "quality_rubric_version": "order-quality-ai-pilot-v1", "annotation_seed": 44,
               "health_gate": {"after_questions": 5, "minimum_complete_scorable_questions": 3,
                               "maximum_judge_error_fraction": 0.25, "stop_on_input_overflow": True}}
-    protocol, _, _ = load_protocol(repository / "configs/order_phase8_v5.yaml")
+    protocol, prompts, prompt_path = load_protocol(repository / "configs/order_phase8_v5.yaml")
+    if split == "calibration":
+        config["purpose"] = "phase11-calibration"
+        # Reuse a simple synthetic decoder here; real Phase 11 protocol validation
+        # and final-only Qwen3 grammar are tested separately.
+        monkeypatch.setattr(internal, "load_protocol", lambda *a, **kw: (protocol, prompts, prompt_path))
     trace = freeze_record({"record_id": "q1", "question": "Q?", "answer": "A.", "status": "ok",
                            "used_context": [{"passage_id": str(i), "title": "T", "text": "A."}
                                             for i in range(10)]})
     selection = {"records": [{"record_id": "q1"}, {"record_id": "failed"}]}
+    if split == "calibration":
+        selection["split"] = split
     baseline = tmp_path / "baseline"
     baseline.mkdir()
     write_json(baseline / "run_manifest.json", {"status": "completed"})
@@ -104,9 +112,11 @@ def test_internal_end_to_end_reuses_all_raw_calls_and_publishes_blind_materials(
             {"record_id": "failed", "status": "error"}]
     (baseline / "answers.jsonl").write_text("\n".join(map(json.dumps, rows)), encoding="utf-8")
     monkeypatch.setattr(internal, "ROOT", tmp_path)
-    monkeypatch.setattr(internal, "load_traces", lambda *a: ([trace], None))
+    monkeypatch.setattr(internal, "load_traces", lambda *a, **kw: ([trace], None))
     manifest = {"purpose": "phase10-test", "traces": [{"record_id": "q1", "directory": digest("q1")[:24],
                  "plan": trial_plan(trace, protocol)}]}
+    if split == "calibration":
+        manifest["purpose"] = "phase11-calibration-not-final-evaluation"
     monkeypatch.setattr(internal, "pilot_identity", lambda *a: manifest)
     qa_row = {"reference_answers": ["A."], "gold_passage_ids": ["0"], "selected_sentences_by_reference": [["A."]]}
     monkeypatch.setattr(internal, "load_offline", lambda *a: ({"q1": qa_row}, {"0": trace["documents"][0]}))
@@ -149,7 +159,7 @@ def test_internal_end_to_end_reuses_all_raw_calls_and_publishes_blind_materials(
             return {}
 
     monkeypatch.setattr(internal, "LocalServer", Server)
-    internal.run_internal(None, config, selection, tmp_path)
+    internal.run_internal(None, config, selection, tmp_path, split=split)
     assert client.completion_attempts == 11
     folder = tmp_path / "internal" / digest("q1")[:24]
     before = {p.name: p.read_bytes() for p in folder.glob("*.json")}
@@ -157,7 +167,7 @@ def test_internal_end_to_end_reuses_all_raw_calls_and_publishes_blind_materials(
     assert len(packet["cases"]) == 2
     assert "q1" not in json.dumps(packet)
     assert all("score" not in c and "stage" not in c for c in packet["cases"])
-    internal.run_internal(None, config, selection, tmp_path)
+    internal.run_internal(None, config, selection, tmp_path, split=split)
     assert client.completion_attempts == 11
     assert before == {p.name: p.read_bytes() for p in folder.glob("*.json")}
     assert read_json(tmp_path / "progress.json")["baseline_failed"] == 1
@@ -177,7 +187,14 @@ def test_internal_end_to_end_reuses_all_raw_calls_and_publishes_blind_materials(
         save_candidate(bundle, assessment, decision_path)
     with pytest.raises(ValueError, match="assessed"):
         open_candidate(bundle, assessment)
-    result = pilot_report(tmp_path)
+    if split == "calibration":
+        from rag_research.calibration.report import calibration_report
+
+        report = calibration_report(tmp_path)
+        result = {**report, **report["analysis"]}
+        assert report["gate11_passed"] is False and report["phase12_allowed"] is False
+    else:
+        result = pilot_report(tmp_path)
     assert result["comparable_questions"] == 1
     assert result["quality_transitions"]["0->0"] == 1
     assert read_json(tmp_path / "quality/assessment_manifest.json")["human_reviewed"] is False

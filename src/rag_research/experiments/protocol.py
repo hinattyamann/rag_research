@@ -17,15 +17,18 @@ FIELDS = {"extract_claims": ["answer"],
           "rewrite_answer": ["question", "answer", "documents"]}
 
 
-def load_protocol(path):
+def load_protocol(path, *, split="development"):
+    require(split in {"development", "calibration"}, "Evaluation is not available for calibration")
     config = yaml.safe_load(Path(path).read_text("utf-8"))
     require(config["schema_version"] == 1, "Unsupported protocol schema")
-    require(config["purpose"] in {"phase7-development-protocol", "phase8-development-protocol"},
+    purposes = ({"phase7-development-protocol", "phase8-development-protocol"}
+                if split == "development" else {"phase11-calibration-protocol"})
+    require(config["purpose"] in purposes,
             "Unexpected protocol purpose")
-    require(config["data"]["split"] == "development", "Phase 8 only reads Development")
+    require(config["data"]["split"] == split, "Protocol split differs from requested stage")
     require(config["data"]["answerable_only"] is True, "Phase 8 uses Answerable QA")
     require(config["data"]["qa_path"] ==
-            "data/processed/clapnq/c508d78-split-v1/development.jsonl", "Unexpected QA path")
+            f"data/processed/clapnq/c508d78-split-v1/{split}.jsonl", "Unexpected QA path")
     trials = config["trials"]
     for field in ("repeated_prompt_result_cache", "regenerate_claims_per_trial",
                   "regenerate_answer_per_trial", "repack_or_truncate_per_trial"):
@@ -53,7 +56,13 @@ def load_protocol(path):
                 "json_schema_source_spans_compact_v3", "json_schema_verdicts_aligned_v4",
                 "thinking_json_passage_ids_v1", "thinking_json_passage_ids_v2"},
             "Unsupported output constraints")
-    require(config["quality"]["llm_labels_are_final"] is False, "Manual quality is still required")
+    if split == "development":
+        require(config["quality"]["llm_labels_are_final"] is False, "Manual quality is still required")
+    else:
+        require(config["quality"]["annotator"] == "Codex_AI" and
+                config["quality"]["human_reviewed"] is False and
+                config["quality"]["internal_judge_is_quality_truth"] is False,
+                "Calibration needs separate external AI quality")
     prompt_path = (ROOT / config["prompts"]).resolve()
     require(prompt_path.is_relative_to(ROOT), "Prompt path escapes repository")
     prompts = yaml.safe_load(prompt_path.read_text("utf-8"))

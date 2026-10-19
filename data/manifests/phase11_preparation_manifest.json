@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-preparation-and-one-baseline-not-final-freeze",
+  "recorded_at_utc": "2026-10-19T15:22:11.920365+00:00",
+  "phase11_started": true,
+  "gate11_passed": false,
+  "phase12_started": false,
+  "human_reviewed": false,
+  "calibration_selected": 5,
+  "baseline_attempted": 1,
+  "baseline_successful": 1,
+  "baseline_pending": 4,
+  "judge_calls": 0,
+  "rewrite_calls": 0,
+  "quality_annotations": 0,
+  "baseline_input_tokens": 2104,
+  "baseline_output_tokens": 14,
+  "baseline_generation_seconds": 45.847028899999714,
+  "read_only_baseline_reuse_additional_calls": 0,
+  "baseline_bytes_unchanged_on_reuse": true,
+  "historical_artifacts_checked": 834,
+  "historical_artifacts_changed": [],
+  "selection_manifest_sha256": "0ea7107ae5107afcce061760a5e0ef69ae85eec4fc422ad21f665cfd4373f25f",
+  "candidate_manifest_sha256": "36d8ff14ff411d3a46e4ef0b16555d0b742eddd8ac9e65128f05d2f10b09538b",
+  "candidate_sources_verified": 71,
+  "baseline_identity_sha256": "34602a1a27082df525f7f29e0dcc4156a148e8249b9a1b43c1f65fa02621b5f7",
+  "baseline_report_sha256": "70370472d520d0f22b5e1ea846e0409dea17fba8d0f26695e8a5abd1b108c7d2",
+  "baseline_answers_sha256": "67f8a9c303ebcbb52e6c13ea32ccfe9384cf714c83f3d130dfe05f234454e45f",
+  "initial_record_sha256": "ba636fcab54b9fcf7327a4361069238304241bc97753cda4befa0f65668268fc",
+  "pytest": {
+    "passed": 259,
+    "seconds": 27.6
+  },
+  "ruff": "All checks passed",
+  "unresolved": {
+    "semantic_validity": "時期・限定・不確実性・正しい結論の誤棄却をCalibrationで確認する",
+    "refusal_fallback": "単独拒否と採点不能時の扱いを根拠付きで確定する",
+    "fresh_parser_validation": "引用重複修正後の処理を新規Model出力で確認する",
+    "external_quality": "外部AI採点のセッション・Model識別子・保存方法を確定する",
+    "runtime_and_scale": "本番環境の時間と有効比較数から対象数・反復数を決定する",
+    "analysis_and_threshold": "閾値・分母・欠測・統計・条件別分析を事前に固定する"
+  },
+  "limits": [
+    "Initial baseline execution success is not answer quality or Judge validity",
+    "No fresh Judge/parser test, rewrite or external quality annotation yet",
+    "Windows CPU only; GPU, final sample size and condition freeze remain pending"
+  ],
+  "result_sha256": "17c1a704ef0c67c0766feb9c364dd6d0735e0495f0594ac44b6ba134571a5526"
+}
