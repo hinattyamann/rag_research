@@ -125,6 +125,14 @@ Judgeへ渡すのは元質問、固定回答/Claim、固定使用Context、評�
 支持/矛盾には最低1件の原文引用をDecoder側でも要求する。引用集合は提示順序から独立する。
 補助Context 12,288・Judge出力予約3,072を用い、入力本文の切詰めや自動再試行は行わない。
 既知診断と新規5問の条件・完了基準は[測定系修正記録](phase10_measurement_revision.md)による。
+さらに`configs/order_phase10_v6.yaml`は、巨大な引用Enumを外したJSONと原文への引用位置解決を検証する候補。
+`evaluation/quote_alignment.py`はRaw引用を保持し、単語列の一意一致だけを原文へ解決する。
+語順・語/数値/否定の違いは修正せず失敗とする。理由400文字、Judge出力予約4,096。
+根拠→質問/初回回答→固定Claimの入力順も全条件へ共通適用する。
+`configs/order_phase10_v7.yaml`は同じJudgeと、1回のJSON点検付き書換えを組み合わせる候補。
+`source_facts`/`draft_issues`/`answer`を1回で生成し、最後のanswerのみを候補として保存する。
+全体予約1,024、最終回答のTokenizer長は512以内。点検欄もToken/時間/Callsの費用へ含める。
+自動再試行、候補の事後選別、Judge Feedbackの追加は行わない。
 以下の原子的Claim抽出と8,192/1,536予算は初回Pilotまでの履歴である。
 
 回答内の検証可能な最小の事実主張だけを順序付きJSONで抽出する。回答を訂正・補完せず、

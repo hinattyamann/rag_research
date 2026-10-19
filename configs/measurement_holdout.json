@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "purpose": "additional_unambiguous_development_diagnostics_before_new_pilot_results",
+  "excluded_from_strict_label_accuracy": {
+    "case": "relation-conflict",
+    "source_suite": "configs/measurement_diagnostics.json",
+    "reason": "Naming an author and a translator does not explicitly exclude coauthorship. Keep the original output, but use the sole-author case below for strict contradiction. This correction is independent of the 7B verdict, which has not yet been read."
+  },
+  "judge": [
+    {"id":"sole-author-conflict","question":"Who wrote The Lantern?","claim":"Oren Vale wrote The Lantern.","documents":[{"passage_id":"h1","title":"Book history","text":"Mira Sol was the sole author of The Lantern. Oren Vale translated the book."}],"expected":"contradicted"},
+    {"id":"birthplace-absent","question":"Where was Risa born?","claim":"Risa was born in Lisbon.","documents":[{"passage_id":"h2","title":"Competition result","text":"Risa won a silver medal in rowing in 2017."}],"expected":"not_supported"},
+    {"id":"service-event-conflict","question":"When did the ferry service start?","claim":"The ferry service started in 2018.","documents":[{"passage_id":"h3","title":"Ferry history","text":"The ferry service started on 3 June 2012. Its terminal building was rebuilt in October 2018."}],"expected":"contradicted"},
+    {"id":"permit-support","question":"What is allowed in the reserve?","claim":"Cycling is permitted in the reserve.","documents":[{"passage_id":"h4","title":"Reserve rules","text":"Cycling is permitted in the reserve. Motor vehicles are prohibited."}],"expected":"supported"}
+  ]
+}

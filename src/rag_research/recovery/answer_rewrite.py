@@ -6,6 +6,8 @@ import time
 from dataclasses import asdict
 from datetime import UTC, datetime
 
+from rag_research.evaluation.claims import parse_json
+from rag_research.evaluation.schema import object_schema
 from rag_research.experiments.frozen_trace import digest, require
 from rag_research.experiments.protocol import build_messages
 from rag_research.experiments.storage import checkpoint, read_json, verify_checkpoint, write_json
@@ -16,7 +18,14 @@ def rewrite_once(client, config, prompts, trace, path, binding):
     payload = {"question": trace["question"], "answer": trace["answer"],
                "documents": trace["documents"]}
     messages = build_messages(prompts, "rewrite_answer", payload)
-    request_hash = digest({"binding": binding, "messages": messages, "settings": asdict(config)})
+    checked = prompts.get("rewrite_format") == "checked_json_v1"
+    schema = object_schema({"source_facts": {"type": "string", "minLength": 1, "maxLength": 1200},
+                            "draft_issues": {"type": "string", "minLength": 1, "maxLength": 600},
+                            "answer": {"type": "string", "minLength": 1, "maxLength": 2400}}) if checked else None
+    request = {"binding": binding, "messages": messages, "settings": asdict(config)}
+    if checked:
+        request.update(json_schema=schema, final_answer_token_limit=512)
+    request_hash = digest(request)
     if path.exists():
         saved = read_json(path)
         require(saved["request_sha256"] == request_hash, "Saved rewrite input hash mismatch")
@@ -47,13 +56,22 @@ def rewrite_once(client, config, prompts, trace, path, binding):
         else:
             result["completion_attempted"] = True
             write_json(path, result)
-            response = client.complete(tokens, config)
+            response = client.complete(tokens, config, json_schema=schema) if schema else client.complete(tokens, config)
             result.update(runtime_response=response, raw_output=response.get("content"),
                           output_tokens=len(response.get("tokens", [])))
             write_json(path, result)
             require(not response.get("truncated"), "Runtime truncated input")
             require(response.get("stop_type") in {"eos", "word"}, "Incomplete rewrite output")
             answer = response.get("content")
+            if checked:
+                review = parse_json(answer)
+                require(set(review) == {"source_facts", "draft_issues", "answer"}, "Unexpected rewrite review fields")
+                require(all(isinstance(v, str) and v.strip() for v in review.values()), "Empty rewrite review")
+                result["source_review"] = review
+                result["review_json_schema"] = schema
+                answer = review["answer"]
+                result["final_answer_tokens"] = len(client.tokenize(answer, special=False))
+                require(result["final_answer_tokens"] <= 512, "Final answer exceeds 512-token candidate budget")
             require(isinstance(answer, str) and bool(answer.strip()), "Empty rewrite output")
             citations = sorted(set(re.findall(r"\[([^\[\]\n]+)\]", answer)))
             known = {d["passage_id"] for d in trace["documents"]}

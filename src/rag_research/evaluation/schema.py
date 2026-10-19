@@ -41,7 +41,7 @@ def compact_quote_candidates(text):
     return sorted(spans)
 
 
-def output_schema(task, payload, *, bounded=False, compact=False):
+def output_schema(task, payload, *, bounded=False, compact=False, aligned=False):
     if task == "extract_claims":
         claim = object_schema({"claim_id": {"type": "string", "pattern": "^c[1-9][0-9]*$"},
                                "text": {"type": "string", "minLength": 1}})
@@ -54,7 +54,8 @@ def output_schema(task, payload, *, bounded=False, compact=False):
     # Sorting is essential: the decoder grammar must not change with evidence order.
     evidence = {"anyOf": [object_schema({
         "passage_id": {"const": d["passage_id"]},
-        "quote": {"enum": (compact_quote_candidates if compact else quote_candidates)(d["text"])},
+        "quote": ({"type": "string", "minLength": 1, "maxLength": 320} if aligned else
+                  {"enum": (compact_quote_candidates if compact else quote_candidates)(d["text"])}),
     }) for d in sorted(documents, key=lambda d: d["passage_id"])]}
     verdict = object_schema({
         "claim_id": {"enum": [c["claim_id"] for c in claims]},
@@ -64,13 +65,14 @@ def output_schema(task, payload, *, bounded=False, compact=False):
     })
     if bounded:
         verdict["properties"]["evidence"]["maxItems"] = 2
-        verdict["properties"]["reason"]["maxLength"] = 120 if compact else 200
+        verdict["properties"]["reason"]["maxLength"] = 400 if aligned else (120 if compact else 200)
         if compact:
             # Compare source meaning before committing to a label. This decoder
             # order is identical for all evidence permutations and repeat trials.
             fields = verdict["properties"]
-            verdict = object_schema({k: fields[k] for k in
-                                     ("claim_id", "reason", "evidence", "label")})
+            order = ("claim_id", "reason", "label", "evidence") if aligned else (
+                "claim_id", "reason", "evidence", "label")
+            verdict = object_schema({k: fields[k] for k in order})
         ordered = []
         for claim in claims:
             entry = deepcopy(verdict)

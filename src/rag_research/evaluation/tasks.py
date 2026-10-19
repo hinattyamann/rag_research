@@ -8,6 +8,7 @@ from datetime import UTC, datetime
 
 from rag_research.evaluation.claims import parse_claims
 from rag_research.evaluation.judge import parse_verdicts
+from rag_research.evaluation.quote_alignment import align_quotes
 from rag_research.evaluation.schema import output_schema
 from rag_research.evaluation.sentence_claims import extract_sentence_units
 from rag_research.experiments.frozen_trace import digest, require
@@ -26,10 +27,12 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
     messages = build_messages(prompts, task, payload)
     require(constraints in {"none", "json_schema_source_spans_v1",
                             "json_schema_source_spans_bounded_v2",
-                            "json_schema_source_spans_compact_v3"}, "Unknown output constraints")
+                            "json_schema_source_spans_compact_v3",
+                            "json_schema_verdicts_aligned_v4"}, "Unknown output constraints")
     sentence_mode = task == "extract_claims" and prompts.get("claim_units") == "verbatim-sentences-v1"
-    schema = (output_schema(task, payload, bounded=constraints.endswith(("bounded_v2", "compact_v3")),
-                            compact=constraints.endswith("compact_v3"))
+    aligned = constraints == "json_schema_verdicts_aligned_v4"
+    schema = (output_schema(task, payload, bounded=aligned or constraints.endswith(("bounded_v2", "compact_v3")),
+                            compact=aligned or constraints.endswith("compact_v3"), aligned=aligned)
               if constraints != "none" else None)
     request = {"binding": binding, "task": task, "messages": messages,
                "settings": asdict(config), "json_schema": schema}
@@ -95,6 +98,8 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
                 if not result["parsed"]["claims"] and prose:
                     result["audit_warnings"].append("empty_claims_on_prose_requires_review")
             elif task == "verify_claims":
+                if aligned:
+                    text, result["quote_alignment"] = align_quotes(text, payload["documents"])
                 result["parsed"] = parse_verdicts(text, payload["claims"], payload["documents"])
                 result["status"] = "ok"
             else:

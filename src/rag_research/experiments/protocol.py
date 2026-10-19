@@ -49,7 +49,7 @@ def load_protocol(path):
     require(config["auxiliary_runtime"]["repack"] is False, "Runtime repacking is forbidden")
     require(config.get("output_constraints", "none") in {
                 "none", "json_schema_source_spans_v1", "json_schema_source_spans_bounded_v2",
-                "json_schema_source_spans_compact_v3"},
+                "json_schema_source_spans_compact_v3", "json_schema_verdicts_aligned_v4"},
             "Unsupported output constraints")
     require(config["quality"]["llm_labels_are_final"] is False, "Manual quality is still required")
     prompt_path = (ROOT / config["prompts"]).resolve()
@@ -62,6 +62,9 @@ def load_protocol(path):
         require(spec["input_fields"] == fields, "Unexpected model input fields")
         require(isinstance(spec["system"], str) and bool(spec["system"].strip()), "Empty system")
         task_config(config, task)
+    require(prompts.get("judge_layout") in {None, "premise_then_claims"}, "Unknown Judge input layout")
+    require(prompts.get("rewrite_format") in {None, "checked_json_v1"}, "Unknown rewrite format")
+    require(prompts.get("rewrite_layout") in {None, "draft_sources_question"}, "Unknown rewrite layout")
     return config, prompts, prompt_path
 
 
@@ -80,5 +83,9 @@ def build_messages(prompts, task, payload):
         validate_claims(payload["claims"])
     if "documents" in payload:
         validate_documents(payload["documents"])
+    if task == "verify_claims" and prompts.get("judge_layout") == "premise_then_claims":
+        payload = {k: payload[k] for k in ("documents", "question", "answer", "claims")}
+    if task == "rewrite_answer" and prompts.get("rewrite_layout") == "draft_sources_question":
+        payload = {k: payload[k] for k in ("answer", "documents", "question")}
     return [{"role": "system", "content": prompts["tasks"][task]["system"]},
             {"role": "user", "content": "Input JSON:\n" + literal_json(payload)}]

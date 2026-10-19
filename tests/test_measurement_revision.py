@@ -127,3 +127,115 @@ def test_auxiliary_model_is_explicit_verified_and_does_not_replace_baseline(tmp_
     with pytest.raises(ValueError, match="escapes"):
         auxiliary.auxiliary_identity(config)
     assert model_identity() == baseline
+
+
+def test_quote_alignment_preserves_exact_word_order_numbers_and_negation():
+    import json
+
+    from rag_research.evaluation.quote_alignment import align_quotes
+
+    documents = [{"passage_id": "p", "text": "The tower was built in 1986 . It is not open on Mondays ."}]
+
+    def raw(quote):
+        return json.dumps({"verdicts": [{"claim_id": "c1", "reason": "Test", "label": "supported",
+                                       "evidence": [{"passage_id": "p", "quote": quote}]}]})
+
+    normalized, audit = align_quotes(raw("The tower was built in 1986."), documents)
+    projected = json.loads(normalized)["verdicts"][0]["evidence"][0]["quote"]
+    assert projected in documents[0]["text"]
+    assert audit[0]["raw_quote"] == "The tower was built in 1986."
+    assert audit[0]["alignment"] == "unique_contiguous_word_tokens"
+    for quote in ("The tower was built in 1987.", "It is open on Mondays.", "In 1986 the tower was built."):
+        with pytest.raises(ValueError, match="unique source"):
+            align_quotes(raw(quote), documents)
+    doubled = [{"passage_id": "p", "text": "The tower was built in 1986 . The tower was built in 1986 ."}]
+    with pytest.raises(ValueError, match="unique source"):
+        align_quotes(raw("The tower was built in 1986."), doubled)
+
+
+def test_simple_verdict_grammar_and_premise_layout_stay_order_independent():
+    from rag_research.experiments.protocol import build_messages
+
+    config, prompts, _ = load_protocol(ROOT / "configs/order_phase10_v6.yaml")
+    payload = {"question": "Q?", "answer": "A.", "claims": [{"claim_id": "c1", "text": "A."}],
+               "documents": [{"passage_id": "a", "title": "A", "text": "A."},
+                             {"passage_id": "b", "title": "B", "text": "B."}]}
+    schema = output_schema("verify_claims", payload, bounded=True, compact=True, aligned=True)
+    changed = deepcopy(payload)
+    changed["documents"].reverse()
+    assert schema == output_schema("verify_claims", changed, bounded=True, compact=True, aligned=True)
+    message = build_messages(prompts, "verify_claims", payload)[1]["content"]
+    assert message.index('"documents"') < message.index('"claims"')
+    assert payload["documents"][0]["text"] == "A."
+    assert config["tasks"]["verify_claims"]["max_output_tokens"] == 4096
+
+
+def test_aligned_task_retains_raw_quote_and_keeps_legacy_literal_validation(tmp_path):
+    import json
+
+    config, prompts, _ = load_protocol(ROOT / "configs/order_phase10_v6.yaml")
+    payload = {"question": "When?", "answer": "The tower opened in 1986.",
+               "claims": [{"claim_id": "c1", "text": "The tower opened in 1986."}],
+               "documents": [{"passage_id": "p", "title": "Tower", "text": "The tower opened in 1986 ."}]}
+
+    class Client:
+        def render(self, messages):
+            return json.dumps(messages)
+
+        def tokenize(self, text, *, special):
+            return [1] * 20
+
+        def complete(self, tokens, settings, **kwargs):
+            return {"content": json.dumps({"verdicts": [{"claim_id": "c1", "label": "supported",
+                    "reason": "The year is explicitly stated.", "evidence": [{"passage_id": "p",
+                    "quote": "The tower opened in 1986."}]}]}), "stop_type": "eos", "tokens": [1],
+                    "truncated": False}
+
+    revised = execute_task(Client(), task_config(config, "verify_claims"), prompts, "verify_claims",
+                           payload, tmp_path / "revised.json", {}, constraints=config["output_constraints"])
+    assert revised["status"] == "ok" and revised["parsed"]["score"] == 1
+    assert revised["quote_alignment"][0]["raw_quote"] == "The tower opened in 1986."
+    legacy = execute_task(Client(), task_config(config, "verify_claims"), prompts, "verify_claims",
+                          payload, tmp_path / "legacy.json", {}, constraints="json_schema_source_spans_bounded_v2")
+    assert legacy["status"] == "error" and "not verbatim" in legacy["error"]
+
+
+@pytest.mark.parametrize("answer_tokens,expected", [(20, "ok"), (513, "error")])
+def test_one_checked_rewrite_exposes_only_final_candidate_with_same_answer_budget(tmp_path, answer_tokens, expected):
+    import json
+
+    from rag_research.recovery.answer_rewrite import rewrite_once
+
+    config, prompts, _ = load_protocol(ROOT / "configs/order_phase10_v7.yaml")
+
+    class Client:
+        calls = 0
+
+        def render(self, messages):
+            payload = json.loads(messages[1]["content"].removeprefix("Input JSON:\n"))
+            assert list(payload) == ["answer", "documents", "question"]
+            assert "reference_answer" not in payload
+            return json.dumps(messages)
+
+        def tokenize(self, text, *, special):
+            return [1] * (10 if special else answer_tokens)
+
+        def complete(self, tokens, settings, **kwargs):
+            self.calls += 1
+            assert kwargs["json_schema"]["required"] == ["source_facts", "draft_issues", "answer"]
+            return {"content": json.dumps({"source_facts": "Correct source fact [p].",
+                    "draft_issues": "The draft gives a wrong fact.", "answer": "Correct fact [p]."}),
+                    "tokens": [1] * 50, "truncated": False, "stop_type": "eos"}
+
+    client = Client()
+    trace = {"question": "Q?", "answer": "Wrong draft.", "reference_answer": "DO NOT LEAK",
+             "documents": [{"passage_id": "p", "title": "P", "text": "Correct fact."}]}
+    result = rewrite_once(client, task_config(config, "rewrite_answer"), prompts, trace,
+                          tmp_path / "rewrite.json", {})
+    assert client.calls == 1 and result["status"] == expected
+    assert result["output_tokens"] == 50
+    if expected == "ok":
+        assert result["answer"] == "Correct fact [p]."
+        assert result["source_review"]["draft_issues"] == "The draft gives a wrong fact."
+    else:
+        assert result["answer"] is None and "512-token" in result["error"]

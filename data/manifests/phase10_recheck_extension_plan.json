@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "prepared_at_utc": "2026-10-19T03:08:41.737726+00:00",
+  "reason": "Initial five baseline answers have only two factual-prose records, before viewing any new internal F or quality. Preserve all five and add five fixed new titles, never substitute failed QA.",
+  "first_selection_sha256": "58a484f00482a7faad9d3e51f0eb1e549731a36577aec5fa562ac56abbce9f8c",
+  "extra_selection_sha256": "0d79caa56f8e935a943e63cb3c0f7e3e09015fe596ef4656618cbba79a737828",
+  "combined_planned_questions": 10,
+  "minimum_common_complete_questions": 3,
+  "maximum_judge_errors": 0,
+  "require_all_quality_labels_complete": true,
+  "require_15_unambiguous_label_checks": true,
+  "require_3_synthetic_and_2_natural_rewrite_checks": true,
+  "per_cohort_original_health_gates_preserved": true,
+  "internal_F_and_quality_not_read": true,
+  "rewrite_check_suite": {
+    "schema_version": 1,
+    "purpose": "additional_unambiguous_development_diagnostics_before_new_pilot_results",
+    "excluded_from_strict_label_accuracy": {
+      "case": "relation-conflict",
+      "source_suite": "configs/measurement_diagnostics.json",
+      "reason": "The original exclusion was recorded in phase10_additional_diagnostics_plan.json before the v4 verdict was read. This suite retains those four cases and adds three rewrite checks."
+    },
+    "judge": [
+      {
+        "id": "sole-author-conflict",
+        "question": "Who wrote The Lantern?",
+        "claim": "Oren Vale wrote The Lantern.",
+        "documents": [
+          {
+            "passage_id": "h1",
+            "title": "Book history",
+            "text": "Mira Sol was the sole author of The Lantern. Oren Vale translated the book."
+          }
+        ],
+        "expected": "contradicted"
+      },
+      {
+        "id": "birthplace-absent",
+        "question": "Where was Risa born?",
+        "claim": "Risa was born in Lisbon.",
+        "documents": [
+          {
+            "passage_id": "h2",
+            "title": "Competition result",
+            "text": "Risa won a silver medal in rowing in 2017."
+          }
+        ],
+        "expected": "not_supported"
+      },
+      {
+        "id": "service-event-conflict",
+        "question": "When did the ferry service start?",
+        "claim": "The ferry service started in 2018.",
+        "documents": [
+          {
+            "passage_id": "h3",
+            "title": "Ferry history",
+            "text": "The ferry service started on 3 June 2012. Its terminal building was rebuilt in October 2018."
+          }
+        ],
+        "expected": "contradicted"
+      },
+      {
+        "id": "permit-support",
+        "question": "What is allowed in the reserve?",
+        "claim": "Cycling is permitted in the reserve.",
+        "documents": [
+          {
+            "passage_id": "h4",
+            "title": "Reserve rules",
+            "text": "Cycling is permitted in the reserve. Motor vehicles are prohibited."
+          }
+        ],
+        "expected": "supported"
+      }
+    ],
+    "rewrite": [
+      {
+        "id": "signing-time",
+        "question": "At what time was Treaty Orion signed?",
+        "answer": "Treaty Orion was signed at 09:00.",
+        "documents": [
+          {
+            "passage_id": "r1",
+            "title": "Treaty record",
+            "text": "Treaty Orion was signed at 06:00. It took effect at 09:00."
+          }
+        ],
+        "expected": "The final answer must give the signing time 06:00, not 09:00."
+      },
+      {
+        "id": "false-refusal",
+        "question": "In what year did Eastford Museum open?",
+        "answer": "The retrieved passages do not provide enough information to answer this question.",
+        "documents": [
+          {
+            "passage_id": "r2",
+            "title": "Museum history",
+            "text": "Eastford Museum opened in 2003."
+          }
+        ],
+        "expected": "Answer 2003 and remove the unsupported refusal."
+      },
+      {
+        "id": "negated-permission",
+        "question": "Is cycling allowed in the reserve?",
+        "answer": "Cycling is allowed in the reserve.",
+        "documents": [
+          {
+            "passage_id": "r3",
+            "title": "Reserve rules",
+            "text": "Cycling is prohibited in the reserve. Walking is allowed."
+          }
+        ],
+        "expected": "Say cycling is prohibited or not allowed, without confusing walking with cycling."
+      }
+    ]
+  }
+}

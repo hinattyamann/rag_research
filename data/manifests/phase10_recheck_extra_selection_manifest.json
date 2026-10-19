@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "purpose": "phase10-preselected-before-model-results",
+  "study_version": "order-ai-pilot-v2-recheck-extra",
+  "qa_sha256": "3769dfcd74903ad58d8d6faf9380a3ddcf2e46913449d7eaa9d466155bdc3cf2",
+  "selection_seed": 42,
+  "count": 5,
+  "selection_rule": "sha256(seed:record_id)_ascending_first_unique_NFC_casefold_title",
+  "excluded_ids": [
+    "clapnq:c508d78:dev:-8781018365983812218:answerable",
+    "clapnq:c508d78:train:-1074440827026414592:answerable",
+    "clapnq:c508d78:train:-2096502590392691103:unanswerable",
+    "clapnq:c508d78:train:-240095523634070764:answerable",
+    "clapnq:c508d78:train:-2421097959159398117:answerable",
+    "clapnq:c508d78:train:-2689611084228995230:answerable",
+    "clapnq:c508d78:train:-3180482538637699841:answerable",
+    "clapnq:c508d78:train:-4263811603246217282:answerable",
+    "clapnq:c508d78:train:-4264080809021345113:unanswerable",
+    "clapnq:c508d78:train:-4605349471942949976:answerable",
+    "clapnq:c508d78:train:-4686795349402626661:answerable",
+    "clapnq:c508d78:train:-4959346488900267637:answerable",
+    "clapnq:c508d78:train:-5013142244634176426:answerable",
+    "clapnq:c508d78:train:-56401976844509479:answerable",
+    "clapnq:c508d78:train:-6210037447272218205:answerable",
+    "clapnq:c508d78:train:-6794979831513526801:answerable",
+    "clapnq:c508d78:train:-6838503988882430528:answerable",
+    "clapnq:c508d78:train:-7022114732054714012:answerable",
+    "clapnq:c508d78:train:-8087022171654146155:answerable",
+    "clapnq:c508d78:train:-8260253141034910118:answerable",
+    "clapnq:c508d78:train:-8653382653895530990:answerable",
+    "clapnq:c508d78:train:-8954290749711884159:answerable",
+    "clapnq:c508d78:train:-996127241617807228:answerable",
+    "clapnq:c508d78:train:3022388409768995192:answerable",
+    "clapnq:c508d78:train:4018351196860803639:answerable",
+    "clapnq:c508d78:train:5203382160973215547:answerable",
+    "clapnq:c508d78:train:5206163730260264910:answerable",
+    "clapnq:c508d78:train:5521512663210460451:answerable",
+    "clapnq:c508d78:train:7231443740269489114:answerable",
+    "clapnq:c508d78:train:7704053979528747207:answerable"
+  ],
+  "excluded_sources_sha256": {
+    "data/runs/phase6/development-five-v1/answers.jsonl": "b6dd7dab3da4ec58cf50e7ed5f2be39e31699a8f34eda60e4748264a8b025d95",
+    "data/manifests/phase10_selection_manifest.json": "f40dfbad27eb458125033e1c1612f9f106bbf2e0356e0f73d7cf8e05f5c252aa",
+    "data/manifests/phase10_recheck_selection_manifest.json": "58a484f00482a7faad9d3e51f0eb1e549731a36577aec5fa562ac56abbce9f8c",
+    "data/runs/order_sensitivity/phase8-development-three-v1/453b8ed6a8fd228581e56c5c/trace.json": "13eea45cb4f99d5c9020185219ba5181956e9d16aae5a545e0fbf21ba1949069",
+    "data/runs/order_sensitivity/phase8-development-three-v1/a80d1b9b25e76848f2e6c729/trace.json": "0d5f0ab84c3aa5ae91c4c10e00f3b6c6acae2174d203f4bc55270214bf6682e9",
+    "data/runs/order_sensitivity/phase8-development-three-v1/bb3c59300c3cfd027e6c6494/trace.json": "f71513c12a217243ef3803a5e985a86a80959a37bbd8797d81a5f88df791759b",
+    "data/runs/order_sensitivity/phase8-development-three-v2/453b8ed6a8fd228581e56c5c/trace.json": "13eea45cb4f99d5c9020185219ba5181956e9d16aae5a545e0fbf21ba1949069",
+    "data/runs/order_sensitivity/phase8-development-three-v2/a80d1b9b25e76848f2e6c729/trace.json": "0d5f0ab84c3aa5ae91c4c10e00f3b6c6acae2174d203f4bc55270214bf6682e9",
+    "data/runs/order_sensitivity/phase8-development-three-v2/bb3c59300c3cfd027e6c6494/trace.json": "f71513c12a217243ef3803a5e985a86a80959a37bbd8797d81a5f88df791759b",
+    "data/runs/order_sensitivity/phase8-development-two-v3/453b8ed6a8fd228581e56c5c/trace.json": "13eea45cb4f99d5c9020185219ba5181956e9d16aae5a545e0fbf21ba1949069",
+    "data/runs/order_sensitivity/phase8-development-two-v3/a80d1b9b25e76848f2e6c729/trace.json": "0d5f0ab84c3aa5ae91c4c10e00f3b6c6acae2174d203f4bc55270214bf6682e9",
+    "data/runs/order_sensitivity/phase8-development-two-v4/453b8ed6a8fd228581e56c5c/trace.json": "13eea45cb4f99d5c9020185219ba5181956e9d16aae5a545e0fbf21ba1949069",
+    "data/runs/order_sensitivity/phase8-development-two-v4/a80d1b9b25e76848f2e6c729/trace.json": "0d5f0ab84c3aa5ae91c4c10e00f3b6c6acae2174d203f4bc55270214bf6682e9",
+    "data/runs/order_sensitivity/phase8-development-two-v5/453b8ed6a8fd228581e56c5c/trace.json": "13eea45cb4f99d5c9020185219ba5181956e9d16aae5a545e0fbf21ba1949069",
+    "data/runs/order_sensitivity/phase8-development-two-v5/a80d1b9b25e76848f2e6c729/trace.json": "0d5f0ab84c3aa5ae91c4c10e00f3b6c6acae2174d203f4bc55270214bf6682e9"
+  },
+  "one_question_per_title": true,
+  "replace_failed_questions": false,
+  "records": [
+    {
+      "record_id": "clapnq:c508d78:train:8261231145937590082:answerable",
+      "question": "where did a series of unfortunate events take place",
+      "source_title": "A Series of Unfortunate Events"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:7720967756953031964:answerable",
+      "question": "where's the tv show yellowstone filmed at",
+      "source_title": "Yellowstone (U.S. TV series)"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:4957669919640612354:answerable",
+      "question": "where is the mitochondria located in the human body",
+      "source_title": "Mitochondrion"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-708692482500130312:answerable",
+      "question": "how many times have the astros appeared in the world series",
+      "source_title": "Houston Astros"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-6257074308122980519:answerable",
+      "question": "where did bernette sewing machine get its name",
+      "source_title": "Bernina International"
+    }
+  ]
+}
