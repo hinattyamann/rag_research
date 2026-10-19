@@ -40,11 +40,16 @@ def main():
     reports = []
     records = []
     bindings = {}
+    expected = read_json(ROOT / "data/runs/measurement/phase10_v14_expected_pilot_bindings.json")
+    verify_checkpoint(expected)
+    expected_by_run = {c["run_name"]: c["expected_identity"] for c in expected["cohorts"]}
+    identity_matches = {}
     for run in runs:
         pilot_report(run)
         reports.append(read_json(run / "pilot_report.json"))
         records.extend(read_json(run / "internal/report.private.json")["records"])
         binding = read_json(run / "internal/manifest.json")
+        identity_matches[run.name] = binding == expected_by_run[run.name]
         bindings[run.name] = all(file_hash(ROOT / p) == sha
                                  for p, sha in binding["source_sha256"].items())
 
@@ -74,6 +79,27 @@ def main():
     history_paths = {p: sha for p, sha in historical.items() if p.startswith("data/runs/")}
     history_changed = [p for p, sha in history_paths.items() if file_hash(ROOT / p) != sha]
     failures = Counter(t["error_code"] for t in judges if t["status"] == "error")
+    extension = read_json(ROOT / "data/manifests/phase10_recheck_extension_plan.json")
+    verify_checkpoint(extension)
+    semantic_review = read_json(diagnostic / "semantic_review.ai.json")
+    verify_checkpoint(semantic_review)
+    attempted = [t for t in tasks if t["completion_attempted"]]
+    native_audits_valid = all(t["status"] == "ok" and t.get("reasoning_budget_audit") and
+                             t.get("final_grammar_audit", {}).get("runtime_settings_verified") and
+                             t["final_grammar_audit"].get("trigger_text_verified") for t in attempted)
+    gate_checks = {
+        "all_ten_questions_preserved": len(records) == extension["combined_planned_questions"],
+        "minimum_common_complete_questions": len(comparable) >= extension["minimum_common_complete_questions"],
+        "maximum_judge_errors": sum(failures.values()) <= extension["maximum_judge_errors"],
+        "strict_fifteen_diagnostics": len(checks) == 15 and all(c["pass"] for c in checks),
+        "five_known_rewrite_checks": len(semantic_review["rewrite_checks"]) == 5 and
+                                    all(c["passed"] for c in semantic_review["rewrite_checks"]),
+        "all_new_rewrites_valid": all(r["rewrite"]["status"] == "ok" for r in records),
+        "all_quality_labels_frozen": all(r["annotation_status_counts"].get("pending", 0) == 0 for r in reports),
+        "native_budget_and_grammar_audits": bool(attempted) and native_audits_valid,
+        "fixed_inference_identity": all(identity_matches.values()) and all(bindings.values()),
+        "historical_artifacts_unchanged": not history_changed,
+    }
     aggregate = {
         "purpose": "phase10_measurement_recheck_not_final_evaluation",
         "audited_at_utc": datetime.now(UTC).isoformat(), "phase11_started": False,
@@ -93,6 +119,10 @@ def main():
         "strict_diagnostic_checks": checks,
         "strict_diagnostic_passed": sum(r["pass"] for r in checks),
         "internal_source_bindings_unchanged": bindings,
+        "identities_match_precollection_manifest": identity_matches,
+        "native_audits_valid": native_audits_valid,
+        "combined_development_gate": {"checks": gate_checks, "passed": all(gate_checks.values()),
+                                      "does_not_freeze_final_experiment": True},
         "historical_artifacts_checked": len(history_paths), "historical_artifacts_changed": history_changed,
         "completion_attempts": sum(t["completion_attempted"] for t in tasks),
         "raw_tasks": len(tasks),
