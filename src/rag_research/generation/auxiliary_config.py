@@ -14,6 +14,7 @@ class AuxiliaryGenerationConfig(GenerationConfig):
     presence_penalty: float = 0.0
     repeat_last_n: int = 64
     reasoning_budget_tokens: int = -1
+    final_json_grammar: bool = False
 
     def __post_init__(self):
         values = asdict(self)
@@ -32,3 +33,5 @@ class AuxiliaryGenerationConfig(GenerationConfig):
             raise ValueError("Invalid auxiliary sampler window")
         if type(self.reasoning_budget_tokens) is not int or self.reasoning_budget_tokens < -1:
             raise ValueError("Invalid reasoning token budget")
+        if type(self.final_json_grammar) is not bool:
+            raise ValueError("Final JSON grammar setting must be boolean")

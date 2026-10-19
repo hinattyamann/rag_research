@@ -12,6 +12,26 @@ def object_schema(properties):
             "additionalProperties": False}
 
 
+def cited_verdict_schema(payload, *, boolean_checks=False):
+    """Small final-only grammar; its definition is invariant to passage order."""
+    claims, documents = payload["claims"], payload["documents"]
+    validate_claims(claims)
+    validate_documents(documents)
+    require(bool(claims), "No Judge schema for empty claims")
+    items = []
+    for claim in claims:
+        fields = {"claim_id": {"const": claim["claim_id"]}}
+        fields.update({"has_explicit_conflict": {"type": "boolean"},
+                       "all_details_supported": {"type": "boolean"}} if boolean_checks else
+                      {"label": {"enum": ["supported", "contradicted", "not_supported"]}})
+        fields.update(reason={"type": "string", "minLength": 1, "maxLength": 160},
+                      evidence_ids={"type": "array", "maxItems": 2,
+                                    "items": {"enum": sorted(d["passage_id"] for d in documents)}})
+        items.append(object_schema(fields))
+    return object_schema({"verdicts": {"type": "array", "items": items,
+                                       "minItems": len(items), "maxItems": len(items)}})
+
+
 def quote_candidates(text):
     # Exact single segments, adjacent pairs, and full text. No source text is rewritten.
     boundaries = [0] + [m.end() for m in re.finditer(r"[.!?;]\s+", text)] + [len(text)]

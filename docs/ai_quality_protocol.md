@@ -7,7 +7,8 @@ Version: order-quality-ai-pilot-v1。2026年10月19日。
 
 ## 1. 役割と情報の分離
 
-内部Judgeは固定Qwen2.5-3B/llama.cppによるFと採用/一回書換えの判断を行う。
+初回20問の内部Judgeは固定Qwen2.5-3B/llama.cppによるFと採用/一回書換えの判断を行う。
+測定系改訂後の少数再確認のModel/予算は第5節に別記する。外部採点の基準は共通である。
 外部品質採点はCodex AIが質問・候補・元順序の実使用Context・Reference/Goldを読み、下記のYを付ける。
 Reference/Goldを内部Judge、初回生成、書換えへ渡さない。
 品質採点には条件名、内部F、採用判断、候補段階、内部JudgeのClaim/理由を渡さない。
@@ -79,6 +80,16 @@ Phase 10は20問の内部試行・書換え・AI採点・欠測・費用をま�
 初回5問の拒否3問を機械的な本文有無だけで確認したため、内部F/Yの開示前に追加5問を固定した。
 全10問を残し、CohortごとのHealth Gate不通過も隠さない。追加計画と完了基準は
 [測定系修正記録](phase10_measurement_revision.md)と専用Manifestによる。
-現在の検証候補は`configs/order_phase10_v7.yaml`。Judge予約4,096、理由400文字、
-自由な短い引用の原文照合を用いる。書換えは1回のJSON点検全体1,024 Token、最終回答512 Token以内とする。
-品質採点には点検欄を渡さず、通常どおり最終候補の本文だけを同じ3観点で採点する。
+再確認用の検証候補は`configs/order_phase10_v13.yaml`。初回生成は旧3Bのまま、内部Judgeと書換えは
+専用Manifestで検証したQwen3-4B Q4_K_M / llama.cpp b11433 Windows CPUを使う。
+補助Context16,384、Judge/書換えCompletion予約各2,048、Runtime推論予算512、
+temperature0.6 / top-k20 / top-p0.95 / min-p0 / presence penalty0 / seed42とする。
+Judgeは矛盾有無/全詳細支持を返し、固定Ruleで三Labelに対応付ける。原文全文は引用IDからプログラムで添付し、
+モデルが選んだ短い証拠Spanとは扱わない。形式検証と意味上の正解を区別する。
+v11の最終JSON括弧誤りを受け、推論終了タグ後だけ小さいJSON SchemaをDecoderへ適用する。
+SchemaのClaim列・引用ID集合は固定し、根拠の提示順で変えない。Labelの意味誤りを事後訂正しない。
+書換えは1回のCompletion内に推論・根拠点検・問題点・最終回答を生成し、最終回答を補助ModelのTokenizerで
+512 Token以下と検査する。初回GeneratorとはTokenizerが異なる。全出力を費用に含める。
+品質採点には推論・点検欄を渡さず、通常どおり最終候補の本文だけを同じ3観点で採点する。
+二つのCohortの全候補を採点・固定するまで、どちらの新規内部F/判断/候補段階Mappingも開示しない。
+開発診断・候補採用条件と残る意味誤判定は修正記録へ残す。これをPhase 11の最終条件凍結とは呼ばない。

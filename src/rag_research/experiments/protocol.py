@@ -51,7 +51,7 @@ def load_protocol(path):
     require(config.get("output_constraints", "none") in {
                 "none", "json_schema_source_spans_v1", "json_schema_source_spans_bounded_v2",
                 "json_schema_source_spans_compact_v3", "json_schema_verdicts_aligned_v4",
-                "thinking_json_passage_ids_v1"},
+                "thinking_json_passage_ids_v1", "thinking_json_passage_ids_v2"},
             "Unsupported output constraints")
     require(config["quality"]["llm_labels_are_final"] is False, "Manual quality is still required")
     prompt_path = (ROOT / config["prompts"]).resolve()

@@ -11,7 +11,7 @@ from rag_research.evaluation.judge import parse_verdicts
 from rag_research.evaluation.quote_alignment import align_quotes
 from rag_research.evaluation.reasoned_json import attach_cited_passages, final_json
 from rag_research.evaluation.reasoning_budget import audit_reasoning_budget
-from rag_research.evaluation.schema import output_schema
+from rag_research.evaluation.schema import cited_verdict_schema, output_schema
 from rag_research.evaluation.sentence_claims import extract_sentence_units
 from rag_research.experiments.frozen_trace import digest, require
 from rag_research.experiments.protocol import build_messages
@@ -30,13 +30,17 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
     require(constraints in {"none", "json_schema_source_spans_v1",
                             "json_schema_source_spans_bounded_v2",
                             "json_schema_source_spans_compact_v3",
-                            "json_schema_verdicts_aligned_v4", "thinking_json_passage_ids_v1"}, "Unknown output constraints")
+                            "json_schema_verdicts_aligned_v4", "thinking_json_passage_ids_v1",
+                            "thinking_json_passage_ids_v2"}, "Unknown output constraints")
     sentence_mode = task == "extract_claims" and prompts.get("claim_units") == "verbatim-sentences-v1"
     aligned = constraints == "json_schema_verdicts_aligned_v4"
-    thinking = constraints == "thinking_json_passage_ids_v1"
+    thinking = constraints in {"thinking_json_passage_ids_v1", "thinking_json_passage_ids_v2"}
     schema = (output_schema(task, payload, bounded=aligned or constraints.endswith(("bounded_v2", "compact_v3")),
                             compact=aligned or constraints.endswith("compact_v3"), aligned=aligned)
               if constraints != "none" and not thinking else None)
+    if constraints == "thinking_json_passage_ids_v2" and task == "verify_claims":
+        require(getattr(config, "final_json_grammar", False), "Final-only grammar must be enabled")
+        schema = cited_verdict_schema(payload, boolean_checks=prompts.get("judge_checks") == "conflict_then_complete_v1")
     request = {"binding": binding, "task": task, "messages": messages,
                "settings": asdict(config), "json_schema": schema}
     if sentence_mode:

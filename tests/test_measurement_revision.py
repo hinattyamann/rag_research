@@ -350,3 +350,61 @@ def test_conflict_and_complete_support_checks_have_a_fixed_non_correcting_mappin
     raw["verdicts"][0].update(has_explicit_conflict=True, all_details_supported=True)
     with pytest.raises(ValueError, match="inconsistent"):
         attach_cited_passages(json.dumps(raw), docs, boolean_checks=True)
+
+
+def test_final_only_grammar_is_order_invariant_and_does_not_constrain_reasoning_for_old_runs(monkeypatch):
+    from rag_research.evaluation.reasoned_json import final_json
+    from rag_research.evaluation.schema import cited_verdict_schema
+    from rag_research.generation.local import LlamaClient
+
+    config, _, _ = load_protocol(ROOT / "configs/order_phase10_v12.yaml")
+    payload = {"claims": [{"claim_id": "c1", "text": "A fact."}], "documents": [
+        {"passage_id": "b", "title": "B", "text": "B source."},
+        {"passage_id": "a", "title": "A", "text": "A source."}]}
+    schema = cited_verdict_schema(payload, boolean_checks=True)
+    assert schema == cited_verdict_schema({**payload, "documents": payload["documents"][::-1]}, boolean_checks=True)
+    assert schema["properties"]["verdicts"]["items"][0]["properties"]["evidence_ids"]["items"]["enum"] == ["a", "b"]
+    client = LlamaClient(1)
+    requests = []
+    monkeypatch.setattr(client, "request", lambda route, value: requests.append(value) or {})
+    client.complete([1], task_config(config, "verify_claims"), json_schema=schema)
+    assert requests[0]["grammar_lazy"] is True
+    assert requests[0]["grammar_triggers"] == [{"type": 1, "value": "</think>"}]
+    assert requests[0]["json_schema"] == schema
+    old, _, _ = load_protocol(ROOT / "configs/order_phase10_v11.yaml")
+    client.complete([1], task_config(old, "verify_claims"), json_schema=schema)
+    assert "grammar_lazy" not in requests[1]
+    # Do not silently repair the malformed real diagnostic output in the parser.
+    with pytest.raises(ValueError):
+        final_json('<think>Correct reasoning.</think>{"verdicts":[{"evidence_ids":[]}}}')
+
+
+def test_thinking_rewrite_passes_final_schema_in_the_same_single_completion(tmp_path):
+    import json
+
+    from rag_research.recovery.answer_rewrite import rewrite_once
+
+    config, prompts, _ = load_protocol(ROOT / "configs/order_phase10_v12.yaml")
+
+    class Client:
+        calls = 0
+
+        def render(self, messages):
+            return json.dumps(messages)
+
+        def tokenize(self, text, *, special):
+            return [101] if text == "<think>" else ([102] if text == "</think>" else [1] * 10)
+
+        def complete(self, tokens, settings, **kwargs):
+            self.calls += 1
+            assert settings.final_json_grammar and kwargs["json_schema"]["required"] == ["source_facts", "draft_issues", "answer"]
+            return {"content": '<think>Compare source.</think>' + json.dumps({"source_facts": "The source says 2003 [p].",
+                "draft_issues": "Wrong year.", "answer": "It opened in 2003 [p]."}),
+                "tokens": [101, 1, 102, 5, 6], "stop_type": "eos", "truncated": False}
+
+    client = Client()
+    trace = {"question": "When?", "answer": "In 2009.",
+             "documents": [{"passage_id": "p", "title": "P", "text": "It opened in 2003."}]}
+    result = rewrite_once(client, task_config(config, "rewrite_answer"), prompts, trace, tmp_path / "rewrite.json", {})
+    assert client.calls == 1 and result["status"] == "ok" and result["review_decoder_constrained"]
+    assert result["answer"] == "It opened in 2003 [p]."

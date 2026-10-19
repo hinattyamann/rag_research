@@ -22,6 +22,7 @@ def rewrite_once(client, config, prompts, trace, path, binding):
     messages = build_messages(prompts, "rewrite_answer", payload)
     thinking = prompts.get("rewrite_format") == "thinking_checked_json_v2"
     checked = thinking or prompts.get("rewrite_format") == "checked_json_v1"
+    final_grammar = thinking and getattr(config, "final_json_grammar", False)
     schema = object_schema({"source_facts": {"type": "string", "minLength": 1, "maxLength": 1200},
                             "draft_issues": {"type": "string", "minLength": 1, "maxLength": 600},
                             "answer": {"type": "string", "minLength": 1, "maxLength": 2400}}) if checked else None
@@ -29,7 +30,7 @@ def rewrite_once(client, config, prompts, trace, path, binding):
     if checked:
         request.update(json_schema=schema, final_answer_token_limit=512)
     if thinking:
-        request.update(json_schema=None, output_parser="closed_thinking_checked_json_v2")
+        request.update(json_schema=schema if final_grammar else None, output_parser="closed_thinking_checked_json_v2")
     request_hash = digest(request)
     if path.exists():
         saved = read_json(path)
@@ -61,7 +62,7 @@ def rewrite_once(client, config, prompts, trace, path, binding):
         else:
             result["completion_attempted"] = True
             write_json(path, result)
-            response = (client.complete(tokens, config, json_schema=schema) if schema and not thinking
+            response = (client.complete(tokens, config, json_schema=schema) if schema and (not thinking or final_grammar)
                         else client.complete(tokens, config))
             result.update(runtime_response=response, raw_output=response.get("content"),
                           output_tokens=len(response.get("tokens", [])))
@@ -78,7 +79,7 @@ def rewrite_once(client, config, prompts, trace, path, binding):
                 require(all(isinstance(v, str) and v.strip() for v in review.values()), "Empty rewrite review")
                 result["source_review"] = review
                 result["review_json_schema"] = schema
-                result["review_decoder_constrained"] = not thinking
+                result["review_decoder_constrained"] = not thinking or final_grammar
                 answer = review["answer"]
                 result["final_answer_tokens"] = len(client.tokenize(answer, special=False))
                 require(result["final_answer_tokens"] <= 512, "Final answer exceeds 512-token candidate budget")

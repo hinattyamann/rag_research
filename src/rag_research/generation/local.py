@@ -73,6 +73,10 @@ class LlamaClient:
                             ("top_k", "top_p", "min_p", "presence_penalty", "repeat_last_n")})
             payload["samplers"] = ["penalties", "top_k", "top_p", "min_p", "temperature"]
             payload["preserved_tokens"] = ["<think>", "</think>"]
+            if json_schema is not None and config.final_json_grammar:
+                # b11433 common.h: COMMON_GRAMMAR_TRIGGER_TYPE_WORD == 1.
+                payload.update(grammar_lazy=True,
+                               grammar_triggers=[{"type": 1, "value": "</think>"}])
             if config.reasoning_budget_tokens >= 0:
                 payload.update(reasoning_budget_tokens=config.reasoning_budget_tokens,
                                reasoning_budget_start_tag="<think>",
