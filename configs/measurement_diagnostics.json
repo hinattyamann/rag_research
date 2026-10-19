@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "purpose": "development_diagnostics_not_main_evaluation",
+  "judge": [
+    {
+      "id": "time-support",
+      "documents": [
+        {
+          "text": "The museum opened at 08:00. The ceremony began at 10:00.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "supported",
+      "question": "What does the source establish?",
+      "claim": "The ceremony began at 10:00."
+    },
+    {
+      "id": "time-conflict",
+      "documents": [
+        {
+          "text": "The museum opened at 08:00. The ceremony began at 10:00.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "contradicted",
+      "question": "What does the source establish?",
+      "claim": "The museum opened at 10:00."
+    },
+    {
+      "id": "time-absent",
+      "documents": [
+        {
+          "text": "The museum opened at 08:00. The ceremony began at 10:00.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "not_supported",
+      "question": "What does the source establish?",
+      "claim": "The museum closed at 18:00."
+    },
+    {
+      "id": "number-support",
+      "documents": [
+        {
+          "text": "The tower is 42 metres tall. It was completed in 1986.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "supported",
+      "question": "What does the source establish?",
+      "claim": "The tower is 42 metres tall."
+    },
+    {
+      "id": "number-conflict",
+      "documents": [
+        {
+          "text": "The tower is 42 metres tall. It was completed in 1986.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "contradicted",
+      "question": "What does the source establish?",
+      "claim": "The tower is 24 metres tall."
+    },
+    {
+      "id": "number-absent",
+      "documents": [
+        {
+          "text": "The tower is 42 metres tall. It was completed in 1986.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "not_supported",
+      "question": "What does the source establish?",
+      "claim": "The tower has 24 floors."
+    },
+    {
+      "id": "negation-support",
+      "documents": [
+        {
+          "text": "Swimming in Lake Nera is prohibited. Fishing is allowed.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "supported",
+      "question": "What does the source establish?",
+      "claim": "Swimming in Lake Nera is prohibited."
+    },
+    {
+      "id": "negation-conflict",
+      "documents": [
+        {
+          "text": "Swimming in Lake Nera is prohibited. Fishing is allowed.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "contradicted",
+      "question": "What does the source establish?",
+      "claim": "Swimming in Lake Nera is allowed."
+    },
+    {
+      "id": "negation-absent",
+      "documents": [
+        {
+          "text": "Swimming in Lake Nera is prohibited. Fishing is allowed.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "not_supported",
+      "question": "What does the source establish?",
+      "claim": "Boating in Lake Nera is prohibited."
+    },
+    {
+      "id": "relation-support",
+      "documents": [
+        {
+          "text": "Mira Sol wrote The Lantern. Oren Vale translated the book.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "supported",
+      "question": "What does the source establish?",
+      "claim": "Oren Vale translated The Lantern."
+    },
+    {
+      "id": "relation-conflict",
+      "documents": [
+        {
+          "text": "Mira Sol wrote The Lantern. Oren Vale translated the book.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "contradicted",
+      "question": "What does the source establish?",
+      "claim": "Oren Vale wrote The Lantern."
+    },
+    {
+      "id": "relation-absent",
+      "documents": [
+        {
+          "text": "Mira Sol wrote The Lantern. Oren Vale translated the book.",
+          "passage_id": "d1",
+          "title": "Diagnostic source"
+        }
+      ],
+      "expected": "not_supported",
+      "question": "What does the source establish?",
+      "claim": "Oren Vale won an award for The Lantern."
+    }
+  ]
+}

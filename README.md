@@ -6,7 +6,7 @@
 評価器への根拠順序を変えた場合と同一順序で繰り返した場合を比較します。
 より信頼できる自己修復の設計につながる知見を目指し、対策の開発は任意の追加成果とします。
 
-**Phase 1〜9の開発確認と、Phase 10の初回20問Pilot・40候補のAI採点・集計を完了しました。次は測定系の修正・再確認です。**
+**Phase 1〜9の開発確認と、Phase 10の初回20問Pilot・40候補のAI採点・集計を完了しました。現在は測定系を修正・再確認しています。**
 固定回答の自己評価・判断に加え、元順序による一回書換え、採点画面、採点JSONのImport、経路比較を実装しました。
 開発3候補は、ユーザーの委任により[AIが代行採点してJSONを保存](docs/phase9_ai_quality_review.md)しました。
 ユーザーの委任により、以後は[AI品質採点Protocol](docs/ai_quality_protocol.md)を使います。
@@ -18,8 +18,8 @@ Gate 9はAI採点による開発確認として通過し、人手確認の達成
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- [研究計画 Version 7.4](docs/rag_research_plan.md)
-- [実装計画 Version 8.4](docs/rag_implementation_plan.md)
+- [研究計画 Version 7.5](docs/rag_research_plan.md)
+- [実装計画 Version 8.5](docs/rag_implementation_plan.md)
 - [Dataset Guide Version 2.4](docs/clapnq_dataset_guide.md)
 - [先行研究との関係・本研究の立ち位置と有用性](docs/related_research_positioning.md)
 

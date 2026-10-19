@@ -45,6 +45,13 @@ def freeze_selection(config, path):
     baseline = ROOT / config["exclude_baseline"]
     inspected.update(r["record_id"] for r in map(json.loads, baseline.read_text("utf-8").splitlines()))
     excluded_sources[baseline.relative_to(ROOT).as_posix()] = file_hash(baseline)
+    for name in config.get("exclude_selection_manifests", []):
+        source = (ROOT / name).resolve()
+        require(source.is_relative_to(ROOT / "data/manifests"), "Selection exclusion escapes manifests")
+        previous = read_json(source)
+        require(previous["qa_sha256"] == file_hash(qa_path), "Excluded selection uses different data")
+        inspected.update(r["record_id"] for r in previous["records"])
+        excluded_sources[source.relative_to(ROOT).as_posix()] = file_hash(source)
     for trace_path in sorted((ROOT / "data/runs/order_sensitivity").glob("*/*/trace.json")):
         inspected.add(read_json(trace_path)["record_id"])
         excluded_sources[trace_path.relative_to(ROOT).as_posix()] = file_hash(trace_path)

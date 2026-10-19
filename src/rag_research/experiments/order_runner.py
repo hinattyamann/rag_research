@@ -21,6 +21,7 @@ from rag_research.experiments.frozen_trace import (
 from rag_research.experiments.protocol import ROOT, load_protocol, task_config
 from rag_research.experiments.storage import read_json, run_lock, write_json
 from rag_research.generation.artifacts import model_identity
+from rag_research.generation.auxiliary import auxiliary_identity, auxiliary_server_kwargs
 from rag_research.generation.local import LocalServer
 from rag_research.retrieval.common import file_hash
 
@@ -82,6 +83,9 @@ def _manifest(config_path, prompt_path, baseline_path, qa_path, config, traces, 
     require(identity["model"] == model_identity(), "Model identity mismatch")
     baseline_config = (ROOT / config["baseline_config"]).resolve()
     require(baseline_config.is_relative_to(ROOT), "Baseline config escapes repository")
+    if "auxiliary_model_manifest" in config:
+        paths.extend([ROOT / config["auxiliary_model_manifest"],
+                      ROOT / "src/rag_research/generation/auxiliary.py"])
     return {
         "schema_version": 1, "purpose": "phase8-development-smoke-not-pilot-or-final-evaluation",
         "python_version": platform.python_version(),
@@ -94,6 +98,7 @@ def _manifest(config_path, prompt_path, baseline_path, qa_path, config, traces, 
         "baseline_config_sha256": file_hash(baseline_config),
         "identity_manifest_sha256": file_hash(identity_path),
         "model": identity["model"], "runtime": identity["runtime"],
+        **({"auxiliary_model": auxiliary_identity(config)} if "auxiliary_model_manifest" in config else {}),
         "source_sha256": {p.relative_to(ROOT).as_posix(): file_hash(p) for p in paths},
         "traces": [{"record_id": t["record_id"], "trace_sha256": t["trace_sha256"],
                     "directory": digest(t["record_id"])[:24], "plan": trial_plan(t, config)}
@@ -222,7 +227,8 @@ def run_evaluation(config_path, baseline_path, output, identifiers=None):
         while (output / f"server-{session_index}.log").exists():
             session_index += 1
         with LocalServer(task_config(config, "verify_claims"),
-                         output / f"server-{session_index}.log") as server:
+                         output / f"server-{session_index}.log",
+                         **auxiliary_server_kwargs(config)) as server:
             records, results = evaluate_traces(
                 server.client, config, prompts, traces, manifest, output)
             session = {"session": session_index, "completion_attempts_this_session":

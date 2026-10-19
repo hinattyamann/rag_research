@@ -1,10 +1,10 @@
 # RAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.4 — 2026年10月19日 AI品質採点方針とPhase 10
+## Version 7.5 — 2026年10月19日 Phase 10測定系の修正
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.4](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.5](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -96,10 +96,16 @@ Pilot初期条件は元順序、逆順、固定Shuffle 3通りと、元順序の
 ### 5.1 評価器と判断Rule
 
 初回回答だけから事実Claimを一度抽出・保存し、同じClaim列を全順序・反復で検証する。
+初回Pilot後の修正候補は[文単位の固定主張](phase10_measurement_revision.md)である。
+決定的な文分割によって本文の網羅性を保持し、LLMによる原子的な分解・言換えは行わない。
+この候補ではFを「支持された文単位数/固定文単位総数」と定義する。複合文は全詳細の支持を要求する。
+旧来の原子的Claimを目指した抽出とは分母が異なるため、新Versionとして比較範囲を区別する。
 抽出へ根拠やGoldを渡さず、Claim抽出の揺れを主比較へ混ぜない。
 Claim Labelは`supported / contradicted / not_supported`。
 F = supported Claim数 / 固定Claim総数。支持割合であって正答確率ではない。
-主要Pilotの評価器候補はGeneratorと同じ固定Qwen2.5-3B条件。妥当性を確認してから本実験へ固定する。
+初回Pilotの評価器はGeneratorと同じ固定Qwen2.5-3B条件だった。修正では初回生成3Bを維持し、
+Judge/書換えの7B候補を別Runで検証する。妥当性を確認してから本実験へ固定する。
+自己評価はRAG内部の評価機構を指し、GeneratorとJudgeの同一Modelという条件は今回から外す。
 別系統の評価器による確認は追試として区別する。Modelの最新性や規模だけを有効性の根拠にしない。
 
 Phase 7の初期条件は[専用Protocol](phase7_order_protocol.md)、`configs/order_pilot.yaml`、
@@ -211,6 +217,7 @@ JSONを保存した。人手確認済みのYや本実験の成果には置き換
 既知品質ペア18問では0→0が7、1→1が11、0→1/1→0は0。不明2問を改善へ数えない。
 事実本文の空Claim、抽出漏れ、調印/発効時刻の誤支持があるため、このまま本実験条件を凍結しない。
 Phase 10内で評価の妥当性・修復能力・出力予算を確認し直す。効果を作るための閾値変更はしない。
+[測定系修正と新規5問の再確認](phase10_measurement_revision.md)を実施し、完了状況と残る制約を別記録に残す。
 [Phase 9記録](phase9_answer_rewrite.md)に実出力・採点手順・検証範囲を示す。
 全条件が採用/採点不能でも比較用書換えを1つ収集し、判断に応じて同じ二候補から出力を選ぶ。
 初回と書換えが完全に同じ質問・回答・Contextの場合は、品質Labelを共用して重複採点を避ける。

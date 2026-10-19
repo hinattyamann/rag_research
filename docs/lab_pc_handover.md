@@ -1,7 +1,7 @@
 # 研究室PCへの引継ぎと実行手順
 
 2026年10月18日更新: 正式テーマを「根拠提示順序に対するRAG自己評価の感度と修復判断への影響」へ変更した。
-2026年10月19日更新: 現行は[研究計画7.4](rag_research_plan.md)、[実装計画8.4](rag_implementation_plan.md)、Dataset Guide 2.4。
+2026年10月19日更新: 現行は[研究計画7.5](rag_research_plan.md)、[実装計画8.5](rag_implementation_plan.md)、Dataset Guide 2.4。
 Phase 1〜9とPhase 10初回20問Pilot・40候補AI採点・集計を完了。測定系の修正・再確認が残る。[ロードマップ](research_roadmap.md)が次工程の正本である。
 ユーザーの委任により品質採点は[Codex AIのProtocol](ai_quality_protocol.md)へ変更し、人手確認とは区別する。
 以下の日付付き実測・旧Versionの記載は、その時点の履歴として読む。

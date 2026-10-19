@@ -11,6 +11,7 @@ from rag_research.experiments.frozen_trace import digest, require
 from rag_research.experiments.order_runner import load_traces
 from rag_research.experiments.protocol import ROOT, load_protocol, task_config
 from rag_research.experiments.storage import read_json, run_lock, verify_checkpoint, write_json
+from rag_research.generation.auxiliary import auxiliary_identity, auxiliary_server_kwargs
 from rag_research.generation.local import LocalServer
 from rag_research.recovery.answer_rewrite import rewrite_once
 from rag_research.retrieval.common import file_hash
@@ -118,6 +119,7 @@ def run_rewrites(config_path, output):
                 "qa_sha256": file_hash(qa_path), "prompts_sha256": file_hash(prompt_path),
                 "rubric_sha256": file_hash(local_path(config["quality_rubric"])),
                 "generation": asdict(generation),
+                **({"auxiliary_model": auxiliary_identity(protocol)} if "auxiliary_model_manifest" in protocol else {}),
                 "source_sha256": {str(p.relative_to(ROOT)): file_hash(p) for p in paths}}
     with run_lock(output):
         path = output / "manifest.json"
@@ -149,7 +151,8 @@ def run_rewrites(config_path, output):
                                   "error": rewritten["error"]}), flush=True)
 
         if pending:
-            with LocalServer(generation, output / f"server-{session_index}.log") as server:
+            with LocalServer(generation, output / f"server-{session_index}.log",
+                             **auxiliary_server_kwargs(protocol)) as server:
                 collect(server.client)
                 session = {"completion_attempts_this_session": server.client.completion_attempts,
                            **server.report()}

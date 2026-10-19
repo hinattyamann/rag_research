@@ -9,6 +9,7 @@ from datetime import UTC, datetime
 from rag_research.evaluation.claims import parse_claims
 from rag_research.evaluation.judge import parse_verdicts
 from rag_research.evaluation.schema import output_schema
+from rag_research.evaluation.sentence_claims import extract_sentence_units
 from rag_research.experiments.frozen_trace import digest, require
 from rag_research.experiments.protocol import build_messages
 from rag_research.experiments.storage import (
@@ -24,11 +25,17 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
     require(task in {"extract_claims", "verify_claims"}, "Phase 8 does not generate rewrite candidates")
     messages = build_messages(prompts, task, payload)
     require(constraints in {"none", "json_schema_source_spans_v1",
-                            "json_schema_source_spans_bounded_v2"}, "Unknown output constraints")
-    schema = (output_schema(task, payload, bounded=constraints.endswith("bounded_v2"))
+                            "json_schema_source_spans_bounded_v2",
+                            "json_schema_source_spans_compact_v3"}, "Unknown output constraints")
+    sentence_mode = task == "extract_claims" and prompts.get("claim_units") == "verbatim-sentences-v1"
+    schema = (output_schema(task, payload, bounded=constraints.endswith(("bounded_v2", "compact_v3")),
+                            compact=constraints.endswith("compact_v3"))
               if constraints != "none" else None)
-    request_hash = digest({"binding": binding, "task": task, "messages": messages,
-                           "settings": asdict(config), "json_schema": schema})
+    request = {"binding": binding, "task": task, "messages": messages,
+               "settings": asdict(config), "json_schema": schema}
+    if sentence_mode:
+        request["claim_units"] = "verbatim-sentences-v1"
+    request_hash = digest(request)
     if path.exists():
         saved = read_json(path)
         require(saved.get("request_sha256") == request_hash, "Saved task input hash mismatch")
@@ -50,6 +57,13 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
               "parsed": None, "error": None, "error_code": None, "cost_incomplete": False,
               "audit_warnings": []}
     write_json(path, result)
+    if sentence_mode:
+        units = extract_sentence_units(payload["answer"])
+        result.update(parsed={"claims": units["claims"]}, unit_audit=units,
+                      status="ok" if units["claims"] else "not_applicable",
+                      input_tokens=0, output_tokens=0, extraction_kind="verbatim_sentence_units",
+                      elapsed_seconds=time.perf_counter() - started)
+        return checkpoint(path, result)
     try:
         rendered = client.render(messages)
         tokens = client.tokenize(rendered, special=True)

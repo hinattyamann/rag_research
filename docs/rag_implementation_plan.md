@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.4 — 2026年10月19日 AI品質採点とPhase 10
+## Version 8.5 — 2026年10月19日 Phase 10測定系の修正
 
-[研究計画 Version 7.4](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.5](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -114,6 +114,18 @@ Judgeへ渡すのは元質問、固定回答/Claim、固定使用Context、評�
 ## 4. Promptと入力予算
 
 ### Claim抽出
+
+初回Pilot後の修正候補は`evaluation/sentence_claims.py`と`configs/order_phase10_v3.yaml`。
+3Bの意味誤りが残るため、`configs/order_phase10_v4.yaml`ではJudge/書換えの7B候補を明示する。
+`generation/auxiliary.py`で専用Manifestと全ModelファイルのHashを検証し、`LocalServer`へ渡す。
+既存`artifacts.model_identity()`と初回3Bは変更しない。RunにはBaselineと補助Modelの両方を記録する。
+初回回答を決定的な文単位として保持し、本文の再構成を検証する。原子的な事実分解ではない。
+候補v3は抽出のModel呼出し0回。Fの分母と費用が旧v5と異なるため、Runと結果を分ける。
+`json_schema_source_spans_compact_v3`は理由→証拠→Labelの順に出力し、引用320文字・理由120文字、
+支持/矛盾には最低1件の原文引用をDecoder側でも要求する。引用集合は提示順序から独立する。
+補助Context 12,288・Judge出力予約3,072を用い、入力本文の切詰めや自動再試行は行わない。
+既知診断と新規5問の条件・完了基準は[測定系修正記録](phase10_measurement_revision.md)による。
+以下の原子的Claim抽出と8,192/1,536予算は初回Pilotまでの履歴である。
 
 回答内の検証可能な最小の事実主張だけを順序付きJSONで抽出する。回答を訂正・補完せず、
 質問・根拠・Referenceを使って主張を追加しない。拒否やClaimなしと抽出失敗を区別する。

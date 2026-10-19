@@ -45,12 +45,16 @@ def main():
     parser.add_argument("stage", choices=["select", "baseline", "internal", "report"])
     parser.add_argument("--config", type=Path, default=ROOT / "configs/phase10.yaml")
     parser.add_argument("--output-dir", type=Path, default=ROOT / "data/runs/pilot/phase10-twenty-v1")
+    parser.add_argument("--selection-manifest", type=Path,
+                        default=ROOT / "data/manifests/phase10_selection_manifest.json")
     args = parser.parse_args()
     config = yaml.safe_load(args.config.read_text("utf-8"))
     require(config["purpose"] == "phase10-development-pilot" and config["automatic_retries"] == 0 and
             config["replace_failed_questions"] is False and config["human_reviewed"] is False,
             "Invalid pilot protocol")
-    selection = freeze_selection(config, ROOT / "data/manifests/phase10_selection_manifest.json")
+    selection_path = args.selection_manifest.resolve()
+    require(selection_path.is_relative_to(ROOT / "data/manifests"), "Unexpected selection manifest")
+    selection = freeze_selection(config, selection_path)
     if args.stage == "select":
         print(f"Selected {len(selection['records'])} unseen titles before model execution")
     else:

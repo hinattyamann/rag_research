@@ -16,6 +16,7 @@ from rag_research.experiments.storage import (
     write_json,
 )
 from rag_research.generation.artifacts import model_identity
+from rag_research.generation.auxiliary import auxiliary_identity, auxiliary_server_kwargs
 from rag_research.generation.local import LocalServer
 from rag_research.pilot.materials import load_offline, publish
 from rag_research.recovery.answer_rewrite import rewrite_once
@@ -53,11 +54,15 @@ def pilot_identity(config_path, config, selection, baseline, traces):
     for directory in ("pilot", "experiments", "evaluation", "recovery"):
         paths.extend(sorted((ROOT / "src/rag_research" / directory).glob("*.py")))
     protocol, _, prompt_path = load_protocol(ROOT / config["internal_protocol"])
+    if "auxiliary_model_manifest" in protocol:
+        paths.append(ROOT / protocol["auxiliary_model_manifest"])
+        paths.append(ROOT / "src/rag_research/generation/auxiliary.py")
     return {"schema_version": 1, "purpose": "phase10-development-pilot-not-final-evaluation",
             "study_version": config["study_version"], "selection_sha256": digest(selection),
             "config": config, "baseline_answers_sha256": file_hash(baseline),
             "baseline_provenance_sha256": file_hash(baseline.parent / "run_manifest.json"),
             "qa_sha256": file_hash(ROOT / config["qa_path"]), "model": model_identity(),
+            **({"auxiliary_model": auxiliary_identity(protocol)} if "auxiliary_model_manifest" in protocol else {}),
             "prompt_sha256": file_hash(prompt_path),
             "auxiliary_runtime": asdict(task_config(protocol, "verify_claims")),
             "quality_assessor": "Codex AI", "human_reviewed": False,
@@ -160,7 +165,8 @@ def run_internal(config_path, config, selection, output):
         session_index = len(list(internal.glob("session-*.json"))) + 1
         if missing:
             with LocalServer(task_config(protocol, "verify_claims"),
-                             internal / f"server-{session_index}.log") as server:
+                             internal / f"server-{session_index}.log",
+                             **auxiliary_server_kwargs(protocol)) as server:
                 collect(server.client)
                 session = {"completion_attempts_this_session": server.client.completion_attempts, **server.report()}
         else:

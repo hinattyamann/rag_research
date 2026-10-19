@@ -48,7 +48,8 @@ def load_protocol(path):
     decide(None, decision["threshold"])
     require(config["auxiliary_runtime"]["repack"] is False, "Runtime repacking is forbidden")
     require(config.get("output_constraints", "none") in {
-                "none", "json_schema_source_spans_v1", "json_schema_source_spans_bounded_v2"},
+                "none", "json_schema_source_spans_v1", "json_schema_source_spans_bounded_v2",
+                "json_schema_source_spans_compact_v3"},
             "Unsupported output constraints")
     require(config["quality"]["llm_labels_are_final"] is False, "Manual quality is still required")
     prompt_path = (ROOT / config["prompts"]).resolve()

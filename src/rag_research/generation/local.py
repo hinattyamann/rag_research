@@ -74,8 +74,9 @@ class LlamaClient:
 class LocalServer:
     """Start one verified server, measure both processes, and always stop owned process."""
 
-    def __init__(self, config, log_path: Path):
+    def __init__(self, config, log_path: Path, *, model_path=None):
         self.config = config
+        self.model_path = Path(model_path).resolve() if model_path is not None else None
         self.log_path = log_path
         self.process = None
         self._stop = threading.Event()
@@ -83,7 +84,7 @@ class LocalServer:
 
     def __enter__(self):
         started = time.perf_counter()
-        model = verify_model().resolve()
+        model = self.model_path or verify_model().resolve()
         executable, self.runtime = verify_runtime()
         self.runtime_version = subprocess.run(
             [str(executable.resolve()), "--version"],

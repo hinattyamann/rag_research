@@ -26,7 +26,22 @@ def quote_candidates(text):
     return sorted(spans)
 
 
-def output_schema(task, payload, *, bounded=False):
+def compact_quote_candidates(text):
+    spans = {s for s in quote_candidates(text) if len(s) <= 320}
+    # Long sentences still have exact substrings available, never paraphrases.
+    words = list(re.finditer(r"\S+", text))
+    for start in range(0, len(words), 12):
+        for count in (12, 24):
+            end = min(start + count, len(words))
+            snippet = text[words[start].start():words[end - 1].end()]
+            if len(snippet) <= 320:
+                spans.add(snippet)
+    if not spans and text.strip():
+        spans.add(text.strip()[:320])
+    return sorted(spans)
+
+
+def output_schema(task, payload, *, bounded=False, compact=False):
     if task == "extract_claims":
         claim = object_schema({"claim_id": {"type": "string", "pattern": "^c[1-9][0-9]*$"},
                                "text": {"type": "string", "minLength": 1}})
@@ -39,7 +54,7 @@ def output_schema(task, payload, *, bounded=False):
     # Sorting is essential: the decoder grammar must not change with evidence order.
     evidence = {"anyOf": [object_schema({
         "passage_id": {"const": d["passage_id"]},
-        "quote": {"enum": quote_candidates(d["text"])},
+        "quote": {"enum": (compact_quote_candidates if compact else quote_candidates)(d["text"])},
     }) for d in sorted(documents, key=lambda d: d["passage_id"])]}
     verdict = object_schema({
         "claim_id": {"enum": [c["claim_id"] for c in claims]},
@@ -49,12 +64,28 @@ def output_schema(task, payload, *, bounded=False):
     })
     if bounded:
         verdict["properties"]["evidence"]["maxItems"] = 2
-        verdict["properties"]["reason"]["maxLength"] = 200
+        verdict["properties"]["reason"]["maxLength"] = 120 if compact else 200
+        if compact:
+            # Compare source meaning before committing to a label. This decoder
+            # order is identical for all evidence permutations and repeat trials.
+            fields = verdict["properties"]
+            verdict = object_schema({k: fields[k] for k in
+                                     ("claim_id", "reason", "evidence", "label")})
         ordered = []
         for claim in claims:
             entry = deepcopy(verdict)
             entry["properties"]["claim_id"] = {"const": claim["claim_id"]}
-            ordered.append(entry)
+            if compact:
+                variants = []
+                for label in ("supported", "contradicted", "not_supported"):
+                    variant = deepcopy(entry)
+                    variant["properties"]["label"] = {"const": label}
+                    if label != "not_supported":
+                        variant["properties"]["evidence"]["minItems"] = 1
+                    variants.append(variant)
+                ordered.append({"anyOf": variants})
+            else:
+                ordered.append(entry)
         # Draft-7 tuple items are supported by this pinned runtime; avoid prefixItems.
         return object_schema({"verdicts": {"type": "array", "items": ordered,
                                            "minItems": len(claims), "maxItems": len(claims)}})
