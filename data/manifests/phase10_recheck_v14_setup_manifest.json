@@ -1,0 +1,249 @@
+{
+  "purpose": "phase10_development_recheck_setup_not_phase11_freeze",
+  "prepared_at_utc": "2026-10-19T07:37:41.526959+00:00",
+  "implementation_commit": "fc9bea9",
+  "phase11_started": false,
+  "new_internal_F_and_quality_not_viewed": true,
+  "protocol": "configs/order_phase10_v14.yaml",
+  "protocol_sha256": "66764e00d8e74899c0a55be3c5fde55ca1ffa1fe9af59708b4c918beab4ec078",
+  "expected_pilot_bindings_sha256": "8aca0ce214f1bd65aff1cbb62b32bee9407a2d466e74589f1f33f437ac47f234",
+  "cohorts": [
+    {
+      "run_name": "phase10-five-v2",
+      "expected_manifest_digest": "7d42a5d500c6d8035c2426dcaed8c785381aa0ecafb5f5953a62100d3d01d9da",
+      "source_sha256": {
+        "configs/phase10_recheck.yaml": "05f8372988aa0c56125f220c1fbb06629a72eb62fce36298f69d083fef373137",
+        "configs/order_phase10_v14.yaml": "66764e00d8e74899c0a55be3c5fde55ca1ffa1fe9af59708b4c918beab4ec078",
+        "docs/ai_quality_protocol.md": "e285e29411e63cf1239b2771d4569a8c233e01b92e5c9b76d2a1242c86d4c3b2",
+        "configs/quality_ai_prompt_v1.txt": "e801d32291766a27f952690762160d0139ca87b26dee258c2e610a64882a668c",
+        "src/rag_research/generation/local.py": "4c14b5cce41aa4a2791cb181a67985d59b39790e223a5c565873fef0da13565c",
+        "pyproject.toml": "c56ec43fef9940597edb26998c848838cc87a5f53d3b516fb0b4298c609150ae",
+        "uv.lock": "11660879153bf6d59af324f295ce3a76c80a09dd4acfb4eb0076b92ae54d348a",
+        "src/rag_research/pilot/__init__.py": "ca181baf17b3acfb1dedc3fc8f0364f272437a9a26051e29f8faf2d8c14274d5",
+        "src/rag_research/pilot/assessment.py": "213d12000a7b94b38cf9c49609fb96005cfd21c9f4d3f6686fe62346c0607ea4",
+        "src/rag_research/pilot/baseline.py": "8bf6136060d7439ee901065b547068a567245b16af5651b9f07f9c9cce669352",
+        "src/rag_research/pilot/internal.py": "67a18239d0da649b2a43e7b8dcbc3f7cc9763aa5437a8bfe74e0f0534bad6ccf",
+        "src/rag_research/pilot/materials.py": "ef55d2bb52efed008fdcf7bd69192ec3fb6754fab048fec6f74b4ec9a6fdc977",
+        "src/rag_research/pilot/report.py": "3ce2e22af32f85e55fb69b3d4193e307955bb83a5b0d5503acb71380976449e2",
+        "src/rag_research/pilot/selection.py": "72513b5bf3a260a467373e30dffbc0fce09fab3433b956e07dfe7244e7d313ae",
+        "src/rag_research/experiments/__init__.py": "47047fe0079dd895316a10769822dde18800a51a1198d7731d736fa981d54296",
+        "src/rag_research/experiments/decisions.py": "20d9e2831fdbbaaf497e265ba7aba9e1e6cfbec98a23fa42d31c3b1765d860ab",
+        "src/rag_research/experiments/frozen_trace.py": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4",
+        "src/rag_research/experiments/order_runner.py": "bb5a75dae9c46257396b80a5b2eef5b9d8b996dc96b77e37a54ed820e104472c",
+        "src/rag_research/experiments/protocol.py": "4525859dc2175281ed2179e483ba4eeea65638939e55dd49bc25cafdad88cec9",
+        "src/rag_research/experiments/quality.py": "f0cb2e2298443e86adb470451d42328067b00066b978e14d9decbfc615415c71",
+        "src/rag_research/experiments/quality_form.py": "89cb98cf433950ea3b66c2151712617c938bff557ce6d2871b9d1d1eac541d00",
+        "src/rag_research/experiments/repair_runner.py": "8c273482750e1cc37a5d297b47d2dec3acb39458d8e7a95b9b4e3094afb38ee8",
+        "src/rag_research/experiments/storage.py": "f32779f45c084276779b8f4a08b94c1197c703f6c2d5a67cc923390949c2f5a9",
+        "src/rag_research/evaluation/__init__.py": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b",
+        "src/rag_research/evaluation/claims.py": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602",
+        "src/rag_research/evaluation/judge.py": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2",
+        "src/rag_research/evaluation/order.py": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e",
+        "src/rag_research/evaluation/quote_alignment.py": "a9bc408e05d9fa25c0902b13b7e70d2e2eb7d3402ba4b10c24184d43759b88bb",
+        "src/rag_research/evaluation/reasoned_json.py": "4da1d2a82156ad78530d2ce0a64b9e80e2c1f36862c7aad0b562c987727c801f",
+        "src/rag_research/evaluation/reasoning_budget.py": "40719a18c7faed3dbef7dbe8292eb70e1a6340c358a65563e42178985663037a",
+        "src/rag_research/evaluation/schema.py": "2335e5f8655748c7e5dc9bc78e338294dcb98a2bfbec8a4ffc57dbdef0c04d2f",
+        "src/rag_research/evaluation/sentence_claims.py": "be30302e34f2456b517cf7dbde837e425226f97726cffa70f0a9aa3ed8b17dc4",
+        "src/rag_research/evaluation/tasks.py": "397da8c45764d2a11d41984944bbb1fff583a957ecadf20642a7f8ab7bd4d474",
+        "src/rag_research/recovery/__init__.py": "a248c5acd19ee7a30fcc05f65b985c7a4b207c48dfff29f30ec1b842b364d123",
+        "src/rag_research/recovery/answer_rewrite.py": "c4649ab2c9a4a7124b5c370b67cf664be95888b370b76489a8bb09ec69795b51",
+        "data/manifests/phase10_auxiliary_qwen3_manifest.json": "c6f539f7ef72e8de02992f1b9125ae53731d807cede02e24fafb523535d01a75",
+        "src/rag_research/generation/auxiliary.py": "64aaff03948ef8bbb2d03f6bbd0a58f631986a6e8e8f71916817d0ed110901cc",
+        "src/rag_research/generation/auxiliary_config.py": "2e36a90dd68de6904fadecb321a8a4f0cb10f6b110d99d82f16d0ec3264774f1"
+      },
+      "mechanical_nonempty_unit_records": 2,
+      "bare_refusal_records": 3
+    },
+    {
+      "run_name": "phase10-five-extra-v2",
+      "expected_manifest_digest": "e0a3cdfeb42d731bb96f6797947c696551672e1e1d3233818c418090ac08dd62",
+      "source_sha256": {
+        "configs/phase10_recheck_extra.yaml": "aa7b4fc7e2ec914769ee6df284e36e37be5dc462ee5fb47edb77a14e90e9f363",
+        "configs/order_phase10_v14.yaml": "66764e00d8e74899c0a55be3c5fde55ca1ffa1fe9af59708b4c918beab4ec078",
+        "docs/ai_quality_protocol.md": "e285e29411e63cf1239b2771d4569a8c233e01b92e5c9b76d2a1242c86d4c3b2",
+        "configs/quality_ai_prompt_v1.txt": "e801d32291766a27f952690762160d0139ca87b26dee258c2e610a64882a668c",
+        "src/rag_research/generation/local.py": "4c14b5cce41aa4a2791cb181a67985d59b39790e223a5c565873fef0da13565c",
+        "pyproject.toml": "c56ec43fef9940597edb26998c848838cc87a5f53d3b516fb0b4298c609150ae",
+        "uv.lock": "11660879153bf6d59af324f295ce3a76c80a09dd4acfb4eb0076b92ae54d348a",
+        "src/rag_research/pilot/__init__.py": "ca181baf17b3acfb1dedc3fc8f0364f272437a9a26051e29f8faf2d8c14274d5",
+        "src/rag_research/pilot/assessment.py": "213d12000a7b94b38cf9c49609fb96005cfd21c9f4d3f6686fe62346c0607ea4",
+        "src/rag_research/pilot/baseline.py": "8bf6136060d7439ee901065b547068a567245b16af5651b9f07f9c9cce669352",
+        "src/rag_research/pilot/internal.py": "67a18239d0da649b2a43e7b8dcbc3f7cc9763aa5437a8bfe74e0f0534bad6ccf",
+        "src/rag_research/pilot/materials.py": "ef55d2bb52efed008fdcf7bd69192ec3fb6754fab048fec6f74b4ec9a6fdc977",
+        "src/rag_research/pilot/report.py": "3ce2e22af32f85e55fb69b3d4193e307955bb83a5b0d5503acb71380976449e2",
+        "src/rag_research/pilot/selection.py": "72513b5bf3a260a467373e30dffbc0fce09fab3433b956e07dfe7244e7d313ae",
+        "src/rag_research/experiments/__init__.py": "47047fe0079dd895316a10769822dde18800a51a1198d7731d736fa981d54296",
+        "src/rag_research/experiments/decisions.py": "20d9e2831fdbbaaf497e265ba7aba9e1e6cfbec98a23fa42d31c3b1765d860ab",
+        "src/rag_research/experiments/frozen_trace.py": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4",
+        "src/rag_research/experiments/order_runner.py": "bb5a75dae9c46257396b80a5b2eef5b9d8b996dc96b77e37a54ed820e104472c",
+        "src/rag_research/experiments/protocol.py": "4525859dc2175281ed2179e483ba4eeea65638939e55dd49bc25cafdad88cec9",
+        "src/rag_research/experiments/quality.py": "f0cb2e2298443e86adb470451d42328067b00066b978e14d9decbfc615415c71",
+        "src/rag_research/experiments/quality_form.py": "89cb98cf433950ea3b66c2151712617c938bff557ce6d2871b9d1d1eac541d00",
+        "src/rag_research/experiments/repair_runner.py": "8c273482750e1cc37a5d297b47d2dec3acb39458d8e7a95b9b4e3094afb38ee8",
+        "src/rag_research/experiments/storage.py": "f32779f45c084276779b8f4a08b94c1197c703f6c2d5a67cc923390949c2f5a9",
+        "src/rag_research/evaluation/__init__.py": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b",
+        "src/rag_research/evaluation/claims.py": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602",
+        "src/rag_research/evaluation/judge.py": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2",
+        "src/rag_research/evaluation/order.py": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e",
+        "src/rag_research/evaluation/quote_alignment.py": "a9bc408e05d9fa25c0902b13b7e70d2e2eb7d3402ba4b10c24184d43759b88bb",
+        "src/rag_research/evaluation/reasoned_json.py": "4da1d2a82156ad78530d2ce0a64b9e80e2c1f36862c7aad0b562c987727c801f",
+        "src/rag_research/evaluation/reasoning_budget.py": "40719a18c7faed3dbef7dbe8292eb70e1a6340c358a65563e42178985663037a",
+        "src/rag_research/evaluation/schema.py": "2335e5f8655748c7e5dc9bc78e338294dcb98a2bfbec8a4ffc57dbdef0c04d2f",
+        "src/rag_research/evaluation/sentence_claims.py": "be30302e34f2456b517cf7dbde837e425226f97726cffa70f0a9aa3ed8b17dc4",
+        "src/rag_research/evaluation/tasks.py": "397da8c45764d2a11d41984944bbb1fff583a957ecadf20642a7f8ab7bd4d474",
+        "src/rag_research/recovery/__init__.py": "a248c5acd19ee7a30fcc05f65b985c7a4b207c48dfff29f30ec1b842b364d123",
+        "src/rag_research/recovery/answer_rewrite.py": "c4649ab2c9a4a7124b5c370b67cf664be95888b370b76489a8bb09ec69795b51",
+        "data/manifests/phase10_auxiliary_qwen3_manifest.json": "c6f539f7ef72e8de02992f1b9125ae53731d807cede02e24fafb523535d01a75",
+        "src/rag_research/generation/auxiliary.py": "64aaff03948ef8bbb2d03f6bbd0a58f631986a6e8e8f71916817d0ed110901cc",
+        "src/rag_research/generation/auxiliary_config.py": "2e36a90dd68de6904fadecb321a8a4f0cb10f6b110d99d82f16d0ec3264774f1"
+      },
+      "mechanical_nonempty_unit_records": 2,
+      "bare_refusal_records": 3
+    }
+  ],
+  "strict_diagnostic_checks": [
+    {
+      "id": "time-support",
+      "expected": "supported",
+      "actual": "supported",
+      "pass": true
+    },
+    {
+      "id": "time-conflict",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "pass": true
+    },
+    {
+      "id": "time-absent",
+      "expected": "not_supported",
+      "actual": "not_supported",
+      "pass": true
+    },
+    {
+      "id": "number-support",
+      "expected": "supported",
+      "actual": "supported",
+      "pass": true
+    },
+    {
+      "id": "number-conflict",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "pass": true
+    },
+    {
+      "id": "number-absent",
+      "expected": "not_supported",
+      "actual": "not_supported",
+      "pass": true
+    },
+    {
+      "id": "negation-support",
+      "expected": "supported",
+      "actual": "supported",
+      "pass": true
+    },
+    {
+      "id": "negation-conflict",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "pass": true
+    },
+    {
+      "id": "negation-absent",
+      "expected": "not_supported",
+      "actual": "not_supported",
+      "pass": true
+    },
+    {
+      "id": "relation-support",
+      "expected": "supported",
+      "actual": "supported",
+      "pass": true
+    },
+    {
+      "id": "relation-absent",
+      "expected": "not_supported",
+      "actual": "not_supported",
+      "pass": true
+    },
+    {
+      "id": "sole-author-conflict",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "pass": true
+    },
+    {
+      "id": "birthplace-absent",
+      "expected": "not_supported",
+      "actual": "not_supported",
+      "pass": true
+    },
+    {
+      "id": "service-event-conflict",
+      "expected": "contradicted",
+      "actual": "contradicted",
+      "pass": true
+    },
+    {
+      "id": "permit-support",
+      "expected": "supported",
+      "actual": "supported",
+      "pass": true
+    }
+  ],
+  "strict_diagnostic_passed": 15,
+  "diagnostic_completion_attempts": 24,
+  "diagnostic_rewrites": 5,
+  "diagnostic_maximum_output_tokens": 946,
+  "all_diagnostic_tasks_valid": true,
+  "semantic_review_sha256": "f90573b331210f19f42b22baa6510fafeddb20ce9dd440704e463fff741707d8",
+  "collection_rule": "All 10 fixed questions retained; 5 orders and 5 original repeats share one trial; one original-order rewrite per question; zero automatic retries.",
+  "quality_rule": "Freeze every anonymous candidate in BOTH cohorts before opening any new F, decisions, or candidate-stage mapping. AI grading, human_reviewed=false.",
+  "completion_criteria_plan_sha256": "22ee6577537bc5a82f4be3155516b7cd5d55fc99832403d644ec3c8c54837cfb",
+  "pytest": {
+    "passed": 246,
+    "seconds": 31.75
+  },
+  "ruff": "passed",
+  "diagnostic_artifacts_sha256": {
+    "data/runs/measurement/phase10-revision-v14/extract-01.json": "a20c814ed0382ab8128357fe8280ff7f1647f446caa9a0f344e56344057dd302",
+    "data/runs/measurement/phase10-revision-v14/extract-02.json": "b4f22a72e630d31757269ea7b71d2a748df247594a3cf23d958e2fbbbd9497f6",
+    "data/runs/measurement/phase10-revision-v14/extract-10.json": "9eb9677b3fcadb0db44f6b926d6a24e1cb10b780e090e9abd7515c9ede114954",
+    "data/runs/measurement/phase10-revision-v14/extract-11.json": "333b93a74bdcd44cd7d38b79ec424cc7af3c51383eb6612e72f6f0c960180edb",
+    "data/runs/measurement/phase10-revision-v14/extract-20.json": "69aa427a19809a48889dbb442e626285bbe1ddb63db3a42ff98c357fdf87bec6",
+    "data/runs/measurement/phase10-revision-v14/judge-negation-absent.json": "b6de7208c358adbf520021b22c51cad5a0b6f487e7e9c79457b42a07344a7b54",
+    "data/runs/measurement/phase10-revision-v14/judge-negation-conflict.json": "4a21d2f390727fe349d794a33be1e374b4864db059e6fb93640a8c646c54928e",
+    "data/runs/measurement/phase10-revision-v14/judge-negation-support.json": "6cc57371f2adee54ee57754e3852a80d2f329b9b06490d33f4dfd2699709a9c5",
+    "data/runs/measurement/phase10-revision-v14/judge-number-absent.json": "d68a3f00a0c9d2d88a71a081ed68076c781804a8de0f3d8e10e4fcaa97fc10b6",
+    "data/runs/measurement/phase10-revision-v14/judge-number-conflict.json": "393038cb8946d4c91a7eeba6aa97dc61eb3d2a1bf07a31410a5833a410aa08f7",
+    "data/runs/measurement/phase10-revision-v14/judge-number-support.json": "57a2bcaa46102c00d5b062927f8953c2ae69488ff9010cc3e2b441dd22e9c39b",
+    "data/runs/measurement/phase10-revision-v14/judge-relation-absent.json": "f7af0fac265c51ceec010d897a514faa408a09550df61dd7d5d540b01ed5f6fc",
+    "data/runs/measurement/phase10-revision-v14/judge-relation-conflict.json": "2cb567ce71f297d4a95d37ff399403a880ce6e3b7ddb3bb1c8d264927138c617",
+    "data/runs/measurement/phase10-revision-v14/judge-relation-support.json": "fd1c9f82a34926716e04b1506dcea2a83944f4995584f34e1b2a820fddac8c2c",
+    "data/runs/measurement/phase10-revision-v14/judge-time-absent.json": "827bab04b16b14a1bedeb3a162f74d6b0f9ff4144f71dabca546f3376f4ea153",
+    "data/runs/measurement/phase10-revision-v14/judge-time-conflict.json": "58db1602617d55a7107aab5ccdba0f5fb5de3f3afd9a776f5745a3916cd3013c",
+    "data/runs/measurement/phase10-revision-v14/judge-time-support.json": "59416811d671bfaa94a18d81ccf6f635b7121978c2224f25eafb9fc09610f062",
+    "data/runs/measurement/phase10-revision-v14/natural-04.json": "ba12c6e889a2ef246fd656f3305a0ce70e10d6bc329d5b4cf721563935aafff7",
+    "data/runs/measurement/phase10-revision-v14/natural-06.json": "52fffa9c5d09b8e54e670a95a04492e592f03e9c240f4109be0450e5a0e227be",
+    "data/runs/measurement/phase10-revision-v14/natural-17.json": "40aca371a9a12e6774c5421c02317c220a305c4e6a4a49251ed4f3cbe4a5f9fb",
+    "data/runs/measurement/phase10-revision-v14/plan.json": "f69b1f72c935a6b9fae9ad130d9fa750fcb72795c6989dc05fc80edcbe0e4a29",
+    "data/runs/measurement/phase10-revision-v14/rewrite-04.json": "2514365f67e481fb99de48c017523b2386a4886a0a767611624b7426cb88e090",
+    "data/runs/measurement/phase10-revision-v14/rewrite-19.json": "f3d7c08db424a722de341ce36ac9058df5553f043ebdb86a822c6d12ffc6a5f3",
+    "data/runs/measurement/phase10-revision-v14/semantic_review.ai.json": "f90573b331210f19f42b22baa6510fafeddb20ce9dd440704e463fff741707d8",
+    "data/runs/measurement/phase10-revision-v14/source_archive_audit.json": "0ba8e5fedccb5030bdfa5b0e3e1bfc144f5f07067cf43cd58c9e69d3bd78baa9",
+    "data/runs/measurement/phase10-revision-v14/summary.json": "9d35d80474378f5d3ee83eb6d7e7fa32597051760bac9606c7a9602d0861ea7f",
+    "data/runs/measurement/phase10-additional-v14/driver-result.json": "124fd50cb6d223cdd18fedc166d00af7254199b6e6dedf9be82f71db87af6d01",
+    "data/runs/measurement/phase10-additional-v14/judge-birthplace-absent.json": "18407bc8b98e8d466ef14a1ebaf2e67294da271bb6cb84055756b6bfb1036c88",
+    "data/runs/measurement/phase10-additional-v14/judge-permit-support.json": "172718326c7beb771f090b44e8c29e909d4cd0a0507b294e53bec45d63521437",
+    "data/runs/measurement/phase10-additional-v14/judge-service-event-conflict.json": "7c8f7fd57f45267bc1965296f9a4e8e9f65946b5bff4f8d40521f8b82a94535d",
+    "data/runs/measurement/phase10-additional-v14/judge-sole-author-conflict.json": "f7c95c971b859f4c78e6f8c7e51c6b381f6fd70988407db8a1bd2de7c911d80a",
+    "data/runs/measurement/phase10-additional-v14/plan.json": "c4ae8d3d5d3b0c7c49cf0e3895bbacec8dc81b6babc4cadfa3f36d77d1590e4f",
+    "data/runs/measurement/phase10-additional-v14/rewrite-false-refusal.json": "7b9f962183dbf904ab2c7c97e10c6216467a415ef75e60ac7b981bd95a111323",
+    "data/runs/measurement/phase10-additional-v14/rewrite-negated-permission.json": "4eb50941d49396f3b7bc9c90fd501b8d88fb39b11e652b87bbc16fda23e4f735",
+    "data/runs/measurement/phase10-additional-v14/rewrite-signing-time.json": "3a96a305aae70e5ce445d5dbe924858a00bed3339817a26358cf3759c6c87ab5",
+    "data/runs/measurement/phase10-additional-v14/summary.json": "42df296ee692c41e49449fe81393110e49bf43ad99a65c7fcdc967b0504411ba"
+  },
+  "result_sha256": "4e7f07aa52006dca01c48c6eb2ed290c7fbb7ed72fbcf5fd0b6228092b76e01d"
+}
