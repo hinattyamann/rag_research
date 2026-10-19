@@ -34,4 +34,7 @@ def auxiliary_server_kwargs(config):
         path = ROOT / artifact["path"]
         require(path.stat().st_size == artifact["bytes"] and file_hash(path) == artifact["sha256"],
                 "Auxiliary model size/hash mismatch")
-    return {"model_path": ROOT / manifest["entrypoint"]}
+    options = manifest.get("runtime_options", {})
+    require(set(options) <= {"jinja"} and type(options.get("jinja", False)) is bool,
+            "Unsupported auxiliary runtime options")
+    return {"model_path": ROOT / manifest["entrypoint"], **options}

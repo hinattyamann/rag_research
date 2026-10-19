@@ -26,6 +26,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--critical-first", action="store_true")
     args = parser.parse_args()
     config, prompts, _ = load_protocol(args.config)
     output = args.output_dir
@@ -40,9 +41,12 @@ def main():
              ROOT / "src/rag_research/generation/auxiliary.py",
              ROOT / "src/rag_research/generation/local.py",
              ROOT / "src/rag_research/experiments/protocol.py"]
+    if "sampling" in config:
+        paths.append(ROOT / "src/rag_research/generation/auxiliary_config.py")
     binding["source_sha256"] = {p.resolve().relative_to(ROOT).as_posix(): file_hash(p) for p in paths}
     plan = {"binding": binding, "suite": suite, "model": model_identity(),
             "auxiliary_model": auxiliary_identity(config),
+            "critical_first": args.critical_first,
             "known_cases": [1, 2, 4, 6, 10, 11, 17, 19, 20]}
     if (output / "plan.json").exists():
         if read_json(output / "plan.json") != plan:
@@ -53,6 +57,27 @@ def main():
     session = len(list(output.glob("server*.log"))) + 1
     with LocalServer(task_config(config, "verify_claims"), output / f"server-{session}.log",
                      **auxiliary_server_kwargs(config)) as server:
+        if args.critical_first:
+            from rag_research.evaluation.sentence_claims import extract_sentence_units
+            trace = records[3]["trace"]
+            payload = {"question": trace["question"], "answer": trace["answer"],
+                       "claims": extract_sentence_units(trace["answer"])["claims"], "documents": trace["documents"]}
+            critical = execute_task(server.client, task_config(config, "verify_claims"), prompts,
+                                    "verify_claims", payload, output / "natural-04.json", binding,
+                                    constraints=config["output_constraints"])
+            print(json.dumps({"kind": "critical", "status": critical["status"],
+                              "error": critical["error"], "verdicts": [
+                                  {k: v[k] for k in ("claim_id", "label", "reason")}
+                                  for v in critical["parsed"]["verdicts"]] if critical["status"] == "ok" else None}), flush=True)
+            if critical["status"] != "ok" or any(v["label"] == "supported" for v in critical["parsed"]["verdicts"][:2]):
+                write_json(output / "summary.json", {"critical_gate": "failed",
+                           "completion_attempts_this_session": server.client.completion_attempts,
+                           "remaining_diagnostics": "not_attempted_after_critical_failure", "server": server.report()})
+                return
+            rewritten = rewrite_once(server.client, task_config(config, "rewrite_answer"), prompts,
+                                     trace, output / "rewrite-04.json", binding)
+            print(json.dumps({"kind": "critical_rewrite", "status": rewritten["status"],
+                              "answer": rewritten["answer"]}), flush=True)
         for index in [1, 2, 10, 11, 20]:
             trace = records[index - 1]["trace"]
             result = execute_task(server.client, task_config(config, "extract_claims"), prompts,

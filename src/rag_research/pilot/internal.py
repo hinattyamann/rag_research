@@ -57,6 +57,8 @@ def pilot_identity(config_path, config, selection, baseline, traces):
     if "auxiliary_model_manifest" in protocol:
         paths.append(ROOT / protocol["auxiliary_model_manifest"])
         paths.append(ROOT / "src/rag_research/generation/auxiliary.py")
+        if "sampling" in protocol:
+            paths.append(ROOT / "src/rag_research/generation/auxiliary_config.py")
     return {"schema_version": 1, "purpose": "phase10-development-pilot-not-final-evaluation",
             "study_version": config["study_version"], "selection_sha256": digest(selection),
             "config": config, "baseline_answers_sha256": file_hash(baseline),

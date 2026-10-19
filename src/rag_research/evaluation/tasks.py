@@ -9,6 +9,8 @@ from datetime import UTC, datetime
 from rag_research.evaluation.claims import parse_claims
 from rag_research.evaluation.judge import parse_verdicts
 from rag_research.evaluation.quote_alignment import align_quotes
+from rag_research.evaluation.reasoned_json import attach_cited_passages, final_json
+from rag_research.evaluation.reasoning_budget import audit_reasoning_budget
 from rag_research.evaluation.schema import output_schema
 from rag_research.evaluation.sentence_claims import extract_sentence_units
 from rag_research.experiments.frozen_trace import digest, require
@@ -28,16 +30,19 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
     require(constraints in {"none", "json_schema_source_spans_v1",
                             "json_schema_source_spans_bounded_v2",
                             "json_schema_source_spans_compact_v3",
-                            "json_schema_verdicts_aligned_v4"}, "Unknown output constraints")
+                            "json_schema_verdicts_aligned_v4", "thinking_json_passage_ids_v1"}, "Unknown output constraints")
     sentence_mode = task == "extract_claims" and prompts.get("claim_units") == "verbatim-sentences-v1"
     aligned = constraints == "json_schema_verdicts_aligned_v4"
+    thinking = constraints == "thinking_json_passage_ids_v1"
     schema = (output_schema(task, payload, bounded=aligned or constraints.endswith(("bounded_v2", "compact_v3")),
                             compact=aligned or constraints.endswith("compact_v3"), aligned=aligned)
-              if constraints != "none" else None)
+              if constraints != "none" and not thinking else None)
     request = {"binding": binding, "task": task, "messages": messages,
                "settings": asdict(config), "json_schema": schema}
     if sentence_mode:
         request["claim_units"] = "verbatim-sentences-v1"
+    if thinking:
+        request["output_parser"] = "closed_thinking_json_cited_passages_v1"
     request_hash = digest(request)
     if path.exists():
         saved = read_json(path)
@@ -98,6 +103,12 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
                 if not result["parsed"]["claims"] and prose:
                     result["audit_warnings"].append("empty_claims_on_prose_requires_review")
             elif task == "verify_claims":
+                if thinking:
+                    result["reasoning_budget_audit"] = audit_reasoning_budget(client, response, config)
+                    text, result["model_reasoning"] = final_json(text)
+                    text, result["raw_cited_verdicts"] = attach_cited_passages(
+                        text, payload["documents"], boolean_checks=prompts.get("judge_checks") == "conflict_then_complete_v1")
+                    result["evidence_scope"] = "programmatically_attached_full_cited_passages_not_model_quotations"
                 if aligned:
                     text, result["quote_alignment"] = align_quotes(text, payload["documents"])
                 result["parsed"] = parse_verdicts(text, payload["claims"], payload["documents"])

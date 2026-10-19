@@ -1,5 +1,6 @@
 """Download a pinned official 7B candidate for Development Judge/rewrite diagnostics."""
 
+import argparse
 import os
 import sys
 import time
@@ -25,7 +26,7 @@ FILES = [
 ]
 
 
-def download_gguf(folder, name, size, sha):
+def download_gguf(folder, name, size, sha, *, repository=REPOSITORY, revision=REVISION):
     path = folder / name
     if path.exists():
         require(path.stat().st_size == size and file_hash(path) == sha, "Existing model differs")
@@ -35,7 +36,7 @@ def download_gguf(folder, name, size, sha):
     require(offset <= size, "Partial download exceeds official size")
     if offset < size:
         # A cache-busting query avoids stale signed redirects; the commit stays pinned.
-        url = (f"https://huggingface.co/{REPOSITORY}/resolve/{REVISION}/{name}"
+        url = (f"https://huggingface.co/{repository}/resolve/{revision}/{name}"
                f"?download=true&transfer={time.time_ns()}")
         request = urllib.request.Request(url, headers={"Range": f"bytes={offset}-",
                                                        "User-Agent": "rag-research"})
@@ -60,21 +61,37 @@ def download_gguf(folder, name, size, sha):
 
 
 def main():
-    folder = ROOT / "data/models/Qwen2.5-7B-Instruct-GGUF" / REVISION
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--spec", type=Path)
+    parser.add_argument("--manifest", type=Path,
+                        default=ROOT / "data/manifests/phase10_auxiliary_model_manifest.json")
+    args = parser.parse_args()
+    spec = read_json(args.spec) if args.spec else None
+    repository = spec["model_id"] if spec else REPOSITORY
+    revision = spec["revision"] if spec else REVISION
+    directory = spec["directory"] if spec else "Qwen2.5-7B-Instruct-GGUF"
+    require(Path(directory).name == directory, "Invalid model directory")
+    folder = ROOT / "data/models" / directory / revision
+    require(folder.resolve().is_relative_to(ROOT / "data/models"), "Model directory escapes workspace")
     folder.mkdir(parents=True, exist_ok=True)
     files = []
-    for name, size, sha in FILES:
+    expected = [(f["name"], f["bytes"], f["sha256"]) for f in spec["files"]] if spec else FILES
+    for name, size, sha in expected:
+        require(Path(name).name == name and name.endswith(".gguf"), "Invalid model filename")
         print(f"Preparing {name} ({size} bytes)", flush=True)
-        path = download_gguf(folder, name, size, sha)
+        path = download_gguf(folder, name, size, sha, repository=repository, revision=revision)
         require(path.stat().st_size == size and file_hash(path) == sha, "Official model hash mismatch")
         files.append({"path": path.relative_to(ROOT).as_posix(), "bytes": size, "sha256": sha})
-    for name in ("README.md", "LICENSE"):
-        hf_hub_download(REPOSITORY, name, revision=REVISION, local_dir=folder, token=False)
+    for name in (("README.md",) if spec else ("README.md", "LICENSE")):
+        hf_hub_download(repository, name, revision=revision, local_dir=folder, token=False)
     manifest = {"schema_version": 1, "purpose": "development-auxiliary-model",
-                "model_id": REPOSITORY, "revision": REVISION, "quantization": "Q4_K_M",
-                "license": "Apache-2.0", "source": f"https://huggingface.co/{REPOSITORY}/tree/{REVISION}",
+                "model_id": repository, "revision": revision, "quantization": "Q4_K_M",
+                "license": "Apache-2.0", "source": f"https://huggingface.co/{repository}/tree/{revision}",
                 "entrypoint": files[0]["path"], "files": files}
-    target = ROOT / "data/manifests/phase10_auxiliary_model_manifest.json"
+    if spec and "runtime_options" in spec:
+        manifest["runtime_options"] = spec["runtime_options"]
+    target = args.manifest.resolve()
+    require(target.is_relative_to(ROOT / "data/manifests"), "Unexpected manifest output")
     if target.exists():
         require(read_json(target) == manifest, "Existing auxiliary manifest differs")
     else:

@@ -239,3 +239,114 @@ def test_one_checked_rewrite_exposes_only_final_candidate_with_same_answer_budge
         assert result["source_review"]["draft_issues"] == "The draft gives a wrong fact."
     else:
         assert result["answer"] is None and "512-token" in result["error"]
+
+
+def test_reasoned_parser_uses_only_closed_final_json_and_attaches_declared_source_scope():
+    import json
+
+    from rag_research.evaluation.reasoned_json import attach_cited_passages, final_json
+
+    text, thinking = final_json('<think>{"answer":"wrong draft"}</think>\n```json\n{"verdicts":[]}\n```')
+    assert json.loads(text) == {"verdicts": []} and "wrong draft" in thinking["text"]
+    for invalid in ('{"verdicts":[]}', '<think>unclosed {"verdicts":[]}', '</think>Here is {"verdicts":[]}'):
+        with pytest.raises(ValueError):
+            final_json(invalid)
+    payload = {"verdicts": [{"claim_id": "c1", "label": "supported", "reason": "Test", "evidence_ids": ["p"]}]}
+    normalized, raw = attach_cited_passages(json.dumps(payload), [{"passage_id": "p", "text": "Whole original source."}])
+    assert json.loads(normalized)["verdicts"][0]["evidence"] == [{"passage_id": "p", "quote": "Whole original source."}]
+    assert raw == payload
+    payload["verdicts"][0]["evidence_ids"] = ["unknown"]
+    with pytest.raises(ValueError, match="Unknown citation"):
+        attach_cited_passages(json.dumps(payload), [{"passage_id": "p", "text": "Whole source."}])
+
+
+def test_auxiliary_sampling_does_not_change_baseline_sampler_or_temperature_contract(monkeypatch):
+    from rag_research.generation.auxiliary_config import AuxiliaryGenerationConfig
+    from rag_research.generation.config import GenerationConfig
+    from rag_research.generation.local import LlamaClient
+
+    with pytest.raises(ValueError, match="zero"):
+        GenerationConfig(temperature=0.6)
+    auxiliary = AuxiliaryGenerationConfig(temperature=0.6)
+    client = LlamaClient(1)
+    requests = []
+    monkeypatch.setattr(client, "request", lambda route, payload: requests.append(payload) or {})
+    client.complete([1], GenerationConfig())
+    client.complete([1], auxiliary)
+    assert requests[0]["temperature"] == 0 and requests[0]["samplers"] == ["temperature"]
+    assert "top_k" not in requests[0]
+    assert requests[1]["temperature"] == 0.6 and requests[1]["top_k"] == 20
+    assert requests[1]["samplers"] == ["penalties", "top_k", "top_p", "min_p", "temperature"]
+    assert requests[0]["seed"] == requests[1]["seed"] == 42
+    budgeted = AuxiliaryGenerationConfig(temperature=0.6, reasoning_budget_tokens=512)
+    client.complete([1], budgeted)
+    assert requests[2]["reasoning_budget_tokens"] == 512
+    assert requests[2]["reasoning_budget_start_tag"] == "<think>"
+    assert requests[2]["reasoning_budget_end_tags"] == ["</think>"]
+    assert requests[2]["preserved_tokens"] == ["<think>", "</think>"]
+
+
+def test_thinking_judge_uses_fixed_claims_without_repeating_untrusted_answer(tmp_path):
+    import json
+
+    from rag_research.experiments.protocol import build_messages
+
+    config, prompts, _ = load_protocol(ROOT / "configs/order_phase10_v8.yaml")
+    payload = {"question": "Q?", "answer": "The library opened in 2003. [p]",
+               "claims": [{"claim_id": "c1", "text": "The library opened in 2003."}],
+               "documents": [{"passage_id": "p", "title": "Library", "text": "The library opened in 2003."}]}
+    sent = json.loads(build_messages(prompts, "verify_claims", payload)[1]["content"].removeprefix("Input JSON:\n"))
+    assert set(sent) == {"documents", "question", "claims"} and sent["documents"] == payload["documents"]
+    with pytest.raises(ValueError, match="forbidden"):
+        build_messages(prompts, "verify_claims", {**payload, "gold": "leak"})
+
+    class Client:
+        def render(self, messages):
+            return json.dumps(messages)
+
+        def tokenize(self, text, *, special):
+            return [1] * 10
+
+        def complete(self, tokens, settings, **kwargs):
+            assert not kwargs
+            return {"content": '<think>Compare the exact year.</think>' + json.dumps({"verdicts": [
+                {"claim_id": "c1", "label": "supported", "reason": "The same year is given.", "evidence_ids": ["p"]}]}),
+                "tokens": [1] * 50, "stop_type": "eos", "truncated": False}
+
+    result = execute_task(Client(), task_config(config, "verify_claims"), prompts, "verify_claims",
+                          payload, tmp_path / "judge.json", {}, constraints=config["output_constraints"])
+    assert result["status"] == "ok" and result["parsed"]["score"] == 1
+    assert result["output_tokens"] == 50 and result["model_reasoning"]["text"]
+    assert result["json_schema"] is None and "not_model_quotations" in result["evidence_scope"]
+
+
+def test_runtime_reasoning_budget_audit_rejects_ignored_budget():
+    from rag_research.evaluation.reasoning_budget import audit_reasoning_budget
+    from rag_research.generation.auxiliary_config import AuxiliaryGenerationConfig
+
+    class Client:
+        def tokenize(self, text, *, special):
+            return [101] if text == "<think>" else ([102] if text == "</think>" else [3] * 5)
+
+    config = AuxiliaryGenerationConfig(temperature=0.6, reasoning_budget_tokens=10)
+    result = audit_reasoning_budget(Client(), {"tokens": [101] + [1] * 15 + [102, 9]}, config)
+    assert result["tokens_before_end_marker"] == 15
+    with pytest.raises(ValueError, match="did not honor"):
+        audit_reasoning_budget(Client(), {"tokens": [101] + [1] * 50 + [102]}, config)
+
+
+def test_conflict_and_complete_support_checks_have_a_fixed_non_correcting_mapping():
+    import json
+
+    from rag_research.evaluation.reasoned_json import attach_cited_passages
+
+    docs = [{"passage_id": "p", "text": "Original source."}]
+    for conflict, complete, expected in ((True, False, "contradicted"), (False, True, "supported"),
+                                         (False, False, "not_supported")):
+        raw = {"verdicts": [{"claim_id": "c1", "has_explicit_conflict": conflict,
+                "all_details_supported": complete, "reason": "Test only", "evidence_ids": ["p"]}]}
+        normalized, saved = attach_cited_passages(json.dumps(raw), docs, boolean_checks=True)
+        assert json.loads(normalized)["verdicts"][0]["label"] == expected and saved == raw
+    raw["verdicts"][0].update(has_explicit_conflict=True, all_details_supported=True)
+    with pytest.raises(ValueError, match="inconsistent"):
+        attach_cited_passages(json.dumps(raw), docs, boolean_checks=True)

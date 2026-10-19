@@ -68,14 +68,27 @@ class LlamaClient:
         }
         if json_schema is not None:
             payload["json_schema"] = json_schema
+        if hasattr(config, "top_k"):
+            payload.update({k: getattr(config, k) for k in
+                            ("top_k", "top_p", "min_p", "presence_penalty", "repeat_last_n")})
+            payload["samplers"] = ["penalties", "top_k", "top_p", "min_p", "temperature"]
+            payload["preserved_tokens"] = ["<think>", "</think>"]
+            if config.reasoning_budget_tokens >= 0:
+                payload.update(reasoning_budget_tokens=config.reasoning_budget_tokens,
+                               reasoning_budget_start_tag="<think>",
+                               reasoning_budget_end_tags=["</think>"],
+                               reasoning_budget_message="\nReturn only the requested final JSON now.\n")
         return self.request("/completion", payload)
 
 
 class LocalServer:
     """Start one verified server, measure both processes, and always stop owned process."""
 
-    def __init__(self, config, log_path: Path, *, model_path=None):
+    def __init__(self, config, log_path: Path, *, model_path=None, jinja=False):
         self.config = config
+        if type(jinja) is not bool:
+            raise ValueError("Jinja setting must be boolean")
+        self.jinja = jinja
         self.model_path = Path(model_path).resolve() if model_path is not None else None
         self.log_path = log_path
         self.process = None
@@ -127,6 +140,8 @@ class LocalServer:
         ]
         if not self.config.repack:
             self.command.append("--no-repack")
+        if self.jinja:
+            self.command.append("--jinja")
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
         self.log_file = self.log_path.open("x", encoding="utf-8")
         self.peak_server = 0

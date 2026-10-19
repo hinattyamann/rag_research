@@ -86,6 +86,8 @@ def _manifest(config_path, prompt_path, baseline_path, qa_path, config, traces, 
     if "auxiliary_model_manifest" in config:
         paths.extend([ROOT / config["auxiliary_model_manifest"],
                       ROOT / "src/rag_research/generation/auxiliary.py"])
+        if "sampling" in config:
+            paths.append(ROOT / "src/rag_research/generation/auxiliary_config.py")
     return {
         "schema_version": 1, "purpose": "phase8-development-smoke-not-pilot-or-final-evaluation",
         "python_version": platform.python_version(),

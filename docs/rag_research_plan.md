@@ -105,6 +105,9 @@ Claim Labelは`supported / contradicted / not_supported`。
 F = supported Claim数 / 固定Claim総数。支持割合であって正答確率ではない。
 初回Pilotの評価器はGeneratorと同じ固定Qwen2.5-3B条件だった。修正では初回生成3Bを維持し、
 Judge/書換えの7B候補を別Runで検証する。妥当性を確認してから本実験へ固定する。
+7Bでも長文の意味判定・引用形式に問題が残ったため、Qwen3-4Bの補助評価候補を追加した。
+文単位の評価、二つの支持/矛盾チェック、推論予算と引用IDの扱いは
+[測定系修正記録](phase10_measurement_revision.md)に履歴・制約を含めて記載する。
 自己評価はRAG内部の評価機構を指し、GeneratorとJudgeの同一Modelという条件は今回から外す。
 別系統の評価器による確認は追試として区別する。Modelの最新性や規模だけを有効性の根拠にしない。
 
