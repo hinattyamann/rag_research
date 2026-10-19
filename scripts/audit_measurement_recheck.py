@@ -10,12 +10,25 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from rag_research.experiments.frozen_trace import require  # noqa: E402
+from rag_research.experiments.quality import cost  # noqa: E402
 from rag_research.experiments.storage import checkpoint, read_json, verify_checkpoint  # noqa: E402
 from rag_research.pilot.report import combine_annotations, pilot_report  # noqa: E402
 from rag_research.retrieval.common import file_hash  # noqa: E402
 
 
 def main():
+    destination = ROOT / "data/manifests/phase10_recheck_result_manifest.json"
+    if destination.exists():
+        # The parser replay binds this original audit by hash. Re-auditing
+        # stored inputs must not rewrite its date, source status or gate result.
+        saved = read_json(destination)
+        verify_checkpoint(saved)
+        require(file_hash(ROOT / "data/manifests/phase10_recheck_quality_freeze.json") ==
+                saved["quality_freeze_sha256"], "Original quality freeze changed")
+        for path, sha in saved["raw_artifacts_sha256"].items():
+            require(file_hash(ROOT / path) == sha, f"Original artifact changed: {path}")
+        print("Frozen v14 audit preserved; all original artifacts and quality freeze are unchanged.")
+        return
     runs = [ROOT / "data/runs/pilot" / name for name in
             ("phase10-five-v2", "phase10-five-extra-v2")]
     # No private outcome or candidate-stage mapping may be read above this barrier.
@@ -40,6 +53,10 @@ def main():
     reports = []
     records = []
     bindings = {}
+    setup = read_json(ROOT / "data/manifests/phase10_recheck_v14_setup_manifest.json")
+    verify_checkpoint(setup)
+    require(file_hash(ROOT / "data/runs/measurement/phase10_v14_expected_pilot_bindings.json") ==
+            setup["expected_pilot_bindings_sha256"], "Precollection identities changed")
     expected = read_json(ROOT / "data/runs/measurement/phase10_v14_expected_pilot_bindings.json")
     verify_checkpoint(expected)
     expected_by_run = {c["run_name"]: c["expected_identity"] for c in expected["cohorts"]}
@@ -79,10 +96,14 @@ def main():
     history_paths = {p: sha for p, sha in historical.items() if p.startswith("data/runs/")}
     history_changed = [p for p, sha in history_paths.items() if file_hash(ROOT / p) != sha]
     failures = Counter(t["error_code"] for t in judges if t["status"] == "error")
-    extension = read_json(ROOT / "data/manifests/phase10_recheck_extension_plan.json")
-    verify_checkpoint(extension)
+    extension_path = ROOT / "data/manifests/phase10_recheck_extension_plan.json"
+    # This predeclared plan is plain JSON, bound by the setup's file hash.
+    require(file_hash(extension_path) == setup["completion_criteria_plan_sha256"], "Extension plan changed")
+    extension = read_json(extension_path)
     semantic_review = read_json(diagnostic / "semantic_review.ai.json")
     verify_checkpoint(semantic_review)
+    require(file_hash(diagnostic / "semantic_review.ai.json") == setup["semantic_review_sha256"],
+            "Known semantic review changed")
     attempted = [t for t in tasks if t["completion_attempted"]]
     native_audits_valid = all(t["status"] == "ok" and t.get("reasoning_budget_audit") and
                              t.get("final_grammar_audit", {}).get("runtime_settings_verified") and
@@ -125,6 +146,8 @@ def main():
                                       "does_not_freeze_final_experiment": True},
         "historical_artifacts_checked": len(history_paths), "historical_artifacts_changed": history_changed,
         "completion_attempts": sum(t["completion_attempted"] for t in tasks),
+        "auxiliary_collection_cost": cost(tasks),
+        "timing_note": "Summed measured steps, excluding baseline, startup, retrieval and offline AI review; not end-to-end route latency",
         "raw_tasks": len(tasks),
         "output_tokens_max": max(t["output_tokens"] or 0 for t in tasks),
         "all_attempted_input_reservations_valid": all(t["input_tokens"] is not None and
@@ -138,7 +161,6 @@ def main():
                    "Known natural-case false rejection remains; calibration is still necessary",
                    "AI quality assessment; exact assessor model and complete session isolation not fixed"],
     }
-    destination = ROOT / "data/manifests/phase10_recheck_result_manifest.json"
     checkpoint(destination, aggregate)
     print(json.dumps({k: v for k, v in aggregate.items() if k not in
                       {"raw_artifacts_sha256", "strict_diagnostic_checks"}}, ensure_ascii=False, indent=2))

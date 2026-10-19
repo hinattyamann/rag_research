@@ -2,7 +2,9 @@
 
 2026年10月18日更新: 正式テーマを「根拠提示順序に対するRAG自己評価の感度と修復判断への影響」へ変更した。
 2026年10月19日更新: 現行は[研究計画7.6](rag_research_plan.md)、[実装計画8.6](rag_implementation_plan.md)、Dataset Guide 2.4。
-Phase 1〜9とPhase 10初回20問・40候補AI採点・集計、修正後の既知診断を完了。新規10問の再実験・採点を実施中。[ロードマップ](research_roadmap.md)が次工程の正本である。
+Phase 1〜9とPhase 10初回20問・測定系修正・新規10問/20候補AI採点・集計を完了。
+引用重複1件で元の事前Gateは不通過とし、後処理の修正・保存出力再検証を別に記録した。
+[再確認結果](phase10_recheck_results.md)と[ロードマップ](research_roadmap.md)が現在地と次工程の正本である。Phase 11は未着手。
 ユーザーの委任により品質採点は[Codex AIのProtocol](ai_quality_protocol.md)へ変更し、人手確認とは区別する。
 以下の日付付き実測・旧Versionの記載は、その時点の履歴として読む。
 
@@ -31,7 +33,7 @@ Phase 1〜9とPhase 10初回20問・40候補AI採点・集計、修正後の既�
 | Phase 7: 新テーマのProtocol具体化 | 完了 | 専用Prompt/Config・品質基準案・入力予算検証・固定Manifest |
 | Phase 8: 固定評価・根拠順序/反復 | 完了、Gate 8通過 | 開発2件、Judge 9回、再開追加0回、182 Tests成功。精度・品質改善の実証ではない |
 | Phase 9: 一回書換え・品質採点入出力 | AI委任後の開発Gate通過 | 3候補AI採点と経路照合済み。人手確認達成とはしない |
-| Phase 10: 未見Pilot | 修正診断完了、新規10問再確認中 | 初回20問・40候補AI採点、完全比較11問。修正後15判定・5書換えを診断し、新規例を実験・採点中 |
+| Phase 10: Development Pilot | 修正・再確認完了、事前Gateの失敗履歴を保持 | 初回20問、15診断/5既知書換え、新規10問/20候補。元完全比較3問、後処理検証4問。判断反転1問 |
 | Phase 11以降: 条件固定・本実験 | 未実施 | 詳細は現行ロードマップ。旧四条件Datasetは必須工程から外れた |
 | 比較実験・結果分析・卒業論文の完成 | 未実施 | 提案手法の性能向上を示す実験結果はまだない |
 
@@ -309,7 +311,9 @@ Raw Data未取得では実データを使う4 Tests、Base QA未生成ではPhas
 ## 5. 次に研究として行うこと
 
 新テーマは自己評価の根拠順序感度と修復判断への影響の分析である。
-**Phase 1〜9、Phase 10初回Pilot・集計と修正後の既知診断を完了。新規10問の再実験・匿名採点を実施中。** 詳細は[ロードマップ](research_roadmap.md)、[初回結果](phase10_pilot.md)、[修正・再確認](phase10_measurement_revision.md)を使う。
+**Phase 1〜9、Phase 10初回Pilot・測定系修正・新規10問の実験/採点・事後の形式再検証を完了。次はPhase 11のCalibration。**
+元v14の事前Gate不通過と後処理の派生検証を区別する。詳細は[ロードマップ](research_roadmap.md)、
+[初回結果](phase10_pilot.md)、[修正後の結果](phase10_recheck_results.md)を使う。
 旧四条件Failure Dataset、全R/F/A、原因別三修復を次工程の前提にしない。
 
 研究室PCでは既存Data・Split・Indexを固定Manifestと照合し、少数DevelopmentでBaselineを再現する。

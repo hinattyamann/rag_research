@@ -12,6 +12,7 @@ from rag_research.evaluation.quote_alignment import align_quotes
 from rag_research.evaluation.reasoned_json import (
     attach_cited_passages,
     audit_final_json_grammar,
+    citation_id_audit,
     final_json,
 )
 from rag_research.evaluation.reasoning_budget import audit_reasoning_budget
@@ -117,6 +118,9 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
                     text, result["model_reasoning"] = final_json(text)
                     text, result["raw_cited_verdicts"] = attach_cited_passages(
                         text, payload["documents"], boolean_checks=prompts.get("judge_checks") == "conflict_then_complete_v1")
+                    result["citation_normalization"] = citation_id_audit(result["raw_cited_verdicts"])
+                    if result["citation_normalization"]["deduplicated_claim_ids"]:
+                        result["audit_warnings"].append("duplicate_citation_ids_normalized_without_semantic_changes")
                     result["evidence_scope"] = "programmatically_attached_full_cited_passages_not_model_quotations"
                 if aligned:
                     text, result["quote_alignment"] = align_quotes(text, payload["documents"])

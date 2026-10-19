@@ -352,6 +352,32 @@ def test_conflict_and_complete_support_checks_have_a_fixed_non_correcting_mappin
         attach_cited_passages(json.dumps(raw), docs, boolean_checks=True)
 
 
+def test_repeated_existing_citations_preserve_raw_output_and_score_for_all_labels():
+    import json
+
+    from rag_research.evaluation.judge import parse_verdicts
+    from rag_research.evaluation.reasoned_json import attach_cited_passages, citation_id_audit
+
+    documents = [{"passage_id": "p", "title": "Source", "text": "Original source."}]
+    claims = [{"claim_id": "c1", "text": "A fixed claim."}]
+    for conflict, complete in ((True, False), (False, True), (False, False)):
+        verdict = {"claim_id": "c1", "has_explicit_conflict": conflict,
+                   "all_details_supported": complete, "reason": "Keep this exact reason.",
+                   "evidence_ids": ["p"]}
+        expected, _ = attach_cited_passages(json.dumps({"verdicts": [verdict]}), documents, boolean_checks=True)
+        verdict["evidence_ids"] = ["p", "p"]
+        raw = {"verdicts": [verdict]}
+        normalized, saved = attach_cited_passages(json.dumps(raw), documents, boolean_checks=True)
+        assert saved == raw and saved["verdicts"][0]["evidence_ids"] == ["p", "p"]
+        assert normalized == expected
+        assert parse_verdicts(normalized, claims, documents) == parse_verdicts(expected, claims, documents)
+        assert citation_id_audit(saved)["deduplicated_claim_ids"] == ["c1"]
+    for invalid, message in ((["p", "unknown"], "Unknown citation"), (["p"] * 3, "Too many")):
+        verdict["evidence_ids"] = invalid
+        with pytest.raises(ValueError, match=message):
+            attach_cited_passages(json.dumps({"verdicts": [verdict]}), documents, boolean_checks=True)
+
+
 def test_final_only_grammar_is_order_invariant_and_does_not_constrain_reasoning_for_old_runs(monkeypatch):
     from rag_research.evaluation.reasoned_json import final_json
     from rag_research.evaluation.schema import cited_verdict_schema

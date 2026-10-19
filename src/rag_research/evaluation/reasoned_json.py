@@ -7,6 +7,16 @@ from rag_research.evaluation.claims import parse_json
 from rag_research.experiments.frozen_trace import require
 from rag_research.generation.auxiliary_config import FINAL_JSON_TRIGGER_PATTERN
 
+CITATION_ID_NORMALIZATION = "stable_unique_passage_ids_v1"
+
+
+def citation_id_audit(raw):
+    """Keep redundant references visible; never change a label or its rationale."""
+    return {"version": CITATION_ID_NORMALIZATION,
+            "deduplicated_claim_ids": [v["claim_id"] for v in raw["verdicts"]
+                if len(v["evidence_ids"]) != len(set(v["evidence_ids"]))],
+            "semantic_labels_or_reasons_changed": False}
+
 
 def audit_final_json_grammar(response, config):
     if not getattr(config, "final_json_grammar", False):
@@ -46,9 +56,12 @@ def attach_cited_passages(text, documents, *, boolean_checks=False):
         identifiers = verdict["evidence_ids"]
         require(isinstance(identifiers, list) and all(isinstance(i, str) for i in identifiers),
                 "Citation IDs must be strings")
-        require(len(identifiers) <= 2 and
-                len(set(identifiers)) == len(identifiers), "Invalid or duplicate citation IDs")
+        require(len(identifiers) <= 2, "Too many citation IDs")
         require(all(isinstance(i, str) and i in sources for i in identifiers), "Unknown citation ID")
+        # References denote a set of passages. Preserve the raw list above, but
+        # attach each existing passage once, retaining its first occurrence.
+        # Do not relax the original length cap or rescue unknown identifiers.
+        identifiers = list(dict.fromkeys(identifiers))
         label = verdict.get("label")
         if boolean_checks:
             conflict, complete = verdict["has_explicit_conflict"], verdict["all_details_supported"]

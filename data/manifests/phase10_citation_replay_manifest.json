@@ -1,0 +1,262 @@
+{
+  "purpose": "posthoc_syntax_repair_replay_not_new_model_experiment",
+  "recorded_at_utc": "2026-10-19T10:56:14.580267+00:00",
+  "phase11_started": false,
+  "new_model_completion_attempts": 0,
+  "human_reviewed": false,
+  "original_result_manifest_sha256": "f91770ab1b0d44e13e62d74a984d742aadb521213a16edcffeee703e1db4acc7",
+  "original_prespecified_gate_passed": false,
+  "original_judge_status_counts": {
+    "ok": 35,
+    "error": 1
+  },
+  "original_comparable_questions": 3,
+  "original_artifacts_unchanged": true,
+  "original_sources_archived_sha256": {
+    "configs/phase10_recheck.yaml": "05f8372988aa0c56125f220c1fbb06629a72eb62fce36298f69d083fef373137",
+    "configs/order_phase10_v14.yaml": "66764e00d8e74899c0a55be3c5fde55ca1ffa1fe9af59708b4c918beab4ec078",
+    "docs/ai_quality_protocol.md": "e285e29411e63cf1239b2771d4569a8c233e01b92e5c9b76d2a1242c86d4c3b2",
+    "configs/quality_ai_prompt_v1.txt": "e801d32291766a27f952690762160d0139ca87b26dee258c2e610a64882a668c",
+    "src/rag_research/generation/local.py": "4c14b5cce41aa4a2791cb181a67985d59b39790e223a5c565873fef0da13565c",
+    "pyproject.toml": "c56ec43fef9940597edb26998c848838cc87a5f53d3b516fb0b4298c609150ae",
+    "uv.lock": "11660879153bf6d59af324f295ce3a76c80a09dd4acfb4eb0076b92ae54d348a",
+    "src/rag_research/pilot/__init__.py": "ca181baf17b3acfb1dedc3fc8f0364f272437a9a26051e29f8faf2d8c14274d5",
+    "src/rag_research/pilot/assessment.py": "213d12000a7b94b38cf9c49609fb96005cfd21c9f4d3f6686fe62346c0607ea4",
+    "src/rag_research/pilot/baseline.py": "8bf6136060d7439ee901065b547068a567245b16af5651b9f07f9c9cce669352",
+    "src/rag_research/pilot/internal.py": "67a18239d0da649b2a43e7b8dcbc3f7cc9763aa5437a8bfe74e0f0534bad6ccf",
+    "src/rag_research/pilot/materials.py": "ef55d2bb52efed008fdcf7bd69192ec3fb6754fab048fec6f74b4ec9a6fdc977",
+    "src/rag_research/pilot/report.py": "3ce2e22af32f85e55fb69b3d4193e307955bb83a5b0d5503acb71380976449e2",
+    "src/rag_research/pilot/selection.py": "72513b5bf3a260a467373e30dffbc0fce09fab3433b956e07dfe7244e7d313ae",
+    "src/rag_research/experiments/__init__.py": "47047fe0079dd895316a10769822dde18800a51a1198d7731d736fa981d54296",
+    "src/rag_research/experiments/decisions.py": "20d9e2831fdbbaaf497e265ba7aba9e1e6cfbec98a23fa42d31c3b1765d860ab",
+    "src/rag_research/experiments/frozen_trace.py": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4",
+    "src/rag_research/experiments/order_runner.py": "bb5a75dae9c46257396b80a5b2eef5b9d8b996dc96b77e37a54ed820e104472c",
+    "src/rag_research/experiments/protocol.py": "4525859dc2175281ed2179e483ba4eeea65638939e55dd49bc25cafdad88cec9",
+    "src/rag_research/experiments/quality.py": "f0cb2e2298443e86adb470451d42328067b00066b978e14d9decbfc615415c71",
+    "src/rag_research/experiments/quality_form.py": "89cb98cf433950ea3b66c2151712617c938bff557ce6d2871b9d1d1eac541d00",
+    "src/rag_research/experiments/repair_runner.py": "8c273482750e1cc37a5d297b47d2dec3acb39458d8e7a95b9b4e3094afb38ee8",
+    "src/rag_research/experiments/storage.py": "f32779f45c084276779b8f4a08b94c1197c703f6c2d5a67cc923390949c2f5a9",
+    "src/rag_research/evaluation/__init__.py": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b",
+    "src/rag_research/evaluation/claims.py": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602",
+    "src/rag_research/evaluation/judge.py": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2",
+    "src/rag_research/evaluation/order.py": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e",
+    "src/rag_research/evaluation/quote_alignment.py": "a9bc408e05d9fa25c0902b13b7e70d2e2eb7d3402ba4b10c24184d43759b88bb",
+    "src/rag_research/evaluation/reasoned_json.py": "4da1d2a82156ad78530d2ce0a64b9e80e2c1f36862c7aad0b562c987727c801f",
+    "src/rag_research/evaluation/reasoning_budget.py": "40719a18c7faed3dbef7dbe8292eb70e1a6340c358a65563e42178985663037a",
+    "src/rag_research/evaluation/schema.py": "2335e5f8655748c7e5dc9bc78e338294dcb98a2bfbec8a4ffc57dbdef0c04d2f",
+    "src/rag_research/evaluation/sentence_claims.py": "be30302e34f2456b517cf7dbde837e425226f97726cffa70f0a9aa3ed8b17dc4",
+    "src/rag_research/evaluation/tasks.py": "397da8c45764d2a11d41984944bbb1fff583a957ecadf20642a7f8ab7bd4d474",
+    "src/rag_research/recovery/__init__.py": "a248c5acd19ee7a30fcc05f65b985c7a4b207c48dfff29f30ec1b842b364d123",
+    "src/rag_research/recovery/answer_rewrite.py": "c4649ab2c9a4a7124b5c370b67cf664be95888b370b76489a8bb09ec69795b51",
+    "data/manifests/phase10_auxiliary_qwen3_manifest.json": "c6f539f7ef72e8de02992f1b9125ae53731d807cede02e24fafb523535d01a75",
+    "src/rag_research/generation/auxiliary.py": "64aaff03948ef8bbb2d03f6bbd0a58f631986a6e8e8f71916817d0ed110901cc",
+    "src/rag_research/generation/auxiliary_config.py": "2e36a90dd68de6904fadecb321a8a4f0cb10f6b110d99d82f16d0ec3264774f1",
+    "configs/phase10_recheck_extra.yaml": "aa7b4fc7e2ec914769ee6df284e36e37be5dc462ee5fb47edb77a14e90e9f363"
+  },
+  "changed_trials": [
+    {
+      "record_id": "clapnq:c508d78:train:-2689611084228995230:answerable",
+      "question": "when does rain occur in a warm front",
+      "trial_id": "shuffle_2",
+      "original_result_sha256": "79704949e92e1902ec38220c0f0bd70fc39211ff38cc451476b652d7193bf587",
+      "original_error": "Invalid or duplicate citation IDs",
+      "normalization": {
+        "version": "stable_unique_passage_ids_v1",
+        "deduplicated_claim_ids": [
+          "c1",
+          "c2"
+        ],
+        "semantic_labels_or_reasons_changed": false
+      },
+      "derived_score": 1.0
+    }
+  ],
+  "replayed_judges": 36,
+  "comparable_questions": 4,
+  "original_native_budget_and_grammar_audits_verified": 46,
+  "quality_transitions": {
+    "0->0": 5,
+    "0->1": 3,
+    "1->0": 0,
+    "1->1": 1,
+    "unknown": 1
+  },
+  "route_summary": {
+    "always_rewrite": {
+      "quality_status_counts": {
+        "unreliable": 5,
+        "indeterminate": 1,
+        "reliable": 4
+      },
+      "missed_improvement_questions": 0,
+      "harmful_rewrite_questions": 0,
+      "operational_completion_attempts": 20
+    },
+    "no_repair": {
+      "quality_status_counts": {
+        "unreliable": 9,
+        "reliable": 1
+      },
+      "missed_improvement_questions": 3,
+      "harmful_rewrite_questions": 0,
+      "operational_completion_attempts": 10
+    },
+    "original": {
+      "quality_status_counts": {
+        "unreliable": 8,
+        "reliable": 2
+      },
+      "missed_improvement_questions": 2,
+      "harmful_rewrite_questions": 0,
+      "operational_completion_attempts": 15
+    },
+    "repeat_2": {
+      "quality_status_counts": {
+        "unreliable": 8,
+        "reliable": 2
+      },
+      "missed_improvement_questions": 2,
+      "harmful_rewrite_questions": 0,
+      "operational_completion_attempts": 15
+    },
+    "repeat_3": {
+      "quality_status_counts": {
+        "unreliable": 8,
+        "reliable": 2
+      },
+      "missed_improvement_questions": 2,
+      "harmful_rewrite_questions": 0,
+      "operational_completion_attempts": 15
+    },
+    "repeat_4": {
+      "quality_status_counts": {
+        "unreliable": 8,
+        "reliable": 2
+      },
+      "missed_improvement_questions": 2,
+      "harmful_rewrite_questions": 0,
+      "operational_completion_attempts": 15
+    },
+    "repeat_5": {
+      "quality_status_counts": {
+        "unreliable": 8,
+        "reliable": 2
+      },
+      "missed_improvement_questions": 2,
+      "harmful_rewrite_questions": 0,
+      "operational_completion_attempts": 15
+    },
+    "reversed": {
+      "quality_status_counts": {
+        "unreliable": 8,
+        "reliable": 2
+      },
+      "missed_improvement_questions": 2,
+      "harmful_rewrite_questions": 0,
+      "operational_completion_attempts": 15
+    },
+    "shuffle_1": {
+      "quality_status_counts": {
+        "unreliable": 9,
+        "reliable": 1
+      },
+      "missed_improvement_questions": 3,
+      "harmful_rewrite_questions": 0,
+      "operational_completion_attempts": 14
+    },
+    "shuffle_2": {
+      "quality_status_counts": {
+        "unreliable": 8,
+        "reliable": 2
+      },
+      "missed_improvement_questions": 2,
+      "harmful_rewrite_questions": 0,
+      "operational_completion_attempts": 15
+    },
+    "shuffle_3": {
+      "quality_status_counts": {
+        "unreliable": 8,
+        "reliable": 2
+      },
+      "missed_improvement_questions": 2,
+      "harmful_rewrite_questions": 0,
+      "operational_completion_attempts": 15
+    }
+  },
+  "questions_with_order_decision_flip": 1,
+  "questions_with_repeat_decision_flip": 0,
+  "posthoc_development_readiness": {
+    "checks": {
+      "all_ten_questions_preserved": true,
+      "all_36_stored_judges_valid_after_replay": true,
+      "all_35_previously_valid_verdicts_unchanged": true,
+      "only_one_duplicate_id_failure_recovered": true,
+      "minimum_three_complete_questions": true,
+      "all_ten_rewrites_preserved": true,
+      "all_quality_labels_fixed": true,
+      "fifteen_diagnostics_preserved": true
+    },
+    "passed": true
+  },
+  "source_sha256": {
+    "scripts/replay_citation_normalization.py": "cd13a23a3a8e35a95e3367dc39f56d79e6fbfdd21b2c01d9579cbde1edb5b19a",
+    "src/rag_research/evaluation/reasoned_json.py": "9359e4db0ace89aab6621920a94a7dbb4dec2c17bf5b82fe964fec7febb54bb7",
+    "src/rag_research/evaluation/tasks.py": "558933798ec949baea2cc1abe615a34ec654f49aa44182901a5a20d033d1210d"
+  },
+  "derived_report_sha256": "3e03b7878718ed560714168382d5db451ee5f5882440986872aedcdd568b54af",
+  "derived_artifacts_sha256": {
+    "data/runs/measurement/phase10-citation-replay-v15/058324c4c9536599ff8e05ee/derived_record.json": "9690545e049efd1c3008224709a7a975f18e50e620cc8158a7a09fcbcc47f6e9",
+    "data/runs/measurement/phase10-citation-replay-v15/252ca3b319d8a7a35e065a3d/derived_record.json": "9fc2c9da33d9083e82d0ccd3144287f49725729882dcc6dfbb2f4f41b818e735",
+    "data/runs/measurement/phase10-citation-replay-v15/252ca3b319d8a7a35e065a3d/original.json": "8ffb399eac49df50821dc3a4f71c414926f06926c97e390880ab1648a0766d20",
+    "data/runs/measurement/phase10-citation-replay-v15/252ca3b319d8a7a35e065a3d/repeat_2.json": "e0fc9aba886c9a2b54bc2fbf573b01df85e1edd1728e91ce1b0c11d7bf213e21",
+    "data/runs/measurement/phase10-citation-replay-v15/252ca3b319d8a7a35e065a3d/repeat_3.json": "dedcd0cd3d98a77e859919a200e591fc462c8553b0be7788303c380c8fdf4944",
+    "data/runs/measurement/phase10-citation-replay-v15/252ca3b319d8a7a35e065a3d/repeat_4.json": "f5e29a5e659f8921040f81bb69586d472249c7dad5f23f0bd9a15af1e3226ff4",
+    "data/runs/measurement/phase10-citation-replay-v15/252ca3b319d8a7a35e065a3d/repeat_5.json": "4d5b799fa52217c908563c7179df54cc9d223233b17b8798f192afa3406da1d7",
+    "data/runs/measurement/phase10-citation-replay-v15/252ca3b319d8a7a35e065a3d/reversed.json": "cb6e1d71b8dc379c3d9d528453a503c8ab414944c6a788659f3d1154bc6db6f4",
+    "data/runs/measurement/phase10-citation-replay-v15/252ca3b319d8a7a35e065a3d/shuffle_1.json": "d2b51fb5adb0ee5a73da18ebf3b282207073daf84b6a4fbfb69b35979a57efc4",
+    "data/runs/measurement/phase10-citation-replay-v15/252ca3b319d8a7a35e065a3d/shuffle_2.json": "f7a837a4295405cbdbd02ff41fa987741ce78fba9c7b5c77fd96b570522bca44",
+    "data/runs/measurement/phase10-citation-replay-v15/252ca3b319d8a7a35e065a3d/shuffle_3.json": "0830109d4e1701b685eb35a83b8bf19d0f5754dee59b7e4596a51cdf4f694902",
+    "data/runs/measurement/phase10-citation-replay-v15/2d38d5d14dd906914e112a1c/derived_record.json": "2fe967bf09458a1bcf30c35b917d171446d010c061e4663bad0f1b7d79e306d0",
+    "data/runs/measurement/phase10-citation-replay-v15/2d38d5d14dd906914e112a1c/original.json": "76e5730c8464652c9ea91f4374b9951e1afca847ecd40dd05e1e486fe29ea88f",
+    "data/runs/measurement/phase10-citation-replay-v15/2d38d5d14dd906914e112a1c/repeat_2.json": "019f29ae57e9cfd2a178442b2f011afeed38997adff7b76d71b005007d217e7a",
+    "data/runs/measurement/phase10-citation-replay-v15/2d38d5d14dd906914e112a1c/repeat_3.json": "6f83fe21d8c78cde73512c079951230a2b7fa77a25acb70e9bfa04d36363b9f0",
+    "data/runs/measurement/phase10-citation-replay-v15/2d38d5d14dd906914e112a1c/repeat_4.json": "0a4e478b19e59fc5a7676a1e0b668db2003452132fd87f779ada32fe4b8cec7c",
+    "data/runs/measurement/phase10-citation-replay-v15/2d38d5d14dd906914e112a1c/repeat_5.json": "1814a4b9ef3d71b61a122ad1cea6d74ef2673a9f755e86815b9eeb6dd085b202",
+    "data/runs/measurement/phase10-citation-replay-v15/2d38d5d14dd906914e112a1c/reversed.json": "abe81583f51a54dd3fc4735adb002d9244fd2c01dc115183199693a6049dc623",
+    "data/runs/measurement/phase10-citation-replay-v15/2d38d5d14dd906914e112a1c/shuffle_1.json": "9a6e69feeb6f412ef1a88bc4e78af559dc29033d6604c9cad78c9f79db76a25d",
+    "data/runs/measurement/phase10-citation-replay-v15/2d38d5d14dd906914e112a1c/shuffle_2.json": "1aa8193f3515e844d4951a3206b3680b6f1720031568578b31eb90d2b41ee038",
+    "data/runs/measurement/phase10-citation-replay-v15/2d38d5d14dd906914e112a1c/shuffle_3.json": "213a91bfec58bae52b93eb562a29f8b234f2593c18ae40fe0c522aa6d9a460c3",
+    "data/runs/measurement/phase10-citation-replay-v15/312bfc698c74563d9816e85b/derived_record.json": "f752cf13d46e447d657e9e071664d0ba367b243987b13f77274ee0e36593e5f1",
+    "data/runs/measurement/phase10-citation-replay-v15/312bfc698c74563d9816e85b/original.json": "b06a419ab57414aa9c81e3d3d93c4bbaea3cd3aad6d267e0bd169480f193af61",
+    "data/runs/measurement/phase10-citation-replay-v15/312bfc698c74563d9816e85b/repeat_2.json": "9c1f34ccdf30d8474a64312c87138c8e95a4e6fc84169bcf4500e67db3cc8c60",
+    "data/runs/measurement/phase10-citation-replay-v15/312bfc698c74563d9816e85b/repeat_3.json": "ce02b7cc836d5a23ef6a0c58a01c45bc66ed029b249635ec73dd75941e7265ae",
+    "data/runs/measurement/phase10-citation-replay-v15/312bfc698c74563d9816e85b/repeat_4.json": "345dc632ac0c4ecb3616a52b2c6f56f2bb03298bb45f3e9b756221765e4d9497",
+    "data/runs/measurement/phase10-citation-replay-v15/312bfc698c74563d9816e85b/repeat_5.json": "a607d1ba79e7a50872b8f1819f01042a8fda80ec2e0eb283097bbd5d6525aa37",
+    "data/runs/measurement/phase10-citation-replay-v15/312bfc698c74563d9816e85b/reversed.json": "a2b52d3db7e6bf7a890e38c8a6b97e8c77abe3d725883330861bcdd594a5ef54",
+    "data/runs/measurement/phase10-citation-replay-v15/312bfc698c74563d9816e85b/shuffle_1.json": "a6d042054991cbfef6a4b494d1c960488f781248dba88077c980b06d2eea7959",
+    "data/runs/measurement/phase10-citation-replay-v15/312bfc698c74563d9816e85b/shuffle_2.json": "5794a703f91bfa5dae42c497bb35be762dd092f4920a99d5876f7c216bde1c83",
+    "data/runs/measurement/phase10-citation-replay-v15/312bfc698c74563d9816e85b/shuffle_3.json": "f08b626d41acf8b1d12ce5e3e1df81f563189144182b173e90b228ef8d7b6f09",
+    "data/runs/measurement/phase10-citation-replay-v15/5f0f6d0b33249f2057f428ee/derived_record.json": "486b05074e920c1db7ba4ddd718020a2743a1120891347559d023607b882aa28",
+    "data/runs/measurement/phase10-citation-replay-v15/5f0f6d0b33249f2057f428ee/original.json": "2525624b7ef6a59a485222a4db0eda353b902b0933953d3dd1f2e5cd67a541f3",
+    "data/runs/measurement/phase10-citation-replay-v15/5f0f6d0b33249f2057f428ee/repeat_2.json": "5b3661bc5e7b6e48380d7d8f108a382e923addee9ba278d0ac96518c15605bfb",
+    "data/runs/measurement/phase10-citation-replay-v15/5f0f6d0b33249f2057f428ee/repeat_3.json": "95593a857e7e06f769e4e9bc7722f9641e22b13a091fe614af75366df544dd15",
+    "data/runs/measurement/phase10-citation-replay-v15/5f0f6d0b33249f2057f428ee/repeat_4.json": "65b9543c321ed640fcc84d257221e7873ddd179ce32f6c5ae0ffe2d46fa6aa5b",
+    "data/runs/measurement/phase10-citation-replay-v15/5f0f6d0b33249f2057f428ee/repeat_5.json": "c2bad8c4babd62d719099182573b0ef26290b8c712b5f5402cab6841a3d17e42",
+    "data/runs/measurement/phase10-citation-replay-v15/5f0f6d0b33249f2057f428ee/reversed.json": "ae8ae3660fd60a2dd58bc0a99c94153141568fbfe7e13521f6b839780277e949",
+    "data/runs/measurement/phase10-citation-replay-v15/5f0f6d0b33249f2057f428ee/shuffle_1.json": "58c3ed9c28d4d42032f917630f7c5224c88e5dddc4bd0e0c67805999859c5624",
+    "data/runs/measurement/phase10-citation-replay-v15/5f0f6d0b33249f2057f428ee/shuffle_2.json": "216564fea45cb5e1074e5ffc0bd3f92184d909c1fe7c059147a3bd63399d58e5",
+    "data/runs/measurement/phase10-citation-replay-v15/5f0f6d0b33249f2057f428ee/shuffle_3.json": "5ccdbf4234b5352c692e79de5553cc4b80f749deba396b201f218651eb24b13d",
+    "data/runs/measurement/phase10-citation-replay-v15/7252105222e6cbad9cb6f691/derived_record.json": "77ca3620bc2ec80f6abf3cd63a0b2a3add7cde74edfe3083470684c6f379289a",
+    "data/runs/measurement/phase10-citation-replay-v15/918e6418290d63af4f972787/derived_record.json": "5440f119d7edc762762abfd70c01d99566da66700180b64596893e8669e1af5f",
+    "data/runs/measurement/phase10-citation-replay-v15/95801e191bdca86cf2ad423a/derived_record.json": "af179cd045a74044df6943c0dc2c62e4284b711fd532307ec6d787158b8375ce",
+    "data/runs/measurement/phase10-citation-replay-v15/b45c98f7fd1c841f8906cd88/derived_record.json": "f40c127156623b2cd2cc37b081a5692d9c13d29c9d8018bd352b6e02e1f90ae9",
+    "data/runs/measurement/phase10-citation-replay-v15/be467c4f1149e0c1d72874f4/derived_record.json": "8754b62077870f0726e5e3e3232b81551365d89f8cbc8e40664e1a2fa094f0f9"
+  },
+  "limits": [
+    "Prespecified v14 gate remains failed; this post-hoc repair does not overwrite it",
+    "Only redundant existing citation IDs were removed; booleans and reasons are unchanged",
+    "No fresh model sample, native retry, quality relabeling or threshold tuning",
+    "Replay does not repair false support or false rejection; calibration remains necessary"
+  ],
+  "result_sha256": "c016f00f06ce8e7873f4caf3348d46b40408c7050b91188ba8d1ed9025723532"
+}
