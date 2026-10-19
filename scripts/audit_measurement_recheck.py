@@ -48,8 +48,8 @@ def main():
         bindings[run.name] = all(file_hash(ROOT / p) == sha
                                  for p, sha in binding["source_sha256"].items())
 
-    diagnostic = ROOT / "data/runs/measurement/phase10-revision-v13"
-    additional = ROOT / "data/runs/measurement/phase10-additional-v13"
+    diagnostic = ROOT / "data/runs/measurement/phase10-revision-v14"
+    additional = ROOT / "data/runs/measurement/phase10-additional-v14"
     checks = [r for r in read_json(diagnostic / "summary.json")["judge"]
               if r["id"] != "relation-conflict"]
     checks += read_json(additional / "summary.json")["results"]

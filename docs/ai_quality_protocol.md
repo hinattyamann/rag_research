@@ -80,9 +80,9 @@ Phase 10は20問の内部試行・書換え・AI採点・欠測・費用をま�
 初回5問の拒否3問を機械的な本文有無だけで確認したため、内部F/Yの開示前に追加5問を固定した。
 全10問を残し、CohortごとのHealth Gate不通過も隠さない。追加計画と完了基準は
 [測定系修正記録](phase10_measurement_revision.md)と専用Manifestによる。
-再確認用の検証候補は`configs/order_phase10_v13.yaml`。初回生成は旧3Bのまま、内部Judgeと書換えは
+再確認用の検証候補は`configs/order_phase10_v14.yaml`。初回生成は旧3Bのまま、内部Judgeと書換えは
 専用Manifestで検証したQwen3-4B Q4_K_M / llama.cpp b11433 Windows CPUを使う。
-補助Context16,384、Judge/書換えCompletion予約各2,048、Runtime推論予算512、
+補助Context8,192、Judge/書換えCompletion予約各2,048、Runtime推論予算512、
 temperature0.6 / top-k20 / top-p0.95 / min-p0 / presence penalty0 / seed42とする。
 Judgeは矛盾有無/全詳細支持を返し、固定Ruleで三Labelに対応付ける。原文全文は引用IDからプログラムで添付し、
 モデルが選んだ短い証拠Spanとは扱わない。形式検証と意味上の正解を区別する。

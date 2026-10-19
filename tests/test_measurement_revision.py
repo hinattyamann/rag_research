@@ -369,7 +369,7 @@ def test_final_only_grammar_is_order_invariant_and_does_not_constrain_reasoning_
     monkeypatch.setattr(client, "request", lambda route, value: requests.append(value) or {})
     client.complete([1], task_config(config, "verify_claims"), json_schema=schema)
     assert requests[0]["grammar_lazy"] is True
-    assert requests[0]["grammar_triggers"] == [{"type": 1, "value": "</think>"}]
+    assert requests[0]["grammar_triggers"] == [{"type": 2, "value": r"</think>\s*(\{)"}]
     assert requests[0]["json_schema"] == schema
     old, _, _ = load_protocol(ROOT / "configs/order_phase10_v11.yaml")
     client.complete([1], task_config(old, "verify_claims"), json_schema=schema)
@@ -400,7 +400,9 @@ def test_thinking_rewrite_passes_final_schema_in_the_same_single_completion(tmp_
             assert settings.final_json_grammar and kwargs["json_schema"]["required"] == ["source_facts", "draft_issues", "answer"]
             return {"content": '<think>Compare source.</think>' + json.dumps({"source_facts": "The source says 2003 [p].",
                 "draft_issues": "Wrong year.", "answer": "It opened in 2003 [p]."}),
-                "tokens": [101, 1, 102, 5, 6], "stop_type": "eos", "truncated": False}
+                "tokens": [101, 1, 102, 5, 6], "stop_type": "eos", "truncated": False,
+                "generation_settings": {"grammar_lazy": True, "grammar": "root ::=...",
+                    "grammar_triggers": [{"type": 2, "value": r"</think>\s*(\{)"}]}}
 
     client = Client()
     trace = {"question": "When?", "answer": "In 2009.",
@@ -408,3 +410,18 @@ def test_thinking_rewrite_passes_final_schema_in_the_same_single_completion(tmp_
     result = rewrite_once(client, task_config(config, "rewrite_answer"), prompts, trace, tmp_path / "rewrite.json", {})
     assert client.calls == 1 and result["status"] == "ok" and result["review_decoder_constrained"]
     assert result["answer"] == "It opened in 2003 [p]."
+
+
+def test_final_grammar_audit_requires_native_settings_and_an_actual_trigger():
+    from rag_research.evaluation.reasoned_json import audit_final_json_grammar
+
+    config, _, _ = load_protocol(ROOT / "configs/order_phase10_v14.yaml")
+    settings = task_config(config, "verify_claims")
+    response = {"content": "<think>Check.</think>\n{}", "generation_settings": {
+        "grammar_lazy": True, "grammar": "root ::= object", "grammar_triggers": [
+            {"type": 2, "value": r"</think>\s*(\{)"}]}}
+    assert audit_final_json_grammar(response, settings)["trigger_text_verified"]
+    with pytest.raises(ValueError, match="did not apply"):
+        audit_final_json_grammar({**response, "generation_settings": {}}, settings)
+    with pytest.raises(ValueError, match="did not reach"):
+        audit_final_json_grammar({**response, "content": "<think>Check.</think>```json\n{}\n```"}, settings)

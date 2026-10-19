@@ -7,7 +7,7 @@ from dataclasses import asdict
 from datetime import UTC, datetime
 
 from rag_research.evaluation.claims import parse_json
-from rag_research.evaluation.reasoned_json import final_json
+from rag_research.evaluation.reasoned_json import audit_final_json_grammar, final_json
 from rag_research.evaluation.reasoning_budget import audit_reasoning_budget
 from rag_research.evaluation.schema import object_schema
 from rag_research.experiments.frozen_trace import digest, require
@@ -72,6 +72,7 @@ def rewrite_once(client, config, prompts, trace, path, binding):
             answer = response.get("content")
             if thinking:
                 result["reasoning_budget_audit"] = audit_reasoning_budget(client, response, config)
+                result["final_grammar_audit"] = audit_final_json_grammar(response, config)
                 answer, result["model_reasoning"] = final_json(answer)
             if checked:
                 review = parse_json(answer)

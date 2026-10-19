@@ -131,10 +131,11 @@ Judgeへ渡すのは元質問、固定回答/Claim、固定使用Context、評�
 根拠→質問/初回回答→固定Claimの入力順も全条件へ共通適用する。
 `configs/order_phase10_v7.yaml`は同じJudgeと、1回のJSON点検付き書換えを組み合わせる候補。
 `source_facts`/`draft_issues`/`answer`を1回で生成し、最後のanswerのみを候補として保存する。
-`configs/order_phase10_v13.yaml`はQwen3-4Bによる追加候補であり、初回生成3Bは維持する。
-補助専用Sampling、Runtime推論予算512、Context16,384、Judge/書換え全体上限2,048を明示する。
+`configs/order_phase10_v14.yaml`はQwen3-4Bによる追加候補であり、初回生成3Bは維持する。
+補助専用Sampling、Runtime推論予算512、Context8,192、Judge/書換え全体上限2,048を明示する。
 終了タグ・実Token列を監査し、推論を閉じた後のJSONだけを厳密に検証する。
-同じ終了タグをトリガーに最終JSONだけのSchema制約を有効にし、括弧の生成エラーを防ぐ。
+終了タグ後のJSON開始括弧を捕捉する正規表現で、最終JSONだけのSchema制約を有効にする。
+Native設定と実出力の開始位置を監査し、無視された形式制約を有効と記録しない。
 Judgeは矛盾有無/全詳細支持の二値を返し、固定Ruleで三Labelに対応付ける。
 実在IDに対応する原文全体を監査用に添付し、モデルが選択した証拠Spanとは区別する。
 形式検証は意味上の正解を保証しない。既知の正しい結論の誤棄却も記録する。

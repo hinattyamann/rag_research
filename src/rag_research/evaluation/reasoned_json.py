@@ -1,9 +1,25 @@
 """Separate explicitly closed model reasoning from the single final JSON response."""
 
 import json
+import re
 
 from rag_research.evaluation.claims import parse_json
 from rag_research.experiments.frozen_trace import require
+from rag_research.generation.auxiliary_config import FINAL_JSON_TRIGGER_PATTERN
+
+
+def audit_final_json_grammar(response, config):
+    if not getattr(config, "final_json_grammar", False):
+        return None
+    settings = response.get("generation_settings", {})
+    require(settings.get("grammar_lazy") is True and settings.get("grammar_triggers") ==
+            [{"type": 2, "value": FINAL_JSON_TRIGGER_PATTERN}] and bool(settings.get("grammar")),
+            "Runtime did not apply the requested final-only grammar")
+    final = response.get("content", "").rpartition("</think>")[2]
+    require(re.match(r"^[ \t\r\n\f\v]*\{", final) is not None,
+            "Final JSON did not reach the declared grammar trigger")
+    return {"runtime_settings_verified": True, "trigger_pattern": FINAL_JSON_TRIGGER_PATTERN,
+            "trigger_text_verified": True, "does_not_verify_semantic_correctness": True}
 
 
 def final_json(text):

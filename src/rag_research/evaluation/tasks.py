@@ -9,7 +9,11 @@ from datetime import UTC, datetime
 from rag_research.evaluation.claims import parse_claims
 from rag_research.evaluation.judge import parse_verdicts
 from rag_research.evaluation.quote_alignment import align_quotes
-from rag_research.evaluation.reasoned_json import attach_cited_passages, final_json
+from rag_research.evaluation.reasoned_json import (
+    attach_cited_passages,
+    audit_final_json_grammar,
+    final_json,
+)
 from rag_research.evaluation.reasoning_budget import audit_reasoning_budget
 from rag_research.evaluation.schema import cited_verdict_schema, output_schema
 from rag_research.evaluation.sentence_claims import extract_sentence_units
@@ -109,6 +113,7 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
             elif task == "verify_claims":
                 if thinking:
                     result["reasoning_budget_audit"] = audit_reasoning_budget(client, response, config)
+                    result["final_grammar_audit"] = audit_final_json_grammar(response, config)
                     text, result["model_reasoning"] = final_json(text)
                     text, result["raw_cited_verdicts"] = attach_cited_passages(
                         text, payload["documents"], boolean_checks=prompts.get("judge_checks") == "conflict_then_complete_v1")

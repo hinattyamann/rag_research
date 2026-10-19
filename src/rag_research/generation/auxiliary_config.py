@@ -5,6 +5,8 @@ from dataclasses import asdict, dataclass
 
 from rag_research.generation.config import GenerationConfig
 
+FINAL_JSON_TRIGGER_PATTERN = r"</think>\s*(\{)"
+
 
 @dataclass(frozen=True)
 class AuxiliaryGenerationConfig(GenerationConfig):
