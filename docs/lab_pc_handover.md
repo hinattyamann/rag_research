@@ -1,10 +1,13 @@
 # 研究室PCへの引継ぎと実行手順
 
 2026年10月18日更新: 正式テーマを「根拠提示順序に対するRAG自己評価の感度と修復判断への影響」へ変更した。
-2026年10月19日更新: 現行は[研究計画7.6](rag_research_plan.md)、[実装計画8.6](rag_implementation_plan.md)、Dataset Guide 2.4。
+2026年10月20日更新: 現行は[研究計画7.8](rag_research_plan.md)、[実装計画8.8](rag_implementation_plan.md)、Dataset Guide 2.4。
 Phase 1〜9とPhase 10初回20問・測定系修正・新規10問/20候補AI採点・集計を完了。
 引用重複1件で元の事前Gateは不通過とし、後処理の修正・保存出力再検証を別に記録した。
-[再確認結果](phase10_recheck_results.md)と[ロードマップ](research_roadmap.md)が現在地と次工程の正本である。Phase 11は未着手。
+[再確認結果](phase10_recheck_results.md)と[ロードマップ](research_roadmap.md)で結果と現在地を確認する。
+Phase 11は本実装・CPU初期5問/10候補AI採点と集計まで完了。ただし全拒否で比較可能0、Gate 11未通過。
+GPU対応・追加Calibration・最終凍結は未完了。[最新のGPU引継ぎ](phase11_finalization.md)を優先する。
+Git運用は、確認済みの変更をCodexがCommit・通常のPushまで行う方針へユーザーが変更した。
 ユーザーの委任により品質採点は[Codex AIのProtocol](ai_quality_protocol.md)へ変更し、人手確認とは区別する。
 以下の日付付き実測・旧Versionの記載は、その時点の履歴として読む。
 
@@ -34,7 +37,8 @@ Phase 1〜9とPhase 10初回20問・測定系修正・新規10問/20候補AI採�
 | Phase 8: 固定評価・根拠順序/反復 | 完了、Gate 8通過 | 開発2件、Judge 9回、再開追加0回、182 Tests成功。精度・品質改善の実証ではない |
 | Phase 9: 一回書換え・品質採点入出力 | AI委任後の開発Gate通過 | 3候補AI採点と経路照合済み。人手確認達成とはしない |
 | Phase 10: Development Pilot | 修正・再確認完了、事前Gateの失敗履歴を保持 | 初回20問、15診断/5既知書換え、新規10問/20候補。元完全比較3問、後処理検証4問。判断反転1問 |
-| Phase 11以降: 条件固定・本実験 | 未実施 | 詳細は現行ロードマップ。旧四条件Datasetは必須工程から外れた |
+| Phase 11: 条件固定 | 進行中、Gate 11未通過 | CPU初期5問/10候補採点・集計済み。比較可能0、GPU追加検証と最終凍結が残る |
+| Phase 12以降: 本実験・分析 | 未実施 | 詳細は現行ロードマップ。旧四条件Datasetは必須工程から外れた |
 | 比較実験・結果分析・卒業論文の完成 | 未実施 | 提案手法の性能向上を示す実験結果はまだない |
 
 現在のPCには次の生成物が存在し、2026年10月5日に研究日誌のHashと一致することを再確認した。
@@ -167,8 +171,8 @@ OSが異なってもPython Scriptは同じものを使う。以下の`Get-FileHa
 ## 3. 引継ぎ前に現在のPCで行うこと
 
 コード、仕様書、`pyproject.toml`、`uv.lock`、Source ManifestをGitHub経由で引き継ぐ。
-今回作成した手順書を研究室へ引き継ぐ場合も、ユーザーがCommit・Pushしてから研究室PCで取得する。
-Codexは`git add`、`git commit`、`git push`を実行しない。
+確認済みの作業単位でCodexが `git add`・`git commit`・通常の `git push` を行い、研究室PCで取得する。
+ユーザーはこの運用を継続的に許可している。詳細はAGENTS.mdに従い、Pushの成否を報告する。
 
 ```powershell
 git status --short
@@ -176,7 +180,7 @@ git diff
 git rev-parse HEAD
 ```
 
-未Commitの変更がある場合は、内容を確認し、必要な変更をユーザーがCommit・Pushする。研究室PCでは
+未Commitの変更がある場合は、内容と必要な検証を確認してCodexがCommit・Pushする。研究室PCでは
 引き継いだCommit Hashが一致することを確認する。`.venv`、`data/raw/`、`data/processed/`、
 `data/indexes/`はGit管理対象外であり、`git clone`だけでは移らない。
 
@@ -345,13 +349,13 @@ Fの初期閾値0.7は旧加重Cとは別のRuleであり、旧R/F/A個別Failur
 Codexへの引継ぎ例:
 
 > AGENTS.md、現行研究/実装計画、docs/research_roadmap.md、研究日誌を読んでください。
-> Phase 1〜8はノートPCで完了済みです。Phase 8の既知のJudge誤りと制約を読んでください。
-> Phase 9の元順序による一回書換え・独立品質Export/Import・経路比較は実装済みです。
-> 3候補のAI代行採点と経路照合を終え、未見Development 20問を事前固定したPilotを実行中です。
+> Phase 1〜9とPhase 10の開発確認は完了済みです。既知のJudge誤りと制約を読んでください。
+> Phase 11は本実装・CPU初期5問/10候補のAI採点と集計まで完了しています。
+> 全5問が拒否で比較可能0、Gate 11未通過です。docs/phase11_finalization.mdを読んで続きへ進んでください。
 > 旧原因別三修復ではなく、固定回答に対する評価器の根拠順序感度と一回書換えの判断を検証します。
 > 研究室PCではOS/RAM/VRAM/Driverを確認し、固定Source・Index・Baselineを小工程で再現してください。
 > Runtime変更は別Versionで記録し、Phase 11の本実験凍結前に共通条件を確定してください。
-> 各工程の成果と未実施事項を説明し、Git操作はAGENTS.mdに従ってください。pushは明示指示がある場合だけです。
+> 各工程の成果と未実施事項を説明し、確認済みの変更はAGENTS.mdに従ってCommit・通常のPushまで行ってください。
 
 持ち帰る情報はOS、CPU、RAM、GPU型番/枚数/VRAM、Driver、Disk空き容量、Network条件、連続利用可能時間である。
 ## 6. 購入PCの仕様とUbuntu向け手順
@@ -421,7 +425,7 @@ uv導入後はTerminalを開き直し、`git --version`と`uv --version`を確�
 
 ### 6.3 RepositoryとDataを再現する
 
-今回の手順書を含む変更をユーザーがCommit・Pushした後、保存先のDirectoryで初回のみCloneする。
+今回の手順書を含む変更のCommit・Push成功を確認した後、保存先のDirectoryで初回のみCloneする。
 各コマンドが成功してから次に進む。
 
 ```bash
