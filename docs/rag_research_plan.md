@@ -1,10 +1,10 @@
 # RAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.7 — 2026年10月20日 Phase 11の準備実装開始
+## Version 7.8 — 2026年10月20日 Phase 11本実装とGPU本番方針
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.7](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.8](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -211,7 +211,7 @@ Viewerは点検と説明の補助。参加者なしで使いやすさや理解�
 通常初回は2026年11月20日、英語4〜8ページ、通知12月11日、最終原稿2027年1月8日。
 会期は3月26〜30日。1月を初回要旨締切として計画しない。
 作業・成果物・Gate・期限は[ロードマップ](research_roadmap.md)による。
-**Phase 1〜9、Phase 10の初回20問・測定系修正・新規10問の再実験/20候補AI採点・集計と、引用重複の後処理再検証を完了。Phase 11は準備実装を開始し、最終条件固定は未完了。**
+**Phase 1〜9、Phase 10の開発確認、Phase 11の本実装とCPU初期5問/10候補AI採点・集計を完了。CPU初期5問は全拒否で比較可能0、Gate 11は未通過。GPU確認・追加Calibration・最終条件固定は未完了。**
 ユーザーのAI採点委任を受け、Gate 9はAI代行で候補・判断・品質・費用を照合する開発ゲートへ改訂した。
 人手確認を達成済みへ書き換えず、採点方法を更新した理由と限界を別記録に残す。本実験は未実施。
 2026年10月19日、ユーザーの委任により[開発3候補をAIが代行採点](phase9_ai_quality_review.md)し、
@@ -236,6 +236,16 @@ Calibration Answerableから結果非依存で異なるTitleの5問を選ぶ初�
 Windows CPUの確認と、本番GPU環境の確認・最終固定を区別する。Evaluationは開かない。
 候補Manifestの作成や実行面のHealth Gate通過だけでGate 11通過とはせず、
 残る意味誤り・拒否・外部AI採点・実行環境・規模・統計の決定を終えてから最終固定する。
+
+同日、ユーザーの指示で[最終固定の本実装](phase11_finalization.md)とCPU Calibrationを進めた。
+本番は研究室PCのGPUを使い、実機情報・環境整備は研究室側のCodexで確認する方針をユーザーが指定した。
+CPUの確認をGPUの確認に代用せず、GPU実Offload・実生成・Calibrationと件数/Runtimeの確定後にGate 11を判定する。
+最終固定の検証処理は、未採点の内部結果を開かず、全品質固定後に候補・元Task・品質・集計を照合する。
+実行Health Gateと意味妥当性を別に確認し、未達なら最終Manifestを作成しない。
+本番対象IDは固定SplitのIDメタデータから結果非依存で選び、主比較・分母・欠測・統計とともに保存する。
+CPU初期5問の初回は全て拒否で、新規Judge呼出し0・比較可能0となった。順序効果の有無を判定しない。
+書換えでAI品質が改善した2問も現行Fallbackでは初回を保持した。元のHealth Gate不通過を保存し、
+未使用の追加Calibration 20問を事前選定した。GPU側の実行条件・新しいHealth Gateは新規結果を見る前に固定する。
 [Phase 9記録](phase9_answer_rewrite.md)に実出力・採点手順・検証範囲を示す。
 全条件が採用/採点不能でも比較用書換えを1つ収集し、判断に応じて同じ二候補から出力を選ぶ。
 初回と書換えが完全に同じ質問・回答・Contextの場合は、品質Labelを共用して重複採点を避ける。

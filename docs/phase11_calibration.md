@@ -1,13 +1,14 @@
 # Phase 11 Calibrationの準備と実行手順
 
-2026年10月20日。研究計画7.7・実装計画8.7に対応する。
+2026年10月20日。研究計画7.8・実装計画8.8に対応する。
 Phase 10の元の事前Gate不通過、事後の引用重複修正、全生出力と品質Labelは履歴として保持する。
 
 ## 目的と今回の範囲
 
 Phase 10で残った課題を確認し、本番の条件を固定する工程を開始する。
-今回の実装は、Calibrationの事前選定・候補Manifest・実行・匿名採点・採点後の集計まで。
-最終凍結とPhase 12のCLIは含まない。候補Manifestは必ず`candidate_not_frozen`、
+初期実装は、Calibrationの事前選定・候補Manifest・実行・匿名採点・採点後の集計まで。
+その後の[最終固定の本実装とGPU引継ぎ](phase11_finalization.md)を別記録へ追加した。
+Phase 12の実行CLIは含まない。候補Manifestは必ず`candidate_not_frozen`、
 `gate11_passed=false`、`phase12_allowed=false`であり、作成成功をGate通過と呼ばない。
 
 実績: 5問を事前固定し、初回生成1問をCPUで実行・保存した。残り4問と内部Judge・書換え・品質採点は未実施。
@@ -17,6 +18,10 @@ Phase 10で残った課題を確認し、本番の条件を固定する工程を
 選定は[選定Manifest](../data/manifests/phase11_calibration_selection_manifest.json)、
 確認は[準備監査Manifest](../data/manifests/phase11_preparation_manifest.json)による。
 これらは初期の実行確認であり、生成された回答の品質・評価器精度・順序効果の結果ではない。
+
+上記は最初の準備実装時点の記録。その後、初回生成5問・書換え5件・全10候補のAI採点と集計を完了した。
+初回全5問が拒否でJudge0回・完全比較0となり、元の事前Health Gateは不通過。
+最新の結果・限界・GPUで残る作業は[本実装記録](phase11_finalization.md)を参照する。
 
 初期バッチはCalibration Answerableの異なるTitle 5問。Seed42とIDのSHA256昇順で選ぶ。
 回答やF/Yを見て選ばず、失敗・拒否を補充しない。検索Calibrationで同じ母集団225問を
@@ -62,6 +67,13 @@ uv run python scripts/run_calibration.py save-quality --packet 1 --decision data
 ```
 
 `internal`はCPUで長時間かかり得る。途中の実験値は非公開ログへ保存し、進捗だけを表示する。
+実行中に公開済みPacketを採点するときは、親Runとは別のLockを用いる次のCLIを使う。
+
+```powershell
+uv run python scripts/assess_calibration.py open --packet 1
+uv run python scripts/assess_calibration.py save --packet 1 --decision data/runs/calibration/decision.json
+```
+
 `open-quality`で表示した匿名候補を、基準に従いAIが実際に採点してからdecision JSONを作る。
 自動でYを生成・承認する機能ではない。既存の`pilot.assessment`が候補Hash・基準・理由・原文引用を検査する。
 各Packetの全候補を採点し、全Packet完了後にだけ次を実行する。

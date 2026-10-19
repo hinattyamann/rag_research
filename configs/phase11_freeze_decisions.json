@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-freeze-decisions",
+  "target_backend": "CUDA",
+  "calibration_source_archive": "data/runs/calibration/phase11-main-work-before/source_snapshot",
+  "reviews": {
+    "semantic_validity": {
+      "status": "pending",
+      "rationale": "Calibrationの全品質Label固定後に固定文の支持・矛盾・限定を監査する。",
+      "evidence": null
+    },
+    "refusal_fallback": {
+      "status": "resolved",
+      "rationale": "CPU Calibration 5問は全て初回拒否で、共通書換えで改善した2問も初回保持により見逃した。F単独と現行Fallbackの限界として測るため今回は維持し、品質上優れた政策だとは主張しない。ルール変更は別Version/比較とする。根拠はphase11-cpu-five-v1/calibration_report.jsonの全品質固定後の集計。",
+      "action": "keep_initial_fallback"
+    },
+    "external_quality": {
+      "status": "resolved",
+      "rationale": "全10匿名候補をAIが実使用Context/Reference/Goldと照合し、全Label固定後に内部結果を開いた。元の入力・判定・引用・時間・対応と集計を保存した。厳密なモデルIDと完全分離は実証できないため、取得不能と同一作業セッションを明記したAI品質推定として扱う。本番でも取得可能な識別子と制約を記録する。",
+      "human_reviewed": false,
+      "exact_model_identifier": null,
+      "session_scope": "same_research_session_new_internal_outcomes_withheld",
+      "limitations": ["厳密なモデルIDと完全なセッション分離は未達。人手正解との一致は未検証。"]
+    },
+    "runtime": {
+      "status": "pending",
+      "rationale": "ユーザー指定により本番は研究室PCのGPU。実機情報・GPU実行・移行後のCalibrationは研究室側で確認する。",
+      "evidence": null
+    },
+    "analysis": {
+      "status": "pending",
+      "rationale": "GPUでの実測と比較可能数から本番件数を決定する。",
+      "specification": {
+        "primary": "mean_within_question_pair_disagreement_difference",
+        "cluster": "source_title",
+        "ci_method": "paired_title_cluster_bootstrap",
+        "bootstrap_repetitions": 10000,
+        "confidence_level": 0.95,
+        "seed": 42,
+        "evaluation_count": null,
+        "sample_size_rationale": "",
+        "missing_policy": "common_complete_for_decisions_all_selected_for_quality_cost",
+        "unknown_quality_policy": "report_unknown_and_best_worst_bounds"
+      }
+    }
+  }
+}

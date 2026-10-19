@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.7 — 2026年10月20日 Phase 11の準備実装開始
+## Version 8.8 — 2026年10月20日 Phase 11本実装とGPU本番方針
 
-[研究計画 Version 7.7](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.8](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -270,8 +270,18 @@ Calibrationへ対応する。既定のDevelopment条件を維持し、Evaluation
 候補ManifestはConfig/Prompt/Model Manifest/全研究Module/依存定義のHashに結び、
 変更時には既存Runを上書きせず新Versionとする。旧Runの来歴Hashも更新しない。
 `status`は公開進捗と未確認事項だけを示し、`report`は品質採点後にだけ内部結果を照合する。
-どちらも`gate11_passed=false`・`phase12_allowed=false`。最終凍結CLIは今回の実装範囲に含まない。
+どちらも`gate11_passed=false`・`phase12_allowed=false`。これは初期実装時の範囲である。
 具体的な実行手順・確認済み/未実施の区分は[Phase 11記録](phase11_calibration.md)による。
+
+本実装として`scripts/finalize_phase11.py`と判断草案`configs/phase11_freeze_decisions.json`を追加した。
+匿名品質の全Label・来歴を確認してから内部対応を読み、元Taskと集計を照合する。
+Parser/実行、全固定文の意味監査、拒否Fallback、外部品質、CUDA実行、分析計画がそろったときだけ
+新しい最終Manifestを保存する。固定済み条件の変更・上書きは拒否する。
+現在のCUDA根拠と本番件数は未決であり、検証処理の成功を実験完了と呼ばない。
+Evaluationの対象ID選定はSplit ManifestのIDだけで行い、質問本文や結果で選ばない。
+`scripts/assess_calibration.py`は公開済みPacketの専用Lockを用い、内部実行中も匿名採点を進められる。
+`scripts/inspect_execution_environment.py`はOS/Memory/Disk/GPU/Driver等の記録専用で、推論成功の証拠とはしない。
+詳細・研究室側の確認事項は[最終固定とGPU引継ぎ](phase11_finalization.md)による。
 
 Phase 1〜6は完了済み、Phase 7で専用Protocol・Prompt・設定を具体化、Phase 8で固定Trace/Judge/順序、
 Phase 9で書換えと独立採点の入出力、Phase 10でPilot、Phase 11で最終凍結、Phase 12で本実験、

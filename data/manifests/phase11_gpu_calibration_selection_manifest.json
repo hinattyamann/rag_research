@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-gpu-calibration-preselection-not-executed",
+  "study_version": "order-calibration-gpu-planned-v1",
+  "split": "calibration",
+  "count": 20,
+  "selection_seed": 42,
+  "qa_sha256": "ac5db1cd270c17c93f47b7572148cf20242f1b806698fc178852bb907055559f",
+  "split_manifest_sha256": "148c0f95736faa8eb9a7ac6cd538988c9f31054468376d2ef9678fcdc958d330",
+  "selection_rule": "sha256(seed:record_id)_ascending_first_unique_NFC_casefold_title",
+  "excluded_ids": [
+    "clapnq:c508d78:train:-3199444299686671305:answerable",
+    "clapnq:c508d78:train:-8588759487587082103:answerable",
+    "clapnq:c508d78:train:3533164973473713881:answerable",
+    "clapnq:c508d78:train:390278020698615219:answerable",
+    "clapnq:c508d78:train:9056475546207977249:answerable"
+  ],
+  "excluded_title_keys": [
+    "fundal massage",
+    "germ theory of disease",
+    "joy to the world",
+    "joyce summers",
+    "la mer (song)"
+  ],
+  "exclusion_source_sha256": "0ea7107ae5107afcce061760a5e0ef69ae85eec4fc422ad21f665cfd4373f25f",
+  "replace_failed_questions": false,
+  "reason": "CPUの初期5問が全拒否で比較可能0。効果を作る質問選択をせず、未使用の追加Calibrationを事前選定。20問は本番件数ではない。",
+  "target_backend": "CUDA",
+  "gpu_runtime_verified": false,
+  "model_calls": 0,
+  "health_gate_status": "must_be_declared_before_GPU_inference",
+  "final_evaluation_count": null,
+  "gate11_passed": false,
+  "records": [
+    {
+      "record_id": "clapnq:c508d78:train:8237082669014738534:answerable",
+      "question": "where was the cover of abbey road taken",
+      "source_title": "Abbey Road, London"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-7667081875084391858:answerable",
+      "question": "the point of contra flexure is a point where",
+      "source_title": "Contraflexure"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:1056297453558018137:answerable",
+      "question": "what was the significance of the camp david accord's of 1979",
+      "source_title": "Camp David Accords"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-2060933173262198753:answerable",
+      "question": "when is light given off in a neon light",
+      "source_title": "Neon lighting"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-6732680369023696685:answerable",
+      "question": "what is the difference between p680 and p700",
+      "source_title": "P700"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:3386769090154171789:answerable",
+      "question": "do the rest of europe change their clocks",
+      "source_title": "Summer Time in Europe"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-6036737709115942054:answerable",
+      "question": "who dies in grey's anatomy season 10",
+      "source_title": "Grey's Anatomy (season 10)"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8610675060620798199:answerable",
+      "question": "one outcome of the council of trent was that",
+      "source_title": "Council of Trent"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-2140282230594159335:answerable",
+      "question": "who can show standing to bring an issue to the court's attention",
+      "source_title": "Standing (law)"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-984643435270994086:answerable",
+      "question": "where does the name dow jones come from",
+      "source_title": "Dow Jones Industrial Average"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:9205130005702231717:answerable",
+      "question": "why are different parts of the ocean different colors",
+      "source_title": "Ocean color"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-4007696326689737656:answerable",
+      "question": "how many champions league did zidane won as a coach",
+      "source_title": "Zinedine Zidane"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:2090484311565652062:answerable",
+      "question": "how do we find out who gossip girl is",
+      "source_title": "Gossip Girl"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:5148452182007422801:answerable",
+      "question": "where does the blackstone river start and end",
+      "source_title": "Blackstone River"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-7881681413996925466:answerable",
+      "question": "lord of the rings who is tom bombadil",
+      "source_title": "Tom Bombadil"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:9002155018269506393:answerable",
+      "question": "are there any big boy restaurants in wisconsin",
+      "source_title": "Big Boy Restaurants"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-4091415169370123881:answerable",
+      "question": "who played phoebe on the bold and the beautiful",
+      "source_title": "Phoebe Forrester"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-272699795805920544:answerable",
+      "question": "what is c moon about by paul mccartney",
+      "source_title": "C Moon"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:7281789422131673691:answerable",
+      "question": "what's the difference between nco and co",
+      "source_title": "Non-commissioned officer"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:24434409188927642:answerable",
+      "question": "what does chateauneuf du pape mean in english",
+      "source_title": "Châteauneuf-du-Pape"
+    }
+  ],
+  "result_sha256": "e89d0b8fcc3c2bdf3df9179e3b243490b4fb8d2b7114f8176d0933c37b7692af"
+}
