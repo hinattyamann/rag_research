@@ -8,6 +8,12 @@ CPUでのCalibrationと、本番GPUでの確認・最終固定を区別する。
 GPU20問/40候補AI採点・34単位監査を完了し完全比較12、実行Health Gateは通過した。
 意味妥当性の採用と分析規模は未確定のためGate 11未通過・最終凍結なし。以下のCPU/移行前記録は履歴である。
 
+2026年10月21日追記: [日英比較の拡張方針](english_japanese_expansion.md)を採用した。
+CLAPNQに近い別の日本語Datasetの選定・日本語対応・予備検証・両言語のCalibrationと条件固定を
+Phase 11の完了要件へ追加する。これらは未着手で、既存の英語用最終固定Validatorも拡張が必要。
+以下の旧ValidatorやGPU確認が通ることだけでは、新しいGate 11の通過やPhase 12の開始を認めない。
+旧Run・条件・判定履歴は保持し、両言語の準備と確認根拠がそろってから新しいManifestを固定する。
+
 ## CPU Calibrationの実測結果
 
 事前選定5問の初回生成・共通書換え・匿名10候補のAI採点・全Label固定後の集計を完了した。

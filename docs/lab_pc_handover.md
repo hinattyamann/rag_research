@@ -1,7 +1,10 @@
 # 研究室PCへの引継ぎと実行手順
 
 2026年10月18日更新: 正式テーマを「根拠提示順序に対するRAG自己評価の感度と修復判断への影響」へ変更した。
-2026年10月20日更新: 現行は[研究計画7.10](rag_research_plan.md)、[実装計画8.10](rag_implementation_plan.md)、Dataset Guide 2.4。
+2026年10月21日更新: 現行は[研究計画7.11](rag_research_plan.md)、[実装計画8.11](rag_implementation_plan.md)、Dataset Guide 2.4。
+英語CLAPNQに近い別の日本語Datasetで比較する方針を追加した。翻訳対を主実験に使わない。
+[日英比較の拡張方針](english_japanese_expansion.md)の選定・日本語対応・予備検証と両言語の条件固定を
+Phase 11で完了してからPhase 12へ進む。日本語準備は未着手で、今回の更新は方針の記録のみ。
 Phase 1〜9とPhase 10初回20問・測定系修正・新規10問/20候補AI採点・集計を完了。
 引用重複1件で元の事前Gateは不通過とし、後処理の修正・保存出力再検証を別に記録した。
 [再確認結果](phase10_recheck_results.md)と[ロードマップ](research_roadmap.md)で結果と現在地を確認する。
@@ -316,6 +319,23 @@ Raw Data未取得では実データを使う4 Tests、Base QA未生成ではPhas
 別出力のManifestはGit管理対象外なので、Data再生成だけなら追跡Fileに変更は生じない想定である。
 
 ## 5. 次に研究として行うこと
+
+2026年10月21日の現行工程は[ロードマップ](research_roadmap.md)と[日英比較方針](english_japanese_expansion.md)。
+日本語候補の仕様比較・選定、取得/Split、検索/文分割/拒否/指示文等の対応・英語回帰、
+少数予備検証と両言語の未使用Calibration、対象・条件・統計の最終固定をPhase 11で行う。
+英語の既知の誤支持と拒否方針の検討も継続する。Phase 12は日英本実験と独立AI採点、
+Phase 13は言語別統計と日英比較、Phase 14は原稿・卒論。既存の英語用Validatorだけで凍結しない。
+
+現在の再開依頼例:
+
+> AGENTS.md、現行計画・ロードマップ、docs/english_japanese_expansion.mdを読んでください。
+> 英語GPU20問の検証済み記録を保持し、日本語Datasetの選定・対応と日英検証をPhase 11で進めます。
+> 両言語の意味妥当性・比較条件・対象/件数・統計を固定するまでPhase 12へ進まないでください。
+> 各工程の成果と未実施事項を説明し、確認済みの変更はCommit・通常Pushの成否まで報告してください。
+
+### 移行前の引継ぎ手順（履歴）
+
+以下は旧CPU/移行前時点の手順。現在地と次工程は上記の2026年10月21日方針を優先する。
 
 新テーマは自己評価の根拠順序感度と修復判断への影響の分析である。
 **Phase 1〜9、Phase 10初回Pilot・測定系修正・新規10問の実験/採点・事後の形式再検証を完了。次はPhase 11のCalibration。**

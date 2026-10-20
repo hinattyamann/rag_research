@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.10 — 2026年10月20日 GPU追加Calibrationの監査と最終固定の保留
+## Version 8.11 — 2026年10月21日 Phase 11に日本語対応と日英比較の準備を追加
 
-[研究計画 Version 7.10](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.11](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -22,6 +22,10 @@ Astrosの順序判断反転1問と改善見逃しを元v14でも確認した。[
 開発3候補の[AI代行採点JSON](phase9_ai_quality_review.md)は別保存し、既存Validatorで検証した。
 人手Importへは投入せず、元のModule・Schema・Run・基準Versionは変更していない。
 Phase 7の入力検証CLIは引き続きCompletion 0回である。
+
+2026年10月21日、英語CLAPNQと仕様を近づけた別の日本語Datasetを使う比較方針を採用した。
+翻訳対を主実験に使わない。[選定・比較・工程の方針](english_japanese_expansion.md)に従い、
+第11節の未実装事項をPhase 11で終え、両言語の条件を固定してからPhase 12へ進む。
 
 ## 1. 既存実装と保存する境界
 
@@ -315,3 +319,32 @@ Judge108回・完全比較12問・Health Gate通過、全34固定文のAI意味�
 本番200問・元/逆/Shuffle3種・同順序5回・Title対応Bootstrap10000回/95%CIは案で未凍結。
 今回の20問を未使用へ戻さず、別の未使用20問を事前選定した。新候補の回帰診断と条件保存後に確認し、
 意味妥当性・分析規模と最終ManifestがそろうまでGate 11を通さず、Phase 12は開始しない。
+
+## 11. 日本語Dataset追加と日英比較への拡張（Phase 11、未実装）
+
+既存の固定Trace・順序操作・同一順序反復・共通書換え・匿名品質採点を再利用する。
+英語の旧Run/Source/Split/Manifestは保持し、日本語Sourceと共通処理の変更を別Versionへ保存する。
+現行コード・Config・最終固定Validatorは日英比較の準備完了を保証していない。
+
+| 変更対象 | Phase 11で追加・確認する内容 |
+|---|---|
+| Data Adapter/選定/Split | 日本語QA・Reference・根拠・Corpusを正規化し、Datasetと言語・安定ID・文書Group・取得/分割Hashを保存。CLAPNQ固定Path/IDへの依存を点検する |
+| 検索 | 日本語Tokenize/Embeddingと検索品質を開発・Calibrationで確認。英語との差とCorpus/候補集合の条件を記録する |
+| 初回生成/Judge/書換え | 共通Modelの日本語での妥当性、指示文の言語方針、支持/矛盾/不足と拒否を確認する |
+| `evaluation/sentence_claims.py`等 | 日本語文境界・引用・拒否の扱いと本文保持を検証。日英文単位の定義をそろえ、Fの分母への影響を監査する |
+| 入力/出力予算 | 実Tokenizerで計測し、QA内の全順序で同じ根拠本文を保持。日英の実長・根拠数・文単位数を記録する |
+| 品質Export/Import | 両言語で同じ意味の品質基準と匿名化を検証。条件・Score・段階を隠し、全品質固定後に内部対応を開く |
+| Report/統計 | 言語別のQA内不一致率の増分と日英差、品質・費用・欠測の分母を扱う。日英QA間に対応を仮定しない |
+| 最終固定Validator | 日本語Source/Split、実対応、意味監査、英語回帰、両言語の対象/条件/統計の根拠を必須化する |
+
+検索用の言語依存処理と評価器側の順序操作は分け、Gold/Referenceを推論へ渡さない。
+新実装では英語の回帰と日本語の境界・漏洩・予算・記録のTestを行い、pytest/Ruffをuvで実行する。
+形式成功だけでJudgeの意味妥当性を認定せず、少数Developmentの実走と独立AI採点を監査する。
+既知例での修正後は別の未使用Calibrationで確認し、対象・停止条件を新規結果前に保存する。
+日本語予備検証の20〜30問は出発目安で、本実験件数・検出力の保証ではない。
+
+Phase 11で両言語のSource/Model/Prompt/文単位/閾値/予算/順序・反復/Fallback/品質基準、
+対象ID・件数・除外/欠測・統計を固定する。旧英語200問案を日英の採用件数には転用しない。
+Phase 12は日英の本実験と独立採点、Phase 13は固定した計画での統計と比較考察、
+Phase 14は原稿への反映。分析処理の拡充をPhase 13で行う場合も、比較・統計の設計はPhase 11で固定する。
+別Dataset間の差を言語単独の因果効果とは扱わない。選定と実装の完了状況はロードマップへ反映する。
