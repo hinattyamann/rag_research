@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.9 — 2026年10月20日 明示的CUDA Runtimeと追加Calibration候補
+## Version 8.10 — 2026年10月20日 GPU追加Calibrationの監査と最終固定の保留
 
-[研究計画 Version 7.9](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.10](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -34,7 +34,7 @@ Phase 7の入力検証CLIは引き続きCompletion 0回である。
 | `generation/context.py` | 元検索順で切詰める実装。順序変更実験のために呼び直さない |
 | `configs/phase6.yaml` / `configs/prompts.yaml` | 既存Baseline用。今回の文書更新では変更しない |
 
-現行はWindows CPUでGate 6通過。Ubuntu/GPUは未確認。
+Phase 6はWindows CPUでGate 6を通過した履歴である。現在は第10節の別VersionでUbuntu/CUDAを確認済み。
 Runtime/Model変更は旧Manifest上書きではなく別実験Versionで記録し、必要なCalibrationをやり直す。
 Phase 6の5問・135 Tests成功は当時の記録であり、新Moduleの検証実績ではない。
 
@@ -308,3 +308,10 @@ Evaluationの本文は解析しない。`scripts/audit_lab_models.py`は全現�
 事前Health Gateは20問で完全比較8問以上、Judgeエラー率0、入力超過で途中停止。
 意味上の合否・品質・最終Gateは別監査とし、Health Gateだけで最終凍結しない。
 旧CPU Runは再開せず、新RunとソースSnapshotを使う。詳細は[実機検証記録](phase11_lab_validation.md)。
+
+2026年10月20日の[GPU追加Calibration結果](phase11_lab_validation.md)では20問/40候補の採点を固定し、
+Judge108回・完全比較12問・Health Gate通過、全34固定文のAI意味監査まで完了した。
+順序判断反転1/12・同順序反転0/12を確認したが、明確な誤支持が残り最終条件の採用は保留する。
+本番200問・元/逆/Shuffle3種・同順序5回・Title対応Bootstrap10000回/95%CIは案で未凍結。
+今回の20問を未使用へ戻さず、別の未使用20問を事前選定した。新候補の回帰診断と条件保存後に確認し、
+意味妥当性・分析規模と最終ManifestがそろうまでGate 11を通さず、Phase 12は開始しない。

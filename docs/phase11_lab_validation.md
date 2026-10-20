@@ -111,3 +111,114 @@ Pradaの翻訳説明はsupportedでも「Pradaが何を指すか」という質�
 追加20問は元Promptを維持した`phase11_gpu_calibration_v2.yaml`を使う。
 既知の意味誤りを隠さず、全匿名品質固定後に新規Judgeも全固定文単位で監査する。
 全誤判定の解消を仮定せず、最終固定の妥当性は別途判定する。
+
+## 追加20問の完了結果（2026-10-20 15:18 JST）
+
+Runは`data/runs/calibration/phase11-gpu-twenty-v2/`。
+事前条件をCommit d2c6550へ保存し、GitHub mainへの通常Push後に実行した。
+20初回生成・108 Judge・20共通書換えを完了。40匿名候補をすべてAI採点し、
+`phase11_gpu_quality_freeze.json`へHashと固定日時を保存してから内部対応を開いた。
+新規品質を内部Fに合わせて採点し直していない。人手採点、厳密な採点モデルID固定、
+完全に分離したセッションとは扱わない。
+
+| 項目 | 結果 |
+|---|---|
+| 初回 / Judge / 書換え | 20 / 108 / 20回、すべて保存 |
+| 単独拒否 / 完全比較 | 8 / 12問 |
+| 事前Health Gate | 12≥8、Judgeエラー率0、入力超過0で通過 |
+| 匿名品質 | 信頼可18・不可20・判定不能2候補 |
+| 初回→書換え | 0→0:6、0→1:6、1→0:0、1→1:6、不明2問 |
+| 順序による判断反転 / 同順序反復 | 1/12問 / 0/12問 |
+| Fの順序変化 | ZidaneとTom Bombadilの2問。後者は閾値を跨がない |
+| 質問内不一致率の差の平均 | 0.03333（記述集計。独立な120ペアの検定にはしない） |
+| 固定文監査 | 全34単位。指示対象・部分訳等が曖昧な5単位を明瞭な一致率から分離 |
+| 元の転送ファイル | 1,876ファイルを再照合し変更0 |
+
+Zidaneの初回「監督としてCL優勝2回」に対し、根拠は2018年の3回目まで記載する。
+元/逆/Shuffle2/Shuffle3と元順序の追加4反復はF=1/採用、Shuffle1だけF=0/書換えだった。
+共通書換えの「3回」はAI品質が改善し、Shuffle1だけその改善を取り込んだ。
+単一のCalibration例であり、順序効果の一般頻度や位置単独の因果を示さない。
+
+Council of Trent後の1567年にPius Vが承認した事項を、Council自体へ帰属する誤文は全9回で支持された。
+Zidaneの誤回数も8/9回で支持された。これらは安定性の高さで意味妥当性を保証できない実例である。
+Tom Bombadilの映画への言及という支持不足も8/9回で支持され、残り1回はcontradictedだった。
+原文が述べるnot portrayedと、候補のmentionedは同じ命題ではないので、監査では支持不足とした。
+全文保持は確認したが、不正な引用IDを挟んだBlackstoneの二文が一単位になるなど、
+決定的分割の限界も保存した。原子的事実や常に完全な文境界を保証するとはしない。
+
+Gossip Girlでは、資料内のSerenaの失敗やナレーターの説明を支持できても、
+質問が求めるDanの正体判明へ答えていない。Châteauneuf-du-PapeはNew Castleの部分訳だけで
+教皇の要素が抜ける。支持の誤り・指示対象の曖昧さ・回答不足を分け、Fを正答確率にしない。
+Big BoyのReferenceは閉鎖年を2017とするが原文は1995であり、原文を優先した。
+P700の励起状態の限定と、NCO/COの分野の曖昧さを含む2候補は判定不能のまま保持した。
+
+| 経路 | 最終AI品質（20問） | 改善見逃し | Model呼出し |
+|---|---|---:|---:|
+| 修復なし | 可6・不可14 | 6 | 20 |
+| 常時書換え | 可12・不可6・不明2 | 0 | 40 |
+| 元順序の単回評価 | 可6・不可14 | 6 | 32 |
+| Shuffle1の単回評価 | 可7・不可13 | 5 | 33 |
+
+改善6問はNeon、Europe clocks、Council、Zidane、Tom Bombadil、Phoebe。
+うちNeon/Europe/Phoebeの3問は拒否Fallbackによる見逃しで、順序効果と合算しない。
+Grey's Anatomyの検索不足による妥当な拒否、NCO/COの分野の曖昧さ等も別に記録した。
+全18既知ペアでは悪化0だが、少数Calibrationと単独AI採点の範囲であり、常時書換えの一般的優越は主張しない。
+
+## GPU・予算・費用の検証結果
+
+初回3Bと補助4Bの両方で37/37 LayerのCUDA Offloadを実ログと出力で照合した。
+補助128 Taskすべての推論予算・終了・最終JSON文法を検証し、
+実質問/固定Claim/本文/Schemaが順序比較で不変であること、書換えに元回答/元順序の根拠だけを使うことを
+保存Promptから再検証した。Gold・内部Judge Feedbackを推論へ追加していない。
+
+- 初回はContext4096/出力512。実最大出力363 Token、入力超過・打切り0。
+- 補助はContext8192/予約3072/推論1536。Judge実最大1561、書換え全出力1592、最終回答261 Token。
+- 3Bの初回引用表記は5問で不正が残った。Token・JSON制約の通過と引用・意味の正しさを区別する。
+- 補助入力353,847/出力93,385 Token、Step和957.37秒（約15.96分）。
+- Judge平均7.304秒、書換え平均8.426秒。初回生成和17.79秒、Context準備2.48秒、検索2.76秒。
+- これらの保存Step和は計980.39秒。起動・Hash検査・外部AI採点込みの実運用応答時間ではない。
+- GPU利用率・VRAM・電力・温度は`data/runs/lab/calibration-gpu-telemetry-v2.csv`へ保存。
+  RAMの計測最小空きは初回約4.09GiB、補助約3.60GiB。現時点のDisk空きは約385GiB。
+
+CPUとの倍率や品質改善率は計算しない。Cohortも補助推論予算も異なるためである。
+固定モデルHashは不変で、旧CPU Runを新GPUコードで再開・上書きしていない。
+
+## 最終固定の判断と本番計画案
+
+`configs/phase11_gpu_freeze_decisions_v2.json`と既存の最終固定Validatorで確認した。
+品質来歴・Parser・拒否方針の記録・CUDA Runtimeは通過。
+**意味妥当性の採用判断と分析規模が未確定なのでGate 11はfalse、Phase 12は未開始。最終凍結Manifestは作らない。**
+監査を全件行ったことと、そのJudgeを本番へ採用できることを分ける。
+
+固定根拠がそろったのは、Source/Split/Index/モデルの同一性、Ubuntu/CUDA Runtime、
+入力と順序の分離、再開・再試行0・失敗非補充、JSON/Token制約、匿名品質固定後の照合である。
+追加修正が必要なのは、支持判定の誤帰属・限定の見落としと、拒否から改善できる場合の扱い。
+推論予算やPromptを変えるだけで一般的な意味精度が改善したとはしない。
+
+本番件数は**200問案、未凍結**。現候補の比較可能率60%なら約120問の完全比較を見込むが、保証ではない。
+補助生成Step和の見積りは同率で約2.66時間、全問比較可能なら約4.12時間。検索・起動・採点は別で、
+修正後のJudge/拒否方針へこの時間をそのまま転用しない。
+順序は元/逆/Shuffle3種、同順序は元を合計5回、共通初回を共有し最大9 Judge/問を候補とする。
+
+統計案は質問内の全有効判断ペアを一つの値へまとめ、順序群−同順序群の差を主比較とする。
+質問/Titleの対応を保つTitle単位Bootstrap 10,000反復・Seed42・95%CI。
+全ペアを独立標本とせず、完全比較QAの分母・全選定QAのFallback込み品質/費用・品質不明の上下限を併記する。
+支持根拠位置/分散・文数等の少数の条件別分析と探索的分析を分ける。
+本番IDはGate通過時に固定SplitのIDメタデータだけからSHA256順で選び、Evaluation本文や結果で調整しない。
+分析実装・件数の最終凍結は追加検証後の作業である。
+
+次は、既知Developmentと今回の使用済み20問を回帰診断へ利用し、
+文ごとの独立支持検証等を別Versionで検証する。順序反転を増やす目的の変更・閾値変更は行わない。
+拒否から一回書換えへ進める案も、保存候補の事後比較と未知QAでの検証を区別する。
+未使用Calibrationは200問残っており、使用済み25問/Titleを除いた次の20問を
+`phase11_additional_validation_selection_manifest.json`へ事前選定した。モデル呼出し0、条件/Health Gateは未確定。
+今回の20問を再び未使用と呼ばず、新候補・停止条件の保存後にこの別バッチで確認する。
+
+確認済みの成果物:
+
+- `data/manifests/phase11_lab_preflight_manifest.json`: 結果前の条件・環境・既知診断。
+- `data/manifests/phase11_gpu_quality_freeze.json`: 全40候補のLabel固定。
+- `data/manifests/phase11_gpu_calibration_result_manifest.json`: 完了集計と生データHash。
+- `data/runs/calibration/phase11-gpu-twenty-v2/semantic_audit_v2.json`: 全34単位の意味監査。
+- `data/runs/calibration/phase11-gpu-twenty-v2/runtime_evidence.json`: 実Offload/Native/モデル/Runtimeの根拠。
+- `scripts/summarize_lab_calibration.py`: 品質封印を照合してから入力不変性・全Task・費用・旧ファイル不変を再検証する。

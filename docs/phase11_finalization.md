@@ -4,6 +4,10 @@
 ユーザーは本番を研究室PCのGPUで行うと指定した。実機情報は研究室側のCodexで確認する。
 CPUでのCalibrationと、本番GPUでの確認・最終固定を区別する。Phase 11はまだ完了していない。
 
+同日Ubuntuでの[GPU検証と追加20問の結果](phase11_lab_validation.md)を追記した。
+GPU20問/40候補AI採点・34単位監査を完了し完全比較12、実行Health Gateは通過した。
+意味妥当性の採用と分析規模は未確定のためGate 11未通過・最終凍結なし。以下のCPU/移行前記録は履歴である。
+
 ## CPU Calibrationの実測結果
 
 事前選定5問の初回生成・共通書換え・匿名10候補のAI採点・全Label固定後の集計を完了した。
@@ -80,8 +84,8 @@ SeedとIDのSHA256昇順で選ぶ。質問・Reference・回答結果を見て�
 uv run python scripts/inspect_execution_environment.py --output data/runs/lab/initial_inventory.json
 ```
 
-`nvidia-smi`の検出だけではGPU推論成功としない。現行`generation/local.py`は
-Windows CPU Runtimeを検証し`--gpu-layers 0`を指定するため、そのままUbuntu/CUDAで動くとは扱わない。
+`nvidia-smi`の検出だけではGPU推論成功としない。移行前の`generation/local.py`は
+Windows CPU Runtimeを検証し`--gpu-layers 0`を指定していた。現在は別Versionの明示的CUDA設定に対応済み。
 研究室側でRuntimeの実装・条件を別Versionへ分け、固定モデルの生成とCalibrationを確認する。
 旧CPU Runを新GPUコードで再開・上書きしない。
 

@@ -6,7 +6,7 @@
 評価器への根拠順序を変えた場合と同一順序で繰り返した場合を比較します。
 より信頼できる自己修復の設計につながる知見を目指し、対策の開発は任意の追加成果とします。
 
-**Phase 1〜9とPhase 10の開発確認を完了しました。現在はPhase 11で、本実装とCPU初期5問・10候補のAI採点・集計まで完了しています。全5問が拒否で比較可能0のためGate 11は未通過です。GPU環境での追加検証・最終条件固定とPhase 12の本番実験は未実施です。**
+**Phase 1〜10の開発確認、Phase 11のUbuntu/CUDA対応と追加20問・40候補のAI採点・34単位監査を完了しました。完全比較12問・実行Health Gate通過ですが、意味妥当性の採用と分析規模が未確定でGate 11未通過です。最終凍結・Phase 12は未実施です。**
 固定回答の自己評価・判断に加え、元順序による一回書換え、採点画面、採点JSONのImport、経路比較を実装しました。
 開発3候補は、ユーザーの委任により[AIが代行採点してJSONを保存](docs/phase9_ai_quality_review.md)しました。
 ユーザーの委任により、以後は[AI品質採点Protocol](docs/ai_quality_protocol.md)を使います。
@@ -17,13 +17,13 @@ Gate 9はAI採点による開発確認として通過し、人手確認の達成
 v14の事前Gateは引用ID重複1件で不通過として保持し、後処理だけを修正した保存出力の再検証を別記録にしました。
 [Phase 9の実走結果と採点手順](docs/phase9_answer_rewrite.md)を参照してください。
 [フェーズ別の現在地・次の作業・完了条件](docs/research_roadmap.md)を最初に確認してください。
-[別チャットからの再開用引継ぎ](docs/codex_handover.md)に、読む順番・生データの場所・未実施のGPU/遠隔接続をまとめています。
+[別チャットからの再開用引継ぎ](docs/codex_handover.md)に、読む順番・生データの場所・GPU確認済み事項と残る作業をまとめています。
 [Phase 11の結果とGPU側で残る作業](docs/phase11_finalization.md)に、CPU確認の限界・追加Calibration・最終固定の条件をまとめています。
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- [研究計画 Version 7.8](docs/rag_research_plan.md)
-- [実装計画 Version 8.8](docs/rag_implementation_plan.md)
+- [研究計画 Version 7.10](docs/rag_research_plan.md)
+- [実装計画 Version 8.10](docs/rag_implementation_plan.md)
 - [Dataset Guide Version 2.4](docs/clapnq_dataset_guide.md)
 - [先行研究との関係・本研究の立ち位置と有用性](docs/related_research_positioning.md)
 
@@ -486,3 +486,7 @@ Gitの管理対象から除外されています。
 APIキーなどの秘密情報をコードや設定ファイルへ直接記載しないでください。
 秘密情報が必要になった段階で、Git管理対象外の `.env` と、項目名のみを示す
 `.env.example` を用意します。
+
+2026年10月20日の[Ubuntu/CUDA検証と追加Calibration](docs/phase11_lab_validation.md)を完了。
+20問/40候補のAI採点、完全比較12問、実行Health Gate通過。意味妥当性と分析規模が未確定でGate 11未通過。
+最終凍結・Phase 12は未実施。再開時はロードマップと最新の実機検証記録を優先する。

@@ -4,13 +4,21 @@
 Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 この文書は再開用の入口で、現在地・工程の正本は [research_roadmap.md](research_roadmap.md)。
 
+最新追記（Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
+[GPU検証結果](phase11_lab_validation.md)のとおり、CUDA対応と追加20問/40候補AI採点・34単位監査を完了。
+完全比較12/20、Judge108回すべて形式有効、Health Gate通過。ただし意味妥当性の採用と分析規模が未確定で
+Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過も保持する。
+現在のRunは`data/runs/calibration/phase11-gpu-twenty-v2/`で全計算・採点が終了している。
+次の未使用20問は`phase11_additional_validation_selection_manifest.json`。今回の20問を未使用と呼び直さない。
+この最新追記とロードマップを、以下の移行前のGPU未実施記録より優先する。
+
 10月19日の引継ぎ整備は、認証エラーにより当時のCommitを未実行のまま保存していた。
 10月20日にユーザーから未Commit分をまとめる指示を受け、Phase 11の現在地に更新してCommit対象とした。
 当時のエラーと未Commit状態は研究日誌の履歴であり、現在の作業状態は `git status` で確認する。
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.8](rag_research_plan.md)・[実装計画8.8](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.10](rag_research_plan.md)・[実装計画8.10](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。
    [Phase 10再確認結果](phase10_recheck_results.md)では、新規10問、具体例、品質・費用・限界を確認する。
@@ -24,7 +32,7 @@ Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 - Phase 1〜9、Phase 10の初回20問、測定系修正、既知診断、新規10問/20候補AI採点と集計を完了。
 - 元v14の事前Gateは引用ID重複1件で不通過として保持。事後の引用後処理v15による検証は別結果。
 - Phase 11の本実装とCPU Calibration 5問・匿名10候補AI採点・集計は完了。ただし全5問が拒否でJudge 0回・完全比較0、元Health Gate不通過。Phase 11全体は未完了。
-- 未使用の追加Calibration 20問を事前選定済み。GPU実機確認・GPU対応・追加検証・最終凍結は未実施。Phase 12の最終Evaluationと遠隔接続も未実施。
+- GPU20問の選定・実行・全品質固定・集計は完了。意味誤支持が残り最終凍結は未実施。追加の未使用20問を事前選定したが新Protocol/Health Gateは未確定。Phase 12と遠隔接続は未実施。
 - Phase 12は研究室PCのGPUを使うユーザー方針。研究室側のCodexで実機情報を確認し、Phase 11の残作業から再開する。
 - ユーザーは品質採点をCodex AIへ委任している。表示名はリサーチャー01、human_reviewed=false。
   人手確認済みとは扱わない。採点モデルの厳密なIDと完全なセッション分離は最終凍結前の確認事項。
@@ -77,7 +85,7 @@ Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 | `data/manifests/phase10_recheck_quality_freeze.json` | 両Cohortの採点固定とHash | 対象 |
 | `data/manifests/phase10_citation_replay_manifest.json` | 事後検証・元結果へのHash対応 | 対象 |
 | `data/manifests/phase11_cpu_calibration_result_manifest.json` | CPU 5問の完了集計・不通過Gate・Raw ArtifactのHash | 対象 |
-| `data/manifests/phase11_gpu_calibration_selection_manifest.json` | 未使用の追加Calibration 20問の事前選定 | 対象 |
+| `data/manifests/phase11_gpu_calibration_selection_manifest.json` | GPUで使用済みの20問の事前選定 | 対象 |
 | `data/runs/calibration/phase11-cpu-five-v1/` | CPU 5問の入力・出力・採点・対応・ログ・集計 | 対象外、このPCに保存 |
 | `data/runs/calibration/phase11-main-work-before/source_snapshot/` | CPU実験時の71ソースの保存版 | 対象外、このPCに保存 |
 | `data/runs/handover/phase11-83da39c.zip` | 83da39cのソースとCPU実験記録・Snapshot。今回の文書更新は含まない | 対象外、このPCに保存 |
@@ -99,8 +107,8 @@ Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 - 購入仕様: Ubuntu24.04 / i5-14400 / RAM8GB / RTX5060Ti / NVMe500GB。
   VRAM8GB版か16GB版か、Driver、現在のRAM・Disk空きは未確認。実機の計測結果ではない。
 - GPU高速化を期待するが、倍率・短縮時間は未測定。まず現在の4Bを同条件で動かして測定する案。
-- 現行実装はWindows CPUに固定し、`generation/local.py` は `--gpu-layers 0` を指定する。
-  Ubuntu/CUDA対応は未実装。GPUがあるだけで現行コードがGPU実行へ切り替わるとは扱わない。
+- 移行前はWindows CPU固定だった。現在は明示的execution設定のときだけCUDAへ切り替える別Versionを追加済み。
+  既定CPU条件・旧Runは保持し、GPUの37/37 Layer Offloadと実生成は新Runで確認した。
 - 自宅→学校指定VPN等→SSH→研究室PCで計算、という構成を説明した。
   学校のVPN提供・SSH許可・接続情報・アカウントは未確認。接続や設定変更は実行していない。
 - 長時間実験をtmux等で維持する案を説明した。導入済み・動作確認済みとは記録しない。
@@ -108,8 +116,9 @@ Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 
 ## 次に行うことと再開用メッセージ
 
-Phase 11の続きとして、実機・GPU実行の小規模確認、初期回答の拒否とJudgeの意味判定の診断、
-必要な修正、未使用20問でのCalibration、拒否Fallback・外部AI採点・件数/反復/統計の確定へ進む。
+Phase 11の続きとして、既知例で支持判定・拒否方針を別Versionで検証し、条件とHealth Gateを保存してから
+新たに事前選定した未使用20問へ進む。実機確認と今回のGPU20問/40候補の採点・集計は完了している。
+今回の20問を再び未使用と扱わない。件数/反復/統計の最終凍結は追加検証後に行う。
 候補条件とHealth Gateは新規結果を見る前に保存する。20問を実行しただけで自動的に最終固定しない。
 モデル・Prompt等を変える場合は理由と影響範囲を仕様にも記録し、別Version/Runで検証する。
 Fは支持割合で正答確率ではない。支持判定の誤りと、質問への回答不足を分けて監査する。
@@ -119,3 +128,19 @@ Fは支持割合で正答確率ではない。支持判定の誤りと、質問�
 別チャットには、例えば次を伝える:
 
 > このプロジェクトのAGENTS.mdとdocs/codex_handover.md、docs/phase11_finalization.md、現行計画・ロードマップを確認してください。Phase 11はCPU 5問・10候補AI採点と集計まで完了しましたが、全拒否で比較可能0、Gate 11は未通過です。本番は研究室PCのGPUです。実機と転送データのHashを確認し、GPU対応、拒否・Judgeの診断と必要な修正、事前選定20問での検証から進めてください。最終条件固定前にPhase 12へ進まないでください。まず現在地と次に行う作業を説明してください。
+
+## Ubuntu研究室PCで続けるとき
+
+実機はUbuntu24.04.3 / i5-14400 / RAM約7.5GiB / RTX5060Ti VRAM8151MiB / Driver580.95.05。
+uvは`.tools/bin/uv`。`export PATH="$PWD/.tools/bin:$PATH" UV_CACHE_DIR="$PWD/.tools/uv-cache"`後にuv runを使う。
+3モデルは固定Hashを照合済み。旧Runtimeを起動せず、`configs/lab_cuda_runtime.json`の別Runtimeを使う。
+制限環境内ではGPUとnetworkが見えない場合がある。ホストでの確認とDriverの故障を区別する。
+
+元CPU条件と失敗履歴を保持し、使用済みGPU20問を新コードで再開しない。
+候補v2のソースはRun内`source_snapshot/`へ保存済み。
+全128 Native Task、34固定文、40品質Label、Runtime根拠と全生データHashは
+`phase11_gpu_calibration_result_manifest.json`等に対応する。
+新しい最終固定の判断は`configs/phase11_gpu_freeze_decisions_v2.json`。
+品質/Parser/Runtime等は確認済みだが意味妥当性と分析はpendingなので、freezeは実行していない。
+次は既知例で支持判定・拒否方針を別Versionで検証し、新条件/停止条件を保存してから別の未使用20問へ進む。
+本番200問とTitle対応Bootstrap10000回/95%CIは未凍結の案。Evaluation本文・結果を調整に使わない。

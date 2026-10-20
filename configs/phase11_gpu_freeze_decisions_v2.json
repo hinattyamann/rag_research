@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-freeze-decisions",
+  "target_backend": "CUDA",
+  "calibration_source_archive": "data/runs/calibration/phase11-gpu-twenty-v2/source_snapshot",
+  "reviews": {
+    "semantic_validity": {
+      "status": "pending",
+      "candidate_accepted": false,
+      "rationale": "全34固定文のAI監査は完了したが、Council後の教皇の判断の誤帰属を全9回で支持し、Zidaneの通算2回という誤りを8/9回で支持した。現候補を最終固定する判断は見送る。新候補は既知例で修正し、別の未使用Calibrationで確認する。",
+      "evidence": {
+        "path": "data/runs/calibration/phase11-gpu-twenty-v2/semantic_audit_v2.json",
+        "sha256": "97f4d1c872827ed8b7570f8cb82458b748d5464bbce2f7f70ecc5800065b9b85"
+      }
+    },
+    "refusal_fallback": {
+      "status": "resolved",
+      "rationale": "候補v2では初回拒否8問をF=null/初回保持とし、3問の改善を見逃した。順序効果とは区別し、今回の固定比較は元のRuleを保持。変更する場合は別Versionで未知QAに適用する。",
+      "action": "keep_initial_fallback"
+    },
+    "external_quality": {
+      "status": "resolved",
+      "rationale": "40匿名候補のLabelを固定しHashと日時を保存してから内部F/対応を開いた。判定不能2候補を保持。人手確認なし、厳密なモデルID取得不能と同一研究セッションの制約を明示する。",
+      "human_reviewed": false,
+      "exact_model_identifier": null,
+      "session_scope": "same_research_session_new_internal_outcomes_withheld",
+      "limitations": [
+        "厳密なモデルIDと完全なセッション分離は未達。人手正解との一致は未検証。"
+      ]
+    },
+    "runtime": {
+      "status": "resolved",
+      "rationale": "3B/4Bとも実機CUDAで37/37 Layer Offload。初回20生成と補助128生成、Token予算・全文/Schema保持・書換え制約・時間を実出力とログで検証した。意味監査の完了はJudge採用の承認とは別。",
+      "evidence": {
+        "path": "data/runs/calibration/phase11-gpu-twenty-v2/runtime_evidence.json",
+        "sha256": "c1a8918defba5c5fb9508a54305bc791a176554691ac1a0e3a9395549a94f9a1"
+      }
+    },
+    "analysis": {
+      "status": "pending",
+      "rationale": "本番は200問案。現行条件の60%比較可能率なら約120完全QA、補助生成Step和は約2.66時間、全問比較可能なら約4.12時間が目安。ただしJudge/拒否方針の追加修正で費用・比較率が変わるため、本番件数は追加検証後に凍結する。",
+      "specification": {
+        "primary": "mean_within_question_pair_disagreement_difference",
+        "cluster": "source_title",
+        "ci_method": "paired_title_cluster_bootstrap",
+        "bootstrap_repetitions": 10000,
+        "confidence_level": 0.95,
+        "seed": 42,
+        "evaluation_count": 200,
+        "sample_size_rationale": "本番は200問案。現行条件の60%比較可能率なら約120完全QA、補助生成Step和は約2.66時間、全問比較可能なら約4.12時間が目安。ただしJudge/拒否方針の追加修正で費用・比較率が変わるため、本番件数は追加検証後に凍結する。",
+        "missing_policy": "common_complete_for_decisions_all_selected_for_quality_cost",
+        "unknown_quality_policy": "report_unknown_and_best_worst_bounds"
+      }
+    }
+  }
+}

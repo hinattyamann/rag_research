@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-lab-handover-complete-final-freeze-withheld",
+  "recorded_at_utc": "2026-10-20T06:22:50.096128+00:00",
+  "readiness": {
+    "gate11_passed": false,
+    "phase12_allowed": false,
+    "checks": {
+      "calibration_quality": true,
+      "parser": true,
+      "semantic_validity": false,
+      "refusal_fallback": true,
+      "external_quality": true,
+      "runtime": true,
+      "analysis": false
+    },
+    "reasons": {
+      "semantic_validity": "Review/decision is still pending",
+      "analysis": "Review/decision is still pending"
+    }
+  },
+  "pytest": {
+    "passed": 274,
+    "elapsed_seconds": 4.29
+  },
+  "ruff": "All checks passed",
+  "old_cpu_runs_preserved": true,
+  "evaluation_body_or_outputs_used_for_tuning": false,
+  "new_validation_selected": 20,
+  "new_validation_model_calls": 0,
+  "remaining_model_unused_calibration_answerable": 200,
+  "candidate_evaluation_count": 200,
+  "evaluation_count_frozen": false,
+  "phase12_started": false,
+  "artifacts_sha256": {
+    "data/manifests/phase11_lab_preflight_manifest.json": "86bc7a2a43afb405074f6361b747a65c3ed1daaa810ea22847c44597df9f6ba9",
+    "data/manifests/phase11_gpu_quality_freeze.json": "7cffac14eb19f27298c640b0d48cf4ab46b8f6964fd342678aecc0dfad44ed59",
+    "data/manifests/phase11_gpu_calibration_result_manifest.json": "e386a626fba163888446311c3a117c8d5c03a8e5deb7cfa72118672d95306d06",
+    "data/manifests/phase11_additional_validation_selection_manifest.json": "2ddb8c6e147220f3b47a779eb09541a67b487c96d3b3dd00aadf5f8a178ca2b9",
+    "configs/phase11_gpu_freeze_decisions_v2.json": "33c06ae2b9c654260d31939b42a973c68118d7f604fa0d323ee56ea29297e262",
+    "data/runs/calibration/phase11-gpu-twenty-v2/readiness-review.json": "552c116a2aad454896243fa9f5cc792441d8a32efd73c193a0bab2c72dbfc452",
+    "data/runs/lab/host-tools-v1.json": "898fcacb9aa650763e9cf4952c19297e537978b3f25bba57d12c11362ac6687c",
+    "data/runs/lab/completion-pytest.log": "be68c680cfd9a76960d48e84ce7adbea41343e694f11019d66b919ee239b7b58",
+    "data/runs/lab/completion-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "result_sha256": "ca99a77be1afe24a4739e26b9c447f43a1f5a84bc7adf46443e04cd64b7835e9"
+}

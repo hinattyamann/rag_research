@@ -1,10 +1,10 @@
 # RAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.9 — 2026年10月20日 Ubuntu/CUDA候補とDevelopment事前診断
+## Version 7.10 — 2026年10月20日 Ubuntu/CUDA検証と追加Calibration結果
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.9](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.10](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -259,3 +259,10 @@ GPUだけによる品質改善は主張しない。
 候補v2で検証する。これは時間・生成分布が変わる変更で、旧CPU条件と混合した率を算出しない。
 モデル・量子化・F・閾値0.7・文単位・順序/反復・初回保持Fallbackは維持する。
 未使用20問は元の事前選定Manifestを保持し、Health Gateを実行前に保存してから使う。
+
+2026年10月20日の[GPU追加Calibration結果](phase11_lab_validation.md)では20問/40候補の採点を固定し、
+Judge108回・完全比較12問・Health Gate通過、全34固定文のAI意味監査まで完了した。
+順序判断反転1/12・同順序反転0/12を確認したが、明確な誤支持が残り最終条件の採用は保留する。
+本番200問・元/逆/Shuffle3種・同順序5回・Title対応Bootstrap10000回/95%CIは案で未凍結。
+今回の20問を未使用へ戻さず、別の未使用20問を事前選定した。新候補の回帰診断と条件保存後に確認し、
+意味妥当性・分析規模と最終ManifestがそろうまでGate 11を通さず、Phase 12は開始しない。
