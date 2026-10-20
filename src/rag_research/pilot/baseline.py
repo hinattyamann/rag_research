@@ -19,6 +19,7 @@ from rag_research.experiments.storage import (
 from rag_research.generation.artifacts import model_identity
 from rag_research.generation.config import load_config
 from rag_research.generation.context import PromptSpec
+from rag_research.generation.cuda_runtime import execution_identity, execution_kwargs
 from rag_research.generation.generator import LocalGenerator
 from rag_research.generation.local import LocalServer
 from rag_research.retrieval.common import CORPUS_PATH, file_hash, json_bytes
@@ -94,6 +95,7 @@ def run_baseline(config, selection, output, *, split="development", max_new_ques
                                                 else "phase11-calibration-phase6-baseline"),
                 "config": original, "config_sha256": file_hash(ROOT / config["baseline_config"]),
                 "prompts_sha256": file_hash(prompts_path), "generator": model_identity(),
+                **execution_identity(original),
                 f"{split}_sha256": file_hash(ROOT / config["qa_path"]), "split": split,
                 "questions": [{"question": r["question"], "record_id": r["record_id"]}
                               for r in selection["records"]], "selection_sha256": digest(selection),
@@ -129,7 +131,8 @@ def run_baseline(config, selection, output, *, split="development", max_new_ques
         session_index = len(list(output.glob("session-*.json"))) + 1
         if missing:
             retriever = load_retriever(original["retrieval"], corpus=CORPUS_PATH)
-            with LocalServer(generation, output / f"server-{session_index}.log") as server:
+            with LocalServer(generation, output / f"server-{session_index}.log",
+                             **execution_kwargs(original)) as server:
                 collect(server.client, retriever)
                 session = {"completion_attempts_this_session": server.client.completion_attempts, **server.report()}
         else:

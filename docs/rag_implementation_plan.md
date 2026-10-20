@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.8 — 2026年10月20日 Phase 11本実装とGPU本番方針
+## Version 8.9 — 2026年10月20日 明示的CUDA Runtimeと追加Calibration候補
 
-[研究計画 Version 7.8](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.9](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -287,3 +287,24 @@ Phase 1〜6は完了済み、Phase 7で専用Protocol・Prompt・設定を具体
 Phase 9で書換えと独立採点の入出力、Phase 10でPilot、Phase 11で最終凍結、Phase 12で本実験、
 Phase 13で分析（任意の対策を含む）、Phase 14でICIAE原稿と卒論を進める。
 各工程の実施状況・完了条件は[ロードマップ](research_roadmap.md)を参照する。
+
+## 10. Ubuntu/CUDA候補の追加
+
+`generation/cuda_runtime.py`と`configs/lab_cuda_runtime.json`で、公式b11433 Linux CUDA版と
+SHA固定した既設CUDA 12.9ライブラリを別Directoryへ準備する。
+既定のWindows CPU経路を保ち、Configの明示的`execution`がある場合だけ切り替える。
+`LocalServer`はCUDAデバイス・全Layer Offloadをログで検証してからCompletionを許可する。
+RunへRuntime全ファイルHash、Command、Version、Offload、時間を保存する。
+初回と補助の両方へ明示設定を伝え、`pilot`の来歴にもRuntimeを含める。
+
+`scripts/audit_lab_transfer.py`はSource/Split/Corpus/Index/過去RunのHashを読取専用で確認し、
+Evaluationの本文は解析しない。`scripts/audit_lab_models.py`は全現行モデルを転送前Hashと照合する。
+既知Developmentの実GPU確認は`probe_lab_generation.py`、既存の測定診断CLI、
+`probe_lab_judge_semantics.py`で行う。これらへ未使用20問を渡さない。
+
+追加Calibrationは`phase11_gpu_calibration_v2.yaml`と`order_phase11_gpu_calibration_v2.yaml`。
+元の20問Manifestを上書きせず、除外Title/選定規則/全IDを照合して再利用する入口を追加した。
+初回Promptは元のまま。補助推論1536/出力3072、Context8192、最終回答512以下。
+事前Health Gateは20問で完全比較8問以上、Judgeエラー率0、入力超過で途中停止。
+意味上の合否・品質・最終Gateは別監査とし、Health Gateだけで最終凍結しない。
+旧CPU Runは再開せず、新RunとソースSnapshotを使う。詳細は[実機検証記録](phase11_lab_validation.md)。

@@ -1,6 +1,8 @@
-"""Owned loopback CPU server and native HTTP API; no external LLM service."""
+"""Owned, verified CPU/CUDA loopback server and native HTTP API."""
 
 import json
+import os
+import re
 import socket
 import subprocess
 import threading
@@ -13,6 +15,7 @@ import psutil
 
 from rag_research.generation.artifacts import verify_model, verify_runtime
 from rag_research.generation.auxiliary_config import FINAL_JSON_TRIGGER_PATTERN
+from rag_research.generation.cuda_runtime import execution_kwargs, verify_cuda_runtime
 
 
 class GenerationError(RuntimeError):
@@ -90,8 +93,10 @@ class LlamaClient:
 class LocalServer:
     """Start one verified server, measure both processes, and always stop owned process."""
 
-    def __init__(self, config, log_path: Path, *, model_path=None, jinja=False):
+    def __init__(self, config, log_path: Path, *, model_path=None, jinja=False, execution=None):
         self.config = config
+        self.execution = execution
+        execution_kwargs({"execution": execution} if execution is not None else {})
         if type(jinja) is not bool:
             raise ValueError("Jinja setting must be boolean")
         self.jinja = jinja
@@ -104,7 +109,7 @@ class LocalServer:
     def __enter__(self):
         started = time.perf_counter()
         model = self.model_path or verify_model().resolve()
-        executable, self.runtime = verify_runtime()
+        executable, self.runtime = verify_cuda_runtime() if self.execution else verify_runtime()
         self.runtime_version = subprocess.run(
             [str(executable.resolve()), "--version"],
             capture_output=True,
@@ -134,7 +139,7 @@ class LocalServer:
             "--threads-batch",
             str(self.config.threads),
             "--gpu-layers",
-            "0",
+            str(self.execution["gpu_layers"]) if self.execution else "0",
             "--batch-size",
             str(self.config.batch_tokens),
             "--ubatch-size",
@@ -144,6 +149,8 @@ class LocalServer:
             "--no-context-shift",
             "--offline",
         ]
+        if self.execution:
+            self.command.extend(["--device", self.execution["device"], "--log-verbosity", "4"])
         if not self.config.repack:
             self.command.append("--no-repack")
         if self.jinja:
@@ -157,6 +164,8 @@ class LocalServer:
         try:
             self.process = subprocess.Popen(
                 self.command,
+                env=({**os.environ, "LD_LIBRARY_PATH": str(executable.resolve().parent)}
+                     if self.execution else None),
                 stdout=self.log_file,
                 stderr=subprocess.STDOUT,
                 creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
@@ -178,6 +187,10 @@ class LocalServer:
             self.props = self.client.request("/props")
             if self.props["default_generation_settings"]["n_ctx"] != self.config.context_tokens:
                 raise GenerationError("Actual server context differs from fixed config")
+            if self.execution:
+                proof = self.offload_report()
+                if not proof["full_gpu_offload"]:
+                    raise GenerationError("CUDA execution did not offload all layers; preserve server log")
             self.startup_seconds = time.perf_counter() - started
             return self
         except BaseException:
@@ -201,6 +214,15 @@ class LocalServer:
                 break
             self._stop.wait(0.1)
 
+    def offload_report(self):
+        self.log_file.flush()
+        log = self.log_path.read_text(encoding="utf-8", errors="replace")
+        matches = re.findall(r"offloaded (\d+)/(\d+) layers to GPU", log)
+        layers, total = tuple(map(int, matches[-1])) if matches else (0, 0)
+        cuda = bool(re.search(r"using device CUDA\d+|CUDA\d+.*model buffer", log))
+        return {"actual_gpu_offload": cuda and layers > 0, "offloaded_layers": layers,
+                "total_layers": total, "full_gpu_offload": cuda and layers == total and total > 0}
+
     def report(self):
         return {
             "startup_seconds": self.startup_seconds,
@@ -212,6 +234,8 @@ class LocalServer:
             "command": self.command,
             "runtime_version": (self.runtime_version.stdout + self.runtime_version.stderr).strip(),
             "server_context_tokens": self.props["default_generation_settings"]["n_ctx"],
+            **({"execution": self.execution, "runtime": self.runtime,
+                **self.offload_report()} if self.execution else {}),
         }
 
     def __exit__(self, *_):

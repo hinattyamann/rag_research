@@ -4,6 +4,7 @@ from rag_research.experiments.frozen_trace import require
 from rag_research.experiments.protocol import ROOT
 from rag_research.experiments.storage import read_json
 from rag_research.generation.artifacts import model_identity
+from rag_research.generation.cuda_runtime import execution_kwargs
 from rag_research.retrieval.common import file_hash
 
 
@@ -28,7 +29,7 @@ def auxiliary_identity(config):
 
 def auxiliary_server_kwargs(config):
     if "auxiliary_model_manifest" not in config:
-        return {}
+        return execution_kwargs(config)
     manifest = auxiliary_identity(config)
     for artifact in manifest["files"]:
         path = ROOT / artifact["path"]
@@ -37,4 +38,4 @@ def auxiliary_server_kwargs(config):
     options = manifest.get("runtime_options", {})
     require(set(options) <= {"jinja"} and type(options.get("jinja", False)) is bool,
             "Unsupported auxiliary runtime options")
-    return {"model_path": ROOT / manifest["entrypoint"], **options}
+    return {"model_path": ROOT / manifest["entrypoint"], **options, **execution_kwargs(config)}

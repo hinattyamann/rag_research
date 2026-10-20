@@ -1,6 +1,6 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月20日。正本: [研究計画7.8](rag_research_plan.md)、[実装計画8.8](rag_implementation_plan.md)。
+更新日: 2026年10月20日。正本: [研究計画7.9](rag_research_plan.md)、[実装計画8.9](rag_implementation_plan.md)。
 テーマは「根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
@@ -157,6 +157,12 @@ CPU上の初期確認であり、GPU実機確認・意味妥当性の判断・�
 未使用の追加Calibration 20問を結果非依存で事前選定したが、GPU実行は未実施である。
 本番はユーザー指定で研究室PCのGPUを使う。GPUでの実測・Calibration・最終件数の決定後に凍結する。
 CPU側の完了状況と、研究室側で残る事項は最新日誌と専用記録へ残す。
+
+同日、Ubuntu実機と転送・モデルのHashを検証し、明示的CUDA対応を別Versionとして実装した。
+既知Developmentで3Bの全Layer Offloadと実生成を確認した。4Bの512 Token推論は既知誤支持を
+再現し、1536 Token候補で事前診断を行う。初回Prompt変更候補は重大な誤りが残るため不採用。
+[実機検証記録](phase11_lab_validation.md)に失敗・条件差・採用理由を保存する。
+追加20問の実行・全品質固定・内部照合と最終固定は、この準備記録時点では未実施。
 
 - Calibrationで評価器の妥当性、閾値・入力予算・品質基準を確認する。
 - Source/Split/検索/Generator/Judge/Runtime/量子化/Prompt/Seed/試行数/採点基準を固定する。

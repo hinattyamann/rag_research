@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "tag": "b11433",
+  "source_commit": "50569eb87df530daff11afda229ceb9ab8e6cae8",
+  "backend": "Ubuntu-x64-CUDA-12.8-system12.9",
+  "directory": "data/runtimes/llama.cpp/b11433-ubuntu-cuda12.8-system12.9-v1",
+  "archives": [
+    {
+      "name": "llama-b11433-bin-ubuntu-cuda-12.8-x64.tar.gz",
+      "bytes": 171651185,
+      "sha256": "4ee66f423e5e4152b87ba7f46dd30a680b4e1d4f5205bbb2cbf0d9daf1662e5e"
+    }
+  ],
+  "system_libraries": [
+    {
+      "source": "/usr/local/cuda-12.9/lib64/libcudart.so.12.9.79",
+      "name": "libcudart.so.12",
+      "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7"
+    },
+    {
+      "source": "/usr/local/cuda-12.9/lib64/libcublas.so.12.9.1.4",
+      "name": "libcublas.so.12",
+      "sha256": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048"
+    },
+    {
+      "source": "/usr/local/cuda-12.9/lib64/libcublasLt.so.12.9.1.4",
+      "name": "libcublasLt.so.12",
+      "sha256": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541"
+    }
+  ]
+}

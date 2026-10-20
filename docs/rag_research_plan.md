@@ -1,10 +1,10 @@
 # RAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.8 — 2026年10月20日 Phase 11本実装とGPU本番方針
+## Version 7.9 — 2026年10月20日 Ubuntu/CUDA候補とDevelopment事前診断
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.8](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.9](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -249,3 +249,13 @@ CPU初期5問の初回は全て拒否で、新規Judge呼出し0・比較可能0
 [Phase 9記録](phase9_answer_rewrite.md)に実出力・採点手順・検証範囲を示す。
 全条件が採用/採点不能でも比較用書換えを1つ収集し、判断に応じて同じ二候補から出力を選ぶ。
 初回と書換えが完全に同じ質問・回答・Contextの場合は、品質Labelを共用して重複採点を避ける。
+
+同日、Ubuntu実機の転送・モデルHash照合とCUDA対応を別Versionとして実装した。
+[研究室PCの検証記録](phase11_lab_validation.md)に実測と取得条件を保存する。
+旧CPUと同じToken列のDevelopment入力でも過剰拒否が残った。初回Promptの変更候補は
+既知例で重大な誤りも生成したため、Calibrationには採用せず、初回3B/元Promptを維持する。
+GPUだけによる品質改善は主張しない。
+補助Judgeの512 Token推論は既知例で途中終了し誤支持したため、推論1536/全出力3072を
+候補v2で検証する。これは時間・生成分布が変わる変更で、旧CPU条件と混合した率を算出しない。
+モデル・量子化・F・閾値0.7・文単位・順序/反復・初回保持Fallbackは維持する。
+未使用20問は元の事前選定Manifestを保持し、Health Gateを実行前に保存してから使う。

@@ -17,6 +17,7 @@ from rag_research.experiments.storage import (
 )
 from rag_research.generation.artifacts import model_identity
 from rag_research.generation.auxiliary import auxiliary_identity, auxiliary_server_kwargs
+from rag_research.generation.cuda_runtime import execution_identity
 from rag_research.generation.local import LocalServer
 from rag_research.pilot.materials import load_offline, publish
 from rag_research.recovery.answer_rewrite import rewrite_once
@@ -68,6 +69,7 @@ def pilot_identity(config_path, config, selection, baseline, traces, split="deve
             "config": config, "baseline_answers_sha256": file_hash(baseline),
             "baseline_provenance_sha256": file_hash(baseline.parent / "run_manifest.json"),
             "qa_sha256": file_hash(ROOT / config["qa_path"]), "model": model_identity(),
+            **execution_identity(protocol),
             **({"auxiliary_model": auxiliary_identity(protocol)} if "auxiliary_model_manifest" in protocol else {}),
             "prompt_sha256": file_hash(prompt_path),
             "auxiliary_runtime": asdict(task_config(protocol, "verify_claims")),

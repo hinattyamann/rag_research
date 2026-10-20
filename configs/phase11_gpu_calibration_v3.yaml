@@ -1,0 +1,24 @@
+schema_version: 1
+purpose: phase11-calibration
+study_version: order-calibration-cuda-temporal-v3
+status: candidate_not_frozen
+phase12_allowed: false
+count: 20
+selection_seed: 42
+qa_path: data/processed/clapnq/c508d78-split-v1/calibration.jsonl
+internal_protocol: configs/order_phase11_gpu_calibration_v3.yaml
+baseline_config: configs/phase11_gpu_baseline.yaml
+baseline_prompts: configs/prompts.yaml
+quality_protocol: docs/ai_quality_protocol.md
+quality_rubric_version: order-quality-ai-pilot-v1
+annotation_seed: 44
+quality_assessor: Codex_AI
+human_reviewed: false
+automatic_retries: 0
+replace_failed_questions: false
+health_gate:
+  after_questions: 20
+  minimum_complete_scorable_questions: 8
+  maximum_judge_error_fraction: 0.0
+  stop_on_input_overflow: true
+preselected_manifest: data/manifests/phase11_gpu_calibration_selection_manifest.json
