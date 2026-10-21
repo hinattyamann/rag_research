@@ -9,12 +9,19 @@ from pathlib import Path
 import yaml
 
 from rag_research.data.study_assets import load_assets, load_rows, parent_map
+from rag_research.evaluation.claimwise import pending as verification_pending
 from rag_research.evaluation.order import trial_plan
 from rag_research.evaluation.sentence_claims import claim_unit_language
 from rag_research.experiments.frozen_trace import digest, freeze_record, require
 from rag_research.experiments.order_runner import evaluate_traces
 from rag_research.experiments.protocol import ROOT, task_config, validate_task_contract
-from rag_research.experiments.storage import read_json, run_lock, verify_checkpoint, write_json
+from rag_research.experiments.storage import (
+    next_session,
+    read_json,
+    run_lock,
+    verify_checkpoint,
+    write_json,
+)
 from rag_research.generation.artifacts import model_identity
 from rag_research.generation.auxiliary import auxiliary_identity, auxiliary_server_kwargs
 from rag_research.generation.config import load_config as load_baseline_config
@@ -73,14 +80,14 @@ def load_config(path):
     return config, assets, chosen, qa_path, baseline, generation, prompt, prompts
 
 
-def internal_complete(internal, binding):
+def internal_complete(internal, binding, verification_mode="joint"):
     for entry in binding["traces"]:
         folder = internal / entry["directory"]
         if not (folder / "claims.json").exists() or not (folder / "rewrite.json").exists():
             return False
         claims = read_json(folder / "claims.json")
-        if claims["status"] == "ok" and not all((folder / (t["trial_id"] + ".json")).exists()
-                                                for t in entry["plan"]["trials"]):
+        if claims["status"] == "ok" and any(verification_pending(folder / (t["trial_id"] + ".json"), verification_mode)
+                                             for t in entry["plan"]["trials"]):
             return False
     return True
 
@@ -124,7 +131,7 @@ def run(config_path, output, *, stage="all"):
 
         if stage in {"baseline", "all"}:
             pending = any(not (base_dir / digest(r["record_id"])[:24] / "record.json").exists() for r in selection)
-            session = len(list(base_dir.glob("session-*.json"))) + 1
+            session = next_session(base_dir)
             if pending:
                 retriever = load_retriever(assets, config["language"])
                 with LocalServer(generation, base_dir / f"server-{session}.log", **execution_kwargs(baseline)) as server:
@@ -188,8 +195,8 @@ def run(config_path, output, *, stage="all"):
                                   ("input_tokens", "output_tokens", "generation_seconds", "context_seconds", "answer_generation_calls")}})
                 print(json.dumps({"stage": "internal", "completed": len(assembled),
                                   "rewrite_status": rewritten["status"]}), flush=True)
-        session = len(list(internal.glob("session-*.json"))) + 1
-        if traces and not internal_complete(internal, binding):
+        session = next_session(internal)
+        if traces and not internal_complete(internal, binding, config.get("verification_mode", "joint")):
             with LocalServer(task_config(config, "verify_claims"), internal / f"server-{session}.log",
                              **auxiliary_server_kwargs(config)) as server:
                 collect_internal(server.client)

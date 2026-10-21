@@ -6,6 +6,7 @@ from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
 
+from rag_research.evaluation.claimwise import atomic_steps
 from rag_research.experiments.decisions import decide_with_refusal
 from rag_research.experiments.frozen_trace import digest, require
 from rag_research.experiments.protocol import ROOT
@@ -170,7 +171,7 @@ def validate_annotations(packet, value):
 
 def cost(tasks):
     """Summed measured model steps, never claimed to be end-to-end operational latency."""
-    tasks = list(tasks)
+    tasks = list(atomic_steps(tasks))
     attempted = [t for t in tasks if t.get("completion_attempted", False)]
     unknown = [t for t in tasks if t.get("error_code") == "interrupted_unknown_outcome"]
     return {"completion_attempts": None if unknown else len(attempted),

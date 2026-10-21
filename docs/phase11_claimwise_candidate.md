@@ -37,3 +37,22 @@
 
 この方法でも意味採用に至らない場合は、結果を保持して原因と残る実装/研究上の選択肢を整理する。
 基準を緩めて最終Gateへ進めず、統計実装など依存しない工程も進める。Phase 12は開始しない。
+
+## 19:10 JST 実装・事前契約の検証
+
+`evaluation/claimwise.py`と共通Runner/品質検証/費用へ任意の`verification_mode: claimwise-v1`を追加した。
+旧Configは`joint`のまま。各単位のRaw Taskを別保存し、元ID・全分母・Score・費用をRawから再構成する。
+1単位の失敗で試行のFはnull、未試行単位も明示する。完了済みの単位は再呼出しせず、結果不明は再試行しない。
+集計直前の中断は保存済みの子結果だけから復元し、その後に必要な未試行条件だけを実行する。
+Server Reportより先にLogだけが残る中断でも、既存Log/Reportの最大連番から新Session番号を選び、旧Logを上書きしない。
+
+新入力配置は、非信頼の固定初回回答→根拠配列→質問→Target Claim。
+代名詞用の回答を先に置き、その後に根拠を読ませる。Target以外の回答文を証拠として扱わない。
+この候補は呼出し単位と入力配置を一緒に変更するため、改善しても単位分離だけの因果効果とは言わない。
+各QA/試行の中で操作するものは根拠配列の順序だけで、他の内容/配置は固定する。
+
+入力は`phase11_semantic_diagnostics_claimwise_v2.json`、Configは`phase11_semantic_candidate_v4.yaml`、
+日英Promptは`phase11_semantic_prompts_{en,ja}_v4.yaml`。旧Expected/曖昧単位/採用・停止基準は同じ、最大70 Completion。
+Completion0のPreflightも全70の単位入力を実Tokenizerで測るよう共通入口を拡張した。
+実GPUの新方式の意味診断はこれから。Test成功で意味妥当性を認定しない。
+新規9 Testを含む全468 Test（ホスト6.43秒）/Ruff成功。共通の旧共同評価も回帰した。

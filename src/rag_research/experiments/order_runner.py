@@ -9,6 +9,7 @@ from pathlib import Path
 
 import yaml
 
+from rag_research.evaluation.claimwise import verify_once
 from rag_research.evaluation.order import trial_plan
 from rag_research.evaluation.tasks import execute_task
 from rag_research.experiments.decisions import decide_with_refusal
@@ -176,11 +177,11 @@ def evaluate_traces(client, config, prompts, traces, manifest, output, notify=pr
                 assert_same_evidence(trace["documents"], documents)
                 payload = {"question": trace["question"], "answer": trace["answer"],
                            "claims": claims, "documents": documents}
-                evaluation = execute_task(
-                    client, task_config(config, "verify_claims"), prompts, "verify_claims",
+                evaluation = verify_once(
+                    client, task_config(config, "verify_claims"), prompts,
                     payload, task_path,
                     {**binding, "trial_id": spec["trial_id"], "claims_sha256": digest(claims)},
-                    constraints=config.get("output_constraints", "none"))
+                    constraints=config.get("output_constraints", "none"), mode=config.get("verification_mode", "joint"))
                 results.append(evaluation)
                 row.update(status=evaluation["status"], error=evaluation["error"],
                            error_code=evaluation["error_code"],

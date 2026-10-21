@@ -4,11 +4,14 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
+import yaml
+
 from rag_research.data.study_assets import load_assets, parent_map
+from rag_research.evaluation.claimwise import verify_once
 from rag_research.evaluation.order import trial_plan
 from rag_research.experiments.decisions import decide_with_refusal
 from rag_research.experiments.frozen_trace import digest, freeze_record, require
-from rag_research.experiments.protocol import ROOT
+from rag_research.experiments.protocol import ROOT, task_config
 from rag_research.experiments.quality import (
     blank_annotations,
     make_packet,
@@ -81,6 +84,15 @@ def read_run(run):
         for name, task in row["tasks"]["judges"].items():
             require(task == read_json(folder / (name + ".json")) and task["binding"] == {
                     **task_binding, "trial_id": name, "claims_sha256": digest(claims)}, "Saved Judge changed")
+            if task.get("execution_mode") == "claimwise-v1":
+                prompts = yaml.safe_load((ROOT / manifest["config"]["prompts"]).read_text())
+                spec = next(t for t in entry["plan"]["trials"] if t["trial_id"] == name)
+                documents = {d["passage_id"]: d for d in trace["documents"]}
+                verified = verify_once(None, task_config(manifest["config"], "verify_claims"), prompts,
+                    {"question": trace["question"], "answer": trace["answer"], "claims": claims,
+                     "documents": [documents[i] for i in spec["document_ids"]]}, folder / (name + ".json"),
+                    task["binding"], constraints=manifest["config"]["output_constraints"], mode="claimwise-v1")
+                require(verified == task, "Claimwise raw/report differs")
         for trial in row["evaluation"]["trials"]:
             task = row["tasks"]["judges"].get(trial["trial_id"])
             score = task["parsed"]["score"] if task and task["status"] == "ok" else None

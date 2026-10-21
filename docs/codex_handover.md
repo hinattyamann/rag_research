@@ -90,6 +90,9 @@ Critical2/4で不通過、人工54未試行・再開追加0。原本と正規Run
 全459 Test/Ruff成功。既存Configの初回維持を保ち、候補は未知QAで未採用/未検証。
 保存済み旧20問の事後再構成は`refusal_policy_reconstruction_v1.json`でY1 6→9/Calls32→40・不明2。
 現在動くModel/取得ジョブはない。次は固定文ごとの意味候補実装/診断、他の既知誤りの回帰、主Development/未使用Calibration。
+固定文ごとの実装候補は`evaluation/claimwise.py`、Config`phase11_semantic_candidate_v4.yaml`、Plan`phase11_semantic_diagnostics_claimwise_v2.json`。
+共通Runner/品質検証/費用に接続し、子単位/集計の中断とLog保持を検証した。最大70 Completion。
+次は検証済みCommitの専用Worktreeへ同じ8B/Runtime/旧Sourceを配置し、Completion0 Preflight後に既知全8文×元逆16 Callから診断する。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -106,7 +109,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.25](rag_research_plan.md)・[実装計画8.27](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.26](rag_research_plan.md)・[実装計画8.28](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

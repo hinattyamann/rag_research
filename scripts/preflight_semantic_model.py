@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from rag_research.evaluation.claimwise import payloads  # noqa: E402
 from rag_research.experiments.frozen_trace import require  # noqa: E402
 from rag_research.experiments.protocol import build_messages, task_config  # noqa: E402
 from rag_research.experiments.semantic_diagnostics import load_config, specs  # noqa: E402
@@ -43,14 +44,16 @@ def main():
                 inputs = []
                 for case, order, key in specs(plan):
                     documents = case["documents"] if order == "original" else list(reversed(case["documents"]))
-                    messages = build_messages(prompts[case["language"]], "verify_claims", {
+                    full = {
                         "question": case["question"], "answer": case["answer"],
-                        "claims": case["claims"], "documents": documents})
-                    tokens = len(server.client.tokenize(server.client.render(messages), special=True))
-                    row = {"condition": key, "input_tokens": tokens,
-                           "reserved_output_tokens": generation.max_output_tokens,
-                           "fits": tokens + generation.max_output_tokens <= generation.context_tokens}
-                    inputs.append(row)
+                        "claims": case["claims"], "documents": documents}
+                    for original_id, payload in payloads(full, config.get("verification_mode", "joint")):
+                        messages = build_messages(prompts[case["language"]], "verify_claims", payload)
+                        tokens = len(server.client.tokenize(server.client.render(messages), special=True))
+                        row = {"condition": key, "original_claim_id": original_id, "input_tokens": tokens,
+                               "reserved_output_tokens": generation.max_output_tokens,
+                               "fits": tokens + generation.max_output_tokens <= generation.context_tokens}
+                        inputs.append(row)
                 report.update(inputs=inputs, server=server.report(), completion_attempts=server.client.completion_attempts,
                     gpu_memory_single_observation=subprocess.run(["nvidia-smi", "--query-gpu=memory.used,memory.total",
                         "--format=csv,noheader"], check=True, capture_output=True, text=True).stdout.strip())

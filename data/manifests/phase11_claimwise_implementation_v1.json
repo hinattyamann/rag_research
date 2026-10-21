@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-claimwise-candidate-implementation-not-final-freeze",
+  "created_at_utc": "2026-10-21T10:12:02.781149+00:00",
+  "verification_mode": "claimwise-v1",
+  "known_first_calls": 16,
+  "max_diagnostic_calls": 70,
+  "model_calls_so_far": 0,
+  "validation": {
+    "pytest_passed": 468,
+    "pytest_seconds": 6.43,
+    "ruff": "passed",
+    "new_tests": 9,
+    "real_config_payloads": 70
+  },
+  "artifacts": {
+    "src/rag_research/evaluation/claimwise.py": {
+      "sha256": "c9049e0245d3993118af44d0d9842f94551e2a134100df01969011f7d3e892be",
+      "bytes": 7532
+    },
+    "src/rag_research/experiments/order_runner.py": {
+      "sha256": "74d37b814096ab9bb2d279cf445b9807be1887d0b107f03083c2f09a6f136272",
+      "bytes": 14813
+    },
+    "src/rag_research/experiments/quality.py": {
+      "sha256": "ff3063f1f36b663ad8acc6a76db43cdaea8b497d264c71583d8a135541bdb07c",
+      "bytes": 21744
+    },
+    "src/rag_research/experiments/bilingual_quality.py": {
+      "sha256": "a36f5589049c14444d49dbda8b1a8f0bd3393e992cf22378fe3aa2a3a2582611",
+      "bytes": 12521
+    },
+    "src/rag_research/experiments/bilingual_runner.py": {
+      "sha256": "6bbe075f52a7c1f2e0a9905d0cc946aca1ffe5607c4a6bb58ca819b035e9b61b",
+      "bytes": 13561
+    },
+    "src/rag_research/experiments/protocol.py": {
+      "sha256": "0117a6090b4d265a9560320d521f1139ff492f6323aa917c7e2c8049be3c1b2d",
+      "bytes": 8469
+    },
+    "src/rag_research/experiments/semantic_diagnostics.py": {
+      "sha256": "d91e47c1717c5306221a1fe27480d8a5314deb5f84d4e79952c8e53fb2e78cb5",
+      "bytes": 13730
+    },
+    "src/rag_research/experiments/storage.py": {
+      "sha256": "073f4c89dca883fd0f5c3ab900c722361c720a3cb607faa9903190c15b272165",
+      "bytes": 2309
+    },
+    "scripts/preflight_semantic_model.py": {
+      "sha256": "079e13b17583aa34e8bbad82d45e60cf1a11dffc2ba184e111ef9d860601ef9d",
+      "bytes": 4509
+    },
+    "tests/test_claimwise.py": {
+      "sha256": "0eb803ae47c8043bf2a47f0dfcb0383a4de331709855ddfa8d8772c335abb19f",
+      "bytes": 7227
+    },
+    "tests/test_bilingual_pipeline.py": {
+      "sha256": "85ce1a5fbd5ac1a347ce04282054a92f7e8590482952407c9d6a10812f1bbfb3",
+      "bytes": 24512
+    },
+    "tests/test_semantic_diagnostics.py": {
+      "sha256": "b9280c9a858712d0d556b41227be3e8bb9f1b4837de1a65c76d46f4d8defc14f",
+      "bytes": 11504
+    },
+    "configs/phase11_semantic_diagnostics_claimwise_v2.json": {
+      "sha256": "726d0ead65462089a60a852fc7107f52ce0772d3c830ca0cc53f21dca6139946",
+      "bytes": 46646
+    },
+    "configs/phase11_semantic_candidate_v4.yaml": {
+      "sha256": "c7927693970e1db90331aee102a6afbc93ad1b6e95cba8dbc9147465d9aa517b",
+      "bytes": 2062
+    },
+    "configs/phase11_semantic_prompts_en_v4.yaml": {
+      "sha256": "b62d7c84132a075d45a7c47057fe1cf1ccd37cf83fd3ba2b0609a4cd8e6f5a66",
+      "bytes": 7673
+    },
+    "configs/phase11_semantic_prompts_ja_v4.yaml": {
+      "sha256": "44be4011668bee2600c4556b0bdd550ac5679beb56d65c74f715295ffc727abc",
+      "bytes": 7735
+    }
+  },
+  "semantic_adoption": "pending_actual_gpu_diagnostic",
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

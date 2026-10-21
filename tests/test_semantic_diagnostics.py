@@ -59,7 +59,8 @@ def diagnostic(tmp_path, monkeypatch):
     monkeypatch.setattr(module, "auxiliary_identity", lambda c: {"test": "identity"})
     monkeypatch.setattr(module, "auxiliary_server_kwargs", lambda c: {})
     monkeypatch.setattr(module, "execution_identity", lambda c: {})
-    state = {"calls": [], "servers": 0, "critical_failure": False, "runtime_error": False}
+    state = {"calls": [], "servers": 0, "critical_failure": False, "runtime_error": False,
+             "allow_answer_context": False}
 
     class Client:
         def render(self, messages):
@@ -72,7 +73,10 @@ def diagnostic(tmp_path, monkeypatch):
         def complete(self, tokens, config, **kwargs):
             state["calls"].append(deepcopy(self.messages))
             payload = json.loads(self.messages[1]["content"].removeprefix("Input JSON:\n"))
-            assert set(payload) == {"question", "claims", "documents"}
+            assert set(payload) == ({"question", "answer", "claims", "documents"} if state["allow_answer_context"] else
+                                    {"question", "claims", "documents"})
+            if state["allow_answer_context"]:
+                assert payload["answer"] in {"A is false.", "A is true."}
             if state["runtime_error"]:
                 raise GenerationError("Synthetic runtime failure")
             label = ("contradicted" if payload["claims"][0]["text"] == "A is false." and
@@ -83,6 +87,7 @@ def diagnostic(tmp_path, monkeypatch):
 
     class Server:
         def __init__(self, *args, **kwargs):
+            args[1].touch(exist_ok=False)
             state["servers"] += 1
             self.client = Client()
 
@@ -181,3 +186,48 @@ def test_clear_negative_false_support_fails_even_when_accuracy_above_threshold()
     assert all(m["accuracy_of_all_planned"] == .95 for m in gate["synthetic"].values())
     assert not gate["diagnostic_gate_passed"]
     assert digest(plan)
+
+
+@pytest.mark.parametrize("partial", [False, True])
+def test_claimwise_diagnostic_uses_real_child_tasks_and_cached_resume(diagnostic, monkeypatch, partial):
+    path, output, state = diagnostic
+    config = yaml.safe_load(path.read_text())
+    config["verification_mode"] = "claimwise-v1"
+    path.write_text(yaml.safe_dump(config))
+    plan_path = path.parent / "plan.json"
+    plan = read_json(plan_path)
+    plan["verification_mode"] = "claimwise-v1"
+    write_json(plan_path, plan)
+    for name in config["prompts"].values():
+        p = path.parent / name
+        prompt = yaml.safe_load(p.read_text())
+        prompt.pop("judge_payload")
+        prompt["tasks"]["verify_claims"]["input_fields"] = ["question", "answer", "claims", "documents"]
+        p.write_text(yaml.safe_dump(prompt))
+    state["allow_answer_context"] = True
+    if partial:
+        from rag_research.evaluation.claimwise import derived
+        from rag_research.experiments.storage import checkpoint
+
+        original = module.verify_once
+
+        def interrupted(client, generation, prompts, payload, task_path, binding, **kwargs):
+            if task_path.stem.startswith("synthetic-"):
+                raise KeyboardInterrupt()
+            return original(client, generation, prompts, payload, task_path, binding, **kwargs)
+
+        monkeypatch.setattr(module, "verify_once", interrupted)
+        with pytest.raises(KeyboardInterrupt):
+            module.run(path, output)
+        assert len(state["calls"]) == 2
+        monkeypatch.setattr(module, "verify_once", original)
+        task_path = output / "tasks/known-reversed.json"
+        saved = read_json(task_path)
+        base = {k: saved[k] for k in ("schema_version", "task", "execution_mode", "request_sha256", "binding", "expected_claim_ids")}
+        checkpoint(task_path, derived(task_path, base, []))
+        assert (output / "server-1.log").exists() and not (output / "session-1.json").exists()
+    report = module.run(path, output)
+    assert report["diagnostic_gate_passed"] and report["completion_attempts_recorded"] == 6
+    assert len(list((output / "tasks").glob("*.claims/*.json"))) == 6
+    assert module.run(path, output) == report
+    assert len(state["calls"]) == 6 and state["servers"] == (2 if partial else 1)

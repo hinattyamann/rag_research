@@ -202,7 +202,7 @@ def connection(registry, tmp_path, monkeypatch):
     rubric.parent.mkdir()
     rubric.write_text("Apply all three criteria.")
     state = {"calls": [], "servers": 0, "failure": None, "overflow": False, "bare_refusal": False,
-             "config": config}
+             "config": config, "prompts": prompts, "multi_sentences": False}
 
     class Client:
         def render(self, messages):
@@ -225,6 +225,8 @@ def connection(registry, tmp_path, monkeypatch):
             if task == "initial":
                 content = ("提示された根拠には、この質問に答えるための十分な情報がありません。"
                            if state["bare_refusal"] else "猫は赤い。[p1]")
+                if state["multi_sentences"]:
+                    content = "猫は赤い。犬は青い。"
             elif task == "rewrite_answer":
                 content = "資料では、猫は赤い。[p1]"
             else:
@@ -236,6 +238,7 @@ def connection(registry, tmp_path, monkeypatch):
 
     class Server:
         def __init__(self, *args, **kwargs):
+            args[1].touch(exist_ok=False)
             state["servers"] += 1
             self.client = Client()
 
@@ -415,3 +418,31 @@ def test_refusal_policy_requires_opt_in_candidate_and_rejects_legacy_protocol():
     config["purpose"] = "phase8-development-protocol"
     with pytest.raises(ValueError, match="separate bilingual candidate"):
         validate_task_contract(config, prompts)
+
+
+def test_claimwise_bilingual_runner_quality_raw_validation_and_operational_calls(connection):
+    config, output, state = connection
+    state["config"]["verification_mode"] = "claimwise-v1"
+    state["prompts"]["judge_layout"] = "draft_sources_target"
+    state["multi_sentences"] = True
+    (config.parent / "prompts.yaml").write_text(yaml.safe_dump(state["prompts"]))
+    result = runner.run(config, output)
+    assert len(state["calls"]) == 14
+    for messages in state["calls"]:
+        if messages[0]["content"] == "verify_claims":
+            assert list(json.loads(messages[1]["content"].removeprefix("Input JSON:\n"))) == ["answer", "documents", "question", "claims"]
+    _, report = quality.read_run(output)
+    row = report["records"][0]
+    assert len(row["evaluation"]["claims"]) == 2
+    assert all(t["completion_attempts_recorded"] == 2 for t in row["tasks"]["judges"].values())
+    identifier = row["trace"]["record_id"]
+    routes = reconstruct([row], {(identifier, "initial"): "reliable", (identifier, "rewritten"): "reliable"})
+    assert routes["auxiliary_collection_cost"]["completion_attempts"] == 13
+    assert all(r["operational_cost"]["completion_attempts"] == 3 for r in routes["routes"]
+               if r["route"] not in {"no_repair", "always_rewrite"})
+    servers = state["servers"]
+    assert runner.run(config, output) == result
+    assert len(state["calls"]) == 14 and state["servers"] == servers
+    # Children are absent from the public anonymous packet.
+    _, _, packet, _ = quality.build_packet(output)
+    assert "subtasks" not in json.dumps(packet) and "score" not in json.dumps(packet)

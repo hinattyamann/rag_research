@@ -1,14 +1,18 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.25 — 2026年10月21日 8B意味診断の不通過・裸拒否の任意一回書換えを記録
+## Version 7.26 — 2026年10月21日 固定文ごとの評価・全文脈/全分母と費用を実装
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.27](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.28](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
 ## 1. テーマと目的
+
+現行候補は[固定文ごとの評価](phase11_claimwise_candidate.md)。初回回答全体を非信頼文脈として保持し、全固定文を個別評価して
+元の全分母へ集約する。呼出し数と入力配置の変更を両言語で同じように扱い、費用と失敗を別に記録する。
+旧共同評価/期待Label・採用基準を保持し、新方式の実GPU意味診断はこれから。
 
 現行の次工程は[意味判定・拒否Fallbackの診断](phase11_semantic_revision.md)。使用済み英語2例の4条件を先行し、
 Critical全件一致した候補だけ日英の人工27例/54条件へ進める。採用・停止規則と最大58呼出し/候補を結果前に保存した。

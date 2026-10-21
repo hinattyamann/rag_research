@@ -47,6 +47,10 @@ def load_protocol(path, *, split="development"):
 def validate_task_contract(config, prompts):
     """Shared comparison/model-input constraints, independent of dataset paths and stage."""
     trials = config["trials"]
+    mode = config.get("verification_mode", "joint")
+    require(mode in {"joint", "claimwise-v1"}, "Unknown verification mode")
+    require(mode == "joint" or (config["purpose"].startswith("phase11-bilingual-") and
+            prompts.get("judge_payload") is None), "Claimwise candidate needs fixed full answer context")
     for field in ("repeated_prompt_result_cache", "regenerate_claims_per_trial",
                   "regenerate_answer_per_trial", "repack_or_truncate_per_trial"):
         require(trials[field] is False, f"Comparison changes inputs or skips calls: {field}")
@@ -88,7 +92,9 @@ def validate_task_contract(config, prompts):
         require(spec["input_fields"] == expected_fields, "Unexpected model input fields")
         require(isinstance(spec["system"], str) and bool(spec["system"].strip()), "Empty system")
         task_config(config, task)
-    require(prompts.get("judge_layout") in {None, "premise_then_claims"}, "Unknown Judge input layout")
+    require(prompts.get("judge_layout") in {None, "premise_then_claims", "draft_sources_target"}, "Unknown Judge input layout")
+    require(prompts.get("judge_layout") != "draft_sources_target" or mode == "claimwise-v1",
+            "Draft/source/target layout is limited to the claimwise candidate")
     require(prompts.get("judge_payload") in {None, "fixed_claims_only"}, "Unknown Judge payload")
     require(prompts.get("judge_checks") in {None, "conflict_then_complete_v1"}, "Unknown Judge checks")
     require(prompts.get("rewrite_format") in {None, "checked_json_v1", "thinking_checked_json_v2"}, "Unknown rewrite format")
@@ -117,6 +123,8 @@ def build_messages(prompts, task, payload):
         validate_documents(payload["documents"])
     if task == "verify_claims" and prompts.get("judge_layout") == "premise_then_claims":
         payload = {k: payload[k] for k in ("documents", "question", "answer", "claims")}
+    if task == "verify_claims" and prompts.get("judge_layout") == "draft_sources_target":
+        payload = {k: payload[k] for k in ("answer", "documents", "question", "claims")}
     if task == "verify_claims" and prompts.get("judge_payload") == "fixed_claims_only":
         payload = {k: payload[k] for k in ("documents", "question", "claims")}
     if task == "rewrite_answer" and prompts.get("rewrite_layout") == "draft_sources_question":

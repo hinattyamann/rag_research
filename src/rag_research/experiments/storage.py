@@ -2,6 +2,7 @@
 
 import json
 import os
+import re
 from contextlib import contextmanager
 
 from rag_research.experiments.frozen_trace import digest, require
@@ -32,6 +33,16 @@ def checkpoint(path, value):
 def verify_checkpoint(value):
     body = {k: v for k, v in value.items() if k != "result_sha256"}
     require(value.get("result_sha256") == digest(body), "Checkpoint hash mismatch")
+
+
+def next_session(directory):
+    """An interrupted server may leave a log without a session report; preserve both."""
+    numbers = []
+    for path in directory.iterdir():
+        match = re.fullmatch(r"(?:server-(\d+)\.log|session-(\d+)\.json)", path.name)
+        if match:
+            numbers.append(int(match.group(1) or match.group(2)))
+    return max(numbers, default=0) + 1
 
 
 @contextmanager

@@ -7,8 +7,9 @@ from pathlib import Path
 import yaml
 
 from rag_research.evaluation.claims import validate_claims
+from rag_research.evaluation.claimwise import atomic_steps, verify_once
+from rag_research.evaluation.claimwise import pending as verification_pending
 from rag_research.evaluation.sentence_claims import extract_sentence_units
-from rag_research.evaluation.tasks import execute_task
 from rag_research.experiments.bilingual_runner import immutable
 from rag_research.experiments.frozen_trace import (
     assert_same_evidence,
@@ -17,7 +18,13 @@ from rag_research.experiments.frozen_trace import (
     validate_documents,
 )
 from rag_research.experiments.protocol import ROOT, task_config, validate_task_contract
-from rag_research.experiments.storage import read_json, run_lock, verify_checkpoint, write_json
+from rag_research.experiments.storage import (
+    next_session,
+    read_json,
+    run_lock,
+    verify_checkpoint,
+    write_json,
+)
 from rag_research.generation.auxiliary import auxiliary_identity, auxiliary_server_kwargs
 from rag_research.generation.cuda_runtime import execution_identity
 from rag_research.generation.local import LocalServer
@@ -43,8 +50,11 @@ def load_config(path):
             "critical_all_exact": True, "synthetic_min_accuracy_per_language": .9,
             "synthetic_max_false_support": 0}, "Preserve preregistered diagnostic criteria")
     cases = plan["cases"]
+    mode = config.get("verification_mode", "joint")
+    require(plan.get("verification_mode", "joint") == mode, "Diagnostic plan verification mode differs")
+    expected_budget = 2 * sum(len(c["claims"]) if mode == "claimwise-v1" else 1 for c in cases)
     require(cases and len({c["id"] for c in cases}) == len(cases) and
-            plan["max_completion_attempts"] == 2 * len(cases), "Invalid case IDs/call budget")
+            plan["max_completion_attempts"] == expected_budget, "Invalid case IDs/call budget")
     require(any(c["critical_claim_ids"] for c in cases) and
             {c["language"] for c in cases if c["scope"] == "synthetic_development"} == {"en", "ja"},
             "Known critical and both-language synthetic cases required")
@@ -150,20 +160,29 @@ def run(config_path, output):
         for task in cached.values():
             if task["status"] != "started":
                 verify_checkpoint(task)
-        health_stopped = any(t["status"] in {"error", "started"} for t in cached.values())
-        critical_pending = any(key not in cached for c, _, key in selected if c["critical_claim_ids"])
-        expanded = assess(plan, cached)["critical_passed"]
-        pending = not health_stopped and (critical_pending or (expanded and len(cached) < len(selected)))
-        results = {}
+        mode = config.get("verification_mode", "joint")
 
         def attempt(client, case, order, key):
             documents = case["documents"] if order == "original" else list(reversed(case["documents"]))
             assert_same_evidence(case["documents"], documents)
-            return execute_task(client, task_config(config, "verify_claims"), prompts[case["language"]], "verify_claims",
+            return verify_once(client, task_config(config, "verify_claims"), prompts[case["language"]],
                                 {"question": case["question"], "answer": case["answer"],
                                  "claims": case["claims"], "documents": documents}, tasks / (key + ".json"),
                                 {"manifest_sha256": digest(manifest), "case_id": case["id"], "order": order},
-                                constraints=config["output_constraints"])
+                                constraints=config["output_constraints"], mode=mode)
+
+        # A final child may be durable even if the aggregate replacement was interrupted.
+        for case, order, key in selected:
+            if (key in cached and cached[key]["status"] == "partial" and
+                    not verification_pending(tasks / (key + ".json"), mode)):
+                cached[key] = attempt(None, case, order, key)
+        health_stopped = any(t["status"] in {"error", "started"} for t in cached.values())
+        critical_pending = any(verification_pending(tasks / (key + ".json"), mode)
+                               for c, _, key in selected if c["critical_claim_ids"])
+        expanded = assess(plan, cached)["critical_passed"]
+        pending = not health_stopped and (critical_pending or (expanded and any(
+                  verification_pending(tasks / (key + ".json"), mode) for _, _, key in selected)))
+        results = {}
 
         def collect(client):
             for case, order, key in selected:
@@ -175,7 +194,7 @@ def run(config_path, output):
                 if task["status"] == "error":
                     break
 
-        session = len(list(output.glob("session-*.json"))) + 1
+        session = next_session(output)
         if pending:
             with LocalServer(task_config(config, "verify_claims"), output / f"server-{session}.log",
                              **auxiliary_server_kwargs(config)) as server:
@@ -191,7 +210,8 @@ def run(config_path, output):
         report = {"schema_version": 1, "purpose": config["purpose"], "manifest_sha256": digest(manifest), **gate,
                   "planned_conditions": len(selected), "completed_conditions": len(results),
                   "not_attempted_ids": [key for _, _, key in selected if key not in results],
-                  "completion_attempts_recorded": sum(bool(t["completion_attempted"]) for t in results.values()),
+                  "planned_completion_limit": plan["max_completion_attempts"],
+                  "completion_attempts_recorded": sum(bool(t["completion_attempted"]) for t in atomic_steps(results.values())),
                   "cost_incomplete": any(t["cost_incomplete"] for t in results.values()),
                   "input_tokens": sum(t["input_tokens"] or 0 for t in results.values()),
                   "output_tokens": sum(t["output_tokens"] or 0 for t in results.values()),

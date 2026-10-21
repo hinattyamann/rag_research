@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.27 — 2026年10月21日 8B意味結果・裸拒否の任意書換えと再構成を検証
+## Version 8.28 — 2026年10月21日 固定文評価・元ID/全分母/実Callと部分再開を実装
 
-[研究計画 Version 7.25](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.26](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -28,6 +28,11 @@ Phase 7の入力検証CLIは引き続きCompletion 0回である。
 第11節の未実装事項をPhase 11で終え、両言語の条件を固定してからPhase 12へ進む。
 
 ## 1. 既存実装と保存する境界
+
+現行の任意候補`verification_mode: claimwise-v1`は`evaluation/claimwise.py`で個別Journalと集計を共用する。
+原固定文をローカルc1へ写して元IDへ戻し、全分母・失敗時null・実Call/Token/時間をRawから検証する。
+完了単位は再呼出しせず、未集計/結果不明/部分再開と既存Server Logを保全する。旧Configはjointのまま。
+Config v4/Plan v2の最大70 Callを事前検証した。実GPUの意味診断は次工程。
 
 現行の次工程は[意味診断の事前計画](phase11_semantic_revision.md)。`semantic_diagnostics.py`は旧Trace/Expectedの一致と
 共通Task契約を確認し、既知Critical4条件の全一致後だけ人工54条件へ進む。Source/Model/Runtime/全CodeをHashへ固定し、
