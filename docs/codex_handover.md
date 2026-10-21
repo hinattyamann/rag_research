@@ -1,6 +1,6 @@
 # 別チャットから再開するための引継ぎ
 
-最新: 既知15問回帰v1は21 Call/5条件目の読解形式失敗で停止。旧結果は保存済み。境界v7の人工検証も空白反復で停止。次は[空白上限付きv8の人工Runtime検証と再診断](phase11_json_boundary.md)。現在Model実験は停止中。
+最新: 既知15問回帰v1は21 Call/5条件目の読解形式失敗で停止。旧結果は保存済み。境界v7の人工検証失敗を保持し、v8は人工Runtime厳密5条件/全128入力Preflightを通過。[固定43ccf05のv8日英意味診断](phase11_json_boundary.md)を専用Worktreeで実行中。Tool session27879を観測し、同じRunを重複起動しない。
 
 更新日: 2026年10月21日。Phase 10実装・結果の基点Commitは `60c4eec`、
 Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
@@ -118,7 +118,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.33](rag_research_plan.md)・[実装計画8.35](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.34](rag_research_plan.md)・[実装計画8.36](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v8-semantic-launch-conditions-only-not-completion",
+  "created_at_utc": "2026-10-21T12:29:05.888950+00:00",
+  "fixed_commit": "43ccf05930247b53209113265883686546f6e9e2",
+  "worktree": ".tools/worktrees/phase11-json-boundary-v2",
+  "run": "data/runs/semantic_diagnostics/phase11-8b-source-reading-v8",
+  "ephemeral_tool_session": 27879,
+  "preflight_inputs": 128,
+  "preflight_completions": 0,
+  "preflight_max_input_tokens": 3874,
+  "preflight_full_gpu_offload": true,
+  "gpu_memory_single_observation": "7070 MiB, 8151 MiB",
+  "artificial_strict_cases_passed": 5,
+  "planned_completion_limit": 128,
+  "critical_conditions_first": 4,
+  "retry": 0,
+  "semantic_results_not_yet_audited": true,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v8/plan.json": {
+      "sha256": "2d30a9174bc05cffe9995198757311b13f38d8e6a45cbf3a307135d112878c30",
+      "bytes": 1192
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v8/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v8/report.json": {
+      "sha256": "365969c31258b33be7932fed79936a360adf44ded2d54ab027f44862fac37801",
+      "bytes": 41013
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v8/server.log": {
+      "sha256": "13f501f039dbfb0b9e01f2d600967ebd3c9d384cbfb27db5a494a5561842fbd6",
+      "bytes": 16497
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/preparation_failure_v8.json": {
+      "sha256": "58c29daedb403afd3f3a25763d14b286cf5113b151d7f30416dcd56c4c4950e3",
+      "bytes": 507
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v8/launch.json": {
+      "sha256": "f5eafb8fbe29a9782baf767c58e5590b88d5a0c94376ee37931d691cc89d8d4c",
+      "bytes": 655,
+      "fixed_worktree_only": true
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v8/preflight_receipt.json": {
+      "sha256": "ad6ad86947d878238c5ea654c96f4a5215d2e63d6a28919e8c2966f5ef8d4ad2",
+      "bytes": 467,
+      "fixed_worktree_only": true
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

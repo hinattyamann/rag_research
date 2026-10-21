@@ -65,3 +65,22 @@ v3の監査は実Tokenizerの終了IDと保存Token一覧を独立照合した�
 違うID/保存漏れ/Tokenizerなし/Grammar差を拒否する。Native表示をWORD型へ書き換えない。
 人工検証v1はこの照合へ進む前の出力打切りで不通過であり、事後に通過へ変更しない。
 全510 Test/Ruff成功。実GPUのv8と、通過後の同じ128 Call意味診断はこれからである。
+
+## 人工検証v2の通過と意味診断v8の開始
+
+固定43ccf05の別Worktreeで同じ6 Callを完了した。旧制約は配列[0]で不通過を再現し、
+新制約の厳密5条件はすべて正常終了/Schema一致・Native設定/推論予算監査に通過した。
+入力278/出力967 Token、生成秒和13.423958秒。83 Source Hash/全Native応答・最終Object/費用を照合し、
+原本10 File不変・監査追加Call/Server0、同一Byte複製と監査を含む11 Artifactを
+`phase11_json_boundary_result_v2.json`へ保存した。これは形式検証であり、意味採用ではない。
+
+次にv8の全128予定入力をCompletion0で確認し、最大3874 Token・中間4096/判定3072予約込み予算内、
+CUDA全層Offloadで通過した。GPU7070/8151 MiBは一点観測。
+初回は旧AI監査JSONの未配置を設定読込みで検出したため、Server/生成0の準備失敗を保存し、
+原本Hashを確認して複製後、まだ開始されていなかったPreflightを実施した。
+
+同じCommitの`phase11-json-boundary-v2` Worktreeから
+`data/runs/semantic_diagnostics/phase11-8b-source-reading-v8`を実行開始した。
+生成0 Receiptと人工検証Report Hashを先に保存した。最初の既知Critical4条件が全一致した場合だけ人工54条件へ進む。
+最大128 Call/Retry0、同じExpected/意味基準・Model/Prompt/予算/Seedを維持し、全結果/採用は未確定。
+Launch Manifestは`phase11_source_reading_launch_v8.json`。実走中のCode/Configを更新しない。
