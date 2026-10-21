@@ -14,7 +14,11 @@ from pathlib import Path
 import psutil
 
 from rag_research.generation.artifacts import verify_model, verify_runtime
-from rag_research.generation.auxiliary_config import FINAL_JSON_TRIGGER_PATTERN
+from rag_research.generation.auxiliary_config import (
+    CHATML_THINK_SUFFIX,
+    FINAL_JSON_TRIGGER_PATTERN,
+    THINK_PREFILL,
+)
 from rag_research.generation.cuda_runtime import execution_kwargs, verify_cuda_runtime
 from rag_research.generation.json_grammar import closing_tag_grammar
 
@@ -59,6 +63,16 @@ class LlamaClient:
 
     def complete(self, prompt_tokens, config, *, json_schema=None):
         # Passing exact counted IDs avoids hidden BOS insertion or retokenization.
+        prefill = None
+        if getattr(config, "reasoning_prefill_mode", "none") == "chatml_think_suffix_v1":
+            rendered = self.detokenize(prompt_tokens)
+            suffix_tokens = self.tokenize(THINK_PREFILL, special=True)
+            if (not isinstance(rendered, str) or not rendered.endswith(CHATML_THINK_SUFFIX)
+                    or not suffix_tokens or list(prompt_tokens[-len(suffix_tokens):]) != suffix_tokens):
+                raise GenerationError("Reasoning prefill differs from the actual ChatML prompt suffix")
+            # Native /completion needs the already present assistant suffix to
+            # initialize its budget sampler. It does not append prompt tokens.
+            prefill = THINK_PREFILL
         self.completion_attempts += 1
         payload = {
                 "prompt": prompt_tokens,
@@ -73,6 +87,8 @@ class LlamaClient:
         }
         if json_schema is not None:
             payload["json_schema"] = json_schema
+        if prefill is not None:
+            payload["generation_prompt"] = prefill
         if hasattr(config, "top_k"):
             payload.update({k: getattr(config, k) for k in
                             ("top_k", "top_p", "min_p", "presence_penalty", "repeat_last_n")})

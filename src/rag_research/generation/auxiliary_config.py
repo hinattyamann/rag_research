@@ -6,6 +6,8 @@ from dataclasses import asdict, dataclass
 from rag_research.generation.config import GenerationConfig
 
 FINAL_JSON_TRIGGER_PATTERN = r"</think>\s*(\{)"
+CHATML_THINK_SUFFIX = "<|im_start|>assistant\n<think>\n"
+THINK_PREFILL = "<think>\n"
 
 
 @dataclass(frozen=True)
@@ -18,6 +20,7 @@ class AuxiliaryGenerationConfig(GenerationConfig):
     reasoning_budget_tokens: int = -1
     final_json_grammar: bool = False
     final_json_grammar_mode: str = "brace_trigger_v1"
+    reasoning_prefill_mode: str = "none"
 
     def __post_init__(self):
         values = asdict(self)
@@ -40,3 +43,7 @@ class AuxiliaryGenerationConfig(GenerationConfig):
             raise ValueError("Final JSON grammar setting must be boolean")
         if self.final_json_grammar_mode not in {"brace_trigger_v1", "closing_tag_root_v2", "closing_tag_root_v3"}:
             raise ValueError("Unknown final JSON grammar mode")
+        if self.reasoning_prefill_mode not in {"none", "chatml_think_suffix_v1"}:
+            raise ValueError("Unknown reasoning prefill mode")
+        if self.reasoning_prefill_mode != "none" and self.reasoning_budget_tokens < 0:
+            raise ValueError("Reasoning prefill requires an explicit token budget")

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-qwen35-9b-v10-before-corrected-prefill-generation",
+  "created_at_utc": "2026-10-21T14:30:49.229098+00:00",
+  "parent_preregistration": "data/manifests/phase11_qwen35_9b_preregistration_v1.json",
+  "parent_sha256": "2c5474fd344a56be59498960961c5c588fe9d4ee180c666775492d80abe63163",
+  "failed_parent_result": "data/manifests/phase11_qwen35_9b_format_result_v1.json",
+  "failed_parent_result_sha256": "3322340f06dab23107763465e06ccbdfc66f8e7760a9d3e84525a085e6cb2386",
+  "candidate_config": "configs/phase11_semantic_candidate_v10.yaml",
+  "candidate_config_sha256": "60cd55f91c6d896ebe98fbdef2fc2b5e83fdfe92938c8a6aa8453768ecced7f0",
+  "changes_from_v9": [
+    "study_version",
+    "sampling.reasoning_prefill_mode=chatml_think_suffix_v1"
+  ],
+  "model_runtime_prompts_inputs_expected_budgets_sampler_gates_unchanged": true,
+  "native_prefill_input_checks": [
+    "detokenized exact ChatML assistant think suffix",
+    "independently tokenized think-newline equals actual prompt suffix IDs"
+  ],
+  "native_prefill_response_checks": [
+    "exact generation_prompt",
+    "no generated reopening tag",
+    "one generated closing tag",
+    "actual generated reasoning token bound"
+  ],
+  "preflight_completions": 0,
+  "artificial_format_completion_limit": 6,
+  "artificial_format_output_tokens": 512,
+  "artificial_format_reasoning_tokens": 128,
+  "semantic_diagnostic_completion_limit": 128,
+  "known_regression_limit_if_prerequisite_passes": 114,
+  "maximum_new_screening_completions": 248,
+  "prior_failed_v9_completions": 2,
+  "maximum_cumulative_9b_completions": 250,
+  "automatic_retries": 0,
+  "completion_attempts_at_preregistration": 0,
+  "language_parameters_identical": true,
+  "strict_failure_stops": true,
+  "main_development_before_all_gates": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

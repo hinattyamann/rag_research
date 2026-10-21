@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+最新追記: 固定4b94794の9B v9は生成0 Preflight128入力/最大3795 Token・全層CUDA（VRAM6266/8151 MiB一点）に通過。人工形式検証は2 Call/入力98・出力1024 Token、推論未終了/limitで停止し残4未試行。session91910は終了、意味診断は0 Call。原本6 File/87 Source不変・追加Call/Server0を確認して全失敗を保存した。入力末尾の既存<think>をNative generation_promptへ申告する任意候補v10を追加、全555 Test/Ruff成功。Model/Prompt/Expected/全基準/予算はv9と同じ。次は新固定Commit/Worktreeで生成0→同じ人工6 Call→通過時だけ同じ意味診断/旧15 QA回帰。旧Runを再生成せず、主20問/Calibrationを先に使わない。詳細は[9B候補記録](phase11_qwen35_candidate.md)。
+
 最新: 既知15問回帰v1は21 Call/5条件目の読解形式失敗で停止。旧結果は保存済み。境界v7の人工検証失敗を保持し、v8は人工Runtime厳密5条件/全128入力Preflightを通過。[固定43ccf05のv8日英意味診断](phase11_json_boundary.md)は全128 Call/既知4一致・人工英語24/24/日本語28/30・誤支持0で通過。再開251 File不変/追加0を監査済み。session27879/63610は終了。全259 Artifact/意味監査を正規保存済み。固定c9bc924の回帰v2は54 Call/12 Criticalで誤支持6・8一致により不通過、他18条件未試行。session76888/74140は終了、再開85 File不変/追加0を監査・全92 Artifact保存済み。次はQwen3.5-9B v9の生成0資源/全128入力確認→人工6 Call形式検証→同じ日英意味診断。重み取得/Hash確認済み、まだ候補推論0。旧Runを再生成しない。
 
 更新日: 2026年10月21日。Phase 10実装・結果の基点Commitは `60c4eec`、

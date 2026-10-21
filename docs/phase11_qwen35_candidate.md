@@ -1,4 +1,4 @@
-# Phase 11 Qwen3.5-9Bの別候補v9
+# Phase 11 Qwen3.5-9Bの別候補v9と推論Prefill候補v10
 
 2026年10月21日。8B v8の既知15 QA回帰v2は12 Critical条件中8一致・誤支持6で不通過。
 暖鋒の通過中/後の表対応、語源の不確実性、別々の逸話をつなぐ関係の誤支持が残った。
@@ -13,7 +13,7 @@
 Apache-2.0、Q4_K_M、5680522464 Byte、SHA256
 `03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8`をAPIで再確認し、
 取得後の全Byte Hashも一致した。取得の記録は`phase11-qwen35-9b-v2/acquisition.json`。
-この時点で候補Modelの生成/Runtime資源検証は未実施である。
+取得直後は生成/Runtime資源検証が未実施だった。固定4b94794の検証結果は下記へ追記する。
 
 読み手の草稿なし読解→固定文ごとの判定という方法と全原文/固定文/Expectedを保持する。
 以前の代替調査にはJointの元PromptからModelだけを試す案もあったが、
@@ -45,3 +45,45 @@ v8を参照した主実行Policy v1は履歴として残し、新Model採用時�
 対象20問・閾値0.7・全分母・意味採用/封印/欠測/統計は結果に合わせて変更しない。
 関連ファイルは`phase11_semantic_candidate_v9.yaml`、`phase11_semantic_prompts_{en,ja}_v7.yaml`、
 `phase11_qwen35_9b_preregistration_v1.json`。重み取得で意味採用やGate 11通過にしない。
+
+## v9の資源通過と人工形式検証の不通過
+
+固定4b94794の専用Worktreeで全128入力のCompletion0 Preflightに通過した。
+最大3795 Token、読解/判定予約込みで入力超過0、CUDA全層Offload。
+VRAM6266/8151 MiBは一点観測であり、生成時のPeakではない。
+
+同じ人工形式検証は2/6 Callで停止した。旧/厳密配列指示とも512 Tokenすべてが
+推論となり、終了Tagを生成せずstop_type=limitに達した。入力98/出力1024 Token、
+生成秒和16.256868秒、残4条件未試行。厳密制約の通過とせず、意味診断/既知回帰は0 Call。
+原本6 File/87 Source Hash不変、監査で追加Call/Server0を確認して同一Byte保存した。
+Preflight/一次資料/監査を`phase11_qwen35_9b_format_result_v1.json`へ結ぶ。
+
+実入力の末尾は`<|im_start|>assistant\n<think>\n`で、開始Tagが既に入力にある。
+一方、直接`/completion`要求はNativeの`generation_prompt`を渡していなかった。
+固定Runtimeの[common.h](https://github.com/ggml-org/llama.cpp/blob/50569eb87df530daff11afda229ceb9ab8e6cae8/common/common.h)と
+[sampling.cpp](https://github.com/ggml-org/llama.cpp/blob/50569eb87df530daff11afda229ceb9ab8e6cae8/common/sampling.cpp)は、
+この情報から推論Budgetの初期状態を進める。
+[Schema](https://github.com/ggml-org/llama.cpp/blob/50569eb87df530daff11afda229ceb9ab8e6cae8/tools/server/server-schema.cpp)も
+同じ値をSamplerへ渡す。これは不通過の原因仮説で、修正版の実生成で確認する。
+一次資料4 Fileを固定Commit/Hash付きで保存した。旧8Bの結果は元Worktreeのまま保持する。
+
+## v10の事前条件と実装
+
+`phase11_semantic_candidate_v10.yaml`はv9からStudy Versionと
+`sampling.reasoning_prefill_mode: chatml_think_suffix_v1`だけを変える。
+Model/Runtime/Prompt/全原文/Expected/予算/Sampler/Seed/Schema/採用基準を保持する。
+全入力Tokenを変更せず、Nativeへ既存の`<think>\n`を申告する別候補である。
+
+申告前に実際の入力TokenをDetokenizeし、ChatML assistantの正確な末尾と、
+別途Tokenizeした開始Tag/改行の末尾Token列が両方一致することを要求する。
+不一致はCompletion前に停止する。Native応答の`generation_prompt`一致、生成内の
+開始Tag再開なし/終了Tag一つ、実推論Token上限も監査する。
+旧Configの既定値はnoneで、Baseline/旧Auxiliaryに追加要求やPrefillを有効にしない。
+
+全555 Test（ホスト8.33秒）/Ruff成功。日英入力Token不変、末尾/Token不一致の
+Completion0停止、Native申告欠落/変造・再開始/未終了/上限無視の拒否、旧要求を検証した。
+v10の実GPU確認はこの記録時点で未実施。事前Manifestは`phase11_qwen35_9b_preregistration_v2.json`。
+新しい固定Worktreeで生成0 Preflight→同じ人工6 Call/出力512・推論128→
+同じ意味58条件/128 Call→通過時だけ旧15 QA/114 Callの順に検証する。
+新候補最大248 Call、過去v9の2 Callと合計最大250。自動Retry0、失敗時停止を維持する。
+失敗したv9を再開/合格へ書換えず、主20問/未使用Calibration/Evaluationへ先に進まない。

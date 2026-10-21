@@ -86,6 +86,10 @@ def validate_task_contract(config, prompts):
     require(config.get("sampling", {}).get("final_json_grammar_mode", "brace_trigger_v1") not in {"closing_tag_root_v2", "closing_tag_root_v3"} or
             (config.get("output_constraints") == "thinking_json_passage_ids_v2" and
              config.get("sampling", {}).get("final_json_grammar") is True), "Closing-tag grammar needs the thinking candidate")
+    require(config.get("sampling", {}).get("reasoning_prefill_mode", "none") == "none" or
+            (config.get("output_constraints") == "thinking_json_passage_ids_v2" and
+             config.get("sampling", {}).get("final_json_grammar") is True),
+            "Reasoning prefill needs the thinking candidate")
     tasks = set(FIELDS) if mode == "source-reading-v1" else set(FIELDS) - {"read_sources"}
     require(prompts["schema_version"] == 1 and set(prompts["tasks"]) == tasks,
             "Unexpected prompt schema/tasks")

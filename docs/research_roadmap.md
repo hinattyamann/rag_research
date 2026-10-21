@@ -7,7 +7,7 @@
 
 ## 1. 今どこまで終わっているか
 
-**Phase 1〜10の基盤と、Phase 11の日本語Source/分割/全文Corpus・日英Index・共通RAGの既知接続を完了。v6は既知/日英人工の意味診断基準を通過した。使用済み15 QAの回帰v1は読解の形式失敗で停止。境界候補v7の失敗を保持し、空白上限付きv8は人工Runtime厳密5条件を通過。固定v8も日英人工診断を通過し、全Raw/意味/実費・再開追加0を正規保存した。既知回帰v2は12 Critical中8一致・誤支持6で不通過。全失敗を保持し、別9B候補v9を事前固定/取得済みで資源検証へ進む。日英主Development/未使用Calibration、規模/本実験条件、拡張Validator/最終凍結は未了。Gate 11未通過、Phase 12未実施。**
+**Phase 1〜10の基盤と、Phase 11の日本語Source/分割/全文Corpus・日英Index・共通RAGの既知接続を完了。v8の人工形式/日英意味診断は通過したが、既知15 QA回帰v2は誤支持6で不通過。別9B v9は生成0の資源確認に通過し、人工形式2 Callで推論未終了/出力上限に達した。全失敗/未試行を保持し、開始TagのPrefillを実入力とNative応答で照合するv10を追加、全555 Test/Ruff成功。次は固定GPUの同じ人工検証。日英主Development/未使用Calibration、規模/本実験条件、拡張Validator/最終凍結は未了。Gate 11未通過、Phase 12未実施。**
 
 2026年10月21日、英語CLAPNQに近い別の日本語Datasetを追加し、日英で順序感度と判断・品質・費用を
 比較する方針を採用した。[日英比較の拡張方針](english_japanese_expansion.md)に従い、

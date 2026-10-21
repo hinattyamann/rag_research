@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-qwen35-9b-v9-resource-passed-format-failed-no-semantic-adoption",
+  "fixed_commit": "4b9479465455b44bbe5e7d018b092fd199635b36",
+  "created_at_utc": "2026-10-21T14:30:49.224426+00:00",
+  "candidate_config": "configs/phase11_semantic_candidate_v9.yaml",
+  "candidate_config_sha256": "71a8a1119860c3910752c59a630c1cd4e3252965223036a347028265466964aa",
+  "preflight": {
+    "status": "passed",
+    "inputs": 128,
+    "max_input_tokens": 3795,
+    "completion_attempts": 0,
+    "full_gpu_offload": true,
+    "gpu_memory_single_observation": "6266 MiB, 8151 MiB"
+  },
+  "format_report": {
+    "purpose": "phase11-artificial-final-json-boundary-probe",
+    "status": "failed",
+    "completion_limit": 6,
+    "completion_attempts": 2,
+    "cases": [
+      {
+        "id": "legacy-array",
+        "status": "failed",
+        "input_tokens": 49,
+        "output_tokens": 512,
+        "error": "ValueError: Probe truncated or did not finish"
+      },
+      {
+        "id": "strict-array",
+        "status": "failed",
+        "input_tokens": 49,
+        "output_tokens": 512,
+        "error": "ValueError: Probe truncated or did not finish"
+      }
+    ],
+    "phase12_allowed": false,
+    "error": "ValueError: Probe truncated or did not finish",
+    "cost_incomplete": false,
+    "input_tokens": 98,
+    "output_tokens": 1024,
+    "not_attempted_ids": [
+      "strict-prose-fence",
+      "strict-fixed-ids",
+      "strict-unicode-escape",
+      "strict-rewrite-bounds"
+    ]
+  },
+  "audit": {
+    "created_at_utc": "2026-10-21T14:26:02.853779+00:00",
+    "fixed_commit": "4b9479465455b44bbe5e7d018b092fd199635b36",
+    "source_hashes_verified": 87,
+    "original_files_unchanged": 6,
+    "cases": [
+      {
+        "case": "legacy-array",
+        "input_tokens": 49,
+        "output_tokens": 512,
+        "generation_seconds": 8.153673346998403,
+        "stop_type": "limit",
+        "closing_reasoning_token_generated": false,
+        "rendered_prompt_contains_prefilled_opening_tag": true,
+        "native_generation_prompt": ""
+      },
+      {
+        "case": "strict-array",
+        "input_tokens": 49,
+        "output_tokens": 512,
+        "generation_seconds": 8.103194278002775,
+        "stop_type": "limit",
+        "closing_reasoning_token_generated": false,
+        "rendered_prompt_contains_prefilled_opening_tag": true,
+        "native_generation_prompt": ""
+      }
+    ],
+    "new_calls_in_audit": 0,
+    "new_servers_in_audit": 0,
+    "semantic_diagnostic_calls": 0,
+    "known_regression_calls": 0,
+    "not_attempted_ids": [
+      "strict-prose-fence",
+      "strict-fixed-ids",
+      "strict-unicode-escape",
+      "strict-rewrite-bounds"
+    ],
+    "hypothesis": "The raw completion request omitted generation_prompt although the model template already prefills <think>. Native sampling source consumes generation_prompt to initialize the reasoning budget. Candidate-specific correction requires a fresh registered run; this failed run stays failed.",
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "generation_seconds": 16.256867625001178,
+  "semantic_diagnostic_calls": 0,
+  "known_regression_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "artifacts": {
+    "data/runs/runtime_screening/phase11-qwen35-9b-format-v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-format-v1/audit_check.json": {
+      "sha256": "8481f34c982d49795a38629f937c084d8c3734e0cf035b52f204a98f39e7c1c5",
+      "bytes": 1462
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-format-v1/legacy-array.json": {
+      "sha256": "588f5efcfbc3fda1a64e03b0de9a4fa64cacdc0a976afd71752def7cc4166e8b",
+      "bytes": 13162
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-format-v1/plan.json": {
+      "sha256": "d2e25fe103154261aa446ad006112083641274776bdd1b78c9e6a6c31f1f12a2",
+      "bytes": 16487
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-format-v1/primary_sources/common/common.h": {
+      "sha256": "17645669982bde37d4ce632c7e600c6957e214e1517ed26193253907573f6681",
+      "bytes": 55762
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-format-v1/primary_sources/common/reasoning-budget.h": {
+      "sha256": "bef856179c9e76b779139e6fd712199aab2efd3e49facbe8ed6e8691dee69cd8",
+      "bytes": 2379
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-format-v1/primary_sources/common/sampling.cpp": {
+      "sha256": "a630f7b83938fcdc1c615b53efa426b9f8cb3aa6188134e0ce29fa16aa67301f",
+      "bytes": 39692
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-format-v1/primary_sources/tools/server/server-schema.cpp": {
+      "sha256": "0bab859883207554fb724774892e8756ec0c956252b7653424756a0ee582efa8",
+      "bytes": 33040
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-format-v1/report.json": {
+      "sha256": "5a45049de611992a401dc7a65fbe7d09cb5a973f11ba1226fe99300207be1333",
+      "bytes": 824
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-format-v1/server.log": {
+      "sha256": "4a7233220ea8ae7053e5fe517112a2c259f2ba659f18a1a491a3205fea02ec86",
+      "bytes": 24106
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-format-v1/strict-array.json": {
+      "sha256": "358965360e90035240ad0cdc6cff03ee3464175b15f02403b5de334d5b7b3e16",
+      "bytes": 13260
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v9/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v9/preflight_v1/plan.json": {
+      "sha256": "0848bfc81910097eb2b53fb34d1229fb6d756136ccd9e3529af36520035e3b5e",
+      "bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v9/preflight_v1/report.json": {
+      "sha256": "013c53b79d1b335d3c1812097b3bd15ecdd12bf4dd10697e9f4a56f83b9330cf",
+      "bytes": 41050
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v9/preflight_v1/server.log": {
+      "sha256": "6df152b4723a377e22aaa346ec785a1675d79269fa634aa3f66e720859c1c21d",
+      "bytes": 19143
+    }
+  }
+}

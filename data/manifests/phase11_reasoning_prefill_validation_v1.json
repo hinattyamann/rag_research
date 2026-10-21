@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-prefilled-thinking-implementation-unit-regression-gpu-pending",
+  "created_at_utc": "2026-10-21T14:30:49.334655+00:00",
+  "pytest": {
+    "command": "uv run pytest -q (host, local uv cache)",
+    "passed": 555,
+    "seconds": 8.33
+  },
+  "ruff": {
+    "command": "uv run ruff check .",
+    "passed": true
+  },
+  "real_task_contract_languages": [
+    "en",
+    "ja"
+  ],
+  "candidate_config_diff_verified": true,
+  "artifacts": {
+    "src/rag_research/generation/auxiliary_config.py": {
+      "sha256": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+      "bytes": 2488
+    },
+    "src/rag_research/generation/local.py": {
+      "sha256": "271494fa62fa30f40f73e43ff1f2e9de3c5b801cd2baab83d9adc5eb7c7d3feb",
+      "bytes": 12431
+    },
+    "src/rag_research/evaluation/reasoning_budget.py": {
+      "sha256": "f9f933dd20b73e51c15aae87c43dc5e50e22b8c4624f9857c2cb13029b6d91ec",
+      "bytes": 2024
+    },
+    "src/rag_research/experiments/protocol.py": {
+      "sha256": "3ca63d0688f9d7e7715a0dfa81733c84b7cfc512889aac98e3f43787a2ae92c2",
+      "bytes": 10486
+    },
+    "tests/test_reasoning_prefill.py": {
+      "sha256": "2e726999ef396e59bdb29321996161297ac3e4a92f1098507453ee344dff283c",
+      "bytes": 4659
+    },
+    "configs/phase11_semantic_candidate_v10.yaml": {
+      "sha256": "60cd55f91c6d896ebe98fbdef2fc2b5e83fdfe92938c8a6aa8453768ecced7f0",
+      "bytes": 2233
+    }
+  },
+  "gpu_format_test_completed": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
