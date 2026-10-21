@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-known15-direct-v3-model-input-preflight-no-completions",
+  "created_at_utc": "2026-10-21T23:29:58.290166+00:00",
+  "fixed_commit": "8ea37e1e625cedd524c4ab2d5f41f2b98ad52b7d",
+  "config": "configs/phase11_known_trace_candidate_v3.yaml",
+  "config_sha256": "6d270efa781678ca0e8c7e4e549f3128215a776787595d1965e06401e3a413d0",
+  "input_conditions": 84,
+  "maximum_input_tokens": 3482,
+  "context_tokens": 24576,
+  "completion_attempts": 0,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "6558 MiB, 8151 MiB",
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v3/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v3/preflight_v1/plan.json": {
+      "sha256": "7354e573c1c0bdb69cf47be404c7b6ca898f38af777fe831d132d4407b8b3b84",
+      "bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v3/preflight_v1/report.json": {
+      "sha256": "6cc95d691def66a956090a9769f842df3645f7e0e2dff2a3ebe1d58c62f1c1b3",
+      "bytes": 35246
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v3/preflight_v1/server.log": {
+      "sha256": "29cd9840c76d4d46d8442986adadf7065fb9344eb897668c2ba2c3723be6344a",
+      "bytes": 19182
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v3/preparation_v1.json": {
+      "sha256": "516f9e5a20a0a744b45c4a124fae95edf7518e1b4cd72c2dea0f735f9dfc607c",
+      "bytes": 56858
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

@@ -45,6 +45,9 @@ Model/Runtime/Prompt/全予算/Sampler/Seedは通過v13と同じで、Study Vers
 事前Manifestは`phase11_known_trace_preregistration_v3.json`。既存9B実完了144込み累積最大228。
 
 実Config/前提Report/計画Hash・Model/Runtime/Native Core・全旧Source/Expectedの照合を生成0で確認した。
-次は新固定Checkoutで全84入力の資源確認をしてから実走する。回帰の通過はまだ確認していない。
+その後、固定8ea37e1の専用Worktreeで全84入力/生成0・最大3482 Token・Context24576/全層CUDAに通過した。
+VRAM6558/8151 MiBは一点観測。準備218 File Binding/内部相対Symlink10・前提137 File/旧Source25 Bindingと
+Preflightを含む5 Artifactを同一Byte保存し、Launchへ全Hashを結んで旧回帰v3を開始した（session93865）。
+同じ実走を観測し、重複起動しない。全結果/採用は未確定で、回帰の通過はまだ確認していない。
 全回帰の実Raw/採用基準が通る場合だけ、同じ主20問の新Policy/Configへ結ぶ。
 主/未使用Calibration/最終N・条件・拡張Validator/凍結は未了で、Phase 12は開始しない。
