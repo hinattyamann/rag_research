@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-source-missingness-and-token-corpus-preparation-not-final-freeze",
+  "recorded_at_utc": "2026-10-21T06:00:59.419574+00:00",
+  "base_commit": "9ab368d35060b3ebc90170a23ab48972d85c6673",
+  "working_source_sha256": {
+    "configs/phase11_english_token_corpus_v1.json": "b587c675c7f6c840d173221cb83104ec94743e11b73118d752d6264fdbfa453d",
+    "configs/phase11_japanese_dataset_v2.json": "73916eb2cfb9cc9e9e146966cd78d4a65a91ca1b3d1d193402e04d48f3d0b5ef",
+    "scripts/prepare_english_token_corpus.py": "680af3bd763e3281068f837af13d69ea5bdc9aa04a9db29ccca89b3412334c9e",
+    "scripts/prepare_japanese_dataset.py": "d5287593f46d9f2b870b73424c99a203a8b9e7ed7b8164ce79886fd5ffb8a7ee",
+    "src/rag_research/data/source_availability.py": "eaaa4ab5353bdc41262b01e2c814cc198eebac5f3c57cdae8d1fbb869863767a",
+    "src/rag_research/data/token_bounded_corpus.py": "e3275f37a6f6631bea13270eb54e728b0846db2c78cfed71b3e671d3feaf45a0",
+    "src/rag_research/data/japanese_dataset.py": "42baaebaf96a2cb1b75d5b611917aeca01a17ccd8818f93a031d0b8a850e4e97",
+    "tests/data/test_source_availability.py": "e06ed7a5452570b0193e456f7fcd3e31fa0a1f6d2776c8f0c6821f9560078c8f",
+    "tests/data/test_token_bounded_corpus.py": "1195d14cea2ca7a010595885b46fedef6397100f0c0aceceeda678279001cd87",
+    "tests/data/test_japanese_dataset.py": "eeab0dddcb6093e8bf1ba9858686249e426bf2e98cf9b98fa9b489c534adc220"
+  },
+  "artifacts": {
+    "data/runs/corpus_preparation/phase11-en-e5-v1/pytest.xml": "0d15db8fb7a9f214d999f837ef61fb0211cb5b68afcdae0080cb3309957d89e4",
+    "data/runs/corpus_preparation/phase11-en-e5-v1/ruff.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "data/runs/corpus_preparation/phase11-en-e5-v1/source_snapshot/configs/phase11_english_token_corpus_v1.json": "b587c675c7f6c840d173221cb83104ec94743e11b73118d752d6264fdbfa453d",
+    "data/runs/corpus_preparation/phase11-en-e5-v1/source_snapshot/configs/phase11_multilingual_embedding_v1.json": "e07b0ddd45d1ff3288b1644c16886f450ff317f051c96bc570c7805eb4d65fb5",
+    "data/runs/corpus_preparation/phase11-en-e5-v1/source_snapshot/scripts/prepare_english_token_corpus.py": "680af3bd763e3281068f837af13d69ea5bdc9aa04a9db29ccca89b3412334c9e",
+    "data/runs/corpus_preparation/phase11-en-e5-v1/source_snapshot/src/rag_research/data/japanese_passages.py": "05ab00ea2a4d6c8bf36b4afd4a21a34af66db9dee80cd6804acba418f00671bb",
+    "data/runs/corpus_preparation/phase11-en-e5-v1/source_snapshot/src/rag_research/data/token_bounded_corpus.py": "e3275f37a6f6631bea13270eb54e728b0846db2c78cfed71b3e671d3feaf45a0",
+    "data/runs/corpus_preparation/phase11-en-e5-v1/source_snapshot/src/rag_research/retrieval/multilingual.py": "a110453ee40b984e4725681cbaed85b9ee982a9ac76d1149ee7f1e0d09349a7f",
+    "data/runs/corpus_preparation/phase11-en-e5-v1/verification.json": "ef8d9a850040399058284bdcc0dd0a6234198a64492b10b7ef80b8e9779adcb4",
+    "data/runs/corpus_preparation/phase11-en-e5-v1/verify_prepared.py": "034d9934e519cd68deaf35fc18e820504873bda26249347b5c6e809336675663",
+    "data/processed/clapnq/c508d78-e5-passages-v1/parent_map.jsonl": "bc2f9a29aa8238e141abce6843681ccb4a6f7a0219389d0eddf10801fc9f24c3",
+    "data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f",
+    "data/processed/clapnq/c508d78-e5-passages-v1/report.json": "83bfa13b9697155a64de36407f9ee8fbf1023605ceaab7ef340581a45ee40114",
+    "data/runs/dataset_screening/phase11-ja-source-v1/availability_policy_v1/preflight.json": "55732ffeb34130078e8786dedd90f915e7086727ff95abf72311c80cd69a9e19",
+    "data/runs/runtime_probe/phase11-e5-cuda-v1/criteria.json": "19963f2e716ad5e0e3408e0a62c9411cd2a383ccb7bee47154da136ce5a8dac1",
+    "data/runs/runtime_probe/phase11-e5-cuda-v1/cuda_profile_2026-10-21_14-55-21_205.json": "24716d0c8a1904d47f2cdb842a0156601fe14f1a8f68f52d57be856146c68741",
+    "data/runs/runtime_probe/phase11-e5-cuda-v1/report.json": "d228758a9458f0f9a137a39d2f5db57e1f89c79a6f99aab2d7d81b93055feb34",
+    "data/runs/runtime_probe/phase11-e5-cuda-v1/run_probe.py": "bd9d0a005daf9e0b7187173ac9912ae6b2af54b58b9a6c276ebc7c3211d2d4bf",
+    ".tools/embedding-gpu-probe/pyproject.toml": "0ed626eb7c753f1b4fadda6423db66c634286823ee377cc9c0072266ceb31fb1",
+    ".tools/embedding-gpu-probe/uv.lock": "1d3d683eab4a461314141be5c02013efe0f74adf344dcda317cb6122506589b3",
+    "data/runs/corpus_preparation/phase11-en-e5-v1/pytest-final.xml": "57532c16a09f5f5f5f9cce543a53666f8dba1b3611355a134aa4dac0f2042159",
+    "data/runs/corpus_preparation/phase11-en-e5-v1/ruff-final.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "english_preparation": {
+    "source_parent_count": 178890,
+    "output_passage_count": 183889,
+    "subdivided_parent_count": 3130,
+    "unchanged_parent_id_count": 175760,
+    "maximum_embedding_input_tokens": 512,
+    "resources": {
+      "rss_sample_interval_seconds": 0.1,
+      "sampled_peak_rss_bytes": 404803584,
+      "wall_seconds": 52.58253621900076
+    }
+  },
+  "independent_english_verification": {
+    "purpose": "independent-stored-token-corpus-and-parent-gold-id-verification",
+    "recorded_at_utc": "2026-10-21T05:48:56.465147+00:00",
+    "source_parent_count": 178890,
+    "child_count": 183889,
+    "retained_original_ids": 175760,
+    "maximum_input_tokens": 512,
+    "all_original_text_reconstructed": true,
+    "qa_metadata_count": 4345,
+    "answerable_qa_metadata_count": 2254,
+    "unique_original_gold_parent_ids": 2074,
+    "missing_gold_parent_ids": 0,
+    "qa_text_exposed_or_used_for_tuning": false,
+    "inference_results_read": false,
+    "original_corpus_sha256": "c847751985c2f95987628800a3a8a12aa274da37dee088310f74b6bddb1ea103",
+    "original_qa_sha256": "6913d7a37b1938e6649c3609aa0b71e63dd2c62e8a717a470b41aaf2e912601d",
+    "new_corpus_sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f",
+    "parent_map_sha256": "bc2f9a29aa8238e141abce6843681ccb4a6f7a0219389d0eddf10801fc9f24c3",
+    "generative_model_calls": 0,
+    "embedding_inference_calls": 0,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "restricted_revision_policy_preflight": {
+    "requested_title": "出家",
+    "page_id": 13492,
+    "revision_id": 95068750,
+    "original_status": "error",
+    "corpus_availability": "unavailable_deleted_historical_text",
+    "policy": "historical-deleted-text-permissiondenied-with-verified-identity-v1",
+    "body_retrieved": false,
+    "fallback_performed": false,
+    "recorded_at_utc": "2026-10-21T05:46:01.544417+00:00",
+    "article_path": ".tools/worktrees/phase11-japanese-corpus-v1/data/raw/wikipedia_human_retrieval_ja/corpus-20231225-v1/articles/e90946b07f11b64c551a1cac.json",
+    "article_sha256": "2f92b458e4f2a4c3ea1a27c54da3999245e91e20e7ddfa9227ed36ee8b0214be",
+    "raw_journals_unchanged": true,
+    "full_snapshot_complete": false,
+    "qa_excluded": 0
+  },
+  "cuda_synthetic_probe": {
+    "purpose": "synthetic-official-e5-cuda-runtime-preflight-not-qa-quality",
+    "recorded_at_utc": "2026-10-21T05:55:20.034639+00:00",
+    "criteria": {
+      "minimum_cpu_cuda_cosine": 0.99999,
+      "maximum_absolute_vector_difference": 0.0001,
+      "cuda_provider_required": true,
+      "cuda_compute_nodes_required": true,
+      "finite_unit_vectors_required": true,
+      "tf32": false
+    },
+    "generative_model_calls": 0,
+    "gate11_passed": false,
+    "accepted": true,
+    "onnxruntime_version": "1.30.0",
+    "installed_runtime_distribution": "1.30.0",
+    "available_providers": [
+      "TensorrtExecutionProvider",
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "session_providers": [
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "cuda_init_and_first_batch_seconds": 1.2884209539997755,
+    "profile": "data/runs/runtime_probe/phase11-e5-cuda-v1/cuda_profile_2026-10-21_14-55-21_205.json",
+    "node_provider_counts": {
+      "CUDAExecutionProvider": 349,
+      "CPUExecutionProvider": 2
+    },
+    "cuda_op_types": {
+      "Shape": 1,
+      "Slice": 1,
+      "Gather": 3,
+      "Add": 98,
+      "LayerNormalization": 25,
+      "MatMul": 84,
+      "Reshape": 48,
+      "Transpose": 48,
+      "FusedMatMul": 12,
+      "Unsqueeze": 2,
+      "Cast": 1,
+      "Sub": 1,
+      "Mul": 1,
+      "Softmax": 12,
+      "BiasGelu": 12
+    },
+    "cpu_cuda_cosines": [
+      0.9999999999999348,
+      0.999999999999966
+    ],
+    "maximum_absolute_vector_difference": 5.4800239873697976e-08
+  },
+  "cuda_encoder_integration_done": false,
+  "full_indexes_built": false,
+  "tests": {
+    "pytest_passed": 365,
+    "new_tests": 14,
+    "host_seconds": 4.59,
+    "ruff": "passed"
+  },
+  "old_run_files_unchanged": 2500,
+  "old_english_index_files_unchanged": 23,
+  "japanese_full_snapshot_ready": false,
+  "new_generation_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

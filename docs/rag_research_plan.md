@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.13 — 2026年10月21日 多言語検索候補と本文保持・英語入力長を監査
+## Version 7.14 — 2026年10月21日 Corpus本文欠測と英語分割・親Gold参照を記録
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.15](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.16](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -319,3 +319,9 @@ Phase 12で日英の本実験と独立採点、Phase 13で統計と比較考察�
 既知開発1記事の検索まで動作したが、検索品質や日英RAG全経路の検証ではない。
 英語Corpusにも新Tokenizerの上限超過が3130/178890 Passageあり、元の参照IDを保持した別Versionの分割と
 新Index・Development回帰・未使用Calibrationが必要である。旧英語条件・Runは保持し、最終採用を保留する。
+
+同日の[Corpus準備・欠測/親参照の監査](phase11_corpus_preparation.md)で英語を183889 Passageへ分割し、
+全親の本文保持と元Gold親2074種類の対応表欠落0を確認した。元の質問・回答・Split/Gold IDは変更しない。
+子Passageが同じGold親を繰り返しても独立した関連文書として加算しない。実際の支持・品質は使用Contextで別評価する。
+日本語の削除本文の権限エラーは原失敗を保持し、Identityと保存応答を確認した本文欠測として別記録する。
+QAを除外・回答不能化せず、別時点の本文を補わない。正式Corpus/Index・新RAG接続と日英の実走はまだ完了していない。

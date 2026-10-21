@@ -16,6 +16,7 @@ from pathlib import Path
 
 from rag_research.data.baobab_source import DATASET_ID, REVISION, SOURCE_FILES, validate_rows
 from rag_research.data.clapnq_records import InternalQARecord
+from rag_research.data.source_availability import POLICY, restricted_historical_text
 from rag_research.data.wikipedia_snapshot import TEXT_VERSION, article_text
 from rag_research.data.wikipedia_snapshot import validate_spec as validate_snapshot_spec
 from rag_research.experiments.frozen_trace import digest, require
@@ -41,7 +42,7 @@ def validate_spec(spec):
             spec.get("purpose") == "phase11-japanese-qa-group-split-preparation",
             "Unknown Japanese dataset specification")
     require(spec.get("source_revision") == REVISION and
-            spec.get("dataset_version", "").startswith(REVISION[:7] + "-groups-v"),
+            re.fullmatch(rf"{REVISION[:7]}-groups-v[1-9][0-9]*", spec.get("dataset_version", "")),
             "Japanese dataset source/version mismatch")
     require(spec.get("grouping") == GROUPING and spec.get("assignment") == ASSIGNMENT,
             "Unknown Japanese grouping/assignment rule")
@@ -50,6 +51,10 @@ def validate_spec(spec):
             all(type(x) is int and 0 < x < 100 for x in percentages.values()) and
             sum(percentages.values()) == 100, "Invalid Japanese split percentages")
     require(type(spec.get("seed")) is int and spec["seed"] >= 0, "Invalid Japanese split seed")
+    policy = spec.get("terminal_source_unavailability_policy")
+    require((policy is None or policy == POLICY) and
+            (policy is None or spec["dataset_version"] != REVISION[:7] + "-groups-v1"),
+            "Source unavailability policy requires a new Japanese dataset version")
     require(spec.get("qa_population") == "all_838_answered_records_without_quality_or_coverage_filtering"
             and spec.get("unsuccessful_searches_are_unanswerable_qa") is False and
             spec.get("gold_passage_mapping") == "pending_passage_build_not_fabricated_from_reference_quotes"
@@ -214,8 +219,10 @@ def group_statistics(groups, assignments=None):
     return report
 
 
-def read_complete_snapshot(directory, *, expected_titles):
+def read_complete_snapshot(directory, *, expected_titles, unavailability_policy=None):
     """Fail closed on partial acquisition, changed archives or inconsistent bodies."""
+    require(unavailability_policy is None or unavailability_policy == POLICY,
+            "Unknown historical source unavailability policy")
     plan = read_json(directory / "plan.json")
     verify_checkpoint(plan)
     validate_snapshot_spec(plan["spec"])
@@ -256,6 +263,8 @@ def read_complete_snapshot(directory, *, expected_titles):
             request = read_json(path)
             verify_checkpoint(request)
             requests[path.name] = request
+        if row["status"] == "error" and unavailability_policy is not None:
+            restricted_historical_text(row, requests, unavailability_policy)
         if row["status"] == "ok":
             require(hashlib.sha256(row["text"].encode()).hexdigest() == row["text_sha256"] and
                     len(row["text"]) == row["characters"] and row["text"].strip() and

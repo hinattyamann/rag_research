@@ -132,3 +132,11 @@ uv run python scripts/prepare_japanese_dataset.py audit-source \
 取得中の実プロセスに対する生成拒否と出力QAなしを確認した。全338 Test（4.54秒）・Ruff成功。
 確認根拠は`data/manifests/phase11_japanese_dataset_preflight.json`。記事取得・正式Split・検索・日本語Model実走と
 品質確認・日英Calibration・最終Gateは未完了である。
+
+## 7. 削除された過去本文の欠測規則
+
+取得中に「出家」Revision95068750への削除本文の閲覧権限エラーを確認した。
+原の失敗・保存応答・Hashを保持し、Dataset Config v2で過去Identityと指定API応答を検証する。
+一致する場合もstatus=errorを変更せず、本文取得不能の監査情報を別保存する。
+通信/別権限エラーの一括許容、現在版Fallback、QA除外・回答不能への変換は行わない。
+v1とその監査は保持する。詳細は[本文欠測・Corpus準備](phase11_corpus_preparation.md)。

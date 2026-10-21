@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.15 — 2026年10月21日 多言語検索候補とToken上限内の本文Passage化を追加
+## Version 8.16 — 2026年10月21日 本文欠測・英語分割と親参照保持を実装
 
-[研究計画 Version 7.13](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.14](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -456,3 +456,19 @@ CPUでBM25/Embedding/Hybrid検索・入力超過の推論前拒否・再開追�
 英語Corpus3130件に新Tokenizerの上限超過があるため、英語にも元のPassage/Gold参照を保持した分割を新Versionで作る。
 全Corpus/Gold対応・正式Split、新RAG Factory・指示文/予算/品質への接続、日英の検索/意味監査・Calibrationは未完了。
 既存の英語Phase 6用Factoryを、新候補の最終固定済みFactoryとは扱わない。
+
+### 本文欠測と英語Corpusの準備（2026年10月21日）
+
+[Corpus準備・親参照の確認](phase11_corpus_preparation.md)として、削除過去本文の欠測規則を
+`source_availability.py`と`phase11_japanese_dataset_v2.json`へ追加した。
+保存応答・過去Page/Revision/時点が一致した指定エラーだけを本文取得不能として別記録し、原status=errorを保持する。
+v1・Raw・全838 QAを保持し、通信/別権限エラーは未解決として止める。現在版Fallbackや別時点の補充はしない。
+
+`token_bounded_corpus.py`と`scripts/prepare_english_token_corpus.py`で英語の上限超過3130親を分割し、
+175760親の元ID/本文を保持した。全183889子・親対応表・実Token上限512を保存し、元の全178890本文を再構成できた。
+元QA/Split/Reference/Gold IDを書き換えず、全4345 QAのID/Gold親Metadataのみを機械照合して2074親の欠落0を確認。
+`parent_relevance()`は同一Gold親の重複子を加算しない。検索評価/品質への接続は未完了で、各子の完全な支持を仮定しない。
+
+全365 Test/Ruff成功、旧Run2500/英語Index23ファイル不変。新Index・日本語全Corpus/Gold対応・正式Splitは未了。
+分離uv環境の合成GPU ProbeはCUDA349/CPU2 NodeとCPU数値差の事前基準を確認したが、正式Encoder/CLIへは未接続。
+確認根拠は`phase11_corpus_preparation_manifest.json`。GPU実行の正式対応・Commit固定Index構築、日英RAG実走は次に行う。

@@ -158,6 +158,9 @@ Disk空き385GiB。既存のRaw/Processed/Index/Model/Runtime/Runは約7.5GiB。
 多言語E5候補・Subword BM25と本文Passage分割を実装し、既知開発1記事の検索まで確認した。全351 Test/Ruff成功。
 英語3130 Passageが新Tokenizer上限を超えるため、元の参照IDを保持した英語分割/新Index・RAG接続が次に必要。
 候補条件と実機確認の範囲は[多言語検索の記録](phase11_multilingual_retrieval.md)に保存した。
+英語の分割はその後全183889 Passageへ作成し、全親の本文とGold親対応を検証した。全365 Test/Ruff成功。
+[Corpus準備](phase11_corpus_preparation.md)に削除過去本文の欠測規則と親関連単位、分離GPU Probeを保存した。
+GPUの正式接続・新Index、日本語全Corpus/Gold対応・正式Split・日英RAG実走は未完了である。
 Source選定と残る差は[比較記録](japanese_dataset_selection.md)、Hashと開発予約は
 `data/manifests/phase11_japanese_source_selection.json`による。Bの完了・C全体〜Fはまだ達成していない。
 取得不能・候補不適合等があれば代替を調査し、依存しない作業を進めた上で必要な判断を説明する。

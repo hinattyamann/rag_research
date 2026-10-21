@@ -46,10 +46,12 @@ def prepare(source_dir, output, spec_path, *, snapshot=None):
     require(len(chunks["answered.jsonl"]) == 838 and len(chunks["not_answered.jsonl"]) == 433,
             "Pinned Japanese population changed")
     articles = []
+    policy = spec.get("terminal_source_unavailability_policy")
     if snapshot is not None:
         with run_lock(snapshot):
-            _, articles = read_complete_snapshot(snapshot, expected_titles=article_titles(chunks))
-        require(not any(r["status"] == "error" for r in articles),
+            _, articles = read_complete_snapshot(snapshot, expected_titles=article_titles(chunks),
+                                                  unavailability_policy=policy)
+        require(policy is not None or not any(r["status"] == "error" for r in articles),
                 "Unresolved article acquisition errors prevent final identity Group split")
     groups = connected_groups(chunks["answered.jsonl"], reserved_source_ids=reserved, articles=articles)
     assignments = assign_splits(groups, spec) if snapshot is not None else None
@@ -74,6 +76,8 @@ def prepare(source_dir, output, spec_path, *, snapshot=None):
             artifacts[output / f"{name}.jsonl"] = encode_rows(r for r in records if r["research_split"] == name)
     code_paths = [Path(__file__), ROOT / "src/rag_research/data/japanese_dataset.py",
                   ROOT / "src/rag_research/data/baobab_source.py", spec_path]
+    if policy is not None:
+        code_paths.append(ROOT / "src/rag_research/data/source_availability.py")
     report = {"schema_version": 1, "purpose": "phase11-japanese-qa-group-preparation-not-final-freeze",
               "stage": "complete_snapshot_groups" if snapshot is not None else "source_title_audit_only",
               "dataset_id": DATASET_ID, "source_revision": REVISION, "spec": spec,
@@ -84,6 +88,11 @@ def prepare(source_dir, output, spec_path, *, snapshot=None):
               "snapshot_plan_sha256": file_hash(snapshot / "plan.json") if snapshot is not None else None,
               "snapshot_article_statuses": {status: sum(r["status"] == status for r in articles)
                                             for status in ("ok", "unavailable", "error")},
+              **({"documented_deleted_text_absences": [
+                  {"requested_title": r["requested_title"], "page_id": r["page_id"],
+                   "revision_id": r["revision_id"], "original_status": r["status"]}
+                  for r in articles if r["status"] == "error"],
+                  "terminal_source_unavailability_policy": policy} if policy is not None else {}),
               "statistics": group_statistics(groups, assignments),
               "group_validation": validate_assignments(groups, assignments) if assignments else None,
               "artifacts": {p.name: {"sha256": hashlib.sha256(b).hexdigest(), "bytes": len(b)}

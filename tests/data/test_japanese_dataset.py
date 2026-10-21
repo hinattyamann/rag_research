@@ -221,3 +221,35 @@ def test_immutable_multi_file_publish_is_idempotent_and_preflights_all_conflicts
     with pytest.raises(ValueError, match="new output version"):
         publish_immutable({third: b"new", first: b"changed"})
     assert not third.exists() and first.read_bytes() == b"original"
+
+
+def test_complete_snapshot_retains_deleted_text_error_under_explicit_policy(tmp_path):
+    from rag_research.data.source_availability import DELETED_TEXT_MESSAGE, POLICY
+    from rag_research.retrieval.common import file_hash
+
+    directory = complete_snapshot(tmp_path)
+    parse_path = next((directory / "requests").glob("*-parse.json"))
+    parse = read_json(parse_path)
+    parse.pop("result_sha256")
+    parse.pop("response")
+    parse.update(status="error", attempts=[{"http_status": 200, "error_response": {
+        "error": {"code": "permissiondenied", "info": DELETED_TEXT_MESSAGE}}}])
+    checkpoint(parse_path, parse)
+    article_path = next((directory / "articles").glob("*.json"))
+    body = read_json(article_path)
+    body.pop("result_sha256")
+    for field in ("text", "text_sha256", "characters"):
+        body.pop(field)
+    body.update(status="error", error="MediaWiki error: permissiondenied")
+    body["request_files_sha256"][parse_path.relative_to(directory).as_posix()] = file_hash(parse_path)
+    saved = checkpoint(article_path, body)
+    progress_path = directory / "progress-001.json"
+    progress = read_json(progress_path)
+    progress.pop("result_sha256")
+    progress["statuses"] = {"error": 1}
+    checkpoint(progress_path, progress)
+    _, articles = read_complete_snapshot(directory, expected_titles=["架空資料"], unavailability_policy=POLICY)
+    assert articles == [saved] and articles[0]["status"] == "error" and "text" not in articles[0]
+    assert read_json(article_path) == saved
+    with pytest.raises(ValueError, match="Unknown historical"):
+        read_complete_snapshot(directory, expected_titles=["架空資料"], unavailability_policy="allow_all")

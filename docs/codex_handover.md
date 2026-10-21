@@ -26,6 +26,10 @@ Main側は日本語の固定文単位候補を追加し、全316 Test（ホス�
 全351 Test（ホスト5.97秒）・Ruff成功。候補Model/Code/実機確認は[多言語検索の記録](phase11_multilingual_retrieval.md)。
 旧英語Corpusの3130件がE5上限を超えるため、元の参照IDを保持した英語分割/新Indexが必要。
 既存RAG FactoryはPhase 6用のまま。日本語全Corpus/Gold対応・正式Splitと日英RAG接続/Calibrationは未完了。
+英語の本文分割は`data/processed/clapnq/c508d78-e5-passages-v1/`へ作成し、全178890親の本文とGold親2074種類の対応を確認した。
+全365 Test/Ruff成功。[Corpus準備の記録](phase11_corpus_preparation.md)に欠測規則・親参照・GPU Probeと次工程を保存した。
+日本語の削除過去本文はDataset Config v2で保存応答/Identityを検証し、原エラーのまま本文欠測を別記録する。
+GPU Probeは`.tools/embedding-gpu-probe`のuv環境で成功。E5 Encoder/CLIのGPU対応と専用環境の正式化・Index構築は未実施。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -42,7 +46,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.13](rag_research_plan.md)・[実装計画8.15](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.14](rag_research_plan.md)・[実装計画8.16](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。
