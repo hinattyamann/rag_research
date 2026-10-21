@@ -357,3 +357,26 @@ Phase 11で両言語のSource/Model/Prompt/文単位/閾値/予算/順序・反�
 Phase 12は日英の本実験と独立採点、Phase 13は固定した計画での統計と比較考察、
 Phase 14は原稿への反映。分析処理の拡充をPhase 13で行う場合も、比較・統計の設計はPhase 11で固定する。
 別Dataset間の差を言語単独の因果効果とは扱わない。選定と実装の完了状況はロードマップへ反映する。
+
+### 日本語Sourceと記事取得の実装（2026年10月21日）
+
+`data/baobab_source.py`は固定版2ファイルの再取得・Hash検証と、回答/文列/引用対応の検証を行う。
+人手要約をquoteへ変換せず、回答なしの検索記録も記事Title一覧の構成へ使う。
+`data/wikipedia_snapshot.py`と`scripts/prepare_japanese_corpus.py`は、全参照2178 Titleを
+共通の2023-12-25T23:59:59Z以前の最新Revisionで照会し、その`oldid`の本文を取得する。
+この共通時点は配布元の収集終了日に基づき、個々のQA収集日時との完全一致は保証しない。
+
+設定は`configs/phase11_japanese_corpus_v1.json`。リクエストは直列、開始間隔0.5秒以上・
+maxlag5秒・timeout45秒・最大3試行。429/一時障害はRetry-Afterと待機を記録し、
+連続5取得エラーで停止する。これはSource HTTP取得の再試行であり、モデル再試行0とは区別する。
+取得先・条件・実行Source Hash・API応答・失敗と本文Hashを保存し、既存の終端失敗を再抽選しない。
+古いRevisionが得られない場合に現在版へ切り替えない。再開時に保存応答・Source Snapshotを照合する。
+
+現在のRedirect解決と取得した過去の記事Revisionを別々に保存する。過去RevisionのHTMLも
+Template等が現在の状態で描画され得るため、oldidのみを再現性の根拠にせず、実際のAPI応答・抽出本文をHash固定する。
+HTMLは実行せず本文へ変換し、見出し・段落・箇条書き・表の文字を保持、Script/Style・脚注番号・ナビゲーション等を除く。
+
+既知の開発記事1件はRevision98468367（2023-12-14）、抽出19251文字で実取得に成功した。
+`phase11_japanese_acquisition_preflight.json`にHashと確認範囲を記録した。
+全284 Tests（ホスト4.39秒）とRuffに成功。制限環境での既存Socket Test1件の失敗は環境制約として別記録とする。
+全文Corpusの全記事取得・Passage化・Group分割・検索・日本語推論Pipelineと最終Validatorはまだ完了していない。

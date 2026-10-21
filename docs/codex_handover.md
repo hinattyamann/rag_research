@@ -10,6 +10,9 @@ Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 同日のGoal実行で[候補比較と日本語Source選定](japanese_dataset_selection.md)を実施し、
 `baobab-trees/wikipedia-human-retrieval-ja`の固定版838回答付き/433回答なしQAを取得・構造監査した。
 次は全検索記録の記事全文Corpusと文書Group分割。実対応・予備検証・最終固定は未実施で、Gate 11は未通過。
+取得CLIは`scripts/prepare_japanese_corpus.py`、設定は`configs/phase11_japanese_corpus_v1.json`。
+再取得/取得履歴・Hashと現在版Fallback防止を実装し、既知1記事の本文取得を確認済み。
+実行手順と未達事項は[Source選定記録](japanese_dataset_selection.md)第5節を参照する。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。

@@ -74,3 +74,26 @@
    生データはGit管理外、Gitには小さいManifestと集計を置く。SourceのApache-2.0表記と、引用Wikipedia本文の出典・権利表示を区別して保持する。
 
 日本語の本実験件数、内部モデル/指示文の採用、分析条件は未固定。Gate 11未通過、Phase 12未実施。
+
+## 5. 取得CLIの実装と確認範囲
+
+`scripts/prepare_japanese_corpus.py`でSource再取得と歴史的な記事全文の取得を行う。
+計画には全参照Title・QA Source Hash・取得Config・実行Source Hashを保存する。
+
+```bash
+export PATH="$PWD/.tools/bin:$PATH"
+export UV_CACHE_DIR="$PWD/.tools/uv-cache"
+uv run python scripts/prepare_japanese_corpus.py plan --download-source \
+  --output-dir data/raw/wikipedia_human_retrieval_ja/corpus-20231225-v1
+uv run python scripts/prepare_japanese_corpus.py fetch \
+  --output-dir data/raw/wikipedia_human_retrieval_ja/corpus-20231225-v1
+```
+
+現在版へのFallbackはせず、欠損・取得失敗も保存する。既存の終端失敗は上書きせず、
+再取得の条件を変更するなら新Versionを使う。Sourceと記事の取得はモデル呼出し0回である。
+過去HTMLはTemplate等の現行描画が混ざり得るため、保存した応答/本文Hashで入力を固定する。
+各QAの収集日と共通のCorpus時点の差、Redirect対応、引用/要約との一致は後続監査に残す。
+
+既知開発例の経済産業省1記事でRevision/本文の実取得を確認し、全284 TestとRuffが成功した。
+これは全Corpus・検索・日本語LLM・品質の実走成功ではない。
+[取得Preflight Manifest](../data/manifests/phase11_japanese_acquisition_preflight.json)を参照する。

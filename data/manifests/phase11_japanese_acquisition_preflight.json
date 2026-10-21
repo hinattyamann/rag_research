@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-japanese-article-acquisition-preflight-not-full-corpus",
+  "article_results": [
+    {
+      "requested_title": "経済産業省",
+      "canonical_title": "経済産業省",
+      "page_id": 3417,
+      "revision_id": 98468367,
+      "revision_timestamp_utc": "2023-12-14T17:18:30Z",
+      "cutoff_utc": "2023-12-25T23:59:59Z",
+      "characters": 19251,
+      "text_sha256": "aadd7d8a48bfca9715a50af3c9ef94d6b460c7176e3c7fb3e1eb61b051f00f00",
+      "plan_sha256": "0cf392491d6c482bb3fccc1db361a580cee1c6327ed96b07d7a31765dd93b80c"
+    }
+  ],
+  "artifacts": {
+    "data/runs/dataset_screening/phase11-ja-source-v1/wiki_parse_preflight/articles/741446b07ec0f5366d619da9.json": "a0c565c877ee5f7f0a8242d4b38254b446d26af3eed391326e0c2cc3a18524cb",
+    "data/runs/dataset_screening/phase11-ja-source-v1/wiki_parse_preflight/requests/741446b07ec0f5366d619da9-parse.json": "704fcf64da3dfba2e4c59a3a08ab5262008c784e0f5ba999ad848ca297349d4d",
+    "data/runs/dataset_screening/phase11-ja-source-v1/wiki_parse_preflight/requests/741446b07ec0f5366d619da9-revision.json": "999511aaebfdab93c5d7f5330699b5e89f28df2d62a1ad9f4f266f693a918f2b"
+  },
+  "model_calls": 0,
+  "full_corpus_prepared": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "tests": {
+    "pytest": "284 passed in 4.39s (host; sandbox socket restriction kept separate)",
+    "ruff": "passed"
+  }
+}

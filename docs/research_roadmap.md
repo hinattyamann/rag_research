@@ -14,6 +14,8 @@
 選定・日本語対応・予備検証・両言語の条件固定をPhase 11へ追加する。
 同日のGoal実行で[日本語Sourceの選定・原QA取得・構造監査](japanese_dataset_selection.md)を実施した。
 Sourceは`baobab-trees/wikipedia-human-retrieval-ja`。本文Corpus・分割・実対応・予備検証と最終固定は未実施。
+原QAの再取得/検証と歴史的な記事全文取得CLIを実装し、既知1記事でPreflightを確認した。
+全Corpusの取得・Passage化・Group分割は次の工程で、上記の未完了状態は維持する。
 翻訳対は主実験に使わず、別Dataset間の差を言語単独の因果効果と断定しない。
 
 基盤に加え、固定回答のClaim抽出、根拠順序/反復ごとの自己評価と採用/書換え要求の保存を実装した。
