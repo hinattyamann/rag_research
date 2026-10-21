@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-known-trace-launch-conditions-only-not-completion",
+  "created_at_utc": "2026-10-21T11:46:20.798811+00:00",
+  "fixed_commit": "2ae5133e7a381b372c4faeaa1e3cb48d5d14780f",
+  "worktree": ".tools/worktrees/phase11-known-trace-regression-v1",
+  "config": "configs/phase11_known_trace_candidate_v1.yaml",
+  "plan": "configs/phase11_known_trace_regression_v1.json",
+  "preflight": {
+    "planned_inputs": 114,
+    "completion_attempts": 0,
+    "max_input_tokens": 3930,
+    "all_fit": true,
+    "full_gpu_offload": true,
+    "gpu_memory_single_observation": "7069 MiB, 8151 MiB"
+  },
+  "completion_status_not_asserted": true,
+  "observed_live_tool_session": 52552,
+  "local_only_worktree_artifacts": {
+    ".tools/worktrees/phase11-known-trace-regression-v1/data/runs/model_screening/phase11-qwen3-8b-v1/known_trace_preflight_v1/plan.json": {
+      "sha256": "5a58235bf2c3d564bd8a9d6b42f1e5b2968ac570cd5ddaae26db034a8a36dcc9",
+      "bytes": 1192
+    },
+    ".tools/worktrees/phase11-known-trace-regression-v1/data/runs/model_screening/phase11-qwen3-8b-v1/known_trace_preflight_v1/report.json": {
+      "sha256": "f704604a7673ca125d92eb883a6a247c3761a5853921fa7033994eb8ed3e6512",
+      "bytes": 40818
+    },
+    ".tools/worktrees/phase11-known-trace-regression-v1/data/runs/model_screening/phase11-qwen3-8b-v1/known_trace_preflight_v1/server.log": {
+      "sha256": "5922e9374fc81d55c162f2eee6cd4d9568f67232c7d97e3e9d70438686c50203",
+      "bytes": 16524
+    },
+    ".tools/worktrees/phase11-known-trace-regression-v1/data/runs/semantic_diagnostics/phase11-8b-known-trace-v1/launch.json": {
+      "sha256": "5b1bf26084bd1ed2c2ab537b75b835b4b8a6b5e3a49c5db276295a4940507cf6",
+      "bytes": 903
+    },
+    ".tools/worktrees/phase11-known-trace-regression-v1/data/runs/semantic_diagnostics/phase11-8b-known-trace-v1/preflight_receipt.json": {
+      "sha256": "239b0c36db462ca6f2d9431d6d7d85a3ce5033a0b7b6bd0437ea71da0630a889",
+      "bytes": 354
+    },
+    ".tools/worktrees/phase11-known-trace-regression-v1/data/runs/semantic_diagnostics/phase11-8b-known-trace-v1/manifest.json": {
+      "sha256": "aa38e837cd1bb7cef425f63971cd5e7f3f97099fe7b260ae7e4f6c48685af1cd",
+      "bytes": 22099
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
