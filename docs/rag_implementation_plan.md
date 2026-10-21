@@ -1,10 +1,15 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.44 — 2026年10月22日 v11の失敗保存とv12の大きな推論・出力予約を事前固定
+## Version 8.45 — 2026年10月22日 主Development証拠の隔離検証とv12失敗の保存
 
-[研究計画 Version 7.42](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.43](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
+
+[主Developmentの証拠検証](phase11_main_certification.md)を実装した。全匿名品質/文Expectedの封印後に全診断/旧15 QA回帰・主各20 QA・意味/統計/Native費用・実CUDA Sessionを隔離コピーで照合し、原本を保全する。新規27件を含む全611 Test/Ruff成功。実不通過v12の拒否と既知接続4 Sessionの資源検査は確認したが、実主証明書の成功側は未了。
+
+固定51b0559の意味v12は20 Call/既知4条件でCritical3/4、元順序Council c4のExpected矛盾に対する支持不足で不通過。誤支持0でも正確一致基準を維持し、人工54未試行・入力95316/出力85176 Token・1424.971683秒/全41 Artifact/再開追加0を保存した。大きな予約でも全基準を満たさず、主/予約Calibrationは未推論。
+
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
 Phase 8の固定Trace・Claim抽出・Judge・順序/反復・判断と再開を実装した。
 Phase 9の一回書換え・独立採点Export/Import・候補選択・経路費用を実装し、開発2件の書換えを実走した。

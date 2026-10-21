@@ -1,17 +1,21 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月22日。正本: [研究計画7.42](rag_research_plan.md)、[実装計画8.44](rag_implementation_plan.md)。
+更新日: 2026年10月22日。正本: [研究計画7.43](rag_research_plan.md)、[実装計画8.45](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
 
-[主Development採用Guardの監査](phase11_main_adoption_audit.md)で、Policy候補/通過回帰の直接一致と全事前基準の値/型・明示nullの開始前検査を補強した。新規23 Testを含む全584 Test/Ruff成功、故障注入の資源監視警告1件を保存。主20問や実採用成功側を達成した意味ではない。固定v11は同じCodeのまま実走中。
+[主Developmentの証拠検証](phase11_main_certification.md)を実装した。全匿名品質/文Expectedの封印後に全診断/旧15 QA回帰・主各20 QA・意味/統計/Native費用・実CUDA Sessionを隔離コピーで照合し、原本を保全する。新規27件を含む全611 Test/Ruff成功。実不通過v12の拒否と既知接続4 Sessionの資源検査は確認したが、実主証明書の成功側は未了。
+
+固定51b0559の意味v12は20 Call/既知4条件でCritical3/4、元順序Council c4のExpected矛盾に対する支持不足で不通過。誤支持0でも正確一致基準を維持し、人工54未試行・入力95316/出力85176 Token・1424.971683秒/全41 Artifact/再開追加0を保存した。大きな予約でも全基準を満たさず、主/予約Calibrationは未推論。
+
+[主Development採用Guardの監査](phase11_main_adoption_audit.md)で、Policy候補/通過回帰の直接一致と全事前基準の値/型・明示nullの開始前検査を補強した。新規23 Testを含む全584 Test/Ruff成功、故障注入の資源監視警告1件を保存。主20問や実採用成功側を達成した意味ではない。固定v11は終了済みで、不通過の全結果を保存した。
 
 Calibrationの対象は[別予約Manifest](phase11_bilingual_calibration.md)へ保存済み。英語の元225問は検索調整済みのまま保持し、未使用Developmentの20 Groupを主20 Groupと分けて追加Calibrationへ予約した。日本語は元Calibrationから20 Group。全561 Test/Ruff・再計算/重複0を確認し、新規推論0。実行Protocol/専用Runner・採用/全Label封印/解析は主Developmentの確認後で、最終Gateは未了。
 
-**Phase 1〜10の基盤と、Phase 11の日本語Source/分割/全文Corpus・日英Index・共通RAGの既知接続を完了。v8の人工形式/日英意味診断は通過したが、既知15 QA回帰v2は誤支持6で不通過。別9B v9は生成0の資源確認に通過し、人工形式2 Callで推論未終了/出力上限に達した。全失敗/未試行を保持し、開始TagのPrefillを実入力とNative応答で照合するv10を追加、全555 Test/Ruff成功。固定v10は同じ人工6 Call/厳密5条件に通過し、監査追加0/全16 Artifact保存を完了。同じ固定Commitの意味診断は20 Call/既知4条件でCritical3/4となり不通過、人工54条件未試行。元順序Councilの矛盾/支持不足の不一致と全42 Artifact/再開追加0を保存した。指示の再述を減らすv11を旧全基準のまま固定bb11fc9へ保存。全128入力/生成0 Preflight後の意味診断も20 Call/既知4条件でCritical3/4・逆順誤支持1となり不通過。全41 Artifact/再開追加0を保存し、旧全基準を保つv12の大きな推論/出力予約を事前固定した。固定51b0559のv12は24k/全128入力生成0/全層CUDAと同じ人工6 Callの厳密5条件に通過し、同じ意味診断を実走中。全結果/採用は未確定。日英主Development/未使用Calibration、規模/本実験条件、拡張Validator/最終凍結は未了。Gate 11未通過、Phase 12未実施。**
+**Phase 1〜10の基盤と、Phase 11の日本語Source/分割/全文Corpus・日英Index・共通RAGの既知接続を完了。v8の人工形式/日英意味診断は通過したが、既知15 QA回帰v2は誤支持6で不通過。別9B v9は生成0の資源確認に通過し、人工形式2 Callで推論未終了/出力上限に達した。全失敗/未試行を保持し、開始TagのPrefillを実入力とNative応答で照合するv10を追加、全555 Test/Ruff成功。固定v10は同じ人工6 Call/厳密5条件に通過し、監査追加0/全16 Artifact保存を完了。同じ固定Commitの意味診断は20 Call/既知4条件でCritical3/4となり不通過、人工54条件未試行。元順序Councilの矛盾/支持不足の不一致と全42 Artifact/再開追加0を保存した。指示の再述を減らすv11を旧全基準のまま固定bb11fc9へ保存。全128入力/生成0 Preflight後の意味診断も20 Call/既知4条件でCritical3/4・逆順誤支持1となり不通過。全41 Artifact/再開追加0を保存し、旧全基準を保つv12の大きな推論/出力予約を事前固定した。固定51b0559のv12は24k/全128入力生成0/全層CUDAと同じ人工6 Callの厳密5条件に通過し、同じ意味診断も20 Call/既知4条件でCritical3/4・元順序の矛盾/支持不足不一致により不通過。誤支持0でも基準を緩めず、人工54未試行/全41 Artifact/再開追加0を保存済み。日英主Development/未使用Calibration、規模/本実験条件、拡張Validator/最終凍結は未了。Gate 11未通過、Phase 12未実施。**
 
 2026年10月21日、英語CLAPNQに近い別の日本語Datasetを追加し、日英で順序感度と判断・品質・費用を
 比較する方針を採用した。[日英比較の拡張方針](english_japanese_expansion.md)に従い、

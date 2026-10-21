@@ -1,6 +1,8 @@
 # 別チャットから再開するための引継ぎ
 
-最新実走: v11/session59388は終了。固定bb11fc9の既知4条件/20 Call・Critical3/4、逆順Council c4の誤支持1で不通過。元順序はC、c6は両C/F元5/7・逆6/7で両採用。入力97740/出力49103 Token・835.989984秒。Source91 Hash/再開34 File不変・追加Call/Server0を監査し、全41 Artifactをphase11_source_reading_result_v11.jsonへ保存済み。次はv12：同じModel/Prompt/全Expected/基準でContext24576・推論4096・読解8192/判定/書換え6144。Preregistration v4、新規最大248 Call/累積296/Retry0、新生成0。新Contextの生成0 Preflight→同じ人工6 Call→同じ意味診断を新固定Worktreeで行う。旧失敗/基準を保持し、主/予約Calibrationを先に使わない。固定51b0559のv12は24k Context・全128入力/生成0/最大3887 Token/全層CUDAに通過（VRAM6527/8151 MiB一点）。同じ人工6 Call/厳密5条件も通過、入力290/出力958 Token・16.687828秒、88 Source Hash/原本10 File不変/監査追加0、全15 Artifact保存済み。Launchへ生成0/形式Report Hashを保存し、同じ固定Worktreeで意味診断v12を実走中（session1222）。全結果/採用は未確定で、同じHandleを観測し重複起動しない。
+最新実走: 固定51b0559の意味v12/session1222と再開監査は終了済み。既知4条件/20 CallでCritical3/4・元順序Council c4がExpected矛盾に対し支持不足で不通過、誤支持0・人工54条件未試行。入力95316/出力85176 Token・1424.971683秒。91 Source/再開34 File不変・追加Call/Server0、全41 Artifactをphase11_source_reading_result_v12.jsonへ正規保存済み。c6は元S/逆C・F6/7→5/7で両採用、Expected nullと全7分母を保持。24k/推論4096でも基準を満たさず、既知15 QA回帰や主/予約Calibrationへ進めない。現在のGPU実走はない。
+
+主Development証拠検証追記: [専用記録](phase11_main_certification.md)とcertify_bilingual_main.pyを追加。両言語の全品質/文Expected封印後に全診断/旧回帰/主20 QA・意味/統計/Native費用・実CUDA Sessionを照合し、原本Lockと同一Byteの隔離コピーで再計算する。新規27件を含む全611 Test/Ruff成功。実不通過v12を拒否/全37 File不変、既知日英接続の4 Session資源検査は成功。初回実照合で見つけたContext参照先を実Schemaへ修正し全Testを再確認した。実主通過証明書/Calibration Protocol・専用Runner・解析/最終凍結は未了。Native Core26+Probe1 Hash不変、追加推論0、Gate11/Phase12はfalse。
 
 主開始前の検査追記: `bilingual_main`でPolicy候補File Hash/設定と完全通過回帰の一致、全Health/意味/品質/判断の事前値/型・明示nullを検査する。新規23 Testを含む全584 Test（8.25秒）/Ruff成功、故障注入の既存資源Sampler警告1件を保持。実Policy v1の値検査も成功したが実採用はまだない。固定v11/Native Core27 Hashは不変。実採用成功側/主20問は引き続き未了。[監査記録](phase11_main_adoption_audit.md)を参照する。
 

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-main-evidence-certifier-control-validation-not-an-actual-main-certificate",
+  "created_at_utc": "2026-10-21T22:11:07.432696+00:00",
+  "new_tests": 27,
+  "pytest_runs": [
+    {
+      "passed": 605,
+      "seconds": 10.13,
+      "stage": "before actual resource session validation"
+    },
+    {
+      "passed": 611,
+      "seconds": 10.34,
+      "stage": "before actual saved-schema check"
+    },
+    {
+      "passed": 611,
+      "seconds": 10.53,
+      "stage": "final after actual saved-schema correction",
+      "warnings": 0
+    }
+  ],
+  "ruff_passed": true,
+  "cli_help_passed": true,
+  "positive_tests_use_explicit_synthetic_validator_doubles": true,
+  "actual_validation": {
+    "created_at_utc": "2026-10-21T22:09:04.455545+00:00",
+    "actual_failed_diagnostic_rejected": {
+      "path": "data/runs/semantic_diagnostics/phase11-qwen35-9b-source-reading-v12/report.json",
+      "sha256": "ed47bc93f1861c63d383ecd8017f74915c76a471424159192e7ee3a8c894f096",
+      "message": "Prerequisite must contain every planned bilingual condition and call",
+      "all_raw_files_unchanged": 37
+    },
+    "actual_connection_resource_checks": {
+      "phase11-connection-en-v2": {
+        "sessions": [
+          "data/runs/bilingual_development/phase11-connection-en-v2/baseline/session-1.json",
+          "data/runs/bilingual_development/phase11-connection-en-v2/internal/session-1.json"
+        ],
+        "source_sha256": {
+          "data/runs/bilingual_development/phase11-connection-en-v2/baseline/server-1.log": "883e66821c02d3022a0f53900571dd134f0086354e9d40711b557012102d4025",
+          "data/runs/bilingual_development/phase11-connection-en-v2/baseline/session-1.json": "dc87b1f36b2f4e735b6041613992aa2a693139fab49a9d736185d3c4536b53bb",
+          "data/runs/bilingual_development/phase11-connection-en-v2/internal/server-1.log": "2fd904aab3842f82c3ba842d8f97dc60b3104f35b6facc45f8fe76a1b6447f0e",
+          "data/runs/bilingual_development/phase11-connection-en-v2/internal/session-1.json": "d22c0a5e098bd2ef709cdcbde3e63d5f67ddf93d77d23904dcbe3c292994cd67"
+        },
+        "scope": "known one-QA connection only, not a full main certificate"
+      },
+      "phase11-connection-ja-v1": {
+        "sessions": [
+          "data/runs/bilingual_development/phase11-connection-ja-v1/baseline/session-1.json",
+          "data/runs/bilingual_development/phase11-connection-ja-v1/internal/session-1.json"
+        ],
+        "source_sha256": {
+          "data/runs/bilingual_development/phase11-connection-ja-v1/baseline/server-1.log": "4466221543db7d2b81bf0eec155fe2f9b0408b665f711240e087be0211ad0f78",
+          "data/runs/bilingual_development/phase11-connection-ja-v1/baseline/session-1.json": "91d81f25e1a409e52d1e82d2c73e8664e9d686dc381a903fbc94a7e6d731fa43",
+          "data/runs/bilingual_development/phase11-connection-ja-v1/internal/server-1.log": "03f5d80aa148335af307983f8a18aa01f1bfb79b8a1f862361a045263f684924",
+          "data/runs/bilingual_development/phase11-connection-ja-v1/internal/session-1.json": "5419eb581eacce0f1e71b1493d89d409181659527e266e5a60b69b89aebe234f"
+        },
+        "scope": "known one-QA connection only, not a full main certificate"
+      }
+    },
+    "native_core_and_probe_sources_unchanged": 27,
+    "new_model_calls": 0,
+    "new_model_servers": 0,
+    "positive_full_main_certificate_with_actual_data_demonstrated": false,
+    "initial_actual_resource_check_failure": {
+      "exception": "KeyError: 'runtime'",
+      "cause": "Synthetic baseline fixture used a nonexistent runtime key; real baseline context is generation.context_tokens. Corrected validator and fixture before release."
+    },
+    "initial_audit_counter_assertion_corrected": "Native-only subset has 26 files; the earlier 27-file proof additionally includes the artificial probe script. All 27 actual hashes verified."
+  },
+  "artifacts": {
+    "src/rag_research/experiments/bilingual_certification.py": {
+      "sha256": "4c1680b03595a20fcb29fcd87455b6ce8f99678e9a8d929feec7d3dc5a72a4dd",
+      "bytes": 23106
+    },
+    "scripts/certify_bilingual_main.py": {
+      "sha256": "ffc4db6fb0d51bf50ee13d64c984bca82242cb29f4a0cdc322f8999d503dddb7",
+      "bytes": 1431
+    },
+    "tests/test_bilingual_certification.py": {
+      "sha256": "f603acb45b7ce8489894b5e674f902e5c665ee0c97f0305563633657232480db",
+      "bytes": 20145
+    },
+    "docs/phase11_main_certification.md": {
+      "sha256": "7c7dc1d0502c496e881d9d0c2f606da6bb2a6c49c66da1965b450096ed44ca62",
+      "bytes": 4791
+    },
+    "data/runs/development_screening/phase11-main-certification-v1/validation.json": {
+      "sha256": "3b61a7459868e99f38f25bed477a20c09385fae976ec49f99afedc2dfe25559c",
+      "bytes": 3069
+    }
+  },
+  "new_model_calls": 0,
+  "new_model_servers": 0,
+  "positive_full_main_certificate_with_actual_data_demonstrated": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

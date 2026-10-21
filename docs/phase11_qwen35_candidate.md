@@ -215,3 +215,26 @@ Contextが異なるため人工形式証拠は再実走する。同じ6入力/�
 Launchへ生成0/形式Report Hashを結び、同じ固定Commitで意味診断v12を開始した（session1222）。
 同じCritical4条件全一致時だけ人工54条件へ進む。最大128 Call/Retry0、全結果/採用は未確定。
 主Development20問/予約Calibration/Evaluationへの新推論は行っていない。
+
+## v12の不通過と全保存
+
+固定51b0559の意味診断v12/session1222は終了した。既知4条件/20 Call、Critical3/4で不通過。
+元順序Council c4がExpected矛盾に対して支持不足となり、逆順は矛盾、Zidaneは両順序とも矛盾だった。
+誤支持0でも正確な三Labelの全一致基準を保ち、人工54条件を未試行のまま残す。
+入力95316/出力85176 Token・Task秒和1424.971683秒（23.75分）。形式/Runtime/Overflow失敗0。
+
+両c4は推論枠4096/実終了前4105 Token（Runtime停止指示10 Tokenを含む監査内）で、
+途中まで主体差と原文の対比を検討しながら、元順序の最終分類は支持不足だった。
+v11の誤支持は今回は生じなかったが、予約拡大で全意味基準を満たしたとはいえない。
+中間読解は元順序でPope Pius V、逆順でPope Pius V / The Catholic Encyclopediaとまとめており、
+原文の完全一致引用だけでは主体/述語の結び付きの正確性を証明しない。
+
+曖昧c6は元S/逆Cとなり、Fは6/7→5/7、閾値0.7で両採用。
+Expected nullは精度だけから除きFの全7分母を保持する。反転はなく、独立した新規QAの順序効果とはしない。
+対象を限ったAI意味確認でhuman_reviewed=false、厳密Model ID未取得/履歴共有を記録した。
+
+91 Source Hash、全4読解/16判定の原文/ID/全分母/Native Budget/費用、
+再開34 File不変・追加Call/Server0を照合した。原本36 Fileを同一Byteで正規保存し、
+対象意味確認1+Preflight4を含む全41 Artifactを`phase11_source_reading_result_v12.json`へ結んだ。
+旧全Version/Expected/採用基準を保つ。9Bの実完了は累積74 Callで、既知15 QA回帰はまだ行っていない。
+主Development/予約Calibrationは未実施、Gate 11未通過、Phase 12未実施である。

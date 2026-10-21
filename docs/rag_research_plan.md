@@ -1,12 +1,17 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.42 — 2026年10月22日 9Bの逆順誤支持を保持し推論・出力予約の別候補を固定
+## Version 7.43 — 2026年10月22日 v12の不通過保存と主Development証拠検証を実装
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.40](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.45](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
+
+
+[主Developmentの証拠検証](phase11_main_certification.md)を実装した。全匿名品質/文Expectedの封印後に全診断/旧15 QA回帰・主各20 QA・意味/統計/Native費用・実CUDA Sessionを隔離コピーで照合し、原本を保全する。新規27件を含む全611 Test/Ruff成功。実不通過v12の拒否と既知接続4 Sessionの資源検査は確認したが、実主証明書の成功側は未了。
+
+固定51b0559の意味v12は20 Call/既知4条件でCritical3/4、元順序Council c4のExpected矛盾に対する支持不足で不通過。誤支持0でも正確一致基準を維持し、人工54未試行・入力95316/出力85176 Token・1424.971683秒/全41 Artifact/再開追加0を保存した。大きな予約でも全基準を満たさず、主/予約Calibrationは未推論。
 
 その後、既知回帰v1は読解が配列で始まり条件付きJSON制約が未到達となって5/30条件で停止した。21 Call/他25条件未試行・再開追加0を保持。
 [終了Tag境界の別候補v7](phase11_json_boundary.md)を固定し、人工Runtime検証後に同じ128 Call診断から再確認する。主Development/未使用Calibration・最終Gateは未了。
