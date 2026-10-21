@@ -26,6 +26,8 @@ v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日�
 
 9B v9は全128入力/生成0・CUDA全層の資源確認に通過したが、人工形式2 Callが推論未終了/出力上限で停止した。失敗/残4条件を保持し、意味診断は未実施。実入力に既にある開始TagをNative Budgetへ申告する[別候補v10](phase11_qwen35_candidate.md)を追加し、全555 Test/Ruff成功。Model/Prompt/Expected/上限/採用基準を保持して同じ人工検証から再確認する。主20問/未使用Calibration・Gate 11は未了。
 
+固定645f193のv10は全128入力/生成0・全層CUDAと人工6 Callの厳密5条件すべてに通過。入力290/出力958 Token・生成16.712355秒、原本10 File/87 Source不変・監査追加Call/Server0、全16 Artifactを保存した。同じ固定Worktreeで日英意味診断v10を開始し、全結果/意味採用は未確定。旧Expected/採用基準と旧v9の失敗を保持する。
+
 ## 1. テーマと目的
 
 現行候補は[固定文ごとの評価](phase11_claimwise_candidate.md)。初回回答全体を非信頼文脈として保持し、全固定文を個別評価して

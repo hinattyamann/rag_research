@@ -45,6 +45,8 @@ v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日�
 
 9B v9は全128入力/生成0・CUDA全層の資源確認に通過したが、人工形式2 Callが推論未終了/出力上限で停止した。失敗/残4条件を保持し、意味診断は未実施。実入力末尾の開始Tag/Token列を照合してNative generation_promptへ申告し、応答と実Tokenも監査する任意Prefill候補v10を追加。旧Configはnoneを既定とし、全555 Test/Ruff成功。固定GPUの同じ人工検証から再確認する。
 
+固定645f193のv10は全128入力/生成0・全層CUDAと人工6 Callの厳密5条件すべてに通過。入力290/出力958 Token・生成16.712355秒、原本10 File/87 Source不変・監査追加Call/Server0、全16 Artifactを保存した。同じ固定Worktreeで日英意味診断v10を開始し、全結果/意味採用は未確定。旧Expected/採用基準と旧v9の失敗を保持する。
+
 ## 1. 既存実装と保存する境界
 
 現行の任意候補`verification_mode: claimwise-v1`は`evaluation/claimwise.py`で個別Journalと集計を共用する。

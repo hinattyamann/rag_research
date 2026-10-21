@@ -87,3 +87,23 @@ v10の実GPU確認はこの記録時点で未実施。事前Manifestは`phase11_
 同じ意味58条件/128 Call→通過時だけ旧15 QA/114 Callの順に検証する。
 新候補最大248 Call、過去v9の2 Callと合計最大250。自動Retry0、失敗時停止を維持する。
 失敗したv9を再開/合格へ書換えず、主20問/未使用Calibration/Evaluationへ先に進まない。
+
+## v10の人工形式通過と意味診断開始
+
+固定645f193の専用Worktreeで全128入力/Completion0 Preflightに通過し、
+最大3795 Token・CUDA全層Offload、VRAM6279/8151 MiBの一点観測を確認した。
+配置Helperが内部共有Libraryの相対Symlinkで止まった準備失敗はServer/生成0で保存した。
+内部に解決されるSymlinkを保ち、既知入力3 JSONをHash照合して配置後、Preflightを実施した。
+
+同じ人工6 Callは旧配列回避を再現し、厳密5条件すべてで正常終了/Schema/Native設定・
+Prefill申告/実推論上限を満たした。出力512/推論128の上限は変更していない。
+入力290/出力958 Token・生成秒和16.712355秒。各Callの終了Tag前は137 Tokenで、
+Runtimeが付ける停止指示分を含む監査に通過した。
+原本10 File/87 Source Hash不変・監査追加Call/Server0。
+Preflight/準備失敗を含む全16 Artifactを同一Byte保存し、
+`phase11_qwen35_9b_format_result_v2.json`へ結んだ。旧v9の失敗は不変である。
+
+同じ固定Worktreeで`phase11-qwen35-9b-source-reading-v10`の意味診断を開始した。
+Launchに生成0/形式ReportのHashを保存。session27269は継続観測し、重複起動しない。
+同じ既知Critical4条件全一致の場合だけ人工54条件へ進む。最大128 Call/Retry0、
+旧Expected/基準は不変。全意味結果/採用は未確定で、主20問/未使用Calibrationは未実施。
