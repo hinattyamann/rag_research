@@ -1,13 +1,13 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月21日。正本: [研究計画7.32](rag_research_plan.md)、[実装計画8.34](rag_implementation_plan.md)。
+更新日: 2026年10月21日。正本: [研究計画7.33](rag_research_plan.md)、[実装計画8.35](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
 
-**Phase 1〜10の基盤と、Phase 11の日本語Source/分割/全文Corpus・日英Index・共通RAGの既知接続を完了。v6は既知/日英人工の意味診断基準を通過した。使用済み15 QAの回帰v1は読解の形式失敗で停止。終了Tag境界の別候補v7を準備中。日英主Development/未使用Calibration、規模/本実験条件、拡張Validator/最終凍結は未了。Gate 11未通過、Phase 12未実施。**
+**Phase 1〜10の基盤と、Phase 11の日本語Source/分割/全文Corpus・日英Index・共通RAGの既知接続を完了。v6は既知/日英人工の意味診断基準を通過した。使用済み15 QAの回帰v1は読解の形式失敗で停止。境界候補v7も人工検証の空白反復で停止し、空白上限付きv8を準備中。日英主Development/未使用Calibration、規模/本実験条件、拡張Validator/最終凍結は未了。Gate 11未通過、Phase 12未実施。**
 
 2026年10月21日、英語CLAPNQに近い別の日本語Datasetを追加し、日英で順序感度と判断・品質・費用を
 比較する方針を採用した。[日英比較の拡張方針](english_japanese_expansion.md)に従い、
@@ -80,6 +80,9 @@ QA AdapterとGroup分割処理を追加し、実838件で原行Hash・引用/人
 次の[使用済み15 QA/42固定文の回帰](phase11_known_trace_regression.md)を最大114 Call/前提Hash/旧Expected保持へ固定し、全502 Test/Ruff成功。主Development/未使用Calibrationと最終Gateは未了。
 固定2ae5133の既知回帰は生成0 Preflight後、5/30条件目の読解が配列で始まり旧Grammar Trigger未到達で停止。21 Call/他25条件未試行、再開37 File不変/追加0。
 [JSON境界の別候補](phase11_json_boundary.md)をv7へ固定し、人工6 Call以下の実Runtime検証後、同じ日英意味診断を新Runで再実行する。未使用QAへはまだ拡大しない。
+
+境界v7の人工検証は旧制約で配列回避を再現し、新制約ではObject開始後の空白反復で上限に達した（2 Call/入力94・出力656 Token）。
+この失敗を保持し、空白を各位置最大2文字とするv8を別保存した。Nativeが保存WORDを単一TOKENへ変換する処理も一次資料から確認し、Tokenizer実測ID/保存Token/全文Grammarの一致を要求する。全510 Test/Ruff成功。GPU再検証は未実施。
 翻訳対は主実験に使わず、別Dataset間の差を言語単独の因果効果と断定しない。
 
 基盤に加え、固定回答のClaim抽出、根拠順序/反復ごとの自己評価と採用/書換え要求の保存を実装した。

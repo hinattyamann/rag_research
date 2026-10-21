@@ -9,10 +9,10 @@ def literal(value):
     return json.dumps(value, ensure_ascii=False)
 
 
-def closing_tag_grammar(schema):
+def closing_tag_grammar(schema, *, bounded_whitespace=False):
     """b11433 WORD replays the trigger itself; the grammar explicitly accepts it."""
     require(isinstance(schema, dict) and schema.get("type") == "object", "Final grammar requires an object root")
-    rules = {"ws": r"[ \t\n\r]*",
+    rules = {"ws": r"[ \t\n\r]{0,2}" if bounded_whitespace else r"[ \t\n\r]*",
              "jchar": r'[^"\\\x00-\x1F] | "\\" (["\\/bfnrt] | "u" [0-9a-fA-F]{4})',
              "upto0": '""'}
     cache, largest = {}, 0

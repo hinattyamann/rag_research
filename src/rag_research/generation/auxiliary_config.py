@@ -38,5 +38,5 @@ class AuxiliaryGenerationConfig(GenerationConfig):
             raise ValueError("Invalid reasoning token budget")
         if type(self.final_json_grammar) is not bool:
             raise ValueError("Final JSON grammar setting must be boolean")
-        if self.final_json_grammar_mode not in {"brace_trigger_v1", "closing_tag_root_v2"}:
+        if self.final_json_grammar_mode not in {"brace_trigger_v1", "closing_tag_root_v2", "closing_tag_root_v3"}:
             raise ValueError("Unknown final JSON grammar mode")

@@ -81,9 +81,10 @@ class LlamaClient:
             if json_schema is not None and config.final_json_grammar:
                 # b11433 PATTERN=2; its first nonempty capture is replayed.
                 # Replay the JSON opening brace, not the reasoning end token.
-                if getattr(config, "final_json_grammar_mode", "brace_trigger_v1") == "closing_tag_root_v2":
+                mode = getattr(config, "final_json_grammar_mode", "brace_trigger_v1")
+                if mode in {"closing_tag_root_v2", "closing_tag_root_v3"}:
                     payload.pop("json_schema")
-                    payload.update(grammar=closing_tag_grammar(json_schema), grammar_lazy=True,
+                    payload.update(grammar=closing_tag_grammar(json_schema, bounded_whitespace=mode == "closing_tag_root_v3"), grammar_lazy=True,
                                    grammar_triggers=[{"type": 1, "value": "</think>"}])
                 else:
                     payload.update(grammar_lazy=True,

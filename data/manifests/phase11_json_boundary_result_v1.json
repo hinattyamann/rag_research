@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-json-boundary-probe-v1-failed-not-adoption",
+  "fixed_commit": "8a77dc312efb16ef36a5ebd48bbfe3f0a7dddde2",
+  "report": {
+    "purpose": "phase11-artificial-final-json-boundary-probe",
+    "status": "failed",
+    "completion_limit": 6,
+    "completion_attempts": 2,
+    "cases": [
+      {
+        "id": "legacy-array",
+        "status": "failed",
+        "input_tokens": 47,
+        "output_tokens": 144,
+        "error": "ValueError: Final JSON did not reach the declared grammar trigger"
+      },
+      {
+        "id": "strict-array",
+        "status": "failed",
+        "input_tokens": 47,
+        "output_tokens": 512,
+        "error": "ValueError: Probe truncated or did not finish"
+      }
+    ],
+    "phase12_allowed": false,
+    "error": "ValueError: Probe truncated or did not finish",
+    "cost_incomplete": false,
+    "input_tokens": 94,
+    "output_tokens": 656,
+    "not_attempted_ids": [
+      "strict-prose-fence",
+      "strict-fixed-ids",
+      "strict-unicode-escape",
+      "strict-rewrite-bounds"
+    ]
+  },
+  "failure": "legacy array bypass; strict object start enforced but whitespace loop hit output limit",
+  "artifacts": {
+    "data/runs/runtime_screening/phase11-json-boundary-probe-v1/legacy-array.json": {
+      "sha256": "a96d20fb8cfd242143ba6f3a9d2eb9ee0170d4cc5e5bbf3556dfa69d121423bb",
+      "bytes": 7593
+    },
+    "data/runs/runtime_screening/phase11-json-boundary-probe-v1/plan.json": {
+      "sha256": "134821adc3cc7013e527aa03629ff62938cb4b6666f0912cd1bfd0b1b1cbc61b",
+      "bytes": 15951
+    },
+    "data/runs/runtime_screening/phase11-json-boundary-probe-v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/runtime_screening/phase11-json-boundary-probe-v1/strict-array.json": {
+      "sha256": "c7c6adc9174e7b610e779082974593b14bddeef9b1ee280261ad4d051bc95d23",
+      "bytes": 17053
+    },
+    "data/runs/runtime_screening/phase11-json-boundary-probe-v1/report.json": {
+      "sha256": "53d947acfbbfb71b06974121c25f8be533d559e25e79ef30dc28c6f202bade00",
+      "bytes": 843
+    },
+    "data/runs/runtime_screening/phase11-json-boundary-probe-v1/server.log": {
+      "sha256": "6231a0f73a2a8d1117aff25d93a276d6ecf5093009e0e368cbcfc140d6510c73",
+      "bytes": 20982
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

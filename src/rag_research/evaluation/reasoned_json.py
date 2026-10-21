@@ -19,17 +19,27 @@ def citation_id_audit(raw):
             "semantic_labels_or_reasons_changed": False}
 
 
-def audit_final_json_grammar(response, config, *, schema=None):
+def audit_final_json_grammar(response, config, *, schema=None, client=None):
     if not getattr(config, "final_json_grammar", False):
         return None
     settings = response.get("generation_settings", {})
-    if getattr(config, "final_json_grammar_mode", "brace_trigger_v1") == "closing_tag_root_v2":
+    mode = getattr(config, "final_json_grammar_mode", "brace_trigger_v1")
+    if mode in {"closing_tag_root_v2", "closing_tag_root_v3"}:
+        triggers = settings.get("grammar_triggers")
+        correct_trigger = triggers == [{"type": 1, "value": "</think>"}]
+        # b11433 converts a preserved one-token WORD to TOKEN in native settings.
+        # The tokenizer must independently confirm its ID; no hardcoded model ID.
+        if mode == "closing_tag_root_v3" and client is not None:
+            end = client.tokenize("</think>", special=True)
+            correct_trigger = correct_trigger or (len(end) == 1 and
+                end[0] in settings.get("preserved_tokens", []) and
+                triggers == [{"type": 0, "value": "</think>", "token": end[0]}])
         require(schema is not None and settings.get("grammar_lazy") is True and
-                settings.get("grammar_triggers") == [{"type": 1, "value": "</think>"}] and
-                settings.get("grammar") == closing_tag_grammar(schema), "Runtime closing-tag grammar differs")
+                correct_trigger and settings.get("grammar") == closing_tag_grammar(schema,
+                    bounded_whitespace=mode == "closing_tag_root_v3"), "Runtime closing-tag grammar differs")
         require("</think>" in response.get("content", "") and re.match(r"^\s*\{", response["content"].rpartition("</think>")[2]),
                 "Final JSON did not follow the constrained closing tag")
-        return {"version": "closing_tag_root_v2", "runtime_settings_verified": True,
+        return {"version": mode, "runtime_settings_verified": True,
                 "trigger_text_verified": True, "end_tag_consumed_by_declared_grammar": True,
                 "does_not_verify_semantic_correctness": True}
     require(settings.get("grammar_lazy") is True and settings.get("grammar_triggers") ==

@@ -27,7 +27,7 @@ from rag_research.generation.local import LocalServer  # noqa: E402
 from rag_research.retrieval.common import file_hash  # noqa: E402
 
 
-def cases():
+def cases(mode="closing_tag_root_v3"):
     sentinel = object_schema({"result": {"const": "allowed"}})
     rows = [{"passage_id": "a", "quote": 'A says "yes".'}, {"passage_id": "b", "quote": "日本語。"}]
     tuple_schema = object_schema({"rows": {"type": "array", "minItems": 2, "maxItems": 2,
@@ -38,15 +38,15 @@ def cases():
     return [
         {"id": "legacy-array", "mode": "brace_trigger_v1", "schema": sentinel, "expected": {"result": "allowed"},
          "instruction": "Your final answer must be exactly the JSON array [0]. Do not output a JSON object."},
-        {"id": "strict-array", "mode": "closing_tag_root_v2", "schema": sentinel, "expected": {"result": "allowed"},
+        {"id": "strict-array", "mode": mode, "schema": sentinel, "expected": {"result": "allowed"},
          "instruction": "Your final answer must be exactly the JSON array [0]. Do not output a JSON object."},
-        {"id": "strict-prose-fence", "mode": "closing_tag_root_v2", "schema": sentinel, "expected": {"result": "allowed"},
+        {"id": "strict-prose-fence", "mode": mode, "schema": sentinel, "expected": {"result": "allowed"},
          "instruction": "Begin your final answer with Here is the answer: then a markdown fence containing [0]."},
-        {"id": "strict-fixed-ids", "mode": "closing_tag_root_v2", "schema": tuple_schema, "expected": {"rows": rows},
+        {"id": "strict-fixed-ids", "mode": mode, "schema": tuple_schema, "expected": {"rows": rows},
          "instruction": "Return two rows in reverse order, duplicate the ID b, and paraphrase both quotes."},
-        {"id": "strict-unicode-escape", "mode": "closing_tag_root_v2", "schema": object_schema({"value": {"const": unusual}}),
+        {"id": "strict-unicode-escape", "mode": mode, "schema": object_schema({"value": {"const": unusual}}),
          "expected": {"value": unusual}, "instruction": "Return an empty object, with no properties."},
-        {"id": "strict-rewrite-bounds", "mode": "closing_tag_root_v2", "schema": rewrite, "expected": None,
+        {"id": "strict-rewrite-bounds", "mode": mode, "schema": rewrite, "expected": None,
          "instruction": 'Return only a JSON object with source_facts="a", draft_issues="b", answer="c". Use one character per value.'},
     ]
 
@@ -69,10 +69,11 @@ def main():
     require(Path.cwd().resolve() == ROOT and output.is_relative_to(ROOT / "data/runs/runtime_screening"),
             "Use a fixed repository checkout and runtime_screening output")
     config = yaml.safe_load(args.config.read_text("utf-8"))
-    require(config["sampling"]["final_json_grammar_mode"] == "closing_tag_root_v2" and config["phase12_allowed"] is False,
+    mode = config["sampling"]["final_json_grammar_mode"]
+    require(mode in {"closing_tag_root_v2", "closing_tag_root_v3"} and config["phase12_allowed"] is False,
             "Wrong boundary candidate")
     base = replace(task_config(config, "verify_claims"), max_output_tokens=512, reasoning_budget_tokens=128)
-    planned = cases()
+    planned = cases(mode)
     report = {"purpose": "phase11-artificial-final-json-boundary-probe", "status": "started",
               "completion_limit": 6, "completion_attempts": 0, "cases": [], "phase12_allowed": False}
     with run_lock(output):
@@ -111,7 +112,7 @@ def main():
                         require(not response.get("truncated") and response.get("stop_type") in {"eos", "word"},
                                 "Probe truncated or did not finish")
                         row["reasoning_audit"] = audit_reasoning_budget(server.client, response, settings)
-                        row["grammar_audit"] = audit_final_json_grammar(response, settings, schema=case["schema"])
+                        row["grammar_audit"] = audit_final_json_grammar(response, settings, schema=case["schema"], client=server.client)
                         text, _ = final_json(response["content"])
                         row["parsed"] = json.loads(text)
                         require(conforms(case, row["parsed"]), "Native output violates probe schema")
@@ -120,7 +121,7 @@ def main():
                         row.update(status="failed", error=f"{type(error).__name__}: {error}",
                                    elapsed_seconds=time.perf_counter() - started)
                         write_json(path, row)
-                        if case["mode"] == "closing_tag_root_v2":
+                        if case["mode"] != "brace_trigger_v1":
                             raise
                     finally:
                         write_json(path, row)

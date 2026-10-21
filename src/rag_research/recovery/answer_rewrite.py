@@ -72,7 +72,7 @@ def rewrite_once(client, config, prompts, trace, path, binding):
             answer = response.get("content")
             if thinking:
                 result["reasoning_budget_audit"] = audit_reasoning_budget(client, response, config)
-                result["final_grammar_audit"] = audit_final_json_grammar(response, config, schema=schema)
+                result["final_grammar_audit"] = audit_final_json_grammar(response, config, schema=schema, client=client)
                 answer, result["model_reasoning"] = final_json(answer)
             if checked:
                 review = parse_json(answer)

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-json-boundary-v8-preregistration-not-adoption",
+  "created_at_utc": "2026-10-21T12:23:14.412139+00:00",
+  "max_probe_completion_attempts": 6,
+  "strict_cases": 5,
+  "automatic_retries": 0,
+  "full_tests_passed": 510,
+  "ruff_passed": true,
+  "runtime_probe_done": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "artifacts": {
+    "src/rag_research/generation/json_grammar.py": {
+      "sha256": "190113d8e69972578722c0cb89ff85e9c1142fafe8de70383a534a018016c292",
+      "bytes": 4353
+    },
+    "src/rag_research/generation/auxiliary_config.py": {
+      "sha256": "128dbd3f2e6b928842a34c6cd3db6431371dbf00e738c4dfe4c168dd221c93bd",
+      "bytes": 2046
+    },
+    "src/rag_research/generation/local.py": {
+      "sha256": "1ab8a1bf6ee0bd3fb4b25790ff5a9a0999e6b90646121f6801bf9567c6fa8fdb",
+      "bytes": 11562
+    },
+    "src/rag_research/evaluation/reasoned_json.py": {
+      "sha256": "5c6b089e9442d8f23783aaa5afc4c9a9744d9a617ac8ea7064eff47fbc219830",
+      "bytes": 5634
+    },
+    "src/rag_research/evaluation/tasks.py": {
+      "sha256": "72c27b8263fdab442fa11e604d3a092eb820c78ecff866b8ea7964383160a792",
+      "bytes": 9506
+    },
+    "src/rag_research/recovery/answer_rewrite.py": {
+      "sha256": "359e2535848182a855cd58b9a6bd52d1893ffea37819a69e68647f1067c87a01",
+      "bytes": 6301
+    },
+    "src/rag_research/experiments/protocol.py": {
+      "sha256": "95343d540507521a8017b8929b8b21cbd0dde3b3abfbda6fa23692260107ddf1",
+      "bytes": 10174
+    },
+    "scripts/probe_final_json_boundary.py": {
+      "sha256": "affcbee22dc1f386951a38ba64c0924b45616d74d14bed7af9da3ab102c21e74",
+      "bytes": 9568
+    },
+    "tests/test_json_boundary.py": {
+      "sha256": "9c0285d743436dd5957e70abfedc633d58649dfdf182a0eff63a3ebe538264d7",
+      "bytes": 5096
+    },
+    "configs/phase11_semantic_candidate_v8.yaml": {
+      "sha256": "a39fa3fec64d55d5bfb5d8b845a60d6cdae7e2f3850b42da16c5cc11e06c7bc5",
+      "bytes": 2168
+    },
+    "docs/phase11_json_boundary.md": {
+      "sha256": "27d4360ddbb31c508465b3b0fc45825ad4b7d64abb644a1f3ff8164aa0edd35f",
+      "bytes": 6135
+    }
+  },
+  "primary_sources": {
+    "data/runs/runtime_screening/phase11-json-boundary-v1/primary_sources/common/sampling.cpp": {
+      "sha256": "a630f7b83938fcdc1c615b53efa426b9f8cb3aa6188134e0ce29fa16aa67301f",
+      "bytes": 39692
+    },
+    "data/runs/runtime_screening/phase11-json-boundary-v1/primary_sources/common/common.h": {
+      "sha256": "17645669982bde37d4ce632c7e600c6957e214e1517ed26193253907573f6681",
+      "bytes": 55762
+    },
+    "data/runs/runtime_screening/phase11-json-boundary-v1/primary_sources/src/llama-grammar.cpp": {
+      "sha256": "97d76071a2ed1b0c4ce827f002f554b12a25593776adb525dde33ac4cb1eb1e9",
+      "bytes": 56537
+    },
+    "data/runs/runtime_screening/phase11-json-boundary-v1/primary_sources/examples/json_schema_pydantic_example.py": {
+      "sha256": "474398112f698a050e15c07e75f251bbac384751f221c51597037f3d27d8d6fd",
+      "bytes": 3214
+    },
+    "data/runs/runtime_screening/phase11-json-boundary-v1/primary_sources/tools/server/server-schema.cpp": {
+      "sha256": "0bab859883207554fb724774892e8756ec0c956252b7653424756a0ee582efa8",
+      "bytes": 33040
+    },
+    "data/runs/runtime_screening/phase11-json-boundary-v1/primary_sources/tools/server/server-task.cpp": {
+      "sha256": "aa752f0ba1ce4be15c65dbce43b769fdeeb5b0f72286005ef40028eea1f56e95",
+      "bytes": 67587
+    }
+  }
+}

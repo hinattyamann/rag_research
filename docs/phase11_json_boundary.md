@@ -49,3 +49,19 @@ Plan/全Source Hash・全要求/応答・Token/時間・Server終了を固定Com
 その結果も通過した場合だけ、旧Expectedを変えず既知15 QAの新Plan/Runへ進む。
 変更したCoreで旧v6の前提照合をすり抜けず、新しい通過Reportを前提として固定する。
 日英主Development・未使用Calibration・最終凍結はその後であり、Phase 12は開始しない。
+
+## 人工検証v1の不通過とv8の事前条件
+
+固定8a77dc3の人工検証は2/6 Callで停止。旧制約は配列[0]でTrigger未到達を再現した。
+新v7はObject開始を制約したが、無制限の空白を繰り返して512 Tokenの上限に達した。
+入力94/出力656 Token、残る4条件未試行。Raw/Plan/Report/Logの全6 Artifactを
+`phase11_json_boundary_result_v1.json`で保持する。新制約の形式合格とはしない。
+
+別候補v8は`closing_tag_root_v3`で、各位置の空白を最大2文字にする。v2の無制限空白とConfig v7は保持する。
+同じ6人工入力/上限/厳密条件/停止規則を新Runで検証し、出力上限を延ばして失敗を隠さない。
+また、固定Sourceの[server-schema.cpp](https://github.com/ggml-org/llama.cpp/blob/50569eb87df530daff11afda229ceb9ab8e6cae8/tools/server/server-schema.cpp)は、
+保存WORDが一つのTokenに対応するとNative設定をTOKEN=0へ正規化する。
+v3の監査は実Tokenizerの終了IDと保存Token一覧を独立照合した場合だけ、このNative表現を受け入れる。
+違うID/保存漏れ/Tokenizerなし/Grammar差を拒否する。Native表示をWORD型へ書き換えない。
+人工検証v1はこの照合へ進む前の出力打切りで不通過であり、事後に通過へ変更しない。
+全510 Test/Ruff成功。実GPUのv8と、通過後の同じ128 Call意味診断はこれからである。

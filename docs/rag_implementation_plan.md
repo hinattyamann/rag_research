@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.34 — 2026年10月21日 最終JSON境界の別制約と人工Runtime検証を追加
+## Version 8.35 — 2026年10月21日 最終JSON境界の別制約と人工Runtime検証を追加
 
-[研究計画 Version 7.31](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.33](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -29,6 +29,9 @@ Phase 7の入力検証CLIは引き続きCompletion 0回である。
 
 その後、既知回帰v1は読解が配列で始まり条件付きJSON制約が未到達となって5/30条件で停止した。21 Call/他25条件未試行・再開追加0を保持。
 [終了Tag境界の別候補v7](phase11_json_boundary.md)を固定し、人工Runtime検証後に同じ128 Call診断から再確認する。主Development/未使用Calibration・最終Gateは未了。
+
+境界v7の人工検証は旧制約で配列回避を再現し、新制約ではObject開始後の空白反復で上限に達した（2 Call/入力94・出力656 Token）。
+この失敗を保持し、空白を各位置最大2文字とするv8を別保存した。Nativeが保存WORDを単一TOKENへ変換する処理も一次資料から確認し、Tokenizer実測ID/保存Token/全文Grammarの一致を要求する。全510 Test/Ruff成功。GPU再検証は未実施。
 
 ## 1. 既存実装と保存する境界
 

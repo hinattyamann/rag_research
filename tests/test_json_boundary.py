@@ -1,6 +1,7 @@
 """Reasoning-end boundary, strict schema identity and unchanged legacy request behavior."""
 
 from dataclasses import replace
+from types import SimpleNamespace
 
 import pytest
 
@@ -55,3 +56,25 @@ def test_grammar_preserves_fixed_ids_citation_order_invariance_and_large_rewrite
 def test_unsupported_or_open_schemas_fail_closed(schema):
     with pytest.raises(ValueError):
         closing_tag_grammar(schema)
+
+
+def test_bounded_candidate_accepts_only_tokenizer_verified_preserved_trigger(monkeypatch):
+    config = AuxiliaryGenerationConfig(temperature=.6, final_json_grammar=True, final_json_grammar_mode="closing_tag_root_v3")
+    schema = object_schema({"result": {"const": "allowed"}})
+    client = LlamaClient(1)
+    requests = []
+    monkeypatch.setattr(client, "request", lambda route, payload: requests.append(payload) or {})
+    client.complete([1], config, json_schema=schema)
+    grammar = requests[0]["grammar"]
+    assert r"ws ::= [ \t\n\r]{0,2}" in grammar
+    settings = {"grammar": grammar, "grammar_lazy": True, "preserved_tokens": [123],
+                "grammar_triggers": [{"type": 0, "value": "</think>", "token": 123}]}
+    response = {"content": '</think>{"result":"allowed"}', "generation_settings": settings}
+    tokenizer = SimpleNamespace(tokenize=lambda text, special: [123])
+    assert audit_final_json_grammar(response, config, schema=schema, client=tokenizer)["runtime_settings_verified"]
+    for bad in ({**settings, "preserved_tokens": []},
+                {**settings, "grammar_triggers": [{"type": 0, "value": "</think>", "token": 124}]}):
+        with pytest.raises(ValueError, match="differs"):
+            audit_final_json_grammar({**response, "generation_settings": bad}, config, schema=schema, client=tokenizer)
+    with pytest.raises(ValueError, match="differs"):
+        audit_final_json_grammar(response, config, schema=schema)
