@@ -1,0 +1,39 @@
+{
+  "purpose": "phase11-source-reading-v11-direct-comparison-launch",
+  "created_at_utc": "2026-10-21T21:03:47.402655+00:00",
+  "fixed_commit": "bb11fc93bb3ad1c6a89b414aefbcd81eab0de167",
+  "config": "configs/phase11_semantic_candidate_v11.yaml",
+  "config_sha256": "cd9efaa6142e49dba4d5852720eb7750781be797b0506e8f7e12cab935df508e",
+  "preflight_report": "data/runs/model_screening/phase11-qwen35-9b-v11/preflight_v1/report.json",
+  "preflight_report_sha256": "890a1a590cc7fa13f762df0967a5a61d598dbe573797e8aa7910942bde54cc4d",
+  "format_report": "data/runs/runtime_screening/phase11-qwen35-9b-format-v2/report.json",
+  "format_report_sha256": "043ea9128a949a1781b107765a3c4298e3bc266b73de6809afe1435794088665",
+  "format_proof_reused_with_verified_core_sources": 27,
+  "format_preregistration": "data/manifests/phase11_qwen35_9b_preregistration_v3.json",
+  "format_preregistration_sha256": "aea7de044aff9b92ba6007e482c916345ce48fb5d71fae93f4fba46f9bae444b",
+  "critical_conditions_first": 4,
+  "maximum_completion_attempts": 128,
+  "automatic_retries": 0,
+  "expected_or_gate_changed": false,
+  "scope": "known-used cases and preregistered artificial diagnostics only; no reserved Calibration or Evaluation QA",
+  "phase12_allowed": false,
+  "tool_session_id_at_start": 59388,
+  "preflight_artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-v11/preflight_v1/plan.json": {
+      "sha256": "82f6aa3930a4af84e54696a81783ef24410989f5423c7794c13b51326d80585c",
+      "bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v11/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v11/preflight_v1/report.json": {
+      "sha256": "890a1a590cc7fa13f762df0967a5a61d598dbe573797e8aa7910942bde54cc4d",
+      "bytes": 41052
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v11/preflight_v1/server.log": {
+      "sha256": "196590915268336ed4108cdbd6049af5f607df3ae90c3fe12013159b4b533032",
+      "bytes": 19146
+    }
+  }
+}

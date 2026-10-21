@@ -148,3 +148,13 @@ v10からJudge systemの先頭に、指示/草稿/文書列挙の再述を避け
 同じ6 Callを無目的に繰り返さず、実Taskごとの終了/形式/実Budget監査は維持する。
 最大新規242 Call（意味128+通過時の旧回帰114）、旧9B28 Callを含め累積最大270、Retry0。
 基準不通過は停止/全保存し、全意味採用証拠がそろう場合だけ主20問へ進む。
+
+
+## v11の固定実走開始
+
+固定bb11fc9の専用Worktreeで全128入力/Completion0 Preflightに通過した。
+最大3887 Token・中間/出力予約込み予算内、CUDA全層Offload。VRAM6270/8151 MiBは一点観測。
+4 Preflight Artifactを同一Byte保存し、再利用する形式Report/事前条件/27 Core Hashを照合した。
+Launchへ全Hashを結んで同じ意味診断を開始した（session59388）。
+最大128 Call/Retry0・Critical4全一致時だけ人工54条件へ、全結果/採用は未確定。
+主20問/予約Calibrationはまだ実行していない。
