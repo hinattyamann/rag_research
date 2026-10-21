@@ -1,11 +1,13 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月22日。正本: [研究計画7.47](rag_research_plan.md)、[実装計画8.49](rag_implementation_plan.md)。
+更新日: 2026年10月22日。正本: [研究計画7.48](rag_research_plan.md)、[実装計画8.50](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
+
+[日英の最終固定Validator](phase11_bilingual_finalization.md)を追加した。実主証明書と全採点封印済みCalibrationを再検証し、旧回帰/全Native/意味・統計・費用、両言語Assets/全Index/Embedding Payload、Evaluation本文を読まないID選定、最終N/資源/停止規則を照合する。未達時は最終Manifestを作らず、検証資料自身のSource一致も要求する。雛形のN/資源/実証拠は未決で、実主/Cal採用と最終凍結は未了。固定8ea37e1の旧15 QA回帰v3/session93865は継続観測し、重複起動しない。修正後の新規27件を含む全701 Test（25.15秒）/Ruff・実未達拒否・全30 Index/Embedding Payload照合に成功。母集団EN564/JA209のMetadata導出は最終Nの決定ではなく、Evaluation QA解析/追加推論0。
 
 [固定v13の全診断と旧15 QA回帰v3](phase11_qwen35_direct_result.md)を保存した。全58条件/70 Callで既知4/4・人工英語24/24/日本語28/30・誤支持0、入力109350/出力198444 Token・3220.362427秒。全92 Source/再開134 File不変・追加Call/Server0、原本136/全142 Artifactと全最終出力のAI確認を保持。日本語の同一入力の支持不足→矛盾2と曖昧c6も保つ。次の旧15 QA/42文/30条件・最大84 Call/Retry0を全Expected/基準のまま新規事前登録し、実契約/前提を確認した。主/Cal採用は依然未了。固定8ea37e1の専用Worktreeで全84入力/生成0に通過し、最大3482 Token・Context24576/全層CUDAを確認した（VRAM6558/8151 MiBは一点観測）。準備/Preflightの5 Artifactを保存し、同じ固定Commitで旧15 QA回帰v3を開始した（session93865）。全結果/採用は未確定、最大84 Call/Retry0・負例12条件全一致時だけ残りへ進む。
 
@@ -299,7 +301,7 @@ Zidaneで順序判断反転1/12、同順序反転0/12。誤支持・回答不足
 
 Gate 11: 日本語Sourceの選定根拠、両言語の実対応・意味妥当性・英語回帰・条件/対象/統計の根拠があり、
 Evaluationの結果を見ずに再現可能な条件と凍結ManifestのHashがそろう。
-追加要件を確認する実装は未着手で、既存の英語用Validatorの成功だけでは拡張後のGate通過としない。
+追加要件を確認する[日英用Validator](phase11_bilingual_finalization.md)を10月22日に追加した。実主/Calibrationの成功側・最終件数/条件は未了で、旧英語用Validatorや人工通過テストだけでは拡張後のGate通過としない。
 ここを通過してから本実験を始める。
 
 ## 7. Phase 12: 日英の本実験と独立採点

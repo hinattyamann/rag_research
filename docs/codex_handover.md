@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+[日英の最終固定Validator](phase11_bilingual_finalization.md)を追加した。実主証明書と全採点封印済みCalibrationを再検証し、旧回帰/全Native/意味・統計・費用、両言語Assets/全Index/Embedding Payload、Evaluation本文を読まないID選定、最終N/資源/停止規則を照合する。未達時は最終Manifestを作らず、検証資料自身のSource一致も要求する。雛形のN/資源/実証拠は未決で、実主/Cal採用と最終凍結は未了。固定8ea37e1の旧15 QA回帰v3/session93865は継続観測し、重複起動しない。修正後の新規27件を含む全701 Test（25.15秒）/Ruff・実未達拒否・全30 Index/Embedding Payload照合に成功。母集団EN564/JA209のMetadata導出は最終Nの決定ではなく、Evaluation QA解析/追加推論0。
+
 [固定v13の全診断と旧15 QA回帰v3](phase11_qwen35_direct_result.md)を保存した。全58条件/70 Callで既知4/4・人工英語24/24/日本語28/30・誤支持0、入力109350/出力198444 Token・3220.362427秒。全92 Source/再開134 File不変・追加Call/Server0、原本136/全142 Artifactと全最終出力のAI確認を保持。日本語の同一入力の支持不足→矛盾2と曖昧c6も保つ。次の旧15 QA/42文/30条件・最大84 Call/Retry0を全Expected/基準のまま新規事前登録し、実契約/前提を確認した。主/Cal採用は依然未了。固定8ea37e1の専用Worktreeで全84入力/生成0に通過し、最大3482 Token・Context24576/全層CUDAを確認した（VRAM6558/8151 MiBは一点観測）。準備/Preflightの5 Artifactを保存し、同じ固定Commitで旧15 QA回帰v3を開始した（session93865）。全結果/採用は未確定、最大84 Call/Retry0・負例12条件全一致時だけ残りへ進む。
 
 実走更新: v13/session11515と再開監査82794は終了し、全診断を正規保存済み。旧Runを再生成しない。次のConfigはphase11_known_trace_candidate_v3.yaml/Planはphase11_known_trace_regression_v3.json、Preregistration v3。新固定Worktreeへ全25 Source Binding・裸拒否8 Trace・通過前提Runを同一Byteで配置し、全84入力/生成0を確認後だけ最大84 Callの回帰を行う。最初の6 QA/12 Critical/42 Call全一致後だけ残り9 QA/18条件へ進む。回帰v3を実走中で、まだ主Policyを更新しない。専用Worktreeは.tools/worktrees/phase11-known-trace-regression-v3。同じsession93865を観測し、重複起動しない。終了後は/tmp/phase11_direct_audit.pyの位置引数Config/Runで再開追加0と全Rawを監査する。
