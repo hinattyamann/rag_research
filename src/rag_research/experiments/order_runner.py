@@ -11,7 +11,7 @@ import yaml
 
 from rag_research.evaluation.order import trial_plan
 from rag_research.evaluation.tasks import execute_task
-from rag_research.experiments.decisions import decide
+from rag_research.experiments.decisions import decide_with_refusal
 from rag_research.experiments.frozen_trace import (
     assert_same_evidence,
     digest,
@@ -192,7 +192,8 @@ def evaluate_traces(client, config, prompts, traces, manifest, output, notify=pr
                 notify(json.dumps({"record_id": trace["record_id"], "trial": spec["trial_id"],
                                    "status": row["status"], "score": row["score"],
                                    "error": row["error"], "error_code": row["error_code"]}), flush=True)
-            row.update(decide(row["score"], config["decision"]["threshold"]))
+            row.update(decide_with_refusal(row["score"], config["decision"]["threshold"], extraction,
+                       policy=config["decision"].get("bare_refusal_policy", "keep_initial")))
             trials.append(row)
         records.append({"record_id": trace["record_id"], "trace_sha256": trace["trace_sha256"],
                         "extraction_status": extraction["status"], "claims": claims,

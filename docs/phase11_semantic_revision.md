@@ -93,3 +93,40 @@ GPUメモリの一点観測は最大値や長時間安定性と区別する。�
 `refusal_saved_comparison_v1.json`へ保存した。追加Model呼出し0の事後比較であり、未知QAでの新方針の有効性の検証ではない。
 候補方針は決定的抽出の`standalone_refusal`だけをJudgeなしの一回書換えへ回し、Scoreはnullのまま残す。
 その他の空Claim/抽出障害・Runtime失敗は初回維持の別Fallbackとして残す。方針は未実装・未採用である。
+
+## 8B資源・意味診断の結果と次の方法候補
+
+固定f8df5b5/専用Worktreeの資源Preflightは58条件・最大入力3257 Tokenで全予算内、Completion0、
+CUDA37/37層Offload、KV1728 MiBだった。GPU全体7094/8151 MiB使用は一点観測である。
+資源確認のReport Hashを先に記録してから意味診断を開始した。
+
+8BのCriticalも2/4一致で不通過。Council c4は元/逆とも誤支持、Zidane c1は元/逆とも矛盾だった。
+形式有効4/4・Overflow/Runtime失敗0、入力12390/出力4303 Token、Task秒和67.52。
+Zidane元順序の理由には誤った優勝Seasonの追加があり、Label一致と理由の正しさを分けて記録した。
+人工54条件は未試行、再開11 File不変・追加Completion/Server起動0。
+原本/正規複製とPreflightは`phase11_semantic_8b_result_v3.json`へHash付きで保存した。
+
+初回に予定した3候補はいずれも意味採用不通過で終了し、どれも主Pilot/Calibrationの採用候補にしていない。
+次の合理的な方法候補は[固定文ごとの評価](phase11_claimwise_candidate.md)。
+全文・全単位・既知Expectedと採用基準を保持し、複数文を一つのCompletionで判定する処理を検討する。
+呼出し数・文脈・Fの集約/失敗処理・費用への影響を先に定義した。新方式はまだ実装/実走していない。
+
+## 裸の拒否だけを一回書換えへ回す実装候補
+
+`decision.bare_refusal_policy`を省略/`keep_initial`なら旧動作を維持する。
+日英の別Development/Calibration候補で`rewrite_once`を明示した場合に限り、
+決定的文抽出の`status=not_applicable`・`extraction_kind=verbatim_sentence_units`・
+`unit_audit.exclusion=standalone_refusal`・空Claimの全条件を満たせば、Score null/decision unscorableのまま
+actionだけを一回書換え要求へ変える。これは通常の支持率判断とは別の例外である。
+その他の空/引用だけ/曖昧な本文・LLM抽出・障害は旧Fallbackのまま。F0を捏造しない。
+共通の一回書換え候補を使い、Judge呼出し0、書換え最大1。失敗時は初回維持/rewrite_failed、Retry0。
+品質Importは同じRuleを再計算し、経路は`bare_refusal_rewrite_once`と費用を別に表示する。
+
+新規9 Testを含む全459 Test（ホスト6.11秒）/Ruffが成功した。
+null維持・通常障害との区別・旧Protocolへの適用拒否・追加呼出し/Server起動0・実費・書換え失敗を検証した。
+既存のConfigは初回維持のままで、まだ新方針を新しいQA/Modelへ採用していない。
+
+変更したCodeで旧20問の保存候補を再構成した事後解析では、8 QA/72経路のactionだけが変わり、F/判断は不変。
+元順序のY1は6→9、Y0は14→9、不明は0→2、対応する保存費用のCallsは32→40だった。
+`refusal_policy_reconstruction_v1.json`へ保存した。旧4Bの候補/Label/費用の再利用・実Model追加0であり、
+新Model/未知QAでの効果や新しい実Latencyとはしない。未知QAのProspective検証は主Development/Calibrationで別に必要。

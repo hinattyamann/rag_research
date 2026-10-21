@@ -61,6 +61,11 @@ def validate_task_contract(config, prompts):
     require(config["errors"]["input_overflow_action"] == "record_error_without_truncating",
             "Overflow must not truncate evidence")
     decision = config["decision"]
+    policy = decision.get("bare_refusal_policy", "keep_initial")
+    require(policy in {"keep_initial", "rewrite_once"}, "Unknown bare-refusal policy")
+    require(policy == "keep_initial" or config["purpose"] in {
+            "phase11-bilingual-development-candidate", "phase11-bilingual-calibration-candidate"},
+            "Bare-refusal rewrite requires a separate bilingual candidate protocol")
     require(decision["no_claims_score"] is None, "No-claim score must be null")
     require(decision["score"] == "supported_claims_divided_by_fixed_claims" and
             decision["accept_when"] == "score_greater_than_or_equal_to_threshold" and

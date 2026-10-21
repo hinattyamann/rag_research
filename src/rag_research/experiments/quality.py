@@ -6,6 +6,7 @@ from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
 
+from rag_research.experiments.decisions import decide_with_refusal
 from rag_research.experiments.frozen_trace import digest, require
 from rag_research.experiments.protocol import ROOT
 from rag_research.experiments.storage import (
@@ -209,8 +210,12 @@ def reconstruct(records, labels):
                 tasks.append(judge)
             if requested:
                 tasks.append(rewrite)
+            bare_refusal = (requested and trial["decision"] == "unscorable" and
+                            decide_with_refusal(None, row["evaluation"]["threshold"], row["tasks"]["extraction"],
+                                                policy="rewrite_once")["action"] == "rewrite_requested")
             routes.append({"route": trial["trial_id"], "requested": requested,
-                           "fallback": "unscorable" if trial["decision"] == "unscorable" else None,
+                           "fallback": ("bare_refusal_rewrite_once" if bare_refusal else "unscorable")
+                           if trial["decision"] == "unscorable" else None,
                            "tasks": tasks})
         for route in routes:
             selected = "rewritten" if route["requested"] and rewrite["status"] == "ok" else "initial"

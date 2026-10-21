@@ -12,8 +12,10 @@ import yaml
 from rag_research.data import study_assets
 from rag_research.experiments import bilingual_quality as quality
 from rag_research.experiments import bilingual_runner as runner
+from rag_research.experiments.decisions import decide, decide_with_refusal
 from rag_research.experiments.frozen_trace import digest
-from rag_research.experiments.quality import make_packet
+from rag_research.experiments.protocol import validate_task_contract
+from rag_research.experiments.quality import make_packet, reconstruct
 from rag_research.experiments.storage import read_json, write_json
 from rag_research.generation.config import GenerationConfig
 from rag_research.generation.context import PromptSpec
@@ -199,7 +201,8 @@ def connection(registry, tmp_path, monkeypatch):
     rubric = tmp_path / "docs/order_quality_rubric.md"
     rubric.parent.mkdir()
     rubric.write_text("Apply all three criteria.")
-    state = {"calls": [], "servers": 0, "failure": None, "overflow": False}
+    state = {"calls": [], "servers": 0, "failure": None, "overflow": False, "bare_refusal": False,
+             "config": config}
 
     class Client:
         def render(self, messages):
@@ -220,7 +223,8 @@ def connection(registry, tmp_path, monkeypatch):
             if task == state["failure"]:
                 raise GenerationError("Synthetic preserved failure")
             if task == "initial":
-                content = "猫は赤い。[p1]"
+                content = ("提示された根拠には、この質問に答えるための十分な情報がありません。"
+                           if state["bare_refusal"] else "猫は赤い。[p1]")
             elif task == "rewrite_answer":
                 content = "資料では、猫は赤い。[p1]"
             else:
@@ -349,3 +353,65 @@ def test_optional_offline_provenance_preserves_legacy_packets_and_deduplicates()
     assert len(packet["cases"]) == 1 and len(next(iter(mapping["assignments"].values()))) == 2
     assert packet["packet_sha256"] != legacy[0]["packet_sha256"]
     assert digest(packet["cases"][0]["reference_provenance"]) == digest({"missing": ["source"]})
+
+
+@pytest.mark.parametrize("policy", ["keep_initial", "rewrite_once"])
+def test_bare_refusal_policy_preserves_null_score_no_judge_and_single_rewrite(connection, policy):
+    config, output, state = connection
+    state["bare_refusal"] = True
+    state["config"]["decision"]["bare_refusal_policy"] = policy
+    result = runner.run(config, output)
+    assert len(state["calls"]) == 2
+    assert [m[0]["content"] for m in state["calls"]] == ["initial", "rewrite_answer"]
+    _, report = quality.read_run(output)
+    row = report["records"][0]
+    for trial in row["evaluation"]["trials"]:
+        assert trial["score"] is None and trial["decision"] == "unscorable"
+        assert trial["action"] == ("rewrite_requested" if policy == "rewrite_once" else "keep_initial_fallback")
+    assert not row["tasks"]["judges"]
+    identifier = row["trace"]["record_id"]
+    routes = reconstruct([row], {(identifier, "initial"): "unreliable", (identifier, "rewritten"): "reliable"})
+    selected = [r for r in routes["routes"] if r["route"] not in {"no_repair", "always_rewrite"}]
+    assert all(r["selected_stage"] == ("rewritten" if policy == "rewrite_once" else "initial") for r in selected)
+    assert all(r["fallback"] == ("bare_refusal_rewrite_once" if policy == "rewrite_once" else "unscorable") for r in selected)
+    assert all(r["operational_cost"]["completion_attempts"] == (2 if policy == "rewrite_once" else 1) for r in selected)
+    assert runner.run(config, output) == result and len(state["calls"]) == 2
+
+
+@pytest.mark.parametrize("change", [
+    {"status": "error"}, {"extraction_kind": "model"}, {"unit_audit": {"exclusion": "empty_or_citations"}},
+    {"unit_audit": {"exclusion": None}}, {"parsed": {"claims": [{"claim_id": "c1", "text": "Fact."}]}},
+])
+def test_non_refusal_or_failed_extraction_never_triggers_refusal_rewrite(change):
+    task = {"status": "not_applicable", "extraction_kind": "verbatim_sentence_units",
+            "unit_audit": {"exclusion": "standalone_refusal"}, "parsed": {"claims": []}}
+    assert decide_with_refusal(None, .7, {**task, **change}, policy="rewrite_once") == decide(None, .7)
+    assert decide_with_refusal(.7, .7, task, policy="rewrite_once") == decide(.7, .7)
+    with pytest.raises(ValueError, match="Unknown bare-refusal"):
+        decide_with_refusal(None, .7, task, policy="unknown")
+
+
+def test_bare_refusal_rewrite_failure_keeps_initial_with_explicit_failure(connection):
+    config, output, state = connection
+    state.update(bare_refusal=True, failure="rewrite_answer")
+    state["config"]["decision"]["bare_refusal_policy"] = "rewrite_once"
+    runner.run(config, output)
+    _, report = quality.read_run(output)
+    row = report["records"][0]
+    identifier = row["trace"]["record_id"]
+    routes = reconstruct([row], {(identifier, "initial"): "unreliable"})
+    selected = [r for r in routes["routes"] if r["route"] not in {"no_repair", "always_rewrite"}]
+    assert all(r["rewrite_requested"] and r["selected_stage"] == "initial" and r["fallback"] == "rewrite_failed" for r in selected)
+    assert len(state["calls"]) == 2
+    runner.run(config, output)
+    assert len(state["calls"]) == 2
+
+
+def test_refusal_policy_requires_opt_in_candidate_and_rejects_legacy_protocol():
+    config = yaml.safe_load((REPO / "configs/phase11_bilingual_connection_en_v2.yaml").read_text())
+    prompts = yaml.safe_load((REPO / config["prompts"]).read_text())
+    config["decision"]["bare_refusal_policy"] = "rewrite_once"
+    validate_task_contract(config, prompts)
+    config["purpose"] = "phase8-development-protocol"
+    with pytest.raises(ValueError, match="separate bilingual candidate"):
+        validate_task_contract(config, prompts)

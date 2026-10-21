@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.26 — 2026年10月21日 4B改訂の不通過と8B固定候補・資源Preflight入口を追加
+## Version 8.27 — 2026年10月21日 8B意味結果・裸拒否の任意書換えと再構成を検証
 
-[研究計画 Version 7.24](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.25](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -36,6 +36,9 @@ Expected漏洩防止・失敗/中断後の再開追加0・未試行/既試行の
 Source/Expectedと実行条件を保持したPrompt改訂v2を追加し、事前契約/日英同一Judge・予算を確認した。別固定実走は次工程。
 その後、v2も2/4一致で停止、失敗/再開追加0を保存した。8B公式GGUFのByte/Hashを確認し、共通Aux契約のManifestと候補v3を追加した。
 全58条件の実Token/CUDA起動をCompletion0で確認するPreflight入口を用意した。8B資源/意味実走・新Fallback実装は未了。
+その後、8B資源確認は成功、意味Criticalは2/4不通過と保存した。次の固定文ごとの方法候補は事前計画のみで未実装。
+`decide_with_refusal`と任意の`decision.bare_refusal_policy`を追加した。裸の拒否だけnull/unscorableのまま一回書換えを要求し、
+通常障害/空Claimや旧Configを変更しない。評価/品質検証/費用へ同じRuleを適用し、全459 Test/Ruffと旧保存例の事後再構成を確認した。
 
 2026年10月21日追記: [日英共通RAG接続候補](phase11_bilingual_pipeline.md)を追加した。
 `study_assets`がHash付き日英QA/Corpus/Index/親対応を検証し、Factoryは同じE5 CUDA/Subword BM25/RRFを使う。

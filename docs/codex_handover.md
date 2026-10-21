@@ -83,6 +83,13 @@ CLAPNQ省略互換を修正し、実IndexのFactory検索2 Testを追加して�
 結果は`phase11_semantic_alignment_result_v2.json`。8B固定GGUFを正規`data/models/Qwen3-8B-GGUF/7c41481...`へ取得/Hash確認済み。
 新設定`phase11_semantic_candidate_v3.yaml`/Model Manifest`phase11_auxiliary_qwen3_8b_manifest_v1.json`で、固定Commitの
 `scripts/preflight_semantic_model.py`をCompletion0で行い、資源条件を満たした後に同じ診断Runnerを実行する。8B実走は未実施。
+その後、固定f8df5b5/Worktree`phase11-semantic-diagnostics-v3`で8B資源確認（全58/Completion0）と意味診断を完了した。
+Critical2/4で不通過、人工54未試行・再開追加0。原本と正規Run/Preflightは`phase11_semantic_8b_result_v3.json`に対応する。
+初期3候補は全て不通過。次の方法は[固定文ごとの候補計画](phase11_claimwise_candidate.md)で、まだ実装/実走していない。
+裸の拒否だけの任意`decision.bare_refusal_policy: rewrite_once`を共通Rule/品質Import/経路費用へ追加した。
+全459 Test/Ruff成功。既存Configの初回維持を保ち、候補は未知QAで未採用/未検証。
+保存済み旧20問の事後再構成は`refusal_policy_reconstruction_v1.json`でY1 6→9/Calls32→40・不明2。
+現在動くModel/取得ジョブはない。次は固定文ごとの意味候補実装/診断、他の既知誤りの回帰、主Development/未使用Calibration。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -99,7 +106,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.24](rag_research_plan.md)・[実装計画8.26](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.25](rag_research_plan.md)・[実装計画8.27](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

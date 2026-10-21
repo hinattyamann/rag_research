@@ -106,6 +106,11 @@ CUDA全層Offload、Combined RSS標本最大は初回3510284288/Aux4149604352 By
 Gate 11は未通過。次は既知英語の誤支持/拒否の診断・修正、日英の主Developmentと意味採用基準、
 未使用Calibrationの事前規則/実走・規模/統計・最終条件/拡張Validatorである。
 
+2026年10月21日追記: [意味診断と拒否候補](phase11_semantic_revision.md)の後続で、裸の拒否だけを一回書換えへ回す
+任意候補`decision.bare_refusal_policy: rewrite_once`を追加した。初期値/既存Configは`keep_initial`。
+Score null/unscorableを保持し、認定された裸拒否以外の空Claim/障害へ拡張しない。全459 Test/Ruff成功。
+採点Importと費用も同じRuleへ結び付けたが、新規QA/Modelでの採用・有効性は未検証である。
+
 1. Data/Corpus/親対応/Index・Model/専用uv Lock/関連CodeをHashへ結び付けるAssetsとFactoryを追加する。
    読込みはDevelopment/Calibrationを明示し、Phase 11でEvaluationを開く入口を用意しない。
 2. モデル入力は質問文字列と実使用文書だけに限定する。Reference・親Gold・欠測・GroupはOfflineに保持する。

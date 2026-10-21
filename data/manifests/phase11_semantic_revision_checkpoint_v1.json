@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-semantic-revision-checkpoint-not-final-freeze",
+  "created_at_utc": "2026-10-21T09:52:12.734593+00:00",
+  "planned_initial_candidate_batch_complete": true,
+  "candidates": [
+    {
+      "name": "current4B",
+      "critical_exact_correct": 1,
+      "critical_conditions": 4,
+      "gate": false
+    },
+    {
+      "name": "alignment4B",
+      "critical_exact_correct": 2,
+      "critical_conditions": 4,
+      "gate": false
+    },
+    {
+      "name": "alignment8B",
+      "critical_exact_correct": 2,
+      "critical_conditions": 4,
+      "gate": false
+    }
+  ],
+  "actual_model_completions": 12,
+  "synthetic_conditions_per_candidate_not_attempted": 54,
+  "refusal_policy": {
+    "software_validated": true,
+    "prospective_new_qa_validation": false
+  },
+  "next_method": {
+    "name": "single fixed sentence requests with fixed untrusted answer context",
+    "status": "planned_not_implemented",
+    "max_diagnostic_completions": 70,
+    "same_semantic_criteria": true
+  },
+  "validation": {
+    "pytest_passed": 459,
+    "ruff": "passed",
+    "old_data_preserved": true,
+    "frozen_sources_verified": true,
+    "all_servers_stopped": true
+  },
+  "artifacts": {
+    "data/manifests/phase11_semantic_current_result_v1.json": {
+      "sha256": "cdc3f478df702e4ff71b1178298df721e97a269446413911662287b84b60ae01",
+      "bytes": 6555
+    },
+    "data/manifests/phase11_semantic_alignment_result_v2.json": {
+      "sha256": "30db3a2f7276c3ea4fdc5050b09c80c0ad765f7f089894a6d5d6230b19e222fd",
+      "bytes": 5944
+    },
+    "data/manifests/phase11_semantic_8b_result_v3.json": {
+      "sha256": "e56a0d7c3f8eac8a05801d4842717de3ab13219aca2d983a4568a39134aba68d",
+      "bytes": 7445
+    },
+    "data/manifests/phase11_refusal_policy_validation_v1.json": {
+      "sha256": "08cd12ca2951b245687e868b49e096731f5e3c85c45f861cbfbd81f9ec488293",
+      "bytes": 2699
+    },
+    "data/runs/semantic_diagnostics/preservation_check_v1.json": {
+      "sha256": "c70154c8ad222a76e188d1892c10dc23d2af5d71bc5cc97782b1c484eb14c71e",
+      "bytes": 662
+    },
+    "data/runs/semantic_diagnostics/failure_mechanism_v1.json": {
+      "sha256": "cdebdad466e3e9087ac19ad26016445b1b613d20c888fd0b5ef7eda8f1afb571",
+      "bytes": 2908
+    },
+    "docs/phase11_claimwise_candidate.md": {
+      "sha256": "1e20f642fa18ac98c6ed7168276deea0b30e5e6fc7d7cdba04f0af3fe454bc94",
+      "bytes": 4071
+    }
+  },
+  "remaining": [
+    "semantic adoption and other known English regressions",
+    "main bilingual Development",
+    "unused bilingual Calibration preregistration/run/quality/semantic audit",
+    "scale/statistics/final conditions/expanded validator/final freeze"
+  ],
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

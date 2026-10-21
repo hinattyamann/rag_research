@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-opt-in-bare-refusal-policy-implementation-and-posthoc-validation",
+  "created_at_utc": "2026-10-21T09:48:33.969162+00:00",
+  "policy": {
+    "default": "keep_initial",
+    "opt_in": "decision.bare_refusal_policy=rewrite_once",
+    "scope": "separate bilingual Development/Calibration candidates only",
+    "requires": [
+      "not_applicable",
+      "verbatim_sentence_units",
+      "standalone_refusal",
+      "empty claims"
+    ],
+    "score": null,
+    "decision": "unscorable",
+    "action": "rewrite_requested",
+    "judge_calls": 0,
+    "max_rewrites": 1,
+    "failure_action": "keep initial with rewrite_failed",
+    "retry": 0
+  },
+  "validation": {
+    "pytest_passed": 459,
+    "pytest_seconds": 6.11,
+    "ruff": "passed",
+    "new_policy_tests": 9,
+    "all_policy_tests_offline": true,
+    "prospective_new_qa_validation": "not performed"
+  },
+  "posthoc_saved_candidate_result": {
+    "affected_qa": 8,
+    "affected_trial_routes": 72,
+    "old_original_y1": 6,
+    "new_original_y1": 9,
+    "old_original_unknown": 0,
+    "new_original_unknown": 2,
+    "old_original_calls": 32,
+    "new_original_calls": 40,
+    "additional_actual_model_calls": 0,
+    "original_model": "old saved 4B; not new 8B results"
+  },
+  "artifacts": {
+    "src/rag_research/experiments/decisions.py": {
+      "sha256": "46567daa5fd1a12092db0fdac7c3827ef55d7ea461815aa0f88b0c5887b3ef1e",
+      "bytes": 1655
+    },
+    "src/rag_research/experiments/order_runner.py": {
+      "sha256": "50b6e7d19c91eccf40331ab9ab7bf1ace4c8edb18907a586fec82412c6058f09",
+      "bytes": 14726
+    },
+    "src/rag_research/experiments/protocol.py": {
+      "sha256": "5cfdb06a73c5613b51cc1db1763078441c6ee42a1615d897c8ef8c0c3e31ead2",
+      "bytes": 7772
+    },
+    "src/rag_research/experiments/bilingual_quality.py": {
+      "sha256": "ed034f2efa8ca1d062a30faddee09e1cff40ee7b0236044c42aa0fccbfeb4a03",
+      "bytes": 11622
+    },
+    "src/rag_research/experiments/quality.py": {
+      "sha256": "7e4588a00d05913c748aa36d09fb453df805235d4bbee939ec8e6ddb9c3de0a8",
+      "bytes": 21671
+    },
+    "tests/test_bilingual_pipeline.py": {
+      "sha256": "7504235cc1dfa372150bd7b57c8528acc6fb1f4c873182b7efff0d508a248c84",
+      "bytes": 22686
+    },
+    "data/runs/semantic_diagnostics/refusal_saved_comparison_v1.json": {
+      "sha256": "46be5ab58a3a0295a432525b164b1139f41d2719506e2d3e7f071a82048fe272",
+      "bytes": 2720
+    },
+    "data/runs/semantic_diagnostics/refusal_policy_reconstruction_v1.json": {
+      "sha256": "e0e05ffebe3e9dfad9720ede84170851430625c7514e51d303a3c5967f9b5fe3",
+      "bytes": 180438
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

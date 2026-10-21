@@ -17,3 +17,17 @@ def decide(score, threshold):
     decision = "accept" if score >= threshold else "rewrite"
     return {"score": score, "decision": decision,
             "action": "keep_initial" if decision == "accept" else "rewrite_requested"}
+
+
+def decide_with_refusal(score, threshold, extraction, *, policy="keep_initial"):
+    """A recognized bare refusal can request one rewrite while its score stays null."""
+    if policy not in {"keep_initial", "rewrite_once"}:
+        raise ValueError("Unknown bare-refusal policy")
+    result = decide(score, threshold)
+    bare_refusal = (extraction.get("status") == "not_applicable" and
+                    extraction.get("extraction_kind") == "verbatim_sentence_units" and
+                    extraction.get("unit_audit", {}).get("exclusion") == "standalone_refusal" and
+                    extraction.get("parsed") == {"claims": []})
+    if score is None and policy == "rewrite_once" and bare_refusal:
+        result["action"] = "rewrite_requested"
+    return result

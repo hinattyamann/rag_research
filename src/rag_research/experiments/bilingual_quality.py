@@ -6,7 +6,7 @@ from pathlib import Path
 
 from rag_research.data.study_assets import load_assets, parent_map
 from rag_research.evaluation.order import trial_plan
-from rag_research.experiments.decisions import decide
+from rag_research.experiments.decisions import decide_with_refusal
 from rag_research.experiments.frozen_trace import digest, freeze_record, require
 from rag_research.experiments.protocol import ROOT
 from rag_research.experiments.quality import (
@@ -85,7 +85,9 @@ def read_run(run):
             task = row["tasks"]["judges"].get(trial["trial_id"])
             score = task["parsed"]["score"] if task and task["status"] == "ok" else None
             require(trial["score"] == score and all(trial[k] == v for k, v in
-                    decide(score, row["evaluation"]["threshold"]).items()), "Saved score/decision changed")
+                    decide_with_refusal(score, row["evaluation"]["threshold"], extraction,
+                        policy=manifest["config"]["decision"].get("bare_refusal_policy", "keep_initial")).items()),
+                    "Saved score/decision changed")
     return manifest, report
 
 

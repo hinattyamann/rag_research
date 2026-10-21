@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-planned-8b-diagnostic-result",
+  "created_at_utc": "2026-10-21T09:42:51.374467+00:00",
+  "fixed_commit": "f8df5b5af44bc986742921d1592df400bcc01279",
+  "report": {
+    "schema_version": 1,
+    "purpose": "phase11-bilingual-semantic-candidate",
+    "manifest_sha256": "7eb3008736b9866f640844ef427704e508b78f0b694a19682ac23e3e1a6bae0a",
+    "critical_planned_conditions": 4,
+    "critical_completed_conditions": 4,
+    "critical_exact_correct_conditions": 2,
+    "critical_passed": false,
+    "synthetic": {
+      "en": {
+        "planned_conditions": 24,
+        "completed_conditions": 0,
+        "valid_conditions": 0,
+        "exact_correct_conditions": 0,
+        "accuracy_of_all_planned": null,
+        "false_support_count": 0
+      },
+      "ja": {
+        "planned_conditions": 30,
+        "completed_conditions": 0,
+        "valid_conditions": 0,
+        "exact_correct_conditions": 0,
+        "accuracy_of_all_planned": null,
+        "false_support_count": 0
+      }
+    },
+    "diagnostic_gate_passed": false,
+    "planned_conditions": 58,
+    "completed_conditions": 4,
+    "not_attempted_ids": [
+      "en-time-support-original",
+      "en-time-support-reversed",
+      "en-time-conflict-original",
+      "en-time-conflict-reversed",
+      "en-time-absent-original",
+      "en-time-absent-reversed",
+      "en-number-support-original",
+      "en-number-support-reversed",
+      "en-number-conflict-original",
+      "en-number-conflict-reversed",
+      "en-number-absent-original",
+      "en-number-absent-reversed",
+      "en-negation-support-original",
+      "en-negation-support-reversed",
+      "en-negation-conflict-original",
+      "en-negation-conflict-reversed",
+      "en-negation-absent-original",
+      "en-negation-absent-reversed",
+      "en-relation-support-original",
+      "en-relation-support-reversed",
+      "en-relation-conflict-original",
+      "en-relation-conflict-reversed",
+      "en-relation-absent-original",
+      "en-relation-absent-reversed",
+      "ja-actor-1-original",
+      "ja-actor-1-reversed",
+      "ja-actor-2-original",
+      "ja-actor-2-reversed",
+      "ja-actor-3-original",
+      "ja-actor-3-reversed",
+      "ja-count-1-original",
+      "ja-count-1-reversed",
+      "ja-count-2-original",
+      "ja-count-2-reversed",
+      "ja-count-3-original",
+      "ja-count-3-reversed",
+      "ja-compound-1-original",
+      "ja-compound-1-reversed",
+      "ja-compound-2-original",
+      "ja-compound-2-reversed",
+      "ja-compound-3-original",
+      "ja-compound-3-reversed",
+      "ja-qualification-1-original",
+      "ja-qualification-1-reversed",
+      "ja-qualification-2-original",
+      "ja-qualification-2-reversed",
+      "ja-qualification-3-original",
+      "ja-qualification-3-reversed",
+      "ja-table-1-original",
+      "ja-table-1-reversed",
+      "ja-table-2-original",
+      "ja-table-2-reversed",
+      "ja-table-3-original",
+      "ja-table-3-reversed"
+    ],
+    "completion_attempts_recorded": 4,
+    "cost_incomplete": false,
+    "input_tokens": 12390,
+    "output_tokens": 4303,
+    "summed_task_seconds": 67.52050114499798,
+    "task_result_sha256": {
+      "known-council-original": "e8c7f9c4ac9ab6bbbbf298916742ed5e5bfb0bcd8ae1904bbcca144726a0c2aa",
+      "known-council-reversed": "6ea40028826061e77dc37d136b27e46cd63c3e59e30ac397effc4c7e34cdcc44",
+      "known-zidane-original": "cb4a696388c2b268a648b2a57b54190b688d95aebf505bc42571774cf14ff4de",
+      "known-zidane-reversed": "88dfde5f30b07ee1a63c4c96b30e2f5da91a8129130ca20daa63f733c3f73caa"
+    },
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "resource_preflight": {
+    "status": "passed",
+    "conditions": 58,
+    "completion_attempts": 0,
+    "max_input_tokens": 3257,
+    "full_gpu_offload": true,
+    "gpu_memory_single_observation": "7094 MiB, 8151 MiB"
+  },
+  "meaning_result": "Council c4 falsely supported in both orders; Zidane c1 contradicted in both orders; diagnostic gate failed; 54 synthetic conditions not attempted",
+  "reason_caveat": "Zidane original has a correct label but invents championship seasons; correct label does not validate its reason.",
+  "resume_new_completions": 0,
+  "resume_new_servers": 0,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen3-8b-v1/runtime_preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/runtime_preflight_v1/plan.json": {
+      "sha256": "db3db9140fb7b548139957d5d52f79ce17041fc5d32a9000ac34b44b1f43493a",
+      "bytes": 1192
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/runtime_preflight_v1/report.json": {
+      "sha256": "6f2fcddab831c896fa0db62a785df6c0e09b4bb8dd426316ed70da9ebb4c9a57",
+      "bytes": 19686
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/runtime_preflight_v1/server.log": {
+      "sha256": "ea4d5faa8985710939dfff1927ae4e5f324725801e12384b516a6da0aeb49900",
+      "bytes": 16519
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/launch.json": {
+      "sha256": "f4e6e99612d79d7e2974f6dee8d44f330be51421f1bd909ff941f063abfc70a8",
+      "bytes": 535
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/manifest.json": {
+      "sha256": "3ef357e6c139a55172150c861c9a9dbafb63716f68d0763170b2180663e3dcc3",
+      "bytes": 21495
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/preflight_receipt.json": {
+      "sha256": "c3c043cc6b97be83556e757fa2fd85efe04d1d40b3a7002f9e5428908c378e16",
+      "bytes": 426
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/report.json": {
+      "sha256": "bb1edeb054b19986db87ea8b134f7a1769a0c88b2c725aa0e77d92f11a9ef075",
+      "bytes": 3231
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/resume_check.json": {
+      "sha256": "9f74ff9cc1db2c7e5897f586780c966b8dbd0a13855b0699ceacf6c368fce4a8",
+      "bytes": 2635
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/server-1.log": {
+      "sha256": "0bafe121fccec55b86ebf4e7aa8607267cd5b5006724b461b9daf3c53e17da52",
+      "bytes": 36447
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/session-1.json": {
+      "sha256": "d157f9bf75f61922e7a3cc5b715de84e73726004f21c43f7b782f8ce5009f1d1",
+      "bytes": 9706
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/tasks/known-council-original.json": {
+      "sha256": "70d5a9fbc9a2cc7e7918440f182182e0f3268f4a9f3769c185c6b7046e84d431",
+      "bytes": 133921
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/tasks/known-council-reversed.json": {
+      "sha256": "74057e910674ed15342286f006f853b098cc4a552c0db617b778714038bfe053",
+      "bytes": 122569
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/tasks/known-zidane-original.json": {
+      "sha256": "cac00d3672e6afe083e820805d36767802d237438c51a1c96cbf7ed26dfe81b7",
+      "bytes": 104367
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-alignment-v3/tasks/known-zidane-reversed.json": {
+      "sha256": "8d46fdc4482f610bf410d3a3775e454c118b8ae7dd5a35412d1a885a5b98e6ad",
+      "bytes": 95090
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
