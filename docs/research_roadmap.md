@@ -1,11 +1,13 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月22日。正本: [研究計画7.46](rag_research_plan.md)、[実装計画8.48](rag_implementation_plan.md)。
+更新日: 2026年10月22日。正本: [研究計画7.47](rag_research_plan.md)、[実装計画8.49](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
+
+[固定v13の全診断と旧15 QA回帰v3](phase11_qwen35_direct_result.md)を保存した。全58条件/70 Callで既知4/4・人工英語24/24/日本語28/30・誤支持0、入力109350/出力198444 Token・3220.362427秒。全92 Source/再開134 File不変・追加Call/Server0、原本136/全142 Artifactと全最終出力のAI確認を保持。日本語の同一入力の支持不足→矛盾2と曖昧c6も保つ。次の旧15 QA/42文/30条件・最大84 Call/Retry0を全Expected/基準のまま新規事前登録し、実契約/前提を確認した。主/Cal採用は依然未了。
 
 [Calibrationの匿名採点・隔離解析](phase11_bilingual_calibration_analysis.md)を対応した。両言語の全品質/文Expected封印後だけ、同一Byteのコピーで意味/統計/全Native費用/実資源を照合する。各20 QA/Groupと比較数/費用の整合、単独Cal importとDevelopment偽装/品質QAのEvaluation本文読込みの拒否、Rubric/統計計画/CLIの固定を検証し、新規21件を含む全674 Test/Ruff成功。合成通過は実主/Cal採用の証明ではなく、実主証明書→実Cal Protocol/実走/全採点・採用と最終N/条件/拡張Validator/凍結は未了。
 

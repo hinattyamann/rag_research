@@ -1,0 +1,690 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-qwen35-9b-direct-v13-full-diagnostic-result-not-main-adoption",
+  "created_at_utc": "2026-10-21T23:22:51.594389+00:00",
+  "fixed_commit": "541d0d2b1573e057951f3a630087fb5643030b49",
+  "report": {
+    "schema_version": 1,
+    "purpose": "phase11-bilingual-semantic-candidate",
+    "manifest_sha256": "7ec72d0e1096397d169e1bacee045ad3bc77a031fcd21f8927816ba4eb7bfd40",
+    "critical_planned_conditions": 4,
+    "critical_completed_conditions": 4,
+    "critical_exact_correct_conditions": 4,
+    "critical_passed": true,
+    "synthetic": {
+      "en": {
+        "planned_conditions": 24,
+        "completed_conditions": 24,
+        "valid_conditions": 24,
+        "exact_correct_conditions": 24,
+        "accuracy_of_all_planned": 1.0,
+        "false_support_count": 0
+      },
+      "ja": {
+        "planned_conditions": 30,
+        "completed_conditions": 30,
+        "valid_conditions": 30,
+        "exact_correct_conditions": 28,
+        "accuracy_of_all_planned": 0.9333333333333333,
+        "false_support_count": 0
+      }
+    },
+    "diagnostic_gate_passed": true,
+    "planned_conditions": 58,
+    "completed_conditions": 58,
+    "not_attempted_ids": [],
+    "planned_completion_limit": 70,
+    "completion_attempts_recorded": 70,
+    "cost_incomplete": false,
+    "input_tokens": 109350,
+    "output_tokens": 198444,
+    "summed_task_seconds": 3220.3624273049354,
+    "task_result_sha256": {
+      "known-council-original": "c54b439d64255d2dfbd0169e78ded84151e91a14fad954d20c55b5a1698276ff",
+      "known-council-reversed": "628ac1237c6ebf2068de3ba7813b20729d8c583721c373444f2ca3e31e67160e",
+      "known-zidane-original": "69704711fb63f4396b7e08ef15bd4cb75ae443b5da3e6bb99ea0eeac82fc868a",
+      "known-zidane-reversed": "172ecd26179c0daa70392f8308581603233c6608bcd1d937c8b68e58f933ced7",
+      "en-time-support-original": "a539b0fc78dfc0014c7c87c9aefda84c155a3f70c8418f669869f8dc2fcf6705",
+      "en-time-support-reversed": "897f62c4406f336138ee8503239ea8c09bf889bbdbc48b1029f731103933a9a7",
+      "en-time-conflict-original": "0d0d2b05ba6627feb559dec9ddfc8c84fde78f5013914b41685d5709f4255a2f",
+      "en-time-conflict-reversed": "3061d585a62b2ecb2e31b9ee9d8eecbea889b06886b1342a6f434a621f8579fc",
+      "en-time-absent-original": "4c5557dc9f80dfd51342811a3431efc633cf989663f498ec6aedf817ae642131",
+      "en-time-absent-reversed": "d9a0d0a2e33de96cdacae614a1e3b788ea9e8b171c77e76e29a6f6b348c07134",
+      "en-number-support-original": "158b19c1a57dafe4fde5a82af161a279bce87a4229eb4ac14b8f13f1836950d5",
+      "en-number-support-reversed": "9e599791af37277ccae826966147e5b90f9118427257cca69ab4cc602315fb13",
+      "en-number-conflict-original": "15884d6976c2a6e36a5f783e9f2dee32f7a2cf64c9bf0cc01d71575db7f46c83",
+      "en-number-conflict-reversed": "65c11e1178d9a3ea4e77f5afefbb23eb410a2c4a3d3444d5b9f2d5aff73bb669",
+      "en-number-absent-original": "c84d280809609780304575772eb76bbf005e31106689c55f20904018c2912004",
+      "en-number-absent-reversed": "2fe472eaeace5fa4e0d6b997530dd186d0d6414f747c452ab8b74c0bb06b5ae9",
+      "en-negation-support-original": "d2f985ae7d90a4e10eed1489627fa0f0e6befb4a88145f20771d6b872e0c2dc8",
+      "en-negation-support-reversed": "cfc5aab775f0ab27445b3ee0cc97639bb6fafc21c398c863701dafeea2c97cc4",
+      "en-negation-conflict-original": "c260ab31552898de6ea1bf151edd5e5f41d86ee02daef19a94128c090f1919c3",
+      "en-negation-conflict-reversed": "38deec5ce1b0ea149b65425be6bb5b70fee7a62a9e524fba15f15477c41c58cb",
+      "en-negation-absent-original": "cf491a168d2942f921276db2de73225fefbe3582daa62bc0d23276fa8a09ca0d",
+      "en-negation-absent-reversed": "97fd25783409037b68f113d06d4526148e1348d5e1cf13086de403c6b33d386f",
+      "en-relation-support-original": "1a4432b97cee4ce82efd42e7a6c56450acbd9c97b5fa59a488d061c5bc79ed4e",
+      "en-relation-support-reversed": "f6f70ef1de1de14c4e1bfd2178cd812277b55cee94f1c713b3c44c8994375cda",
+      "en-relation-conflict-original": "31d82f2f8aea2aabccf63cb50552d34d3bf4292c1a06cc67a8fbf302a015b5a4",
+      "en-relation-conflict-reversed": "47be4b21a26a6af3776982a48b339b0eb41a42b25929352641452348bb1ac2a8",
+      "en-relation-absent-original": "75d13875a41a0cb369973ab5f1349df8f5249c87ca0d6dcf527f47bc3fab2669",
+      "en-relation-absent-reversed": "638c73c1ebcbad37b53803e648ebfdabfe640f3d37b519d60564f8810ade82d1",
+      "ja-actor-1-original": "02c665f1cfcd43de7c8c921e5afff1226dfa8ffae588e84ee0e086189f6113d4",
+      "ja-actor-1-reversed": "bf6f63b1e925a19a3ededc257036d9c448b37239b8dfc1393df4f2ffacee7890",
+      "ja-actor-2-original": "d431142d2c5fafbabf5c9c14d69359c9505c91dca73ac616fcebf17f40f1b404",
+      "ja-actor-2-reversed": "3dbc5d4017abc43119ba076f378c7fbdba550d30c72081a7d461b4416a0fd8e0",
+      "ja-actor-3-original": "63844ffe576d7cc21d14c5373b5a0fd6577d8ed5f3b448f4df50ddcfb8d61147",
+      "ja-actor-3-reversed": "ae76231238530a011f3e6616856d9fbbd0cc099dcdb0cf1c29ff468bccce0797",
+      "ja-count-1-original": "157df72e9ec0906600383d2481616329d98ddbb3770e2dd491d44cb2486eaae0",
+      "ja-count-1-reversed": "01a0e180af18f3a5c665548f75047ef3e6a2ca7a68eb52dc42f5d101de40811d",
+      "ja-count-2-original": "b2c23ae930e8642b027298db07da0a61171bded57fca420da1dd35b4f2a3a3b1",
+      "ja-count-2-reversed": "034ad5487ba956f47e07c49596f75bc98b3f482888ff5ae03b1df61ebf6a7d95",
+      "ja-count-3-original": "e13ae588308eedbeaa69e1fb7c9dd7d158f97325a86945d28b4f553d1c88afa6",
+      "ja-count-3-reversed": "c03d491dacc033208eebf2d3723b7ee9c8dd22070bbc579b82d8b8c1f043961f",
+      "ja-compound-1-original": "212732fe1d3f85603f87fa371be0a9e5d990e995cf992a3c0325d143bcf781ec",
+      "ja-compound-1-reversed": "b5c5c6fd4ce60c7393111098efee181399c70f570f89a69bfdf2ac2d9ea8ec41",
+      "ja-compound-2-original": "4e6867666ce24283f09e14e898e4f61e8c837911aa18a442ef0b303e1e7a849d",
+      "ja-compound-2-reversed": "d59ad8e8e149b40d2897aa7958a75e5c4e81ecc21dcec05a21d30fcac5f0e2a3",
+      "ja-compound-3-original": "965e72ace5523f157309c015aa77943376b13b06b766996112a5aa3d1cfacd33",
+      "ja-compound-3-reversed": "36d0578b27c2c64f62b6baa78d1db641d39e12cb1879ce0a3445eb717191ac3b",
+      "ja-qualification-1-original": "34bd65a459096ca510d988b3385463368231a078271885993ece147870c3db0e",
+      "ja-qualification-1-reversed": "4da961586116cebc766a24e7b17a02f1cb659e0dd0cb45ace6064e1b4547a125",
+      "ja-qualification-2-original": "b5095793853c0d2c24eb29cf78c6b1bb05d9a50c77a0470e2ce324b9faf1980c",
+      "ja-qualification-2-reversed": "5a9491169b676d1363240390b81b7875fda997d33fd728a48b6218dbc99aa020",
+      "ja-qualification-3-original": "99d49824be1c05356591f7f9c85c9c14fad0636546180e4488e510b8af342ef2",
+      "ja-qualification-3-reversed": "d91afddc6e7cbc2155d6eec4bc499fb436d6c4f8850b1f9bc236946eb5c06979",
+      "ja-table-1-original": "07f78841b7dbad702d16f9dc25d7d16db97d3cbba903232f68ccb2d4ce2b7266",
+      "ja-table-1-reversed": "52cd36038b61df81803821ebe5bf2e8a9f7d23fc64a3d11935dd9adf3617c55b",
+      "ja-table-2-original": "85e1da930ef04c930712fe2e80b9a57106ea13ebf925a7925d8e3fa9356f55ea",
+      "ja-table-2-reversed": "650a612d2e939321141bd5b2126b3e42a27c530cad9ef36227c5d232dd6e0805",
+      "ja-table-3-original": "094622b4ac67eedaab51e8ab957f6315b8c725ac683e3967717c2a35b49bfd7a",
+      "ja-table-3-reversed": "61204196e8de0e44f1feb2cfb6f282f0e16e298ba46dcf9dccb86e0d0af1b3e4"
+    },
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "audit": {
+    "source_hashes_verified": 92,
+    "aggregate_conditions": 58,
+    "actual_leaf_calls": 70,
+    "resume_unchanged_files": 134,
+    "new_calls": 0,
+    "new_server_files": 0
+  },
+  "manual_AI_review": "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/semantic_output_audit_v1.json",
+  "native_calls_so_far_for_9b": 144,
+  "artifacts": {
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/audit_check.json": {
+      "sha256": "bcfce1d11cb5a8199f8e34e040b4b69195e27366352c3e8d35c3ee55a7a2dd1d",
+      "bytes": 55684
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/launch.json": {
+      "sha256": "66775fe4f084807c141c8db8c6ec0062d84820e0b96258a60326cff50df29331",
+      "bytes": 4692
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/manifest.json": {
+      "sha256": "2cc51f35b10abb6bdb6fbd1883c8e95bbddcf4dca12ccb7cbcc16e99ea5bbcc6",
+      "bytes": 23086
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/report.json": {
+      "sha256": "bdbc3e5b8710c87df2bf55f4df640d7ead10ba5d6551a0d7ae212d71e26d2b75",
+      "bytes": 6958
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/resume_check.json": {
+      "sha256": "6328c505d015314fb2ecce63cfed76cf7f844ba1aea4f7ea2a35039db63abdb4",
+      "bytes": 15516
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/semantic_output_audit_v1.json": {
+      "sha256": "8eef6a04546f9a1ad324b1552c8c03e4f8c00bada2e8c759c3238469adedb1aa",
+      "bytes": 12414
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/server-1.log": {
+      "sha256": "ae6b7b459676d720238e0597a35c40b2cbf13db1b2349e96da60d5ec02944ca2",
+      "bytes": 422224
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/session-1.json": {
+      "sha256": "27afe5bb923b47754a405aabf1c5f31f4cd432beb399a7a66a9643512d0371d6",
+      "bytes": 9699
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-absent-original.claims/c1.json": {
+      "sha256": "a99b1a285d06047a2d0e0b6c84735c3adc56cb3547e31ae6596ff9a42f0e7207",
+      "bytes": 106276
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-absent-original.json": {
+      "sha256": "6aca1c1b35a5b70f2d8d97a8c803a2d27f534e6236337a54c35a5adb2bb2578c",
+      "bytes": 1818
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-absent-reversed.claims/c1.json": {
+      "sha256": "a8fda93da9ce26ff11601ceeb937b26619d5d9a659916bb4087f0ea76726b9aa",
+      "bytes": 106278
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-absent-reversed.json": {
+      "sha256": "365bb883d866a4e4fe61dcf7abd26baca95ebed795558926bb7d4ded56d8e731",
+      "bytes": 1820
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-conflict-original.claims/c1.json": {
+      "sha256": "01fdc0f9b1492185dba4fe0c9c65b4f5e0d5a5596cb7e6f3c49a383aa0b77a57",
+      "bytes": 62951
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-conflict-original.json": {
+      "sha256": "268fdf472b2b1a6bc16fa6caabcc0858fa7c986ce07a9311f8aa9a924ad997d9",
+      "bytes": 1830
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-conflict-reversed.claims/c1.json": {
+      "sha256": "38ae7379656d968f34d2f0ce20199749c402ab45d01aa809c7d6c313c7b529c1",
+      "bytes": 62954
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-conflict-reversed.json": {
+      "sha256": "c13c2254552753a3ad625ef306ef901d4525b8899a6de368eaccb1dde65775a1",
+      "bytes": 1833
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-support-original.claims/c1.json": {
+      "sha256": "039d06771baa8d626a6048987d0d9fe3e339a58817e4c4bef27ce08af912e23e",
+      "bytes": 134253
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-support-original.json": {
+      "sha256": "03ad7a97ceb87a094cdc82609338ba1d943f884a6dcd1b4d89bc37a5bc63452b",
+      "bytes": 1845
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-support-reversed.claims/c1.json": {
+      "sha256": "e0d3d77a1c3dc9c326da558cd0fb371aa91ee89be930054e0a463baaf5ee6c3b",
+      "bytes": 134255
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-negation-support-reversed.json": {
+      "sha256": "862a6ad46d1855658ab0db2e590db5723ce592ac5af69d4a69d13e2652d70459",
+      "bytes": 1846
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-absent-original.claims/c1.json": {
+      "sha256": "7df349d494ca47a4ff8e9a4390538e54edd798758d74f81bd322b541b1e74f68",
+      "bytes": 87469
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-absent-original.json": {
+      "sha256": "fad3ca552fe23022ebc359286d5f3592c1d949313c321c210db94b4065418b59",
+      "bytes": 1801
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-absent-reversed.claims/c1.json": {
+      "sha256": "7cd4157dcac3df22e8ed35af6324b7cec86fa93304a23b3924a1cfb71d3455e2",
+      "bytes": 87472
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-absent-reversed.json": {
+      "sha256": "77fc2ad976d127fec337b8446824c383f08c92da8fd2a103ac208daf7c01b9ac",
+      "bytes": 1806
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-conflict-original.claims/c1.json": {
+      "sha256": "89e6aaeee0ecef46f4c8eeaacc2f2761c392dd40831609bbb3202ab3daf72f5b",
+      "bytes": 59377
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-conflict-original.json": {
+      "sha256": "67010f814a9a8b2b41e024a7533fea4ac70e46c8bc80af6c8a4522755c40f3b3",
+      "bytes": 1807
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-conflict-reversed.claims/c1.json": {
+      "sha256": "efbb9bdc69625658f9833dbc4741ddda2d6c985e89d376c5a86323e076aac6c0",
+      "bytes": 59379
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-conflict-reversed.json": {
+      "sha256": "ab8f384f98e507ef971a1ce20775ccc145db47f997d86fc788a0f91f45b9a72c",
+      "bytes": 1809
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-support-original.claims/c1.json": {
+      "sha256": "44891953f55d3948c08a1f58ff1d9b3b9ed6a6dea911e54c26bce809def7bed5",
+      "bytes": 58000
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-support-original.json": {
+      "sha256": "9cf4dbfed216aeabea29b73cd5060e2a30e5cba6eeb1d2fa8ae9119d5d27c36d",
+      "bytes": 1815
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-support-reversed.claims/c1.json": {
+      "sha256": "f0290dcbdb077d67ee1ea3c876c70b9cad5fa03c829305ce789fb69dfeba10ec",
+      "bytes": 57999
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-number-support-reversed.json": {
+      "sha256": "46855f78bfd822624d5eed08ecf1a3856ef3abf50a140cec7691beb54065d7e2",
+      "bytes": 1815
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-absent-original.claims/c1.json": {
+      "sha256": "e8f8b65417684c1bdbfd62866f3a665b2f557b346cc37741b281d02ec635060d",
+      "bytes": 140744
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-absent-original.json": {
+      "sha256": "40673cc60e3182bcc899dc62fb92aceb43a4145df12c643a2e755cf3d4fa3217",
+      "bytes": 1826
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-absent-reversed.claims/c1.json": {
+      "sha256": "c4cae293c87c728b55d92a1b07b667cbf98006361ac4ff9529eae2bae314baeb",
+      "bytes": 140745
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-absent-reversed.json": {
+      "sha256": "a7829e3fe2accab87b29825c870326c8878016d16881711abf7e8ff717089239",
+      "bytes": 1826
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-conflict-original.claims/c1.json": {
+      "sha256": "eeab46d7c207cd267386b4e9e611b0e82f4f58194a42664cb3a54aa0cd87e85c",
+      "bytes": 83381
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-conflict-original.json": {
+      "sha256": "f863e8ecac6b1b74247a9459a3b6b1174c1b0a12f40be6b01a406e739074a126",
+      "bytes": 1847
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-conflict-reversed.claims/c1.json": {
+      "sha256": "1c3d0a9004401c3eefccb64734909fded4ab4891ade3b16333c71e62ac1b3b31",
+      "bytes": 83381
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-conflict-reversed.json": {
+      "sha256": "a8706119744f71289532768cba01b3c67c7f8303e477b8155caa760bb3495f73",
+      "bytes": 1847
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-support-original.claims/c1.json": {
+      "sha256": "b8857aae5317670be5715e1a699a6b2181375d6884224dd1040eb74b3cc04e44",
+      "bytes": 87776
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-support-original.json": {
+      "sha256": "53610bcbf26413ff6a217ce7dc0879b64ab0deaf718bb94c8154d3f110f6eeb2",
+      "bytes": 1850
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-support-reversed.claims/c1.json": {
+      "sha256": "d3db996d9ee9f1a90f243d39fce6ee7574f494cf7845010b22578d137ccc0890",
+      "bytes": 87780
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-relation-support-reversed.json": {
+      "sha256": "63666ba8d341b2f304eaaf3e0fc9402ec8a5d64da5067425f9972172aba1e067",
+      "bytes": 1855
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-absent-original.claims/c1.json": {
+      "sha256": "e4290aaed16def49587fb046eb81ace19d608f23ba1872a262170b45e4cf57e0",
+      "bytes": 121400
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-absent-original.json": {
+      "sha256": "35d779dcff13834fe0dc34419554307c22b0f52dffc24fa7b31e0fbab57a43f1",
+      "bytes": 1793
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-absent-reversed.claims/c1.json": {
+      "sha256": "4fd52d25a506a922af9ed3256c4ef72f9ca0fa90f1eb4b8ffc1dd106d0f017ec",
+      "bytes": 121400
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-absent-reversed.json": {
+      "sha256": "0cb7af31f2019f07f186a9f55513d3e6ce89cb93fa05425b22433705a660aed0",
+      "bytes": 1796
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-conflict-original.claims/c1.json": {
+      "sha256": "376f060892b079206486945651515155e4d561c0dee2fb45279df1cba73d45a4",
+      "bytes": 110421
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-conflict-original.json": {
+      "sha256": "a8dcb770a8824db8a524b3794d6dd3758cdfefe3358117081360e75aa69ac8a1",
+      "bytes": 1813
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-conflict-reversed.claims/c1.json": {
+      "sha256": "9734e2736215054ecd14b04ef4751284b891bb25610a9df4aff6aa108f281017",
+      "bytes": 110417
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-conflict-reversed.json": {
+      "sha256": "50bfe0ac0c7706e84c4cea1cc4ee0e1f19bcd303abf09e2d713172409db58836",
+      "bytes": 1812
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-support-original.claims/c1.json": {
+      "sha256": "750555eb3977fd4f257d6a5b86095fe23525f08b1edf6e3a737947e76f6e255a",
+      "bytes": 83613
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-support-original.json": {
+      "sha256": "31e9629532811e4865c8145babf57ac7feb62bb5b7ce1cca01a702d7be2c5f8a",
+      "bytes": 1821
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-support-reversed.claims/c1.json": {
+      "sha256": "cf229db5628f56ce28a1a475277a962151815b2db0f37fcd49e762b2684e175c",
+      "bytes": 83611
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/en-time-support-reversed.json": {
+      "sha256": "a4c05d7e47dd84105e5e063f7f2114935d5ca66802666f9eda877d036fa12bc8",
+      "bytes": 1821
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-1-original.claims/c1.json": {
+      "sha256": "4123b5c4055fb927d50c1e51fc90ca27bfa7bfae3281a2b9c31767dcad831e7a",
+      "bytes": 71360
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-1-original.json": {
+      "sha256": "1db5735b49226bf274f7a5741a257fab936d5a7623f1bbe31d1fa46ac99ccd63",
+      "bytes": 1913
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-1-reversed.claims/c1.json": {
+      "sha256": "63b761e10f6f3c9136821212e56afc90be8bbb802b181561a73e2abfb255dc3b",
+      "bytes": 71360
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-1-reversed.json": {
+      "sha256": "82bae558c73032a633b79271c4f2300190845239457e979a77868c2c429ef8c8",
+      "bytes": 1912
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-2-original.claims/c1.json": {
+      "sha256": "2e3303cb25b49fae978abc796aa3d4c388d8beae58f51b6d79e3e3160c9ef6e0",
+      "bytes": 70632
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-2-original.json": {
+      "sha256": "c5333b5040a9f0de6a7be4258f65e0920438c9757c87abd98c8170b30904125c",
+      "bytes": 1889
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-2-reversed.claims/c1.json": {
+      "sha256": "52799f617d1ee33846cba771f33fa59a792da8fb74a44a237e7d7dfd68cce64d",
+      "bytes": 70632
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-2-reversed.json": {
+      "sha256": "aafcc8ded07f7f9cbc2112d16c64f02b471b352a8601f54ecd89b0e550c39c40",
+      "bytes": 1891
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-3-original.claims/c1.json": {
+      "sha256": "1e9958937001be63f0d4e26469ba821ff8a6ec5556fa5896041ea6fbbc6cff07",
+      "bytes": 125287
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-3-original.json": {
+      "sha256": "0b275d93a6664af7891680dcd59178a510d8ff70dcec368a7e3f61d254e7e850",
+      "bytes": 1912
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-3-reversed.claims/c1.json": {
+      "sha256": "5289a5bc87902d3c9484380ce63522edbd963a2bf9d607f0ee5c4defe17a4e47",
+      "bytes": 125289
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-actor-3-reversed.json": {
+      "sha256": "f1318fcfbe64fb9b52bf9a64d6f3fe5226234895df712821d864b93b881d92b1",
+      "bytes": 1914
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-1-original.claims/c1.json": {
+      "sha256": "46aced9669c6c076a5533bf3076d4b63813e978d392d0ddf0bd29ca9a5c87aa2",
+      "bytes": 77068
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-1-original.json": {
+      "sha256": "5fa5c62ca2e2419716b105ef8b8ae32cd4883b9790a1e6856b7ab6c8e0e720d6",
+      "bytes": 1854
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-1-reversed.claims/c1.json": {
+      "sha256": "41854c956d1994a1722b7755b647ed2a09c92bde14a49da21442bd12b8a5864a",
+      "bytes": 77069
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-1-reversed.json": {
+      "sha256": "253c627379ff8c46b1cc3aa815f503c4d262ec30234c0696343bbbaea22c9ecf",
+      "bytes": 1853
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-2-original.claims/c1.json": {
+      "sha256": "3c27d8f6b04c535998a9f24f6fd70984b3ecc6af87dcc5d675e0d6e08df1efaf",
+      "bytes": 90238
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-2-original.json": {
+      "sha256": "a6e1da7edc5a154a0e263efb990f8e94be00f65f0ea4e7aa92aa552ad7122806",
+      "bytes": 1953
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-2-reversed.claims/c1.json": {
+      "sha256": "cec946ac83048f25044056f46746d4001b8722c9eecb617487ed39a4e94db59e",
+      "bytes": 90235
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-2-reversed.json": {
+      "sha256": "5a4f6a11578762a956af56594b9ada0241303cddb614183e173ac508f449c61c",
+      "bytes": 1951
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-3-original.claims/c1.json": {
+      "sha256": "78056da5871c22cc09b8a113942e98914973c9e54451ccf615d7b16a93604989",
+      "bytes": 125203
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-3-original.json": {
+      "sha256": "ff4333343a229d354e9fbfd215fc988c0d27a7a6e92a6ce1aff8718f33f02bdd",
+      "bytes": 1930
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-3-reversed.claims/c1.json": {
+      "sha256": "756c39ca0b444d061b835a81b8675f2d090e2bbf99116bd73d27e1aee5db8ea7",
+      "bytes": 125204
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-compound-3-reversed.json": {
+      "sha256": "3694dd0a849461cb5f90fea35f50657695480c520806be816ac78d324f45ea78",
+      "bytes": 1928
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-1-original.claims/c1.json": {
+      "sha256": "c0b2839ea5572b22847c2eb9918fa47b6fba048c05748321ce802c3cc2f7374e",
+      "bytes": 122101
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-1-original.json": {
+      "sha256": "e3a2061bae6e75dff92d68c7b1b214f79b449c1fc22349b3178c6f1eec6e8462",
+      "bytes": 1971
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-1-reversed.claims/c1.json": {
+      "sha256": "bd0df8f00e608ff8419da0a4ecf6062bdc64ce9609bab4233efef1c1a6b79479",
+      "bytes": 122099
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-1-reversed.json": {
+      "sha256": "498f8afa19b1814ca33be73359be408e3e70ee8125c3efa94c34eb686feededf",
+      "bytes": 1972
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-2-original.claims/c1.json": {
+      "sha256": "60524a08f0eb2b4313a4b20a57534c240a7cf6e0f3d1058807f39e69b54f5375",
+      "bytes": 108676
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-2-original.json": {
+      "sha256": "8010540ea4781e04e6373acdb98a017310eb172dd00f646f968c6656da89a5c5",
+      "bytes": 1887
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-2-reversed.claims/c1.json": {
+      "sha256": "5c8c6eaa0d1a8dcd8f68fb1b60055a51ebb863994707ee5a523bfe7027dc0a47",
+      "bytes": 108675
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-2-reversed.json": {
+      "sha256": "86af811dfc73832f23f70ba55a0b9c80e901aa446e6c0d30e61a2644a2017717",
+      "bytes": 1887
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-3-original.claims/c1.json": {
+      "sha256": "568c29fb915b06aee0bc1b11e58a2595e61e2c2eeb0e87dd8809b9b8127f7255",
+      "bytes": 144400
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-3-original.json": {
+      "sha256": "d8441d64fe672391ae8252d7dd69c83f1380feb0c0f4139fc11c4d3967399844",
+      "bytes": 1993
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-3-reversed.claims/c1.json": {
+      "sha256": "31a7441f525bf06c8f815ccf5e3a3263058287ac9dba93f1ca4faed48a680b06",
+      "bytes": 144399
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-count-3-reversed.json": {
+      "sha256": "2ca86909412e82959562141e22fcade57664bd7f6cd53dac1d358cd3f7d20bb3",
+      "bytes": 1993
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-1-original.claims/c1.json": {
+      "sha256": "b7826773c56e42011aeb82d55477d7a6878a5f06e642a3bbdf66598c9dc7d259",
+      "bytes": 142213
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-1-original.json": {
+      "sha256": "0eec319ea2b4ad540e5c94323d617822205bdec0a517691fb3c96abd2f789e44",
+      "bytes": 1954
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-1-reversed.claims/c1.json": {
+      "sha256": "8b7cb5982c2350709645685e1bdef8b0d38918599c0157cdd803bca3fcba830a",
+      "bytes": 142209
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-1-reversed.json": {
+      "sha256": "a3d7a17cd018b0998685c77c834ebe97bccec2e306000f423869da6b134a1285",
+      "bytes": 1953
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-2-original.claims/c1.json": {
+      "sha256": "6f4244c962699993a9cc9273e3fb26582943164450fcab494defb781f50b71cb",
+      "bytes": 128420
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-2-original.json": {
+      "sha256": "4d1ae58e789a707b43178b3806697730deb5920d64fd5d14d97f6674bb4cd9c2",
+      "bytes": 1910
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-2-reversed.claims/c1.json": {
+      "sha256": "f9fdcabb5e5e98844048e110fc8e91a9f8fab704a29209bd405fbc1347d1309a",
+      "bytes": 128422
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-2-reversed.json": {
+      "sha256": "2cac8a39d3c85b3d5d21b10ef09f76b21ee266a0e82eab9f1cba0dfcb67adb12",
+      "bytes": 1913
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-3-original.claims/c1.json": {
+      "sha256": "91736c60e2e9ec5a1cb30fc2f51a5ca5218ea3770a3d4c21077c41e8875c7d42",
+      "bytes": 134760
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-3-original.json": {
+      "sha256": "138d9a0f2d4e2a0efb3cb54a368abb3645b80b8f8367d2450de06cc80a494224",
+      "bytes": 1990
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-3-reversed.claims/c1.json": {
+      "sha256": "8a46a6cc6404001488cb84e36fe2deedf23ee1414bed1a4cef855092e6762f5a",
+      "bytes": 134762
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-qualification-3-reversed.json": {
+      "sha256": "ef8e364359f6d490dabc8debe9f8ccf70968fac262536024be8cdf23abad8f20",
+      "bytes": 1993
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-1-original.claims/c1.json": {
+      "sha256": "b32cc9f3f626c4c70f3fba057ec53744078ef86e576f45e0c39aabc8c197b9a5",
+      "bytes": 135909
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-1-original.json": {
+      "sha256": "0f475ba87e10bd747e229c8661c5d1a50088073649d8d48150dfa34223256aeb",
+      "bytes": 1872
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-1-reversed.claims/c1.json": {
+      "sha256": "227b2250a241de33888272fc645bd5e659507e2f53e13452560eb19c2d42e250",
+      "bytes": 135909
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-1-reversed.json": {
+      "sha256": "e09401ff33450e6b1984ab1bb304167854644ec3dae081260f982148bd63e55a",
+      "bytes": 1870
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-2-original.claims/c1.json": {
+      "sha256": "ed297d0a87d2fd3be922b19483ce694870b4b717c62a542cc7833b827627e145",
+      "bytes": 70657
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-2-original.json": {
+      "sha256": "402bd0c90f851b647555ee490ebe3ac808e8cd839c9e4e5672d7620e6625ce58",
+      "bytes": 1946
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-2-reversed.claims/c1.json": {
+      "sha256": "92ffb737c7aeffcbed3ce0870f3bc44a3861b27b53b4c153c8111676759a37ed",
+      "bytes": 70655
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-2-reversed.json": {
+      "sha256": "228f25fb92301969a9d2cf1d2ddc962de2dc87a097b55265a08dc3c744933908",
+      "bytes": 1946
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-3-original.claims/c1.json": {
+      "sha256": "8dfd3045c89f01736fe842c422d9c3b7f48ea8b89943923bccff2d1e6b72da9e",
+      "bytes": 74491
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-3-original.json": {
+      "sha256": "c9e8c601911a2ca77813349d8af60d2d9f6616a570f3b563cbcca75ee916c028",
+      "bytes": 1947
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-3-reversed.claims/c1.json": {
+      "sha256": "918f4a59ea6aa4be8b590d997ae4d877f700ab435381a5d54722959ae96631bd",
+      "bytes": 74490
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/ja-table-3-reversed.json": {
+      "sha256": "75e43f385dbf0b083fdcda983f6332584492664c067dbaed48b448112011a162",
+      "bytes": 1945
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-original.claims/c1.json": {
+      "sha256": "6373a02d525070276382685a27eaf1a204d7bd84365a08c23fdbfeb59af448b8",
+      "bytes": 176745
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-original.claims/c2.json": {
+      "sha256": "6bbded09c6dd068056563d07cb71bd8e3cf7cf126f01f211e8f057f966a63793",
+      "bytes": 125495
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-original.claims/c3.json": {
+      "sha256": "488965bd3d8446f94d9a4bbb70c031476c3287a4b557282773c46b505a367124",
+      "bytes": 176004
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-original.claims/c4.json": {
+      "sha256": "0b06e0379fa98a37e0a9b7f2844866d4a910c658cf6e5026c8e0f9c212eec093",
+      "bytes": 145909
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-original.claims/c5.json": {
+      "sha256": "8b727cae6cad8423eaf2017f575112afed037c7564728e50d1a5b17161a6515f",
+      "bytes": 179982
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-original.claims/c6.json": {
+      "sha256": "8310787575ef6a03cf926c150903ff9bd997792bdb3bf7bc9271532c5d885669",
+      "bytes": 174159
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-original.claims/c7.json": {
+      "sha256": "3e5e50992d8e4b643923bd5a51d3180c6c1ceb6154738caa3641e499bc833325",
+      "bytes": 166606
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-original.json": {
+      "sha256": "2fb702b991782c79e57dbf8b5025d27d00c14f3cab87cf4f1ebc514e5ba9877c",
+      "bytes": 11712
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-reversed.claims/c1.json": {
+      "sha256": "243724bf26fcd9d4ce3bd601bdcbc48a86c365dda45d9029fe57199080796920",
+      "bytes": 145112
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-reversed.claims/c2.json": {
+      "sha256": "fc68e8fe9717e2f8f57b8dec17037aafb0a8af346a7ec46a7ae0529dff4be592",
+      "bytes": 151500
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-reversed.claims/c3.json": {
+      "sha256": "e767ea7eb7754dc0b8ee3c020819702de6d8833e73b30009acd025b773f30652",
+      "bytes": 158854
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-reversed.claims/c4.json": {
+      "sha256": "3f7ca5623a738a0100d04406905b39d610ebb4755682c63ee18d5cef58d60a83",
+      "bytes": 171308
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-reversed.claims/c5.json": {
+      "sha256": "be3a1a52eddfa8a8ab64263459b0e8bb8d7a7d8987291aeb5c19845d63070768",
+      "bytes": 132268
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-reversed.claims/c6.json": {
+      "sha256": "ffbfb76b5012e8a5261c98dd0d2d20c425c45da28e066b16193016036edfeac0",
+      "bytes": 173944
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-reversed.claims/c7.json": {
+      "sha256": "5c0f50bd7e80709a6c3aa4232b3f5799fb99f58d38f2a97e5b9f8655aa5afb53",
+      "bytes": 175356
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-council-reversed.json": {
+      "sha256": "c603e12c18a74b55ce52c9c1c3845c4f82eb2577edadf32f0abc270024bafcbc",
+      "bytes": 11956
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-zidane-original.claims/c1.json": {
+      "sha256": "ffb8eb3bb2d09e4b6077b4f49c23ab00a925110f984b9d07fe5686e961648a08",
+      "bytes": 184151
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-zidane-original.json": {
+      "sha256": "24ed84ac4345e0acf60c8e72567047d12b219c5f5e35360baa73e144901b188e",
+      "bytes": 2739
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-zidane-reversed.claims/c1.json": {
+      "sha256": "e9d77dc4bfbd3478e45681684301b7005cbe4973c260abec9aaaecd7c7fb80d3",
+      "bytes": 182893
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v13/tasks/known-zidane-reversed.json": {
+      "sha256": "37cac298a47696490f71172d44269366c0684a422a9599f2068473f21e5462ba",
+      "bytes": 4163
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v13/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v13/preflight_v1/plan.json": {
+      "sha256": "cb8b316555bb32b60c1e295fe9bef3c85d095890353a6126892567a9174f2138",
+      "bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v13/preflight_v1/report.json": {
+      "sha256": "a619625457e5faf839c7f9a911a439511e707ecd71bb1c682048ea8686107fed",
+      "bytes": 30792
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v13/preflight_v1/server.log": {
+      "sha256": "44ae5220ef7ae9f751f5c7b562fc04c344ca557e5150f3d86a40c080229577f7",
+      "bytes": 19146
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v13/preparation_v1.json": {
+      "sha256": "9c3aad3c303ce876915e014f2321f40d33e88425e72a75f40e20656ebe28af3d",
+      "bytes": 16448
+    }
+  },
+  "known15_regression_still_required": true,
+  "main_development_still_required": true,
+  "heldout_calibration_still_required": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
