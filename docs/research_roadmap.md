@@ -1,6 +1,6 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月21日。正本: [研究計画7.40](rag_research_plan.md)、[実装計画8.42](rag_implementation_plan.md)。
+更新日: 2026年10月22日。正本: [研究計画7.40](rag_research_plan.md)、[実装計画8.42](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
@@ -9,7 +9,7 @@
 
 Calibrationの対象は[別予約Manifest](phase11_bilingual_calibration.md)へ保存済み。英語の元225問は検索調整済みのまま保持し、未使用Developmentの20 Groupを主20 Groupと分けて追加Calibrationへ予約した。日本語は元Calibrationから20 Group。全561 Test/Ruff・再計算/重複0を確認し、新規推論0。実行Protocol/専用Runner・採用/全Label封印/解析は主Developmentの確認後で、最終Gateは未了。
 
-**Phase 1〜10の基盤と、Phase 11の日本語Source/分割/全文Corpus・日英Index・共通RAGの既知接続を完了。v8の人工形式/日英意味診断は通過したが、既知15 QA回帰v2は誤支持6で不通過。別9B v9は生成0の資源確認に通過し、人工形式2 Callで推論未終了/出力上限に達した。全失敗/未試行を保持し、開始TagのPrefillを実入力とNative応答で照合するv10を追加、全555 Test/Ruff成功。固定v10は同じ人工6 Call/厳密5条件に通過し、監査追加0/全16 Artifact保存を完了。同じ固定Commitの意味診断は20 Call/既知4条件でCritical3/4となり不通過、人工54条件未試行。元順序Councilの矛盾/支持不足の不一致を保持し、全Raw保存へ進む。日英主Development/未使用Calibration、規模/本実験条件、拡張Validator/最終凍結は未了。Gate 11未通過、Phase 12未実施。**
+**Phase 1〜10の基盤と、Phase 11の日本語Source/分割/全文Corpus・日英Index・共通RAGの既知接続を完了。v8の人工形式/日英意味診断は通過したが、既知15 QA回帰v2は誤支持6で不通過。別9B v9は生成0の資源確認に通過し、人工形式2 Callで推論未終了/出力上限に達した。全失敗/未試行を保持し、開始TagのPrefillを実入力とNative応答で照合するv10を追加、全555 Test/Ruff成功。固定v10は同じ人工6 Call/厳密5条件に通過し、監査追加0/全16 Artifact保存を完了。同じ固定Commitの意味診断は20 Call/既知4条件でCritical3/4となり不通過、人工54条件未試行。元順序Councilの矛盾/支持不足の不一致と全42 Artifact/再開追加0を保存した。指示の再述を減らすv11を旧全基準のまま別登録し、固定実走へ進む。日英主Development/未使用Calibration、規模/本実験条件、拡張Validator/最終凍結は未了。Gate 11未通過、Phase 12未実施。**
 
 2026年10月21日、英語CLAPNQに近い別の日本語Datasetを追加し、日英で順序感度と判断・品質・費用を
 比較する方針を採用した。[日英比較の拡張方針](english_japanese_expansion.md)に従い、

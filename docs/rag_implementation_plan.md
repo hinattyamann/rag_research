@@ -49,6 +49,8 @@ v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日�
 
 検索調整済み英語225問を未使用へ戻さず、元Developmentの未使用Groupから20問、日本語元Calibrationから20問を別予約した。`calibration_selection.py`/専用CLIが元Split/用途・主20 Group/旧225 IDとSplit Hash/使用済み70 File・計262 ID/予約閉包を結び、Evaluation行は開かない。新規6 Testを含む全561 Test/Ruffと選定の同一再計算に成功。元QA/旧Split不変。専用実行/採用/封印/統計の経路は主Development確認後に実装する。
 
+9B v10は4既知条件/20 CallでCritical3/4により不通過。元順序Councilの矛盾/支持不足の差、曖昧c6/Fの元逆差と全42 Artifact・再開追加0を保持した。新v11はJudgeへ再述を避け直接比較する一般Prefixだけを加え、旧Expected/全基準/予算等を保持して別登録。形式証拠は同一Model/Runtime/設定と27 Core/Probe Hashでv10を再利用し、新しい意味診断へ進む。主/予約Calibrationは未推論。
+
 ## 1. 既存実装と保存する境界
 
 現行の任意候補`verification_mode: claimwise-v1`は`evaluation/claimwise.py`で個別Journalと集計を共用する。

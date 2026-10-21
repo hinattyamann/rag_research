@@ -30,6 +30,8 @@ v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日�
 
 英語の元Calibration225問は全て検索条件調整済みのため再び未使用とせず、旧記録を保持する。[新しい日英Calibration用の別予約](phase11_bilingual_calibration.md)として、英語は未使用Developmentから主20 Groupとも分けた20問、日本語は元Calibrationから20問を結果非依存で保存した。元Source Splitと分析用途を区別し、Group/使用履歴/Hashを検証、全561 Test/Ruff成功。主Development採用後の専用実行Protocol/Runner・実走/全Label封印/集計は未了で、予約QAを方法調整へ使わない。
 
+9B v10は4既知条件/20 CallでCritical3/4により不通過。元順序Councilの矛盾/支持不足の差、曖昧c6/Fの元逆差と全42 Artifact・再開追加0を保持した。新v11はJudgeへ再述を避け直接比較する一般Prefixだけを加え、旧Expected/全基準/予算等を保持して別登録。形式証拠は同一Model/Runtime/設定と27 Core/Probe Hashでv10を再利用し、新しい意味診断へ進む。主/予約Calibrationは未推論。
+
 ## 1. テーマと目的
 
 現行候補は[固定文ごとの評価](phase11_claimwise_candidate.md)。初回回答全体を非信頼文脈として保持し、全固定文を個別評価して

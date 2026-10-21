@@ -1,4 +1,4 @@
-# Phase 11 Qwen3.5-9Bの別候補v9と推論Prefill候補v10
+# Phase 11 Qwen3.5-9Bの候補v9〜v11と保存した失敗
 
 2026年10月21日。8B v8の既知15 QA回帰v2は12 Critical条件中8一致・誤支持6で不通過。
 暖鋒の通過中/後の表対応、語源の不確実性、別々の逸話をつなぐ関係の誤支持が残った。
@@ -107,3 +107,44 @@ Preflight/準備失敗を含む全16 Artifactを同一Byte保存し、
 Launchに生成0/形式ReportのHashを保存。session27269は継続観測し、重複起動しない。
 同じ既知Critical4条件全一致の場合だけ人工54条件へ進む。最大128 Call/Retry0、
 旧Expected/基準は不変。全意味結果/採用は未確定で、主20問/未使用Calibrationは未実施。
+
+## v10の意味不通過と全保存
+
+固定645f193のv10は全4既知条件/20 Callを完了し、Critical正確一致3/4で停止した。
+形式/Runtime/Overflow失敗0・Critical誤支持0でも、旧正確Label基準に不通過である。
+人工54条件は未試行。入力96268/出力50676 Token・Task秒和860.195937秒（14.34分）。
+90 Source Hash/4読解・16固定文判定の全文/ID/全分母/実費を機械照合し、
+再開34 File不変・追加Call/Server0を確認した。原本36 Fileを同一Byte複製し、
+対象を明示した意味確認/Preflight/準備失敗を含む全42 Artifactを
+`phase11_source_reading_result_v10.json`へ結んだ。
+
+不一致はCouncil元順序c4のExpected矛盾→観測支持不足である。Modelは1567年のPope Pius Vへの
+主体帰属を認識したが、原文のwent-beyond対比を矛盾として確定しなかった。逆順c4とZidane両順序は一致。
+両非支持分類ともFへの寄与は0だが、正確Label基準を事後に二値へ変更しない。
+対象c4の実推論2057 TokenにはRuntime停止指示分を含み、Budget2048+監査許容範囲に適合する。
+推論本文は指示の再述が長く、直接比較は2367文字目から始まり、対比の検討中に強制終了した。
+文字数をToken数へ読み替えず、含まれたSource外の歴史推測も根拠にしない。
+これは次候補の原因仮説で、改善した証明ではない。
+
+Councilの曖昧c6はExpected nullを保ち、元順序矛盾/逆順支持となった。
+Fは元5/7・逆6/7、閾値0.7で両方採用。曖昧c6を精度からだけ除き、F全7文を維持する。
+既知一例の観測を新しい独立標本や一般的な順序効果の推定とはしない。
+手動意味確認は不一致c4/逆順対応とc6を対象とし、全読解文の独立した完全監査とは主張しない。
+human_reviewed=false・厳密Model ID未取得・同一開発履歴を記録した。
+
+## 直接比較を先に行う候補v11
+
+`phase11_semantic_candidate_v11.yaml`/Prompt v8を結果前に別保存した。
+v10からJudge systemの先頭に、指示/草稿/文書列挙の再述を避け、Sourceの主体/行為・関係から
+簡潔に比較し、原文の対比/限定を確認する一般指示だけを加える。既存の支持/矛盾/欠落の定義、
+架空例、全文/Expected/全基準、読解/書換え/抽出、Model/Runtime/Sampler/予算/Schemaは保持する。
+日英同じJudgeで、既知人名/年/ID/期待Labelを追加しない。主/予約Calibrationの出力は使っていない。
+
+事前Manifestは`phase11_qwen35_9b_preregistration_v3.json`。
+既知例を繰り返した候補選定なので、この診断の通過を独立した一般精度の証拠にはしない。
+固定Worktreeの生成0で全128入力を確認してから、同じ4 Critical/日英人工診断を新Runで行う。
+人工形式検証は候補Judge指示を使わない固定6入力であり、同じModel/Runtime/全Sampler/Task設定と
+27 Core/Probe Source Hashが一致したため、通過済みv10の証拠を明示して再利用する。
+同じ6 Callを無目的に繰り返さず、実Taskごとの終了/形式/実Budget監査は維持する。
+最大新規242 Call（意味128+通過時の旧回帰114）、旧9B28 Callを含め累積最大270、Retry0。
+基準不通過は停止/全保存し、全意味採用証拠がそろう場合だけ主20問へ進む。
