@@ -116,7 +116,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.28](rag_research_plan.md)・[実装計画8.30](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.29](rag_research_plan.md)・[実装計画8.31](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。
@@ -248,3 +248,5 @@ uvは`.tools/bin/uv`。`export PATH="$PWD/.tools/bin:$PATH" UV_CACHE_DIR="$PWD/.
 品質/Parser/Runtime等は確認済みだが意味妥当性と分析はpendingなので、freezeは実行していない。
 次は既知例で支持判定・拒否方針を別Versionで検証し、新条件/停止条件を保存してから別の未使用20問へ進む。
 本番200問とTitle対応Bootstrap10000回/95%CIは未凍結の案。Evaluation本文・結果を調整に使わない。
+
+直近: 固定565885aのv5はPreflight128/生成0成功後、読解のID重複/欠落と非一致Quoteで最初の1 Callを停止。固定文判定0/他57条件未試行。結果は`phase11_source_reading_result_v5.json`、旧Worktreeを保持。v6 Config/Promptは固定IDと原文Quote選択のSchemaだけを明示追加し、全488 Test/Ruff成功。次は別固定Worktreeで同じ最大128 Call/停止規則を検証する。

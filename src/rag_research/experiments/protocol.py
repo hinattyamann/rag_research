@@ -88,6 +88,9 @@ def validate_task_contract(config, prompts):
             "Unexpected prompt schema/tasks")
     require((prompts.get("source_reading_auxiliary") == "untrusted_reading_v1") == (mode == "source-reading-v1"),
             "Source reading requires its explicit candidate mode")
+    require(prompts.get("source_reading_schema") in {None, "free_quote_coverage_v1", "fixed_ids_exact_quotes_v2"} and
+            (prompts.get("source_reading_schema") is None or mode == "source-reading-v1"),
+            "Unsupported reading schema candidate")
     claim_unit_language(prompts.get("claim_units"))
     for task, fields in FIELDS.items():
         if task not in tasks:

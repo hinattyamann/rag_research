@@ -51,7 +51,7 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
         require(constraints in {"none", "thinking_json_passage_ids_v2"}, "Unsupported source reading constraints")
         if constraints != "none":
             require(getattr(config, "final_json_grammar", False), "Source reading requires final grammar")
-            schema = reading_schema(payload["documents"])
+            schema = reading_schema(payload["documents"], prompts.get("source_reading_schema", "free_quote_coverage_v1"))
     if constraints == "thinking_json_passage_ids_v2" and task == "verify_claims":
         require(getattr(config, "final_json_grammar", False), "Final-only grammar must be enabled")
         schema = cited_verdict_schema(payload, boolean_checks=prompts.get("judge_checks") == "conflict_then_complete_v1")

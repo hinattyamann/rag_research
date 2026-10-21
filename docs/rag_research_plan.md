@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.28 — 2026年10月21日 草稿なし根拠読解を先行する意味候補の共通処理を実装
+## Version 7.29 — 2026年10月21日 草稿なし読解の形式不通過と原文引用Schema候補を保存
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.30](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.31](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -17,6 +17,7 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 主比較と欠測/文書Group Bootstrapの[統計事前計画](phase11_statistical_plan.md)を具体化・実装したが、件数/条件の最終凍結と新規Runへの解析は未了。
 次は期待Label/採用基準を保持した[草稿なしの根拠読解候補](phase11_source_reading_candidate.md)を別計画で検証する。
 その後、読解/全固定文・全分母/実費・中断再開と匿名品質への接続を実装し、全487 Test/Ruff成功。実GPU意味診断はこれからで、意味採用/最終凍結は未了。
+その後、v5は読解1 CallでID/Quoteの対応不正を検出して停止した。v6へ一意ID/原文QuoteのDecoder制約を別保存し、Expected/意味採用基準を保持した。全488 Test/Ruff成功、v6実走はこれから。
 
 現行の次工程は[意味判定・拒否Fallbackの診断](phase11_semantic_revision.md)。使用済み英語2例の4条件を先行し、
 Critical全件一致した候補だけ日英の人工27例/54条件へ進める。採用・停止規則と最大58呼出し/候補を結果前に保存した。

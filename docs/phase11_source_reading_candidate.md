@@ -53,3 +53,21 @@ Preflightは読解58+単位70の入力を生成0で測り、単位側に中間�
 これは事前の保守的な見積りで、実読解後の全入力も各Call前にTokenizerで測り、超過時は切詰めず停止する。
 新規13 Testを含む全487 Test/Ruff成功。全文/全ID・Gold非漏洩・Quote/ID不正で停止・全分母と実費・部分/未知結果再開・匿名品質/経路費用を検証した。
 長時間の実GPU意味診断は検証済みCommitを固定して行う。Test成功を意味採用やGate 11通過としない。
+
+## 固定565885aのv5実走とSchema改訂v6の事前条件
+
+全128予定入力のPreflightはCompletion0/最大3874入力Token・全層CUDA・中間予約込み予算内で通過した。
+GPU7073/8151 MiBは一点観測。配置時の追跡済みConfigとの重複と最初の旧Trace不足は生成/Server前に停止し、保全・配置後に復旧した。
+その後、Council元順序の最初の読解1 Callで10行中9種類のIDしか返らず、1種類の重複/欠落を検出した。
+別照合で原文に一致しない引用も1件確認した。停止規則に従い固定文判定へ進まず、他57条件も未試行。
+入力2120/出力1068 Token・Task15.99秒、再開10ファイル不変/追加Call・Server0。
+これは読解の形式/原文対応Gate不通過で、意味判定の誤支持やCritical2/4と同じ失敗には数えない。
+v5結果/配置失敗・全Rawは`phase11_source_reading_result_v5.json`の15 Artifactで保持した。
+
+次のv6は`source_reading_schema: fixed_ids_exact_quotes_v2`を明示する別Prompt/Configとする。
+各文書IDを固定順のSchemaへ一度ずつ配置し、その文書だけの原文から決定的に抽出した完全一致QuoteをDecoderの選択肢にする。
+主体/行為はModelが記述し、Expected/Referenceは使わない。SchemaのID順/候補は根拠提示順によらず同じにし、実入力の全根拠配列は元/逆のまま保持する。
+これは出力制約の改訂であり、読解の正しさや支持を保証しない。旧v5は既定の自由Quote/ID配列を保持し、旧Runへ適用しない。
+同じ8B・4096/3072出力・推論1536/Seed/全本文/Expected・Critical4全一致/人工90%以上・明確非支持の誤支持0・Health/Overflow停止を維持する。
+同じ事前Plan v3・最大128 Call、既知20 Callを先行する。これまで29 Callと合わせ最大157 Call。
+全29例のSchema不変/原本文不変を検証し、新規1 Testを含む全488 Test/Ruffを確認してCommitを固定する。

@@ -167,3 +167,17 @@ def test_empty_fixed_units_do_not_call_reader_or_invent_score(reading):
     result = invoke(reading)
     assert result["status"] == "not_applicable" and result["parsed"] is None
     assert not reading[0].requests and result["completion_attempts_recorded"] == 0
+
+
+def test_fixed_id_exact_quote_schema_uses_only_all_original_documents_and_no_gold(reading):
+    documents = reading[3]["documents"]
+    schema = source_reading.reading_schema(documents, "fixed_ids_exact_quotes_v2")
+    assert schema == source_reading.reading_schema(list(reversed(documents)), "fixed_ids_exact_quotes_v2")
+    rows = schema["properties"]["readings"]
+    assert rows["minItems"] == rows["maxItems"] == 2
+    assert [r["properties"]["passage_id"]["const"] for r in rows["items"]] == ["d1", "d2"]
+    for document, row in zip(documents, rows["items"], strict=True):
+        assert all(q and q in document["text"] for q in row["properties"]["quote"]["enum"])
+        assert "Draft" not in json.dumps(row)
+    # Legacy v5 keeps its unconstrained ID array and free quotes.
+    assert isinstance(source_reading.reading_schema(documents)["properties"]["readings"]["items"], dict)

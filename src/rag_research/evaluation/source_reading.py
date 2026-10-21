@@ -4,7 +4,7 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
-from rag_research.evaluation.schema import object_schema
+from rag_research.evaluation.schema import object_schema, quote_candidates
 from rag_research.experiments.frozen_trace import digest, require, validate_documents
 from rag_research.experiments.storage import checkpoint, read_json, verify_checkpoint
 
@@ -12,12 +12,26 @@ MODE = "source-reading-v1"
 BASE_FIELDS = ("schema_version", "task", "execution_mode", "request_sha256", "binding", "expected_claim_ids")
 
 
-def reading_schema(documents):
+def reading_schema(documents, variant="free_quote_coverage_v1"):
     validate_documents(documents)
+    require(variant in {"free_quote_coverage_v1", "fixed_ids_exact_quotes_v2"}, "Unknown reading schema")
     item = object_schema({"passage_id": {"enum": sorted(d["passage_id"] for d in documents)},
                           "actor": {"type": "string", "minLength": 1, "maxLength": 160},
                           "action": {"type": "string", "minLength": 1, "maxLength": 320},
                           "quote": {"type": "string", "minLength": 1, "maxLength": 1600}})
+    if variant == "fixed_ids_exact_quotes_v2":
+        # Only decoder choices are canonicalized. Original input evidence order/text remain untouched.
+        from copy import deepcopy
+
+        items = []
+        for document in sorted(documents, key=lambda d: d["passage_id"]):
+            fields = deepcopy(item["properties"])
+            fields["passage_id"] = {"const": document["passage_id"]}
+            quotes = {q for q in quote_candidates(document["text"]) if len(q) <= 1600}
+            quotes.add(document["text"][:1600])
+            fields["quote"] = {"enum": sorted(quotes)}
+            items.append(object_schema(fields))
+        item = items
     return object_schema({"readings": {"type": "array", "items": item,
                                        "minItems": len(documents), "maxItems": len(documents)}})
 

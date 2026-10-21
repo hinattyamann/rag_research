@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-source-reading-v6-decoder-preregistration-not-final-freeze",
+  "created_at_utc": "2026-10-21T10:55:52.628810+00:00",
+  "change": "fixed each-source-ID exactly once and exact quote choices derived only from that source; original input evidence order retained",
+  "previous_v5_failure": "one reader call invalid source-ID coverage and nonliteral quote; zero sentence-verification calls",
+  "old_v5_default_preserved": true,
+  "expected_and_semantic_gate_unchanged": true,
+  "known_first_max_calls": 20,
+  "maximum_calls": 128,
+  "previous_calls": 29,
+  "maximum_cumulative_calls": 157,
+  "validation": {
+    "pytest_passed": 488,
+    "pytest_seconds": 6.92,
+    "ruff": "passed",
+    "new_schema_regression_tests": 1,
+    "real_cases_schema_invariance_and_full_source_preserved": 29
+  },
+  "model_calls_so_far": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "artifacts": {
+    "src/rag_research/evaluation/source_reading.py": {
+      "sha256": "ebc5ace62451eb4d8fcdc4380d16be6c0eead9f22d28de6fd96d3f4aac72f693",
+      "bytes": 10068
+    },
+    "src/rag_research/evaluation/tasks.py": {
+      "sha256": "634adbcfef6a2a24d167cdc80540f5f37d178b817f3bbd115fae98ce61ac7d89",
+      "bytes": 9446
+    },
+    "src/rag_research/experiments/protocol.py": {
+      "sha256": "cc0bad1a812b4b57cda0ae09fbc1a728f215c1522a6db2e54c77733e10cf733a",
+      "bytes": 9815
+    },
+    "tests/test_source_reading.py": {
+      "sha256": "2045375d74eced575834be87c42b80250af5761b3075a712adc786a794506bf9",
+      "bytes": 9365
+    },
+    "configs/phase11_semantic_candidate_v6.yaml": {
+      "sha256": "428b055a0127d958ff61ee27b8eed124ec1c2a84eb34d556195128f11bb370c9",
+      "bytes": 2121
+    },
+    "configs/phase11_semantic_prompts_en_v6.yaml": {
+      "sha256": "bf78992cc419b67e6ab0791b6cfc0104382c326c7e99c8d1f2b8fbec8286bf28",
+      "bytes": 10135
+    },
+    "configs/phase11_semantic_prompts_ja_v6.yaml": {
+      "sha256": "e393dfe94c1af5dbd917d0aa31429473a5cd021b87e8d072777fe61482f9a53e",
+      "bytes": 10197
+    },
+    "configs/phase11_semantic_diagnostics_source_reading_v3.json": {
+      "sha256": "d121059dc4224edb1b16064c03de34e108bb678ed851103c82bb1207497a87c6",
+      "bytes": 46652
+    },
+    "docs/phase11_source_reading_candidate.md": {
+      "sha256": "7aba0e80777106c0d17838331e0608745a7d266f163acf949bae88e21b8582a9",
+      "bytes": 7560
+    }
+  }
+}

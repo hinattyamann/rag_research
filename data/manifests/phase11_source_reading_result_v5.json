@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-source-reading-v5-health-failure-result-not-semantic-adoption",
+  "created_at_utc": "2026-10-21T10:53:09.763735+00:00",
+  "fixed_commit": "565885af4ec1e0b1ad24acdca777356d8a7aaade",
+  "report": {
+    "schema_version": 1,
+    "purpose": "phase11-bilingual-semantic-candidate",
+    "manifest_sha256": "32f163d873469bde2ddffc1b4e797e3f33f3c295214752f6f3bf5adfaee9a362",
+    "critical_planned_conditions": 4,
+    "critical_completed_conditions": 1,
+    "critical_exact_correct_conditions": 0,
+    "critical_passed": false,
+    "synthetic": {
+      "en": {
+        "planned_conditions": 24,
+        "completed_conditions": 0,
+        "valid_conditions": 0,
+        "exact_correct_conditions": 0,
+        "accuracy_of_all_planned": null,
+        "false_support_count": 0
+      },
+      "ja": {
+        "planned_conditions": 30,
+        "completed_conditions": 0,
+        "valid_conditions": 0,
+        "exact_correct_conditions": 0,
+        "accuracy_of_all_planned": null,
+        "false_support_count": 0
+      }
+    },
+    "diagnostic_gate_passed": false,
+    "planned_conditions": 58,
+    "completed_conditions": 1,
+    "not_attempted_ids": [
+      "known-council-reversed",
+      "known-zidane-original",
+      "known-zidane-reversed",
+      "en-time-support-original",
+      "en-time-support-reversed",
+      "en-time-conflict-original",
+      "en-time-conflict-reversed",
+      "en-time-absent-original",
+      "en-time-absent-reversed",
+      "en-number-support-original",
+      "en-number-support-reversed",
+      "en-number-conflict-original",
+      "en-number-conflict-reversed",
+      "en-number-absent-original",
+      "en-number-absent-reversed",
+      "en-negation-support-original",
+      "en-negation-support-reversed",
+      "en-negation-conflict-original",
+      "en-negation-conflict-reversed",
+      "en-negation-absent-original",
+      "en-negation-absent-reversed",
+      "en-relation-support-original",
+      "en-relation-support-reversed",
+      "en-relation-conflict-original",
+      "en-relation-conflict-reversed",
+      "en-relation-absent-original",
+      "en-relation-absent-reversed",
+      "ja-actor-1-original",
+      "ja-actor-1-reversed",
+      "ja-actor-2-original",
+      "ja-actor-2-reversed",
+      "ja-actor-3-original",
+      "ja-actor-3-reversed",
+      "ja-count-1-original",
+      "ja-count-1-reversed",
+      "ja-count-2-original",
+      "ja-count-2-reversed",
+      "ja-count-3-original",
+      "ja-count-3-reversed",
+      "ja-compound-1-original",
+      "ja-compound-1-reversed",
+      "ja-compound-2-original",
+      "ja-compound-2-reversed",
+      "ja-compound-3-original",
+      "ja-compound-3-reversed",
+      "ja-qualification-1-original",
+      "ja-qualification-1-reversed",
+      "ja-qualification-2-original",
+      "ja-qualification-2-reversed",
+      "ja-qualification-3-original",
+      "ja-qualification-3-reversed",
+      "ja-table-1-original",
+      "ja-table-1-reversed",
+      "ja-table-2-original",
+      "ja-table-2-reversed",
+      "ja-table-3-original",
+      "ja-table-3-reversed"
+    ],
+    "planned_completion_limit": 128,
+    "completion_attempts_recorded": 1,
+    "cost_incomplete": false,
+    "input_tokens": 2120,
+    "output_tokens": 1068,
+    "summed_task_seconds": 15.990650848998484,
+    "task_result_sha256": {
+      "known-council-original": "c5fe6ded2ab40edaeff7db2398ad58b3b4400d96958d7b681d075f2040330565"
+    },
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "reading_completed_calls": 1,
+  "sentence_judge_calls": 0,
+  "stopped_on": "invalid_output: Reading must cover every document exactly once",
+  "output_audit": {
+    "returned_rows": 10,
+    "distinct_source_ids": 9,
+    "source_id_count": 10,
+    "at_least_one_quote_not_exact": true,
+    "actor_for_pope_passage": "Pope Pius V, correctly named in fallible intermediate output; no verdict inferred"
+  },
+  "resume_unchanged_files": 10,
+  "resume_new_calls": 0,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v5/plan.json": {
+      "sha256": "2dfb72645dd4237a70db6a3473df4456f0b5d5362c03fae25bd1ac9e7897c296",
+      "bytes": 1192
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v5/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v5/report.json": {
+      "sha256": "a0361952d648ba5de4fd91fab746bedd93016da1600726333d6687d8b62ce7bb",
+      "bytes": 41033
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v5/server.log": {
+      "sha256": "fc347ae3c87251b07b98c10595b81dbf0836044b4cb6c3837a962bde43394116",
+      "bytes": 16527
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v5/server-1.log": {
+      "sha256": "351ccc427c834bdb4514cbae550f530ddfb74dcf49e194eb0bfc91983f607250",
+      "bytes": 20671
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v5/resume_check.json": {
+      "sha256": "78aa12ba5cba8c8b77de846184b2c7224d15a79443f2d5ff1f36541c496ee32b",
+      "bytes": 1126
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v5/launch.json": {
+      "sha256": "510257370608de84704bf0a51004f001aa2934235f0ee6e730bab587bccdb7b8",
+      "bytes": 918
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v5/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v5/manifest.json": {
+      "sha256": "c610a05ce4b67debc24d96a23ffd83294467259fb841b6def6b4a5c86a7d44ca",
+      "bytes": 21995
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v5/report.json": {
+      "sha256": "11f68842381a5bd72163df83e9620759909854aedb25f920a2542b856acdfc00",
+      "bytes": 3062
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v5/session-1.json": {
+      "sha256": "1304fc8ae1ce2de28681223b5144b8f4a3982ccbf0c0a6991a8536e9d35e5156",
+      "bytes": 9712
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v5/preparation_failure_v1.json": {
+      "sha256": "5a5196b1ac998d9ce862e52e211b1818fb4d978c2d9c56156a92c3c6a2768e6b",
+      "bytes": 342
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v5/preflight_receipt.json": {
+      "sha256": "1ca8b6df818b8b72162c44ef3dc5f4c2de7a43bf20a5807365d13a2137af786a",
+      "bytes": 370
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v5/tasks/known-council-original.reading.json": {
+      "sha256": "37b1d1293fa3e7d581899737656297111050f5b000a7172e68b51bb09f38d9ae",
+      "bytes": 74049
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v5/tasks/known-council-original.json": {
+      "sha256": "6ccd267d6f7573e0e9272b18e0c4bd0ef64c06c3611209bfecbdaedf644e8cc6",
+      "bytes": 1549
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

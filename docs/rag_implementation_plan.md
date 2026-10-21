@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.30 — 2026年10月21日 草稿なし読解と全固定文の評価・費用/部分再開を接続
+## Version 8.31 — 2026年10月21日 読解のID/原文対応失敗を保存しDecoder制約v6を追加
 
-[研究計画 Version 7.28](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.29](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -38,6 +38,7 @@ Config v4/Plan v2の最大70 Callを事前検証した。実GPUの意味診断�
 全474 Test/Ruff成功、品質封印済み実RunへのAdapterと最終規模/条件は未了。草稿なし読解の次候補は計画のみ。
 その後、`source-reading-v1`をTask/共通評価/品質Import/実費と意味診断へ実装した。読解は質問/根拠だけ、原文Quoteと全IDを検証する。
 全487 Test/Ruff成功。読解58+固定文70の最大128 Call/事前上限を保存し、固定Commitの実GPU診断はこれから。
+その後、v5は読解のID/Quote対応不正で1 Call停止（固定文判定0）。v6だけ`fixed_ids_exact_quotes_v2`で一意ID/原文Quoteを制約し、旧v5を保持した。全488 Test/Ruff成功、v6実走は未了。
 
 現行の次工程は[意味診断の事前計画](phase11_semantic_revision.md)。`semantic_diagnostics.py`は旧Trace/Expectedの一致と
 共通Task契約を確認し、既知Critical4条件の全一致後だけ人工54条件へ進む。Source/Model/Runtime/全CodeをHashへ固定し、
