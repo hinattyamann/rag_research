@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-known-regression-v2-launch-conditions-not-completion",
+  "created_at_utc": "2026-10-21T13:19:00.058325+00:00",
+  "fixed_commit": "c9bc924430435cd44e05777845e56b5328a6b361",
+  "worktree": ".tools/worktrees/phase11-known-trace-regression-v2",
+  "run": "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2",
+  "ephemeral_tool_session": 76888,
+  "preflight_inputs": 114,
+  "preflight_completion_attempts": 0,
+  "max_input_tokens": 3930,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "7019 MiB, 8151 MiB",
+  "planned_completion_limit": 114,
+  "critical_conditions_first": 12,
+  "critical_maximum_calls": 54,
+  "automatic_retries": 0,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen3-8b-v1/known_trace_preflight_v2/plan.json": {
+      "sha256": "81332fc80073851480b181c433b94acf1ea58cfa8dce3c80b341c5bd901bf986",
+      "bytes": 1192
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/known_trace_preflight_v2/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/known_trace_preflight_v2/report.json": {
+      "sha256": "1670627407614977a30087e9b9fb4add9fa1aa3ebd1389abfb56822d449e4e80",
+      "bytes": 40819
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/known_trace_preflight_v2/server.log": {
+      "sha256": "5875529c6db37e90d6c6460d0aecc4433f1630bfa52b2b9fee4f34d72c29366b",
+      "bytes": 16525
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/launch.json": {
+      "sha256": "fca9612c7583fa0233c4e96442ddb106ee1119d3d2cef86ca2b181b29014f3cb",
+      "bytes": 613,
+      "fixed_worktree_only": true
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/preflight_receipt.json": {
+      "sha256": "dcc9d9c5cc0b4bb7c4e43f34286601b5a411acf5b7e759004128a985ee94a28b",
+      "bytes": 470,
+      "fixed_worktree_only": true
+    }
+  },
+  "results_not_yet_audited": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

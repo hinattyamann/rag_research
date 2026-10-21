@@ -64,3 +64,8 @@ Raw配列を修復・再試行せず、全43 Artifact・再開37 File不変/追�
 Config v2はv8の全条件を保持し、Study Version/Plan Pathだけを回帰用に変えた。
 現SourceでModel/Runtime/Prompt/Core・旧Expectedの読込み照合に成功。新しい実GPU回帰は未実施。
 形式修正後の結果を旧v1の継続へ混ぜず、別固定Worktree/Runを使う。
+
+
+固定c9bc924の専用Worktreeでv2の全114入力/Completion0・最大3930 Token・全予算内/全層CUDAを確認した。
+生成0 Receiptを保存後、既知12 Critical条件/最大54 Callを先行する実走を開始。
+Tool session76888が生存し、全結果/採用は未確定。Launch Manifestは`phase11_known_trace_launch_v2.json`。

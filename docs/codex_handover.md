@@ -1,6 +1,6 @@
 # 別チャットから再開するための引継ぎ
 
-最新: 既知15問回帰v1は21 Call/5条件目の読解形式失敗で停止。旧結果は保存済み。境界v7の人工検証失敗を保持し、v8は人工Runtime厳密5条件/全128入力Preflightを通過。[固定43ccf05のv8日英意味診断](phase11_json_boundary.md)は全128 Call/既知4一致・人工英語24/24/日本語28/30・誤支持0で通過。再開251 File不変/追加0を監査済み。session27879/63610は終了。全259 Artifact/意味監査を正規保存済み。次はphase11_known_trace_candidate_v2.yamlの全114入力Preflight/既知15 QA回帰。旧Runを再生成しない。
+最新: 既知15問回帰v1は21 Call/5条件目の読解形式失敗で停止。旧結果は保存済み。境界v7の人工検証失敗を保持し、v8は人工Runtime厳密5条件/全128入力Preflightを通過。[固定43ccf05のv8日英意味診断](phase11_json_boundary.md)は全128 Call/既知4一致・人工英語24/24/日本語28/30・誤支持0で通過。再開251 File不変/追加0を監査済み。session27879/63610は終了。全259 Artifact/意味監査を正規保存済み。固定c9bc924のphase11-known-trace-regression-v2 Worktreeで回帰v2を実走中。全114入力/生成0 Preflight通過、Tool session76888を観測して二重起動しない。旧Runを再生成しない。
 
 更新日: 2026年10月21日。Phase 10実装・結果の基点Commitは `60c4eec`、
 Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
