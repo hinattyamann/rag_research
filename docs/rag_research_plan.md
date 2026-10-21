@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.11 — 2026年10月21日 別の日本語データセットによる比較へ研究範囲を拡張
+## Version 7.12 — 2026年10月21日 日本語の人手検索・長文QA Sourceを選定
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.11](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.12](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -22,7 +22,10 @@ on English and Japanese Datasets
 2026年10月21日、英語CLAPNQに別の日本語データセットを追加し、同じ現象の再現性と
 順序感度・品質・費用の差を比較する方針をユーザーが決定した。
 翻訳した同一問題の比較は主実験に使わず、CLAPNQにできるだけ近い課題・長文回答・根拠・
-検索Corpusを持つ日本語データをPhase 11で選定する。選定・実装・予備検証は未実施。
+検索Corpusを持つ日本語データをPhase 11で選定する。
+同日、[候補比較と原QA構造監査](japanese_dataset_selection.md)により
+`baobab-trees/wikipedia-human-retrieval-ja`を選定し、固定版の回答付き838件・回答なし433件を取得した。
+記事全文Corpus・文書Group分割・実対応・予備検証は未実施であり、Source選定を本実験条件の固定とはしない。
 選定基準・比較上の制約・工程は[日英比較の拡張方針](english_japanese_expansion.md)による。
 別Dataset間の比較なので、観測する差を言語そのものの因果効果とは断定しない。
 
@@ -240,7 +243,8 @@ Viewerは点検と説明の補助。参加者なしで使いやすさや理解�
 作業・成果物・Gate・期限は[ロードマップ](research_roadmap.md)による。
 **Phase 1〜10の開発確認、Phase 11のCUDA対応とGPU20問/40候補AI採点・34単位監査を完了。
 完全比較12問だが意味妥当性の採用と分析規模は未確定。10月21日に日本語Dataset追加方針を採用したが、
-選定・実装・検証は未着手。Gate 11未通過、最終凍結・Phase 12は未実施。**
+日本語Sourceの選定・原QA取得・構造監査まで実施。本文Corpus・分割・実対応・検証は未実施。
+Gate 11未通過、最終凍結・Phase 12は未実施。**
 ユーザーのAI採点委任を受け、Gate 9はAI代行で候補・判断・品質・費用を照合する開発ゲートへ改訂した。
 人手確認を達成済みへ書き換えず、採点方法を更新した理由と限界を別記録に残す。本実験は未実施。
 2026年10月19日、ユーザーの委任により[開発3候補をAIが代行採点](phase9_ai_quality_review.md)し、
@@ -300,3 +304,9 @@ Judge108回・完全比較12問・Health Gate通過、全34固定文のAI意味�
 検索/文分割/拒否/指示文/入力予算等の対応・予備検証・英語側の回帰確認・両言語の条件固定を追加する。
 Phase 12で日英の本実験と独立採点、Phase 13で統計と比較考察、Phase 14で論文・卒論へ反映する。
 今回は方針の文書化のみで、既存コード・設定・Run・Manifest・品質Labelを変更していない。
+
+同日のGoal実行では[日本語Source選定](japanese_dataset_selection.md)と
+`phase11_japanese_source_selection.json`を保存した。日本語Referenceは人手の段落・文ごとの引用対応を持つ。
+引用断片のみのOracle条件へ切り替えず、全検索記録の記事全文から共通Corpusを準備する。
+複数記事の引用を介する文書Group、引用と人手要約の違い、記事時点・規模・検索品質を確認する。
+回答なし433件はCorpus全体の回答不能とは扱わない。これらの整備と日英実走・最終固定はこれからである。

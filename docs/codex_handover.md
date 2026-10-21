@@ -6,7 +6,10 @@ Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 
 最新方針（2026年10月21日）: 英語CLAPNQに近い別の日本語Datasetを追加し、日英で順序感度と
 判断・品質・費用を比較する。翻訳対は主実験に使わない。[拡張方針](english_japanese_expansion.md)の
-選定・取得・日本語対応・予備検証・両言語の条件固定をPhase 11で行う。全て未着手で、Gate 11は未通過。
+選定・取得・日本語対応・予備検証・両言語の条件固定をPhase 11で行う。
+同日のGoal実行で[候補比較と日本語Source選定](japanese_dataset_selection.md)を実施し、
+`baobab-trees/wikipedia-human-retrieval-ja`の固定版838回答付き/433回答なしQAを取得・構造監査した。
+次は全検索記録の記事全文Corpusと文書Group分割。実対応・予備検証・最終固定は未実施で、Gate 11は未通過。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -23,7 +26,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.11](rag_research_plan.md)・[実装計画8.11](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.12](rag_research_plan.md)・[実装計画8.12](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

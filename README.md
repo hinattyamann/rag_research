@@ -9,7 +9,9 @@
 2026年10月21日、CLAPNQと仕様をできるだけ近づけた別の日本語データセットを加え、
 日英で順序感度と採用/書換え・品質・費用への影響を比較する方針を採用しました。
 [日英比較の拡張方針](docs/english_japanese_expansion.md)に沿って、選定・日本語対応・予備検証・
-両言語の条件固定をPhase 11で行います。これらは未着手で、翻訳対を主実験には使いません。
+両言語の条件固定をPhase 11で行います。翻訳対を主実験には使いません。
+[候補比較](docs/japanese_dataset_selection.md)から日本語Sourceを選定し、固定版原QAを取得・構造監査しました。
+本文Corpus・分割・実対応・予備検証・最終固定は未実施です。
 
 **Phase 1〜10の開発確認、Phase 11のUbuntu/CUDA対応と追加20問・40候補のAI採点・34単位監査を完了しました。完全比較12問・実行Health Gate通過ですが、意味妥当性の採用と分析規模が未確定でGate 11未通過です。最終凍結・Phase 12は未実施です。**
 固定回答の自己評価・判断に加え、元順序による一回書換え、採点画面、採点JSONのImport、経路比較を実装しました。
@@ -27,8 +29,8 @@ v14の事前Gateは引用ID重複1件で不通過として保持し、後処理�
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- [研究計画 Version 7.11](docs/rag_research_plan.md)
-- [実装計画 Version 8.11](docs/rag_implementation_plan.md)
+- [研究計画 Version 7.12](docs/rag_research_plan.md)
+- [実装計画 Version 8.12](docs/rag_implementation_plan.md)
 - [日本語Datasetの選定基準・日英比較・Phase 11〜14の拡張方針](docs/english_japanese_expansion.md)
 - [Dataset Guide Version 2.4](docs/clapnq_dataset_guide.md)
 - [先行研究との関係・本研究の立ち位置と有用性](docs/related_research_positioning.md)
@@ -225,7 +227,7 @@ HybridのSuccess@10はEmbeddingと同じ78.22%ですが、nDCG@10は0.5317でEmb
 | 8 | 固定Trace、評価器、根拠順序と反復 | 完了。開発2件、Judge 9回、再開の追加Completion 0回 |
 | 9 | 一回書換え、品質のExport/Import | AI採点委任に合わせた開発Gate通過。人手評価とはしない |
 | 10 | Development予備実験 | 初回20問、測定修正、新規10問の実験/採点と事後検証を完了 |
-| 11 | 日本語Dataset選定・対応、日英Calibrationと条件凍結 | 英語GPU検証済み。意味妥当性/規模は未決、日本語準備は未着手、Gate未通過 |
+| 11 | 日本語Dataset選定・対応、日英Calibrationと条件凍結 | 英語GPU検証済み。日本語Source選定/原QA取得済み、本文Corpus・実対応/検証と最終固定は未了。Gate未通過 |
 | 12 | 日英の内部Evaluationと独立採点 | 未実施 |
 | 13 | 言語別統計・日英比較・条件別分析、任意の対策 | 未着手 |
 | 14 | 日英比較を含むICIAE原稿・投稿準備・卒論 | 未着手 |

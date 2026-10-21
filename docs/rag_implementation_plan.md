@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.11 — 2026年10月21日 Phase 11に日本語対応と日英比較の準備を追加
+## Version 8.12 — 2026年10月21日 日本語Source選定と取得・分割契約を具体化
 
-[研究計画 Version 7.11](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.12](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -321,6 +321,15 @@ Judge108回・完全比較12問・Health Gate通過、全34固定文のAI意味�
 意味妥当性・分析規模と最終ManifestがそろうまでGate 11を通さず、Phase 12は開始しない。
 
 ## 11. 日本語Dataset追加と日英比較への拡張（Phase 11、未実装）
+
+Sourceは[候補比較・構造監査](japanese_dataset_selection.md)により
+`baobab-trees/wikipedia-human-retrieval-ja`、Revision `02e85c83a64f345aee62fba3a35af99c075a331f`を選定した。
+回答付き838件と回答なし433件は取得・Hash照合済み。参照断片だけのOracle条件は主検索にしない。
+全検索記録の記事全文の取得・整形・分割を別Versionで実装し、原QAの文ごとの引用と人手要約を区別する。
+複数の引用記事を持つQAは連結Groupとして分割し、Redirect/別名も確認する。
+プレビュー閲覧の保守的な開発予約は先頭100件と同Group（初期132 QA）。最終分割は未実施。
+選定Manifestは`data/manifests/phase11_japanese_source_selection.json`。
+以下のPipeline・Validatorは未実装で、原QA取得を日本語の対応完了とは扱わない。
 
 既存の固定Trace・順序操作・同一順序反復・共通書換え・匿名品質採点を再利用する。
 英語の旧Run/Source/Split/Manifestは保持し、日本語Sourceと共通処理の変更を別Versionへ保存する。
