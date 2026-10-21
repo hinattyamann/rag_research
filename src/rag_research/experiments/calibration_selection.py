@@ -54,7 +54,7 @@ def select_rows(rows, language, used_ids, reserved_groups, *, count=20, seed=42,
             "selected_group_overlap_with_used_or_reserved": len(groups & excluded)}
 
 
-def prepare(policy_path, *, root=ROOT):
+def prepare(policy_path, *, root=ROOT, excluded_resume_runs=()):
     policy_path = Path(policy_path)
     policy = read_json(policy_path)
     require(policy["schema_version"] == 1 and policy["purpose"] == "phase11-new-calibration-reservation-policy" and
@@ -101,7 +101,7 @@ def prepare(policy_path, *, root=ROOT):
             {r["document_group_id"] for r in development["en"]},
             "English historical retrieval IDs or source split groups differ")
     used_ids, usage_hashes, legacy = used_inventory(root, development_rows=development["en"] + development["ja"],
-                                                   inventory_roots=USAGE_ROOTS)
+        inventory_roots=USAGE_ROOTS, excluded_resume_runs=excluded_resume_runs)
     used_ids |= set(retrieval_ids)
     exposed = {g for item in legacy for g in item["conservatively_excluded_english_groups"]}
     languages = {}
@@ -117,7 +117,7 @@ def prepare(policy_path, *, root=ROOT):
                                          exposed_groups=exposed if language == "en" else ())
     bindings = {key: policy[key] for key in ("assets", "main_development_selection", "japanese_group_metadata",
                                              "prior_english_retrieval_calibration")}
-    return {"schema_version": 1, "purpose": "phase11-new-calibration-preselected-reservation-not-execution-approval",
+    result = {"schema_version": 1, "purpose": "phase11-new-calibration-preselected-reservation-not-execution-approval",
             "method": METHOD, "analysis_split": "calibration", "source_splits": SOURCE_SPLITS,
             "seed": 42, "languages": languages, "policy_sha256": file_hash(policy_path), "inputs": bindings,
             "source_qa_sha256": hashes, "used_baseline_input_sha256": usage_hashes,
@@ -131,3 +131,6 @@ def prepare(policy_path, *, root=ROOT):
             "unused_scope": "Recorded baseline/retrieval QA usage, native Japanese preview closure and main Development group reservations; not a proof about unrecorded external use or model pretraining",
             "model_completion_attempts": 0, "execution_protocol_and_passing_main_evidence_required": True,
             "gate11_passed": False, "phase12_allowed": False}
+    if excluded_resume_runs:
+        result["excluded_own_resume_runs_already_used_not_new_unused_qa"] = list(excluded_resume_runs)
+    return result

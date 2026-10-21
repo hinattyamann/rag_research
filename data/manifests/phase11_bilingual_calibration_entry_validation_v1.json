@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-calibration-preparation-collection-control-validation-not-actual-adoption",
+  "created_at_utc": "2026-10-21T22:45:01.615978+00:00",
+  "new_tests": 20,
+  "pytest_runs": [
+    {
+      "passed": 651,
+      "seconds": 15.62,
+      "scope": "initial entry/resume controls"
+    },
+    {
+      "passed": 652,
+      "seconds": 15.5,
+      "scope": "direct actual-main condition comparison"
+    },
+    {
+      "passed": 653,
+      "seconds": 15.61,
+      "scope": "final including both source-split entry guards"
+    }
+  ],
+  "ruff_passed": true,
+  "both_cli_help_passed": true,
+  "positive_tests_use_explicit_main_evidence_config_model_doubles": true,
+  "synthetic_collection_cases": {
+    "qa_per_run": 20,
+    "modes": [
+      "claimwise-v1",
+      "source-reading-v1"
+    ],
+    "server_sessions_per_run": 8,
+    "completion_calls_per_run": [
+      160,
+      280
+    ],
+    "cached_resume_new_calls": 0
+  },
+  "actual_checks": {
+    "created_at_utc": "2026-10-21T22:40:34.224565+00:00",
+    "actual_reservation_sha256": "6c686867da6aeb8192b3bb3a8e1830d77a2af00c2186e3f440ca194a72e6f643",
+    "original_reservation_unchanged": true,
+    "reserved_qa_source_hashes_unchanged": {
+      "data/processed/clapnq/c508d78-split-v1/development.jsonl": "3769dfcd74903ad58d8d6faf9380a3ddcf2e46913449d7eaa9d466155bdc3cf2",
+      "data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2/development.jsonl": "5206b6f9ec61d28cd984f66f2ea2b296a54e1efe5755d2bfbca77ac13c48f989",
+      "data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2/calibration.jsonl": "3d3a88a5c439830711c3fdf5c4306c14ba6a8348608cdb16ffbd51158c468b16",
+      "data/processed/clapnq/c508d78-split-v1/calibration.jsonl": "ac5db1cd270c17c93f47b7572148cf20242f1b806698fc178852bb907055559f"
+    },
+    "actual_current_usage_recheck": {
+      "same_original_ids_groups": true,
+      "counts": {
+        "en": 20,
+        "ja": 20
+      },
+      "baseline_inventory_files": 70,
+      "used_or_retrieval_exposed_unique_ids": 262
+    },
+    "actual_pending_execution_rules_validation_passed": true,
+    "actual_missing_protocol_rejection": {
+      "config": "data/runs/development_screening/phase11-calibration-entry-v1/unapproved-calibration-entry-ja.yaml",
+      "message": "Missing preregistered evidence binding",
+      "assets_or_qa_loads": 0,
+      "new_model_servers": 0,
+      "no_per_qa_output_created": true
+    },
+    "core_and_probe_sources_unchanged": 27,
+    "positive_actual_main_to_calibration_adoption_demonstrated": false,
+    "new_model_calls": 0,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "artifacts": {
+    "configs/phase11_bilingual_calibration_execution_rules_v1.json": {
+      "sha256": "8781ebac9e610b6525e4581d28d7fe3550d2e1a4f58690068e17268962524caa",
+      "bytes": 2957
+    },
+    "src/rag_research/experiments/calibration_protocol.py": {
+      "sha256": "2f677825bab5f2a9834fc8ac688040a0300ddcafcb2122670a944758f8b96d7b",
+      "bytes": 14182
+    },
+    "src/rag_research/experiments/bilingual_runner.py": {
+      "sha256": "bb4a87f008bce425288d2a01a411fcec5dc08d518e1318d4eced5b31e5e26310",
+      "bytes": 20140
+    },
+    "src/rag_research/experiments/calibration_selection.py": {
+      "sha256": "14542517f6d82935d96c26a68119245993e6dc8a6da75c120f342399b08962aa",
+      "bytes": 9549
+    },
+    "src/rag_research/experiments/development_selection.py": {
+      "sha256": "e4557484428d9474c4ec30934719f761c9d0d8a3e90cc9c807410e2e8b8f30dc",
+      "bytes": 9370
+    },
+    "scripts/prepare_bilingual_calibration.py": {
+      "sha256": "973695dbedc7a64722368a2d3d96e5a33c2416f9ae779f529643942c6681b87f",
+      "bytes": 770
+    },
+    "scripts/run_bilingual_calibration.py": {
+      "sha256": "1df20e0baacf4578c0ed929f40875724110b49961fad6111f8803952a192a2b1",
+      "bytes": 749
+    },
+    "tests/test_calibration_protocol.py": {
+      "sha256": "b96351bdf3e6842205228f0cc97e8fa7ad10f2c01e883a14b512863bfa1332ce",
+      "bytes": 11245
+    },
+    "tests/test_bilingual_pipeline.py": {
+      "sha256": "598c7aeef51ae546abfcd5abdd1758e5b6dc69016f2ab8c984ce3805c1b4cfc5",
+      "bytes": 34988
+    },
+    "tests/test_calibration_selection.py": {
+      "sha256": "84b87a018a1a3a557aa9f946c880f6322ea4b7478c1c74149541124b27b37ef0",
+      "bytes": 9855
+    },
+    "docs/phase11_bilingual_calibration_execution.md": {
+      "sha256": "b4248228c645dc972404d913037b24f59bad57fa2777a2dc434dad53718cb76c",
+      "bytes": 5895
+    },
+    "data/runs/development_screening/phase11-calibration-entry-v1/validation.json": {
+      "sha256": "38ecfad5338329af34b80e7d9d66b26cda5415682ab724cc971cccb2de12260b",
+      "bytes": 1606
+    },
+    "data/runs/development_screening/phase11-calibration-entry-v1/unapproved-calibration-entry-ja.yaml": {
+      "sha256": "2ed675fe900a167015960993a3c225224319b75735c3cf7e2f9887e3303d5190",
+      "bytes": 838
+    }
+  },
+  "actual_positive_main_to_calibration_demonstrated": false,
+  "calibration_review_semantic_statistical_adapter_completed": false,
+  "new_calibration_model_calls": 0,
+  "new_calibration_model_servers": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

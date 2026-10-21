@@ -545,3 +545,85 @@ def test_pending_quality_is_rejected_before_access_to_private_scores(connection,
     monkeypatch.setattr(quality, "build_packet", forbidden)
     with pytest.raises(ValueError, match="Seal all external labels"):
         quality.validated_annotations(output, bundle, bundle / "annotations.blank.json")
+
+
+@pytest.mark.parametrize("mode", ["claimwise-v1", "source-reading-v1"])
+def test_heldout_uses_common_collection_all20_in_five_qa_batches_and_cached_resume(connection, monkeypatch, capsys, mode):
+    path, _, state = connection
+    root = path.parent
+    loaded = list(runner.load_config(path))
+    config, assets = loaded[:2]
+    config.update(purpose="phase11-bilingual-calibration-candidate", execution_scope="heldout_calibration_v1",
+        verification_mode=mode, analysis_split="calibration", calibration_limits={
+            "maximum_completion_attempts": 1660, "maximum_new_qa_per_stage_session": 5})
+    source = assets["datasets"]["ja"]["qa"]["calibration"]
+    qa_path = root / source["path"]
+    rows = [{**deepcopy(loaded[2][0]), "record_id": "heldout-" + str(n), "research_split": "calibration",
+        "document_group_id": "heldout-group-" + str(n)} for n in range(20)]
+    qa_path.write_text("".join(json.dumps(r) + "\n" for r in rows))
+    source["sha256"] = file_hash(qa_path)
+    write_json(root / "assets.json", assets)
+    loaded[2:4] = rows, qa_path
+    config["data"] = {"split": "calibration", "record_ids": [r["record_id"] for r in rows]}
+    protocol = root / "data/runs/bilingual_calibration_protocol/fixture/protocol.json"
+    protocol.parent.mkdir(parents=True)
+    protocol.write_text("{}")
+    config["calibration_protocol"] = {"path": protocol.relative_to(root).as_posix(), "sha256": file_hash(protocol)}
+    state["prompts"]["judge_layout"] = "draft_sources_target"
+    if mode == "source-reading-v1":
+        state["prompts"]["source_reading_auxiliary"] = "untrusted_reading_v1"
+        state["prompts"]["tasks"]["read_sources"] = {"system": "read_sources"}
+        config["tasks"]["read_sources"] = {"max_output_tokens": 512}
+    (root / "prompts.yaml").write_text(yaml.safe_dump(state["prompts"]))
+    (root / "scripts/run_bilingual_calibration.py").write_text("synthetic CLI source")
+    output = root / "data/runs/bilingual_calibration/heldout-ja"
+
+    def contract(p, *, calibration_output=None):
+        # Model/contract doubles; real protocol rejection is tested separately.
+        assert calibration_output == output
+        return tuple(loaded)
+
+    monkeypatch.setattr(runner, "load_config", contract)
+    for n in range(3):
+        result = runner.run_calibration(path, output)
+        assert result["stage"] == "baseline_batch_complete" and result["processed_qa"] == 5 * (n + 1)
+        assert not (output / "report.private.json").exists()
+    for n in range(3):
+        result = runner.run_calibration(path, output)
+        assert result["stage"] == "internal_batch_complete" and result["processed_qa"] == 5 * (n + 1)
+        assert not (output / "report.private.json").exists()
+    result = runner.run_calibration(path, output)
+    assert result["selected_qa_count"] == result["trace_count"] == 20
+    assert len(state["calls"]) == 20 * (14 if mode == "source-reading-v1" else 8)
+    assert state["servers"] == 8
+    manifest = read_json(output / "manifest.json")
+    assert manifest["qa_path"] == source["path"] and manifest["selection_scope"] == "preselected_heldout_calibration"
+    before = len(state["calls"]), state["servers"]
+    assert runner.run_calibration(path, output) == result
+    assert (len(state["calls"]), state["servers"]) == before
+    console = capsys.readouterr().out
+    assert '"score"' not in console and '"decision"' not in console and "猫は赤い" not in console
+    assert "REFERENCE-SECRET" not in json.dumps(state["calls"])
+
+
+@pytest.mark.parametrize("language", ["en", "ja"])
+def test_real_calibration_entry_requires_protocol_before_loading_reserved_qa_or_starting_model(tmp_path, monkeypatch, language):
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(runner, "ROOT", tmp_path)
+    config = yaml.safe_load((REPO / "configs/phase11_bilingual_connection_ja_v1.yaml").read_text())
+    config.update(purpose="phase11-bilingual-calibration-candidate", execution_scope="heldout_calibration_v1", language=language)
+    config["data"]["split"] = "development" if language == "en" else "calibration"
+    path = tmp_path / "calibration.yaml"
+    path.write_text(yaml.safe_dump(config))
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("No reserved QA read or Model before complete preregistered evidence")
+
+    monkeypatch.setattr(runner, "load_assets", forbidden)
+    monkeypatch.setattr(runner, "LocalServer", forbidden)
+    with pytest.raises(ValueError, match="matching predeclared"):
+        runner.run(path, tmp_path / "data/runs/bilingual_development/wrong-entry")
+    output = tmp_path / "data/runs/bilingual_calibration" / ("heldout-" + language)
+    with pytest.raises(ValueError, match="Missing preregistered"):
+        runner.run_calibration(path, output)
+    assert not output.exists()

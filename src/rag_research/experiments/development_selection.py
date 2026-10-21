@@ -16,13 +16,17 @@ METHOD = "phase11-main-development-one-qa-per-group-sha256-v1"
 LEGACY_RULE = "Phase5 custom queries with null QA ID: exact Development question match plus conservative exclusion of all used/retrieved English title groups; never invent source IDs or silently skip unresolved schema"
 
 
-def used_inventory(root=ROOT, *, development_rows=(), inventory_roots=None):
+def used_inventory(root=ROOT, *, development_rows=(), inventory_roots=None, excluded_resume_runs=()):
     """Include failures and pre-call journals conservatively; never inspect internal F."""
     paths = set()
+    excluded = [(root / p).resolve() for p in excluded_resume_runs]
+    require(all(p.is_relative_to(root / "data/runs/bilingual_calibration") and
+                p != root / "data/runs/bilingual_calibration" for p in excluded),
+            "Only explicitly validated Calibration resume runs can be excluded")
     for name in INVENTORY_ROOTS if inventory_roots is None else inventory_roots:
         folder = local_path(name, root)
         for pattern in ("answers.jsonl", "record.json"):
-            paths.update(folder.rglob(pattern))
+            paths.update(p for p in folder.rglob(pattern) if not any(p.resolve().is_relative_to(r) for r in excluded))
     require(paths, "No prior baseline inventory; do not claim unused QA")
     identifiers, hashes, legacy = set(), {}, []
     by_question = {}

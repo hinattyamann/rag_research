@@ -49,15 +49,23 @@ def immutable(path, value):
         write_json(path, value)
 
 
-def load_config(path):
+def load_config(path, *, calibration_output=None):
     config = yaml.safe_load(Path(path).read_text("utf-8"))
-    require(config["schema_version"] == 1 and config["purpose"] == "phase11-bilingual-development-candidate"
+    calibration = calibration_output is not None
+    purpose = "phase11-bilingual-calibration-candidate" if calibration else "phase11-bilingual-development-candidate"
+    require(config["schema_version"] == 1 and config["purpose"] == purpose
             and config["status"] == "candidate_not_frozen" and config["phase12_allowed"] is False,
-            "This entry point is Development only, not Calibration/Evaluation")
+            "Use the matching predeclared Development or Calibration entry point, never Evaluation")
     language = config["language"]
-    require(language in {"en", "ja"} and config["data"]["split"] == "development", "Development language required")
+    source_split = ("development" if language == "en" else "calibration") if calibration else "development"
+    require(language in {"en", "ja"} and config["data"]["split"] == source_split, "Wrong language/source split")
     scope = config["execution_scope"]
-    require(scope in {"connection_smoke_only", "main_development_v1"}, "Predeclare a new protocol for the main pilot")
+    require(scope in ({"heldout_calibration_v1"} if calibration else {"connection_smoke_only", "main_development_v1"}),
+            "Predeclare the matching execution scope")
+    if calibration:
+        from rag_research.experiments.calibration_protocol import validate
+
+        validate(config, calibration_output)
     quality = config["quality"]
     require(quality["annotator"] == "Codex_AI" and quality["human_reviewed"] is False and
             quality["internal_judge_is_quality_truth"] is False and quality["llm_labels_are_final"] is False and
@@ -66,7 +74,7 @@ def load_config(path):
     asset_path = (ROOT / config["assets"]).resolve()
     require(asset_path.is_relative_to(ROOT), "Assets escape repository")
     assets = load_assets(asset_path)
-    rows, qa_path = load_rows(assets, language, "development")
+    rows, qa_path = load_rows(assets, language, source_split)
     baseline_path = (ROOT / config["baseline_config"]).resolve()
     require(baseline_path.is_relative_to(ROOT), "Baseline config escapes repository")
     baseline, generation = load_baseline_config(baseline_path)
@@ -104,33 +112,50 @@ def internal_complete(internal, binding, verification_mode="joint"):
 
 
 def run(config_path, output, *, stage="all"):
+    return guarded_run(config_path, output, stage=stage)
+
+
+def run_calibration(config_path, output, *, stage="all"):
+    output = Path(output).resolve()
+    parent = ROOT / "data/runs/bilingual_calibration"
+    require(Path.cwd().resolve() == ROOT and output.is_relative_to(parent) and output != parent,
+            "Use the predeclared held-out Calibration output")
+    # One inventory check/collection at a time, including across distinct protocols.
+    with run_lock(parent):
+        return guarded_run(config_path, output, stage=stage, calibration=True)
+
+
+def guarded_run(config_path, output, *, stage="all", calibration=False):
     try:
-        return _run(config_path, output, stage=stage)
+        return _run(config_path, output, stage=stage, calibration=True) if calibration else _run(config_path, output, stage=stage)
     except DevelopmentStop as stopped:
         # No task is invented for a resource reservation rejected before a call.
         output = Path(output).resolve()
         with run_lock(output):
-            report = {"stage": "main_development_stopped", "reason": stopped.reason,
+            report = {"stage": "heldout_calibration_stopped" if calibration else "main_development_stopped", "reason": stopped.reason,
                       "budget_snapshot": stopped.snapshot, "gate11_passed": False, "phase12_allowed": False}
             write_json(output / "stop.json", report)
         return {"stage": report["stage"], "reason": stopped.reason, "phase12_allowed": False}
 
 
-def _run(config_path, output, *, stage="all"):
+def _run(config_path, output, *, stage="all", calibration=False):
     config_path, output = Path(config_path).resolve(), Path(output).resolve()
-    parent = ROOT / "data/runs/bilingual_development"
+    parent = ROOT / ("data/runs/bilingual_calibration" if calibration else "data/runs/bilingual_development")
     require(Path.cwd().resolve() == ROOT and output.is_relative_to(parent) and output != parent,
-            "Run from repository root into a new bilingual Development run")
+            "Run from repository root into the matching predeclared bilingual run")
     require(stage in {"baseline", "internal", "all"}, "Unknown execution stage")
     os.environ["LANGSMITH_TRACING"] = "false"
     os.environ["LANGCHAIN_TRACING_V2"] = "false"
-    config, assets, rows, qa_path, baseline, generation, initial_prompt, prompts = load_config(config_path)
-    main = config.get("execution_scope") == "main_development_v1"
-    limits = config.get("main_limits", {})
+    contract = load_config(config_path, calibration_output=output) if calibration else load_config(config_path)
+    config, assets, rows, qa_path, baseline, generation, initial_prompt, prompts = contract
+    main = config.get("execution_scope") in {"main_development_v1", "heldout_calibration_v1"}
+    limits = config.get("calibration_limits" if calibration else "main_limits", {})
     sources = sorted((ROOT / "src/rag_research").rglob("*.py"))
     sources += [config_path, ROOT / config["assets"], ROOT / config["baseline_config"],
                 ROOT / config["baseline_prompts"], ROOT / config["prompts"], ROOT / "scripts/run_bilingual_development.py"]
-    if main:
+    if calibration:
+        sources += [ROOT / config["calibration_protocol"]["path"], ROOT / "scripts/run_bilingual_calibration.py"]
+    elif main:
         sources += [ROOT / config["development_selection"]["path"], ROOT / config["adopted_known_regression"]["path"],
                     ROOT / config["main_execution_policy"]["path"]]
     selection = [{"record_id": r["record_id"], "question": r["question"]} for r in rows]
@@ -139,7 +164,8 @@ def _run(config_path, output, *, stage="all"):
                 "baseline_model": model_identity(), "auxiliary_model": auxiliary_identity(config),
                 **execution_identity(baseline),
                 "qa_path": qa_path.relative_to(ROOT).as_posix(), "qa_sha256": file_hash(qa_path),
-                "selection": selection, "selection_scope": "preselected_main_development_not_calibration" if main
+                "selection": selection, "selection_scope": "preselected_heldout_calibration" if calibration else
+                    "preselected_main_development_not_calibration" if main
                     else "known_development_connection_not_calibration",
                 "source_sha256": {p.relative_to(ROOT).as_posix(): file_hash(p) for p in sources},
                 "gate11_passed": False, "phase12_allowed": False}

@@ -1,0 +1,54 @@
+{
+  "health_gate": {
+    "selected_qa_completed_per_language": 20,
+    "maximum_task_errors": 0,
+    "maximum_input_overflow": 0,
+    "baseline_requires_actual_used_context": true,
+    "unknown_outcome_stops_without_resampling": true,
+    "missing_or_budget_stopped_qa_remain_in_manifest": true
+  },
+  "semantic_adoption_after_blind_seal": {
+    "minimum_exact_label_accuracy_per_language": 0.9,
+    "minimum_supported_label_accuracy_per_language": 0.9,
+    "maximum_definite_negative_false_support": 0,
+    "minimum_complete_comparable_qa_per_language": 10,
+    "ambiguous_units_excluded_only_from_accuracy_not_F": true,
+    "report_all_positive_negative_ambiguous_denominators": true,
+    "AI_expected_labels_frozen_before_internal_verdict_unblinding": true,
+    "comparison_minimum_reason": "At least half of the 20 distinct held-out groups must support the complete within-QA comparison. This is a feasibility threshold, not power, effect size or significance; keep every selected QA and do not refill."
+  },
+  "quality": {
+    "seal_all_candidates_both_languages_before_internal_unblinding": true,
+    "human_reviewed": false,
+    "unknown_quality_not_imputed": true,
+    "maximum_candidates_per_qa": 2
+  },
+  "decision": {
+    "threshold": 0.7,
+    "bare_refusal_policy": "rewrite_once",
+    "score_for_no_fixed_units": null
+  },
+  "schema_version": 1,
+  "purpose": "phase11-bilingual-calibration-execution-rules",
+  "status": "preregistered_pending_main_evidence",
+  "created_at_utc": "2026-10-21T22:30:22.841024+00:00",
+  "count_per_language": 20,
+  "limits_per_language": {
+    "maximum_completion_attempts": 1660,
+    "maximum_new_qa_per_stage_session": 5,
+    "stop_on_any_task_error": true,
+    "automatic_refill": false
+  },
+  "main_full_certificate_required": true,
+  "both_language_all_labels_sealed_before_unblinding": true,
+  "phase12_allowed": false,
+  "resource_policy": {
+    "total_native_call_ceiling": 1660,
+    "token_limits": "Preserve the adopted per-task input/output reservations; never truncate or drop fixed units. Total token ceilings follow the finite call ceiling and largest adopted per-call reservation.",
+    "time_limits": "Preserve adopted per-call timeout; record measured step seconds and estimate total time from both complete main runs. No total wall-clock guarantee is asserted.",
+    "unknown_outcome": "stop_without_retry",
+    "no_post_result_budget_or_criteria_relaxation": true
+  },
+  "revision_policy": "Keep all failed/stopped/unattempted QA. Do not tune on held-out outputs, extend budgets after inspecting F/Y, refill failures or reuse these groups as unused. An unsuccessful calibration cannot freeze Gate11; preserve it and separately decide any research-scope change.",
+  "sample_size_policy": "20 per language is held-out feasibility and cost validation. Final Evaluation N is decided separately using resource/precision rationale; no significance, nonzero sensitivity or quality gain is required."
+}
