@@ -94,3 +94,12 @@ Hail Mary段落への公会議のCatechism委託の混入、Counter-Reformation�
 意味診断通過は修復判断や回答品質の改善を保証しない。F/判断/品質/費用は分けて評価する。
 結果Manifestは`phase11_source_reading_result_v6.json`。次の[全旧GPU固定文と3旧誤りの回帰](phase11_known_trace_regression.md)を事前保存した。
 Gate 11、主Development/未使用Calibration、最終条件固定は未完了。
+
+
+## 2026年10月21日 境界修正v8の再診断
+
+[JSON境界の修正記録](phase11_json_boundary.md)のv8は、同じExpected/Model/Prompt/予算/基準で
+全58条件/128 Callを完了し、Critical4/4・人工英語24/24/日本語28/30・誤支持0で通過した。
+再開251 File不変/追加0、全259 Artifactを保存した。読解の文書内非対応11行と同じ日本語下位分類2誤りを保持する。
+曖昧c6は今回両順序で支持/F6/7、旧v6は矛盾/F5/7。全分母/曖昧Expected/閾値を変更しない。
+新前提Reportを使う既知15 QA回帰v2を保存し、主Development向け最終採用はその回帰後とする。

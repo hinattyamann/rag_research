@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-known-regression-v2-preregistered-with-v8-not-executed",
+  "created_at_utc": "2026-10-21T13:12:33.889929+00:00",
+  "planned_qa": 15,
+  "fixed_units": 42,
+  "planned_conditions": 30,
+  "maximum_completion_attempts": 114,
+  "Expected_or_criteria_changed": false,
+  "preservation_verified": {
+    "data/runs/dataset_screening/phase11-ja-source-v1/protected_existing_runs_baseline.json": 2500,
+    "data/runs/model_screening/phase11-multilingual-e5-small-v1/article_preflight_v1/protected_english_indexes.json": 23,
+    "data/manifests/phase11_source_reading_result_v8.json": 259,
+    "data/manifests/phase11_main_development_runner_validation_v2.json": 8
+  },
+  "artifacts": {
+    "configs/phase11_known_trace_candidate_v2.yaml": {
+      "sha256": "ab8592e92c44b94ab987f3ea285f545746dc2b3aebfc37030ae2adae7e4d2b5f",
+      "bytes": 2154
+    },
+    "configs/phase11_known_trace_regression_v2.json": {
+      "sha256": "3516e7a5c6e66d9a69b0424fe4e0d83ad73b75db8b7ef6fbb9961919352a1a73",
+      "bytes": 140725
+    },
+    "configs/phase11_known_trace_expected_v1.json": {
+      "sha256": "1ec65d65a19bea3189dfe7d07ad144e60df4fd8a3d2677c3c02c16d06160e4d9",
+      "bytes": 41307
+    },
+    "docs/phase11_known_trace_regression.md": {
+      "sha256": "4d08d166bbc4dc3fc235ba2370d1b11872f4a8a1bb98d7175e8abf37ff866db3",
+      "bytes": 5869
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

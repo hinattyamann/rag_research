@@ -84,3 +84,30 @@ CUDA全層Offloadで通過した。GPU7070/8151 MiBは一点観測。
 生成0 Receiptと人工検証Report Hashを先に保存した。最初の既知Critical4条件が全一致した場合だけ人工54条件へ進む。
 最大128 Call/Retry0、同じExpected/意味基準・Model/Prompt/予算/Seedを維持し、全結果/採用は未確定。
 Launch Manifestは`phase11_source_reading_launch_v8.json`。実走中のCode/Configを更新しない。
+
+## v8の日英意味診断通過・監査と既知回帰v2
+
+固定43ccf05の全58条件/128 Completionを完了し、Critical4/4・人工英語24/24/日本語28/30、
+明確な非支持の誤支持0、Task失敗/Overflow0で事前診断基準を通過した。
+入力162583/出力116590 Token、Task秒和1677.570092秒（27.96分）。
+固定Source86 Hash/全58集計・128子Taskの元本文/ID/全分母/費用を照合し、
+再開251 File不変・追加Call/Server0を確認した。原本253 Fileを同一Byteで正規配置し、
+Preflight/準備失敗/意味監査を含む259 Artifactを`phase11_source_reading_result_v8.json`へ保存した。
+
+同じCodex AIで全58読解/94文書行・70最終固定文判定を原資料と照合した。
+既知Council元順序の委託/因果/移転3行と、Zidaneの別内容文書4種類×両順序8行、
+計11行に文書内非対応/過大一般化がある。原文Quote/ID一致だけで意味を保証しない。
+人工例の時刻/市長承認/限定/表対応の読解省略、複数主体/行為の曖昧な圧縮も残る。
+最終2不一致は同じ日本語未知語源例の支持不足→矛盾。両LabelともFの非支持0で、Expectedを変えない。
+1文書の人工例では元/逆が同一入力であり、独立した順序条件例を54件得た意味ではない。
+human_reviewed=false・厳密Model ID未取得・同一開発履歴を明記し、未Flagの完全性を認証しない。
+
+Council c6は事前に曖昧/Expected nullのまま残した文で、v8では両順序で支持となりF6/7、
+v6では両順序で矛盾/F5/7だった。いずれも閾値0.7で採用になる。
+形式制約の改訂も出力に影響しうる。曖昧単位を精度の分母へ後付けで入れず、F全7文を保持する。
+誤帰属c4の検出と、回答の品質改善/修復判断の妥当性を混同しない。
+
+次の既知回帰v2は同じ15 QA/42文・Expected v1/全基準/最大114 Callを保持し、
+新v8通過Report Hashを前提とする。Source Core/Model/Runtime/Prompt/予算の事前照合に成功した。
+`phase11_known_trace_candidate_v2.yaml`/`phase11_known_trace_regression_v2.json`を
+固定Commitの別Worktreeで全114入力/生成0 Preflight後に実走する。主20問はまだ生成しない。

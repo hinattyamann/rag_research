@@ -54,3 +54,13 @@ Plan/Expectedは`phase11_known_trace_regression_v1.json`/`phase11_known_trace_ex
 Raw配列を修復・再試行せず、全43 Artifact・再開37 File不変/追加Call・Server0を
 `phase11_known_trace_result_v1.json`に保存した。次は[終了Tag境界の別候補](phase11_json_boundary.md)を
 人工Runtime・日英意味診断から検証し、新しい通過Reportを前提に同じExpectedで別Runを用意する。
+
+
+## v8通過Reportを前提とする回帰v2
+
+新しい`phase11_known_trace_regression_v2.json`は、v1の全15 QA/42固定文・37確定/5曖昧・
+全Expected/原Trace/基準/裸拒否8件/最大114 Callを同一内容で保持する。
+前提だけを固定43ccf05のv8日英意味診断Report Hashへ結び、親Plan Hashも記録した。
+Config v2はv8の全条件を保持し、Study Version/Plan Pathだけを回帰用に変えた。
+現SourceでModel/Runtime/Prompt/Core・旧Expectedの読込み照合に成功。新しい実GPU回帰は未実施。
+形式修正後の結果を旧v1の継続へ混ぜず、別固定Worktree/Runを使う。
