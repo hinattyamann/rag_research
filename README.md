@@ -12,8 +12,8 @@
 両言語の条件固定をPhase 11で行います。翻訳対を主実験には使いません。
 [候補比較](docs/japanese_dataset_selection.md)から日本語Sourceを選定し、固定版原QAを取得・構造監査しました。
 記事取得と正式文書Group分割が完了し、日本語838問を開発545・Calibration84・Evaluation209問へ分けました。
-日本語の文単位候補・全文Passage化・原HTML脚注を含む参照対応と英語回帰は確認済みですが、検索/Model/品質の全Pipeline実走・
-予備検証・最終固定は未完了です。[取得・分割結果](docs/japanese_dataset_selection.md#8-全取得と正式group分割の完了)を参照してください。
+日本語の文単位・全文Passage化・原HTML脚注を含む参照対応を検証し、[日英の既知Development各1問で全Pipelineと匿名品質を照合](docs/phase11_bilingual_pipeline.md)しました。
+主な予備検証・英語既知問題の解消・日英未使用Calibration・最終固定は未完了です。[取得・分割結果](docs/japanese_dataset_selection.md#8-全取得と正式group分割の完了)も参照してください。
 
 **Phase 1〜10の開発確認、Phase 11のUbuntu/CUDA対応と追加20問・40候補のAI採点・34単位監査を完了しました。完全比較12問・実行Health Gate通過ですが、意味妥当性の採用と分析規模が未確定でGate 11未通過です。最終凍結・Phase 12は未実施です。**
 固定回答の自己評価・判断に加え、元順序による一回書換え、採点画面、採点JSONのImport、経路比較を実装しました。
@@ -31,8 +31,8 @@ v14の事前Gateは引用ID重複1件で不通過として保持し、後処理�
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- [研究計画 Version 7.20](docs/rag_research_plan.md)
-- [実装計画 Version 8.22](docs/rag_implementation_plan.md)
+- [研究計画 Version 7.21](docs/rag_research_plan.md)
+- [実装計画 Version 8.23](docs/rag_implementation_plan.md)
 - [多言語検索候補・本文Passage分割の実装と確認](docs/phase11_multilingual_retrieval.md)
 - [日本語共通Corpusの全文保持Passage化・参照粒度と残る工程](docs/phase11_japanese_corpus.md)
 - [日本語参照・欠測の監査と原HTML脚注の位置検証](docs/phase11_japanese_evidence.md)
@@ -221,7 +221,7 @@ uv run --locked python scripts/run_baseline.py --smoke --limit 5
 ```
 
 準備済みのReport/Manifest/Configは同じByte列だけを再利用し、異なる内容で上書きしません。
-HybridのSuccess@10はEmbeddingと同じ78.22%ですが、nDCG@10は0.5317でEmbeddingの0.5519を下回りました。
+HybridのSuccess@10はEmbeddingと同じ78.23%ですが、nDCG@10は0.5317でEmbeddingの0.5519を下回りました。
 検索精度改善を示す結果ではありません。全条件・評価定義・実測・再現手順は
 [`docs/phase6_hybrid.md`](docs/phase6_hybrid.md)を参照してください。
 固定Development 5問で各1回の生成・保存が完了し、Gate 6を通過しました。

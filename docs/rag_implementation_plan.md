@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.22 — 2026年10月21日 日本語全経路実走と英語Index互換を検証
+## Version 8.23 — 2026年10月21日 日英接続実走・品質固定/内部照合を完了
 
-[研究計画 Version 7.20](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.21](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -36,6 +36,8 @@ Phase 7の入力検証CLIは引き続きCompletion 0回である。
 全441 Test/Ruff成功、再開追加0・中断/失敗保持・漏洩防止・匿名化とLabel固定を確認。実GPU接続・意味監査は次工程。
 その後、日本語1問の初回/Judge9/書換えを固定Commitで実走した。英語生成前に判明したSource省略互換をFactoryで修正し、
 日英の実Index経由Testを追加して全443 Test/Ruffに成功。旧失敗/Code/Runを保持し、Assets/英語接続Config v2で再実走する。
+その後、英語v2実走・日英匿名4候補の固定とImport・全3文/27判定のAI意味確認まで完了した。
+全18 Judge形式有効/入力超過0、両言語の再開追加0。既知各1問・肯定例のみで、意味採用Gateや主Pilot成功とは扱わない。
 
 | 既存資産 | 現状と利用方法 |
 |---|---|

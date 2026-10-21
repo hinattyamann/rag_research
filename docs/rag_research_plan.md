@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.20 — 2026年10月21日 日本語接続実走と英語Index互換を検証
+## Version 7.21 — 2026年10月21日 日英既知Developmentの全経路と匿名品質を照合
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.22](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.23](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -16,6 +16,9 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 現在は既知Development各1問の実機接続確認前であり、日英の意味監査・未使用Calibration・最終凍結は未了。
 その後、日本語既知1問の11 Completion/全文固定/再開追加0を確認した。英語は生成前の旧Schema互換エラーを保持し、
 条件を変えずFactoryを修正、全443 Test/Ruffに成功。英語再実走・匿名品質の照合と意味監査は次工程。
+その後、英語も実走し、日英4候補をAI採点・固定後に内部照合した。各1問は全9試行で採用・品質1→1。
+全3固定文は実Contextで支持と確認したが、既知肯定例の接続確認で、主Pilot・旧英語誤支持/拒否の解消を代替しない。
+日英未使用Calibration・規模/統計・最終条件と拡張Validatorは未了。
 
 **英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響**
 

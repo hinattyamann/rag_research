@@ -67,6 +67,45 @@ v1は元Commitの履歴として保持し、新Codeを同じAssets/Runへ混ぜ�
 別固定Commit/Worktree/Runで同じ既知英語1問・最大11 Completionを行う。
 正規配置のローカル保存は`data/runs/bilingual_development/`。実走原本は専用Worktreeに保持した。
 
+## 日英の接続確認・匿名品質固定後の結果
+
+英語v2は固定`5605bf8`の専用Worktreeで、同じ既知1問の初回/Judge9/書換えまで成功した。
+初回入力1166/出力53、Judge入力2284/出力479〜756、書換え入力1553/全出力966・最終回答47 Token。
+実使用5文書・固定文1単位、初回の本文短縮0、Overflow/暗黙Truncation0。
+CUDA全層Offload、Combined RSS標本最大は初回3510284288/Aux4149604352 Byte。
+再開22 FileのHash不変・追加呼出し0・Server起動0。初回の英語v1停止は生成0として残した。
+
+両言語の匿名4候補を固定し、`phase11_bilingual_connection_quality_freeze_v1.json`を保存した後にImportした。
+実採点者は同じ実装セッションのCodex AI、human_reviewed=false・厳密Model ID取得不可・履歴分離なし。
+結果は両言語とも初回/書換えY1、全9試行F=1/採用、品質遷移1→1、順序・同順序内の判断不一致0。
+既知各1問の結果であり、一般的な感度・精度・品質改善・日英差の根拠としない。
+
+| 接続結果 | 英語既知1問 | 日本語開発予約1問 |
+|---|---:|---:|
+| 全Completion（初回1/Judge9/書換え1） | 11 | 11 |
+| 固定文/文×Judgeの意味確認数 | 1 / 9 | 2 / 18 |
+| 3固定文のAI監査でのJudgeとの相違 | 0 | 0 |
+| 親単位Success@5 / Recall@5 | 1 / 1 | 1 / 1 |
+| nDCG@5 / MRR@5 | 1 / 1 | 0.6309 / 0.5 |
+| 補助収集の入力/出力Token | 22109 / 6806 | 47146 / 10833 |
+| 補助Step秒の和（初回/起動/採点除外） | 67.98 | 122.88 |
+
+意味監査は先に読んだ実使用Contextを根拠に、全3固定文の全詳細を支持として確認した。
+27の文×Judge判定に相違はなかったが、肯定例だけで、旧英語の誤支持が直ったことを示さない。
+監査も同じCodexによる事後確認であり、独立した人手正解・複数評価者一致ではない。
+補助Step秒は生成以外の一部準備も含み、GPUの純演算時間や経路の実Latencyではない。
+別TokenizerのToken数も一つの共通単位へ合算して言語差と解釈しない。
+
+日本語書換えは役割の直接根拠が`_802-1558`にあるのに`_0-802`を引用する不適合を残した。
+現行の3観点は実使用Context全体の支持を判定するため、Labelは変更せず理由に明記した。
+英語は初回の2〜4文指示に対して1文の直接回答で、形式上の逸脱を別記した。
+反転や改善を得るために基準・閾値を緩めたりQAを追加したりしていない。
+
+原Task/Quality/再開・来歴は各Run、全体集計は`connection_summary_v1.json`、
+固定Hashは`phase11_bilingual_connection_result_v1.json`に保存する。
+Gate 11は未通過。次は既知英語の誤支持/拒否の診断・修正、日英の主Developmentと意味採用基準、
+未使用Calibrationの事前規則/実走・規模/統計・最終条件/拡張Validatorである。
+
 1. Data/Corpus/親対応/Index・Model/専用uv Lock/関連CodeをHashへ結び付けるAssetsとFactoryを追加する。
    読込みはDevelopment/Calibrationを明示し、Phase 11でEvaluationを開く入口を用意しない。
 2. モデル入力は質問文字列と実使用文書だけに限定する。Reference・親Gold・欠測・GroupはOfflineに保持する。
