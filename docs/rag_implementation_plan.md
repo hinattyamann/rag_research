@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.41 — 2026年10月21日 9Bの推論Prefillを実入力とNative応答で検証
+## Version 8.42 — 2026年10月21日 日英Calibrationの元Splitと別予約を使用履歴へ結び付ける
 
-[研究計画 Version 7.39](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.40](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -46,6 +46,8 @@ v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日�
 9B v9は全128入力/生成0・CUDA全層の資源確認に通過したが、人工形式2 Callが推論未終了/出力上限で停止した。失敗/残4条件を保持し、意味診断は未実施。実入力末尾の開始Tag/Token列を照合してNative generation_promptへ申告し、応答と実Tokenも監査する任意Prefill候補v10を追加。旧Configはnoneを既定とし、全555 Test/Ruff成功。固定GPUの同じ人工検証から再確認する。
 
 固定645f193のv10は全128入力/生成0・全層CUDAと人工6 Callの厳密5条件すべてに通過。入力290/出力958 Token・生成16.712355秒、原本10 File/87 Source不変・監査追加Call/Server0、全16 Artifactを保存した。同じ固定Worktreeで日英意味診断v10を開始し、全結果/意味採用は未確定。旧Expected/採用基準と旧v9の失敗を保持する。
+
+検索調整済み英語225問を未使用へ戻さず、元Developmentの未使用Groupから20問、日本語元Calibrationから20問を別予約した。`calibration_selection.py`/専用CLIが元Split/用途・主20 Group/旧225 IDとSplit Hash/使用済み70 File・計262 ID/予約閉包を結び、Evaluation行は開かない。新規6 Testを含む全561 Test/Ruffと選定の同一再計算に成功。元QA/旧Split不変。専用実行/採用/封印/統計の経路は主Development確認後に実装する。
 
 ## 1. 既存実装と保存する境界
 

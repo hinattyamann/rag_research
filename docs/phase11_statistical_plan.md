@@ -59,6 +59,8 @@ Quality Importも同じ純粋検証関数を再利用し、Label未固定の段�
 
 入力は`[{"run":"data/runs/bilingual_development/...","bundle":".../quality","annotations":".../quality/annotations.json"}, ...]`。
 現在のRunnerに合わせDevelopmentだけに限定し、Evaluationを拒否する。未使用Calibrationへの経路拡張は、その事前条件とRunnerの実装に合わせて別途検証する。
+
+新Calibrationの[別予約](phase11_bilingual_calibration.md)は、英語の元Developmentと日本語の元CalibrationをSourceとし、分析用途は両方Calibrationとする。将来のAdapterはこの元Split/QA Hashと分析用途・予約ID/Groupを同時に検証し、英語予約を主Development結果へ混ぜない。元英語225問の検索調整使用を保持し、最終EvaluationのQA行は開かない。統計式/Bootstrap・閾値/欠測の規則は変更しない。専用Adapterと実Calibration解析は未了。
 既存の旧Runは当時の固定Sourceで保持し、新Codeの検証を旧Source一致の代わりにしない。今回、新規QA/Calibrationの実解析は行っていない。
 
 新規5 Testで両言語の封印前停止、全QA/失敗Group・結果不明費用、品質不明、条件混在/重複/Evaluation拒否を確認した。

@@ -1,5 +1,9 @@
 # 別チャットから再開するための引継ぎ
 
+実走追記: 固定645f193の日英意味診断v10/session27269は終了。既知4条件/20 Call、Critical3/4で不通過、人工54条件未試行。入力96268/出力50676 Token・Task秒和860.195937。Council元順序c4がExpected矛盾に対し支持不足、他Critical3は一致。誤支持0でも正確Label基準を変えず採用しない。再開監査session52519も終了し、34 File/90 Source不変・追加Call/Server0。全Raw/意味/結果Manifestの正規保存へ進む。
+
+Calibration追記: 元英語Calibration225問は検索調整済みで未使用へ戻さない。元Developmentの未使用20 Groupを主20 Groupと分けて別Calibrationへ予約、日本語は元Calibration84から20 Group。`phase11_bilingual_calibration_selection_v1.json`/Policy v1、使用70 File+旧225 IDから計262 ID/主予約/Preview閉包を照合し全重複0・選定同一再計算・新規推論0。全561 Test/Ruff成功。元Source Splitと分析用途を明示し、予約QAを方法調整へ使わない。専用実行/採用/封印/統計Adapterは未実装で、主Development採用後に事前Protocolを保存してから実走する。[専用記録](phase11_bilingual_calibration.md)を読む。
+
 最新追記: 645f193「9Bの形式失敗を保存し推論開始状態を実入力へ結び付ける」をCommit/通常Pushしリモート一致、全555 Test/Ruff成功。固定v10の全128入力/生成0/最大3795 Token・CUDA全層（VRAM6279/8151 MiB一点）に通過。同じ人工6 Call/厳密5条件すべてのPrefill/終了/Schema/実上限も通過し、入力290/出力958 Token・生成16.712355秒。原本10 File/87 Source不変・追加Call/Server0、準備失敗含む16 Artifactをformat_result_v2へ保存。生成0/形式Report HashをLaunchへ結び、同じ固定Worktreeで日英意味診断v10を実行中（session27269）。最大128 Call、Critical4全一致時だけ人工54へ、重複起動なし。全結果/採用は未確定、旧v9の失敗/旧Expected不変。主20問/未使用Calibrationはまだ行わない。詳細は[9B候補記録](phase11_qwen35_candidate.md)。
 
 最新: 既知15問回帰v1は21 Call/5条件目の読解形式失敗で停止。旧結果は保存済み。境界v7の人工検証失敗を保持し、v8は人工Runtime厳密5条件/全128入力Preflightを通過。[固定43ccf05のv8日英意味診断](phase11_json_boundary.md)は全128 Call/既知4一致・人工英語24/24/日本語28/30・誤支持0で通過。再開251 File不変/追加0を監査済み。session27879/63610は終了。全259 Artifact/意味監査を正規保存済み。固定c9bc924の回帰v2は54 Call/12 Criticalで誤支持6・8一致により不通過、他18条件未試行。session76888/74140は終了、再開85 File不変/追加0を監査・全92 Artifact保存済み。次はQwen3.5-9B v9の生成0資源/全128入力確認→人工6 Call形式検証→同じ日英意味診断。重み取得/Hash確認済み、まだ候補推論0。旧Runを再生成しない。

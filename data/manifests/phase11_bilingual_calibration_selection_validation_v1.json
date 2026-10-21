@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-new-calibration-reservation-validation-not-execution",
+  "created_at_utc": "2026-10-21T14:54:43.946525+00:00",
+  "pytest": {
+    "passed": 561,
+    "seconds": 8.24,
+    "command": "uv run pytest -q (host)"
+  },
+  "ruff_passed": true,
+  "selection_recomputed_exactly": true,
+  "original_manifest_unchanged": true,
+  "main_qa_group_overlap": {
+    "en": 0,
+    "ja": 0
+  },
+  "source_splits": {
+    "en": "development",
+    "ja": "calibration"
+  },
+  "original_source_qa_files_unchanged": true,
+  "prior_english_retrieval_ids_preserved": 225,
+  "used_or_retrieval_exposed_unique_ids": 262,
+  "prior_custom_retrieval_probe_check": {
+    "source": "data/runs/model_screening/phase11-multilingual-e5-small-v1/article_preflight_v1/report.json",
+    "sha256": "47f98cff547e489b0fa18b1ff272b79c1f0a79ea040a51efbc5cdbf3a7761f3d",
+    "distinct_queries": 2,
+    "exact_matches_to_english_development": 0
+  },
+  "new_model_calls": 0,
+  "candidate_execution_allowed": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "artifacts": {
+    "src/rag_research/experiments/calibration_selection.py": {
+      "sha256": "4968332400d531cb5eb1a1792cf4e9d8ac30d9709b2133d95a10f7021ad7994d",
+      "bytes": 9372
+    },
+    "src/rag_research/experiments/development_selection.py": {
+      "sha256": "17ffc78e79dead9b0fb187742e93e82c11fd199a75c16100c10c5db5e242be0f",
+      "bytes": 8964
+    },
+    "scripts/prepare_bilingual_calibration_selection.py": {
+      "sha256": "17733e09660f9b55a91e12c5bd21fd6258be852f60f8fd320e4bcc9adf1b45a2",
+      "bytes": 1338
+    },
+    "tests/test_calibration_selection.py": {
+      "sha256": "a92aa59e99b50ec15bc3d2b1e508cfa8d7c498929142663ec1ba1c95e56a3d4a",
+      "bytes": 8726
+    },
+    "configs/phase11_bilingual_calibration_selection_policy_v1.json": {
+      "sha256": "7ebac8c3d50f7347ee96336d71368f2a2c3a186fc84ca4cfce51626a69a971a5",
+      "bytes": 2974
+    },
+    "data/manifests/phase11_bilingual_calibration_selection_v1.json": {
+      "sha256": "6c686867da6aeb8192b3bb3a8e1830d77a2af00c2186e3f440ca194a72e6f643",
+      "bytes": 50070
+    },
+    "docs/phase11_bilingual_calibration.md": {
+      "sha256": "255ef225b4ff5c94bd64721f35e8ddb103cf4c4d732fecf470c4fb988b077a27",
+      "bytes": 5707
+    }
+  }
+}

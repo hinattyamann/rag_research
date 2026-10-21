@@ -16,10 +16,10 @@ METHOD = "phase11-main-development-one-qa-per-group-sha256-v1"
 LEGACY_RULE = "Phase5 custom queries with null QA ID: exact Development question match plus conservative exclusion of all used/retrieved English title groups; never invent source IDs or silently skip unresolved schema"
 
 
-def used_inventory(root=ROOT, *, development_rows=()):
+def used_inventory(root=ROOT, *, development_rows=(), inventory_roots=None):
     """Include failures and pre-call journals conservatively; never inspect internal F."""
     paths = set()
-    for name in INVENTORY_ROOTS:
+    for name in INVENTORY_ROOTS if inventory_roots is None else inventory_roots:
         folder = local_path(name, root)
         for pattern in ("answers.jsonl", "record.json"):
             paths.update(folder.rglob(pattern))

@@ -1,6 +1,6 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.39 — 2026年10月21日 9Bの形式失敗と推論Prefillの別候補を保存
+## Version 7.40 — 2026年10月21日 使用済み検索Calibrationを保持し独立した日英対象を別予約
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
@@ -27,6 +27,8 @@ v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日�
 9B v9は全128入力/生成0・CUDA全層の資源確認に通過したが、人工形式2 Callが推論未終了/出力上限で停止した。失敗/残4条件を保持し、意味診断は未実施。実入力に既にある開始TagをNative Budgetへ申告する[別候補v10](phase11_qwen35_candidate.md)を追加し、全555 Test/Ruff成功。Model/Prompt/Expected/上限/採用基準を保持して同じ人工検証から再確認する。主20問/未使用Calibration・Gate 11は未了。
 
 固定645f193のv10は全128入力/生成0・全層CUDAと人工6 Callの厳密5条件すべてに通過。入力290/出力958 Token・生成16.712355秒、原本10 File/87 Source不変・監査追加Call/Server0、全16 Artifactを保存した。同じ固定Worktreeで日英意味診断v10を開始し、全結果/意味採用は未確定。旧Expected/採用基準と旧v9の失敗を保持する。
+
+英語の元Calibration225問は全て検索条件調整済みのため再び未使用とせず、旧記録を保持する。[新しい日英Calibration用の別予約](phase11_bilingual_calibration.md)として、英語は未使用Developmentから主20 Groupとも分けた20問、日本語は元Calibrationから20問を結果非依存で保存した。元Source Splitと分析用途を区別し、Group/使用履歴/Hashを検証、全561 Test/Ruff成功。主Development採用後の専用実行Protocol/Runner・実走/全Label封印/集計は未了で、予約QAを方法調整へ使わない。
 
 ## 1. テーマと目的
 
