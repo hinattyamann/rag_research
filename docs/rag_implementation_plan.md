@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.23 — 2026年10月21日 日英接続実走・品質固定/内部照合を完了
+## Version 8.24 — 2026年10月21日 意味診断専用Runner・停止/採用規則を実装
 
-[研究計画 Version 7.21](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.22](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -28,6 +28,10 @@ Phase 7の入力検証CLIは引き続きCompletion 0回である。
 第11節の未実装事項をPhase 11で終え、両言語の条件を固定してからPhase 12へ進む。
 
 ## 1. 既存実装と保存する境界
+
+現行の次工程は[意味診断の事前計画](phase11_semantic_revision.md)。`semantic_diagnostics.py`は旧Trace/Expectedの一致と
+共通Task契約を確認し、既知Critical4条件の全一致後だけ人工54条件へ進む。Source/Model/Runtime/全CodeをHashへ固定し、
+Expected漏洩防止・失敗/中断後の再開追加0・未試行/既試行の保存を新規7 Testで確認した。実GPU診断はこれから。
 
 2026年10月21日追記: [日英共通RAG接続候補](phase11_bilingual_pipeline.md)を追加した。
 `study_assets`がHash付き日英QA/Corpus/Index/親対応を検証し、Factoryは同じE5 CUDA/Subword BM25/RRFを使う。

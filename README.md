@@ -31,12 +31,13 @@ v14の事前Gateは引用ID重複1件で不通過として保持し、後処理�
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- [研究計画 Version 7.21](docs/rag_research_plan.md)
-- [実装計画 Version 8.23](docs/rag_implementation_plan.md)
+- [研究計画 Version 7.22](docs/rag_research_plan.md)
+- [実装計画 Version 8.24](docs/rag_implementation_plan.md)
 - [多言語検索候補・本文Passage分割の実装と確認](docs/phase11_multilingual_retrieval.md)
 - [日本語共通Corpusの全文保持Passage化・参照粒度と残る工程](docs/phase11_japanese_corpus.md)
 - [日本語参照・欠測の監査と原HTML脚注の位置検証](docs/phase11_japanese_evidence.md)
 - [日英共通RAG接続候補と固定Commitでの接続確認](docs/phase11_bilingual_pipeline.md)
+- [既知誤支持・日英意味診断と拒否Fallbackの修正計画](docs/phase11_semantic_revision.md)
 - [日英全CorpusのCUDA Embedding Indexと全件検証](docs/phase11_bilingual_indexes.md)
 - [多言語EmbeddingのCUDA入口・専用uv環境と実機監査](docs/phase11_embedding_cuda.md)
 - [Corpus本文欠測・英語分割と親参照保持の監査](docs/phase11_corpus_preparation.md)
@@ -221,7 +222,7 @@ uv run --locked python scripts/run_baseline.py --smoke --limit 5
 ```
 
 準備済みのReport/Manifest/Configは同じByte列だけを再利用し、異なる内容で上書きしません。
-HybridのSuccess@10はEmbeddingと同じ78.23%ですが、nDCG@10は0.5317でEmbeddingの0.5519を下回りました。
+HybridのSuccess@10はEmbeddingと同じ78.24%ですが、nDCG@10は0.5317でEmbeddingの0.5519を下回りました。
 検索精度改善を示す結果ではありません。全条件・評価定義・実測・再現手順は
 [`docs/phase6_hybrid.md`](docs/phase6_hybrid.md)を参照してください。
 固定Development 5問で各1回の生成・保存が完了し、Gate 6を通過しました。
