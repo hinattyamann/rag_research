@@ -62,3 +62,34 @@ Critical4条件は全て形式有効だったが、Council c4を元/逆とも支
 既知Source/Expected・採用/停止規則・閾値0.7・Model/Runtime/Seed/予算/Schemaは不変。
 初回生成/書換えの指示と日英文単位も変更しない。両言語のJudge指示を同じものにする。
 新指示の意味精度はTestでは未認定で、別固定Commit/Runで同じ先行4条件から診断する。
+
+## 4B改訂v2の不通過と8B候補の準備
+
+固定54f116e/別Worktreeの`phase11-4b-alignment-v2`はCritical2/4一致で不通過だった。
+Zidaneは元/逆とも矛盾へ改善したが、Council c4は元/逆とも支持のまま。人工54条件は未試行。
+形式有効4/4、入力12390/出力4239 Token、Task秒和43.71、入力超過/Runtime失敗0。
+逆順Zidaneの理由は正しい3回判定に誤った2014〜2017年を付けており、Label一致だけで理由の正しさも認定しない。
+再開10 File不変/追加呼出し/Server起動0、結果は`phase11_semantic_alignment_result_v2.json`。
+
+計画内3番目の候補は[Qwen公式8B GGUF](https://huggingface.co/Qwen/Qwen3-8B-GGUF)の
+Revision `7c41481f57cb95916b40956ab2f0b139b296d974`、Q4_K_M/Apache-2.0。
+`Qwen3-8B-Q4_K_M.gguf`の公式サイズ5027783488 Byte、SHA256
+`d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785`を取得後に照合した。
+取得/検証122.33秒、Model Completion0。元の3B/4BとRuntimeは保持した。
+固定Manifestは`phase11_auxiliary_qwen3_8b_manifest_v1.json`、設定は`phase11_semantic_candidate_v3.yaml`。
+Prompt v2・Source/Expected・全基準/閾値・Sampler/予算/Schemaは変えず、Aux Modelだけを8Bへ変更する。
+主実験に採用する場合はJudge/書換えのModel変更と費用を両言語で同じように扱い、新Calibration前に固定する。
+
+`preflight_semantic_model.py`は固定Config/Model/RuntimeでServerを起動し、58条件を実Tokenizerで測る。
+Completion0・CUDA全層Offload・全入力+出力3072がContext12288以内であることを先に確認し、失敗は保存して停止する。
+GPUメモリの一点観測は最大値や長時間安定性と区別する。資源Preflightも意味精度の採用とはしない。
+現時点では8Bの取得/Hash/Config契約まで確認済みで、資源Preflight/意味診断はこれから。
+
+## 拒否Fallbackの保存候補による事後診断
+
+旧GPU20問の保存済み・品質固定済み結果には裸の拒否が8問あった。
+全8問で既存経路はunscorable/初回維持、初回Y0。共通の一回書換え候補はY1が3、Y0が3、不明2だった。
+この3問の改善を現経路は見逃し、初回1 Callに対して常時書換え経路は2 Callsを使っていた。
+`refusal_saved_comparison_v1.json`へ保存した。追加Model呼出し0の事後比較であり、未知QAでの新方針の有効性の検証ではない。
+候補方針は決定的抽出の`standalone_refusal`だけをJudgeなしの一回書換えへ回し、Scoreはnullのまま残す。
+その他の空Claim/抽出障害・Runtime失敗は初回維持の別Fallbackとして残す。方針は未実装・未採用である。

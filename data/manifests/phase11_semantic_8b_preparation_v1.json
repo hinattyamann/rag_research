@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-planned-8b-fallback-preparation",
+  "created_at_utc": "2026-10-21T09:31:24.285833+00:00",
+  "prior_4b_v2_critical_correct": 2,
+  "prior_4b_v2_critical_planned": 4,
+  "model_download_verified": true,
+  "resource_preflight_status": "not_run",
+  "meaning_diagnostic_status": "not_run",
+  "model_completions_for_8b": 0,
+  "source": "https://huggingface.co/Qwen/Qwen3-8B-GGUF/tree/7c41481f57cb95916b40956ab2f0b139b296d974",
+  "unchanged_conditions": [
+    "Prompt v2",
+    "source/expected labels and gate criteria",
+    "threshold0.7",
+    "context12288/output3072/reasoning1536",
+    "sampler and fixed seed",
+    "CUDA runtime and full offload requirement"
+  ],
+  "validation": {
+    "common_source_pytest": 450,
+    "new_candidate_contract_and_model_hash": "passed",
+    "targeted_diagnostic_tests": 7,
+    "ruff": "passed"
+  },
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_metadata.json": {
+      "sha256": "9f82a44f5cb2a7087f9455f8e105ce252165279ac49fa76a007893432285db5a",
+      "bytes": 477
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/download_verified.json": {
+      "sha256": "d42f55db20dd691b5fce1bdb539da468a0637266b235983cc6e87f4f7165db3c",
+      "bytes": 495
+    },
+    "data/runs/semantic_diagnostics/refusal_saved_comparison_v1.json": {
+      "sha256": "46be5ab58a3a0295a432525b164b1139f41d2719506e2d3e7f071a82048fe272",
+      "bytes": 2720
+    },
+    "data/manifests/phase11_auxiliary_qwen3_8b_manifest_v1.json": {
+      "sha256": "507390013781f3cee9e9abf34255d5e0a07f1cd660d38ed83e1dccda0ecc3d08",
+      "bytes": 720
+    },
+    "data/manifests/phase11_semantic_alignment_result_v2.json": {
+      "sha256": "30db3a2f7276c3ea4fdc5050b09c80c0ad765f7f089894a6d5d6230b19e222fd",
+      "bytes": 5944
+    },
+    "configs/phase11_semantic_candidate_v3.yaml": {
+      "sha256": "4ed631b4d6c34a808fbf07cfdfb22f574268dc46ac728744d5830a0f298b680c",
+      "bytes": 2023
+    },
+    "scripts/preflight_semantic_model.py": {
+      "sha256": "f3e9512ed9733e5fae1ee649ee0eebdaadd5ea9e391e04030b7f4681ab3078f4",
+      "bytes": 4241
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

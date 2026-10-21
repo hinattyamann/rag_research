@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.25 — 2026年10月21日 初期意味診断を保存し関係照合Prompt候補を追加
+## Version 8.26 — 2026年10月21日 4B改訂の不通過と8B固定候補・資源Preflight入口を追加
 
-[研究計画 Version 7.23](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.24](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -34,6 +34,8 @@ Phase 7の入力検証CLIは引き続きCompletion 0回である。
 Expected漏洩防止・失敗/中断後の再開追加0・未試行/既試行の保存を新規7 Testで確認した。実GPU診断はこれから。
 その後、固定93c3611で先行4条件を実走し、1/4一致で拡大を停止した。全450 Test/Ruffの検証に加え再開追加0を実機確認した。
 Source/Expectedと実行条件を保持したPrompt改訂v2を追加し、事前契約/日英同一Judge・予算を確認した。別固定実走は次工程。
+その後、v2も2/4一致で停止、失敗/再開追加0を保存した。8B公式GGUFのByte/Hashを確認し、共通Aux契約のManifestと候補v3を追加した。
+全58条件の実Token/CUDA起動をCompletion0で確認するPreflight入口を用意した。8B資源/意味実走・新Fallback実装は未了。
 
 2026年10月21日追記: [日英共通RAG接続候補](phase11_bilingual_pipeline.md)を追加した。
 `study_assets`がHash付き日英QA/Corpus/Index/親対応を検証し、Factoryは同じE5 CUDA/Subword BM25/RRFを使う。

@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.23 — 2026年10月21日 初期意味診断の不通過を保存しPrompt改訂を事前固定
+## Version 7.24 — 2026年10月21日 4B改訂の不通過・拒否の事後診断と8B候補を記録
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.25](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.26](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -15,6 +15,8 @@ Critical全件一致した候補だけ日英の人工27例/54条件へ進める�
 期待Labelはモデル入力へ渡さず、主Developmentや未使用Calibrationの代わりにしない。今回のGPU診断はこれから。
 その後、初期4BはCritical1/4一致・誤支持3/4で不通過、人工例へ拡大せず保存した。
 予定した1つのPrompt改訂v2は主体・関係・時期・数の範囲を照合する指示へ変更し、旧Expected/基準・閾値・Model/予算は保持する。
+その後、v2も2/4一致で不通過。計画内の8B公式固定版を取得/Hash照合し、同じPrompt/基準/予算の候補v3を用意した。
+裸の拒否8問中3問の改善見逃しは保存候補による事後比較であり、Fallback候補の実装/未知QA検証はこれから。
 
 2026年10月21日追記: [日英共通RAG接続候補](phase11_bilingual_pipeline.md)を実装し、全441 Test/Ruffに成功した。
 検索/初回/固定文評価/書換え/匿名品質の共通処理を再利用し、親Gold/欠測/参照来歴はOfflineに分離する。

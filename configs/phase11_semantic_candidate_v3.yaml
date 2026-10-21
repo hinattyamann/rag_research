@@ -1,0 +1,76 @@
+auxiliary_runtime:
+  context_tokens: 12288
+  temperature: 0.6
+  seed: 42
+  threads: 6
+  batch_tokens: 128
+  repack: false
+  timeout_seconds: 1200
+  startup_timeout_seconds: 120
+tasks:
+  extract_claims:
+    max_output_tokens: 3072
+  verify_claims:
+    max_output_tokens: 3072
+  rewrite_answer:
+    max_output_tokens: 3072
+trials:
+  order_conditions:
+  - original
+  - reversed
+  - shuffle_1
+  - shuffle_2
+  - shuffle_3
+  shuffle_seed: 42
+  same_order_total_trials: 5
+  share_original_first_trial: true
+  execution_order_seed: 43
+  generation_seed_policy: same_fixed_seed_for_every_trial
+  deduplicate_order_permutations: true
+  repeated_prompt_result_cache: false
+  regenerate_claims_per_trial: false
+  regenerate_answer_per_trial: false
+  repack_or_truncate_per_trial: false
+decision:
+  score: supported_claims_divided_by_fixed_claims
+  threshold: 0.7
+  accept_when: score_greater_than_or_equal_to_threshold
+  unscorable_action: keep_initial_answer_with_separate_fallback_status
+  no_claims_score: null
+  sensitivity_thresholds:
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+errors:
+  automatic_retries: 0
+  input_overflow_action: record_error_without_truncating
+  preserve_failed_attempts: true
+  resume_only_missing_trials: true
+  reject_protocol_hash_mismatch: true
+output_constraints: thinking_json_passage_ids_v2
+auxiliary_model_manifest: data/manifests/phase11_auxiliary_qwen3_8b_manifest_v1.json
+sampling:
+  version: auxiliary-sampling-v1
+  top_k: 20
+  top_p: 0.95
+  min_p: 0.0
+  presence_penalty: 0.0
+  repeat_last_n: 64
+  reasoning_budget_tokens: 1536
+  final_json_grammar: true
+execution:
+  runtime_spec: configs/lab_cuda_runtime.json
+  gpu_layers: 99
+  device: CUDA0
+  require_full_offload: true
+schema_version: 1
+purpose: phase11-bilingual-semantic-candidate
+status: candidate_not_frozen
+study_version: semantic-8b-alignment-v3
+diagnostics: configs/phase11_semantic_diagnostics_v1.json
+prompts:
+  en: configs/phase11_semantic_prompts_en_v2.yaml
+  ja: configs/phase11_semantic_prompts_ja_v2.yaml
+phase12_allowed: false
