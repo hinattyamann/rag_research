@@ -123,7 +123,7 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
             elif task == "verify_claims":
                 if thinking:
                     result["reasoning_budget_audit"] = audit_reasoning_budget(client, response, config)
-                    result["final_grammar_audit"] = audit_final_json_grammar(response, config)
+                    result["final_grammar_audit"] = audit_final_json_grammar(response, config, schema=schema)
                     text, result["model_reasoning"] = final_json(text)
                     text, result["raw_cited_verdicts"] = attach_cited_passages(
                         text, payload["documents"], boolean_checks=prompts.get("judge_checks") == "conflict_then_complete_v1")
@@ -140,7 +140,7 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
 
                 if thinking:
                     result["reasoning_budget_audit"] = audit_reasoning_budget(client, response, config)
-                    result["final_grammar_audit"] = audit_final_json_grammar(response, config)
+                    result["final_grammar_audit"] = audit_final_json_grammar(response, config, schema=schema)
                     text, result["model_reasoning"] = final_json(text)
                 result["parsed"] = parse_reading(text, payload["documents"])
                 result["status"] = "ok"

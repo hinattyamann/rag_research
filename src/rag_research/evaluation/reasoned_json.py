@@ -6,6 +6,7 @@ import re
 from rag_research.evaluation.claims import parse_json
 from rag_research.experiments.frozen_trace import require
 from rag_research.generation.auxiliary_config import FINAL_JSON_TRIGGER_PATTERN
+from rag_research.generation.json_grammar import closing_tag_grammar
 
 CITATION_ID_NORMALIZATION = "stable_unique_passage_ids_v1"
 
@@ -18,10 +19,19 @@ def citation_id_audit(raw):
             "semantic_labels_or_reasons_changed": False}
 
 
-def audit_final_json_grammar(response, config):
+def audit_final_json_grammar(response, config, *, schema=None):
     if not getattr(config, "final_json_grammar", False):
         return None
     settings = response.get("generation_settings", {})
+    if getattr(config, "final_json_grammar_mode", "brace_trigger_v1") == "closing_tag_root_v2":
+        require(schema is not None and settings.get("grammar_lazy") is True and
+                settings.get("grammar_triggers") == [{"type": 1, "value": "</think>"}] and
+                settings.get("grammar") == closing_tag_grammar(schema), "Runtime closing-tag grammar differs")
+        require("</think>" in response.get("content", "") and re.match(r"^\s*\{", response["content"].rpartition("</think>")[2]),
+                "Final JSON did not follow the constrained closing tag")
+        return {"version": "closing_tag_root_v2", "runtime_settings_verified": True,
+                "trigger_text_verified": True, "end_tag_consumed_by_declared_grammar": True,
+                "does_not_verify_semantic_correctness": True}
     require(settings.get("grammar_lazy") is True and settings.get("grammar_triggers") ==
             [{"type": 2, "value": FINAL_JSON_TRIGGER_PATTERN}] and bool(settings.get("grammar")),
             "Runtime did not apply the requested final-only grammar")

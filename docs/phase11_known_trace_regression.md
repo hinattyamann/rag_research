@@ -45,3 +45,12 @@ v6実測27.43分/128 Callと実例の入力長から30〜60分程度を見積も
 Plan/Expectedは`phase11_known_trace_regression_v1.json`/`phase11_known_trace_expected_v1.json`。
 新規9 Testで通過/停止・再開、前提/Model/Core/旧Expected/設定/基準の改変拒否、正例精度を別に確認する条件を検証した。
 旧v6のCoreとRunは固定Worktreeに保持する。新規Calibrationや最終Gateの通過は、この回帰だけでは確定しない。
+
+## 実走v1の停止結果
+
+固定2ae5133の全114入力/生成0 Preflightは通過したが、5/30条件目の読解が最終JSON配列で始まり、
+条件付きGrammar Triggerに到達せずHealth Gate停止。21 Call/入力84642/出力21107 Token・342.06秒。
+最初の4 Critical条件は一致、残る25条件は未試行。全予定精度/支持精度はnull、採用しない。
+Raw配列を修復・再試行せず、全43 Artifact・再開37 File不変/追加Call・Server0を
+`phase11_known_trace_result_v1.json`に保存した。次は[終了Tag境界の別候補](phase11_json_boundary.md)を
+人工Runtime・日英意味診断から検証し、新しい通過Reportを前提に同じExpectedで別Runを用意する。

@@ -16,6 +16,7 @@ import psutil
 from rag_research.generation.artifacts import verify_model, verify_runtime
 from rag_research.generation.auxiliary_config import FINAL_JSON_TRIGGER_PATTERN
 from rag_research.generation.cuda_runtime import execution_kwargs, verify_cuda_runtime
+from rag_research.generation.json_grammar import closing_tag_grammar
 
 
 class GenerationError(RuntimeError):
@@ -80,8 +81,13 @@ class LlamaClient:
             if json_schema is not None and config.final_json_grammar:
                 # b11433 PATTERN=2; its first nonempty capture is replayed.
                 # Replay the JSON opening brace, not the reasoning end token.
-                payload.update(grammar_lazy=True,
-                               grammar_triggers=[{"type": 2, "value": FINAL_JSON_TRIGGER_PATTERN}])
+                if getattr(config, "final_json_grammar_mode", "brace_trigger_v1") == "closing_tag_root_v2":
+                    payload.pop("json_schema")
+                    payload.update(grammar=closing_tag_grammar(json_schema), grammar_lazy=True,
+                                   grammar_triggers=[{"type": 1, "value": "</think>"}])
+                else:
+                    payload.update(grammar_lazy=True,
+                                   grammar_triggers=[{"type": 2, "value": FINAL_JSON_TRIGGER_PATTERN}])
             if config.reasoning_budget_tokens >= 0:
                 payload.update(reasoning_budget_tokens=config.reasoning_budget_tokens,
                                reasoning_budget_start_tag="<think>",

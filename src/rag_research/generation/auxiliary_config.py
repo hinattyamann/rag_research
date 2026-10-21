@@ -17,6 +17,7 @@ class AuxiliaryGenerationConfig(GenerationConfig):
     repeat_last_n: int = 64
     reasoning_budget_tokens: int = -1
     final_json_grammar: bool = False
+    final_json_grammar_mode: str = "brace_trigger_v1"
 
     def __post_init__(self):
         values = asdict(self)
@@ -37,3 +38,5 @@ class AuxiliaryGenerationConfig(GenerationConfig):
             raise ValueError("Invalid reasoning token budget")
         if type(self.final_json_grammar) is not bool:
             raise ValueError("Final JSON grammar setting must be boolean")
+        if self.final_json_grammar_mode not in {"brace_trigger_v1", "closing_tag_root_v2"}:
+            raise ValueError("Unknown final JSON grammar mode")

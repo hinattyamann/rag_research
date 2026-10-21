@@ -1,6 +1,6 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.33 — 2026年10月21日 日英人工診断/全費用・再開を監査し既知回帰を接続
+## Version 8.34 — 2026年10月21日 最終JSON境界の別制約と人工Runtime検証を追加
 
 [研究計画 Version 7.31](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
@@ -26,6 +26,9 @@ Phase 7の入力検証CLIは引き続きCompletion 0回である。
 2026年10月21日、英語CLAPNQと仕様を近づけた別の日本語Datasetを使う比較方針を採用した。
 翻訳対を主実験に使わない。[選定・比較・工程の方針](english_japanese_expansion.md)に従い、
 第11節の未実装事項をPhase 11で終え、両言語の条件を固定してからPhase 12へ進む。
+
+その後、既知回帰v1は読解が配列で始まり条件付きJSON制約が未到達となって5/30条件で停止した。21 Call/他25条件未試行・再開追加0を保持。
+[終了Tag境界の別候補v7](phase11_json_boundary.md)を固定し、人工Runtime検証後に同じ128 Call診断から再確認する。主Development/未使用Calibration・最終Gateは未了。
 
 ## 1. 既存実装と保存する境界
 
