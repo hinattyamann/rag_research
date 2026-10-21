@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.37 — 2026年10月21日 既知回帰の形式失敗を保持し終了Tag境界の別候補を固定
+## Version 7.38 — 2026年10月21日 既知回帰の形式失敗を保持し終了Tag境界の別候補を固定
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.39](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.40](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -21,6 +21,8 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 主Development用の採用/選定/Policy Guard・原子Call上限1660/言語・新規5 QA/段階Sessionと中断再開を実装し、全536 Test/Ruff成功。主結果前のHealth/意味採用/全Label封印基準も保存した。実設定/新規推論は既知15 QA回帰の通過後とし、まだ主実走を行っていない。
 
 v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日本語28/30/誤支持0を完了し、全259 Artifact/読解11行の問題・曖昧c6によるF6/7/再開追加0を保存した。旧Expected不変の既知15 QA回帰v2は、この新しい通過Reportへ前提を結んで事前検証済み。実GPU回帰はこれから。
+
+既知回帰v2は形式/Runtime失敗0でも12 Critical中8一致・誤支持6により不通過。54 Call/残18条件未試行・再開追加0を保存した。日英全品質/固定文Labelの封印後にだけ内部と比較する監査入出力を追加し全545 Test/Ruff成功。次の[Qwen3.5-9B候補v9](phase11_qwen35_candidate.md)は条件固定/重みHash確認までで未推論。
 
 ## 1. テーマと目的
 

@@ -69,3 +69,18 @@ Config v2はv8の全条件を保持し、Study Version/Plan Pathだけを回帰�
 固定c9bc924の専用Worktreeでv2の全114入力/Completion0・最大3930 Token・全予算内/全層CUDAを確認した。
 生成0 Receiptを保存後、既知12 Critical条件/最大54 Callを先行する実走を開始。
 Tool session76888が生存し、全結果/採用は未確定。Launch Manifestは`phase11_known_trace_launch_v2.json`。
+
+
+## 回帰v2の意味不通過
+
+固定c9bc924の54 Call/12 Critical条件を完了したが、正確一致8/12・明確な非支持への誤支持6で停止した。
+形式/Runtime/Overflow失敗0。入力200215/出力51314 Token・Task秒和826.530559秒。
+暖鋒c2の元逆2判定、Tar Heels c1/c2の元逆4判定が誤支持。表の通過中/後の対応と、
+未確定の由来の無限定断定・別々の逸話の因果接続を支持した。原Expectedは維持する。
+観測した確定40判定では34一致/支持24一致・非支持16中6誤支持だが、
+残る正例18条件が未試行なので全予定精度/支持精度はnull。主採用しない。
+
+固定Source89 Hash/全12集計・54子Callの原文/分母/費用と、再開85 File不変・追加Call/Server0を確認した。
+原本87 FileとPreflight/誤支持Reviewを含む全92 Artifactを`phase11_known_trace_result_v2.json`へ保存した。
+次は既に資源調査した[別9B候補](phase11_qwen35_candidate.md)。この失敗を通過へ読み替えず、
+旧Expected/基準を保ち、新Modelの形式/日英診断から確認する。

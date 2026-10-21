@@ -1,0 +1,454 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-known-trace-v2-semantic-failure-not-adoption",
+  "created_at_utc": "2026-10-21T14:01:43.948271+00:00",
+  "fixed_commit": "c9bc924430435cd44e05777845e56b5328a6b361",
+  "report": {
+    "schema_version": 1,
+    "purpose": "phase11-bilingual-semantic-candidate",
+    "manifest_sha256": "f54d3ff13152c3b37191427b638f7acefdd9cb7885fb95ddc8286cdca6798ada",
+    "critical_planned_conditions": 12,
+    "critical_completed_conditions": 12,
+    "critical_exact_correct_conditions": 8,
+    "critical_passed": false,
+    "known_regression": {
+      "planned_labeled_unit_conditions": 74,
+      "exact_correct": 34,
+      "accuracy_of_all_planned": null,
+      "planned_supported_unit_conditions": 58,
+      "supported_exact_correct": 24,
+      "supported_accuracy": null,
+      "false_support_count": 6,
+      "ambiguous_unit_conditions_retained_in_F": 10
+    },
+    "diagnostic_gate_passed": false,
+    "planned_conditions": 30,
+    "completed_conditions": 12,
+    "not_attempted_ids": [
+      "known-gpu-da38af9cd782-original",
+      "known-gpu-da38af9cd782-reversed",
+      "known-gpu-25560cfd1cab-original",
+      "known-gpu-25560cfd1cab-reversed",
+      "known-gpu-dee22fa20655-original",
+      "known-gpu-dee22fa20655-reversed",
+      "known-gpu-b33c1496859d-original",
+      "known-gpu-b33c1496859d-reversed",
+      "known-gpu-c99e26828c62-original",
+      "known-gpu-c99e26828c62-reversed",
+      "known-gpu-35d3e8259d8f-original",
+      "known-gpu-35d3e8259d8f-reversed",
+      "known-gpu-6d9820642610-original",
+      "known-gpu-6d9820642610-reversed",
+      "known-gpu-9080b47549bc-original",
+      "known-gpu-9080b47549bc-reversed",
+      "known-gpu-aaba171a10f6-original",
+      "known-gpu-aaba171a10f6-reversed"
+    ],
+    "planned_completion_limit": 114,
+    "completion_attempts_recorded": 54,
+    "cost_incomplete": false,
+    "input_tokens": 200215,
+    "output_tokens": 51314,
+    "summed_task_seconds": 826.5305586909744,
+    "task_result_sha256": {
+      "known-gpu-323bf35882bc-original": "8cd4dc9d3b837d4d8d8032e14d05a96bea7b43e55bc995b05d5daf5598b5af0c",
+      "known-gpu-323bf35882bc-reversed": "a9dae1e70c2d2af39d426b2fbca099503094d9287190649d8d0646aecb5b04fd",
+      "known-gpu-31e646aa9601-original": "bcc4166431e2f7b459e3118fa6573ababb496754567e7708ca9e4ee3fbe78dfa",
+      "known-gpu-31e646aa9601-reversed": "1bd72d41ff6724409692405245451ac02c26a848c1d0797115949a916aaffd5b",
+      "known-gpu-b4291e2a1a09-original": "5930a5a7a06393f20c1204564181cbf44ffc205f0ff8972f08dc28d90e31b0f8",
+      "known-gpu-b4291e2a1a09-reversed": "19ca6cebee0e0c7f129841a7297ee9d4950d3c83f2bb1512187d140cfd1ebde5",
+      "known-armistice-original": "043614d34278df1b587aab6ea0f6c278c5510b44463258e5dd40e08a38f045e2",
+      "known-armistice-reversed": "b4bbbc362d3c32a7fd028eb156f7214b5f30452dbdb7cd08540d3072b90f147f",
+      "known-warm-front-original": "cff1f9f9b06ae6ad9730e4c090fcd9703cea7e93af8af17867052a62b7d9e476",
+      "known-warm-front-reversed": "9722e4d003a57e6e08cbb7a65a11dfbab63d01d2ab074b125aa3cdc0ab994d34",
+      "known-tar-heels-original": "e33b4a86b4b12373337481b2dfa4e6f563b2559abcc90eb5555ea3a9fe3ff8ec",
+      "known-tar-heels-reversed": "3e22d9714522e8f3a32e57aa1504ca7d5c0d5c63b1d36830d8c493b49dc4e811"
+    },
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "resume_unchanged_files": 85,
+  "resume_new_calls": 0,
+  "resume_new_servers": 0,
+  "source_hashes_verified": 89,
+  "failure_conditions": [
+    "known-warm-front-original",
+    "known-warm-front-reversed",
+    "known-tar-heels-original",
+    "known-tar-heels-reversed"
+  ],
+  "observed_definite_unit_conditions": 40,
+  "false_support_count_among_16_definite_negative_conditions": 6,
+  "artifacts": {
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/server-1.log": {
+      "sha256": "99278c3bdf1692095192f83d2c455eb8654c51d064679a456cacebf3f47fd638",
+      "bytes": 316048
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/resume_check.json": {
+      "sha256": "aa07e9fa30efa0330a239b9f2bf0fa2e8100d11fc5c35d1a5e5c7a5ecbe26b6a",
+      "bytes": 10991
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/launch.json": {
+      "sha256": "fca9612c7583fa0233c4e96442ddb106ee1119d3d2cef86ca2b181b29014f3cb",
+      "bytes": 613
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/manifest.json": {
+      "sha256": "13276cd0cf43cd64da63261165f8c3a1946e0742b37bec156e343454c8cf375e",
+      "bytes": 22649
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/report.json": {
+      "sha256": "bb4805d4a7a61e5506096ac6c03890e4367e6cec079194ee268bef85ac220df7",
+      "bytes": 2989
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/semantic_failure_review_v1.json": {
+      "sha256": "ccc2800b7f4e953c353ccb42760aacd580b20d8434e0252bed87e654ac7f78cf",
+      "bytes": 2832
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/session-1.json": {
+      "sha256": "76d059e02765ed03126387414b39c694433090009fdb7566ddaf0116beb4bbeb",
+      "bytes": 9709
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/preflight_receipt.json": {
+      "sha256": "dcc9d9c5cc0b4bb7c4e43f34286601b5a411acf5b7e759004128a985ee94a28b",
+      "bytes": 470
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/audit_check.json": {
+      "sha256": "21b259a1a88854e10bbf0d9e510a327e7ffda6b9babdc5e516519bd008659a14",
+      "bytes": 71845
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-warm-front-original.json": {
+      "sha256": "a2ea310226a5987b6db340d448d50b51e483880236201a6724dd58436ed431aa",
+      "bytes": 7621
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-reversed.json": {
+      "sha256": "4007e4a86f15d7fd20624b773ec2d89466ad5553acbef5741283e079b2c7e199",
+      "bytes": 8148
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-original.verification.json": {
+      "sha256": "456cd91dd6a2c1c220342da03ed2a4a468c32ca3cb1a8042b64c62f70ea5c622",
+      "bytes": 8976
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-original.json": {
+      "sha256": "b5925d22829fbeea443fdc79f1b43171ab2df4703881ee0f68457a3398e7529c",
+      "bytes": 8207
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-original.reading.json": {
+      "sha256": "ba6cbadeec5fafbc12e98e9b1d282b0b6f803630bcd2754ca3802453295b058a",
+      "bytes": 163960
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-reversed.json": {
+      "sha256": "0796b5442bd9b330e0f47954edbddeb497197ca2d44ae0cf77fecd188e3afe83",
+      "bytes": 8314
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-reversed.verification.json": {
+      "sha256": "25e4986531ab0e803591a2aad95583edbacc2eaaf690dc89182ca4d148264e83",
+      "bytes": 9008
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-warm-front-reversed.verification.json": {
+      "sha256": "a8ea10865ef9f578cca9c3ae843f9fb779acef978e953e46f9d8072202690c61",
+      "bytes": 6072
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-original.json": {
+      "sha256": "a98fd5ebb37125e58e22d42e0bd559fb8c371ebb2dbe8891a14d5b9d1e0c4c16",
+      "bytes": 7770
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-31e646aa9601-reversed.verification.json": {
+      "sha256": "a215f37b51b72fc4a36c626f22b50793b145afb134d2fab3ee66d676896c3349",
+      "bytes": 4337
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-original.verification.json": {
+      "sha256": "b37566e9cf0db260b79e35fe215ace127577d078f42c050715aa6dde6f871321",
+      "bytes": 8633
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-warm-front-original.reading.json": {
+      "sha256": "e85db368652e145f2ca808882d5f98dadf40a423ff351056fceefca501040bc1",
+      "bytes": 160624
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-31e646aa9601-original.json": {
+      "sha256": "09a0b0eb90971cb72fe800c73db4001568b29b5edc51ae39b952a49210246a48",
+      "bytes": 4436
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-warm-front-reversed.reading.json": {
+      "sha256": "ee8dce478af2a5f122edc723d91a2ee0fef517656d7e27cab29009450752c4c1",
+      "bytes": 179701
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-31e646aa9601-original.verification.json": {
+      "sha256": "918d0667af26a0d7ba3ea179e998bff20b838b653b8b4579a0f43c8b20200a61",
+      "bytes": 4377
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-31e646aa9601-reversed.json": {
+      "sha256": "25ecbeec68347e875e9c0d1a592353e945202f261f181c5767e2adacc19226d1",
+      "bytes": 4405
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-31e646aa9601-reversed.reading.json": {
+      "sha256": "d68efc5083ab9e3e701aa6b85c9bb64bf40527c6ce1292f40bb8ae9f0c8e4008",
+      "bytes": 187206
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-reversed.reading.json": {
+      "sha256": "4e8343289a388b9f23bfe988cee742b1387cf069e62ab4f809bbe893a167474e",
+      "bytes": 178051
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-warm-front-original.verification.json": {
+      "sha256": "682c748827bf1759a9c68bb721fdce7c2df67d75e2acab924362f1c1dc3925c0",
+      "bytes": 7810
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-reversed.verification.json": {
+      "sha256": "3c3d078cfdf1499427add354acf29c2707f4ff6de588de6a6e653d3526b147ff",
+      "bytes": 13197
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-reversed.reading.json": {
+      "sha256": "af53a99e9e092341af4962763a2d09a0a554c33d5a9fa433dbb19f862c4e450b",
+      "bytes": 160932
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-original.json": {
+      "sha256": "08491d0afea78a7ebc095927a3ee863a1500b76b2f9e64ac0cb102f29ba780c5",
+      "bytes": 8550
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-warm-front-reversed.json": {
+      "sha256": "d43047dd466698e69ac12010bfc7666c1072f78064fa446fbfefbc07901e95f0",
+      "bytes": 5885
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-original.reading.json": {
+      "sha256": "f77737b3f802a8dbd4d311f149a42624fe8283f1b44af527da6c86c152c32565",
+      "bytes": 179852
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-reversed.reading.json": {
+      "sha256": "681fbff5607273963690ae7539c5448e107cd48eea37f120a3182eb08b3b5e1d",
+      "bytes": 156198
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-reversed.verification.json": {
+      "sha256": "e25b7c7b74a1e9ba542d8e91c3eee8d81d88b009ed02bb9aa2ae88d2a847a22e",
+      "bytes": 9245
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-original.reading.json": {
+      "sha256": "701d039b79f6876263ff1dfdd2ab87ba830523d23a2d3b6125af849fbc8a4954",
+      "bytes": 162602
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-reversed.json": {
+      "sha256": "1101205df554f0a4e4e763c5e3af7dcc451da4ee285718b2b086448d1ee54cb3",
+      "bytes": 8578
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-31e646aa9601-original.reading.json": {
+      "sha256": "44d2f92dd5082f103a5286b51935a369219703a7dd467dd418608f6244d9f0ff",
+      "bytes": 184450
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-original.verification.json": {
+      "sha256": "338035a6be0b9bdde80add606256e006bd0a37d4e7c5d73cc9f557584985551b",
+      "bytes": 13243
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-original.verification.json": {
+      "sha256": "9fd743855302422cf0f4fddb5062d8044bd2a1178ea242911b1391c4fc8fe84f",
+      "bytes": 8702
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-reversed.json": {
+      "sha256": "b8310f97df0dc098f43793e78456857277b4ffcba4888228bc9db7264f6d742f",
+      "bytes": 11772
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-reversed.reading.json": {
+      "sha256": "445d3001878a4c0196a71d580239fd305ffd9e84afbd9a90eccb5b586e916be2",
+      "bytes": 161040
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-original.reading.json": {
+      "sha256": "45023c620eb644ef863f888551a9760403be428857addd2501ba25e191d4076a",
+      "bytes": 167863
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-original.json": {
+      "sha256": "109c22eb7dc6676f0c6c6ddd166df8a17da658e2cf065b1069e4d3a9d01f302f",
+      "bytes": 11819
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-reversed.verification.json": {
+      "sha256": "155d8d8fa7eeca254fe09072897b0ee06bfd8421fe046a0e60cf8795ae5a229d",
+      "bytes": 8577
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-original.verification.claims/c4.json": {
+      "sha256": "31ab22d35ebe33a75fb74dc945de33c77794cf00f06d3fb6f0de7082572cb464",
+      "bytes": 137193
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-original.verification.claims/c5.json": {
+      "sha256": "44c616d30d352972620e02547b89108b4c1c650a5a38c8a8cdc33cd4cbfff5dd",
+      "bytes": 123106
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-original.verification.claims/c2.json": {
+      "sha256": "e912a315c4f515d747943ee5919e51056a8cd3eb6dacbcd864707d144f7b4087",
+      "bytes": 124173
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-original.verification.claims/c7.json": {
+      "sha256": "679949af4ce7a6fb4e35e1df6fb6ec9ad9736a2baa1594a359496c7ca992b3f1",
+      "bytes": 124703
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-original.verification.claims/c3.json": {
+      "sha256": "6ab1cde98e7a4465f521a3ca19b9fb81d5e4858d19b63647ee97f74a2534f2c6",
+      "bytes": 125756
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-original.verification.claims/c1.json": {
+      "sha256": "b6e4c33db7df06c0025cf14c1cd6572468a21a63f0fa95774b891664ca360482",
+      "bytes": 124027
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-original.verification.claims/c6.json": {
+      "sha256": "715aa2ead559e1680e6dbac03433d3b3940700c8de3c7c814f254e5246469fc8",
+      "bytes": 141916
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-reversed.verification.claims/c4.json": {
+      "sha256": "ff428eba7104dc9ae65499490d865a5b8c72110f5ea1dde20949de1fc23268b8",
+      "bytes": 103038
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-reversed.verification.claims/c5.json": {
+      "sha256": "adff38c4015d44ad5109896ed37b7de9e529cb59cdf8c06f58a4144804f3855c",
+      "bytes": 108778
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-reversed.verification.claims/c2.json": {
+      "sha256": "157bf661d310dc30fe62b8142f57c1d9401897f05e59bcf7bab9e6bf9b405773",
+      "bytes": 106928
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-reversed.verification.claims/c3.json": {
+      "sha256": "6a923c60eb44708ad5cbee19dd4dd86d1d2e63ea494cb7458a45b4a65d3b0f9a",
+      "bytes": 105537
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-reversed.verification.claims/c1.json": {
+      "sha256": "89b0c552f4f76a8c36e485a6f2fe05b6763c0e26521d5612f1e8d86874e9335f",
+      "bytes": 103412
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-31e646aa9601-original.verification.claims/c1.json": {
+      "sha256": "c0f27cbee355371e096e0d2ce8c47c731bfa1a0685c07a6ef96843df1aeedfae",
+      "bytes": 146052
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-warm-front-original.verification.claims/c2.json": {
+      "sha256": "c3f77b6ec27107cae44fd72cc108339af5c888b740ff4fbc7442d6f3234b9abb",
+      "bytes": 110642
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-warm-front-original.verification.claims/c1.json": {
+      "sha256": "05c6fdef5e167b466a2779597eff6ef83fa0438f258e39e8a98d9610163768a3",
+      "bytes": 113866
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-original.verification.claims/c4.json": {
+      "sha256": "ace06bc48a544c7b98d27201359437d4fd4af119a03a06405b7b831ae3db8e27",
+      "bytes": 116650
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-original.verification.claims/c5.json": {
+      "sha256": "5f8bae76fff8af6d66e3ee30129f120c05aa2b699a7ca879467115da7e4c3758",
+      "bytes": 106978
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-original.verification.claims/c2.json": {
+      "sha256": "a1aba5a85b1a1a34f1319d812819fe5f93134f461edb68795ccc9d9788db86d9",
+      "bytes": 107944
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-original.verification.claims/c3.json": {
+      "sha256": "d54d1ebdcd9018aac6c5c44caeca6b585586c36a69ede68924df62d1cc00e756",
+      "bytes": 103446
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-b4291e2a1a09-original.verification.claims/c1.json": {
+      "sha256": "c04680fe4e6c397f88b3ab342665ed8bbe3c7f67b4ee621fa42c5ec61f0995f8",
+      "bytes": 102174
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-reversed.verification.claims/c2.json": {
+      "sha256": "b98ce08288b02412bb95f91427029b152116b334d36498354279806f9d853505",
+      "bytes": 112018
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-reversed.verification.claims/c3.json": {
+      "sha256": "23f94677cf041f932673ec46241fdf80f2aa0b6873ccea8ef4a6bd5b8e8b030b",
+      "bytes": 109032
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-reversed.verification.claims/c1.json": {
+      "sha256": "3221b4974ea1beba23d3ef5d63e57fa29ddd753103da13207112f08b9945f1f2",
+      "bytes": 113004
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-warm-front-reversed.verification.claims/c2.json": {
+      "sha256": "a2d1be11493bb9d8797824412fd096b964663a679c8d3412b94fc91ecec1d87f",
+      "bytes": 108723
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-warm-front-reversed.verification.claims/c1.json": {
+      "sha256": "0c6f1158ce77a0c15e7abbd62883bc376b8cc07aa08e3895d22054f50071b9db",
+      "bytes": 112328
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-31e646aa9601-reversed.verification.claims/c1.json": {
+      "sha256": "3098be76652390cfd3cb2b2a59e4d17820804e261ae55e7d82bbc693fa9bf9b3",
+      "bytes": 135075
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-reversed.verification.claims/c2.json": {
+      "sha256": "0bea8f0e26380cf623cb82103ad6847aa906fde242ffef64ccb24b5a4b303261",
+      "bytes": 122357
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-reversed.verification.claims/c3.json": {
+      "sha256": "02f7c7433a5a22d9435de933880f249acc7c2f2ff3ae582079165aa180d170a4",
+      "bytes": 113238
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-reversed.verification.claims/c1.json": {
+      "sha256": "5366a552ec36410125229cac88e9f6273e1b2e0e4e757931ff2f73a2c7cdffb1",
+      "bytes": 118437
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-reversed.verification.claims/c4.json": {
+      "sha256": "10cf9c20f853e9b52b5cb374e9d9a3191d20b29d46abf9205a79d4723da36f7d",
+      "bytes": 148948
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-reversed.verification.claims/c5.json": {
+      "sha256": "64f427ac2d5abafa4dd6c2d2ec45ddd7daf7c8048c58c8df332eb9a7639e8e69",
+      "bytes": 121097
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-reversed.verification.claims/c2.json": {
+      "sha256": "05d876da8fb998ab71ce7be5797e0b42257c00833a53a2c652ee99b3acc4a944",
+      "bytes": 123336
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-reversed.verification.claims/c7.json": {
+      "sha256": "55cc3e4a74b2e4b6a46eab83b6fad857ddc0b17e0422c9ec5dd4a5e5e0edf90b",
+      "bytes": 121754
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-reversed.verification.claims/c3.json": {
+      "sha256": "371f7371ee0634f876c9ff60a49f67f75ceb3c1ac50a5519de36813352ee1a9a",
+      "bytes": 124872
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-reversed.verification.claims/c1.json": {
+      "sha256": "60aca25b318b9dfb13e6570496932eb3f959e8f827f09aea7616337d18c625b6",
+      "bytes": 118581
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-gpu-323bf35882bc-reversed.verification.claims/c6.json": {
+      "sha256": "c3f6f15a69685d290ac9c546043be18ef80503aeaf65d62156cbfc0686cba3b8",
+      "bytes": 145719
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-original.verification.claims/c2.json": {
+      "sha256": "4892effbc5595d942d7520c88f954d3a8c458d17643e85407a8cef42e23025af",
+      "bytes": 114742
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-original.verification.claims/c3.json": {
+      "sha256": "03d3c1f2b5b8f22463def392061b62dd83562bc28cf8f593f39e94609c63d198",
+      "bytes": 114935
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-armistice-original.verification.claims/c1.json": {
+      "sha256": "5bf58f3b6bbc194fc5d6098d79853aa12ae92fb9cafbcaf060af5cd70e39875b",
+      "bytes": 137758
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-original.verification.claims/c2.json": {
+      "sha256": "c1950026cd2cf546885474a5c5555a3bd182c6c26f2204cdb720e81a5d51ce73",
+      "bytes": 124948
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-original.verification.claims/c3.json": {
+      "sha256": "a30d452e643bce36db1a2b68e41c8f14c69cafe3b874ac01a0fc674b73696845",
+      "bytes": 111958
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-known-trace-v2/tasks/known-tar-heels-original.verification.claims/c1.json": {
+      "sha256": "ff1290cb2caa4966b369d339f9ea0631f3cc62ece9e93741f96f4b5a0b532cc4",
+      "bytes": 112706
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/known_trace_preflight_v2/plan.json": {
+      "sha256": "81332fc80073851480b181c433b94acf1ea58cfa8dce3c80b341c5bd901bf986",
+      "bytes": 1192
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/known_trace_preflight_v2/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/known_trace_preflight_v2/report.json": {
+      "sha256": "1670627407614977a30087e9b9fb4add9fa1aa3ebd1389abfb56822d449e4e80",
+      "bytes": 40819
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/known_trace_preflight_v2/server.log": {
+      "sha256": "5875529c6db37e90d6c6460d0aecc4433f1630bfa52b2b9fee4f34d72c29366b",
+      "bytes": 16525
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

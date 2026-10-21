@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-qwen35-9b-v9-preregistration-before-weight-download-or-output",
+  "created_at_utc": "2026-10-21T13:50:53.784887+00:00",
+  "source_spec": "configs/phase11_auxiliary_qwen35_9b_v1.json",
+  "source_spec_sha256": "978016b66fb7a032720aa3af18ee0deefaeefe2bf5930eb389372f86146dc123",
+  "candidate_config": "configs/phase11_semantic_candidate_v9.yaml",
+  "candidate_config_sha256": "71a8a1119860c3910752c59a630c1cd4e3252965223036a347028265466964aa",
+  "prompt_compatibility_changes": {
+    "en": {
+      "removed_unsupported_soft_switch_lines": 3,
+      "other_prompt_fields_changed": false
+    },
+    "ja": {
+      "removed_unsupported_soft_switch_lines": 3,
+      "other_prompt_fields_changed": false
+    }
+  },
+  "language_parameters_identical": true,
+  "method": "source-reading-v1",
+  "expected_plan": "configs/phase11_semantic_diagnostics_source_reading_v3.json",
+  "expected_plan_sha256": "d121059dc4224edb1b16064c03de34e108bb678ed851103c82bb1207497a87c6",
+  "expected_or_gate_changed": false,
+  "automatic_retries": 0,
+  "local_gpu_total_mib": 8151,
+  "preflight_completions": 0,
+  "artificial_format_completion_limit": 6,
+  "semantic_diagnostic_completion_limit": 128,
+  "known_regression_limit_if_prerequisite_passes": 114,
+  "maximum_screening_completions": 248,
+  "primary_sources": {
+    "data/runs/model_screening/phase11-qwen35-9b-v2/metadata/chat_template.jinja": {
+      "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+      "bytes": 7756
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v2/metadata/config.json": {
+      "sha256": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+      "bytes": 3126
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v2/metadata/converter_api.json": {
+      "sha256": "d61cbccea6f08769c85d8ce7c624f9924ee3144749d74b1d28b0350da0cde555",
+      "bytes": 15956
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v2/metadata/README.md": {
+      "sha256": "c5f5a8c2dddab69cfbf05279235aa5fddb137939a06539c4c7637aa900fef6d0",
+      "bytes": 77643
+    }
+  },
+  "budget_rationale": "16k context, read6144/judge4096/reason2048 bound local compute while allowing fuller source notes and reasoning; ordinary attention FP16 KV about512MiB excluding recurrent state/buffers/display. Official long-context/output recommendations exceed these local limits; no maximum-capability claim.",
+  "sampling_rationale": "official general-thinking numeric settings temp1/top_p.95/top_k20/min_p0/presence1.5/repeat1; fixed native repeat_last_n64 window retained and recorded, not claiming identical implementation to vendor serving stacks",
+  "method_rationale": "keep the source-reading method that passed prior critical/artificial checks; change model and bounded budget/sampler instead of repeating the earlier joint-method proposal; this is a new candidate, not a causal model-only comparison",
+  "weight_downloads_at_preregistration": 0,
+  "completion_attempts_at_preregistration": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

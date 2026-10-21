@@ -1,6 +1,6 @@
 # 別チャットから再開するための引継ぎ
 
-最新: 既知15問回帰v1は21 Call/5条件目の読解形式失敗で停止。旧結果は保存済み。境界v7の人工検証失敗を保持し、v8は人工Runtime厳密5条件/全128入力Preflightを通過。[固定43ccf05のv8日英意味診断](phase11_json_boundary.md)は全128 Call/既知4一致・人工英語24/24/日本語28/30・誤支持0で通過。再開251 File不変/追加0を監査済み。session27879/63610は終了。全259 Artifact/意味監査を正規保存済み。固定c9bc924のphase11-known-trace-regression-v2 Worktreeで回帰v2を実走中。全114入力/生成0 Preflight通過、Tool session76888を観測して二重起動しない。旧Runを再生成しない。
+最新: 既知15問回帰v1は21 Call/5条件目の読解形式失敗で停止。旧結果は保存済み。境界v7の人工検証失敗を保持し、v8は人工Runtime厳密5条件/全128入力Preflightを通過。[固定43ccf05のv8日英意味診断](phase11_json_boundary.md)は全128 Call/既知4一致・人工英語24/24/日本語28/30・誤支持0で通過。再開251 File不変/追加0を監査済み。session27879/63610は終了。全259 Artifact/意味監査を正規保存済み。固定c9bc924の回帰v2は54 Call/12 Criticalで誤支持6・8一致により不通過、他18条件未試行。session76888/74140は終了、再開85 File不変/追加0を監査・全92 Artifact保存済み。次はQwen3.5-9B v9の生成0資源/全128入力確認→人工6 Call形式検証→同じ日英意味診断。重み取得/Hash確認済み、まだ候補推論0。旧Runを再生成しない。
 
 更新日: 2026年10月21日。Phase 10実装・結果の基点Commitは `60c4eec`、
 Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
@@ -122,7 +122,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.37](rag_research_plan.md)・[実装計画8.39](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.38](rag_research_plan.md)・[実装計画8.40](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

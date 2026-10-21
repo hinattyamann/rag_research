@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.39 — 2026年10月21日 最終JSON境界の別制約と人工Runtime検証を追加
+## Version 8.40 — 2026年10月21日 最終JSON境界の別制約と人工Runtime検証を追加
 
-[研究計画 Version 7.37](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.38](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -40,6 +40,8 @@ Phase 7の入力検証CLIは引き続きCompletion 0回である。
 主Development用の採用/選定/Policy Guard・原子Call上限1660/言語・新規5 QA/段階Sessionと中断再開を実装し、全536 Test/Ruff成功。主結果前のHealth/意味採用/全Label封印基準も保存した。実設定/新規推論は既知15 QA回帰の通過後とし、まだ主実走を行っていない。
 
 v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日本語28/30/誤支持0を完了し、全259 Artifact/読解11行の問題・曖昧c6によるF6/7/再開追加0を保存した。旧Expected不変の既知15 QA回帰v2は、この新しい通過Reportへ前提を結んで事前検証済み。実GPU回帰はこれから。
+
+既知回帰v2は形式/Runtime失敗0でも12 Critical中8一致・誤支持6により不通過。54 Call/残18条件未試行・再開追加0を保存した。日英全品質/固定文Labelの封印後にだけ内部と比較する監査入出力を追加し全545 Test/Ruff成功。次の[Qwen3.5-9B候補v9](phase11_qwen35_candidate.md)は条件固定/重みHash確認までで未推論。
 
 ## 1. 既存実装と保存する境界
 

@@ -29,3 +29,12 @@ APIで各RepoのRevision・License・該当ファイルのByte数/LFS SHA256を�
 初回生成Model・原回答/全固定文/根拠・Expectedを保持し、Jointの元の改訂PromptでModel変更を先に切り分ける案を基本にする。
 実行可否を測り、既知Critical全一致・日英人工基準・旧既知回帰と新規Developmentを通した場合だけ後続の採用を検討する。
 Model変更だけでGate 11を通したり、新規Calibrationを先に使ったりしない。
+
+
+## 2026年10月21日 既知回帰の不通過後に進める候補
+
+8B v8は旧15 QA回帰で明確な誤支持6を残し不通過となった。
+次は[固定Qwen3.5-9B候補v9](phase11_qwen35_candidate.md)を選び、固定RevisionのArtifactを取得/全Hash照合した。
+この段階で生成/Runtime互換は未検証。初回の代替調査記録はMetadataだけの当時の記録として保持する。
+今回はJointへ戻す初期案より、v8の草稿なし読解/固定文方式を保った新Model/予算/Samplerを先に検証する。
+これは別候補の評価で、Modelだけの因果比較ではない。公式の長文脈/出力推奨より小さいローカル資源枠の限界を記録する。
