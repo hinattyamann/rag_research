@@ -17,7 +17,7 @@ from rag_research.evaluation.reasoned_json import (
 )
 from rag_research.evaluation.reasoning_budget import audit_reasoning_budget
 from rag_research.evaluation.schema import cited_verdict_schema, output_schema
-from rag_research.evaluation.sentence_claims import extract_sentence_units
+from rag_research.evaluation.sentence_claims import claim_unit_language, extract_sentence_units
 from rag_research.experiments.frozen_trace import digest, require
 from rag_research.experiments.protocol import build_messages
 from rag_research.experiments.storage import (
@@ -37,7 +37,9 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
                             "json_schema_source_spans_compact_v3",
                             "json_schema_verdicts_aligned_v4", "thinking_json_passage_ids_v1",
                             "thinking_json_passage_ids_v2"}, "Unknown output constraints")
-    sentence_mode = task == "extract_claims" and prompts.get("claim_units") == "verbatim-sentences-v1"
+    unit_mode = prompts.get("claim_units")
+    unit_language = claim_unit_language(unit_mode)
+    sentence_mode = task == "extract_claims" and unit_language is not None
     aligned = constraints == "json_schema_verdicts_aligned_v4"
     thinking = constraints in {"thinking_json_passage_ids_v1", "thinking_json_passage_ids_v2"}
     schema = (output_schema(task, payload, bounded=aligned or constraints.endswith(("bounded_v2", "compact_v3")),
@@ -49,7 +51,7 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
     request = {"binding": binding, "task": task, "messages": messages,
                "settings": asdict(config), "json_schema": schema}
     if sentence_mode:
-        request["claim_units"] = "verbatim-sentences-v1"
+        request["claim_units"] = unit_mode
     if thinking:
         request["output_parser"] = "closed_thinking_json_cited_passages_v1"
     request_hash = digest(request)
@@ -75,7 +77,7 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
               "audit_warnings": []}
     write_json(path, result)
     if sentence_mode:
-        units = extract_sentence_units(payload["answer"])
+        units = extract_sentence_units(payload["answer"], language=unit_language)
         result.update(parsed={"claims": units["claims"]}, unit_audit=units,
                       status="ok" if units["claims"] else "not_applicable",
                       input_tokens=0, output_tokens=0, extraction_kind="verbatim_sentence_units",

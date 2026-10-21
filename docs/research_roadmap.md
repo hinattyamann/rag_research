@@ -1,6 +1,6 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月21日。正本: [研究計画7.12](rag_research_plan.md)、[実装計画8.12](rag_implementation_plan.md)。
+更新日: 2026年10月21日。正本: [研究計画7.12](rag_research_plan.md)、[実装計画8.13](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
@@ -13,9 +13,12 @@
 比較する方針を採用した。[日英比較の拡張方針](english_japanese_expansion.md)に従い、
 選定・日本語対応・予備検証・両言語の条件固定をPhase 11へ追加する。
 同日のGoal実行で[日本語Sourceの選定・原QA取得・構造監査](japanese_dataset_selection.md)を実施した。
-Sourceは`baobab-trees/wikipedia-human-retrieval-ja`。本文Corpus・分割・実対応・予備検証と最終固定は未実施。
+Sourceは`baobab-trees/wikipedia-human-retrieval-ja`。本文Corpusは取得中、分割・全Pipeline・予備検証と最終固定は未完了。
 原QAの再取得/検証と歴史的な記事全文取得CLIを実装し、既知1記事でPreflightを確認した。
-全Corpusの取得・Passage化・Group分割は次の工程で、上記の未完了状態は維持する。
+全2178 Titleの取得をCommit `61b4a5c`の専用Checkoutで開始した。Passage化・Group分割はこれからである。
+独立して日本語の文単位候補を実装し、新規32 Testを含む全316 Test・Ruffに成功。
+旧英語抽出65件は不変で、[実装計画第11節](rag_implementation_plan.md)に定義とFの分母への影響を記録した。
+日本語の検索/Model実走、日英の意味監査・未使用Calibrationと最終固定は未完了で、Gate 11は通していない。
 翻訳対は主実験に使わず、別Dataset間の差を言語単独の因果効果と断定しない。
 
 基盤に加え、固定回答のClaim抽出、根拠順序/反復ごとの自己評価と採用/書換え要求の保存を実装した。

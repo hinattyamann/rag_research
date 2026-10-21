@@ -17,7 +17,8 @@ RAG内部評価の感度と、採用/一回書換えの判断・最終回答品�
 
 方針決定時点では文書化のみだった。同日のGoal実行で[候補比較・Source選定](japanese_dataset_selection.md)と
 固定版原QAの取得・構造監査を実施した。選定したのは`baobab-trees/wikipedia-human-retrieval-ja`。
-本文Corpus・分割・実対応・予備検証・条件凍結・本実験は未実施。JQaRAやJaQuADを採用したわけではない。
+本文Corpusは取得中。日本語文単位のComponentは実装・Test済みだが、分割・全Pipeline実走・
+予備検証・条件凍結・本実験は未完了。JQaRAやJaQuADを採用したわけではない。
 既存の英語Phase 1〜10の完了記録とCPU/GPU Runは保持し、日本語対応の完了へ読み替えない。
 
 ## 2. 比較から主張できる範囲
@@ -108,8 +109,8 @@ Phase 12の全対象実験やPhase 13の最終統計を前倒しで完了扱い�
 日英比較の準備を満たすまでPhase 12へ進まない。既存の英語用最終固定Validatorだけでは
 今回の追加要件を確認できないため、その検証処理の拡張もPhase 11の未実装事項である。
 
-現在は候補比較・Source選定・原QA取得・構造監査まで実施。本文Corpus・分割・日本語対応・
-新しい検証処理は未実施で、Gate 11は未通過。
+現在は候補比較・Source選定・原QA取得・構造監査を実施し、本文Corpus取得を開始した。
+日本語文単位の候補を実装・Testしたが、分割・全Pipeline・新しい最終検証処理は未完了で、Gate 11は未通過。
 旧Runの成功/不通過や固定Hashは当時の根拠として保持する。
 
 ## 7. Phase 11の実行計画（2026年10月21日12:57 JST開始）
@@ -148,6 +149,9 @@ Disk空き385GiB。既存のRaw/Processed/Index/Model/Runtime/Runは約7.5GiB。
 開始時の状態: 環境確認と工程計画を実施し、A以降は未実施だった。
 その後Aを実施し、日本語Sourceの固定版原QAを取得・構造監査した。
 引用断片を直接渡す方式へ変更せず、次はBの歴史的Revisionによる記事全文Corpusと文書Group分割を進める。
+記事全文取得はCommit `61b4a5c`の専用Checkoutで実行中。Cのうち日本語文単位候補を独立して実装し、
+合成例32 Testを含む全316 Test・Ruffと旧英語保存抽出65件の回帰を確認した。
+定義と引用/括弧をまとめる規則によるFの分母への影響は[実装計画第11節](rag_implementation_plan.md)に記録した。
 Source選定と残る差は[比較記録](japanese_dataset_selection.md)、Hashと開発予約は
-`data/manifests/phase11_japanese_source_selection.json`による。Bの完了・C〜Fはまだ達成していない。
+`data/manifests/phase11_japanese_source_selection.json`による。Bの完了・C全体〜Fはまだ達成していない。
 取得不能・候補不適合等があれば代替を調査し、依存しない作業を進めた上で必要な判断を説明する。

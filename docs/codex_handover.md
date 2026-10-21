@@ -9,10 +9,15 @@ Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 選定・取得・日本語対応・予備検証・両言語の条件固定をPhase 11で行う。
 同日のGoal実行で[候補比較と日本語Source選定](japanese_dataset_selection.md)を実施し、
 `baobab-trees/wikipedia-human-retrieval-ja`の固定版838回答付き/433回答なしQAを取得・構造監査した。
-次は全検索記録の記事全文Corpusと文書Group分割。実対応・予備検証・最終固定は未実施で、Gate 11は未通過。
+全検索記録の記事全文Corpusは取得中。文書Group分割・全Pipeline実走・予備検証・最終固定は未完了で、Gate 11は未通過。
 取得CLIは`scripts/prepare_japanese_corpus.py`、設定は`configs/phase11_japanese_corpus_v1.json`。
 再取得/取得履歴・Hashと現在版Fallback防止を実装し、既知1記事の本文取得を確認済み。
 実行手順と未達事項は[Source選定記録](japanese_dataset_selection.md)第5節を参照する。
+全2178 Titleの取得はCommit `61b4a5c`の専用Checkout
+`.tools/worktrees/phase11-japanese-corpus-v1`で実行している。取得中に当該CheckoutのCode/Configを変更しない。
+Raw保存先は同Checkout内の`data/raw/wikipedia_human_retrieval_ja/corpus-20231225-v1/`。
+Main側は日本語の固定文単位候補を追加し、全316 Test（ホスト4.62秒）・Ruff、旧英語保存抽出65件の一致を確認した。
+文単位だけのComponent検証であり、日本語検索・Model/品質実走・日英文単位の最終採用はこれから。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -29,7 +34,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.12](rag_research_plan.md)・[実装計画8.12](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.12](rag_research_plan.md)・[実装計画8.13](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

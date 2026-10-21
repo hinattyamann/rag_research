@@ -5,6 +5,7 @@ from pathlib import Path
 import yaml
 
 from rag_research.evaluation.claims import validate_claims
+from rag_research.evaluation.sentence_claims import claim_unit_language
 from rag_research.experiments.decisions import decide
 from rag_research.experiments.frozen_trace import require, validate_documents
 from rag_research.generation.auxiliary_config import AuxiliaryGenerationConfig
@@ -68,6 +69,7 @@ def load_protocol(path, *, split="development"):
     prompts = yaml.safe_load(prompt_path.read_text("utf-8"))
     require(prompts["schema_version"] == 1 and set(prompts["tasks"]) == set(FIELDS),
             "Unexpected prompt schema/tasks")
+    claim_unit_language(prompts.get("claim_units"))
     for task, fields in FIELDS.items():
         spec = prompts["tasks"][task]
         expected_fields = (["question", "claims", "documents"] if task == "verify_claims" and

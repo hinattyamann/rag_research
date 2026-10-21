@@ -1,6 +1,6 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.12 — 2026年10月21日 日本語Source選定と取得・分割契約を具体化
+## Version 8.13 — 2026年10月21日 日本語文単位の明示版・本文保持と英語回帰を追加
 
 [研究計画 Version 7.12](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
@@ -320,7 +320,7 @@ Judge108回・完全比較12問・Health Gate通過、全34固定文のAI意味�
 今回の20問を未使用へ戻さず、別の未使用20問を事前選定した。新候補の回帰診断と条件保存後に確認し、
 意味妥当性・分析規模と最終ManifestがそろうまでGate 11を通さず、Phase 12は開始しない。
 
-## 11. 日本語Dataset追加と日英比較への拡張（Phase 11、未実装）
+## 11. 日本語Dataset追加と日英比較への拡張（Phase 11、対応中）
 
 Sourceは[候補比較・構造監査](japanese_dataset_selection.md)により
 `baobab-trees/wikipedia-human-retrieval-ja`、Revision `02e85c83a64f345aee62fba3a35af99c075a331f`を選定した。
@@ -329,7 +329,8 @@ Sourceは[候補比較・構造監査](japanese_dataset_selection.md)により
 複数の引用記事を持つQAは連結Groupとして分割し、Redirect/別名も確認する。
 プレビュー閲覧の保守的な開発予約は先頭100件と同Group（初期132 QA）。最終分割は未実施。
 選定Manifestは`data/manifests/phase11_japanese_source_selection.json`。
-以下のPipeline・Validatorは未実装で、原QA取得を日本語の対応完了とは扱わない。
+以下の対応対象のうち、Source検証・記事取得処理・日本語文単位を実装した。
+全Pipeline・Validatorは未完了で、原QA取得や個別ComponentのTestを日本語対応の完了とは扱わない。
 
 既存の固定Trace・順序操作・同一順序反復・共通書換え・匿名品質採点を再利用する。
 英語の旧Run/Source/Split/Manifestは保持し、日本語Sourceと共通処理の変更を別Versionへ保存する。
@@ -380,3 +381,30 @@ HTMLは実行せず本文へ変換し、見出し・段落・箇条書き・表�
 `phase11_japanese_acquisition_preflight.json`にHashと確認範囲を記録した。
 全284 Tests（ホスト4.39秒）とRuffに成功。制限環境での既存Socket Test1件の失敗は環境制約として別記録とする。
 全文Corpusの全記事取得・Passage化・Group分割・検索・日本語推論Pipelineと最終Validatorはまだ完了していない。
+
+### 日本語の固定文単位候補（2026年10月21日13:44 JST）
+
+`claim_units: verbatim-sentences-ja-v1`を明示したときだけ日本語用処理を使い、
+`unit_version: verbatim-sentence-units-ja-v1`を保存する。言語の自動推定は行わない。
+旧英語`verbatim-sentences-v1`と既定の関数出力はそのまま保持し、設定名不明は実行前に拒否する。
+モード名をTaskの入力Hashへ含め、異なる文単位の保存結果を再利用しない。文抽出のModel呼出しは0。
+
+- 旧英語と同じ既知の数値/Passage引用記号だけを除き、空白を正規化する。未知の角括弧内本文は残す。
+- `。！？!?`を空白の有無によらず境界とする。連続句読点はまとめる。小数の`.`は切らず、
+  空白を伴う英文の終止`.`は既知の略語/Initialを除いて境界にする。HTTP/HTTPS URL内では切らない。
+- `「」『』（）`、対応する括弧・曲線引用符と二重引用符の内側は複合単位として保持する。
+  閉じていない括弧は残りをまとめて保持し、未閉鎖の記号を監査情報へ保存する。
+- 正規化本文の連続Spanが全文を重複・欠落なく覆うことを検査する。日本語の境界に空白を挿入せず、
+  Spanの部分文字列をそのまま連結して本文を再構成する。各ClaimはSpan両端の空白だけを除いたもの。
+- 定型拒否「提示された根拠には、この質問に答えるための十分な情報がありません」（句点は任意）と
+  既知の英語拒否の単独回答だけを除く。拒否と事実本文の混在や曖昧な拒否は本文として残す。
+
+日英とも固定の原文単位であり原子的事実分解ではない。ただし、日本語候補の引用/括弧内を保守的に
+まとめる規則は旧英語の境界規則と完全には同じでない。複合単位は全詳細の支持を必要とし、
+単位数とFの分母に影響する。これは本実験採用済みの条件ではなく、Developmentで分割の妥当性と
+日英の単位数・複合性を監査する。共通規則へ追加変更する場合も旧英語Runを上書きせず別版で検証する。
+
+合成例のみの新規32 Test、全316 Test成功（ホスト4.62秒）、Ruff成功。
+既存英語の保存抽出65件と合成7例は変更前Commitの抽出結果と一致し、既存Run2500ファイルのHashは不変。
+`data/manifests/phase11_japanese_sentence_component.json`に確認根拠を保存する。
+日本語Model実走・検索・意味上の支持判定・未使用Calibration・日英文単位の最終採用は未完了である。

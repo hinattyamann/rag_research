@@ -4,7 +4,7 @@
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.12](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.13](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -25,7 +25,8 @@ on English and Japanese Datasets
 検索Corpusを持つ日本語データをPhase 11で選定する。
 同日、[候補比較と原QA構造監査](japanese_dataset_selection.md)により
 `baobab-trees/wikipedia-human-retrieval-ja`を選定し、固定版の回答付き838件・回答なし433件を取得した。
-記事全文Corpus・文書Group分割・実対応・予備検証は未実施であり、Source選定を本実験条件の固定とはしない。
+記事全文Corpusは固定Commitの専用Checkoutで取得中。日本語の文単位候補と本文保持のTestを追加したが、
+文書Group分割・検索/Model実走・予備検証は未完了であり、Source選定やComponent実装を条件固定とはしない。
 選定基準・比較上の制約・工程は[日英比較の拡張方針](english_japanese_expansion.md)による。
 別Dataset間の比較なので、観測する差を言語そのものの因果効果とは断定しない。
 

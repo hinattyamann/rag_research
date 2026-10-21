@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-japanese-sentence-component-not-bilingual-readiness",
+  "recorded_at_utc": "2026-10-21T04:46:35.715991+00:00",
+  "base_commit": "61b4a5ce058151a8e7ae68a1a7a8740d82f0dea1",
+  "claim_units": "verbatim-sentences-ja-v1",
+  "unit_version": "verbatim-sentence-units-ja-v1",
+  "source_files": {
+    "src/rag_research/evaluation/sentence_claims.py": "a0a3715ab7f1c3b0b8d7766e779c716efc133822a20c524bab1ca8e09d47a0a5",
+    "src/rag_research/evaluation/tasks.py": "7559d3b975371169f36f55d0b3a795f08bfe0270073501491d84fab24abae4b7",
+    "src/rag_research/experiments/protocol.py": "8ac03621de7f9e697d6b7462f5f666bad2434478b1a1477f62c9fc8da93cfdc6",
+    "tests/test_japanese_sentence_units.py": "6b401205e63fc63859911e58fff99d54b68e2aa752605d6f0c0bb0f62460d375"
+  },
+  "artifacts": {
+    "data/runs/dataset_screening/phase11-ja-source-v1/sentence_units_v1/english_regression.json": "71e4c1d09cf2567282596f49ed66ad0ee19aa861d2c8628090a6db14daaa60af",
+    "data/runs/dataset_screening/phase11-ja-source-v1/sentence_units_v1/pytest.xml": "028396e114262ed3ba70949bae2ce42f6fb283a32d0dc8122458d74afb7ff89f",
+    "data/runs/dataset_screening/phase11-ja-source-v1/sentence_units_v1/replay_english.py": "cded359d14711a0cfb66be76ae597460c42af6b25c6fd2a78d30a133f843cbf6",
+    "data/runs/dataset_screening/phase11-ja-source-v1/sentence_units_v1/ruff.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "tests": {
+    "pytest": {
+      "passed": 316,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suite_seconds": 4.603,
+      "environment": "host_socket_enabled"
+    },
+    "ruff": "passed",
+    "new_synthetic_boundary_and_integration_tests": 32
+  },
+  "english_regression": {
+    "baseline_commit": "61b4a5ce058151a8e7ae68a1a7a8740d82f0dea1",
+    "saved_extraction_outputs_equal": 65,
+    "synthetic_outputs_equal": 7,
+    "protected_existing_run_files_unchanged": 2500
+  },
+  "new_model_calls": 0,
+  "unseen_evaluation_used_for_tuning": false,
+  "limitations": [
+    "Synthetic Japanese boundary and checkpoint checks only; no Japanese retrieval/model/quality run yet.",
+    "Japanese quoted/bracketed compound units differ from legacy English boundaries; denominator comparability needs development audit before final adoption.",
+    "Japanese corpus acquisition, group split, bilingual calibration and final validator are incomplete."
+  ],
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
