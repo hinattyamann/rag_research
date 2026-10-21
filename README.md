@@ -35,6 +35,7 @@ v14の事前Gateは引用ID重複1件で不通過として保持し、後処理�
 - [実装計画 Version 8.18](docs/rag_implementation_plan.md)
 - [多言語検索候補・本文Passage分割の実装と確認](docs/phase11_multilingual_retrieval.md)
 - [日本語共通Corpusの全文保持Passage化・参照粒度と残る工程](docs/phase11_japanese_corpus.md)
+- [日英全CorpusのCUDA Embedding Indexと全件検証](docs/phase11_bilingual_indexes.md)
 - [多言語EmbeddingのCUDA入口・専用uv環境と実機監査](docs/phase11_embedding_cuda.md)
 - [Corpus本文欠測・英語分割と親参照保持の監査](docs/phase11_corpus_preparation.md)
 - [日本語Datasetの選定基準・日英比較・Phase 11〜14の拡張方針](docs/english_japanese_expansion.md)

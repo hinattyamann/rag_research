@@ -31,6 +31,9 @@ QA AdapterとGroup分割処理を追加し、実838件で原行Hash・引用/人
 全380 Test/Ruff成功。全Corpusの新Index・日英RAG/意味監査・未使用Calibrationと最終Gateは未完了。
 [日本語全CorpusのPassage化](phase11_japanese_corpus.md)を完了し、2118記事・30065 Passageの全本文/Span/Hash/Tokenを独立検証した。
 全392 Test/Ruff成功。原QA/Splitは保持し、親記事/引用/人手要約と欠測のQA対応は未完了。英語新CUDA Indexは固定Checkoutで構築中。
+その後、[日英全CorpusのEmbedding Index](phase11_bilingual_indexes.md)を同じ固定Commit/GPU条件で構築・全件検証した。
+英語183889/日本語30065 Vector・全ID/Offset/親対応、正規配置への同一Byte複製と再開追加0を確認。
+新BM25/Hybrid、QA参照対応、日英RAG/意味監査と未使用Calibrationは未完了。
 翻訳対は主実験に使わず、別Dataset間の差を言語単独の因果効果と断定しない。
 
 基盤に加え、固定回答のClaim抽出、根拠順序/反復ごとの自己評価と採用/書換え要求の保存を実装した。

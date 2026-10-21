@@ -340,3 +340,7 @@ CPU既定・旧条件/Runは保持し、全Corpus Indexと日英RAG/Calibration�
 元本文22341944文字・全子のSpan/Hash/実Token上限・全Raw6494ファイルの保持を独立確認した。
 QA/Referenceは入力にせず、全838 QAと元Splitは保持した。日本語の記事親と英語の元Passage親は粒度が異なり、
 各子の完全な支持を仮定しない。Corpus規模などのDataset差も報告する。QAとの親記事/引用/人手要約と欠測の対応は次工程。
+
+その後、同じ固定Commit・専用uv Lock・GPU条件で日英の全Corpus Embedding Indexを構築し、
+全Vector・ID/Offset/元親対応と再開追加0を確認した。[全件Index記録](phase11_bilingual_indexes.md)による。
+これは検索基盤の動作/完全性の確認であり、QAの検索精度・日英RAG品質/意味妥当性・Calibrationの完了ではない。

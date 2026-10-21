@@ -30,7 +30,7 @@ Main側は日本語の固定文単位候補を追加し、全316 Test（ホス�
 全365 Test/Ruff成功。[Corpus準備の記録](phase11_corpus_preparation.md)に欠測規則・親参照・GPU Probeと次工程を保存した。
 日本語の削除過去本文はDataset Config v2で保存応答/Identityを検証し、原エラーのまま本文欠測を別記録する。
 GPU Probeを正式化し、`environments/embedding_gpu`のuv定義/LockとE5 Encoder/CLIの明示CUDA入口を追加した。
-全380 Test/Ruff、実CUDA数値/演算と既知1記事の構築/検索確認済み。手順は[CUDA監査](phase11_embedding_cuda.md)。英語の全Corpus IndexはCommit ded26faの固定Checkoutで構築中。
+全380 Test/Ruff、実CUDA数値/演算と既知1記事の構築/検索確認済み。手順は[CUDA監査](phase11_embedding_cuda.md)。
 日本語の全2178 Titleは本文成功2126（2118種類のPage）・取得不能50・削除本文エラー2で終了した。
 正式QA/Groupは`data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/`、開発545/Calibration84/Evaluation209。
 706 Group・Group間Identity重複0、開発予約142 QAは全てDevelopment。原質問/Reference/行Hashを保持した。
@@ -40,7 +40,11 @@ Source/取得RawはMain側`data/raw/wikipedia_human_retrieval_ja/`にも複製�
 全2118記事→30065 Passage・最大501 Token、元本文22341944文字と全Span/Hashを独立検証した。全392 Test/Ruff成功。
 手順と限界は[日本語Corpus記録](phase11_japanese_corpus.md)。QA側Goldは`pending_passage_build`のままで、引用/要約/欠測対応が次工程。
 英語Indexの実行計画/ログは`data/runs/index_build/phase11-en-e5-cuda-v1/`、固定Checkoutは`.tools/worktrees/phase11-multilingual-index-v1`。
-実行中のCheckoutのCode/Configは編集しない。元QA/Splitは保持、最終採用件数は未決。
+英語/日本語の全Corpus Embedding Indexは同Commitで構築・全件検証済み。両構築プロセスは正常終了している。
+正規配置は`data/indexes/clapnq/c508d78-e5-cuda-v1/embedding/`と
+`data/indexes/wikipedia_human_retrieval_ja/02e85c8-e5-cuda-v1/embedding/`。元Checkoutの原本も保持した。
+全Vector/ID/Offset/親参照・同一Byte複製、実GPUでの再開追加0/合成検索を確認。[全件Index記録](phase11_bilingual_indexes.md)を参照。
+新BM25/HybridとQA参照対応・RAG接続が次工程。元QA/Splitは保持、最終採用件数は未決。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。

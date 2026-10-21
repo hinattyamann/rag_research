@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-bilingual-complete-cuda-embedding-index-integrity-not-final-freeze",
+  "recorded_at_utc": "2026-10-21T07:04:23.859833+00:00",
+  "fixed_commit": "ded26fa76f076e502b406296c466ceaa46f5da96",
+  "fixed_source_sha256": {
+    "scripts/build_retrieval_index.py": "abfa30ea0e03c376261f4bd3a8ef5463907eef89d12f339778216cb0885a8d4d",
+    "src/rag_research/retrieval/multilingual.py": "f7f104c07c4c45826a783b22b35735a8ae61b1d7073f2b89aaa8eb3473c63c35",
+    "src/rag_research/retrieval/dense.py": "9f2a6588ca129fe1d522d09c3d3c7bcef6a5950509d22527675846b1d692ade7",
+    "src/rag_research/retrieval/common.py": "e54d7e1afc9745822ed574245ea630bbb6bd3224497ba3857baa9fb99408e2b4",
+    "configs/phase11_multilingual_embedding_v1.json": "e07b0ddd45d1ff3288b1644c16886f450ff317f051c96bc570c7805eb4d65fb5",
+    "environments/embedding_gpu/pyproject.toml": "b7947c6874debd7da804d9cdd0e724641e5c1761ccfa8f6c24690fd9e6b6e004",
+    "environments/embedding_gpu/uv.lock": "2df57fadfe7537c4d6b5c87c239949b0aa46763f00a96d590be6945321804126"
+  },
+  "preparation_manifests_sha256": {
+    "data/manifests/phase11_multilingual_cuda_encoder_manifest.json": "97f8787175bf794e67bd1c22d97745bdb1a64bdd5c6bc4950622ec9faa300b21",
+    "data/manifests/phase11_corpus_preparation_manifest.json": "1776d4f767cfa3515248dbb5ab609390b4678412ac00891c8c18c687e56eea71",
+    "data/manifests/phase11_japanese_token_corpus_manifest.json": "9f94782af181b89dfb9104bc32829c12b189a4049d15db0cd7be2767332f4f2d",
+    "data/manifests/phase11_japanese_snapshot_group_manifest.json": "824a7891ab2c5886c22d45302ae72c98386c2e10a67f643d24e65a7ac36fc032"
+  },
+  "artifacts": {
+    "data/runs/index_build/verify_complete.py": {
+      "sha256": "d5f4efdfd69c7865d01780372b5129ee88fa107b191aefa124f2053123ba3254",
+      "bytes": 4141
+    },
+    "data/runs/index_build/verify_resume.py": {
+      "sha256": "52010fbd60d927ab949a644f51de4bca47fb8fae53f53abd54d70233ab442a42",
+      "bytes": 2446
+    },
+    "data/indexes/clapnq/c508d78-e5-cuda-v1/embedding/passage_ids.json": {
+      "sha256": "b749edc1284eeea75217f1f90a03e2b72b05b1f66cc6c62f8cbf944695fd57a6",
+      "bytes": 4424668
+    },
+    "data/indexes/clapnq/c508d78-e5-cuda-v1/embedding/build_measurements.json": {
+      "sha256": "3ebe7a79977a690e09394bbf371a351cd1d35c461a868a88de91dca6af70d5a0",
+      "bytes": 145
+    },
+    "data/indexes/clapnq/c508d78-e5-cuda-v1/embedding/vectors.npy": {
+      "sha256": "f71c0bc8869922cc502ed29a69239b1c84a2a45bf145073424f9922fd888f703",
+      "bytes": 282453632
+    },
+    "data/indexes/clapnq/c508d78-e5-cuda-v1/embedding/manifest.json": {
+      "sha256": "944f31f62139e670ab150b571d2067a95b4bd19a2d067c3980451762d38036e8",
+      "bytes": 3152
+    },
+    "data/indexes/clapnq/c508d78-e5-cuda-v1/embedding/offsets.npy": {
+      "sha256": "0b0fcdb7347957ac938d1ae2cf93d541761646e7d79341e2ae67bab73e4aab1a",
+      "bytes": 1471240
+    },
+    "data/runs/index_build/phase11-en-e5-cuda-v1/execution_plan.json": {
+      "sha256": "6f9f3948c0d7fc0f6b013fd09b19e16bb02274fabc1aa6bd839154b9b8607dfb",
+      "bytes": 2438
+    },
+    "data/runs/index_build/phase11-en-e5-cuda-v1/integrity_verification.json": {
+      "sha256": "ed0a7b0d53e220c56092774ac74f85e4bbcf70a019b1997aef3897b07aa72e31",
+      "bytes": 1136
+    },
+    "data/runs/index_build/phase11-en-e5-cuda-v1/resume_verification.json": {
+      "sha256": "552e5d6142a70eeb475a79ffec62987b21cced7d4e2453de5b6796dfc2983d90",
+      "bytes": 494
+    },
+    "data/runs/index_build/phase11-en-e5-cuda-v1/embedding.log": {
+      "sha256": "3256542dcf6797c8cafe83c6667724d84b3cd46dd813f0c2f00181a932b70c31",
+      "bytes": 2385
+    },
+    "data/runs/index_build/phase11-en-e5-cuda-v1/hardware-before.csv": {
+      "sha256": "5f0458cd6efb851f750e63185181fa34d6e7aea8f0ca9e45f8d3aacc3e1dce63",
+      "bytes": 104
+    },
+    "data/indexes/wikipedia_human_retrieval_ja/02e85c8-e5-cuda-v1/embedding/passage_ids.json": {
+      "sha256": "72f52a938273a646b961a50967436b3d1a3dd2aede87e6e318c5a59c50329b72",
+      "bytes": 1274582
+    },
+    "data/indexes/wikipedia_human_retrieval_ja/02e85c8-e5-cuda-v1/embedding/build_measurements.json": {
+      "sha256": "8d188e9a3d9792e8aa2b0f509f9a25a13756fb7753dc9aaec69d32cafa2fa275",
+      "bytes": 150
+    },
+    "data/indexes/wikipedia_human_retrieval_ja/02e85c8-e5-cuda-v1/embedding/vectors.npy": {
+      "sha256": "aceb9c362a7e15219cb83c153bfdee7a240ffeacff7a2604c40493e5eb837bb9",
+      "bytes": 46179968
+    },
+    "data/indexes/wikipedia_human_retrieval_ja/02e85c8-e5-cuda-v1/embedding/manifest.json": {
+      "sha256": "793bc231e751a60b7c7fc82db853bf699184e6c9fcca0e73c33ab1b6babbf51b",
+      "bytes": 3209
+    },
+    "data/indexes/wikipedia_human_retrieval_ja/02e85c8-e5-cuda-v1/embedding/offsets.npy": {
+      "sha256": "a966d9a751faac4db57d33c30396338ce8970e2e73db6c833367b9a9b0ff0def",
+      "bytes": 240648
+    },
+    "data/runs/index_build/phase11-ja-e5-cuda-v1/execution_plan.json": {
+      "sha256": "d4c3010d08ec5819b1ad489d12e6eb7c97287fcc28bf451c611bbc77dfb43f3f",
+      "bytes": 2754
+    },
+    "data/runs/index_build/phase11-ja-e5-cuda-v1/integrity_verification.json": {
+      "sha256": "7c33aab25052a9b52699bbe2c31869a76edccc936b01e47518bf20e1b5cca19c",
+      "bytes": 1184
+    },
+    "data/runs/index_build/phase11-ja-e5-cuda-v1/resume_verification.json": {
+      "sha256": "7acc0de6f13e310e8aad2db7298df3a701c140bdcbb45e5cf623f7147c91103a",
+      "bytes": 570
+    },
+    "data/runs/index_build/phase11-ja-e5-cuda-v1/embedding.log": {
+      "sha256": "0b5b99aaef002b5194a2a0efcecb1bdaf8feab3f6872e19477d717c5c99b25a7",
+      "bytes": 1241
+    },
+    "data/runs/index_build/phase11-ja-e5-cuda-v1/hardware-before.csv": {
+      "sha256": "5922d29e10c013e8ac8bc4477067694034d9c08d7e508f83467a6b32dca379e1",
+      "bytes": 104
+    }
+  },
+  "results": {
+    "en": {
+      "plan_sha256": "6f9f3948c0d7fc0f6b013fd09b19e16bb02274fabc1aa6bd839154b9b8607dfb",
+      "integrity": {
+        "actual_resume_test_status": "pending_same_runtime_encoder_test",
+        "all_children_have_unchanged_source_parent_mapping": true,
+        "all_corpus_ids_and_offsets_match": true,
+        "all_vector_values_finite_and_l2": true,
+        "build_measurements": {
+          "resumed_from_row": 0,
+          "rss_sample_interval_seconds": 0.1,
+          "sampled_peak_rss_bytes": 1582141440,
+          "truncated_passages": 0,
+          "wall_seconds": 633.528751848
+        },
+        "canonical_copy_files_byte_verified": 5,
+        "canonical_index": "/home/uchida/デスクトップ/code/rag_research/data/indexes/clapnq/c508d78-e5-cuda-v1/embedding",
+        "corpus_record_count": 183889,
+        "fixed_commit": "ded26fa76f076e502b406296c466ceaa46f5da96",
+        "gate11_passed": false,
+        "generative_model_calls": 0,
+        "manifest_sha256": "944f31f62139e670ab150b571d2067a95b4bd19a2d067c3980451762d38036e8",
+        "phase12_allowed": false,
+        "purpose": "full-index-independent-integrity-and-canonical-copy-verification",
+        "qa_or_reference_inputs_used": false,
+        "recorded_at_utc": "2026-10-21T06:59:18.175072+00:00",
+        "retrieval_quality_validated": false,
+        "source_index": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-multilingual-index-v1/data/indexes/clapnq/c508d78-e5-cuda-v1/embedding"
+      },
+      "resume": {
+        "gate11_passed": false,
+        "generative_model_calls": 0,
+        "hit_ids": [
+          "856893037_46503-46804",
+          "860983841_13379-14792",
+          "854021684_14417-14887",
+          "860983841_14808-15826",
+          "812590740_19356-19553"
+        ],
+        "index_files_unchanged": 5,
+        "index_record_count": 183889,
+        "phase12_allowed": false,
+        "purpose": "completed-index-same-runtime-resume-and-synthetic-query-preflight",
+        "qa_or_reference_used": false,
+        "resume_embedding_batches": 0,
+        "retrieval_quality_evaluated": false,
+        "synthetic_query_embedding_batches": 1,
+        "truncated_passages": 0
+      }
+    },
+    "ja": {
+      "plan_sha256": "d4c3010d08ec5819b1ad489d12e6eb7c97287fcc28bf451c611bbc77dfb43f3f",
+      "integrity": {
+        "actual_resume_test_status": "pending_same_runtime_encoder_test",
+        "all_children_have_unchanged_source_parent_mapping": true,
+        "all_corpus_ids_and_offsets_match": true,
+        "all_vector_values_finite_and_l2": true,
+        "build_measurements": {
+          "resumed_from_row": 0,
+          "rss_sample_interval_seconds": 0.1,
+          "sampled_peak_rss_bytes": 1319391232,
+          "truncated_passages": 0,
+          "wall_seconds": 168.23288533199957
+        },
+        "canonical_copy_files_byte_verified": 5,
+        "canonical_index": "/home/uchida/デスクトップ/code/rag_research/data/indexes/wikipedia_human_retrieval_ja/02e85c8-e5-cuda-v1/embedding",
+        "corpus_record_count": 30065,
+        "fixed_commit": "ded26fa76f076e502b406296c466ceaa46f5da96",
+        "gate11_passed": false,
+        "generative_model_calls": 0,
+        "manifest_sha256": "793bc231e751a60b7c7fc82db853bf699184e6c9fcca0e73c33ab1b6babbf51b",
+        "phase12_allowed": false,
+        "purpose": "full-index-independent-integrity-and-canonical-copy-verification",
+        "qa_or_reference_inputs_used": false,
+        "recorded_at_utc": "2026-10-21T07:01:36.911080+00:00",
+        "retrieval_quality_validated": false,
+        "source_index": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-multilingual-index-v1/data/indexes/wikipedia_human_retrieval_ja/02e85c8-e5-cuda-v1/embedding"
+      },
+      "resume": {
+        "gate11_passed": false,
+        "generative_model_calls": 0,
+        "hit_ids": [
+          "997398409339357156463674239_787-1506",
+          "66906751987468895165627373216_2276-2952",
+          "997398409339357156463674239_0-787",
+          "997398409339357156463674239_4598-5360",
+          "997398409339357156463674239_7006-7828"
+        ],
+        "index_files_unchanged": 5,
+        "index_record_count": 30065,
+        "phase12_allowed": false,
+        "purpose": "completed-index-same-runtime-resume-and-synthetic-query-preflight",
+        "qa_or_reference_used": false,
+        "resume_embedding_batches": 0,
+        "retrieval_quality_evaluated": false,
+        "synthetic_query_embedding_batches": 1,
+        "truncated_passages": 0
+      }
+    }
+  },
+  "old_run_files_unchanged": 2500,
+  "old_english_index_files_unchanged": 23,
+  "generative_model_calls": 0,
+  "qa_or_reference_inputs_used": false,
+  "retrieval_quality_validated": false,
+  "japanese_qa_gold_mapping_complete": false,
+  "full_multilingual_bm25_built": false,
+  "tests_reference": {
+    "pytest_passed": 392,
+    "host_seconds": 5.03,
+    "ruff": "passed",
+    "new_tests_run_for_result_only_unit": false
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

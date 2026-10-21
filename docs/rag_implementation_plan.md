@@ -500,3 +500,7 @@ Provider/Options/実Session/Runtime版をIndex Configへ含め、異なる条件
 全保存子のSpan/Hash/実Tokenと全親本文再構成・Raw6494ファイル不変を別Scriptで確認した。
 新規12 Testを含む全392 Test/Ruff成功。根拠は`phase11_japanese_token_corpus_manifest.json`。
 QAのGold対応は未実装で、原QAの空Gold/保留状態と新Corpusの`pending_qa_parent_and_quote_audit`を維持する。
+
+日英全CorpusのEmbedding IndexはCommit ded26faの固定Checkout・同CUDA/Batch16/専用Lockで構築済み。
+英語183889/日本語30065の全Vector・Corpus ID/Offset・親対応、正規配置のByte/Hash、再開追加0/合成検索を確認。
+根拠は`phase11_bilingual_dense_index_manifest.json`。新BM25/Hybrid・QA対応・日英RAG実走は未了。
