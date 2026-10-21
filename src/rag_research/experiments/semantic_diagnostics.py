@@ -52,7 +52,7 @@ def load_config(path):
     cases = plan["cases"]
     mode = config.get("verification_mode", "joint")
     require(plan.get("verification_mode", "joint") == mode, "Diagnostic plan verification mode differs")
-    expected_budget = 2 * sum(len(c["claims"]) if mode == "claimwise-v1" else 1 for c in cases)
+    expected_budget = 2 * sum((len(c["claims"]) + (mode == "source-reading-v1")) if mode != "joint" else 1 for c in cases)
     require(cases and len({c["id"] for c in cases}) == len(cases) and
             plan["max_completion_attempts"] == expected_budget, "Invalid case IDs/call budget")
     require(any(c["critical_claim_ids"] for c in cases) and
@@ -169,7 +169,8 @@ def run(config_path, output):
                                 {"question": case["question"], "answer": case["answer"],
                                  "claims": case["claims"], "documents": documents}, tasks / (key + ".json"),
                                 {"manifest_sha256": digest(manifest), "case_id": case["id"], "order": order},
-                                constraints=config["output_constraints"], mode=mode)
+                                constraints=config["output_constraints"], mode=mode,
+                                reader_generation=task_config(config, "read_sources") if mode == "source-reading-v1" else None)
 
         # A final child may be durable even if the aggregate replacement was interrupted.
         for case, order, key in selected:

@@ -73,8 +73,13 @@ def diagnostic(tmp_path, monkeypatch):
         def complete(self, tokens, config, **kwargs):
             state["calls"].append(deepcopy(self.messages))
             payload = json.loads(self.messages[1]["content"].removeprefix("Input JSON:\n"))
+            if state.get("source_reading") and set(payload) == {"question", "documents"}:
+                assert "EXPECTED-SECRET" not in json.dumps(self.messages)
+                return {"content": json.dumps({"readings": [{"passage_id": d["passage_id"], "actor": "A",
+                    "action": "is true", "quote": d["text"]} for d in payload["documents"]]}),
+                    "tokens": [1], "stop_type": "eos", "truncated": False}
             assert set(payload) == ({"question", "answer", "claims", "documents"} if state["allow_answer_context"] else
-                                    {"question", "claims", "documents"})
+                                    {"question", "claims", "documents"}) | ({"source_reading"} if state.get("source_reading") else set())
             if state["allow_answer_context"]:
                 assert payload["answer"] in {"A is false.", "A is true."}
             if state["runtime_error"]:
@@ -231,3 +236,28 @@ def test_claimwise_diagnostic_uses_real_child_tasks_and_cached_resume(diagnostic
     assert len(list((output / "tasks").glob("*.claims/*.json"))) == 6
     assert module.run(path, output) == report
     assert len(state["calls"]) == 6 and state["servers"] == (2 if partial else 1)
+
+
+def test_source_reading_diagnostic_counts_both_stages_and_resumes_without_calls(diagnostic):
+    path, output, state = diagnostic
+    config = yaml.safe_load(path.read_text())
+    config["verification_mode"] = "source-reading-v1"
+    config["tasks"]["read_sources"] = {"max_output_tokens": 512}
+    path.write_text(yaml.safe_dump(config))
+    plan_path = path.parent / "plan.json"
+    plan = read_json(plan_path)
+    plan.update(verification_mode="source-reading-v1", max_completion_attempts=12)
+    write_json(plan_path, plan)
+    for name in config["prompts"].values():
+        p = path.parent / name
+        prompt = yaml.safe_load(p.read_text())
+        prompt.pop("judge_payload")
+        prompt["source_reading_auxiliary"] = "untrusted_reading_v1"
+        prompt["tasks"]["verify_claims"]["input_fields"] = ["question", "answer", "claims", "documents", "source_reading"]
+        prompt["tasks"]["read_sources"] = {"input_fields": ["question", "documents"], "system": "Read fixture."}
+        p.write_text(yaml.safe_dump(prompt))
+    state.update(allow_answer_context=True, source_reading=True)
+    report = module.run(path, output)
+    assert report["diagnostic_gate_passed"] and report["completion_attempts_recorded"] == 12
+    assert len(list((output / "tasks").glob("*.reading.json"))) == 6
+    assert module.run(path, output) == report and len(state["calls"]) == 12 and state["servers"] == 1

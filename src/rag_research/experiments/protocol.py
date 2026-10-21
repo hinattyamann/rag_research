@@ -15,7 +15,8 @@ from rag_research.generation.context import literal_json
 ROOT = Path(__file__).resolve().parents[3]
 FIELDS = {"extract_claims": ["answer"],
           "verify_claims": ["question", "answer", "claims", "documents"],
-          "rewrite_answer": ["question", "answer", "documents"]}
+          "rewrite_answer": ["question", "answer", "documents"],
+          "read_sources": ["question", "documents"]}
 
 
 def load_protocol(path, *, split="development"):
@@ -48,7 +49,7 @@ def validate_task_contract(config, prompts):
     """Shared comparison/model-input constraints, independent of dataset paths and stage."""
     trials = config["trials"]
     mode = config.get("verification_mode", "joint")
-    require(mode in {"joint", "claimwise-v1"}, "Unknown verification mode")
+    require(mode in {"joint", "claimwise-v1", "source-reading-v1"}, "Unknown verification mode")
     require(mode == "joint" or (config["purpose"].startswith("phase11-bilingual-") and
             prompts.get("judge_payload") is None), "Claimwise candidate needs fixed full answer context")
     for field in ("repeated_prompt_result_cache", "regenerate_claims_per_trial",
@@ -82,18 +83,25 @@ def validate_task_contract(config, prompts):
                 "json_schema_source_spans_compact_v3", "json_schema_verdicts_aligned_v4",
                 "thinking_json_passage_ids_v1", "thinking_json_passage_ids_v2"},
             "Unsupported output constraints")
-    require(prompts["schema_version"] == 1 and set(prompts["tasks"]) == set(FIELDS),
+    tasks = set(FIELDS) if mode == "source-reading-v1" else set(FIELDS) - {"read_sources"}
+    require(prompts["schema_version"] == 1 and set(prompts["tasks"]) == tasks,
             "Unexpected prompt schema/tasks")
+    require((prompts.get("source_reading_auxiliary") == "untrusted_reading_v1") == (mode == "source-reading-v1"),
+            "Source reading requires its explicit candidate mode")
     claim_unit_language(prompts.get("claim_units"))
     for task, fields in FIELDS.items():
+        if task not in tasks:
+            continue
         spec = prompts["tasks"][task]
         expected_fields = (["question", "claims", "documents"] if task == "verify_claims" and
                            prompts.get("judge_payload") == "fixed_claims_only" else fields)
+        if task == "verify_claims" and mode == "source-reading-v1":
+            expected_fields = fields + ["source_reading"]
         require(spec["input_fields"] == expected_fields, "Unexpected model input fields")
         require(isinstance(spec["system"], str) and bool(spec["system"].strip()), "Empty system")
         task_config(config, task)
     require(prompts.get("judge_layout") in {None, "premise_then_claims", "draft_sources_target"}, "Unknown Judge input layout")
-    require(prompts.get("judge_layout") != "draft_sources_target" or mode == "claimwise-v1",
+    require(prompts.get("judge_layout") != "draft_sources_target" or mode in {"claimwise-v1", "source-reading-v1"},
             "Draft/source/target layout is limited to the claimwise candidate")
     require(prompts.get("judge_payload") in {None, "fixed_claims_only"}, "Unknown Judge payload")
     require(prompts.get("judge_checks") in {None, "conflict_then_complete_v1"}, "Unknown Judge checks")
@@ -112,19 +120,28 @@ def task_config(config, task):
 
 
 def build_messages(prompts, task, payload):
-    require(task in FIELDS and set(payload) == set(FIELDS[task]),
+    fields = FIELDS.get(task, [])
+    reading = task == "verify_claims" and prompts.get("source_reading_auxiliary") == "untrusted_reading_v1"
+    require(task in FIELDS and set(payload) == set(fields + (["source_reading"] if reading else [])),
             "Missing or forbidden model input field")
-    require(isinstance(payload["answer"], str), "Answer must be text")
+    if "answer" in payload:
+        require(isinstance(payload["answer"], str), "Answer must be text")
     if "question" in payload:
         require(isinstance(payload["question"], str), "Question must be text")
     if "claims" in payload:
         validate_claims(payload["claims"])
     if "documents" in payload:
         validate_documents(payload["documents"])
+    if reading:
+        from rag_research.evaluation.source_reading import validate_reading
+
+        validate_reading(payload["source_reading"], payload["documents"])
     if task == "verify_claims" and prompts.get("judge_layout") == "premise_then_claims":
-        payload = {k: payload[k] for k in ("documents", "question", "answer", "claims")}
+        payload = {k: payload[k] for k in ("documents", "question", "answer", "claims",
+                                          *(["source_reading"] if reading else []))}
     if task == "verify_claims" and prompts.get("judge_layout") == "draft_sources_target":
-        payload = {k: payload[k] for k in ("answer", "documents", "question", "claims")}
+        payload = {k: payload[k] for k in ("answer", "documents", "question", "claims",
+                                          *(["source_reading"] if reading else []))}
     if task == "verify_claims" and prompts.get("judge_payload") == "fixed_claims_only":
         payload = {k: payload[k] for k in ("documents", "question", "claims")}
     if task == "rewrite_answer" and prompts.get("rewrite_layout") == "draft_sources_question":

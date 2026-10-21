@@ -98,6 +98,8 @@ Critical2/4で不通過、人工54未試行・再開追加0。原本と正規Run
 4集計/16子Taskを検証し、再開27 File不変/追加0、人工54条件未試行。Modelは停止済み。
 `experiments/statistics.py`と[事前統計方法](phase11_statistical_plan.md)を追加。全474 Test/Ruff成功、実Run用の封印済みAdapterは未実装。
 次の意味候補は[草稿なし根拠読解の先行計画](phase11_source_reading_candidate.md)。まだ実装/Model実走していない。
+その後、`evaluation/source_reading.py`とConfig v5/Plan v3/日英Prompt v5を実装した。全487 Test/Ruff成功。
+読解58+単位70=最大128 Call、既知4読解+16判定を先行する。次は固定Commit/専用WorktreeでCompletion0 Preflight後に実GPU診断する。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -114,7 +116,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.27](rag_research_plan.md)・[実装計画8.29](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.28](rag_research_plan.md)・[実装計画8.30](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

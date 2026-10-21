@@ -181,7 +181,8 @@ def evaluate_traces(client, config, prompts, traces, manifest, output, notify=pr
                     client, task_config(config, "verify_claims"), prompts,
                     payload, task_path,
                     {**binding, "trial_id": spec["trial_id"], "claims_sha256": digest(claims)},
-                    constraints=config.get("output_constraints", "none"), mode=config.get("verification_mode", "joint"))
+                    constraints=config.get("output_constraints", "none"), mode=config.get("verification_mode", "joint"),
+                    reader_generation=task_config(config, "read_sources") if config.get("verification_mode") == "source-reading-v1" else None)
                 results.append(evaluation)
                 row.update(status=evaluation["status"], error=evaluation["error"],
                            error_code=evaluation["error_code"],

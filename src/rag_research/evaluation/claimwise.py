@@ -14,7 +14,7 @@ COST_FIELDS = ("completion_attempted", "input_tokens", "output_tokens", "elapsed
 def atomic_steps(tasks):
     """Collection and operational routes pay for every actual child request."""
     for task in tasks:
-        if task.get("execution_mode") == MODE:
+        if task.get("execution_mode") in {MODE, "source-reading-v1"}:
             yield from task["subtask_costs"]
         else:
             yield task
@@ -29,6 +29,10 @@ def payloads(payload, mode):
 
 
 def pending(path, mode="joint"):
+    if mode == "source-reading-v1":
+        from rag_research.evaluation.source_reading import pending as reading_pending
+
+        return reading_pending(path)
     path = Path(path)
     if not path.exists():
         return True
@@ -94,7 +98,12 @@ def verify_aggregate(path, value):
     return value
 
 
-def verify_once(client, generation, prompts, payload, path, binding, *, constraints="none", mode="joint"):
+def verify_once(client, generation, prompts, payload, path, binding, *, constraints="none", mode="joint",
+                reader_generation=None):
+    if mode == "source-reading-v1":
+        from rag_research.evaluation.source_reading import verify_once as reading_verify
+
+        return reading_verify(client, generation, reader_generation, prompts, payload, path, binding, constraints=constraints)
     if mode == "joint":
         return execute_task(client, generation, prompts, "verify_claims", payload, path, binding, constraints=constraints)
     from rag_research.experiments.protocol import build_messages

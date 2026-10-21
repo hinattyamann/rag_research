@@ -30,7 +30,7 @@ from rag_research.generation.local import GenerationError
 
 
 def execute_task(client, config, prompts, task, payload, path, binding, *, constraints="none"):
-    require(task in {"extract_claims", "verify_claims"}, "Phase 8 does not generate rewrite candidates")
+    require(task in {"extract_claims", "verify_claims", "read_sources"}, "Phase 8 does not generate rewrite candidates")
     messages = build_messages(prompts, task, payload)
     require(constraints in {"none", "json_schema_source_spans_v1",
                             "json_schema_source_spans_bounded_v2",
@@ -44,7 +44,14 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
     thinking = constraints in {"thinking_json_passage_ids_v1", "thinking_json_passage_ids_v2"}
     schema = (output_schema(task, payload, bounded=aligned or constraints.endswith(("bounded_v2", "compact_v3")),
                             compact=aligned or constraints.endswith("compact_v3"), aligned=aligned)
-              if constraints != "none" and not thinking else None)
+              if constraints != "none" and not thinking and task != "read_sources" else None)
+    if task == "read_sources":
+        from rag_research.evaluation.source_reading import reading_schema
+
+        require(constraints in {"none", "thinking_json_passage_ids_v2"}, "Unsupported source reading constraints")
+        if constraints != "none":
+            require(getattr(config, "final_json_grammar", False), "Source reading requires final grammar")
+            schema = reading_schema(payload["documents"])
     if constraints == "thinking_json_passage_ids_v2" and task == "verify_claims":
         require(getattr(config, "final_json_grammar", False), "Final-only grammar must be enabled")
         schema = cited_verdict_schema(payload, boolean_checks=prompts.get("judge_checks") == "conflict_then_complete_v1")
@@ -127,6 +134,15 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
                 if aligned:
                     text, result["quote_alignment"] = align_quotes(text, payload["documents"])
                 result["parsed"] = parse_verdicts(text, payload["claims"], payload["documents"])
+                result["status"] = "ok"
+            elif task == "read_sources":
+                from rag_research.evaluation.source_reading import parse_reading
+
+                if thinking:
+                    result["reasoning_budget_audit"] = audit_reasoning_budget(client, response, config)
+                    result["final_grammar_audit"] = audit_final_json_grammar(response, config)
+                    text, result["model_reasoning"] = final_json(text)
+                result["parsed"] = parse_reading(text, payload["documents"])
                 result["status"] = "ok"
             else:
                 raise ValueError("Phase 8 does not generate rewrite candidates")

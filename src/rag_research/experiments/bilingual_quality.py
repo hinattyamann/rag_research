@@ -84,14 +84,15 @@ def read_run(run):
         for name, task in row["tasks"]["judges"].items():
             require(task == read_json(folder / (name + ".json")) and task["binding"] == {
                     **task_binding, "trial_id": name, "claims_sha256": digest(claims)}, "Saved Judge changed")
-            if task.get("execution_mode") == "claimwise-v1":
+            if task.get("execution_mode") in {"claimwise-v1", "source-reading-v1"}:
                 prompts = yaml.safe_load((ROOT / manifest["config"]["prompts"]).read_text())
                 spec = next(t for t in entry["plan"]["trials"] if t["trial_id"] == name)
                 documents = {d["passage_id"]: d for d in trace["documents"]}
                 verified = verify_once(None, task_config(manifest["config"], "verify_claims"), prompts,
                     {"question": trace["question"], "answer": trace["answer"], "claims": claims,
                      "documents": [documents[i] for i in spec["document_ids"]]}, folder / (name + ".json"),
-                    task["binding"], constraints=manifest["config"]["output_constraints"], mode="claimwise-v1")
+                    task["binding"], constraints=manifest["config"]["output_constraints"], mode=task["execution_mode"],
+                    reader_generation=task_config(manifest["config"], "read_sources") if task["execution_mode"] == "source-reading-v1" else None)
                 require(verified == task, "Claimwise raw/report differs")
         for trial in row["evaluation"]["trials"]:
             task = row["tasks"]["judges"].get(trial["trial_id"])

@@ -229,6 +229,11 @@ def connection(registry, tmp_path, monkeypatch):
                     content = "猫は赤い。犬は青い。"
             elif task == "rewrite_answer":
                 content = "資料では、猫は赤い。[p1]"
+            elif task == "read_sources":
+                payload = json.loads(self.messages[1]["content"].removeprefix("Input JSON:\n"))
+                assert set(payload) == {"question", "documents"} and "REFERENCE-SECRET" not in json.dumps(payload)
+                content = json.dumps({"readings": [{"passage_id": d["passage_id"], "actor": "Fixture",
+                    "action": "Fixture", "quote": d["text"]} for d in payload["documents"]]})
             else:
                 payload = json.loads(self.messages[1]["content"].removeprefix("Input JSON:\n"))
                 content = json.dumps({"verdicts": [{"claim_id": c["claim_id"], "label": "supported",
@@ -420,29 +425,35 @@ def test_refusal_policy_requires_opt_in_candidate_and_rejects_legacy_protocol():
         validate_task_contract(config, prompts)
 
 
-def test_claimwise_bilingual_runner_quality_raw_validation_and_operational_calls(connection):
+@pytest.mark.parametrize("mode", ["claimwise-v1", "source-reading-v1"])
+def test_claimwise_bilingual_runner_quality_raw_validation_and_operational_calls(connection, mode):
     config, output, state = connection
-    state["config"]["verification_mode"] = "claimwise-v1"
+    state["config"]["verification_mode"] = mode
     state["prompts"]["judge_layout"] = "draft_sources_target"
     state["multi_sentences"] = True
+    reading = mode == "source-reading-v1"
+    if reading:
+        state["prompts"]["source_reading_auxiliary"] = "untrusted_reading_v1"
+        state["prompts"]["tasks"]["read_sources"] = {"system": "read_sources"}
+        state["config"]["tasks"]["read_sources"] = {"max_output_tokens": 512}
     (config.parent / "prompts.yaml").write_text(yaml.safe_dump(state["prompts"]))
     result = runner.run(config, output)
-    assert len(state["calls"]) == 14
+    assert len(state["calls"]) == 14 + 6 * reading
     for messages in state["calls"]:
         if messages[0]["content"] == "verify_claims":
-            assert list(json.loads(messages[1]["content"].removeprefix("Input JSON:\n"))) == ["answer", "documents", "question", "claims"]
+            assert list(json.loads(messages[1]["content"].removeprefix("Input JSON:\n"))) == ["answer", "documents", "question", "claims"] + (["source_reading"] if reading else [])
     _, report = quality.read_run(output)
     row = report["records"][0]
     assert len(row["evaluation"]["claims"]) == 2
-    assert all(t["completion_attempts_recorded"] == 2 for t in row["tasks"]["judges"].values())
+    assert all(t["completion_attempts_recorded"] == 2 + reading for t in row["tasks"]["judges"].values())
     identifier = row["trace"]["record_id"]
     routes = reconstruct([row], {(identifier, "initial"): "reliable", (identifier, "rewritten"): "reliable"})
-    assert routes["auxiliary_collection_cost"]["completion_attempts"] == 13
-    assert all(r["operational_cost"]["completion_attempts"] == 3 for r in routes["routes"]
+    assert routes["auxiliary_collection_cost"]["completion_attempts"] == 13 + 6 * reading
+    assert all(r["operational_cost"]["completion_attempts"] == 3 + reading for r in routes["routes"]
                if r["route"] not in {"no_repair", "always_rewrite"})
     servers = state["servers"]
     assert runner.run(config, output) == result
-    assert len(state["calls"]) == 14 and state["servers"] == servers
+    assert len(state["calls"]) == 14 + 6 * reading and state["servers"] == servers
     # Children are absent from the public anonymous packet.
     _, _, packet, _ = quality.build_packet(output)
     assert "subtasks" not in json.dumps(packet) and "score" not in json.dumps(packet)

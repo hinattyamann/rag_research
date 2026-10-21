@@ -47,12 +47,27 @@ def main():
                     full = {
                         "question": case["question"], "answer": case["answer"],
                         "claims": case["claims"], "documents": documents}
-                    for original_id, payload in payloads(full, config.get("verification_mode", "joint")):
+                    mode = config.get("verification_mode", "joint")
+                    if mode == "source-reading-v1":
+                        reader = task_config(config, "read_sources")
+                        messages = build_messages(prompts[case["language"]], "read_sources",
+                                                  {k: full[k] for k in ("question", "documents")})
+                        tokens = len(server.client.tokenize(server.client.render(messages), special=True))
+                        inputs.append({"condition": key, "stage": "read_sources", "input_tokens": tokens,
+                            "reserved_output_tokens": reader.max_output_tokens,
+                            "fits": tokens + reader.max_output_tokens <= reader.context_tokens})
+                        # Conservative planning reserve. The real generated reading is token-checked again before every Judge call.
+                        full["source_reading"] = {"readings": [{"passage_id": d["passage_id"], "actor": "Preflight",
+                            "action": "Preflight", "quote": d["text"][:1]} for d in documents]}
+                    for original_id, payload in payloads(full, "claimwise-v1" if mode == "source-reading-v1" else mode):
                         messages = build_messages(prompts[case["language"]], "verify_claims", payload)
                         tokens = len(server.client.tokenize(server.client.render(messages), special=True))
                         row = {"condition": key, "original_claim_id": original_id, "input_tokens": tokens,
                                "reserved_output_tokens": generation.max_output_tokens,
-                               "fits": tokens + generation.max_output_tokens <= generation.context_tokens}
+                               "intermediate_additional_reservation": reader.max_output_tokens if mode == "source-reading-v1" else 0,
+                               "actual_intermediate_must_be_checked": mode == "source-reading-v1",
+                               "fits": tokens + generation.max_output_tokens + (reader.max_output_tokens if mode == "source-reading-v1" else 0)
+                                       <= generation.context_tokens}
                         inputs.append(row)
                 report.update(inputs=inputs, server=server.report(), completion_attempts=server.client.completion_attempts,
                     gpu_memory_single_observation=subprocess.run(["nvidia-smi", "--query-gpu=memory.used,memory.total",

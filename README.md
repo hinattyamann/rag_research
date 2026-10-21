@@ -31,8 +31,8 @@ v14の事前Gateは引用ID重複1件で不通過として保持し、後処理�
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- [研究計画 Version 7.27](docs/rag_research_plan.md)
-- [実装計画 Version 8.29](docs/rag_implementation_plan.md)
+- [研究計画 Version 7.28](docs/rag_research_plan.md)
+- [実装計画 Version 8.30](docs/rag_implementation_plan.md)
 - [多言語検索候補・本文Passage分割の実装と確認](docs/phase11_multilingual_retrieval.md)
 - [日本語共通Corpusの全文保持Passage化・参照粒度と残る工程](docs/phase11_japanese_corpus.md)
 - [日本語参照・欠測の監査と原HTML脚注の位置検証](docs/phase11_japanese_evidence.md)

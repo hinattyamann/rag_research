@@ -1,6 +1,6 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月21日。正本: [研究計画7.27](rag_research_plan.md)、[実装計画8.29](rag_implementation_plan.md)。
+更新日: 2026年10月21日。正本: [研究計画7.28](rag_research_plan.md)、[実装計画8.30](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
@@ -68,6 +68,8 @@ QA AdapterとGroup分割処理を追加し、実838件で原行Hash・引用/人
 4集計/16子Taskの全分母・実費/再開追加0を照合し、人工54条件を未試行のまま保持した。
 依存しない[QA内増分・Group Bootstrapと日英差](phase11_statistical_plan.md)を事前定義/実装し、全474 Test/Ruff成功。
 統計は新規Run未適用。次の[草稿なし根拠読解候補](phase11_source_reading_candidate.md)は計画段階で、意味採用・主Development/未使用Calibration・最終凍結は未了。
+その後、草稿なし読解を先行する任意候補を共通Task/評価/品質検証へ実装した。全ID/Quote・全分母/実費・中断再開を含む全487 Test/Ruff成功。
+候補v5/最大128 Callの条件を保存した。実GPU意味診断と意味採用・日英主Development/未使用Calibration・最終凍結は未完了。
 翻訳対は主実験に使わず、別Dataset間の差を言語単独の因果効果と断定しない。
 
 基盤に加え、固定回答のClaim抽出、根拠順序/反復ごとの自己評価と採用/書換え要求の保存を実装した。
