@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+最新実走: v11/session59388は終了。固定bb11fc9の既知4条件/20 Call・Critical3/4、逆順Council c4の誤支持1で不通過。元順序はC、c6は両C/F元5/7・逆6/7で両採用。入力97740/出力49103 Token・835.989984秒。Source91 Hash/再開34 File不変・追加Call/Server0を監査し、全41 Artifactをphase11_source_reading_result_v11.jsonへ保存済み。次はv12：同じModel/Prompt/全Expected/基準でContext24576・推論4096・読解8192/判定/書換え6144。Preregistration v4、新規最大248 Call/累積296/Retry0、新生成0。新Contextの生成0 Preflight→同じ人工6 Call→同じ意味診断を新固定Worktreeで行う。旧失敗/基準を保持し、主/予約Calibrationを先に使わない。
+
 主開始前の検査追記: `bilingual_main`でPolicy候補File Hash/設定と完全通過回帰の一致、全Health/意味/品質/判断の事前値/型・明示nullを検査する。新規23 Testを含む全584 Test（8.25秒）/Ruff成功、故障注入の既存資源Sampler警告1件を保持。実Policy v1の値検査も成功したが実採用はまだない。固定v11/Native Core27 Hashは不変。実採用成功側/主20問は引き続き未了。[監査記録](phase11_main_adoption_audit.md)を参照する。
 
 実走追記: 固定645f193の日英意味診断v10/session27269は終了。既知4条件/20 Call、Critical3/4で不通過、人工54条件未試行。入力96268/出力50676 Token・Task秒和860.195937。Council元順序c4がExpected矛盾に対し支持不足、他Critical3は一致。誤支持0でも正確Label基準を変えず採用しない。再開監査session52519も終了し、34 File/90 Source不変・追加Call/Server0。全Raw36 File/対象意味確認・Preflightを含む42 Artifactをphase11_source_reading_result_v10.jsonへ正規保存済み。Council曖昧c6は元C/逆SでF5/7→6/7・両採用、Expected null/全7分母を維持。次はv11/Prompt v8：指示の再述を避け直接比較する一般PrefixだけをJudgeへ追加し、旧Model/予算/Expected/全基準を保つ。Preregistration v3、最大新規242 Call/Retry0。形式証拠は同一Model/設定/Core27 Hashでv10を明示再利用し、新固定Worktreeの生成0確認後に同じ意味診断を行う。固定bb11fc9のv11は全128入力/生成0 Preflight・最大3887 Token/全層CUDAに通過（VRAM6270/8151 MiB一点）。Launchへ全Hashと4 Preflight Artifactを保存し、同じ固定Worktreeで意味診断を開始した（session59388）。同じHandleを観測し、重複起動しない。全結果/採用は未確定。

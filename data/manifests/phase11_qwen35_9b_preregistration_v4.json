@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-qwen35-9b-v12-expanded-reasoning-preregistration",
+  "created_at_utc": "2026-10-21T21:22:21.545006+00:00",
+  "candidate_config": "configs/phase11_semantic_candidate_v12.yaml",
+  "candidate_config_sha256": "6809b7fbc30ee1241115482f490843b009259e7499781f6268218a04c2e9e5e4",
+  "parent_failed_result": {
+    "path": "data/manifests/phase11_source_reading_result_v11.json",
+    "sha256": "e94948233c51e83b8109d6efe4c3d12f13c77c528cab4d5c63d3cb0bccfc8eb6"
+  },
+  "changes_from_v11": {
+    "context_tokens": [
+      16384,
+      24576
+    ],
+    "reasoning_budget_tokens": [
+      2048,
+      4096
+    ],
+    "read_sources_output_tokens": [
+      6144,
+      8192
+    ],
+    "verify_and_rewrite_output_tokens": [
+      4096,
+      6144
+    ]
+  },
+  "reason": "Both critical Council checks reached forced closure; reversed check remained mid-comparison and final support conflicted with the source actor/contrast. Double the reasoning reserve as a bounded hypothesis, expand output and context consistently, record greater cost; no claim of improvement before the same full diagnostic.",
+  "source_reservation_tokens": 8192,
+  "judge_reservation_tokens": 6144,
+  "planned_context_headroom_before_actual_reader_recheck": true,
+  "estimated_incremental_attention_fp16_KV_mib": 256,
+  "estimate_excludes_recurrent_buffers_display_and_other_processes": true,
+  "resource_limits_require_actual_preflight": true,
+  "formal_format_proof_must_be_rerun_due_to_context_change": true,
+  "artificial_format_completion_limit": 6,
+  "artificial_format_output_tokens": 512,
+  "artificial_format_reasoning_tokens": 128,
+  "semantic_diagnostic_completion_limit": 128,
+  "known_regression_limit_if_prerequisite_passes": 114,
+  "maximum_new_screening_completions": 248,
+  "prior_9b_completions": 48,
+  "maximum_cumulative_9b_completions": 296,
+  "automatic_retries": 0,
+  "new_completions_at_preregistration": 0,
+  "main_or_reserved_calibration_used_for_tuning": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "model_runtime_binary_prompt_schema_seed_probability_sampler_expected_and_gates_unchanged": true,
+  "exact_config_diff_verified": true
+}
