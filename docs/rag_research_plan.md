@@ -38,6 +38,8 @@ v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日�
 
 固定v11も既知4条件/20 CallでCritical3/4・逆順の誤支持1により不通過。41 Artifact/旧Label/曖昧単位/全分母・再開追加0を保存した。[別候補v12](phase11_qwen35_candidate.md)は同じModel/指示/Expected/採用基準を保ち、推論4096・読解8192/判定/書換え6144・Context24576へ予約を増やす。費用が増える条件差を記録し、固定GPUの生成0/人工形式から再確認する。主/予約Calibrationは未推論。
 
+固定51b0559のv12は24k Context/全128入力の生成0・CUDA全層と同じ人工6 Call/厳密5条件に通過。入力290/出力958 Token・16.687828秒、Source88 Hash/原本10 File不変/監査追加0・全15 Artifactを保存した。同じ固定Worktreeで意味診断v12を実走中、全結果/採用は未確定。
+
 ## 1. テーマと目的
 
 現行候補は[固定文ごとの評価](phase11_claimwise_candidate.md)。初回回答全体を非信頼文脈として保持し、全固定文を個別評価して

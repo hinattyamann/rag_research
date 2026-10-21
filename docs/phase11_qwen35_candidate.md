@@ -201,3 +201,17 @@ Contextが異なるため人工形式証拠は再実走する。同じ6入力/�
 同じ意味58条件/最大128 Call、全採用基準通過時だけ旧15 QA/114 Callの回帰へ進む。
 最大新規248 Call、過去9B48 Callを含む累積最大296、Retry0。
 読解の意味/分類誤りが解消するかは新しい実走で確認し、不通過は停止/全保存する。
+
+
+## v12の新Context/人工形式通過と意味診断開始
+
+固定51b0559の専用Worktreeで24k Context・全128入力/生成0 Preflightに通過した。
+最大3887 Token・全予約込みで予算内、CUDA全層Offload。VRAM6527/8151 MiBは一点観測。
+同じ人工6 Call/厳密5条件すべてで終了/Schema/Native/実上限を確認した。
+入力290/出力958 Token、生成秒和16.687828秒、88 Source Hash/原本10 File不変・監査追加Call/Server0。
+全15 Artifactを同一Byteで保存し、phase11_qwen35_9b_format_result_v3.jsonへ結んだ。
+実推論枠を増やした意味判定の正確性を、この形式通過で認定しない。
+
+Launchへ生成0/形式Report Hashを結び、同じ固定Commitで意味診断v12を開始した（session1222）。
+同じCritical4条件全一致時だけ人工54条件へ進む。最大128 Call/Retry0、全結果/採用は未確定。
+主Development20問/予約Calibration/Evaluationへの新推論は行っていない。

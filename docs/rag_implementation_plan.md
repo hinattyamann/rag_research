@@ -57,6 +57,8 @@ v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日�
 
 固定v11は全4既知条件/20 Call・Critical3/4・逆順誤支持1で不通過。Source91 Hash/再開34 File不変・追加0、全41 Artifactを保存した。v12は全定義/Expected/基準/確率Sampler/Model/Promptを保ち、Context24576・推論4096・読解8192/判定/書換え6144へ増やす。新Contextの生成0/全層CUDA/全128入力と同じ人工6 Callを先行し、意味診断/旧15 QA回帰は全基準通過時だけ拡大する。新Model Call0。
 
+固定51b0559のv12は24k Context/全128入力の生成0・CUDA全層と同じ人工6 Call/厳密5条件に通過。入力290/出力958 Token・16.687828秒、Source88 Hash/原本10 File不変/監査追加0・全15 Artifactを保存した。同じ固定Worktreeで意味診断v12を実走中、全結果/採用は未確定。
+
 ## 1. 既存実装と保存する境界
 
 現行の任意候補`verification_mode: claimwise-v1`は`evaluation/claimwise.py`で個別Journalと集計を共用する。

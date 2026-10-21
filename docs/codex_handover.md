@@ -1,6 +1,6 @@
 # 別チャットから再開するための引継ぎ
 
-最新実走: v11/session59388は終了。固定bb11fc9の既知4条件/20 Call・Critical3/4、逆順Council c4の誤支持1で不通過。元順序はC、c6は両C/F元5/7・逆6/7で両採用。入力97740/出力49103 Token・835.989984秒。Source91 Hash/再開34 File不変・追加Call/Server0を監査し、全41 Artifactをphase11_source_reading_result_v11.jsonへ保存済み。次はv12：同じModel/Prompt/全Expected/基準でContext24576・推論4096・読解8192/判定/書換え6144。Preregistration v4、新規最大248 Call/累積296/Retry0、新生成0。新Contextの生成0 Preflight→同じ人工6 Call→同じ意味診断を新固定Worktreeで行う。旧失敗/基準を保持し、主/予約Calibrationを先に使わない。
+最新実走: v11/session59388は終了。固定bb11fc9の既知4条件/20 Call・Critical3/4、逆順Council c4の誤支持1で不通過。元順序はC、c6は両C/F元5/7・逆6/7で両採用。入力97740/出力49103 Token・835.989984秒。Source91 Hash/再開34 File不変・追加Call/Server0を監査し、全41 Artifactをphase11_source_reading_result_v11.jsonへ保存済み。次はv12：同じModel/Prompt/全Expected/基準でContext24576・推論4096・読解8192/判定/書換え6144。Preregistration v4、新規最大248 Call/累積296/Retry0、新生成0。新Contextの生成0 Preflight→同じ人工6 Call→同じ意味診断を新固定Worktreeで行う。旧失敗/基準を保持し、主/予約Calibrationを先に使わない。固定51b0559のv12は24k Context・全128入力/生成0/最大3887 Token/全層CUDAに通過（VRAM6527/8151 MiB一点）。同じ人工6 Call/厳密5条件も通過、入力290/出力958 Token・16.687828秒、88 Source Hash/原本10 File不変/監査追加0、全15 Artifact保存済み。Launchへ生成0/形式Report Hashを保存し、同じ固定Worktreeで意味診断v12を実走中（session1222）。全結果/採用は未確定で、同じHandleを観測し重複起動しない。
 
 主開始前の検査追記: `bilingual_main`でPolicy候補File Hash/設定と完全通過回帰の一致、全Health/意味/品質/判断の事前値/型・明示nullを検査する。新規23 Testを含む全584 Test（8.25秒）/Ruff成功、故障注入の既存資源Sampler警告1件を保持。実Policy v1の値検査も成功したが実採用はまだない。固定v11/Native Core27 Hashは不変。実採用成功側/主20問は引き続き未了。[監査記録](phase11_main_adoption_audit.md)を参照する。
 
