@@ -1,6 +1,6 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.40 — 2026年10月21日 使用済み検索Calibrationを保持し独立した日英対象を別予約
+## Version 7.41 — 2026年10月22日 主Developmentの候補Bindingと全事前採用値を開始前検証
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
@@ -33,6 +33,8 @@ v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日�
 9B v10は4既知条件/20 CallでCritical3/4により不通過。元順序Councilの矛盾/支持不足の差、曖昧c6/Fの元逆差と全42 Artifact・再開追加0を保持した。新v11はJudgeへ再述を避け直接比較する一般Prefixだけを加え、旧Expected/全基準/予算等を保持して別登録。形式証拠は同一Model/Runtime/設定と27 Core/Probe Hashでv10を再利用し、新しい意味診断へ進む。主/予約Calibrationは未推論。
 
 固定bb11fc9のv11は全128入力/生成0 Preflight・最大3887 Token/全層CUDAに通過。4 Artifact/形式証拠/27 Core HashとLaunchを固定し、同じ意味診断を実走中。全結果/採用は未確定、旧Expected/全基準を保つ。
+
+主Developmentを実行する前の[採用Guard監査](phase11_main_adoption_audit.md)で、Policy候補と完全通過回帰の条件の直接一致、および全Health/意味/品質/判断の事前値・型/明示nullの検査を追加した。既存採用基準/入力は不変、新規23 Testを含む全584 Test/Ruff成功（既存の失敗起動時資源監視警告1件を保持）。実採用成功側/主20問・Calibrationの実走は未了。v11は固定bb11fc9のまま実走中。
 
 ## 1. テーマと目的
 

@@ -203,9 +203,8 @@ def test_preregistered_main_semantic_gate_requires_twenty_qa_and_ten_complete_co
                 row["tasks"]["judges"][trial["trial_id"]]["parsed"]["verdicts"][0]["label"] = "supported"
             report["records"].append(row)
         report.update(selected_qa_count=20, failures=[])
-        policy = {"count_per_language": 20, "semantic_adoption_after_blind_seal": {
-            "minimum_exact_label_accuracy_per_language": .9, "minimum_supported_label_accuracy_per_language": .9,
-            "maximum_definite_negative_false_support": 0, "minimum_complete_comparable_qa_per_language": 10}}
+        policy = json.loads((Path(__file__).resolve().parents[1] /
+            "configs/phase11_main_development_execution_policy_v1.json").read_text())
         policy_path = run / "policy.json"
         write_json(policy_path, policy)
         from rag_research.retrieval.common import file_hash
@@ -228,3 +227,14 @@ def test_preregistered_main_semantic_gate_requires_twenty_qa_and_ten_complete_co
     assert result["languages"]["en"]["exact_label_accuracy"] == 1
     assert result["languages"]["en"]["complete_comparable_qa"] == 9
     assert not result["main_development_semantic_gate_passed"]
+    # The sealed analysis must reject weaker rules, even if the metadata is
+    # rebound to the new policy hash. It must not merely report a softer gate.
+    run = Path(inputs[0]["run"])
+    manifest, _, _ = originals[run]
+    path = run / "policy.json"
+    weakened = json.loads(path.read_text())
+    weakened["semantic_adoption_after_blind_seal"]["minimum_exact_label_accuracy_per_language"] = .5
+    write_json(path, weakened)
+    manifest["config"]["main_execution_policy"]["sha256"] = file_hash(path)
+    with pytest.raises(ValueError, match="preregistered main policy rules"):
+        sem.analyze_semantics(inputs)

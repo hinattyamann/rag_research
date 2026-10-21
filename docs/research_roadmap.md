@@ -1,11 +1,13 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月22日。正本: [研究計画7.40](rag_research_plan.md)、[実装計画8.42](rag_implementation_plan.md)。
+更新日: 2026年10月22日。正本: [研究計画7.41](rag_research_plan.md)、[実装計画8.43](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
+
+[主Development採用Guardの監査](phase11_main_adoption_audit.md)で、Policy候補/通過回帰の直接一致と全事前基準の値/型・明示nullの開始前検査を補強した。新規23 Testを含む全584 Test/Ruff成功、故障注入の資源監視警告1件を保存。主20問や実採用成功側を達成した意味ではない。固定v11は同じCodeのまま実走中。
 
 Calibrationの対象は[別予約Manifest](phase11_bilingual_calibration.md)へ保存済み。英語の元225問は検索調整済みのまま保持し、未使用Developmentの20 Groupを主20 Groupと分けて追加Calibrationへ予約した。日本語は元Calibrationから20 Group。全561 Test/Ruff・再計算/重複0を確認し、新規推論0。実行Protocol/専用Runner・採用/全Label封印/解析は主Developmentの確認後で、最終Gateは未了。
 

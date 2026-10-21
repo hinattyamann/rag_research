@@ -2,6 +2,8 @@
 
 from pathlib import Path
 
+import yaml
+
 from rag_research.evaluation.claimwise import atomic_steps, verify_once
 from rag_research.experiments.frozen_trace import digest, require
 from rag_research.experiments.protocol import ROOT, task_config
@@ -9,6 +11,30 @@ from rag_research.experiments.storage import read_json, verify_checkpoint
 from rag_research.generation.auxiliary import auxiliary_identity
 from rag_research.generation.cuda_runtime import execution_identity
 from rag_research.retrieval.common import file_hash
+
+REQUIRED_MAIN_POLICY = {
+    "health_gate": {"selected_qa_completed_per_language": 20, "maximum_task_errors": 0,
+        "maximum_input_overflow": 0, "baseline_requires_actual_used_context": True,
+        "unknown_outcome_stops_without_resampling": True, "missing_or_budget_stopped_qa_remain_in_manifest": True},
+    "semantic_adoption_after_blind_seal": {"minimum_exact_label_accuracy_per_language": .9,
+        "minimum_supported_label_accuracy_per_language": .9, "maximum_definite_negative_false_support": 0,
+        "minimum_complete_comparable_qa_per_language": 10,
+        "ambiguous_units_excluded_only_from_accuracy_not_F": True,
+        "report_all_positive_negative_ambiguous_denominators": True,
+        "AI_expected_labels_frozen_before_internal_verdict_unblinding": True},
+    "quality": {"seal_all_candidates_both_languages_before_internal_unblinding": True,
+        "human_reviewed": False, "unknown_quality_not_imputed": True, "maximum_candidates_per_qa": 2},
+    "decision": {"threshold": .7, "bare_refusal_policy": "rewrite_once", "score_for_no_fixed_units": None},
+}
+
+
+def validate_main_policy(policy):
+    for section, expected in REQUIRED_MAIN_POLICY.items():
+        actual = policy.get(section)
+        require(isinstance(actual, dict) and all(k in actual and type(actual[k]) is type(v) and actual[k] == v
+                for k, v in expected.items()), "Preserve preregistered main policy rules: " + section)
+    reason = policy["semantic_adoption_after_blind_seal"].get("comparison_minimum_reason")
+    require(isinstance(reason, str) and reason.strip(), "Main comparison minimum needs its prior rationale")
 
 
 def bound_path(binding, *, root=None):
@@ -70,6 +96,7 @@ def validate_main(config, rows, qa_path):
             policy["limits_per_language"] == config.get("main_limits") and
             policy["quality"]["seal_all_candidates_both_languages_before_internal_unblinding"] is True,
             "Main execution policy/limits/selection/seal changed")
+    validate_main_policy(policy)
     selection_path = bound_path(config.get("development_selection"))
     selection = read_json(selection_path)
     verify_checkpoint(selection)
@@ -89,6 +116,13 @@ def validate_main(config, rows, qa_path):
         path = (ROOT / name).resolve()
         require(path.is_relative_to(ROOT) and file_hash(path) == sha, "Historical usage inventory changed")
     prior, manifest = passing_known_regression(config.get("adopted_known_regression"))
+    candidate = yaml.safe_load(bound_path(policy.get("candidate_config")).read_text("utf-8"))
+    ignored = {"study_version", "diagnostics"}
+    require(isinstance(candidate, dict) and candidate.get("purpose") == prior.get("purpose") ==
+            "phase11-bilingual-semantic-candidate" and
+            {k: v for k, v in candidate.items() if k not in ignored} ==
+            {k: v for k, v in prior.items() if k not in ignored},
+            "Policy candidate must match the completely adopted known-regression conditions")
     keys = ("auxiliary_runtime", "sampling", "execution", "verification_mode", "output_constraints")
     require(all(config.get(k) == prior.get(k) for k in keys) and
             all(config["tasks"][t] == prior["tasks"][t] for t in ("read_sources", "verify_claims", "rewrite_answer")) and

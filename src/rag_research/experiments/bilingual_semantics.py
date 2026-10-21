@@ -6,6 +6,7 @@ from pathlib import Path
 
 from rag_research.evaluation.sentence_claims import extract_sentence_units
 from rag_research.experiments import bilingual_quality
+from rag_research.experiments.bilingual_main import validate_main_policy
 from rag_research.experiments.bilingual_statistics import condition
 from rag_research.experiments.frozen_trace import digest, require, validate_documents
 from rag_research.experiments.protocol import ROOT
@@ -206,6 +207,7 @@ def analyze_semantics(inputs):
             policy_path = (ROOT / binding["path"]).resolve()
             require(policy_path.is_relative_to(ROOT) and file_hash(policy_path) == binding["sha256"], "Semantic adoption policy changed")
             policy = read_json(policy_path)
+            validate_main_policy(policy)
             rules = policy["semantic_adoption_after_blind_seal"]
             gate = (report["selected_qa_count"] == len(report["records"]) == policy["count_per_language"] == 20 and
                     not report["failures"] and counts["invalid_trial_conditions"] == 0 and

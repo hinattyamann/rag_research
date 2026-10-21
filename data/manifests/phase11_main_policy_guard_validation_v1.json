@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-main-policy-candidate-and-criteria-guard-validation-not-adoption",
+  "created_at_utc": "2026-10-21T21:17:57.213937+00:00",
+  "pytest_runs": [
+    {
+      "scope": "main start guard",
+      "passed": 584,
+      "seconds": 8.25,
+      "warnings": 1
+    },
+    {
+      "scope": "same validation also used after bilingual label seal",
+      "passed": 584,
+      "seconds": 8.47,
+      "warnings": 0
+    }
+  ],
+  "ruff_passed": true,
+  "new_tests": 23,
+  "actual_preregistered_policy_rule_validation_passed": true,
+  "actual_failed_v10_report_rejected": {
+    "path": "data/runs/semantic_diagnostics/phase11-qwen35-9b-source-reading-v10/report.json",
+    "sha256": "56d07d19d08fd0b0659c4b6c2fc813f6e9b47d90a41ed4d3bbdd7ffba0068fe4",
+    "message": "Known regression must be complete, passing and fully costed",
+    "original_report_unchanged": true
+  },
+  "new_model_calls": 0,
+  "runtime_core_sources_unchanged": 27,
+  "positive_full_adoption_with_real_data_demonstrated": false,
+  "unresolved_failure_injection_warning": {
+    "test": "tests/generation/test_baseline.py::test_server_startup_failure_closes_owned_process_and_log",
+    "type": "PytestUnhandledThreadExceptionWarning",
+    "thread": "LocalServer._sample",
+    "exception": "psutil.NoSuchProcess",
+    "runtime_source_changed": false,
+    "not_reproduced_in_final_suite_is_not_a_fix": true
+  },
+  "artifacts": {
+    "src/rag_research/experiments/bilingual_main.py": {
+      "sha256": "dab32c49795fba9ed0c40af527a0690a67a65db629ca59f00c2b57c51dfc581a",
+      "bytes": 9656
+    },
+    "src/rag_research/experiments/bilingual_semantics.py": {
+      "sha256": "4f72b1bd00d69d417c789a26a70d3ef62688eb415cf10653abf455eecdb2abcf",
+      "bytes": 16729
+    },
+    "tests/test_bilingual_main.py": {
+      "sha256": "40eb3c3a930e7810f411d30ea40d53d10e8a22b381cd16f0c569cd025324b796",
+      "bytes": 8598
+    },
+    "tests/test_bilingual_semantics.py": {
+      "sha256": "6f928cc939112f09a131096371e28ab3d314acf0303384713aad7730346cdc26",
+      "bytes": 13183
+    },
+    "configs/phase11_main_development_execution_policy_v1.json": {
+      "sha256": "6375eff913fa7117ca427e22be11ff7e0779a0406211bb41c18af9358842a361",
+      "bytes": 3247
+    },
+    "docs/phase11_main_adoption_audit.md": {
+      "sha256": "2268139cb145f2b68914259cf4754fd39e3d3a346202cc8d7c33a214620b0fab",
+      "bytes": 4052
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.42 — 2026年10月21日 日英Calibrationの元Splitと別予約を使用履歴へ結び付ける
+## Version 8.43 — 2026年10月22日 主DevelopmentのPolicy候補と全採用値を開始前照合
 
-[研究計画 Version 7.40](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.41](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -52,6 +52,8 @@ v8は固定43ccf05の全58条件/128 Call・Critical4/4/人工英語24/24・日�
 9B v10は4既知条件/20 CallでCritical3/4により不通過。元順序Councilの矛盾/支持不足の差、曖昧c6/Fの元逆差と全42 Artifact・再開追加0を保持した。新v11はJudgeへ再述を避け直接比較する一般Prefixだけを加え、旧Expected/全基準/予算等を保持して別登録。形式証拠は同一Model/Runtime/設定と27 Core/Probe Hashでv10を再利用し、新しい意味診断へ進む。主/予約Calibrationは未推論。
 
 固定bb11fc9のv11は全128入力/生成0 Preflight・最大3887 Token/全層CUDAに通過。4 Artifact/形式証拠/27 Core HashとLaunchを固定し、同じ意味診断を実走中。全結果/採用は未確定、旧Expected/全基準を保つ。
+
+`bilingual_main.validate_main`がPolicyの候補File Hash/実設定を完全採用回帰へ結び、Study/診断用途以外の全条件一致を要求する。全事前Health/意味/品質/判断値と型・明示nullも開始前に検査し、旧基準を保持した。全584 Test/Ruff成功、失敗起動の資源Sampler警告1件を記録。実Native Core27 Hashは不変、固定v11実走へ影響しない。実通過Reportによる採用成功側と主実走は未了。
 
 ## 1. 既存実装と保存する境界
 
