@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-main-development-selection-validation-not-main-pilot-completion",
+  "created_at_utc": "2026-10-21T12:39:58.337982+00:00",
+  "full_tests_passed": 514,
+  "ruff_passed": true,
+  "actual_usage_input_files": 70,
+  "actual_selected_qa": {
+    "en": 20,
+    "ja": 20
+  },
+  "actual_byte_hash_bound_replay_identical": true,
+  "legacy_null_id_records_resolved": 3,
+  "preserved_data_verified": {
+    "data/runs/dataset_screening/phase11-ja-source-v1/protected_existing_runs_baseline.json": 2500,
+    "data/runs/model_screening/phase11-multilingual-e5-small-v1/article_preflight_v1/protected_english_indexes.json": 23,
+    "data/manifests/phase11_json_boundary_result_v2.json": 11
+  },
+  "active_v8_source_hashes_verified": 86,
+  "additional_model_calls": 0,
+  "artifacts": {
+    "src/rag_research/experiments/development_selection.py": {
+      "sha256": "6da690f7d4111fc04090da4c16f442418762576f1eb4eb541fdd214c417dbfc4",
+      "bytes": 8894
+    },
+    "scripts/prepare_bilingual_development_selection.py": {
+      "sha256": "cc37f14b59e258f93df9093380f1ccc6023bbfda5e27aae1cabcf1adf4c8d55f",
+      "bytes": 1319
+    },
+    "tests/test_development_selection.py": {
+      "sha256": "85f00ac84f2c9532761cff720e92da0c76f2ab4d364f2f967485ce58c9d00c49",
+      "bytes": 3981
+    },
+    "configs/phase11_main_development_selection_policy_v1.json": {
+      "sha256": "4e18f021da8e9c2a2b0fe624699cce343f842b9c6dfc4b0b712b0ea67e0c34cc",
+      "bytes": 1741
+    },
+    "configs/phase11_main_development_selection_policy_v2.json": {
+      "sha256": "7f92c5473d7817dd15f7e20ec42ab162bdfda4a666dca481578955d4eeb0c4b2",
+      "bytes": 1973
+    },
+    "data/manifests/phase11_main_development_selection_v1.json": {
+      "sha256": "1b05b3834c9179522749a3b6ed7980b883591ad33b00e6e47de1ef29db486a2a",
+      "bytes": 34925
+    },
+    "docs/phase11_main_development.md": {
+      "sha256": "d0850878983ca8d432b2bca2339ee05e9a82fc415571f3de822b3a7f672a314c",
+      "bytes": 4855
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

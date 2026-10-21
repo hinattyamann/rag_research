@@ -5,6 +5,8 @@
 更新日: 2026年10月21日。Phase 10実装・結果の基点Commitは `60c4eec`、
 Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 この文書は再開用の入口で、現在地・工程の正本は [research_roadmap.md](research_roadmap.md)。
+並行して[主Developmentの事前選定](phase11_main_development.md)を行い、旧入力70 File/使用済み62 ID・日本語予約142 QAの除外来歴から日英各20問/20 Groupを保存した。全514 Test/Ruff成功、追加Model Call0。主20問のRunner拡張/実行Protocol・採用前提・実走は未了。
+
 
 最新方針（2026年10月21日）: 英語CLAPNQに近い別の日本語Datasetを追加し、日英で順序感度と
 判断・品質・費用を比較する。翻訳対は主実験に使わない。[拡張方針](english_japanese_expansion.md)の
@@ -118,7 +120,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.34](rag_research_plan.md)・[実装計画8.36](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.35](rag_research_plan.md)・[実装計画8.37](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

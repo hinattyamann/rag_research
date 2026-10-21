@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-main-development-selection-policy",
+  "created_at_utc": "2026-10-21T12:34:04.231007+00:00",
+  "method": "phase11-main-development-one-qa-per-group-sha256-v1",
+  "split": "development",
+  "count_per_language": 20,
+  "seed": 42,
+  "assets": {
+    "path": "configs/phase11_bilingual_assets_v2.json",
+    "sha256": "20f5b1eaf77b70cf3721728f5c4708be14b38efe04e71a29134bc8152f21e64b"
+  },
+  "japanese_group_metadata": {
+    "path": "data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/groups.json",
+    "sha256": "2302e1f9c30da9fccf61317487873817799f79e8a17ded1d6191255e004ae800"
+  },
+  "automatic_refill": false,
+  "phase12_allowed": false,
+  "candidate_execution_allowed": false,
+  "count_reason": "20 per language is the lower pilot guideline, balances source-diverse groups and measured multi-call source-reading cost; not a final Evaluation sample size",
+  "exclusion": "all recorded Phase5/6/pilot/calibration/bilingual baseline journals including failed and pre-call records, whole document groups, and native Japanese preview/reserved group closure",
+  "prohibitions": [
+    "no model inference before adopted known-regression evidence and main execution protocol",
+    "no selection on gold coverage, reference text, model output, F, quality or availability",
+    "no Evaluation QA row loading",
+    "no replacement of failures"
+  ],
+  "next_execution_protocol_required": [
+    "passing fresh semantic and known-trace regression reports with exact model/runtime/prompt/core bindings",
+    "predeclared actual call/time/health/meaning/stopping rules",
+    "baseline and read/judge/rewrite cost/resume",
+    "both-language full anonymous-label seal before internal unblinding"
+  ]
+}
