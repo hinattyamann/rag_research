@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.35 — 2026年10月21日 既知回帰の形式失敗を保持し終了Tag境界の別候補を固定
+## Version 7.36 — 2026年10月21日 既知回帰の形式失敗を保持し終了Tag境界の別候補を固定
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.37](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.38](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -17,6 +17,8 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 固定43ccf05のv8は人工6 Call（厳密5条件すべて）を通過。全128予定入力/生成0 Preflight・CUDA全層も確認し、新しい日英意味診断を実走中。全結果/意味採用は未確定で、旧Expected/基準と失敗Runを保持する。
 
 並行して[主Developmentの事前選定](phase11_main_development.md)を行い、旧入力70 File/使用済み62 ID・日本語予約142 QAの除外来歴から日英各20問/20 Groupを保存した。全514 Test/Ruff成功、追加Model Call0。主20問のRunner拡張/実行Protocol・採用前提・実走は未了。
+
+主Development用の採用/選定/Policy Guard・原子Call上限1660/言語・新規5 QA/段階Sessionと中断再開を実装し、全536 Test/Ruff成功。主結果前のHealth/意味採用/全Label封印基準も保存した。実設定/新規推論は既知15 QA回帰の通過後とし、まだ主実走を行っていない。
 
 ## 1. テーマと目的
 

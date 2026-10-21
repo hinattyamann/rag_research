@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-main-development-execution-policy",
+  "status": "preregistered_pending_known_regression",
+  "created_at_utc": "2026-10-21T13:00:55.311999+00:00",
+  "split": "development",
+  "count_per_language": 20,
+  "phase12_allowed": false,
+  "selection_manifest": {
+    "path": "data/manifests/phase11_main_development_selection_v1.json",
+    "sha256": "1b05b3834c9179522749a3b6ed7980b883591ad33b00e6e47de1ef29db486a2a"
+  },
+  "limits_per_language": {
+    "maximum_completion_attempts": 1660,
+    "maximum_new_qa_per_stage_session": 5,
+    "stop_on_any_task_error": true,
+    "automatic_refill": false
+  },
+  "limit_reason": "20*(1 initial + 1 rewrite + 9*(1 reader+8 fixed units))=1660; actual fixed units stay unchanged; reserve all missing raw tasks before a QA and stop without replacement if capacity is insufficient",
+  "batch_reason": "at most five new QA per stage/session permits checkpoints and resource measurement; repeat the same fixed manifest without repeating cached native requests",
+  "candidate_config": {
+    "path": "configs/phase11_semantic_candidate_v8.yaml",
+    "sha256": "a39fa3fec64d55d5bfb5d8b845a60d6cdae7e2f3850b42da16c5cc11e06c7bc5"
+  },
+  "known_regression_required": "full fresh 15QA/42unit/30condition/114call report, all criteria passing with exact model/runtime/prompt/core bindings; no report is claimed yet",
+  "health_gate": {
+    "selected_qa_completed_per_language": 20,
+    "maximum_task_errors": 0,
+    "maximum_input_overflow": 0,
+    "baseline_requires_actual_used_context": true,
+    "unknown_outcome_stops_without_resampling": true,
+    "missing_or_budget_stopped_qa_remain_in_manifest": true
+  },
+  "semantic_adoption_after_blind_seal": {
+    "minimum_exact_label_accuracy_per_language": 0.9,
+    "minimum_supported_label_accuracy_per_language": 0.9,
+    "maximum_definite_negative_false_support": 0,
+    "ambiguous_units_excluded_only_from_accuracy_not_F": true,
+    "report_all_positive_negative_ambiguous_denominators": true,
+    "AI_expected_labels_frozen_before_internal_verdict_unblinding": true,
+    "minimum_complete_comparable_qa_per_language": 10,
+    "comparison_minimum_reason": "at least half of 20 source-diverse QA must have complete distinct-order and repeat comparisons for a usable feasibility estimate; not a power calculation or significance requirement"
+  },
+  "quality": {
+    "seal_all_candidates_both_languages_before_internal_unblinding": true,
+    "human_reviewed": false,
+    "assessor": "Codex AI",
+    "exact_model_identifier_available": false,
+    "history_isolated": false,
+    "unknown_quality_not_imputed": true,
+    "maximum_candidates_per_qa": 2
+  },
+  "time_policy": {
+    "hard_wall_limit_asserted": false,
+    "measure_each_stage_session_wall_time": true,
+    "prior_rough_generation_estimate_hours_for_both_languages": [
+      5.5,
+      12
+    ],
+    "external_annotation_audit_time_additional": true
+  },
+  "decision": {
+    "threshold": 0.7,
+    "bare_refusal_policy": "rewrite_once",
+    "score_for_no_fixed_units": null
+  },
+  "do_not_claim": [
+    "main pilot completed from tests or selected IDs",
+    "fresh Calibration from reused Development",
+    "Gate11 from execution health only",
+    "Phase12 execution"
+  ]
+}

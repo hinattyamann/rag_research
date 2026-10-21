@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.37 — 2026年10月21日 最終JSON境界の別制約と人工Runtime検証を追加
+## Version 8.38 — 2026年10月21日 最終JSON境界の別制約と人工Runtime検証を追加
 
-[研究計画 Version 7.35](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.36](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -36,6 +36,8 @@ Phase 7の入力検証CLIは引き続きCompletion 0回である。
 固定43ccf05のv8は人工6 Call（厳密5条件すべて）を通過。全128予定入力/生成0 Preflight・CUDA全層も確認し、新しい日英意味診断を実走中。全結果/意味採用は未確定で、旧Expected/基準と失敗Runを保持する。
 
 並行して[主Developmentの事前選定](phase11_main_development.md)を行い、旧入力70 File/使用済み62 ID・日本語予約142 QAの除外来歴から日英各20問/20 Groupを保存した。全514 Test/Ruff成功、追加Model Call0。主20問のRunner拡張/実行Protocol・採用前提・実走は未了。
+
+主Development用の採用/選定/Policy Guard・原子Call上限1660/言語・新規5 QA/段階Sessionと中断再開を実装し、全536 Test/Ruff成功。主結果前のHealth/意味採用/全Label封印基準も保存した。実設定/新規推論は既知15 QA回帰の通過後とし、まだ主実走を行っていない。
 
 ## 1. 既存実装と保存する境界
 

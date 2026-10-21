@@ -459,6 +459,80 @@ def test_claimwise_bilingual_runner_quality_raw_validation_and_operational_calls
     assert "subtasks" not in json.dumps(packet) and "score" not in json.dumps(packet)
 
 
+def main_fixture(connection):
+    path, output, state = connection
+    config = state["config"]
+    config.update(execution_scope="main_development_v1", verification_mode="source-reading-v1",
+                  main_limits={"maximum_completion_attempts": 100, "maximum_new_qa_per_stage_session": 1})
+    config["development_selection"] = {"path": "selection.json"}
+    config["adopted_known_regression"] = {"path": "known.json"}
+    config["main_execution_policy"] = {"path": "policy.json"}
+    for name in ("selection.json", "known.json", "policy.json"):
+        (path.parent / name).write_text("{}")
+    state["prompts"]["judge_layout"] = "draft_sources_target"
+    state["prompts"]["source_reading_auxiliary"] = "untrusted_reading_v1"
+    state["prompts"]["tasks"]["read_sources"] = {"system": "read_sources"}
+    config["tasks"]["read_sources"] = {"max_output_tokens": 512}
+    (path.parent / "prompts.yaml").write_text(yaml.safe_dump(state["prompts"]))
+    return path, output, state
+
+
+def test_main_batches_keep_all_selected_qa_resume_and_avoid_duplicate_calls(connection, monkeypatch, capsys):
+    path, output, state = main_fixture(connection)
+    loaded = list(runner.load_config(path))
+    second = deepcopy(loaded[2][0])
+    second.update(record_id="ja-second", document_group_id="second-group")
+    loaded[2].append(second)
+    monkeypatch.setattr(runner, "load_config", lambda p: tuple(loaded))
+    assert runner.run(path, output)["stage"] == "baseline_batch_complete"
+    assert len(state["calls"]) == 1
+    assert not (output / "report.private.json").exists()
+    assert len(read_json(output / "manifest.json")["selection"]) == 2
+    result = runner.run(path, output)
+    assert result["stage"] == "internal_batch_complete" and result["processed_qa"] == 1
+    assert not (output / "report.private.json").exists()
+    final = runner.run(path, output)
+    assert final["selected_qa_count"] == 2 and final["trace_count"] == 2
+    assert len(state["calls"]) == 28  # 2 baseline + 2*(6 readers+6 verdicts+1 rewrite).
+    before = (len(state["calls"]), state["servers"])
+    assert runner.run(path, output) == final
+    assert (len(state["calls"]), state["servers"]) == before
+    assert quality.read_run(output)[1]["selected_qa_count"] == 2
+    # A lost derived aggregate is reconstructed from intact leaves without a server.
+    (output / "internal" / digest("ja-development")[:24] / "original.json").unlink()
+    assert runner.run(path, output) == final
+    assert (len(state["calls"]), state["servers"]) == before
+    assert quality.read_run(output)[1]["selected_qa_count"] == 2
+    console = capsys.readouterr().out
+    assert '"score"' not in console and '"decision"' not in console and "猫は赤い" not in console
+
+
+def test_main_call_limit_reserves_before_server_and_creates_no_fictitious_attempt(connection):
+    path, output, state = main_fixture(connection)
+    state["config"]["main_limits"]["maximum_completion_attempts"] = 1
+    result = runner.run(path, output)
+    assert result["stage"] == "main_development_stopped" and "budget_exhausted" in result["reason"]
+    assert len(state["calls"]) == state["servers"] == 1  # Baseline only.
+    folder = output / "internal" / digest("ja-development")[:24]
+    assert not (folder / "claims.json").exists() and not (folder / "rewrite.json").exists()
+    assert read_json(output / "stop.json")["budget_snapshot"]["recorded_native_attempts_upper_bound"] == 1
+    assert runner.run(path, output) == result
+    assert len(state["calls"]) == state["servers"] == 1
+
+
+@pytest.mark.parametrize("failure", ["initial", "verify_claims", "rewrite_answer"])
+def test_main_health_failure_is_durable_and_never_resampled(connection, failure):
+    path, output, state = main_fixture(connection)
+    state["failure"] = failure
+    stopped = runner.run(path, output)
+    assert stopped["stage"] == "main_development_stopped" and "health_failure" in stopped["reason"]
+    before = (len(state["calls"]), state["servers"])
+    replay = runner.run(path, output)
+    assert replay["reason"] == "existing_error_or_unknown_outcome"
+    assert (len(state["calls"]), state["servers"]) == before
+    assert not (output / "report.private.json").exists()
+
+
 def test_pending_quality_is_rejected_before_access_to_private_scores(connection, monkeypatch):
     config, output, state = connection
     runner.run(config, output)
