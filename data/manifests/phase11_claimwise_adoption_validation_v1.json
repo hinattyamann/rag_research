@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-direct-fixed-unit-adoption-and-budget-control-validation-not-model-adoption",
+  "created_at_utc": "2026-10-21T22:18:38.135038+00:00",
+  "new_tests": 22,
+  "pytest_full": {
+    "passed": 633,
+    "seconds": 11.18
+  },
+  "pytest_focused": {
+    "passed": 109,
+    "seconds": 4.1
+  },
+  "ruff_passed": true,
+  "actual_checks": {
+    "created_at_utc": "2026-10-21T22:17:25.609413+00:00",
+    "actual_configs_loaded": [
+      {
+        "candidate_version": 8,
+        "cases": 29,
+        "conditions": 58,
+        "max_calls": 128,
+        "mode": "source-reading-v1"
+      },
+      {
+        "candidate_version": 13,
+        "cases": 29,
+        "conditions": 58,
+        "max_calls": 70,
+        "mode": "claimwise-v1"
+      }
+    ],
+    "all_parent_cases_expected_sources_and_gates_identical": true,
+    "both_language_judges_identical": true,
+    "actual_failed_reports_rejected": [
+      {
+        "path": "data/runs/semantic_diagnostics/phase11-qwen35-9b-source-reading-v11/report.json",
+        "sha256": "d572ce1057d27992ffbe48c0571c3b38be602c4f1adf61dd3abb97863d125822",
+        "message": "Known regression must be complete, passing and fully costed"
+      },
+      {
+        "path": "data/runs/semantic_diagnostics/phase11-qwen35-9b-source-reading-v12/report.json",
+        "sha256": "ed47bc93f1861c63d383ecd8017f74915c76a471424159192e7ee3a8c894f096",
+        "message": "Known regression must be complete, passing and fully costed"
+      }
+    ],
+    "core_and_probe_hashes_unchanged": 27,
+    "positive_full_adoption_with_actual_data_demonstrated": false,
+    "new_model_calls": 0,
+    "new_model_servers": 0
+  },
+  "artifacts": {
+    "src/rag_research/experiments/bilingual_budget.py": {
+      "sha256": "343f77abff44086574e9b466b723483465ad7e276d3265029dbe30c5dc0de2a3",
+      "bytes": 4433
+    },
+    "src/rag_research/experiments/bilingual_main.py": {
+      "sha256": "a9be98ba78b1c670e7bb2f041c89677246dc8dc43354d769642a6df7ce6d5644",
+      "bytes": 10271
+    },
+    "src/rag_research/experiments/bilingual_runner.py": {
+      "sha256": "f519a0d5e7dee619d082d19f22038923ebdbb319d80f4b22b7fdb91a70d3a2c7",
+      "bytes": 18440
+    },
+    "src/rag_research/experiments/semantic_diagnostics.py": {
+      "sha256": "4a43cc49115c45b0cdb774dbe9933392f8860c0dcb96afc9882344604509d565",
+      "bytes": 20310
+    },
+    "tests/test_bilingual_budget.py": {
+      "sha256": "92b5f0833b52598ba6335ddcfd5272bc17516f78063ed95ed53fce990d957ce8",
+      "bytes": 4496
+    },
+    "tests/test_bilingual_main.py": {
+      "sha256": "bc18d0d1a8f8dd4282ab91623730b488d36ec2c190ff5e461fcb3a1157814c18",
+      "bytes": 13752
+    },
+    "tests/test_semantic_diagnostics.py": {
+      "sha256": "4c1710421e324707c1dab39616079e51f29ceaa0f45e7c2549e330c46d48d2f1",
+      "bytes": 24187
+    },
+    "configs/phase11_semantic_candidate_v13.yaml": {
+      "sha256": "d354c73d6361ab86f66f00d2766eec526ca8318fd88bab06628d980a2826658f",
+      "bytes": 2178
+    },
+    "configs/phase11_semantic_diagnostics_claimwise_v4.json": {
+      "sha256": "9500c2942638b3ed4f3919d9d29de3b5c4800e8d9f4419bca03571a862919874",
+      "bytes": 46646
+    },
+    "configs/phase11_semantic_prompts_en_v9.yaml": {
+      "sha256": "8ee1548cc33291fc7af31f2c88280a667870469f35783556edd067e5916d7eeb",
+      "bytes": 8327
+    },
+    "configs/phase11_semantic_prompts_ja_v9.yaml": {
+      "sha256": "1a001260b56406e042ebe07e4cc31a22b1ba6079bed8344fb6d5ac1f035bc569",
+      "bytes": 8389
+    },
+    "data/manifests/phase11_qwen35_9b_preregistration_v5.json": {
+      "sha256": "d65890da276b57b737d138fde320b1adb38438f63730a9015fcf27826b76b173",
+      "bytes": 6238
+    },
+    "docs/phase11_qwen35_candidate.md": {
+      "sha256": "d6e53c29f21717cb434ed2915626740a2d784392f253a8b8d8687c3116753ca3",
+      "bytes": 22104
+    },
+    "data/runs/development_screening/phase11-direct-adoption-v1/validation.json": {
+      "sha256": "aff48ff56e7e56a7230d8256e88ef10703e9a41097556db6824f7e6fcf68d9fc",
+      "bytes": 1226
+    }
+  },
+  "positive_tests_use_explicit_model_replay_and_config_doubles": true,
+  "actual_main_or_calibration_started": false,
+  "new_model_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

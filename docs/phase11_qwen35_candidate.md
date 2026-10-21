@@ -238,3 +238,38 @@ Expected nullは精度だけから除きFの全7分母を保持する。反転�
 対象意味確認1+Preflight4を含む全41 Artifactを`phase11_source_reading_result_v12.json`へ結んだ。
 旧全Version/Expected/採用基準を保つ。9Bの実完了は累積74 Callで、既知15 QA回帰はまだ行っていない。
 主Development/予約Calibrationは未実施、Gate 11未通過、Phase 12未実施である。
+
+## 中間読解を除く直接照合v13の事前条件
+
+v12と同じ9B/Runtime/Context24576・推論4096・判定/書換え6144・全Sampler/Seed/Schemaで、
+中間読解だけを除いた`claimwise-v1`を別候補v13へ登録する。
+中間メモの複数主体/行為の要約による影響を取り除く仮説で、改善は未証明。
+旧8Bの直接照合v4は不通過だったが、この9B/Native設定では直接方式をまだ試していない。
+
+全原資料・固定文・全文の未信頼草稿を渡し、各文を直接照合する既存Engineを使う。
+Prompt v9はv8から`source_reading`の入力・Task/Schemaと中間メモ説明だけを除き、
+既存の一般的な主体移転の確認文は保持する。元の比較Prefix/意味定義/架空例/抽出/書換えは変えない。
+日英で同じJudgeと設定を使い、既知の人名/ID/期待Labelを追加しない。
+主/予約CalibrationのQA出力やEvaluationを調整へ使わない。
+
+全29例/35文/58条件と旧Expected・全採用/停止基準は同じである。
+中間読解29 Call×2順序を除くため、診断上限は128→70となる。
+通過時に行う旧15 QA/全42文/30条件の回帰は、中間読解15 Call×2を除き114→84。
+新規上限154、既存9B実完了74を含む累積最大228、Retry0をPreregistration v5へ新生成前に保存した。
+Callsの減少は検証対象の削減ではない。全Critical/正負/曖昧分母・支持精度・誤支持0は保つ。
+
+人工形式検証の入力は候補Prompt/中間読解を使わない固定メッセージである。
+v12と同じModel/Context/Runtime/確率Sampler/判定TaskとNative Core26+Probe1 Hashの一致を確認し、
+通過済みformat_result_v3の厳密5条件を明示再利用する。新しい直接入力70件の生成0 Preflightは別途必須。
+形式の通過を意味の通過へ転用しない。
+
+主開始前のGuardを両固定文方式へ対応した。完全に結び付いた実前提PlanからCall数を計算し、
+既知回帰は全15 QA/42文/30条件・計画Hash/全Task集合/実Leaf Callsを要求する。
+主各20 QA/1660 Callと新規5 QA/段階Sessionの上限は保ち、直接方式では実際の`.claims/`だけを予約する。
+元方式の`.reading.json`と`.verification.claims/`の予約は維持する。未知方式は拒否する。
+主の実採用時には新Policy Versionと測定条件/時間見積りを別保存し、旧v8のPolicyを流用しない。
+
+新規22 Testを含む全633 Test/Ruff成功（11.18秒）、実v8/v13 Config・同じ全Expected/基準・
+日英同じJudge・Native27 Hash不変、不通過v11/v12の拒否を追加推論0で確認した。
+実回帰の成功側はまだなく、合成の全15 QA/42文TestはModel再生/設定読込みを置換した制御検証である。
+新候補の資源/意味診断は固定Commit/専用Worktreeで行う。失敗/未試行は保持し、基準を緩めない。

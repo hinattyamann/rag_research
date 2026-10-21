@@ -49,19 +49,22 @@ def budget_snapshot(output):
             "model_answers_or_internal_scores_in_snapshot": False}
 
 
-def pending_trace_calls(folder, trial_ids, fixed_claim_ids):
+def pending_trace_calls(folder, trial_ids, fixed_claim_ids, *, mode="source-reading-v1"):
     """Missing raw reader/claim/rewrite leaves give the exact upper bound to reserve."""
     folder = Path(folder)
+    require(mode in {"source-reading-v1", "claimwise-v1"}, "Unsupported main verification mode")
     require(len(trial_ids) == len(set(trial_ids)) and len(fixed_claim_ids) == len(set(fixed_claim_ids)),
             "Duplicate planned trials or fixed units")
     required = [folder / "rewrite.json"]
     if fixed_claim_ids:
         for trial in trial_ids:
             require(Path(trial).name == trial and trial not in {"", ".", ".."}, "Invalid trial ID")
-            required.append(folder / (trial + ".reading.json"))
+            if mode == "source-reading-v1":
+                required.append(folder / (trial + ".reading.json"))
             for claim in fixed_claim_ids:
                 require(Path(claim).name == claim and claim not in {"", ".", ".."}, "Invalid fixed unit ID")
-                required.append(folder / (trial + ".verification.claims") / (claim + ".json"))
+                suffix = ".verification.claims" if mode == "source-reading-v1" else ".claims"
+                required.append(folder / (trial + suffix) / (claim + ".json"))
     return sum(not path.exists() for path in required)
 
 

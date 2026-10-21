@@ -58,8 +58,19 @@ def load_config(path):
         prerequisite = local(plan["prerequisite"]["report_path"])
         require(file_hash(prerequisite) == plan["prerequisite"]["sha256"], "Prerequisite report changed")
         prior_report, prior_manifest = read_json(prerequisite), read_json(prerequisite.parent / "manifest.json")
-        require(prior_report["diagnostic_gate_passed"] is True and prior_report["completion_attempts_recorded"] == 128 and
-                prior_report["manifest_sha256"] == digest(prior_manifest), "Passing full bilingual diagnostics required")
+        prior_plan_path = local(prior_manifest["config"]["diagnostics"])
+        prior_plan = read_json(prior_plan_path)
+        prior_mode = prior_manifest["config"].get("verification_mode", "joint")
+        prior_calls = 2 * sum(len(c["claims"]) + (prior_mode == "source-reading-v1") for c in prior_plan["cases"])
+        require(prior_mode in {"claimwise-v1", "source-reading-v1"} and
+                prior_plan["purpose"] == "phase11-known-bilingual-semantic-diagnostics" and
+                prior_plan.get("verification_mode") == prior_mode and
+                prior_manifest["plan_sha256"] == file_hash(prior_plan_path) and
+                prior_report["diagnostic_gate_passed"] is True and not prior_report["not_attempted_ids"] and
+                prior_report["completed_conditions"] == prior_report["planned_conditions"] == len(specs(prior_plan)) and
+                prior_report["completion_attempts_recorded"] == prior_plan["max_completion_attempts"] == prior_calls and
+                prior_report["cost_incomplete"] is False and prior_report["manifest_sha256"] == digest(prior_manifest),
+                "Passing full bilingual diagnostics required")
         require({k: v for k, v in config.items() if k not in {"study_version", "diagnostics"}} ==
                 {k: v for k, v in prior_manifest["config"].items() if k not in {"study_version", "diagnostics"}},
                 "Known regression must use the passing candidate settings")
@@ -73,7 +84,7 @@ def load_config(path):
                 require(file_hash(local(name)) == sha, "Passing Judge implementation changed")
     cases = plan["cases"]
     mode = config.get("verification_mode", "joint")
-    require(not regression or mode == "source-reading-v1", "Known regression requires the passing source-reading mode")
+    require(not regression or mode in {"claimwise-v1", "source-reading-v1"}, "Known regression requires the passing fixed-unit mode")
     require(plan.get("verification_mode", "joint") == mode, "Diagnostic plan verification mode differs")
     expected_budget = 2 * sum((len(c["claims"]) + (mode == "source-reading-v1")) if mode != "joint" else 1 for c in cases)
     require(cases and len({c["id"] for c in cases}) == len(cases) and

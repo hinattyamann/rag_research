@@ -55,12 +55,18 @@ def passing_known_regression(binding):
     report, manifest = read_json(report_path), read_json(report_path.parent / "manifest.json")
     require(report["diagnostic_gate_passed"] is True and report["completed_conditions"] ==
             report["planned_conditions"] == 30 and not report["not_attempted_ids"] and
-            report["completion_attempts_recorded"] == 114 and report["cost_incomplete"] is False,
+            report["cost_incomplete"] is False,
             "Known regression must be complete, passing and fully costed")
     config_path = bound_path(binding["config"])
-    config, plan, prompts, _ = load_config(config_path)
+    config, plan, prompts, plan_path = load_config(config_path)
+    mode = config.get("verification_mode", "joint")
+    expected_calls = 2 * sum(len(c["claims"]) + (mode == "source-reading-v1") for c in plan["cases"])
     require(config == manifest["config"] and plan["purpose"] == "phase11-known-trace-semantic-regression" and
-            len(plan["cases"]) == 15 and report["manifest_sha256"] == digest(manifest),
+            len(plan["cases"]) == 15 and sum(len(c["claims"]) for c in plan["cases"]) == 42 and
+            mode in {"source-reading-v1", "claimwise-v1"} and
+            report["completion_attempts_recorded"] == plan["max_completion_attempts"] == expected_calls and
+            set(report["task_result_sha256"]) == {key for _, _, key in specs(plan)} and
+            manifest["plan_sha256"] == file_hash(plan_path) and report["manifest_sha256"] == digest(manifest),
             "Use the complete passing known-15 regression, not the artificial diagnostic alone")
     require(manifest["model"] == auxiliary_identity(config) and
             all(manifest.get(k) == v for k, v in execution_identity(config).items()), "Known model/runtime changed")
@@ -75,13 +81,13 @@ def passing_known_regression(binding):
         result = verify_once(None, task_config(config, "verify_claims"), prompts[case["language"]],
             {"question": case["question"], "answer": case["answer"], "claims": case["claims"], "documents": documents},
             path, {"manifest_sha256": digest(manifest), "case_id": case["id"], "order": order},
-            constraints=config["output_constraints"], mode="source-reading-v1",
-            reader_generation=task_config(config, "read_sources"))
+            constraints=config["output_constraints"], mode=mode,
+            reader_generation=task_config(config, "read_sources") if mode == "source-reading-v1" else None)
         require(result == saved, "Known raw reading/verdict/cost binding changed")
         results[key] = result
     assessed = assess(plan, results)
     require(all(report.get(k) == v for k, v in assessed.items()) and assessed["diagnostic_gate_passed"] and
-            sum(bool(t["completion_attempted"]) for t in atomic_steps(results.values())) == 114,
+            sum(bool(t["completion_attempted"]) for t in atomic_steps(results.values())) == expected_calls,
             "Known adoption criteria do not agree with all saved raw results")
     return config, manifest
 
@@ -124,8 +130,9 @@ def validate_main(config, rows, qa_path):
             {k: v for k, v in prior.items() if k not in ignored},
             "Policy candidate must match the completely adopted known-regression conditions")
     keys = ("auxiliary_runtime", "sampling", "execution", "verification_mode", "output_constraints")
+    tasks = ("verify_claims", "rewrite_answer") + (("read_sources",) if prior.get("verification_mode") == "source-reading-v1" else ())
     require(all(config.get(k) == prior.get(k) for k in keys) and
-            all(config["tasks"][t] == prior["tasks"][t] for t in ("read_sources", "verify_claims", "rewrite_answer")) and
+            all(config["tasks"][t] == prior["tasks"][t] for t in tasks) and
             auxiliary_identity(config) == manifest["model"] and
             file_hash(ROOT / config["prompts"]) == manifest["source_sha256"][prior["prompts"][language]],
             "Main Judge model/runtime/prompts/budgets must match the adopted candidate")

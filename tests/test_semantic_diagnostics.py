@@ -300,10 +300,17 @@ def prepare_regression_fixture(diagnostic):
     core.write_text("# Fixed fixture core, not a real Model experiment\n")
     prior = path.parent / "prior"
     prior.mkdir()
-    prior_manifest = {"config": deepcopy(config), "model": {"test": "identity"},
+    prior_plan = deepcopy(plan)
+    prior_plan.update(verification_mode="source-reading-v1", max_completion_attempts=12)
+    write_json(path.parent / "prior-plan.json", prior_plan)
+    prior_config = {**deepcopy(config), "diagnostics": "prior-plan.json"}
+    prior_manifest = {"config": prior_config, "model": {"test": "identity"},
+                      "plan_sha256": file_hash(path.parent / "prior-plan.json"),
                       "source_sha256": {str(core.relative_to(path.parent)): file_hash(core)}}
     write_json(prior / "manifest.json", prior_manifest)
-    write_json(prior / "report.json", {"diagnostic_gate_passed": True, "completion_attempts_recorded": 128,
+    write_json(prior / "report.json", {"diagnostic_gate_passed": True, "completion_attempts_recorded": 12,
+                                      "completed_conditions": 6, "planned_conditions": 6,
+                                      "not_attempted_ids": [], "cost_incomplete": False,
                                       "manifest_sha256": digest(prior_manifest), "fixture_not_real_model_evidence": True})
     plan.update(purpose="phase11-known-trace-semantic-regression", verification_mode="source-reading-v1",
                 max_completion_attempts=12, bare_refusal_cases_retained_separately=[],
@@ -378,3 +385,72 @@ def test_known_regression_positive_accuracy_cannot_hide_behind_many_negative_con
     assert assessed["known_regression"]["accuracy_of_all_planned"] == .925
     assert assessed["known_regression"]["supported_accuracy"] == .85
     assert assessed["critical_passed"] and not assessed["diagnostic_gate_passed"]
+
+
+def prepare_direct_regression_fixture(diagnostic):
+    path, output, state = prepare_regression_fixture(diagnostic)
+    config = yaml.safe_load(path.read_text())
+    config["verification_mode"] = "claimwise-v1"
+    config["tasks"].pop("read_sources")
+    for name in config["prompts"].values():
+        target = path.parent / name
+        prompt = yaml.safe_load(target.read_text())
+        prompt.pop("source_reading_auxiliary")
+        prompt["tasks"].pop("read_sources")
+        prompt["tasks"]["verify_claims"]["input_fields"].remove("source_reading")
+        target.write_text(yaml.safe_dump(prompt))
+    path.write_text(yaml.safe_dump(config))
+    prior_plan_path = path.parent / "prior-plan.json"
+    prior_plan = read_json(prior_plan_path)
+    prior_plan.update(verification_mode="claimwise-v1", max_completion_attempts=6)
+    write_json(prior_plan_path, prior_plan)
+    prior = path.parent / "prior"
+    manifest = read_json(prior / "manifest.json")
+    manifest.update(config={**config, "diagnostics": "prior-plan.json"}, plan_sha256=file_hash(prior_plan_path))
+    write_json(prior / "manifest.json", manifest)
+    report = read_json(prior / "report.json")
+    report.update(completion_attempts_recorded=6, manifest_sha256=digest(manifest))
+    write_json(prior / "report.json", report)
+    plan_path = path.parent / "plan.json"
+    plan = read_json(plan_path)
+    plan.update(verification_mode="claimwise-v1", max_completion_attempts=6)
+    plan["prerequisite"]["sha256"] = file_hash(prior / "report.json")
+    write_json(plan_path, plan)
+    state["source_reading"] = False
+    return path, output, state
+
+
+@pytest.mark.parametrize("failure", [False, True])
+def test_direct_regression_keeps_all_cases_and_gates_without_inventing_reader_calls(diagnostic, failure):
+    path, output, state = prepare_direct_regression_fixture(diagnostic)
+    state["critical_failure"] = failure
+    report = module.run(path, output)
+    assert report["diagnostic_gate_passed"] is not failure
+    assert report["completion_attempts_recorded"] == (2 if failure else 6)
+    assert not list((output / "tasks").glob("*.reading.json"))
+    assert module.run(path, output) == report and state["servers"] == 1
+    assert len(state["calls"]) == (2 if failure else 6) and "EXPECTED-SECRET" not in json.dumps(state["calls"])
+
+
+@pytest.mark.parametrize("fault", ["plan_hash", "call_count", "incomplete", "cost", "mode"])
+def test_direct_regression_requires_its_own_complete_bound_prerequisite(diagnostic, fault):
+    path, output, state = prepare_direct_regression_fixture(diagnostic)
+    prior = path.parent / "prior"
+    manifest, report = read_json(prior / "manifest.json"), read_json(prior / "report.json")
+    if fault == "plan_hash":
+        manifest["plan_sha256"] = "changed"
+    elif fault == "mode":
+        manifest["config"]["verification_mode"] = "joint"
+    else:
+        report[{"call_count": "completion_attempts_recorded", "incomplete": "completed_conditions", "cost": "cost_incomplete"}[fault]] = {
+            "call_count": 128, "incomplete": 5, "cost": True}[fault]
+    write_json(prior / "manifest.json", manifest)
+    report["manifest_sha256"] = digest(manifest)
+    write_json(prior / "report.json", report)
+    plan_path = path.parent / "plan.json"
+    plan = read_json(plan_path)
+    plan["prerequisite"]["sha256"] = file_hash(prior / "report.json")
+    write_json(plan_path, plan)
+    with pytest.raises(ValueError, match="Passing full bilingual"):
+        module.run(path, output)
+    assert state["calls"] == [] and state["servers"] == 0

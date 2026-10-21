@@ -70,3 +70,15 @@ def test_corrupt_durable_cost_or_missing_attempt_flag_is_rejected(tmp_path):
     checkpoint(path, {"status": "ok"})
     with pytest.raises(ValueError, match="attempt flag"):
         budget_snapshot(tmp_path)
+
+
+def test_direct_claimwise_reservation_counts_actual_leaf_paths_without_a_reader(tmp_path):
+    trials, units = ["original", "reversed"], ["c1", "c2"]
+    assert pending_trace_calls(tmp_path, trials, units, mode="claimwise-v1") == 5
+    save(tmp_path / "original.claims/c1.json", "verify_claims")
+    save(tmp_path / "reversed.verification.claims/c2.json", "verify_claims")
+    save(tmp_path / "original.reading.json", "read_sources")
+    assert pending_trace_calls(tmp_path, trials, units, mode="claimwise-v1") == 4
+    assert pending_trace_calls(tmp_path, trials, [], mode="claimwise-v1") == 1
+    with pytest.raises(ValueError, match="Unsupported"):
+        pending_trace_calls(tmp_path, trials, units, mode="joint")

@@ -7,7 +7,9 @@ import pytest
 import yaml
 
 from rag_research.experiments import bilingual_main as main
-from rag_research.experiments.storage import checkpoint, write_json
+from rag_research.experiments import semantic_diagnostics
+from rag_research.experiments.frozen_trace import digest
+from rag_research.experiments.storage import checkpoint, read_json, write_json
 from rag_research.retrieval.common import file_hash
 
 
@@ -144,3 +146,91 @@ def test_policy_must_explicitly_bind_the_candidate_and_preserve_null_score(adopt
     config["main_execution_policy"]["sha256"] = file_hash(root / "policy.json")
     with pytest.raises(ValueError):
         main.validate_main(config, rows, qa)
+
+
+@pytest.fixture(params=["source-reading-v1", "claimwise-v1"])
+def known_evidence(tmp_path, monkeypatch, request):
+    """Synthetic full-size plan; configuration loading and model replay are doubles."""
+    monkeypatch.setattr(main, "ROOT", tmp_path)
+    run = tmp_path / "data/runs/semantic_diagnostics/known"
+    (run / "tasks").mkdir(parents=True)
+    config = {"verification_mode": request.param, "output_constraints": "synthetic"}
+    config_path = tmp_path / "candidate.yaml"
+    config_path.write_text(yaml.safe_dump(config))
+    cases = []
+    for number in range(15):
+        claims = [{"claim_id": "c" + str(i + 1), "text": "Fixed sentence."} for i in range(3 if number < 12 else 2)]
+        cases.append({"id": "known-" + str(number), "scope": "known_used_development", "language": "en",
+            "question": "Q?", "answer": "Full draft", "claims": claims,
+            "documents": [{"passage_id": "p1", "text": "One"}, {"passage_id": "p2", "text": "Two"}],
+            "expected": {c["claim_id"]: "contradicted" if number < 6 and c["claim_id"] == "c1" else "supported" for c in claims},
+            "critical_claim_ids": ["c1"] if number < 6 else []})
+    limit = 114 if request.param == "source-reading-v1" else 84
+    plan = {"purpose": "phase11-known-trace-semantic-regression", "cases": cases,
+        "orders": ["original", "reversed"], "max_completion_attempts": limit}
+    plan_path = tmp_path / "plan.json"
+    write_json(plan_path, plan)
+    manifest = {"config": config, "model": "synthetic", "plan_sha256": file_hash(plan_path)}
+    write_json(run / "manifest.json", manifest)
+    tasks = {}
+    for case, _, key in semantic_diagnostics.specs(plan):
+        tasks[key] = checkpoint(run / "tasks" / (key + ".json"), {"status": "ok", "execution_mode": request.param,
+            "completion_attempted": True, "subtask_costs": [{"completion_attempted": True}] *
+                (len(case["claims"]) + (request.param == "source-reading-v1")),
+            "parsed": {"verdicts": [{"claim_id": i, "label": label} for i, label in case["expected"].items()]}})
+    report = {**semantic_diagnostics.assess(plan, tasks), "completed_conditions": 30, "planned_conditions": 30,
+        "not_attempted_ids": [], "completion_attempts_recorded": limit, "cost_incomplete": False,
+        "manifest_sha256": digest(manifest), "task_result_sha256": {k: v["result_sha256"] for k, v in tasks.items()}}
+    write_json(run / "report.json", report)
+    state = {"calls": []}
+
+    def replay(client, generation, prompts, payload, path, binding, **kwargs):
+        assert client is None and kwargs["mode"] == request.param
+        assert kwargs["reader_generation"] == ("read_sources" if request.param == "source-reading-v1" else None)
+        state["calls"].append(path.stem)
+        return read_json(path)
+
+    monkeypatch.setattr(semantic_diagnostics, "load_config", lambda p: (config, plan, {"en": {}}, plan_path))
+    monkeypatch.setattr(main, "auxiliary_identity", lambda c: "synthetic")
+    monkeypatch.setattr(main, "execution_identity", lambda c: {})
+    monkeypatch.setattr(main, "task_config", lambda c, t: t)
+    monkeypatch.setattr(main, "verify_once", replay)
+    binding = {"path": "data/runs/semantic_diagnostics/known/report.json", "sha256": file_hash(run / "report.json"),
+        "config": {"path": "candidate.yaml", "sha256": file_hash(config_path)}}
+    return binding, run, plan, plan_path, state
+
+
+def test_full_known_adoption_uses_all_42_units_in_both_modes(known_evidence):
+    binding, _, plan, _, state = known_evidence
+    main.passing_known_regression(binding)
+    assert len(plan["cases"]) == 15 and sum(len(c["claims"]) for c in plan["cases"]) == 42
+    assert len(state["calls"]) == 30
+
+
+@pytest.mark.parametrize("fault", ["count", "plan", "fewer_units", "extra_condition", "false_pass", "native_count"])
+def test_full_known_adoption_cannot_reduce_units_or_trust_flags_and_recorded_costs(known_evidence, fault):
+    binding, run, plan, plan_path, _ = known_evidence
+    report = read_json(run / "report.json")
+    if fault == "count":
+        report["completion_attempts_recorded"] += 1
+    elif fault == "plan":
+        plan_path.write_text("different bytes")
+    elif fault == "fewer_units":
+        plan["cases"][-1]["claims"].pop()
+    elif fault == "extra_condition":
+        report["task_result_sha256"]["unplanned"] = "fake"
+    else:
+        raw = run / "tasks/known-0-original.json"
+        task = read_json(raw)
+        task.pop("result_sha256")
+        if fault == "false_pass":
+            task["parsed"]["verdicts"][0]["label"] = "supported"
+        else:
+            task["subtask_costs"] = deepcopy(task["subtask_costs"])
+            task["subtask_costs"][0]["completion_attempted"] = False
+        task = checkpoint(raw, task)
+        report["task_result_sha256"][raw.stem] = task["result_sha256"]
+    write_json(run / "report.json", report)
+    binding["sha256"] = file_hash(run / "report.json")
+    with pytest.raises(ValueError):
+        main.passing_known_regression(binding)

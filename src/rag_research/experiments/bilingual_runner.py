@@ -234,7 +234,7 @@ def _run(config_path, output, *, stage="all"):
                 if main:
                     units = extract_sentence_units(trace["answer"], language=config["language"])["claims"]
                     reserve = pending_trace_calls(folder, [t["trial_id"] for t in entry["plan"]["trials"]],
-                                                  [c["claim_id"] for c in units])
+                        [c["claim_id"] for c in units], mode=config.get("verification_mode", "joint"))
                     if reserve:
                         if new_questions == limits["maximum_new_qa_per_stage_session"]:
                             break
@@ -263,7 +263,8 @@ def _run(config_path, output, *, stage="all"):
             for trace, entry in zip(traces, binding["traces"], strict=True):
                 units = extract_sentence_units(trace["answer"], language=config["language"])["claims"]
                 needed = pending_trace_calls(internal / entry["directory"],
-                    [t["trial_id"] for t in entry["plan"]["trials"]], [c["claim_id"] for c in units])
+                    [t["trial_id"] for t in entry["plan"]["trials"]], [c["claim_id"] for c in units],
+                    mode=config.get("verification_mode", "joint"))
                 if needed:
                     reserve_calls(output, limits["maximum_completion_attempts"], needed)
                     needs_server = True
