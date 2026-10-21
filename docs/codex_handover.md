@@ -29,7 +29,8 @@ Main側は日本語の固定文単位候補を追加し、全316 Test（ホス�
 英語の本文分割は`data/processed/clapnq/c508d78-e5-passages-v1/`へ作成し、全178890親の本文とGold親2074種類の対応を確認した。
 全365 Test/Ruff成功。[Corpus準備の記録](phase11_corpus_preparation.md)に欠測規則・親参照・GPU Probeと次工程を保存した。
 日本語の削除過去本文はDataset Config v2で保存応答/Identityを検証し、原エラーのまま本文欠測を別記録する。
-GPU Probeは`.tools/embedding-gpu-probe`のuv環境で成功。E5 Encoder/CLIのGPU対応と専用環境の正式化・Index構築は未実施。
+GPU Probeを正式化し、`environments/embedding_gpu`のuv定義/LockとE5 Encoder/CLIの明示CUDA入口を追加した。
+全380 Test/Ruff、実CUDA数値/演算と既知1記事の構築/検索確認済み。手順は[CUDA監査](phase11_embedding_cuda.md)。全Corpus Indexは未構築。
 日本語の全2178 Titleは本文成功2126（2118種類のPage）・取得不能50・削除本文エラー2で終了した。
 正式QA/Groupは`data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/`、開発545/Calibration84/Evaluation209。
 706 Group・Group間Identity重複0、開発予約142 QAは全てDevelopment。原質問/Reference/行Hashを保持した。
@@ -52,7 +53,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.14](rag_research_plan.md)・[実装計画8.16](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.15](rag_research_plan.md)・[実装計画8.17](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

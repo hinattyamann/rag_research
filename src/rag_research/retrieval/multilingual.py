@@ -1,5 +1,6 @@
 """Pinned official multilingual E5 candidate; explicit query/passage roles, no truncation."""
 
+import importlib.metadata
 from pathlib import Path
 
 import numpy as np
@@ -95,16 +96,50 @@ class E5Tokenizer:
 
 
 class MultilingualE5Encoder:
-    def __init__(self, model_root=MODEL_ROOT, *, threads=6):
+    def __init__(self, model_root=MODEL_ROOT, *, threads=6, provider="cpu", device_id=0,
+                 profile_prefix=None):
         if type(threads) is not int or threads < 1:
             raise ValueError("threads must be a positive integer")
+        if provider not in {"cpu", "cuda"} or type(device_id) is not int or device_id < 0:
+            raise ValueError("Explicit cpu/cuda provider and nonnegative integer device_id required")
+        if provider == "cpu" and device_id != 0:
+            raise ValueError("device_id is only configurable for CUDA")
+        distributions = []
+        for name in ("onnxruntime", "onnxruntime-gpu"):
+            try:
+                importlib.metadata.version(name)
+            except importlib.metadata.PackageNotFoundError:
+                continue
+            distributions.append(name)
+        if len(distributions) != 1:
+            raise IndexValidationError("Install exactly one ONNX Runtime distribution per environment")
+        self.runtime_distribution = distributions[0]
+        self.provider = "CUDAExecutionProvider" if provider == "cuda" else "CPUExecutionProvider"
+        self.provider_options = {"device_id": str(device_id), "use_tf32": "0"}
+        if provider == "cuda":
+            if (self.runtime_distribution != "onnxruntime-gpu" or
+                    self.provider not in ort.get_available_providers()):
+                raise IndexValidationError("Explicit CUDA requires the isolated onnxruntime-gpu environment")
+            ort.preload_dlls(directory="")
         self.tokenizer = E5Tokenizer(model_root)
         self.model_manifest = self.tokenizer.model_manifest
         self.threads, self.truncated_count, self.encoded_batches = threads, 0, 0
         options = ort.SessionOptions()
         options.intra_op_num_threads, options.inter_op_num_threads = threads, 1
+        if profile_prefix is not None:
+            options.enable_profiling = True
+            options.profile_file_prefix = str(profile_prefix)
+        providers = ([(self.provider, self.provider_options)] if provider == "cuda" else [self.provider])
         self.session = ort.InferenceSession(str(self.tokenizer.directory / "onnx/model.onnx"),
-                                           sess_options=options, providers=["CPUExecutionProvider"])
+                                           sess_options=options, providers=providers)
+        if provider == "cuda":
+            if self.provider not in self.session.get_providers():
+                raise IndexValidationError("Requested CUDA session fell back to CPU only")
+            actual_options = self.session.get_provider_options().get(self.provider, {})
+            if any(actual_options.get(k) != v for k, v in self.provider_options.items()):
+                raise IndexValidationError("CUDA device/TF32 options differ from the requested conditions")
+            # Do not allow Python's run-time provider failure handler to silently switch to CPU.
+            self.session.disable_fallback()
 
     def encode(self, texts, *, kind):
         if not isinstance(texts, list) or kind not in {"query", "passage"}:
@@ -141,11 +176,16 @@ class MultilingualE5Encoder:
         return self.encode(texts, kind="passage")
 
     def retrieval_config(self, batch_size):
-        return {"kind": "embedding", "algorithm": "multilingual-e5-onnx-cosine-no-truncation-v1",
+        config = {"kind": "embedding", "algorithm": "multilingual-e5-onnx-cosine-no-truncation-v1",
                 "model": self.model_manifest, "quantization": "none_fp32_official_onnx",
                 "input": "text", "query_prefix": "query: ", "passage_prefix": "passage: ",
                 "dimension": DIMENSION, "max_length": MAX_LENGTH, "pooling": "attention_mask_mean",
                 "normalization": "l2", "overflow": "error_without_truncating", "dtype": "float32",
                 "metric": "cosine", "search": "numpy-exact-block-dot", "tie_break": "corpus_row_ascending",
-                "batch_size": batch_size, "threads": self.threads, "provider": "CPUExecutionProvider",
-                "packages": package_versions(["numpy", "onnxruntime", "tokenizers"])}
+                "batch_size": batch_size, "threads": self.threads, "provider": self.provider,
+                "packages": package_versions(["numpy", self.runtime_distribution, "tokenizers"])}
+        if self.provider == "CUDAExecutionProvider":
+            config.update(provider_options=self.provider_options,
+                          session_providers=self.session.get_providers(),
+                          automatic_provider_fallback=False)
+        return config

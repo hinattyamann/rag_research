@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.16 — 2026年10月21日 本文欠測・英語分割と親参照保持を実装
+## Version 8.17 — 2026年10月21日 正式日本語分割と多言語EncoderのCUDA入口を追加
 
-[研究計画 Version 7.14](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.15](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -482,3 +482,11 @@ v1・Raw・全838 QAを保持し、通信/別権限エラーは未解決とし�
 全6494 Rawファイルを正規配置へ複製しByte一致、保存Splitの和集合/互いの非重複と原行対応を独立検証した。
 `phase11_japanese_snapshot_group_manifest.json`へ成果物と検証ScriptのHashを保存する。
 `gold_passage_ids=[]`/`pending_passage_build`は継続し、記事Passage化・引用/人手要約と欠測の対応は次に行う。
+
+### 多言語Encoderの明示CUDA実行
+
+[実機監査](phase11_embedding_cuda.md)のとおり、専用uv環境と正式Encoder/CLIのGPU入口を追加した。
+GPU版Runtime単独・実CUDA Session・Device0/TF32無効を検査し、Pythonの自動Provider Fallbackを無効にする。
+Provider/Options/実Session/Runtime版をIndex Configへ含め、異なる条件の再開/検索を拒否する。CPU既定Configは不変。
+合成入力のCUDA1396/CPU8 NodeとCPU数値差、既知27 Passageの構築・再開追加0・検索・超過拒否を確認した。
+全380 Test/Ruff成功。根拠は`phase11_multilingual_cuda_encoder_manifest.json`。全Corpus Index/日英RAG/Calibrationは未完了。

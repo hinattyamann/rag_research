@@ -30,9 +30,14 @@ def main():
     parser.add_argument("--source-dataset", default="CLAPNQ")
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--threads", type=int, default=6)
+    parser.add_argument("--provider", choices=("cpu", "cuda"), default="cpu")
+    parser.add_argument("--device-id", type=int, default=0)
     args = parser.parse_args()
     if args.encoder == "multilingual-e5" and args.output_dir is None:
         parser.error("Multilingual E5 requires an explicit new --output-dir")
+    if (args.provider != "cpu" or args.device_id != 0) and (
+            args.encoder != "multilingual-e5" or args.kind != "embedding"):
+        parser.error("CUDA/device options apply only to multilingual E5 embedding builds")
     output = args.output_dir or INDEX_ROOT / args.kind
     try:
         if args.kind == "bm25":
@@ -41,7 +46,8 @@ def main():
             manifest = build_bm25(args.corpus, output, tokenizer=tokenizer,
                                   source_dataset=args.source_dataset)
         else:
-            encoder = (MultilingualE5Encoder(args.model_root or E5_MODEL_ROOT, threads=args.threads)
+            encoder = (MultilingualE5Encoder(args.model_root or E5_MODEL_ROOT, threads=args.threads,
+                                             provider=args.provider, device_id=args.device_id)
                        if args.encoder == "multilingual-e5" else
                        OnnxEncoder(args.model_root or MODEL_ROOT, threads=args.threads))
             manifest = build_dense(args.corpus, output, encoder, batch_size=args.batch_size,

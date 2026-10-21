@@ -1,7 +1,10 @@
 """Role, padding, cache integrity and source boundaries without downloading weights."""
 
 import hashlib
+import importlib.metadata
 import json
+import subprocess
+import sys
 from copy import deepcopy
 from types import SimpleNamespace
 
@@ -226,3 +229,121 @@ def test_mixed_source_corpus_is_rejected_even_with_an_explicit_dataset(tmp_path)
     mapping.mkdir()
     with pytest.raises(IndexValidationError, match="Invalid Corpus record"):
         CorpusStore.prepare(path, mapping, source_dataset=DATASET_ID)
+
+
+@pytest.fixture
+def fake_cuda(fake_encoder, monkeypatch):
+    cpu, runs = fake_encoder
+    state = {"providers": ["CUDAExecutionProvider", "CPUExecutionProvider"],
+             "options": {"device_id": "0", "use_tf32": "0"}, "fallback_disabled": False}
+    original_version = importlib.metadata.version
+
+    def gpu_version(name):
+        if name == "onnxruntime":
+            raise importlib.metadata.PackageNotFoundError(name)
+        if name == "onnxruntime-gpu":
+            return "1.30.0"
+        return original_version(name)
+
+    class Session(type(cpu.session)):
+        def __init__(self, *args, **kwargs):
+            state["requested"] = kwargs["providers"]
+            state["session_options"] = kwargs["sess_options"]
+
+        def get_providers(self):
+            return state["providers"]
+
+        def get_provider_options(self):
+            return {"CUDAExecutionProvider": state["options"]}
+
+        def disable_fallback(self):
+            state["fallback_disabled"] = True
+
+    monkeypatch.setattr(importlib.metadata, "version", gpu_version)
+    monkeypatch.setattr(module.ort, "get_available_providers", lambda: ["CUDAExecutionProvider"])
+    monkeypatch.setattr(module.ort, "preload_dlls", lambda **kw: state.update(preload=kw), raising=False)
+    monkeypatch.setattr(module.ort, "InferenceSession", Session)
+    return state, runs
+
+
+def test_cuda_options_distribution_and_fallback_are_bound_to_index_identity(fake_cuda, tmp_path):
+    state, runs = fake_cuda
+    encoder = module.MultilingualE5Encoder(provider="cuda", profile_prefix=tmp_path / "profile")
+    assert state["requested"] == [("CUDAExecutionProvider", {"device_id": "0", "use_tf32": "0"})]
+    assert state["preload"] == {"directory": ""} and state["fallback_disabled"]
+    assert state["session_options"].enable_profiling
+    assert encoder.encode_passages(["normal", "short"]).shape == (2, 384)
+    config = encoder.retrieval_config(2)
+    assert config["provider"] == "CUDAExecutionProvider"
+    assert config["packages"]["onnxruntime-gpu"] == "1.30.0"
+    assert "onnxruntime" not in config["packages"]
+    assert config["automatic_provider_fallback"] is False
+    assert config["provider_options"]["use_tf32"] == "0"
+    assert len(runs) == 1
+    corpus = tmp_path / "corpus.jsonl"
+    japanese_corpus(corpus)
+    output = tmp_path / "index"
+    build_dense(corpus, output, encoder, source_dataset=DATASET_ID, batch_size=2)
+    count = len(runs)
+    build_dense(corpus, output, encoder, source_dataset=DATASET_ID, batch_size=2)
+    assert len(runs) == count
+    encoder.provider_options = {"device_id": "1", "use_tf32": "0"}
+    with pytest.raises(IndexValidationError, match="differs"):
+        DenseRetriever(corpus, output, encoder)
+    with pytest.raises(IndexValidationError, match="different settings"):
+        build_dense(corpus, output, encoder, source_dataset=DATASET_ID, batch_size=2)
+
+
+def test_cuda_cpu_only_fallback_fails_before_encoding(fake_cuda):
+    state, runs = fake_cuda
+    state["providers"] = ["CPUExecutionProvider"]
+    with pytest.raises(IndexValidationError, match="fell back to CPU only"):
+        module.MultilingualE5Encoder(provider="cuda")
+    assert not runs and not state["fallback_disabled"]
+
+
+@pytest.mark.parametrize("options", [{"device_id": "0", "use_tf32": "1"},
+                                     {"device_id": "1", "use_tf32": "0"}, {}])
+def test_cuda_changed_actual_options_are_rejected(fake_cuda, options):
+    state, runs = fake_cuda
+    state["options"] = options
+    with pytest.raises(IndexValidationError, match="device/TF32"):
+        module.MultilingualE5Encoder(provider="cuda")
+    assert not runs
+
+
+def test_cuda_missing_provider_is_rejected_without_loading_model(fake_cuda, monkeypatch):
+    monkeypatch.setattr(module.ort, "get_available_providers", lambda: ["CPUExecutionProvider"])
+    monkeypatch.setattr(module, "E5Tokenizer", lambda *a: pytest.fail("Do not load model without CUDA"))
+    with pytest.raises(IndexValidationError, match="isolated"):
+        module.MultilingualE5Encoder(provider="cuda")
+
+
+@pytest.mark.parametrize("installed", [set(), {"onnxruntime", "onnxruntime-gpu"}])
+def test_missing_or_ambiguous_runtime_distributions_fail_closed(monkeypatch, installed):
+    def version(name):
+        if name not in installed:
+            raise importlib.metadata.PackageNotFoundError(name)
+        return "1.30.0"
+
+    monkeypatch.setattr(importlib.metadata, "version", version)
+    with pytest.raises(IndexValidationError, match="exactly one"):
+        module.MultilingualE5Encoder()
+
+
+@pytest.mark.parametrize("kwargs", [{"provider": "auto"}, {"device_id": -1},
+                                    {"device_id": True}, {"device_id": 1}, {"threads": False}])
+def test_invalid_runtime_request_is_rejected_before_model_load(monkeypatch, kwargs):
+    monkeypatch.setattr(module, "E5Tokenizer", lambda *a: pytest.fail("Unexpected model load"))
+    with pytest.raises(ValueError):
+        module.MultilingualE5Encoder(**kwargs)
+
+
+@pytest.mark.parametrize("args", [["--encoder", "minilm", "--kind", "embedding"],
+                                  ["--encoder", "multilingual-e5", "--kind", "bm25",
+                                   "--output-dir", "unused"]])
+def test_cli_rejects_cuda_for_unsupported_paths(args):
+    result = subprocess.run([sys.executable, "scripts/build_retrieval_index.py", *args,
+                             "--provider", "cuda"], capture_output=True, text=True)
+    assert result.returncode == 2
+    assert "apply only to multilingual E5 embedding" in result.stderr
