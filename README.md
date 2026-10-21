@@ -31,7 +31,7 @@ v14の事前Gateは引用ID重複1件で不通過として保持し、後処理�
 研究内容と実装方針は、次の文書を参照してください。
 
 - [研究計画 Version 7.12](docs/rag_research_plan.md)
-- [実装計画 Version 8.13](docs/rag_implementation_plan.md)
+- [実装計画 Version 8.14](docs/rag_implementation_plan.md)
 - [日本語Datasetの選定基準・日英比較・Phase 11〜14の拡張方針](docs/english_japanese_expansion.md)
 - [Dataset Guide Version 2.4](docs/clapnq_dataset_guide.md)
 - [先行研究との関係・本研究の立ち位置と有用性](docs/related_research_positioning.md)

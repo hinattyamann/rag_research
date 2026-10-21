@@ -1,6 +1,6 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.13 — 2026年10月21日 日本語文単位の明示版・本文保持と英語回帰を追加
+## Version 8.14 — 2026年10月21日 日本語QA Adapterと文書Group分割・取得監査の契約を追加
 
 [研究計画 Version 7.12](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
@@ -408,3 +408,33 @@ HTMLは実行せず本文へ変換し、見出し・段落・箇条書き・表�
 既存英語の保存抽出65件と合成7例は変更前Commitの抽出結果と一致し、既存Run2500ファイルのHashは不変。
 `data/manifests/phase11_japanese_sentence_component.json`に確認根拠を保存する。
 日本語Model実走・検索・意味上の支持判定・未使用Calibration・日英文単位の最終採用は未完了である。
+
+### 日本語QA Adapterと文書Group分割（2026年10月21日13:59 JST）
+
+`data/japanese_dataset.py`と`scripts/prepare_japanese_dataset.py`を追加した。
+設定は`configs/phase11_japanese_dataset_v1.json`。回答付き838件すべてを既存の内部QAの基本Fieldへ対応させ、
+言語・原行Hash・引用原文/人手要約・回答文と引用Index・文書Groupを追加で保存する。
+原文引用だけを`selected_sentences_by_reference`へ入れ、人手要約を原文へ変換しない。
+`gold_passage_ids`はPassage構築前には空のまま`pending_passage_build`を明示し、引用断片のIDを捏造しない。
+人手回答の存在は共通Corpusによる回答可能性の保証とは区別する。回答なし433件へ回答不能Labelを付けない。
+
+Groupは回答の引用先に限らず、同QAの全取得記事、正規化Title・Redirect/別名・Page ID・同じ記事全文Hash、
+同文の質問/Reference回答の連結成分とする。開発予約が1件でも含まれる成分全体をDevelopment専用とする。
+TitleはUnderscore/空白・NFC・Casefoldを保守的に正規化し、RawのTitle/URLはそのまま保持する。
+質問/回答の同文確認はNFC・空白除去後のHashによる機械処理のみで、未使用QA本文を条件調整へ閲覧しない。
+
+目標比率は既存英語と同じDevelopment65%・Calibration10%・Evaluation25%、Seed42。
+予約GroupをDevelopmentへ割り当て、残りをサイズ降順・Seed付きSHA256順に処理し、
+各割当て後の目標QA数との二乗誤差の増分を最小にする。Groupを切り分けたり、都合のよい例を補充したりしない。
+実際のQA数と比率のずれを報告し、本実験の言語別採用件数は別途Calibration後に決める。
+
+`audit-source`はTitleと同文Hashによる暫定監査に限定し、`research_split=None`のまま保存する。
+実838件の取込み・原行Hashを確認し、暫定706 Group、初期予約132件からの開発閉包142件を得た。
+引用先に非quoteを含む94 QAも保持した。同じ出力での再実行は全Byte不変だった。
+正式な`build`は完了済みCorpus取得記録と排他的Lockを必要とし、記事/HTTP応答/Revision/本文/Source Archiveの
+Hashと取得件数・重複記事の整合を検証する。取得中・未完了・取得エラー未解消では正式Group分割を生成しない。
+取得中の実プロセスに対して生成を試み、Lockで拒否されQAが書かれないことも確認した。
+
+新規22 Test、全338 Test成功（ホスト4.54秒）、Ruff成功。既存Run2500ファイルのHashは不変。
+確認根拠は`data/manifests/phase11_japanese_dataset_preflight.json`。
+Redirect解決後の正式Split、記事Passage化/Gold対応、検索と日本語Model/品質実走はこれからである。

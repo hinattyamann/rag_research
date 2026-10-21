@@ -18,6 +18,10 @@ Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 Raw保存先は同Checkout内の`data/raw/wikipedia_human_retrieval_ja/corpus-20231225-v1/`。
 Main側は日本語の固定文単位候補を追加し、全316 Test（ホスト4.62秒）・Ruff、旧英語保存抽出65件の一致を確認した。
 文単位だけのComponent検証であり、日本語検索・Model/品質実走・日英文単位の最終採用はこれから。
+その後QA Adapter/Group分割処理を追加し、実838件の取込みを確認。全338 Test（4.54秒）・Ruff成功。
+暫定監査は`data/processed/wikipedia_human_retrieval_ja/02e85c8-source-audit-v1/`。
+706 Group・開発予約142件で全QAは`research_split=None`。正式SplitとGold Passage対応を完了済みにしない。
+手順と取得中の正式生成拒否は[Source選定記録](japanese_dataset_selection.md)第6節を参照する。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -34,7 +38,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.12](rag_research_plan.md)・[実装計画8.13](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.12](rag_research_plan.md)・[実装計画8.14](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

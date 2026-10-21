@@ -97,3 +97,38 @@ uv run python scripts/prepare_japanese_corpus.py fetch \
 既知開発例の経済産業省1記事でRevision/本文の実取得を確認し、全284 TestとRuffが成功した。
 これは全Corpus・検索・日本語LLM・品質の実走成功ではない。
 [取得Preflight Manifest](../data/manifests/phase11_japanese_acquisition_preflight.json)を参照する。
+
+## 6. QA取込みとGroup分割の準備（2026年10月21日）
+
+`scripts/prepare_japanese_dataset.py`と`configs/phase11_japanese_dataset_v1.json`を追加し、
+実838件を内部QAへ取り込んで原行HashとReference/引用Indexを確認した。
+Source IDから安定IDを作り、言語を`ja`と記録する。人手要約は原文引用と別Fieldへ保持する。
+非quoteの引用先を持つ94 QAも除外しない。回答なし433件をCorpus全体の回答不能と解釈しない。
+
+Groupは各回答の引用先だけでなく同QAの全参照記事をつなぎ、Redirect/別名・Page ID・同じ記事全文Hash、
+同文の質問/Reference回答の依存もまとめる。機械的な同文Hashの確認に限定し、未使用QA本文を調整に閲覧しない。
+初期予約132件を含む成分は全て開発専用とする。Title/同文のみの現時点の監査では706 Group・開発予約142件。
+Redirect解決後はさらに閉包が広がり得るため、まだ正式Splitとはしない。
+
+分割目標は既存英語と同じDevelopment65%・Calibration10%・Evaluation25%、Seed42。
+開発予約を優先し、残りのGroupをサイズ降順・Seed付きHash順に割り当て、目標QA数との二乗誤差の増分を
+最小にする。大きいGroupを切り分けて件数を合わせない。実比率のずれを報告し、最終採用件数は別途決める。
+
+`audit-source`は記事同一性を確定せず、全QAの`research_split=None`を保持する。
+出力は`data/processed/wikipedia_human_retrieval_ja/02e85c8-source-audit-v1/`のQA/Group/Report。
+同じCode/Config・Sourceでの再実行はByte不変、異なる既存出力の上書きは拒否する。
+参照断片からCorpus Passageを作らず、`gold_passage_ids=[]`と`pending_passage_build`を明示する。
+本文Passage化と引用対応の監査は後続で行い、人手回答の存在を共通Corpusの網羅性の証明にはしない。
+
+```bash
+uv run python scripts/prepare_japanese_dataset.py audit-source \
+  --source-dir .tools/worktrees/phase11-japanese-corpus-v1/data/raw/wikipedia_human_retrieval_ja/source-02e85c83a64f345aee62fba3a35af99c075a331f \
+  --output-dir data/processed/wikipedia_human_retrieval_ja/02e85c8-source-audit-v1
+```
+
+正式生成は`build --snapshot-dir <完了済みCorpus Directory>`を用いる。
+取得完了の全記事記録・HTTP応答・過去Revision・本文・実行Source ArchiveのHash、件数と同一記事の整合を照合する。
+取得の排他的Lockが残る実行中のCorpusには正式生成せず、部分取得や未解決の取得エラーでもSplitを生成しない。
+取得中の実プロセスに対する生成拒否と出力QAなしを確認した。全338 Test（4.54秒）・Ruff成功。
+確認根拠は`data/manifests/phase11_japanese_dataset_preflight.json`。記事取得・正式Split・検索・日本語Model実走と
+品質確認・日英Calibration・最終Gateは未完了である。

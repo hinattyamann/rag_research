@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-japanese-source-adapter-and-group-policy-not-final-split",
+  "recorded_at_utc": "2026-10-21T04:59:43.559233+00:00",
+  "base_commit": "96b5fd9490d21d2560a666084092b19892cb1668",
+  "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+  "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+  "stage": "source_title_audit_only",
+  "policy": {
+    "assignment": "reserved-development-then-size-desc-sha256-greedy-squared-error-v1",
+    "dataset_version": "02e85c8-groups-v1",
+    "development_reservation_manifest": "data/manifests/phase11_japanese_source_selection.json",
+    "gold_passage_mapping": "pending_passage_build_not_fabricated_from_reference_quotes",
+    "grouping": "all-retrieved-articles-aliases-pageids-identical-text-and-exact-qa-components-v1",
+    "model_calls": 0,
+    "phase12_allowed": false,
+    "purpose": "phase11-japanese-qa-group-split-preparation",
+    "qa_population": "all_838_answered_records_without_quality_or_coverage_filtering",
+    "schema_version": 1,
+    "seed": 42,
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "split_percentages": {
+      "calibration": 10,
+      "development": 65,
+      "evaluation": 25
+    },
+    "unsuccessful_searches_are_unanswerable_qa": false
+  },
+  "statistics": {
+    "group_count": 706,
+    "largest_group_sizes": [
+      7,
+      7,
+      5,
+      4,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "qa_count": 838,
+    "reserved_development_qa": 142
+  },
+  "preflight": {
+    "purpose": "japanese-source-adapter-and-concurrent-acquisition-preflight",
+    "adapted_rows": 838,
+    "all_source_line_hashes_equal": true,
+    "cited_nonquote_qa_retained": 94,
+    "literal_quotes_and_summaries_separate": true,
+    "idempotent_resume_bytes_unchanged": true,
+    "snapshot_build_blocked_while_acquisition_live": true,
+    "no_final_qa_written_by_lock_probe": true,
+    "model_calls": 0,
+    "article_identities_verified": false,
+    "gate11_passed": false
+  },
+  "tests": {
+    "pytest_passed": 338,
+    "new_synthetic_tests": 22,
+    "host_seconds": 4.54,
+    "ruff": "passed"
+  },
+  "protected_existing_run_files_unchanged": 2500,
+  "source_files": {
+    "src/rag_research/data/japanese_dataset.py": "352ab28441fa551ef15b42eb9a8b72be2203dc337557c9f14387f35a80fb66e3",
+    "scripts/prepare_japanese_dataset.py": "7963d390447e32e0d31dbe29891e0755c96671e4683638ae4a6d80c39cb8d1df",
+    "configs/phase11_japanese_dataset_v1.json": "4959f197ba6c7adfd24599783c67170c17fcacb541bb42bf095c91329f20d212",
+    "tests/data/test_japanese_dataset.py": "3320852f8a14cded504a174572cebe98b497925b92422da93371af1a2d25910d"
+  },
+  "artifacts": {
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-source-audit-v1/groups.json": "128cd7734b17fdc8039baecdcfd9d2b4f25332bba26e0d5fc4e6ce0c9c126b30",
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-source-audit-v1/qa.jsonl": "14e495cdf42978cffa14727491761027a6ae5736751be13f36f7b33d571cb08c",
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-source-audit-v1/report.json": "67b3dfa1c3f23494581b39e83037d1022b75820584a766431e4d906be51dbca1",
+    "data/runs/dataset_screening/phase11-ja-source-v1/japanese_dataset_v1/acquisition_lock_probe.txt": "1b4049ecbf16809f2c628c4d482f44c1de776be8e75244bf7665e7482114c602",
+    "data/runs/dataset_screening/phase11-ja-source-v1/japanese_dataset_v1/preflight.json": "82074ba98eb808e743e37c4999afdfff7a4865e0ea3f715acff35bbd62ae4f58",
+    "data/runs/dataset_screening/phase11-ja-source-v1/japanese_dataset_v1/pytest.xml": "85f45190d272e327ffea1795c08aabdb5a081bfb0ab5ac24b2a9ab0f066b034d",
+    "data/runs/dataset_screening/phase11-ja-source-v1/japanese_dataset_v1/ruff.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "article_identities_verified": false,
+  "research_split_assigned": false,
+  "gold_passage_mapping_status": "pending_passage_build",
+  "new_model_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-japanese-qa-group-split-preparation",
+  "dataset_version": "02e85c8-groups-v1",
+  "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+  "seed": 42,
+  "split_percentages": {"development": 65, "calibration": 10, "evaluation": 25},
+  "grouping": "all-retrieved-articles-aliases-pageids-identical-text-and-exact-qa-components-v1",
+  "assignment": "reserved-development-then-size-desc-sha256-greedy-squared-error-v1",
+  "development_reservation_manifest": "data/manifests/phase11_japanese_source_selection.json",
+  "qa_population": "all_838_answered_records_without_quality_or_coverage_filtering",
+  "unsuccessful_searches_are_unanswerable_qa": false,
+  "gold_passage_mapping": "pending_passage_build_not_fabricated_from_reference_quotes",
+  "model_calls": 0,
+  "phase12_allowed": false
+}
