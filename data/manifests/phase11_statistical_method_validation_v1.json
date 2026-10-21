@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-preregistered-statistical-method-validation",
+  "created_at": "2026-10-21T19:38:40.427759+09:00",
+  "implementation": "qa-increment-document-group-bootstrap-v1",
+  "bootstrap_repetitions": 10000,
+  "seed": 42,
+  "language_streams": "SeedSequence(42).spawn(2), en then ja, independently resampled document groups",
+  "estimand": "QA-weighted complete-comparison increment, conditional on comparability",
+  "ci": "percentile 2.5/97.5, numpy linear, null for fewer than two comparable groups",
+  "tests": {
+    "new_statistics_tests": 6,
+    "full_pytest_passed": 474,
+    "seconds": 6.37,
+    "ruff": "passed"
+  },
+  "legacy_english_schema_regression": {
+    "previously_used_qa": 20,
+    "comparable": 12,
+    "pair_denominators_match_saved_report": true
+  },
+  "capacity_probe": "artificial 200 groups per language only; does not freeze research N",
+  "new_qa_read": false,
+  "new_model_calls": 0,
+  "quality_sealed_real_run_adapter_implemented": false,
+  "research_sample_size_frozen": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "artifacts": {
+    "src/rag_research/experiments/statistics.py": {
+      "sha256": "25244b304a0613ccc5cd23f60d98f8c69ddb4f94c7968b1c3eaa1433ef90de3f",
+      "bytes": 6868
+    },
+    "tests/test_statistics.py": {
+      "sha256": "31b230fa7c8f4199e88770476283621e9c96f80d93119208e63336f51d134c7d",
+      "bytes": 5053
+    },
+    "docs/phase11_statistical_plan.md": {
+      "sha256": "a67798b2fc16856cf884620b80f553e2dfb783872c0684516c0f3cb00ac9892a",
+      "bytes": 4490
+    },
+    "uv.lock": {
+      "sha256": "11660879153bf6d59af324f295ce3a76c80a09dd4acfb4eb0076b92ae54d348a",
+      "bytes": 113925
+    },
+    "data/runs/statistics_validation/phase11-bilingual-v1/capacity_probe.json": {
+      "sha256": "70885dfd94ebfcacd10d7988b0eaf141df76473e223ee6169b70730fdbaf76ec",
+      "bytes": 247097
+    },
+    "data/runs/statistics_validation/phase11-bilingual-v1/legacy_english_compatibility.json": {
+      "sha256": "7925380a085df7af2e0e6e683cab98329cdd0a8e7f2289581b08bbc5419468b5",
+      "bytes": 11339
+    }
+  }
+}

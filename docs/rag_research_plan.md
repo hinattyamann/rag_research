@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.26 — 2026年10月21日 固定文ごとの評価・全文脈/全分母と費用を実装
+## Version 7.27 — 2026年10月21日 固定文候補の不通過とQA内増分・日英差/区間を記録
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.28](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.29](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -13,6 +13,9 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 現行候補は[固定文ごとの評価](phase11_claimwise_candidate.md)。初回回答全体を非信頼文脈として保持し、全固定文を個別評価して
 元の全分母へ集約する。呼出し数と入力配置の変更を両言語で同じように扱い、費用と失敗を別に記録する。
 旧共同評価/期待Label・採用基準を保持し、新方式の実GPU意味診断はこれから。
+その後、同じ基準で固定文候補もCritical2/4と不通過を保存した。
+主比較と欠測/文書Group Bootstrapの[統計事前計画](phase11_statistical_plan.md)を具体化・実装したが、件数/条件の最終凍結と新規Runへの解析は未了。
+次は期待Label/採用基準を保持した[草稿なしの根拠読解候補](phase11_source_reading_candidate.md)を別計画で検証する。
 
 現行の次工程は[意味判定・拒否Fallbackの診断](phase11_semantic_revision.md)。使用済み英語2例の4条件を先行し、
 Critical全件一致した候補だけ日英の人工27例/54条件へ進める。採用・停止規則と最大58呼出し/候補を結果前に保存した。

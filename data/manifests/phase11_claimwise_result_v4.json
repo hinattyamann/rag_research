@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-claimwise-known-diagnostic-result",
+  "created_at_utc": "2026-10-21T10:23:24.976597+00:00",
+  "fixed_commit": "4196aa5f797950fc25cafc54506a4972db7171a1",
+  "report": {
+    "schema_version": 1,
+    "purpose": "phase11-bilingual-semantic-candidate",
+    "manifest_sha256": "58a72fabbfb0d06db86886043dc38a2fffaef82720e122642259ee87ec7d1e93",
+    "critical_planned_conditions": 4,
+    "critical_completed_conditions": 4,
+    "critical_exact_correct_conditions": 2,
+    "critical_passed": false,
+    "synthetic": {
+      "en": {
+        "planned_conditions": 24,
+        "completed_conditions": 0,
+        "valid_conditions": 0,
+        "exact_correct_conditions": 0,
+        "accuracy_of_all_planned": null,
+        "false_support_count": 0
+      },
+      "ja": {
+        "planned_conditions": 30,
+        "completed_conditions": 0,
+        "valid_conditions": 0,
+        "exact_correct_conditions": 0,
+        "accuracy_of_all_planned": null,
+        "false_support_count": 0
+      }
+    },
+    "diagnostic_gate_passed": false,
+    "planned_conditions": 58,
+    "completed_conditions": 4,
+    "not_attempted_ids": [
+      "en-time-support-original",
+      "en-time-support-reversed",
+      "en-time-conflict-original",
+      "en-time-conflict-reversed",
+      "en-time-absent-original",
+      "en-time-absent-reversed",
+      "en-number-support-original",
+      "en-number-support-reversed",
+      "en-number-conflict-original",
+      "en-number-conflict-reversed",
+      "en-number-absent-original",
+      "en-number-absent-reversed",
+      "en-negation-support-original",
+      "en-negation-support-reversed",
+      "en-negation-conflict-original",
+      "en-negation-conflict-reversed",
+      "en-negation-absent-original",
+      "en-negation-absent-reversed",
+      "en-relation-support-original",
+      "en-relation-support-reversed",
+      "en-relation-conflict-original",
+      "en-relation-conflict-reversed",
+      "en-relation-absent-original",
+      "en-relation-absent-reversed",
+      "ja-actor-1-original",
+      "ja-actor-1-reversed",
+      "ja-actor-2-original",
+      "ja-actor-2-reversed",
+      "ja-actor-3-original",
+      "ja-actor-3-reversed",
+      "ja-count-1-original",
+      "ja-count-1-reversed",
+      "ja-count-2-original",
+      "ja-count-2-reversed",
+      "ja-count-3-original",
+      "ja-count-3-reversed",
+      "ja-compound-1-original",
+      "ja-compound-1-reversed",
+      "ja-compound-2-original",
+      "ja-compound-2-reversed",
+      "ja-compound-3-original",
+      "ja-compound-3-reversed",
+      "ja-qualification-1-original",
+      "ja-qualification-1-reversed",
+      "ja-qualification-2-original",
+      "ja-qualification-2-reversed",
+      "ja-qualification-3-original",
+      "ja-qualification-3-reversed",
+      "ja-table-1-original",
+      "ja-table-1-reversed",
+      "ja-table-2-original",
+      "ja-table-2-reversed",
+      "ja-table-3-original",
+      "ja-table-3-reversed"
+    ],
+    "planned_completion_limit": 70,
+    "completion_attempts_recorded": 16,
+    "cost_incomplete": false,
+    "input_tokens": 49690,
+    "output_tokens": 11432,
+    "summed_task_seconds": 183.19075345100646,
+    "task_result_sha256": {
+      "known-council-original": "b1da722f045e772537e08351b6b77a76fd4aef9ab82681765b47888af29d97b0",
+      "known-council-reversed": "07005b523f6630f3ba155f1bf9dc96f409130c658bdd7005400809eafe7aea50",
+      "known-zidane-original": "197277bce82310b1ef8d1f9129c307393c5a4a12e89f356dbe8a90882cdaf801",
+      "known-zidane-reversed": "f7b1a81bdb30cb917120b13b1ca557e349170aca2e06c2ca56e5ae97a97d9b67"
+    },
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "meaning_result": "Council c4 supported in both orders; Zidane c1 contradicted in both; critical2/4 failed; synthetic54 unattempted",
+  "all_fixed_units_evaluated": 8,
+  "raw_child_tasks_verified": 16,
+  "aggregate_cost_calls_verified": 16,
+  "resume_unchanged_files": 27,
+  "resume_new_calls": 0,
+  "resume_new_servers": 0,
+  "audit_stdout": "All 4 aggregates and 16 raw child tasks/costs verified\n",
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen3-8b-v1/claimwise_preflight_v4/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/claimwise_preflight_v4/plan.json": {
+      "sha256": "3bfb1b463809d658a9d90135fb1e5e59abd1865b96d1599eb89a62b617b5321a",
+      "bytes": 1192
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/claimwise_preflight_v4/report.json": {
+      "sha256": "4330be11a834069ee1460b495c3ee97009f5add29301d549eefcc7b32633fb0e",
+      "bytes": 23708
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/claimwise_preflight_v4/server.log": {
+      "sha256": "ff287c037b484cb8f77cb516f5d67536879992688133bfb036d003cc6968a855",
+      "bytes": 16512
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/launch.json": {
+      "sha256": "d63a38d8b919bb500c592c97860c66de002d8fd19a5963629de3c03c196602c1",
+      "bytes": 652
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/manifest.json": {
+      "sha256": "f8e751ee39575d703b4b76c9a541c5b6332ebf08328192dd046263026b62f044",
+      "bytes": 21669
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/preflight_receipt.json": {
+      "sha256": "14a8ef52ec36e98282c3c74438068f0b173bd52604efbbeac36c093f1e77a947",
+      "bytes": 400
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/report.json": {
+      "sha256": "0cb274c7e03b4e6b0371d119c3e9496fad5560c5e8871d8ad0df7bb339c519bd",
+      "bytes": 3268
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/resume_check.json": {
+      "sha256": "d182f918ec50b3cbecc6feb92de4919b44793e748acd75a013e1cfb6f08fb773",
+      "bytes": 4577
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/server-1.log": {
+      "sha256": "dd5b63a6b017437a70106ab31bc791af6ac7c0734110ea096ed85ef4b2abdb6f",
+      "bytes": 95133
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/session-1.json": {
+      "sha256": "4da0c0b3b29f74fdd28aaed37258bda551ed03d0402bff7ac50795e464781929",
+      "bytes": 9703
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-original.claims/c1.json": {
+      "sha256": "b6dcf5321a1137c7b2ea165e7bfbf017681ddcd68d4b0a8b4d4b7cb2fec75389",
+      "bytes": 87243
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-original.claims/c2.json": {
+      "sha256": "0170280d9343435c18a38180f3999eca0ed82bf303f89a4558c4097ff0cdcfe1",
+      "bytes": 87023
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-original.claims/c3.json": {
+      "sha256": "c4ca70a68fb026c61c5247617a676fcc2278a585302fc53b5275cfec08664d0d",
+      "bytes": 88785
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-original.claims/c4.json": {
+      "sha256": "01e0e6601fd9693535c62d1b9420dff37775580e995a5d13c59d9e10f5a85636",
+      "bytes": 89218
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-original.claims/c5.json": {
+      "sha256": "cffb9d4d50463fa24dc5ff9bbe20e1043029d6fa09a286c93f2f0c92363d90ab",
+      "bytes": 87036
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-original.claims/c6.json": {
+      "sha256": "b42a593ea526a8ba72d68fc85dfbc69f0c56fe77a08dd355d52afbee0163de76",
+      "bytes": 112454
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-original.claims/c7.json": {
+      "sha256": "5fe35c9ffe8a21ac4f481fba28c9dcc09b82a6287ae9540aac43c883a46defd2",
+      "bytes": 91564
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-original.json": {
+      "sha256": "ade0c5e6efd0c027a9180c78e614cfe7776fb3824f2ac9d9bf665556d206c241",
+      "bytes": 13556
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-reversed.claims/c1.json": {
+      "sha256": "67a2d46ffc498f665a957658a3c612626e1cf300a92d5b6a1f8e7425022c5fe2",
+      "bytes": 86011
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-reversed.claims/c2.json": {
+      "sha256": "47c6b2e40af8436f36878dc20211572a4074ce6ed4464bf5b7fcb3de51e1908c",
+      "bytes": 92489
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-reversed.claims/c3.json": {
+      "sha256": "cdc1a36b0f5c1f8c0d5ad0f0c375a0ad15134e1a8463329754ed378811656ab8",
+      "bytes": 86750
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-reversed.claims/c4.json": {
+      "sha256": "5aa3ebe78dd1f6aa79946554b55ae9429ba63d18a5a51ac4b93deb11c3dc9445",
+      "bytes": 87940
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-reversed.claims/c5.json": {
+      "sha256": "6f8c252511a89ff67dd1cc29421c72c02b1fe368fd43214388728551f8aea83b",
+      "bytes": 89684
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-reversed.claims/c6.json": {
+      "sha256": "2abaf80fb4db504b60cb92814797683e005b5d00814e9bdf9a2af1d28ab17ddb",
+      "bytes": 112882
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-reversed.claims/c7.json": {
+      "sha256": "541c1697b9f6539ea0380231d66994ab01a4c8085f2b3dd3ceab745c886e141b",
+      "bytes": 91260
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-council-reversed.json": {
+      "sha256": "d086e7c1b4767427ade288381b34dd23250a75619748a32827207f18e53e0932",
+      "bytes": 13972
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-zidane-original.claims/c1.json": {
+      "sha256": "6e84aec027524bbfc581971d7485466e4a098346a1cadd93661c4dd85170748e",
+      "bytes": 95584
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-zidane-original.json": {
+      "sha256": "c8cd525e29db7c80a7e6fc28205f7fc213a342b48a44acb6a32f3bcc400abab4",
+      "bytes": 4103
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-zidane-reversed.claims/c1.json": {
+      "sha256": "e568704a812868fb5dffd3ed68df09601744435a5e16f05c6615c37335e93504",
+      "bytes": 106765
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-claimwise-v4/tasks/known-zidane-reversed.json": {
+      "sha256": "adef351a8b503ddccef76f6f57408235fafefee5f5d2620fa186dd2d79d08886",
+      "bytes": 3759
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

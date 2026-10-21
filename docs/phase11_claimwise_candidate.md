@@ -56,3 +56,16 @@ Server Reportより先にLogだけが残る中断でも、既存Log/Reportの最
 Completion0のPreflightも全70の単位入力を実Tokenizerで測るよう共通入口を拡張した。
 実GPUの新方式の意味診断はこれから。Test成功で意味妥当性を認定しない。
 新規9 Testを含む全468 Test（ホスト6.43秒）/Ruff成功。共通の旧共同評価も回帰した。
+
+## 固定4196aa5での実走結果
+
+同じ8Bの全70 PayloadをCompletion0で測り、最大入力3322 Token・全層CUDA Offload・予算内を確認した。
+GPU全体7082/8151 MiBは一点観測。事前確認Report Hashを保存後に、既知全8文を元/逆で実評価した。
+16 Completion・4集計、入力49690/出力11432 Token、Task秒和183.19秒。
+Criticalは2/4一致で不通過。Zidaneは両方で矛盾、Council c4は両方で誤支持のままで、人工54条件は未試行。
+全16 Raw子Taskの元ID/全分母/費用と4集計を別照合し、再開27 File不変・追加呼出し/Server起動0を確認した。
+結果は`phase11_claimwise_result_v4.json`。新方式も採用済みとせず、旧失敗と共に保持する。
+
+並行して[QA内増分・Group Bootstrapの統計方法](phase11_statistical_plan.md)を結果を見る前の方法として実装した。
+主Development/未使用Calibrationへは未適用で、主Model/条件/件数は未凍結である。
+次の意味候補は[草稿を見ない根拠読解の先行](phase11_source_reading_candidate.md)として、別の事前計画へ分けた。
