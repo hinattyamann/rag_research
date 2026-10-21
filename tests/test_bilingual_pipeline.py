@@ -604,6 +604,17 @@ def test_heldout_uses_common_collection_all20_in_five_qa_batches_and_cached_resu
     console = capsys.readouterr().out
     assert '"score"' not in console and '"decision"' not in console and "猫は赤い" not in console
     assert "REFERENCE-SECRET" not in json.dumps(state["calls"])
+    bundle = output / "quality"
+    assert quality.export(output, bundle)["quality_status"] == "pending_external_blinded_annotation"
+    from rag_research.experiments import bilingual_semantics
+
+    monkeypatch.setattr(bilingual_semantics, "ROOT", root)
+    unit_output = bundle / "units"
+    bilingual_semantics.export_units(bundle, unit_output, "ja")
+    packet = read_json(unit_output / "packet.json")
+    assert "REFERENCE-SECRET" not in json.dumps(packet) and "score" not in packet
+    with pytest.raises(ValueError, match="Calibration requires both"):
+        quality.import_annotations(output, bundle, bundle / "annotations.blank.json")
 
 
 @pytest.mark.parametrize("language", ["en", "ja"])
@@ -627,3 +638,35 @@ def test_real_calibration_entry_requires_protocol_before_loading_reserved_qa_or_
     with pytest.raises(ValueError, match="Missing preregistered"):
         runner.run_calibration(path, output)
     assert not output.exists()
+
+
+@pytest.mark.parametrize("split", ["development", "calibration"])
+def test_quality_refuses_evaluation_before_parsing_even_with_its_correct_hash(registry, tmp_path, monkeypatch, split):
+    assets, _ = registry
+    monkeypatch.setattr(quality, "ROOT", tmp_path)
+    root_name = "bilingual_calibration" if split == "calibration" else "bilingual_development"
+    run = tmp_path / "data/runs" / root_name / "qa"
+    evaluation = tmp_path / assets["datasets"]["ja"]["qa"]["evaluation"]["path"]
+    config = {"assets": "assets.json"}
+    if split == "calibration":
+        config.update(purpose="phase11-bilingual-calibration-candidate", execution_scope="heldout_calibration_v1",
+            analysis_split="calibration", data={"split": "calibration"})
+    manifest = {"language": "ja", "config": config, "qa_path": evaluation.relative_to(tmp_path).as_posix(),
+        "qa_sha256": file_hash(evaluation)}
+    monkeypatch.setattr(quality, "read_run", lambda p: (manifest, {"records": []}))
+    monkeypatch.setattr(quality, "load_assets", lambda p: assets)
+    original = Path.read_text
+
+    def guarded(path, *args, **kwargs):
+        assert path != evaluation, "Never parse Evaluation QA in quality annotation"
+        return original(path, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "read_text", guarded)
+    with pytest.raises(ValueError, match="never load Evaluation"):
+        quality.build_packet(run)
+
+
+def test_calibration_cannot_masquerade_as_development_even_for_english_source_development():
+    with pytest.raises(ValueError, match="relabelled"):
+        quality.source_split({"language": "en", "config": {
+            "execution_scope": "heldout_calibration_v1", "data": {"split": "development"}}}, "development")

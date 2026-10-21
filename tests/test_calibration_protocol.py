@@ -1,11 +1,13 @@
 """Calibration prerequisites use explicit synthetic main/configuration doubles."""
 
+import shutil
 from copy import deepcopy
 from pathlib import Path
 
 import pytest
 import yaml
 
+from rag_research.experiments import bilingual_statistics
 from rag_research.experiments import calibration_protocol as module
 from rag_research.experiments.frozen_trace import digest
 from rag_research.experiments.storage import checkpoint, read_json, write_json
@@ -16,7 +18,9 @@ REPO = Path(__file__).resolve().parents[1]
 @pytest.fixture
 def prerequisite(tmp_path, monkeypatch):
     monkeypatch.setattr(module, "ROOT", tmp_path)
-    for name in ["src/rag_research/fixed.py", "scripts/prepare_bilingual_calibration.py", "scripts/run_bilingual_calibration.py"]:
+    for name in ["src/rag_research/fixed.py", "scripts/prepare_bilingual_calibration.py", "scripts/run_bilingual_calibration.py",
+            "scripts/analyze_bilingual_calibration.py", "scripts/bilingual_quality.py", "scripts/review_bilingual_units.py",
+            "docs/order_quality_rubric.md", "docs/phase11_statistical_plan.md"]:
         path = tmp_path / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text("synthetic fixed source")
@@ -29,7 +33,7 @@ def prerequisite(tmp_path, monkeypatch):
     rule_path = configs / "rules.json"
     rule_path.write_bytes((REPO / "configs/phase11_bilingual_calibration_execution_rules_v1.json").read_bytes())
     main = {key: {} for key in module.MAIN_FIELDS}
-    main.update(status="verified", canonical_inputs=[{"synthetic": True}], condition_sha256="same-condition", source_runs={})
+    main.update(status="verified", canonical_inputs=[{"synthetic": True}], condition_sha256=digest({"synthetic": True}), source_runs={})
     fresh = {key: "synthetic" for key in ["purpose", "method", "analysis_split", "seed", "policy_sha256", "source_qa_sha256"]}
     fresh.update(source_splits=module.SOURCE_SPLITS, inputs={"assets": {"path": "configs/assets.json"}}, languages={})
     configs_by_language = {}
@@ -72,6 +76,7 @@ def prerequisite(tmp_path, monkeypatch):
 
     monkeypatch.setattr(module, "certify_main", certify)
     monkeypatch.setattr(module, "prepare", prepare)
+    monkeypatch.setattr(bilingual_statistics, "condition", lambda manifest: {"synthetic": manifest.get("condition", True)})
     original_read = module.read_json
 
     def checked_read(path):
@@ -217,4 +222,56 @@ def test_new_payload_and_protocol_hashes_cannot_hide_drift_from_actual_adopted_c
     checkpoint(protocol_path, protocol)
     config["calibration_protocol"] = module.binding(protocol_path)
     with pytest.raises(ValueError, match="actual adopted main"):
+        module.validate(config, root / protocol["runs"]["en"])
+
+
+def test_review_replay_requires_exact_original_bytes_and_never_counts_replays_as_fresh_usage(prerequisite):
+    args, _, root = prerequisite
+    module.create(*args)
+    protocol = read_json(args[-1] / "protocol.json")
+    aliases = {}
+    for lang in ("en", "ja"):
+        config = yaml.safe_load((args[-1] / ("config-" + lang + ".yaml")).read_text())
+        original = root / protocol["runs"][lang]
+        original.mkdir(parents=True)
+        write_json(original / "manifest.json", {"language": lang, "config": config,
+            "selection": [{"record_id": r["record_id"]} for r in protocol["selected"][lang]]})
+        write_json(original / "raw.json", {"synthetic": True})
+        copied = root / "data/runs/bilingual_calibration_replay/test" / lang
+        copied.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copytree(original, copied)
+        aliases[copied] = original
+    copied = next(iter(aliases))
+    manifest = read_json(copied / "manifest.json")
+    assert module.review_contract(copied, manifest, canonical_runs=aliases) == protocol
+    write_json(copied / "raw.json", {"altered": True})
+    with pytest.raises(ValueError, match="differs from original"):
+        module.review_contract(copied, manifest, canonical_runs=aliases)
+
+
+def test_review_checks_actual_condition_digest_instead_of_trusting_calibration_model_metadata(prerequisite):
+    args, _, root = prerequisite
+    module.create(*args)
+    protocol = read_json(args[-1] / "protocol.json")
+    for lang in ("en", "ja"):
+        config = yaml.safe_load((args[-1] / ("config-" + lang + ".yaml")).read_text())
+        original = root / protocol["runs"][lang]
+        original.mkdir(parents=True)
+        write_json(original / "manifest.json", {"language": lang, "config": config,
+            "selection": [{"record_id": r["record_id"]} for r in protocol["selected"][lang]]})
+    run = root / protocol["runs"]["en"]
+    manifest = read_json(run / "manifest.json")
+    manifest["condition"] = False
+    with pytest.raises(ValueError, match="conditions differ from"):
+        module.review_contract(run, manifest)
+
+
+@pytest.mark.parametrize("name", ["docs/order_quality_rubric.md", "docs/phase11_statistical_plan.md", "scripts/analyze_bilingual_calibration.py"])
+def test_review_and_statistical_definitions_cannot_change_after_protocol_creation(prerequisite, name):
+    args, _, root = prerequisite
+    module.create(*args)
+    protocol = read_json(args[-1] / "protocol.json")
+    config = yaml.safe_load((args[-1] / "config-en.yaml").read_text())
+    (root / name).write_text("changed after protocol")
+    with pytest.raises(ValueError, match="source changed"):
         module.validate(config, root / protocol["runs"]["en"])

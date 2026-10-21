@@ -84,10 +84,13 @@ def unchanged_selection(reservation_path, policy_path, *, excluded_resume_runs=(
     return reserved, fresh
 
 
-def source_hashes():
-    paths = [*sorted((ROOT / "src/rag_research").rglob("*.py")),
-        ROOT / "scripts/prepare_bilingual_calibration.py", ROOT / "scripts/run_bilingual_calibration.py"]
-    return {p.relative_to(ROOT).as_posix(): file_hash(p) for p in paths}
+def source_hashes(*, root=None):
+    root = ROOT if root is None else root
+    paths = [*sorted((root / "src/rag_research").rglob("*.py")),
+        *[root / name for name in ("scripts/prepare_bilingual_calibration.py", "scripts/run_bilingual_calibration.py",
+            "scripts/analyze_bilingual_calibration.py", "scripts/bilingual_quality.py", "scripts/review_bilingual_units.py",
+            "docs/order_quality_rubric.md", "docs/phase11_statistical_plan.md")]]
+    return {p.relative_to(root).as_posix(): file_hash(p) for p in paths}
 
 
 def configuration(main_config, selected, language):
@@ -207,3 +210,35 @@ def validate(config, output):
     require(all(fresh["languages"][lang]["selected"] == protocol["selected"][lang] for lang in ("en", "ja")) and
             [r["record_id"] for r in protocol["selected"][language]] == config["data"]["record_ids"], "Calibration selection drifted")
     return protocol, fresh, reserved
+
+
+def review_contract(run, manifest, *, canonical_runs=None):
+    """Only byte-identical isolated replays may stand in for the original Cal runs."""
+    run = Path(run).resolve()
+    original = run
+    if canonical_runs is not None:
+        aliases = {Path(k).resolve(): Path(v).resolve() for k, v in canonical_runs.items()}
+        require(run in aliases and len(aliases) == len(set(aliases.values())) == 2,
+                "Calibration replay needs the complete distinct original run mapping")
+        for copied, source in aliases.items():
+            require(copied.is_relative_to(ROOT / "data/runs/bilingual_calibration_replay") and
+                    copied != ROOT / "data/runs/bilingual_calibration_replay" and
+                    source.is_relative_to(ROOT / "data/runs/bilingual_calibration") and
+                    source != ROOT / "data/runs/bilingual_calibration", "Unexpected isolated Cal replay")
+
+            def snapshot(folder):
+                paths = [p for p in folder.rglob("*") if p.is_file()]
+                require(paths and all(p.resolve().is_relative_to(folder) for p in paths), "Replay file escapes run")
+                return {p.relative_to(folder).as_posix(): file_hash(p) for p in paths}
+
+            require(snapshot(copied) == snapshot(source), "Isolated Calibration replay differs from original evidence")
+        original = aliases[run]
+    protocol, _, _ = validate(manifest["config"], original)
+    from rag_research.experiments.bilingual_statistics import condition
+
+    require(digest(condition(manifest)) == protocol["condition_sha256"],
+            "Calibration model/baseline/analysis conditions differ from the actual main proof")
+    if canonical_runs is not None:
+        require({(ROOT / p).resolve() for p in protocol["runs"].values()} ==
+                {Path(p).resolve() for p in canonical_runs.values()}, "Replay original cohort differs from protocol")
+    return protocol

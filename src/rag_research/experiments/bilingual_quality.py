@@ -29,9 +29,38 @@ from rag_research.experiments.storage import (
 from rag_research.retrieval.common import file_hash
 
 
+def analysis_split(run, *, root=None, allow_replay=False):
+    root = ROOT if root is None else root
+    run = Path(run).resolve()
+    folders = {"development": ["data/runs/bilingual_development"], "calibration": ["data/runs/bilingual_calibration"]}
+    if allow_replay:
+        folders["calibration"].append("data/runs/bilingual_calibration_replay")
+    matched = [split for split, names in folders.items() for name in names
+               if run.is_relative_to(root / name) and run != root / name]
+    require(len(matched) == 1, "Unexpected bilingual Development/Calibration run path")
+    return matched[0]
+
+
+def source_split(manifest, split):
+    if split == "development":
+        require(manifest["config"].get("execution_scope") != "heldout_calibration_v1" and
+                manifest["config"].get("analysis_split") != "calibration" and
+                manifest["config"].get("purpose") != "phase11-bilingual-calibration-candidate",
+                "Calibration cannot be relabelled as Development")
+        return "development"
+    require(split == "calibration" and manifest["config"]["purpose"] == "phase11-bilingual-calibration-candidate" and
+            manifest["config"]["execution_scope"] == "heldout_calibration_v1" and
+            manifest["config"]["analysis_split"] == "calibration" and manifest["language"] in {"en", "ja"},
+            "Use the declared held-out Calibration role")
+    source = "development" if manifest["language"] == "en" else "calibration"
+    require(manifest["config"]["data"]["split"] == source, "Calibration source split changed")
+    return source
+
+
 def read_run(run):
-    require(run.is_relative_to(ROOT / "data/runs/bilingual_development"), "Unexpected bilingual run path")
+    split = analysis_split(run, allow_replay=True)
     manifest, report = read_json(run / "manifest.json"), read_json(run / "report.private.json")
+    source_split(manifest, split)
     require(report["manifest_sha256"] == digest(manifest), "Bilingual report binding differs")
     for name, expected in manifest["source_sha256"].items():
         require(file_hash(ROOT / name) == expected, "Bilingual source changed: " + name)
@@ -108,7 +137,11 @@ def build_packet(run):
     manifest, report = read_run(run)
     config, language = manifest["config"], manifest["language"]
     assets = load_assets(ROOT / config["assets"])
-    qa_path = ROOT / manifest["qa_path"]
+    source = source_split(manifest, analysis_split(run, allow_replay=True))
+    declared = assets["datasets"][language]["qa"][source]
+    qa_path = (ROOT / manifest["qa_path"]).resolve()
+    require(qa_path == (ROOT / declared["path"]).resolve() and manifest["qa_sha256"] == declared["sha256"],
+            "Quality QA must match the declared source split; never load Evaluation rows")
     require(file_hash(qa_path) == manifest["qa_sha256"], "Quality QA changed")
     qa = {r["record_id"]: r for r in map(json.loads, qa_path.read_text().splitlines())}
     parent_of = parent_map(assets, language)
@@ -153,7 +186,8 @@ def build_packet(run):
 
 def export(run, output):
     run, output = Path(run).resolve(), Path(output).resolve()
-    require(run.is_relative_to(ROOT / "data/runs/bilingual_development") and output.is_relative_to(run) and output != run,
+    analysis_split(run)
+    require(output.is_relative_to(run) and output != run,
             "Unexpected bilingual annotation output")
     manifest, report, packet, mapping = build_packet(run)
     with run_lock(output):
@@ -195,6 +229,7 @@ def validated_annotations(run, bundle, annotations):
 
 def import_annotations(run, bundle, annotations):
     run, bundle, annotations = map(lambda p: Path(p).resolve(), (run, bundle, annotations))
+    require(analysis_split(run) == "development", "Calibration requires both languages' quality and unit labels in the batch analysis")
     manifest, report, assigned = validated_annotations(run, bundle, annotations)
     result = reconstruct(report["records"], assigned)
     result.update(selected_qa_count=report["selected_qa_count"], baseline_failures=report["failures"],

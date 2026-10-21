@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-bilingual-calibration-review-isolated-analysis-control-validation-not-actual-adoption",
+  "created_at_utc": "2026-10-21T23:16:03.097653+00:00",
+  "new_tests": 21,
+  "pytest_runs": [
+    {
+      "passed": 673,
+      "seconds": 24.15
+    },
+    {
+      "passed": 674,
+      "seconds": 24.54,
+      "scope": "final including analysis-time definition-change guard"
+    }
+  ],
+  "ruff_passed": true,
+  "analysis_cli_help_passed": true,
+  "synthetic_bilingual_cohort": {
+    "qa_per_language": 20,
+    "native_calls_per_language": 220,
+    "all_labels_sealed_before_private_access": true,
+    "zero_effect_can_pass_component_gate": true,
+    "nine_comparable_qa_do_not_pass": true,
+    "missing_resource_keeps_known_costs": true,
+    "originals_unchanged_and_no_replay_files_left": true
+  },
+  "positive_tests_use_explicit_adoption_raw_validation_QA_loading_GPU_doubles": true,
+  "actual_checks": {
+    "created_at_utc": "2026-10-21T23:11:01.949141+00:00",
+    "actual_historical_source_binding_checks": [
+      {
+        "run": "data/runs/bilingual_development/phase11-connection-en-v2",
+        "qa_path": "data/processed/clapnq/c508d78-split-v1/development.jsonl",
+        "sha256": "3769dfcd74903ad58d8d6faf9380a3ddcf2e46913449d7eaa9d466155bdc3cf2",
+        "scope": "only historical manifest/source-split binding, not replaying old sources with current code"
+      },
+      {
+        "run": "data/runs/bilingual_development/phase11-connection-ja-v1",
+        "qa_path": "data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2/development.jsonl",
+        "sha256": "5206b6f9ec61d28cd984f66f2ea2b296a54e1efe5755d2bfbca77ac13c48f989",
+        "scope": "only historical manifest/source-split binding, not replaying old sources with current code"
+      }
+    ],
+    "actual_development_as_calibration_rejected": {
+      "input": "data/runs/bilingual_calibration/analysis-guard-inputs-v1.json",
+      "sha256": "22f22770f5074f08af342c331095bc93b5febeb986aa172524da190875c7e82e",
+      "message": "Use existing original Calibration runs with their locks",
+      "new_model_calls": 0
+    },
+    "rubric_statistical_plan_and_analysis_entry_now_bound": {
+      "docs/order_quality_rubric.md": "11118d7840e616edb5ff2b999ce5b239a141c2747751e2cca13d26d10d040b79",
+      "docs/phase11_statistical_plan.md": "225a9210c6226abf623cdbd993f6894a6485396059fe2163c48129f4624d2a1a",
+      "scripts/analyze_bilingual_calibration.py": "fc18657a4b5f75897ac61321a0ba577ac37e35290adff2c49cf698bc96ac5438"
+    },
+    "core_and_probe_sources_unchanged": 27,
+    "positive_actual_calibration_review_or_adoption_demonstrated": false,
+    "new_model_calls": 0,
+    "new_model_servers": 0,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "artifacts": {
+    "src/rag_research/experiments/bilingual_quality.py": {
+      "sha256": "0a4664601956d962650f06d0480879bdf7172dbb79c7a42aec185f3d1dea6265",
+      "bytes": 15329
+    },
+    "src/rag_research/experiments/bilingual_semantics.py": {
+      "sha256": "b1db7b3ecef8801b212d18d28cfd3bb48fdbce9b0b01f10e90a3bfba311b16b7",
+      "bytes": 17831
+    },
+    "src/rag_research/experiments/bilingual_statistics.py": {
+      "sha256": "944f85f41ed68f1f135b72b8ac99a40aa0cdd401cfc785c2e4aa2954f43a46c9",
+      "bytes": 7314
+    },
+    "src/rag_research/experiments/calibration_protocol.py": {
+      "sha256": "4db9ca3a45e9eb0c6703ada88e56e4a92017b21c7c06d03939967d4711e04145",
+      "bytes": 16384
+    },
+    "src/rag_research/experiments/calibration_analysis.py": {
+      "sha256": "aa9150ef594209a59cdc7c5f48ae7e4264dc66c71fb2c9dd162b6d26bb066211",
+      "bytes": 11411
+    },
+    "scripts/analyze_bilingual_calibration.py": {
+      "sha256": "fc18657a4b5f75897ac61321a0ba577ac37e35290adff2c49cf698bc96ac5438",
+      "bytes": 628
+    },
+    "tests/test_bilingual_pipeline.py": {
+      "sha256": "466f1c8d471cfa4efd9fa8ffe3be39a7222a322eb2fa50334bdc258cf1f002da",
+      "bytes": 37359
+    },
+    "tests/test_calibration_protocol.py": {
+      "sha256": "381ed262dbd98ceee32ff13de3535cb8170d19e381904effc846b6873ad73696",
+      "bytes": 14370
+    },
+    "tests/test_calibration_analysis.py": {
+      "sha256": "d62a1f55a00866731a7ed4f5f6128f079569354bdd304fe86ed5c3ffba46e8cd",
+      "bytes": 18432
+    },
+    "docs/phase11_bilingual_calibration_analysis.md": {
+      "sha256": "e6e1881581802c320732fcec53e3e4f67a3a3fb562c2281377b2a52421a86513",
+      "bytes": 6286
+    },
+    "data/runs/development_screening/phase11-calibration-analysis-v1/validation.json": {
+      "sha256": "aa2c3ef50b9ea442101a0fd2a10f41f08522cbc81c5754563b03f2ba9d0623d3",
+      "bytes": 1770
+    },
+    "data/runs/bilingual_calibration/analysis-guard-inputs-v1.json": {
+      "sha256": "22f22770f5074f08af342c331095bc93b5febeb986aa172524da190875c7e82e",
+      "bytes": 981
+    }
+  },
+  "actual_positive_main_or_calibration_analysis_demonstrated": false,
+  "new_calibration_model_calls": 0,
+  "new_calibration_model_servers": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

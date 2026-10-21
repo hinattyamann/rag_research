@@ -108,7 +108,8 @@ def validate_unit_annotations(packet, value, *, sealed=False):
 
 def export_units(quality_bundle, output, language):
     bundle, output = Path(quality_bundle).resolve(), Path(output).resolve()
-    require(bundle.is_relative_to(ROOT / "data/runs/bilingual_development") and output.is_relative_to(bundle) and
+    bilingual_quality.analysis_split(bundle, root=ROOT)
+    require(output.is_relative_to(bundle) and
             output != bundle, "Unexpected unit review output")
     packet = make_unit_packet(read_json(bundle / "packet.json"), language)
     with run_lock(output):
@@ -161,7 +162,8 @@ def semantic_counts(records, expected):
     return counts
 
 
-def analyze_semantics(inputs):
+def sealed_inputs(inputs, *, analysis_split="development", allow_replay=False):
+    require(analysis_split in {"development", "calibration"}, "Unknown review analysis split")
     require(isinstance(inputs, list) and len(inputs) == 2, "One sealed run per language is required")
     sealed, frozen = [], {}
     for spec in inputs:
@@ -169,7 +171,7 @@ def analyze_semantics(inputs):
                 "Unexpected semantic input fields")
         paths = {k: (ROOT / v).resolve() for k, v in spec.items()}
         run = paths["run"]
-        require(run.is_relative_to(ROOT / "data/runs/bilingual_development") and
+        require(bilingual_quality.analysis_split(run, root=ROOT, allow_replay=allow_replay) == analysis_split and
                 paths["quality_bundle"].is_relative_to(run) and paths["unit_bundle"].is_relative_to(paths["quality_bundle"]) and
                 paths["quality_annotations"].is_relative_to(paths["quality_bundle"]) and
                 paths["unit_annotations"].is_relative_to(paths["unit_bundle"]), "Semantic input paths escape Development")
@@ -177,17 +179,27 @@ def analyze_semantics(inputs):
         packet = read_json(paths["unit_bundle"] / "packet.json")
         labels = validate_unit_annotations(packet, read_json(paths["unit_annotations"]), sealed=True)
         require(packet["quality_packet_sha256"] == quality_packet["packet_sha256"], "Semantic and quality packets differ")
-        for p in (paths["quality_annotations"], paths["unit_annotations"], paths["unit_bundle"] / "packet.json",
-                  paths["quality_bundle"] / "packet.json", paths["quality_bundle"] / "mapping.private.json"):
-            frozen[p] = file_hash(p)
         sealed.append((paths, quality_packet, mapping, packet, labels))
     require(len({p[0]["run"] for p in sealed}) == 2 and {p[3]["language"] for p in sealed} == {"en", "ja"},
             "Two distinct English/Japanese runs are required")
+    for paths, *_ in sealed:
+        for p in (paths["quality_annotations"], paths["unit_annotations"], paths["unit_bundle"] / "packet.json",
+                  paths["quality_bundle"] / "packet.json", paths["quality_bundle"] / "mapping.private.json"):
+            frozen[p] = file_hash(p)
+    return sealed, frozen
+
+
+def analyze_semantics(inputs, *, analysis_split="development", canonical_runs=None):
+    sealed, frozen = sealed_inputs(inputs, analysis_split=analysis_split, allow_replay=canonical_runs is not None)
     results, conditions, gates = {}, [], {}
     for paths, quality_packet, mapping, packet, labels in sealed:
         require(all(file_hash(p) == h for p, h in frozen.items()), "Sealed review changed")
         manifest, report, _ = bilingual_quality.validated_annotations(paths["run"], paths["quality_bundle"], paths["quality_annotations"])
         language = manifest["language"]
+        if analysis_split == "calibration":
+            from rag_research.experiments.calibration_protocol import review_contract
+
+            protocol = review_contract(paths["run"], manifest, canonical_runs=canonical_runs)
         require(language == packet["language"] and make_unit_packet(quality_packet, language) == packet,
                 "Semantic packet differs from sealed actual candidates")
         expected = {(slot["record_id"], claim["claim_id"]): labels[case["annotation_id"], claim["claim_id"]]["label"]
@@ -202,8 +214,9 @@ def analyze_semantics(inputs):
         results[language] = semantic_counts(report["records"], expected)
         counts = results[language]
         gate = False
-        if manifest["config"].get("execution_scope") == "main_development_v1":
-            binding = manifest["config"]["main_execution_policy"]
+        scope = manifest["config"].get("execution_scope")
+        if scope == "main_development_v1" or analysis_split == "calibration":
+            binding = protocol["rules"] if analysis_split == "calibration" else manifest["config"]["main_execution_policy"]
             policy_path = (ROOT / binding["path"]).resolve()
             require(policy_path.is_relative_to(ROOT) and file_hash(policy_path) == binding["sha256"], "Semantic adoption policy changed")
             policy = read_json(policy_path)
@@ -220,9 +233,12 @@ def analyze_semantics(inputs):
         conditions.append(condition(manifest))
     require(conditions[0] == conditions[1], "Semantic conditions must match across languages")
     require(all(file_hash(p) == h for p, h in frozen.items()), "Sealed review changed during comparison")
-    return {"purpose": "sealed-bilingual-development-unit-semantic-audit-not-final-evaluation", "languages": results,
-            "main_development_semantic_gate_per_language": gates,
-            "main_development_semantic_gate_passed": all(gates.values()),
+    return {"purpose": f"sealed-bilingual-{analysis_split}-unit-semantic-audit-not-final-evaluation", "languages": results,
+            "analysis_split": analysis_split,
+            "main_development_semantic_gate_per_language": gates if analysis_split == "development" else {},
+            "main_development_semantic_gate_passed": analysis_split == "development" and all(gates.values()),
+            "calibration_semantic_gate_per_language": gates if analysis_split == "calibration" else {},
+            "calibration_semantic_gate_passed": analysis_split == "calibration" and all(gates.values()),
             "sealed_files_sha256": {str(p.relative_to(ROOT)): h for p, h in frozen.items()},
             "human_reviewed": False, "annotation_history_independence_not_assumed": True,
             "gate11_passed": False, "phase12_allowed": False}

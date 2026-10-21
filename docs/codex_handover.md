@@ -1,10 +1,14 @@
 # 別チャットから再開するための引継ぎ
 
+[Calibrationの匿名採点・隔離解析](phase11_bilingual_calibration_analysis.md)を対応した。両言語の全品質/文Expected封印後だけ、同一Byteのコピーで意味/統計/全Native費用/実資源を照合する。各20 QA/Groupと比較数/費用の整合、単独Cal importとDevelopment偽装/品質QAのEvaluation本文読込みの拒否、Rubric/統計計画/CLIの固定を検証し、新規21件を含む全674 Test/Ruff成功。合成通過は実主/Cal採用の証明ではなく、実主証明書→実Cal Protocol/実走/全採点・採用と最終N/条件/拡張Validator/凍結は未了。
+
+新Batch入口はanalyze_bilingual_calibration.py。元のCal Run/quality/unitsと全Labelの5 Field×2言語を渡し、全封印後に同一Byteコピーをbilingual_calibration_replayへ置いて解析する。両言語の全20・比較数/実費と実CUDAを検査し、Cal component Gateと最終Gate11を分ける。実主/Cal成功側はまだない。Protocol SourceにRubric/統計計画/関連CLIも追加したため、実主実走前にこの一連を固定する。
+
 [Calibrationの準備・実行入口](phase11_bilingual_calibration_execution.md)を追加した。主の全証拠を再検証してから元の予約/未使用性と条件を結び、共通RAGを各20 QA/5 QAずつ・1660 Call上限/Retry0で収集する。元Runだけの再開・他Runの利用済み保持、Protocol Hashを更新しても実主条件と異なる設定の拒否を検証した。新規20件を含む全653 Test/Ruff成功。実未承認設定はQA読込み前に拒否/新規Cal推論0で、実主証明書/実Cal Protocolの成功側とCal匿名採点・意味/統計Adapterは未了。
 
 専用Ruleはphase11_bilingual_calibration_execution_rules_v1.jsonで主証拠待ち。実Protocolはprepare_bilingual_calibration.pyが主の再検証後だけ新規作成し、run_bilingual_calibration.pyで同じ予約を収集する。今は通過主/実Protocol/Cal推論0。主実走前にCal品質/意味/統計Adapterも実装して固定Sourceをそろえる。
 
-v13は同じ9B/24k/推論4096/判定6144と全原資料/Expected/基準で、中間読解を除く直接固定文照合を別登録した。全58条件/35文は同じで最大70 Call、通過時の旧15 QA/全42文/30条件は84 Call。新規上限154/既存9B74込み累積228/Retry0。元方式も保つ採用/予算Guardを対応し、計画Hash/全対象/実Leaf Callsを照合する。新規22件を含む全633 Test/Ruff成功。Native Core26+Probe1 Hash不変でv12の形式証拠を再利用し、新固定Worktreeの全70入力/生成0から確認する。採用は未確定。固定541d0d2のv13は全70入力/生成0 Preflightに通過。最大3348 Token、Context24576/全層CUDA、VRAM6525/8151 MiBは一点観測。準備1+Preflight4の5 Artifactを正規保存し、Native26+Probe1不変/形式v3の15 Artifactを照合後、同じ固定Worktreeで意味診断を開始した（session11515）。既知Critical4/4一致を実Checkpointで確認し、人工54条件を実走中（同じsession11515）。最大70 Call/Retry0、全結果/採用は未確定。
+v13は同じ9B/24k/推論4096/判定6144と全原資料/Expected/基準で、中間読解を除く直接固定文照合を別登録した。全58条件/35文は同じで最大70 Call、通過時の旧15 QA/全42文/30条件は84 Call。新規上限154/既存9B74込み累積228/Retry0。元方式も保つ採用/予算Guardを対応し、計画Hash/全対象/実Leaf Callsを照合する。新規22件を含む全633 Test/Ruff成功。Native Core26+Probe1 Hash不変でv12の形式証拠を再利用し、新固定Worktreeの全70入力/生成0から確認する。採用は未確定。固定541d0d2のv13は全70入力/生成0 Preflightに通過。最大3348 Token、Context24576/全層CUDA、VRAM6525/8151 MiBは一点観測。準備1+Preflight4の5 Artifactを正規保存し、Native26+Probe1不変/形式v3の15 Artifactを照合後、同じ固定Worktreeで意味診断を開始した（session11515）。固定v13は全58条件/70 Callを終了し、既知4/4・人工英語24/24/日本語28/30・誤支持0で診断基準に通過した。再開/全Raw/費用/2不一致の監査・保存を行い、完了後だけ旧15 QA/全42文/最大84 Callへ進む。主/Cal採用は未確定。
 
 候補Configはphase11_semantic_candidate_v13.yaml、同じ58条件の直接Planはphase11_semantic_diagnostics_claimwise_v4.json、事前条件はphase11_qwen35_9b_preregistration_v5.json。中間メモだけを外す仮説で旧8B直接方式の失敗も保持する。全633 Test/Ruff、元/直接方式の完全15 QA/42文・計画Hash/実Callsの合成検証と実v8/v13契約/失敗拒否を確認済み。実採用成功側は未了。専用Worktreeは.tools/worktrees/phase11-qwen35-9b-v13。session11515を観測し、重複起動しない。終了後の再開/原入力/費用監査は/tmp/phase11_direct_audit.pyの位置引数Config/Runで行い、全Rawを保存する。
 
