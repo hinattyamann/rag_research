@@ -1,8 +1,8 @@
 # 別チャットから再開するための引継ぎ
 
-v13は同じ9B/24k/推論4096/判定6144と全原資料/Expected/基準で、中間読解を除く直接固定文照合を別登録した。全58条件/35文は同じで最大70 Call、通過時の旧15 QA/全42文/30条件は84 Call。新規上限154/既存9B74込み累積228/Retry0。元方式も保つ採用/予算Guardを対応し、計画Hash/全対象/実Leaf Callsを照合する。新規22件を含む全633 Test/Ruff成功。Native Core26+Probe1 Hash不変でv12の形式証拠を再利用し、新固定Worktreeの全70入力/生成0から確認する。新推論/採用はまだない。
+v13は同じ9B/24k/推論4096/判定6144と全原資料/Expected/基準で、中間読解を除く直接固定文照合を別登録した。全58条件/35文は同じで最大70 Call、通過時の旧15 QA/全42文/30条件は84 Call。新規上限154/既存9B74込み累積228/Retry0。元方式も保つ採用/予算Guardを対応し、計画Hash/全対象/実Leaf Callsを照合する。新規22件を含む全633 Test/Ruff成功。Native Core26+Probe1 Hash不変でv12の形式証拠を再利用し、新固定Worktreeの全70入力/生成0から確認する。採用は未確定。固定541d0d2のv13は全70入力/生成0 Preflightに通過。最大3348 Token、Context24576/全層CUDA、VRAM6525/8151 MiBは一点観測。準備1+Preflight4の5 Artifactを正規保存し、Native26+Probe1不変/形式v3の15 Artifactを照合後、同じ固定Worktreeで意味診断を開始した（session11515）。最大70 Call/Retry0、Critical4全一致時だけ人工54へ進む。全結果/採用は未確定。
 
-候補Configはphase11_semantic_candidate_v13.yaml、同じ58条件の直接Planはphase11_semantic_diagnostics_claimwise_v4.json、事前条件はphase11_qwen35_9b_preregistration_v5.json。中間メモだけを外す仮説で旧8B直接方式の失敗も保持する。全633 Test/Ruff、元/直接方式の完全15 QA/42文・計画Hash/実Callsの合成検証と実v8/v13契約/失敗拒否を確認済み。実採用成功側は未了。先に新固定Commit/専用Worktreeを作り、生成0 Preflight後だけ同じCritical4から最大70 Callを実走する。
+候補Configはphase11_semantic_candidate_v13.yaml、同じ58条件の直接Planはphase11_semantic_diagnostics_claimwise_v4.json、事前条件はphase11_qwen35_9b_preregistration_v5.json。中間メモだけを外す仮説で旧8B直接方式の失敗も保持する。全633 Test/Ruff、元/直接方式の完全15 QA/42文・計画Hash/実Callsの合成検証と実v8/v13契約/失敗拒否を確認済み。実採用成功側は未了。専用Worktreeは.tools/worktrees/phase11-qwen35-9b-v13。session11515を観測し、重複起動しない。終了後の再開/原入力/費用監査は/tmp/phase11_direct_audit.pyの位置引数Config/Runで行い、全Rawを保存する。
 
 最新実走: 固定51b0559の意味v12/session1222と再開監査は終了済み。既知4条件/20 CallでCritical3/4・元順序Council c4がExpected矛盾に対し支持不足で不通過、誤支持0・人工54条件未試行。入力95316/出力85176 Token・1424.971683秒。91 Source/再開34 File不変・追加Call/Server0、全41 Artifactをphase11_source_reading_result_v12.jsonへ正規保存済み。c6は元S/逆C・F6/7→5/7で両採用、Expected nullと全7分母を保持。24k/推論4096でも基準を満たさず、既知15 QA回帰や主/予約Calibrationへ進めない。現在のGPU実走はない。
 
