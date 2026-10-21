@@ -1,6 +1,6 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月21日。正本: [研究計画7.15](rag_research_plan.md)、[実装計画8.17](rag_implementation_plan.md)。
+更新日: 2026年10月21日。正本: [研究計画7.16](rag_research_plan.md)、[実装計画8.18](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
@@ -13,7 +13,7 @@
 比較する方針を採用した。[日英比較の拡張方針](english_japanese_expansion.md)に従い、
 選定・日本語対応・予備検証・両言語の条件固定をPhase 11へ追加する。
 同日のGoal実行で[日本語Sourceの選定・原QA取得・構造監査](japanese_dataset_selection.md)を実施した。
-Sourceは`baobab-trees/wikipedia-human-retrieval-ja`。記事取得・正式Group分割は完了、Passage/参照対応・全Pipeline・予備検証と最終固定は未完了。
+Sourceは`baobab-trees/wikipedia-human-retrieval-ja`。記事取得・正式Group分割・全文Passage化は完了、QA参照対応・全Pipeline・予備検証と最終固定は未完了。
 原QAの再取得/検証と歴史的な記事全文取得CLIを実装し、既知1記事でPreflightを確認した。
 全2178 Titleの取得をCommit `61b4a5c`の専用Checkoutで行い、保存応答・本文/Source Hashを照合した。
 独立して日本語の文単位候補を実装し、新規32 Testを含む全316 Test・Ruffに成功。
@@ -29,6 +29,8 @@ QA AdapterとGroup分割処理を追加し、実838件で原行Hash・引用/人
 新Index・日本語の全本文Passage/Gold対応と日英RAG/Calibrationは未完了。
 [正式Encoder/CLIのCUDA入口](phase11_embedding_cuda.md)と専用uv Lockを追加し、合成数値/実演算・既知1記事の構築/検索を確認した。
 全380 Test/Ruff成功。全Corpusの新Index・日英RAG/意味監査・未使用Calibrationと最終Gateは未完了。
+[日本語全CorpusのPassage化](phase11_japanese_corpus.md)を完了し、2118記事・30065 Passageの全本文/Span/Hash/Tokenを独立検証した。
+全392 Test/Ruff成功。原QA/Splitは保持し、親記事/引用/人手要約と欠測のQA対応は未完了。英語新CUDA Indexは固定Checkoutで構築中。
 翻訳対は主実験に使わず、別Dataset間の差を言語単独の因果効果と断定しない。
 
 基盤に加え、固定回答のClaim抽出、根拠順序/反復ごとの自己評価と採用/書換え要求の保存を実装した。
@@ -47,7 +49,7 @@ QA AdapterとGroup分割処理を追加し、実838件で原行Hash・引用/人
 | 8 | 固定Trace・評価器・根拠順序実験 | 完了、Gate 8通過 | 開発2件、Judge 9回、固定内容/Schema同一・再開追加0回・182 Tests/ruff成功 |
 | 9 | 一回書換え・品質採点の入出力 | AI委任後の開発Gate通過 | 2回書換え、3候補AI採点、候補・判断・品質・費用の対応を照合。人手確認とはしない |
 | 10 | Development予備実験 | 修正・再実験・事後の形式検証を完了 | 15診断・5既知書換え、新規10問/20候補。v14事前Gateの失敗を保持し、後処理再検証を別記録 |
-| 11 | 日本語Dataset選定・対応、日英Calibration・最終条件凍結 | 英語GPU検証完了、意味妥当性/規模未決。日本語記事取得・正式Group分割済み、Passage/全実対応未了。Gate 11未通過 | 選定比較表、日本語対応/意味監査/英語回帰、両言語の対象・条件・統計の凍結Manifest |
+| 11 | 日本語Dataset選定・対応、日英Calibration・最終条件凍結 | 英語GPU検証完了、意味妥当性/規模未決。日本語記事取得・正式Group分割・全文Passage化済み、参照/全実対応未了。Gate 11未通過 | 選定比較表、日本語対応/意味監査/英語回帰、両言語の対象・条件・統計の凍結Manifest |
 | 12 | 日英の最終Evaluationと独立採点 | 未実施 | 両言語の事前選定全対象のRun/品質/欠測/費用が対応し、条件を事後変更しない |
 | 13 | 言語別統計・日英比較・条件別分析、任意の対策 | 未着手 | 不一致増分の日英差と不確実性、品質/費用、Dataset差の限界。対策は同予算で比較 |
 | 14 | 日英比較を含むICIAE原稿・投稿準備・卒論 | 未着手 | 方法・結果・比較考察・限界、再現手順、引用・図表、指導教員レビュー |

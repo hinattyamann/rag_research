@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.17 — 2026年10月21日 正式日本語分割と多言語EncoderのCUDA入口を追加
+## Version 8.18 — 2026年10月21日 日本語のSource専用Corpusと親記事対応表を追加
 
-[研究計画 Version 7.15](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.16](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -490,3 +490,13 @@ GPU版Runtime単独・実CUDA Session・Device0/TF32無効を検査し、Python�
 Provider/Options/実Session/Runtime版をIndex Configへ含め、異なる条件の再開/検索を拒否する。CPU既定Configは不変。
 合成入力のCUDA1396/CPU8 NodeとCPU数値差、既知27 Passageの構築・再開追加0・検索・超過拒否を確認した。
 全380 Test/Ruff成功。根拠は`phase11_multilingual_cuda_encoder_manifest.json`。全Corpus Index/日英RAG/Calibrationは未完了。
+
+### 日本語のSource専用Token Corpus
+
+`japanese_token_corpus.py`と専用CLI/Configで、完了済み歴史的Snapshotだけから共通Corpusを生成する。
+固定Plan/Source・全保存応答/Revision/本文Hash・欠測規則・一意Pageを検証し、QA/Referenceや未知Fieldを拒否する。
+全2118記事から30065 Passage、最大501 Token、全文22341944文字を保持した。
+別名をまとめた親子対応表と全2178 TitleのCatalogを保存し、取得不能50/原削除本文エラー2も保持する。
+全保存子のSpan/Hash/実Tokenと全親本文再構成・Raw6494ファイル不変を別Scriptで確認した。
+新規12 Testを含む全392 Test/Ruff成功。根拠は`phase11_japanese_token_corpus_manifest.json`。
+QAのGold対応は未実装で、原QAの空Gold/保留状態と新Corpusの`pending_qa_parent_and_quote_audit`を維持する。

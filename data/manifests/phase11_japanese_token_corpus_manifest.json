@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-source-only-japanese-full-corpus-preparation-not-final-freeze",
+  "recorded_at_utc": "2026-10-21T06:55:29.631026+00:00",
+  "base_commit": "ded26fa76f076e502b406296c466ceaa46f5da96",
+  "working_source_sha256": {
+    "configs/phase11_japanese_token_corpus_v1.json": "998ec68523c3b2f3be3074328c685fc0823b3539a22ce989bb27d357a8d7ca54",
+    "configs/phase11_multilingual_embedding_v1.json": "e07b0ddd45d1ff3288b1644c16886f450ff317f051c96bc570c7805eb4d65fb5",
+    "scripts/prepare_japanese_token_corpus.py": "b856ac437e5aaf5296029d8db7587b868afe9e086dfdffd7c451cb59be2677b0",
+    "src/rag_research/data/japanese_dataset.py": "42baaebaf96a2cb1b75d5b611917aeca01a17ccd8818f93a031d0b8a850e4e97",
+    "src/rag_research/data/japanese_passages.py": "05ab00ea2a4d6c8bf36b4afd4a21a34af66db9dee80cd6804acba418f00671bb",
+    "src/rag_research/data/japanese_token_corpus.py": "0e04be836598938cff552c295cc9a36b7b4770892a94d11dbe38e8b041d957ca",
+    "src/rag_research/data/source_availability.py": "eaaa4ab5353bdc41262b01e2c814cc198eebac5f3c57cdae8d1fbb869863767a",
+    "src/rag_research/data/wikipedia_snapshot.py": "0cf392491d6c482bb3fccc1db361a580cee1c6327ed96b07d7a31765dd93b80c",
+    "src/rag_research/retrieval/multilingual.py": "f7f104c07c4c45826a783b22b35735a8ae61b1d7073f2b89aaa8eb3473c63c35",
+    "tests/data/test_japanese_token_corpus.py": "f0d3ee1266d3fa8f4ffcc72efd129d1bf0a269bf1317637574bc92b1a986e9f9"
+  },
+  "artifacts": {
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/article_catalog.jsonl": {
+      "sha256": "4bf15e39f94fa1b4d98d225cc6893351602efbb9d0fb4d58424353e510346622",
+      "bytes": 1007381
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/parent_map.jsonl": {
+      "sha256": "d55e4f524f7f6adbd12f1db07b063a6d5c094b8fcf714185cf406a2cceeda40b",
+      "bytes": 2159671
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl": {
+      "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df",
+      "bytes": 86861672
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/report.json": {
+      "sha256": "b7dbb30685f764ebf1694d07cbc2dc73acc25be55475e2588874fdcf982e1386",
+      "bytes": 191638
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/verify_prepared.py": {
+      "sha256": "f0677a576421b4253d9be3f908989422c88f039801d7cd1d475781267e6503b8",
+      "bytes": 5483
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/verification.json": {
+      "sha256": "bc96e0877bea064f45de8d5d9f06ce5c36233a409a27d572923ff8cb6c6b5be0",
+      "bytes": 654
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/source_snapshot/configs/phase11_japanese_token_corpus_v1.json": {
+      "sha256": "998ec68523c3b2f3be3074328c685fc0823b3539a22ce989bb27d357a8d7ca54",
+      "bytes": 851
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/source_snapshot/configs/phase11_multilingual_embedding_v1.json": {
+      "sha256": "e07b0ddd45d1ff3288b1644c16886f450ff317f051c96bc570c7805eb4d65fb5",
+      "bytes": 2287
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/source_snapshot/scripts/prepare_japanese_token_corpus.py": {
+      "sha256": "b856ac437e5aaf5296029d8db7587b868afe9e086dfdffd7c451cb59be2677b0",
+      "bytes": 2591
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/source_snapshot/tests/data/test_japanese_token_corpus.py": {
+      "sha256": "f0d3ee1266d3fa8f4ffcc72efd129d1bf0a269bf1317637574bc92b1a986e9f9",
+      "bytes": 7528
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/source_snapshot/src/rag_research/retrieval/multilingual.py": {
+      "sha256": "f7f104c07c4c45826a783b22b35735a8ae61b1d7073f2b89aaa8eb3473c63c35",
+      "bytes": 10664
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/source_snapshot/src/rag_research/data/wikipedia_snapshot.py": {
+      "sha256": "0cf392491d6c482bb3fccc1db361a580cee1c6327ed96b07d7a31765dd93b80c",
+      "bytes": 11887
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/source_snapshot/src/rag_research/data/source_availability.py": {
+      "sha256": "eaaa4ab5353bdc41262b01e2c814cc198eebac5f3c57cdae8d1fbb869863767a",
+      "bytes": 3635
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/source_snapshot/src/rag_research/data/japanese_dataset.py": {
+      "sha256": "42baaebaf96a2cb1b75d5b611917aeca01a17ccd8818f93a031d0b8a850e4e97",
+      "bytes": 16821
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/source_snapshot/src/rag_research/data/japanese_token_corpus.py": {
+      "sha256": "0e04be836598938cff552c295cc9a36b7b4770892a94d11dbe38e8b041d957ca",
+      "bytes": 10439
+    },
+    "data/runs/corpus_preparation/phase11-ja-e5-v1/source_snapshot/src/rag_research/data/japanese_passages.py": {
+      "sha256": "05ab00ea2a4d6c8bf36b4afd4a21a34af66db9dee80cd6804acba418f00671bb",
+      "bytes": 4213
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/token_corpus_pytest.xml": {
+      "sha256": "9c3aab9de658d29c8a6404b11ced6485ba796b3b09bf667d4af43ad76f5baac1",
+      "bytes": 60068
+    }
+  },
+  "verification": {
+    "all_article_bodies_reconstructed": true,
+    "all_child_spans_hashes_and_tokens_verified": true,
+    "canonical_raw_files_unchanged": 6494,
+    "embedding_inference_calls": 0,
+    "gate11_passed": false,
+    "generative_model_calls": 0,
+    "gold_passage_mapping_status": "pending_qa_parent_and_quote_audit",
+    "maximum_embedding_input_tokens": 501,
+    "output_passage_count": 30065,
+    "phase12_allowed": false,
+    "purpose": "independent-saved-japanese-corpus-verification",
+    "qa_or_reference_read": false,
+    "raw_statuses": {
+      "error": 2,
+      "ok": 2126,
+      "unavailable": 50
+    },
+    "recorded_at_utc": "2026-10-21T06:53:07.811534+00:00",
+    "source_characters_preserved": 22341944,
+    "source_title_count": 2178,
+    "source_unique_articles": 2118
+  },
+  "corpus_preparation_resources": {
+    "rss_sample_interval_seconds": 0.1,
+    "sampled_peak_rss_bytes": 534818816,
+    "wall_seconds": 47.17792840400034
+  },
+  "parent_relevance_unit": "source_article_not_each_child_entailment",
+  "english_parent_unit_differs": true,
+  "qa_reference_or_quality_inputs_used": false,
+  "original_838_qa_and_splits_unchanged": true,
+  "old_run_files_unchanged": 2500,
+  "old_english_index_files_unchanged": 23,
+  "tests": {
+    "pytest_passed": 392,
+    "new_tests": 12,
+    "host_seconds": 5.03,
+    "ruff": "passed"
+  },
+  "gold_passage_mapping_status": "pending_qa_parent_and_quote_audit",
+  "japanese_full_index_built": false,
+  "embedding_inference_calls": 0,
+  "new_generation_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

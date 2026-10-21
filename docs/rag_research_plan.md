@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.15 — 2026年10月21日 日本語正式分割と多言語EmbeddingのCUDA監査を記録
+## Version 7.16 — 2026年10月21日 日本語共通Corpusの全文保持と参照粒度の差を記録
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.17](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.18](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -335,3 +335,8 @@ Group間Identity重複0・開発予約142 QAの開発専用配置・原質問/Re
 同日の[多言語Embedding CUDA監査](phase11_embedding_cuda.md)で、GPUを明示した正式Encoder/CLIと
 専用uv Lockを整備した。合成入力の実CUDA演算とCPU数値差、既知1記事のIndex構築/再開/検索を確認した。
 CPU既定・旧条件/Runは保持し、全Corpus Indexと日英RAG/Calibrationの確認までは最終採用を保留する。
+
+同日の[日本語共通Corpus生成](phase11_japanese_corpus.md)で、全2118記事を30065 Passageへ分割し、
+元本文22341944文字・全子のSpan/Hash/実Token上限・全Raw6494ファイルの保持を独立確認した。
+QA/Referenceは入力にせず、全838 QAと元Splitは保持した。日本語の記事親と英語の元Passage親は粒度が異なり、
+各子の完全な支持を仮定しない。Corpus規模などのDataset差も報告する。QAとの親記事/引用/人手要約と欠測の対応は次工程。

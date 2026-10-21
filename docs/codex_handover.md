@@ -9,7 +9,7 @@ Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 選定・取得・日本語対応・予備検証・両言語の条件固定をPhase 11で行う。
 同日のGoal実行で[候補比較と日本語Source選定](japanese_dataset_selection.md)を実施し、
 `baobab-trees/wikipedia-human-retrieval-ja`の固定版838回答付き/433回答なしQAを取得・構造監査した。
-全検索記録の記事取得と正式Group分割は完了。Passage/参照対応・全Pipeline実走・予備検証・最終固定は未完了で、Gate 11は未通過。
+全検索記録の記事取得・正式Group分割・全文Passage化は完了。QA参照対応・全Pipeline実走・予備検証・最終固定は未完了で、Gate 11は未通過。
 取得CLIは`scripts/prepare_japanese_corpus.py`、設定は`configs/phase11_japanese_corpus_v1.json`。
 再取得/取得履歴・Hashと現在版Fallback防止を実装し、既知1記事の本文取得を確認済み。
 実行手順と未達事項は[Source選定記録](japanese_dataset_selection.md)第5節を参照する。
@@ -30,13 +30,17 @@ Main側は日本語の固定文単位候補を追加し、全316 Test（ホス�
 全365 Test/Ruff成功。[Corpus準備の記録](phase11_corpus_preparation.md)に欠測規則・親参照・GPU Probeと次工程を保存した。
 日本語の削除過去本文はDataset Config v2で保存応答/Identityを検証し、原エラーのまま本文欠測を別記録する。
 GPU Probeを正式化し、`environments/embedding_gpu`のuv定義/LockとE5 Encoder/CLIの明示CUDA入口を追加した。
-全380 Test/Ruff、実CUDA数値/演算と既知1記事の構築/検索確認済み。手順は[CUDA監査](phase11_embedding_cuda.md)。全Corpus Indexは未構築。
+全380 Test/Ruff、実CUDA数値/演算と既知1記事の構築/検索確認済み。手順は[CUDA監査](phase11_embedding_cuda.md)。英語の全Corpus IndexはCommit ded26faの固定Checkoutで構築中。
 日本語の全2178 Titleは本文成功2126（2118種類のPage）・取得不能50・削除本文エラー2で終了した。
 正式QA/Groupは`data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/`、開発545/Calibration84/Evaluation209。
 706 Group・Group間Identity重複0、開発予約142 QAは全てDevelopment。原質問/Reference/行Hashを保持した。
 Source/取得RawはMain側`data/raw/wikipedia_human_retrieval_ja/`にも複製し、全6494ファイルのByte一致を確認済み。
 一覧は同Directoryの`acquisition_file_index_v1.json`、根拠は`phase11_japanese_snapshot_group_manifest.json`。
-Goldは`pending_passage_build`のままで、記事Passage化と引用/要約/欠測対応が次工程。最終採用件数は未決。
+日本語全文Corpusは`data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/`へ生成済み。
+全2118記事→30065 Passage・最大501 Token、元本文22341944文字と全Span/Hashを独立検証した。全392 Test/Ruff成功。
+手順と限界は[日本語Corpus記録](phase11_japanese_corpus.md)。QA側Goldは`pending_passage_build`のままで、引用/要約/欠測対応が次工程。
+英語Indexの実行計画/ログは`data/runs/index_build/phase11-en-e5-cuda-v1/`、固定Checkoutは`.tools/worktrees/phase11-multilingual-index-v1`。
+実行中のCheckoutのCode/Configは編集しない。元QA/Splitは保持、最終採用件数は未決。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -53,7 +57,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.15](rag_research_plan.md)・[実装計画8.17](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.16](rag_research_plan.md)・[実装計画8.18](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。
