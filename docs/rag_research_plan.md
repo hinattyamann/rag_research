@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.12 — 2026年10月21日 日本語の人手検索・長文QA Sourceを選定
+## Version 7.13 — 2026年10月21日 多言語検索候補と本文保持・英語入力長を監査
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.14](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.15](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -313,3 +313,9 @@ Phase 12で日英の本実験と独立採点、Phase 13で統計と比較考察�
 引用断片のみのOracle条件へ切り替えず、全検索記録の記事全文から共通Corpusを準備する。
 複数記事の引用を介する文書Group、引用と人手要約の違い、記事時点・規模・検索品質を確認する。
 回答なし433件はCorpus全体の回答不能とは扱わない。これらの整備と日英実走・最終固定はこれからである。
+
+同日、[日英共通の検索候補・本文分割の確認](phase11_multilingual_retrieval.md)として
+固定版Multilingual E5 smallの公式FP32 ONNXとSubword BM25、512 Token以内の全文保持を実装した。
+既知開発1記事の検索まで動作したが、検索品質や日英RAG全経路の検証ではない。
+英語Corpusにも新Tokenizerの上限超過が3130/178890 Passageあり、元の参照IDを保持した別Versionの分割と
+新Index・Development回帰・未使用Calibrationが必要である。旧英語条件・Runは保持し、最終採用を保留する。

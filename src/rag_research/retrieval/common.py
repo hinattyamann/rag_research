@@ -97,7 +97,9 @@ class CorpusStore:
             raise IndexValidationError("Duplicate Corpus Passage ID")
 
     @staticmethod
-    def prepare(corpus_path: Path, index_dir: Path) -> dict:
+    def prepare(corpus_path: Path, index_dir: Path, *, source_dataset="CLAPNQ") -> dict:
+        if not isinstance(source_dataset, str) or not source_dataset.strip():
+            raise IndexValidationError("Explicit Corpus source dataset must be nonblank text")
         ids, offsets, revisions = [], [], set()
         with corpus_path.open("rb") as source:
             while True:
@@ -113,7 +115,7 @@ class CorpusStore:
                     or not row["text"].strip()
                     or not isinstance(row.get("title"), str)
                     or not row["title"].strip()
-                    or row.get("source_dataset") != "CLAPNQ"
+                    or row.get("source_dataset") != source_dataset
                     or not isinstance(row.get("source_revision"), str)
                     or row.get("text_sha256")
                     != hashlib.sha256(row["text"].encode("utf-8")).hexdigest()
@@ -126,13 +128,16 @@ class CorpusStore:
             raise IndexValidationError("Corpus must be nonempty, unique and from one revision")
         write_json(index_dir / "passage_ids.json", ids)
         np.save(index_dir / "offsets.npy", np.asarray(offsets, dtype=np.int64), allow_pickle=False)
-        return {
+        metadata = {
             "sha256": file_hash(corpus_path),
             "bytes": corpus_path.stat().st_size,
             "record_count": len(ids),
             "source_revision": revisions.pop(),
             "ordered_passage_ids_sha256": file_hash(index_dir / "passage_ids.json"),
         }
+        if source_dataset != "CLAPNQ":
+            metadata["source_dataset"] = source_dataset
+        return metadata
 
     def iter_texts(self):
         with self.path.open("rb") as source:

@@ -14,6 +14,10 @@ from rag_research.retrieval.common import (  # noqa: E402
     IndexValidationError,
 )
 from rag_research.retrieval.dense import OnnxEncoder, build_dense  # noqa: E402
+from rag_research.retrieval.multilingual import (  # noqa: E402
+    MODEL_ROOT as E5_MODEL_ROOT,
+)
+from rag_research.retrieval.multilingual import E5Tokenizer, MultilingualE5Encoder  # noqa: E402
 
 
 def main():
@@ -21,17 +25,27 @@ def main():
     parser.add_argument("--kind", choices=("bm25", "embedding"), required=True)
     parser.add_argument("--corpus", type=Path, default=CORPUS_PATH)
     parser.add_argument("--output-dir", type=Path)
-    parser.add_argument("--model-root", type=Path, default=MODEL_ROOT)
+    parser.add_argument("--model-root", type=Path)
+    parser.add_argument("--encoder", choices=("minilm", "multilingual-e5"), default="minilm")
+    parser.add_argument("--source-dataset", default="CLAPNQ")
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--threads", type=int, default=6)
     args = parser.parse_args()
+    if args.encoder == "multilingual-e5" and args.output_dir is None:
+        parser.error("Multilingual E5 requires an explicit new --output-dir")
     output = args.output_dir or INDEX_ROOT / args.kind
     try:
         if args.kind == "bm25":
-            manifest = build_bm25(args.corpus, output)
+            tokenizer = (E5Tokenizer(args.model_root or E5_MODEL_ROOT)
+                         if args.encoder == "multilingual-e5" else None)
+            manifest = build_bm25(args.corpus, output, tokenizer=tokenizer,
+                                  source_dataset=args.source_dataset)
         else:
-            encoder = OnnxEncoder(args.model_root, threads=args.threads)
-            manifest = build_dense(args.corpus, output, encoder, batch_size=args.batch_size)
+            encoder = (MultilingualE5Encoder(args.model_root or E5_MODEL_ROOT, threads=args.threads)
+                       if args.encoder == "multilingual-e5" else
+                       OnnxEncoder(args.model_root or MODEL_ROOT, threads=args.threads))
+            manifest = build_dense(args.corpus, output, encoder, batch_size=args.batch_size,
+                                   source_dataset=args.source_dataset)
     except (OSError, IndexValidationError, ValueError) as error:
         parser.exit(1, f"Index build failed: {error}\n")
     print(f"Index: {output}; {manifest['corpus']['record_count']} passages")

@@ -155,6 +155,9 @@ Disk空き385GiB。既存のRaw/Processed/Index/Model/Runtime/Runは約7.5GiB。
 その後、QA Adapter/Group分割処理を実装し、実838件の原行Hash・引用/要約の保持と同一Byte再開を確認。
 全338 Test/Ruff成功、暫定706 Group・開発予約142件。取得完了とRedirect等の照合前には正式Splitを生成しない。
 取込み・分割方針の根拠は`data/manifests/phase11_japanese_dataset_preflight.json`による。
+多言語E5候補・Subword BM25と本文Passage分割を実装し、既知開発1記事の検索まで確認した。全351 Test/Ruff成功。
+英語3130 Passageが新Tokenizer上限を超えるため、元の参照IDを保持した英語分割/新Index・RAG接続が次に必要。
+候補条件と実機確認の範囲は[多言語検索の記録](phase11_multilingual_retrieval.md)に保存した。
 Source選定と残る差は[比較記録](japanese_dataset_selection.md)、Hashと開発予約は
 `data/manifests/phase11_japanese_source_selection.json`による。Bの完了・C全体〜Fはまだ達成していない。
 取得不能・候補不適合等があれば代替を調査し、依存しない作業を進めた上で必要な判断を説明する。

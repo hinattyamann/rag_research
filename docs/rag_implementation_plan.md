@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.14 — 2026年10月21日 日本語QA Adapterと文書Group分割・取得監査の契約を追加
+## Version 8.15 — 2026年10月21日 多言語検索候補とToken上限内の本文Passage化を追加
 
-[研究計画 Version 7.12](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.13](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -438,3 +438,21 @@ Hashと取得件数・重複記事の整合を検証する。取得中・未完�
 新規22 Test、全338 Test成功（ホスト4.54秒）、Ruff成功。既存Run2500ファイルのHashは不変。
 確認根拠は`data/manifests/phase11_japanese_dataset_preflight.json`。
 Redirect解決後の正式Split、記事Passage化/Gold対応、検索と日本語Model/品質実走はこれからである。
+
+### 多言語検索候補と本文Passage分割（2026年10月21日）
+
+[実装・実機確認記録](phase11_multilingual_retrieval.md)のとおり、公式Multilingual E5 smallの
+固定版FP32 ONNX、用途別Prefix・Mask付き平均Pool/L2、512 Token超過の事前拒否を追加した。
+BM25には同TokenizerのSubword IDを使い、共通のIndex/検索/RRFを再利用する。
+新CorpusのDatasetを明示し、既定のCLAPNQ/旧MiniLM・単語BM25のConfigと既存Indexは保持する。
+
+記事本文の連続文字Spanを実Tokenizerで分け、Prefix/Special込み512 Token以下・全文再構成を確認する。
+文字Span・過去Page/Revision・URLと本文Hashを保存し、描画本文Hashを含む96-bit派生数値IDで旧引用形式へ対応する。
+QA/ReferenceをCorpus生成へ渡さない。既知の開発1記事19251文字は27 Passage・最大501 Tokenとなり、
+CPUでBM25/Embedding/Hybrid検索・入力超過の推論前拒否・再開追加0回を確認した。
+
+新規13 Test、全351 Test/Ruff成功。旧Run2500/英語Index23ファイルのHashと旧既定Configは不変。
+確認根拠は`phase11_multilingual_retrieval_preflight.json`。
+英語Corpus3130件に新Tokenizerの上限超過があるため、英語にも元のPassage/Gold参照を保持した分割を新Versionで作る。
+全Corpus/Gold対応・正式Split、新RAG Factory・指示文/予算/品質への接続、日英の検索/意味監査・Calibrationは未完了。
+既存の英語Phase 6用Factoryを、新候補の最終固定済みFactoryとは扱わない。

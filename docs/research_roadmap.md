@@ -1,6 +1,6 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月21日。正本: [研究計画7.12](rag_research_plan.md)、[実装計画8.14](rag_implementation_plan.md)。
+更新日: 2026年10月21日。正本: [研究計画7.13](rag_research_plan.md)、[実装計画8.15](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
@@ -21,6 +21,8 @@ Sourceは`baobab-trees/wikipedia-human-retrieval-ja`。本文Corpusは取得中�
 日本語の検索/Model実走、日英の意味監査・未使用Calibrationと最終固定は未完了で、Gate 11は通していない。
 QA AdapterとGroup分割処理を追加し、実838件で原行Hash・引用/人手要約の区別・同一Byte再開を検証した。
 全338 Test/Ruff成功。暫定706 Group・開発予約142件で、正式SplitとPassage/Gold対応は取得完了後に進める。
+その後[多言語検索候補・全文保持のPassage化](phase11_multilingual_retrieval.md)を実装し、既知1記事で検索まで実走した。
+全351 Test/Ruff成功。英語Corpusにも新Tokenizer上限超過3130件があり、英語の分割/新Index・新RAG接続と両言語の実走は未完了。
 翻訳対は主実験に使わず、別Dataset間の差を言語単独の因果効果と断定しない。
 
 基盤に加え、固定回答のClaim抽出、根拠順序/反復ごとの自己評価と採用/書換え要求の保存を実装した。

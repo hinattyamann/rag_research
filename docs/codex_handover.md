@@ -22,6 +22,10 @@ Main側は日本語の固定文単位候補を追加し、全316 Test（ホス�
 暫定監査は`data/processed/wikipedia_human_retrieval_ja/02e85c8-source-audit-v1/`。
 706 Group・開発予約142件で全QAは`research_split=None`。正式SplitとGold Passage対応を完了済みにしない。
 手順と取得中の正式生成拒否は[Source選定記録](japanese_dataset_selection.md)第6節を参照する。
+多言語E5候補・Subword BM25・本文Passage分割を追加し、既知開発1記事を27 Passageへ分けて検索まで確認した。
+全351 Test（ホスト5.97秒）・Ruff成功。候補Model/Code/実機確認は[多言語検索の記録](phase11_multilingual_retrieval.md)。
+旧英語Corpusの3130件がE5上限を超えるため、元の参照IDを保持した英語分割/新Indexが必要。
+既存RAG FactoryはPhase 6用のまま。日本語全Corpus/Gold対応・正式Splitと日英RAG接続/Calibrationは未完了。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -38,7 +42,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.12](rag_research_plan.md)・[実装計画8.14](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.13](rag_research_plan.md)・[実装計画8.15](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

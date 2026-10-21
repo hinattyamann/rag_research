@@ -114,6 +114,8 @@ class OnnxEncoder:
 
 
 def dense_config(encoder, batch_size: int) -> dict:
+    if hasattr(encoder, "retrieval_config"):
+        return encoder.retrieval_config(batch_size)
     return {
         "kind": "embedding",
         "algorithm": "minilm-onnx-cosine-v1",
@@ -135,16 +137,22 @@ def dense_config(encoder, batch_size: int) -> dict:
     }
 
 
-def build_dense(corpus_path: Path, output_dir: Path, encoder, *, batch_size: int = 1) -> dict:
+def build_dense(corpus_path: Path, output_dir: Path, encoder, *, batch_size: int = 1,
+                source_dataset="CLAPNQ") -> dict:
     """Resume only when Corpus, model bytes and execution config match exactly."""
     if batch_size < 1:
         raise ValueError("batch_size must be positive")
     config = dense_config(encoder, batch_size)
     if output_dir.exists():
-        return verify_index(output_dir, corpus_path, config)
+        manifest = verify_index(output_dir, corpus_path, config)
+        if manifest["corpus"].get("source_dataset", "CLAPNQ") != source_dataset:
+            raise IndexValidationError("Corpus source dataset differs from existing Index")
+        return manifest
     stage = output_dir.with_name(output_dir.name + ".building")
     if (stage / "manifest.json").exists():
         manifest = verify_index(stage, corpus_path, config)
+        if manifest["corpus"].get("source_dataset", "CLAPNQ") != source_dataset:
+            raise IndexValidationError("Corpus source dataset differs from staged Index")
         stage.rename(output_dir)
         return manifest
     with ResourceMonitor() as monitor:
@@ -158,6 +166,8 @@ def build_dense(corpus_path: Path, output_dir: Path, encoder, *, batch_size: int
             ):
                 raise IndexValidationError("Resume conditions changed; use a new output path")
             metadata = checkpoint["corpus"]
+            if metadata.get("source_dataset", "CLAPNQ") != source_dataset:
+                raise IndexValidationError("Corpus source dataset differs from resume checkpoint")
             if any(
                 file_hash(stage / name) != digest
                 for name, digest in checkpoint["mapping_hashes"].items()
@@ -173,7 +183,7 @@ def build_dense(corpus_path: Path, output_dir: Path, encoder, *, batch_size: int
             encoder.truncated_count = checkpoint["truncated_passages"]
         else:
             stage.mkdir(parents=True)
-            metadata = CorpusStore.prepare(corpus_path, stage)
+            metadata = CorpusStore.prepare(corpus_path, stage, source_dataset=source_dataset)
             vectors = np.lib.format.open_memmap(
                 stage / "vectors.npy",
                 mode="w+",
@@ -209,7 +219,8 @@ def build_dense(corpus_path: Path, output_dir: Path, encoder, *, batch_size: int
             batch.append(text)
             if len(batch) < batch_size and index + 1 < len(vectors):
                 continue
-            encoded = encoder.encode(batch)
+            encoded = (encoder.encode_passages(batch) if hasattr(encoder, "encode_passages")
+                       else encoder.encode(batch))
             if encoded.shape != (len(batch), DIMENSION) or not np.isfinite(encoded).all():
                 raise IndexValidationError("Encoder returned invalid vectors")
             vectors[index + 1 - len(batch) : index + 1] = encoded
@@ -267,7 +278,8 @@ class DenseRetriever:
 
     def search(self, question: str, *, top_k: int = 5):
         validate_query(question, top_k)
-        query = self.encoder.encode([question])[0]
+        query = (self.encoder.encode_queries([question]) if hasattr(self.encoder, "encode_queries")
+                 else self.encoder.encode([question]))[0]
         scores = np.empty(len(self.vectors), dtype=np.float32)
         for start in range(0, len(scores), self.block_size):
             end = min(start + self.block_size, len(scores))

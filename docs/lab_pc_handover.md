@@ -1,7 +1,7 @@
 # 研究室PCへの引継ぎと実行手順
 
 2026年10月18日更新: 正式テーマを「根拠提示順序に対するRAG自己評価の感度と修復判断への影響」へ変更した。
-2026年10月21日更新: 現行は[研究計画7.12](rag_research_plan.md)、[実装計画8.14](rag_implementation_plan.md)、Dataset Guide 2.4。
+2026年10月21日更新: 現行は[研究計画7.13](rag_research_plan.md)、[実装計画8.15](rag_implementation_plan.md)、Dataset Guide 2.4。
 英語CLAPNQに近い別の日本語Datasetで比較する方針を追加した。翻訳対を主実験に使わない。
 [日英比較の拡張方針](english_japanese_expansion.md)の選定・日本語対応・予備検証と両言語の条件固定を
 Phase 11で完了してからPhase 12へ進む。
@@ -10,6 +10,8 @@ Phase 11で完了してからPhase 12へ進む。
 分割・検索/Model/品質の全Pipeline実走・予備検証・最終固定は未完了。
 QA Adapter/Group処理は実装済みで、実838件の取込み・暫定706 Group/開発予約142件を確認。全338 Test/Ruff成功。
 正式Splitは取得完了とRedirect等の照合後に生成し、Gold Passage対応と意味妥当性は未確認。
+[多言語検索候補とPassage分割](phase11_multilingual_retrieval.md)は既知開発1記事で実走し、全351 Test/Ruff成功。
+英語3130 Passageに新Tokenizer上限超過があり、英語の分割・新Index・日英RAG接続とCalibrationは未完了。
 Phase 1〜9とPhase 10初回20問・測定系修正・新規10問/20候補AI採点・集計を完了。
 引用重複1件で元の事前Gateは不通過とし、後処理の修正・保存出力再検証を別に記録した。
 [再確認結果](phase10_recheck_results.md)と[ロードマップ](research_roadmap.md)で結果と現在地を確認する。
