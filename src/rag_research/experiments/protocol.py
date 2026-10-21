@@ -30,6 +30,22 @@ def load_protocol(path, *, split="development"):
     require(config["data"]["answerable_only"] is True, "Phase 8 uses Answerable QA")
     require(config["data"]["qa_path"] ==
             f"data/processed/clapnq/c508d78-split-v1/{split}.jsonl", "Unexpected QA path")
+    if split == "development":
+        require(config["quality"]["llm_labels_are_final"] is False, "Manual quality is still required")
+    else:
+        require(config["quality"]["annotator"] == "Codex_AI" and
+                config["quality"]["human_reviewed"] is False and
+                config["quality"]["internal_judge_is_quality_truth"] is False,
+                "Calibration needs separate external AI quality")
+    prompt_path = (ROOT / config["prompts"]).resolve()
+    require(prompt_path.is_relative_to(ROOT), "Prompt path escapes repository")
+    prompts = yaml.safe_load(prompt_path.read_text("utf-8"))
+    validate_task_contract(config, prompts)
+    return config, prompts, prompt_path
+
+
+def validate_task_contract(config, prompts):
+    """Shared comparison/model-input constraints, independent of dataset paths and stage."""
     trials = config["trials"]
     for field in ("repeated_prompt_result_cache", "regenerate_claims_per_trial",
                   "regenerate_answer_per_trial", "repack_or_truncate_per_trial"):
@@ -57,16 +73,6 @@ def load_protocol(path, *, split="development"):
                 "json_schema_source_spans_compact_v3", "json_schema_verdicts_aligned_v4",
                 "thinking_json_passage_ids_v1", "thinking_json_passage_ids_v2"},
             "Unsupported output constraints")
-    if split == "development":
-        require(config["quality"]["llm_labels_are_final"] is False, "Manual quality is still required")
-    else:
-        require(config["quality"]["annotator"] == "Codex_AI" and
-                config["quality"]["human_reviewed"] is False and
-                config["quality"]["internal_judge_is_quality_truth"] is False,
-                "Calibration needs separate external AI quality")
-    prompt_path = (ROOT / config["prompts"]).resolve()
-    require(prompt_path.is_relative_to(ROOT), "Prompt path escapes repository")
-    prompts = yaml.safe_load(prompt_path.read_text("utf-8"))
     require(prompts["schema_version"] == 1 and set(prompts["tasks"]) == set(FIELDS),
             "Unexpected prompt schema/tasks")
     claim_unit_language(prompts.get("claim_units"))
@@ -82,7 +88,6 @@ def load_protocol(path, *, split="development"):
     require(prompts.get("judge_checks") in {None, "conflict_then_complete_v1"}, "Unknown Judge checks")
     require(prompts.get("rewrite_format") in {None, "checked_json_v1", "thinking_checked_json_v2"}, "Unknown rewrite format")
     require(prompts.get("rewrite_layout") in {None, "draft_sources_question"}, "Unknown rewrite layout")
-    return config, prompts, prompt_path
 
 
 def task_config(config, task):

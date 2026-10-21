@@ -40,6 +40,7 @@ def load_config(path=Path("configs/phase5.yaml")):
     if value["schema_version"] != 1 or value["purpose"] not in {
         "phase5-development-only",
         "phase6-hybrid-baseline",
+        "phase11-bilingual-baseline-candidate",
     }:
         raise ValueError("Unsupported baseline config")
     if value["purpose"] == "phase5-development-only" and value["retrieval"]["kind"] != "embedding":
@@ -47,7 +48,7 @@ def load_config(path=Path("configs/phase5.yaml")):
     top_k = value["retrieval"]["top_k"]
     if type(top_k) is not int or top_k < 1:
         raise ValueError("top_k must be a positive integer")
-    if value["purpose"] == "phase6-hybrid-baseline":
+    if value["purpose"] in {"phase6-hybrid-baseline", "phase11-bilingual-baseline-candidate"}:
         retrieval = value["retrieval"]
         if retrieval["kind"] != "hybrid":
             raise ValueError("Phase 6 uses Hybrid retrieval")

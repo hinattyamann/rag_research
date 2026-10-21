@@ -63,7 +63,7 @@ def read_run(run):
     return manifest, report
 
 
-def make_packet(records, qa, gold, rubric, version, seed, binding):
+def make_packet(records, qa, gold, rubric, version, seed, binding, *, reference_metadata=None):
     cases, mapping, lookup = {}, {}, {}
     for row in records:
         trace = row["trace"]
@@ -77,6 +77,8 @@ def make_packet(records, qa, gold, rubric, version, seed, binding):
                        "reference_answers": reference["reference_answers"],
                        "selected_sentences_by_reference": reference["selected_sentences_by_reference"],
                        "gold_documents": [gold[i] for i in reference["gold_passage_ids"]]}
+            if reference_metadata is not None:
+                content["reference_provenance"] = reference_metadata[trace["record_id"]]
             candidate_hash = digest(content)
             # Identical question/answer/context/reference is annotated once for both stages.
             anonymous = "Q-" + digest([seed, candidate_hash])[:20]

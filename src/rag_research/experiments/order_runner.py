@@ -163,7 +163,7 @@ def evaluate_traces(client, config, prompts, traces, manifest, output, notify=pr
         claims = extraction["parsed"]["claims"] if extraction["status"] == "ok" else []
         notify(json.dumps({"record_id": trace["record_id"], "task": "extract_claims",
                            "status": extraction["status"], "claims": len(claims),
-                           "error": extraction["error"]}), flush=True)
+                           "error": extraction["error"], "error_code": extraction["error_code"]}), flush=True)
         trials = []
         documents_by_id = {d["passage_id"]: d for d in trace["documents"]}
         for spec in entry["plan"]["trials"]:
@@ -191,7 +191,7 @@ def evaluate_traces(client, config, prompts, traces, manifest, output, notify=pr
                     row["score"] = evaluation["parsed"]["score"]
                 notify(json.dumps({"record_id": trace["record_id"], "trial": spec["trial_id"],
                                    "status": row["status"], "score": row["score"],
-                                   "error": row["error"]}), flush=True)
+                                   "error": row["error"], "error_code": row["error_code"]}), flush=True)
             row.update(decide(row["score"], config["decision"]["threshold"]))
             trials.append(row)
         records.append({"record_id": trace["record_id"], "trace_sha256": trace["trace_sha256"],
