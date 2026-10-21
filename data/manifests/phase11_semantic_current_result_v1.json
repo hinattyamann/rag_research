@@ -1,0 +1,193 @@
+{
+  "recorded_at_utc": "2026-10-21T09:17:20.627695+00:00",
+  "fixed_commit": "93c3611fe0e06c9f5d08a77111486f51dcf2cc35",
+  "report": {
+    "schema_version": 1,
+    "purpose": "phase11-bilingual-semantic-candidate",
+    "manifest_sha256": "044cf81858a706545ae72cdd58795d1f3413e5fc88c5a635cd48861609abf7e6",
+    "critical_planned_conditions": 4,
+    "critical_completed_conditions": 4,
+    "critical_exact_correct_conditions": 1,
+    "critical_passed": false,
+    "synthetic": {
+      "en": {
+        "planned_conditions": 24,
+        "completed_conditions": 0,
+        "valid_conditions": 0,
+        "exact_correct_conditions": 0,
+        "accuracy_of_all_planned": null,
+        "false_support_count": 0
+      },
+      "ja": {
+        "planned_conditions": 30,
+        "completed_conditions": 0,
+        "valid_conditions": 0,
+        "exact_correct_conditions": 0,
+        "accuracy_of_all_planned": null,
+        "false_support_count": 0
+      }
+    },
+    "diagnostic_gate_passed": false,
+    "planned_conditions": 58,
+    "completed_conditions": 4,
+    "not_attempted_ids": [
+      "en-time-support-original",
+      "en-time-support-reversed",
+      "en-time-conflict-original",
+      "en-time-conflict-reversed",
+      "en-time-absent-original",
+      "en-time-absent-reversed",
+      "en-number-support-original",
+      "en-number-support-reversed",
+      "en-number-conflict-original",
+      "en-number-conflict-reversed",
+      "en-number-absent-original",
+      "en-number-absent-reversed",
+      "en-negation-support-original",
+      "en-negation-support-reversed",
+      "en-negation-conflict-original",
+      "en-negation-conflict-reversed",
+      "en-negation-absent-original",
+      "en-negation-absent-reversed",
+      "en-relation-support-original",
+      "en-relation-support-reversed",
+      "en-relation-conflict-original",
+      "en-relation-conflict-reversed",
+      "en-relation-absent-original",
+      "en-relation-absent-reversed",
+      "ja-actor-1-original",
+      "ja-actor-1-reversed",
+      "ja-actor-2-original",
+      "ja-actor-2-reversed",
+      "ja-actor-3-original",
+      "ja-actor-3-reversed",
+      "ja-count-1-original",
+      "ja-count-1-reversed",
+      "ja-count-2-original",
+      "ja-count-2-reversed",
+      "ja-count-3-original",
+      "ja-count-3-reversed",
+      "ja-compound-1-original",
+      "ja-compound-1-reversed",
+      "ja-compound-2-original",
+      "ja-compound-2-reversed",
+      "ja-compound-3-original",
+      "ja-compound-3-reversed",
+      "ja-qualification-1-original",
+      "ja-qualification-1-reversed",
+      "ja-qualification-2-original",
+      "ja-qualification-2-reversed",
+      "ja-qualification-3-original",
+      "ja-qualification-3-reversed",
+      "ja-table-1-original",
+      "ja-table-1-reversed",
+      "ja-table-2-original",
+      "ja-table-2-reversed",
+      "ja-table-3-original",
+      "ja-table-3-reversed"
+    ],
+    "completion_attempts_recorded": 4,
+    "cost_incomplete": false,
+    "input_tokens": 14162,
+    "output_tokens": 5192,
+    "summed_task_seconds": 54.61052013400331,
+    "task_result_sha256": {
+      "known-council-original": "35d74906b4b0ac187f2932ae4561d6d08bc63c321d1d6f2736ba29a565aaf197",
+      "known-council-reversed": "f9d88147a870370f9b86debaa5e2dbde5c19da8165998e80c46e9d5d990f2aba",
+      "known-zidane-original": "e3fc42d61033dc7a8a4e0fe47a1ad526052363215ce10fa22a84344f0c030665",
+      "known-zidane-reversed": "44a082bf78b98d7d45131f2ad918872166f6afaccd2d6053c53c2d2197b21a23"
+    },
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "critical": [
+    {
+      "case": "known-council",
+      "order": "original",
+      "critical_expected": {
+        "c4": "contradicted"
+      },
+      "actual": {
+        "c4": "supported"
+      }
+    },
+    {
+      "case": "known-council",
+      "order": "reversed",
+      "critical_expected": {
+        "c4": "contradicted"
+      },
+      "actual": {
+        "c4": "supported"
+      }
+    },
+    {
+      "case": "known-zidane",
+      "order": "original",
+      "critical_expected": {
+        "c1": "contradicted"
+      },
+      "actual": {
+        "c1": "supported"
+      }
+    },
+    {
+      "case": "known-zidane",
+      "order": "reversed",
+      "critical_expected": {
+        "c1": "contradicted"
+      },
+      "actual": {
+        "c1": "contradicted"
+      }
+    }
+  ],
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "artifacts": {
+    "data/runs/semantic_diagnostics/phase11-4b-current-v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-4b-current-v1/launch.json": {
+      "sha256": "20bcbb18f215b84d67a015e26ee1f2682e670c6bf6ae77184d21c1e687590414",
+      "bytes": 490
+    },
+    "data/runs/semantic_diagnostics/phase11-4b-current-v1/manifest.json": {
+      "sha256": "4c5b9f223fb8d97d584c5e652902c4e32ed21bf35b1e0d5486ef9b3929ba9e73",
+      "bytes": 21510
+    },
+    "data/runs/semantic_diagnostics/phase11-4b-current-v1/report.json": {
+      "sha256": "b6415472d9f5047c2dc8b589177379214b908b7343336bea6a937b249f3bf396",
+      "bytes": 3231
+    },
+    "data/runs/semantic_diagnostics/phase11-4b-current-v1/resume_check.json": {
+      "sha256": "9eec00ba48128a7c33b102c4c0af99dd339e97c385a0a4aa7301b8cb74587e69",
+      "bytes": 2537
+    },
+    "data/runs/semantic_diagnostics/phase11-4b-current-v1/server-1.log": {
+      "sha256": "6cf5d0839d1a442bdff955e04fe64b370d6fa3661c1ab644eb58fe68b49a88ff",
+      "bytes": 37588
+    },
+    "data/runs/semantic_diagnostics/phase11-4b-current-v1/session-1.json": {
+      "sha256": "b7525459b3bf1619542b96dc6c9b42c654a8f80c3634b5a49ccd408e463426fe",
+      "bytes": 9707
+    },
+    "data/runs/semantic_diagnostics/phase11-4b-current-v1/tasks/known-council-original.json": {
+      "sha256": "f4b1cbcb17f1ec9c328111b3e442d1aa102c93b3edbd520bff3a820d5a640922",
+      "bytes": 139183
+    },
+    "data/runs/semantic_diagnostics/phase11-4b-current-v1/tasks/known-council-reversed.json": {
+      "sha256": "a9b756e08f5c860902ebe6189d0db59892402971bb51da1844dc7d074a4964ff",
+      "bytes": 134395
+    },
+    "data/runs/semantic_diagnostics/phase11-4b-current-v1/tasks/known-zidane-original.json": {
+      "sha256": "68e4dd98280261a672ccf009f09730d4d96bce50fd1c0a1812fc765e8eb32c5e",
+      "bytes": 113449
+    },
+    "data/runs/semantic_diagnostics/phase11-4b-current-v1/tasks/known-zidane-reversed.json": {
+      "sha256": "dc35b69a1c8f71cd73326da342ae234f1e1f67aed0b4ec73fe513bba34cb933c",
+      "bytes": 127620
+    }
+  }
+}

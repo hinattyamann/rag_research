@@ -45,3 +45,20 @@
 入力/Expected・Protocol改変の検出、平均一致率が高くても誤支持があれば不採用となることを確認した。
 全450 Test（ホスト5.99秒）とRuffに成功した。実Planの旧Source/Expected・日英Judge指示の一致も確認済み。
 実GPUでの新診断結果はまだ得ていない。検証済みCommitに固定して実行する。
+
+## 初期4B候補の実走と事前に予定したPrompt改訂
+
+固定93c3611の専用Worktreeで`phase11-4b-current-v1`を実行した。
+Critical4条件は全て形式有効だったが、Council c4を元/逆とも支持、Zidane c1を元順序で支持し、
+逆順序のZidaneだけ期待する矛盾と一致した。正確一致1/4・誤支持3/4で不通過、人工54条件は未試行。
+4 Completion・入力14162/出力5192 Token、Task秒和54.61。入力超過/Runtime失敗0。
+再開10 FileのHash不変・追加呼出し/Server起動0を確認した。初回失敗を`phase11_semantic_current_result_v1.json`で保持した。
+元/逆だけの既知2例で感度率を推定しない。
+
+予定した1回のPrompt改訂は`phase11_semantic_alignment_system_v1.txt`と
+`phase11_semantic_prompts_{en,ja}_v2.yaml`、設定は`phase11_semantic_candidate_v2.yaml`。
+文の主体→動作/関係→対象、時期・数値の範囲・否定・推測の限定を先に照合させる。
+部分期間の回数と通算、閉会した組織と後の別主体の行為を架空の一般例で区別し、実例の人名/正解はPromptへ書かない。
+既知Source/Expected・採用/停止規則・閾値0.7・Model/Runtime/Seed/予算/Schemaは不変。
+初回生成/書換えの指示と日英文単位も変更しない。両言語のJudge指示を同じものにする。
+新指示の意味精度はTestでは未認定で、別固定Commit/Runで同じ先行4条件から診断する。

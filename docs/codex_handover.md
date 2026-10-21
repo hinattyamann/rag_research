@@ -76,6 +76,9 @@ CLAPNQ省略互換を修正し、実IndexのFactory検索2 Testを追加して�
 その次工程の事前入力/採用規則は`configs/phase11_semantic_diagnostics_v1.json`、初期Configは`phase11_semantic_candidate_v1.yaml`。
 新入口`scripts/run_semantic_diagnostics.py`は既知Critical4条件を先行し、全一致した場合だけ日英人工54条件へ進む。
 新規7 Testを追加。新GPU診断は未実施で、[計画と候補変更上限](phase11_semantic_revision.md)に従い固定Commit/別Runで実行する。
+その後、固定93c3611/Worktree`phase11-semantic-diagnostics-v1`で現4Bを実走しCritical1/4一致で停止した。
+原本/正規Runは`data/runs/semantic_diagnostics/phase11-4b-current-v1`、結果Manifestは`phase11_semantic_current_result_v1.json`。
+人工54条件未試行・再開追加0。次は同じ基準/予算の`phase11_semantic_candidate_v2.yaml`を別固定Commitで実走する。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -92,7 +95,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.22](rag_research_plan.md)・[実装計画8.24](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.23](rag_research_plan.md)・[実装計画8.25](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。
