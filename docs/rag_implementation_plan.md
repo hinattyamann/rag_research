@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.18 — 2026年10月21日 日本語のSource専用Corpusと親記事対応表を追加
+## Version 8.19 — 2026年10月21日 日本語引用のOffline対応と語彙検索を検証
 
-[研究計画 Version 7.16](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.17](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -504,3 +504,13 @@ QAのGold対応は未実装で、原QAの空Gold/保留状態と新Corpusの`pen
 日英全CorpusのEmbedding IndexはCommit ded26faの固定Checkout・同CUDA/Batch16/専用Lockで構築済み。
 英語183889/日本語30065の全Vector・Corpus ID/Offset・親対応、正規配置のByte/Hash、再開追加0/合成検索を確認。
 根拠は`phase11_bilingual_dense_index_manifest.json`。新BM25/Hybrid・QA対応・日英RAG実走は未了。
+
+### 日本語参照のOffline監査と全Corpus語彙検索
+
+`japanese_evidence.py`と専用CLI/Configで、固定したGroup/Corpus Reportから全838 QAの引用記事/引用位置を対応させる。
+原質問・Reference・Group/Split・原行HashとSource回答有無は保持し、引用/非引用と取得不能を分ける。
+`gold_parent_ids`は取得できた引用元記事、`gold_passage_ids`は原文の確認済みSpanと重なる子に限り、検索MetricのGoldへ流用しない。
+人手要約は非原文のまま、欠測参照単位も別に保持する。全838件のField/引用/位置/Hashを別Scriptで監査し、全411 Test/Ruff成功。
+原HTMLの脚注表示の検証と投影、親単位Metricと品質Packet/Factoryの接続は未実装。
+日英BM25は固定Commit ded26faで構築・全Hash/ID/Offsetを確認、合成質問のHybrid動作まで実走した。
+根拠は`phase11_japanese_reference_audit_v1.json`と`phase11_bilingual_bm25_hybrid_preflight.json`。

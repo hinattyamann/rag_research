@@ -1,6 +1,6 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月21日。正本: [研究計画7.16](rag_research_plan.md)、[実装計画8.18](rag_implementation_plan.md)。
+更新日: 2026年10月21日。正本: [研究計画7.17](rag_research_plan.md)、[実装計画8.19](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
@@ -34,6 +34,9 @@ QA AdapterとGroup分割処理を追加し、実838件で原行Hash・引用/人
 その後、[日英全CorpusのEmbedding Index](phase11_bilingual_indexes.md)を同じ固定Commit/GPU条件で構築・全件検証した。
 英語183889/日本語30065 Vector・全ID/Offset/親対応、正規配置への同一Byte複製と再開追加0を確認。
 新BM25/Hybrid、QA参照対応、日英RAG/意味監査と未使用Calibrationは未完了。
+その後、日英BM25の全構築と合成Hybrid動作を確認し、日本語838 QAの[参照/引用/欠測の初期監査](phase11_japanese_evidence.md)を完了した。
+全411 Test/Ruff成功、全原Field/Group/Splitを保持。引用元本文欠測25 QA・全引用元本文欠測9 QAを除外しない。
+開発予約3例の脚注表示差を確認し、原HTMLから脚注位置を検証する別Version、Factory/RAG接続・未使用Calibrationはこれから。
 翻訳対は主実験に使わず、別Dataset間の差を言語単独の因果効果と断定しない。
 
 基盤に加え、固定回答のClaim抽出、根拠順序/反復ごとの自己評価と採用/書換え要求の保存を実装した。

@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.16 — 2026年10月21日 日本語共通Corpusの全文保持と参照粒度の差を記録
+## Version 7.17 — 2026年10月21日 語彙検索と日本語参照・欠測の監査を記録
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.18](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.19](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -344,3 +344,8 @@ QA/Referenceは入力にせず、全838 QAと元Splitは保持した。日本語
 その後、同じ固定Commit・専用uv Lock・GPU条件で日英の全Corpus Embedding Indexを構築し、
 全Vector・ID/Offset/元親対応と再開追加0を確認した。[全件Index記録](phase11_bilingual_indexes.md)による。
 これは検索基盤の動作/完全性の確認であり、QAの検索精度・日英RAG品質/意味妥当性・Calibrationの完了ではない。
+
+同日の[日本語参照監査](phase11_japanese_evidence.md)で全838 QAの原Field/Group/Splitを保持し、
+引用元の記事親と、実際に確認した引用Spanに重なる子を別々に保存した。欠測25 QA（利用可能な引用元本文0は9 QA）を保持する。
+人手要約や未一致を回答不能に変換しない。開発予約3例の脚注表示差を確認し、原HTMLから位置を証明する別Versionは次工程。
+日英のBM25全構築・同Corpusでの合成Hybrid動作も確認したが、アプリケーションRAG接続/検索品質/意味監査は未完了。

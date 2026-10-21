@@ -12,7 +12,7 @@
 両言語の条件固定をPhase 11で行います。翻訳対を主実験には使いません。
 [候補比較](docs/japanese_dataset_selection.md)から日本語Sourceを選定し、固定版原QAを取得・構造監査しました。
 記事取得と正式文書Group分割が完了し、日本語838問を開発545・Calibration84・Evaluation209問へ分けました。
-日本語の文単位候補・全文Passage化と英語回帰は確認済みですが、QA参照対応・検索/Model/品質の全Pipeline実走・
+日本語の文単位候補・全文Passage化・参照の初期監査と英語回帰は確認済みですが、脚注の原HTML対応・検索/Model/品質の全Pipeline実走・
 予備検証・最終固定は未完了です。[取得・分割結果](docs/japanese_dataset_selection.md#8-全取得と正式group分割の完了)を参照してください。
 
 **Phase 1〜10の開発確認、Phase 11のUbuntu/CUDA対応と追加20問・40候補のAI採点・34単位監査を完了しました。完全比較12問・実行Health Gate通過ですが、意味妥当性の採用と分析規模が未確定でGate 11未通過です。最終凍結・Phase 12は未実施です。**
@@ -31,10 +31,11 @@ v14の事前Gateは引用ID重複1件で不通過として保持し、後処理�
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- [研究計画 Version 7.16](docs/rag_research_plan.md)
-- [実装計画 Version 8.18](docs/rag_implementation_plan.md)
+- [研究計画 Version 7.17](docs/rag_research_plan.md)
+- [実装計画 Version 8.19](docs/rag_implementation_plan.md)
 - [多言語検索候補・本文Passage分割の実装と確認](docs/phase11_multilingual_retrieval.md)
 - [日本語共通Corpusの全文保持Passage化・参照粒度と残る工程](docs/phase11_japanese_corpus.md)
+- [日本語参照の初期監査・欠測と脚注表示の残る対応](docs/phase11_japanese_evidence.md)
 - [日英全CorpusのCUDA Embedding Indexと全件検証](docs/phase11_bilingual_indexes.md)
 - [多言語EmbeddingのCUDA入口・専用uv環境と実機監査](docs/phase11_embedding_cuda.md)
 - [Corpus本文欠測・英語分割と親参照保持の監査](docs/phase11_corpus_preparation.md)

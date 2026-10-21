@@ -44,7 +44,14 @@ Source/取得RawはMain側`data/raw/wikipedia_human_retrieval_ja/`にも複製�
 正規配置は`data/indexes/clapnq/c508d78-e5-cuda-v1/embedding/`と
 `data/indexes/wikipedia_human_retrieval_ja/02e85c8-e5-cuda-v1/embedding/`。元Checkoutの原本も保持した。
 全Vector/ID/Offset/親参照・同一Byte複製、実GPUでの再開追加0/合成検索を確認。[全件Index記録](phase11_bilingual_indexes.md)を参照。
-新BM25/HybridとQA参照対応・RAG接続が次工程。元QA/Splitは保持、最終採用件数は未決。
+日英BM25も構築・同一Byte複製/全ID/Offset照合済み。同じIndex Rootの`bm25/`にある。合成Hybrid動作を確認済み。
+参照監査v1は`data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v1/`。全838 QA/原Field/Group/Split保持、全411 Test/Ruff成功。
+取得できた引用元は`gold_parent_ids`、確認済み原文Spanの子は`gold_passage_ids`、欠測は別参照単位。旧Gold処理へそのまま流用しない。
+引用位置確認834/未一致775/原文なし102/本文欠測30。欠測を含む25 QA・利用可能な引用元本文0の9 QAも保持した。
+開発予約ID1/10/100で、引用の脚注表示がCorpus抽出では除かれている差を確認。次は[原HTMLの脚注投影](phase11_japanese_evidence.md)を新Versionで実装する。
+v1のCode/Config/Test/結果は`data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v1/`にもHash付きで保持した。
+BM25と参照監査のManifestは`phase11_bilingual_bm25_hybrid_preflight.json`/`phase11_japanese_reference_audit_v1.json`。
+アプリケーションFactory/RAG/品質・親単位Metricの接続、未使用Calibrationは未了。元QA/Splitは保持、最終採用件数は未決。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -61,7 +68,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.16](rag_research_plan.md)・[実装計画8.18](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.17](rag_research_plan.md)・[実装計画8.19](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

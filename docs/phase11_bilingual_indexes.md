@@ -39,7 +39,12 @@ GPUと実行計画を保存した。旧Corpus・Index・Runを保持した。
 
 ## 次工程
 
-全Corpusの新しいBM25/Hybrid検索はまだ構築・接続していない。
+全Corpusの新BM25も同じ固定Commitから構築・検証した。英語約27.25秒/ピークProcess Tree RSS4224348160 Byte、
+日本語約10.71秒/2269020160 Byte。事前のRAM/時間上限内で正常終了した。
+両方を正規配置の同じIndex Rootの`bm25/`へ複製し、各9ファイルの同一Byte/Hash、Embeddingとの全ID/Offset一致を確認した。
+完了済みIndexの再利用と合成質問によるRRF（各候補50・定数60）のHybrid検索を実GPU Encoderと確認した。
+このRRF値は旧実装の初期値であり、未使用QAの品質結果に合わせて選んだ値ではない。
+根拠は`phase11_bilingual_bm25_hybrid_preflight.json`。新しいアプリケーションFactory/RAG接続と検索品質評価は未実施。
 日本語QAの引用元親記事・引用原文Span・人手要約/本文欠測の対応と、新日英RAG/指示文/予算/品質入出力を整備する。
 Development実走・意味監査・英語既知問題の確認後、結果前に未使用Calibrationの対象/候補/採用・停止規則を固定する。
 このIndex構築だけで検索精度や回答品質の妥当性を認定せず、Gate 11未通過・Phase 12未実施を維持する。
