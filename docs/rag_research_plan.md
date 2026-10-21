@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.17 — 2026年10月21日 語彙検索と日本語参照・欠測の監査を記録
+## Version 7.18 — 2026年10月21日 原HTML脚注に基づく日本語引用対応を検証
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.19](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.20](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -349,3 +349,8 @@ QA/Referenceは入力にせず、全838 QAと元Splitは保持した。日本語
 引用元の記事親と、実際に確認した引用Spanに重なる子を別々に保存した。欠測25 QA（利用可能な引用元本文0は9 QA）を保持する。
 人手要約や未一致を回答不能に変換しない。開発予約3例の脚注表示差を確認し、原HTMLから位置を証明する別Versionは次工程。
 日英のBM25全構築・同Corpusでの合成Hybrid動作も確認したが、アプリケーションRAG接続/検索品質/意味監査は未完了。
+
+その後、[原HTML脚注の投影v2](phase11_japanese_evidence.md)で脚注の実位置と本文の全文字対応を検証し、
+引用位置確認は1493/1741参照になった。未一致116・原文なし102・原文引用あり本文欠測30も別保存した。
+原838 QA/Group/Split、欠測25 QA/全引用元本文欠測9 QA、Corpus/Indexとv1を保持する。
+原文形式の来歴確認であり、意味支持/品質の認定ではない。新RAG接続・意味監査・未使用Calibrationは次工程。

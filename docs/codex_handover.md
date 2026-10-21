@@ -51,7 +51,12 @@ Source/取得RawはMain側`data/raw/wikipedia_human_retrieval_ja/`にも複製�
 開発予約ID1/10/100で、引用の脚注表示がCorpus抽出では除かれている差を確認。次は[原HTMLの脚注投影](phase11_japanese_evidence.md)を新Versionで実装する。
 v1のCode/Config/Test/結果は`data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v1/`にもHash付きで保持した。
 BM25と参照監査のManifestは`phase11_bilingual_bm25_hybrid_preflight.json`/`phase11_japanese_reference_audit_v1.json`。
-アプリケーションFactory/RAG/品質・親単位Metricの接続、未使用Calibrationは未了。元QA/Splitは保持、最終採用件数は未決。
+参照対応v2は`data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2/`。原HTML脚注の位置と本文の全文字対応を証明する。
+引用位置確認1493/原文不一致116/原文なし102/原文引用あり本文欠測30、全838 QA・欠測25 QA/全引用元本文欠測9 QAは不変。
+全432 Test/Ruff、原HTML接頭部描画と脚注再挿入による全投影の独立照合、全6ファイルの同一Byte再利用を確認済み。
+空の脚注要素で止まった初回と修正後の結果を`data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/`へ保持した。
+Hash Manifestは`phase11_japanese_reference_projection_v2.json`。v1・元Corpus/Indexも保持した。
+次はアプリケーションFactory/RAG/品質・親単位Metricの接続。Development/意味監査と未使用Calibrationは未了。最終採用件数は未決。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -68,7 +73,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.17](rag_research_plan.md)・[実装計画8.19](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.18](rag_research_plan.md)・[実装計画8.20](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

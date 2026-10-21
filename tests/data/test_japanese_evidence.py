@@ -189,3 +189,62 @@ def test_changed_input_cannot_be_accepted_via_existing_output_cache(tmp_path, ch
     path.write_text("changed")
     with pytest.raises(ValueError, match="changed"):
         prepare_dataset(groups, corpus, snapshot, output, spec, code_hashes={})
+
+
+def test_v2_projection_preserves_v1_records_and_rejects_changed_parse_journal(tmp_path):
+    from html import escape
+
+    from rag_research.data.wikipedia_snapshot import article_text
+    from rag_research.experiments.storage import checkpoint
+
+    groups, corpus, snapshot, spec = fixture_dataset(tmp_path)
+    original = json.loads((groups / "qa.jsonl").read_text())
+    original["reference_evidence"][0]["quote"] = "第一[4]文。"
+    (groups / "qa.jsonl").write_text(json.dumps(original, ensure_ascii=False) + "\n")
+    group_report = read_json(groups / "report.json")
+    group_report["artifacts"]["qa.jsonl"] = {"sha256": file_hash(groups / "qa.jsonl"),
+                                              "bytes": (groups / "qa.jsonl").stat().st_size}
+    write_json(groups / "report.json", group_report)
+    corpus_report = read_json(corpus / "report.json")
+    requests = snapshot / "requests"
+    requests.mkdir()
+    for title in corpus_report["execution_identity"]["article_journal_sha256"]:
+        key = hashlib.sha256(title.encode()).hexdigest()[:24]
+        path = snapshot / "articles" / (key + ".json")
+        article = read_json(path)
+        source = ("<p>第一<sup class='reference'>[4]</sup>文。</p><p>続きです。</p>" if title == "引用記事" else
+                  "<p>" + escape(article["text"]).replace("\n", "</p><p>") + "</p>")
+        assert article_text(source) == article["text"]
+        request = requests / (key + "-parse.json")
+        checkpoint(request, {"status": "ok", "response": {"parse": {"text": source,
+                   "pageid": article["page_id"], "revid": article["revision_id"]}}})
+        article["request_files_sha256"] = {request.relative_to(snapshot).as_posix(): file_hash(request)}
+        write_json(path, article)
+        corpus_report["execution_identity"]["article_journal_sha256"][title] = file_hash(path)
+    write_json(corpus / "report.json", corpus_report)
+    spec = {**read_json(ROOT / "configs/phase11_japanese_evidence_v2.json"),
+            "expected_qa_count": 1, "source_group_report_sha256": file_hash(groups / "report.json"),
+            "source_corpus_report_sha256": file_hash(corpus / "report.json")}
+    output = tmp_path / "mapped-v2"
+    report = prepare_dataset(groups, corpus, snapshot, output, spec, code_hashes={})
+    assert report["statistics"]["cited_reference_quote_modes"] == {"verified_source_reference_markup": 1}
+    mapped = json.loads((output / "qa.jsonl").read_text())
+    assert mapped["reference_corpus_mapping"][0]["literal_quote_audit"]["mode"] == "verified_source_reference_markup"
+    assert mapped["question"] == original["question"]
+    assert mapped["reference_evidence"] == original["reference_evidence"]
+    expected = {p.name: file_hash(p) for p in output.iterdir()}
+    assert prepare_dataset(groups, corpus, snapshot, output, spec, code_hashes={}) == report
+    key = hashlib.sha256("引用記事".encode()).hexdigest()[:24]
+    (requests / (key + "-parse.json")).write_text("changed")
+    with pytest.raises(ValueError, match="parse journal changed"):
+        prepare_dataset(groups, corpus, snapshot, output, spec, code_hashes={})
+    assert expected == {p.name: file_hash(p) for p in output.iterdir()}
+
+
+@pytest.mark.parametrize("field,value", [("dataset_version", "02e85c8-qa-corpus-v1"),
+                                         ("source_footnote_projection", "delete_all_bracketed_numbers")])
+def test_reference_projection_requires_explicit_verified_policy_and_new_version(field, value):
+    spec = read_json(ROOT / "configs/phase11_japanese_evidence_v2.json")
+    spec[field] = value
+    with pytest.raises(ValueError):
+        validate_spec(spec)

@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.19 — 2026年10月21日 日本語引用のOffline対応と語彙検索を検証
+## Version 8.20 — 2026年10月21日 原HTML脚注の厳密な本文位置投影を実装
 
-[研究計画 Version 7.17](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.18](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -514,3 +514,13 @@ QAのGold対応は未実装で、原QAの空Gold/保留状態と新Corpusの`pen
 原HTMLの脚注表示の検証と投影、親単位Metricと品質Packet/Factoryの接続は未実装。
 日英BM25は固定Commit ded26faで構築・全Hash/ID/Offsetを確認、合成質問のHybrid動作まで実走した。
 根拠は`phase11_japanese_reference_audit_v1.json`と`phase11_bilingual_bm25_hybrid_preflight.json`。
+
+### 原HTML脚注の本文位置投影v2
+
+`wikipedia_reference_projection.py`で実際の`sup.reference`のHTML位置/可視文字/Hashを取得する。
+脚注以外の全可視文字が既存Corpus本文へ完全に対応し、引用全体が脚注付き描画に一致する場合だけ、
+本文Spanへ投影する。空/非表示要素・別位置/途中の脚注・通常上付きや本文の括弧数字を根拠化しない。
+空の脚注で停止した初回処理を保持し、表示文字0から根拠を作らない修正後に全838 QAをv2へ保存した。
+全432 Test/Ruff成功、別ScriptのSource接頭部描画/脚注再挿入による全位置/Hash照合と、全6ファイルの同一Byte再利用を確認。
+引用位置確認1493・不一致116・原文なし102・原文引用あり本文欠測30。全原QA/Group/Split/欠測とCorpus/Index/v1を保持した。
+根拠は`phase11_japanese_reference_projection_v2.json`。親単位Metric/品質Packetと新RAG/Factory接続は未実装。

@@ -60,3 +60,47 @@ Configは`configs/phase11_japanese_evidence_v1.json`。固定した元Group/Corp
 日英BM25の全構築と合成Hybrid動作は[検索基盤の記録](phase11_bilingual_indexes.md)へ記録した。
 アプリケーションFactory、新日英RAG/予算/品質、Development意味監査・未使用Calibrationと最終凍結は未完了。
 Gate 11未通過、Phase 12未実施。
+
+## Version 2: 原HTMLの脚注位置を検証する投影
+
+`wikipedia_reference_projection.py`と`phase11_japanese_evidence_v2.json`を追加した。
+原HTMLの`sup.reference`だけを位置・可視文字・部分HTML Hashとともに記録し、脚注表示を含む描画を作る。
+脚注以外の全可視文字が既存Corpus本文へ完全に対応することを確認し、引用全体の空白差だけの一致を探す。
+脚注を丸ごと含む一致だけを元本文の文字位置へ投影し、原HTML/Request/本文SpanのHashを保存する。
+本文の括弧数字・別位置の脚注・通常の上付き文字・脚注の途中・非表示要素は根拠へ変換しない。
+人手要約の扱い、親記事単位と欠測の区別、Corpus本文/Indexは変更しない。
+
+初回の全件処理は可視文字が空の脚注要素で停止し、Dataset未生成を確認してCode/失敗理由を保存した。
+空の要素から根拠を作らずに除外する表示処理を追加し、本文の全文字対応条件を保って再実行した。
+開発予約3例で事前基準を確認後に同じ規則を全QAへ適用しており、未使用QAの本文/Model・品質結果を調整に閲覧していない。
+
+| 引用された1741参照の状態 | v1 | v2 |
+|---|---:|---:|
+| 位置確認 | 834 | 1493 |
+| うち原HTML脚注の検証による追加 | 0 | 659 |
+| 原文不一致 | 775 | 116 |
+| 原文引用なし / 原文引用あり本文欠測 | 102 / 30 | 102 / 30 |
+
+欠測を含む25 QA・全引用元本文欠測9 QA、人手要約を引用した94 QAは保持した。
+未一致を含むQAは106件であり、全838 QAを除外・補充せず残す。
+出力は`data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2/`。v1も保持する。
+新規21 Testを含む全432 Test成功（ホスト4.83秒）、Ruff成功。
+
+別Scriptは本体の投影処理を再利用せず、原HTMLを各脚注位置の直前まで描画して本文中の挿入位置を求めた。
+保存された脚注表示をその位置へ挿入し直し、引用全体と一致することを全保存投影で確認した。
+引用/非引用合わせて665参照、延べ1452脚注表示の位置/Hashと投影先を照合し、v1の全位置・原Field/Group/Split・欠測を保持した。
+同条件での再計算・再利用でも全6ファイルのByteが不変だった。
+この再計算/再利用区間は28.94秒・ピークRSS168914944 Byteで、初回生成の計測とは区別する。
+根拠は`data/manifests/phase11_japanese_reference_projection_v2.json`。
+
+```bash
+uv run python scripts/prepare_japanese_evidence.py \
+  --config configs/phase11_japanese_evidence_v2.json \
+  --groups-dir data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2 \
+  --corpus-dir data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1 \
+  --snapshot-dir data/raw/wikipedia_human_retrieval_ja/corpus-20231225-v1 \
+  --output-dir data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2
+```
+
+これは引用形式の来歴確認で、意味支持や回答品質の認定ではない。残る不一致を類似表現へ置換せず、
+参照状況として品質資料へ渡す。次は親単位Metric/品質Packetと、新Factory/RAG/指示文/予算を接続する。

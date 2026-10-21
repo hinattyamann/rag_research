@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-japanese-verified-source-reference-markup-projection-v2-not-final-freeze",
+  "recorded_at_utc": "2026-10-21T07:54:42.169385+00:00",
+  "base_commit": "72ddfe3a88f387bc10b811ba8fb85feaadb19976",
+  "working_source_sha256": {
+    "configs/phase11_japanese_evidence_v2.json": "0e49ebb4ff9ce4ff8bc68d7539cfede2bfa223a113f94e057eb3db287d7c7b4a",
+    "scripts/prepare_japanese_evidence.py": "ff15f4830e35b1199314cce731a4d4fa7a85f02a418d0a7a36382e6501ccaa0a",
+    "src/rag_research/data/japanese_dataset.py": "42baaebaf96a2cb1b75d5b611917aeca01a17ccd8818f93a031d0b8a850e4e97",
+    "src/rag_research/data/japanese_evidence.py": "da0459c8fbaec7d735c702669e59864ba996b79c10d1bb3fd8baf3a00eec95e9",
+    "src/rag_research/data/wikipedia_reference_projection.py": "3c48860c4a8540344fc35afad7b4ceefde4c12a9578d426e9b395454ce9f7762",
+    "src/rag_research/data/wikipedia_snapshot.py": "0cf392491d6c482bb3fccc1db361a580cee1c6327ed96b07d7a31765dd93b80c",
+    "tests/data/test_wikipedia_reference_projection.py": "ec2f29204af521483d913dd63a370f8dbf558c4c5a039aabdf99a1488ee9ec00",
+    "tests/data/test_japanese_evidence.py": "703c564dee4bb625ac003f67a579717cf66dc6b0cb67b418369f0bdcdc7da258"
+  },
+  "artifacts": {
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2/groups.json": {
+      "sha256": "2302e1f9c30da9fccf61317487873817799f79e8a17ded1d6191255e004ae800",
+      "bytes": 399203
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2/development.jsonl": {
+      "sha256": "5206b6f9ec61d28cd984f66f2ea2b296a54e1efe5755d2bfbca77ac13c48f989",
+      "bytes": 3838448
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2/report.json": {
+      "sha256": "ae39b8bb5246496ecf5afade48ba0f2cbc7f26de176c4138693819d2e1a314f0",
+      "bytes": 4102
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2/calibration.jsonl": {
+      "sha256": "3d3a88a5c439830711c3fdf5c4306c14ba6a8348608cdb16ffbd51158c468b16",
+      "bytes": 593974
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2/evaluation.jsonl": {
+      "sha256": "a427914afd7c400c3f32340ea7869de412e49ec042f638ff944c7e30ee699213",
+      "bytes": 1363365
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-qa-corpus-v2/qa.jsonl": {
+      "sha256": "3232c2daa30fb45bc2601efcb14becf02a2b6e85819d679eb2353268f5624936",
+      "bytes": 5795787
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/idempotence_measurement.json": {
+      "sha256": "b8dbcbf4937e1dd6a3205d48f2f5b527587c21c4bbffaf09415245910bbb4db3",
+      "bytes": 303
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/ruff_final.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/pytest.xml": {
+      "sha256": "f67ed2868774334c07a83f429d2a780dbb6a0230d1d82becc6fb196535fe3ccb",
+      "bytes": 68341
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/development_criteria.json": {
+      "sha256": "a9b61b01e8d347bfb33a77cd571b7ea42c2f722775cfe9fe35b7d1f07e9d29d5",
+      "bytes": 799
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/verify_projection.py": {
+      "sha256": "369034edc66266c6caa8cf2887e7e04892ed1e82bb972825a8c1bcf19cdbc69c",
+      "bytes": 7476
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/verification.json": {
+      "sha256": "d7cc2047bf204d6d3bb3a42d3596bcd33ca0c7afa1a2596c5132c15c3c8f1ff3",
+      "bytes": 591
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/full_prepare_retry.log": {
+      "sha256": "55cb6a4a8624a6d928dcda22559755bb8d395f1805184189bc2dc6b5e7a8cb24",
+      "bytes": 803
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/pytest_final.xml": {
+      "sha256": "113f01cbdf6270bfb4cc298c20d7dbaed952a368125e960cf04ec4be0d61ea19",
+      "bytes": 68500
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/development_preflight.json": {
+      "sha256": "595241e865933272e9e2a741a811bcf01f8bab1c86c16c572a9e0a730512f585",
+      "bytes": 4286
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/initial_attempt/failure.json": {
+      "sha256": "69601f5235d2b8b0d673b907a4584866a38754cc6f537d8bfdde5d1c5f95e569",
+      "bytes": 1180
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/initial_attempt/configs/phase11_japanese_evidence_v2.json": {
+      "sha256": "0e49ebb4ff9ce4ff8bc68d7539cfede2bfa223a113f94e057eb3db287d7c7b4a",
+      "bytes": 1029
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/initial_attempt/src/rag_research/data/wikipedia_reference_projection.py": {
+      "sha256": "f3389b3f6ea7e16678fd16b268b20b431430f663c175a3cbfd90841661e6ae9c",
+      "bytes": 7808
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/initial_attempt/src/rag_research/data/japanese_evidence.py": {
+      "sha256": "da0459c8fbaec7d735c702669e59864ba996b79c10d1bb3fd8baf3a00eec95e9",
+      "bytes": 16692
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/source_snapshot/configs/phase11_japanese_evidence_v2.json": {
+      "sha256": "0e49ebb4ff9ce4ff8bc68d7539cfede2bfa223a113f94e057eb3db287d7c7b4a",
+      "bytes": 1029
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/source_snapshot/scripts/prepare_japanese_evidence.py": {
+      "sha256": "ff15f4830e35b1199314cce731a4d4fa7a85f02a418d0a7a36382e6501ccaa0a",
+      "bytes": 2305
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/source_snapshot/tests/data/test_japanese_evidence.py": {
+      "sha256": "703c564dee4bb625ac003f67a579717cf66dc6b0cb67b418369f0bdcdc7da258",
+      "bytes": 14813
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/source_snapshot/tests/data/test_wikipedia_reference_projection.py": {
+      "sha256": "ec2f29204af521483d913dd63a370f8dbf558c4c5a039aabdf99a1488ee9ec00",
+      "bytes": 4761
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/source_snapshot/src/rag_research/data/wikipedia_snapshot.py": {
+      "sha256": "0cf392491d6c482bb3fccc1db361a580cee1c6327ed96b07d7a31765dd93b80c",
+      "bytes": 11887
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/source_snapshot/src/rag_research/data/japanese_dataset.py": {
+      "sha256": "42baaebaf96a2cb1b75d5b611917aeca01a17ccd8818f93a031d0b8a850e4e97",
+      "bytes": 16821
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/source_snapshot/src/rag_research/data/wikipedia_reference_projection.py": {
+      "sha256": "3c48860c4a8540344fc35afad7b4ceefde4c12a9578d426e9b395454ce9f7762",
+      "bytes": 7860
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/reference_evidence_v2/source_snapshot/src/rag_research/data/japanese_evidence.py": {
+      "sha256": "da0459c8fbaec7d735c702669e59864ba996b79c10d1bb3fd8baf3a00eec95e9",
+      "bytes": 16692
+    }
+  },
+  "statistics": {
+    "all_reference_quote_statuses": {
+      "article_body_unavailable": 30,
+      "located": 1504,
+      "no_literal_quote": 269,
+      "not_located": 116
+    },
+    "cited_reference_count": 1741,
+    "cited_reference_quote_modes": {
+      "exact": 804,
+      "none": 248,
+      "verified_source_reference_markup": 659,
+      "whitespace_only": 30
+    },
+    "cited_reference_quote_statuses": {
+      "article_body_unavailable": 30,
+      "located": 1493,
+      "no_literal_quote": 102,
+      "not_located": 116
+    },
+    "qa_count": 838,
+    "qa_with_cited_human_summary": 94,
+    "qa_with_cited_unlocated_literal_quote": 106,
+    "qa_with_unavailable_cited_source_units": 25,
+    "qa_without_any_available_cited_parent": 9,
+    "reference_count": 1919,
+    "split_counts": {
+      "calibration": 84,
+      "development": 545,
+      "evaluation": 209
+    }
+  },
+  "independent_verification": {
+    "all_original_qa_fields_groups_and_splits_preserved": true,
+    "all_source_marker_positions_and_projected_quote_text_verified": true,
+    "all_v1_locations_preserved": true,
+    "cited_modes": {
+      "exact": 804,
+      "none": 248,
+      "verified_source_reference_markup": 659,
+      "whitespace_only": 30
+    },
+    "gate11_passed": false,
+    "missing_cited_source_units_unchanged": true,
+    "model_calls": 0,
+    "phase12_allowed": false,
+    "projected_references_all_cited_and_uncited": 665,
+    "purpose": "independent-reference-projection-verification-by-source-prefix-insertion",
+    "qa_count": 838,
+    "quality_or_evaluation_results_used": false,
+    "source_markers_verified": 1452
+  },
+  "idempotence_measurement": {
+    "files_byte_unchanged": 6,
+    "gate11_passed": false,
+    "model_calls": 0,
+    "phase12_allowed": false,
+    "purpose": "repeat-computation-and-immutable-reuse-not-original-first-construction",
+    "qa_count": 838,
+    "resources": {
+      "rss_sample_interval_seconds": 0.1,
+      "sampled_peak_rss_bytes": 168914944,
+      "wall_seconds": 28.94315854300112
+    }
+  },
+  "previous_manifests_sha256": {
+    "phase11_japanese_reference_audit_v1.json": "34d6db016d205c743ca4ac3005782636bc589c6e5b1a0e83acaf81378849b940",
+    "phase11_japanese_token_corpus_manifest.json": "9f94782af181b89dfb9104bc32829c12b189a4049d15db0cd7be2767332f4f2d",
+    "phase11_bilingual_dense_index_manifest.json": "6497e1e72f02ae06a810de1a7ab01a05367146df1b09047d4d3fc1c81930fd28",
+    "phase11_bilingual_bm25_hybrid_preflight.json": "7dc32140a7f591dd486ec0a3b62c0d59c2050dd80ca6b217f12cdb178c3fc398"
+  },
+  "previous_artifacts_verified_unchanged": 87,
+  "canonical_raw_files_unchanged": 6494,
+  "old_run_files_unchanged": 2500,
+  "old_english_index_files_unchanged": 23,
+  "tests": {
+    "pytest_passed": 432,
+    "new_tests": 21,
+    "host_seconds": 4.83,
+    "ruff": "passed"
+  },
+  "original_qa_groups_splits_and_v1_preserved": true,
+  "corpus_and_indexes_unchanged": true,
+  "initial_failed_attempt_preserved": true,
+  "quality_or_evaluation_results_used_for_tuning": false,
+  "model_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

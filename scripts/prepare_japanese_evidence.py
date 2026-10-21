@@ -27,7 +27,9 @@ def main():
             config.is_relative_to(ROOT), "Use a new Japanese evidence dataset and repository config")
     require(output not in {args.groups_dir.resolve(), args.corpus_dir.resolve()}, "Do not overwrite source dataset/corpus")
     files = [Path(__file__), config, ROOT / "src/rag_research/data/japanese_evidence.py",
-             ROOT / "src/rag_research/data/japanese_dataset.py"]
+             ROOT / "src/rag_research/data/japanese_dataset.py",
+             ROOT / "src/rag_research/data/wikipedia_reference_projection.py",
+             ROOT / "src/rag_research/data/wikipedia_snapshot.py"]
     hashes = {p.relative_to(ROOT).as_posix(): file_hash(p) for p in files}
     with run_lock(output.with_name(output.name + ".prepare-lock")):
         report = prepare_dataset(args.groups_dir.resolve(), args.corpus_dir.resolve(), args.snapshot_dir.resolve(),
