@@ -472,3 +472,13 @@ v1・Raw・全838 QAを保持し、通信/別権限エラーは未解決とし�
 全365 Test/Ruff成功、旧Run2500/英語Index23ファイル不変。新Index・日本語全Corpus/Gold対応・正式Splitは未了。
 分離uv環境の合成GPU ProbeはCUDA349/CPU2 NodeとCPU数値差の事前基準を確認したが、正式Encoder/CLIへは未接続。
 確認根拠は`phase11_corpus_preparation_manifest.json`。GPU実行の正式対応・Commit固定Index構築、日英RAG実走は次に行う。
+
+### 日本語の全取得と正式Group分割の結果
+
+全2178 Titleを取得し、本文成功2126記録/2118種類のPage・取得不能50・指定削除本文エラー2を保持した。
+完了件数・全保存応答/Revision/Source/本文Hash・同一Pageの整合を確認して`02e85c8-groups-v2`を生成した。
+838 QA、706 Group、Identity Key4790のGroup間重複0、開発予約142 QAはDevelopmentのみ。
+正式SplitはDevelopment545/Calibration84/Evaluation209である。原質問/Reference/行Hash・全838 QAを保持した。
+全6494 Rawファイルを正規配置へ複製しByte一致、保存Splitの和集合/互いの非重複と原行対応を独立検証した。
+`phase11_japanese_snapshot_group_manifest.json`へ成果物と検証ScriptのHashを保存する。
+`gold_passage_ids=[]`/`pending_passage_build`は継続し、記事Passage化・引用/人手要約と欠測の対応は次に行う。

@@ -11,8 +11,9 @@
 [日英比較の拡張方針](docs/english_japanese_expansion.md)に沿って、選定・日本語対応・予備検証・
 両言語の条件固定をPhase 11で行います。翻訳対を主実験には使いません。
 [候補比較](docs/japanese_dataset_selection.md)から日本語Sourceを選定し、固定版原QAを取得・構造監査しました。
-本文Corpusは取得中です。日本語の文単位候補を実装し英語回帰を確認しましたが、
-分割・検索/Model/品質の全Pipeline実走・予備検証・最終固定は未完了です。
+記事取得と正式文書Group分割が完了し、日本語838問を開発545・Calibration84・Evaluation209問へ分けました。
+日本語の文単位候補と英語回帰は確認済みですが、Passage/参照対応・検索/Model/品質の全Pipeline実走・
+予備検証・最終固定は未完了です。[取得・分割結果](docs/japanese_dataset_selection.md#8-全取得と正式group分割の完了)を参照してください。
 
 **Phase 1〜10の開発確認、Phase 11のUbuntu/CUDA対応と追加20問・40候補のAI採点・34単位監査を完了しました。完全比較12問・実行Health Gate通過ですが、意味妥当性の採用と分析規模が未確定でGate 11未通過です。最終凍結・Phase 12は未実施です。**
 固定回答の自己評価・判断に加え、元順序による一回書換え、採点画面、採点JSONのImport、経路比較を実装しました。

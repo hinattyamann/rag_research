@@ -9,12 +9,12 @@ Phase 11準備実装は `c0d5891`、本実装・CPU結果は `83da39c`。
 選定・取得・日本語対応・予備検証・両言語の条件固定をPhase 11で行う。
 同日のGoal実行で[候補比較と日本語Source選定](japanese_dataset_selection.md)を実施し、
 `baobab-trees/wikipedia-human-retrieval-ja`の固定版838回答付き/433回答なしQAを取得・構造監査した。
-全検索記録の記事全文Corpusは取得中。文書Group分割・全Pipeline実走・予備検証・最終固定は未完了で、Gate 11は未通過。
+全検索記録の記事取得と正式Group分割は完了。Passage/参照対応・全Pipeline実走・予備検証・最終固定は未完了で、Gate 11は未通過。
 取得CLIは`scripts/prepare_japanese_corpus.py`、設定は`configs/phase11_japanese_corpus_v1.json`。
 再取得/取得履歴・Hashと現在版Fallback防止を実装し、既知1記事の本文取得を確認済み。
 実行手順と未達事項は[Source選定記録](japanese_dataset_selection.md)第5節を参照する。
 全2178 Titleの取得はCommit `61b4a5c`の専用Checkout
-`.tools/worktrees/phase11-japanese-corpus-v1`で実行している。取得中に当該CheckoutのCode/Configを変更しない。
+`.tools/worktrees/phase11-japanese-corpus-v1`で完了した。元CheckoutのCode/Config/Rawは保持する。
 Raw保存先は同Checkout内の`data/raw/wikipedia_human_retrieval_ja/corpus-20231225-v1/`。
 Main側は日本語の固定文単位候補を追加し、全316 Test（ホスト4.62秒）・Ruff、旧英語保存抽出65件の一致を確認した。
 文単位だけのComponent検証であり、日本語検索・Model/品質実走・日英文単位の最終採用はこれから。
@@ -25,11 +25,17 @@ Main側は日本語の固定文単位候補を追加し、全316 Test（ホス�
 多言語E5候補・Subword BM25・本文Passage分割を追加し、既知開発1記事を27 Passageへ分けて検索まで確認した。
 全351 Test（ホスト5.97秒）・Ruff成功。候補Model/Code/実機確認は[多言語検索の記録](phase11_multilingual_retrieval.md)。
 旧英語Corpusの3130件がE5上限を超えるため、元の参照IDを保持した英語分割/新Indexが必要。
-既存RAG FactoryはPhase 6用のまま。日本語全Corpus/Gold対応・正式Splitと日英RAG接続/Calibrationは未完了。
+既存RAG FactoryはPhase 6用のまま。日本語全Corpus/Gold対応と日英RAG接続/Calibrationは未完了。
 英語の本文分割は`data/processed/clapnq/c508d78-e5-passages-v1/`へ作成し、全178890親の本文とGold親2074種類の対応を確認した。
 全365 Test/Ruff成功。[Corpus準備の記録](phase11_corpus_preparation.md)に欠測規則・親参照・GPU Probeと次工程を保存した。
 日本語の削除過去本文はDataset Config v2で保存応答/Identityを検証し、原エラーのまま本文欠測を別記録する。
 GPU Probeは`.tools/embedding-gpu-probe`のuv環境で成功。E5 Encoder/CLIのGPU対応と専用環境の正式化・Index構築は未実施。
+日本語の全2178 Titleは本文成功2126（2118種類のPage）・取得不能50・削除本文エラー2で終了した。
+正式QA/Groupは`data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/`、開発545/Calibration84/Evaluation209。
+706 Group・Group間Identity重複0、開発予約142 QAは全てDevelopment。原質問/Reference/行Hashを保持した。
+Source/取得RawはMain側`data/raw/wikipedia_human_retrieval_ja/`にも複製し、全6494ファイルのByte一致を確認済み。
+一覧は同Directoryの`acquisition_file_index_v1.json`、根拠は`phase11_japanese_snapshot_group_manifest.json`。
+Goldは`pending_passage_build`のままで、記事Passage化と引用/要約/欠測対応が次工程。最終採用件数は未決。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。

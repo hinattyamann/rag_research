@@ -140,3 +140,31 @@ uv run python scripts/prepare_japanese_dataset.py audit-source \
 一致する場合もstatus=errorを変更せず、本文取得不能の監査情報を別保存する。
 通信/別権限エラーの一括許容、現在版Fallback、QA除外・回答不能への変換は行わない。
 v1とその監査は保持する。詳細は[本文欠測・Corpus準備](phase11_corpus_preparation.md)。
+
+## 8. 全取得と正式Group分割の完了
+
+2026年10月21日15:15 JST、Commit61b4a5cの専用Checkoutによる全2178 Titleの取得が終了した。
+原記録は本文取得2126・取得不能50・エラー2。エラー2件は「出家」Revision95068750と
+「阪神甲子園球場」Revision98510583の削除過去本文への指定権限エラーであり、v2の欠測規則で検証した。
+原エラーを保持し、別時点の本文で補わない。取得成功した重複Pageをまとめると2118記事である。
+
+全保存応答・過去Revision・本文/Source Hash・完了件数・同一Pageの整合を照合し、
+`02e85c8-groups-v2`へ正式なQAとGroupを生成した。原838 QAを除外せず、706 Group・4790 Identity Keyの
+Group間重複0、開発予約142 QAの全成分がDevelopmentにあることを別Scriptでも検証した。
+
+| Split | QA数 |
+|---|---:|
+| Development | 545 |
+| Calibration | 84 |
+| Evaluation | 209 |
+
+固定Sourceと全取得記録をMain側の`data/raw/wikipedia_human_retrieval_ja/`へ複製し、6494ファイルの
+同一Byteを検証した。元CheckoutのRawも保持する。正規配置の全ファイル一覧・Hashは
+`acquisition_file_index_v1.json`、正式Splitは
+`data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/`にある。
+根拠は`data/manifests/phase11_japanese_snapshot_group_manifest.json`。
+
+未使用Calibration/Evaluation本文を調整に表示せず、機械的な原行・Group・Split照合だけを行った。
+`gold_passage_ids=[]`と`pending_passage_build`は保持している。記事全体をPassageへ分割して参照対応と
+欠測を監査する作業は未完了であり、209件を最終本実験の確定件数とはしない。
+この取得・分割完了だけでGate 11を通さず、日英RAG実走・意味監査・未使用Calibration・最終固定へ続ける。

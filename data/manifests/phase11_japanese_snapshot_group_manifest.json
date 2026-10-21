@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-japanese-complete-snapshot-and-document-group-split-not-final-freeze",
+  "recorded_at_utc": "2026-10-21T06:34:33.862356+00:00",
+  "implementation_commit": "00722c83133e195b550a6f203c0146312167898f",
+  "acquisition_commit": "61b4a5c",
+  "artifacts": {
+    "data/runs/dataset_screening/phase11-ja-source-v1/final_snapshot_group_verification.json": {
+      "sha256": "9743ee8d0a3f7ddfcb52681a67a768fa2001ed25fcec385fa08311dcfdd94f9f",
+      "bytes": 1278
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/final_snapshot_and_groups.py": {
+      "sha256": "868e5e878ecd941717f02b606c05a75f87e9977b7898ecb2e20478c3f993b090",
+      "bytes": 5472
+    },
+    "data/raw/wikipedia_human_retrieval_ja/acquisition_file_index_v1.json": {
+      "sha256": "4a074bdddff4a252389c4a2efee668eb4ca238c36745ca97a8e0e244df79be29",
+      "bytes": 1439954
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/groups.json": {
+      "sha256": "2302e1f9c30da9fccf61317487873817799f79e8a17ded1d6191255e004ae800",
+      "bytes": 399203
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/development.jsonl": {
+      "sha256": "b821a1c14b82b15b18cd49ae16e05acd089780f2a4f6e1ad545b075f6ac1b08d",
+      "bytes": 2462565
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/report.json": {
+      "sha256": "ff2809555261ef2f8f21178223708ce8eb5aa501862b2bc3b99ade159e7675e6",
+      "bytes": 4265
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/calibration.jsonl": {
+      "sha256": "ee1bec382321140a706d6f1582804731b3579c63adf326427f462480b2ee0f00",
+      "bytes": 385635
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/evaluation.jsonl": {
+      "sha256": "360f69fefd6d3bb1c6f2bf7664560c44865fe6ac5579ab30c894a1228a3d563e",
+      "bytes": 898019
+    },
+    "data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/qa.jsonl": {
+      "sha256": "491cdac843d5964313df5b25f721cdc8657411ee6e94f93b4cfd7213fcee85a5",
+      "bytes": 3746219
+    },
+    "configs/phase11_japanese_dataset_v2.json": {
+      "sha256": "73916eb2cfb9cc9e9e146966cd78d4a65a91ca1b3d1d193402e04d48f3d0b5ef",
+      "bytes": 955
+    },
+    "data/manifests/phase11_japanese_source_selection.json": {
+      "sha256": "df2d8cfb82bfffd7b50bd401bf6d26c3becfe92e35c85f6f6b2105b363ae1d88",
+      "bytes": 19022
+    }
+  },
+  "verification": {
+    "purpose": "saved-japanese-source-and-split-independent-verification",
+    "recorded_at_utc": "2026-10-21T06:28:21.981052+00:00",
+    "raw_files_byte_verified": 6494,
+    "qa_count": 838,
+    "group_count": 706,
+    "split_qa_counts": {
+      "development": 545,
+      "calibration": 84,
+      "evaluation": 209
+    },
+    "group_identity_key_count": 4790,
+    "cross_group_identity_overlap": 0,
+    "all_original_questions_references_and_raw_hashes_preserved": true,
+    "all_reserved_groups_development_only": true,
+    "raw_statuses": {
+      "unavailable": 50,
+      "ok": 2126,
+      "error": 2
+    },
+    "documented_deleted_text_absences": [
+      {
+        "original_status": "error",
+        "page_id": 13492,
+        "requested_title": "出家",
+        "revision_id": 95068750
+      },
+      {
+        "original_status": "error",
+        "page_id": 1384627,
+        "requested_title": "阪神甲子園球場",
+        "revision_id": 98510583
+      }
+    ],
+    "unique_ok_page_ids": 2118,
+    "canonical_raw_file_index": "data/raw/wikipedia_human_retrieval_ja/acquisition_file_index_v1.json",
+    "canonical_raw_file_index_sha256": "4a074bdddff4a252389c4a2efee668eb4ca238c36745ca97a8e0e244df79be29",
+    "gold_passage_mapping_status": "pending_passage_build",
+    "model_calls": 0,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "source_code_sha256": {
+    "configs/phase11_japanese_dataset_v2.json": "73916eb2cfb9cc9e9e146966cd78d4a65a91ca1b3d1d193402e04d48f3d0b5ef",
+    "scripts/prepare_japanese_dataset.py": "d5287593f46d9f2b870b73424c99a203a8b9e7ed7b8164ce79886fd5ffb8a7ee",
+    "src/rag_research/data/baobab_source.py": "29a02661abdf522fea4660deb6bd9c9bec484b09f60276be7d95e6ea22cb178a",
+    "src/rag_research/data/japanese_dataset.py": "42baaebaf96a2cb1b75d5b611917aeca01a17ccd8818f93a031d0b8a850e4e97",
+    "src/rag_research/data/source_availability.py": "eaaa4ab5353bdc41262b01e2c814cc198eebac5f3c57cdae8d1fbb869863767a"
+  },
+  "source_files_sha256": {
+    "answered.jsonl": "f72a43a9661496acb050a98dfd21c6f1b331a7e834b2fca975fcbbdcb8ec960b",
+    "not_answered.jsonl": "3c42639197a192f57deee70ca229bae2f6cbcdf69c393fe2f93aacda4e671e7e"
+  },
+  "snapshot_plan_sha256": "1c085b1f60ed7741580206599741cae2a6d7cd43878b504d9300d7a284456956",
+  "source_answerable_does_not_imply_corpus_coverage": true,
+  "unused_qa_text_displayed_or_used_for_tuning": false,
+  "model_calls": 0,
+  "old_run_files_unchanged": 2500,
+  "old_english_index_files_unchanged": 23,
+  "gold_passage_mapping_status": "pending_passage_build",
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

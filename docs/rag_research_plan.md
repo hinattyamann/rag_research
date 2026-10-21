@@ -325,3 +325,9 @@ Phase 12で日英の本実験と独立採点、Phase 13で統計と比較考察�
 子Passageが同じGold親を繰り返しても独立した関連文書として加算しない。実際の支持・品質は使用Contextで別評価する。
 日本語の削除本文の権限エラーは原失敗を保持し、Identityと保存応答を確認した本文欠測として別記録する。
 QAを除外・回答不能化せず、別時点の本文を補わない。正式Corpus/Index・新RAG接続と日英の実走はまだ完了していない。
+
+その後、日本語の全2178 Title取得と正式Group分割を完了した。成功2126記録は2118種類のPageに対応し、
+取得不能50・指定削除本文エラー2を保持した。全838 QAを706 Group、開発545/Calibration84/Evaluation209へ分割し、
+Group間Identity重複0・開発予約142 QAの開発専用配置・原質問/Reference/行Hash保持を検証した。
+全6494 Rawを正規配置へ同一Byteで複製した。根拠は`phase11_japanese_snapshot_group_manifest.json`。
+記事Passage/Gold対応は未了で、Evaluation209件を本実験の確定件数とはしない。最終Gateも未通過である。
