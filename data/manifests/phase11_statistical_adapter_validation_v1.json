@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-sealed-development-statistical-adapter-validation-not-final-freeze",
+  "created_at_utc": "2026-10-21T11:13:45.944436+00:00",
+  "all_language_labels_required_before_private_read": true,
+  "all_selected_qa_and_baseline_failure_costs_retained": true,
+  "unknown_outcomes_not_imputed": true,
+  "same_conditions_required": true,
+  "supported_stage": "development",
+  "calibration_adapter_implemented": false,
+  "new_qa_results_analyzed": false,
+  "new_model_calls": 0,
+  "validation": {
+    "new_tests": 5,
+    "pytest_passed": 493,
+    "pytest_seconds": 6.65,
+    "ruff": "passed",
+    "cli_help": "passed"
+  },
+  "prior_statistical_method_commit": "15b757473c7e24080c2dcfea5ac39f69c54ec404",
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "artifacts": {
+    "src/rag_research/experiments/bilingual_statistics.py": {
+      "sha256": "fc7a663d7962cce8f55ff5a7d56785aa694327c8361f96a9529ac83a7a644b50",
+      "bytes": 5962
+    },
+    "src/rag_research/experiments/bilingual_quality.py": {
+      "sha256": "fc8d0553f4f4fc6e8588f079a4d06f2c3727266f417024a414ab659d8026846f",
+      "bytes": 13314
+    },
+    "src/rag_research/experiments/statistics.py": {
+      "sha256": "25244b304a0613ccc5cd23f60d98f8c69ddb4f94c7968b1c3eaa1433ef90de3f",
+      "bytes": 6868
+    },
+    "scripts/analyze_bilingual_development.py": {
+      "sha256": "4912490533169f554ac8b830fbc8b2603f2fe6e42229f14cefb5fed5fb81d976",
+      "bytes": 1456
+    },
+    "tests/test_bilingual_statistics.py": {
+      "sha256": "cafa1fc968d773aebf870d5426b9d322c8232773f54d2ba101603260fdf568b2",
+      "bytes": 6428
+    },
+    "tests/test_bilingual_pipeline.py": {
+      "sha256": "f4ff0f6deb6b9eab8c070e2153771d34ce1a3a89dfb73e47e6e5e22416f982cb",
+      "bytes": 25994
+    },
+    "docs/phase11_statistical_plan.md": {
+      "sha256": "1cc3c30061f6a43c19a2829e9c9ca69581df735b8def877a822233babcd68abd",
+      "bytes": 6720
+    }
+  }
+}

@@ -167,23 +167,35 @@ def export(run, output):
     return {"candidate_count": len(packet["cases"]), "quality_status": "pending_external_blinded_annotation"}
 
 
-def import_annotations(run, bundle, annotations):
-    run, bundle, annotations = map(lambda p: Path(p).resolve(), (run, bundle, annotations))
-    require(bundle.is_relative_to(run) and bundle != run, "Annotation bundle escapes run")
-    manifest, report, expected_packet, expected_mapping = build_packet(run)
+def sealed_annotations(bundle, annotations):
+    """Check all labels before accessing private scores or reconstructing any routes."""
+    bundle, annotations = Path(bundle).resolve(), Path(annotations).resolve()
     packet, mapping = read_json(bundle / "packet.json"), read_json(bundle / "mapping.private.json")
     verify_packet(packet, mapping)
+    labels = validate_annotations(packet, read_json(annotations))
+    require(all(a["label"] != "pending" for a in labels.values()), "Seal all external labels before revealing internal routes")
+    return packet, mapping, labels
+
+
+def validated_annotations(run, bundle, annotations):
+    run, bundle, annotations = map(lambda p: Path(p).resolve(), (run, bundle, annotations))
+    require(bundle.is_relative_to(run) and bundle != run, "Annotation bundle escapes run")
+    packet, mapping, labels = sealed_annotations(bundle, annotations)
+    manifest, report, expected_packet, expected_mapping = build_packet(run)
     require(packet == expected_packet and {k: v for k, v in mapping.items() if k != "result_sha256"} == expected_mapping,
             "Quality packet/mapping differs from source candidates")
     exported = read_json(bundle / "export_manifest.json")
     verify_checkpoint(exported)
     require(exported["mapping_sha256"] == file_hash(bundle / "mapping.private.json") and
             exported["run_manifest_sha256"] == digest(manifest), "Quality export binding differs")
-    values = read_json(annotations)
-    labels = validate_annotations(packet, values)
-    require(all(a["label"] != "pending" for a in labels.values()), "Seal all external labels before revealing internal routes")
     assigned = {(a["record_id"], a["stage"]): labels[identifier]["label"]
                 for identifier, slots in mapping["assignments"].items() for a in slots}
+    return manifest, report, assigned
+
+
+def import_annotations(run, bundle, annotations):
+    run, bundle, annotations = map(lambda p: Path(p).resolve(), (run, bundle, annotations))
+    manifest, report, assigned = validated_annotations(run, bundle, annotations)
     result = reconstruct(report["records"], assigned)
     result.update(selected_qa_count=report["selected_qa_count"], baseline_failures=report["failures"],
                   language=manifest["language"], quality_annotation_sha256=file_hash(annotations),
@@ -191,4 +203,5 @@ def import_annotations(run, bundle, annotations):
     path = bundle / "routes.scored.json"
     require(not path.exists(), "Scored routes already exist")
     write_json(path, result)
+    labels = read_json(annotations)["annotations"]
     return {"sealed_candidates": len(labels), "route_rows": len(result["routes"]), "gate11_passed": False}

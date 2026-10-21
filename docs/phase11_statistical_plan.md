@@ -43,3 +43,23 @@ Groupを保った復元抽出/QA重み・独立言語・再現性・少数Group/
 実行定義の異なる根拠順序・5反復/共用originalと有効な判断/Scoreを検証し、QA内のペア分母と部分/構造的欠測を分ける。
 Groupを一緒に動かすQA重みと、同じQA/Group名が日英にあっても独立に復元抽出すること、入力順に依存しない再現性を確認した。
 比較可能Groupが2未満ならCI null。実Runへ適用する品質封印済みAdapter/CLIは未実装で、新規Calibration解析はしていない。
+
+## 全Label封印済みDevelopment Runへの接続
+
+`bilingual_statistics.py`と`scripts/analyze_bilingual_development.py`を追加した。
+全入力Runの匿名Packet/候補/Labelを先に検証し、いずれかがpendingなら全言語の内部F/判断の検証へ進まない。
+LabelのHashを保持し、封印後の変更を拒否する。全Label固定後に、Raw生成・読解/単位・集計/費用、Source/QA/実行Manifestと匿名対応を再照合する。
+Quality Importも同じ純粋検証関数を再利用し、Label未固定の段階で内部を読む経路を前で止める。
+
+元QAから既定の文書Groupを取得し、全選定IDを保持する。Baseline失敗は主増分null/欠測理由付きで残し、
+成功した候補だけの品質/経路費用に加え、Baseline失敗/未知結果を含む全選定の初回生成費用を別に保持する。
+品質不明は補完せず、初回/書換えのLabelと不明/品質遷移を保存する。判断の主比較は事前定義どおり内部判断の完全性で決め、Yの大小でQAを選ばない。
+共有Model/Runtime・予算・閾値/試行/Fallback・Judge/読解Prompt/Schema・品質Rubricの異なるRunの混在を拒否する。
+実験結果/品質Label・Source/RawのHashと事前計画Hashを付け、全選定数/完全比較/欠測と既定10000反復の出力を保存する。
+
+入力は`[{"run":"data/runs/bilingual_development/...","bundle":".../quality","annotations":".../quality/annotations.json"}, ...]`。
+現在のRunnerに合わせDevelopmentだけに限定し、Evaluationを拒否する。未使用Calibrationへの経路拡張は、その事前条件とRunnerの実装に合わせて別途検証する。
+既存の旧Runは当時の固定Sourceで保持し、新Codeの検証を旧Source一致の代わりにしない。今回、新規QA/Calibrationの実解析は行っていない。
+
+新規5 Testで両言語の封印前停止、全QA/失敗Group・結果不明費用、品質不明、条件混在/重複/Evaluation拒否を確認した。
+全493 Test（ホスト6.65秒）/Ruff成功。テスト用の人工入力と既存品質経路を使い、新規QA結果や最終件数は使っていない。

@@ -31,8 +31,8 @@ v14の事前Gateは引用ID重複1件で不通過として保持し、後処理�
 
 研究内容と実装方針は、次の文書を参照してください。
 
-- [研究計画 Version 7.29](docs/rag_research_plan.md)
-- [実装計画 Version 8.31](docs/rag_implementation_plan.md)
+- [研究計画 Version 7.30](docs/rag_research_plan.md)
+- [実装計画 Version 8.32](docs/rag_implementation_plan.md)
 - [多言語検索候補・本文Passage分割の実装と確認](docs/phase11_multilingual_retrieval.md)
 - [日本語共通Corpusの全文保持Passage化・参照粒度と残る工程](docs/phase11_japanese_corpus.md)
 - [日本語参照・欠測の監査と原HTML脚注の位置検証](docs/phase11_japanese_evidence.md)
@@ -40,6 +40,7 @@ v14の事前Gateは引用ID重複1件で不通過として保持し、後処理�
 - [既知誤支持・日英意味診断と拒否Fallbackの修正計画](docs/phase11_semantic_revision.md)
 - [3候補不通過後の固定文ごとの評価候補計画](docs/phase11_claimwise_candidate.md)
 - [QA内増分・日英差とGroup Bootstrapの事前統計方法](docs/phase11_statistical_plan.md)
+- [未採用の補助Model代替・公開Metadataと資源調査](docs/phase11_auxiliary_alternatives.md)
 - [草稿を見ない根拠読解を先行する次候補](docs/phase11_source_reading_candidate.md)
 - [日英全CorpusのCUDA Embedding Indexと全件検証](docs/phase11_bilingual_indexes.md)
 - [多言語EmbeddingのCUDA入口・専用uv環境と実機監査](docs/phase11_embedding_cuda.md)

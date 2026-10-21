@@ -457,3 +457,17 @@ def test_claimwise_bilingual_runner_quality_raw_validation_and_operational_calls
     # Children are absent from the public anonymous packet.
     _, _, packet, _ = quality.build_packet(output)
     assert "subtasks" not in json.dumps(packet) and "score" not in json.dumps(packet)
+
+
+def test_pending_quality_is_rejected_before_access_to_private_scores(connection, monkeypatch):
+    config, output, state = connection
+    runner.run(config, output)
+    bundle = output / "quality"
+    quality.export(output, bundle)
+
+    def forbidden(*args):
+        raise AssertionError("Private verification must wait until labels are sealed")
+
+    monkeypatch.setattr(quality, "build_packet", forbidden)
+    with pytest.raises(ValueError, match="Seal all external labels"):
+        quality.validated_annotations(output, bundle, bundle / "annotations.blank.json")
