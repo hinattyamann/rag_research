@@ -42,6 +42,31 @@
   Symlinkで外のDataを参照しない。実行前にCommit・Config Hash・選定と上限をLaunch Manifestへ保存する。
 - 規模拡大・英語既知誤支持/拒否診断・日英未使用CalibrationのHealth/意味採用基準はこの結果の後に別途事前登録する。
 
+## 固定75d4787の日本語実走と英語Index互換修正
+
+日本語の既知1問は`phase11-connection-ja-v1`で初回1/Judge9/書換え1を完了した。
+実使用5文書、固定文2単位。初回入力3584/出力138、Judge各入力4790/出力698〜1456、
+書換え入力4036/全出力1390・最終回答174 Token。GeneratorとAuxのTokenizerは異なる。
+初回Packingは1文書を短縮したが、内部評価では全順序の同じ本文/ID/Titleを保持し、Input Overflow/暗黙Truncationは0。
+両ServerはCUDA全層Offload、Combined RSSの標本最大は初回3484721152/Aux4133298176 Byte。
+GPU全体使用量5143 MiBの一点観測もあるが、最大値の計測とは扱わない。
+別の照合Scriptが入力Whitelist/実Token予算/本文不変/呼出し上限/原Journalを確認した。
+再開で22ファイルのHash不変・追加呼出し0・Server起動0。匿名2候補を出力し、AI Labelを固定した。
+同じCodex実装セッションの採点でhuman_reviewed=false、厳密なモデルID取得不可・履歴分離なしを記録し、
+英語側の採点前なので内部F/判断/候補段階の照合はまだ行っていない。
+
+英語v1はRetriever初期化で`KeyError: source_dataset`により停止し、Completion/Server起動とも0。
+旧`CorpusStore`はCLAPNQの場合だけSource Fieldを省略するSchemaだが、新Factoryが明示Fieldを必須としたためだった。
+初回失敗は`phase11-connection-en-v1/failure.json`と元Launch/Manifestで保持した。
+既存と同じ`.get("source_dataset", "CLAPNQ")`へ修正し、日本語は明示Identityが一致する制約を維持した。
+実BM25/Dense Indexを構築してFactoryから日英それぞれ検索する新規2 Testを追加した。
+全443 Test/Ruff成功。Source/Corpus/Index自体、検索/生成/Judgeの条件・品質基準は変更していない。
+
+新候補Assetsは`phase11_bilingual_assets_v2.json`、英語再実走は`phase11_bilingual_connection_en_v2.yaml`。
+v1は元Commitの履歴として保持し、新Codeを同じAssets/Runへ混ぜない。
+別固定Commit/Worktree/Runで同じ既知英語1問・最大11 Completionを行う。
+正規配置のローカル保存は`data/runs/bilingual_development/`。実走原本は専用Worktreeに保持した。
+
 1. Data/Corpus/親対応/Index・Model/専用uv Lock/関連CodeをHashへ結び付けるAssetsとFactoryを追加する。
    読込みはDevelopment/Calibrationを明示し、Phase 11でEvaluationを開く入口を用意しない。
 2. モデル入力は質問文字列と実使用文書だけに限定する。Reference・親Gold・欠測・GroupはOfflineに保持する。

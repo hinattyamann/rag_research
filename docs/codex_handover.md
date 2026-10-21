@@ -62,6 +62,11 @@ Assetsは`configs/phase11_bilingual_assets_v1.json`、入口は`scripts/run_bili
 既知Development各1問の`phase11_bilingual_connection_{en,ja}_v1.yaml`だけを使う接続確認を予定している。
 新GPU実走・匿名採点/意味監査はこれから。旧Runを新結果として流用せず、固定Commitの別Worktree/Runで進める。
 新入口はCalibration/Evaluationと主20〜30問Pilotを許可しない。拡大前に対象・Health/採用・停止規則を別登録する。
+その後、固定75d4787/専用Worktree`phase11-bilingual-connection-v1`で日本語1問の全経路を完了した。
+`data/runs/bilingual_development/phase11-connection-ja-v1`の正規複製も同一Byte。匿名2候補のLabelは固定済みで、まだImport/内部照合していない。
+英語v1はSource省略SchemaのFactory検査でCompletion前停止、`failure.json`を保存した。
+CLAPNQ省略互換を修正し、実IndexのFactory検索2 Testを追加して全443 Test/Ruff成功。
+次の英語設定は`phase11_bilingual_connection_en_v2.yaml`/Assets v2。v1実走の品質処理は元Worktreeで行う（主CheckoutのCode Hashは変更済み）。
 既存の英語最終固定Validatorだけでは追加要件を確認できない。日本語の準備を満たすまでPhase 12へ進まない。
 
 GPU検証記録（2026年10月20日、Ubuntu研究室PC）: 環境・事前条件はCommit `d2c6550`。
@@ -78,7 +83,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.19](rag_research_plan.md)・[実装計画8.21](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.20](rag_research_plan.md)・[実装計画8.22](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。

@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-bilingual-connection-partial-preflight",
+  "created_at_utc": "2026-10-21T08:46:51.436694+00:00",
+  "status": "japanese_connection_complete_english_schema_fix_pending_rerun",
+  "execution_commit_v1": "75d47878ba2942d4c044f3fb4eedd2d78136d64c",
+  "japanese_qa": 1,
+  "japanese_completion_counts": {
+    "baseline": 1,
+    "judge": 9,
+    "rewrite": 1
+  },
+  "japanese_resume_new_calls": 0,
+  "japanese_quality_labels_sealed": 2,
+  "japanese_internal_disclosed": false,
+  "english_v1_completion_calls": 0,
+  "english_v1_failure": "KeyError source_dataset during retriever initialization",
+  "fix": "legacy CLAPNQ missing source_dataset defaults to CLAPNQ; other sources stay explicit",
+  "validation": {
+    "pytest_passed": 443,
+    "pytest_seconds": 5.55,
+    "ruff": "passed"
+  },
+  "artifacts": {
+    "configs/phase11_bilingual_assets_v2.json": {
+      "sha256": "20f5b1eaf77b70cf3721728f5c4708be14b38efe04e71a29134bc8152f21e64b",
+      "bytes": 4702
+    },
+    "configs/phase11_bilingual_connection_en_v2.yaml": {
+      "sha256": "46c818a0f67d92cab9c6aab0a8cff082c036292fe2e366cc15310d406e9179ac",
+      "bytes": 3092
+    },
+    "data/runs/bilingual_development/audit_connection.py": {
+      "sha256": "c329ede86f7a4c2b4a45ed24a9e077f1151e351943a4d061254313fb635eefbd",
+      "bytes": 4185
+    },
+    "data/runs/bilingual_development/phase11-connection-en-v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/bilingual_development/phase11-connection-en-v1/failure.json": {
+      "sha256": "395f8eb0d65157ccb34f6a8a5298590aeeda52ef53a57de99306478563ae2292",
+      "bytes": 642
+    },
+    "data/runs/bilingual_development/phase11-connection-en-v1/launch.json": {
+      "sha256": "323d0640a54060aa2d1e9f742548ff0aabe216f202abbabeda03d9bb99dece3a",
+      "bytes": 1278
+    },
+    "data/runs/bilingual_development/phase11-connection-en-v1/manifest.json": {
+      "sha256": "3f6f34b7e5c6ec1fbf68459ca633c1109e9c201ac7e788e3cc084f0a09e89d91",
+      "bytes": 24345
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/baseline/92f662d74ddcc6f58349135b/record.json": {
+      "sha256": "534002bec198cd81f0e5598f9da09e27103db6fd7dbbfb5969b581ee9ee544de",
+      "bytes": 104575
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/baseline/answers.jsonl": {
+      "sha256": "f8cec7e91f8ae27eb20f555df362bf9ca65621a147c8ab9bd5f3e74a57ce4a9d",
+      "bytes": 83921
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/baseline/server-1.log": {
+      "sha256": "4466221543db7d2b81bf0eec155fe2f9b0408b665f711240e087be0211ad0f78",
+      "bytes": 20759
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/baseline/session-1.json": {
+      "sha256": "91d81f25e1a409e52d1e82d2c73e8664e9d686dc381a903fbc94a7e6d731fa43",
+      "bytes": 9713
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/connection_audit.json": {
+      "sha256": "d09f24e93186931507264c34be99c6cfaa9ba2b4dfb29ae8e6e6894ef06b2e37",
+      "bytes": 24200
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/claims.json": {
+      "sha256": "b768a1fa47442a64e05eaf8bbef09e1b8be6ba6351657f023c392ff2aa7ed029",
+      "bytes": 4309
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/original.json": {
+      "sha256": "8b8627f101154380b54a48a84c784c6b1b1f91e10d9919eb5fdec9d578debed2",
+      "bytes": 141956
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/repeat_2.json": {
+      "sha256": "695356c83f98be6a776420a196231bb320f9c4f496604bda807e1bb6208705f8",
+      "bytes": 141957
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/repeat_3.json": {
+      "sha256": "6944c910c8b184752f09770ffb5e7b67182a1d37a3f3d2ed179c9b5191f2e2e7",
+      "bytes": 141955
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/repeat_4.json": {
+      "sha256": "1d4330b6e653fbd78d8f243e4b4dc7c904deb66d5fafb8c49552ab4eedf3f33e",
+      "bytes": 141956
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/repeat_5.json": {
+      "sha256": "db4b5606f0035c3c1b99d3f8eb5fce050a30fcfb33a015059faebaadab7e7d31",
+      "bytes": 141957
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/reversed.json": {
+      "sha256": "ed6dc931bc60db2d734efd11d8269cd7739f7cb3ae599ce9a1adfc5013057b2d",
+      "bytes": 135627
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/rewrite.json": {
+      "sha256": "7ad24c72ae7ccd4c8a527f441c46ebca81a74a56cfc6c827566cafe70cfe7b17",
+      "bytes": 122672
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/shuffle_1.json": {
+      "sha256": "e7ea3c53523500a177335b077c73c435f600efea4eef5d2eb9549c9c8cfc5169",
+      "bytes": 154526
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/shuffle_2.json": {
+      "sha256": "232aad3a18187f306c4670176c51dab791b3cf9987b3dc54fc8c25eba64b265c",
+      "bytes": 140093
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/shuffle_3.json": {
+      "sha256": "bfa5b376216d1d7b2af9c39f1fe41d8be96bd082a337f20870ba0ee063b9ede7",
+      "bytes": 141060
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/summary.json": {
+      "sha256": "e28c767457a8337eca5a207a7413c7d76b1b3919f686009e51cb294c649d5d79",
+      "bytes": 11313
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/92f662d74ddcc6f58349135b/trace.json": {
+      "sha256": "1d4236aeee7593c3f89817e182f1831bf6bedb34a280d3f6cd52c84179c1bebf",
+      "bytes": 11824
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/manifest.json": {
+      "sha256": "cc2c38e72fc45f3d60a02251172945e36370e704b1ea30c330e0d4a3f8a8f7a9",
+      "bytes": 4185
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/server-1.log": {
+      "sha256": "03f5d80aa148335af307983f8a18aa01f1bfb79b8a1f862361a045263f684924",
+      "bytes": 78246
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/internal/session-1.json": {
+      "sha256": "5419eb581eacce0f1e71b1493d89d409181659527e266e5a60b69b89aebe234f",
+      "bytes": 9707
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/launch.json": {
+      "sha256": "8e35e6ab5960325fe6d9d28ad53c12fceba19a302b8da31c50002d5e76f6d1b8",
+      "bytes": 1278
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/manifest.json": {
+      "sha256": "73225669820f3ababd54c7d47c8f5bdd7f1cc72dd23212df4da311f4be736931",
+      "bytes": 24313
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/quality-v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/quality-v1/annotation_provenance.json": {
+      "sha256": "9cbeb7583619329339d3b2ee3aad5a8851367512cfb4f8f37f103c86879c65bb",
+      "bytes": 936
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/quality-v1/annotations.ai.v1.json": {
+      "sha256": "57870a97c8985ee17be17a207a52161861dc99bb30965ebe40e543c560844d1a",
+      "bytes": 3627
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/quality-v1/annotations.blank.json": {
+      "sha256": "04ef1c02b057606493665a5f92aa4ca4f7d5967234ae1fe4a4ced0affa8ce75f",
+      "bytes": 1144
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/quality-v1/export_manifest.json": {
+      "sha256": "5e549881a97443040ce02bb4772c75e1ad6f3b74d0e2825e2e42e827c1f00d75",
+      "bytes": 415
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/quality-v1/mapping.private.json": {
+      "sha256": "43f5868748533a83e64249fbb932b7f175652dba4aff1aca7b1926a03fd02620",
+      "bytes": 580
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/quality-v1/packet.json": {
+      "sha256": "f37c43e914d23b37425c410610ecc30bea53be150881e014816bb5aff82812d6",
+      "bytes": 44975
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/report.private.json": {
+      "sha256": "7f191d8ea2a9570a8d810df03dd45f2cd504e40972d583ff1f97981613b6403b",
+      "bytes": 2024450
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/resume_check.json": {
+      "sha256": "c4e246ee12f3ac74969941c58965ee51d96101da89a7fe8b4991eb6dfec90c34",
+      "bytes": 3492
+    },
+    "data/runs/bilingual_development/phase11-connection-ja-v1/retrieval.offline.json": {
+      "sha256": "8b511bee3ded2cdb567e678538593031ec60715b47d10555702245e7405da633",
+      "bytes": 547
+    },
+    "src/rag_research/retrieval/bilingual.py": {
+      "sha256": "a22f84c414f9c9da5a659dc324ec7f4c7c642a50c47690060cd28d8a45a25be0",
+      "bytes": 1599
+    },
+    "tests/test_bilingual_pipeline.py": {
+      "sha256": "b4a79010ac592d63c91b57c81facc323ca9ece051a56351413f96039652118c0",
+      "bytes": 18631
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

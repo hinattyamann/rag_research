@@ -19,7 +19,8 @@ def load_retriever(assets, language, *, root=ROOT):
     bm25 = BM25Retriever(corpus, local_path(data["indexes"]["bm25"]["path"], root).parent,
                          tokenizer=encoder.tokenizer)
     dense = DenseRetriever(corpus, local_path(data["indexes"]["embedding"]["path"], root).parent, encoder)
-    require(bm25.manifest["corpus"]["source_dataset"] == data["source_dataset"], "Index dataset differs")
+    # CorpusStore's original CLAPNQ schema omits this field. Other datasets must be explicit.
+    require(bm25.manifest["corpus"].get("source_dataset", "CLAPNQ") == data["source_dataset"], "Index dataset differs")
     selection = assets["retrieval"]
     return HybridRetriever(bm25, dense, candidate_count=selection["candidate_count"],
                            rrf_constant=selection["rrf_constant"])

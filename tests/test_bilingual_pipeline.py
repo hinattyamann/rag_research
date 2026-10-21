@@ -5,6 +5,7 @@ import math
 from copy import deepcopy
 from pathlib import Path
 
+import numpy as np
 import pytest
 import yaml
 
@@ -17,7 +18,10 @@ from rag_research.experiments.storage import read_json, write_json
 from rag_research.generation.config import GenerationConfig
 from rag_research.generation.context import PromptSpec
 from rag_research.generation.local import GenerationError
+from rag_research.retrieval import bilingual
+from rag_research.retrieval.bm25 import build_bm25, tokenize
 from rag_research.retrieval.common import RetrievalHit, file_hash
+from rag_research.retrieval.dense import build_dense
 from rag_research.retrieval.parent_metrics import retrieval_metrics
 
 REPO = Path(__file__).resolve().parents[1]
@@ -42,7 +46,7 @@ def test_parent_metrics_keep_missing_units_and_count_each_parent_once():
 
 @pytest.fixture
 def registry(tmp_path):
-    def bind(name, contents="{}"): 
+    def bind(name, contents="{}"):
         path = tmp_path / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(contents)
@@ -104,6 +108,59 @@ def test_assets_hash_but_never_parse_evaluation_and_reject_changes(registry, tmp
         study_assets.load_assets(path, root=tmp_path)
     with pytest.raises(ValueError, match="escapes"):
         study_assets.local_path("../outside", tmp_path)
+
+
+@pytest.mark.parametrize("language", ["en", "ja"])
+def test_factory_loads_real_indexes_with_legacy_english_and_explicit_japanese_schema(
+        registry, tmp_path, monkeypatch, language):
+    assets, _ = registry
+    assets["embedding"]["model_root"] = "synthetic-model"
+    data = assets["datasets"][language]
+    path = tmp_path / data["corpus"]["path"]
+    rows = [json.loads(line) for line in path.read_text().splitlines()]
+    for row in rows:
+        row.update(source_dataset=data["source_dataset"], source_revision="fixed-test-revision",
+                   text_sha256=__import__("hashlib").sha256(row["text"].encode()).hexdigest())
+    path.write_text("".join(json.dumps(r) + "\n" for r in rows))
+    data["corpus"]["sha256"] = file_hash(path)
+
+    class Tokenizer:
+        def tokenize(self, texts, *, return_ids=True):
+            return tokenize(texts, return_ids=return_ids)
+
+        def bm25_config(self):
+            return {"tokenization": "synthetic-fixture-v1"}
+
+    class Encoder:
+        truncated_count = 0
+        tokenizer = Tokenizer()
+
+        def __init__(self, root, *, threads, provider, device_id):
+            assert (threads, provider, device_id) == (6, "cuda", 0)
+
+        def retrieval_config(self, batch_size):
+            return {"kind": "embedding", "algorithm": "synthetic-test", "batch_size": batch_size}
+
+        def encode_passages(self, texts):
+            values = np.zeros((len(texts), 384), dtype=np.float32)
+            values[:, 0] = 1.
+            return values
+
+        encode_queries = encode_passages
+
+    encoder = Encoder(None, threads=6, provider="cuda", device_id=0)
+    for kind, build in (("bm25", build_bm25), ("embedding", build_dense)):
+        index = tmp_path / language / (kind + "-actual")
+        kwargs = {"tokenizer": encoder.tokenizer} if kind == "bm25" else {"batch_size": 2, "encoder": encoder}
+        build(path, index, source_dataset=data["source_dataset"], **kwargs)
+        data["indexes"][kind] = {"path": (index / "manifest.json").relative_to(tmp_path).as_posix(),
+                                   "sha256": file_hash(index / "manifest.json")}
+    monkeypatch.setattr(bilingual, "MultilingualE5Encoder", Encoder)
+    retriever = bilingual.load_retriever(assets, language, root=tmp_path)
+    assert retriever.bm25.manifest["corpus"].get("source_dataset", "CLAPNQ") == data["source_dataset"]
+    assert retriever.search("猫は赤い。", top_k=1)
+    with pytest.raises(ValueError, match="QA/Gold"):
+        retriever.search({"question": "猫", "gold": "SECRET"})
 
 
 @pytest.fixture
