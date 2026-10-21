@@ -1,0 +1,1162 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-source-reading-v6-known-and-synthetic-diagnostic-passed-not-gate11",
+  "created_at_utc": "2026-10-21T11:26:48.616176+00:00",
+  "fixed_commit": "772d1a7174e559c2a05bac7bb1c878eb79882b2b",
+  "report": {
+    "schema_version": 1,
+    "purpose": "phase11-bilingual-semantic-candidate",
+    "manifest_sha256": "f15d672f443b837e1a82a97dc6df430d4c40acf2a54e0c4a65e90bd22b24aadd",
+    "critical_planned_conditions": 4,
+    "critical_completed_conditions": 4,
+    "critical_exact_correct_conditions": 4,
+    "critical_passed": true,
+    "synthetic": {
+      "en": {
+        "planned_conditions": 24,
+        "completed_conditions": 24,
+        "valid_conditions": 24,
+        "exact_correct_conditions": 24,
+        "accuracy_of_all_planned": 1.0,
+        "false_support_count": 0
+      },
+      "ja": {
+        "planned_conditions": 30,
+        "completed_conditions": 30,
+        "valid_conditions": 30,
+        "exact_correct_conditions": 28,
+        "accuracy_of_all_planned": 0.9333333333333333,
+        "false_support_count": 0
+      }
+    },
+    "diagnostic_gate_passed": true,
+    "planned_conditions": 58,
+    "completed_conditions": 58,
+    "not_attempted_ids": [],
+    "planned_completion_limit": 128,
+    "completion_attempts_recorded": 128,
+    "cost_incomplete": false,
+    "input_tokens": 162631,
+    "output_tokens": 114592,
+    "summed_task_seconds": 1645.5221586869811,
+    "task_result_sha256": {
+      "known-council-original": "e453226f4ee31ec4a41f0e5987607ba4521ea4e48d477418322277af081436f9",
+      "known-council-reversed": "5c2faa972d90d159b053de5ad87f7b7339ea4a9ed6a6e471c247f05250571e6c",
+      "known-zidane-original": "ec4b84fa308235f95610802de43f6cee6db688b4d6601704cf21ee1e0cdb3d04",
+      "known-zidane-reversed": "184c25de5416f5aadda9b3103d45c2a6bf5b08c00a38e5c7f027d16da90fa08c",
+      "en-time-support-original": "b79695b5aecce8f9b781249652dfedc47029542073e7a594c7a8305e21d75fb7",
+      "en-time-support-reversed": "0e136c060c3b437e03bad0fa757049e9b2160f87fafd8038faeef7b89db59a00",
+      "en-time-conflict-original": "ade9520562f9dd72c8a04a89e8314218145d582239a626eed4ea307b29425966",
+      "en-time-conflict-reversed": "70e078d2d51396752d59dbdedd2283ebd646875359f2d2d849ee2670f8885aac",
+      "en-time-absent-original": "b5f28894bc295716fe471b700d44e98511bdf685daa5e69b0eebec229bfaec1a",
+      "en-time-absent-reversed": "8998c809136c6e8759fcf82b525444de9012e44bece6be3352de5ef07c298167",
+      "en-number-support-original": "9d36f42379a2e6a12852e807916eeb56063c31753fbe337443de7435e58247e3",
+      "en-number-support-reversed": "c3c5f1c1ab3ee69f638104f1a10a0b0c82dd8e7b20f59d6f483aab65eec22939",
+      "en-number-conflict-original": "5fb4ac12ddbd3c296c53f5885e219d83f2b19ec9d6c656cedac0122bf90c5e02",
+      "en-number-conflict-reversed": "06937db290e374668048cf70925b70fb8a7c8efe583fe8ea7028ab86b3a9a555",
+      "en-number-absent-original": "9f0595eed74c651b1005c842d3dd52b443462964dd0a542818700cf3807fadf2",
+      "en-number-absent-reversed": "2cdc26c2bd94ee2ca74bd4d34f9b7b77801cd3ae703af91a7b50a3dec68a469d",
+      "en-negation-support-original": "a10cf84540baf4ed092e609df9ac668f08b75885bcc575a658e8997a044ecb29",
+      "en-negation-support-reversed": "4ddbc31d8705fe8323b93da5135c84d0cd35d7d4433640c1d32dbac95325fe76",
+      "en-negation-conflict-original": "a32eab20666a8deaea14f0c31b1d180176d8fe79ed9ab77479d967f297851f57",
+      "en-negation-conflict-reversed": "29d6f32877695d885cb43edae4b8941391ae5dbed5a43de752e3c3b5dc7a066e",
+      "en-negation-absent-original": "55bcc3c1b5e7ccec954a85abca8f617c2bd5ea943fe7f223e80d4a3b5257b46a",
+      "en-negation-absent-reversed": "bd261b4f3eb18d4025d4faf468e998b4ca29de1e8352d5282c7bf5ece502248f",
+      "en-relation-support-original": "e095719465e82fd3eb5e288772d88efe598a6ef9f5e68e094ec87d52406a9f91",
+      "en-relation-support-reversed": "14189e4177052ed126e6d79f10a77da133ba35f449ed5b24ab4e59991cabfa45",
+      "en-relation-conflict-original": "f9769ffe65df021377b9ed2099e4aa024b4a8f9354244bf22aea4eeebf94909b",
+      "en-relation-conflict-reversed": "0a80b913c58b32fe19e739fd2c1f6dce0f9e94ec368eaf09e18983ae36c09f1b",
+      "en-relation-absent-original": "5a40386851440246446e4894d59173eaf1a971b83178c0ba7913d7fbbdc595c8",
+      "en-relation-absent-reversed": "0dfa245849b3e22cb087d68979d893274cc9afcd7bc0c9e5270d160f69a8cb06",
+      "ja-actor-1-original": "d6cbd5efbf791ae889e89985a78c459902b4a6a0dd63cfeb9aab6b541e425e83",
+      "ja-actor-1-reversed": "b2aa23137ffaca347498d2ae4ffefafff9842f087c052b92a584a85210bb100e",
+      "ja-actor-2-original": "4efea99d3ab94f920e8747c5613eddec7204459d85cc686dfc41a7dbe69e1e60",
+      "ja-actor-2-reversed": "60149bc10612069462255844cc802a7814bea5b5d53b552e709184e440ee6a2d",
+      "ja-actor-3-original": "fa1097bd005beea3adb9b599f266a5b785b0da3e1ee884d9ff66dc661d998c39",
+      "ja-actor-3-reversed": "67d9f0d55201b19643c6eb26ffaea72ff54489994b1b7ff7be3991d7e6b53096",
+      "ja-count-1-original": "75ff71d2ed01fcd6aa4cb328944e5ea04a45b3e336dd1b89fde4f1e243aba7f0",
+      "ja-count-1-reversed": "016b74f67555d72d5fbc94c484d2c6a2cb2224f82d12eaea14ee8721579b8ffb",
+      "ja-count-2-original": "b4385754a68519f9edfd0f0e3018ebd3f119c17bbba34e2602a3fb5adac32ca2",
+      "ja-count-2-reversed": "94d1b82d468732fb6ba7f3588c91b191ce8e16bf99a250b4effa579b116d0ddf",
+      "ja-count-3-original": "9a81f9cf39ef2d360fc60740753f2a626a2ee54dd33a4d8f5c3d04e5bedeaee6",
+      "ja-count-3-reversed": "aea2e19d0ab3e89fe83e862e84870929711f8f2a0b155d9f36e688c4c7c900e6",
+      "ja-compound-1-original": "3f1be8103e823f95f47ced3c19575509cf9a39f0a10b87ebb03e8d8b85d27646",
+      "ja-compound-1-reversed": "f4e86c89758b3913799dd2791a50e9519d48457b5ff5692b04bcd7c87c0c464a",
+      "ja-compound-2-original": "ea7aed21785e7269c023d3287bb4574ac1e00af9b4c5634f26c3256f4d916430",
+      "ja-compound-2-reversed": "dbd0dad617683fb69e826f91e21da7f3f2deb32177b2a3bbf30283df1e654ca6",
+      "ja-compound-3-original": "179dca988ad9f05155f2c3256c3d9dca84d1161f1c92d024bd0fc232cbf9933a",
+      "ja-compound-3-reversed": "598a1e4cd58c68900b7fa21e759e6eaebf204193cdf479ddb9c62000a4cdc321",
+      "ja-qualification-1-original": "332a70c6a0f07fe6252215f82b1ca8559deab166525bf04fb2888b937b3e151b",
+      "ja-qualification-1-reversed": "0977f717dc32b7f5bb55726bcece38412e450afcf1df04dd805d8e9dbfa30d2c",
+      "ja-qualification-2-original": "b8ae88356c214a31b0dd3e0f712cbf14a1f78f033649da31ea913191d9eb76a5",
+      "ja-qualification-2-reversed": "a76be17a7315481bfb0f59aee64e4320c8451065c69f5276a8ef70ada8f2e14f",
+      "ja-qualification-3-original": "365aa7b4ac53219a7a62b1d439808fa922f9e457cd491636d7dce71e66965181",
+      "ja-qualification-3-reversed": "3c8bc57b6c67ebc9c4be818f0f0a380e45e77512a8530c7b56cf4f43aef2bb59",
+      "ja-table-1-original": "cecb3fb755920e9a5cf5050d5a0d0003bd67a0fdd3a39e1fdb887de11c8b4c64",
+      "ja-table-1-reversed": "a98411bb0c5084cb41531cfb8d62150967543d4c6501bfc40d75c2f93a1b106d",
+      "ja-table-2-original": "d814e3701ebfdb3a00c3528873c4386b8e34936e92b55f9fe5ef5b7dacda6b89",
+      "ja-table-2-reversed": "e32efe563c7ffaa83b30c1676f5f3f0a3ff57df3a181327fdcf0a34bf3a2c52d",
+      "ja-table-3-original": "83f1155ccddbbabdae755d3b5a44e8f91b519b21c58d1a3491c114e402c5f9c0",
+      "ja-table-3-reversed": "bf764f583e48c2c2d04a7fdc346bc9968b266d79560c132a9245d148e76b443e"
+    },
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "raw_reader_and_verifier_calls_verified": 128,
+  "aggregate_conditions_verified": 58,
+  "resume_unchanged_files": 251,
+  "resume_new_calls": 0,
+  "resume_new_servers": 0,
+  "all_original_inputs_and_fixed_unit_denominators_verified": true,
+  "source_hashes_verified": 84,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v6/plan.json": {
+      "sha256": "88d41445aa82b0c001ff97994f0282acbf4df7df444d3f360f72c1c946935625",
+      "bytes": 1192
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v6/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v6/report.json": {
+      "sha256": "7b26bf0673e218d7c3f637c6be101e2788e8151ba7b2eb9900bf3ad6c6df4284",
+      "bytes": 41032
+    },
+    "data/runs/model_screening/phase11-qwen3-8b-v1/source_reading_preflight_v6/server.log": {
+      "sha256": "d79e6974977b7d41f156a808c1857c68e07543ce940290c9e9795a5e6ee34e6a",
+      "bytes": 16527
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/server-1.log": {
+      "sha256": "2a4d233a56f9b497eabfbeb8a50e5c964a26aeb679f2aaf9f089502d5cadb3fc",
+      "bytes": 467888
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/resume_check.json": {
+      "sha256": "58a72354c41ce5f77ac35cefd8239b948a71d6597c1e749a8082a76bbaaf4562",
+      "bytes": 30550
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/launch.json": {
+      "sha256": "633aee616728b0e9717c222abb25d00e2205a0bda22859d8b0b8bd2a0debad50",
+      "bytes": 709
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/manifest.json": {
+      "sha256": "da2b4f557c11a865bc6658f3e90267657fb784026fe63b7bbedd1554231f80f4",
+      "bytes": 21995
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/report.json": {
+      "sha256": "fa794be72ad265d7423691309bb983915e671b838029328236eaaf6c52d21561",
+      "bytes": 6960
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/session-1.json": {
+      "sha256": "5f66f45bcc680ff24d6dce828aef77abc575b05ac9e09ddbb289715a7a0c38c4",
+      "bytes": 9713
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/preflight_receipt.json": {
+      "sha256": "e2bf63527dd90a0787005a290a6be58ca9b33095ccefa2c68ebc08a7f8f82249",
+      "bytes": 370
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/audit_check.json": {
+      "sha256": "ea521892b0472e7c5d4494ced0fe5b3a6ff258befe65c2ed52c0e056652eeece",
+      "bytes": 57123
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-1-reversed.verification.json": {
+      "sha256": "097dbb34f35a41387d4ecad2bbbecddfc33b38b7e4cd243beddb15ebea567f10",
+      "bytes": 2086
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-zidane-reversed.reading.json": {
+      "sha256": "168e6931f8755e2d75c7439a708ea73be7b04753b02a0d0d5bd507b8fb47e113",
+      "bytes": 182501
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-1-original.json": {
+      "sha256": "c06d415089b4128c9f801ab011a75c58c85a3f1d8433d61c7bd38c00627787d9",
+      "bytes": 2147
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-conflict-reversed.reading.json": {
+      "sha256": "000eee187a54bafe4fde0e0d345ae0eb98c89be4a9c913002a07dc753ef5aabc",
+      "bytes": 58169
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-support-original.json": {
+      "sha256": "8f961c8c1aa32179be87f4f7e7c132f89e059f99b49dbd5874e048230db38d96",
+      "bytes": 2073
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-3-reversed.json": {
+      "sha256": "1b59fecfdc8c3f3eee4b4ab7eb2fe6c34c141e6b9142154b00dc4ad327a5419d",
+      "bytes": 1921
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-2-original.json": {
+      "sha256": "7239cac36a0b8c4ea1a6ec104ddc28e55b8a6f96f2734409b0a59df5252f84db",
+      "bytes": 2159
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-support-reversed.reading.json": {
+      "sha256": "3e1f729ce5b992f75cf08b8dc32e77707608adeaa524e67ed75c04b18d4dc211",
+      "bytes": 57827
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-support-reversed.reading.json": {
+      "sha256": "45938534a866d9081c3f43903ae48ea117f2de8114e7b2464a7a9f87236db207",
+      "bytes": 57825
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-2-reversed.json": {
+      "sha256": "0d97fa4e02d4bf8fe609f4b8cb6b14542fbd744c599e5cbbd7e8daed47c7fa0e",
+      "bytes": 2157
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-2-original.reading.json": {
+      "sha256": "3ecc5ef7855914604939ef9ac31befef1d0f41d10093ca5f33b1798887406e18",
+      "bytes": 40705
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-support-original.json": {
+      "sha256": "9a1ceaf147da8a695b2dbc6b2e8b822f9ea6de1f544fef297b7191a81bb7ed4d",
+      "bytes": 2066
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-3-reversed.reading.json": {
+      "sha256": "1348a3957754db429b70e19106d695ec6f9e98436c4f5680b9117b58e9ba874e",
+      "bytes": 40705
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-3-reversed.verification.json": {
+      "sha256": "c68807af0ac2dff2b7d57f4a4ac121e1540f110c7605f86e6b522f96dfab30ab",
+      "bytes": 1870
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-2-original.json": {
+      "sha256": "b4d755c16708606bbc563405df162a5034751973f13846e0977856c04f2ddac0",
+      "bytes": 2156
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-conflict-reversed.json": {
+      "sha256": "59803e062679c97fae07df46a8a0a16ced28e7fedddd809c08996d368cb1f000",
+      "bytes": 2088
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-3-reversed.json": {
+      "sha256": "0096f5ac9a6dd2bad4972a2f4106989f17720bb31caff92184e3cd06a473d571",
+      "bytes": 1910
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-conflict-original.json": {
+      "sha256": "d395f7e7f4eac69941ad866367e413fba6e040e06709615028c214927ab212fa",
+      "bytes": 2065
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-2-reversed.reading.json": {
+      "sha256": "aa9038bb1b45be0d32389ecd905ae8cc26b0b34a1d22e225f5de6f46f80be310",
+      "bytes": 40705
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-1-reversed.json": {
+      "sha256": "6ff93fc481858a59f264a17af3f1c295d81633c622e61e93863fafa1cd3d37c8",
+      "bytes": 2108
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-3-reversed.reading.json": {
+      "sha256": "3d8b896f4713376c2651bc8ac64631a642e681d46c9c0eaf1ad3573be2ab9f09",
+      "bytes": 29257
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-1-original.verification.json": {
+      "sha256": "5e4ea5b69c0dac68de90689a79696db5d6324fb4f1ab8b0609b7506c9cceb263",
+      "bytes": 2056
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-zidane-reversed.verification.json": {
+      "sha256": "0e257bd4182d7684a0da0ef16d90067d0863c19ecbb7c3d06b3a321894c8f29a",
+      "bytes": 4355
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-zidane-original.reading.json": {
+      "sha256": "a594a3969914923f0b850827e4187991db98b5780c54b98b1cf412e1e4529da0",
+      "bytes": 178711
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-absent-original.verification.json": {
+      "sha256": "11ac60a7479b90b054b82772d568bbcfc261ab1e78c48a28402d7b601672ae9e",
+      "bytes": 2008
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-reversed.reading.json": {
+      "sha256": "b7d338d6592cee8dc6538bb201da14d7ecdb0928fb2e5989f3e6e54dbcda63bd",
+      "bytes": 155186
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-support-original.verification.json": {
+      "sha256": "9dc7f1cf0754b971068526bf93f1edd567db44cfe5d441d9fd79c56b41d24fec",
+      "bytes": 2009
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-3-original.reading.json": {
+      "sha256": "8d677d6729e324e7ad06eaaddaf85cf6f108603aabef404329947f330ec5bcf6",
+      "bytes": 57705
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-1-reversed.reading.json": {
+      "sha256": "819b1886b45ef6e3b314bcac550fc8e33d57b8f6b729e39290832f55560fde9b",
+      "bytes": 29254
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-2-reversed.reading.json": {
+      "sha256": "a450af35a5b9137ab340aceb52f5d5c886254d830cbc7ab45935c7016554d654",
+      "bytes": 57707
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-conflict-original.reading.json": {
+      "sha256": "821935332196ab6eaef5d3674b1137a6affe80ec8491cda351c45388640dba12",
+      "bytes": 58170
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-support-reversed.verification.json": {
+      "sha256": "b786ba90aca0f96fac4185336217b5f03361a79acdf15d6687dfcf512d6b35dc",
+      "bytes": 2015
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-1-reversed.verification.json": {
+      "sha256": "d3806addd087046cf5f142b6ede449b49f499a2439e6be440e53dcca63625613",
+      "bytes": 2089
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-reversed.json": {
+      "sha256": "46f726d3642f05f2d3d67b9256abc3acf0ae93c012d0ffb87bd7342eb7365ccb",
+      "bytes": 12564
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-3-original.reading.json": {
+      "sha256": "a77f5fa555169e948da777935e7ffa8c39edb7826c5ce8107333f508054207fb",
+      "bytes": 40701
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-conflict-reversed.verification.json": {
+      "sha256": "10cd981cca9b6d0cb0d7c07d307b9c528079167a6997548d145f03eb0432ca78",
+      "bytes": 2022
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-1-original.reading.json": {
+      "sha256": "b6cecd037ff68e294c10d87666c8bd8c45064ee314dbe6682b02bf83ed619495",
+      "bytes": 29254
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-absent-reversed.verification.json": {
+      "sha256": "4017069abbc16a3717243b8ea8e31ebe803fbbc33e16a92372cb2e8e96e547dd",
+      "bytes": 1850
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-3-reversed.json": {
+      "sha256": "a78d512b0d0ebada8825137ab9f46909bcf309ef0c4f9d4e1f98b4556622d497",
+      "bytes": 2192
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-3-reversed.verification.json": {
+      "sha256": "c379d66eef89e150315dfc99fa544d76d9af94bf74f7b7e01f4e8344632aa376",
+      "bytes": 2118
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-support-reversed.verification.json": {
+      "sha256": "04b49fb9ab36af493de414ccf7d786718de163a4181012215f6412e98ba631a5",
+      "bytes": 2009
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-absent-original.json": {
+      "sha256": "c7db03eb21d9b432b73ee502e44e2fc1a64eeaee78d84cabce99eddeeddac44d",
+      "bytes": 2068
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-absent-reversed.verification.json": {
+      "sha256": "af3c3516d91ec5e480842fd8470a8e43686c1a7c6a0a59918832e90ad4546dc8",
+      "bytes": 1880
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-absent-reversed.verification.json": {
+      "sha256": "08b06b10406bd0d99aad181bcb2e34b8e1108b9e398c62d98abcb365f8fe219b",
+      "bytes": 2032
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-2-reversed.reading.json": {
+      "sha256": "d9ffd321dc880d1787022d93df1bf10ed13a3bdb2280460d0ed1a2bf399e22cf",
+      "bytes": 59305
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-3-original.reading.json": {
+      "sha256": "ae56fe1a65f7e5da52ffc733e95bc0e57251fb76f42723b18c900ab71f4fdac6",
+      "bytes": 59303
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-zidane-original.json": {
+      "sha256": "a7d50a736877ae81789f6e50f97f2b4d2148b2a3f977dc6852db8f400caee25d",
+      "bytes": 4408
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-absent-reversed.json": {
+      "sha256": "01d660df63e922a88d30718efe4e1579d1d5303e209ec21ad6ec251f11bfdaf8",
+      "bytes": 1937
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-conflict-original.reading.json": {
+      "sha256": "8325d39dc22445bf95703ea6f82ea566b2a7c489cde81c703bfa7f300494a7d8",
+      "bytes": 57829
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-zidane-original.verification.json": {
+      "sha256": "abef696e6ea4b785e905d1d8f6bc2cd9d6666d58fae2930b0bd2b928b0fc7fe3",
+      "bytes": 4355
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-1-reversed.verification.json": {
+      "sha256": "f9e73ba339c7bbdfc93e5187a1f176eb50440c090f48be0230d5b3bcddcff58e",
+      "bytes": 2089
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-2-original.verification.json": {
+      "sha256": "789cd8b14d7ce8fd4bfb51036da046a05e04da8a0aa21bcae89404e7c95df2a8",
+      "bytes": 2107
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-1-reversed.json": {
+      "sha256": "69b5cf8c75a57dbde8fd9a1e437a386e7d03d5cd8deb58c9932ca302e494d5ca",
+      "bytes": 2137
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-original.reading.json": {
+      "sha256": "cbf6a8c3e605d56235d5434c5ba89c431720592c28aa14958b7c7542e82e1a40",
+      "bytes": 158166
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-support-reversed.json": {
+      "sha256": "d5b1e7cf48639fe4f0e07ec7f0856208adefa2cb23c31a73388c4c8b47598669",
+      "bytes": 2065
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-3-original.verification.json": {
+      "sha256": "f2c4c8a0889b462854300e0c1dbffcc979d6d6b7749fabc5f392219f6f7bd92b",
+      "bytes": 1871
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-2-original.json": {
+      "sha256": "23d7753014da2e3517fb6225d8bec7692c599ca03c1b18d8980b796e9b225e02",
+      "bytes": 2168
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-3-original.json": {
+      "sha256": "84ef50b3ecf118d36d7f075511b3ab96d208a7f92571016babc161b85bbe1b8a",
+      "bytes": 2141
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-absent-original.verification.json": {
+      "sha256": "c164ce10122badc651dbb09338b95e45b18bf1b39997ce82186d8184885748de",
+      "bytes": 2035
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-conflict-reversed.json": {
+      "sha256": "825da3fa46c5a8a873a9c5bc4c0c7b4f1427998a1283dfde96c03d1bbbaa65f4",
+      "bytes": 2067
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-1-reversed.reading.json": {
+      "sha256": "0a2c2b391424e6e8c7a8572fb7589858a22528b3eb2df002a372f4dec024d487",
+      "bytes": 57709
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-3-original.json": {
+      "sha256": "39d32b71de730d94a90e9fbf145ca226f6a343b3bd4f94d01cc00a3e98c738be",
+      "bytes": 1922
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-support-original.reading.json": {
+      "sha256": "b002a20369ccb9522d95259dc28247d05e948a8a1c4e36ebe3fb5567e1cf84ce",
+      "bytes": 58169
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-3-reversed.json": {
+      "sha256": "004c2958b01b6c5d0d237eddf11a67d47ce158a57b4b8dff3d0bc80e8509f275",
+      "bytes": 2174
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-3-reversed.verification.json": {
+      "sha256": "14f46730eb522f99c834b646f7bdd5c5efc77e1202990f2762336b622afd97a8",
+      "bytes": 1863
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-support-reversed.json": {
+      "sha256": "143b88db90fbef141fec9eca397492576d35440a3b2013af46454e1865f58f7c",
+      "bytes": 2076
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-support-reversed.verification.json": {
+      "sha256": "9430defeb7f73b6b16a087f06d0cbbce1311f667d1aa3c5a128b457991633282",
+      "bytes": 2006
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-1-reversed.json": {
+      "sha256": "0ae824dd30f7dfa127a0912ee569bc78526b90c77eec6c3d9e9bb6349df61b64",
+      "bytes": 2132
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-1-reversed.verification.json": {
+      "sha256": "fca0f6f1873ad2502e7b0f9e27c91e5aff9fca2132add4d6ad64f1809962598c",
+      "bytes": 2054
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-original.verification.json": {
+      "sha256": "6a3badd5ad82075ae8aa80cbacdef2d169972b2e60df7eaa116181a7f7c8d7d8",
+      "bytes": 13819
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-1-original.verification.json": {
+      "sha256": "35d9310b387ed8319ea5efc2db3874489a1b5c137746d0f8a8fa3a5e7ffc54f9",
+      "bytes": 2088
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-2-reversed.verification.json": {
+      "sha256": "33930aead5ee52ac89391d4d1e3b7cdf7e1aa48740d3ac117d0a9febdc27a53c",
+      "bytes": 2107
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-1-original.verification.json": {
+      "sha256": "6e93b546436169839ab9eec944717fe233918d3285e8ec4c34111f5993671350",
+      "bytes": 2080
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-absent-reversed.json": {
+      "sha256": "cf72c9e3abf1d11c0e0327933fc83c1e1d646384a0a752f8dde49b7a28e5f73e",
+      "bytes": 1908
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-absent-original.reading.json": {
+      "sha256": "a30189b376738274e9ad6efaa892098afe8cba8723d8191454bc7591295088a1",
+      "bytes": 57823
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-3-original.verification.json": {
+      "sha256": "2cb791844f4680e6e9cead34a6b2fb8af1f717e2bf4a263b1ee21e73706d0c7e",
+      "bytes": 1860
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-3-original.verification.json": {
+      "sha256": "48eeae91a837ff610bd2dabb010b411037632bb25b7a4c79ec74ecde89333050",
+      "bytes": 2117
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-absent-original.verification.json": {
+      "sha256": "8bf36cb832001ade51bd52ef4b82320acf9b4d339d9094d63f75d334f0e1ef2e",
+      "bytes": 1878
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-support-original.json": {
+      "sha256": "1dc4609c7d472d7035c2d3cf58d3dbaaeb615a561ab4249d63f1a9218650763a",
+      "bytes": 2079
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-absent-original.reading.json": {
+      "sha256": "f8c65bf2cfd367f58a66470700a1c0dc2b15ae147c638d62d6dea28ae694b666",
+      "bytes": 57826
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-2-reversed.verification.json": {
+      "sha256": "081b9ede9e00dee0f480280cdc98a24ebe9752c1795e931bdff39b87c418b6ae",
+      "bytes": 2107
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-conflict-reversed.verification.json": {
+      "sha256": "67cebcbf021fd2e053c3dac7ffc0d21fef129a7258907eacc90ff8e8db5254ca",
+      "bytes": 2029
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-conflict-original.verification.json": {
+      "sha256": "9ddda4054fd1fcc0c796ea73c8257c8dfa122c115266b2d32f0ed3994466fdfa",
+      "bytes": 2029
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-2-reversed.verification.json": {
+      "sha256": "a5c3ef4e78f0599e0365b3833b24841a31855b350a2ad9c48f57d426be32495e",
+      "bytes": 2108
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-zidane-reversed.json": {
+      "sha256": "35836c92a1b5f892636b6cc7083f84e79c662ab1acf632a49975ac6ef306f69e",
+      "bytes": 4406
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-1-original.reading.json": {
+      "sha256": "d06c2d15eedc5f5fa71823db1da653bb9031b388d3ca4873878b86e5ae631f78",
+      "bytes": 45979
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-1-original.json": {
+      "sha256": "c62652e129c84a08e93c530727180613c96c6db747d8aebd188786295fa93168",
+      "bytes": 2108
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-2-original.reading.json": {
+      "sha256": "0eeacc4a27a3956f83969da8827c0e32b530ab00666ef65f467d9a980414cf20",
+      "bytes": 29256
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-reversed.verification.json": {
+      "sha256": "41d3863730f3f0e58fa93bb8f2b57aca699128d4a79b93f25fcd377dfcb6add3",
+      "bytes": 13942
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-support-original.verification.json": {
+      "sha256": "c4c6f6b6085a9656167b8b11b1fdba3af979618c061ac5ebccb9b262128b1688",
+      "bytes": 2017
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-3-reversed.reading.json": {
+      "sha256": "1c6867534ad1f8e1eefd125c62baeae5a5abfa84fb84b661c6dd404106cd4c55",
+      "bytes": 59304
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-3-original.json": {
+      "sha256": "12eae45aeb4c71fdee3b60db3cd5875ddf6b1f55fcab10e07dc55c4bbf68f44e",
+      "bytes": 2171
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-3-original.reading.json": {
+      "sha256": "dee940fd74698aa4a184e3e8e41a315a10a2e883c998a8ccb913f3f051f70dbb",
+      "bytes": 45981
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-3-original.reading.json": {
+      "sha256": "ba7fcb01d210ec2992eeb07ba95c7d762e83ccac7bfca3064cb7eef6d10671aa",
+      "bytes": 29254
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-conflict-original.verification.json": {
+      "sha256": "b45f7b418622c375f9352d71de004cf905b2350ef18ed813ffedafcda481a1cb",
+      "bytes": 2014
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-original.json": {
+      "sha256": "184770fb53a61a55927047586c7b3edd6593d7a8f913a5f53416a4a1a394f5ce",
+      "bytes": 12439
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-3-original.verification.json": {
+      "sha256": "26e27a54748455794791e4f3eae330bfbaa4b1fba7b0e1ca74e09f98c331d719",
+      "bytes": 2091
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-support-original.json": {
+      "sha256": "6215132aebb29ea5a1b20044150e515d2d5851495e9ca55c04d448dacf8695e0",
+      "bytes": 2065
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-2-reversed.json": {
+      "sha256": "ced9d91c2d25b5e7b66d4cb0981ae91e521713efb2060fa3f7d2ee528e603f1a",
+      "bytes": 2159
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-absent-original.json": {
+      "sha256": "860137989a57c7ab1bb15ac9d3fa2672c9d2b31a0d88ab9405ddd3760e363609",
+      "bytes": 2094
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-2-original.reading.json": {
+      "sha256": "e0659637201496b18cd6c7084ba7b3faa802b1d8e864c8db6539a83a74c57c16",
+      "bytes": 59304
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-support-original.reading.json": {
+      "sha256": "e650ccb15fd07db25c76bdec26fda64a4f9a41643b7e4dcb2ee8a277afba34ed",
+      "bytes": 57826
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-absent-reversed.verification.json": {
+      "sha256": "3bd921aa1d9e7181f86f2c4676fba3baaf0f3284eb47bccfa59a5a0b22aeddc7",
+      "bytes": 2009
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-2-original.verification.json": {
+      "sha256": "86da4e1627e60ffb38b1973a3765e08e672c13fb82b99dbf19e75a06d12c5477",
+      "bytes": 2107
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-support-reversed.reading.json": {
+      "sha256": "65029fb6e19c39a98cbb7c596eaf5eff7f6a23c492dd97c5fd39a4fd9f2c8748",
+      "bytes": 58166
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-support-original.verification.json": {
+      "sha256": "f2296ec342bd01e412779911b0864eac1f82da36fc3561323e43ba998b5d8f91",
+      "bytes": 2006
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-conflict-reversed.verification.json": {
+      "sha256": "1b5d7954585e69b2c4a8d1be3a8c665b34432c27571b1cc0cf61fdd1914bfbc5",
+      "bytes": 2009
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-absent-reversed.json": {
+      "sha256": "3cd408308cabe69496344e81808b082302f6b3c396fac18595d06e5188f321f1",
+      "bytes": 2069
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-support-reversed.json": {
+      "sha256": "1148f96239b509036ddae7a3eef0d078704cef092e5232ac53bb9ff7a8ea6f57",
+      "bytes": 2065
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-1-reversed.reading.json": {
+      "sha256": "41bc74c455405b9fb6d01d6f1d148f1bc0c440d4397249b0b3ba15bd290d7cee",
+      "bytes": 40708
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-conflict-reversed.json": {
+      "sha256": "fcb1e4b891df31da30b0f7fd2ae1bce209ad7d276a3995cdfd6662800a4513bf",
+      "bytes": 2070
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-support-reversed.reading.json": {
+      "sha256": "3179e0f8af577fa6f98434e8364a15d545d76e08afe1cccb007d973ae3de2799",
+      "bytes": 58134
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-absent-original.json": {
+      "sha256": "c03edcd6e85fa19af559a066a6cb3b0e1c46a233e9aaeb96c91c8dc1f56c12be",
+      "bytes": 1908
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-absent-original.json": {
+      "sha256": "d0501daab5d78ec807c9f6b7163d1549f61c02de4897640881b7f89958b0c4b9",
+      "bytes": 1933
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-support-reversed.verification.json": {
+      "sha256": "71eae6fac2d9d831574a5b0720772f4cb904f7e379c47c291e6efab0b58406f4",
+      "bytes": 2017
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-conflict-original.reading.json": {
+      "sha256": "1afe625e39ae7c854bdf21a6531f8ec166313cbaa44f55535f079e1098f9da82",
+      "bytes": 58135
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-1-reversed.verification.json": {
+      "sha256": "32d2eda62bc9b1ea12f8081047ae4dce636fbfb84f8c211f23a85f79bb81aaa1",
+      "bytes": 2082
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-1-reversed.json": {
+      "sha256": "5f94b55167b37b9d33a8174328ddde2ace92cfcb30e6fa98bf0bcf0a2d00c02a",
+      "bytes": 2136
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-conflict-original.verification.json": {
+      "sha256": "efa18c5ae59ab46fc6736659dc6eb8fa0302e77c24256b3970fe72bb8e78c865",
+      "bytes": 2020
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-2-original.json": {
+      "sha256": "8d6e54c205764cea656082d5b7fb8ac7fc2d4ae8cfffe98845a5d9063f56ba46",
+      "bytes": 2154
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-1-original.reading.json": {
+      "sha256": "2a1151e552fb8d41411adec2b2b8b9367beb2a751ef6849c832fa731281da819",
+      "bytes": 59305
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-1-original.json": {
+      "sha256": "67c2f8f04a322adf60a1701364c394ef5ed1ea2eb2cce86daf8571fee49731de",
+      "bytes": 2136
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-3-reversed.reading.json": {
+      "sha256": "9a2b6e34b2c63280d0751b385e404982e50b94229e7f4d5173cf2545a7869a50",
+      "bytes": 45976
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-conflict-reversed.verification.json": {
+      "sha256": "e8a003f43bd9cfac9dd53e822e3d0ab935ca1984129fa266cb751a0150363252",
+      "bytes": 2011
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-3-original.json": {
+      "sha256": "1fc28306095a695b77fdfabf2fb4c47265415330b1b34ccb8d7318cb645ab7e5",
+      "bytes": 2193
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-1-reversed.reading.json": {
+      "sha256": "f9935e5ad6064f2604e993e32b954d6c2a2098ef07e2e8593d9d59dcc4482b78",
+      "bytes": 59303
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-conflict-original.json": {
+      "sha256": "758e473af881cbd11759bc2b2a0684edde49f675116ba62aa827f84388086e70",
+      "bytes": 2072
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-support-original.reading.json": {
+      "sha256": "913efadad6e974958ec9b91e2162386748370700df710bb90c0faf70b99329de",
+      "bytes": 57824
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-1-original.reading.json": {
+      "sha256": "866a6d97704449d473cf0f1e0405bc39b48afa10be93ef8f370b21ca0567cadb",
+      "bytes": 57702
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-conflict-original.reading.json": {
+      "sha256": "869de52758db677fe82df00f83237ffc2d3988903e35892eb2e46b26f1eb964a",
+      "bytes": 57828
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-conflict-reversed.json": {
+      "sha256": "1d42e5cb60e795448f0da30facf05673ab2c680659130b9eded5b82b1ecaa8bf",
+      "bytes": 2081
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-support-original.reading.json": {
+      "sha256": "3801f04ab7ef7da4fd83b4a1bad3237b4e09536bef1f294e626122ec38437c4a",
+      "bytes": 58134
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-absent-original.reading.json": {
+      "sha256": "26fe9aa6203fbc980245443954c25601a88d4e8497e37b559e5114d3459a1792",
+      "bytes": 58136
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-2-reversed.verification.json": {
+      "sha256": "8a00a18c005eed25bf47ac263dc8207a5dfe8ffa6a0fad05ff59a2a46ad8537a",
+      "bytes": 2109
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-1-reversed.json": {
+      "sha256": "8b57f0a126de2319a02ac5a6de81723c4a3b4f5d810f5ac2a5353aa712df048b",
+      "bytes": 2147
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-3-reversed.reading.json": {
+      "sha256": "4416b7f59fa22ea8f6af2a363578b4d21ac919f619e42a0dfd117e2b62ed42f4",
+      "bytes": 57705
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-2-original.reading.json": {
+      "sha256": "0d79af5c2574b5a55249e9586b63ff5188559d90320158d65e5645db204d3c25",
+      "bytes": 57704
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-2-original.json": {
+      "sha256": "6146100a7f457fbf8fe0e191ba96cc20cb3ff22fb91347f1c3f4b117e2654ce3",
+      "bytes": 2159
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-conflict-reversed.reading.json": {
+      "sha256": "af1eb887466bdd35c5b8f9a14899dc22bb1b856c1405e9b36f33788192cea749",
+      "bytes": 57829
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-absent-reversed.json": {
+      "sha256": "a9bf074b9c44bd94c9bb7ff5e6173ab4952a58187b4da20e4bb3d9f199080df4",
+      "bytes": 2091
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-2-reversed.reading.json": {
+      "sha256": "c48d4c3eefbb8c4e329c59e2fa6c344b7e66f29c9ec5cf90a8a17ed55c726318",
+      "bytes": 29255
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-conflict-reversed.reading.json": {
+      "sha256": "fd189f13b723da5109722f28b357acffc73d143f38b43c93082cf995410e0897",
+      "bytes": 58135
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-absent-original.reading.json": {
+      "sha256": "345d42d3910239c1e12f39cd36ac18904839904250c94619edc454f9c7857bf3",
+      "bytes": 58168
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-absent-reversed.reading.json": {
+      "sha256": "c121254ab551c8740603b45b5a04529f1904d33d98b3b7406e16fd54830d26ff",
+      "bytes": 58166
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-2-reversed.reading.json": {
+      "sha256": "c16a23e7ed0a8eae4c8f1600c5b321923e8bdf42f8059faaa4d407d20a58d6a1",
+      "bytes": 45978
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-2-original.verification.json": {
+      "sha256": "38fea79671bd808f949ba2b6bba236726bd6cd9cae6e39cd9affb562551709d0",
+      "bytes": 2109
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-3-original.json": {
+      "sha256": "7461a8b1e81d113a8105cb9fae51e08938fd8e62c1aef6a9b53f6c98ad2d4831",
+      "bytes": 1908
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-conflict-reversed.reading.json": {
+      "sha256": "9c718b6f62bc42137446fa877e66798d1c9b74354cf8b53782038e8e46ed2f7b",
+      "bytes": 57825
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-absent-reversed.reading.json": {
+      "sha256": "25de3e5da74f0af8e5bd95365c10de4231dbe48190e551ef8272170ebe608b91",
+      "bytes": 57825
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-absent-original.verification.json": {
+      "sha256": "b9a852e4abf7372fdb6325955c51ac2310aa3a927abcd18ba73d601be72de687",
+      "bytes": 1853
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-conflict-original.json": {
+      "sha256": "f4b410828cce7367dc0b9c9dd355a875bb836bda23238046303e7376a52a8759",
+      "bytes": 2089
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-support-original.verification.json": {
+      "sha256": "9eefc9a78af3292c8fee40e768a516b8680056d2e4d14aa3a2091e154269cdde",
+      "bytes": 2015
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-conflict-original.json": {
+      "sha256": "f4c83426de6c2aaff8c500984bf2b0109392d27928f4506262eb7809866ebcbe",
+      "bytes": 2081
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-3-reversed.json": {
+      "sha256": "b3c570882d7173b1b3d60cbe83c74f16eee5fc86cd6233bfc9c2bbe78f79c4d1",
+      "bytes": 2142
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-2-original.verification.json": {
+      "sha256": "efa9f3c7c4ced47b2e357c1267facdbe955c6578e3792c603949c67a68e156c8",
+      "bytes": 2102
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-2-original.verification.json": {
+      "sha256": "4530d4aefc525c257081becf75dc5f9bce944c36109f88b9fedcf4d19750797e",
+      "bytes": 2104
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-support-reversed.json": {
+      "sha256": "d06477cc3059f807466a0774b7255e1996159e682a11586a7eca53620dfc74ad",
+      "bytes": 2074
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-2-original.reading.json": {
+      "sha256": "efcf7c2feea15e103affaa828d35068f9fd1d9ee116f3e95d926afda60d8604e",
+      "bytes": 45977
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-2-reversed.json": {
+      "sha256": "c50627650a9192000874cc17ecf114869c5ac0932e4aa09b6c6968f2d800eb96",
+      "bytes": 2167
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-2-reversed.json": {
+      "sha256": "4197de0cf8a7afeccbe3cf097eed02bcfff898faf126d09aca95ad121bd5b4d0",
+      "bytes": 2158
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-1-reversed.reading.json": {
+      "sha256": "e8ba4561204db79a79489306a08a80d135145121425fc009c74f482dc0d4ae58",
+      "bytes": 45976
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-1-original.verification.json": {
+      "sha256": "6bdb90d856e88498838e366841f8c4be0cd3c708eabd22460f4c3115fd13c28c",
+      "bytes": 2086
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-3-original.verification.json": {
+      "sha256": "4619f8ef3c511ef025738ef3268f322a4a015856d33f864ac522d91c37722f3f",
+      "bytes": 2142
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-2-reversed.verification.json": {
+      "sha256": "915e44a826862530a7672fee2b5b335fee589b49fb79e3f60d9294bba38d99b1",
+      "bytes": 2102
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-1-original.json": {
+      "sha256": "6c13b921f503c1174169d7e52b20d94ce019f8f9728117e9eafc30fdb695c1b0",
+      "bytes": 2132
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-3-reversed.verification.json": {
+      "sha256": "18ed5074441dfd44a1df0bfd73f85a91cba291fa6864c289bee87bb5d6b2e645",
+      "bytes": 2091
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-1-original.verification.json": {
+      "sha256": "6dd00090c788086b769498e4e9bcc8f75df5d05c79f4fc96d3417611a0ace3ea",
+      "bytes": 2090
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-1-original.json": {
+      "sha256": "6d7513da10dcc5fedbdabaa36add484eaed0d87bba01086399f7eefd60898dc2",
+      "bytes": 2136
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-3-reversed.verification.json": {
+      "sha256": "0b37352b26a8b8cb05392c018415d0b99d34eb9d2d94f2432b1aed6dd12b576a",
+      "bytes": 2142
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-2-reversed.json": {
+      "sha256": "372ef2673681385824fb9f1438c571e42137284d31d09fe6ceacbcd9eced6e25",
+      "bytes": 2155
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-absent-reversed.reading.json": {
+      "sha256": "cc6b4819ba481252654092981ed88ce7d49079304405611fb35856c296aa3305",
+      "bytes": 58134
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-1-original.reading.json": {
+      "sha256": "be0d23a2f0730851ef94eca2331a23f432d8f7957a696ecd5a7ac9fe88343a42",
+      "bytes": 40701
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-absent-reversed.reading.json": {
+      "sha256": "c492f95abeca4d6bec14cf8802f4ebe667b5af94265512aa2a461eb9bc00424d",
+      "bytes": 57825
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-conflict-original.verification.json": {
+      "sha256": "9081989fcc612560fe5f24180158213a8feb717ec0d96c25d67f9118ce0bfe3e",
+      "bytes": 2005
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-conflict-reversed.verification.claims/c1.json": {
+      "sha256": "321405783d0ef2af5641c5fd18212452803d7428a8cd35f5402197140d430604",
+      "bytes": 43368
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-3-original.verification.claims/c1.json": {
+      "sha256": "7fe4dd704d60f0af703ecf2cd336fbc1e66862c26a8f5a39da8fee278be5d7be",
+      "bytes": 61952
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-support-reversed.verification.claims/c1.json": {
+      "sha256": "ce175ef90486f4aedcf0d2df4757cc9028d5cca8c7356da0c61308aac40d2a4b",
+      "bytes": 41772
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-3-reversed.verification.claims/c1.json": {
+      "sha256": "478611a3979c6a88d43ce1f22a062df0a2cdadab12c56104d1df38f7b41efe73",
+      "bytes": 49884
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-3-original.verification.claims/c1.json": {
+      "sha256": "cf1375014473c7c82a5aa4d39dcfde8bbceed17c66f8d6fb595e0619e99f61d0",
+      "bytes": 43680
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-absent-reversed.verification.claims/c1.json": {
+      "sha256": "64587d72efe5ddd88a72070b7aa892651682aae016741a474093c6cb344c42fb",
+      "bytes": 43379
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-2-original.verification.claims/c1.json": {
+      "sha256": "675aaf291b7a68daed494023992ecfb24ac2e505a9b6164951a272f66ccfea25",
+      "bytes": 42518
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-2-original.verification.claims/c1.json": {
+      "sha256": "79100f199a1d74f9f1343c47e9d41eb354d63116e0c47fcb99d5df4a2b993745",
+      "bytes": 42993
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-2-original.verification.claims/c1.json": {
+      "sha256": "54be7bedb7510c11c6451fe49c062064aa80827fb0a54ef8f1192eb4ad2846e0",
+      "bytes": 51848
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-zidane-reversed.verification.claims/c1.json": {
+      "sha256": "bd1006bdae92e7b4d543160e6bac6c034853eabcd294163d0d4e09dc7d0af6ba",
+      "bytes": 133607
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-absent-original.verification.claims/c1.json": {
+      "sha256": "121356deb88e5692367d85e2dc3705678429ad75192543572e4a22016627dddd",
+      "bytes": 41673
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-reversed.verification.claims/c4.json": {
+      "sha256": "db2238a624a9d85fbdc93e91a500a7b30a03bc89cc55e987cc6a732fe946f04b",
+      "bytes": 118515
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-reversed.verification.claims/c5.json": {
+      "sha256": "9a28e529333605f470aff166db6f3f6e9128cd6de39edecbd54753d9663bddbb",
+      "bytes": 119024
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-reversed.verification.claims/c2.json": {
+      "sha256": "741fffd055be15b9dc431a8e92a3312b10d2fb05b1e130918278fa46b0b37449",
+      "bytes": 116127
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-reversed.verification.claims/c7.json": {
+      "sha256": "b43f3afc9ca23f05a9b38cf907a1486d6f92221fa24d2403f96bbcfc9c957bfe",
+      "bytes": 119174
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-reversed.verification.claims/c3.json": {
+      "sha256": "02ed6655fe1c389b31060d0b286317fda4dfbb358c2dd1b4efeba4b364af36ae",
+      "bytes": 115077
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-reversed.verification.claims/c1.json": {
+      "sha256": "5dab1e031efa2828d2d69f2ad6c215e5704409c29741f283dcbbc481a3ba22fd",
+      "bytes": 116185
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-reversed.verification.claims/c6.json": {
+      "sha256": "32eb38a8ec228ead2b18f8a0bc37b5d57393afabae1b7eb3caa3e5de8a9abdb0",
+      "bytes": 133400
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-conflict-original.verification.claims/c1.json": {
+      "sha256": "1efbfec5423b526225be6e5edd7c82dab5d410f08c6c1e707b9bdc608321be3f",
+      "bytes": 39975
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-absent-original.verification.claims/c1.json": {
+      "sha256": "6f2f216c9a738567c8ac3be838e549e17ca9df52f9d97a20fdbe52dc0a6994c8",
+      "bytes": 40760
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-2-reversed.verification.claims/c1.json": {
+      "sha256": "5edc9a8a2c33e0a9a691b762e21110328b3ab5c9c9b97322ff3f80356ad92692",
+      "bytes": 42518
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-support-original.verification.claims/c1.json": {
+      "sha256": "ab42ea850636950a85ea6ba19db6eec543d1c5b7151426dc38fd8820431b378c",
+      "bytes": 40735
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-1-reversed.verification.claims/c1.json": {
+      "sha256": "1d8f6799067e8be4227be1e427888fddb067600fca3b80f98d1f3f98a6efa101",
+      "bytes": 44690
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-absent-original.verification.claims/c1.json": {
+      "sha256": "cb5c258dd7df77d22400fb5752762d79f34cd89e7a4cbbf77c6b27892c1f9df5",
+      "bytes": 43382
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-absent-original.verification.claims/c1.json": {
+      "sha256": "a3860dce5485806c32ae03172f1108f80f020de80a2e16fb91042fbbb463f1e3",
+      "bytes": 42388
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-3-reversed.verification.claims/c1.json": {
+      "sha256": "23631e8c2e4b8e923c093d085b762b726d3eb0cc7856a47fc5030ee3702b1876",
+      "bytes": 77214
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-1-reversed.verification.claims/c1.json": {
+      "sha256": "02159e3f05d5b71574c1cbf559aae7cf95a99f749ca7b3857b7589166dea4c37",
+      "bytes": 43749
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-support-original.verification.claims/c1.json": {
+      "sha256": "69e39ba31b08c764c0ae2f657e64bcee99d4033980699ecd03d71c9fad8b6a8b",
+      "bytes": 40287
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-2-original.verification.claims/c1.json": {
+      "sha256": "70eb847a27ce684f661fef6adec6633d4d4de73955a456ffcfff28e0328074c3",
+      "bytes": 42391
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-conflict-reversed.verification.claims/c1.json": {
+      "sha256": "12c1780d83d83a59feae97dd03c68524f97921aafc0e8b7f9bdfc2350cfe4f20",
+      "bytes": 39972
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-conflict-original.verification.claims/c1.json": {
+      "sha256": "a883eea5b0eaf9b3a4e12190ff32067e7c13147635b0c0ab8a7fa361efccf6cb",
+      "bytes": 43367
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-2-reversed.verification.claims/c1.json": {
+      "sha256": "371da643a24f6ae40edfca30b44fae1be80c344f834f5649f2b3b255fe814b93",
+      "bytes": 51848
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-1-original.verification.claims/c1.json": {
+      "sha256": "2d88375581aa7165725c4cfcbaa9bda4fa1273bd0170a4caab0821bae5bf8e10",
+      "bytes": 43460
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-original.verification.claims/c4.json": {
+      "sha256": "1881afe91d691c08d0511e0f509b3e52f607dedb7ff07bf3d5158a6ab1599dec",
+      "bytes": 123654
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-original.verification.claims/c5.json": {
+      "sha256": "bd86e835d80bca914fb203e3bd09b50a493d52e45f432bebb32e9b9142b30ae2",
+      "bytes": 118871
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-original.verification.claims/c2.json": {
+      "sha256": "ca2de2d3174852969c7ec19c19c2add7a29b53fbfe45b6f4bd0b1d9cf901fb4f",
+      "bytes": 120116
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-original.verification.claims/c7.json": {
+      "sha256": "3aa944045d86e34e849b9c741b7fd277a4f3199deef79f0fd027fb4a2df129dd",
+      "bytes": 121024
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-original.verification.claims/c3.json": {
+      "sha256": "1aa3382d3058cb24f0d4060ea060fe2f5c321a9d05ad2f40e97ab381ef340c6e",
+      "bytes": 118911
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-original.verification.claims/c1.json": {
+      "sha256": "384993bde6a4c33da2d6f02b00824c68588d4cb78a562813c28f13992a4bdf6a",
+      "bytes": 118693
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-council-original.verification.claims/c6.json": {
+      "sha256": "71a1070d51b8077e172e8c359f438d190429dcde0a3c178595ab3c9fe163c3f8",
+      "bytes": 129889
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-support-reversed.verification.claims/c1.json": {
+      "sha256": "2e1508511396a99ea7be6f71d2aad485db35921e9ba79d1ef4701e5441b93e90",
+      "bytes": 40735
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-2-reversed.verification.claims/c1.json": {
+      "sha256": "54c70bc121a37a7c7a410ce46618526646ba4ce9c0f3b0afbc932b3c2ce6ff33",
+      "bytes": 42390
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-conflict-reversed.verification.claims/c1.json": {
+      "sha256": "af45cff158633e0c76bc001690f03f463a24342444f634d4b9138c68cca7e0cd",
+      "bytes": 44033
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-1-original.verification.claims/c1.json": {
+      "sha256": "aa265c3ec45d3271533756fcc389a0903bb217e5135aab47f94608854a54bb0e",
+      "bytes": 45888
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-3-original.verification.claims/c1.json": {
+      "sha256": "20e233b19e281659b194f8517a42bd910dc9b479d461dd2eb80bbce219e68d5f",
+      "bytes": 77212
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-2-reversed.verification.claims/c1.json": {
+      "sha256": "956490f78630735f2ec237c8133c212f522375dbd7038b957a6069c8061bd60a",
+      "bytes": 42995
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-support-original.verification.claims/c1.json": {
+      "sha256": "9e3a1cdefcfaa17018a22ad71bfee5cc9bcdeceabaf2e1fd0920d0244a41dd76",
+      "bytes": 41771
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-3-original.verification.claims/c1.json": {
+      "sha256": "496477c7f16a5f24dbe7d4874ba06d172cfa3b472b526810cbd921e4f409a3d3",
+      "bytes": 43194
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-absent-reversed.verification.claims/c1.json": {
+      "sha256": "20e344852658cea370ab10c0150396db038c0dc7391706830e861a7ce3c44e96",
+      "bytes": 40755
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-1-reversed.verification.claims/c1.json": {
+      "sha256": "dc9434f1bcb58d04b439a9b776ce298a304a6f0e8b1e437880c38ef5426c82ee",
+      "bytes": 42351
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-3-reversed.verification.claims/c1.json": {
+      "sha256": "3d9bc64f53c7b3577ffd547de3e9abe56aa24dc867a251acba0c7a343b64a20d",
+      "bytes": 43191
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-2-original.verification.claims/c1.json": {
+      "sha256": "361bca221bbae69795f9f0174c2275942a03546fc062d4db896c69f4e509a6f7",
+      "bytes": 43469
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/known-zidane-original.verification.claims/c1.json": {
+      "sha256": "ad11e73a7fd7cf6d8e8603860323d2c8fd5efde7e8d50ffb44fe14c21fc45f25",
+      "bytes": 141386
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-1-original.verification.claims/c1.json": {
+      "sha256": "874bc9191ddbd74965ab5131ecddbd65e5e4bbf08b8572d52c88ccd1b30818fa",
+      "bytes": 43753
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-qualification-1-original.verification.claims/c1.json": {
+      "sha256": "94d43f8c381901b2c08e568bbb95add33a2e27d171afd3282f0c3c74a00df78b",
+      "bytes": 44693
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-1-reversed.verification.claims/c1.json": {
+      "sha256": "045a616f7c9b84317ad67da10a637a599b0e2bb68e83cd38bfc55ef1a03c4435",
+      "bytes": 43461
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-absent-reversed.verification.claims/c1.json": {
+      "sha256": "da1625c60bc7dc43634fafe65b6039997067247c3b317c0b7a5c8cfb8bd0572a",
+      "bytes": 41677
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-1-original.verification.claims/c1.json": {
+      "sha256": "4981414d2e6149f775c43485a2bc44a58af37b47dbd791974c996ea3f35c486d",
+      "bytes": 42361
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-conflict-reversed.verification.claims/c1.json": {
+      "sha256": "04b414a097da051f815819008ec7b00dfe2af4aba37f3dfb4679d6029a3cb4bc",
+      "bytes": 41348
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-table-1-reversed.verification.claims/c1.json": {
+      "sha256": "ed7834712b384170ee43d81c9f61b890ed9d1b13555e0560e554da76b52e643f",
+      "bytes": 45889
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-3-original.verification.claims/c1.json": {
+      "sha256": "e4a20e1a037f3ff83ef9aed537b3aa2382e5b5eb32a2ffdd0b28ae8a26e1ada5",
+      "bytes": 49881
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-conflict-original.verification.claims/c1.json": {
+      "sha256": "aa74d057891b8ed97f2adc679abe5bce725c34181624a4c1512a6a4ca95bdeb8",
+      "bytes": 44032
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-relation-conflict-original.verification.claims/c1.json": {
+      "sha256": "a4e0bb00a22c91ee68253a6dc954a1afb968a5483da9313f2660eae894f6b7be",
+      "bytes": 41349
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-number-absent-reversed.verification.claims/c1.json": {
+      "sha256": "259cf3ffd822f8ce52fa7ebc509e73a23b0334193de690fce06d979892bcb899",
+      "bytes": 42392
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-support-reversed.verification.claims/c1.json": {
+      "sha256": "8048117a04d11ea7f7f6291ef4c9743156851ea0ae9e05e266ec78eca9cd19d7",
+      "bytes": 43308
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-time-support-original.verification.claims/c1.json": {
+      "sha256": "ad7f5870626855aaa1d928b5ab4a59d72b73123285c5f9b0311ff2a845d1d17d",
+      "bytes": 43308
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-actor-2-reversed.verification.claims/c1.json": {
+      "sha256": "b11b6863b60f42648906ec56adaea17e2db4d83a290b0cd34c6ed2cd6a5be075",
+      "bytes": 43468
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-compound-3-reversed.verification.claims/c1.json": {
+      "sha256": "15ae888af02cf828d07ca89e03c4d448240b8e41b6c823ff6f29f4cee27a5c7d",
+      "bytes": 61951
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/ja-count-3-reversed.verification.claims/c1.json": {
+      "sha256": "818c9efb803f0519476e51131cdf4d989a5ec0902f4c5a996e8acd92425970cc",
+      "bytes": 43682
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/tasks/en-negation-support-reversed.verification.claims/c1.json": {
+      "sha256": "06a57bc421ebe3d0157921330ce2f96e044a50f9e7c6bb815fae1222fc5d65df",
+      "bytes": 40285
+    },
+    "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/semantic_output_audit_v1.json": {
+      "sha256": "e239bb3096d3249d311932f8dc80672946b6f9c9913225d9aa8d25edc7ce9de8",
+      "bytes": 4779
+    }
+  },
+  "limitations": [
+    "known and synthetic Development only, not general accuracy",
+    "Japanese two non-support label subclass errors remain and are retained",
+    "main Development, all known regressions and unused Calibration still required",
+    "11 source-reading rows lack local passage support or overgeneralize; candidate remains provisional pending broader known/Development/Calibration audit"
+  ],
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "semantic_output_audit": {
+    "readers": 58,
+    "reader_document_rows": 94,
+    "final_verdicts": 70,
+    "flagged_reader_rows": 11,
+    "human_reviewed": false,
+    "not_certified_as_complete_ground_truth": true
+  }
+}

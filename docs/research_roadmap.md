@@ -1,13 +1,13 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月21日。正本: [研究計画7.30](rag_research_plan.md)、[実装計画8.32](rag_implementation_plan.md)。
+更新日: 2026年10月21日。正本: [研究計画7.31](rag_research_plan.md)、[実装計画8.33](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
 
-**Phase 1〜10の開発確認、Phase 11のUbuntu/CUDA対応と追加20問/40匿名候補AI採点・全34単位監査を完了。完全比較12問・実行Health Gate通過。ただし意味妥当性の採用判断と分析規模は未確定でGate 11未通過。最終凍結とPhase 12は未実施。**
+**Phase 1〜10の基盤と、Phase 11の日本語Source/分割/全文Corpus・日英Index・共通RAGの既知接続を完了。v6は既知/日英人工の意味診断基準を通過した。使用済み15 QAの回帰を事前固定し、実走はこれから。日英主Development/未使用Calibration、規模/本実験条件、拡張Validator/最終凍結は未了。Gate 11未通過、Phase 12未実施。**
 
 2026年10月21日、英語CLAPNQに近い別の日本語Datasetを追加し、日英で順序感度と判断・品質・費用を
 比較する方針を採用した。[日英比較の拡張方針](english_japanese_expansion.md)に従い、
@@ -75,6 +75,9 @@ QA AdapterとGroup分割処理を追加し、実838件で原行Hash・引用/人
 その後、固定772d1a7のv6は全128入力の生成0 Preflightと既知Critical4条件全一致を確認し、人工54条件を実行中。全意味Gateは未確定。
 全Label封印済みDevelopment用統計Adapter/CLIを追加し、全選定/失敗費用・文書Group・条件混在拒否を含む全493 Test/Ruff成功。
 未使用Calibration対応・本実験規模/条件・全意味監査/拡張Validator・最終凍結は未了。追加Modelは公開Metadata/資源の調査だけで未取得/未採用。
+その後、v6全58条件/128 Callを完了し、Critical4/4・人工英語24/24/日本語28/30・誤支持0で診断通過。再開251 File不変/追加0。
+日本語の同一例での支持不足→矛盾2条件、補助読解11行の文書内非対応/過大一般化と、Council F5/7による採用を保存した。
+次の[使用済み15 QA/42固定文の回帰](phase11_known_trace_regression.md)を最大114 Call/前提Hash/旧Expected保持へ固定し、全502 Test/Ruff成功。実走/主Development/未使用Calibrationと最終Gateは未了。
 翻訳対は主実験に使わず、別Dataset間の差を言語単独の因果効果と断定しない。
 
 基盤に加え、固定回答のClaim抽出、根拠順序/反復ごとの自己評価と採用/書換え要求の保存を実装した。

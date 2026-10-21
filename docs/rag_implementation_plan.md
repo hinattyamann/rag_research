@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.32 — 2026年10月21日 全Label封印後のRun検証と統計・全失敗費用を接続
+## Version 8.33 — 2026年10月21日 日英人工診断/全費用・再開を監査し既知回帰を接続
 
-[研究計画 Version 7.30](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.31](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 Phase 7の専用Config/Prompt・採点基準・入力検証CLIを作成した。
@@ -40,6 +40,8 @@ Config v4/Plan v2の最大70 Callを事前検証した。実GPUの意味診断�
 全487 Test/Ruff成功。読解58+固定文70の最大128 Call/事前上限を保存し、固定Commitの実GPU診断はこれから。
 その後、v5は読解のID/Quote対応不正で1 Call停止（固定文判定0）。v6だけ`fixed_ids_exact_quotes_v2`で一意ID/原文Quoteを制約し、旧v5を保持した。全488 Test/Ruff成功、v6実走は未了。
 その後、固定v6は生成0 Preflight/既知Critical4条件全一致、人工54条件実行中。`bilingual_statistics.py`とCLIで全Labelを先に検証し、Raw/Group/全選定と失敗費用から事前統計へ接続した。全493 Test/Ruff成功。現AdapterはDevelopment用で、Calibrationへの経路拡張と最終Gateは未了。
+その後、v6全58条件/128 Callと再開追加0を検証し、事前意味診断基準に通過した。残るLabel下位分類/読解の誤りも保存。
+共通診断Runnerに既知Trace回帰の前提Report/Model/Runtime/Core・旧Expected保持・正例基準を追加し、全502 Test/Ruff成功。Configは同じv6条件を保持し、最大114 Call/全15 QAを実走前に固定した。
 
 現行の次工程は[意味診断の事前計画](phase11_semantic_revision.md)。`semantic_diagnostics.py`は旧Trace/Expectedの一致と
 共通Task契約を確認し、既知Critical4条件の全一致後だけ人工54条件へ進む。Source/Model/Runtime/全CodeをHashへ固定し、

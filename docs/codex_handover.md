@@ -116,7 +116,7 @@ Gate 11未通過、最終凍結・Phase 12は未実施。旧CPU5問の不通過�
 
 ## 最初に読む記録
 
-1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.30](rag_research_plan.md)・[実装計画8.32](rag_implementation_plan.md)。
+1. ルートの [AGENTS.md](../AGENTS.md) と、[研究計画7.31](rag_research_plan.md)・[実装計画8.33](rag_implementation_plan.md)。
 2. [ロードマップ](research_roadmap.md): フェーズ、現在地、次工程、完了条件。
    [日英比較の拡張方針](english_japanese_expansion.md): 日本語選定基準、比較の限界、追加するPhase 11の要件。
 3. [Phase 11の結果・最終固定とGPU引継ぎ](phase11_finalization.md) と [Calibration手順](phase11_calibration.md)。
@@ -252,3 +252,5 @@ uvは`.tools/bin/uv`。`export PATH="$PWD/.tools/bin:$PATH" UV_CACHE_DIR="$PWD/.
 直近: 固定565885aのv5はPreflight128/生成0成功後、読解のID重複/欠落と非一致Quoteで最初の1 Callを停止。固定文判定0/他57条件未試行。結果は`phase11_source_reading_result_v5.json`、旧Worktreeを保持。v6 Config/Promptは固定IDと原文Quote選択のSchemaだけを明示追加し、全488 Test/Ruff成功。次は別固定Worktreeで同じ最大128 Call/停止規則を検証する。
 
 直近追記: v6は固定772d1a7/Worktree `phase11-semantic-source-reading-v6`。128入力/生成0 Preflight通過後、既知Critical4/4一致で人工54条件を実行中。Tool session 78661を継続観測し、終了前に再起動しない。端末終了後は`/tmp/phase11_source_reading_audit.py`を固定WTのuvで実行してSource/Raw/費用・再開追加0を確認し、正規配置/結果Manifestへ保存する。統計は全Label封印済みDevelopment Adapter/CLIと新規5 Testを追加し全493 Test/Ruff成功。新規QA/Calibrationへは未適用。Model代替調査は`phase11_auxiliary_alternatives.md`と公開Metadataのみ、重み未取得。
+
+最新: v6は全58条件/128 Callを完了。Critical4/4、人工英語24/24・日本語28/30・誤支持0で診断通過。固定WTで全Raw/Source/実費と再開251 File不変/追加0を監査し、正規Runと`phase11_source_reading_result_v6.json`へ保存。Server停止済み。日本語同一例の下位分類誤り2条件、読解11行の文書内非対応/過大一般化、Council F5/7/閾値0.7採用を保存。次は`phase11_known_trace_candidate_v1.yaml`/Plan v1の15 QA・42固定文・最大114 Callを固定Commitで実走する。前提としてv6 Report/Model/Runtime/Coreと旧34単位Expectedの不変を検証する。裸拒否8 QAは別検証として保全。全502 Test/Ruff成功。

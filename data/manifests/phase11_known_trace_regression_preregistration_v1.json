@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-known-trace-regression-preregistration-not-final-freeze",
+  "created_at_utc": "2026-10-21T11:39:41.401825+00:00",
+  "known_qa": 15,
+  "all_fixed_units": 42,
+  "ambiguous_units_retained_in_F": 5,
+  "definite_expected_counts": {
+    "supported": 29,
+    "contradicted": 5,
+    "not_supported": 3
+  },
+  "bare_refusal_qa_retained_separately": 8,
+  "orders": [
+    "original",
+    "reversed"
+  ],
+  "critical_conditions": 12,
+  "all_definite_negative_units_critical": true,
+  "maximum_completion_attempts": 114,
+  "prerequisite": {
+    "report_path": "data/runs/semantic_diagnostics/phase11-8b-source-reading-v6/report.json",
+    "sha256": "fa794be72ad265d7423691309bb983915e671b838029328236eaaf6c52d21561"
+  },
+  "validation": {
+    "new_tests": 9,
+    "pytest_passed": 502,
+    "pytest_seconds": 7.44,
+    "ruff": "passed",
+    "real_config_and_all_old_expected_source_matches": true
+  },
+  "new_candidate_calls": 0,
+  "human_reviewed": false,
+  "history_isolated": false,
+  "model_identifier_available": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "artifacts": {
+    "scripts/prepare_known_trace_regression.py": {
+      "sha256": "c091e90bfce1cc8c386f34ea38cb02f7b17e06b0d20834ec591946ff2f6943f9",
+      "bytes": 8263
+    },
+    "src/rag_research/experiments/semantic_diagnostics.py": {
+      "sha256": "dafb6ee1903e77727af84027d0b426692148816ef1efb87bebf90695f8234073",
+      "bytes": 19377
+    },
+    "tests/test_semantic_diagnostics.py": {
+      "sha256": "d54fde13cdf10e85537effbf1636d3eae4edfbf1d6ddd09291ae71583cfbe654",
+      "bytes": 20127
+    },
+    "configs/phase11_known_trace_candidate_v1.yaml": {
+      "sha256": "01587dd6fb99ea93cff222850a4e2b2eb32acef600b5075b21550d355265f8df",
+      "bytes": 2107
+    },
+    "configs/phase11_known_trace_regression_v1.json": {
+      "sha256": "e1d1584ab7093509b23089594435119c69a55a92baf4e2ff8649d7cbb45df08a",
+      "bytes": 140461
+    },
+    "configs/phase11_known_trace_expected_v1.json": {
+      "sha256": "1ec65d65a19bea3189dfe7d07ad144e60df4fd8a3d2677c3c02c16d06160e4d9",
+      "bytes": 41307
+    },
+    "docs/phase11_known_trace_regression.md": {
+      "sha256": "9c32b674756981450e71e71d0af6dd0001198963b232fb372c04cd221a7c18e3",
+      "bytes": 4481
+    }
+  }
+}

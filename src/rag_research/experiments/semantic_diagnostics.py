@@ -44,23 +44,49 @@ def load_config(path):
             "Diagnostic Development config required")
     plan_path = local(config["diagnostics"])
     plan = read_json(plan_path)
-    require(plan["schema_version"] == 1 and plan["purpose"] == "phase11-known-bilingual-semantic-diagnostics" and
+    regression = plan["purpose"] == "phase11-known-trace-semantic-regression"
+    require(plan["schema_version"] == 1 and plan["purpose"] in {
+            "phase11-known-bilingual-semantic-diagnostics", "phase11-known-trace-semantic-regression"} and
             plan["phase12_allowed"] is False and plan["orders"] == ["original", "reversed"], "Unsupported diagnostic plan")
-    require(plan["gate"] == {"stop_on_task_error": True, "stop_after_critical_failure": True,
+    expected_gate = ({"stop_on_task_error": True, "stop_after_critical_failure": True,
+        "critical_all_exact": True, "known_min_accuracy": .9, "known_min_supported_accuracy": .9,
+        "known_max_false_support": 0} if regression else {"stop_on_task_error": True, "stop_after_critical_failure": True,
             "critical_all_exact": True, "synthetic_min_accuracy_per_language": .9,
-            "synthetic_max_false_support": 0}, "Preserve preregistered diagnostic criteria")
+            "synthetic_max_false_support": 0})
+    require(plan["gate"] == expected_gate, "Preserve preregistered diagnostic criteria")
+    if regression:
+        prerequisite = local(plan["prerequisite"]["report_path"])
+        require(file_hash(prerequisite) == plan["prerequisite"]["sha256"], "Prerequisite report changed")
+        prior_report, prior_manifest = read_json(prerequisite), read_json(prerequisite.parent / "manifest.json")
+        require(prior_report["diagnostic_gate_passed"] is True and prior_report["completion_attempts_recorded"] == 128 and
+                prior_report["manifest_sha256"] == digest(prior_manifest), "Passing full bilingual diagnostics required")
+        require({k: v for k, v in config.items() if k not in {"study_version", "diagnostics"}} ==
+                {k: v for k, v in prior_manifest["config"].items() if k not in {"study_version", "diagnostics"}},
+                "Known regression must use the passing candidate settings")
+        require(prior_manifest["model"] == auxiliary_identity(config) and
+                all(prior_manifest.get(k) == v for k, v in execution_identity(config).items()),
+                "Passing Model/Runtime identity changed")
+        for name, sha in prior_manifest["source_sha256"].items():
+            if name.startswith(("src/rag_research/evaluation/", "src/rag_research/generation/")) or name in {
+                    "src/rag_research/experiments/protocol.py", "src/rag_research/experiments/frozen_trace.py",
+                    "src/rag_research/experiments/storage.py"}:
+                require(file_hash(local(name)) == sha, "Passing Judge implementation changed")
     cases = plan["cases"]
     mode = config.get("verification_mode", "joint")
+    require(not regression or mode == "source-reading-v1", "Known regression requires the passing source-reading mode")
     require(plan.get("verification_mode", "joint") == mode, "Diagnostic plan verification mode differs")
     expected_budget = 2 * sum((len(c["claims"]) + (mode == "source-reading-v1")) if mode != "joint" else 1 for c in cases)
     require(cases and len({c["id"] for c in cases}) == len(cases) and
             plan["max_completion_attempts"] == expected_budget, "Invalid case IDs/call budget")
-    require(any(c["critical_claim_ids"] for c in cases) and
-            {c["language"] for c in cases if c["scope"] == "synthetic_development"} == {"en", "ja"},
+    require(any(c["critical_claim_ids"] for c in cases) and (regression or
+            {c["language"] for c in cases if c["scope"] == "synthetic_development"} == {"en", "ja"}),
             "Known critical and both-language synthetic cases required")
+    if regression:
+        require(all(c["scope"] in {"known_used_calibration", "known_used_development"} for c in cases),
+                "Known regression must not load new QA")
     for case in cases:
         require(re.fullmatch(r"[a-z0-9-]+", case["id"]) and case["language"] in {"en", "ja"} and
-                case["scope"] in {"known_used_calibration", "synthetic_development"}, "Unsupported case scope")
+                case["scope"] in {"known_used_calibration", "known_used_development", "synthetic_development"}, "Unsupported case scope")
         validate_documents(case["documents"])
         validate_claims(case["claims"])
         require(isinstance(case["question"], str) and case["question"].strip() and
@@ -71,15 +97,29 @@ def load_config(path):
                 and all(case["expected"][i] is not None for i in case["critical_claim_ids"]) and
                 (case["scope"] != "synthetic_development" or None not in case["expected"].values()),
                 "Expected claim set differs")
+        if regression:
+            require(set(case["critical_claim_ids"]) == {i for i, label in case["expected"].items()
+                    if label in {"contradicted", "not_supported"}}, "All definite negative units must remain critical")
     for name, expected in plan["source_sha256"].items():
         require(file_hash(local(name)) == expected, "Known diagnostic source changed")
     annotation = plan["expected_annotations"]
     require(annotation["human_reviewed"] is False and
             file_hash(local(annotation["known_trace_expected_source"])) == annotation["known_trace_expected_sha256"],
             "Known AI expected annotation changed")
-    old_annotations = read_json(local(annotation["known_trace_expected_source"]))["claims"]
+    annotation_file = read_json(local(annotation["known_trace_expected_source"]))
+    old_annotations = annotation_file["claims"]
+    if regression:
+        original_audit = local(annotation_file["preserved_audit_path"])
+        require(file_hash(original_audit) == annotation_file["preserved_audit_sha256"] and
+                all(a in old_annotations for a in read_json(original_audit)["claims"]), "Old expected annotations changed")
+        for entry in plan["bare_refusal_cases_retained_separately"]:
+            trace = read_json(local(entry["trace_path"]))
+            units = extract_sentence_units(trace["answer"])
+            require(trace["record_id"] == entry["record_id"] and units["claims"] == [] and
+                    units["exclusion"] == "standalone_refusal" and entry["score"] is None,
+                    "Preserve bare-refusal QA separately")
     for case in cases:
-        if case["scope"] != "known_used_calibration":
+        if case["scope"] not in {"known_used_calibration", "known_used_development"}:
             continue
         paths = [name for name, sha in plan["source_sha256"].items() if sha == case["source_trace_sha256"]]
         require(len(paths) == 1, "Known trace source binding missing")
@@ -117,6 +157,28 @@ def assess(plan, results):
     selected = specs(plan)
     critical = [(case, key) for case, _, key in selected if case["critical_claim_ids"]]
     critical_passed = bool(critical) and all(key in results and matches(case, results[key], critical=True) for case, key in critical)
+    if plan.get("purpose") == "phase11-known-trace-semantic-regression":
+        planned = [(case, key, i, label) for case, _, key in selected for i, label in case["expected"].items() if label is not None]
+        observed = {key: {v["claim_id"]: v["label"] for v in task["parsed"]["verdicts"]}
+                    for key, task in results.items() if task["status"] == "ok"}
+        complete = len(results) == len(selected) and all(t["status"] == "ok" for t in results.values())
+        correct = sum(observed.get(key, {}).get(i) == label for _, key, i, label in planned)
+        positives = [(key, i) for _, key, i, label in planned if label == "supported"]
+        supported_correct = sum(observed.get(key, {}).get(i) == "supported" for key, i in positives)
+        false_support = sum(label != "supported" and observed.get(key, {}).get(i) == "supported" for _, key, i, label in planned)
+        accuracy = correct / len(planned) if complete and planned else None
+        positive_accuracy = supported_correct / len(positives) if complete and positives else None
+        return {"critical_planned_conditions": len(critical),
+                "critical_completed_conditions": sum(key in results for _, key in critical),
+                "critical_exact_correct_conditions": sum(key in results and matches(case, results[key], critical=True) for case, key in critical),
+                "critical_passed": critical_passed,
+                "known_regression": {"planned_labeled_unit_conditions": len(planned), "exact_correct": correct,
+                    "accuracy_of_all_planned": accuracy, "planned_supported_unit_conditions": len(positives),
+                    "supported_exact_correct": supported_correct, "supported_accuracy": positive_accuracy,
+                    "false_support_count": false_support, "ambiguous_unit_conditions_retained_in_F":
+                    sum(label is None for case, _, key in selected for label in case["expected"].values())},
+                "diagnostic_gate_passed": bool(critical_passed and accuracy is not None and accuracy >= .9 and
+                                               positive_accuracy is not None and positive_accuracy >= .9 and false_support == 0)}
     metrics = {}
     for language in ("en", "ja"):
         planned = [(case, key) for case, _, key in selected

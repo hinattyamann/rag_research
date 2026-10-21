@@ -71,3 +71,26 @@ v5結果/配置失敗・全Rawは`phase11_source_reading_result_v5.json`の15 Ar
 同じ8B・4096/3072出力・推論1536/Seed/全本文/Expected・Critical4全一致/人工90%以上・明確非支持の誤支持0・Health/Overflow停止を維持する。
 同じ事前Plan v3・最大128 Call、既知20 Callを先行する。これまで29 Callと合わせ最大157 Call。
 全29例のSchema不変/原本文不変を検証し、新規1 Testを含む全488 Test/Ruffを確認してCommitを固定する。
+
+## 固定772d1a7のv6実走と監査結果
+
+全128予定入力の生成0 Preflight/全層CUDA/予算内を確認し、GPU7069/8151MiBは一点観測として保存した。
+既知Critical4/4、人工英語24/24・日本語28/30、明確な非支持への誤支持0、形式/Overflow失敗0で事前診断Gateに通過。
+読解58+固定文70=128 Call、入力162631/出力114592 Token、Task秒和1645.52秒（27.43分）。
+全58集計/128 Raw・原入力/全分母/実費と84 Source Hashを照合し、再開251 File不変/新Call・Server0を確認した。
+257 Artifactを正規配置へ同一Byteで保存し、意味出力監査を追加した現在は258 Artifact。Model Server終了/GPU解放を確認した。
+
+日本語の不一致2条件は、同じ1文書/1人工例の元/逆という同一入力で、独立した2つの誤りではない。
+未知の名前の由来を無限定に断定するClaimのExpectedは支持不足だが、両方で矛盾と判定した。
+Expectedを変更せず残した。両Labelは非支持なのでこの例のFはいずれも0。
+
+同じCodex AIが全58読解の94文書行/70最終判定を原資料と照合した。human_reviewed=false、履歴分離/Model IDの固定は未達。
+最終ラベルとは別に、読解11行でその割当文書にない行為や過大一般化を検出した。
+Hail Mary段落への公会議のCatechism委託の混入、Counter-Reformationへの因果の追加、Zidaneの別の時期/内容の段落への優勝事実の反復等がある。
+正確な引用とIDだけでは、主体/行為の記述の正しさを保証しない。未Flag行も完全性を認証せず、式典時刻/市長の承認/複数主体の対応などの省略も記録した。
+全原文を引き続きJudgeへ渡す設計を保持し、この限界を含め旧既知回帰・主Development/Calibrationで確認する。
+
+またCouncilの誤帰属を正しく非支持と判定しても、全7文中5支持でF=5/7となり、閾値0.7なら採用となる。
+意味診断通過は修復判断や回答品質の改善を保証しない。F/判断/品質/費用は分けて評価する。
+結果Manifestは`phase11_source_reading_result_v6.json`。次の[全旧GPU固定文と3旧誤りの回帰](phase11_known_trace_regression.md)を事前保存した。
+Gate 11、主Development/未使用Calibration、最終条件固定は未完了。

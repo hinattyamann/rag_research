@@ -1,0 +1,544 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-known-trace-regression-expected-before-candidate",
+  "created_at_utc": "2026-10-21T11:27:26.419856+00:00",
+  "actual_assessor": "Codex AI in same development thread",
+  "human_reviewed": false,
+  "exact_model_identifier_available": false,
+  "history_isolated": false,
+  "preserved_audit_path": "data/runs/calibration/phase11-gpu-twenty-v2/semantic_audit_v2.json",
+  "preserved_audit_sha256": "97f4d1c872827ed8b7570f8cb82458b748d5464bbce2f7f70ecc5800065b9b85",
+  "claims": [
+    {
+      "record_id": "clapnq:c508d78:train:8237082669014738534:answerable",
+      "claim_id": "c1",
+      "expected_label": "supported",
+      "reason": "AI監査: スタジオ入口外の横断歩道と明記される。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "799385001_1675-2338",
+          "quote": "EMI 's Abbey Road Studios are located at the south - eastern end , at 3 Abbey Road , St John 's Wood . The Beatles and many other famous popular music performers have recorded at this studio , and The Beatles named their last studio LP after this street . The album 's cover photograph shows the four group members walking across the zebra crossing just outside the studio entrance . As a result of its association with The Beatles , since 1969 this part of Abbey Road has been featured on the London tourism circuit . In December 2010 the crossing was given Grade II Listed Building status by English Heritage despite its age not being contemporary to that era ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-7667081875084391858:answerable",
+      "claim_id": "c1",
+      "expected_label": "supported",
+      "reason": "AI監査: 曲げモーメント曲線とゼロ線の交点という定義が一致する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "836599715_310-830",
+          "quote": "In a bending beam , a point is known as a point of contraflexure if it is a location at which no bending occurs . It is also known as an inflection point . In a bending moment diagram , it is the point at which the bending moment curve intersects with the zero line . In other words where the bending moment changes its sign from negative to positive or vice versa . Knowing the place of the contraflexure is especially useful when designing reinforced concrete or structural steel beams and also for designing bridges ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:1056297453558018137:answerable",
+      "claim_id": "c1",
+      "expected_label": "contradicted",
+      "reason": "AI監査: 合意は1978年、和平条約は1979年。原質問も1979年と呼ぶため、of 1979を歴史的合意の年の断定と取るかは曖昧。明瞭な誤支持の率から除外する。",
+      "ambiguous_scope": true,
+      "evidence": [
+        {
+          "passage_id": "857093760_607-1383",
+          "quote": "The Camp David Accords were signed by Egyptian President Anwar Sadat and Israeli Prime Minister Menachem Begin on 17 September 1978 , following twelve days of secret negotiations at Camp David . The two framework agreements were signed at the White House , and were witnessed by United States President Jimmy Carter . The second of these frameworks ( A Framework for the Conclusion of a Peace Treaty between Egypt and Israel ) led directly to the 1979 Egypt -- Israel Peace Treaty . Due to the agreement , Sadat and Begin received the shared 1978 Nobel Peace Prize . The first framework ( A Framework for Peace in the Middle East ) , which dealt with the Palestinian territories , was written without participation of the Palestinians and was condemned by the United Nations ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:1056297453558018137:answerable",
+      "claim_id": "c2",
+      "expected_label": "supported",
+      "reason": "AI監査: シナイからの撤退とWest Bank/Gaza自治交渉が記載される。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "837288933_36435-37056",
+          "quote": "The 1977 Knesset elections marked a major turning point in Israeli political history as Menachem Begin 's Likud party took control from the Labor Party . Later that year , Egyptian President Anwar El Sadat made a trip to Israel and spoke before the Knesset in what was the first recognition of Israel by an Arab head of state . In the two years that followed , Sadat and Begin signed the Camp David Accords ( 1978 ) and the Israel -- Egypt Peace Treaty ( 1979 ) . In return , Israel withdrew from the Sinai Peninsula and agreed to enter negotiations over an autonomy for Palestinians in the West Bank and the Gaza Strip ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:1056297453558018137:answerable",
+      "claim_id": "c3",
+      "expected_label": "supported",
+      "reason": "AI監査: ItをCamp Davidの合意と解釈すれば1978年の共同Nobel賞が明記される。隣の文の1979年条約とは区別する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "857093760_607-1383",
+          "quote": "The Camp David Accords were signed by Egyptian President Anwar Sadat and Israeli Prime Minister Menachem Begin on 17 September 1978 , following twelve days of secret negotiations at Camp David . The two framework agreements were signed at the White House , and were witnessed by United States President Jimmy Carter . The second of these frameworks ( A Framework for the Conclusion of a Peace Treaty between Egypt and Israel ) led directly to the 1979 Egypt -- Israel Peace Treaty . Due to the agreement , Sadat and Begin received the shared 1978 Nobel Peace Prize . The first framework ( A Framework for Peace in the Middle East ) , which dealt with the Palestinian territories , was written without participation of the Palestinians and was condemned by the United Nations ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:1056297453558018137:answerable",
+      "claim_id": "c4",
+      "expected_label": "supported",
+      "reason": "AI監査: 中東政治への影響と1979〜1989年のArab League停止が一致する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "857093760_24744-25221",
+          "quote": "The time that has elapsed since the Camp David Accords has left no doubt as to their enormous ramifications on Middle Eastern politics . Most notably , the perception of Egypt within the Arab world changed . With the most powerful of the Arab militaries and a history of leadership in the Arab world under Nasser , Egypt had more leverage than any of the other Arab states to advance Arab interests . Egypt was subsequently suspended from the Arab League from 1979 until 1989 ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:1056297453558018137:answerable",
+      "claim_id": "c5",
+      "expected_label": "not_supported",
+      "reason": "AI監査: 国連拒否は特定のPalestinian Framework/部分合意へのもの。the accordの指示範囲を広く解釈すると支持不足だが、限定した解釈もあり、三Label一致率の明瞭な分母から除外する。",
+      "ambiguous_scope": true,
+      "evidence": [
+        {
+          "passage_id": "857093760_21614-22958",
+          "quote": "The UN General Assembly rejected the Framework for Peace in the Middle East , because the agreement was concluded without participation of UN and PLO and did not comply with the Palestinian right of return , of self - determination and to national independence and sovereignty . December 1978 , it declared in Resolution 33 / 28 A , that agreements were only valid if they are within the framework of the United Nations and its Charter and its resolutions , include the Palestinian right of return and the right to national independence and sovereignty in Palestine , and concluded with the participation of the PLO . Also the passive attitude of the Security Council was criticised . On 6 December 1979 , the UN condemned in Resolution 34 / 70 all partial agreements and separate treaties that did not meet the Palestinian rights and comprehensive solutions to peace ; it condemned Israel 's continued occupation and demanded withdrawal from all occupied territories . On 12 December , in Resolution 34 / 65 B , she rejected more specific parts of the Camp David Accords and similar agreements , which were not in accordance with mentioned requirements . All such partial agreements and separate treaties were strongly condemned . The part of the Camp David accords regarding the Palestinian future and all similar ones were declared invalid ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8610675060620798199:answerable",
+      "claim_id": "c1",
+      "expected_label": "supported",
+      "reason": "AI監査: Jedinの全4巻の歴史書が最も包括的と記載される。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "838915949_21093-21655",
+          "quote": "The most comprehensive history is still Hubert Jedin 's The History of the Council of Trent ( Geschichte des Konzils von Trient ) with about 2500 pages in four volumes : The History of the Council of Trent : The fight for a Council ( Vol I , 1951 ) ; The History of the Council of Trent : The first Sessions in Trent ( 1545 -- 1547 ) ( Vol II , 1957 ) ; The History of the Council of Trent : Sessions in Bologna 1547 -- 1548 and Trento 1551 -- 1552 ( Vol III , 1970 , 1998 ) ; The History of the Council of Trent : Third Period and Conclusion ( Vol IV , 1976 ) ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8610675060620798199:answerable",
+      "claim_id": "c2",
+      "expected_label": "supported",
+      "reason": "AI監査: 1545〜1563年、宗教改革を契機とし反宗教改革の体現という記述が一致する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "838915949_1389-1678",
+          "quote": "The Council of Trent ( Latin : Concilium Tridentinum ) , held between 1545 and 1563 in Trent ( or Trento , in northern Italy ) , was an ecumenical council of the Catholic Church . Prompted by the Protestant Reformation , it has been described as the embodiment of the Counter-Reformation ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8610675060620798199:answerable",
+      "claim_id": "c3",
+      "expected_label": "supported",
+      "reason": "AI監査: 最初の全教会向けcatechismの委嘱が明記される。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "829980313_5278-6287",
+          "quote": "The Council of Trent , an ecumenical council held in Italy between 1545 and 1563 and prompted by the Protestant Reformation , commissioned in the seventh canon ( `` De Reformatione '' ) of Session XXIV the first Church - wide catechism of the Catholic Church , later known as the Roman Catechism and also as the Catechism of the Council of Trent . A commission of eminent theologians supervised by three cardinals produced a catechism , which was published in Rome under Papal authority , after the Council had concluded , under the Latin title `` Catechismus ex decreto Concilii Tridentini ad parochos Pii V jussu editus , Romae , 1566 '' ( in - folio ) . In its section on the Fifth Commandment , the Roman Catechism teaches that civil authority , having power over life and death as `` the legitimate avenger of crime , '' may commit `` lawful slaying '' as `` an act of paramount obedience to this Commandment which prohibits murder '' by giving `` security to life by repressing outrage and violence . ''"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8610675060620798199:answerable",
+      "claim_id": "c4",
+      "expected_label": "contradicted",
+      "reason": "AI監査: Council後の1567年にPius VがTrentを越えて承認した事項であり、Councilに帰属させる主体・時期の誤り。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "823091938_17808-18437",
+          "quote": "In 1567 , soon after the close of the Council of Trent , Pope Pius V went beyond Trent by sanctioning Aquinas 's distinction between nature and supernature in Adam 's state before the Fall , condemned the identification of original sin with concupiscence , and approved the view that the unbaptized could have right use of will . The Catholic Encyclopedia refers : `` Whilst original sin is effaced by baptism concupiscence still remains in the person baptized ; therefore original sin and concupiscence can not be one and the same thing , as was held by the early Protestants ( see Council of Trent , Sess . V , can . v ) . '' ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8610675060620798199:answerable",
+      "claim_id": "c5",
+      "expected_label": "supported",
+      "reason": "AI監査: Council閉会時の儀礼的喝采と信仰・布告の受容が記載される。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "838915949_8901-9808",
+          "quote": "Reopened at Trent on 1 May 1551 by convocation of Pope Julius III ( 1550 -- 1555 ) , it was broken up by the sudden victory of Maurice , Elector of Saxony over the Emperor Charles V and his march into surrounding state of Tirol on 28 April 1552 . There was no hope of reassembling the council while the very anti-Protestant Paul IV was Pope . The council was reconvened by Pope Pius IV ( 1559 -- 1565 ) for the last time , meeting from 18 January 1562 at Santa Maria Maggiore , and continued until its final adjournment on 4 December 1563 . It closed with a series of ritual acclamations honouring the reigning Pope , the Popes who had convoked the Council , the emperor and the kings who had supported it , the papal legates , the cardinals , the ambassadors present , and the bishops , followed by acclamations of acceptance of the faith of the Council and its decrees , and of anathema for all heretics ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8610675060620798199:answerable",
+      "claim_id": "c6",
+      "expected_label": "not_supported",
+      "reason": "AI監査: 本文は1555年のsentence追加と1566年Catechismへの収録で、Hail Mary自体を閉会時に追加したとは明記しない。petitionの指示範囲とaround conclusionの幅が曖昧なので明瞭な誤支持率から除外。",
+      "ambiguous_scope": true,
+      "evidence": [
+        {
+          "passage_id": "820742796_5974-6146",
+          "quote": "The petition was commonly added around the time of the Council of Trent . The Dutch Jesuit St. Petrus Canisius is credited with adding in 1555 in his Catechism the sentence"
+        },
+        {
+          "passage_id": "820742796_6197-6872",
+          "quote": "Eleven years later , the sentence was included in the Catechism of the Council of Trent of 1566 . The `` Catechism of the Council of Trent '' says that to the first part of the Hail Mary , by which `` we render to God the highest praise and return Him most gracious thanks , because He has bestowed all His heavenly gifts on the most holy Virgin ... the Church of God has wisely added prayers and an invocation addressed to the most holy Mother of God ... we should earnestly implore her help and assistance ; for that she possesses exalted merits with God , and that she is most desirous to assist us by her prayers , no one can doubt without impiety and wickedness . '' The"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8610675060620798199:answerable",
+      "claim_id": "c7",
+      "expected_label": "supported",
+      "reason": "AI監査: 1566年CatechismにMaryへの祈りと助けを求める記載がある。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "820742796_6197-6872",
+          "quote": "Eleven years later , the sentence was included in the Catechism of the Council of Trent of 1566 . The `` Catechism of the Council of Trent '' says that to the first part of the Hail Mary , by which `` we render to God the highest praise and return Him most gracious thanks , because He has bestowed all His heavenly gifts on the most holy Virgin ... the Church of God has wisely added prayers and an invocation addressed to the most holy Mother of God ... we should earnestly implore her help and assistance ; for that she possesses exalted merits with God , and that she is most desirous to assist us by her prayers , no one can doubt without impiety and wickedness . '' The"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-2140282230594159335:answerable",
+      "claim_id": "c1",
+      "expected_label": "supported",
+      "reason": "AI監査: 現実又は差し迫った法による被害が米国のstandingとして記載される。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "815615503_2070-2696",
+          "quote": "In the United States , the current doctrine is that a person can not bring a suit challenging the constitutionality of a law unless the plaintiff can demonstrate that he / she / it is or will `` imminently '' be harmed by the law . Otherwise , the court will rule that the plaintiff `` lacks standing '' to bring the suit , and will dismiss the case without considering the merits of the claim of unconstitutionality . To have a court declare a law unconstitutional , there must be a valid reason for the lawsuit . The party suing must have something to lose in order to sue unless it has automatic standing by action of law ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-2140282230594159335:answerable",
+      "claim_id": "c2",
+      "expected_label": "supported",
+      "reason": "AI監査: sufficient connectionとharmという定義が一致する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "815615503_76-340",
+          "quote": "In law , standing or locus standi is the term for the ability of a party to demonstrate to the court sufficient connection to and harm from the law or action challenged to support that party 's participation in the case . Standing exists from one of three causes :"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-984643435270994086:answerable",
+      "claim_id": "c1",
+      "expected_label": "supported",
+      "reason": "AI監査: Charles Dowと統計家Edward Jonesに由来する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "807218667_465-1443",
+          "quote": "The Dow Jones Industrial Average / ˌdaʊ ˈdʒoʊnz / , also called DJIA , the Industrial Average , the Dow Jones , the Dow Jones Industrial , ^ DJI , the Dow 30 or simply the Dow , is a stock market index , and one of several indices created by Wall Street Journal editor and Dow Jones & Company co-founder Charles Dow . The industrial average was first calculated on May 26 , 1896 . Currently owned by S&P Dow Jones Indices , which is majority owned by S&P Global , it is the most notable of the Dow Averages , of which the first ( non-industrial ) was originally published on February 16 , 1885 . The averages are named after Dow and one of his business associates , statistician Edward Jones . It is an index that shows how 30 large publicly owned companies based in the United States have traded during a standard trading session in the stock market . It is the second - oldest U.S. market index after the Dow Jones Transportation Average , which was also created by Dow ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-4007696326689737656:answerable",
+      "claim_id": "c1",
+      "expected_label": "contradicted",
+      "reason": "AI監査: 最初の2季のtwiceだけでは通算を支持しない。後の2018年の3回目が同じ根拠に明記される。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "857107821_3414-4341",
+          "quote": "After retiring as a player , Zidane transitioned into coaching , becoming assistant coach at Real Madrid under Carlo Ancelotti for the 2013 -- 14 season . After a successful year in which the club won the UEFA Champions League and Copa del Rey , Zidane became the coach of Real Madrid 's B team , Real Madrid Castilla . He remained in the position for two years before taking the helm of the first team in January 2016 . In his first two seasons as manager , Zidane won the UEFA Champions League twice , a La Liga title , a Supercopa de España , and both the UEFA Super Cup and FIFA Club World Cup twice . His success saw him named Best FIFA Men 's Coach in 2017 . In 2018 , Zidane led Real Madrid to another UEFA Champions League , his third in a row , becoming the only coach in the history of football to win three consecutive UEFA Champions League titles . A few days after the victory , he resigned as Real Madrid coach ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:2090484311565652062:answerable",
+      "claim_id": "c1",
+      "expected_label": "supported",
+      "reason": "AI監査: 引用した資料中のfinal episodeでのSerenaの失敗という命題には直接の記載がある。どのseasonか曖昧なため明瞭な一致率から除外。これを支持してもDanの正体判明という質問への十分さは保証しない。",
+      "ambiguous_scope": true,
+      "evidence": [
+        {
+          "passage_id": "833351045_26162-26551",
+          "quote": "As the storylines progressed , the role of `` Gossip Girl '' is slightly decreased . She continues to run her blog , but she keeps the ultimate information for herself , sending it in the final episode as the last blast , where Serena decides to find out who `` Gossip Girl '' really is , but ultimately fails . The season finale ended with a well - received kiss between Blair and Chuck ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:2090484311565652062:answerable",
+      "claim_id": "c2",
+      "expected_label": "supported",
+      "reason": "AI監査: recapのnarratorとKristen Bellの声が明記される。Danを答えない不足は独立品質へ分離する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "833351045_13408-13842",
+          "quote": "The narrator is Gossip Girl , voiced by Kristen Bell . She begins the recap with the sentence , `` Gossip Girl here , your one and only source into the scandalous lives of Manhattan 's elite , '' and ends the recap with whispered voices saying `` Where has she been ? '' and `` Serena . '' Then , the voice of Gossip Girl says , `` And who am I ? That 's one secret I 'll never tell ! You know you love me ... XO XO , Gossip Girl . ''"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:5148452182007422801:answerable",
+      "claim_id": "c1",
+      "expected_label": "supported",
+      "reason": "AI監査: 起点の合流と終点Pawtucket Falls/Seekonkの双方が支持される。不正なnumeric引用を挟むため二文が一単位になったが全文保持は不変。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "788693126_3369-4036",
+          "quote": "The river is formed in Worcester , Massachusetts by the confluence of the Middle River and Mill Brook . From there , it follows a rough southeast course through Millbury , Sutton , Grafton , Northbridge , Uxbridge , Millville , and Blackstone . It then continues into Rhode Island , where it flows through Woonsocket , Cumberland , Lincoln , Central Falls , and Pawtucket , where the river then reaches Pawtucket Falls . After that , the river becomes tidal , and flows into the Seekonk River just north of Providence . Other tributaries join the Blackstone along the way , such as the West and Mumford River , at Uxbridge , and The Branch River in North Smithfield ."
+        },
+        {
+          "passage_id": "788693126_138-724",
+          "quote": "Blackstone River The Blackstone River in Blackstone , Massachusetts , just short of the Rhode Island border . Country United States City Massachusetts , Rhode Island Physical characteristics Main source Worcester , MA River mouth Seekonk River , at Pawtucket Falls in Pawtucket , Rhode Island 41 ° 52 ′ 38 '' N 71 ° 22 ′ 56 '' W ﻿ / ﻿ 41.8771 ° N 71.3822 ° W ﻿ / 41.8771 ; - 71.3822 Coordinates : 41 ° 52 ′ 38 '' N 71 ° 22 ′ 56 '' W ﻿ / ﻿ 41.8771 ° N 71.3822 ° W ﻿ / 41.8771 ; - 71.3822 Length 48 mi ( 77 km ) Basin features Basin size 540 sq mi ( 1,400 km )"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-7881681413996925466:answerable",
+      "claim_id": "c1",
+      "expected_label": "supported",
+      "reason": "AI監査: 支持人物という基本説明は明記され、先頭の角括弧は本文内容を変えない。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "814944214_420-873",
+          "quote": "Tom Bombadil is a supporting character in J.R.R. Tolkien 's legendarium . He appears in Tolkien 's high fantasy epic The Lord of the Rings , published in 1954 and 1955 . In the first volume , The Fellowship of the Ring , Frodo Baggins and company meet Bombadil in the Old Forest . He also appears in The Adventures of Tom Bombadil , a book of verse first published in 1962 , purporting to be a selection of Hobbit poems , two of which concern Bombadil ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-7881681413996925466:answerable",
+      "claim_id": "c2",
+      "expected_label": "supported",
+      "reason": "AI監査: Fellowship of the RingでFrodoらがOld Forestで会う。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "814944214_420-873",
+          "quote": "Tom Bombadil is a supporting character in J.R.R. Tolkien 's legendarium . He appears in Tolkien 's high fantasy epic The Lord of the Rings , published in 1954 and 1955 . In the first volume , The Fellowship of the Ring , Frodo Baggins and company meet Bombadil in the Old Forest . He also appears in The Adventures of Tom Bombadil , a book of verse first published in 1962 , purporting to be a selection of Hobbit poems , two of which concern Bombadil ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-7881681413996925466:answerable",
+      "claim_id": "c3",
+      "expected_label": "supported",
+      "reason": "AI監査: Adventures of Tom Bombadilは1962年の詩集と明記される。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "814944214_420-873",
+          "quote": "Tom Bombadil is a supporting character in J.R.R. Tolkien 's legendarium . He appears in Tolkien 's high fantasy epic The Lord of the Rings , published in 1954 and 1955 . In the first volume , The Fellowship of the Ring , Frodo Baggins and company meet Bombadil in the Old Forest . He also appears in The Adventures of Tom Bombadil , a book of verse first published in 1962 , purporting to be a selection of Hobbit poems , two of which concern Bombadil ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-7881681413996925466:answerable",
+      "claim_id": "c4",
+      "expected_label": "supported",
+      "reason": "AI監査: spry/playful wit/rhyming whimsicalという特徴が一致する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "814944214_7338-7893",
+          "quote": "Tom Bombadil is spry , with a quick , playful wit . He speaks in a rhyming whimsical way : `` Hey dol ! merry dol ! ring a dong dillo ! Ring a dong ! hop along ! fal lal the willow ! Tom Bom , jolly Tom , Tom Bombadillo ! '' He has a jolly , carefree attitude , and little seems to concern him . He sometimes refers to himself in the third person , as if simultaneously weaving his own epic narrative , even as he lives it . In The Lord of the Rings he twice describes himself in his songs as : `` Bright blue his jacket is , and his boots are yellow . ''"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-7881681413996925466:answerable",
+      "claim_id": "c5",
+      "expected_label": "not_supported",
+      "reason": "AI監査: radio/TV等は記載されるがfilm versionsでの言及は使用根拠にない。not portrayedはnot mentionedの直接の矛盾ではないためcontradictedへは強制しない。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "814944214_14557-14851",
+          "quote": "Although Tom Bombadil was not portrayed in Peter Jackson 's film trilogy of The Lord of the Rings , a Tom Bombadil card exists in The Lord of the Rings Trading Card Game by Decipher , Inc. ( part of the trilogy 's merchandise ) . The model portraying Bombadil on this card is Harry Wellerchew ."
+        },
+        {
+          "passage_id": "814944214_14852-15128",
+          "quote": "Bombadil has appeared in a number of other adaptations , including the Mind 's Eye radio adaptation . He was played by Norman Shelley in the 1955 -- 1956 BBC radio adaptation of The Lord of the Rings . He was portrayed by Esko Hukkanen in the 1993 Finnish miniseries Hobitit ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-272699795805920544:answerable",
+      "claim_id": "c1",
+      "expected_label": "supported",
+      "reason": "AI監査: pop/reggae、Paul/Linda、Wingsが全て明記される。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "833912035_605-1026",
+          "quote": "`` C Moon '' is a pop song with a reggae beat , written by Paul and Linda McCartney and performed by Wings . It was released as a double A-side with `` Hi , Hi , Hi '' in 1972 . The single reached No. 5 on the UK Singles Chart and since `` Hi Hi Hi '' was banned by the BBC , `` C Moon '' received much airplay in the United Kingdom . In the United States , `` C Moon '' did not appear on any of the major record charts ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-272699795805920544:answerable",
+      "claim_id": "c2",
+      "expected_label": "supported",
+      "reason": "AI監査: 1972年にHi Hi Hiと両A面発売したことが一致する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "833912035_605-1026",
+          "quote": "`` C Moon '' is a pop song with a reggae beat , written by Paul and Linda McCartney and performed by Wings . It was released as a double A-side with `` Hi , Hi , Hi '' in 1972 . The single reached No. 5 on the UK Singles Chart and since `` Hi Hi Hi '' was banned by the BBC , `` C Moon '' received much airplay in the United Kingdom . In the United States , `` C Moon '' did not appear on any of the major record charts ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-272699795805920544:answerable",
+      "claim_id": "c3",
+      "expected_label": "supported",
+      "reason": "AI監査: 曲名を通じたWooly Bullyの歌詞の影響という説明がある。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "833912035_1144-1609",
+          "quote": "The name `` C Moon '' was inspired by lyrics in the song `` Wooly Bully '' by Sam the Sham and the Pharaohs . McCartney said , `` There 's a line in ( Wooly Bully ) that says , ' Let 's not be L7 . ' Well , L7 , it was explained at the time , means a square -- put L and 7 together and you get a square ... So I thought of the idea of putting a C and a moon together ( a half - moon ) to get the opposite of a square . So ' C Moon ' means cool , in other words . ''"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-272699795805920544:answerable",
+      "claim_id": "c4",
+      "expected_label": "supported",
+      "reason": "AI監査: McCartneyの命名の説明の引用に対応する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "833912035_1144-1609",
+          "quote": "The name `` C Moon '' was inspired by lyrics in the song `` Wooly Bully '' by Sam the Sham and the Pharaohs . McCartney said , `` There 's a line in ( Wooly Bully ) that says , ' Let 's not be L7 . ' Well , L7 , it was explained at the time , means a square -- put L and 7 together and you get a square ... So I thought of the idea of putting a C and a moon together ( a half - moon ) to get the opposite of a square . So ' C Moon ' means cool , in other words . ''"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-272699795805920544:answerable",
+      "claim_id": "c5",
+      "expected_label": "supported",
+      "reason": "AI監査: Lと7を組み合わせたsquareの説明が一致する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "833912035_1144-1609",
+          "quote": "The name `` C Moon '' was inspired by lyrics in the song `` Wooly Bully '' by Sam the Sham and the Pharaohs . McCartney said , `` There 's a line in ( Wooly Bully ) that says , ' Let 's not be L7 . ' Well , L7 , it was explained at the time , means a square -- put L and 7 together and you get a square ... So I thought of the idea of putting a C and a moon together ( a half - moon ) to get the opposite of a square . So ' C Moon ' means cool , in other words . ''"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-272699795805920544:answerable",
+      "claim_id": "c6",
+      "expected_label": "supported",
+      "reason": "AI監査: Cと半月を組み合わせsquareの反対にするという説明が一致する。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "833912035_1144-1609",
+          "quote": "The name `` C Moon '' was inspired by lyrics in the song `` Wooly Bully '' by Sam the Sham and the Pharaohs . McCartney said , `` There 's a line in ( Wooly Bully ) that says , ' Let 's not be L7 . ' Well , L7 , it was explained at the time , means a square -- put L and 7 together and you get a square ... So I thought of the idea of putting a C and a moon together ( a half - moon ) to get the opposite of a square . So ' C Moon ' means cool , in other words . ''"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-272699795805920544:answerable",
+      "claim_id": "c7",
+      "expected_label": "supported",
+      "reason": "AI監査: coolという意味が明記される。",
+      "ambiguous_scope": false,
+      "evidence": [
+        {
+          "passage_id": "833912035_1144-1609",
+          "quote": "The name `` C Moon '' was inspired by lyrics in the song `` Wooly Bully '' by Sam the Sham and the Pharaohs . McCartney said , `` There 's a line in ( Wooly Bully ) that says , ' Let 's not be L7 . ' Well , L7 , it was explained at the time , means a square -- put L and 7 together and you get a square ... So I thought of the idea of putting a C and a moon together ( a half - moon ) to get the opposite of a square . So ' C Moon ' means cool , in other words . ''"
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:24434409188927642:answerable",
+      "claim_id": "c1",
+      "expected_label": "not_supported",
+      "reason": "AI監査: New CastleはChateauneuf部分の訳。全体名にはdu Papeの教皇との関係がある。部分訳としての支持と全体訳の支持の境界が曖昧なので明瞭な誤支持の率から除外する。品質では不足を独立に判定済み。",
+      "ambiguous_scope": true,
+      "evidence": [
+        {
+          "passage_id": "860983841_3093-4227",
+          "quote": "The first mention of the village is in a Latin document from 1094 that uses the name Castro Novo . The term castrum or castro in the 11th century was used to denote a fortified village , rather than a castle ( castellum ) . The current French name of `` Châteauneuf '' ( English : `` New Castle '' ) is derived from this early Latin name and not from the ruined 14th - century castle that towers above the village . Just over a century later in 1213 the village was referred to as Castronovum Calcernarium . Other early documents use Castronovo Caussornerio or Castrum Novum Casanerii . The official French name became Châteauneuf Calcernier . The word ' Calcernier ' comes from the presence of important lime kilns in the village . Calcernarium is derived from the Latin calx for lime and cernere means sift or sieve . From the 16th century the village was often referred to as `` Châteauneuf du Pape '' or `` Châteauneuf Calcernier dit de Pape '' , because of the connection with Pope John XXII , but it was not until 1893 that the official name was changed from `` Châteauneuf Calcernier '' to `` Châteauneuf - du - Pape '' ."
+        }
+      ]
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-4605349471942949976:answerable",
+      "claim_id": "c1",
+      "expected_label": "contradicted",
+      "ambiguous_scope": false,
+      "reason": "調印は5時、発効は11時と明記。11時調印という追加詳細は矛盾。",
+      "evidence": [],
+      "annotation_source": "Codex AI source-only preregistration before candidate output; whole original trace retained"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-4605349471942949976:answerable",
+      "claim_id": "c2",
+      "expected_label": "contradicted",
+      "ambiguous_scope": false,
+      "reason": "根拠は5時の調印と11時の発効を区別し、11時調印という明示引用は誤り。",
+      "evidence": [],
+      "annotation_source": "Codex AI source-only preregistration before candidate output; whole original trace retained"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-4605349471942949976:answerable",
+      "claim_id": "c3",
+      "expected_label": "supported",
+      "ambiguous_scope": false,
+      "reason": "質問の命題は1918年11月11日の調印。誤った追加時刻を含まないtrueという結論は支持。",
+      "evidence": [],
+      "annotation_source": "Codex AI source-only preregistration before candidate output; whole original trace retained"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-2689611084228995230:answerable",
+      "claim_id": "c1",
+      "expected_label": "supported",
+      "ambiguous_scope": false,
+      "reason": "先行する雲と、接近に伴い降雨が増加することを本文が支持。",
+      "evidence": [],
+      "annotation_source": "Codex AI source-only preregistration before candidate output; whole original trace retained"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-2689611084228995230:answerable",
+      "claim_id": "c2",
+      "expected_label": "contradicted",
+      "ambiguous_scope": false,
+      "reason": "表は通過中に持続的な中程度の雨、通過後には次第に止む弱い霧雨。通常通過後も持続するという列の転記が矛盾。",
+      "evidence": [],
+      "annotation_source": "Codex AI source-only preregistration before candidate output; whole original trace retained"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8260253141034910118:answerable",
+      "claim_id": "c1",
+      "expected_label": "not_supported",
+      "ambiguous_scope": false,
+      "reason": "正確な語源は不明で、輸出品由来はfolkloreの説。無限定の確定した起源は支持されない。",
+      "evidence": [],
+      "annotation_source": "Codex AI source-only preregistration before candidate output; whole original trace retained"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8260253141034910118:answerable",
+      "claim_id": "c2",
+      "expected_label": "not_supported",
+      "ambiguous_scope": false,
+      "reason": "兵が隊列に固執した伝説と、丘を保てず笑われた逸話は別々に記載。前者の句が後者の逸話から生じたという因果関係は支持されない。",
+      "evidence": [],
+      "annotation_source": "Codex AI source-only preregistration before candidate output; whole original trace retained"
+    },
+    {
+      "record_id": "clapnq:c508d78:train:-8260253141034910118:answerable",
+      "claim_id": "c3",
+      "expected_label": "supported",
+      "ambiguous_scope": false,
+      "reason": "侮蔑語から再利用され、1865年頃から誇りとして使われたと本文に明記。",
+      "evidence": [],
+      "annotation_source": "Codex AI source-only preregistration before candidate output; whole original trace retained"
+    }
+  ],
+  "limitations": [
+    "AI source-based annotations, not human ground truth",
+    "old output/history known; no claim of blind independent annotation",
+    "new 8 unit labels fixed before candidate outputs for those traces; existing 34 labels unchanged"
+  ]
+}

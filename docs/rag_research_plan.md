@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.30 — 2026年10月21日 既知Critical全一致の途中経過と全Label封印後の統計接続
+## Version 7.31 — 2026年10月21日 日英人工診断通過と補助読解の限界・旧既知回帰を固定
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.32](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.33](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -19,6 +19,7 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 その後、読解/全固定文・全分母/実費・中断再開と匿名品質への接続を実装し、全487 Test/Ruff成功。実GPU意味診断はこれからで、意味採用/最終凍結は未了。
 その後、v5は読解1 CallでID/Quoteの対応不正を検出して停止した。v6へ一意ID/原文QuoteのDecoder制約を別保存し、Expected/意味採用基準を保持した。全488 Test/Ruff成功、v6実走はこれから。
 その後、v6の既知Critical4条件は全一致し、人工54条件を実走中。意味Gate/採用は未確定。全Label封印後だけ内部を検証するDevelopment用統計接続を追加し全493 Test/Ruff成功。未使用Calibrationの実解析・最終件数/条件は未了。
+その後、v6の全58条件が完了し、人工英語24/24・日本語28/30/誤支持0で診断通過。補助読解の誤り11行とF閾値による誤採用が残り、最終採用や品質改善は未実証。全旧GPU固定文と3旧誤りの回帰を事前固定し、全502 Test/Ruff成功。
 
 現行の次工程は[意味判定・拒否Fallbackの診断](phase11_semantic_revision.md)。使用済み英語2例の4条件を先行し、
 Critical全件一致した候補だけ日英の人工27例/54条件へ進める。採用・停止規則と最大58呼出し/候補を結果前に保存した。

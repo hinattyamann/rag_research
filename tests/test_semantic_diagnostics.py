@@ -261,3 +261,120 @@ def test_source_reading_diagnostic_counts_both_stages_and_resumes_without_calls(
     assert report["diagnostic_gate_passed"] and report["completion_attempts_recorded"] == 12
     assert len(list((output / "tasks").glob("*.reading.json"))) == 6
     assert module.run(path, output) == report and len(state["calls"]) == 12 and state["servers"] == 1
+
+
+def prepare_regression_fixture(diagnostic):
+    path, output, state = diagnostic
+    config = yaml.safe_load(path.read_text())
+    config["verification_mode"] = "source-reading-v1"
+    config["tasks"]["read_sources"] = {"max_output_tokens": 512}
+    for name in config["prompts"].values():
+        p = path.parent / name
+        prompt = yaml.safe_load(p.read_text())
+        prompt.pop("judge_payload")
+        prompt["source_reading_auxiliary"] = "untrusted_reading_v1"
+        prompt["tasks"]["verify_claims"]["input_fields"] = ["question", "answer", "claims", "documents", "source_reading"]
+        prompt["tasks"]["read_sources"] = {"input_fields": ["question", "documents"], "system": "Read fixture."}
+        p.write_text(yaml.safe_dump(prompt))
+    path.write_text(yaml.safe_dump(config))
+    plan_path = path.parent / "plan.json"
+    plan = read_json(plan_path)
+    old = read_json(path.parent / "old_audit.json")
+    annotations = deepcopy(old["claims"])
+    for case in plan["cases"][1:]:
+        case["scope"] = "known_used_development"
+        trace = freeze_record({"record_id": case["id"], "status": "ok", "question": case["question"],
+                               "answer": case["answer"], "used_context": case["documents"]})
+        p = path.parent / (case["id"] + ".json")
+        write_json(p, trace)
+        case.update(original_record_id=case["id"], source_trace_sha256=file_hash(p))
+        plan["source_sha256"][p.name] = file_hash(p)
+        annotations.append({"record_id": case["id"], "claim_id": "c1", "expected_label": "supported", "ambiguous_scope": False})
+    p = path.parent / "new_expected.json"
+    write_json(p, {"preserved_audit_path": "old_audit.json", "preserved_audit_sha256": file_hash(path.parent / "old_audit.json"),
+                   "claims": annotations})
+    plan["expected_annotations"].update(known_trace_expected_source=p.name, known_trace_expected_sha256=file_hash(p))
+    plan["source_sha256"][p.name] = file_hash(p)
+    core = path.parent / "src/rag_research/evaluation/fixed.py"
+    core.parent.mkdir(parents=True)
+    core.write_text("# Fixed fixture core, not a real Model experiment\n")
+    prior = path.parent / "prior"
+    prior.mkdir()
+    prior_manifest = {"config": deepcopy(config), "model": {"test": "identity"},
+                      "source_sha256": {str(core.relative_to(path.parent)): file_hash(core)}}
+    write_json(prior / "manifest.json", prior_manifest)
+    write_json(prior / "report.json", {"diagnostic_gate_passed": True, "completion_attempts_recorded": 128,
+                                      "manifest_sha256": digest(prior_manifest), "fixture_not_real_model_evidence": True})
+    plan.update(purpose="phase11-known-trace-semantic-regression", verification_mode="source-reading-v1",
+                max_completion_attempts=12, bare_refusal_cases_retained_separately=[],
+                prerequisite={"report_path": "prior/report.json", "sha256": file_hash(prior / "report.json")},
+                gate={"stop_on_task_error": True, "stop_after_critical_failure": True, "critical_all_exact": True,
+                      "known_min_accuracy": .9, "known_min_supported_accuracy": .9, "known_max_false_support": 0})
+    write_json(plan_path, plan)
+    state.update(allow_answer_context=True, source_reading=True)
+    return path, output, state
+
+
+@pytest.mark.parametrize("critical_failure", [False, True])
+def test_known_regression_requires_negatives_and_positive_controls_and_preserves_resume(diagnostic, critical_failure):
+    path, output, state = prepare_regression_fixture(diagnostic)
+    state["critical_failure"] = critical_failure
+    report = module.run(path, output)
+    assert report["diagnostic_gate_passed"] is not critical_failure
+    assert report["completion_attempts_recorded"] == (4 if critical_failure else 12)
+    assert report["known_regression"]["accuracy_of_all_planned"] == (None if critical_failure else 1.)
+    assert module.run(path, output) == report and state["servers"] == 1
+    assert "EXPECTED-SECRET" not in json.dumps(state["calls"])
+
+
+@pytest.mark.parametrize("change", ["prerequisite", "core", "old_expected", "settings", "model", "critical"])
+def test_known_regression_rejects_changed_proof_criteria_and_judge_before_calls(diagnostic, monkeypatch, change):
+    path, output, state = prepare_regression_fixture(diagnostic)
+    plan_path = path.parent / "plan.json"
+    plan = read_json(plan_path)
+    if change == "prerequisite":
+        p = path.parent / "prior/report.json"
+        report = read_json(p)
+        report["diagnostic_gate_passed"] = False
+        write_json(p, report)
+        plan["prerequisite"]["sha256"] = file_hash(p)
+    elif change == "core":
+        (path.parent / "src/rag_research/evaluation/fixed.py").write_text("# changed\n")
+    elif change == "old_expected":
+        p = path.parent / "new_expected.json"
+        value = read_json(p)
+        value["claims"][0]["expected_label"] = "supported"
+        write_json(p, value)
+        plan["source_sha256"][p.name] = file_hash(p)
+        plan["expected_annotations"]["known_trace_expected_sha256"] = file_hash(p)
+    elif change == "settings":
+        config = yaml.safe_load(path.read_text())
+        config["tasks"]["verify_claims"]["max_output_tokens"] += 1
+        path.write_text(yaml.safe_dump(config))
+    elif change == "model":
+        monkeypatch.setattr(module, "auxiliary_identity", lambda c: {"test": "changed"})
+    else:
+        plan["cases"][0]["critical_claim_ids"] = []
+        plan["cases"][1]["critical_claim_ids"] = ["c1"]
+    write_json(plan_path, plan)
+    with pytest.raises(ValueError):
+        module.run(path, output)
+    assert not state["calls"] and not state["servers"]
+
+
+def test_known_regression_positive_accuracy_cannot_hide_behind_many_negative_controls():
+    plan = {"purpose": "phase11-known-trace-semantic-regression", "cases": [], "orders": ["original", "reversed"]}
+    results = {}
+    for n in range(40):
+        positive = n < 20
+        label = "supported" if positive else "not_supported"
+        case = {"id": str(n), "language": "en", "scope": "known_used_development",
+                "critical_claim_ids": [] if positive else ["c1"], "expected": {"c1": label}}
+        plan["cases"].append(case)
+        for order in plan["orders"]:
+            results[str(n) + "-" + order] = {"status": "ok", "parsed": {"verdicts": [
+                {"claim_id": "c1", "label": "not_supported" if n < 3 else label}]}}
+    assessed = module.assess(plan, results)
+    assert assessed["known_regression"]["accuracy_of_all_planned"] == .925
+    assert assessed["known_regression"]["supported_accuracy"] == .85
+    assert assessed["critical_passed"] and not assessed["diagnostic_gate_passed"]
