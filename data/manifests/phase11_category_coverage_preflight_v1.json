@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-category-coverage-startup-input-preflight-not-adoption",
+  "created_at_utc": "2026-10-22T00:24:25.453875+00:00",
+  "fixed_commit": "f92298b0c51f419650d40e887d661e1732535f6f",
+  "config": "configs/phase11_semantic_candidate_v14.yaml",
+  "config_sha256": "e1cbb7e92a32dcdfdd46112a3543b66cc7452b11d5b57e3307ee0aa0212c5a43",
+  "actual_input_count": 70,
+  "maximum_input_tokens": 3478,
+  "context_tokens": 24576,
+  "completion_attempts": 0,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "6513 MiB, 8151 MiB",
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-v14/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v14/preflight_v1/plan.json": {
+      "sha256": "293fc41d49f069732461295f70c60ad6157ee9452c6df7ef73eed8ef4c65e4c8",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v14/preflight_v1/report.json": {
+      "sha256": "c4c42c14738202f6fcb04ba1657d826b92d837c86e6d88c70441fe1970c66ace",
+      "size_bytes": 30793
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v14/preflight_v1/server.log": {
+      "sha256": "e9b1de47b577a043f845321cdd6120aa01c3353b1d07f6a211d9d975143a6d6f",
+      "size_bytes": 19146
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v14/preparation_failure_v1.json": {
+      "sha256": "82f673a245915d9cfb43b73bf85f20c276f474ef7a4e344fc226d8de8cf7ecee",
+      "size_bytes": 669
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v14/preparation_v1.json": {
+      "sha256": "90481142a37cc89f2e7d2b676c53eedc986d6e70af014f14aee3b29eec445d43",
+      "size_bytes": 47405
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v14/prepare_worktree.py": {
+      "sha256": "01e8a162b885f3972d968f670fb8cb5ecb06ebca2f7b4f203a4020310a7dc3c1",
+      "size_bytes": 4064
+    }
+  },
+  "native_core_plus_probe_hashes_verified_unchanged": 27,
+  "reused_formal_artifacts_verified": 15,
+  "parent_terminal_result": {
+    "path": "data/manifests/phase11_known_trace_result_v3.json",
+    "sha256": "5be24346d831d80d81bbc7f205257f1afcf0ef8abd8be76a25eabf26c383dd45"
+  },
+  "actual_prior_completed_9b_calls": 186,
+  "maximum_new_candidate_calls": 154,
+  "exact_cumulative_9b_ceiling": 340,
+  "initial_preparation_failure_preserved": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

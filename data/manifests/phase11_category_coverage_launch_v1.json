@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-category-coverage-semantic-launch-not-adoption",
+  "created_at_utc": "2026-10-22T00:24:25.454665+00:00",
+  "fixed_commit": "f92298b0c51f419650d40e887d661e1732535f6f",
+  "worktree": ".tools/worktrees/phase11-qwen35-9b-v14",
+  "config": "configs/phase11_semantic_candidate_v14.yaml",
+  "config_sha256": "e1cbb7e92a32dcdfdd46112a3543b66cc7452b11d5b57e3307ee0aa0212c5a43",
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v6.json",
+    "sha256": "22527a05e6ecf09062aec928cae0d952890198957d287a55e62dc8e62a797f2f"
+  },
+  "preflight": {
+    "path": "data/manifests/phase11_category_coverage_preflight_v1.json",
+    "sha256": "1225d66f63c5b395148dee5dfeea30ffa42367ed23753c29f16ea895efc94e3f"
+  },
+  "parent_result": {
+    "path": "data/manifests/phase11_known_trace_result_v3.json",
+    "sha256": "5be24346d831d80d81bbc7f205257f1afcf0ef8abd8be76a25eabf26c383dd45"
+  },
+  "output_dir": "data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v14",
+  "semantic_call_limit": 70,
+  "full_known_regression_call_limit_if_passes": 84,
+  "automatic_retries": 0,
+  "prior_completed_9b_calls": 186,
+  "maximum_cumulative_completed_9b_calls": 340,
+  "status": "running",
+  "tool_session_id": 54441,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "started_at_utc": "2026-10-22T00:26:23.400083+00:00"
+}
