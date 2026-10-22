@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-known-v4-actual-prerequisite-rebinding-validation-not-regression-pass",
+  "created_at_utc": "2026-10-22T02:16:45.650520+00:00",
+  "artifacts": {
+    "data/runs/development_screening/phase11-known-v4-preparation-v1/pending_rejection.json": {
+      "sha256": "1af8ff0c1fbda539f737b9c7877f7a364e3f6caa2c7e45da472357a72bdf71f5",
+      "size_bytes": 333
+    },
+    "data/runs/development_screening/phase11-known-v4-preparation-v1/pending_stderr.txt": {
+      "sha256": "73cd8bb3c7407bdee9a25c679957321b637ac90305141e13eee01eb9c2d484de",
+      "size_bytes": 842
+    },
+    "data/runs/development_screening/phase11-known-v4-preparation-v1/pending_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-known-v4-preparation-v1/preparation.json": {
+      "sha256": "60f46ba31e9fff91aa2874fce1ebf5dc9434a921c8b1afbec35c864bffb3c0f6",
+      "size_bytes": 486
+    },
+    "data/runs/development_screening/phase11-known-v4-preparation-v1/prepare.py": {
+      "sha256": "0f163a741ee50b568c90ada012696651039f3a40e970592fd7c81242381f412e",
+      "size_bytes": 6110
+    },
+    "configs/phase11_known_trace_candidate_v4.yaml": {
+      "sha256": "151f349446862ebe0385090586a073c439dbea363ce5bbbd7ef20a964cc1fe68",
+      "size_bytes": 2172
+    },
+    "configs/phase11_known_trace_regression_v4.json": {
+      "sha256": "1162714e961f9858f31b0f993cd11c264e60d8e39335a8690e1f396e9ce1ab6a",
+      "size_bytes": 140800
+    },
+    "data/runs/development_screening/phase11-known-v4-preparation-v1/pytest.txt": {
+      "sha256": "87ca210f25f063dc8bd6d9a0f6ceba07afe3f1da3e1c591cc4f8744ac9710a10",
+      "size_bytes": 4387
+    },
+    "data/runs/development_screening/phase11-known-v4-preparation-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    }
+  },
+  "actual_pending_rejection_preserved": true,
+  "actual_positive_rebinding_passed": true,
+  "prior_run_files_unchanged": 136,
+  "parent_full_diagnostic_replayed_on_copy": true,
+  "unchanged_original_cases_sources_expected_gates_refusals": true,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "new_known_regression_execution_not_started": true,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "tests": {
+    "pytest_passed": 734,
+    "pytest_elapsed_seconds": 26.46,
+    "ruff": "passed",
+    "product_source_unchanged_since_parent_diagnostic": true
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-qwen35-9b-complete-known15-v4-preregistration",
+  "created_at_utc": "2026-10-22T02:16:45.649969+00:00",
+  "candidate_config": {
+    "path": "configs/phase11_known_trace_candidate_v4.yaml",
+    "sha256": "151f349446862ebe0385090586a073c439dbea363ce5bbbd7ef20a964cc1fe68"
+  },
+  "expected_plan": {
+    "path": "configs/phase11_known_trace_regression_v4.json",
+    "sha256": "1162714e961f9858f31b0f993cd11c264e60d8e39335a8690e1f396e9ce1ab6a"
+  },
+  "parent_candidate": {
+    "path": "configs/phase11_semantic_candidate_v15.yaml",
+    "sha256": "97daad00225fcd2fd20defa548aceabde1ea1e004a975be4a2da1447f8de4b49"
+  },
+  "parent_complete_result": {
+    "path": "data/manifests/phase11_cited_decisions_result_v1.json",
+    "sha256": "e48dfcaf561ba772f603b752bb3d95a5b99271305f9d30d9fb46f9967838a3d7"
+  },
+  "prerequisite_report": {
+    "path": "data/runs/semantic_diagnostics/phase11-qwen35-9b-cited-v15/report.json",
+    "sha256": "b7d5d8c3c396248248ff0c66191ec829d12af60858d73747a3a4f5bd9fec0ad5"
+  },
+  "preparation_receipt": {
+    "path": "data/runs/development_screening/phase11-known-v4-preparation-v1/preparation.json",
+    "sha256": "60f46ba31e9fff91aa2874fce1ebf5dc9434a921c8b1afbec35c864bffb3c0f6"
+  },
+  "previous_pending_guard_evidence_preserved": {
+    "path": "data/manifests/phase11_known_trace_preparation_pending_v1.json",
+    "sha256": "d7d43d8bd98aab401f5778178cac63e07d1592bea9fbc9bc233d67ae43641b9e"
+  },
+  "native_core_and_probe_sha256": {
+    "src/rag_research/evaluation/__init__.py": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b",
+    "src/rag_research/evaluation/claims.py": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602",
+    "src/rag_research/evaluation/claimwise.py": "2d0045aad140d869aef2ac279cbca3df50cfa7c320d1b06a553904aa29d9b617",
+    "src/rag_research/evaluation/judge.py": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2",
+    "src/rag_research/evaluation/order.py": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e",
+    "src/rag_research/evaluation/quote_alignment.py": "a9bc408e05d9fa25c0902b13b7e70d2e2eb7d3402ba4b10c24184d43759b88bb",
+    "src/rag_research/evaluation/reasoned_json.py": "5c6b089e9442d8f23783aaa5afc4c9a9744d9a617ac8ea7064eff47fbc219830",
+    "src/rag_research/evaluation/reasoning_budget.py": "f9f933dd20b73e51c15aae87c43dc5e50e22b8c4624f9857c2cb13029b6d91ec",
+    "src/rag_research/evaluation/schema.py": "616619fe28b913a309a6676415b2a8d8eb36afa0ddaef0ccb77e214e109a3b42",
+    "src/rag_research/evaluation/sentence_claims.py": "a0a3715ab7f1c3b0b8d7766e779c716efc133822a20c524bab1ca8e09d47a0a5",
+    "src/rag_research/evaluation/source_reading.py": "ebc5ace62451eb4d8fcdc4380d16be6c0eead9f22d28de6fd96d3f4aac72f693",
+    "src/rag_research/evaluation/tasks.py": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+    "src/rag_research/experiments/frozen_trace.py": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4",
+    "src/rag_research/experiments/protocol.py": "e5738106f7409313cd27fd052eae61779b40b112c22ec3d299c7932aa52ce3cf",
+    "src/rag_research/experiments/storage.py": "073f4c89dca883fd0f5c3ab900c722361c720a3cb607faa9903190c15b272165",
+    "src/rag_research/generation/__init__.py": "33c1d27b63c42955f7e025298bd2347fbc8cf5afc57216d35516e7701e0e421a",
+    "src/rag_research/generation/artifacts.py": "bb70ba77b944ecc23a07cc1865a3fafeee610dcd453caebc5a77b8fe79fc44b5",
+    "src/rag_research/generation/auxiliary.py": "b702f4762d8da7e892486c1096b7f8c60dabf4d93dd9c3722a8a0904d893c410",
+    "src/rag_research/generation/auxiliary_config.py": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+    "src/rag_research/generation/config.py": "9a641357a2767322e97d8ee224b2f7d2d0c7bda0a3ff21f7f684fc329175b60e",
+    "src/rag_research/generation/context.py": "a86c5fda1a1d7747d3ce9087a732b70e700802b6142e4e5db6adeb1a64b6a63c",
+    "src/rag_research/generation/cuda_runtime.py": "b21d13c790071fde655aa6c3601eaf91fc609b842fcdc11725e96e9c641731f9",
+    "src/rag_research/generation/generator.py": "3ece4c433d2dec54b4c07dc0b95e42f78a2debde1349ab67d7d852445f9226a1",
+    "src/rag_research/generation/json_grammar.py": "c1355a13afa204b8ae1362a87cd928116f180ee07dc8b208e29c91a86bf04c46",
+    "src/rag_research/generation/local.py": "271494fa62fa30f40f73e43ff1f2e9de3c5b801cd2baab83d9adc5eb7c7d3feb",
+    "src/rag_research/generation/smoke.py": "469dd916567aac7d247dea606f5e885685f3c91d62e79dae683c8f7fa75a063a",
+    "scripts/probe_final_json_boundary.py": "61a903ffb2b65e5b23763fc3be620347ca43148e3ab7a89f5c2946090370663c"
+  },
+  "reused_fresh_format_result": {
+    "path": "data/manifests/phase11_qwen35_9b_format_result_v4.json",
+    "sha256": "d74578d590dc5ae1fe638ce51dfe86f80d6e8d111b0b6f43daa40de760418c67"
+  },
+  "reuse_reason": "All 27 native core/probe files and exact model/runtime/context/reasoning/grammar/sampler unchanged; only study-version and diagnostic plan differ from passing v15.",
+  "reused_format_artifacts_verified": 25,
+  "new_formal_calls": 0,
+  "all_old_qa_claims_expected_source_gates_and_refusal_traces_unchanged": true,
+  "qa": 15,
+  "fixed_units": 42,
+  "conditions": 30,
+  "definite_expected_verdicts": 74,
+  "supported_expected_verdicts": 58,
+  "ambiguous_verdicts_excluded_only_from_accuracy": 10,
+  "separate_bare_refusal_traces": 8,
+  "first_critical_conditions": 12,
+  "first_critical_completion_limit": 42,
+  "gate": {
+    "stop_on_task_error": true,
+    "stop_after_critical_failure": true,
+    "critical_all_exact": true,
+    "known_min_accuracy": 0.9,
+    "known_min_supported_accuracy": 0.9,
+    "known_max_false_support": 0
+  },
+  "completion_limit": 84,
+  "automatic_retries": 0,
+  "actual_prior_completed_9b_calls": 275,
+  "maximum_cumulative_completed_9b_calls": 359,
+  "time_projection_minutes_from_prior_run_means": [
+    63.371087851939954,
+    86.15832129840176
+  ],
+  "time_projection_is_descriptive_not_wall_limit": true,
+  "new_model_calls_at_registration": 0,
+  "launch_order": [
+    "Commit fixed version and new dedicated worktree",
+    "Verify all bound sources and immutable runtime",
+    "All 84 actual input token/startup checks with zero completions",
+    "Run all 12 critical conditions first; require every critical label exact before positives",
+    "Keep all failures/unattempted/cost; audit cached replay adds zero calls; do not adopt main before full 30-condition pass"
+  ],
+  "new_main_or_reserved_calibration_or_evaluation_qa_used": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

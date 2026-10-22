@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.55 — 2026年10月22日 新Native形式の全9条件通過と固定WT意味診断
+## Version 8.56 — 2026年10月22日 全70判定監査と同一Byteコピーによる回帰引継ぎ
 
-[研究計画 Version 7.53](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.54](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 
@@ -10,11 +10,13 @@
 
 
 
+[v15の全意味診断と全旧回帰v4の登録](phase11_cited_decisions_result_v1.md)を保存した。固定55d031c/session77717は全58条件/70 Callを終了し、既知Critical4/4・人工英語24/24・日本語30/30・誤支持0で診断基準に通過。入力118450/出力194751 Token・3168.554393秒、95 Source/再開133 File不変・追加Call/Server0、Raw135/全142 Artifactを照合した。全70出力の独立Schema/AI確認と35組のSchema不変を保存。人工27組は1文書で同一入力、Council c6は曖昧のまま、F5/7による矛盾を含む回答の採用相当も保持する。親136 Fileのコピー上で全再検証する引継ぎに成功し、全旧15 QA/42文/30条件・84 Call/全Expected/基準/Source25/裸拒否8をv4へ結んだ。新事前登録v8はRetry0・既存275/累積上限359、Native27と新形式v4の25 Artifact不変を照合して再利用する。次は新Commit固定WTで全84入力/生成0→全旧回帰。実主/Cal採用・最終N/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
+
+以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
+
 [引用状態Schema v3の実機形式検証](phase11_cited_decisions_native_result_v1.md)を保存した。固定55d031cの全70実入力/生成0・最大3478 Token/全層CUDAと、新Native 10 Call中の全9 Strict条件に通過。入力630/出力1679 Token・生成合計29.255313秒、92 Source/再開14 File不変・追加Call/Server0を確認し、Raw16を含む全25 Artifactを固定WTとByte照合した。包装時の既存File検査失敗も保存し、追加推論はない。形式は意味精度の証明ではない。同じWTで全58条件/最大70 Callをsession77717として実行中（10:37 JST観測で7/58条件完了、既知4条件のCritical基準を通過して人工条件へ進行）。開始時9B累積205/上限359・Retry0、全旧対象/Expected/基準を維持する。現行93 Sourceの最終Validator検証v2も保存し、全734 Test/Ruff・実未達拒否・30 Payload照合、Evaluation本文解析/追加推論0を確認。実主/Cal採用・最終N/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
 
 [9B直接判定の暫定資源見積り](phase11_qwen35_9b_resource_estimate_v1.md)を追加した。完了済みv13/旧回帰v3/v14の全121 Call（既知費用の失敗1を含む）と236 Artifactを再照合し、6323.312653秒/平均52.258782秒を確認。各9試行・日英40 QA・平均5固定文の仮定ではJudgeだけ23.0〜30.8時間、初回/書換え/検索/採点は別途。これは観測Run平均の記述的な幅であり、時間保証/95%CIではない。旧8B Policyを9Bの許可に流用せず、採用後に実費と新Policyを結ぶ。最終N/資源は未決で、文切捨て/QA補充/基準緩和を行わない。
-
-以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 
 [引用必須状態を生成時に拘束するv15候補](phase11_cited_decisions.md)を実装した。旧v2のSchema/Grammarと人工6 Caseの変更前Hashを保持し、v3だけでC/Sの実ID引用1〜2・NSの0〜2・両Boolean true禁止を表す。閉じたCompilerの選択肢/明示Protocolを対応し、新規33件を含む全734 Test（26.78秒）/Ruffと実v14失敗のClient=None再開Byte不変/追加0を確認。独立Draft-7検証器は開発依存だけに追加し、既存依存/別GPU Lockを維持。Core/Probe27 Binding中5 Fileが変わるため旧形式証拠は再利用せず、旧6+状態4の新形式10、全意味70、全旧回帰84=最大164/累積359 Call・Retry0を事前登録した。Model/Runtime/予算/日英Prompt・全旧対象/Expected/基準は維持する。Native実走/意味採用はまだ未了で、主/Cal/Evaluationを開始していない。
 
