@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q5-new-native-format-proof-not-semantic-adoption",
+  "recorded_at_utc": "2026-10-22T03:54:18.917077+00:00",
+  "fixed_commit": "be6e6ac606abf985c5cc9dfe921360fd14fea0b4",
+  "tool_session_id": 15996,
+  "terminal": true,
+  "status": "passed",
+  "config": "configs/phase11_semantic_candidate_v16.yaml",
+  "config_sha256": "f1131c7747ed1b326db789849ecd3b18abe55f1f0c0eaf9eedd7e6cb6f48e467",
+  "strict_conditions_passed": 9,
+  "actual_completion_attempts": 10,
+  "legacy_array_escape_preserved": true,
+  "artificial_reasoning_tokens": 128,
+  "artificial_output_tokens": 512,
+  "context_tokens": 24576,
+  "input_tokens": 630,
+  "output_tokens": 1802,
+  "summed_generation_seconds": 34.96400083802291,
+  "full_gpu_offload": true,
+  "source_hashes_verified": 92,
+  "reread_unchanged_files": 14,
+  "independent_schema_validator": "jsonschema Draft7Validator",
+  "saved_live_tokenizer_verified_native_positions_checked": true,
+  "offline_audit_used_no_new_or_hardcoded_tokenizer": true,
+  "audit_new_calls": 0,
+  "audit_new_servers": 0,
+  "artifacts": {
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/audit_check.json": {
+      "sha256": "2196174c92b834575a94f4974d44eb8e2766977becd45290ab6f7889eb9f4837",
+      "size_bytes": 4068
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/legacy-array.json": {
+      "sha256": "d7b3aadad19137bbf8416c2317093e380b6c44f33ccef6d4d810c06ecaca2e2e",
+      "size_bytes": 7734
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/plan.json": {
+      "sha256": "e9f003e9b026ae03817dddb6202e265ccc81b4b093033e0298918c9be7cc1d68",
+      "size_bytes": 29894
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/report.json": {
+      "sha256": "01568bbc03497b1df373b73181f895ff4bed6ffef62c87833f050d3a23baf086",
+      "size_bytes": 11768
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/resume_check.json": {
+      "sha256": "c31628eea83a6c34f48c6211bf01554fccdfd3b15eac57ee93806919d68fc6d7",
+      "size_bytes": 1577
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/server.log": {
+      "sha256": "de9907f0937b78fb324388ba782c6e31fa6b2ecffbb297b54c3b5b400923b380",
+      "size_bytes": 45832
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/strict-array.json": {
+      "sha256": "b3c6f4a52273c6f1da7555986a93542c09432d94943f2f4c78381605a652eeec",
+      "size_bytes": 8153
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/strict-cited-contradicted.json": {
+      "sha256": "d8f4b33f32d059a9128c326370f9423f3fd4d285271a11bab6713d9eabaf7ac5",
+      "size_bytes": 16686
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/strict-cited-missing-empty.json": {
+      "sha256": "685e7fd88530b1c7ab5faae3a9cfd8208d4ffdf777c0c87bb54ba56fc766936e",
+      "size_bytes": 17219
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/strict-cited-supported.json": {
+      "sha256": "c5914b28535549e9b2a47611b3faaec549ce87aa52ba21aae469c165f2fa0f59",
+      "size_bytes": 16666
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/strict-cited-union.json": {
+      "sha256": "7b3d7ba9733469002d064e668a41b714bcc389a6c26c4fedf12449ebb4689d70",
+      "size_bytes": 19958
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/strict-fixed-ids.json": {
+      "sha256": "7f877712462b26e49de1d08d716ec0977f150833487d04f2b5a59c82c421107f",
+      "size_bytes": 10390
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/strict-prose-fence.json": {
+      "sha256": "b4ea5d69d29f3d60545f4c29e6c5f319541ab23b8786472c3e388361b2945e1c",
+      "size_bytes": 8239
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/strict-rewrite-bounds.json": {
+      "sha256": "27fe9be4d963485cff501fc82e72951fc900c114c6ab7d3d8768a85be189f0ef",
+      "size_bytes": 93241
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q5-cited-v5/strict-unicode-escape.json": {
+      "sha256": "42271f330e09ef646c6c58ee9035f91c902091bbe76ead73e131abf5370057cd",
+      "size_bytes": 8295
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/format_audit.py": {
+      "sha256": "6d02f65296aa99f47af130f8769497a40df017a3a360ccc78e168d4a58ecc5da",
+      "size_bytes": 6277
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/format_rerun_rejection.txt": {
+      "sha256": "93243f6d1a9dadec384cc9828906b2cc9d3084622a1d7c99522ce7d3eb24e54a",
+      "size_bytes": 751
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/preflight_v1/plan.json": {
+      "sha256": "d57b716c06faf369386965a853fbe0535171997f038c15b0b07d94e9f886089b",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/preflight_v1/report.json": {
+      "sha256": "6de18ac64e2e70901a79b2f3ab875f1c6fcdf7f5e8b21c186cb1b9738734d53a",
+      "size_bytes": 30798
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/preflight_v1/server.log": {
+      "sha256": "10c2413f663cbe23057ae5bbb6ca4ece2d2e84027f74c9d8581038d304c1886d",
+      "size_bytes": 19239
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/preparation_v1.json": {
+      "sha256": "7b680cfff6d43e9fb69ef5bc6754279be24ab8e441f844276d57054562c81956",
+      "size_bytes": 98983
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/prepare_worktree.py": {
+      "sha256": "3bd4406bc7400b2f807ef43e08fc0ccb8d278808a8fbae1d873937b9a23585e1",
+      "size_bytes": 4650
+    }
+  },
+  "prior_completed_Q4_calls": 317,
+  "completed_Q5_calls": 10,
+  "cumulative_all_9b_calls": 327,
+  "semantic_accuracy_not_proven": true,
+  "new_main_or_calibration_or_evaluation_qa_used": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

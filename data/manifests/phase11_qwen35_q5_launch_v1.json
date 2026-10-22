@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q5-v16-fixed-semantic-launch-not-adoption",
+  "created_at_utc": "2026-10-22T03:54:18.918550+00:00",
+  "fixed_commit": "be6e6ac606abf985c5cc9dfe921360fd14fea0b4",
+  "worktree": ".tools/worktrees/phase11-qwen35-9b-q5-v16",
+  "config": "configs/phase11_semantic_candidate_v16.yaml",
+  "config_sha256": "f1131c7747ed1b326db789849ecd3b18abe55f1f0c0eaf9eedd7e6cb6f48e467",
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v9.json",
+    "sha256": "40dd0cde570d1bcca6e3e5fdddddb330009466a49a4c0cc0c24348f579ad96a5"
+  },
+  "preflight": {
+    "path": "data/manifests/phase11_qwen35_q5_preflight_v1.json",
+    "sha256": "fc8814874213282e448ce87e2f8dd684b4190672f8a101c1626d769b906a7db6"
+  },
+  "fresh_Q5_format": {
+    "path": "data/manifests/phase11_qwen35_q5_format_result_v1.json",
+    "sha256": "b2759d743ceac4f091f75a527dc9a6f13c85fe475324f9a030d2c279e5f617ce"
+  },
+  "output_dir": "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-v16",
+  "status": "running",
+  "semantic_completion_limit": 70,
+  "conditional_known_completion_limit": 84,
+  "automatic_retries": 0,
+  "completed_Q4_calls_before_launch": 317,
+  "completed_Q5_calls_before_launch": 10,
+  "maximum_cumulative_all_9b_calls": 481,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "tool_session_id": 95591,
+  "tool_session_observed_at_utc": "2026-10-22T03:56:46.882752+00:00"
+}

@@ -7,7 +7,7 @@
 
 ## 1. 今どこまで終わっているか
 
-[9B Q5候補の取得と別事前登録](phase11_qwen35_q5_candidate.md)を保存した。同じ固定Repository Revisionの6577841376 Byte/公開SHA256を実ファイル全体で確認し、別Manifestへ取得した。取得CLIの量子化名Q4固定を修正し、誤った宣言は取得前に拒否/旧Q4既定を維持する。追加6件を含む全740 Test（28.29秒）/Ruffと実Config/Source/Identity契約に成功。候補v16はv15からStudy VersionとModel Manifestだけを変更し、Runtime/日英Prompt/予算/Sampler/全対象/Expected/基準とNative Core27を保持する。新事前登録v9は形式10+意味70+通過時の全旧回帰84=新規164/Retry0、旧Q4実317/Q5実0から全9B累積上限481。Model変更により新形式証拠が必要。実VRAM/Native形式/意味採用は未実施。次はCommit固定WTで生成0から確認し、全旧基準通過前に主/Calへ進まない。Gate 11未通過・Phase 12未実施。
+[9B Q5候補の取得と別事前登録](phase11_qwen35_q5_candidate.md)を保存した。同じ固定Repository Revisionの6577841376 Byte/公開SHA256を実ファイル全体で確認し、別Manifestへ取得した。取得CLIの量子化名Q4固定を修正し、誤った宣言は取得前に拒否/旧Q4既定を維持する。追加6件を含む全740 Test（28.29秒）/Ruffと実Config/Source/Identity契約に成功。候補v16はv15からStudy VersionとModel Manifestだけを変更し、Runtime/日英Prompt/予算/Sampler/全対象/Expected/基準とNative Core27を保持する。新事前登録v9は形式10+意味70+通過時の全旧回帰84=新規164/Retry0、旧Q4実317/Q5実0から全9B累積上限481。Model変更により新形式証拠が必要。固定be6e6acの専用WTへ389 File Binding/56不変Hardlink/相対Symlink10・Offline58 Packageを配置。全70入力/生成0・最大3478 Token/全層CUDAに通過し、VRAM7254/8151 MiBを一点観測した。新Q5形式10 Call/全9 Strict条件に通過、入力630/出力1802・生成34.964001秒、92 Source/再読14 File不変・追加Call/Server0、全24 Artifactを照合。同じWTで全意味58条件/70 Callをsession95591として開始し、全採否は未確定。[実行記録](phase11_qwen35_q5_execution_v1.md)に全証拠と再開先を保存。全旧基準通過前に主/Calへ進まない。Gate 11未通過・Phase 12未実施。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 

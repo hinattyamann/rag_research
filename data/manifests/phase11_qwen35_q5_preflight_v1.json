@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q5-zero-completion-all-input-full-CUDA-preflight-not-adoption",
+  "created_at_utc": "2026-10-22T03:49:04.267027+00:00",
+  "fixed_commit": "be6e6ac606abf985c5cc9dfe921360fd14fea0b4",
+  "tool_session_id": 35955,
+  "terminal": true,
+  "status": "passed",
+  "config": "configs/phase11_semantic_candidate_v16.yaml",
+  "config_sha256": "f1131c7747ed1b326db789849ecd3b18abe55f1f0c0eaf9eedd7e6cb6f48e467",
+  "actual_inputs": 70,
+  "completion_attempts": 0,
+  "maximum_input_tokens": 3478,
+  "context_tokens": 24576,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "7254 MiB, 8151 MiB",
+  "regular_file_bindings": 389,
+  "immutable_hardlinks": 56,
+  "internal_relative_symlinks": 10,
+  "offline_gpu_environment_packages": 58,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/prepare_worktree.py": {
+      "sha256": "3bd4406bc7400b2f807ef43e08fc0ccb8d278808a8fbae1d873937b9a23585e1",
+      "size_bytes": 4650
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/preparation_v1.json": {
+      "sha256": "7b680cfff6d43e9fb69ef5bc6754279be24ab8e441f844276d57054562c81956",
+      "size_bytes": 98983
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/preflight_v1/plan.json": {
+      "sha256": "d57b716c06faf369386965a853fbe0535171997f038c15b0b07d94e9f886089b",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/preflight_v1/report.json": {
+      "sha256": "6de18ac64e2e70901a79b2f3ab875f1c6fcdf7f5e8b21c186cb1b9738734d53a",
+      "size_bytes": 30798
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v16/preflight_v1/server.log": {
+      "sha256": "10c2413f663cbe23057ae5bbb6ca4ece2d2e84027f74c9d8581038d304c1886d",
+      "size_bytes": 19239
+    }
+  },
+  "new_native_format_proof_still_required": true,
+  "semantic_adoption_not_proven": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
