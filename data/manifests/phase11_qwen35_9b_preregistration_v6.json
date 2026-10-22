@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-qwen35-9b-complete-category-coverage-preregistration",
+  "created_at_utc": "2026-10-22T00:00:59.995165+00:00",
+  "candidate_config": "configs/phase11_semantic_candidate_v14.yaml",
+  "candidate_config_sha256": "e1cbb7e92a32dcdfdd46112a3543b66cc7452b11d5b57e3307ee0aa0212c5a43",
+  "status": "prepared_after_observed_known_false_support_pending_complete_parent_audit",
+  "observed_parent_diagnosis": {
+    "path": "data/runs/development_screening/phase11-known-v3-category-diagnosis-v1/diagnosis.json",
+    "sha256": "70ac6bf395a6b3a802829e2df2e2e9f068dde6896c8d3a16080befc7fbb29faa"
+  },
+  "expected_plan": "configs/phase11_semantic_diagnostics_claimwise_v4.json",
+  "expected_plan_sha256": "9500c2942638b3ed4f3919d9d29de3b5c4800e8d9f4419bca03571a862919874",
+  "prompt_change": "Prepend the same generic complete item/category coverage rule and fictional display example to both language judge systems. Do not name the observed character, works, media categories, answers or expected labels. Preserve all old instructions, task schemas, extraction and rewrite.",
+  "hypothesis": "Typed examples can be overgeneralized from a broad category despite the original complete-support instruction. Explicit positive support for every listed item may reduce false support; success is unproven and support recall may decrease.",
+  "same_model_runtime_context_reasoning_verify_rewrite_probability_sampler_schema_seed": true,
+  "all_29_cases_35_units_58_conditions_expected_and_gates_unchanged": true,
+  "known_15_qa_42_units_30_conditions_unchanged": true,
+  "both_languages_same_judge": true,
+  "artificial_format_proof_reused": {
+    "path": "data/manifests/phase11_qwen35_9b_format_result_v3.json",
+    "sha256": "e52458162fb9c377299947c99633d33e96e6eaf38391f18b1b1d5177cb63fe60",
+    "strict_conditions": 5,
+    "reason": "Fixed artificial messages do not use candidate prompts or intermediate reading. Same model/runtime/context/sampler/verification task and native core/probe; no extra six format calls. New actual-input preflight is still mandatory.",
+    "verified_core_source_sha256": {
+      "src/rag_research/evaluation/__init__.py": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b",
+      "src/rag_research/evaluation/claims.py": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602",
+      "src/rag_research/evaluation/claimwise.py": "2d0045aad140d869aef2ac279cbca3df50cfa7c320d1b06a553904aa29d9b617",
+      "src/rag_research/evaluation/judge.py": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2",
+      "src/rag_research/evaluation/order.py": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e",
+      "src/rag_research/evaluation/quote_alignment.py": "a9bc408e05d9fa25c0902b13b7e70d2e2eb7d3402ba4b10c24184d43759b88bb",
+      "src/rag_research/evaluation/reasoned_json.py": "5c6b089e9442d8f23783aaa5afc4c9a9744d9a617ac8ea7064eff47fbc219830",
+      "src/rag_research/evaluation/reasoning_budget.py": "f9f933dd20b73e51c15aae87c43dc5e50e22b8c4624f9857c2cb13029b6d91ec",
+      "src/rag_research/evaluation/schema.py": "2335e5f8655748c7e5dc9bc78e338294dcb98a2bfbec8a4ffc57dbdef0c04d2f",
+      "src/rag_research/evaluation/sentence_claims.py": "a0a3715ab7f1c3b0b8d7766e779c716efc133822a20c524bab1ca8e09d47a0a5",
+      "src/rag_research/evaluation/source_reading.py": "ebc5ace62451eb4d8fcdc4380d16be6c0eead9f22d28de6fd96d3f4aac72f693",
+      "src/rag_research/evaluation/tasks.py": "72c27b8263fdab442fa11e604d3a092eb820c78ecff866b8ea7964383160a792",
+      "src/rag_research/experiments/frozen_trace.py": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4",
+      "src/rag_research/experiments/protocol.py": "3ca63d0688f9d7e7715a0dfa81733c84b7cfc512889aac98e3f43787a2ae92c2",
+      "src/rag_research/experiments/storage.py": "073f4c89dca883fd0f5c3ab900c722361c720a3cb607faa9903190c15b272165",
+      "src/rag_research/generation/__init__.py": "33c1d27b63c42955f7e025298bd2347fbc8cf5afc57216d35516e7701e0e421a",
+      "src/rag_research/generation/artifacts.py": "bb70ba77b944ecc23a07cc1865a3fafeee610dcd453caebc5a77b8fe79fc44b5",
+      "src/rag_research/generation/auxiliary.py": "b702f4762d8da7e892486c1096b7f8c60dabf4d93dd9c3722a8a0904d893c410",
+      "src/rag_research/generation/auxiliary_config.py": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+      "src/rag_research/generation/config.py": "9a641357a2767322e97d8ee224b2f7d2d0c7bda0a3ff21f7f684fc329175b60e",
+      "src/rag_research/generation/context.py": "a86c5fda1a1d7747d3ce9087a732b70e700802b6142e4e5db6adeb1a64b6a63c",
+      "src/rag_research/generation/cuda_runtime.py": "b21d13c790071fde655aa6c3601eaf91fc609b842fcdc11725e96e9c641731f9",
+      "src/rag_research/generation/generator.py": "3ece4c433d2dec54b4c07dc0b95e42f78a2debde1349ab67d7d852445f9226a1",
+      "src/rag_research/generation/json_grammar.py": "190113d8e69972578722c0cb89ff85e9c1142fafe8de70383a534a018016c292",
+      "src/rag_research/generation/local.py": "271494fa62fa30f40f73e43ff1f2e9de3c5b801cd2baab83d9adc5eb7c7d3feb",
+      "src/rag_research/generation/smoke.py": "469dd916567aac7d247dea606f5e885685f3c91d62e79dae683c8f7fa75a063a",
+      "scripts/probe_final_json_boundary.py": "affcbee22dc1f386951a38ba64c0924b45616d74d14bed7af9da3ab102c21e74"
+    }
+  },
+  "preflight_completions": 0,
+  "semantic_diagnostic_completion_limit": 70,
+  "known_regression_limit_if_prerequisite_passes": 84,
+  "maximum_new_screening_completions": 154,
+  "prior_registered_9b_maximum_including_running_parent": 228,
+  "maximum_cumulative_9b_completions_conservative": 382,
+  "exact_prior_completed_calls_to_bind_after_parent_terminal_audit": true,
+  "automatic_retries": 0,
+  "new_completions_at_preregistration": 0,
+  "launch_requires": [
+    "Parent known regression v3 terminal; full Raw/cost/resume audit and preserved result including failures and unattempted conditions",
+    "This candidate committed and immutable dedicated worktree with all original source/model/runtime hashes verified",
+    "Every actual diagnostic input passes generation-zero preflight, full CUDA and unchanged native probe/core proof",
+    "No simultaneous model server from the parent run"
+  ],
+  "stopping_rules": "Keep the original all-critical-exact, per-language artificial accuracy >=0.9 and false support 0; then every known15 condition and original accuracy/support/false-support gates. First task error or completed critical gate failure stops without retry, clipping, relabeling or refill.",
+  "development_revision_rationale": "One generic prompt clarification justified by an observed used known-case false support. Additional time/calls are a separately preregistered development candidate, not an extension or rerun of the failed parent. Do not claim repeated known-case selection is independent accuracy.",
+  "main_or_reserved_calibration_used_for_tuning": false,
+  "main_and_reserved_calibration_execution_not_authorized_by_this_preregistration": true,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "prompts_sha256": {
+    "configs/phase11_semantic_prompts_en_v10.yaml": "4fe99d235d577fd317900b28fc8164f758ef018cf70e2ec17abc93b8616f4316",
+    "configs/phase11_semantic_prompts_ja_v10.yaml": "cf08d79ae7dce1311ebd1d88076ba7312992ec20b4b8d409cd876333b75dc6ae"
+  },
+  "observed_parent_proof_bindings": {
+    "path": "data/runs/development_screening/phase11-known-v3-category-diagnosis-v1/proof_bindings.json",
+    "sha256": "930dcf57a6e83df473b69e44d45e341f9d764f79a205eec7f7a3c430a7174fb1"
+  },
+  "prior_unchanged_python_source_validation": {
+    "path": "data/manifests/phase11_bilingual_finalization_validation_v1.json",
+    "sha256": "43b56173e5dbf8941f0723f01165144a6e84deed40d4c13da4f8eac36acf0d12",
+    "full_pytest_passed": 701,
+    "source_unchanged": true
+  }
+}

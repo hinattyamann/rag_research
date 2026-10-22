@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.48 — 2026年10月22日 日英最終固定Validatorと未達時の凍結拒否
+## Version 7.49 — 2026年10月22日 既知誤支持の診断と完全支持指示の別候補
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.50](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.51](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -12,6 +12,8 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 
 
 
+
+[カテゴリー・列挙項目の完全支持を明確化するv14候補](phase11_category_coverage_candidate.md)を別登録した。実行中の旧15 QA回帰v3でTom c5が元S/逆NS（Expected NS、F1.0/0.8・両採用）となり、元順序の誤支持を確認した。固有名/答えを入れず、日英へ同じ一般Prefixだけを加える。全旧29例/35文/58条件・15 QA/42文/全基準/Native Core27とModel/Runtime/予算を維持し、契約と関連82 Test（2.61秒）/Ruffに成功。Python Sourceは全701 Testのe3c9fa0と同一。新規最大70+84=154 Call/Retry0、親の旧登録上限込み保守的9B累積382を事前記録したが、v14のGPU確認/推論は未開始。親session93865の終了・全失敗/未試行/Raw/費用監査保存後だけ次の固定Worktreeへ進み、主/Cal採用は行わない。
 
 [日英の最終固定Validator](phase11_bilingual_finalization.md)を追加した。実主証明書と全採点封印済みCalibrationを再検証し、旧回帰/全Native/意味・統計・費用、両言語Assets/全Index/Embedding Payload、Evaluation本文を読まないID選定、最終N/資源/停止規則を照合する。未達時は最終Manifestを作らず、検証資料自身のSource一致も要求する。雛形のN/資源/実証拠は未決で、実主/Cal採用と最終凍結は未了。固定8ea37e1の旧15 QA回帰v3/session93865は継続観測し、重複起動しない。修正後の新規27件を含む全701 Test（25.15秒）/Ruff・実未達拒否・全30 Index/Embedding Payload照合に成功。母集団EN564/JA209のMetadata導出は最終Nの決定ではなく、Evaluation QA解析/追加推論0。
 
