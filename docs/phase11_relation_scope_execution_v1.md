@@ -35,3 +35,19 @@ Config v17/新Runを位置引数で渡し、全入力/順序/文ID/Source/費用
 全旧基準通過後だけ新主Policy/実費へ進む。
 主/予約Cal/Evaluationの新規QAは使用していない。
 主/Cal採用・最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施、Goal継続中。
+
+## 旧全回帰v6への準備Guard
+
+2026年10月22日16:13 JST。実行中session6340の終了・監査を待つ間に、
+旧回帰v5の準備Helperから、候補v17/新Runを前提とするv6用の別Helperを作成した。
+全旧15 QA/42文/Source25/全Expected/基準/裸拒否8は原版との一致を確認し、
+正の処理は全58条件/70 Callの通過・終了後監査・全Rawのコピー上での再検証を必須とする。
+新しい回帰Config/Planはまだ作成していない。
+
+実未完了の固定WTをPRIORへ指定する確認では、終了・監査不足を実際に拒否した。
+この確認でのみ参照先を固定WTへ向け、正の処理の参照先は正規Runのままとした。
+拒否はConfig読込み/Run Lock/再開より前で、完了済みCritical4集約FileもByte不変。
+稼働中の他Task全体は固定・Snapshotしていない。追加Model Call/Serverは0。
+構文/Ruffに成功し、Helper/確認Script/Receipt/標準出力・エラー/検査Logの7 Artifactを
+`phase11_relation_scope_known_preparation_pending_v1.json`へ結んだ。
+これは準備Guardの検証であり、全診断通過・正の登録・旧回帰の採用を示さない。
