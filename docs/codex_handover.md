@@ -1,10 +1,14 @@
 # 別チャットから再開するための引継ぎ
 
+[v14の引用ID欠落による停止](phase11_category_coverage_result_v1.md)を保存した。固定f92298b/session54441は9 Call・1条件成功/1エラーで終了し、56条件未試行。支持判定なのにevidence_ids空で、既存検査が正しく拒否した。入力3339/出力4211のエラーは出力上限到達ではなく、v2の生成Schemaが後段の引用必須条件を表し切れていない。全入力29988/出力31378 Token・518.200587秒、95 Source/再開16 File不変・追加Call/Server0、原本18/全26 Artifactと8有効出力・1不正ObjectのAI確認を保存した。9B実完了累積195。旧v2/Raw/Expected/全基準を保ち、次は別Versionで支持/矛盾の非空引用とBoolean状態を生成段階でも拘束する。実装・新形式/意味/旧回帰は未実施で、主/Cal採用は未了。
+
+実行状態更新: session54441と監査64692は終了済み。現在GPU実走なし。旧93865/33134を含め全失敗は正規保存済みで再生成しない。次はevaluation/schema.pyのcited_verdict_schema、generation/json_grammar.pyの閉じたCompiler、evaluation/tasks.py/protocol.pyの明示Version選択を点検し、旧v2を変えず別Versionを実装する。Source/Core変更後は新形式証拠が必須。実装/検証/事前登録→固定WT→新形式/生成0→同じ全意味/旧15 QAの順で進む。引用後付け/Label変更で失敗を隠さない。
+
+以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
+
 [旧15 QA直接回帰v3の不通過結果](phase11_known_trace_direct_result_v3.md)を正規保存した。固定8ea37e1/session93865は42 Call・12 Critical条件を終了し、完全一致8/12・誤支持4（Tom元1/Warm front逆1/Tar Heel c2両2）とNS→Cの2不一致で不通過。残り18条件未試行、全74/支持58の精度はnull。入力130198/出力156604 Token・2584.749639秒、94 Source/再開60 File不変・追加Call/Server0、全68 Artifactと全42最終出力のAI確認を保存した。親終了時9B累積186。次のv14は固定f92298bで181 File Binding/相対Symlink10・Offline58 Packageを再現し、準備のリンク連鎖検査失敗も保全。全70実入力/生成0・最大3478 Token・24k/全層CUDAに通過し、VRAM6513/8151 MiBは一点観測。Native27/形式15 Artifact不変と準備/Preflight7 Artifactを確認し、同じWTの全58条件/最大70 Callを開始した（session54441）。全旧基準/Expected/分母・Retry0を維持、主/Cal採用は未確定。
 
 旧session93865と監査33134は終了済みで再生成しない。現在の唯一のGPU実走はsession54441、WT .tools/worktrees/phase11-qwen35-9b-v14、Config phase11_semantic_candidate_v14.yaml、Output data/runs/semantic_diagnostics/phase11-qwen35-9b-direct-v14。同じHandleを継続観測する。終了後だけ固定WTのuvで/tmp/phase11_direct_audit.pyへConfig/Runを位置引数で渡して全Raw/費用/再開追加0を監査する。全58/70通過後だけ旧全15 QA/42文/30条件・84 Callを新Planへ結び、主採用を先に決めない。
-
-以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 
 [カテゴリー・列挙項目の完全支持を明確化するv14候補](phase11_category_coverage_candidate.md)を別登録した。実行中の旧15 QA回帰v3でTom c5が元S/逆NS（Expected NS、F1.0/0.8・両採用）となり、元順序の誤支持を確認した。固有名/答えを入れず、日英へ同じ一般Prefixだけを加える。全旧29例/35文/58条件・15 QA/42文/全基準/Native Core27とModel/Runtime/予算を維持し、契約と関連82 Test（2.61秒）/Ruffに成功。Python Sourceは全701 Testのe3c9fa0と同一。新規最大70+84=154 Call/Retry0、親の旧登録上限込み保守的9B累積382を事前記録したが、v14のGPU確認/推論は未開始。親session93865の終了・全失敗/未試行/Raw/費用監査保存後だけ次の固定Worktreeへ進み、主/Cal採用は行わない。
 
