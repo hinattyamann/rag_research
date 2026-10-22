@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-relation-v17-whole-known-v6-launch-not-adoption",
+  "observed_active_at_utc": "2026-10-22T08:00:08.936865+00:00",
+  "fixed_commit": "d9c889b88a79392fd938a46ac516ca79398d16bd",
+  "worktree": ".tools/worktrees/phase11-known-trace-regression-v6",
+  "run": "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6",
+  "tool_session_id": 78660,
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v6.yaml",
+    "sha256": "2ebc0f10112d8c52d724d459355d6e3e73a9cf399d7a308c90a263bf56bd25bf"
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v12.json",
+    "sha256": "855522e0d84d823edb0bd4edcfadb3013d161cc5583dbb2d88916cd9b8979500"
+  },
+  "complete_parent_result": {
+    "path": "data/manifests/phase11_relation_scope_semantic_result_v1.json",
+    "sha256": "d2dcfef960e63f7e186b00ebecaae64726afac1236f45b7008ee593847bd9372"
+  },
+  "positive_preparation": {
+    "path": "data/manifests/phase11_relation_scope_known_preparation_validation_v1.json",
+    "sha256": "789d6e83ab8057d5fb26550aec6dac391edcfef098c2254b0ae99bb69bb3bf55"
+  },
+  "registration_validation": {
+    "path": "data/manifests/phase11_relation_scope_known_registration_validation_v1.json",
+    "sha256": "db51a481b603c0bbede79e4502e79fca8b96754164cdbcc6984d1432effc2651"
+  },
+  "preflight": {
+    "path": "data/manifests/phase11_relation_scope_known_preflight_v1.json",
+    "sha256": "e2489602a64825e63d335311950e62bbfff8298b57d8bdfae31519ca22e021f6"
+  },
+  "first_negative_qa": 6,
+  "first_critical_conditions": 12,
+  "first_critical_calls": 42,
+  "whole_qa": 15,
+  "whole_fixed_units": 42,
+  "whole_conditions": 30,
+  "maximum_new_calls": 84,
+  "automatic_retries": 0,
+  "prior_completed_all_9b_calls": 509,
+  "maximum_cumulative_calls": 593,
+  "first_all_critical_exact_before_remaining_18_conditions": true,
+  "old_sources_expected_gates_refusals_unchanged": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

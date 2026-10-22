@@ -57,4 +57,6 @@ Native Core27/新Q5形式24 Artifactの不変を再確認した。
 
 全旧基準通過後だけ新しいMain Policy/実費へ進む。
 主/予約Cal/Evaluationの新規QAは使っていない。
-実旧回帰、主/Cal採用、最終N/資源/条件/凍結は未了。Gate 11未通過、Phase 12未実施、Goal継続中。
+固定d9c889b上で全84入力の生成0/全層CUDAを確認し、旧回帰v6をsession78660として開始した。
+[回帰実行記録](phase11_relation_scope_known_execution_v1.md)を最新の再開先とする。全採否は未確定。
+主/Cal採用、最終N/資源/条件/凍結は未了。Gate 11未通過、Phase 12未実施、Goal継続中。

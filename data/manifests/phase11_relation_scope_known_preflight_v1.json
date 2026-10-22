@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-relation-v17-whole-known-v6-all-input-zero-completion-preflight",
+  "recorded_at_utc": "2026-10-22T07:58:16.954080+00:00",
+  "fixed_commit": "d9c889b88a79392fd938a46ac516ca79398d16bd",
+  "preparation_tool_session_id": 97158,
+  "preflight_tool_session_id": 42180,
+  "regular_file_bindings": 820,
+  "immutable_hardlinks": 56,
+  "internal_relative_symlinks": 10,
+  "gpu_environment_offline_packages": 58,
+  "all_84_real_inputs_fit": true,
+  "max_input_tokens": 3927,
+  "completion_attempts": 0,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "7254 MiB, 8151 MiB",
+  "observation_is_not_peak_or_kernel_time": true,
+  "fresh_Q5_format24_and_native_core27_unchanged": true,
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v6.yaml",
+    "sha256": "2ebc0f10112d8c52d724d459355d6e3e73a9cf399d7a308c90a263bf56bd25bf",
+    "size_bytes": 2178
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v6.json",
+    "sha256": "881d8e58e0d9b2806223f8650b1b3d66c11a862dab007fcc7d726c33ce043e1b",
+    "size_bytes": 140809
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v12.json",
+    "sha256": "855522e0d84d823edb0bd4edcfadb3013d161cc5583dbb2d88916cd9b8979500",
+    "size_bytes": 6183
+  },
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/prepare_worktree.py": {
+      "sha256": "4ec93ff865618d991e9781de664a8a1258d319b1dd167e93b43dd85dd8c6ef43",
+      "size_bytes": 4803
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/preparation_v1.json": {
+      "sha256": "970d17a337e6b9a012560034775f829e3320351a6f76adc9f3c0217a6bec8a7d",
+      "size_bytes": 208718
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/preflight_v1/plan.json": {
+      "sha256": "9b37dcd1da96406208d43ffa7100f347336d8dfadbf85ba2c98221bbfd9b5cdc",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/preflight_v1/report.json": {
+      "sha256": "7e4529fc709df754d264cfc1122e4fde4ba54bfd43bb25a670a9551059aec7cc",
+      "size_bytes": 35246
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/preflight_v1/server.log": {
+      "sha256": "7326e190fafe92e70d3c4acf8973ea745e26010bef21e271df5818a4ad3274f8",
+      "size_bytes": 19266
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    }
+  },
+  "all_artifacts_fixed_checkout_byte_identical": true,
+  "native_regression_not_started": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
