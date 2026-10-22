@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-provisional-9b-resource-estimate-not-main-policy",
+  "created_at_utc": "2026-10-22T01:35:26.880908+00:00",
+  "source_bindings": {
+    "src/rag_research/experiments/bilingual_budget.py": {
+      "sha256": "343f77abff44086574e9b466b723483465ad7e276d3265029dbe30c5dc0de2a3",
+      "size_bytes": 4433
+    },
+    "src/rag_research/experiments/bilingual_runner.py": {
+      "sha256": "bb4a87f008bce425288d2a01a411fcec5dc08d518e1318d4eced5b31e5e26310",
+      "size_bytes": 20140
+    },
+    "configs/phase11_main_development_execution_policy_v1.json": {
+      "sha256": "6375eff913fa7117ca427e22be11ff7e0779a0406211bb41c18af9358842a361",
+      "size_bytes": 3247
+    },
+    "configs/phase11_semantic_candidate_v15.yaml": {
+      "sha256": "97daad00225fcd2fd20defa548aceabde1ea1e004a975be4a2da1447f8de4b49",
+      "size_bytes": 2178
+    },
+    "data/manifests/phase11_auxiliary_qwen35_9b_manifest_v1.json": {
+      "sha256": "b1bc4da2a9baf05fdfbd7d04390757bfb2e26ea68f0bfd4409ff3da167492b3b",
+      "size_bytes": 754
+    },
+    "data/manifests/phase11_direct_result_v13.json": {
+      "sha256": "a2f23198dccb14233b4f05cd5d97057d3ed8ee011adae01a7b6eff880589f367",
+      "size_bytes": 39043
+    },
+    "data/manifests/phase11_known_trace_result_v3.json": {
+      "sha256": "5be24346d831d80d81bbc7f205257f1afcf0ef8abd8be76a25eabf26c383dd45",
+      "size_bytes": 18125
+    },
+    "data/manifests/phase11_category_coverage_result_v1.json": {
+      "sha256": "de1a358e0e3a7f3e7d867ebc3ee4458daf61da7b770903391e9aa8068acc700c",
+      "size_bytes": 7335
+    }
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-qwen35-9b-resource-estimate-v1/estimate.json": {
+      "sha256": "db63dc2d36597770c21322e61e32562ce0c40ca4c3533f421dfd35dd9b4c4414",
+      "size_bytes": 29053
+    },
+    "data/runs/development_screening/phase11-qwen35-9b-resource-estimate-v1/estimate.py": {
+      "sha256": "97d002f54380bcaaadcdaee55753e8b588e4642c4dbec34560e4c01ea8d1ae1c",
+      "size_bytes": 6125
+    },
+    "data/runs/development_screening/phase11-qwen35-9b-resource-estimate-v1/estimate_before_artifact_shape_fix.py": {
+      "sha256": "837e1359acaee1e00b26c58c1b07f6a8a4daa340e8b84098dd86c328e3505f13",
+      "size_bytes": 5972
+    },
+    "data/runs/development_screening/phase11-qwen35-9b-resource-estimate-v1/preparation_failure_v1.json": {
+      "sha256": "8ce5481f05a5fdd65e20a9ac3086bfdbe42c8fa2f1e890a378b24a1f0028d07c",
+      "size_bytes": 428
+    },
+    "docs/phase11_qwen35_9b_resource_estimate_v1.md": {
+      "sha256": "44ce7bee7f78163b79d5fed119701dbb529672e3a5fd40997d51563d85ff2599",
+      "size_bytes": 4549
+    }
+  },
+  "all_completed_direct_9b_native_calls_before_v15": 121,
+  "failed_call_with_known_cost_retained": 1,
+  "all_prior_artifact_bindings_verified": 236,
+  "summed_task_seconds": 6323.3126533879695,
+  "weighted_mean_task_seconds": 52.258782259404704,
+  "observed_run_mean_seconds_range": [
+    46.00517753292765,
+    61.54165807028697
+  ],
+  "projection_is_not_interval_or_wall_time_guarantee": true,
+  "old_8b_policy_is_not_9b_authorization": true,
+  "main_qa_and_fixed_unit_counts_not_observed": true,
+  "quality_annotation_time_not_yet_measured": true,
+  "calculation_setup_failure_preserved": true,
+  "new_model_calls": 0,
+  "evaluation_qa_rows_read": 0,
+  "research_sample_size_frozen": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

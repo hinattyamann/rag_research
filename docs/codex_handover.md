@@ -1,6 +1,8 @@
 # 別チャットから再開するための引継ぎ
 
-[引用状態Schema v3の実機形式検証](phase11_cited_decisions_native_result_v1.md)を保存した。固定55d031cの全70実入力/生成0・最大3478 Token/全層CUDAと、新Native 10 Call中の全9 Strict条件に通過。入力630/出力1679 Token・生成合計29.255313秒、92 Source/再開14 File不変・追加Call/Server0を確認し、Raw16を含む全25 Artifactを固定WTとByte照合した。包装時の既存File検査失敗も保存し、追加推論はない。形式は意味精度の証明ではない。同じWTで全58条件/最大70 Callをsession77717として実行中（10:27 JST観測で最初の条件完了）。開始時9B累積205/上限359・Retry0、全旧対象/Expected/基準を維持する。現行93 Sourceの最終Validator検証v2も保存し、全734 Test/Ruff・実未達拒否・30 Payload照合、Evaluation本文解析/追加推論0を確認。実主/Cal採用・最終N/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
+[引用状態Schema v3の実機形式検証](phase11_cited_decisions_native_result_v1.md)を保存した。固定55d031cの全70実入力/生成0・最大3478 Token/全層CUDAと、新Native 10 Call中の全9 Strict条件に通過。入力630/出力1679 Token・生成合計29.255313秒、92 Source/再開14 File不変・追加Call/Server0を確認し、Raw16を含む全25 Artifactを固定WTとByte照合した。包装時の既存File検査失敗も保存し、追加推論はない。形式は意味精度の証明ではない。同じWTで全58条件/最大70 Callをsession77717として実行中（10:37 JST観測で7/58条件完了、既知4条件のCritical基準を通過して人工条件へ進行）。開始時9B累積205/上限359・Retry0、全旧対象/Expected/基準を維持する。現行93 Sourceの最終Validator検証v2も保存し、全734 Test/Ruff・実未達拒否・30 Payload照合、Evaluation本文解析/追加推論0を確認。実主/Cal採用・最終N/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
+
+[9B直接判定の暫定資源見積り](phase11_qwen35_9b_resource_estimate_v1.md)を追加した。完了済みv13/旧回帰v3/v14の全121 Call（既知費用の失敗1を含む）と236 Artifactを再照合し、6323.312653秒/平均52.258782秒を確認。各9試行・日英40 QA・平均5固定文の仮定ではJudgeだけ23.0〜30.8時間、初回/書換え/検索/採点は別途。これは観測Run平均の記述的な幅であり、時間保証/95%CIではない。旧8B Policyを9Bの許可に流用せず、採用後に実費と新Policyを結ぶ。最終N/資源は未決で、文切捨て/QA補充/基準緩和を行わない。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 
