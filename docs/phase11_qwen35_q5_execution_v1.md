@@ -1,5 +1,8 @@
 # Phase 11 Q5の全層CUDA・新形式検証と意味診断の開始
 
+最新の終了結果と次工程は[全意味診断の監査と旧回帰v5](phase11_qwen35_q5_semantic_result_v1.md)を参照する。
+session95591/監査72553は終了済みで、旧Runを再起動しない。以下は開始/準備時点の記録。
+
 2026年10月22日12:57 JST時点。[取得と事前登録](phase11_qwen35_q5_candidate.md)を
 `be6e6ac`へCommit・Pushし、リモート一致を確認して専用Worktreeへ固定した。
 現在の全意味診断の採否は未確定であり、主/予約Calibrationは開始していない。

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q5-known-v5-positive-preparation-not-regression-adoption",
+  "recorded_at_utc": "2026-10-22T05:02:09.337115+00:00",
+  "helper_tool_session_id": 24522,
+  "receipt": {
+    "created_at_utc": "2026-10-22T05:00:40.512718+00:00",
+    "prior_run_files_unchanged": 136,
+    "prior_diagnostic_replayed_on_copy": true,
+    "plan_sha256": "83ff26aba449f2411c2ba004a758f9d56bdbb4afebb327b39a9f7064d2b02561",
+    "config_sha256": "e2d4a0f2cddd7f05434c71421fbc89187ec4084dd3725d61b258693faa914e39",
+    "qa": 15,
+    "fixed_units": 42,
+    "conditions": 30,
+    "maximum_calls": 84,
+    "new_model_calls": 0,
+    "new_servers": 0,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "all_original_cases_source_expected_gates_refusals_unchanged": true,
+  "source_bindings_verified": 25,
+  "candidate_changes_only_study_version_and_diagnostics": true,
+  "parent_semantic_result": {
+    "path": "data/manifests/phase11_qwen35_q5_semantic_result_v1.json",
+    "sha256": "915a9fd27647abb38536829d25f35c289e3a48ae7808163ba4cd344920fdde54"
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-known-v5-preparation-v1/pending_rejection.json": {
+      "sha256": "cf7229c168494019ba25590f60754f000227946c7d81edd5f057e17ab78a3a03",
+      "size_bytes": 678
+    },
+    "data/runs/development_screening/phase11-known-v5-preparation-v1/pending_stderr.txt": {
+      "sha256": "d7f233951182003afaed15dc7935913a368934770e57cff8e9281fc63133fdbc",
+      "size_bytes": 845
+    },
+    "data/runs/development_screening/phase11-known-v5-preparation-v1/pending_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-known-v5-preparation-v1/positive_stderr.txt": {
+      "sha256": "9ec492be5b0aad1bd5e7fffde878ec5d2a9af3fa37a6c5247ddcd7dfc8be0ff8",
+      "size_bytes": 162
+    },
+    "data/runs/development_screening/phase11-known-v5-preparation-v1/positive_stdout.txt": {
+      "sha256": "b7d0fafface35a440d5befc002860b59559fbfbb9bd755f392f5310a0b275e20",
+      "size_bytes": 458
+    },
+    "data/runs/development_screening/phase11-known-v5-preparation-v1/preparation.json": {
+      "sha256": "78b81dd3d11e3bae1efa8969f7c7284625b270eacf7d90832d832c2abf328612",
+      "size_bytes": 486
+    },
+    "data/runs/development_screening/phase11-known-v5-preparation-v1/prepare.py": {
+      "sha256": "1a0e5933b91d6efe66272b1fd44f82bbde8e3c07cf7f614cae6e5e6fc67a864e",
+      "size_bytes": 6122
+    }
+  },
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v5.yaml",
+    "sha256": "e2d4a0f2cddd7f05434c71421fbc89187ec4084dd3725d61b258693faa914e39"
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v5.json",
+    "sha256": "83ff26aba449f2411c2ba004a758f9d56bdbb4afebb327b39a9f7064d2b02561"
+  },
+  "product_source_changed": false,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "regression_native_run_not_started": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
