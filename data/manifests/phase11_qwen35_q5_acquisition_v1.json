@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-pinned-Q5-acquisition-and-identity-validation-not-adoption",
+  "recorded_at_utc": "2026-10-22T03:32:42.623146+00:00",
+  "tool_session_id": 37526,
+  "terminal": true,
+  "status": "acquired_hash_verified",
+  "model_manifest": {
+    "path": "data/manifests/phase11_auxiliary_qwen35_9b_q5_manifest_v1.json",
+    "sha256": "a46d1b75a50832c036a1d92735d31969d7181c996bde5fcccccd306b4ff5ef00"
+  },
+  "verified_model_files": [
+    {
+      "path": "data/models/Unsloth-Qwen3.5-9B-GGUF/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q5_K_M.gguf",
+      "bytes": 6577841376,
+      "sha256": "dc2a39aef291f91a9116ad214058da0d86eb648743a124bd8c333787c4b9c91c"
+    }
+  ],
+  "gguf_magic_verified": true,
+  "quantization": "Q5_K_M",
+  "primary_file_page": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF/blob/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q5_K_M.gguf",
+  "old_cached_metadata_matches_public_hash_and_spec": true,
+  "actual_source_snapshots_unchanged": 3,
+  "tests": {
+    "targeted_passed": 6,
+    "pytest_passed": 740,
+    "elapsed_seconds": 28.29,
+    "ruff": "passed"
+  },
+  "initial_fixture_failure_preserved": true,
+  "old_default_Q4_behavior_verified": true,
+  "wrong_or_missing_precision_label_rejected_before_download": true,
+  "native_core_not_changed_by_acquisition_cli_fix": true,
+  "new_qa_or_model_calls": 0,
+  "gpu_fit_verified": false,
+  "semantic_improvement_proven": false,
+  "conversion_base_exact_revision_independently_verified": false,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-q5-acquisition-v1/download.txt": {
+      "sha256": "4549c95dbee9cc0060db46db3af425d9f1695ab49f6d18143a1bb84dc3b3d97e",
+      "size_bytes": 3918
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-acquisition-v1/plan.json": {
+      "sha256": "b51a01068157d5a042bcc1b1a4593bc08040e9529e52dae2604b23b448dba136",
+      "size_bytes": 1156
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-acquisition-v1/source_snapshot/configs/phase11_auxiliary_qwen35_9b_q5_v1.json": {
+      "sha256": "cd9bc01eb839329a286286b68c75daa6c2bf5bba260d360f5bb0e4187e635ff9",
+      "size_bytes": 650
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-acquisition-v1/source_snapshot/data/runs/model_screening/phase11-qwen35-candidates-v1/metadata.json": {
+      "sha256": "3022ef8a83e17a105663fd2b2904eac2df23f4f71edf754fc9998fd212d8c635",
+      "size_bytes": 1923
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-acquisition-v1/source_snapshot/scripts/prepare_auxiliary_model.py": {
+      "sha256": "c4f5433211c2c2f0ce5f21a2984e535f616f22dde9cdc5b6799cd1834ad25fc2",
+      "size_bytes": 5655
+    },
+    "data/runs/development_screening/phase11-q5-acquisition-v1/initial_test_failure_v1.json": {
+      "sha256": "0319019f1a3f99d2e54749f1d0f8c9cae618eebb15935b2960079f8440d79864",
+      "size_bytes": 414
+    },
+    "data/runs/development_screening/phase11-q5-acquisition-v1/pytest.txt": {
+      "sha256": "ea254d60f4355501f1ec0fbd7490d012e683a9d051a9553c6424516aaac1a460",
+      "size_bytes": 4467
+    },
+    "data/runs/development_screening/phase11-q5-acquisition-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q5-acquisition-v1/targeted_pytest.txt": {
+      "sha256": "a600ca1478c9964892196afcf4b0c79ab22aefed7615a7d2d537fd529101af47",
+      "size_bytes": 98
+    },
+    "data/runs/development_screening/phase11-q5-acquisition-v1/targeted_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "scripts/prepare_auxiliary_model.py": {
+      "sha256": "c4f5433211c2c2f0ce5f21a2984e535f616f22dde9cdc5b6799cd1834ad25fc2",
+      "size_bytes": 5655
+    },
+    "tests/test_auxiliary_acquisition_identity.py": {
+      "sha256": "f6752d200be4f430690f0395fbebc9c4e1b7e69b7461d08b2b1d30691bb45fe7",
+      "size_bytes": 2912
+    },
+    "configs/phase11_auxiliary_qwen35_9b_q5_v1.json": {
+      "sha256": "cd9bc01eb839329a286286b68c75daa6c2bf5bba260d360f5bb0e4187e635ff9",
+      "size_bytes": 650
+    },
+    "data/manifests/phase11_auxiliary_qwen35_9b_q5_manifest_v1.json": {
+      "sha256": "a46d1b75a50832c036a1d92735d31969d7181c996bde5fcccccd306b4ff5ef00",
+      "size_bytes": 754
+    },
+    "data/models/Unsloth-Qwen3.5-9B-GGUF/3885219b6810b007914f3a7950a8d1b469d598a5/README.md": {
+      "sha256": "e50f8066e39c38cbc2da5dd94b9a9a2712b64c4921f107a5adb4b3ca5b6bbac0",
+      "size_bytes": 78888
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

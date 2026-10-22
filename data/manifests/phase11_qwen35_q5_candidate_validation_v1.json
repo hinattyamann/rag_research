@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q5-candidate-contract-and-acquisition-validation-not-native-pass",
+  "created_at_utc": "2026-10-22T03:36:34.336779+00:00",
+  "artifacts": {
+    "scripts/prepare_auxiliary_model.py": {
+      "sha256": "c4f5433211c2c2f0ce5f21a2984e535f616f22dde9cdc5b6799cd1834ad25fc2",
+      "size_bytes": 5655
+    },
+    "tests/test_auxiliary_acquisition_identity.py": {
+      "sha256": "f6752d200be4f430690f0395fbebc9c4e1b7e69b7461d08b2b1d30691bb45fe7",
+      "size_bytes": 2912
+    },
+    "configs/phase11_auxiliary_qwen35_9b_q5_v1.json": {
+      "sha256": "cd9bc01eb839329a286286b68c75daa6c2bf5bba260d360f5bb0e4187e635ff9",
+      "size_bytes": 650
+    },
+    "configs/phase11_semantic_candidate_v16.yaml": {
+      "sha256": "f1131c7747ed1b326db789849ecd3b18abe55f1f0c0eaf9eedd7e6cb6f48e467",
+      "size_bytes": 2178
+    },
+    "data/manifests/phase11_auxiliary_qwen35_9b_q5_manifest_v1.json": {
+      "sha256": "a46d1b75a50832c036a1d92735d31969d7181c996bde5fcccccd306b4ff5ef00",
+      "size_bytes": 754
+    },
+    "data/manifests/phase11_qwen35_q5_acquisition_v1.json": {
+      "sha256": "dde8d4bd6fe64454ed7056ce19c30fcb4e53b31961f6c3851047243dd158a489",
+      "size_bytes": 4642
+    },
+    "docs/phase11_qwen35_q5_candidate.md": {
+      "sha256": "58cf6cbf2c820176d5a4329b1c039a1c473b13f1ad696981a9879b30ac81acbe",
+      "size_bytes": 3606
+    },
+    "data/runs/development_screening/phase11-q5-acquisition-v1/pytest.txt": {
+      "sha256": "ea254d60f4355501f1ec0fbd7490d012e683a9d051a9553c6424516aaac1a460",
+      "size_bytes": 4467
+    },
+    "data/runs/development_screening/phase11-q5-acquisition-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    }
+  },
+  "actual_config_source_annotation_and_identity_contract_passed": true,
+  "changed_config_keys": [
+    "study_version",
+    "auxiliary_model_manifest"
+  ],
+  "native_core_and_probe_sha256_unchanged": 27,
+  "full_semantic_diagnostic_calls_planned": 70,
+  "full_old_known_calls_if_passes": 84,
+  "new_model_formal_proof_required": true,
+  "tests": {
+    "pytest_passed": 740,
+    "elapsed_seconds": 28.29,
+    "ruff": "passed"
+  },
+  "new_model_calls": 0,
+  "new_qa_rows_used": 0,
+  "actual_gpu_fit_and_native_format_and_semantics_unproven": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

@@ -1,7 +1,8 @@
-"""Download a pinned official 7B candidate for Development Judge/rewrite diagnostics."""
+"""Download pinned GGUF candidates with explicit quantization identity."""
 
 import argparse
 import os
+import re
 import sys
 import time
 import urllib.request
@@ -70,12 +71,17 @@ def main():
     repository = spec["model_id"] if spec else REPOSITORY
     revision = spec["revision"] if spec else REVISION
     directory = spec["directory"] if spec else "Qwen2.5-7B-Instruct-GGUF"
+    quantization = spec.get("quantization", "Q4_K_M") if spec else "Q4_K_M"
+    require(isinstance(quantization, str) and re.fullmatch(r"[A-Z][A-Z0-9_-]*", quantization),
+            "Use a normalized GGUF quantization label")
+    expected = [(f["name"], f["bytes"], f["sha256"]) for f in spec["files"]] if spec else FILES
+    require(all(re.search(r"(?:^|[-_])" + re.escape(quantization) + r"(?:[-_.]|$)", name, re.I)
+                for name, _, _ in expected), "Declared quantization does not match pinned filenames")
     require(Path(directory).name == directory, "Invalid model directory")
     folder = ROOT / "data/models" / directory / revision
     require(folder.resolve().is_relative_to(ROOT / "data/models"), "Model directory escapes workspace")
     folder.mkdir(parents=True, exist_ok=True)
     files = []
-    expected = [(f["name"], f["bytes"], f["sha256"]) for f in spec["files"]] if spec else FILES
     for name, size, sha in expected:
         require(Path(name).name == name and name.endswith(".gguf"), "Invalid model filename")
         print(f"Preparing {name} ({size} bytes)", flush=True)
@@ -85,7 +91,7 @@ def main():
     for name in (("README.md",) if spec else ("README.md", "LICENSE")):
         hf_hub_download(repository, name, revision=revision, local_dir=folder, token=False)
     manifest = {"schema_version": 1, "purpose": "development-auxiliary-model",
-                "model_id": repository, "revision": revision, "quantization": "Q4_K_M",
+                "model_id": repository, "revision": revision, "quantization": quantization,
                 "license": "Apache-2.0", "source": f"https://huggingface.co/{repository}/tree/{revision}",
                 "entrypoint": files[0]["path"], "files": files}
     if spec and "runtime_options" in spec:

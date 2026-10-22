@@ -1,15 +1,17 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月22日。正本: [研究計画7.55](rag_research_plan.md)、[実装計画8.57](rag_implementation_plan.md)。
+更新日: 2026年10月22日。正本: [研究計画7.56](rag_research_plan.md)、[実装計画8.58](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
 
-[旧15 QA直接回帰v4の不通過結果](phase11_known_trace_direct_result_v4.md)を保存した。固定321adf3/session95270は42 Call/12 Critical条件を終了し、完全一致9/12・誤支持4で停止。残る18条件未試行、全74/支持58判定の精度はnull。Tomの媒体一般化1、Tar Heelの由来断定1/別逸話の因果接続2が誤支持。暖鋒は両Label一致でも両理由が表の列を誤読しており能力改善としない。入力135658/出力159626 Token・2529.175093秒、95 Source/再開59 File不変・追加Call/Server0、Raw61/全69 Artifactと全42出力AI確認・独立Schemaを保存。Q4実累積317。旧全Source/Expected/基準/曖昧/裸拒否8を保ち主/Cal採用しない。次は同じ固定Revisionの9B Q5_K_Mを、量子化だけを分ける候補として取得/Hash・VRAM資源調査する。取得/実走と意味改善はまだ未確認。Gate 11未通過・Phase 12未実施。
+[9B Q5候補の取得と別事前登録](phase11_qwen35_q5_candidate.md)を保存した。同じ固定Repository Revisionの6577841376 Byte/公開SHA256を実ファイル全体で確認し、別Manifestへ取得した。取得CLIの量子化名Q4固定を修正し、誤った宣言は取得前に拒否/旧Q4既定を維持する。追加6件を含む全740 Test（28.29秒）/Ruffと実Config/Source/Identity契約に成功。候補v16はv15からStudy VersionとModel Manifestだけを変更し、Runtime/日英Prompt/予算/Sampler/全対象/Expected/基準とNative Core27を保持する。新事前登録v9は形式10+意味70+通過時の全旧回帰84=新規164/Retry0、旧Q4実317/Q5実0から全9B累積上限481。Model変更により新形式証拠が必要。実VRAM/Native形式/意味採用は未実施。次はCommit固定WTで生成0から確認し、全旧基準通過前に主/Calへ進まない。Gate 11未通過・Phase 12未実施。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
+
+[旧15 QA直接回帰v4の不通過結果](phase11_known_trace_direct_result_v4.md)を保存した。固定321adf3/session95270は42 Call/12 Critical条件を終了し、完全一致9/12・誤支持4で停止。残る18条件未試行、全74/支持58判定の精度はnull。Tomの媒体一般化1、Tar Heelの由来断定1/別逸話の因果接続2が誤支持。暖鋒は両Label一致でも両理由が表の列を誤読しており能力改善としない。入力135658/出力159626 Token・2529.175093秒、95 Source/再開59 File不変・追加Call/Server0、Raw61/全69 Artifactと全42出力AI確認・独立Schemaを保存。Q4実累積317。旧全Source/Expected/基準/曖昧/裸拒否8を保ち主/Cal採用しない。次は同じ固定Revisionの9B Q5_K_Mを、量子化だけを分ける候補として取得/Hash・VRAM資源調査する。取得/実走と意味改善はまだ未確認。Gate 11未通過・Phase 12未実施。
 
 [v15の全意味診断と全旧回帰v4の登録](phase11_cited_decisions_result_v1.md)を保存した。固定55d031c/session77717は全58条件/70 Callを終了し、既知Critical4/4・人工英語24/24・日本語30/30・誤支持0で診断基準に通過。入力118450/出力194751 Token・3168.554393秒、95 Source/再開133 File不変・追加Call/Server0、Raw135/全142 Artifactを照合した。全70出力の独立Schema/AI確認と35組のSchema不変を保存。人工27組は1文書で同一入力、Council c6は曖昧のまま、F5/7による矛盾を含む回答の採用相当も保持する。親136 Fileのコピー上で全再検証する引継ぎに成功し、全旧15 QA/42文/30条件・84 Call/全Expected/基準/Source25/裸拒否8をv4へ結んだ。新事前登録v8はRetry0・既存275/累積上限359、Native27と新形式v4の25 Artifact不変を照合して再利用する。固定321adf3の新WTへ299 File Binding/55 Hardlink/相対Symlink10・Offline58 Packageを再現。全84入力/生成0・最大3612 Token/全層CUDA（VRAM6517/8151 MiBは一点観測）に通過し、7準備Artifactを保存した。記録包装のField参照失敗も保持してNative再実行0。同じWTで全旧回帰をsession95270として開始し、全採否は未確定。実主/Cal採用・最終N/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
 
