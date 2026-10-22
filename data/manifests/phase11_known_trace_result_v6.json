@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-known-v6-CUDA-timeout-terminal-failure-with-unknown-completion-retained",
+  "recorded_at_utc": "2026-10-22T08:14:06.322880+00:00",
+  "fixed_commit": "d9c889b88a79392fd938a46ac516ca79398d16bd",
+  "tool_session_id": 78660,
+  "audit_tool_session_id": 47278,
+  "terminal": true,
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v6.yaml",
+    "sha256": "2ebc0f10112d8c52d724d459355d6e3e73a9cf399d7a308c90a263bf56bd25bf",
+    "size_bytes": 2178
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v6.json",
+    "sha256": "881d8e58e0d9b2806223f8650b1b3d66c11a862dab007fcc7d726c33ce043e1b",
+    "size_bytes": 140809
+  },
+  "report": {
+    "schema_version": 1,
+    "purpose": "phase11-bilingual-semantic-candidate",
+    "manifest_sha256": "04d472916abd77e429079caa9974e023d9466312ebb1844f69e88ff9d45346d4",
+    "critical_planned_conditions": 12,
+    "critical_completed_conditions": 1,
+    "critical_exact_correct_conditions": 0,
+    "critical_passed": false,
+    "known_regression": {
+      "planned_labeled_unit_conditions": 74,
+      "exact_correct": 0,
+      "accuracy_of_all_planned": null,
+      "planned_supported_unit_conditions": 58,
+      "supported_exact_correct": 0,
+      "supported_accuracy": null,
+      "false_support_count": 0,
+      "ambiguous_unit_conditions_retained_in_F": 10
+    },
+    "diagnostic_gate_passed": false,
+    "planned_conditions": 30,
+    "completed_conditions": 1,
+    "not_attempted_ids": [
+      "known-gpu-323bf35882bc-reversed",
+      "known-gpu-31e646aa9601-original",
+      "known-gpu-31e646aa9601-reversed",
+      "known-gpu-b4291e2a1a09-original",
+      "known-gpu-b4291e2a1a09-reversed",
+      "known-armistice-original",
+      "known-armistice-reversed",
+      "known-warm-front-original",
+      "known-warm-front-reversed",
+      "known-tar-heels-original",
+      "known-tar-heels-reversed",
+      "known-gpu-da38af9cd782-original",
+      "known-gpu-da38af9cd782-reversed",
+      "known-gpu-25560cfd1cab-original",
+      "known-gpu-25560cfd1cab-reversed",
+      "known-gpu-dee22fa20655-original",
+      "known-gpu-dee22fa20655-reversed",
+      "known-gpu-b33c1496859d-original",
+      "known-gpu-b33c1496859d-reversed",
+      "known-gpu-c99e26828c62-original",
+      "known-gpu-c99e26828c62-reversed",
+      "known-gpu-35d3e8259d8f-original",
+      "known-gpu-35d3e8259d8f-reversed",
+      "known-gpu-6d9820642610-original",
+      "known-gpu-6d9820642610-reversed",
+      "known-gpu-9080b47549bc-original",
+      "known-gpu-9080b47549bc-reversed",
+      "known-gpu-aaba171a10f6-original",
+      "known-gpu-aaba171a10f6-reversed"
+    ],
+    "planned_completion_limit": 84,
+    "completion_attempts_recorded": 3,
+    "cost_incomplete": true,
+    "input_tokens": 10942,
+    "output_tokens": 5347,
+    "summed_task_seconds": 141.28143747200374,
+    "task_result_sha256": {
+      "known-gpu-323bf35882bc-original": "6ccf59cba98ee47e6b31efb660987fe6bb55b8fd3a21e19daf8915a586ade0f1"
+    },
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "source_hashes_verified": 95,
+  "resume_unchanged_files": 9,
+  "resume_new_calls": 0,
+  "resume_new_servers": 0,
+  "raw_files_copied_byte_identical_before_AI_review": 11,
+  "raw_files_including_partial_AI_review": 12,
+  "returned_native_leaves_independently_schema_checked": 2,
+  "unknown_native_leaves_not_schema_checked": 1,
+  "paired_schema_verification_not_possible": true,
+  "complete_successful_conditions": 0,
+  "unattempted_conditions": 29,
+  "unattempted_atomic_calls": 81,
+  "output_tokens_known_partial_sum": 5347,
+  "output_token_total_unknown": true,
+  "failure": "CUDA kernel launch timeout followed by closed completion connection; third leaf has no Native response",
+  "kernel_memory_allocation_errors_and_watchdog_Xid8_observed": true,
+  "memory_domain_and_causal_chain_not_established": true,
+  "separate_process_four_byte_kernel_passed": true,
+  "kernel_exec_timeout_enabled": 1,
+  "long_native_stability_not_proven": true,
+  "no_original_unknown_request_retried": true,
+  "system_or_driver_settings_modified": false,
+  "previous_completed_all_9b_call_attempts": 509,
+  "cumulative_all_9b_call_attempts": 512,
+  "Q4_call_attempts": 317,
+  "Q5_call_attempts": 195,
+  "current_run_unknown_completion_attempts": 1,
+  "v12_unused81_not_reallocated": true,
+  "older_v5_unused42_not_reallocated": true,
+  "all_original_cases_sources_expected_gates_and_refusals_unchanged": true,
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v12.json",
+    "sha256": "855522e0d84d823edb0bd4edcfadb3013d161cc5583dbb2d88916cd9b8979500",
+    "size_bytes": 6183
+  },
+  "parent_complete_semantic_result": {
+    "path": "data/manifests/phase11_relation_scope_semantic_result_v1.json",
+    "sha256": "d2dcfef960e63f7e186b00ebecaae64726afac1236f45b7008ee593847bd9372",
+    "size_bytes": 44517
+  },
+  "partial_AI_review": "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/semantic_output_audit_v1.json",
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "artifact_fixed_checkout_path_overrides": {
+    "data/manifests/phase11_relation_scope_known_launch_v1.json": "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/launch.json"
+  },
+  "artifacts": {
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/audit_check.json": {
+      "sha256": "79daf8c3f25be191b6b0e51f56d3ab02edc8621d9fe17d4319e74b835134fe6b",
+      "size_bytes": 419
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/manifest.json": {
+      "sha256": "2d269bc15e1a68b020982e32c1d0f0235f5980d4eeb2126a82cbc5e2c0d944cd",
+      "size_bytes": 23468
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/report.json": {
+      "sha256": "b1cea8eade836b7fb44a50e96dc21ce107349c096d28a352fdf29b36d8ee5c01",
+      "size_bytes": 2233
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/resume_check.json": {
+      "sha256": "5de9512903fae82b322a2efe29755e4746988f11b1d9daf4831f1ecc33e8620c",
+      "size_bytes": 1113
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/semantic_output_audit_v1.json": {
+      "sha256": "af39b6518392240aa832753b99e2bd247318e3615825189661bcddae0c662fb6",
+      "size_bytes": 2729
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/server-1.log": {
+      "sha256": "ac0653e52b11bc7f0769ffd2bd3366d3737d976f7ab96060f5abf4e57aa9401b",
+      "size_bytes": 44873
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/session-1.json": {
+      "sha256": "ef387b5bcdf066bc5189863a55243e1bbada689acc5127d4f14acf0ff16d23b0",
+      "size_bytes": 9722
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/tasks/known-gpu-323bf35882bc-original.claims/c1.json": {
+      "sha256": "51bd670041afc2914385d673e80b886fa936af26f32a940cfc73fdb290f19b4a",
+      "size_bytes": 132582
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/tasks/known-gpu-323bf35882bc-original.claims/c2.json": {
+      "sha256": "a2566573b10f2c13e58e1fe01421e5ac8206175e3216cba75228cc77bbf16eca",
+      "size_bytes": 181686
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/tasks/known-gpu-323bf35882bc-original.claims/c3.json": {
+      "sha256": "bcabab50328bfcef4b3f29ddd905b338777d8ffade18dc9bf4132791e91db3dc",
+      "size_bytes": 72327
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v6/tasks/known-gpu-323bf35882bc-original.json": {
+      "sha256": "0adcdc65b8fd1155bf2a648f6d9521cf4cf8b5a0bafa0a87b3ad4bc647a29f25",
+      "size_bytes": 2519
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-audit-v1/audit.py": {
+      "sha256": "3a8529888dc08943f1b59d287cfaa1a4520e8ed18c4aae94926a800207330433",
+      "size_bytes": 3873
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-audit-v1/inspect_partial.py": {
+      "sha256": "9b55b8cf9a0a988561db14540292b4ecf24c5fd84c2c4e390b0077a706f4785d",
+      "size_bytes": 3902
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-audit-v1/inspect_partial_v2.py": {
+      "sha256": "f2ed70de609499aee2522cb44702106105c6230923edad756ab2d64136b15379",
+      "size_bytes": 4033
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-audit-v1/partial_schema_stderr.txt": {
+      "sha256": "775bed5636fe1198ce1c6b294b746318aa4be2cde943d02fcc582f50f05805e0",
+      "size_bytes": 520
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-audit-v1/partial_schema_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-audit-v1/partial_schema_v2.json": {
+      "sha256": "766032a8153795588ac00a2fdefc6683406463019baead1cfe598704400c7456",
+      "size_bytes": 2360
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-audit-v1/partial_schema_v2_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-audit-v1/partial_schema_v2_stdout.txt": {
+      "sha256": "93e08b3492ef222c7bce739e497053d1b615c8f3ade8f30e1c318294508a546d",
+      "size_bytes": 89
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-audit-v1/stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-audit-v1/stdout.txt": {
+      "sha256": "17b27a98b97b39ac29a6a4cfbff488764949a83c9c48187725a3dc56c69203b2",
+      "size_bytes": 161
+    },
+    "data/runs/development_screening/phase11-cuda-timeout-diagnosis-v1/collect.py": {
+      "sha256": "4f4614b5b33174fda83885f593c2df120ffa2d5527d3f9901269be9a494eb7e6",
+      "size_bytes": 2562
+    },
+    "data/runs/development_screening/phase11-cuda-timeout-diagnosis-v1/device_probe": {
+      "sha256": "64f2ccb1caed3095dcec0d5b0cc29038e9ccbba96253f88981c46d4b134228a0",
+      "size_bytes": 1026168
+    },
+    "data/runs/development_screening/phase11-cuda-timeout-diagnosis-v1/device_probe.cu": {
+      "sha256": "793b89166c03d8a00c38b40dd34a2f27bfe7017808e8de046c11e9df1c1c7fa8",
+      "size_bytes": 1324
+    },
+    "data/runs/development_screening/phase11-cuda-timeout-diagnosis-v1/health_snapshot_v1.json": {
+      "sha256": "a4b5bb76a1382833f979dd385d7e45df1ecd858daf90ebb8ac4648bee82868c6",
+      "size_bytes": 5420
+    },
+    "data/runs/development_screening/phase11-cuda-timeout-diagnosis-v1/official_sources.json": {
+      "sha256": "ee339c0d66d5b250f245f1ac10e0f992b650acd62861b73538289ccd860c987e",
+      "size_bytes": 772
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/prepare_worktree.py": {
+      "sha256": "4ec93ff865618d991e9781de664a8a1258d319b1dd167e93b43dd85dd8c6ef43",
+      "size_bytes": 4803
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/preparation_v1.json": {
+      "sha256": "970d17a337e6b9a012560034775f829e3320351a6f76adc9f3c0217a6bec8a7d",
+      "size_bytes": 208718
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/preflight_v1/plan.json": {
+      "sha256": "9b37dcd1da96406208d43ffa7100f347336d8dfadbf85ba2c98221bbfd9b5cdc",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/preflight_v1/report.json": {
+      "sha256": "7e4529fc709df754d264cfc1122e4fde4ba54bfd43bb25a670a9551059aec7cc",
+      "size_bytes": 35246
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/preflight_v1/server.log": {
+      "sha256": "7326e190fafe92e70d3c4acf8973ea745e26010bef21e271df5818a4ad3274f8",
+      "size_bytes": 19266
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v6/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/manifests/phase11_relation_scope_known_launch_v1.json": {
+      "sha256": "4c2390e11ae783066a3b6625f4680d5cb21419f72a19b50971a0b1a7b345fd31",
+      "size_bytes": 1999
+    }
+  },
+  "new_model_calls_from_diagnosis": 0,
+  "new_llama_servers_from_diagnosis": 0,
+  "main_or_reserved_calibration_or_evaluation_new_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

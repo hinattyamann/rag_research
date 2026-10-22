@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.62 — 2026年10月22日 v17全意味診断と旧全回帰v6を登録
+## Version 8.63 — 2026年10月22日 旧回帰v6のCUDA停止と全未試行を保存
 
-[研究計画 Version 7.60](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.61](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 
@@ -10,7 +10,7 @@
 
 
 
-[v17の全意味診断と旧全回帰v6](phase11_relation_scope_semantic_result_v1.md)を保存した。固定1214dbf/session6340は全58条件/70 Callを終了し、Critical4/4・人工英語24/24・日本語28/30・誤支持0で元基準に通過。由来の限定なし主張を矛盾とした2件と全理由の断片を保持し、改善を一般化しない。入力140500/出力181440 Token・3288.686713秒、95 Source/再開133 File不変・追加Call/Server0、Raw136/全153 Artifactを照合。全70 Native最終JSONの独立Schema/全理由・SourceのAI確認と35組のSchema不変を保存した。親136 Fileのコピー上で前提を再検証し、同じ旧全15 QA/42文/30条件・84 Call/Source25/全Expected/基準/裸拒否8をv6へ結んだ。事前登録v12は既存v11の条件付き84 Callを使い、既存509/累積上限593・Retry0と旧未使用42の保存を維持する。開始記録のWT内パスを誤参照した包装失敗も保持し、実保存先とのByte照合へ修正・Native再実行0。Native Core27/新Q5形式24の不変と全740 Test（27.27秒）/Ruffにも成功。固定d9c889bの新WTへ820 File Binding/56不変Hardlink/内部相対Symlink10・Offline58 Packageを配置。全84入力/生成0・最大3927 Token/全層CUDAに通過し、VRAM7254/8151 MiBを一点観測した。準備/Preflight6 Artifactを保存・Byte照合し、同じWTで全旧回帰をsession78660として開始した。[回帰実行記録](phase11_relation_scope_known_execution_v1.md)を再開先とし、全採否は未確定。全旧基準通過前にMain/Calへ進まない。主/Cal採用・最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
+[旧15 QA回帰v6のCUDA timeout停止](phase11_known_trace_direct_result_v6.md)を保存した。固定d9c889b/session78660は最初の条件で3 Call（応答取得2/不明1）を記録して停止し、成功条件0・残り29条件/81 Callは未試行。全74確定/支持58精度とFはnull、元Source25/Expected/基準/裸拒否8は不変。入力10942/既知部分出力5347 Token・Task秒和141.281437秒、費用不明を保持。95 Source/再開9 File不変・追加Call/Server0、Raw12/全34 Artifactと返却2件の独立Schema/AI確認を保存した。NativeのCUDA launch timeout、Kernelの確保失敗/watchdog/Xid8を確認したがメモリ領域/因果は未確定。独立した4 ByteのCUDA Kernelは成功・実行時間制限有効を確認し、OS/Driver設定と失敗要求は変更/再試行していない。記録済み全9B試行512（Q4 317/Q5 195、今回に不明1）、v12未使用81/旧v5未使用42を保持する。次は全文/出力・推論予算等を保持し、現行全154入力が収まるContext12288の資源候補を別事前登録・資源時系列付きで検証する。新候補は未作成・未推論。主/Cal採用・最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 

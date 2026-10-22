@@ -1,5 +1,9 @@
 # Phase 11 関係照合候補v17の旧全15 QA回帰v6
 
+2026年10月22日17:14 JST追記。旧回帰v6/session78660は3 CallでCUDA timeoutとなり終了した。
+応答不明1/残り29条件未試行を保持し、[停止結果と資源診断](phase11_known_trace_direct_result_v6.md)を最新の再開先とする。
+以下は全意味診断通過・回帰開始時点の履歴で、同じRunを再生成しない。
+
 2026年10月22日16:59 JST時点。全意味診断/監査と回帰v6の登録を
 `d9c889b88a79392fd938a46ac516ca79398d16bd`へCommit・通常Pushし、GitHubとの一致を確認した。
 [全意味診断結果](phase11_relation_scope_semantic_result_v1.md)と旧失敗を保持する。
