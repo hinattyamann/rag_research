@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v17-all-input-zero-completion-full-CUDA-preflight-not-adoption",
+  "created_at_utc": "2026-10-22T06:46:54.281316+00:00",
+  "fixed_commit": "1214dbf82eaabafa8edd6076804c7bab24dba58c",
+  "tool_session_id": 8327,
+  "preparation_tool_session_id": 57377,
+  "terminal": true,
+  "status": "passed",
+  "config": "configs/phase11_semantic_candidate_v17.yaml",
+  "config_sha256": "2c8f411e009732950c6d8778694b0e62fa70747e707816282b57a0fa303d5266",
+  "actual_inputs": 70,
+  "completion_attempts": 0,
+  "maximum_input_tokens": 3793,
+  "context_tokens": 24576,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "7275 MiB, 8151 MiB",
+  "regular_file_bindings_verified_at_preparation": 650,
+  "immutable_hardlinks": 56,
+  "internal_relative_symlinks": 10,
+  "offline_gpu_environment_packages": 58,
+  "post_preflight_native_core_and_probe_27_unchanged": true,
+  "fresh_Q5_format_24_artifacts_verified_and_reused": true,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v17/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v17/preflight_v1/plan.json": {
+      "sha256": "0841e4cfe0c4a88cb611ec8943d2a650bd63da6c4e36dbef88206af3561fcecd",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v17/preflight_v1/report.json": {
+      "sha256": "68c26a0ba18cd09b57793760d376d7acee4ab65727254d1d67407d5a20f959dd",
+      "size_bytes": 30798
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v17/preflight_v1/server.log": {
+      "sha256": "b42ff59d806920aa839852fab51808cfa49b856f1ac976c4fd4c7b7ddd443b01",
+      "size_bytes": 19239
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v17/preparation_v1.json": {
+      "sha256": "1de5048544e01fc8879b7ce34a59e759dae182e8e61d0bad51a512943c11576d",
+      "size_bytes": 164952
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-v17/prepare_worktree.py": {
+      "sha256": "9edefaf7bb837eb9fd68b98f583a4376c785673dc5320cc0440842fa12f54a44",
+      "size_bytes": 4676
+    }
+  },
+  "full_new_meaning_and_known_regression_still_required": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

@@ -13,7 +13,7 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 
 
 
-[関係・説明の範囲を照合するQ5候補v17](phase11_relation_scope_candidate.md)を別登録した。旧回帰v5の全失敗は50410abへ保存・Push済み。同じQ5/Runtime/予算/全対象/Expected/基準のまま、因果・由来・同一性の接続自体と仮説/否定の区別を確認する一般Prefixを日英へ同じように追加する。固有名/答え/IDは入れず、正しい言換え/照応/根拠から含意される統合は許容する。Config差はStudy VersionとPromptsだけ、全70非System入力/他Taskは同一。実Loader/Identity契約と全740 Test（26.95秒）/Ruffに成功。Native Core27/新Q5形式24 Artifact不変を確認して形式は再利用し、意味は全件やり直す。事前登録v11は新意味70+通過時の旧全15 QA回帰84=最大154/Retry0、既存439/累積上限593で、旧未使用42を再割当てしない。新固定WT/全70入力生成0/意味実走は未実施。主/Cal採用・最終N/資源/条件/凍結は未了。Gate 11未通過・Phase 12未実施。
+[関係・説明の範囲を照合するQ5候補v17](phase11_relation_scope_candidate.md)を別登録した。旧回帰v5の全失敗は50410abへ保存・Push済み。同じQ5/Runtime/予算/全対象/Expected/基準のまま、因果・由来・同一性の接続自体と仮説/否定の区別を確認する一般Prefixを日英へ同じように追加する。固有名/答え/IDは入れず、正しい言換え/照応/根拠から含意される統合は許容する。Config差はStudy VersionとPromptsだけ、全70非System入力/他Taskは同一。実Loader/Identity契約と全740 Test（26.95秒）/Ruffに成功。Native Core27/新Q5形式24 Artifact不変を確認して形式は再利用し、意味は全件やり直す。事前登録v11は新意味70+通過時の旧全15 QA回帰84=最大154/Retry0、既存439/累積上限593で、旧未使用42を再割当てしない。固定1214dbfの新WTへ650 File Binding/56不変Hardlink/相対Symlink10・Offline58 Packageを配置。全70入力/生成0・最大3793 Token/24k/全層CUDAに通過し、VRAM7275/8151 MiBを一点観測した。準備/Preflight6 Artifactを正規保存・Byte照合し、同じWTで全意味診断をsession6340として開始した。[実行記録](phase11_relation_scope_execution_v1.md)を再開先とし、全採否は未確定。主/Cal採用・最終N/資源/条件/凍結は未了。Gate 11未通過・Phase 12未実施。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 
