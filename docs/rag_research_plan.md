@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.54 — 2026年10月22日 v15の全意味診断通過と全旧回帰v4を登録
+## Version 7.55 — 2026年10月22日 旧回帰v4の誤支持不通過と全未試行を保存
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.56](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.57](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -13,9 +13,11 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 
 
 
-[v15の全意味診断と全旧回帰v4の登録](phase11_cited_decisions_result_v1.md)を保存した。固定55d031c/session77717は全58条件/70 Callを終了し、既知Critical4/4・人工英語24/24・日本語30/30・誤支持0で診断基準に通過。入力118450/出力194751 Token・3168.554393秒、95 Source/再開133 File不変・追加Call/Server0、Raw135/全142 Artifactを照合した。全70出力の独立Schema/AI確認と35組のSchema不変を保存。人工27組は1文書で同一入力、Council c6は曖昧のまま、F5/7による矛盾を含む回答の採用相当も保持する。親136 Fileのコピー上で全再検証する引継ぎに成功し、全旧15 QA/42文/30条件・84 Call/全Expected/基準/Source25/裸拒否8をv4へ結んだ。新事前登録v8はRetry0・既存275/累積上限359、Native27と新形式v4の25 Artifact不変を照合して再利用する。固定321adf3の新WTへ299 File Binding/55 Hardlink/相対Symlink10・Offline58 Packageを再現。全84入力/生成0・最大3612 Token/全層CUDA（VRAM6517/8151 MiBは一点観測）に通過し、7準備Artifactを保存した。記録包装のField参照失敗も保持してNative再実行0。同じWTで全旧回帰をsession95270として開始し、全採否は未確定。実主/Cal採用・最終N/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
+[旧15 QA直接回帰v4の不通過結果](phase11_known_trace_direct_result_v4.md)を保存した。固定321adf3/session95270は42 Call/12 Critical条件を終了し、完全一致9/12・誤支持4で停止。残る18条件未試行、全74/支持58判定の精度はnull。Tomの媒体一般化1、Tar Heelの由来断定1/別逸話の因果接続2が誤支持。暖鋒は両Label一致でも両理由が表の列を誤読しており能力改善としない。入力135658/出力159626 Token・2529.175093秒、95 Source/再開59 File不変・追加Call/Server0、Raw61/全69 Artifactと全42出力AI確認・独立Schemaを保存。Q4実累積317。旧全Source/Expected/基準/曖昧/裸拒否8を保ち主/Cal採用しない。次は同じ固定Revisionの9B Q5_K_Mを、量子化だけを分ける候補として取得/Hash・VRAM資源調査する。取得/実走と意味改善はまだ未確認。Gate 11未通過・Phase 12未実施。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
+
+[v15の全意味診断と全旧回帰v4の登録](phase11_cited_decisions_result_v1.md)を保存した。固定55d031c/session77717は全58条件/70 Callを終了し、既知Critical4/4・人工英語24/24・日本語30/30・誤支持0で診断基準に通過。入力118450/出力194751 Token・3168.554393秒、95 Source/再開133 File不変・追加Call/Server0、Raw135/全142 Artifactを照合した。全70出力の独立Schema/AI確認と35組のSchema不変を保存。人工27組は1文書で同一入力、Council c6は曖昧のまま、F5/7による矛盾を含む回答の採用相当も保持する。親136 Fileのコピー上で全再検証する引継ぎに成功し、全旧15 QA/42文/30条件・84 Call/全Expected/基準/Source25/裸拒否8をv4へ結んだ。新事前登録v8はRetry0・既存275/累積上限359、Native27と新形式v4の25 Artifact不変を照合して再利用する。固定321adf3の新WTへ299 File Binding/55 Hardlink/相対Symlink10・Offline58 Packageを再現。全84入力/生成0・最大3612 Token/全層CUDA（VRAM6517/8151 MiBは一点観測）に通過し、7準備Artifactを保存した。記録包装のField参照失敗も保持してNative再実行0。同じWTで全旧回帰をsession95270として開始し、全採否は未確定。実主/Cal採用・最終N/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
 
 [引用状態Schema v3の実機形式検証](phase11_cited_decisions_native_result_v1.md)を保存した。固定55d031cの全70実入力/生成0・最大3478 Token/全層CUDAと、新Native 10 Call中の全9 Strict条件に通過。入力630/出力1679 Token・生成合計29.255313秒、92 Source/再開14 File不変・追加Call/Server0を確認し、Raw16を含む全25 Artifactを固定WTとByte照合した。包装時の既存File検査失敗も保存し、追加推論はない。形式は意味精度の証明ではない。同じWTで全58条件/最大70 Callをsession77717として実行中（10:37 JST観測で7/58条件完了、既知4条件のCritical基準を通過して人工条件へ進行）。開始時9B累積205/上限359・Retry0、全旧対象/Expected/基準を維持する。現行93 Sourceの最終Validator検証v2も保存し、全734 Test/Ruff・実未達拒否・30 Payload照合、Evaluation本文解析/追加推論0を確認。実主/Cal採用・最終N/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
 
