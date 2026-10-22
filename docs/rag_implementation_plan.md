@@ -1,8 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.59 — 2026年10月22日 Q5の全Raw監査と旧回帰v5の前提を検証
+## Version 8.60 — 2026年10月22日 Q5旧回帰v5の全失敗と未試行を監査
 
-[研究計画 Version 7.57](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.58](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 
@@ -10,11 +10,13 @@
 
 
 
+[旧15 QAのQ5直接回帰v5の不通過結果](phase11_known_trace_direct_result_v5.md)を保存した。固定9036182/session54967は12 Critical条件/42 Callを終了し、完全一致10/12・誤支持2で停止した。残る18条件は未試行、全74確定/支持58判定の精度はnull。Tar Heel c2は両順序で別伝承を結ぶ因果関係を誤支持し、c1逆順序は支持不足を矛盾とした。Tom c5は両NS、暖鋒c2は両Label/表の列対応が一致したが、c1元の余分な引用IDの非対応も保持。入力135658/出力166835 Token・3047.441637秒、95 Source/再開59 File不変・追加Call/Server0、Raw61/全73 Artifactと全42出力の独立Schema/AI確認を保存した。全9B実439（Q4 317/Q5 122）、旧84 Call枠の未使用42は保持する。全Source25/Expected/基準/曖昧/裸拒否8は不変。次は同じQ5/Runtime/予算で、別の説明間の因果・同一関係を根拠なしに補わない一般Prefixを日英の別Versionとして事前計画する。候補は未作成・未推論で、主/Cal採用・最終N/条件/凍結は未了。Gate 11未通過・Phase 12未実施。
+
+以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
+
 [Q5の全意味診断と旧15 QA回帰v5](phase11_qwen35_q5_semantic_result_v1.md)を保存した。固定be6e6ac/session95591は全58条件/70 Callを終了し、Critical4/4・人工英語24/24・日本語28/30・誤支持0で事前基準に通過。日本語の記載のない選手時代の優勝を矛盾とした2件を保持し、精度改善を断定しない。入力118450/出力209629 Token・3781.233184秒、95 Source/再開133 File不変・追加Call/Server0、Raw135/全147 Artifactを照合。全70 Native最終JSONの独立Draft-7と35組のSchema不変、全理由/SourceのAI確認を保存した。Council c6の曖昧/観測NS・F5/7による採用相当と理由の断片も保持。親136 Fileのコピー上で全再検証する準備が成功し、同じ旧全15 QA/42文/30条件・84 Call/Source25/全Expected/基準/裸拒否8を回帰v5へ結んだ。事前登録v10は既存v9の条件付き84 Callを使い、既存397/累積上限481・Retry0を維持。Native27/新Q5形式24 Artifactは不変。全740 Test（26.07秒）/Ruffにも成功。固定9036182の新WTへ567 File Binding/56不変Hardlink/相対Symlink10・Offline58 Packageを再現。全84実入力/生成0・最大3612 Token/全層CUDAに通過し、VRAM7258/8151 MiBを一点観測した。準備/Preflight6 Artifactを保存し、同じWTで旧回帰v5をsession54967として開始した。全採否は未確定で、実主/Cal・最終N/資源/条件/凍結は未了。Gate 11未通過・Phase 12未実施。
 
 [Q5の暫定資源見積り](phase11_qwen35_q5_resource_estimate_v1.md)も保存した。終了済み全70 Judge Call/147 Artifactを照合し、3781.233184秒・平均54.017617秒、既知16/人工54の群平均68.019841/49.868810秒を確認。各20 QA/平均5文/各9試行の仮定では主Judgeだけ24.9〜34.0時間、同規模Calを含むJudgeは49.9〜68.0時間で、初回/書換え/検索/採点等は別。観測群平均の幅であり時間保証/95%CIではない。1660 Call/言語を維持し、実行中旧回帰の費用や旧8Bの時間は混ぜず、新主Policy/最終Nの採用とはしない。追加Model Call0。
-
-以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 
 [9B Q5候補の取得と別事前登録](phase11_qwen35_q5_candidate.md)を保存した。同じ固定Repository Revisionの6577841376 Byte/公開SHA256を実ファイル全体で確認し、別Manifestへ取得した。取得CLIの量子化名Q4固定を修正し、誤った宣言は取得前に拒否/旧Q4既定を維持する。追加6件を含む全740 Test（28.29秒）/Ruffと実Config/Source/Identity契約に成功。候補v16はv15からStudy VersionとModel Manifestだけを変更し、Runtime/日英Prompt/予算/Sampler/全対象/Expected/基準とNative Core27を保持する。新事前登録v9は形式10+意味70+通過時の全旧回帰84=新規164/Retry0、旧Q4実317/Q5実0から全9B累積上限481。Model変更により新形式証拠が必要。固定be6e6acの専用WTへ389 File Binding/56不変Hardlink/相対Symlink10・Offline58 Packageを配置。全70入力/生成0・最大3478 Token/全層CUDAに通過し、VRAM7254/8151 MiBを一点観測した。新Q5形式10 Call/全9 Strict条件に通過、入力630/出力1802・生成34.964001秒、92 Source/再読14 File不変・追加Call/Server0、全24 Artifactを照合。同じWTで全意味58条件/70 Callをsession95591として開始し、全採否は未確定。[実行記録](phase11_qwen35_q5_execution_v1.md)に全証拠と再開先を保存。全旧基準通過前に主/Calへ進まない。Gate 11未通過・Phase 12未実施。 Q5通過後の旧回帰v5用準備Helperを別保存し、未完了/未監査の親を実際に拒否・出力未作成を確認した（`phase11_qwen35_q5_known_preparation_pending_v1.json`）。旧15 QA/42文/Source25/Expected/基準/裸拒否8は原版一致、追加推論0。正の再検証/登録はまだ未了。
 

@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q5-whole-known15-v5-failed-critical-gate-not-main-adoption",
+  "recorded_at_utc": "2026-10-22T06:13:12.494305+00:00",
+  "fixed_commit": "90361825b2e5dfe99bf401ed6ca074d533dba516",
+  "config": "configs/phase11_known_trace_candidate_v5.yaml",
+  "config_sha256": "e2d4a0f2cddd7f05434c71421fbc89187ec4084dd3725d61b258693faa914e39",
+  "run": "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5",
+  "tool_session_id": 54967,
+  "audit_tool_session_id": 52552,
+  "terminal": true,
+  "report": {
+    "schema_version": 1,
+    "purpose": "phase11-bilingual-semantic-candidate",
+    "manifest_sha256": "ccef4ca0193b00e53c931df522eb2682914d3d091bc7ad8c331bad1962dfb6c9",
+    "critical_planned_conditions": 12,
+    "critical_completed_conditions": 12,
+    "critical_exact_correct_conditions": 10,
+    "critical_passed": false,
+    "known_regression": {
+      "planned_labeled_unit_conditions": 74,
+      "exact_correct": 37,
+      "accuracy_of_all_planned": null,
+      "planned_supported_unit_conditions": 58,
+      "supported_exact_correct": 24,
+      "supported_accuracy": null,
+      "false_support_count": 2,
+      "ambiguous_unit_conditions_retained_in_F": 10
+    },
+    "diagnostic_gate_passed": false,
+    "planned_conditions": 30,
+    "completed_conditions": 12,
+    "not_attempted_ids": [
+      "known-gpu-da38af9cd782-original",
+      "known-gpu-da38af9cd782-reversed",
+      "known-gpu-25560cfd1cab-original",
+      "known-gpu-25560cfd1cab-reversed",
+      "known-gpu-dee22fa20655-original",
+      "known-gpu-dee22fa20655-reversed",
+      "known-gpu-b33c1496859d-original",
+      "known-gpu-b33c1496859d-reversed",
+      "known-gpu-c99e26828c62-original",
+      "known-gpu-c99e26828c62-reversed",
+      "known-gpu-35d3e8259d8f-original",
+      "known-gpu-35d3e8259d8f-reversed",
+      "known-gpu-6d9820642610-original",
+      "known-gpu-6d9820642610-reversed",
+      "known-gpu-9080b47549bc-original",
+      "known-gpu-9080b47549bc-reversed",
+      "known-gpu-aaba171a10f6-original",
+      "known-gpu-aaba171a10f6-reversed"
+    ],
+    "planned_completion_limit": 84,
+    "completion_attempts_recorded": 42,
+    "cost_incomplete": false,
+    "input_tokens": 135658,
+    "output_tokens": 166835,
+    "summed_task_seconds": 3047.441637332973,
+    "task_result_sha256": {
+      "known-gpu-323bf35882bc-original": "97c0cf2184853d444dd8850228734a2a32624deab0023d3e5253b47d3509cb75",
+      "known-gpu-323bf35882bc-reversed": "954476368e1ef4175f0f017b4ee0b5872ed7a1662d9003d196687247de92aa2f",
+      "known-gpu-31e646aa9601-original": "4486e8bdc053afe5ad10920809446f8fc227d7ce9210242ac7840f9ef412a626",
+      "known-gpu-31e646aa9601-reversed": "808b6fa725e63e3a83a77cdb60dbba6ded9a1e6d033f32aa07b7b17a8542753b",
+      "known-gpu-b4291e2a1a09-original": "3b43b2b427342ff9aa1dcfe6c3f6f536e074e84205ff53e8f8e342cd39ca2168",
+      "known-gpu-b4291e2a1a09-reversed": "f048ada4acea7ef003a38aad78a10923f6a53acfddba080f1fad01cb1f8c9527",
+      "known-armistice-original": "5ec6b92828068673e5d389e4e5742845b3e7d3cfdd196dc2b102d42b8a2a85a5",
+      "known-armistice-reversed": "7a6bbd8a85b2aa503452108e6e87737292908b36152d63b168771020f152ee69",
+      "known-warm-front-original": "4accad956c4636eba61b89f51423e2dae34222fc6c5722300afcdb4634a00648",
+      "known-warm-front-reversed": "adab0a6b48d81d1da25814c06d213035c2574b2c594fdd88de7777acfe149b67",
+      "known-tar-heels-original": "893372cc5f99e2b6794695282597c784229591712af43c522d9fa22f34aedd30",
+      "known-tar-heels-reversed": "a1d707412b2a7acd181e2808e4637c81d8ca6495b581bc31d55752e27e6250c9"
+    },
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "source_hashes_verified": 95,
+  "resume_unchanged_files": 59,
+  "resume_new_calls": 0,
+  "resume_new_servers": 0,
+  "raw_files_copied_byte_identical": 61,
+  "final_verdicts_AI_reviewed": 42,
+  "independent_schema_validations": 42,
+  "schema_invariant_unit_pairs": 21,
+  "manual_AI_review": "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/semantic_output_audit_v1.json",
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "parent_complete_diagnostic": {
+    "path": "data/manifests/phase11_qwen35_q5_semantic_result_v1.json",
+    "sha256": "915a9fd27647abb38536829d25f35c289e3a48ae7808163ba4cd344920fdde54"
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v10.json",
+    "sha256": "6a5799dc44578bac949113719774b4f0408f996ca9ceaa2ecf900d03f5c8f2b2"
+  },
+  "old_25_source_bindings_all_cases_expected_gates_ambiguous_and_eight_refusals_unchanged": true,
+  "previous_completed_all_9b_calls": 397,
+  "cumulative_completed_all_9b_calls": 439,
+  "completed_Q4_calls": 317,
+  "completed_Q5_calls": 122,
+  "unused_42_calls_in_this_84_call_registration_not_reallocated": true,
+  "next_candidate_not_yet_created": true,
+  "main_or_reserved_calibration_or_evaluation_new_calls": 0,
+  "artifacts": {
+    "data/manifests/phase11_qwen35_q5_known_launch_v1.json": {
+      "sha256": "74211b0022644785f2ecc8732f0a60cbe5698cc23cc06a45e4c42626ffbabbc2",
+      "size_bytes": 2098
+    },
+    "data/runs/development_screening/phase11-q5-known-v5-audit-v1/audit.py": {
+      "sha256": "3a8529888dc08943f1b59d287cfaa1a4520e8ed18c4aae94926a800207330433",
+      "size_bytes": 3873
+    },
+    "data/runs/development_screening/phase11-q5-known-v5-audit-v1/partial_AI_review_v1.json": {
+      "sha256": "3b768d3237a64a21cce3b2a56766ac3336520ecfe1d59f6ad995dc57785bd1fa",
+      "size_bytes": 7342
+    },
+    "data/runs/development_screening/phase11-q5-known-v5-audit-v1/stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q5-known-v5-audit-v1/stdout.txt": {
+      "sha256": "43dc4925e0acd211e4d42fe738bf7a92f41c654b27fcc7fd905d846aa50b3db8",
+      "size_bytes": 692
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/preflight_v1/plan.json": {
+      "sha256": "0ec31aca3894a4cb445fdf8fc551c4329240bc028e438db3ebcdaf1defe854a4",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/preflight_v1/report.json": {
+      "sha256": "9cd9c7936b24c8fa926586d4256ef00e9b9fb0ec89acbb7fa61a5c4e4e5d32c3",
+      "size_bytes": 35246
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/preflight_v1/server.log": {
+      "sha256": "f07035ff046586d10ba477365e009e9b2a15fb42098edaad8ec845d51f68c49d",
+      "size_bytes": 19266
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/preparation_v1.json": {
+      "sha256": "0eebc5797bb723fec1a545bf831eaaad2c7b7f16a2fec3571dc1b35426ec1438",
+      "size_bytes": 143190
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/prepare_worktree.py": {
+      "sha256": "488185e18e923f6b10e1aaf13e3fd569cd01daf4818f825e8ed8ea6d4e36b200",
+      "size_bytes": 4773
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/audit_check.json": {
+      "sha256": "e2772d7d53e11fe0662a89d450283cd2d746f20ed39ea43a9b25ca1437dbe378",
+      "size_bytes": 59701
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/manifest.json": {
+      "sha256": "2b882294a175217abef1d58fdac9866464bc6e5c3dea2a804a583f16d7d83c9f",
+      "size_bytes": 23468
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/report.json": {
+      "sha256": "7f365773814b7654089315859a19edeabaa78d721252152b91f623326adbecc3",
+      "size_bytes": 2990
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/resume_check.json": {
+      "sha256": "3e857419d70621645ac5a57762e1be01a12b7f93752e34077dd5fa6ea247c030",
+      "size_bytes": 7256
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/semantic_output_audit_v1.json": {
+      "sha256": "6a0e7436cc1a205a13a75e09ad95518e608bee1af991f421b7fba3a466d437c1",
+      "size_bytes": 31800
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/server-1.log": {
+      "sha256": "16c70233ace27633d9d227a2b267dff00a1509b18b241ab2e16ae842398beb7b",
+      "size_bytes": 361241
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/session-1.json": {
+      "sha256": "8b33c1021385d2ba0c5cf2618b44f85eed3e6907f8a19916748ed79f32c2c919",
+      "size_bytes": 9722
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-armistice-original.claims/c1.json": {
+      "sha256": "d542162ae7b0b118b0495b05f0389dca78e867bdefd5ae9fd228444ad28524f0",
+      "size_bytes": 174747
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-armistice-original.claims/c2.json": {
+      "sha256": "a8b7a63302965be236f0214af8c33b73c4c1c6e63e46ccface2233e0ab767c04",
+      "size_bytes": 177551
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-armistice-original.claims/c3.json": {
+      "sha256": "54fd1249dac4f519323859c5c8e8df8069803271e712cdb000002284ffca36a0",
+      "size_bytes": 177145
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-armistice-original.json": {
+      "sha256": "81d592c279a269b58069e5dde21bcd0cdc9101b6a85f399647f234e5bc726664",
+      "size_bytes": 5905
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-armistice-reversed.claims/c1.json": {
+      "sha256": "e3726d835207ed4df45b043a9b42bfaddc7fcdf0f600291fd6e5e96bc5f4258d",
+      "size_bytes": 161437
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-armistice-reversed.claims/c2.json": {
+      "sha256": "a8f9c14e99f11b13c70a6c366b9f060364c38ff17a2741c89b4ad3889dda2ce2",
+      "size_bytes": 176783
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-armistice-reversed.claims/c3.json": {
+      "sha256": "af73d6460a576f590c8b8dbdccc153547972b8280487298dd3851aba070c6569",
+      "size_bytes": 177190
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-armistice-reversed.json": {
+      "sha256": "70d8cf2bafdbc89a62e42e9a21bda9aeda5faa195180b746bc20b76d66e3f72d",
+      "size_bytes": 6462
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-31e646aa9601-original.claims/c1.json": {
+      "sha256": "f37f8ebf5b141763cbcf6952bd5b0dc8cd3ea2244bd19d214251a75b1604a0aa",
+      "size_bytes": 194691
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-31e646aa9601-original.json": {
+      "sha256": "2a1e83d0e0ee308ee127b69430f7ea1e8946e53228cd59c882c3753bea915619",
+      "size_bytes": 4174
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-31e646aa9601-reversed.claims/c1.json": {
+      "sha256": "3020190b0a392ba3dc4c0f83918bc01b3edc022a024c0fbf4c419866a97f8c71",
+      "size_bytes": 189638
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-31e646aa9601-reversed.json": {
+      "sha256": "e65d5249bbeaae0889e5b8dae6a3506c2019322281429fc12bfdd52235ec1bbb",
+      "size_bytes": 4145
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-original.claims/c1.json": {
+      "sha256": "441c8ad59adaca7c0197e3c57c7dc7cc7dd61683b097e048b57cb31589c36dda",
+      "size_bytes": 151668
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-original.claims/c2.json": {
+      "sha256": "d86a6ab0803216d69d088fc33f5b87d28e9e9d71d1a43c66043a4e3bb905b60d",
+      "size_bytes": 184377
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-original.claims/c3.json": {
+      "sha256": "ce3f4de306147e5be8bb9544819881318f9b325f8f63568290055a43d681e643",
+      "size_bytes": 162314
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-original.claims/c4.json": {
+      "sha256": "27a3a98b183aaa6d2f55d58dea42d104c32eb60ab4cfcec517835ee3dbf81a23",
+      "size_bytes": 180275
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-original.claims/c5.json": {
+      "sha256": "508653044b369c2a8b3b79fd7193c3714fd264b042f1c80d2c645314fe1388bf",
+      "size_bytes": 175074
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-original.claims/c6.json": {
+      "sha256": "4a2fcc4b7bb2166ed1cc768e004ec195ac188d32b9c43e742b11c38cdbd7edc2",
+      "size_bytes": 182106
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-original.claims/c7.json": {
+      "sha256": "0fefb2e29db6b942b0d8f38a077fa5895109a5c060733523473c98976c1afaff",
+      "size_bytes": 183111
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-original.json": {
+      "sha256": "7799c6df2881f055b3a18f04ebfc14ccac78489ad0df060362350e0c78594895",
+      "size_bytes": 11999
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-reversed.claims/c1.json": {
+      "sha256": "78f603096a8907696af42ce8d6ad8a13856f5e73e2f7426791250efced9e3a2a",
+      "size_bytes": 124272
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-reversed.claims/c2.json": {
+      "sha256": "05409cfd2d5cfaf61377fa28d7d94ae216a676e1203eab8cfc0d5111cce80c38",
+      "size_bytes": 162657
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-reversed.claims/c3.json": {
+      "sha256": "88f9c6a1c1c3e47bdd2200301d7347b8f57f564e0dd96510ae2a18a3d0415d57",
+      "size_bytes": 170948
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-reversed.claims/c4.json": {
+      "sha256": "73af6f6de977839b953c4a11122ea08aff6a6131ce70f2a5739a1a0bfaf38f2c",
+      "size_bytes": 186540
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-reversed.claims/c5.json": {
+      "sha256": "a306ef757b346a42ca6831959946aaea903d108be3e9a43b859d302c246a013f",
+      "size_bytes": 155432
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-reversed.claims/c6.json": {
+      "sha256": "ae6b2e6737393c5f926ec0a69e77b817360446c0c03a4e934230acd84029dca6",
+      "size_bytes": 184613
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-reversed.claims/c7.json": {
+      "sha256": "a95648028ed5fbdcc82bfdd185cd17f67b6fce8ae15f3eb035b4e906dea1509a",
+      "size_bytes": 184777
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-323bf35882bc-reversed.json": {
+      "sha256": "409edaa5cce1d5aabba856b7dd653fd5bf4160738a785562f5d9a900f3b6bf16",
+      "size_bytes": 11069
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-original.claims/c1.json": {
+      "sha256": "93e65d77b0fabaaa873cacba471e3b1dce0c0f0ea38c50cdd2128122d4d7636b",
+      "size_bytes": 180537
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-original.claims/c2.json": {
+      "sha256": "67ba26ee58c2b70f9bbf6152c00ea80b2dd50726a73b3745f14939c138ef5873",
+      "size_bytes": 174568
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-original.claims/c3.json": {
+      "sha256": "6bc56f38b2580bf4917fd62fda42b44fcbbaff16601377ff131271b435eaa698",
+      "size_bytes": 188462
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-original.claims/c4.json": {
+      "sha256": "c11b283c5be4f8b7d84342e565a5308a1a3665b1b83cdac9c23859db841fdc25",
+      "size_bytes": 183413
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-original.claims/c5.json": {
+      "sha256": "7aba146558b56713c0f35372f33710afe15dc722145256eea6a6c72a9e419bb7",
+      "size_bytes": 183753
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-original.json": {
+      "sha256": "5110193a45a34fb898b5c4bb80a51d22422225419b71e80b6f3b374f930657d2",
+      "size_bytes": 6923
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-reversed.claims/c1.json": {
+      "sha256": "9e28a72684d3bc82aac86b98a4293c96950497d9eeb3f6f9ab5061394425c1e6",
+      "size_bytes": 181407
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-reversed.claims/c2.json": {
+      "sha256": "996b5e07c19f667fb7639d73bc22b550129606f274bf2280bad17047c13fdab1",
+      "size_bytes": 186990
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-reversed.claims/c3.json": {
+      "sha256": "b7686ebfa208d7cb574ee27ce023c2286a770f161716b1a287e0a243d33df718",
+      "size_bytes": 185564
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-reversed.claims/c4.json": {
+      "sha256": "e9706f66286c473160b4db8e1d3e3faacc72a76cc541e4f8c84ff5b9422441f3",
+      "size_bytes": 164681
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-reversed.claims/c5.json": {
+      "sha256": "9a7ce2f55a50957998f2b06ab3116c591eec6c16c71f21344b31c163547577c0",
+      "size_bytes": 181144
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-gpu-b4291e2a1a09-reversed.json": {
+      "sha256": "411f304b660550ab38f1cdd045fd95e7334eaef6f4efd95bd74afa10e5b3d22a",
+      "size_bytes": 7336
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-tar-heels-original.claims/c1.json": {
+      "sha256": "105f84cce62c66e22302ea4d88f503163d13dda35592b4fd7312cc18b97be525",
+      "size_bytes": 191445
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-tar-heels-original.claims/c2.json": {
+      "sha256": "05b0cd04f042e5616804c58d90d63e72a2cd9f0b94dbebf6bb09565a39b00751",
+      "size_bytes": 198842
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-tar-heels-original.claims/c3.json": {
+      "sha256": "ee5223311bc88d63dbf0623f42dbba8ea52b9abf0d95ec007df5c4a5db8d88ad",
+      "size_bytes": 187071
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-tar-heels-original.json": {
+      "sha256": "3f89d1367e00e81e913dc6e0a1adf6a616f75fd5232fbab80463c530007f887f",
+      "size_bytes": 7623
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-tar-heels-reversed.claims/c1.json": {
+      "sha256": "8867dee847160cfa83b6e41b800f10db101acff32e3f8815ef76e082e19f5387",
+      "size_bytes": 195013
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-tar-heels-reversed.claims/c2.json": {
+      "sha256": "5ac41ddf1b05c9655a7d4e1e3759c08cb2a24969363677b15e9ea146e3cef70a",
+      "size_bytes": 192591
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-tar-heels-reversed.claims/c3.json": {
+      "sha256": "6fae3b7bb26fb6b1aaaf5a549b20a97012913c2aee36be5bd3fa02e4b8c83291",
+      "size_bytes": 187441
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-tar-heels-reversed.json": {
+      "sha256": "e5488bcca11b0e87a82b22ff7851acefef1a15d96074ab9de78aa13cc56623cb",
+      "size_bytes": 8531
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-warm-front-original.claims/c1.json": {
+      "sha256": "e953620d221ac206d7c3b91a7650fc138e17b2abc864437af4d552d4daf1fff3",
+      "size_bytes": 187996
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-warm-front-original.claims/c2.json": {
+      "sha256": "8b72a789d137b7e9bd943b173c2723da7b315ef50e484d8804cfb18c66753250",
+      "size_bytes": 188307
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-warm-front-original.json": {
+      "sha256": "d7860157d93a9245f006c18d415cafa9ba11d2f8c409d1ad5f4813f688012a0f",
+      "size_bytes": 6277
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-warm-front-reversed.claims/c1.json": {
+      "sha256": "6175403ea783646f057135ebe184b6e953cabc5e935fcc3c37e76db9de24fde3",
+      "size_bytes": 192783
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-warm-front-reversed.claims/c2.json": {
+      "sha256": "a073da228f4b4aed9eb57c613ff3eb3c57dc1597f62207d9d7893a0af74d6db4",
+      "size_bytes": 170453
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5/tasks/known-warm-front-reversed.json": {
+      "sha256": "e0443588a6eb1d7797c42b04139a920142db3fe0c999ac6dcaa5a0c97aa05753",
+      "size_bytes": 6768
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
