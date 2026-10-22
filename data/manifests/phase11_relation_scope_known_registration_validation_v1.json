@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-relation-v17-known-v6-registration-validation-not-native-regression-adoption",
+  "recorded_at_utc": "2026-10-22T07:52:17.716624+00:00",
+  "test_tool_session_id": 80690,
+  "pytest": "740 passed in 27.27s",
+  "ruff": "passed",
+  "ignored_audit_helpers_ruff": "passed",
+  "contract": {
+    "recorded_at_utc": "2026-10-22T07:52:17.716532+00:00",
+    "actual_positive_preparation_tool_session_id": 10028,
+    "candidate_config_difference_fields": [
+      "study_version",
+      "diagnostics"
+    ],
+    "old_qa": 15,
+    "fixed_units": 42,
+    "conditions": 30,
+    "maximum_calls": 84,
+    "old_source_hashes_verified": 25,
+    "all_expected_gates_and_bare_refusals_unchanged": true,
+    "native_core27_and_Q5_fresh_format24_unchanged": true,
+    "prior_all9b_calls": 509,
+    "cumulative_limit": 593,
+    "automatic_retries": 0,
+    "new_model_calls": 0,
+    "new_servers": 0,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v6.yaml",
+    "sha256": "2ebc0f10112d8c52d724d459355d6e3e73a9cf399d7a308c90a263bf56bd25bf",
+    "size_bytes": 2178
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v6.json",
+    "sha256": "881d8e58e0d9b2806223f8650b1b3d66c11a862dab007fcc7d726c33ce043e1b",
+    "size_bytes": 140809
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v12.json",
+    "sha256": "855522e0d84d823edb0bd4edcfadb3013d161cc5583dbb2d88916cd9b8979500",
+    "size_bytes": 6183
+  },
+  "parent_result": {
+    "path": "data/manifests/phase11_relation_scope_semantic_result_v1.json",
+    "sha256": "d2dcfef960e63f7e186b00ebecaae64726afac1236f45b7008ee593847bd9372",
+    "size_bytes": 44517
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-relation-known-v6-registration-v1/contract.json": {
+      "sha256": "a30f57ad0d130f6180abf9b293f9e853a70892512b0e189eefe022f155cd08fd",
+      "size_bytes": 612
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-registration-v1/helpers_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-registration-v1/pytest.txt": {
+      "sha256": "5fd9d4324bb268c399e1a8ac0fbf06bc62b0518c3fca78450416ed719e67ebc5",
+      "size_bytes": 4467
+    },
+    "data/runs/development_screening/phase11-relation-known-v6-registration-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    }
+  },
+  "product_source_changed": false,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "native_regression_not_started": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

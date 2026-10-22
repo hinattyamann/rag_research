@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.59 — 2026年10月22日 関係と説明の範囲を照合するv17を別登録
+## Version 7.60 — 2026年10月22日 v17全意味診断と旧全回帰v6を保存
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.61](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.62](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -13,7 +13,7 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 
 
 
-[関係・説明の範囲を照合するQ5候補v17](phase11_relation_scope_candidate.md)を別登録した。旧回帰v5の全失敗は50410abへ保存・Push済み。同じQ5/Runtime/予算/全対象/Expected/基準のまま、因果・由来・同一性の接続自体と仮説/否定の区別を確認する一般Prefixを日英へ同じように追加する。固有名/答え/IDは入れず、正しい言換え/照応/根拠から含意される統合は許容する。Config差はStudy VersionとPromptsだけ、全70非System入力/他Taskは同一。実Loader/Identity契約と全740 Test（26.95秒）/Ruffに成功。Native Core27/新Q5形式24 Artifact不変を確認して形式は再利用し、意味は全件やり直す。事前登録v11は新意味70+通過時の旧全15 QA回帰84=最大154/Retry0、既存439/累積上限593で、旧未使用42を再割当てしない。固定1214dbfの新WTへ650 File Binding/56不変Hardlink/相対Symlink10・Offline58 Packageを配置。全70入力/生成0・最大3793 Token/24k/全層CUDAに通過し、VRAM7275/8151 MiBを一点観測した。準備/Preflight6 Artifactを正規保存・Byte照合し、同じWTで全意味診断をsession6340として開始した。[実行記録](phase11_relation_scope_execution_v1.md)を再開先とし、全採否は未確定。主/Cal採用・最終N/資源/条件/凍結は未了。Gate 11未通過・Phase 12未実施。
+[v17の全意味診断と旧全回帰v6](phase11_relation_scope_semantic_result_v1.md)を保存した。固定1214dbf/session6340は全58条件/70 Callを終了し、Critical4/4・人工英語24/24・日本語28/30・誤支持0で元基準に通過。由来の限定なし主張を矛盾とした2件と全理由の断片を保持し、改善を一般化しない。入力140500/出力181440 Token・3288.686713秒、95 Source/再開133 File不変・追加Call/Server0、Raw136/全153 Artifactを照合。全70 Native最終JSONの独立Schema/全理由・SourceのAI確認と35組のSchema不変を保存した。親136 Fileのコピー上で前提を再検証し、同じ旧全15 QA/42文/30条件・84 Call/Source25/全Expected/基準/裸拒否8をv6へ結んだ。事前登録v12は既存v11の条件付き84 Callを使い、既存509/累積上限593・Retry0と旧未使用42の保存を維持する。開始記録のWT内パスを誤参照した包装失敗も保持し、実保存先とのByte照合へ修正・Native再実行0。Native Core27/新Q5形式24の不変と全740 Test（27.27秒）/Ruffにも成功。新回帰の固定準備/生成0/実走はこれからで、全旧基準通過前にMain/Calへ進まない。主/Cal採用・最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 

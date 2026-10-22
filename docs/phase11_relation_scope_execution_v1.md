@@ -1,5 +1,11 @@
 # Phase 11 関係・説明の範囲を照合するv17の実走
 
+2026年10月22日16:49 JST追記。session6340は全58条件/70 Callを終了し、
+Critical4/4・英語24/24・日本語28/30・誤支持0で元診断基準に通過。監査49997は
+95 Source/再開133 File不変・追加Call/Server0、全70出力独立Schemaを確認した。
+[全結果と旧回帰v6への引継ぎ](phase11_relation_scope_semantic_result_v1.md)を次の再開先とする。
+以下は各時点の開始・未完了Guardの履歴であり、同じ6340を再生成しない。
+
 2026年10月22日15:49 JST時点。[候補と事前登録](phase11_relation_scope_candidate.md)を
 `1214dbf82eaabafa8edd6076804c7bab24dba58c`へCommit・通常Pushし、リモート一致を確認した。
 候補資料/旧失敗は保持し、全意味診断の採否はまだ未確定である。
