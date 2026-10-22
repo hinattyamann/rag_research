@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.61 — 2026年10月22日 旧回帰v6のCUDA停止と未知費用を保存
+## Version 7.62 — 2026年10月23日 全文を保つ12k Context候補を別登録
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.63](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.64](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -13,7 +13,7 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 
 
 
-[旧15 QA回帰v6のCUDA timeout停止](phase11_known_trace_direct_result_v6.md)を保存した。固定d9c889b/session78660は最初の条件で3 Call（応答取得2/不明1）を記録して停止し、成功条件0・残り29条件/81 Callは未試行。全74確定/支持58精度とFはnull、元Source25/Expected/基準/裸拒否8は不変。入力10942/既知部分出力5347 Token・Task秒和141.281437秒、費用不明を保持。95 Source/再開9 File不変・追加Call/Server0、Raw12/全34 Artifactと返却2件の独立Schema/AI確認を保存した。NativeのCUDA launch timeout、Kernelの確保失敗/watchdog/Xid8を確認したがメモリ領域/因果は未確定。独立した4 ByteのCUDA Kernelは成功・実行時間制限有効を確認し、OS/Driver設定と失敗要求は変更/再試行していない。記録済み全9B試行512（Q4 317/Q5 195、今回に不明1）、v12未使用81/旧v5未使用42を保持する。次は全文/出力・推論予算等を保持し、現行全154入力が収まるContext12288の資源候補を別事前登録・資源時系列付きで検証する。新候補は未作成・未推論。主/Cal採用・最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
+[12k Context資源候補v18](phase11_context12k_candidate.md)を別登録した。旧v6の停止/未知1/未試行29条件と全34 Artifactは958ac94へ保存済み。同じQ5/Runtime Binary/日英Prompt v11/全文/出力6144/推論4096・Sampler/Seed/全対象/Expected/基準を保ち、Study VersionとContext24576→12288だけを変更する。実Loader/Identity、意味70+旧全回帰84の全154 Messages一致、旧Tokenizerの最大3927+出力予約が12kに収まることを確認した。Native Core27と旧失敗34/全意味153 Artifactは不変。新しい資源観測CLIは5秒ごとのGPU/RAM/Native子孫RSSを保存し、欠測/子起動失敗/終了Codeと観測の限界を保持する。新規10件を含む全750 Test（29.68秒）/Ruffに成功、実GPU/RAMの1点観測エラー0・追加Model Call0。事前登録v13は新条件の形式10+意味70+通過時の同じ旧全回帰84=最大164/Retry0、既存試行512/累積上限676を別登録し、旧未使用81/42を再割当てしない。新固定WT/生成0/全実走は未了。主/Cal採用・最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 
