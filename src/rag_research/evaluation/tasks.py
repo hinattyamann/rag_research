@@ -36,12 +36,12 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
                             "json_schema_source_spans_bounded_v2",
                             "json_schema_source_spans_compact_v3",
                             "json_schema_verdicts_aligned_v4", "thinking_json_passage_ids_v1",
-                            "thinking_json_passage_ids_v2"}, "Unknown output constraints")
+                            "thinking_json_passage_ids_v2", "thinking_json_passage_ids_v3"}, "Unknown output constraints")
     unit_mode = prompts.get("claim_units")
     unit_language = claim_unit_language(unit_mode)
     sentence_mode = task == "extract_claims" and unit_language is not None
     aligned = constraints == "json_schema_verdicts_aligned_v4"
-    thinking = constraints in {"thinking_json_passage_ids_v1", "thinking_json_passage_ids_v2"}
+    thinking = constraints in {"thinking_json_passage_ids_v1", "thinking_json_passage_ids_v2", "thinking_json_passage_ids_v3"}
     schema = (output_schema(task, payload, bounded=aligned or constraints.endswith(("bounded_v2", "compact_v3")),
                             compact=aligned or constraints.endswith("compact_v3"), aligned=aligned)
               if constraints != "none" and not thinking and task != "read_sources" else None)
@@ -52,9 +52,10 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
         if constraints != "none":
             require(getattr(config, "final_json_grammar", False), "Source reading requires final grammar")
             schema = reading_schema(payload["documents"], prompts.get("source_reading_schema", "free_quote_coverage_v1"))
-    if constraints == "thinking_json_passage_ids_v2" and task == "verify_claims":
+    if constraints in {"thinking_json_passage_ids_v2", "thinking_json_passage_ids_v3"} and task == "verify_claims":
         require(getattr(config, "final_json_grammar", False), "Final-only grammar must be enabled")
-        schema = cited_verdict_schema(payload, boolean_checks=prompts.get("judge_checks") == "conflict_then_complete_v1")
+        schema = cited_verdict_schema(payload, boolean_checks=prompts.get("judge_checks") == "conflict_then_complete_v1",
+                                      require_cited_decisions=constraints == "thinking_json_passage_ids_v3")
     request = {"binding": binding, "task": task, "messages": messages,
                "settings": asdict(config), "json_schema": schema}
     if sentence_mode:

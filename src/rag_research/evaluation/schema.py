@@ -12,12 +12,13 @@ def object_schema(properties):
             "additionalProperties": False}
 
 
-def cited_verdict_schema(payload, *, boolean_checks=False):
+def cited_verdict_schema(payload, *, boolean_checks=False, require_cited_decisions=False):
     """Small final-only grammar; its definition is invariant to passage order."""
     claims, documents = payload["claims"], payload["documents"]
     validate_claims(claims)
     validate_documents(documents)
     require(bool(claims), "No Judge schema for empty claims")
+    require(not require_cited_decisions or boolean_checks, "Cited decisions require Boolean checks")
     items = []
     for claim in claims:
         fields = {"claim_id": {"const": claim["claim_id"]}}
@@ -27,7 +28,17 @@ def cited_verdict_schema(payload, *, boolean_checks=False):
         fields.update(reason={"type": "string", "minLength": 1, "maxLength": 160},
                       evidence_ids={"type": "array", "maxItems": 2,
                                     "items": {"enum": sorted(d["passage_id"] for d in documents)}})
-        items.append(object_schema(fields))
+        if require_cited_decisions:
+            variants = []
+            for conflict, complete in ((True, False), (False, True), (False, False)):
+                variant = deepcopy(fields)
+                variant["has_explicit_conflict"] = {"const": conflict}
+                variant["all_details_supported"] = {"const": complete}
+                variant["evidence_ids"]["minItems"] = int(conflict or complete)
+                variants.append(object_schema(variant))
+            items.append({"anyOf": variants})
+        else:
+            items.append(object_schema(fields))
     return object_schema({"verdicts": {"type": "array", "items": items,
                                        "minItems": len(items), "maxItems": len(items)}})
 

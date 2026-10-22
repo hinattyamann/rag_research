@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-cited-decision-schema-source-contract-validation-not-native-or-semantic-adoption",
+  "recorded_at_utc": "2026-10-22T01:08:27.392707+00:00",
+  "git_commit_before_work": "e4af281168adcbff9dfcd7532db4730645e16b96",
+  "tests": {
+    "pytest_passed": 734,
+    "new_tests": 33,
+    "host_seconds": 26.78,
+    "ruff": "passed",
+    "independent_schema_validator": "jsonschema 4.26.0 Draft7Validator"
+  },
+  "artifacts": {
+    "src/rag_research/evaluation/schema.py": {
+      "sha256": "616619fe28b913a309a6676415b2a8d8eb36afa0ddaef0ccb77e214e109a3b42",
+      "size_bytes": 6406
+    },
+    "src/rag_research/evaluation/tasks.py": {
+      "sha256": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+      "size_bytes": 9713
+    },
+    "src/rag_research/generation/json_grammar.py": {
+      "sha256": "c1355a13afa204b8ae1362a87cd928116f180ee07dc8b208e29c91a86bf04c46",
+      "size_bytes": 4634
+    },
+    "src/rag_research/experiments/protocol.py": {
+      "sha256": "e5738106f7409313cd27fd052eae61779b40b112c22ec3d299c7932aa52ce3cf",
+      "size_bytes": 10941
+    },
+    "scripts/probe_final_json_boundary.py": {
+      "sha256": "61a903ffb2b65e5b23763fc3be620347ca43148e3ab7a89f5c2946090370663c",
+      "size_bytes": 12308
+    },
+    "tests/test_cited_decision_grammar.py": {
+      "sha256": "a9e73e19ec3f57ed4fedce78d3cc17d7a28d77c1e7b5560c4badb2ef96833405",
+      "size_bytes": 9514
+    },
+    "configs/phase11_semantic_candidate_v15.yaml": {
+      "sha256": "97daad00225fcd2fd20defa548aceabde1ea1e004a975be4a2da1447f8de4b49",
+      "size_bytes": 2178
+    },
+    "pyproject.toml": {
+      "sha256": "6d70933c18aab6fcb94681f92a8c64bbc01324156b83b0123612eb3d52f2a0a5",
+      "size_bytes": 675
+    },
+    "uv.lock": {
+      "sha256": "50b3357e957dc3b5617917ba8ac23ec69a9770fd3d63a008f0694623b10128c6",
+      "size_bytes": 126402
+    },
+    "docs/phase11_cited_decisions.md": {
+      "sha256": "fee629ef8eeeb33855639943bf3d7f13215e9b7ed4a0f24443e453b66bb4244f",
+      "size_bytes": 4998
+    },
+    "data/manifests/phase11_qwen35_9b_preregistration_v7.json": {
+      "sha256": "c94b6aa8764cd3eec3deddbaea7023d8a548a30a17824a8d2318eae625089ffe",
+      "size_bytes": 7116
+    },
+    "data/runs/development_screening/phase11-cited-decisions-v1/formal_plan_preview.json": {
+      "sha256": "df7abfe1cbaf2b87ed351ffc575c38fb5613e3d8a03839ddcc7a814973369ff7",
+      "size_bytes": 17641
+    },
+    "data/runs/development_screening/phase11-cited-decisions-v1/old_v14_failed_task_resume.json": {
+      "sha256": "97c2708c4d384a7435088136037598c5040465198c4458d34c5f571a105b62c2",
+      "size_bytes": 732
+    },
+    "data/runs/development_screening/phase11-cited-decisions-v1/pytest.txt": {
+      "sha256": "7bb29ec00d963608fbf9bdea43f753e6bf7547bfe2689349a53e387937b11f8c",
+      "size_bytes": 901
+    },
+    "data/runs/development_screening/phase11-cited-decisions-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-cited-decisions-v1/source_contract_validation.json": {
+      "sha256": "bfc1617ec8e079d5299794b29a587928cc011fc8bb330a5755762d3c4322d5a3",
+      "size_bytes": 1032
+    }
+  },
+  "old_v2_schema_and_grammar_byte_identical": true,
+  "old_six_native_probe_definitions_byte_identical": true,
+  "new_state_probe_cases": 4,
+  "actual_old_v14_failed_task_cache_bytes_unchanged": true,
+  "gpu_environment_lock_unchanged": true,
+  "old_dependency_versions_and_artifacts_unchanged": true,
+  "added_development_packages": 5,
+  "new_native_model_calls": 0,
+  "actual_native_v3_format_not_yet_run": true,
+  "positive_task_provider_and_audit_doubles_not_native_proof": true,
+  "human_reviewed": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "result_sha256": "b55156103b1f04367ac256cb6724253a908483e1f44d81068abe417aaba61a4e"
+}

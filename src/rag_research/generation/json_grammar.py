@@ -38,6 +38,10 @@ def closing_tag_grammar(schema, *, bounded_whitespace=False):
             values = [node[field]] if field == "const" else node[field]
             require(isinstance(values, list) and values, "Empty literal alternatives")
             expression = " | ".join(literal(json.dumps(v, ensure_ascii=False, allow_nan=False, separators=(",", ":"))) for v in values)
+        elif "anyOf" in node:
+            require(set(node) == {"anyOf"} and isinstance(node["anyOf"], list) and
+                    1 <= len(node["anyOf"]) <= 128, "Unsupported schema alternatives")
+            expression = " | ".join(visit(variant) for variant in node["anyOf"])
         elif node.get("type") == "boolean":
             require(set(node) == {"type"}, "Unsupported boolean schema fields")
             expression = '"true" | "false"'

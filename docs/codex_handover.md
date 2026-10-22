@@ -1,10 +1,12 @@
 # 別チャットから再開するための引継ぎ
 
+[引用必須状態を生成時に拘束するv15候補](phase11_cited_decisions.md)を実装した。旧v2のSchema/Grammarと人工6 Caseの変更前Hashを保持し、v3だけでC/Sの実ID引用1〜2・NSの0〜2・両Boolean true禁止を表す。閉じたCompilerの選択肢/明示Protocolを対応し、新規33件を含む全734 Test（26.78秒）/Ruffと実v14失敗のClient=None再開Byte不変/追加0を確認。独立Draft-7検証器は開発依存だけに追加し、既存依存/別GPU Lockを維持。Core/Probe27 Binding中5 Fileが変わるため旧形式証拠は再利用せず、旧6+状態4の新形式10、全意味70、全旧回帰84=最大164/累積359 Call・Retry0を事前登録した。Model/Runtime/予算/日英Prompt・全旧対象/Expected/基準は維持する。Native実走/意味採用はまだ未了で、主/Cal/Evaluationを開始していない。
+
+以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
+
 [v14の引用ID欠落による停止](phase11_category_coverage_result_v1.md)を保存した。固定f92298b/session54441は9 Call・1条件成功/1エラーで終了し、56条件未試行。支持判定なのにevidence_ids空で、既存検査が正しく拒否した。入力3339/出力4211のエラーは出力上限到達ではなく、v2の生成Schemaが後段の引用必須条件を表し切れていない。全入力29988/出力31378 Token・518.200587秒、95 Source/再開16 File不変・追加Call/Server0、原本18/全26 Artifactと8有効出力・1不正ObjectのAI確認を保存した。9B実完了累積195。旧v2/Raw/Expected/全基準を保ち、次は別Versionで支持/矛盾の非空引用とBoolean状態を生成段階でも拘束する。実装・新形式/意味/旧回帰は未実施で、主/Cal採用は未了。
 
 実行状態更新: session54441と監査64692は終了済み。現在GPU実走なし。旧93865/33134を含め全失敗は正規保存済みで再生成しない。次はevaluation/schema.pyのcited_verdict_schema、generation/json_grammar.pyの閉じたCompiler、evaluation/tasks.py/protocol.pyの明示Version選択を点検し、旧v2を変えず別Versionを実装する。Source/Core変更後は新形式証拠が必須。実装/検証/事前登録→固定WT→新形式/生成0→同じ全意味/旧15 QAの順で進む。引用後付け/Label変更で失敗を隠さない。
-
-以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 
 [旧15 QA直接回帰v3の不通過結果](phase11_known_trace_direct_result_v3.md)を正規保存した。固定8ea37e1/session93865は42 Call・12 Critical条件を終了し、完全一致8/12・誤支持4（Tom元1/Warm front逆1/Tar Heel c2両2）とNS→Cの2不一致で不通過。残り18条件未試行、全74/支持58の精度はnull。入力130198/出力156604 Token・2584.749639秒、94 Source/再開60 File不変・追加Call/Server0、全68 Artifactと全42最終出力のAI確認を保存した。親終了時9B累積186。次のv14は固定f92298bで181 File Binding/相対Symlink10・Offline58 Packageを再現し、準備のリンク連鎖検査失敗も保全。全70実入力/生成0・最大3478 Token・24k/全層CUDAに通過し、VRAM6513/8151 MiBは一点観測。Native27/形式15 Artifact不変と準備/Preflight7 Artifactを確認し、同じWTの全58条件/最大70 Callを開始した（session54441）。全旧基準/Expected/分母・Retry0を維持、主/Cal採用は未確定。
 

@@ -81,13 +81,17 @@ def validate_task_contract(config, prompts):
     require(config.get("output_constraints", "none") in {
                 "none", "json_schema_source_spans_v1", "json_schema_source_spans_bounded_v2",
                 "json_schema_source_spans_compact_v3", "json_schema_verdicts_aligned_v4",
-                "thinking_json_passage_ids_v1", "thinking_json_passage_ids_v2"},
+                "thinking_json_passage_ids_v1", "thinking_json_passage_ids_v2", "thinking_json_passage_ids_v3"},
             "Unsupported output constraints")
+    require(config.get("output_constraints") != "thinking_json_passage_ids_v3" or
+            (mode == "claimwise-v1" and prompts.get("judge_checks") == "conflict_then_complete_v1" and
+             config.get("sampling", {}).get("final_json_grammar") is True),
+            "Cited-decision grammar requires the direct Boolean candidate and final grammar")
     require(config.get("sampling", {}).get("final_json_grammar_mode", "brace_trigger_v1") not in {"closing_tag_root_v2", "closing_tag_root_v3"} or
-            (config.get("output_constraints") == "thinking_json_passage_ids_v2" and
+            (config.get("output_constraints") in {"thinking_json_passage_ids_v2", "thinking_json_passage_ids_v3"} and
              config.get("sampling", {}).get("final_json_grammar") is True), "Closing-tag grammar needs the thinking candidate")
     require(config.get("sampling", {}).get("reasoning_prefill_mode", "none") == "none" or
-            (config.get("output_constraints") == "thinking_json_passage_ids_v2" and
+            (config.get("output_constraints") in {"thinking_json_passage_ids_v2", "thinking_json_passage_ids_v3"} and
              config.get("sampling", {}).get("final_json_grammar") is True),
             "Reasoning prefill needs the thinking candidate")
     tasks = set(FIELDS) if mode == "source-reading-v1" else set(FIELDS) - {"read_sources"}
