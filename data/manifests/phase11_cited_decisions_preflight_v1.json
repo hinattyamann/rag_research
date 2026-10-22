@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-cited-decisions-v15-zero-completion-preflight-not-adoption",
+  "created_at_utc": "2026-10-22T01:14:15.416857+00:00",
+  "fixed_commit": "55d031ca9c9ff599e0ef362856a8cd05f0b32cb7",
+  "config": "configs/phase11_semantic_candidate_v15.yaml",
+  "config_sha256": "97daad00225fcd2fd20defa548aceabde1ea1e004a975be4a2da1447f8de4b49",
+  "actual_inputs": 70,
+  "maximum_input_tokens": 3478,
+  "context_tokens": 24576,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "6526 MiB, 8151 MiB",
+  "completion_attempts": 0,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-v15/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v15/preflight_v1/plan.json": {
+      "sha256": "42932fa159d5678daed9b0429b6db824b446f79a7d535546d39dfa7c3fd59889",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v15/preflight_v1/report.json": {
+      "sha256": "a06099ae88eee8441e106556852a7f79e56fb694d61ada086beb645feb8d9200",
+      "size_bytes": 30792
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v15/preflight_v1/server.log": {
+      "sha256": "59e6f00b894c156a2d7fac6bae6699fc0add4fdc3044edcfbbac082684b30f19",
+      "size_bytes": 19146
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v15/preparation_v1.json": {
+      "sha256": "05c499299fac4d29b42313e766ee412be71d0b8eab458774608f5a07749462a2",
+      "size_bytes": 26956
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-v15/prepare_worktree.py": {
+      "sha256": "8594b7af1a20082aed8cf1150e406631ff404d6da710ab67f7d46b800927fde7",
+      "size_bytes": 3952
+    }
+  },
+  "native_core_plus_probe_bindings_verified": 27,
+  "fresh_ten_call_format_probe_required": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

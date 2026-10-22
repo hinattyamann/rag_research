@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-bilingual-finalization-validation-not-final-freeze",
+  "created_at_utc": "2026-10-22T01:21:44.453074+00:00",
+  "tests": {
+    "pytest_passed": 734,
+    "new_cited_schema_tests": 33,
+    "host_seconds": 26.78,
+    "ruff": "passed"
+  },
+  "validation_source_sha256": {
+    "src/rag_research/__init__.py": "7b788c2f28d57d6f0c2c532d9b01a3c7b6b6f3d4475e1cf12da028b65ab96b74",
+    "src/rag_research/baseline.py": "5ae83d487fe46dbc117e2098751374a7fe500378f7e009afd79d950d16a3ad85",
+    "src/rag_research/calibration/__init__.py": "0f8f62672aef489bf544efaa7f864caf54dacc9399a9de89af3be6d624574b47",
+    "src/rag_research/calibration/preparation.py": "c9718d8f341a74088379ab8bb7392978544c51780b4726b0b8564eb590d0b5ee",
+    "src/rag_research/calibration/report.py": "6426fc6676c69e94ebd6f41c91df84a40a8c2bf70fe0f15d0b85106999fe93a2",
+    "src/rag_research/data/__init__.py": "de362f3487a018cb700e8fb8f12718f5e6dce28a27481d96d8b04f948c29306b",
+    "src/rag_research/data/baobab_source.py": "29a02661abdf522fea4660deb6bd9c9bec484b09f60276be7d95e6ea22cb178a",
+    "src/rag_research/data/clapnq_acquisition.py": "2d089d99532d44abae23b619474cc0cf9e9bd7913693417095af105a970fd393",
+    "src/rag_research/data/clapnq_annotations.py": "5c9f9656efdc71756d8ceb804b0bf8ddb7f9c6df6681852365ebbeaee61e4dbb",
+    "src/rag_research/data/clapnq_corpus.py": "5e049f3113854a405bbe022895bcb404c62cd65a20f5a8af65bd9a086741015c",
+    "src/rag_research/data/clapnq_manifest.py": "9443f15fdc9181875ab1058fd775ed8fa4d3fbef586921c7ded7764703dece3b",
+    "src/rag_research/data/clapnq_queries.py": "34a16a1b54846881420f8f566e33ddf7c33c3cc7dbfda7f30a5888d5cfded405",
+    "src/rag_research/data/clapnq_records.py": "9efa5c14ded2f0302360236a051c0d4d7dfd9f64636b341cf792761986e6fb22",
+    "src/rag_research/data/clapnq_source.py": "bff1e979d6f65a799154590295e0ae61826ef929db9c3e383a10b2baebd4cea0",
+    "src/rag_research/data/clapnq_split.py": "a5327fb6c3d5fea39132f28b2c3e03afe4b719a7c70ea2fb9af30f7f94732a8d",
+    "src/rag_research/data/japanese_dataset.py": "42baaebaf96a2cb1b75d5b611917aeca01a17ccd8818f93a031d0b8a850e4e97",
+    "src/rag_research/data/japanese_evidence.py": "da0459c8fbaec7d735c702669e59864ba996b79c10d1bb3fd8baf3a00eec95e9",
+    "src/rag_research/data/japanese_passages.py": "05ab00ea2a4d6c8bf36b4afd4a21a34af66db9dee80cd6804acba418f00671bb",
+    "src/rag_research/data/japanese_token_corpus.py": "0e04be836598938cff552c295cc9a36b7b4770892a94d11dbe38e8b041d957ca",
+    "src/rag_research/data/source_availability.py": "eaaa4ab5353bdc41262b01e2c814cc198eebac5f3c57cdae8d1fbb869863767a",
+    "src/rag_research/data/study_assets.py": "78b33b20578cb1bac2dc4198856627f2a4442de168d58360c463d759dc7296e4",
+    "src/rag_research/data/token_bounded_corpus.py": "e3275f37a6f6631bea13270eb54e728b0846db2c78cfed71b3e671d3feaf45a0",
+    "src/rag_research/data/wikipedia_reference_projection.py": "3c48860c4a8540344fc35afad7b4ceefde4c12a9578d426e9b395454ce9f7762",
+    "src/rag_research/data/wikipedia_snapshot.py": "0cf392491d6c482bb3fccc1db361a580cee1c6327ed96b07d7a31765dd93b80c",
+    "src/rag_research/evaluation/__init__.py": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b",
+    "src/rag_research/evaluation/claims.py": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602",
+    "src/rag_research/evaluation/claimwise.py": "2d0045aad140d869aef2ac279cbca3df50cfa7c320d1b06a553904aa29d9b617",
+    "src/rag_research/evaluation/judge.py": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2",
+    "src/rag_research/evaluation/order.py": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e",
+    "src/rag_research/evaluation/quote_alignment.py": "a9bc408e05d9fa25c0902b13b7e70d2e2eb7d3402ba4b10c24184d43759b88bb",
+    "src/rag_research/evaluation/reasoned_json.py": "5c6b089e9442d8f23783aaa5afc4c9a9744d9a617ac8ea7064eff47fbc219830",
+    "src/rag_research/evaluation/reasoning_budget.py": "f9f933dd20b73e51c15aae87c43dc5e50e22b8c4624f9857c2cb13029b6d91ec",
+    "src/rag_research/evaluation/schema.py": "616619fe28b913a309a6676415b2a8d8eb36afa0ddaef0ccb77e214e109a3b42",
+    "src/rag_research/evaluation/sentence_claims.py": "a0a3715ab7f1c3b0b8d7766e779c716efc133822a20c524bab1ca8e09d47a0a5",
+    "src/rag_research/evaluation/source_reading.py": "ebc5ace62451eb4d8fcdc4380d16be6c0eead9f22d28de6fd96d3f4aac72f693",
+    "src/rag_research/evaluation/tasks.py": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+    "src/rag_research/experiments/__init__.py": "47047fe0079dd895316a10769822dde18800a51a1198d7731d736fa981d54296",
+    "src/rag_research/experiments/bilingual_budget.py": "343f77abff44086574e9b466b723483465ad7e276d3265029dbe30c5dc0de2a3",
+    "src/rag_research/experiments/bilingual_certification.py": "4c1680b03595a20fcb29fcd87455b6ce8f99678e9a8d929feec7d3dc5a72a4dd",
+    "src/rag_research/experiments/bilingual_finalization.py": "892e912551e079b6359b64d6a7af6bc46c2be1155f4d6d102beaed8eb02d4a0d",
+    "src/rag_research/experiments/bilingual_main.py": "a9be98ba78b1c670e7bb2f041c89677246dc8dc43354d769642a6df7ce6d5644",
+    "src/rag_research/experiments/bilingual_quality.py": "0a4664601956d962650f06d0480879bdf7172dbb79c7a42aec185f3d1dea6265",
+    "src/rag_research/experiments/bilingual_runner.py": "bb4a87f008bce425288d2a01a411fcec5dc08d518e1318d4eced5b31e5e26310",
+    "src/rag_research/experiments/bilingual_semantics.py": "b1db7b3ecef8801b212d18d28cfd3bb48fdbce9b0b01f10e90a3bfba311b16b7",
+    "src/rag_research/experiments/bilingual_statistics.py": "944f85f41ed68f1f135b72b8ac99a40aa0cdd401cfc785c2e4aa2954f43a46c9",
+    "src/rag_research/experiments/calibration_analysis.py": "aa9150ef594209a59cdc7c5f48ae7e4264dc66c71fb2c9dd162b6d26bb066211",
+    "src/rag_research/experiments/calibration_protocol.py": "4db9ca3a45e9eb0c6703ada88e56e4a92017b21c7c06d03939967d4711e04145",
+    "src/rag_research/experiments/calibration_selection.py": "14542517f6d82935d96c26a68119245993e6dc8a6da75c120f342399b08962aa",
+    "src/rag_research/experiments/decisions.py": "46567daa5fd1a12092db0fdac7c3827ef55d7ea461815aa0f88b0c5887b3ef1e",
+    "src/rag_research/experiments/development_selection.py": "e4557484428d9474c4ec30934719f761c9d0d8a3e90cc9c807410e2e8b8f30dc",
+    "src/rag_research/experiments/frozen_trace.py": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4",
+    "src/rag_research/experiments/order_runner.py": "4179540c39a0b6b8baa1d9efe6cb1e286a96b1487df30ecc06e1bd3b278e8bee",
+    "src/rag_research/experiments/protocol.py": "e5738106f7409313cd27fd052eae61779b40b112c22ec3d299c7932aa52ce3cf",
+    "src/rag_research/experiments/quality.py": "ff3063f1f36b663ad8acc6a76db43cdaea8b497d264c71583d8a135541bdb07c",
+    "src/rag_research/experiments/quality_form.py": "89cb98cf433950ea3b66c2151712617c938bff557ce6d2871b9d1d1eac541d00",
+    "src/rag_research/experiments/repair_runner.py": "8c273482750e1cc37a5d297b47d2dec3acb39458d8e7a95b9b4e3094afb38ee8",
+    "src/rag_research/experiments/semantic_diagnostics.py": "4a43cc49115c45b0cdb774dbe9933392f8860c0dcb96afc9882344604509d565",
+    "src/rag_research/experiments/statistics.py": "25244b304a0613ccc5cd23f60d98f8c69ddb4f94c7968b1c3eaa1433ef90de3f",
+    "src/rag_research/experiments/storage.py": "073f4c89dca883fd0f5c3ab900c722361c720a3cb607faa9903190c15b272165",
+    "src/rag_research/generation/__init__.py": "33c1d27b63c42955f7e025298bd2347fbc8cf5afc57216d35516e7701e0e421a",
+    "src/rag_research/generation/artifacts.py": "bb70ba77b944ecc23a07cc1865a3fafeee610dcd453caebc5a77b8fe79fc44b5",
+    "src/rag_research/generation/auxiliary.py": "b702f4762d8da7e892486c1096b7f8c60dabf4d93dd9c3722a8a0904d893c410",
+    "src/rag_research/generation/auxiliary_config.py": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+    "src/rag_research/generation/config.py": "9a641357a2767322e97d8ee224b2f7d2d0c7bda0a3ff21f7f684fc329175b60e",
+    "src/rag_research/generation/context.py": "a86c5fda1a1d7747d3ce9087a732b70e700802b6142e4e5db6adeb1a64b6a63c",
+    "src/rag_research/generation/cuda_runtime.py": "b21d13c790071fde655aa6c3601eaf91fc609b842fcdc11725e96e9c641731f9",
+    "src/rag_research/generation/generator.py": "3ece4c433d2dec54b4c07dc0b95e42f78a2debde1349ab67d7d852445f9226a1",
+    "src/rag_research/generation/json_grammar.py": "c1355a13afa204b8ae1362a87cd928116f180ee07dc8b208e29c91a86bf04c46",
+    "src/rag_research/generation/local.py": "271494fa62fa30f40f73e43ff1f2e9de3c5b801cd2baab83d9adc5eb7c7d3feb",
+    "src/rag_research/generation/smoke.py": "469dd916567aac7d247dea606f5e885685f3c91d62e79dae683c8f7fa75a063a",
+    "src/rag_research/pilot/__init__.py": "ca181baf17b3acfb1dedc3fc8f0364f272437a9a26051e29f8faf2d8c14274d5",
+    "src/rag_research/pilot/assessment.py": "213d12000a7b94b38cf9c49609fb96005cfd21c9f4d3f6686fe62346c0607ea4",
+    "src/rag_research/pilot/baseline.py": "9e76898c903a64a4bb078015f81124be368d0005f28f9f19d0b0a38b05cb2abd",
+    "src/rag_research/pilot/internal.py": "79d0f8278f6aa4ff572a2e787bcd4906c83d973de20492759ee9b77ea4f13060",
+    "src/rag_research/pilot/materials.py": "ef55d2bb52efed008fdcf7bd69192ec3fb6754fab048fec6f74b4ec9a6fdc977",
+    "src/rag_research/pilot/report.py": "3ce2e22af32f85e55fb69b3d4193e307955bb83a5b0d5503acb71380976449e2",
+    "src/rag_research/pilot/selection.py": "72513b5bf3a260a467373e30dffbc0fce09fab3433b956e07dfe7244e7d313ae",
+    "src/rag_research/recovery/__init__.py": "a248c5acd19ee7a30fcc05f65b985c7a4b207c48dfff29f30ec1b842b364d123",
+    "src/rag_research/recovery/answer_rewrite.py": "359e2535848182a855cd58b9a6bd52d1893ffea37819a69e68647f1067c87a01",
+    "src/rag_research/retrieval/__init__.py": "22c7dcaf10082418687dd9cf7a6333b255e76560e4c11e5a983b32b228fbd2f0",
+    "src/rag_research/retrieval/bilingual.py": "a22f84c414f9c9da5a659dc324ec7f4c7c642a50c47690060cd28d8a45a25be0",
+    "src/rag_research/retrieval/bm25.py": "c99e079567ca7c3b86a38d5708b25facb03837f641c57181b731dfcadd89178e",
+    "src/rag_research/retrieval/calibration.py": "32281b5f24690b51903945c3bb492a281ce7fac5279d9754a0539a1917788cb7",
+    "src/rag_research/retrieval/common.py": "e54d7e1afc9745822ed574245ea630bbb6bd3224497ba3857baa9fb99408e2b4",
+    "src/rag_research/retrieval/dense.py": "9f2a6588ca129fe1d522d09c3d3c7bcef6a5950509d22527675846b1d692ade7",
+    "src/rag_research/retrieval/factory.py": "81c13594214eaf095e8e95bdb5a460cc84010f5ee67ec5c7b4b060f81f3bcc00",
+    "src/rag_research/retrieval/hybrid.py": "d161d4860fedc0a862e318c3848d7d5abf089a0730e0a2206c3a12e4e5d0ed1d",
+    "src/rag_research/retrieval/multilingual.py": "f7f104c07c4c45826a783b22b35735a8ae61b1d7073f2b89aaa8eb3473c63c35",
+    "src/rag_research/retrieval/parent_metrics.py": "f1a23aca9ec6f3c6916209a48640d07af2202028e879ba8d16b987eb3596fec5",
+    "src/rag_research/retrieval/validation.py": "1a0a0ff58b60ae484c627efbd4cb9e4684110e4a6c1bfbf6c83cbed450733839",
+    "scripts/finalize_bilingual_phase11.py": "c1de5795846dfdfe154b8e28abf5c3608238f81e2f0d45e5bcfe340fff7d28d1",
+    "docs/order_quality_rubric.md": "11118d7840e616edb5ff2b999ce5b239a141c2747751e2cca13d26d10d040b79",
+    "docs/phase11_statistical_plan.md": "225a9210c6226abf623cdbd993f6894a6485396059fe2163c48129f4624d2a1a"
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-bilingual-finalization-v2/dataset_integrity.json": {
+      "sha256": "4a3500fe134c4ae101d0001ab5cff262aec6a88dae51b31db9a49401858b016b",
+      "size_bytes": 16741
+    },
+    "data/runs/development_screening/phase11-bilingual-finalization-v2/freeze_rejection.txt": {
+      "sha256": "4842f81a487ea9ecad5f16b1d7a48379ccf61f8291a8cb834dd7100b212e014a",
+      "size_bytes": 1064
+    },
+    "data/runs/development_screening/phase11-bilingual-finalization-v2/help.txt": {
+      "sha256": "6a024287ece4e95ac2fa6f99ddce9034c72869d120efaa22584ec05d41adc07f",
+      "size_bytes": 710
+    },
+    "data/runs/development_screening/phase11-bilingual-finalization-v2/review.json": {
+      "sha256": "f58e00f0e2dc64510168fc4d41a23f0322ec512dbfa905043f7d0a42b2e82023",
+      "size_bytes": 392
+    },
+    "data/runs/development_screening/phase11-bilingual-finalization-v2/review.txt": {
+      "sha256": "2d62624826b87d3b7fe386190179c9f53c2662d5ccc142b2aed2e0df8485b529",
+      "size_bytes": 532
+    },
+    "src/rag_research/experiments/bilingual_finalization.py": {
+      "sha256": "892e912551e079b6359b64d6a7af6bc46c2be1155f4d6d102beaed8eb02d4a0d",
+      "size_bytes": 21532
+    },
+    "scripts/finalize_bilingual_phase11.py": {
+      "sha256": "c1de5795846dfdfe154b8e28abf5c3608238f81e2f0d45e5bcfe340fff7d28d1",
+      "size_bytes": 1063
+    },
+    "tests/test_bilingual_finalization.py": {
+      "sha256": "497ec41741bf607927dba0f48690424d25e6e1f3cbae617d516b72b2a79605a3",
+      "size_bytes": 16980
+    },
+    "configs/phase11_bilingual_freeze_decisions_v1.json": {
+      "sha256": "6b2b070651b6fa2719627cdae032d80034258a3cbbd57141c7838fc4e99a4b84",
+      "size_bytes": 3550
+    },
+    "docs/phase11_bilingual_finalization.md": {
+      "sha256": "7341f6acb60b6133991fa91a4e82027eca2504b23ba0f0ac2f475519c17c7ee9",
+      "size_bytes": 6780
+    },
+    "data/runs/development_screening/phase11-cited-decisions-v1/pytest.txt": {
+      "sha256": "7bb29ec00d963608fbf9bdea43f753e6bf7547bfe2689349a53e387937b11f8c",
+      "size_bytes": 901
+    },
+    "data/runs/development_screening/phase11-cited-decisions-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    }
+  },
+  "previous_validation_capsule_preserved_and_rejected_for_current_source": true,
+  "actual_pending_freeze_rejected": true,
+  "actual_evaluation_qa_rows_parsed": 0,
+  "actual_retrieval_payload_files_verified": 30,
+  "positive_certification_tests_are_explicit_doubles_not_actual_main_or_calibration_proof": true,
+  "actual_main_and_calibration_adoption_proven": false,
+  "new_model_calls": 0,
+  "human_reviewed": false,
+  "research_sample_size_frozen": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "result_sha256": "04c4a0f64938aafab033e4ff79bbe641f23d6e40a55a0b1834bf1f1ccdcbfbd0"
+}
