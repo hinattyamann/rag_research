@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q5-known15-v5-zero-completion-all-input-full-CUDA-preflight-not-adoption",
+  "created_at_utc": "2026-10-22T05:13:45.169588+00:00",
+  "fixed_commit": "90361825b2e5dfe99bf401ed6ca074d533dba516",
+  "tool_session_id": 61166,
+  "preparation_tool_session_id": 13552,
+  "terminal": true,
+  "status": "passed",
+  "config": "configs/phase11_known_trace_candidate_v5.yaml",
+  "config_sha256": "e2d4a0f2cddd7f05434c71421fbc89187ec4084dd3725d61b258693faa914e39",
+  "actual_inputs": 84,
+  "completion_attempts": 0,
+  "maximum_input_tokens": 3612,
+  "context_tokens": 24576,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "7258 MiB, 8151 MiB",
+  "regular_file_bindings": 567,
+  "immutable_hardlinks": 56,
+  "internal_relative_symlinks": 10,
+  "offline_gpu_environment_packages": 58,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/preflight_v1/plan.json": {
+      "sha256": "0ec31aca3894a4cb445fdf8fc551c4329240bc028e438db3ebcdaf1defe854a4",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/preflight_v1/report.json": {
+      "sha256": "9cd9c7936b24c8fa926586d4256ef00e9b9fb0ec89acbb7fa61a5c4e4e5d32c3",
+      "size_bytes": 35246
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/preflight_v1/server.log": {
+      "sha256": "f07035ff046586d10ba477365e009e9b2a15fb42098edaad8ec845d51f68c49d",
+      "size_bytes": 19266
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/preparation_v1.json": {
+      "sha256": "0eebc5797bb723fec1a545bf831eaaad2c7b7f16a2fec3571dc1b35426ec1438",
+      "size_bytes": 143190
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-known-regression-v5/prepare_worktree.py": {
+      "sha256": "488185e18e923f6b10e1aaf13e3fd569cd01daf4818f825e8ed8ea6d4e36b200",
+      "size_bytes": 4773
+    }
+  },
+  "native_core_and_probe_27_unchanged": true,
+  "fresh_Q5_format_24_artifacts_verified_and_reused": true,
+  "old_Q4_proof_not_substituted_for_Q5": true,
+  "regression_adoption_not_proven": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

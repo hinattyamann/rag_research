@@ -70,3 +70,26 @@ Native Core/Probe27と新Q5形式証拠が同一なので形式を再利用し�
 次は確認済みの記録/全事前条件をCommit・Pushし、新固定WTの生成0/全旧回帰へ進む。
 旧回帰v5の固定WT/実走と全採用、実主/Cal・最終N/資源/条件/凍結は未了。
 Gate 11未通過、Phase 12未実施、Goal継続中。
+
+## 14:15 JST追記: 固定9036182で旧回帰v5を開始
+
+全結果/事前条件を`9036182`「Q5の全意味診断と旧15 QA回帰v5を保存」へCommit・通常Pushし、
+リモート一致を確認した。新WTは`.tools/worktrees/phase11-known-trace-regression-v5`。
+567 File Binding、56不変Hardlink、内部相対Symlink10を照合し、JSON/Rawはコピーした。
+独立GPU環境58 PackageをOfflineで再現した。
+
+session61166は全84実入力/Completion0、最大3612 Token、Context24576/全Layer CUDAで通過。
+VRAM7258/8151 MiBは一点観測であり、全実行の最大値やKernel時間ではない。
+準備/Preflight6 Artifactを正規保存・固定WTとByte照合し、全567 BindingとNative Core27、
+新Q5形式24 Artifactの不変を確認した。証拠は`phase11_qwen35_q5_known_preflight_v1.json`。
+
+同じ固定WTで全旧回帰v5をsession54967として開始した。
+出力は`data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5`、
+開始記録は`phase11_qwen35_q5_known_launch_v1.json`。
+最大84 Call/Retry0・累積上限481、旧全対象/Expected/基準/裸拒否8を維持する。
+全採否は未確定。旧95591/72553/24522/61166/13552は終了済みで再生成しない。
+
+同じHandleを継続観測し、終了後だけ固定WTのuvで
+`data/runs/development_screening/phase11-q5-semantic-audit-v1/audit.py`へ
+Config v5/Runを位置引数で渡し、全Raw/費用/失敗/未試行と追加0再開を監査する。
+全旧基準通過後だけ新主Policy/実費へ結ぶ。実主/Cal・最終N/資源/条件/凍結は未了。

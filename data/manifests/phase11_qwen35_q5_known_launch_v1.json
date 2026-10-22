@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q5-known15-v5-fixed-commit-launch-not-adoption",
+  "observed_at_utc": "2026-10-22T05:15:12.223900+00:00",
+  "fixed_commit": "90361825b2e5dfe99bf401ed6ca074d533dba516",
+  "tool_session_id": 54967,
+  "observed_tool_status": "running",
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v5.yaml",
+    "sha256": "e2d4a0f2cddd7f05434c71421fbc89187ec4084dd3725d61b258693faa914e39"
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v5.json",
+    "sha256": "83ff26aba449f2411c2ba004a758f9d56bdbb4afebb327b39a9f7064d2b02561"
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v10.json",
+    "sha256": "6a5799dc44578bac949113719774b4f0408f996ca9ceaa2ecf900d03f5c8f2b2"
+  },
+  "preflight": {
+    "path": "data/manifests/phase11_qwen35_q5_known_preflight_v1.json",
+    "sha256": "8b710e923da787a99f137016c529a81bbad21be16835cb895a56669ca23e7207"
+  },
+  "parent_complete_diagnostic": {
+    "path": "data/manifests/phase11_qwen35_q5_semantic_result_v1.json",
+    "sha256": "915a9fd27647abb38536829d25f35c289e3a48ae7808163ba4cd344920fdde54"
+  },
+  "fresh_format_proof": {
+    "path": "data/manifests/phase11_qwen35_q5_format_result_v1.json",
+    "sha256": "b2759d743ceac4f091f75a527dc9a6f13c85fe475324f9a030d2c279e5f617ce"
+  },
+  "output_dir": "data/runs/semantic_diagnostics/phase11-qwen35-9b-q5-known-regression-v5",
+  "whole_old_qa": 15,
+  "whole_old_fixed_units": 42,
+  "whole_old_conditions": 30,
+  "first_critical_conditions": 12,
+  "first_critical_calls": 42,
+  "maximum_new_calls": 84,
+  "automatic_retries": 0,
+  "previous_completed_all_9b_calls": 397,
+  "maximum_cumulative_all_9b_calls": 481,
+  "remaining_positive_conditions_allowed_only_after_all_critical_pass": true,
+  "all_original_targets_expected_gates_refusals_unchanged": true,
+  "native_core_and_probe_27_and_fresh_Q5_format_24_artifacts_verified": true,
+  "actual_adoption_not_yet_determined": true,
+  "new_main_or_reserved_calibration_or_evaluation_qa_used": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

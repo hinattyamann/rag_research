@@ -7,7 +7,7 @@
 
 ## 1. 今どこまで終わっているか
 
-[Q5の全意味診断と旧15 QA回帰v5](phase11_qwen35_q5_semantic_result_v1.md)を保存した。固定be6e6ac/session95591は全58条件/70 Callを終了し、Critical4/4・人工英語24/24・日本語28/30・誤支持0で事前基準に通過。日本語の記載のない選手時代の優勝を矛盾とした2件を保持し、精度改善を断定しない。入力118450/出力209629 Token・3781.233184秒、95 Source/再開133 File不変・追加Call/Server0、Raw135/全147 Artifactを照合。全70 Native最終JSONの独立Draft-7と35組のSchema不変、全理由/SourceのAI確認を保存した。Council c6の曖昧/観測NS・F5/7による採用相当と理由の断片も保持。親136 Fileのコピー上で全再検証する準備が成功し、同じ旧全15 QA/42文/30条件・84 Call/Source25/全Expected/基準/裸拒否8を回帰v5へ結んだ。事前登録v10は既存v9の条件付き84 Callを使い、既存397/累積上限481・Retry0を維持。Native27/新Q5形式24 Artifactは不変。全740 Test（26.07秒）/Ruffにも成功。旧回帰v5の固定WT/生成0/実走は未実施で、実主/Cal・最終N/資源/条件/凍結は未了。Gate 11未通過・Phase 12未実施。
+[Q5の全意味診断と旧15 QA回帰v5](phase11_qwen35_q5_semantic_result_v1.md)を保存した。固定be6e6ac/session95591は全58条件/70 Callを終了し、Critical4/4・人工英語24/24・日本語28/30・誤支持0で事前基準に通過。日本語の記載のない選手時代の優勝を矛盾とした2件を保持し、精度改善を断定しない。入力118450/出力209629 Token・3781.233184秒、95 Source/再開133 File不変・追加Call/Server0、Raw135/全147 Artifactを照合。全70 Native最終JSONの独立Draft-7と35組のSchema不変、全理由/SourceのAI確認を保存した。Council c6の曖昧/観測NS・F5/7による採用相当と理由の断片も保持。親136 Fileのコピー上で全再検証する準備が成功し、同じ旧全15 QA/42文/30条件・84 Call/Source25/全Expected/基準/裸拒否8を回帰v5へ結んだ。事前登録v10は既存v9の条件付き84 Callを使い、既存397/累積上限481・Retry0を維持。Native27/新Q5形式24 Artifactは不変。全740 Test（26.07秒）/Ruffにも成功。固定9036182の新WTへ567 File Binding/56不変Hardlink/相対Symlink10・Offline58 Packageを再現。全84実入力/生成0・最大3612 Token/全層CUDAに通過し、VRAM7258/8151 MiBを一点観測した。準備/Preflight6 Artifactを保存し、同じWTで旧回帰v5をsession54967として開始した。全採否は未確定で、実主/Cal・最終N/資源/条件/凍結は未了。Gate 11未通過・Phase 12未実施。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 
