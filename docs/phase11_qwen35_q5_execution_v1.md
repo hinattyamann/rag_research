@@ -40,3 +40,20 @@ Q4の実完了317、Q5の人工10から全9B累積327 Callとなった。
 全診断基準通過後だけ、同じ全旧15 QA/42文/30条件・84 Callの新前提を結ぶ。
 旧Q4回帰v4は不採用のまま保持し、Q5の採用に転用しない。
 全既知採用後の実主/Cal・最終N/資源/条件/凍結は未了。Gate 11未通過、Phase 12未実施、Goal継続中。
+
+## 通過後の全旧回帰への準備Guard
+
+2026年10月22日13:23 JSTに、旧回帰v4の準備Helperを別Version
+`data/runs/development_screening/phase11-known-v5-preparation-v1/prepare.py`へ複製した。
+Q5 v16の正規保存先と新しい旧回帰v5出力だけへ接続先を変え、
+全58条件/70 Call通過・終了後監査・同一Byteコピー上の全再検証を必要とする。
+親の途中結果や旧Q4の通過証拠では設定を作成しない。
+
+実行した準備処理は、未完了/未監査の正規証拠を拒否した。
+新しいPlan/Config/成功Receiptは未作成で、追加Completion/Serverは0。
+旧原版との全対象/Expected/基準/曖昧/裸拒否8の一致と全Source25 Hash、
+15 QA/42文/最大84 Callを確認し、構文解析/Ruffにも成功した。
+4 Artifactと7 Source Bindingは
+`phase11_qwen35_q5_known_preparation_pending_v1.json`へ保存した。
+正の再検証/登録・固定WT/生成0・旧回帰の実走と採用はまだ未了。
+現在のGPU実走はsession95591のみで、同じHandleを継続観測する。

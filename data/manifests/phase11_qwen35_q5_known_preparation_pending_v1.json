@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q5-known-v5-preparation-guard-not-registration-or-adoption",
+  "created_at_utc": "2026-10-22T04:24:30.361071+00:00",
+  "candidate_and_existing_verifiers": {
+    "configs/phase11_semantic_candidate_v16.yaml": {
+      "sha256": "f1131c7747ed1b326db789849ecd3b18abe55f1f0c0eaf9eedd7e6cb6f48e467",
+      "size_bytes": 2178
+    },
+    "configs/phase11_known_trace_regression_v1.json": {
+      "sha256": "e1d1584ab7093509b23089594435119c69a55a92baf4e2ff8649d7cbb45df08a",
+      "size_bytes": 140461
+    },
+    "configs/phase11_known_trace_regression_v4.json": {
+      "sha256": "1162714e961f9858f31b0f993cd11c264e60d8e39335a8690e1f396e9ce1ab6a",
+      "size_bytes": 140800
+    },
+    "src/rag_research/experiments/bilingual_certification.py": {
+      "sha256": "4c1680b03595a20fcb29fcd87455b6ce8f99678e9a8d929feec7d3dc5a72a4dd",
+      "size_bytes": 23106
+    },
+    "src/rag_research/experiments/semantic_diagnostics.py": {
+      "sha256": "4a43cc49115c45b0cdb774dbe9933392f8860c0dcb96afc9882344604509d565",
+      "size_bytes": 20310
+    },
+    "data/manifests/phase11_qwen35_9b_preregistration_v9.json": {
+      "sha256": "40dd0cde570d1bcca6e3e5fdddddb330009466a49a4c0cc0c24348f579ad96a5",
+      "size_bytes": 5764
+    },
+    "data/runs/development_screening/phase11-known-v4-preparation-v1/prepare.py": {
+      "sha256": "0f163a741ee50b568c90ada012696651039f3a40e970592fd7c81242381f412e",
+      "size_bytes": 6110
+    }
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-known-v5-preparation-v1/pending_rejection.json": {
+      "sha256": "cf7229c168494019ba25590f60754f000227946c7d81edd5f057e17ab78a3a03",
+      "size_bytes": 678
+    },
+    "data/runs/development_screening/phase11-known-v5-preparation-v1/pending_stderr.txt": {
+      "sha256": "d7f233951182003afaed15dc7935913a368934770e57cff8e9281fc63133fdbc",
+      "size_bytes": 845
+    },
+    "data/runs/development_screening/phase11-known-v5-preparation-v1/pending_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-known-v5-preparation-v1/prepare.py": {
+      "sha256": "1a0e5933b91d6efe66272b1fd44f82bbde8e3c07cf7f614cae6e5e6fc67a864e",
+      "size_bytes": 6122
+    }
+  },
+  "planned_outputs_still_absent": [
+    "configs/phase11_known_trace_candidate_v5.yaml",
+    "configs/phase11_known_trace_regression_v5.json"
+  ],
+  "parent_semantic_tool_session_id": 95591,
+  "parent_canonical_terminal_evidence_required": true,
+  "parent_full_58_conditions_and_70_calls_required": true,
+  "full_raw_prerequisite_replay_on_byte_identical_copy_required": true,
+  "syntax_and_ruff": "passed",
+  "actual_pending_prerequisite_rejected": true,
+  "positive_rebinding_not_yet_verified": true,
+  "actual_parent_inventory": {
+    "qa": 15,
+    "fixed_units": 42,
+    "bare_refusals": 8,
+    "direct_call_limit": 84,
+    "old_source_bindings_verified": 25
+  },
+  "all_original_targets_expected_gates_and_refusals_unchanged": true,
+  "new_model_calls_from_preparation": 0,
+  "new_servers_from_preparation": 0,
+  "product_source_changed": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
