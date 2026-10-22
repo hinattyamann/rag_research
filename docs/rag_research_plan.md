@@ -13,7 +13,7 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 
 
 
-[v15の全意味診断と全旧回帰v4の登録](phase11_cited_decisions_result_v1.md)を保存した。固定55d031c/session77717は全58条件/70 Callを終了し、既知Critical4/4・人工英語24/24・日本語30/30・誤支持0で診断基準に通過。入力118450/出力194751 Token・3168.554393秒、95 Source/再開133 File不変・追加Call/Server0、Raw135/全142 Artifactを照合した。全70出力の独立Schema/AI確認と35組のSchema不変を保存。人工27組は1文書で同一入力、Council c6は曖昧のまま、F5/7による矛盾を含む回答の採用相当も保持する。親136 Fileのコピー上で全再検証する引継ぎに成功し、全旧15 QA/42文/30条件・84 Call/全Expected/基準/Source25/裸拒否8をv4へ結んだ。新事前登録v8はRetry0・既存275/累積上限359、Native27と新形式v4の25 Artifact不変を照合して再利用する。次は新Commit固定WTで全84入力/生成0→全旧回帰。実主/Cal採用・最終N/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
+[v15の全意味診断と全旧回帰v4の登録](phase11_cited_decisions_result_v1.md)を保存した。固定55d031c/session77717は全58条件/70 Callを終了し、既知Critical4/4・人工英語24/24・日本語30/30・誤支持0で診断基準に通過。入力118450/出力194751 Token・3168.554393秒、95 Source/再開133 File不変・追加Call/Server0、Raw135/全142 Artifactを照合した。全70出力の独立Schema/AI確認と35組のSchema不変を保存。人工27組は1文書で同一入力、Council c6は曖昧のまま、F5/7による矛盾を含む回答の採用相当も保持する。親136 Fileのコピー上で全再検証する引継ぎに成功し、全旧15 QA/42文/30条件・84 Call/全Expected/基準/Source25/裸拒否8をv4へ結んだ。新事前登録v8はRetry0・既存275/累積上限359、Native27と新形式v4の25 Artifact不変を照合して再利用する。固定321adf3の新WTへ299 File Binding/55 Hardlink/相対Symlink10・Offline58 Packageを再現。全84入力/生成0・最大3612 Token/全層CUDA（VRAM6517/8151 MiBは一点観測）に通過し、7準備Artifactを保存した。記録包装のField参照失敗も保持してNative再実行0。同じWTで全旧回帰をsession95270として開始し、全採否は未確定。実主/Cal採用・最終N/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 

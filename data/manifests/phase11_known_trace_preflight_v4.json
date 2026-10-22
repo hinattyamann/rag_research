@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-known15-v4-zero-completion-preflight-not-regression-pass",
+  "created_at_utc": "2026-10-22T02:27:15.830922+00:00",
+  "fixed_commit": "321adf3203958c68b114302dbe1cb01db3ea03b5",
+  "worktree": ".tools/worktrees/phase11-known-trace-regression-v4",
+  "config": "configs/phase11_known_trace_candidate_v4.yaml",
+  "config_sha256": "151f349446862ebe0385090586a073c439dbea363ce5bbbd7ef20a964cc1fe68",
+  "actual_inputs": 84,
+  "planned_qa": 15,
+  "planned_conditions": 30,
+  "maximum_input_tokens": 3612,
+  "context_tokens": 24576,
+  "completion_attempts": 0,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "6517 MiB, 8151 MiB",
+  "regular_file_bindings": 299,
+  "immutable_hardlinks": 55,
+  "internal_relative_symlinks": 10,
+  "offline_gpu_environment_packages": 58,
+  "packaging_failure_preserved_without_repeating_native": true,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v4/preflight_packaging_failure_v1.json": {
+      "sha256": "7c0a0ff429eca39bc115482e47684972989be1b01c27149813839bbe2c0159ff",
+      "size_bytes": 553
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v4/prepare_worktree.py": {
+      "sha256": "7c43232ccf95c5b4a0fa7da3b681a821793f646e1c1ce3d7746d71f472b86ece",
+      "size_bytes": 4441
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v4/preparation_v1.json": {
+      "sha256": "764d1d32ae7edee1092d01c32de3fc2adc11b2c59fcb45e147c2c508e5d25509",
+      "size_bytes": 75621
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v4/preflight_v1/plan.json": {
+      "sha256": "e0340bb78c3c9db9494e1ce06d8c5d27306642bd640adbbab8a47b948e51a971",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v4/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v4/preflight_v1/report.json": {
+      "sha256": "cca23962df092a0e0dc8b85d20651198620821722d801d12e5e619ba780202dc",
+      "size_bytes": 35246
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-known-regression-v4/preflight_v1/server.log": {
+      "sha256": "94e43afee22ed23bfd91412ba241a299a981cb25488c4c4f5dcf570e946ad08b",
+      "size_bytes": 19182
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

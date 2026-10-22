@@ -60,3 +60,20 @@ Native Core/Probe27 HashとModel/Runtime/予算/Grammarが不変なので、新�
 全旧回帰の通過前に新しい主Policyを採用しない。
 実主各20 QA/全匿名品質・Expected封印/証明、予約Calと最終N/資源/条件/凍結は未了。
 Gate 11未通過、Phase 12未実施、Goal継続中。
+
+## 11:28 JSTの固定実走開始
+
+全734 Test/Ruff後の結果/登録を`321adf3`へCommit・通常Pushし、リモート一致を確認した。
+専用WT `.tools/worktrees/phase11-known-trace-regression-v4`へ同Commitを固定し、299 File Binding、
+不変資源55 Hardlink、内部相対Symlink10を検証、独立GPU環境58 PackageをOfflineで再現した。
+全84実入力/生成0、最大3612 Token、Context24576/全Layer CUDAに通過した。
+VRAM6517/8151 MiBは一点観測である。
+
+正規包装はGPU情報をReport直下から読もうとして停止した。詳細Reportのserver内を参照して修正し、
+失敗記録も保存した。成功済みのNative Preflight/生成は再実行せず、準備/Preflight/失敗記録の7 Artifactを
+Rootと固定WTでByte照合した。証拠は`phase11_known_trace_preflight_v4.json`。
+
+同じWTで全旧回帰をsession95270として開始した。開始Manifestは`phase11_known_trace_launch_v4.json`。
+このHandleを継続観測し、終了後だけ全Raw/費用/失敗/未試行と追加0再開を監査する。
+親session77717、監査39592、準備22761、Preflight78473は終了済みで再生成しない。
+全旧回帰の採否は未確定であり、主/予約Calibrationは開始していない。
