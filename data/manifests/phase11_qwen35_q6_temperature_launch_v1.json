@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-temperature-v20-semantic-launch-not-adoption",
+  "observed_active_at_utc": "2026-10-23T06:11:33.534899+00:00",
+  "fixed_commit": "17d57c6b4186a158685b85eb50da71fb4d04d93b",
+  "worktree": ".tools/worktrees/phase11-qwen35-9b-q6-v20",
+  "tool_session_id": 89310,
+  "run": "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20",
+  "resource_observations": "data/runs/resource_observation/phase11-qwen35-9b-q6-v20-semantic-v1",
+  "config": {
+    "path": "configs/phase11_semantic_candidate_v20.yaml",
+    "sha256": "baa8c6f5b136d9964ba058736fc4ca242fe7f95f5996f9cc810c35945644225f",
+    "size_bytes": 2184
+  },
+  "plan": {
+    "path": "configs/phase11_semantic_diagnostics_claimwise_v4.json",
+    "sha256": "9500c2942638b3ed4f3919d9d29de3b5c4800e8d9f4419bca03571a862919874",
+    "size_bytes": 46646
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v17.json",
+    "sha256": "bb1c7d67d834ffedd5523e10f965c5fe4981a19be2284cb0d3ce4d3a8e6da9da",
+    "size_bytes": 8059
+  },
+  "fresh_temperature_specific_format": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_format_result_v1.json",
+    "sha256": "e83453953032d0f52c51911980a9d1a55dd5bd82471efad35b1eb6ad773f9d89",
+    "size_bytes": 13243
+  },
+  "preflight": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_preflight_v1.json",
+    "sha256": "913cd56a79c071ac87612fd5456765709f69f4a84415dbb7d4e6fb396ae5b502",
+    "size_bytes": 5359
+  },
+  "old_failed_known": {
+    "path": "data/manifests/phase11_known_trace_result_v8.json",
+    "sha256": "9505dc68acfae73583e1c6f59d281cef0a469f51c7075f1522f693eb1633bf2a",
+    "size_bytes": 39779
+  },
+  "temperature": 0.2,
+  "context_tokens": 12288,
+  "cases": 29,
+  "fixed_units": 35,
+  "conditions": 58,
+  "maximum_semantic_calls": 70,
+  "automatic_retries": 0,
+  "previous_recorded_all9b_attempts": 766,
+  "recorded_Q4_Q5_Q6_attempts_before_semantic": {
+    "Q4": 317,
+    "Q5": 317,
+    "Q6": 132
+  },
+  "maximum_cumulative_all9b_attempts": 920,
+  "conditional_whole_known_calls_after_full_adoption_and_audits": 84,
+  "prior_unknown1_and_unused42_42_81_42_not_filled_or_reallocated": true,
+  "observation_interval_seconds": 5,
+  "all_original_sources_expected_gates_ambiguous_and_refusals_unchanged": true,
+  "worktree_launch_alias": "data/runs/model_screening/phase11-qwen35-9b-q6-v20/launch.json",
+  "worktree_preflight_alias": "data/runs/model_screening/phase11-qwen35-9b-q6-v20/preflight_binding.json",
+  "worktree_fresh_format_alias": "data/runs/model_screening/phase11-qwen35-9b-q6-v20/fresh_format_binding.json",
+  "artifacts": {
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v20-semantic-v1/launch.json": {
+      "sha256": "b284e12a1169800e9e2b6ecf505c2f7d8b8205f961ff6facd4b57908a06f89d2",
+      "size_bytes": 1174
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

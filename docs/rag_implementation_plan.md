@@ -6,6 +6,8 @@
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 
+[温度0.2候補v20の実機確認](phase11_qwen35_q6_temperature_execution_v1.md)を保存。固定17d57c6へ1537 Binding/57 Hardlink/相対リンク10・Offline58 Packageを再現し、全70入力生成0/全層CUDA、新形式10 Call/全9 StrictとNative実温度/独立Schema/Grammar/Token位置/資源を全監査した。92 Source/元14 File不変・追加0、Raw16/全40 Artifactを正規保存・WT照合。src/Core27/旧対象/全Expected/基準は不変。同じWTで意味session89310を実行中で採否未確定、Main/Cal/最終凍結は未了。
+
 [候補v20の別v17登録](phase11_q6_temperature_registration_v1.md)を保存。記録試行756/新最大164/累積920・Retry0、旧未知/未使用を保持。全参照9/親144・準備9 Artifact/実95 Source/Core27/予算算術を検証し、追加推論0。登録Commit固定WTで全入力生成0・新形式から進め、旧T1形式は新温度の実績に流用しない。src/全Expected/基準は不変、実新Native/意味/旧回帰採用とMain/Cal/最終凍結は未了。
 
 [低temperature候補v20](phase11_qwen35_q6_low_temperature_candidate.md)を実Loader/全Taskで検証した。v19からStudy Version/補助temperature1.0→0.2だけが差分で、全154 Message・Model/Runtime/Prompt/予算/Seed/全Expected/基準とCore27/実95 Sourceは不変。全761 Test（29.32秒）/Ruff成功。新条件の生成0/新形式/意味/旧回帰はまだ未実施であり、新上限の事前登録後に固定WTで実行する。srcは変更しない。
