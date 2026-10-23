@@ -1,10 +1,12 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.65 — 2026年10月23日 12k全意味監査と旧全回帰v7を登録
+## Version 8.66 — 2026年10月23日 全旧回帰の通過後専用Main準備CLI
 
 [研究計画 Version 7.63](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
+
+[Main設定準備CLI](phase11_main_preparation_v1.md)を追加。既存の全旧回帰採用Guardをコピー上で再使用し、先に全30条件/84 Call・終了後監査を要求する。未通過時は選定/未使用QAを読む前に拒否する。実行Policyは別の事前入力で、採用済みの候補と元選定/使用済み来歴を確認し、日英とも既存Runnerの検証後にだけ新Directoryへ出力する。全761 Test（27.55秒）/Ruff・実稼働/不通過Runの早期拒否・Native95 Source不変を確認。実Main Policy/設定/追加推論は0で、session64437の全採否は未確定。研究目的・Expected・採用基準・元実験条件は変更しない。
 
 
 

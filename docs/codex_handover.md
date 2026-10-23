@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+[通過後専用のMain設定準備CLI](phase11_main_preparation_v1.md)を追加した。全761 Test（27.55秒）/Ruff、実行中v7/実不通過v5のQA読込み前拒否・出力なしを確認。実Main Policy/設定は未作成で、固定5f4a6b6/session64437を継続観測する。実験の95 Sourceは不変。終了後監査と全旧採用基準の通過後だけ新Policy/両設定へ進む。証拠はphase11_main_preparation_validation_v1.json。Main/予約Cal/最終凍結は未了、Goal継続中。
+
 [12k全意味診断と旧全回帰v7](phase11_context12k_semantic_result_v1.md)を保存した。固定5c8b8b0/session74326は全58条件/70 Callを正常終了し、Critical4/4・人工英語24/24・日本語28/30・誤支持0で元基準を満たした。全58条件の判定/理由/引用/Fは元24kと同一で、意味改善を主張しない。限定なし由来主張の不一致2件/曖昧/理由断片を保持した。入力140500/出力181440 Token・Task秒和3301.218210秒、95 Source/再開133 File不変・追加Call/Server0、全70 Native JSONの独立Schema/35組不変・全理由確認を保存。資源663点/取得エラー0・観測最大GPU6926/8151 MiB/最小Host Available4344584 KiBを再計算し、連続Peak/因果/安定性保証としない。Raw136/全182 Artifactを正規保存・WTとByte照合した。親136 Fileのコピー上で全前提を再検証し、同じ旧全15 QA/42文/30条件・84 Call/Source25/Expected/基準/裸拒否8をv7へ結んだ。全750 Test（29.14秒）/Ruffも成功。事前登録v14は元v13の条件付き84だけで、記録試行592/累積上限676・Retry0/旧未知1・旧未使用81/42を保持する。固定5f4a6b6の新WTへ1065 File Binding/56不変Hardlink/内部相対Symlink10・Offline58 Packageを配置。全84実入力/生成0・最大3927 Token/12k/全層CUDAに通過し、Runtime一点6871/8151 MiBと短区間見逃しを含む資源観測も保存した。全9 Artifactを正規保存・WTとByte照合し、同じWTで旧全回帰を観測付きsession64437として開始した。[回帰実行記録](phase11_context12k_known_execution_v1.md)を再開先とし、採否は未確定。主/Cal採用・最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。

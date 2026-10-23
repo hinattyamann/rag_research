@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-bilingual-main-preparation-validation-not-adoption",
+  "recorded_at_utc": "2026-10-23T01:33:34.738210+00:00",
+  "pytest_tool_session_id": 95332,
+  "pytest": "761 passed in 27.55s",
+  "new_tests": 11,
+  "ruff": "passed",
+  "new_cli": "scripts/prepare_bilingual_main.py",
+  "src_changed": false,
+  "active_native_source_bindings_unchanged": 95,
+  "live_known_tool_session_id": 64437,
+  "live_known_fixed_commit": "5f4a6b6146b0a00691800dbf01e9854ffd636d61",
+  "live_completed_files_unchanged_in_early_probe": 20,
+  "pending_and_failed_actual_runs_rejected": true,
+  "positive_preparation_tests_use_doubles_not_actual_adoption": true,
+  "sealed_inputs": {
+    "data/manifests/phase11_context12k_semantic_result_v1.json": {
+      "sha256": "f21ef388c28783d1843b92b3ad40c145f39946672c26bcd70bf7d901ff078e36",
+      "artifacts_verified": 182
+    },
+    "data/manifests/phase11_context12k_format_result_v1.json": {
+      "sha256": "3a74e5098c2a6c033f93dd75f4dda81602d08c16a9ae93452834e4a4d93c9da5",
+      "artifacts_verified": 32
+    },
+    "data/manifests/phase11_context12k_known_registration_validation_v1.json": {
+      "sha256": "7c880be79c436b563c9ff735727574f3c8b6262f2965b7b9fbf5675de9361325",
+      "artifacts_verified": 4
+    },
+    "data/manifests/phase11_context12k_known_preflight_v1.json": {
+      "sha256": "47700a0a10f6317c198d617d903e7d5c521fedee49685c64eddacd3ca2c35b72",
+      "artifacts_verified": 9
+    }
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-main-preparation-v1/actual_rejection.json": {
+      "sha256": "92d822c589bfb28980462a484c16272bf37cf89f52aa2c4dba5f59213fe3102d",
+      "size_bytes": 6294
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/actual_rejection_stderr.txt": {
+      "sha256": "4d3cf063d9557e7d513754b5772f2c204dc6c85bfa3a3d90d781875be690e570",
+      "size_bytes": 162
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/actual_rejection_stdout.txt": {
+      "sha256": "0e4c37c5cb3c928911ab2a845c76baaab3ae3d669a58647cf3e20412079ea4ff",
+      "size_bytes": 991
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/check_actual_rejection.py": {
+      "sha256": "b285bd4f9193d206f83009bd0a1739ad9afec3987c1a369312929efe9d639c55",
+      "size_bytes": 3907
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/check_contract.py": {
+      "sha256": "430d5206cc38bce8fc12ddc6c638e1dc5700fa7c166fdd8f5327f227b9f86d37",
+      "size_bytes": 2631
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/check_history.json": {
+      "sha256": "e9d21bd8cc4d2753563b86b251f3d79af605329989f96f68a4138fc4b01f8fb4",
+      "size_bytes": 601
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/contract.json": {
+      "sha256": "ce83ce90bf431ec0282b189ec408445846220e66ca5755a7f4b8125691804c25",
+      "size_bytes": 1320
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/contract_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/contract_stdout.txt": {
+      "sha256": "ebff644687bc9ccd73d8a87373661d93476b9896e5d0238a14cce7e717ccf512",
+      "size_bytes": 1198
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/helper_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/helpers_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/probe_import_error_stderr.txt": {
+      "sha256": "6ab7d6ca4fe640f62f8a2bd6ae8a3d3ecc7e417baa8901ba3da656191f464434",
+      "size_bytes": 309
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/probe_import_error_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/pytest.txt": {
+      "sha256": "b4366e13743d954a369cab6f9bf815ae1b1ad577dff3d3c4d80fab99b9a295ef",
+      "size_bytes": 4627
+    },
+    "data/runs/development_screening/phase11-main-preparation-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "scripts/prepare_bilingual_main.py": {
+      "sha256": "15f80aee8cbb5edf66d0de8fbdc8d982998a3bec45721f90a03fb40660acd894",
+      "size_bytes": 12142
+    },
+    "tests/test_bilingual_main_preparation.py": {
+      "sha256": "6256d84defab63dd90b785802db3c8ae5926faedea7da47ad71250873b53d0f9",
+      "size_bytes": 11499
+    },
+    "docs/phase11_main_preparation_v1.md": {
+      "sha256": "a772a8fe67b406e56b47fa07f03b23d0966ea7ccfbd84d7fd54194c51025baad",
+      "size_bytes": 5904
+    }
+  },
+  "main_execution_policy_generated": false,
+  "main_configs_generated": false,
+  "unused_main_or_calibration_qa_rows_read": 0,
+  "new_model_calls_for_these_checks": 0,
+  "new_servers_for_these_checks": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
