@@ -1,11 +1,13 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月23日。正本: [研究計画7.63](rag_research_plan.md)、[実装計画8.66](rag_implementation_plan.md)。
+更新日: 2026年10月23日。正本: [研究計画7.64](rag_research_plan.md)、[実装計画8.67](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
+
+[12k旧全回帰v7の不採用結果](phase11_known_trace_direct_result_v7.md)を保存した。固定5f4a6b6/session64437は12条件/42 Callを終了し、Critical一致9/12・誤支持3、残18条件は未試行。Tom元c5の媒体一般化1、Tar両c2の関係補完2が誤支持で、Tar両c1の支持不足→矛盾2と暖鋒元c2の理由の表誤読も保持した。確定35/40/支持24/24、全74/58精度はnull。入力148888/出力153689・Task秒和2827.888992秒、95 Source/再開59 File不変・追加Call/Server0。全42 Native JSONの独立Schema/21組不変・全理由/6 QA Sourceを確認し、Raw62/全93 Artifactを正規保存・WTとByte照合した。資源569点/取得エラー0・観測最大GPU6898/8151 MiB/最小Host Available4323548 KiBを再計算。全9B記録試行634（Q4 317/Q5 317）/旧未知1・今回未使用42/旧81/42を保持する。Main準備CLIも今回の正規ReportをQA読込み前に拒否した。[同じRevisionのQ6資源調査](phase11_q6_resource_feasibility_v1.md)は公開API/PointerのSize/Hash照合と試算までで、精度/実GPU配置は未確認。次は量子化だけを分ける別候補の取得/事前登録/生成0を検討する。Main/予約Cal/最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施、Goal継続中。
 
 [通過後専用のMain設定準備CLI](phase11_main_preparation_v1.md)を追加した。全旧30条件/84 Callの採用と終了後監査を先に要求し、コピー上のRaw再検証、元選定/使用済み来歴、現行Policyと日英Runnerの検査後に両設定を生成する。全761 Test（27.55秒）/Ruffに成功し、実行中v7/実不通過v5の早期拒否・出力なし・未使用QA読込み0、Native95 Source不変も確認した。実Main Policy/設定はまだ作成せず、下記session64437の全採否は未確定。Goal継続中、Gate 11未通過。
 

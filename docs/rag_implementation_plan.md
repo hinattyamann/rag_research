@@ -1,10 +1,12 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.66 — 2026年10月23日 全旧回帰の通過後専用Main準備CLI
+## Version 8.67 — 2026年10月23日 12k旧全回帰v7の不採用と全終了後監査
 
-[研究計画 Version 7.63](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.64](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
+
+[旧全回帰v7](phase11_known_trace_direct_result_v7.md)は12条件/42 Call・Critical9/12・誤支持3で停止。残18未試行、全74/58精度null・元全条件/基準を保持する。95 Source/元59 File不変・追加0、全42 Native独立Schema/21組・全理由/Sourceと569点資源を監査し、Raw62/全93 Artifactを正規保存・WT照合した。Main準備CLIも実不通過Reportを早期拒否し出力0。[Q6公開Metadata/試算](phase11_q6_resource_feasibility_v1.md)を保存したが新条件の配置/精度は未確認。srcは不変、全761 Test/Ruffの現行Sourceは維持。Main/予約Cal/最終凍結は未了でGoal継続中。
 
 [Main設定準備CLI](phase11_main_preparation_v1.md)を追加。既存の全旧回帰採用Guardをコピー上で再使用し、先に全30条件/84 Call・終了後監査を要求する。未通過時は選定/未使用QAを読む前に拒否する。実行Policyは別の事前入力で、採用済みの候補と元選定/使用済み来歴を確認し、日英とも既存Runnerの検証後にだけ新Directoryへ出力する。全761 Test（27.55秒）/Ruff・実稼働/不通過Runの早期拒否・Native95 Source不変を確認。実Main Policy/設定/追加推論は0で、session64437の全採否は未確定。研究目的・Expected・採用基準・元実験条件は変更しない。
 

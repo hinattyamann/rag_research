@@ -1,12 +1,14 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.63 — 2026年10月23日 12k全意味診断と旧全回帰v7を保存
+## Version 7.64 — 2026年10月23日 12k旧全回帰v7の不採用と資源実測を保存
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.66](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.67](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
+
+[旧全回帰v7](phase11_known_trace_direct_result_v7.md)は12条件/42 Call・Critical9/12・誤支持3で不採用。残18条件/全74・58分母を保持し、全精度はnullとする。全理由/Source、Native Schema、追加0再開、569点の資源を監査/正規保存した。元Expected/基準/全失敗と旧未知1を維持し、Main/Calは未開始。[Q6資源調査](phase11_q6_resource_feasibility_v1.md)は同固定Revisionの公開Size/Hashと試算だけであり、配置/精度の確認ではない。量子化を分ける候補でも別事前登録・形式/意味/旧全回帰が必要。目的・閾値・成功条件は変更せず、Gate 11未通過。
 
 
 
