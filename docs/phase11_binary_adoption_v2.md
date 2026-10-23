@@ -65,3 +65,8 @@ Smokeの初回Zidane c1は正常終了（3793入力/4246出力/86.475462 Task秒
 全2 Native Schema/Sampler/全回帰と同じ全文Payloadを独立に照合し、12 Raw Artifactを正規保存した。
 正本は`data/manifests/phase11_binary_smoke_result_v1.json`。共有消費225.012950壁秒を保持し、
 同固定WTの新Known v10/84 Callを実行中。Smoke成功を完全回帰採用・Runtime根本原因解決とは扱わない。
+
+最終更新: 新Known v10は56試行（55応答/未知1）でCUDA timeout/Xid8が再発して停止。
+非支持層も14/16＝87.5%で不採用。全予定率null・残28を保持し、[停止結果と再開判断](phase11_known_trace_direct_result_v10.md)へ保存した。
+新開発累積58/188・旧851から909、未知計3。数値上限未到達でもRuntime停止規則を守り、残130を自動使用しない。
+Main/Cal/最終凍結/Gate11は未了で、保存・同期後にGoalを一時停止する。

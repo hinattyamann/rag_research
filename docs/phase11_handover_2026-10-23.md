@@ -4,13 +4,17 @@
 工程の正本は[research_roadmap.md](research_roadmap.md)。長い日誌/過去の引継ぎは履歴であり、必要な箇所だけ参照する。
 新チャット用の貼付文は[phase11_next_chat_prompt.md](phase11_next_chat_prompt.md)。
 
-2026-10-23再開の最新: [基準v2](phase11_binary_adoption_v2.md)を実装し、全782 Test/Ruff成功。
-固定9bfe78dの生成0/全84入力/全CUDA→903f4cfで送信前ミスの未送信分だけを訂正→Smoke計2 Call/未知0に通過。
-**新Known v10を固定903f4cfで実行中**。WTは`.tools/worktrees/phase11-binary-v10-recovery`、
-Runは`data/runs/semantic_diagnostics/phase11-binary-v10-known`、共有台帳はWT内の
-`data/runs/development_screening/phase11-review-budget-recovery-v1/ledger.json`。再起動/別Runへの再試行はしない。
-Known完了・全監査後にHealthとv2意味基準を確認するまでMainへ進めない。
-以下の旧Session終了/新基準未実装/新枠未登録は移行時点の履歴。現在地はロードマップと本追記を優先する。
+2026-10-23再開後の最新: **[新Known v10は不採用・全終了](phase11_known_trace_direct_result_v10.md)**。
+新基準v2の全経路実装と全782 Test/Ruff、生成0/全84入力/全CUDA、Smoke計2 Callは通過した。
+固定903f4cfの全Knownは56試行（55応答/未知1）でCUDA launch timeout・Watchdog/Xid8再発。
+非支持全16判定も14/16＝87.5%で0.90未達。全予定率null、28 Call未試行を保持。
+正本は`data/manifests/phase11_known_trace_result_v10.json`、Raw81/全123 Artifactを正規保存・WT照合した。
+**稼働中のNativeはない。** 現チャットSession68501/監査74660は終了。旧Runも新v10も再起動しない。
+新開発58/188・累積909/1039・未知計3、Task4310.915004秒/14400秒、保守的壁4381.357537秒。
+未使用130（Known28+未割当102）と旧69・42/42/81/42は自動再配分しない。
+Main各20/予約Cal各20/品質・費用/最終N・凍結は未了、Gate11未通過・Phase12未開始。
+ユーザー指定の障害時一時停止条件に該当する。保存・同期後にGoalを一時停止し、再開は下記第6節の判断から行う。
+以下の初回移行時・実行中・新基準未実装の記録より、この追記とロードマップを優先する。
 
 ## 1. 今回の依頼と引継ぎの意味
 
@@ -112,44 +116,29 @@ Config/Plan: `configs/phase11_known_trace_candidate_v9.yaml`/`phase11_known_trac
 全9B記録851（Q4 317/Q5 317/Q6 217）、応答不明は計2。
 旧上限920、v9未使用69/旧未使用42・42・81・42を保持。次の新枠へ繰り越さない。
 
-## 5. 採用した見直しと未実装事項
+## 5. 新基準の実装済み範囲と未達
 
-詳細は`docs/phase11_evaluator_review_policy_v1.md`。
+[基準v2](phase11_binary_adoption_v2.md)の実装/事前登録・旧v1拒否・Version整合・被覆/不足・Health境界を確認した。
+推論Core/Prompt/Samplerは不変で、温度0.2の旧全意味70 Call/形式証拠をHash照合して再利用した。
+全回帰のAI監査は55最終理由を読み、誤支持2/C↔NS3/表を誤読した正Label理由2を保存した。
+Camp David逆の4保存応答を失わず、3支持を含む全Leafの観測34S/34とRoot有効条件の31Sを区別する。
+失敗条件のF/判断・未知出力Tokenはnullのまま。全Run指標を観測部分だけで通過へ変更しない。
 
-- C↔NSだけの誤りは二次診断。主採用を支持/非支持に対応させる設計とし、支持Recall/非支持Specificity各0.90以上を新Versionへ実装する。
-- 旧の誤支持0/全Critical3分類完全一致を要求する経路は保存し、新VersionをKnown→Main→Cal→最終Validatorまで結び付ける。現在のGuardは未変更。
-- 新鮮な結果を見る前に必要なクラス被覆/分母0/不足時の扱いまで固定する。クラス不足を補充や自動通過で埋めない。
-- 次の追加候補は最大1個。追加開発は全体で188試行またはNative Task経過4時間まで、診断24はその内数。実行前に別事前登録し、無制限更新しない。
-- 旧851から新開発累積上限は最大1039。これは設計上限で、新規Runはまだ登録/実行していない。
-- Main各20/予約Cal各20、実QAの5順序/5反復、全文/固定文、閾値0.7、裸拒否の一回書換えは維持。
+新Scopeで使ったModel候補は最大1個の最終v20、開発Native計58。旧851や未使用枠は保全する。
+実Main/Cal/独立回答品質Yは未実施。Known意味監査をこれらの代用にしない。
 
-温度0.2の暫定Judge平均54.964秒。各20 QA/平均5文/9試行ならJudgeだけMain25.6〜33.8時間、
-同規模Cal込み51.2〜67.6時間。総時間/上限/CIではない。各言語で同じ平均文数を仮定した算術で、
-実際の言語別原子上限1660は別に守る。根拠:
-`data/manifests/phase11_qwen35_q6_temperature_resource_estimate_v1.json`（7 Artifact）。
+## 6. 次に行うこと――再開に先立つ判断
 
-## 6. 次に行うこと――依存順と完了条件
+1. 新v10の結果/Raw/Manifest/HashとGitを確認する。新規生成をせず、旧失敗と未知応答3件を保全する。
+2. Runtime切分けの別計画（例: 固定SourceをCUDA Graph OFFで別Build/Hash化）を許可するか判断する。
+   Root Causeは未確定で、Driver/Reset/再起動/OS設定は変更していない。システム変更は具体案/影響と明示的な承認を要する。
+3. 意味候補を追加する候補上限/予算の改訂を明示的に認めるか、研究範囲を再設計するか判断する。
+   CUDAだけを直しても非支持87.5%は未達。0.90/Expected/閾値0.7を自動変更しない。
+4. 新たな許可/事前登録と完全KnownのHealth・意味実採用がそろって初めて、元選定のMain日英各20へ進む。
+   全品質/Expected封印・完全比較各10 QA以上・実費用・主証明書→予約Cal各20→最終N/条件/統計/Hash/Gate11を維持する。
 
-1. **旧成果と移行を検証する。** 本書のManifest/Raw/Source/Hash、Gitと実機、Goal状態を確認。
-   既存の日本語整備やIndexを作り直さず、Evaluation QAを開かない。
-2. **新しい基準Versionを具体化する。** 見直し方針を研究計画/実装計画/Protocol/採用Guard/Testへ反映。
-   旧v1拒否は保持。Known/Main/Cal/最終Validatorの整合を検証し、全Test/Ruff・検証Source Hashを更新。
-   この作業は新規QA/Native推論なしで進められる。
-3. **CUDA障害を分離して調べる。** 保存済みLogとDriver/Kernel/NVIDIAの一次資料を調べる。
-   Root Cause未確定を明記し、必要な変更案/影響を具体化。GPU Reset/再起動/Driver/OS設定を勝手に変更しない。
-   新枠を事前登録し、生成0→内数24以内の診断→最終追加候補1個の検証へ進む。
-   新しい完全Known回帰とHealth/意味基準の両方がそろって初めてMainへ進む。
-4. **実Main各20 QAを完了する。** 採用候補に一致する新しいPolicyを作り、固定選定IDのまま実走。
-   BaselineとInternalのProcessを分離し、新規5 QA/段階Session・1660/言語・全文/全固定文原子予約。
-   Mainの内部Fを含むstdoutをファイルへ退避し、両言語の全候補品質と全Expected封印前に読まない。
-   完全比較QA各10以上、全失敗/未試行/品質不明/費用、意味/品質/判断を照合し実証明書を作る。
-5. **予約Cal→最終凍結。** 実主証明書後だけCal Protocolを事前保存し、予約各20を一度実走。
-   全品質/Expected封印後だけF/対応を結合。調整が必要なら使用済みCalとして保持し、同じデータで条件探索しない。
-   実主/Calの費用、比較率/CI/採点負担から最終N/資源を決め、拡張Validatorを実証拠で通す。
-   最終Manifest/Hash/全Gate11証拠がそろった場合だけGoal完了。Phase 12は開始しない。
-
-上限/障害で進めない場合は未達を明示し、具体的な代替と必要な判断を示す。
-単にテスト/形式/計画が整っただけではPhase 11を完了としない。
+上限未到達を理由に未使用130を自動消費したり、失敗Runの残28を実行したりしない。
+保存物と実装Testの完成だけでPhase11を完了にせず、Phase12は開始しない。
 
 ## 7. 実装入口と分割・統計・採点の重要事項
 

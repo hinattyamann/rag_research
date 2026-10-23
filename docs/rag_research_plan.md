@@ -1,14 +1,14 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.71 — 2026年10月23日 支持対非支持の基準v2実装・別回帰登録
+## Version 7.72 — 2026年10月23日 新基準全回帰のCUDA再停止・意味不適合
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.74](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.75](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
-新しいGoalでPhase11を再開し、[支持対非支持の採用基準v2](phase11_binary_adoption_v2.md)をKnown→Main→Calibration→最終Validatorへ実装・事前登録した。支持Recall/非支持Specificity各0.90、異なる支持10文/非支持5文・各3 Groupを必要とし、不足は不通過・補充なし。旧v1拒否と旧851試行/未知2/未使用枠を保全する。追加候補最大1個/188試行・Task4時間/診断24内数の新枠へSmoke2+新鮮なKnown84を登録し、残102は未割当。保存395 Fileを照合（改訂した採用Sourceの旧版は固定Git Blobで検証）し、旧停止のKernel Watchdog/Xid8を確認したが根本原因は未確定。Driver/OS/Resetは変更していない。固定9bfe78dの生成0/全84入力/全CUDAは通過。Smokeの送信前文IDミスを保全・修正した903f4cfで未送信分だけを継続し、元成功1+新成功1の2 Native/未知0・実Schema/Sampler/全文入力照合に通過した。全Src91 File/推論条件は不変。前消費を含む225.012950壁秒から、同固定903f4cfの新Known v10（15QA/42文/30条件/84 Call）を共有4時間枠内で実行中。完了/採用をまだ主張しない。Main各20/Cal各20/独立品質・費用/最終凍結は未了、Gate11未通過・Phase12未実施。
+[新基準v2の全回帰v10](phase11_known_trace_direct_result_v10.md)は固定903f4cfで56試行（55応答取得/未知1）後にCUDA launch timeout・Kernel Watchdog/Xid8で停止し不採用。元15 QA/42文/30条件・84 Callを保持し、12条件/28 Call未試行。非支持の予定16判定は全件取得したが14/16＝87.5%で基準0.90未達。C↔NS3件は二次診断、全予定率はHealth不適合でnull。全55理由/56入力・Schema/55実Sampler/96 Source/生成0再読79 File不変・830資源観測を監査し、Raw81/全123 Artifactを正規保存・WT照合した。新開発はSmoke2+Known56＝58、累積909/未知3、Task4310.915004秒・共有壁4381.357537秒で数値上限内。残130（Known28+未割当102）と旧未使用69・42/42/81/42は自動再配分しない。v2のKnown→Main→Cal→最終Validator実装と全782 Test/Ruffは成功し、実Main準備/最終凍結の拒否も確認。Main各20/予約Cal各20・独立品質/費用・最終N/条件/凍結は未了、Gate11未通過・Phase12未実施。Nativeは全終了。ユーザー指定の障害時一時停止条件に該当し、保存・Git同期後にGoalを一時停止する。再開にはRuntime診断と意味候補の追加枠または研究範囲の明示的判断が必要で、CUDA復旧だけでは意味不適合は解消しない。
 
 研究目的/仮説/実QAの順序反復設計は維持し、採用の意味指標をScoreに対応させる設計改訂。支持Recall/非支持Specificity各0.90という新設計は今後の別Protocolへだけ適用し、旧の誤支持0・完全一致基準での不採用結果を保持する。全経路実装・Test/事前登録に加え、新鮮な全Known回帰のHealth・意味採用がそろうまでMainへ進めない。
 
