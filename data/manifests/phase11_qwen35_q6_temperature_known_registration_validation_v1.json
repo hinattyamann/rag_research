@@ -1,0 +1,521 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-temperature-whole-known-v9-registration-not-native-adoption",
+  "recorded_at_utc": "2026-10-23T07:18:51.195361+00:00",
+  "pytest_tool_session_id": 32188,
+  "pytest": "761 passed in 30.43s",
+  "ruff": "passed",
+  "helpers_ruff": "passed",
+  "contract": {
+    "recorded_at_utc": "2026-10-23T07:17:02.772313+00:00",
+    "config_differences": [
+      "study_version",
+      "diagnostics"
+    ],
+    "temperature": 0.2,
+    "qa": 15,
+    "fixed_units": 42,
+    "conditions": 30,
+    "maximum_calls": 84,
+    "source_bindings_verified": 25,
+    "all_expected_gates_ambiguous_and_refusals_unchanged": true,
+    "all84_messages_and_generation_tasks_match_adopted_temperature_candidate": [
+      {
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c1",
+        "message_sha256": "f712f68114e8e23a32a0ef62c759eb5691953fe4146c2da926067bcc3909bcbd"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c2",
+        "message_sha256": "c68a899b483196bb3a8003b83ddf6463ff70b5587127ca9085f4f08d25fba006"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c3",
+        "message_sha256": "cc670f318591e417c38683ae1d5dd2612444f048b29245c2b36652ce759c36da"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c4",
+        "message_sha256": "92a383ba3e032d8c6d74142a70de3cf5a094f1a17648db5839fbfc155d91e3b4"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c5",
+        "message_sha256": "ddddc657075961ee3813ef8ebfa086d94fd4791a8a6cf272926093ed20047548"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c6",
+        "message_sha256": "0f2aad66c05048fd0b3f83ee87038062bb9755cadeb0ca6ccc1884a9d0b2aef0"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c7",
+        "message_sha256": "ca7611df6dd2c057dae0be2610a4e11e0171a81f64c86cfbf38cdf45368485fb"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c1",
+        "message_sha256": "988c737c65866905c14ef6cc9a2db906bf80ee0e078f42edb4faa791d0833d10"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c2",
+        "message_sha256": "b21d7c07e6f42bf97a595c0e0b0b74014398c219ce772650cede6bc3ae49d20e"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c3",
+        "message_sha256": "65375fbae2c01b04ef0a7ec064cd55f77af62d598014c4b292d43426eeab005a"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c4",
+        "message_sha256": "e4745c4a3af05215644dd9e41cb96169e90f11e47ac8e8150accee68362029a9"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c5",
+        "message_sha256": "4b3d227380edaa566e963418c47363e3a298f2d343ef824aad4fd1f7cf2de1e5"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c6",
+        "message_sha256": "0921e358c266cd7c6e50bf7c4c2f24730c4feb037b2242d2f70f19662ffe7adc"
+      },
+      {
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c7",
+        "message_sha256": "3fd7e3665f775712fb4c568eecb729277615714d93bf7f9d982fa4496d329383"
+      },
+      {
+        "condition": "known-gpu-31e646aa9601-original",
+        "claim_id": "c1",
+        "message_sha256": "d1fe95090926407a87c72701b0ed33edf8fef8993e3103e6792d11612c340159"
+      },
+      {
+        "condition": "known-gpu-31e646aa9601-reversed",
+        "claim_id": "c1",
+        "message_sha256": "e2947f38b7870da5c6506893498ed4a799139e9e74ea66e69de0e51f6f694d41"
+      },
+      {
+        "condition": "known-gpu-b4291e2a1a09-original",
+        "claim_id": "c1",
+        "message_sha256": "5d88ac753f922f4253cdba2d9dd0f6b72659e4c5b295de0e2cba052872d069b6"
+      },
+      {
+        "condition": "known-gpu-b4291e2a1a09-original",
+        "claim_id": "c2",
+        "message_sha256": "9b12f35b17e03df4dfd161ef9d61167808a81e9a40ce9355e5798d17661ef61a"
+      },
+      {
+        "condition": "known-gpu-b4291e2a1a09-original",
+        "claim_id": "c3",
+        "message_sha256": "6cae3503b34874946ab6014a13a4479b9979cda3470a443e2f5b07ef21ea6da6"
+      },
+      {
+        "condition": "known-gpu-b4291e2a1a09-original",
+        "claim_id": "c4",
+        "message_sha256": "6111aa03e4f13f8b082737ca2f635686dea2c36134e4426414ad704f73baaf46"
+      },
+      {
+        "condition": "known-gpu-b4291e2a1a09-original",
+        "claim_id": "c5",
+        "message_sha256": "fd9f8fb612cd509495fe78c066f925d1b1149b5c9a2cf6425b9db22d7085e2ba"
+      },
+      {
+        "condition": "known-gpu-b4291e2a1a09-reversed",
+        "claim_id": "c1",
+        "message_sha256": "8c48dfca15ea56d52d4fa4a3d893dff2a6a38e5e3a2523974dec11094e77da50"
+      },
+      {
+        "condition": "known-gpu-b4291e2a1a09-reversed",
+        "claim_id": "c2",
+        "message_sha256": "f103797e98c3f3978bef37e743b90d6f7bfef89306e6bc0621cd19641b06bc1b"
+      },
+      {
+        "condition": "known-gpu-b4291e2a1a09-reversed",
+        "claim_id": "c3",
+        "message_sha256": "597de426ddd6a273a0ea556813ea2528e555a4c1515b9ab1746ccad850ddcbc3"
+      },
+      {
+        "condition": "known-gpu-b4291e2a1a09-reversed",
+        "claim_id": "c4",
+        "message_sha256": "3d50955cebfa9a1f7ad8763bd27ff987cf1392b620874ef673f04d94cea403e1"
+      },
+      {
+        "condition": "known-gpu-b4291e2a1a09-reversed",
+        "claim_id": "c5",
+        "message_sha256": "95f69f9ccb4b431358309ec18153222e6cf6c9d0c3e2542d82964eab78f1eb63"
+      },
+      {
+        "condition": "known-armistice-original",
+        "claim_id": "c1",
+        "message_sha256": "b59c6990d3ec021895f6f7ec5e1962d3e0410603c89e93e7387511a6340a30a1"
+      },
+      {
+        "condition": "known-armistice-original",
+        "claim_id": "c2",
+        "message_sha256": "be67b863918ef46a116662228507d14c04bd0a29774d7ae47417991cfa4bc8b2"
+      },
+      {
+        "condition": "known-armistice-original",
+        "claim_id": "c3",
+        "message_sha256": "7079680ac20d963bc070f0aa31498b65721ccfd5a287e68f2ba8501c40ed9b74"
+      },
+      {
+        "condition": "known-armistice-reversed",
+        "claim_id": "c1",
+        "message_sha256": "296f31279818bf8278e96de09719a3576db90146f84f4f0111753772618b403f"
+      },
+      {
+        "condition": "known-armistice-reversed",
+        "claim_id": "c2",
+        "message_sha256": "bbfac90d98960f3998dba96b5d1f126da5005aac457d6a05382ab38452e0c474"
+      },
+      {
+        "condition": "known-armistice-reversed",
+        "claim_id": "c3",
+        "message_sha256": "f7992e5832b591172c0ba0b3b8568120725fb17ae26c500ffbc6353a908fdfa0"
+      },
+      {
+        "condition": "known-warm-front-original",
+        "claim_id": "c1",
+        "message_sha256": "79c022a38e90dabd15dea7ac542ac6036ca5d46a0c358ee858745c3912572fb5"
+      },
+      {
+        "condition": "known-warm-front-original",
+        "claim_id": "c2",
+        "message_sha256": "d50db15d82f297bacbd89e52c94dd2e54b8e069e78f707f11fabe793ac272962"
+      },
+      {
+        "condition": "known-warm-front-reversed",
+        "claim_id": "c1",
+        "message_sha256": "540ceed363f0ff371e1d122276d252eac3e8130a3ad388224c235dc4ac56bafd"
+      },
+      {
+        "condition": "known-warm-front-reversed",
+        "claim_id": "c2",
+        "message_sha256": "541f463327f5e9f1cc0cb2a774862ae209a39f18b8291009222065c93b32a32a"
+      },
+      {
+        "condition": "known-tar-heels-original",
+        "claim_id": "c1",
+        "message_sha256": "5fd397ec7b0e881d2ed7a4829c45c7ee307b0441c80766a9b6dea035f8b7fb68"
+      },
+      {
+        "condition": "known-tar-heels-original",
+        "claim_id": "c2",
+        "message_sha256": "f39f4c9a80bd24d8d4fe687f678633c7e00bd3bb2cab1175865404e73f7eb3d1"
+      },
+      {
+        "condition": "known-tar-heels-original",
+        "claim_id": "c3",
+        "message_sha256": "05c32aa0b8744b769d7fbd924d14ddc33208e76fc21435b613aeae0d1b0c91ac"
+      },
+      {
+        "condition": "known-tar-heels-reversed",
+        "claim_id": "c1",
+        "message_sha256": "a821d62db81375f9a3ea75cd5d35c70f9507c47781cb76f2e91d6e514a53b8a9"
+      },
+      {
+        "condition": "known-tar-heels-reversed",
+        "claim_id": "c2",
+        "message_sha256": "808e418129d382c679d1caed2434ec60f2ef4324395ab09482a729dc1cc9ef60"
+      },
+      {
+        "condition": "known-tar-heels-reversed",
+        "claim_id": "c3",
+        "message_sha256": "1b0461acfaaa59d5b8a6b6b45e0e2b6de632d447cfd69ae7d7d364b984afc545"
+      },
+      {
+        "condition": "known-gpu-da38af9cd782-original",
+        "claim_id": "c1",
+        "message_sha256": "0846923453e05b11b1fe1c28e80460348488d923dc51446f9b6a0554d1259518"
+      },
+      {
+        "condition": "known-gpu-da38af9cd782-reversed",
+        "claim_id": "c1",
+        "message_sha256": "61af0e80a059a08766de99f7fd6f9c224f1e9da8e86022b1a865147172bf14ba"
+      },
+      {
+        "condition": "known-gpu-25560cfd1cab-original",
+        "claim_id": "c1",
+        "message_sha256": "61c664c3c1fdec7622e65765f19d97840858df7a56cbd6f6d88a361d4be218a4"
+      },
+      {
+        "condition": "known-gpu-25560cfd1cab-reversed",
+        "claim_id": "c1",
+        "message_sha256": "36509edd1e934c954cfe4d42466adfbced73e60e59c5dec8a8798ee07b6ddc0a"
+      },
+      {
+        "condition": "known-gpu-dee22fa20655-original",
+        "claim_id": "c1",
+        "message_sha256": "9e9b4dc810e9fba78416a6348ca793cb2b09e60eb7a941b7bfcb93909e009dba"
+      },
+      {
+        "condition": "known-gpu-dee22fa20655-original",
+        "claim_id": "c2",
+        "message_sha256": "d3f5d49045635f2a828a2d8af1ed89f1dae0abc1159ee18dd4529a6bf6626100"
+      },
+      {
+        "condition": "known-gpu-dee22fa20655-original",
+        "claim_id": "c3",
+        "message_sha256": "e28a545981f403435bd033c34e7749c0385cd1b3c7eea2d32f82a5a8eb9b7ec3"
+      },
+      {
+        "condition": "known-gpu-dee22fa20655-original",
+        "claim_id": "c4",
+        "message_sha256": "fbbf684cad5aa1a796dfbfdc90c8a0dcb0c35bb8af9d96b4bd3a26fcd7adf90d"
+      },
+      {
+        "condition": "known-gpu-dee22fa20655-original",
+        "claim_id": "c5",
+        "message_sha256": "d15d1e9b542329209905ee343d23f0f67dbbd328108613f16555c99ac3ca88ed"
+      },
+      {
+        "condition": "known-gpu-dee22fa20655-reversed",
+        "claim_id": "c1",
+        "message_sha256": "baab28a2c0c7403119ce443f034b93b9fc532b8b1771eed0cb9ae6aee774a6ba"
+      },
+      {
+        "condition": "known-gpu-dee22fa20655-reversed",
+        "claim_id": "c2",
+        "message_sha256": "7bfcc603003ff8acb738c96f05e1de2fcafb90b0bf96712d623b60918e2ba676"
+      },
+      {
+        "condition": "known-gpu-dee22fa20655-reversed",
+        "claim_id": "c3",
+        "message_sha256": "b0296f07c78644147e6a542e3b10315e153f12cc0b15f84669e3b2078ae013b4"
+      },
+      {
+        "condition": "known-gpu-dee22fa20655-reversed",
+        "claim_id": "c4",
+        "message_sha256": "67bec2fbae9940a731819c8abfa45768e1368d790479e8856309cf1af781a638"
+      },
+      {
+        "condition": "known-gpu-dee22fa20655-reversed",
+        "claim_id": "c5",
+        "message_sha256": "4644f9f2aa4c528dcbfcbda0a03e541de0dbeae5d876599ff51fde30b29ac437"
+      },
+      {
+        "condition": "known-gpu-b33c1496859d-original",
+        "claim_id": "c1",
+        "message_sha256": "5fb1a9b900af97981e2804f3b057c58b9af9681a85d3a5eba41d2a40b2dc3166"
+      },
+      {
+        "condition": "known-gpu-b33c1496859d-original",
+        "claim_id": "c2",
+        "message_sha256": "aba3abb65b6e5ce42cc2eb0ec43b2de9ee45fc45f7e8352edbbc7143b2e3a0fc"
+      },
+      {
+        "condition": "known-gpu-b33c1496859d-reversed",
+        "claim_id": "c1",
+        "message_sha256": "65b354b578ac684599ce445830a9d05377e8a46a47fda3ca575e1dcf422d459a"
+      },
+      {
+        "condition": "known-gpu-b33c1496859d-reversed",
+        "claim_id": "c2",
+        "message_sha256": "64025de004cc10df9a591e2244bedc7176a9e49ae516d95ef45cbc9829e61d7c"
+      },
+      {
+        "condition": "known-gpu-c99e26828c62-original",
+        "claim_id": "c1",
+        "message_sha256": "c562de58dc17b4440ebb543ecda258dc757d8fbb2489cad66b402485e2fd5188"
+      },
+      {
+        "condition": "known-gpu-c99e26828c62-reversed",
+        "claim_id": "c1",
+        "message_sha256": "0277ebf2e3155bc5cf6d3a3fd0be4deef225a9b9ebed08659f0f97bfc88a0fca"
+      },
+      {
+        "condition": "known-gpu-35d3e8259d8f-original",
+        "claim_id": "c1",
+        "message_sha256": "2e66313d6656c705e1da7f5a86aa8aa18e22857086e3762a7d4b0378b78e64a2"
+      },
+      {
+        "condition": "known-gpu-35d3e8259d8f-original",
+        "claim_id": "c2",
+        "message_sha256": "a225c888f4d7562ab594d914f870efa515389cea227d3c83e0e5c9baa177c9f9"
+      },
+      {
+        "condition": "known-gpu-35d3e8259d8f-reversed",
+        "claim_id": "c1",
+        "message_sha256": "fbc9fc02d303fda38e9e0a4f913accc85c0bcfd7e33b6c48410e55d711895a02"
+      },
+      {
+        "condition": "known-gpu-35d3e8259d8f-reversed",
+        "claim_id": "c2",
+        "message_sha256": "db74bdd724f45e5bda4284a2c8bc7fcfc514751b02b3176ecf06e1f18675a27e"
+      },
+      {
+        "condition": "known-gpu-6d9820642610-original",
+        "claim_id": "c1",
+        "message_sha256": "1e15122bc34188db84e1b3e6e81d0344a93a039219c9f8701942c60aacd0e89e"
+      },
+      {
+        "condition": "known-gpu-6d9820642610-reversed",
+        "claim_id": "c1",
+        "message_sha256": "987919def5a0fbe33f3a63929df60ed754c4bab969aa104506608ba27fa1e86a"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c1",
+        "message_sha256": "d20d78613564f1f5dc17239b2ee653681b6b850a235c0bcdf146e8be43de4b20"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c2",
+        "message_sha256": "cfa3e2af46dd5747af0831965dd3ce07a3a761dd1ebbe05f804bb88efb0cdd85"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c3",
+        "message_sha256": "09ac33b163ebf1b73c4781bfaac203fb889561a5b73acb741ce465a91361017e"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c4",
+        "message_sha256": "b0dd5a9aa00b35d158486fff940cec8c7c62fcbb4151bfd661caf8baa425a7a3"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c5",
+        "message_sha256": "01b3262c1692ffb8c57d8be5f3c15a0c7f77313f34757a5bb9f9c5d8ea66f2fe"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c6",
+        "message_sha256": "ad068c47e2e7431195b87eb617be0439a9cc9e8796510934187d2bdaa7a500cd"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c7",
+        "message_sha256": "c0c6cec2a0c28c664c46c7c2ff3d78a0e2413fe051bac8e8a8f96a646f34ae3f"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c1",
+        "message_sha256": "f9541c40c1015ca7098a983e2c6ff20102c1afc53539311d3e63bc86bc60e8b7"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c2",
+        "message_sha256": "a5eba018e97f3e2b9bb7cc8f2ada1f5af5157bc9bf32187908de444588bed63a"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c3",
+        "message_sha256": "fae047f37e0c2c75b1da4207e1f0d5b19b4d6b00edd10fce356a9d7651b5da0a"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c4",
+        "message_sha256": "70aa98074059fe211618aaeab1dd53ed61e6e0b6248476b82e381bf829f58b3e"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c5",
+        "message_sha256": "d56eb4ec140bed1e9645ee8963eca77f2d20915651ebafd82aaa0c3b280ccbcf"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c6",
+        "message_sha256": "927629899028834e7bdf3bd932fee1373642ef055505115e32808029661c9314"
+      },
+      {
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c7",
+        "message_sha256": "b6fd51256b6d0941652530d54996ce5481f619a9b8acfbdbc67b48d81af136ad"
+      },
+      {
+        "condition": "known-gpu-aaba171a10f6-original",
+        "claim_id": "c1",
+        "message_sha256": "f8fb0deabe2700f51e10a654b4f76c7a2da0ffaf286103668d5f595ae4e01253"
+      },
+      {
+        "condition": "known-gpu-aaba171a10f6-reversed",
+        "claim_id": "c1",
+        "message_sha256": "f8dc98d2182ab831ed82d966c81841f1d1d23c51cdc78d5a846a0c81354dfd77"
+      }
+    ],
+    "parent_complete_artifacts_verified": 202,
+    "native_core27_unchanged": true,
+    "prior_all9b_call_attempts": 836,
+    "cumulative_cap": 920,
+    "automatic_retries": 0,
+    "draws_only_v17_conditional84_no_new_budget": true,
+    "new_model_calls": 0,
+    "new_servers": 0,
+    "new_qa_rows_read": 0,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v9.yaml",
+    "sha256": "375e9b2296321515d3816e49506d1949caa9ff81bd30a5bf04cb59881828bbc1",
+    "size_bytes": 2190
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v9.json",
+    "sha256": "a7eafc48e0f609ff9abbffc0fd3e7cf09e4eb3db69df5d998893186697791a70",
+    "size_bytes": 140824
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v18.json",
+    "sha256": "b6436577a2898c5d3c37d3dc762213947c3e3a488cdba130cc771a9f0443991a",
+    "size_bytes": 7078
+  },
+  "parent_result": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_semantic_result_v1.json",
+    "sha256": "e00f78ffc46afe3b5003ce96aae2ff88e8129082b8ef92719f92ff1046075a52",
+    "size_bytes": 56198
+  },
+  "positive_preparation": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_known_preparation_validation_v1.json",
+    "sha256": "02aabe93412dcea09ea7db33342a70652f01bdf68b972faef0ecfc0baaaa1e89",
+    "size_bytes": 3114
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-registration-v1/check_contract.py": {
+      "sha256": "f62b8e73919a15891f6b0a8957a605a141314abb2e4659d903c7baea5c755ad6",
+      "size_bytes": 4524
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-registration-v1/contract.json": {
+      "sha256": "44e75319817289f352d2b0f3f75c0a84e97fa8a8d27aa85f151573347ac4587d",
+      "size_bytes": 15932
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-registration-v1/contract_stderr.txt": {
+      "sha256": "6cf6611efa27753e88b8e3e5711e680468d290384ae6b58f7e7e10d0ac41f4e1",
+      "size_bytes": 162
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-registration-v1/contract_stdout.txt": {
+      "sha256": "ad23c979d7f10f6601b82c5fcd71b21ea82e0cc47c495ba63061984d7e646bc1",
+      "size_bytes": 615
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-registration-v1/helpers_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-registration-v1/pytest.txt": {
+      "sha256": "61a8c1ad8682110e81c36769cb4ec251fd2d247e4c9f7f844fd9962f415011b6",
+      "size_bytes": 4627
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-registration-v1/register.py": {
+      "sha256": "1d77b458904873c309a79adedc1077dbb921a06246083bd22348571e990126c4",
+      "size_bytes": 6584
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-registration-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    }
+  },
+  "src_changed": false,
+  "native_regression_not_started": true,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

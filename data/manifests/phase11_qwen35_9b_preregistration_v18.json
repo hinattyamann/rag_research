@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-temperature-v20-whole-known15-v9-conditional-registration",
+  "created_at_utc": "2026-10-23T07:18:51.194365+00:00",
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v9.yaml",
+    "sha256": "375e9b2296321515d3816e49506d1949caa9ff81bd30a5bf04cb59881828bbc1",
+    "size_bytes": 2190
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v9.json",
+    "sha256": "a7eafc48e0f609ff9abbffc0fd3e7cf09e4eb3db69df5d998893186697791a70",
+    "size_bytes": 140824
+  },
+  "parent_preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v17.json",
+    "sha256": "bb1c7d67d834ffedd5523e10f965c5fe4981a19be2284cb0d3ce4d3a8e6da9da",
+    "size_bytes": 8059
+  },
+  "parent_complete_diagnostic": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_semantic_result_v1.json",
+    "sha256": "e00f78ffc46afe3b5003ce96aae2ff88e8129082b8ef92719f92ff1046075a52",
+    "size_bytes": 56198
+  },
+  "positive_preparation": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_known_preparation_validation_v1.json",
+    "sha256": "02aabe93412dcea09ea7db33342a70652f01bdf68b972faef0ecfc0baaaa1e89",
+    "size_bytes": 3114
+  },
+  "temperature": 0.2,
+  "context_tokens": 12288,
+  "model_manifest": {
+    "path": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+    "sha256": "acadda5c012105a454b07ee95d406a217fe0aab8f498f3988bf44de36ebade65",
+    "size_bytes": 748
+  },
+  "fresh_format_result": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_format_result_v1.json",
+    "sha256": "e83453953032d0f52c51911980a9d1a55dd5bd82471efad35b1eb6ad773f9d89",
+    "size_bytes": 13243
+  },
+  "native_core_and_probe_sha256": {
+    "src/rag_research/evaluation/__init__.py": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b",
+    "src/rag_research/evaluation/claims.py": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602",
+    "src/rag_research/evaluation/claimwise.py": "2d0045aad140d869aef2ac279cbca3df50cfa7c320d1b06a553904aa29d9b617",
+    "src/rag_research/evaluation/judge.py": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2",
+    "src/rag_research/evaluation/order.py": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e",
+    "src/rag_research/evaluation/quote_alignment.py": "a9bc408e05d9fa25c0902b13b7e70d2e2eb7d3402ba4b10c24184d43759b88bb",
+    "src/rag_research/evaluation/reasoned_json.py": "5c6b089e9442d8f23783aaa5afc4c9a9744d9a617ac8ea7064eff47fbc219830",
+    "src/rag_research/evaluation/reasoning_budget.py": "f9f933dd20b73e51c15aae87c43dc5e50e22b8c4624f9857c2cb13029b6d91ec",
+    "src/rag_research/evaluation/schema.py": "616619fe28b913a309a6676415b2a8d8eb36afa0ddaef0ccb77e214e109a3b42",
+    "src/rag_research/evaluation/sentence_claims.py": "a0a3715ab7f1c3b0b8d7766e779c716efc133822a20c524bab1ca8e09d47a0a5",
+    "src/rag_research/evaluation/source_reading.py": "ebc5ace62451eb4d8fcdc4380d16be6c0eead9f22d28de6fd96d3f4aac72f693",
+    "src/rag_research/evaluation/tasks.py": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+    "src/rag_research/experiments/frozen_trace.py": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4",
+    "src/rag_research/experiments/protocol.py": "e5738106f7409313cd27fd052eae61779b40b112c22ec3d299c7932aa52ce3cf",
+    "src/rag_research/experiments/storage.py": "073f4c89dca883fd0f5c3ab900c722361c720a3cb607faa9903190c15b272165",
+    "src/rag_research/generation/__init__.py": "33c1d27b63c42955f7e025298bd2347fbc8cf5afc57216d35516e7701e0e421a",
+    "src/rag_research/generation/artifacts.py": "bb70ba77b944ecc23a07cc1865a3fafeee610dcd453caebc5a77b8fe79fc44b5",
+    "src/rag_research/generation/auxiliary.py": "b702f4762d8da7e892486c1096b7f8c60dabf4d93dd9c3722a8a0904d893c410",
+    "src/rag_research/generation/auxiliary_config.py": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+    "src/rag_research/generation/config.py": "9a641357a2767322e97d8ee224b2f7d2d0c7bda0a3ff21f7f684fc329175b60e",
+    "src/rag_research/generation/context.py": "a86c5fda1a1d7747d3ce9087a732b70e700802b6142e4e5db6adeb1a64b6a63c",
+    "src/rag_research/generation/cuda_runtime.py": "b21d13c790071fde655aa6c3601eaf91fc609b842fcdc11725e96e9c641731f9",
+    "src/rag_research/generation/generator.py": "3ece4c433d2dec54b4c07dc0b95e42f78a2debde1349ab67d7d852445f9226a1",
+    "src/rag_research/generation/json_grammar.py": "c1355a13afa204b8ae1362a87cd928116f180ee07dc8b208e29c91a86bf04c46",
+    "src/rag_research/generation/local.py": "271494fa62fa30f40f73e43ff1f2e9de3c5b801cd2baab83d9adc5eb7c7d3feb",
+    "src/rag_research/generation/smoke.py": "469dd916567aac7d247dea606f5e885685f3c91d62e79dae683c8f7fa75a063a",
+    "scripts/probe_final_json_boundary.py": "61a903ffb2b65e5b23763fc3be620347ca43148e3ab7a89f5c2946090370663c"
+  },
+  "same_model_runtime_prompts_full_inputs_budgets_sampling_seed_schema_and_all_original_expected_gates": true,
+  "full_parent_replayed_on_copy": true,
+  "whole_old_qa": 15,
+  "whole_old_fixed_units": 42,
+  "whole_old_conditions": 30,
+  "all_source_bindings": 25,
+  "bare_refusals_retained_separately": 8,
+  "first_critical_conditions": 12,
+  "first_critical_calls": 42,
+  "remaining_positive_conditions": 18,
+  "maximum_new_calls": 84,
+  "automatic_retries": 0,
+  "maximum_cumulative_all_9b_calls": 920,
+  "new_calls_at_registration": 0,
+  "previous_recorded_all9b_call_attempts": 836,
+  "previous_recorded_Q4_call_attempts": 317,
+  "previous_recorded_Q5_call_attempts": 317,
+  "previous_recorded_Q6_call_attempts": 202,
+  "previous_unknown_output_attempts_retained": 1,
+  "prior_unused_calls_not_filled_or_reallocated": {
+    "Q6_known_v8": 42,
+    "Q5_known_v7": 42,
+    "Q5_known_v6": 81,
+    "Q5_known_v5": 42
+  },
+  "budget_draws_only_the_conditional_84_already_registered_in_v17": true,
+  "parent_164_call_cap_not_expanded": true,
+  "all_old_failed_runs_immutable": true,
+  "full_parent_semantic_resource_audit": {
+    "path": "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/semantic_resource_audit.json",
+    "sha256": "086773ebeaacb646527f92c80a67fa4a210719b12b457bad0eb3133c1bdcb35c",
+    "size_bytes": 1487
+  },
+  "resource_observer": {
+    "path": "scripts/observe_native_resources.py",
+    "sha256": "900ca7483d26ba07c6d46526007ff379817f8de99320ce1400e080533366e89e",
+    "size_bytes": 8865
+  },
+  "observation_interval_seconds": 5,
+  "launch_order": [
+    "Commit and Push the actual complete audited parent and this unchanged whole-known registration",
+    "New fixed checkout; all Source/Model/Runtime hashes and current-temperature format40 proof",
+    "All84 actual inputs, zero completions, full CUDA offload",
+    "Whole old15 QA: first all12 Critical conditions/42 calls exact before remaining18 positive conditions",
+    "Full terminal audits and all old gates before any fresh Main policy or actual bilingual Main; no early reserved Calibration"
+  ],
+  "main_or_reserved_calibration_or_evaluation_new_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
