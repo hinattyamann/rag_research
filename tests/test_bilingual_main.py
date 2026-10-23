@@ -68,6 +68,24 @@ def test_unchanged_adoption_is_required_and_selection_cannot_be_reordered_or_ref
             main.validate_main(config, changed, qa)
 
 
+def test_binary_main_cannot_adopt_a_legacy_known_report(adoption):
+    from rag_research.experiments.semantic_adoption import BINARY, BINARY_RULES
+
+    config, rows, qa, root = adoption
+    policy = read_json(root / "policy.json")
+    policy["semantic_adoption_version"] = BINARY
+    rules = policy["semantic_adoption_after_blind_seal"]
+    for key in ("minimum_exact_label_accuracy_per_language", "minimum_supported_label_accuracy_per_language",
+                "maximum_definite_negative_false_support"):
+        rules.pop(key)
+    rules.update(BINARY_RULES)
+    write_json(root / "policy.json", policy)
+    config["main_execution_policy"]["sha256"] = file_hash(root / "policy.json")
+    config["semantic_adoption_version"] = BINARY
+    with pytest.raises(ValueError, match="Known/Main semantic adoption versions differ"):
+        main.validate_main(config, rows, qa)
+
+
 @pytest.mark.parametrize("change", ["model", "seed", "tokens", "threshold", "fallback", "limits", "prompt", "core", "usage", "qa", "policy"])
 def test_changed_conditions_or_historical_evidence_cannot_enter_main(adoption, change):
     config, rows, qa, root = adoption
@@ -205,6 +223,42 @@ def test_full_known_adoption_uses_all_42_units_in_both_modes(known_evidence):
     main.passing_known_regression(binding)
     assert len(plan["cases"]) == 15 and sum(len(c["claims"]) for c in plan["cases"]) == 42
     assert len(state["calls"]) == 30
+
+
+def test_binary_known_adoption_replays_all_raw_and_keeps_legacy_failure(known_evidence):
+    from rag_research.experiments.semantic_adoption import BINARY, KNOWN_GATE_V2
+
+    binding, run, plan, plan_path, state = known_evidence
+    results = {}
+    for case, _, key in semantic_diagnostics.specs(plan):
+        path = run / "tasks" / (key + ".json")
+        task = read_json(path)
+        for verdict in task["parsed"]["verdicts"]:
+            if verdict["label"] == "contradicted":
+                verdict["label"] = "not_supported"
+        task.pop("result_sha256")
+        results[key] = checkpoint(path, task)
+    assert not semantic_diagnostics.assess(plan, results)["diagnostic_gate_passed"]
+    plan["gate"] = deepcopy(KNOWN_GATE_V2)
+    write_json(plan_path, plan)
+    manifest = read_json(run / "manifest.json")
+    manifest.update(semantic_adoption_version=BINARY, plan_sha256=file_hash(plan_path))
+    write_json(run / "manifest.json", manifest)
+    report = read_json(run / "report.json")
+    report.update(semantic_diagnostics.assess(plan, results), manifest_sha256=digest(manifest),
+                  task_result_sha256={k: v["result_sha256"] for k, v in results.items()})
+    write_json(run / "report.json", report)
+    binding["sha256"] = file_hash(run / "report.json")
+    assert report["diagnostic_gate_passed"] and not report["critical_passed"]
+    main.passing_known_regression(binding)
+    assert len(state["calls"]) == 30
+    manifest.pop("semantic_adoption_version")
+    write_json(run / "manifest.json", manifest)
+    report["manifest_sha256"] = digest(manifest)
+    write_json(run / "report.json", report)
+    binding["sha256"] = file_hash(run / "report.json")
+    with pytest.raises(ValueError, match="versions differ"):
+        main.passing_known_regression(binding)
 
 
 @pytest.mark.parametrize("fault", ["count", "plan", "fewer_units", "extra_condition", "false_pass", "native_count"])

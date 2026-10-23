@@ -141,6 +141,24 @@ def test_positive_freeze_with_explicit_certification_doubles(final_evidence):
         module.save(p.relative_to(root).as_posix(), "data/manifests/phase11_bilingual_final_freeze_v1.json")
 
 
+@pytest.mark.parametrize("matching", [False, True])
+def test_finalization_requires_same_binary_version_as_main_and_calibration(final_evidence, matching):
+    from rag_research.experiments.semantic_adoption import BINARY
+
+    root, path, decisions, main, calibration, _, _ = final_evidence
+    decisions["semantic_adoption_version"] = BINARY
+    main["semantics"] = {"semantic_adoption_version": BINARY}
+    calibration["semantics"] = {"semantic_adoption_version": BINARY if matching else "three-label-v1"}
+    saved_path = root / decisions["calibration_analysis"]["path"]
+    checkpoint(saved_path, calibration)
+    decisions["calibration_analysis"]["sha256"] = file_hash(saved_path)
+    write_json(path, decisions)
+    result = module.readiness(path.relative_to(root).as_posix())
+    assert result["gate11_passed"] is matching
+    if not matching:
+        assert "semantic adoption versions differ" in str(result["reasons"])
+
+
 @pytest.mark.parametrize("field,value", [("status", "pending"), ("counts", {"en": 200, "ja": None}),
     ("selection_uses_effect_size_or_significance", True), ("automatic_refill", True),
     ("resource_safety_factor", float("inf")), ("retry_unknown_outcomes", True),

@@ -10,6 +10,7 @@ from rag_research.experiments.bilingual_certification import certify_main
 from rag_research.experiments.bilingual_main import bound_path, validate_main_policy
 from rag_research.experiments.calibration_selection import SOURCE_SPLITS, prepare
 from rag_research.experiments.frozen_trace import digest, require
+from rag_research.experiments.semantic_adoption import version
 from rag_research.experiments.storage import (
     checkpoint,
     read_json,
@@ -118,12 +119,13 @@ def create(inputs_path, certificate_path, reservation_path, policy_path, rules_p
             "Calibration policies/rules must stay in configs; never parse Evaluation QA")
     source_before = source_hashes()
     main = verify_main(inputs_path, certificate_path)
-    rules(rules_path)
+    adoption_rules = rules(rules_path)
     reserved, fresh = unchanged_selection(reservation_path, policy_path)
     configs, runs, estimates = {}, {}, {}
     for language in ("en", "ja"):
         main_run = ROOT / main["source_runs"][language]["run"]
         manifest = read_json(main_run / "manifest.json")
+        require(version(adoption_rules) == version(manifest["config"]), "Main/Calibration adoption versions differ")
         chosen = fresh["languages"][language]["selected"]
         config = configuration(manifest["config"], chosen, language)
         require(config["assets"] == reserved["inputs"]["assets"]["path"], "Calibration assets must match main")
@@ -180,7 +182,7 @@ def validate(config, output):
             config["data"]["split"] == SOURCE_SPLITS[language] and config["calibration_limits"] == LIMITS,
             "Calibration configuration, source split or exact output changed")
     require(source_hashes() == protocol["source_sha256"], "Calibration source changed after preregistration")
-    rules(bound(protocol["rules"]))
+    require(version(rules(bound(protocol["rules"]))) == version(config), "Main/Calibration adoption versions differ")
     unused_path = bound(protocol["unused_inventory_file"])
     require(digest(read_json(unused_path)) == protocol["unused_inventory_at_preparation_sha256"], "Pre-inference usage proof changed")
     certificate_path = (ROOT / protocol["main_certificate"]["path"]).resolve()

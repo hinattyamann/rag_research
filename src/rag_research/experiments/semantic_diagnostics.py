@@ -18,6 +18,7 @@ from rag_research.experiments.frozen_trace import (
     validate_documents,
 )
 from rag_research.experiments.protocol import ROOT, task_config, validate_task_contract
+from rag_research.experiments.semantic_adoption import BINARY, KNOWN_GATE_V2, summarize, version
 from rag_research.experiments.storage import (
     next_session,
     read_json,
@@ -53,6 +54,10 @@ def load_config(path):
         "known_max_false_support": 0} if regression else {"stop_on_task_error": True, "stop_after_critical_failure": True,
             "critical_all_exact": True, "synthetic_min_accuracy_per_language": .9,
             "synthetic_max_false_support": 0})
+    adoption_version = version(plan["gate"])
+    if adoption_version == BINARY:
+        require(regression, "Binary v2 is registered for the complete known regression")
+        expected_gate = KNOWN_GATE_V2
     require(plan["gate"] == expected_gate, "Preserve preregistered diagnostic criteria")
     if regression:
         prerequisite = local(plan["prerequisite"]["report_path"])
@@ -165,6 +170,24 @@ def matches(case, task, *, critical=False):
 
 
 def assess(plan, results):
+    result = assess_legacy(plan, results)
+    if version(plan.get("gate", {})) == BINARY:
+        selected = specs(plan)
+        observations = []
+        for case, _, key in selected:
+            task = results.get(key, {})
+            actual = {v["claim_id"]: v["label"] for v in task["parsed"]["verdicts"]} if task.get("status") == "ok" else {}
+            group = case.get("document_group_id", case.get("original_record_id", case["id"]))
+            observations.extend((group, (case["id"], i), label, actual.get(i)) for i, label in case["expected"].items())
+        healthy = (set(results) == {key for _, _, key in selected} and
+                   all(t["status"] == "ok" and not t.get("cost_incomplete", False) for t in results.values()))
+        result["binary_adoption"] = summarize(observations, healthy=healthy)
+        result["semantic_adoption_version"] = BINARY
+        result["diagnostic_gate_passed"] = result["binary_adoption"]["passed"]
+    return result
+
+
+def assess_legacy(plan, results):
     selected = specs(plan)
     critical = [(case, key) for case, _, key in selected if case["critical_claim_ids"]]
     critical_passed = bool(critical) and all(key in results and matches(case, results[key], critical=True) for case, key in critical)
@@ -224,6 +247,8 @@ def run(config_path, output):
                 "plan_sha256": file_hash(plan_path), "model": auxiliary_identity(config), **execution_identity(config),
                 "source_sha256": {p.relative_to(ROOT).as_posix(): file_hash(p) for p in sources},
                 "phase12_allowed": False}
+    if version(plan["gate"]) == BINARY:
+        manifest["semantic_adoption_version"] = BINARY
     selected = specs(plan)
     with run_lock(output):
         immutable(output / "manifest.json", manifest)
@@ -253,14 +278,15 @@ def run(config_path, output):
         health_stopped = any(t["status"] in {"error", "started"} for t in cached.values())
         critical_pending = any(verification_pending(tasks / (key + ".json"), mode)
                                for c, _, key in selected if c["critical_claim_ids"])
-        expanded = assess(plan, cached)["critical_passed"]
+        binary = version(plan["gate"]) == BINARY
+        expanded = binary or assess(plan, cached)["critical_passed"]
         pending = not health_stopped and (critical_pending or (expanded and any(
                   verification_pending(tasks / (key + ".json"), mode) for _, _, key in selected)))
         results = {}
 
         def collect(client):
             for case, order, key in selected:
-                if not case["critical_claim_ids"] and not assess(plan, results)["critical_passed"]:
+                if not binary and not case["critical_claim_ids"] and not assess(plan, results)["critical_passed"]:
                     break
                 task = attempt(client, case, order, key)
                 results[key] = task

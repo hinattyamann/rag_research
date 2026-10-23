@@ -420,6 +420,22 @@ def prepare_direct_regression_fixture(diagnostic):
     return path, output, state
 
 
+def test_binary_runner_completes_positive_controls_after_a_critical_label_error(diagnostic):
+    from rag_research.experiments.semantic_adoption import KNOWN_GATE_V2
+
+    path, output, state = prepare_direct_regression_fixture(diagnostic)
+    plan_path = path.parent / "plan.json"
+    plan = read_json(plan_path)
+    plan["gate"] = deepcopy(KNOWN_GATE_V2)
+    write_json(plan_path, plan)
+    state["critical_failure"] = True
+    report = module.run(path, output)
+    assert report["completion_attempts_recorded"] == 6 and report["not_attempted_ids"] == []
+    assert not report["diagnostic_gate_passed"] and not report["binary_adoption"]["coverage_passed"]
+    assert report["binary_adoption"]["negative_denominator"] == 2
+    assert module.run(path, output) == report and state["servers"] == 1
+
+
 @pytest.mark.parametrize("failure", [False, True])
 def test_direct_regression_keeps_all_cases_and_gates_without_inventing_reader_calls(diagnostic, failure):
     path, output, state = prepare_direct_regression_fixture(diagnostic)

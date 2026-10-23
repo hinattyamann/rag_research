@@ -1,13 +1,13 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月23日。正本: [研究計画7.70](rag_research_plan.md)、[実装計画8.73](rag_implementation_plan.md)。
+更新日: 2026年10月23日。正本: [研究計画7.71](rag_research_plan.md)、[実装計画8.74](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
 
-ユーザーの資源見直し・別チャット移行の依頼を受け、[新チャット引継ぎ](phase11_handover_2026-10-23.md)と[評価器/テスト/資源の見直し](phase11_evaluator_review_policy_v1.md)を保存した。無期限の最適化を終え、支持対非支持の意味検証を主にする新基準Versionを設計採用したが、Guard/Protocolの改訂は未実装で旧失敗の採否は変更しない。追加候補最大1個/新開発188試行またはNative Task4時間・診断24内数を別登録する方針。旧851試行/未知2/未使用69・42/42/81/42を保持し、現行v9はCUDA停止・全監査済み。Main各20/Cal各20と独立品質・費用・最終凍結は未了、Gate11未通過・Phase12未実施。本チャットGoalはpaused、稼働中Nativeなし。次チャットは[貼付用Goal](phase11_next_chat_prompt.md)で新しいGoalを設定し、保存物/新基準実装/Runtime原因調査から再開する。
+新しいGoalでPhase11を再開し、[支持対非支持の採用基準v2](phase11_binary_adoption_v2.md)をKnown→Main→Calibration→最終Validatorへ実装・事前登録した。支持Recall/非支持Specificity各0.90、異なる支持10文/非支持5文・各3 Groupを必要とし、不足は不通過・補充なし。旧v1拒否と旧851試行/未知2/未使用枠を保全する。追加候補最大1個/188試行・Task4時間/診断24内数の新枠へSmoke2+新鮮なKnown84を登録し、残102は未割当。保存395 Fileを照合（改訂した採用Sourceの旧版は固定Git Blobで検証）し、旧停止のKernel Watchdog/Xid8を確認したが根本原因は未確定。Driver/OS/Resetは変更していない。新規Nativeはこの記録時点で0、Main各20/Cal各20/独立品質・費用/最終凍結は未了、Gate11未通過・Phase12未実施。
 
 [温度0.2旧全回帰v9のCUDA停止](phase11_known_trace_direct_result_v9.md)を監査・正規保存した。固定9727409/session72566は3条件/15記録試行・14応答取得/未知1、Zidane元順序の実LogにCUDA launch timeout/応答前切断があり不採用。取得した会議14判定は確定12/12/支持10/10・誤支持0だが、全74/58精度null・残27条件未試行/69枠未使用を保持する。95 Source/元23 File不変・追加0、全15提出Schema/取得14 Native Schema・実Sampler/7組/全14理由/193点資源/実Main準備拒否を確認し、Raw26/全110 ArtifactをWT照合した。全9B記録851（Q4 317/Q5 317/Q6 217）・未知計2、今回未使用69と旧42/42/81/42/累積上限920・Retry0を保持。72566/23121は終了済みで再起動しない。次はGPU/Driver/Kernelと旧停止Logの原因調査で、根本原因や温度効果は未確定。新候補/新Native未登録、Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
 
@@ -353,7 +353,7 @@ Zidaneで順序判断反転1/12、同順序反転0/12。誤支持・回答不足
 - [x] CLAPNQに近い日本語候補を比較し、[人手検索・長文QA Sourceの選定理由と残る差](japanese_dataset_selection.md)、固定版原QAの取得・構造監査を保存する。本文Corpusの準備は下記へ残す。
 - [x] 全検索記録の記事全文から[共通Corpus](phase11_japanese_corpus.md)を取得・検証し、[正式Group/ID/Seed分割](japanese_dataset_selection.md#8-全取得と正式group分割の完了)とManifestを保存した。Redirect・複数参照・欠測を保持し、[日英全文Index](phase11_bilingual_indexes.md)と参照対応v2をAssets v2へ結んだ。
 - [x] 読込み・選定・検索・指示文・文分割/拒否・Token予算・匿名品質採点・言語別記録/集計の[共通接続](phase11_bilingual_pipeline.md)と単体/回帰Testを実装した。現行Sourceの全734 Test/Ruffと全30 Index/Embedding Payloadの照合を最終Validator検証v2へ保存した。これは実主/Calの意味採用ではない。
-- [ ] 最優先: 現候補の全日英意味診断と全旧15 QA英語回帰を、全Expected/基準を保って通過する。形式成功や既知4条件の通過だけで採用しない。
+- [ ] 最優先: 新基準v2の生成0/Runtime Smoke後、新鮮な全旧15 QA/42文英語回帰を元Expectedのまま完了し、Healthと二値意味基準を通過する。旧v1失敗を通過へ変更しない。日英全意味70 Callは不変の推論条件に限り証拠を再利用する。
 - [ ] 日英の主Development各20 QAで全経路・全匿名品質/固定文Expectedの封印・意味/費用/有効比較数を確認する。既知各1問の接続結果と、使用済み英語の拒否/誤支持履歴は保持し、主20問完了へ数えない。
 - [ ] 修正後の候補と停止条件を保存し、両言語の未使用Calibrationで意味妥当性・有効数・費用を確認する。
 - [ ] 言語別件数・対象ID・条件・独立品質基準・日英差の統計と欠測の扱いを固定し、最終固定Validatorも追加要件へ対応させる。

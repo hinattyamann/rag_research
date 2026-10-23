@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-bilingual-final-freeze-decisions",
+  "status": "pending_main_and_calibration_evidence",
+  "target_backend": "CUDA",
+  "main_inputs": null,
+  "main_certificate": null,
+  "calibration_inputs": null,
+  "calibration_analysis": null,
+  "assets": {
+    "path": "configs/phase11_bilingual_assets_v2.json",
+    "sha256": "20f5b1eaf77b70cf3721728f5c4708be14b38efe04e71a29134bc8152f21e64b"
+  },
+  "japanese_source_selection": {
+    "path": "data/manifests/phase11_japanese_source_selection.json",
+    "sha256": "df2d8cfb82bfffd7b50bd401bf6d26c3becfe92e35c85f6f6b2105b363ae1d88"
+  },
+  "evaluation_metadata": {
+    "en": {
+      "path": "data/manifests/clapnq_split_manifest.json",
+      "sha256": "148c0f95736faa8eb9a7ac6cd538988c9f31054468376d2ef9678fcdc958d330"
+    },
+    "ja_groups": {
+      "path": "data/processed/wikipedia_human_retrieval_ja/02e85c8-groups-v2/groups.json",
+      "sha256": "2302e1f9c30da9fccf61317487873817799f79e8a17ded1d6191255e004ae800"
+    },
+    "ja_spec": {
+      "path": "configs/phase11_japanese_dataset_v2.json",
+      "sha256": "73916eb2cfb9cc9e9e146966cd78d4a65a91ca1b3d1d193402e04d48f3d0b5ef"
+    }
+  },
+  "counts": {
+    "en": null,
+    "ja": null
+  },
+  "selection_seed": 42,
+  "automatic_refill": false,
+  "selection_uses_evaluation_text_or_results": false,
+  "selection_uses_effect_size_or_significance": false,
+  "resource_limits": {
+    "en": null,
+    "ja": null
+  },
+  "resource_safety_factor": null,
+  "sample_size_rationale": "Pending actual complete main and held-out Calibration feasibility/cost evidence; do not reuse the historical English 200-QA suggestion.",
+  "precision_and_group_dependence_limitations": "Pending final N. Use fixed document groups and preregistered QA-weighted cluster bootstrap. No selection using observed effect or significance.",
+  "source_comparison_limitations": "CLAPNQ and native Japanese human retrieval QA differ in corpus, domain, reference unit and task. The unpaired dataset comparison does not identify a causal language effect.",
+  "quality_assessor_limitations": "AI review; human_reviewed=false. Exact assessor model identifier may be unavailable and conversation-history independence must not be assumed.",
+  "stopping_and_missing_policy": "Keep all selected QA, errors, refusals, unknown costs and unattempted QA. Stop on unknown/error or resource exhaustion; no refill or truncation. Primary uses complete planned comparisons only, unknown quality is reported with bounds.",
+  "stop_on_unknown_or_error": true,
+  "no_fixed_unit_truncation": true,
+  "retry_unknown_outcomes": false,
+  "statistics": {
+    "primary": "mean_within_qa_order_pair_disagreement_minus_repeat_pair_disagreement",
+    "language_contrast": "unpaired_dataset_mean_ja_minus_en",
+    "cluster": {
+      "en": "NFC_casefold_source_title",
+      "ja": "document_group_id"
+    },
+    "bootstrap_repetitions": 10000,
+    "seed": 42,
+    "rng": "SeedSequence(seed).spawn(2) in en,ja order",
+    "quantile": "linear_percentile_2.5_97.5",
+    "missing": "complete_planned_trials_only_primary_partial_exploratory_no_imputation",
+    "quality_cost_denominator": "all_selected_including_failures_unknown_and_unattempted",
+    "fewer_than_two_comparable_groups": "null_ci",
+    "causal_language_effect_claim": false
+  },
+  "phase12_execution_started": false,
+  "source_comparison_document": {
+    "path": "docs/japanese_dataset_selection.md",
+    "sha256": "c012737a168d74cdc3639b2ce355603f299cd2c572f3eecbb6ed7c4c1195c776"
+  },
+  "validator_validation": null,
+  "semantic_adoption_version": "support-binary-v2"
+}

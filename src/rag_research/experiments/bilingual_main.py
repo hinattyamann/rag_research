@@ -7,6 +7,7 @@ import yaml
 from rag_research.evaluation.claimwise import atomic_steps, verify_once
 from rag_research.experiments.frozen_trace import digest, require
 from rag_research.experiments.protocol import ROOT, task_config
+from rag_research.experiments.semantic_adoption import BINARY, BINARY_RULES, version
 from rag_research.experiments.storage import read_json, verify_checkpoint
 from rag_research.generation.auxiliary import auxiliary_identity
 from rag_research.generation.cuda_runtime import execution_identity
@@ -30,6 +31,10 @@ REQUIRED_MAIN_POLICY = {
 
 def validate_main_policy(policy):
     for section, expected in REQUIRED_MAIN_POLICY.items():
+        if section == "semantic_adoption_after_blind_seal" and version(policy) == BINARY:
+            expected = {k: v for k, v in expected.items() if k not in {
+                "minimum_exact_label_accuracy_per_language", "minimum_supported_label_accuracy_per_language",
+                "maximum_definite_negative_false_support"}} | BINARY_RULES
         actual = policy.get(section)
         require(isinstance(actual, dict) and all(k in actual and type(actual[k]) is type(v) and actual[k] == v
                 for k, v in expected.items()), "Preserve preregistered main policy rules: " + section)
@@ -59,6 +64,8 @@ def passing_known_regression(binding):
             "Known regression must be complete, passing and fully costed")
     config_path = bound_path(binding["config"])
     config, plan, prompts, plan_path = load_config(config_path)
+    require(version(manifest) == version(plan.get("gate", {})) == version(report),
+            "Known plan/manifest/report semantic adoption versions differ")
     mode = config.get("verification_mode", "joint")
     expected_calls = 2 * sum(len(c["claims"]) + (mode == "source-reading-v1") for c in plan["cases"])
     require(config == manifest["config"] and plan["purpose"] == "phase11-known-trace-semantic-regression" and
@@ -122,6 +129,7 @@ def validate_main(config, rows, qa_path):
         path = (ROOT / name).resolve()
         require(path.is_relative_to(ROOT) and file_hash(path) == sha, "Historical usage inventory changed")
     prior, manifest = passing_known_regression(config.get("adopted_known_regression"))
+    require(version(policy) == version(manifest) == version(config), "Known/Main semantic adoption versions differ")
     candidate = yaml.safe_load(bound_path(policy.get("candidate_config")).read_text("utf-8"))
     ignored = {"study_version", "diagnostics"}
     require(isinstance(candidate, dict) and candidate.get("purpose") == prior.get("purpose") ==

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-review-single-final-candidate-development-preregistration",
+  "created_at_utc": "2026-10-23T08:44:41.141665+00:00",
+  "semantic_adoption_version": "support-binary-v2",
+  "candidate": {
+    "path": "configs/phase11_semantic_candidate_v20.yaml",
+    "sha256": "baa8c6f5b136d9964ba058736fc4ca242fe7f95f5996f9cc810c35945644225f"
+  },
+  "known_config": {
+    "path": "configs/phase11_known_trace_candidate_v10.yaml",
+    "sha256": "987a25bbe6c5ed99bd3d47713a2ba4fe940ccc5b626e7d86f5923cfa5ad89f9c"
+  },
+  "known_plan": {
+    "path": "configs/phase11_known_trace_regression_v10.json",
+    "sha256": "bb6e2afccdcee8ca4eebee45200ce9a1beb4e6a833385ebccf79b639779be119"
+  },
+  "preserved_handover": {
+    "path": "data/manifests/phase11_chat_handover_v1.json",
+    "sha256": "26996676fb91ffb191c05ec68657dd132c80e435934056bade742b1cd5afea45"
+  },
+  "preserved_handover_files_verified": 395,
+  "current_adoption_sources_changed_with_old_git_blobs_preserved": [
+    "src/rag_research/experiments/bilingual_finalization.py",
+    "src/rag_research/experiments/bilingual_main.py",
+    "src/rag_research/experiments/bilingual_semantics.py",
+    "src/rag_research/experiments/bilingual_statistics.py",
+    "src/rag_research/experiments/calibration_protocol.py",
+    "src/rag_research/experiments/semantic_diagnostics.py"
+  ],
+  "previous_recorded_all9b_attempts": 851,
+  "previous_unknown_responses": 2,
+  "old_limits_and_unused_not_reallocated": {
+    "ceiling": 920,
+    "unused": [
+      69,
+      42,
+      42,
+      81,
+      42
+    ]
+  },
+  "maximum_additional_candidates": 1,
+  "maximum_additional_completion_attempts": 188,
+  "maximum_cumulative_all9b_attempts": 1039,
+  "maximum_native_task_seconds": 14400,
+  "maximum_runtime_diagnostic_attempts_within_total": 24,
+  "allocated_calls": {
+    "runtime_smoke": 2,
+    "fresh_complete_known": 84
+  },
+  "unallocated_calls_not_automatically_usable": 102,
+  "runtime_smoke_targets": [
+    {
+      "case_id": "known-gpu-31e646aa9601",
+      "order": "original",
+      "claim_id": "c1"
+    },
+    {
+      "case_id": "known-warm-front",
+      "order": "original",
+      "claim_id": "c2"
+    }
+  ],
+  "runtime_smoke_selection_reason": "First is the old unknown CUDA-failed request; second checks an independent known table input. Full answer/evidence/prompt/schema unchanged, not a semantic gate.",
+  "time_enforcement": "Sequential supervised Native wall seconds (including startup/preflight/overhead) <=14400, a conservative upper bound on summed Task seconds; reserve 15s termination grace, timeout TERM then KILL. Before each launch subtract prior wall seconds. Per-call adopted timeout1200 unchanged. No request retry after timeout; preserve unknown raw/cost and audit without generation.",
+  "continuation": "Generation0 full input fit/full CUDA -> 2-call runtime smoke health -> one fresh complete 84-call known run. Any health error stops. Complete all known conditions for binary class coverage; adoption only after whole-run audit. No new model/sampler/prompt; reuse unchanged prior bilingual70 and format evidence.",
+  "prerequisite_reused": {
+    "report_path": "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/report.json",
+    "sha256": "37a873b11e9cb257463f2e2fdf77c2ec1ec3388032ef206c946da4a52b13bf28"
+  },
+  "inference_core_change": false,
+  "runtime_driver_OS_change": false,
+  "no_new_or_evaluation_qa_read": true,
+  "new_model_calls": 0,
+  "main_calibration_and_evaluation_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "new_protocol_files": {
+    "configs/phase11_known_trace_regression_v10.json": "bb6e2afccdcee8ca4eebee45200ce9a1beb4e6a833385ebccf79b639779be119",
+    "configs/phase11_known_trace_candidate_v10.yaml": "987a25bbe6c5ed99bd3d47713a2ba4fe940ccc5b626e7d86f5923cfa5ad89f9c",
+    "configs/phase11_main_development_execution_policy_v2.json": "36d29541089b9262d30bfdddaada13a4e194967eb40ffc4b94bd34244cf2974e",
+    "configs/phase11_bilingual_calibration_execution_rules_v2.json": "4460fe2491863ae92a76997f6cd29a378e53a1c67ec6f3e390116647cb63e2d0",
+    "configs/phase11_bilingual_freeze_decisions_v2.json": "b086a7e89e5343d69d947f1a430052c1cc2c68ba1c7e694de5629464bc003a9f"
+  }
+}

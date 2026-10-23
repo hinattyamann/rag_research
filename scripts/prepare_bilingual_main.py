@@ -162,6 +162,8 @@ def prepare(known_report, known_config, policy_path, selection_policy, assets, t
                     selection["languages"][language]["selected"], language, inputs["assets"]["path"],
                     inputs["execution_policy"], selection_binding, adoption, output.name)
                 config["main_limits"] = deepcopy(policy["limits_per_language"])
+                if "semantic_adoption_version" in policy:
+                    config["semantic_adoption_version"] = policy["semantic_adoption_version"]
                 checked = deepcopy(config)
                 checked["adopted_known_regression"] = copied_adoption
                 staged_path = staging / f"{language}.yaml"

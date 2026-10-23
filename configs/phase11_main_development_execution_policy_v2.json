@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-main-development-execution-policy",
+  "status": "preregistered",
+  "created_at_utc": "2026-10-23T08:44:41.140000+00:00",
+  "split": "development",
+  "count_per_language": 20,
+  "phase12_allowed": false,
+  "selection_manifest": {
+    "path": "data/manifests/phase11_main_development_selection_v1.json",
+    "sha256": "1b05b3834c9179522749a3b6ed7980b883591ad33b00e6e47de1ef29db486a2a"
+  },
+  "limits_per_language": {
+    "maximum_completion_attempts": 1660,
+    "maximum_new_qa_per_stage_session": 5,
+    "stop_on_any_task_error": true,
+    "automatic_refill": false
+  },
+  "limit_reason": "20*(1 initial + 1 rewrite + 9*(1 reader+8 fixed units))=1660; actual fixed units stay unchanged; reserve all missing raw tasks before a QA and stop without replacement if capacity is insufficient",
+  "batch_reason": "at most five new QA per stage/session permits checkpoints and resource measurement; repeat the same fixed manifest without repeating cached native requests",
+  "candidate_config": {
+    "path": "configs/phase11_semantic_candidate_v20.yaml",
+    "sha256": "baa8c6f5b136d9964ba058736fc4ca242fe7f95f5996f9cc810c35945644225f"
+  },
+  "known_regression_required": "New complete known15/42unit/30condition/84call binary-v2; no result claimed",
+  "health_gate": {
+    "selected_qa_completed_per_language": 20,
+    "maximum_task_errors": 0,
+    "maximum_input_overflow": 0,
+    "baseline_requires_actual_used_context": true,
+    "unknown_outcome_stops_without_resampling": true,
+    "missing_or_budget_stopped_qa_remain_in_manifest": true
+  },
+  "semantic_adoption_after_blind_seal": {
+    "ambiguous_units_excluded_only_from_accuracy_not_F": true,
+    "report_all_positive_negative_ambiguous_denominators": true,
+    "AI_expected_labels_frozen_before_internal_verdict_unblinding": true,
+    "minimum_complete_comparable_qa_per_language": 10,
+    "comparison_minimum_reason": "at least half of 20 source-diverse QA must have complete distinct-order and repeat comparisons for a usable feasibility estimate; not a power calculation or significance requirement",
+    "minimum_supported_recall": 0.9,
+    "minimum_negative_specificity": 0.9,
+    "minimum_unique_supported_units": 10,
+    "minimum_unique_negative_units": 5,
+    "minimum_supported_groups": 3,
+    "minimum_negative_groups": 3,
+    "missing_class_or_insufficient_coverage": "fail_without_refill",
+    "uncertainty": "document_group_bootstrap_10000_seed42"
+  },
+  "quality": {
+    "seal_all_candidates_both_languages_before_internal_unblinding": true,
+    "human_reviewed": false,
+    "assessor": "Codex AI",
+    "exact_model_identifier_available": false,
+    "history_isolated": false,
+    "unknown_quality_not_imputed": true,
+    "maximum_candidates_per_qa": 2
+  },
+  "time_policy": {
+    "hard_wall_limit_asserted": false,
+    "measure_each_stage_session_wall_time": true,
+    "prior_rough_generation_estimate_hours_for_both_languages": [
+      25.6,
+      33.8
+    ],
+    "external_annotation_audit_time_additional": true,
+    "estimate_scope": "Judge only, five units per QA; not wall-time bound/CI; other stages and review additional"
+  },
+  "decision": {
+    "threshold": 0.7,
+    "bare_refusal_policy": "rewrite_once",
+    "score_for_no_fixed_units": null
+  },
+  "do_not_claim": [
+    "main pilot completed from tests or selected IDs",
+    "fresh Calibration from reused Development",
+    "Gate11 from execution health only",
+    "Phase12 execution"
+  ],
+  "semantic_adoption_version": "support-binary-v2"
+}

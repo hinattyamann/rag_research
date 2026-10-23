@@ -8,6 +8,7 @@ from rag_research.data.japanese_dataset import REVISION, assign_splits
 from rag_research.data.study_assets import load_assets
 from rag_research.experiments import calibration_analysis, calibration_protocol
 from rag_research.experiments.frozen_trace import digest, require
+from rag_research.experiments.semantic_adoption import version
 from rag_research.experiments.storage import checkpoint, read_json, run_lock, verify_checkpoint
 from rag_research.retrieval.common import file_hash, verify_index
 
@@ -176,6 +177,8 @@ def sealed_evidence(decisions):
     require(protocol["main_inputs"] == decisions["main_inputs"] and protocol["main_certificate"] == decisions["main_certificate"],
             "Final main evidence differs from the evidence authorizing Calibration")
     main = calibration_protocol.verify_main(main_inputs, certificate)
+    require(version(main.get("semantics", {})) == version(current.get("semantics", {})) == version(decisions),
+            "Final/Main/Calibration semantic adoption versions differ")
     require(main["condition_sha256"] == current["statistics"]["condition_sha256"] == protocol["condition_sha256"],
             "Main and held-out Calibration conditions differ")
     return main, current

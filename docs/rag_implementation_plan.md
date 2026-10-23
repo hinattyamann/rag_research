@@ -1,14 +1,14 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.73 — 2026年10月23日 新基準設計と資源上限・引継ぎ
+## Version 8.74 — 2026年10月23日 二値意味採用の全経路実装・CUDA切分け
 
-[研究計画 Version 7.70](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.71](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 
-ユーザーの資源見直し・別チャット移行の依頼を受け、[新チャット引継ぎ](phase11_handover_2026-10-23.md)と[評価器/テスト/資源の見直し](phase11_evaluator_review_policy_v1.md)を保存した。無期限の最適化を終え、支持対非支持の意味検証を主にする新基準Versionを設計採用したが、Guard/Protocolの改訂は未実装で旧失敗の採否は変更しない。追加候補最大1個/新開発188試行またはNative Task4時間・診断24内数を別登録する方針。旧851試行/未知2/未使用69・42/42/81/42を保持し、現行v9はCUDA停止・全監査済み。Main各20/Cal各20と独立品質・費用・最終凍結は未了、Gate11未通過・Phase12未実施。本チャットGoalはpaused、稼働中Nativeなし。次チャットは[貼付用Goal](phase11_next_chat_prompt.md)で新しいGoalを設定し、保存物/新基準実装/Runtime原因調査から再開する。
+新しいGoalでPhase11を再開し、[支持対非支持の採用基準v2](phase11_binary_adoption_v2.md)をKnown→Main→Calibration→最終Validatorへ実装・事前登録した。支持Recall/非支持Specificity各0.90、異なる支持10文/非支持5文・各3 Groupを必要とし、不足は不通過・補充なし。旧v1拒否と旧851試行/未知2/未使用枠を保全する。追加候補最大1個/188試行・Task4時間/診断24内数の新枠へSmoke2+新鮮なKnown84を登録し、残102は未割当。保存395 Fileを照合（改訂した採用Sourceの旧版は固定Git Blobで検証）し、旧停止のKernel Watchdog/Xid8を確認したが根本原因は未確定。Driver/OS/Resetは変更していない。新規Nativeはこの記録時点で0、Main各20/Cal各20/独立品質・費用/最終凍結は未了、Gate11未通過・Phase12未実施。
 
-次実装は旧v1経路を保存した意味採用ProtocolのVersion化。Known/Main/Cal/最終Validatorで支持Recall/非支持Specificity各0.90・クラス被覆/不足時の扱いを一貫させる。C/NSのExpectedは保存し二値派生集計だけで扱い、Health失敗/未知は引き続き拒否する。旧v1の拒否、二値誤り/亜分類誤り/分母不足/不正な基準差替えをTestし、新Sourceで検証Manifestを更新してから新規QAへ進む。本書の設計だけでは実装済み/採用済みとしない。
+`semantic_adoption.py`でVersion選択、二値指標/三分類精度/クラス被覆/Group Bootstrapを共通化した。Known v10のPlan/Manifest/ReportとMain Policy/Config、Cal Rules/Config、最終Decisions/主/CalのVersion差を拒否する。旧v1拒否・C↔NS・二値誤り・クラス不足・Health/未知・旧前提をMainへ流用する不整合をTestし、実Known通過までは実主を許可しない。詳細と資源停止は[基準v2](phase11_binary_adoption_v2.md)。
 
 [温度0.2旧全回帰v9のCUDA停止](phase11_known_trace_direct_result_v9.md)を監査・正規保存した。固定9727409/session72566は3条件/15記録試行・14応答取得/未知1、Zidane元順序の実LogにCUDA launch timeout/応答前切断があり不採用。取得した会議14判定は確定12/12/支持10/10・誤支持0だが、全74/58精度null・残27条件未試行/69枠未使用を保持する。95 Source/元23 File不変・追加0、全15提出Schema/取得14 Native Schema・実Sampler/7組/全14理由/193点資源/実Main準備拒否を確認し、Raw26/全110 ArtifactをWT照合した。全9B記録851（Q4 317/Q5 317/Q6 217）・未知計2、今回未使用69と旧42/42/81/42/累積上限920・Retry0を保持。72566/23121は終了済みで再起動しない。次はGPU/Driver/Kernelと旧停止Logの原因調査で、根本原因や温度効果は未確定。新候補/新Native未登録、Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
 

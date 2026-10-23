@@ -106,6 +106,48 @@ def test_protocol_binds_complete_main_exact_reserved_groups_and_source_split_wit
         module.create(*args)
 
 
+def test_binary_calibration_rules_reject_legacy_main_even_before_inference(prerequisite):
+    from rag_research.experiments.semantic_adoption import BINARY, BINARY_RULES
+
+    args, _, _ = prerequisite
+    rules = read_json(args[4])
+    rules["semantic_adoption_version"] = BINARY
+    semantic = rules["semantic_adoption_after_blind_seal"]
+    for key in ("minimum_exact_label_accuracy_per_language", "minimum_supported_label_accuracy_per_language",
+                "maximum_definite_negative_false_support"):
+        semantic.pop(key)
+    semantic.update(BINARY_RULES)
+    write_json(args[4], rules)
+    with pytest.raises(ValueError, match="Main/Calibration adoption versions differ"):
+        module.create(*args)
+    assert not args[-1].exists()
+
+
+def test_binary_calibration_preserves_actual_main_version_in_both_language_configs(prerequisite):
+    from rag_research.experiments.semantic_adoption import BINARY, BINARY_RULES
+
+    args, state, root = prerequisite
+    rules = read_json(args[4])
+    rules["semantic_adoption_version"] = BINARY
+    semantic = rules["semantic_adoption_after_blind_seal"]
+    for key in ("minimum_exact_label_accuracy_per_language", "minimum_supported_label_accuracy_per_language",
+                "maximum_definite_negative_false_support"):
+        semantic.pop(key)
+    semantic.update(BINARY_RULES)
+    write_json(args[4], rules)
+    for run in state["main"]["source_runs"].values():
+        path = root / run["run"] / "manifest.json"
+        manifest = read_json(path)
+        manifest["config"]["semantic_adoption_version"] = BINARY
+        write_json(path, manifest)
+    module.create(*args)
+    protocol = read_json(args[-1] / "protocol.json")
+    for language in ("en", "ja"):
+        config = yaml.safe_load((args[-1] / ("config-" + language + ".yaml")).read_text())
+        assert config["semantic_adoption_version"] == BINARY
+        module.validate(config, root / protocol["runs"][language])
+
+
 @pytest.mark.parametrize("fault", ["main", "certificate", "selection", "rules", "overlap"])
 def test_failed_or_changed_prerequisites_never_create_an_execution_protocol(prerequisite, fault):
     args, state, root = prerequisite

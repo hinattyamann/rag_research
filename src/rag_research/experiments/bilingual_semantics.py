@@ -10,6 +10,7 @@ from rag_research.experiments.bilingual_main import validate_main_policy
 from rag_research.experiments.bilingual_statistics import condition
 from rag_research.experiments.frozen_trace import digest, require, validate_documents
 from rag_research.experiments.protocol import ROOT
+from rag_research.experiments.semantic_adoption import BINARY, LEGACY, version
 from rag_research.experiments.storage import read_json, run_lock, write_json
 from rag_research.retrieval.common import file_hash
 
@@ -120,11 +121,13 @@ def export_units(quality_bundle, output, language):
             "quality_packet_sha256": packet["quality_packet_sha256"], "internal_results_read": False}
 
 
-def semantic_counts(records, expected):
+def semantic_counts(records, expected, *, binary=False, groups=None):
     counts = {"planned_definite_unit_conditions": 0, "exact_correct": 0, "planned_supported_unit_conditions": 0,
               "supported_exact_correct": 0, "planned_definite_negative_unit_conditions": 0, "false_support_count": 0,
               "ambiguous_unit_conditions_retained_in_F": 0, "invalid_trial_conditions": 0, "complete_comparable_qa": 0,
               "unique_definite_units": 0, "unique_ambiguous_units": 0, "no_unit_qa": 0}
+    observations = []
+    healthy = True
     for record in records:
         identifier, evaluation = record["trace"]["record_id"], record["evaluation"]
         claims = evaluation["claims"]
@@ -142,10 +145,12 @@ def semantic_counts(records, expected):
         for trial in trials.values():
             task = record["tasks"]["judges"].get(trial["trial_id"])
             valid = task is not None and task["status"] == "ok"
+            healthy = healthy and (not claims or valid)
             predicted = {v["claim_id"]: v["label"] for v in task["parsed"]["verdicts"]} if valid else {}
             counts["invalid_trial_conditions"] += bool(claims and not valid)
             for claim in claims:
                 truth, actual = expected[identifier, claim["claim_id"]], predicted.get(claim["claim_id"])
+                observations.append(((groups or {}).get(identifier, identifier), (identifier, claim["claim_id"]), truth, actual))
                 if truth == "ambiguous":
                     counts["ambiguous_unit_conditions_retained_in_F"] += 1
                     continue
@@ -159,6 +164,10 @@ def semantic_counts(records, expected):
                     counts["false_support_count"] += actual == "supported"
     counts["exact_label_accuracy"] = counts["exact_correct"] / counts["planned_definite_unit_conditions"] if counts["planned_definite_unit_conditions"] else None
     counts["supported_label_accuracy"] = counts["supported_exact_correct"] / counts["planned_supported_unit_conditions"] if counts["planned_supported_unit_conditions"] else None
+    if binary:
+        from rag_research.experiments.semantic_adoption import summarize
+
+        counts["binary_adoption"] = summarize(observations, healthy=healthy)
     return counts
 
 
@@ -191,7 +200,7 @@ def sealed_inputs(inputs, *, analysis_split="development", allow_replay=False):
 
 def analyze_semantics(inputs, *, analysis_split="development", canonical_runs=None):
     sealed, frozen = sealed_inputs(inputs, analysis_split=analysis_split, allow_replay=canonical_runs is not None)
-    results, conditions, gates = {}, [], {}
+    results, conditions, gates, versions = {}, [], {}, []
     for paths, quality_packet, mapping, packet, labels in sealed:
         require(all(file_hash(p) == h for p, h in frozen.items()), "Sealed review changed")
         manifest, report, _ = bilingual_quality.validated_annotations(paths["run"], paths["quality_bundle"], paths["quality_annotations"])
@@ -214,6 +223,7 @@ def analyze_semantics(inputs, *, analysis_split="development", canonical_runs=No
         results[language] = semantic_counts(report["records"], expected)
         counts = results[language]
         gate = False
+        adoption_version = LEGACY
         scope = manifest["config"].get("execution_scope")
         if scope == "main_development_v1" or analysis_split == "calibration":
             binding = protocol["rules"] if analysis_split == "calibration" else manifest["config"]["main_execution_policy"]
@@ -222,19 +232,29 @@ def analyze_semantics(inputs, *, analysis_split="development", canonical_runs=No
             policy = read_json(policy_path)
             validate_main_policy(policy)
             rules = policy["semantic_adoption_after_blind_seal"]
+            adoption_version = version(policy)
+            require(adoption_version == version(manifest["config"]), "Run/policy semantic adoption versions differ")
+            binary = version(policy) == BINARY
+            if binary:
+                results[language] = counts = semantic_counts(report["records"], expected, binary=True,
+                    groups={r["record_id"]: r["document_group_id"] for r in manifest["selection"]})
+            semantic_passed = counts["binary_adoption"]["passed"] if binary else (
+                counts["exact_label_accuracy"] is not None and counts["supported_label_accuracy"] is not None and
+                counts["exact_label_accuracy"] >= rules["minimum_exact_label_accuracy_per_language"] and
+                counts["supported_label_accuracy"] >= rules["minimum_supported_label_accuracy_per_language"] and
+                counts["false_support_count"] <= rules["maximum_definite_negative_false_support"])
             gate = (report["selected_qa_count"] == len(report["records"]) == policy["count_per_language"] == 20 and
                     not report["failures"] and counts["invalid_trial_conditions"] == 0 and
-                    counts["exact_label_accuracy"] is not None and counts["supported_label_accuracy"] is not None and
-                    counts["exact_label_accuracy"] >= rules["minimum_exact_label_accuracy_per_language"] and
-                    counts["supported_label_accuracy"] >= rules["minimum_supported_label_accuracy_per_language"] and
-                    counts["false_support_count"] <= rules["maximum_definite_negative_false_support"] and
+                    semantic_passed and
                     counts["complete_comparable_qa"] >= rules["minimum_complete_comparable_qa_per_language"])
         gates[language] = gate
+        versions.append(adoption_version)
         conditions.append(condition(manifest))
     require(conditions[0] == conditions[1], "Semantic conditions must match across languages")
+    require(versions[0] == versions[1], "Bilingual semantic adoption versions differ")
     require(all(file_hash(p) == h for p, h in frozen.items()), "Sealed review changed during comparison")
     return {"purpose": f"sealed-bilingual-{analysis_split}-unit-semantic-audit-not-final-evaluation", "languages": results,
-            "analysis_split": analysis_split,
+            "analysis_split": analysis_split, "semantic_adoption_version": versions[0],
             "main_development_semantic_gate_per_language": gates if analysis_split == "development" else {},
             "main_development_semantic_gate_passed": analysis_split == "development" and all(gates.values()),
             "calibration_semantic_gate_per_language": gates if analysis_split == "calibration" else {},
