@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+最優先は[Q6旧全回帰v8の全不採用結果](phase11_known_trace_direct_result_v8.md)。61821/監査61124は終了済みで再生成しない。12条件/42 Call・Critical8/12・誤支持3、残18未試行。確定34/40/支持23/24で全74/58精度null、曖昧/F/理由断片を保持。95 Source/元59 File不変・追加Call/Server0、全42独立Schema/21組/全理由/6 QA Sourceと資源648点を監査し、Raw62/全144 Artifactを正規保存・WT照合した。Main準備CLIも正規不採用Reportを早期拒否/出力0。全9B記録試行756（Q4 317/Q5 317/Q6 122）/旧未知1・今回未使用42/旧42/81/42を保持。次は準備済みのtemperature0.2候補v20を別上限へ登録する。全154 Message/Model/Runtime/Prompt/全Expected/基準/Core27・実95 Sourceは不変、全761 Test（29.32秒）/Ruffまで成功したが、新条件のNative実走はまだ未実施。Main/予約Cal/最終凍結は未了。
+
 14:10 JSTにQ6旧回帰v8のTom元c5でNS→Sの確定誤支持1を確認した。radio/miniseriesをfilmへ広げており、現候補はMain基準未達。部分AI v3/元6 File不変をphase11_qwen35_q6_known_partial_failure_v1.jsonへ保存した。同じ61821は残る負例条件を登録どおり継続中で、全結果/実費は終了後に確定する。判定/基準を修復せず、Main/予約Calは開始しない。全終了後だけ全Raw/未知/失敗/未試行/追加0再開・独立Schema/全理由・Source/資源を監査して正規保存し、その証拠から次の候補を検討する。
 
 同じ回帰61821の稼働を継続確認し、先行Council/Zidane元逆4条件の全16最終理由・全20 Source Passageを部分AI確認した。全16入力Message/Schema/最終判定は親Q6の対応入力と同一で、曖昧Council c6元C/逆NS・両F5/7/不完全な末尾は維持する。実未完了Runを固定WTのMain準備関数がJSON入力/Lock/再検証/選定/Runner前で拒否し、ROOT Overrideなし・出力0・元20 File不変・実95 Source一致を確認した。全7 Artifactをphase11_qwen35_q6_known_main_pending_validation_v1.jsonへ保存しWT照合、追加推論/未使用QA読込み0。全回帰採否は未確定、同じHandleで継続観測し、終了後だけ全監査/正規保存へ進む。

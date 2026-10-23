@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-temperature-v20-preparation-validation-not-native-adoption",
+  "recorded_at_utc": "2026-10-23T05:46:31.366531+00:00",
+  "input_bindings": {
+    "configs/phase11_semantic_candidate_v19.yaml": {
+      "sha256": "bf99846483acb794e322515c17c1e20f4a25209c0020a8e4195da07f592598e5",
+      "size_bytes": 2179
+    },
+    "data/manifests/phase11_known_trace_result_v8.json": {
+      "sha256": "9505dc68acfae73583e1c6f59d281cef0a469f51c7075f1522f693eb1633bf2a",
+      "size_bytes": 39779
+    },
+    "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json": {
+      "sha256": "acadda5c012105a454b07ee95d406a217fe0aab8f498f3988bf44de36ebade65",
+      "size_bytes": 748
+    },
+    "configs/lab_cuda_runtime.json": {
+      "sha256": "05a49090315c85cce04dbcd6a07e311aeea04b1050f28cc456d57b154b5aaca4",
+      "size_bytes": 1061
+    },
+    "data/manifests/phase11_qwen35_q6_resource_estimate_v1.json": {
+      "sha256": "04a72e46260f52af46b552aa60dfcf0d226e42a2db06de148a2323207b5e44c1",
+      "size_bytes": 3826
+    }
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-q6-temperature-v20-preparation-v1/check_contract.py": {
+      "sha256": "de9b95cfffd8a28aba967bc0af6e34303d29a04ab47274f4349d4e0ab4ea8f7f",
+      "size_bytes": 5308
+    },
+    "data/runs/development_screening/phase11-q6-temperature-v20-preparation-v1/preparation_contract.json": {
+      "sha256": "29b70f8fb25a5789c9bcf5df9e88a9e21d59d6293814613275b73ac1f29cfbf7",
+      "size_bytes": 32732
+    },
+    "data/runs/development_screening/phase11-q6-temperature-v20-preparation-v1/project_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q6-temperature-v20-preparation-v1/pytest.txt": {
+      "sha256": "16a6a99eaac6740a7ac8733bfe7c7736994e06a54ca2476fdd216d7542006f68",
+      "size_bytes": 4627
+    },
+    "data/runs/development_screening/phase11-q6-temperature-v20-preparation-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q6-temperature-v20-preparation-v1/stderr.txt": {
+      "sha256": "23e0cc6efa1cd6534a25c872aaf45d56fd3e78b92d8b0c2a7dfb22588fd66d5d",
+      "size_bytes": 162
+    },
+    "data/runs/development_screening/phase11-q6-temperature-v20-preparation-v1/stdout.txt": {
+      "sha256": "76a303bd1a34246ac1da4b12e147efa4707c559423fcf4c2e845a51f195feeb9",
+      "size_bytes": 1143
+    },
+    "configs/phase11_semantic_candidate_v20.yaml": {
+      "sha256": "baa8c6f5b136d9964ba058736fc4ca242fe7f95f5996f9cc810c35945644225f",
+      "size_bytes": 2184
+    },
+    "docs/phase11_qwen35_q6_low_temperature_candidate.md": {
+      "sha256": "64f9ad670e9a73605826855e6d342968be881f5c10cf1e8c47dd43ac8ef7647a",
+      "size_bytes": 3387
+    }
+  },
+  "pytest_tool_session_id": 37701,
+  "pytest": "761 passed in 29.32s",
+  "project_ruff": "passed",
+  "helper_ruff": "passed",
+  "actual_loader_and_all_task_configs_valid": true,
+  "only_changes": [
+    "study_version",
+    "auxiliary_runtime.temperature"
+  ],
+  "old_temperature": 1.0,
+  "candidate_temperature": 0.2,
+  "all154_messages_unchanged": true,
+  "native_core27_and_actual95_sources_unchanged": true,
+  "all_original_expected_gates_ambiguous_and_refusals_unchanged": true,
+  "native_source_changed": false,
+  "parent_full_known_failure_audited_and_preserved": true,
+  "new_budget_registration_still_required": true,
+  "new_native_formal10_semantic70_conditional_known84_required": true,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "new_qa_rows_read": 0,
+  "candidate_adopted": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

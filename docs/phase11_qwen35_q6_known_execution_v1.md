@@ -1,5 +1,9 @@
 # Phase 11 Q6の旧全15 QA回帰v8
 
+14:36 JSTに61821は12条件/42 Call・Critical8/12/誤支持3で終了し、不採用となった。残18条件は未試行。
+監査61124/全42独立Schema・全理由/Sourceと資源648点を確認し、Raw62/全144 Artifactを正規保存・WT照合した。
+現在地は[全不採用結果と次工程](phase11_known_trace_direct_result_v8.md)を優先する。以下は各観測時点の履歴である。
+
 14:10 JST時点でTom元c5のNS→Sという確定誤支持1を確認した。根拠のradio/miniseriesをfilmまで拡張しており、
 現候補はMain採用基準を満たせない。残る負例条件は同じ61821で登録どおり継続し、全結果/実費は終了後に確定する。
 部分AI記録v3・完了6 File不変を`phase11_qwen35_q6_known_partial_failure_v1.json`へ保存した。

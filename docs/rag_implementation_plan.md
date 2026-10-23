@@ -1,10 +1,14 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.69 — 2026年10月23日 Q6全意味監査・旧全回帰v8の正の準備と登録
+## Version 8.70 — 2026年10月23日 Q6旧回帰v8の監査・低temperature候補v20
 
-[研究計画 Version 7.66](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.67](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
+
+[低temperature候補v20](phase11_qwen35_q6_low_temperature_candidate.md)を実Loader/全Taskで検証した。v19からStudy Version/補助temperature1.0→0.2だけが差分で、全154 Message・Model/Runtime/Prompt/予算/Seed/全Expected/基準とCore27/実95 Sourceは不変。全761 Test（29.32秒）/Ruff成功。新条件の生成0/新形式/意味/旧回帰はまだ未実施であり、新上限の事前登録後に固定WTで実行する。srcは変更しない。
+
+[Q6旧全回帰v8](phase11_known_trace_direct_result_v8.md)は12条件/42 Call・Critical8/12・誤支持3で終了/不採用、残18未試行。95 Source/元59 File不変・追加0、全42独立Schema/全理由/Source/648点資源を監査し、Raw62/全144 Artifactを正規保存・WT照合した。実Main準備も正規Reportを早期拒否し出力0。src/旧全対象/Expected/基準は不変で、temperatureだけを下げる別候補を準備中。Main/Cal/最終凍結は未了。
 
 262ba08の[固定WT/旧全回帰v8](phase11_qwen35_q6_known_execution_v1.md)へ1404 File Binding/57不変Hardlink/相対Symlink10・Offline58 Packageを再現。全84実入力/生成0・最大3927 Token/12k/全層CUDAと全14 Artifact保存/WT照合に成功した。Core27/新Q6形式37/親195も不変、追加形式Call0。同じWTで観測付き61821を開始し、終了後だけ監査/正規保存する。src/全Expected/基準は不変、採用/実Main/Cal/最終凍結は未了。
 

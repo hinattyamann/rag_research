@@ -1,11 +1,13 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月23日。正本: [研究計画7.66](rag_research_plan.md)、[実装計画8.69](rag_implementation_plan.md)。
+更新日: 2026年10月23日。正本: [研究計画7.67](rag_research_plan.md)、[実装計画8.70](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
+
+[Q6旧全回帰v8の不採用結果](phase11_known_trace_direct_result_v8.md)を保存した。固定262ba08/session61821は12条件/42 Call・Critical8/12・誤支持3で終了し、残18条件未試行。媒体の元S/逆C、暖鋒逆c1のS→C、語源元c1のNS→C/両c2の誤支持を保持し、確定34/40・支持23/24、全74/58精度nullとする。95 Source/元59 File不変・追加Call/Server0、全42独立Schema/21組・全理由/6 QA Sourceと資源648点/エラー0・最大GPU7674/8151 MiBを監査した。Raw62/全144 Artifactを正規保存・WT照合し、Main準備CLIも早期拒否/出力0。全9B記録試行756/旧未知1/今回未使用42・旧42/81/42を保持。次はtemperatureだけ1.0→0.2の候補v20を別上限へ登録する。全154 Message/全旧条件/基準/Core27・実95 Source不変、全761 Test（29.32秒）/Ruffまで確認したが、新候補のNative実走はまだ未実施。Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
 
 14:10 JSTに[Q6旧回帰v8](phase11_qwen35_q6_known_execution_v1.md)のTom元c5でNS→Sの確定誤支持1を確認した。radio/miniseriesをfilmへ広げており、現候補はMain基準未達。部分AI v3/元6 File不変をphase11_qwen35_q6_known_partial_failure_v1.jsonへ保存。同じ61821で残る負例条件を登録どおり継続し、全結果/実費は終了後に確定する。全Expected/基準/分母を維持し、Main/予約Calへ進まない。全終了後だけ全監査/正規保存を終えて次の候補を検討する。Gate 11未通過、Phase 12未実施。
 
