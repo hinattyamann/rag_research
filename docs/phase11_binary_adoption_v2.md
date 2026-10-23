@@ -59,3 +59,9 @@ Smokeの初回Zidane c1は正常終了（3793入力/4246出力/86.475462 Task秒
 元と同じ全文/文書のc2を通常のclaimwiseと同じ局所c1へ写して、未送信分1回だけ新Commit/新Runで継続する。
 成功済み初回を再生成せず、全Src91 File・候補/Prompt/Sampler/基準と188/14400/86の上限を維持する。
 訂正用の共有Ledgerも元消費秒を差し引く。新鮮なKnown84の実採用は引き続き未了。
+
+その後、903f4cfをCommit/通常Push・Remote一致し、新固定WTで未送信Smoke1回を正常終了した。
+元成功1+新成功1=2 Call/未知0、入力7197/出力8500 Token、Task秒和173.264229秒。
+全2 Native Schema/Sampler/全回帰と同じ全文Payloadを独立に照合し、12 Raw Artifactを正規保存した。
+正本は`data/manifests/phase11_binary_smoke_result_v1.json`。共有消費225.012950壁秒を保持し、
+同固定WTの新Known v10/84 Callを実行中。Smoke成功を完全回帰採用・Runtime根本原因解決とは扱わない。

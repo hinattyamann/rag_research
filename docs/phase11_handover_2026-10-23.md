@@ -4,9 +4,13 @@
 工程の正本は[research_roadmap.md](research_roadmap.md)。長い日誌/過去の引継ぎは履歴であり、必要な箇所だけ参照する。
 新チャット用の貼付文は[phase11_next_chat_prompt.md](phase11_next_chat_prompt.md)。
 
-2026-10-23の再開追記: [基準v2の実装と新回帰登録](phase11_binary_adoption_v2.md)を追加した。
-旧v1/旧Runを保全し、全780 Test/Ruff・未達拒否を確認。新しいNative実行先は同資料と最新ロードマップを使う。
-以下の「新基準未実装」「新枠未登録」は移行時点の履歴である。
+2026-10-23再開の最新: [基準v2](phase11_binary_adoption_v2.md)を実装し、全782 Test/Ruff成功。
+固定9bfe78dの生成0/全84入力/全CUDA→903f4cfで送信前ミスの未送信分だけを訂正→Smoke計2 Call/未知0に通過。
+**新Known v10を固定903f4cfで実行中**。WTは`.tools/worktrees/phase11-binary-v10-recovery`、
+Runは`data/runs/semantic_diagnostics/phase11-binary-v10-known`、共有台帳はWT内の
+`data/runs/development_screening/phase11-review-budget-recovery-v1/ledger.json`。再起動/別Runへの再試行はしない。
+Known完了・全監査後にHealthとv2意味基準を確認するまでMainへ進めない。
+以下の旧Session終了/新基準未実装/新枠未登録は移行時点の履歴。現在地はロードマップと本追記を優先する。
 
 ## 1. 今回の依頼と引継ぎの意味
 
