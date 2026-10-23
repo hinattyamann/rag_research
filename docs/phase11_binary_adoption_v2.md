@@ -50,3 +50,12 @@ RC Watchdog/Xid8を確認した。Xid8は「GPU停止」、初動はアプリ再
 同日07:27:15 UTCにNVRM割当失敗もあるが、時間差があり停止の直接原因とは断定しない。
 ホストではGPUを認識し、sandbox内の`/dev/nvidia*`非公開による接続失敗と区別した。
 Driver/OS設定/Reset/再起動は実施せず、同じ条件の新プロセスで生成0→2 Smoke→完全回帰の順に検証する。
+
+2026-10-23 18:03 JST追記: 固定9bfe78dの生成0で全84入力/最大3927 Token/全CUDAに通過。
+Smokeの初回Zidane c1は正常終了（3793入力/4246出力/86.475462 Task秒）。
+2回目の暖鋒c2はGlobal c2を単独で渡したSmokeコードの連番検証で、Native送信・Task Journal作成の前に停止した。
+これはRuntime/意味不適合ではなくオーケストレーションの実装ミス。停止Run/Log/最初の成功/元Ledgerを保全し、
+`phase11_review_smoke_recovery_v1.json`に消費122.924029壁秒・新Native1/未知0と未送信の証拠を固定した。
+元と同じ全文/文書のc2を通常のclaimwiseと同じ局所c1へ写して、未送信分1回だけ新Commit/新Runで継続する。
+成功済み初回を再生成せず、全Src91 File・候補/Prompt/Sampler/基準と188/14400/86の上限を維持する。
+訂正用の共有Ledgerも元消費秒を差し引く。新鮮なKnown84の実採用は引き続き未了。

@@ -6,7 +6,7 @@
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 
-新しいGoalでPhase11を再開し、[支持対非支持の採用基準v2](phase11_binary_adoption_v2.md)をKnown→Main→Calibration→最終Validatorへ実装・事前登録した。支持Recall/非支持Specificity各0.90、異なる支持10文/非支持5文・各3 Groupを必要とし、不足は不通過・補充なし。旧v1拒否と旧851試行/未知2/未使用枠を保全する。追加候補最大1個/188試行・Task4時間/診断24内数の新枠へSmoke2+新鮮なKnown84を登録し、残102は未割当。保存395 Fileを照合（改訂した採用Sourceの旧版は固定Git Blobで検証）し、旧停止のKernel Watchdog/Xid8を確認したが根本原因は未確定。Driver/OS/Resetは変更していない。新規Nativeはこの記録時点で0、Main各20/Cal各20/独立品質・費用/最終凍結は未了、Gate11未通過・Phase12未実施。
+新しいGoalでPhase11を再開し、[支持対非支持の採用基準v2](phase11_binary_adoption_v2.md)をKnown→Main→Calibration→最終Validatorへ実装・事前登録した。支持Recall/非支持Specificity各0.90、異なる支持10文/非支持5文・各3 Groupを必要とし、不足は不通過・補充なし。旧v1拒否と旧851試行/未知2/未使用枠を保全する。追加候補最大1個/188試行・Task4時間/診断24内数の新枠へSmoke2+新鮮なKnown84を登録し、残102は未割当。保存395 Fileを照合（改訂した採用Sourceの旧版は固定Git Blobで検証）し、旧停止のKernel Watchdog/Xid8を確認したが根本原因は未確定。Driver/OS/Resetは変更していない。固定9bfe78dの生成0/全84入力/全CUDAは通過。Smoke初回1 Nativeが正常終了し、2回目は送信前の文ID処理ミスで停止した。旧停止/消費122.924秒/Native1を保全し、推論Core91 File不変のまま未送信2回目だけを訂正継続する別記録を保存した。Main各20/Cal各20/独立品質・費用/最終凍結は未了、Gate11未通過・Phase12未実施。
 
 `semantic_adoption.py`でVersion選択、二値指標/三分類精度/クラス被覆/Group Bootstrapを共通化した。Known v10のPlan/Manifest/ReportとMain Policy/Config、Cal Rules/Config、最終Decisions/主/CalのVersion差を拒否する。旧v1拒否・C↔NS・二値誤り・クラス不足・Health/未知・旧前提をMainへ流用する不整合をTestし、実Known通過までは実主を許可しない。詳細と資源停止は[基準v2](phase11_binary_adoption_v2.md)。
 

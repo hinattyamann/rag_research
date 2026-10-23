@@ -8,7 +8,7 @@
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
-新しいGoalでPhase11を再開し、[支持対非支持の採用基準v2](phase11_binary_adoption_v2.md)をKnown→Main→Calibration→最終Validatorへ実装・事前登録した。支持Recall/非支持Specificity各0.90、異なる支持10文/非支持5文・各3 Groupを必要とし、不足は不通過・補充なし。旧v1拒否と旧851試行/未知2/未使用枠を保全する。追加候補最大1個/188試行・Task4時間/診断24内数の新枠へSmoke2+新鮮なKnown84を登録し、残102は未割当。保存395 Fileを照合（改訂した採用Sourceの旧版は固定Git Blobで検証）し、旧停止のKernel Watchdog/Xid8を確認したが根本原因は未確定。Driver/OS/Resetは変更していない。新規Nativeはこの記録時点で0、Main各20/Cal各20/独立品質・費用/最終凍結は未了、Gate11未通過・Phase12未実施。
+新しいGoalでPhase11を再開し、[支持対非支持の採用基準v2](phase11_binary_adoption_v2.md)をKnown→Main→Calibration→最終Validatorへ実装・事前登録した。支持Recall/非支持Specificity各0.90、異なる支持10文/非支持5文・各3 Groupを必要とし、不足は不通過・補充なし。旧v1拒否と旧851試行/未知2/未使用枠を保全する。追加候補最大1個/188試行・Task4時間/診断24内数の新枠へSmoke2+新鮮なKnown84を登録し、残102は未割当。保存395 Fileを照合（改訂した採用Sourceの旧版は固定Git Blobで検証）し、旧停止のKernel Watchdog/Xid8を確認したが根本原因は未確定。Driver/OS/Resetは変更していない。固定9bfe78dの生成0/全84入力/全CUDAは通過。Smoke初回1 Nativeが正常終了し、2回目は送信前の文ID処理ミスで停止した。旧停止/消費122.924秒/Native1を保全し、推論Core91 File不変のまま未送信2回目だけを訂正継続する別記録を保存した。Main各20/Cal各20/独立品質・費用/最終凍結は未了、Gate11未通過・Phase12未実施。
 
 研究目的/仮説/実QAの順序反復設計は維持し、採用の意味指標をScoreに対応させる設計改訂。支持Recall/非支持Specificity各0.90という新設計は今後の別Protocolへだけ適用し、旧の誤支持0・完全一致基準での不採用結果を保持する。全経路実装・Test/事前登録に加え、新鮮な全Known回帰のHealth・意味採用がそろうまでMainへ進めない。
 

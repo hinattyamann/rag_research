@@ -20,7 +20,7 @@ NAMES = {"preflight": "data/runs/model_screening/phase11-binary-v10-preflight",
          "known": "data/runs/semantic_diagnostics/phase11-binary-v10-known"}
 
 
-def run(stage):
+def run(stage, *, recover_unsent_smoke=False):
     require(Path.cwd().resolve() == ROOT, "Run from the fixed checkout")
     require(not subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True).strip(),
             "Commit all code/configuration changes before Native execution")
@@ -29,7 +29,20 @@ def run(stage):
     for field in ("known_config", "candidate", "known_plan"):
         binding = registration[field]
         require(file_hash(ROOT / binding["path"]) == binding["sha256"], "Registered final candidate changed")
-    ledger_root = ROOT / "data/runs/development_screening/phase11-review-budget-v1"
+    names, prior_seconds = NAMES, 0
+    if recover_unsent_smoke:
+        from run_review_runtime_smoke import recovery_proof
+
+        proof = recovery_proof()
+        prior_seconds = proof["prior_wall_seconds_consumed"]
+        prior = read_json(ROOT / proof["old_ledger"])
+        require(prior["wall_seconds_used"] == prior_seconds and len(prior["stages"]) == 2 and
+                prior["stages"][0]["status"] == "passed" and prior["stages"][1]["status"] == "failed_or_unknown",
+                "Preserve the original conservative time consumption and failed stage")
+        names = {"smoke": "data/runs/runtime_screening/phase11-binary-v10-smoke-recovery", "known": NAMES["known"]}
+    require(stage in names, "Preflight already passed; do not repeat stages during recovery")
+    ledger_root = ROOT / ("data/runs/development_screening/phase11-review-budget-recovery-v1" if recover_unsent_smoke
+                          else "data/runs/development_screening/phase11-review-budget-v1")
     with run_lock(ledger_root):
         ledger_path = ledger_root / "ledger.json"
         ledger = read_json(ledger_path) if ledger_path.exists() else {
@@ -38,24 +51,27 @@ def run(stage):
             "fixed_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
             "previous_all9b_calls": 851, "previous_unknown": 2,
             "hard_call_ceiling": 188, "allocated_call_ceiling": 86, "hard_seconds_ceiling": 14400,
+            "prior_wall_seconds_consumed": prior_seconds, "prior_new_calls": 1 if recover_unsent_smoke else 0,
             "wall_time_conservatively_includes_non_native_overhead": True}
         require(ledger["registration_sha256"] == file_hash(registration_path) and
                 ledger["fixed_commit"] == subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
                 "Keep the same registration and fixed commit across all three stages")
-        require([s["stage"] for s in ledger["stages"]] == list(NAMES)[:list(NAMES).index(stage)] and
+        require([s["stage"] for s in ledger["stages"]] == list(names)[:list(names).index(stage)] and
                 all(s["status"] == "passed" for s in ledger["stages"]),
                 "No retries, duplicate stages or expansion after a failure/unknown stage")
-        remaining = ledger["hard_seconds_ceiling"] - sum(s["wall_seconds"] for s in ledger["stages"])
+        remaining = ledger["hard_seconds_ceiling"] - prior_seconds - sum(s["wall_seconds"] for s in ledger["stages"])
         require(remaining > 15, "Shared four-hour budget exhausted")
         config = registration["known_config"]["path"]
         if stage == "smoke":
-            native = [sys.executable, str(ROOT / "scripts/run_review_runtime_smoke.py"), "--output-dir", NAMES[stage]]
+            native = [sys.executable, str(ROOT / "scripts/run_review_runtime_smoke.py"), "--output-dir", names[stage]]
+            if recover_unsent_smoke:
+                native.append("--remaining-only")
         else:
             native = [sys.executable, str(ROOT / "scripts/observe_native_resources.py"), "--kind",
                 "preflight" if stage == "preflight" else "semantic", "--config", config,
-                "--output-dir", NAMES[stage], "--observations", "data/runs/resource_observation/phase11-binary-v10-" + stage]
+                "--output-dir", names[stage], "--observations", "data/runs/resource_observation/phase11-binary-v10-" + stage]
         command = ["timeout", "--signal=TERM", "--kill-after=10s", f"{remaining - 15:.3f}s", *native]
-        require(not (ROOT / NAMES[stage]).exists(), "Preserve all previous Native outputs")
+        require(not (ROOT / names[stage]).exists(), "Preserve all previous Native outputs")
         entry = {"stage": stage, "status": "started", "started_at_utc": datetime.now(UTC).isoformat(),
                  "remaining_seconds_before": remaining, "command": command}
         ledger["stages"].append(entry)
@@ -65,7 +81,7 @@ def run(stage):
             result = subprocess.run(command, cwd=ROOT, stdout=stream, stderr=subprocess.STDOUT, start_new_session=True, check=False)
         entry.update(wall_seconds=time.perf_counter() - started, returncode=result.returncode,
                      finished_at_utc=datetime.now(UTC).isoformat(), status="failed_or_unknown")
-        report_path = ROOT / NAMES[stage] / "report.json"
+        report_path = ROOT / names[stage] / "report.json"
         if result.returncode == 0 and report_path.is_file():
             report = read_json(report_path)
             passed = report.get({"preflight": "status", "smoke": "runtime_health_passed",
@@ -73,7 +89,7 @@ def run(stage):
             if passed is True or stage == "preflight" and passed == "passed":
                 entry["status"] = "passed"
             entry["report_sha256"] = file_hash(report_path)
-        ledger["wall_seconds_used"] = sum(s["wall_seconds"] for s in ledger["stages"])
+        ledger["wall_seconds_used"] = prior_seconds + sum(s["wall_seconds"] for s in ledger["stages"])
         ledger["no_request_retry"] = True
         ledger["gate11_passed"] = ledger["phase12_allowed"] = False
         write_json(ledger_path, ledger)
@@ -84,4 +100,6 @@ def run(stage):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", required=True, choices=NAMES)
-    sys.exit(run(parser.parse_args().stage))
+    parser.add_argument("--recover-unsent-smoke", action="store_true")
+    args = parser.parse_args()
+    sys.exit(run(args.stage, recover_unsent_smoke=args.recover_unsent_smoke))
