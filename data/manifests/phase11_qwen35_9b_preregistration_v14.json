@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-context12k-v18-whole-known15-v7-conditional-budget-registration",
+  "created_at_utc": "2026-10-23T00:58:35.659194+00:00",
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v7.yaml",
+    "sha256": "5599be44906627ce4cfcfdf69e98509f5c540bacd9a11ef59c3873a22ca10d8a",
+    "size_bytes": 2178
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v7.json",
+    "sha256": "585e8a0e1e8e19b7762fa46efaae24dd89a4b86b7157d1a603c6cf7b2fb81e13",
+    "size_bytes": 140808
+  },
+  "parent_preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v13.json",
+    "sha256": "7abe54e55f2d2f98dc69a82bec00464362de34f7778e8b8e1bc27ea54da41100",
+    "size_bytes": 6483
+  },
+  "parent_complete_diagnostic": {
+    "path": "data/manifests/phase11_context12k_semantic_result_v1.json",
+    "sha256": "f21ef388c28783d1843b92b3ad40c145f39946672c26bcd70bf7d901ff078e36",
+    "size_bytes": 50825
+  },
+  "positive_preparation": {
+    "path": "data/manifests/phase11_context12k_known_preparation_validation_v1.json",
+    "sha256": "eca298c9a591a73c73ae9b1104b09047163175254a3966e14f9524d694d3d608",
+    "size_bytes": 3775
+  },
+  "model_manifest": {
+    "path": "data/manifests/phase11_auxiliary_qwen35_9b_q5_manifest_v1.json",
+    "sha256": "a46d1b75a50832c036a1d92735d31969d7181c996bde5fcccccd306b4ff5ef00"
+  },
+  "fresh_format_result": {
+    "path": "data/manifests/phase11_context12k_format_result_v1.json",
+    "sha256": "3a74e5098c2a6c033f93dd75f4dda81602d08c16a9ae93452834e4a4d93c9da5",
+    "size_bytes": 9074
+  },
+  "native_core_and_probe_sha256": {
+    "src/rag_research/evaluation/__init__.py": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b",
+    "src/rag_research/evaluation/claims.py": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602",
+    "src/rag_research/evaluation/claimwise.py": "2d0045aad140d869aef2ac279cbca3df50cfa7c320d1b06a553904aa29d9b617",
+    "src/rag_research/evaluation/judge.py": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2",
+    "src/rag_research/evaluation/order.py": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e",
+    "src/rag_research/evaluation/quote_alignment.py": "a9bc408e05d9fa25c0902b13b7e70d2e2eb7d3402ba4b10c24184d43759b88bb",
+    "src/rag_research/evaluation/reasoned_json.py": "5c6b089e9442d8f23783aaa5afc4c9a9744d9a617ac8ea7064eff47fbc219830",
+    "src/rag_research/evaluation/reasoning_budget.py": "f9f933dd20b73e51c15aae87c43dc5e50e22b8c4624f9857c2cb13029b6d91ec",
+    "src/rag_research/evaluation/schema.py": "616619fe28b913a309a6676415b2a8d8eb36afa0ddaef0ccb77e214e109a3b42",
+    "src/rag_research/evaluation/sentence_claims.py": "a0a3715ab7f1c3b0b8d7766e779c716efc133822a20c524bab1ca8e09d47a0a5",
+    "src/rag_research/evaluation/source_reading.py": "ebc5ace62451eb4d8fcdc4380d16be6c0eead9f22d28de6fd96d3f4aac72f693",
+    "src/rag_research/evaluation/tasks.py": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+    "src/rag_research/experiments/frozen_trace.py": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4",
+    "src/rag_research/experiments/protocol.py": "e5738106f7409313cd27fd052eae61779b40b112c22ec3d299c7932aa52ce3cf",
+    "src/rag_research/experiments/storage.py": "073f4c89dca883fd0f5c3ab900c722361c720a3cb607faa9903190c15b272165",
+    "src/rag_research/generation/__init__.py": "33c1d27b63c42955f7e025298bd2347fbc8cf5afc57216d35516e7701e0e421a",
+    "src/rag_research/generation/artifacts.py": "bb70ba77b944ecc23a07cc1865a3fafeee610dcd453caebc5a77b8fe79fc44b5",
+    "src/rag_research/generation/auxiliary.py": "b702f4762d8da7e892486c1096b7f8c60dabf4d93dd9c3722a8a0904d893c410",
+    "src/rag_research/generation/auxiliary_config.py": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+    "src/rag_research/generation/config.py": "9a641357a2767322e97d8ee224b2f7d2d0c7bda0a3ff21f7f684fc329175b60e",
+    "src/rag_research/generation/context.py": "a86c5fda1a1d7747d3ce9087a732b70e700802b6142e4e5db6adeb1a64b6a63c",
+    "src/rag_research/generation/cuda_runtime.py": "b21d13c790071fde655aa6c3601eaf91fc609b842fcdc11725e96e9c641731f9",
+    "src/rag_research/generation/generator.py": "3ece4c433d2dec54b4c07dc0b95e42f78a2debde1349ab67d7d852445f9226a1",
+    "src/rag_research/generation/json_grammar.py": "c1355a13afa204b8ae1362a87cd928116f180ee07dc8b208e29c91a86bf04c46",
+    "src/rag_research/generation/local.py": "271494fa62fa30f40f73e43ff1f2e9de3c5b801cd2baab83d9adc5eb7c7d3feb",
+    "src/rag_research/generation/smoke.py": "469dd916567aac7d247dea606f5e885685f3c91d62e79dae683c8f7fa75a063a",
+    "scripts/probe_final_json_boundary.py": "61a903ffb2b65e5b23763fc3be620347ca43148e3ab7a89f5c2946090370663c"
+  },
+  "same_model_runtime_prompts_full_inputs_budgets_sampling_seed_schema_and_all_original_expected_gates": true,
+  "full_parent_replayed_on_copy": true,
+  "whole_old_qa": 15,
+  "whole_old_fixed_units": 42,
+  "whole_old_conditions": 30,
+  "all_source_bindings": 25,
+  "bare_refusals_retained_separately": 8,
+  "maximum_new_calls": 84,
+  "automatic_retries": 0,
+  "maximum_cumulative_all_9b_calls": 676,
+  "new_calls_at_registration": 0,
+  "launch_order": [
+    "Commit and Push actual parent evidence and this whole unchanged registration",
+    "New fixed checkout, all Source/Model/Runtime hashes and reused Q5 native proof",
+    "All 84 actual inputs with zero completions and full CUDA offload",
+    "Same complete known 15 QA; first all 12 critical conditions/42 calls must pass before remaining 18 positive conditions",
+    "Only after every old gate passes: fresh main policy and actual Development; no early reserved Calibration"
+  ],
+  "all_old_failed_runs_immutable": true,
+  "main_or_reserved_calibration_or_evaluation_new_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "prior_known_v5_unused_42_calls_not_reallocated": true,
+  "previous_recorded_Q4_call_attempts": 317,
+  "previous_recorded_Q5_call_attempts": 275,
+  "previous_recorded_all9b_call_attempts": 592,
+  "prior_v18_formal10_and_semantic70_completed": true,
+  "budget_draws_only_the_conditional_84_already_registered_in_v13": true,
+  "parent_164_call_cap_not_expanded": true,
+  "prior_v6_unknown1_and_unused81_not_filled_or_reallocated": true,
+  "context_tokens": 12288,
+  "observation_interval_seconds": 5,
+  "resource_observer": {
+    "path": "scripts/observe_native_resources.py",
+    "sha256": "900ca7483d26ba07c6d46526007ff379817f8de99320ce1400e080533366e89e",
+    "size_bytes": 8865
+  },
+  "full_parent_semantic_resource_audit": {
+    "path": "data/runs/development_screening/phase11-context-v18-semantic-audit-v1/semantic_resource_audit.json",
+    "sha256": "996e772b375731cf7908a537431d71a4be5a2ff7d982d003a83a41f4bef2852d",
+    "size_bytes": 1489
+  }
+}

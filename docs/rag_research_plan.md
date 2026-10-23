@@ -1,10 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.62 — 2026年10月23日 全文を保つ12k Context候補を別登録
+## Version 7.63 — 2026年10月23日 12k全意味診断と旧全回帰v7を保存
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.64](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.65](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
@@ -13,7 +13,7 @@ Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 
 
 
-[12k Context資源候補v18](phase11_context12k_candidate.md)を別登録した。旧v6の停止/未知1/未試行29条件と全34 Artifactは958ac94へ保存済み。同じQ5/Runtime Binary/日英Prompt v11/全文/出力6144/推論4096・Sampler/Seed/全対象/Expected/基準を保ち、Study VersionとContext24576→12288だけを変更する。実Loader/Identity、意味70+旧全回帰84の全154 Messages一致、旧Tokenizerの最大3927+出力予約が12kに収まることを確認した。Native Core27と旧失敗34/全意味153 Artifactは不変。新しい資源観測CLIは5秒ごとのGPU/RAM/Native子孫RSSを保存し、欠測/子起動失敗/終了Codeと観測の限界を保持する。新規10件を含む全750 Test（29.68秒）/Ruffに成功、実GPU/RAMの1点観測エラー0・追加Model Call0。事前登録v13は新条件の形式10+意味70+通過時の同じ旧全回帰84=最大164/Retry0、既存試行512/累積上限676を別登録し、旧未使用81/42を再割当てしない。固定5c8b8b0の新WTへ865 File Binding/56不変Hardlink/内部相対Symlink10・Offline58 Packageを配置。全70入力/生成0・最大3793 Token/12k/全層CUDAに通過し、Runtime一点6872/8151 MiBと5秒観測の短区間見逃しも保存した。新形式10 Call/全9 Strict条件が通過、入力630/出力1802・生成35.354127秒、92 Source/再読14 File不変・追加0、全32 Artifactを保存した。同じWTで全意味58条件/70 Callを観測付きsession74326として開始した。[実行記録](phase11_context12k_execution_v1.md)を再開先とし、全意味採否は未確定。主/Cal採用・最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
+[12k全意味診断と旧全回帰v7](phase11_context12k_semantic_result_v1.md)を保存した。固定5c8b8b0/session74326は全58条件/70 Callを正常終了し、Critical4/4・人工英語24/24・日本語28/30・誤支持0で元基準を満たした。全58条件の判定/理由/引用/Fは元24kと同一で、意味改善を主張しない。限定なし由来主張の不一致2件/曖昧/理由断片を保持した。入力140500/出力181440 Token・Task秒和3301.218210秒、95 Source/再開133 File不変・追加Call/Server0、全70 Native JSONの独立Schema/35組不変・全理由確認を保存。資源663点/取得エラー0・観測最大GPU6926/8151 MiB/最小Host Available4344584 KiBを再計算し、連続Peak/因果/安定性保証としない。Raw136/全182 Artifactを正規保存・WTとByte照合した。親136 Fileのコピー上で全前提を再検証し、同じ旧全15 QA/42文/30条件・84 Call/Source25/Expected/基準/裸拒否8をv7へ結んだ。全750 Test（29.14秒）/Ruffも成功。事前登録v14は元v13の条件付き84だけで、記録試行592/累積上限676・Retry0/旧未知1・旧未使用81/42を保持する。新回帰の固定WT/全84入力生成0/実走は未了。主/Cal採用・最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
 
 以下は各作業時点の履歴であり、稼働中Session・採用状況・次の操作は上の最新記録を優先する。
 

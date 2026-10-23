@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-context12k-v18-known-v7-positive-preparation-not-regression-adoption",
+  "recorded_at_utc": "2026-10-23T00:58:35.658142+00:00",
+  "helper_tool_session_id": 12627,
+  "receipt": {
+    "created_at_utc": "2026-10-23T00:56:55.588462+00:00",
+    "prior_run_files_unchanged": 136,
+    "prior_diagnostic_replayed_on_copy": true,
+    "plan_sha256": "585e8a0e1e8e19b7762fa46efaae24dd89a4b86b7157d1a603c6cf7b2fb81e13",
+    "config_sha256": "5599be44906627ce4cfcfdf69e98509f5c540bacd9a11ef59c3873a22ca10d8a",
+    "qa": 15,
+    "fixed_units": 42,
+    "conditions": 30,
+    "maximum_calls": 84,
+    "new_model_calls": 0,
+    "new_servers": 0,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "all_original_cases_sources_expected_gates_ambiguous_and_refusals_unchanged": true,
+  "source_bindings_verified": 25,
+  "candidate_changes_only_study_version_and_diagnostics": true,
+  "context_tokens": 12288,
+  "parent_semantic_result": {
+    "path": "data/manifests/phase11_context12k_semantic_result_v1.json",
+    "sha256": "f21ef388c28783d1843b92b3ad40c145f39946672c26bcd70bf7d901ff078e36",
+    "size_bytes": 50825
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/check_pending.py": {
+      "sha256": "0ce1265fae35816ae8c1ad246a13d087776ec39b789a5149be90f6cb02229ecd",
+      "size_bytes": 3196
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/pending_rejection.json": {
+      "sha256": "4ebba5adec2d654cf4cc1ed0b0d0f54e1f6dc51260ff71129348b39c464b2529",
+      "size_bytes": 1367
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/pending_stderr.txt": {
+      "sha256": "2914107ef01d4fb6f80780119f3874bdc551adf1a24f52463f1a9b7f946dc007",
+      "size_bytes": 691
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/pending_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/positive_stderr.txt": {
+      "sha256": "b8f5f5452e8f9ff8867cf14bb618023753d52300b628288b0b5c2ceb8e6e3957",
+      "size_bytes": 162
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/positive_stdout.txt": {
+      "sha256": "d41093a0fa5e29803e9b35aa9915ed0130de5af6142c5a5f03147b8db409396b",
+      "size_bytes": 458
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/preparation.json": {
+      "sha256": "e453a2e7f90d619f8fba63a88d2d6ee6751261a1e0c91fa453fc5cc3d3c7d214",
+      "size_bytes": 486
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/prepare.py": {
+      "sha256": "5f331d524f7fa334717ea00e818a0ab3a491755390a4075d241ce0d3cd8a9d3b",
+      "size_bytes": 6142
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/syntax.txt": {
+      "sha256": "cd0da3e644e1ddd47c307f342042ab1010eacab3f5eb953802c1504714740b22",
+      "size_bytes": 65
+    }
+  },
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v7.yaml",
+    "sha256": "5599be44906627ce4cfcfdf69e98509f5c540bacd9a11ef59c3873a22ca10d8a",
+    "size_bytes": 2178
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v7.json",
+    "sha256": "585e8a0e1e8e19b7762fa46efaae24dd89a4b86b7157d1a603c6cf7b2fb81e13",
+    "size_bytes": 140808
+  },
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "product_source_changed": false,
+  "native_regression_not_started": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

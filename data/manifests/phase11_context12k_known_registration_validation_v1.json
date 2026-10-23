@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-context12k-known-v7-registration-validation-not-native-adoption",
+  "recorded_at_utc": "2026-10-23T01:01:02.336916+00:00",
+  "pytest_tool_session_id": 63594,
+  "pytest": "750 passed in 29.14s",
+  "ruff": "passed",
+  "audit_helpers_ruff": "passed",
+  "contract": {
+    "recorded_at_utc": "2026-10-23T01:01:02.336811+00:00",
+    "positive_preparation_tool_session_id": 12627,
+    "config_differences": [
+      "study_version",
+      "diagnostics"
+    ],
+    "qa": 15,
+    "fixed_units": 42,
+    "conditions": 30,
+    "maximum_calls": 84,
+    "source_bindings_verified": 25,
+    "all_expected_gates_ambiguous_and_refusals_unchanged": true,
+    "native_core27_and_fresh_12k_format32_unchanged": true,
+    "context_tokens": 12288,
+    "prior_all9b_call_attempts": 592,
+    "cumulative_cap": 676,
+    "automatic_retries": 0,
+    "observer_interval_seconds": 5,
+    "new_model_calls": 0,
+    "new_servers": 0,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v7.yaml",
+    "sha256": "5599be44906627ce4cfcfdf69e98509f5c540bacd9a11ef59c3873a22ca10d8a",
+    "size_bytes": 2178
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v7.json",
+    "sha256": "585e8a0e1e8e19b7762fa46efaae24dd89a4b86b7157d1a603c6cf7b2fb81e13",
+    "size_bytes": 140808
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v14.json",
+    "sha256": "27d484fbdfb9d1cef4c46622629c39c52d9d1b00cce91b1f195ea1e79a59deea",
+    "size_bytes": 6818
+  },
+  "parent_result": {
+    "path": "data/manifests/phase11_context12k_semantic_result_v1.json",
+    "sha256": "f21ef388c28783d1843b92b3ad40c145f39946672c26bcd70bf7d901ff078e36",
+    "size_bytes": 50825
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-context-known-v7-registration-v1/contract.json": {
+      "sha256": "ed51cf1449e691c7187e90720c65792b9c6b876bb5760fabd28b21a26998f4d2",
+      "size_bytes": 656
+    },
+    "data/runs/development_screening/phase11-context-known-v7-registration-v1/helpers_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-context-known-v7-registration-v1/pytest.txt": {
+      "sha256": "f1119b39e639c697d0754aa44928cea5101708c189fe60a9ada36a756c8236fd",
+      "size_bytes": 4547
+    },
+    "data/runs/development_screening/phase11-context-known-v7-registration-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    }
+  },
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "product_source_changed": false,
+  "native_regression_not_started": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
