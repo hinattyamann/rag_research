@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-known-v8-partial-AI-review-and-actual-main-pending-rejection-not-adoption",
+  "recorded_at_utc": "2026-10-23T05:07:57.533264+00:00",
+  "native_tool_session_id": 61821,
+  "fixed_native_commit": "262ba082261deaebb97f542025e592f4509f9fae",
+  "input_bindings": {
+    "configs/phase11_known_trace_candidate_v8.yaml": {
+      "sha256": "ef88f072e7b45e5c4caf73a285f29deeb7f5b85f7f01a2aeeff5338f5daba75d",
+      "size_bytes": 2178
+    },
+    "configs/phase11_known_trace_regression_v8.json": {
+      "sha256": "34fdda3023f079bc39412da1348bb58c6b67c48ecbbac71c79b5dde7e23036ef",
+      "size_bytes": 140808
+    },
+    "scripts/prepare_bilingual_main.py": {
+      "sha256": "15f80aee8cbb5edf66d0de8fbdc8d982998a3bec45721f90a03fb40660acd894",
+      "size_bytes": 12142
+    },
+    "data/manifests/phase11_qwen35_q6_known_launch_v1.json": {
+      "sha256": "89ddcec341a7ed7da5c60b97036f231a4d98a1b80f0f2eaaff041fede47a3327",
+      "size_bytes": 3226
+    },
+    "data/manifests/phase11_main_preparation_validation_v1.json": {
+      "sha256": "101041401e1e1ec8157d29d97954ff28b7606e0026aca6236a5ba27456071e95",
+      "size_bytes": 5306
+    }
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-q6-known-v8-main-pending-v1/check_pending.py": {
+      "sha256": "6bb57bbe95b331dd4715aaf4760d9219939e0a8670ccde888b3651b0521ef332",
+      "size_bytes": 3549
+    },
+    "data/runs/development_screening/phase11-q6-known-v8-main-pending-v1/pending_check.json": {
+      "sha256": "69a683f10cc8679cc9b1a6f5dd5ccb8611a7d6d56ae343167fb3e5db25bbde32",
+      "size_bytes": 4811
+    },
+    "data/runs/development_screening/phase11-q6-known-v8-main-pending-v1/stdout.txt": {
+      "sha256": "0248694a21bfb632a7554356d10246cb8a1a6f9f706c4a63d4538acb022a693e",
+      "size_bytes": 620
+    },
+    "data/runs/development_screening/phase11-q6-known-v8-main-pending-v1/stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-known-v8-main-pending-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q6-known-v8-audit-v1/partial_AI_review_v1.json": {
+      "sha256": "50059d43d7181e37a262ba7af8a190e8d980ab4654dc7e6fde07a68d0b7b97b7",
+      "size_bytes": 3949
+    },
+    "data/runs/development_screening/phase11-q6-known-v8-audit-v1/partial_AI_review_v2.json": {
+      "sha256": "498ad7ace2cffd9c021d61eef641c126c822202b5efd0551c8592980efbfc17d",
+      "size_bytes": 9615
+    }
+  },
+  "all_artifacts_fixed_checkout_byte_identical": true,
+  "actual_pending_main_preparation_rejected": true,
+  "production_main_preparer_JSON_inputs_read": 0,
+  "locking_replay_selection_and_main_loading_entered": 0,
+  "root_override_used": false,
+  "completed_native_files_unchanged": 20,
+  "actual_native_sources_verified": 95,
+  "partial_final_reasons_actually_AI_reviewed": 16,
+  "parent_messages_schema_and_final_verdicts_identical": 16,
+  "all20_source_passages_of_two_cases_read": true,
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "external_quality_labels_created": false,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "unused_qa_rows_read": 0,
+  "main_configs_generated": false,
+  "live_whole_run_inventory_frozen": false,
+  "whole_known_adopted": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

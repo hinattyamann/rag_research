@@ -7,6 +7,10 @@
 
 ## 1. 今どこまで終わっているか
 
+14:10 JSTに[Q6旧回帰v8](phase11_qwen35_q6_known_execution_v1.md)のTom元c5でNS→Sの確定誤支持1を確認した。radio/miniseriesをfilmへ広げており、現候補はMain基準未達。部分AI v3/元6 File不変をphase11_qwen35_q6_known_partial_failure_v1.jsonへ保存。同じ61821で残る負例条件を登録どおり継続し、全結果/実費は終了後に確定する。全Expected/基準/分母を維持し、Main/予約Calへ進まない。全終了後だけ全監査/正規保存を終えて次の候補を検討する。Gate 11未通過、Phase 12未実施。
+
+[Q6旧全回帰v8の実行記録](phase11_qwen35_q6_known_execution_v1.md)へ、先行Council/Zidane4条件/16判定の部分AI確認と実Main準備の未完了拒否を保存した。全16 Message/Schema/最終判定は親Q6と同一、全理由/20 Source Passageを確認。実未完了Runは固定WTのMain準備関数がJSON入力/Lock/再検証/選定/Runner前で拒否し、ROOT Overrideなし・出力0・元20 File不変・実95 Source一致。全7 Artifact/Ruffを保存・WT照合し追加推論/未使用QA読込み0。曖昧/F/理由断片を保持し、全回帰採否は未確定。同じsession61821を継続観測し、終了後だけ全監査/正規保存を行う。
+
 [Q6の暫定資源見積り](phase11_qwen35_q6_resource_estimate_v1.md)を完了70 Callだけで計算した。全195 Artifact/実95 Source・実費/算術/Ruffと全7 Artifactを検証し、平均54.566118秒/Call。各20 QA・平均5文・9試行の仮定ではJudgeだけMain24.5〜36.6時間/同規模Cal込み49.0〜73.2時間で、群平均の記述的な幅を上限/CI/総経過保証にしない。旧1660 Call/言語を維持し、稼働中61821の途中費用は含めない。追加推論/新Policy/新規QA読込み0、全旧回帰採用前にMainを開始しない。次は同じ61821の継続観測・終了後監査である。
 
 [Q6旧全回帰v8の実行記録](phase11_qwen35_q6_known_execution_v1.md)を再開先とする。262ba08をCommit・通常Pushしリモート一致後、固定WTへ1404 File Binding/57不変Hardlink/内部相対Symlink10・Offline58 Packageを再現。全84実入力/生成0・最大3927 Token/12k/全層CUDAに通過し、全84 Token数も旧Q5と一致した。Runtime一点7582/8151 MiB、5秒6点/エラー0の観測最大7583 MiBで、連続Peak/安定性保証とはしない。全14準備ArtifactとCore27/新Q6形式37/親全意味195を照合し、同じ固定WTで観測付きsession61821を開始した。元Source25/全Expected/基準/曖昧/裸拒否8・最大84/累積798・Retry0を維持し、負例12条件の全一致後だけ残18条件へ進む。採否は未確定、同じHandleを観測し終了後だけ監査/正規保存する。Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。

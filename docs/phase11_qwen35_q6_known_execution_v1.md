@@ -1,5 +1,10 @@
 # Phase 11 Q6の旧全15 QA回帰v8
 
+14:10 JST時点でTom元c5のNS→Sという確定誤支持1を確認した。根拠のradio/miniseriesをfilmまで拡張しており、
+現候補はMain採用基準を満たせない。残る負例条件は同じ61821で登録どおり継続し、全結果/実費は終了後に確定する。
+部分AI記録v3・完了6 File不変を`phase11_qwen35_q6_known_partial_failure_v1.json`へ保存した。
+判定/Expected/基準/分母は修復せず、Main/予約Calへは進まない。以下は各観測時点の記録である。
+
 2026年10月23日13:43 JST時点。[全意味結果・監査・回帰登録](phase11_qwen35_q6_semantic_result_v1.md)を
 `262ba082261deaebb97f542025e592f4509f9fae`「Q6全意味診断の監査結果と旧全回帰v8を登録」へ
 Commit・通常Pushし、GitHub mainとの一致・追跡差0/0・未Commit0を確認した。
@@ -57,3 +62,18 @@ Main/Cal/最終N/資源/条件/凍結は未了で、Gate 11未通過・Phase 12�
 各20 QA・平均5文・各9試行の仮定ではJudgeだけMain24.5〜36.6時間、同規模Cal込み49.0〜73.2時間。
 群平均の記述的な幅で、総経過時間や95%CIではない。稼働中v8の途中費用は含めず、旧1660 Call/言語を維持する。
 追加Model Call/Server・新Policy・新規QA読込みは0で、全回帰採用前にMainを開始しない。
+
+## 先行4条件の部分AI確認と実Main準備の早期拒否
+
+14:07 JSTに、先行のCouncil/Zidane元・逆4条件/16判定の最終理由と2例の全20 Source Passageを確認した。
+14確定Label・10支持LabelとCritical4条件は元Expectedに一致し、曖昧Council c6は元C/逆NSのまま保持する。
+両F5/7により矛盾を含む回答が採用相当になる点、不完全な理由末尾「Claim transfers」も維持した。
+全16の実入力Message/Schema/最終判定は親Q6診断の対応する実入力と同一だった。
+AI確認は同じ開発履歴のCodex・human_reviewed=false・厳密Model ID不明・非盲検/履歴分離なしで、
+外部回答品質の新Labelや全回帰採用へ読み替えない。
+
+固定WTの実Main準備関数へ未完了の同じ回帰を渡し、MainのJSON入力読込み/Lock/再検証/選定/Runner読込み前で拒否された。
+ROOTのOverrideは使わず、Main設定は生成しなかった。完了済み20 Fileは不変、実95 Native Sourceも一致した。
+実行中全RawのInventoryは固定していない。HelperのRuff/実拒否・部分AI記録の全7 ArtifactをRoot/WTでByte照合し、
+`phase11_qwen35_q6_known_main_pending_validation_v1.json`へ結んだ。追加Model Call/Server・未使用QA読込み0である。
+同じ61821の全終了後だけ全Raw監査/正規保存を実施し、全旧基準通過後だけ新Main Policyへ進む。

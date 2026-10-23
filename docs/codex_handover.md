@@ -1,5 +1,9 @@
 # 別チャットから再開するための引継ぎ
 
+14:10 JSTにQ6旧回帰v8のTom元c5でNS→Sの確定誤支持1を確認した。radio/miniseriesをfilmへ広げており、現候補はMain基準未達。部分AI v3/元6 File不変をphase11_qwen35_q6_known_partial_failure_v1.jsonへ保存した。同じ61821は残る負例条件を登録どおり継続中で、全結果/実費は終了後に確定する。判定/基準を修復せず、Main/予約Calは開始しない。全終了後だけ全Raw/未知/失敗/未試行/追加0再開・独立Schema/全理由・Source/資源を監査して正規保存し、その証拠から次の候補を検討する。
+
+同じ回帰61821の稼働を継続確認し、先行Council/Zidane元逆4条件の全16最終理由・全20 Source Passageを部分AI確認した。全16入力Message/Schema/最終判定は親Q6の対応入力と同一で、曖昧Council c6元C/逆NS・両F5/7/不完全な末尾は維持する。実未完了Runを固定WTのMain準備関数がJSON入力/Lock/再検証/選定/Runner前で拒否し、ROOT Overrideなし・出力0・元20 File不変・実95 Source一致を確認した。全7 Artifactをphase11_qwen35_q6_known_main_pending_validation_v1.jsonへ保存しWT照合、追加推論/未使用QA読込み0。全回帰採否は未確定、同じHandleで継続観測し、終了後だけ全監査/正規保存へ進む。
+
 回帰61821の待機中に[Q6暫定資源見積り](phase11_qwen35_q6_resource_estimate_v1.md)を保存した。完了70 Call/全195 Artifact・実95 SourceからTask平均54.566118秒、既知/人工群平均73.225826/49.037316秒。各20 QA・平均5文・9試行ではJudgeだけMain24.5〜36.6時間/同規模Cal込み49.0〜73.2時間という仮定で、上限/CI/総経過保証や採用許可ではない。全7 Artifact/実費・算術/Ruffを検証、追加推論/新Policy/新規QA読込み0、旧1660 Call/言語を維持する。稼働中61821の途中費用を混ぜず、同じHandleの終了後だけ全回帰監査へ進む。
 
 最優先は[Q6旧全回帰v8](phase11_qwen35_q6_known_execution_v1.md)。固定262ba082261deaebb97f542025e592f4509f9faeのWT phase11-known-trace-regression-v8へ1404 File Binding/57不変Hardlink/内部相対Symlink10とOffline58 Packageを再現。全84入力生成0/最大3927 Token/全層CUDAと、全14 Artifactの正規保存/WT照合を終えた。96627/38450は終了済みで再生成しない。同じWTの観測付き旧全回帰はsession61821・採否未確定。同じHandleを観測し、全終了後だけ汎用Direct監査/独立Schema/全理由・Source/資源を保存する。最大84/記録試行714から累積798・Retry0、負例12条件全一致後だけ残18条件へ進む。開始記録/生成0のWT実コピーはmodelscreeningのlaunch.json/preflight_binding.jsonで、Rootの新Manifestパスの存在を仮定しない。Main/予約Cal/最終凍結は未了。

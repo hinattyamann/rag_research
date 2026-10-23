@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-known-v8-first-definite-false-support-preserved-before-full-termination",
+  "recorded_at_utc": "2026-10-23T05:12:48.509355+00:00",
+  "native_tool_session_id": 61821,
+  "fixed_native_commit": "262ba082261deaebb97f542025e592f4509f9fae",
+  "input_bindings": {
+    "configs/phase11_known_trace_candidate_v8.yaml": {
+      "sha256": "ef88f072e7b45e5c4caf73a285f29deeb7f5b85f7f01a2aeeff5338f5daba75d",
+      "size_bytes": 2178
+    },
+    "configs/phase11_known_trace_regression_v8.json": {
+      "sha256": "34fdda3023f079bc39412da1348bb58c6b67c48ecbbac71c79b5dde7e23036ef",
+      "size_bytes": 140808
+    },
+    "data/manifests/phase11_qwen35_q6_known_main_pending_validation_v1.json": {
+      "sha256": "29a238f0d9571fd8b3132772255218f309a0b2096af37cbaf45119f08a862766",
+      "size_bytes": 3525
+    }
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-q6-known-v8-audit-v1/partial_AI_review_v3.json": {
+      "sha256": "aff6a782459ec54bb956030a420a589e0e70fa818c512aec17a1e5c5d96c7620",
+      "size_bytes": 2748
+    }
+  },
+  "condition": "known-gpu-b4291e2a1a09-original",
+  "claim": "c5",
+  "expected": "not_supported",
+  "actual": "supported",
+  "definite_false_support": 1,
+  "current_candidate_main_adoption_disqualified": true,
+  "full_result_and_resource_audit_pending": true,
+  "remaining_negative_stage_continues_as_registered": true,
+  "completed_files_unchanged": 6,
+  "all10_source_passages_reviewed": true,
+  "human_reviewed": false,
+  "history_isolated": false,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "main_or_calibration_new_qa_rows_read": 0,
+  "live_whole_run_inventory_frozen": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
