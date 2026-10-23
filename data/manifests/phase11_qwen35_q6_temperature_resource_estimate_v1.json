@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-temperature-v20-resource-assumptions-not-main-adoption",
+  "recorded_at_utc": "2026-10-23T07:41:06.787294+00:00",
+  "source_evidence": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_semantic_result_v1.json",
+    "sha256": "e00f78ffc46afe3b5003ce96aae2ff88e8129082b8ef92719f92ff1046075a52"
+  },
+  "temperature": 0.2,
+  "observed_judge_calls": 70,
+  "weighted_mean_task_seconds": 54.964120866130024,
+  "observed_subgroup_mean_seconds_range": [
+    51.2267941422615,
+    67.5775985591863
+  ],
+  "main_five_unit_judge_hours": [
+    25.61339707113075,
+    33.78879927959315
+  ],
+  "main_plus_same_scale_calibration_five_unit_judge_hours": [
+    51.2267941422615,
+    67.5775985591863
+  ],
+  "task_elapsed_seconds_and_native_generation_seconds_distinct": true,
+  "subgroup_range_not_bound_or_confidence_interval": true,
+  "source95_and_parent202_unchanged": true,
+  "all_artifacts_fixed_checkout_byte_identical": true,
+  "artifacts": {
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/calculate.py": {
+      "sha256": "ba680b474162315d5b1cfa7fdd5ceb0d078d76d499fc988971f6260a7a1a6aab",
+      "size_bytes": 8347
+    },
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/estimate.json": {
+      "sha256": "db6f6ed23729a18f22dcda37c0361438368f7bf1ce47b175cc98e011849481f8",
+      "size_bytes": 36193
+    },
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/stdout.txt": {
+      "sha256": "268adfb88cb5bb52530b30dd51963924647120469abdb587b6b33ee93ace6bfc",
+      "size_bytes": 265
+    },
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/verification.json": {
+      "sha256": "4a02fc1bb6717613690b1d5334bf64011fb36cadf0eba6e0ecadb682323add36",
+      "size_bytes": 587
+    },
+    "docs/phase11_qwen35_q6_temperature_resource_estimate_v1.md": {
+      "sha256": "064d9a107d249c720aacc986692efe069b7d9ee924993459a8696ae8bd11d073",
+      "size_bytes": 3964
+    }
+  },
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "new_qa_rows_read": 0,
+  "main_or_calibration_execution_authorized_by_this_estimate": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "per_language_cap_checked_under_explicit_equal_mean_assumption": true
+}
