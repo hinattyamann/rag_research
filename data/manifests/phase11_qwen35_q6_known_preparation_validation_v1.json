@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-v19-positive-whole-known-v8-preparation-validation-not-adoption",
+  "recorded_at_utc": "2026-10-23T04:28:22.944496+00:00",
+  "tool_session_id": 43926,
+  "receipt": {
+    "created_at_utc": "2026-10-23T04:25:38.764601+00:00",
+    "prior_run_files_unchanged": 136,
+    "prior_diagnostic_replayed_on_copy": true,
+    "plan_sha256": "34fdda3023f079bc39412da1348bb58c6b67c48ecbbac71c79b5dde7e23036ef",
+    "config_sha256": "ef88f072e7b45e5c4caf73a285f29deeb7f5b85f7f01a2aeeff5338f5daba75d",
+    "qa": 15,
+    "fixed_units": 42,
+    "conditions": 30,
+    "maximum_calls": 84,
+    "new_model_calls": 0,
+    "new_servers": 0,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "parent_semantic": {
+    "path": "data/manifests/phase11_qwen35_q6_semantic_result_v1.json",
+    "sha256": "146f5962f8d714c418f1f9447eb3e5b5decbb683d9511ce6fddc7b9da726a0cc",
+    "size_bytes": 53640
+  },
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v8.yaml",
+    "sha256": "ef88f072e7b45e5c4caf73a285f29deeb7f5b85f7f01a2aeeff5338f5daba75d",
+    "size_bytes": 2178
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v8.json",
+    "sha256": "34fdda3023f079bc39412da1348bb58c6b67c48ecbbac71c79b5dde7e23036ef",
+    "size_bytes": 140808
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-known-v8-preparation-v1/check_pending.py": {
+      "sha256": "1e208a56d480cdbb1b6f1c7960b76b9d9cde4305a3192ce37d58fb0c8970fe45",
+      "size_bytes": 3832
+    },
+    "data/runs/development_screening/phase11-known-v8-preparation-v1/pending_check.json": {
+      "sha256": "f2f7d06da6a3f8560d9a199c6b64f18ce3406337ad9a361afc6bd0f533e47b9f",
+      "size_bytes": 2596
+    },
+    "data/runs/development_screening/phase11-known-v8-preparation-v1/pending_stderr.txt": {
+      "sha256": "33715484cff19089fa3506b618177093848987faeedc2dd611f2caf74a8d8412",
+      "size_bytes": 162
+    },
+    "data/runs/development_screening/phase11-known-v8-preparation-v1/pending_stdout.txt": {
+      "sha256": "adf3eee930565f22dbd45b0184ab131261fe31cdaab8b51dbfb23d640454f1ce",
+      "size_bytes": 1012
+    },
+    "data/runs/development_screening/phase11-known-v8-preparation-v1/prepare.py": {
+      "sha256": "e644d57728103984bc641e252ad61f15b484b4957571b2d9b037580440498e1f",
+      "size_bytes": 6142
+    },
+    "data/runs/development_screening/phase11-known-v8-preparation-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-known-v8-preparation-v1/syntax.json": {
+      "sha256": "843d40c32e083e3c86b64ac01d0aab5893499c91d67f60015723999adace8158",
+      "size_bytes": 144
+    },
+    "data/runs/development_screening/phase11-known-v8-preparation-v1/positive_stdout.txt": {
+      "sha256": "0c539393f57eb307f480c5ddc1729af70393b004d36512a301d8a5162054bafe",
+      "size_bytes": 458
+    },
+    "data/runs/development_screening/phase11-known-v8-preparation-v1/positive_stderr.txt": {
+      "sha256": "af2ec73e8c59d3e7db7ff82825c26daf65c32be484cf46a6b07e8f8403a1033b",
+      "size_bytes": 162
+    },
+    "data/runs/development_screening/phase11-known-v8-preparation-v1/preparation.json": {
+      "sha256": "bec0e0804068ba9eb54aba1bb1831b67ef162e616e83484ff7999d88097eb81e",
+      "size_bytes": 486
+    }
+  },
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

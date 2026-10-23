@@ -1,10 +1,12 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.68 — 2026年10月23日 Q6の別Manifest・候補v19・事前登録
+## Version 8.69 — 2026年10月23日 Q6全意味監査・旧全回帰v8の正の準備と登録
 
-[研究計画 Version 7.65](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.66](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
+
+[Q6全意味/旧回帰v8の登録](phase11_qwen35_q6_semantic_result_v1.md)を保存。全58条件/70 CallはCritical4/4・英語24/24・日本語28/30・誤支持0で元基準に通過。95 Source/元133 File不変・追加0、全70独立Schema/35組/全理由/Sourceと資源766点を監査し、Raw136/全195 Artifactを正規保存・WT照合した。親136 Fileコピー上の全再検証後、同じ旧全15 QA/42文/84 Call・Source25/全Expected/基準/裸拒否8へ新前提を結びv8を生成。Core27/新Q6形式37不変・全761 Test（28.72秒）/Ruff成功。新v16は既存条件付き84/累積798・Retry0。src/旧条件/基準を変えず、Main/Cal/最終凍結は未了。
 
 [Q6候補v19](phase11_qwen35_q6_candidate.md)を別取得仕様/Model Manifestへ保存し、7458301152 Byte/公開SHA256を全体照合した。v18からModel Manifest/Study Versionだけを変更し、全154入力Message・生成Task/Runtime/日英Prompt/Schema/全Expected/基準とCore27は不変。全761 Test（29.18秒）/Ruff・実契約に成功。事前登録v15は新形式10/意味70/条件付き旧全84＝最大164、既存記録試行634/累積上限798・Retry0。実GPU生成0/新形式/意味は未実施、srcの変更/追加推論0。旧全失敗/未知/未使用を維持して固定WTで検証する。
 

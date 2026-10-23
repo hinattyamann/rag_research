@@ -1,12 +1,14 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.65 — 2026年10月23日 Q6取得・同条件の別候補v19を登録
+## Version 7.66 — 2026年10月23日 Q6全意味監査と旧全回帰v8の前提を保存
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.68](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.69](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
+
+[Q6全意味診断](phase11_qwen35_q6_semantic_result_v1.md)は全58条件/70 Call・Critical4/4・英語24/24・日本語28/30・誤支持0で元基準に通過し、全終了後監査/Raw136・195 Artifactを保存した。NS→C2/曖昧/F/理由断片は維持し、全68確定Labelは旧Q5と同一で改善を主張しない。同じ旧全15 QA/42文・84 Callと全Expected/基準へQ6の新前提を結びv8を作成。新v16は既存条件付き84だけ/累積上限798・Retry0で、旧未知/未使用を維持する。全旧採用とMain/Cal/最終N/条件/凍結は未了であり、目的/閾値/成功条件は変更しない。
 
 [Q6候補v19](phase11_qwen35_q6_candidate.md)は同固定Revisionの公開Size/Hashで取得し、v18のModel Manifest/Study Versionだけを分けた。全対象/Expected/基準・日英Prompt/12k/予算/Samplerは維持する。全154入力同一・全761 Test/Ruffに成功し、事前登録v15は新最大164/累積798・Retry0。実GPU配置/新形式/意味/旧全回帰は未確認で、取得やTest成功を採用としない。全旧失敗・未知1・未使用42/81/42を保持する。研究目的/閾値/全採用条件を変えず、Main/Cal/最終凍結は未了。
 

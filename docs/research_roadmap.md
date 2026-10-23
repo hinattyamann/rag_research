@@ -1,11 +1,13 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月23日。正本: [研究計画7.65](rag_research_plan.md)、[実装計画8.68](rag_implementation_plan.md)。
+更新日: 2026年10月23日。正本: [研究計画7.66](rag_research_plan.md)、[実装計画8.69](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
+
+[Q6全意味結果と旧全回帰v8](phase11_qwen35_q6_semantic_result_v1.md)を保存した。固定cf489d9/session98160は全58条件/70 Callを正常終了し、Critical4/4・英語24/24・日本語28/30・誤支持0で元基準に通過。留保なし由来のNS→C2、曖昧Council c6の元C/逆NS・両F5/7、理由断片を保持した。全68確定Labelは旧Q5と同じで改善を主張しない。入力140500/出力189936・Task秒和3819.628270秒、95 Source/元133 File不変・追加Call/Server0、全70独立Schema/35組不変/全理由・Sourceを確認。資源766点/取得エラー0・観測最大GPU7672/8151 MiB/最小Host Available4134612 KiBを再計算し、Raw136/全195 Artifactを正規保存・WT照合した。親136 Fileのコピー上で全再検証後、同じ旧全15 QA/42文/30条件・84 Call/Source25/全Expected/基準/裸拒否8へ前提を結び、v8を実生成した。全761 Test（28.72秒）/Ruff成功。事前登録v16は既存v15の条件付き84だけで、記録試行714/累積上限798・Retry0、旧未知1/未使用42/81/42を保持する。次は新固定WTで全84入力生成0/全層CUDAと旧全回帰を実走する。Main/予約Cal/最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施。
 
 Q6のsession98160は12:35 JSTに6/58条件まで進み、既知Critical4/4完全一致を終えて人工条件へ進行中。全採否は未確定。[実行記録](phase11_qwen35_q6_execution_v1.md)に、全通過後だけ使う旧全回帰v8準備Helperと実未完了親の早期拒否を追加した。Config/Lock/再検証に入る前で停止し出力0、元15 QA/42文/Source25/Expected/基準/裸拒否8と実Native95 Sourceは不変。構文/Ruff・全7 Artifactを保存し、追加推論0。正の引継ぎ/実回帰v8・Main/Cal/最終凍結は未了である。
 

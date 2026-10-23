@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+最優先は[Q6全意味結果と旧全回帰v8](phase11_qwen35_q6_semantic_result_v1.md)。98160/監査28327は終了済みで再生成しない。全58条件/70 Call・Critical4/4/英語24/24/日本語28/30/誤支持0、95 Source/133 File不変・追加0、全70独立Schema/全理由/Sourceと資源766点を監査し、Raw136/全195 Artifactを正規保存・WT照合した。親136 Fileコピーでの正の準備43926後、同じ旧全15 QA/42文/84 Call・全Expected/基準/Source25をv8へ結んだ。新v16は既存v15の条件付き84だけ、記録試行714/累積上限798・Retry0、旧未知1/未使用42/81/42を保持。全Test85780は761件/28.72秒・Ruff成功。次は新Commitの固定WTで全84入力生成0から進む。Q6全意味の68確定Labelは旧Q5と同じで、精度改善は主張しない。Main/予約Cal/最終凍結は未了。
+
 待機中にQ6通過後だけの旧全回帰v8用Helperを保存し、実未完了親のConfig/Lock/再検証前拒否と出力なしを確認した。証拠はphase11_qwen35_q6_known_preparation_pending_v1.json（7 Artifact）。元15 QA/42文/Source25/Expected/基準/裸拒否8とNative95 Sourceは不変、追加推論0。正の引継ぎ/実Config v8は未生成。同じ98160の全終了・全監査後だけ使う。12:35 JSTには6/58条件まで進み、既知Critical4/4は完全一致したが、全意味採否はまだ未確定である。
 
 最優先は[Q6実機実行記録](phase11_qwen35_q6_execution_v1.md)。固定cf489d9844651995be9986e4d41c0f89de672e63のWT phase11-qwen35-9b-q6-v19で、全70入力生成0/全層CUDAと新形式10 Call/全9 Strictを通過した。生成0全11/新形式Raw16・全37 Artifactを正規保存・WT照合済み。準備83147/生成0確認77162/形式30605は終了済みで再生成しない。同じWTで全意味58条件/最大70 Callを観測付きsession98160として実行中、同じHandleで継続観測する。全9Bは開始前記録試行644/上限798・Retry0。終了後だけ全監査/正規保存を行い、全通過後だけ旧全15 QAへ進む。開始/形式/生成0参照のWT実コピーはmodelscreeningのlaunch.json/fresh_format_binding.json/preflight_binding.jsonで、Rootと同じManifestパスを仮定しない。Main/予約Cal/最終凍結は未了。
