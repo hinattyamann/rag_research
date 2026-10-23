@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-whole-known-v8-all84-input-zero-completion-preflight",
+  "recorded_at_utc": "2026-10-23T04:42:05.832927+00:00",
+  "fixed_commit": "262ba082261deaebb97f542025e592f4509f9fae",
+  "preparation_tool_session_id": 96627,
+  "preflight_observer_tool_session_id": 38450,
+  "regular_file_bindings": 1404,
+  "immutable_hardlinks": 57,
+  "internal_relative_symlinks": 10,
+  "gpu_environment_offline_packages": 58,
+  "context_tokens": 12288,
+  "all84_real_inputs_fit": true,
+  "all84_input_token_counts_match_prior_Q5": true,
+  "max_input_tokens": 3927,
+  "completion_attempts": 0,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "7582 MiB, 8151 MiB",
+  "resource_observation_summary": {
+    "finished_at_utc": "2026-10-23T04:41:33.568882+00:00",
+    "native_runner_returncode": 0,
+    "samples": 6,
+    "native_runner_launch_error": null,
+    "samples_with_observation_errors": 0,
+    "observation_complete": true,
+    "observed_max_gpu_used_mib": 7583,
+    "observed_min_host_available_kib": 4213736,
+    "elapsed_observer_seconds": 20.18247161101317,
+    "sampled_extrema_are_not_continuous_peaks": true,
+    "native_gate_or_semantic_pass_not_asserted": true,
+    "new_model_calls_from_observer": 0
+  },
+  "sampled_extrema_not_continuous_peaks": true,
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v8.yaml",
+    "sha256": "ef88f072e7b45e5c4caf73a285f29deeb7f5b85f7f01a2aeeff5338f5daba75d",
+    "size_bytes": 2178
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v8.json",
+    "sha256": "34fdda3023f079bc39412da1348bb58c6b67c48ecbbac71c79b5dde7e23036ef",
+    "size_bytes": 140808
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v16.json",
+    "sha256": "f84731fcfa7e765a9639e8aa58d36251cb3daf08174d14bf70702c2159f3fc3a",
+    "size_bytes": 6940
+  },
+  "parent_complete_semantic": {
+    "path": "data/manifests/phase11_qwen35_q6_semantic_result_v1.json",
+    "sha256": "146f5962f8d714c418f1f9447eb3e5b5decbb683d9511ce6fddc7b9da726a0cc",
+    "size_bytes": 53640
+  },
+  "native_core27_and_current_Q6_format37_unchanged": true,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/prepare_worktree.py": {
+      "sha256": "4f3c8373fd0f0e98971541d2cc8d67e6c50655b7aa8dcb3ec406ea8f1cc501d0",
+      "size_bytes": 4774
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/preparation_v1.json": {
+      "sha256": "ff4fe79591fefea41b3af88a4372e37e210ee42554693643ce1579a2966a7624",
+      "size_bytes": 356769
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/preparation_stdout.txt": {
+      "sha256": "d846ad56b3861cd654caacc285f3d63a9fd7fcb781b7a688485cb6b9b7c29f4b",
+      "size_bytes": 238
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/preparation_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/uv_sync_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/uv_sync_stderr.txt": {
+      "sha256": "0592d38a21b68162374076caf1edc707d3bac46f72f755f36672e30b1155808f",
+      "size_bytes": 1436
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/assemble_preflight.py": {
+      "sha256": "5cda1bd8e58f1c167574dcd4686a19462f5c7de74cfea3f78f02a0fcbd1f4a6d",
+      "size_bytes": 5297
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/preflight_v1/plan.json": {
+      "sha256": "eac0bf03216dbbb18e47763ae0e9f426ad4c4bbb881ba39fbac90ebab02f7237",
+      "size_bytes": 1220
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/preflight_v1/report.json": {
+      "sha256": "a152481cc9cb8cd9f8ad57b8ce7e05ba54cd0d17e1157b1e68d6b0d760796bfd",
+      "size_bytes": 35238
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/preflight_v1/server.log": {
+      "sha256": "511e7fa6d73c50ecd61316354e0256a70a6caeed8b689d11b4bf7678c4933ec8",
+      "size_bytes": 19190
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-context-known-v8-preflight-v1/launch.json": {
+      "sha256": "744156eb9cf4f0e08523b9f70c2dea1beca2a81ebc4835630a582d998a2e5e39",
+      "size_bytes": 1232
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-context-known-v8-preflight-v1/samples.jsonl": {
+      "sha256": "09f414c6fffa64278484d27a59205fa220375dc442248ed3823ded901e42f37e",
+      "size_bytes": 2370
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-context-known-v8-preflight-v1/summary.json": {
+      "sha256": "c879b58b52e296d84af0bba56a24fa8ba4f3410ced57204c16266be38927ad8e",
+      "size_bytes": 494
+    }
+  },
+  "all_artifacts_fixed_checkout_byte_identical": true,
+  "native_regression_not_started": true,
+  "new_model_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+最優先は[Q6旧全回帰v8](phase11_qwen35_q6_known_execution_v1.md)。固定262ba082261deaebb97f542025e592f4509f9faeのWT phase11-known-trace-regression-v8へ1404 File Binding/57不変Hardlink/内部相対Symlink10とOffline58 Packageを再現。全84入力生成0/最大3927 Token/全層CUDAと、全14 Artifactの正規保存/WT照合を終えた。96627/38450は終了済みで再生成しない。同じWTの観測付き旧全回帰はsession61821・採否未確定。同じHandleを観測し、全終了後だけ汎用Direct監査/独立Schema/全理由・Source/資源を保存する。最大84/記録試行714から累積798・Retry0、負例12条件全一致後だけ残18条件へ進む。開始記録/生成0のWT実コピーはmodelscreeningのlaunch.json/preflight_binding.jsonで、Rootの新Manifestパスの存在を仮定しない。Main/予約Cal/最終凍結は未了。
+
 最優先は[Q6全意味結果と旧全回帰v8](phase11_qwen35_q6_semantic_result_v1.md)。98160/監査28327は終了済みで再生成しない。全58条件/70 Call・Critical4/4/英語24/24/日本語28/30/誤支持0、95 Source/133 File不変・追加0、全70独立Schema/全理由/Sourceと資源766点を監査し、Raw136/全195 Artifactを正規保存・WT照合した。親136 Fileコピーでの正の準備43926後、同じ旧全15 QA/42文/84 Call・全Expected/基準/Source25をv8へ結んだ。新v16は既存v15の条件付き84だけ、記録試行714/累積上限798・Retry0、旧未知1/未使用42/81/42を保持。全Test85780は761件/28.72秒・Ruff成功。次は新Commitの固定WTで全84入力生成0から進む。Q6全意味の68確定Labelは旧Q5と同じで、精度改善は主張しない。Main/予約Cal/最終凍結は未了。
 
 待機中にQ6通過後だけの旧全回帰v8用Helperを保存し、実未完了親のConfig/Lock/再検証前拒否と出力なしを確認した。証拠はphase11_qwen35_q6_known_preparation_pending_v1.json（7 Artifact）。元15 QA/42文/Source25/Expected/基準/裸拒否8とNative95 Sourceは不変、追加推論0。正の引継ぎ/実Config v8は未生成。同じ98160の全終了・全監査後だけ使う。12:35 JSTには6/58条件まで進み、既知Critical4/4は完全一致したが、全意味採否はまだ未確定である。

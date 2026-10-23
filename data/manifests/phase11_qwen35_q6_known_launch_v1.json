@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-whole-known-v8-launch-not-adoption",
+  "observed_active_at_utc": "2026-10-23T04:43:21.295815+00:00",
+  "fixed_commit": "262ba082261deaebb97f542025e592f4509f9fae",
+  "worktree": ".tools/worktrees/phase11-known-trace-regression-v8",
+  "tool_session_id": 61821,
+  "run": "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-context-known-regression-v8",
+  "resource_observations": "data/runs/resource_observation/phase11-qwen35-9b-q6-context-known-v8-semantic-v1",
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v8.yaml",
+    "sha256": "ef88f072e7b45e5c4caf73a285f29deeb7f5b85f7f01a2aeeff5338f5daba75d"
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v16.json",
+    "sha256": "f84731fcfa7e765a9639e8aa58d36251cb3daf08174d14bf70702c2159f3fc3a"
+  },
+  "parent_complete_semantic": {
+    "path": "data/manifests/phase11_qwen35_q6_semantic_result_v1.json",
+    "sha256": "146f5962f8d714c418f1f9447eb3e5b5decbb683d9511ce6fddc7b9da726a0cc"
+  },
+  "positive_preparation": {
+    "path": "data/manifests/phase11_qwen35_q6_known_preparation_validation_v1.json",
+    "sha256": "66a9072959515b7cba350070a35e26dd4ae8f3b4edbab820a45df91a0c147740"
+  },
+  "registration_validation": {
+    "path": "data/manifests/phase11_qwen35_q6_known_registration_validation_v1.json",
+    "sha256": "bedc1b22e8fe2ad4d76069baf476ea7691f2df8d0dbbbc0e72deb86fc87881a6"
+  },
+  "preflight": {
+    "path": "data/manifests/phase11_qwen35_q6_known_preflight_v1.json",
+    "sha256": "355b5c7ae19c77a303b86abd21333e28569531f03d41e94c242da0c16f4f2056"
+  },
+  "observer": {
+    "path": "scripts/observe_native_resources.py",
+    "sha256": "900ca7483d26ba07c6d46526007ff379817f8de99320ce1400e080533366e89e"
+  },
+  "context_tokens": 12288,
+  "observation_interval_seconds": 5,
+  "qa": 15,
+  "fixed_units": 42,
+  "conditions": 30,
+  "maximum_new_calls": 84,
+  "first_negative_qa": 6,
+  "first_critical_conditions": 12,
+  "first_critical_calls": 42,
+  "all_critical_exact_before_remaining18_conditions": true,
+  "previous_recorded_all9b_call_attempts": 714,
+  "maximum_cumulative_call_attempts": 798,
+  "automatic_retries": 0,
+  "all_original_sources_expected_gates_ambiguous_and_refusals_unchanged": true,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "current_Q6_format": {
+    "path": "data/manifests/phase11_qwen35_q6_format_result_v1.json",
+    "sha256": "50e2282b593f5954a336fb9eb3c6f70fc31243fe7acb98647c5593516fb19d13"
+  },
+  "old_unknown1_and_unused42_81_42_not_filled_or_reallocated": true,
+  "budget_draws_only_the_conditional84_already_registered": true,
+  "recorded_Q4_Q5_Q6_attempts_before_run": {
+    "Q4": 317,
+    "Q5": 317,
+    "Q6": 80
+  },
+  "worktree_launch_alias": "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/launch.json",
+  "worktree_preflight_binding_alias": "data/runs/model_screening/phase11-qwen35-9b-q6-context-known-regression-v8/preflight_binding.json",
+  "artifacts": {
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-context-known-v8-semantic-v1/launch.json": {
+      "sha256": "a3b82af3ae18bc13d1b344523e96b0e38ca7eb08ebee3d6f9753213ef6b23b0c",
+      "size_bytes": 1224
+    }
+  }
+}
