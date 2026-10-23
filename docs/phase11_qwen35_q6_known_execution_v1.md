@@ -49,3 +49,11 @@ Rootの新Manifestが過去固定Commitに存在したとは仮定せず、こ�
 Main/予約Cal/Evaluationの新規QAは使っていない。
 Main/Cal/最終N/資源/条件/凍結は未了で、Gate 11未通過・Phase 12未実施・Goal継続中である。
 モデル/Raw/環境はGit Pushでは転送されないため、別PCにはManifest/Hash付きで別途再現する。
+
+## 待機中の計算資料
+
+[Q6の暫定資源見積り](phase11_qwen35_q6_resource_estimate_v1.md)を、完了済み全意味70 Callだけから保存した。
+全195 Artifact/実95 Sourceを照合し、Task平均54.566118秒、既知16/人工54の群平均73.225826/49.037316秒。
+各20 QA・平均5文・各9試行の仮定ではJudgeだけMain24.5〜36.6時間、同規模Cal込み49.0〜73.2時間。
+群平均の記述的な幅で、総経過時間や95%CIではない。稼働中v8の途中費用は含めず、旧1660 Call/言語を維持する。
+追加Model Call/Server・新Policy・新規QA読込みは0で、全回帰採用前にMainを開始しない。

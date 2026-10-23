@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+回帰61821の待機中に[Q6暫定資源見積り](phase11_qwen35_q6_resource_estimate_v1.md)を保存した。完了70 Call/全195 Artifact・実95 SourceからTask平均54.566118秒、既知/人工群平均73.225826/49.037316秒。各20 QA・平均5文・9試行ではJudgeだけMain24.5〜36.6時間/同規模Cal込み49.0〜73.2時間という仮定で、上限/CI/総経過保証や採用許可ではない。全7 Artifact/実費・算術/Ruffを検証、追加推論/新Policy/新規QA読込み0、旧1660 Call/言語を維持する。稼働中61821の途中費用を混ぜず、同じHandleの終了後だけ全回帰監査へ進む。
+
 最優先は[Q6旧全回帰v8](phase11_qwen35_q6_known_execution_v1.md)。固定262ba082261deaebb97f542025e592f4509f9faeのWT phase11-known-trace-regression-v8へ1404 File Binding/57不変Hardlink/内部相対Symlink10とOffline58 Packageを再現。全84入力生成0/最大3927 Token/全層CUDAと、全14 Artifactの正規保存/WT照合を終えた。96627/38450は終了済みで再生成しない。同じWTの観測付き旧全回帰はsession61821・採否未確定。同じHandleを観測し、全終了後だけ汎用Direct監査/独立Schema/全理由・Source/資源を保存する。最大84/記録試行714から累積798・Retry0、負例12条件全一致後だけ残18条件へ進む。開始記録/生成0のWT実コピーはmodelscreeningのlaunch.json/preflight_binding.jsonで、Rootの新Manifestパスの存在を仮定しない。Main/予約Cal/最終凍結は未了。
 
 最優先は[Q6全意味結果と旧全回帰v8](phase11_qwen35_q6_semantic_result_v1.md)。98160/監査28327は終了済みで再生成しない。全58条件/70 Call・Critical4/4/英語24/24/日本語28/30/誤支持0、95 Source/133 File不変・追加0、全70独立Schema/全理由/Sourceと資源766点を監査し、Raw136/全195 Artifactを正規保存・WT照合した。親136 Fileコピーでの正の準備43926後、同じ旧全15 QA/42文/84 Call・全Expected/基準/Source25をv8へ結んだ。新v16は既存v15の条件付き84だけ、記録試行714/累積上限798・Retry0、旧未知1/未使用42/81/42を保持。全Test85780は761件/28.72秒・Ruff成功。次は新Commitの固定WTで全84入力生成0から進む。Q6全意味の68確定Labelは旧Q5と同じで、精度改善は主張しない。Main/予約Cal/最終凍結は未了。
