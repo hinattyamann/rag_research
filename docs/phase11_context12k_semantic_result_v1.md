@@ -56,6 +56,8 @@ Config v7の差は候補v18からStudy VersionとDiagnosticsだけ。
 全750 Test（29.14秒）/Ruff・監査HelperのRuffと、Core27/新形式32 Artifactの不変を確認した。
 最初の負例6 QA/12 Critical条件・42 Callが全一致した場合だけ残る正例9 QA/18条件へ進む。
 
-新固定WT/全84入力生成0/実旧回帰は未実施。全旧基準通過後だけ新Main Policy/実費へ進む。
+固定5f4a6b6で全84入力生成0/全層CUDAを確認し、旧全回帰を観測付きsession64437として開始した。
+[回帰実行記録](phase11_context12k_known_execution_v1.md)を最新の再開先とし、全旧基準の採否は未確定。
+全旧基準通過後だけ新Main Policy/実費へ進む。
 Main/予約Cal/Evaluationの新規QAは使っていない。
 主/Cal採用・最終N/資源/条件/凍結は未了、Gate 11未通過・Phase 12未実施、Goal継続中。

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-context12k-whole-known-v7-all84-input-zero-completion-preflight",
+  "recorded_at_utc": "2026-10-23T01:07:24.382647+00:00",
+  "fixed_commit": "5f4a6b6146b0a00691800dbf01e9854ffd636d61",
+  "preparation_tool_session_id": 16822,
+  "preflight_observer_tool_session_id": 75177,
+  "regular_file_bindings": 1065,
+  "immutable_hardlinks": 56,
+  "internal_relative_symlinks": 10,
+  "gpu_environment_offline_packages": 58,
+  "context_tokens": 12288,
+  "all84_real_inputs_fit": true,
+  "all84_input_token_counts_match_prior24k": true,
+  "max_input_tokens": 3927,
+  "completion_attempts": 0,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "6871 MiB, 8151 MiB",
+  "resource_observation_summary": {
+    "finished_at_utc": "2026-10-23T01:05:53.592193+00:00",
+    "native_runner_returncode": 0,
+    "samples": 6,
+    "native_runner_launch_error": null,
+    "samples_with_observation_errors": 0,
+    "observation_complete": true,
+    "observed_max_gpu_used_mib": 791,
+    "observed_min_host_available_kib": 4960248,
+    "elapsed_observer_seconds": 20.298568668978987,
+    "sampled_extrema_are_not_continuous_peaks": true,
+    "native_gate_or_semantic_pass_not_asserted": true,
+    "new_model_calls_from_observer": 0
+  },
+  "short_allocation_missed_by5s_samples_retained": true,
+  "sampled_extrema_not_continuous_peaks": true,
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v7.yaml",
+    "sha256": "5599be44906627ce4cfcfdf69e98509f5c540bacd9a11ef59c3873a22ca10d8a",
+    "size_bytes": 2178
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v7.json",
+    "sha256": "585e8a0e1e8e19b7762fa46efaae24dd89a4b86b7157d1a603c6cf7b2fb81e13",
+    "size_bytes": 140808
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v14.json",
+    "sha256": "27d484fbdfb9d1cef4c46622629c39c52d9d1b00cce91b1f195ea1e79a59deea",
+    "size_bytes": 6818
+  },
+  "native_core27_and_new12k_format32_unchanged": true,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-known-regression-v7/prepare_worktree.py": {
+      "sha256": "553a57c4cba494017540a3d45ca475a3da845b6cbc5eb885d6eb9702bcb35207",
+      "size_bytes": 4802
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-known-regression-v7/preparation_v1.json": {
+      "sha256": "8ea89ea37cc3c06686ca07938dc14d36b950540a066b679c15947a57e097bf51",
+      "size_bytes": 270320
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-known-regression-v7/preflight_v1/plan.json": {
+      "sha256": "9cac2952cdd36640e2aed4f644ad7ef8a16224c0571e0acfc1642c5615f75aeb",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-known-regression-v7/preflight_v1/report.json": {
+      "sha256": "1e4f0ef4e128dca4073634fdf54bdd2a2be24e2d39421e1b25262350bd11690a",
+      "size_bytes": 35246
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-known-regression-v7/preflight_v1/server.log": {
+      "sha256": "62db6c73a85f1ccc7bc1372a03259a4c2b34969065e4a964a9cf4271581873e8",
+      "size_bytes": 19266
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-known-regression-v7/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q5-context-known-v7-preflight-v1/launch.json": {
+      "sha256": "8ec11a8336615f088dec07cb973b3915a4f7d2ee97c2f48e772277a6b157149f",
+      "size_bytes": 1232
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q5-context-known-v7-preflight-v1/samples.jsonl": {
+      "sha256": "a0044b3c311a9c87599aa2ac1f3361d654e10f1531a8eab9be4735ecdf6dbdbf",
+      "size_bytes": 2266
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q5-context-known-v7-preflight-v1/summary.json": {
+      "sha256": "98d2ab81edc0b2df66d7bd2ba638cb845bb756ebed4f4d777546ff7c0ac3202a",
+      "size_bytes": 494
+    }
+  },
+  "all_artifacts_fixed_checkout_byte_identical": true,
+  "native_regression_not_started": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
