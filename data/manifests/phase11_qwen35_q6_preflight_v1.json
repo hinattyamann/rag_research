@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-v19-actual-zero-generation-preflight-not-semantic-adoption",
+  "recorded_at_utc": "2026-10-23T03:07:08.566785+00:00",
+  "fixed_commit": "cf489d9844651995be9986e4d41c0f89de672e63",
+  "preparation_tool_session_id": 83147,
+  "preflight_tool_session_id": 77162,
+  "regular_file_bindings": 1191,
+  "immutable_hardlinks": 57,
+  "internal_relative_symlinks": 10,
+  "offline_environment_packages": 58,
+  "actual_input_count": 70,
+  "all_input_token_counts_same_as_Q5": true,
+  "context_tokens": 12288,
+  "max_input_tokens": 3793,
+  "full_gpu_offload": true,
+  "gpu_single_observation": "7589 MiB, 8151 MiB",
+  "resource_summary": {
+    "finished_at_utc": "2026-10-23T03:05:41.019253+00:00",
+    "native_runner_returncode": 0,
+    "samples": 6,
+    "native_runner_launch_error": null,
+    "samples_with_observation_errors": 0,
+    "observation_complete": true,
+    "observed_max_gpu_used_mib": 7577,
+    "observed_min_host_available_kib": 4218000,
+    "elapsed_observer_seconds": 20.207300959998975,
+    "sampled_extrema_are_not_continuous_peaks": true,
+    "native_gate_or_semantic_pass_not_asserted": true,
+    "new_model_calls_from_observer": 0
+  },
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/preparation_v1.json": {
+      "sha256": "bd9b83e56dd7f5353f4262988d76f929a07243eaea7773438cf54daf97e02781",
+      "size_bytes": 302961
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/prepare_worktree.py": {
+      "sha256": "dbfd0afcf913589a241815025ef1867b3761c7fe542503212590a9a72a3c4bdb",
+      "size_bytes": 4724
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/uv_sync_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/uv_sync_stderr.txt": {
+      "sha256": "2267c7415d52a4c203ffcbd7a2f3176db81fd81392389783d866c0b29e7a9d19",
+      "size_bytes": 1436
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/preflight_v1/plan.json": {
+      "sha256": "a1af46c467c9e03adb57b4f96f7bf08e7946cba1e57420c90213143793af65d6",
+      "size_bytes": 1220
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/preflight_v1/report.json": {
+      "sha256": "b1b93f63cf6c8f55fc09e9b8d10bfdf61644dfc79c0195db5b77a9c86bb3dcd1",
+      "size_bytes": 30790
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/preflight_v1/server.log": {
+      "sha256": "5822de794554358842c0e68fcd1e52921c28a719691f6bae87565edb1302cb8e",
+      "size_bytes": 19163
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v19-preflight-v1/launch.json": {
+      "sha256": "6f71fc214aeb0164465a0b3a42e54fb00b297c83ee1324889e2e1830734d4464",
+      "size_bytes": 1170
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v19-preflight-v1/samples.jsonl": {
+      "sha256": "99c4145e769b64e67da01ddd0cce581bdb0651c06da89dc3cb8cdcf4c896e653",
+      "size_bytes": 2369
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v19-preflight-v1/summary.json": {
+      "sha256": "887fb0949094530f47ca28d4c99628ae317487766e8d44dacc95b536ba5cdb46",
+      "size_bytes": 495
+    }
+  },
+  "new_model_calls": 0,
+  "fresh_Q6_format_still_required": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

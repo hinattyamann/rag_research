@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-v19-fresh-native-format-proof-not-semantic-adoption",
+  "recorded_at_utc": "2026-10-23T03:13:42.084870+00:00",
+  "fixed_commit": "cf489d9844651995be9986e4d41c0f89de672e63",
+  "tool_session_id": 30605,
+  "run": "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7",
+  "config": {
+    "path": "configs/phase11_semantic_candidate_v19.yaml",
+    "sha256": "bf99846483acb794e322515c17c1e20f4a25209c0020a8e4195da07f592598e5",
+    "size_bytes": 2179
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v15.json",
+    "sha256": "7acb31152e620054186395d050d311ad3fa3f33b5e673da1b974ef7fd4abc73c",
+    "size_bytes": 7563
+  },
+  "preflight": {
+    "path": "data/manifests/phase11_qwen35_q6_preflight_v1.json",
+    "sha256": "808990149f2e49dea6d494932095cdb0878131ad5fb5f8ae55240d43d1377b19",
+    "size_bytes": 3535
+  },
+  "report": {
+    "purpose": "phase11-artificial-final-json-boundary-probe",
+    "status": "passed",
+    "completion_limit": 10,
+    "completion_attempts": 10,
+    "cases": [
+      {
+        "id": "legacy-array",
+        "status": "failed",
+        "input_tokens": 49,
+        "output_tokens": 143,
+        "error": "ValueError: Final JSON did not reach the declared grammar trigger"
+      },
+      {
+        "id": "strict-array",
+        "status": "constrained_object",
+        "input_tokens": 49,
+        "output_tokens": 155
+      },
+      {
+        "id": "strict-prose-fence",
+        "status": "constrained_object",
+        "input_tokens": 48,
+        "output_tokens": 155
+      },
+      {
+        "id": "strict-fixed-ids",
+        "status": "constrained_object",
+        "input_tokens": 48,
+        "output_tokens": 197
+      },
+      {
+        "id": "strict-unicode-escape",
+        "status": "constrained_object",
+        "input_tokens": 39,
+        "output_tokens": 164
+      },
+      {
+        "id": "strict-rewrite-bounds",
+        "status": "constrained_object",
+        "input_tokens": 57,
+        "output_tokens": 170
+      },
+      {
+        "id": "strict-cited-supported",
+        "status": "constrained_object",
+        "input_tokens": 85,
+        "output_tokens": 192
+      },
+      {
+        "id": "strict-cited-contradicted",
+        "status": "constrained_object",
+        "input_tokens": 85,
+        "output_tokens": 199
+      },
+      {
+        "id": "strict-cited-missing-empty",
+        "status": "constrained_object",
+        "input_tokens": 85,
+        "output_tokens": 194
+      },
+      {
+        "id": "strict-cited-union",
+        "status": "constrained_object",
+        "input_tokens": 85,
+        "output_tokens": 199
+      }
+    ],
+    "phase12_allowed": false,
+    "server": {
+      "startup_seconds": 7.023846238997066,
+      "sampled_peak_python_rss_bytes": 50126848,
+      "sampled_peak_server_rss_bytes": 6177951744,
+      "sampled_peak_combined_rss_bytes": 6189543424,
+      "minimum_available_ram_bytes": 4968255488,
+      "sampling_interval_seconds": 0.1,
+      "command": [
+        "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-qwen35-9b-q6-v19/data/runtimes/llama.cpp/b11433-ubuntu-cuda12.8-system12.9-v1/llama-b11433/llama-server",
+        "--model",
+        "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-qwen35-9b-q6-v19/data/models/Unsloth-Qwen3.5-9B-GGUF/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q6_K.gguf",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "47109",
+        "--ctx-size",
+        "12288",
+        "--parallel",
+        "1",
+        "--threads",
+        "6",
+        "--threads-batch",
+        "6",
+        "--gpu-layers",
+        "99",
+        "--batch-size",
+        "128",
+        "--ubatch-size",
+        "128",
+        "--cache-ram",
+        "0",
+        "--no-context-shift",
+        "--offline",
+        "--device",
+        "CUDA0",
+        "--log-verbosity",
+        "4",
+        "--no-repack",
+        "--jinja"
+      ],
+      "runtime_version": "version: 0.6.0-dev (build 11433, commit 50569eb87)\nbuilt with GNU 13.3.0 for Linux x86_64",
+      "server_context_tokens": 12288,
+      "execution": {
+        "runtime_spec": "configs/lab_cuda_runtime.json",
+        "gpu_layers": 99,
+        "device": "CUDA0",
+        "require_full_offload": true
+      },
+      "runtime": {
+        "archives": [
+          {
+            "bytes": 171651185,
+            "name": "llama-b11433-bin-ubuntu-cuda-12.8-x64.tar.gz",
+            "sha256": "4ee66f423e5e4152b87ba7f46dd30a680b4e1d4f5205bbb2cbf0d9daf1662e5e"
+          }
+        ],
+        "backend": "Ubuntu-x64-CUDA-12.8-system12.9",
+        "files": {
+          "llama-b11433/LICENSE": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+          "llama-b11433/ggml-rpc-server": "b6193549199a89bbd30b750cca364795540425f53289be88cf39a14eca3c06f8",
+          "llama-b11433/libcublas.so.12": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048",
+          "llama-b11433/libcublasLt.so.12": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541",
+          "llama-b11433/libcudart.so.12": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7",
+          "llama-b11433/libggml-base.so": "91fcfa2e0c79e5d2e703d8f2bd08c9cac3ca854ac5ba8752afeaf08a556c152d",
+          "llama-b11433/libggml-base.so.0": "91fcfa2e0c79e5d2e703d8f2bd08c9cac3ca854ac5ba8752afeaf08a556c152d",
+          "llama-b11433/libggml-base.so.0.26.0": "91fcfa2e0c79e5d2e703d8f2bd08c9cac3ca854ac5ba8752afeaf08a556c152d",
+          "llama-b11433/libggml-cpu-alderlake.so": "278b5509065d4ebff62987a01f1c6c03541ac69e72b72c6eaec8d4f81522e28d",
+          "llama-b11433/libggml-cpu-cannonlake.so": "79b9da6f58f5446e3cf55f593604c7dfd3ae6c6b1ffccd2075ac39aa2185aa04",
+          "llama-b11433/libggml-cpu-cascadelake.so": "25b10f37e1bc30f497a5a1b0f4c32168204c5aba4f931e920ada44a6988dbde6",
+          "llama-b11433/libggml-cpu-cooperlake.so": "cf18777ad552f4bf2cb6626cbcb0530202c23c5d17fb16f04796a7824317f22e",
+          "llama-b11433/libggml-cpu-haswell.so": "7a6b7bf86d11db8ad0b0df7cb2011beeb1316303e96d25f4e877d01cc9a225a5",
+          "llama-b11433/libggml-cpu-icelake.so": "0a2bb65d345b06d9e299f0391fb4042a27879834aa54b95f66bc091c7e21162c",
+          "llama-b11433/libggml-cpu-ivybridge.so": "67ce9d40cad87ea0af8dbdb2abfc17e1145220617ccd68cbe17aa51e1c03c2d4",
+          "llama-b11433/libggml-cpu-piledriver.so": "62c3196031c66a344659efd7b8e57691dfda053431aab418a95794117e1df865",
+          "llama-b11433/libggml-cpu-sandybridge.so": "952df934f498078893f7c5147007d8df0c5420f24137617195bc6be1a2bc026b",
+          "llama-b11433/libggml-cpu-sapphirerapids.so": "4222cf9e08c31aedd40e7487fd2a971861e8dd5fe24058512f095270e57df452",
+          "llama-b11433/libggml-cpu-skylakex.so": "b065963dd8029838a55a5ad632949378f6b7c04c7c686d4328bf9796cc79324e",
+          "llama-b11433/libggml-cpu-sse42.so": "396014727454a14b51613e6ad22d78da8b20cb49d4eaf53b53d750a81b474d78",
+          "llama-b11433/libggml-cpu-x64.so": "ae3c8e87f7738874165bd4d685f9f2d715bf112a5c401686e49758f37d7e583c",
+          "llama-b11433/libggml-cpu-zen4.so": "24f811415aa24e998ce5aa7c2db20da383e42fca4877b414cd05a2f14c6cce10",
+          "llama-b11433/libggml-cuda.so": "7df35bd0d37e8b42afa9dc9c99460183fb1142b2ac44a65012a314f8f21e62c6",
+          "llama-b11433/libggml-rpc.so": "52914cc9c82a25cc784035556095aaefc49abf0ed7d422e4734f3c0bb3e3cd48",
+          "llama-b11433/libggml.so": "6fe347469e77a19024f3ec2b1d949cf8221f014495318af3758af0df3a646bc1",
+          "llama-b11433/libggml.so.0": "6fe347469e77a19024f3ec2b1d949cf8221f014495318af3758af0df3a646bc1",
+          "llama-b11433/libggml.so.0.26.0": "6fe347469e77a19024f3ec2b1d949cf8221f014495318af3758af0df3a646bc1",
+          "llama-b11433/libllama-batched-bench-impl.so": "f34967f6e61a9e5dfd812ebc0ac5fa190092a2e5d1740ed30321c1a562d8673e",
+          "llama-b11433/libllama-bench-impl.so": "f0b97e82dd36087df7ecd449a311b8a7983be4f2607171421015515410d38416",
+          "llama-b11433/libllama-cli-impl.so": "7b24496d486ee6a9a726666c9324a05e5e1cf8dbfa4c6fc2c92e30cdfb8eddc2",
+          "llama-b11433/libllama-common.so": "cd933a764d3cd9fb46993c40b9ce9ddc32c34744fc3ce3c1820bb80fd258f758",
+          "llama-b11433/libllama-common.so.0": "cd933a764d3cd9fb46993c40b9ce9ddc32c34744fc3ce3c1820bb80fd258f758",
+          "llama-b11433/libllama-common.so.0.6.0": "cd933a764d3cd9fb46993c40b9ce9ddc32c34744fc3ce3c1820bb80fd258f758",
+          "llama-b11433/libllama-completion-impl.so": "df18bccf2e956d2edf594d3f80e8b7074f38dd4550aa133603538997af1aac4a",
+          "llama-b11433/libllama-fit-params-impl.so": "e0fb8f12b5042d8181490a096dd3c80583e0c3ccd14845fe6a678854bd489422",
+          "llama-b11433/libllama-perplexity-impl.so": "d8672d0d7ce1a9002797c70cfd93e4244cb85ed7ed1c22419b9bc92068cc5609",
+          "llama-b11433/libllama-quantize-impl.so": "f9ecfdd4451cf051532ffe4df02e68e6e2d0d6186df696b3ba88731ef17e0173",
+          "llama-b11433/libllama-server-impl.so": "2f3526ee5be20cf202652bee47ac8b700a546ef006379e7c6fac5cb79551b239",
+          "llama-b11433/libllama.so": "0994014e11147d3781f7ba7c0ea1f20524840dd666c55e1e5d3ea972d408721b",
+          "llama-b11433/libllama.so.0": "0994014e11147d3781f7ba7c0ea1f20524840dd666c55e1e5d3ea972d408721b",
+          "llama-b11433/libllama.so.0.6.0": "0994014e11147d3781f7ba7c0ea1f20524840dd666c55e1e5d3ea972d408721b",
+          "llama-b11433/libmtmd.so": "e65002335e4162f8a63791c59c1b47300dde677b2a4534d1b26f24b8155d8403",
+          "llama-b11433/libmtmd.so.0": "e65002335e4162f8a63791c59c1b47300dde677b2a4534d1b26f24b8155d8403",
+          "llama-b11433/libmtmd.so.0.6.0": "e65002335e4162f8a63791c59c1b47300dde677b2a4534d1b26f24b8155d8403",
+          "llama-b11433/llama": "3bf23b012d0097ba831cff55cba8d3522d6967582e64a4d4d5e38973fe8c623a",
+          "llama-b11433/llama-batched-bench": "7859f175883f9c37443f6e5f1e07425f4b5885031d90ebacb4c1e97e60d8788c",
+          "llama-b11433/llama-bench": "128d7ac5251dc6cb16ea542dc31375b42ace229b8338b89ee634c5dca28d558e",
+          "llama-b11433/llama-cli": "475dfb1c203c746e53a1a99e3f0e1c33858c2154038474cee54eb197d3e370de",
+          "llama-b11433/llama-completion": "15472995c69d23fd6350f84b1fb73156698bab77b20438b617bcd8e1e9a9a11f",
+          "llama-b11433/llama-fit-params": "140a1326c0556d44fb96fad5fed3d1910e28525911c57676f5ff0fd11923265e",
+          "llama-b11433/llama-gemma3-cli": "b97e6722bf5d263b68e0f25dd6480d44f2e12ec752fc80204600a82e2d773372",
+          "llama-b11433/llama-gguf-split": "d2a649c9622343682b22bbc55c3cd6007304a518031e1970a2ff95b4b9fdaf09",
+          "llama-b11433/llama-imatrix": "58740fb15311c8c292f150da7fece0f5ac07c9b6f0b3d064bfe168cc3afc49a4",
+          "llama-b11433/llama-llava-cli": "b97e6722bf5d263b68e0f25dd6480d44f2e12ec752fc80204600a82e2d773372",
+          "llama-b11433/llama-minicpmv-cli": "b97e6722bf5d263b68e0f25dd6480d44f2e12ec752fc80204600a82e2d773372",
+          "llama-b11433/llama-mtmd-cli": "6c5e02b9d2ccdf880fce0bea0893955a278802249cc84faa43af4d73d56199c3",
+          "llama-b11433/llama-mtmd-debug": "741b96eb7b404ea6a781b69df200f29719e50a0ee279c35dd348f587a37b362e",
+          "llama-b11433/llama-perplexity": "92594986686a4bbe23a2834695792ce32f8b18b9d57bf3c50e0ac87aba715fdd",
+          "llama-b11433/llama-quantize": "ee6adcfdbf1cf3504e09a7f0444ba49e71d252364c271c0cbf0ee4485e445214",
+          "llama-b11433/llama-qwen2vl-cli": "b97e6722bf5d263b68e0f25dd6480d44f2e12ec752fc80204600a82e2d773372",
+          "llama-b11433/llama-results": "5faeb288f1a57e7b2226eb347c54f81f7056f75e18e30ef16357622bf6bb2997",
+          "llama-b11433/llama-server": "a2bd95e075b90541548148538e02436d521da7306e56f2a305df89c4d5e52a7d",
+          "llama-b11433/llama-tokenize": "bfd9952e1f6299966c724b052d928126ec8d1f288c48d6ee3af9ba77c251d980",
+          "llama-b11433/llama-tts": "5d6638a3b89036c5d9c1e8eb7c9879e3008d14286bc749bf083578f16d3985bf"
+        },
+        "schema_version": 1,
+        "server": "llama-b11433/llama-server",
+        "source_commit": "50569eb87df530daff11afda229ceb9ab8e6cae8",
+        "specification_sha256": "05a49090315c85cce04dbcd6a07e311aeea04b1050f28cc456d57b154b5aaca4",
+        "system_libraries": [
+          {
+            "name": "libcudart.so.12",
+            "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7",
+            "source": "/usr/local/cuda-12.9/lib64/libcudart.so.12.9.79"
+          },
+          {
+            "name": "libcublas.so.12",
+            "sha256": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048",
+            "source": "/usr/local/cuda-12.9/lib64/libcublas.so.12.9.1.4"
+          },
+          {
+            "name": "libcublasLt.so.12",
+            "sha256": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541",
+            "source": "/usr/local/cuda-12.9/lib64/libcublasLt.so.12.9.1.4"
+          }
+        ],
+        "tag": "b11433"
+      },
+      "actual_gpu_offload": true,
+      "offloaded_layers": 33,
+      "total_layers": 33,
+      "full_gpu_offload": true
+    },
+    "cost_incomplete": false,
+    "input_tokens": 630,
+    "output_tokens": 1768,
+    "not_attempted_ids": []
+  },
+  "actual_model_type_from_native_log": "Q6_K",
+  "full_gpu_offload": true,
+  "cuda_offloaded_layers": 33,
+  "cpu_mapped_model_buffer_mib": 795.7,
+  "cuda_model_buffer_mib": 6306.63,
+  "native_core27_unchanged": true,
+  "strict_cases_passed": 9,
+  "legacy_control_failed_and_retained": true,
+  "independent_native_json_Draft7_and_grammar_token_witness_verified": true,
+  "source_hashes_verified": 92,
+  "resume_unchanged_files": 14,
+  "resume_new_calls": 0,
+  "resume_new_servers": 0,
+  "input_tokens": 630,
+  "output_tokens": 1768,
+  "summed_generation_seconds": 37.80482954799663,
+  "resource_summary": {
+    "finished_at_utc": "2026-10-23T03:08:07.422036+00:00",
+    "native_runner_returncode": 0,
+    "samples": 13,
+    "native_runner_launch_error": null,
+    "samples_with_observation_errors": 0,
+    "observation_complete": true,
+    "observed_max_gpu_used_mib": 7601,
+    "observed_min_host_available_kib": 5130740,
+    "elapsed_observer_seconds": 55.364926630980335,
+    "sampled_extrema_are_not_continuous_peaks": true,
+    "native_gate_or_semantic_pass_not_asserted": true,
+    "new_model_calls_from_observer": 0
+  },
+  "raw_files": 16,
+  "previous_all9b_recorded_attempts": 634,
+  "cumulative_all9b_recorded_attempts": 644,
+  "recorded_Q6_calls": 10,
+  "maximum_cumulative_all9b_calls": 798,
+  "remaining_semantic70_and_conditional_known84": 154,
+  "previous_unknown1_and_unused42_81_42_retained": true,
+  "artifacts": {
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/audit_check.json": {
+      "sha256": "bd79db9df4a6c2d945342b04ab0cd7e6a48265ca7827122ab07a6469d0306ac2",
+      "size_bytes": 3998
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/legacy-array.json": {
+      "sha256": "cd19fb39c538138bb5c7430644147cd141990910f731dfb5ed0dd03e84d2e377",
+      "size_bytes": 7715
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/plan.json": {
+      "sha256": "d0e5aeac0432bb433f267a4849fdee6ca7b4e873d46f2654959ec83c84d3f410",
+      "size_bytes": 29888
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/report.json": {
+      "sha256": "2456d3111ea6d5485bbe3296d85d13b80568778108d17216977bdb4e83cf8253",
+      "size_bytes": 11766
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/resume_check.json": {
+      "sha256": "bc5887013ad911d95b621e6b471f24128a3f6f0f4c72155429be6c269ab0a80c",
+      "size_bytes": 1577
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/server.log": {
+      "sha256": "440f3b04aafc5c35e076c4eaf40d8e3da2e83de437461aecb825861f5d1d47b7",
+      "size_bytes": 45953
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/strict-array.json": {
+      "sha256": "b0617d3d0cb3e41b91602a5e46316f15e14f10c0377e45cf672e1d325040c65b",
+      "size_bytes": 8151
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/strict-cited-contradicted.json": {
+      "sha256": "1e7dcadbea7e05cfe87f7f462e5d824913216fcabab5f9a11e5c027f2f85949a",
+      "size_bytes": 16839
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/strict-cited-missing-empty.json": {
+      "sha256": "f124bb8837c798e6f5656d4c77d65ea919072c46f9c516df95a2ee57bcb55987",
+      "size_bytes": 16707
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/strict-cited-supported.json": {
+      "sha256": "e939e3f39466c914b9761d33811426d3f94659bb9bf5e6efe54f8a634cfb520d",
+      "size_bytes": 16703
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/strict-cited-union.json": {
+      "sha256": "635b3a11afdd5f7e164256b7e61f216f2c05fe6c9c838a6dea9c0c05a32477d4",
+      "size_bytes": 20102
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/strict-fixed-ids.json": {
+      "sha256": "44839c8cbc76befec784e6060b0ca6890f5f73bb0b0572121e1a883cc825db08",
+      "size_bytes": 10377
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/strict-prose-fence.json": {
+      "sha256": "3b1af98ae7bdf9e90ce19e0f330ea1ea8ecb10391a3764cfab9163d8ed96d614",
+      "size_bytes": 8239
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/strict-rewrite-bounds.json": {
+      "sha256": "8ead956c653ccbc2a24d265e2871f8cc47f8c48089acc23c238db9c2676fa365",
+      "size_bytes": 93331
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-context-cited-v7/strict-unicode-escape.json": {
+      "sha256": "bcb005bb6a04eeb0c868af2217ee314b83c6186b2a91419c37f4f01d4e85143e",
+      "size_bytes": 8232
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v19-format-v1/launch.json": {
+      "sha256": "a0aa352f477ce1991a80e2fe26ed617aa117bfb092418e1fabf1d2534d622232",
+      "size_bytes": 1173
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v19-format-v1/samples.jsonl": {
+      "sha256": "47f97ace81d54909862a8a5d9bfff81df0bd2d949d6b6ab0387daf20ad265831",
+      "size_bytes": 5789
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v19-format-v1/summary.json": {
+      "sha256": "8a3bb30729cc066f330ed9ade356beaf933c2408e77b495bc6b7ee95fabc2468",
+      "size_bytes": 496
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/format_audit.py": {
+      "sha256": "333c5578895e1c7ace4b62e9f01196e1b8ac95f049904acfefedcb76f26e83de",
+      "size_bytes": 6624
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/format_audit_stdout.txt": {
+      "sha256": "b2a56582161b54f4f5ffe574fbfec7bbe3ec3468e8ec3320721098fdf25e12f1",
+      "size_bytes": 219
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/format_audit_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/format_rerun_rejection.txt": {
+      "sha256": "1920da3548c87d3cf654d29dd889659a512830d04bc6e5335da063cce66316c2",
+      "size_bytes": 751
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/audit_resources.py": {
+      "sha256": "af8e913e81aa4a83290987b4335b25128e0fbb72227cde40fb2d629f3beae8c4",
+      "size_bytes": 5218
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/preflight_resource_audit.json": {
+      "sha256": "52cdb1a6efdfd7cbec4421feedd59afbf014a9380e5fdc9abe50ee94dcae22e8",
+      "size_bytes": 1445
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/format_resource_audit.json": {
+      "sha256": "c27d59fdcab6e32772901a255877c961094751aa5bd4d9cff887bd334e3472c3",
+      "size_bytes": 1444
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/preparation_v1.json": {
+      "sha256": "bd9b83e56dd7f5353f4262988d76f929a07243eaea7773438cf54daf97e02781",
+      "size_bytes": 302961
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/prepare_worktree.py": {
+      "sha256": "dbfd0afcf913589a241815025ef1867b3761c7fe542503212590a9a72a3c4bdb",
+      "size_bytes": 4724
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/uv_sync_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/uv_sync_stderr.txt": {
+      "sha256": "2267c7415d52a4c203ffcbd7a2f3176db81fd81392389783d866c0b29e7a9d19",
+      "size_bytes": 1436
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/preflight_v1/plan.json": {
+      "sha256": "a1af46c467c9e03adb57b4f96f7bf08e7946cba1e57420c90213143793af65d6",
+      "size_bytes": 1220
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/preflight_v1/report.json": {
+      "sha256": "b1b93f63cf6c8f55fc09e9b8d10bfdf61644dfc79c0195db5b77a9c86bb3dcd1",
+      "size_bytes": 30790
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/preflight_v1/server.log": {
+      "sha256": "5822de794554358842c0e68fcd1e52921c28a719691f6bae87565edb1302cb8e",
+      "size_bytes": 19163
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v19-preflight-v1/launch.json": {
+      "sha256": "6f71fc214aeb0164465a0b3a42e54fb00b297c83ee1324889e2e1830734d4464",
+      "size_bytes": 1170
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v19-preflight-v1/samples.jsonl": {
+      "sha256": "99c4145e769b64e67da01ddd0cce581bdb0651c06da89dc3cb8cdcf4c896e653",
+      "size_bytes": 2369
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v19-preflight-v1/summary.json": {
+      "sha256": "887fb0949094530f47ca28d4c99628ae317487766e8d44dacc95b536ba5cdb46",
+      "size_bytes": 495
+    }
+  },
+  "main_or_reserved_calibration_or_evaluation_new_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

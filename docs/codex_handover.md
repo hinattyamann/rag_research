@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+最優先は[Q6実機実行記録](phase11_qwen35_q6_execution_v1.md)。固定cf489d9844651995be9986e4d41c0f89de672e63のWT phase11-qwen35-9b-q6-v19で、全70入力生成0/全層CUDAと新形式10 Call/全9 Strictを通過した。生成0全11/新形式Raw16・全37 Artifactを正規保存・WT照合済み。準備83147/生成0確認77162/形式30605は終了済みで再生成しない。同じWTで全意味58条件/最大70 Callを観測付きsession98160として実行中、同じHandleで継続観測する。全9Bは開始前記録試行644/上限798・Retry0。終了後だけ全監査/正規保存を行い、全通過後だけ旧全15 QAへ進む。開始/形式/生成0参照のWT実コピーはmodelscreeningのlaunch.json/fresh_format_binding.json/preflight_binding.jsonで、Rootと同じManifestパスを仮定しない。Main/予約Cal/最終凍結は未了。
+
 [Q6別候補v19](phase11_qwen35_q6_candidate.md)を登録した。取得35864は終了Code0、全体7458301152 Byte/公開SHA91898433…を照合した。実Loader/全154入力同一・全761 Test（29.18秒）/Ruffに成功。Native Core27/日英Prompt/12k/予算/全Expected/基準は不変で、追加推論0。事前登録v15は既存記録試行634/新最大164/累積上限798・Retry0、旧未知1/未使用42/81/42を保持する。次は新Commitの専用WTで生成0全層CUDA→新Q6形式10以下→全意味70→通過時だけ旧全84へ進む。Q5形式はQ6証拠として再使用しない。Main/予約Cal/最終凍結は未了。
 
 [12k旧全回帰v7の不採用結果](phase11_known_trace_direct_result_v7.md)を最優先する。64437/監査63748は終了済みで再生成しない。12条件/42 Call・Critical9/12/誤支持3、残18未試行。95 Source/再開59 File不変・追加0、独立42 Schema/21組・全理由/Sourceと資源569点を監査し、Raw62/全93 Artifactを正規保存・WT照合した。今回未使用42/旧未知1/旧未使用81/42を保持し、全9B記録試行634（Q4 317/Q5 317）。Main準備は今回の正規Reportも拒否した。次は[同RevisionのQ6資源調査](phase11_q6_resource_feasibility_v1.md)に基づく別候補の取得/事前登録/生成0を検討する。精度/実GPU配置は未確認。旧同条件を再開して未知/未試行を埋めず、全基準通過前にMain/予約Calへ進まない。Gate 11未通過、Goal継続中。

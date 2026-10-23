@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-v19-semantic-launch-not-adoption",
+  "observed_active_at_utc": "2026-10-23T03:15:40.228180+00:00",
+  "fixed_commit": "cf489d9844651995be9986e4d41c0f89de672e63",
+  "worktree": ".tools/worktrees/phase11-qwen35-9b-q6-v19",
+  "tool_session_id": 98160,
+  "run": "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-context-v19",
+  "resource_observations": "data/runs/resource_observation/phase11-qwen35-9b-q6-v19-semantic-v1",
+  "config": {
+    "path": "configs/phase11_semantic_candidate_v19.yaml",
+    "sha256": "bf99846483acb794e322515c17c1e20f4a25209c0020a8e4195da07f592598e5",
+    "size_bytes": 2179
+  },
+  "model_manifest": {
+    "path": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+    "sha256": "acadda5c012105a454b07ee95d406a217fe0aab8f498f3988bf44de36ebade65",
+    "size_bytes": 748
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v15.json",
+    "sha256": "7acb31152e620054186395d050d311ad3fa3f33b5e673da1b974ef7fd4abc73c",
+    "size_bytes": 7563
+  },
+  "registration_validation": {
+    "path": "data/manifests/phase11_qwen35_q6_candidate_validation_v1.json",
+    "sha256": "0d913f151872f58994f62b49a110347846033c08fe20375931f0d2f05a0be6f0",
+    "size_bytes": 38908
+  },
+  "preflight": {
+    "path": "data/manifests/phase11_qwen35_q6_preflight_v1.json",
+    "sha256": "808990149f2e49dea6d494932095cdb0878131ad5fb5f8ae55240d43d1377b19",
+    "size_bytes": 3535
+  },
+  "fresh_model_specific_format": {
+    "path": "data/manifests/phase11_qwen35_q6_format_result_v1.json",
+    "sha256": "50e2282b593f5954a336fb9eb3c6f70fc31243fe7acb98647c5593516fb19d13",
+    "size_bytes": 22284
+  },
+  "previous_failed_whole_known": {
+    "path": "data/manifests/phase11_known_trace_result_v7.json",
+    "sha256": "b5b094b06c947af955257b07443807f06264a093ba147ce36d860e0091b6589b",
+    "size_bytes": 28749
+  },
+  "observer": {
+    "path": "scripts/observe_native_resources.py",
+    "sha256": "900ca7483d26ba07c6d46526007ff379817f8de99320ce1400e080533366e89e",
+    "size_bytes": 8865
+  },
+  "context_tokens": 12288,
+  "conditions": 58,
+  "maximum_new_calls_this_stage": 70,
+  "conditional_whole_known_calls_only_after_full_pass_and_audit": 84,
+  "recorded_all9b_attempts_before_launch": 644,
+  "recorded_Q4_attempts_before_launch": 317,
+  "recorded_Q5_attempts_before_launch": 317,
+  "recorded_Q6_attempts_before_launch": 10,
+  "maximum_cumulative_call_attempts": 798,
+  "automatic_retries": 0,
+  "observation_interval_seconds": 5,
+  "old_unknown1_and_unused42_81_42_not_filled_or_reallocated": true,
+  "all_original_sources_expected_gates_ambiguous_and_refusals_unchanged": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
