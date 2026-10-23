@@ -1,10 +1,12 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.75 — 2026年10月23日 新基準実装・全回帰の停止保全とGuard検証
+## Version 8.76 — 2026年10月24日 研究室向け自律継続の実行要件を保存
 
-[研究計画 Version 7.72](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.73](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
+
+[週末Goal](phase11_lab_weekend_goal.md)と[開始文](phase11_lab_weekend_start.md)を保存した。旧188/14400秒/候補1個のGuardを削除した実装はまだない。研究室で新しい許可・候補/Runtime・有限な各Run計画・累積台帳を別Versionへ登録し、Known→Main→Cal→Freezeの整合・旧拒否回帰・障害保全/重複防止をテストしてから実走する。回復可能障害では失敗Runを保存して原因に対応する修正と別検証へ進み、未知要求の再送や同条件の成功待ち再抽選をしない。90%の意味基準・Health・全文/被覆/未使用性・全採点封印は不変。最終完了は実Gate11/Manifest/Hashであり、本実験は開始しない。今回は文書のみで新規推論0。
 
 [新基準v2の全回帰v10](phase11_known_trace_direct_result_v10.md)は固定903f4cfで56試行（55応答取得/未知1）後にCUDA launch timeout・Kernel Watchdog/Xid8で停止し不採用。元15 QA/42文/30条件・84 Callを保持し、12条件/28 Call未試行。非支持の予定16判定は全件取得したが14/16＝87.5%で基準0.90未達。C↔NS3件は二次診断、全予定率はHealth不適合でnull。全55理由/56入力・Schema/55実Sampler/96 Source/生成0再読79 File不変・830資源観測を監査し、Raw81/全123 Artifactを正規保存・WT照合した。新開発はSmoke2+Known56＝58、累積909/未知3、Task4310.915004秒・共有壁4381.357537秒で数値上限内。残130（Known28+未割当102）と旧未使用69・42/42/81/42は自動再配分しない。v2のKnown→Main→Cal→最終Validator実装と全782 Test/Ruffは成功し、実Main準備/最終凍結の拒否も確認。Main各20/予約Cal各20・独立品質/費用・最終N/条件/凍結は未了、Gate11未通過・Phase12未実施。Nativeは全終了。ユーザー指定の障害時一時停止条件に該当し、保存・Git同期後にGoalを一時停止する。再開にはRuntime診断と意味候補の追加枠または研究範囲の明示的判断が必要で、CUDA復旧だけでは意味不適合は解消しない。
 

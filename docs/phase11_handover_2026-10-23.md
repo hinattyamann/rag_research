@@ -1,5 +1,9 @@
 # Phase 11 新チャットへの引継ぎ
 
+2026-10-24の作業指示更新: [研究室向け開始文](phase11_lab_weekend_start.md)と[週末Goal](phase11_lab_weekend_goal.md)を保存。
+旧の候補1個/188回/4時間/障害時Goal停止は新規の自律継続方針へ置換する。旧失敗/未知/台帳は保存し、意味基準は維持する。
+研究室での新Protocol実装・実験開始はまだ行っていない。以下の不採用/停止結果は実績として有効である。
+
 更新日: 2026-10-23。新チャットでは本書と[評価器・資源・テスト見直し方針](phase11_evaluator_review_policy_v1.md)から読む。
 工程の正本は[research_roadmap.md](research_roadmap.md)。長い日誌/過去の引継ぎは履歴であり、必要な箇所だけ参照する。
 新チャット用の貼付文は[phase11_next_chat_prompt.md](phase11_next_chat_prompt.md)。

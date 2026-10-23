@@ -1,11 +1,13 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月23日。正本: [研究計画7.72](rag_research_plan.md)、[実装計画8.75](rag_implementation_plan.md)。
+更新日: 2026年10月24日。正本: [研究計画7.73](rag_research_plan.md)、[実装計画8.76](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
+
+2026-10-24、ユーザーの研究室PCでの週末自律継続依頼に基づき、[開始プロンプト](phase11_lab_weekend_start.md)と[Goal・実行方針](phase11_lab_weekend_goal.md)を保存した。旧の候補1個/追加188回/4時間/回復可能障害時のGoal停止は、今後の新Protocolで置換する許可を記録。支持/非支持各90%、被覆/Health/未使用性/全採点封印/最終実証拠は維持する。候補の不合格とRuntime障害は保存し、原因に対応する修正・別検証へ継続する。最終到達点はGate11/最終ManifestまででPhase12は始めない。今回は文書作成のみで、実行Guard改訂・新実験・候補採用は未実施。以下の093fd9f時点の失敗実績は変更しない。
 
 [新基準v2の全回帰v10](phase11_known_trace_direct_result_v10.md)は固定903f4cfで56試行（55応答取得/未知1）後にCUDA launch timeout・Kernel Watchdog/Xid8で停止し不採用。元15 QA/42文/30条件・84 Callを保持し、12条件/28 Call未試行。非支持の予定16判定は全件取得したが14/16＝87.5%で基準0.90未達。C↔NS3件は二次診断、全予定率はHealth不適合でnull。全55理由/56入力・Schema/55実Sampler/96 Source/生成0再読79 File不変・830資源観測を監査し、Raw81/全123 Artifactを正規保存・WT照合した。新開発はSmoke2+Known56＝58、累積909/未知3、Task4310.915004秒・共有壁4381.357537秒で数値上限内。残130（Known28+未割当102）と旧未使用69・42/42/81/42は自動再配分しない。v2のKnown→Main→Cal→最終Validator実装と全782 Test/Ruffは成功し、実Main準備/最終凍結の拒否も確認。Main各20/予約Cal各20・独立品質/費用・最終N/条件/凍結は未了、Gate11未通過・Phase12未実施。Nativeは全終了。ユーザー指定の障害時一時停止条件に該当し、保存・Git同期後にGoalを一時停止する。再開にはRuntime診断と意味候補の追加枠または研究範囲の明示的判断が必要で、CUDA復旧だけでは意味不適合は解消しない。
 
@@ -353,7 +355,7 @@ Zidaneで順序判断反転1/12、同順序反転0/12。誤支持・回答不足
 - [x] CLAPNQに近い日本語候補を比較し、[人手検索・長文QA Sourceの選定理由と残る差](japanese_dataset_selection.md)、固定版原QAの取得・構造監査を保存する。本文Corpusの準備は下記へ残す。
 - [x] 全検索記録の記事全文から[共通Corpus](phase11_japanese_corpus.md)を取得・検証し、[正式Group/ID/Seed分割](japanese_dataset_selection.md#8-全取得と正式group分割の完了)とManifestを保存した。Redirect・複数参照・欠測を保持し、[日英全文Index](phase11_bilingual_indexes.md)と参照対応v2をAssets v2へ結んだ。
 - [x] 読込み・選定・検索・指示文・文分割/拒否・Token予算・匿名品質採点・言語別記録/集計の[共通接続](phase11_bilingual_pipeline.md)と単体/回帰Testを実装した。現行Sourceの全734 Test/Ruffと全30 Index/Embedding Payloadの照合を最終Validator検証v2へ保存した。これは実主/Calの意味採用ではない。
-- [ ] 最優先の再開条件: 新Known v10はCUDA再停止と非支持Specificity87.5%で不採用。Runtime切分け・意味候補の追加枠/研究範囲をユーザーが明示的に判断するまで新規推論を再開しない。v2実装/全782 Test/Ruff/生成0/Smoke2通過は完了したが、全Known実採用は未了。全Expected/旧v1失敗を保持する。
+- [ ] 最優先: 新Known v10はCUDA再停止と非支持Specificity87.5%で不採用。10月24日のユーザー指示に基づく週末Goalで、今後の追加開発・自律継続は許可された。研究室で新Protocol/累積台帳/Guard整合を実装・検証・事前登録し、Runtime切分けと意味候補改善を再開する。旧v2実装/全782 Test/Ruff/生成0/Smoke2通過を全Known実採用とは扱わず、全Expected/旧失敗を保持する。
 - [ ] 日英の主Development各20 QAで全経路・全匿名品質/固定文Expectedの封印・意味/費用/有効比較数を確認する。既知各1問の接続結果と、使用済み英語の拒否/誤支持履歴は保持し、主20問完了へ数えない。
 - [ ] 修正後の候補と停止条件を保存し、両言語の未使用Calibrationで意味妥当性・有効数・費用を確認する。
 - [ ] 言語別件数・対象ID・条件・独立品質基準・日英差の統計と欠測の扱いを固定し、最終固定Validatorも追加要件へ対応させる。

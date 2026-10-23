@@ -1,6 +1,9 @@
 # 別チャットから再開するための引継ぎ
 
-**新チャットはまず[2026-10-23の短い引継ぎ](phase11_handover_2026-10-23.md)と[新しいGoal貼付文](phase11_next_chat_prompt.md)を読む。以下の長い本文は過去の経緯で、最初から全文を読み直さない。**
+2026-10-24の研究室再開は[週末用開始文](phase11_lab_weekend_start.md)と[自律継続Goal](phase11_lab_weekend_goal.md)を優先する。
+旧上限付きGoalは履歴とし、90%の採用基準・旧不採用・実証拠要件を維持してPhase11完了まで進める。文書作成のみで、新実験は未開始。
+
+**研究室の新チャットは[週末用開始文](phase11_lab_weekend_start.md)と[自律継続Goal](phase11_lab_weekend_goal.md)から再開する。以下の長い本文と旧Goalは過去の経緯で、最初から全文を読み直さない。**
 
 ユーザーの資源見直し・別チャット移行の依頼を受け、[新チャット引継ぎ](phase11_handover_2026-10-23.md)と[評価器/テスト/資源の見直し](phase11_evaluator_review_policy_v1.md)を保存した。無期限の最適化を終え、支持対非支持の意味検証を主にする新基準Versionを設計採用したが、Guard/Protocolの改訂は未実装で旧失敗の採否は変更しない。追加候補最大1個/新開発188試行またはNative Task4時間・診断24内数を別登録する方針。旧851試行/未知2/未使用69・42/42/81/42を保持し、現行v9はCUDA停止・全監査済み。Main各20/Cal各20と独立品質・費用・最終凍結は未了、Gate11未通過・Phase12未実施。本チャットGoalはpaused、稼働中Nativeなし。次チャットは[貼付用Goal](phase11_next_chat_prompt.md)で新しいGoalを設定し、保存物/新基準実装/Runtime原因調査から再開する。
 

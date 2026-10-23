@@ -1,12 +1,14 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.72 — 2026年10月23日 新基準全回帰のCUDA再停止・意味不適合
+## Version 7.73 — 2026年10月24日 研究室での自律継続Goalと資源方針の改訂
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.75](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.76](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
+
+ユーザーの週末無人運転依頼を[研究室用Goal](phase11_lab_weekend_goal.md)へ明文化した。候補数・追加188回/4時間の全体打切りと回復可能障害時のGoal停止は今後の新Protocolで置換可能とし、90%の採用基準・実行Health・全対象/分母・未使用性・全採点封印を維持する。純粋な資源枠は結果を見る前に別Versionへ必要量を登録し、失敗の再抽選へ使わない。Calを調整に使った後は同じ集合を未使用と呼ばず、追加の独立確認は非重複・未使用Groupで事前固定し、全失敗と反復選択の限界を報告する。Evaluationで調整せず、Gate11実証拠と最終Manifestまでを完了条件としPhase12は開始しない。研究目的とF閾値0.7は不変。旧v10の不採用・909試行/未知3件は保存し、今回はGoal文書だけの作成で新実装/実験/採用は未了。
 
 [新基準v2の全回帰v10](phase11_known_trace_direct_result_v10.md)は固定903f4cfで56試行（55応答取得/未知1）後にCUDA launch timeout・Kernel Watchdog/Xid8で停止し不採用。元15 QA/42文/30条件・84 Callを保持し、12条件/28 Call未試行。非支持の予定16判定は全件取得したが14/16＝87.5%で基準0.90未達。C↔NS3件は二次診断、全予定率はHealth不適合でnull。全55理由/56入力・Schema/55実Sampler/96 Source/生成0再読79 File不変・830資源観測を監査し、Raw81/全123 Artifactを正規保存・WT照合した。新開発はSmoke2+Known56＝58、累積909/未知3、Task4310.915004秒・共有壁4381.357537秒で数値上限内。残130（Known28+未割当102）と旧未使用69・42/42/81/42は自動再配分しない。v2のKnown→Main→Cal→最終Validator実装と全782 Test/Ruffは成功し、実Main準備/最終凍結の拒否も確認。Main各20/予約Cal各20・独立品質/費用・最終N/条件/凍結は未了、Gate11未通過・Phase12未実施。Nativeは全終了。ユーザー指定の障害時一時停止条件に該当し、保存・Git同期後にGoalを一時停止する。再開にはRuntime診断と意味候補の追加枠または研究範囲の明示的判断が必要で、CUDA復旧だけでは意味不適合は解消しない。
 

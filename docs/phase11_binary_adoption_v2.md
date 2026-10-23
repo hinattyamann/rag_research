@@ -1,5 +1,9 @@
 # Phase 11 支持対非支持の採用基準v2
 
+2026-10-24の方針更新: 支持/非支持各90%と被覆・Healthは本書のまま維持する。
+今後の候補数/追加188回/4時間/回復可能障害時のGoal停止は[週末Goal](phase11_lab_weekend_goal.md)に基づく新Protocolへ置換可能。
+本書後半の旧上限・消費・不採用は当時の実績であり、自動的なGuard改修や旧結果の変更を示すものではない。
+
 2026-10-23。基準IDは`support-binary-v2`。設計理由は[見直し方針](phase11_evaluator_review_policy_v1.md)。
 旧Version（Version欄なしを含む`three-label-v1`）のCritical完全一致・誤支持0の経路と、全旧不採用を保存する。
 新基準の実装・事前登録であり、候補の実採用やGate11通過ではない。
