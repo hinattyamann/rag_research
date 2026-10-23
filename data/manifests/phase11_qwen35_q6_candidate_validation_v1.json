@@ -1,0 +1,1044 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-q6-v19-candidate-registration-validation-not-native-adoption",
+  "recorded_at_utc": "2026-10-23T02:55:45.443824+00:00",
+  "pytest_tool_session_id": 32364,
+  "pytest": "761 passed in 29.18s",
+  "ruff": "passed",
+  "contract_tool_session_id": 95348,
+  "acquisition_tool_session_id": 35864,
+  "contract": {
+    "recorded_at_utc": "2026-10-23T02:52:59.245358+00:00",
+    "only_config_differences": [
+      "study_version",
+      "auxiliary_model_manifest"
+    ],
+    "model_revision_and_runtime_unchanged": true,
+    "all_154_messages_byte_identical": [
+      {
+        "group": "semantic",
+        "condition": "known-council-original",
+        "claim_id": "c1",
+        "messages_sha256": "f712f68114e8e23a32a0ef62c759eb5691953fe4146c2da926067bcc3909bcbd"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-original",
+        "claim_id": "c2",
+        "messages_sha256": "c68a899b483196bb3a8003b83ddf6463ff70b5587127ca9085f4f08d25fba006"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-original",
+        "claim_id": "c3",
+        "messages_sha256": "cc670f318591e417c38683ae1d5dd2612444f048b29245c2b36652ce759c36da"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-original",
+        "claim_id": "c4",
+        "messages_sha256": "92a383ba3e032d8c6d74142a70de3cf5a094f1a17648db5839fbfc155d91e3b4"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-original",
+        "claim_id": "c5",
+        "messages_sha256": "ddddc657075961ee3813ef8ebfa086d94fd4791a8a6cf272926093ed20047548"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-original",
+        "claim_id": "c6",
+        "messages_sha256": "0f2aad66c05048fd0b3f83ee87038062bb9755cadeb0ca6ccc1884a9d0b2aef0"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-original",
+        "claim_id": "c7",
+        "messages_sha256": "ca7611df6dd2c057dae0be2610a4e11e0171a81f64c86cfbf38cdf45368485fb"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "988c737c65866905c14ef6cc9a2db906bf80ee0e078f42edb4faa791d0833d10"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-reversed",
+        "claim_id": "c2",
+        "messages_sha256": "b21d7c07e6f42bf97a595c0e0b0b74014398c219ce772650cede6bc3ae49d20e"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-reversed",
+        "claim_id": "c3",
+        "messages_sha256": "65375fbae2c01b04ef0a7ec064cd55f77af62d598014c4b292d43426eeab005a"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-reversed",
+        "claim_id": "c4",
+        "messages_sha256": "e4745c4a3af05215644dd9e41cb96169e90f11e47ac8e8150accee68362029a9"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-reversed",
+        "claim_id": "c5",
+        "messages_sha256": "4b3d227380edaa566e963418c47363e3a298f2d343ef824aad4fd1f7cf2de1e5"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-reversed",
+        "claim_id": "c6",
+        "messages_sha256": "0921e358c266cd7c6e50bf7c4c2f24730c4feb037b2242d2f70f19662ffe7adc"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-council-reversed",
+        "claim_id": "c7",
+        "messages_sha256": "3fd7e3665f775712fb4c568eecb729277615714d93bf7f9d982fa4496d329383"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-zidane-original",
+        "claim_id": "c1",
+        "messages_sha256": "d1fe95090926407a87c72701b0ed33edf8fef8993e3103e6792d11612c340159"
+      },
+      {
+        "group": "semantic",
+        "condition": "known-zidane-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "e2947f38b7870da5c6506893498ed4a799139e9e74ea66e69de0e51f6f694d41"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-time-support-original",
+        "claim_id": "c1",
+        "messages_sha256": "efa2902bdc5f68edffaee0a6d296b22787c34520413161f4091f32128fa79cfe"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-time-support-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "efa2902bdc5f68edffaee0a6d296b22787c34520413161f4091f32128fa79cfe"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-time-conflict-original",
+        "claim_id": "c1",
+        "messages_sha256": "74783ea72edd8c93d4603a046a16390f117c0375e5380fa7f745747e7c9cab8d"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-time-conflict-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "74783ea72edd8c93d4603a046a16390f117c0375e5380fa7f745747e7c9cab8d"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-time-absent-original",
+        "claim_id": "c1",
+        "messages_sha256": "1e1335a85e2a02851f66e4282d75ba538dbc28353c2467be005a1f21549720cf"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-time-absent-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "1e1335a85e2a02851f66e4282d75ba538dbc28353c2467be005a1f21549720cf"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-number-support-original",
+        "claim_id": "c1",
+        "messages_sha256": "51a6ade6c7c7d7558d2360f70ddba98051a7415fae77fa04d61070234b7aecf2"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-number-support-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "51a6ade6c7c7d7558d2360f70ddba98051a7415fae77fa04d61070234b7aecf2"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-number-conflict-original",
+        "claim_id": "c1",
+        "messages_sha256": "ae1cbcd3e74c3e2ee9d21a028353bd16ef1412e023333f10c5c6b811580e67dc"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-number-conflict-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "ae1cbcd3e74c3e2ee9d21a028353bd16ef1412e023333f10c5c6b811580e67dc"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-number-absent-original",
+        "claim_id": "c1",
+        "messages_sha256": "c51789676a52c7e995b52734ce3a71a354743922218b9a252915680d502a1a34"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-number-absent-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "c51789676a52c7e995b52734ce3a71a354743922218b9a252915680d502a1a34"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-negation-support-original",
+        "claim_id": "c1",
+        "messages_sha256": "d61516e43acbe1facff762d09b686dff1c5d2835763ade72fdd83c3481817d14"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-negation-support-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "d61516e43acbe1facff762d09b686dff1c5d2835763ade72fdd83c3481817d14"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-negation-conflict-original",
+        "claim_id": "c1",
+        "messages_sha256": "d57244f72be0c76cd66435c2efdf0496f8403a7e4a86aa79cb8abfbe1654de24"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-negation-conflict-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "d57244f72be0c76cd66435c2efdf0496f8403a7e4a86aa79cb8abfbe1654de24"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-negation-absent-original",
+        "claim_id": "c1",
+        "messages_sha256": "2c72cd24985705d7dc4438510cfcf87194ccb751a418dd5925c45e90c686f65c"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-negation-absent-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "2c72cd24985705d7dc4438510cfcf87194ccb751a418dd5925c45e90c686f65c"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-relation-support-original",
+        "claim_id": "c1",
+        "messages_sha256": "ea8f4b48d1bcdb6acce99417f8af5414d3d18b9158b42864ab47ee85bba94f66"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-relation-support-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "ea8f4b48d1bcdb6acce99417f8af5414d3d18b9158b42864ab47ee85bba94f66"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-relation-conflict-original",
+        "claim_id": "c1",
+        "messages_sha256": "9f84635ab34e18c079dc40aaec7247f3787c995d37b0b6affca6df9702c51813"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-relation-conflict-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "9f84635ab34e18c079dc40aaec7247f3787c995d37b0b6affca6df9702c51813"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-relation-absent-original",
+        "claim_id": "c1",
+        "messages_sha256": "2f325115d286f751c5fc62ba1145a6a185ea390b4ecec3373f427d325f870c1d"
+      },
+      {
+        "group": "semantic",
+        "condition": "en-relation-absent-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "2f325115d286f751c5fc62ba1145a6a185ea390b4ecec3373f427d325f870c1d"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-actor-1-original",
+        "claim_id": "c1",
+        "messages_sha256": "740ab4b58ae07ccdbf9cc3b1829468fb71b32d6636c67ed853a0a612c77db28d"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-actor-1-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "740ab4b58ae07ccdbf9cc3b1829468fb71b32d6636c67ed853a0a612c77db28d"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-actor-2-original",
+        "claim_id": "c1",
+        "messages_sha256": "99ec676fbe9f574f233a4e420c6869aecb92594f2d76b3bf05c00aa0a03ecf97"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-actor-2-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "99ec676fbe9f574f233a4e420c6869aecb92594f2d76b3bf05c00aa0a03ecf97"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-actor-3-original",
+        "claim_id": "c1",
+        "messages_sha256": "16f4d755a20cd82d3c49feb092d84375b1e257d6024684ab5cf33dbee73779da"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-actor-3-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "16f4d755a20cd82d3c49feb092d84375b1e257d6024684ab5cf33dbee73779da"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-count-1-original",
+        "claim_id": "c1",
+        "messages_sha256": "d9ac96d518c0fe876cfac974a9d4a7db2ede343a966a813d579c33970fd5c8e1"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-count-1-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "d9ac96d518c0fe876cfac974a9d4a7db2ede343a966a813d579c33970fd5c8e1"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-count-2-original",
+        "claim_id": "c1",
+        "messages_sha256": "5866b6f8befd7aa9335c96adbb7babf7baa10ea6fe29916e0be0482bbfca2c89"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-count-2-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "5866b6f8befd7aa9335c96adbb7babf7baa10ea6fe29916e0be0482bbfca2c89"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-count-3-original",
+        "claim_id": "c1",
+        "messages_sha256": "d5dff19f8b3fb78382fd05cfe184351bab79e827d8944d32b5017f12cac05722"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-count-3-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "d5dff19f8b3fb78382fd05cfe184351bab79e827d8944d32b5017f12cac05722"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-compound-1-original",
+        "claim_id": "c1",
+        "messages_sha256": "59bdb35804f8bbecb3bdc4e4653c1f407857ecafc910f7e34db615e618e26de8"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-compound-1-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "59bdb35804f8bbecb3bdc4e4653c1f407857ecafc910f7e34db615e618e26de8"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-compound-2-original",
+        "claim_id": "c1",
+        "messages_sha256": "b393adff53ba36ad4f02e6d0871dae535f2b3ebb38fde2e2b536eabbf7bcda61"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-compound-2-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "b393adff53ba36ad4f02e6d0871dae535f2b3ebb38fde2e2b536eabbf7bcda61"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-compound-3-original",
+        "claim_id": "c1",
+        "messages_sha256": "af1dec8f9cb2fe15c00ae1486878388306d61a3cade7e982a8edfdbe745f10e5"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-compound-3-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "af1dec8f9cb2fe15c00ae1486878388306d61a3cade7e982a8edfdbe745f10e5"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-qualification-1-original",
+        "claim_id": "c1",
+        "messages_sha256": "a1bd5ac6f9702a042a09a938eeba23995c5060614dae44c5e6359e5b01efc23e"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-qualification-1-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "a1bd5ac6f9702a042a09a938eeba23995c5060614dae44c5e6359e5b01efc23e"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-qualification-2-original",
+        "claim_id": "c1",
+        "messages_sha256": "7a32ef8eda3cb0f45cdd94fdcc1f125f1d6120da74beb1c47f06395364b5f5f2"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-qualification-2-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "7a32ef8eda3cb0f45cdd94fdcc1f125f1d6120da74beb1c47f06395364b5f5f2"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-qualification-3-original",
+        "claim_id": "c1",
+        "messages_sha256": "62b78a233af766a8b4044621ce53c5203af70ab08d248c721431a13b9a5616d0"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-qualification-3-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "62b78a233af766a8b4044621ce53c5203af70ab08d248c721431a13b9a5616d0"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-table-1-original",
+        "claim_id": "c1",
+        "messages_sha256": "8f8cd9d1ec412ed06ff6ae7b88517f8ac0718383cf7719de5a75923726494cf6"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-table-1-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "8f8cd9d1ec412ed06ff6ae7b88517f8ac0718383cf7719de5a75923726494cf6"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-table-2-original",
+        "claim_id": "c1",
+        "messages_sha256": "c7af0f8eef41874772215d0d3f164677a52654364aa4f21239ab448461dc46ef"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-table-2-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "c7af0f8eef41874772215d0d3f164677a52654364aa4f21239ab448461dc46ef"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-table-3-original",
+        "claim_id": "c1",
+        "messages_sha256": "257066fcb1d0f8a265c487a439d91d5c513b63917578bc71d053034d42fefb0b"
+      },
+      {
+        "group": "semantic",
+        "condition": "ja-table-3-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "257066fcb1d0f8a265c487a439d91d5c513b63917578bc71d053034d42fefb0b"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c1",
+        "messages_sha256": "f712f68114e8e23a32a0ef62c759eb5691953fe4146c2da926067bcc3909bcbd"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c2",
+        "messages_sha256": "c68a899b483196bb3a8003b83ddf6463ff70b5587127ca9085f4f08d25fba006"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c3",
+        "messages_sha256": "cc670f318591e417c38683ae1d5dd2612444f048b29245c2b36652ce759c36da"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c4",
+        "messages_sha256": "92a383ba3e032d8c6d74142a70de3cf5a094f1a17648db5839fbfc155d91e3b4"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c5",
+        "messages_sha256": "ddddc657075961ee3813ef8ebfa086d94fd4791a8a6cf272926093ed20047548"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c6",
+        "messages_sha256": "0f2aad66c05048fd0b3f83ee87038062bb9755cadeb0ca6ccc1884a9d0b2aef0"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-original",
+        "claim_id": "c7",
+        "messages_sha256": "ca7611df6dd2c057dae0be2610a4e11e0171a81f64c86cfbf38cdf45368485fb"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "988c737c65866905c14ef6cc9a2db906bf80ee0e078f42edb4faa791d0833d10"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c2",
+        "messages_sha256": "b21d7c07e6f42bf97a595c0e0b0b74014398c219ce772650cede6bc3ae49d20e"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c3",
+        "messages_sha256": "65375fbae2c01b04ef0a7ec064cd55f77af62d598014c4b292d43426eeab005a"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c4",
+        "messages_sha256": "e4745c4a3af05215644dd9e41cb96169e90f11e47ac8e8150accee68362029a9"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c5",
+        "messages_sha256": "4b3d227380edaa566e963418c47363e3a298f2d343ef824aad4fd1f7cf2de1e5"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c6",
+        "messages_sha256": "0921e358c266cd7c6e50bf7c4c2f24730c4feb037b2242d2f70f19662ffe7adc"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-323bf35882bc-reversed",
+        "claim_id": "c7",
+        "messages_sha256": "3fd7e3665f775712fb4c568eecb729277615714d93bf7f9d982fa4496d329383"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-31e646aa9601-original",
+        "claim_id": "c1",
+        "messages_sha256": "d1fe95090926407a87c72701b0ed33edf8fef8993e3103e6792d11612c340159"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-31e646aa9601-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "e2947f38b7870da5c6506893498ed4a799139e9e74ea66e69de0e51f6f694d41"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b4291e2a1a09-original",
+        "claim_id": "c1",
+        "messages_sha256": "5d88ac753f922f4253cdba2d9dd0f6b72659e4c5b295de0e2cba052872d069b6"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b4291e2a1a09-original",
+        "claim_id": "c2",
+        "messages_sha256": "9b12f35b17e03df4dfd161ef9d61167808a81e9a40ce9355e5798d17661ef61a"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b4291e2a1a09-original",
+        "claim_id": "c3",
+        "messages_sha256": "6cae3503b34874946ab6014a13a4479b9979cda3470a443e2f5b07ef21ea6da6"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b4291e2a1a09-original",
+        "claim_id": "c4",
+        "messages_sha256": "6111aa03e4f13f8b082737ca2f635686dea2c36134e4426414ad704f73baaf46"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b4291e2a1a09-original",
+        "claim_id": "c5",
+        "messages_sha256": "fd9f8fb612cd509495fe78c066f925d1b1149b5c9a2cf6425b9db22d7085e2ba"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b4291e2a1a09-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "8c48dfca15ea56d52d4fa4a3d893dff2a6a38e5e3a2523974dec11094e77da50"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b4291e2a1a09-reversed",
+        "claim_id": "c2",
+        "messages_sha256": "f103797e98c3f3978bef37e743b90d6f7bfef89306e6bc0621cd19641b06bc1b"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b4291e2a1a09-reversed",
+        "claim_id": "c3",
+        "messages_sha256": "597de426ddd6a273a0ea556813ea2528e555a4c1515b9ab1746ccad850ddcbc3"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b4291e2a1a09-reversed",
+        "claim_id": "c4",
+        "messages_sha256": "3d50955cebfa9a1f7ad8763bd27ff987cf1392b620874ef673f04d94cea403e1"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b4291e2a1a09-reversed",
+        "claim_id": "c5",
+        "messages_sha256": "95f69f9ccb4b431358309ec18153222e6cf6c9d0c3e2542d82964eab78f1eb63"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-armistice-original",
+        "claim_id": "c1",
+        "messages_sha256": "b59c6990d3ec021895f6f7ec5e1962d3e0410603c89e93e7387511a6340a30a1"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-armistice-original",
+        "claim_id": "c2",
+        "messages_sha256": "be67b863918ef46a116662228507d14c04bd0a29774d7ae47417991cfa4bc8b2"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-armistice-original",
+        "claim_id": "c3",
+        "messages_sha256": "7079680ac20d963bc070f0aa31498b65721ccfd5a287e68f2ba8501c40ed9b74"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-armistice-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "296f31279818bf8278e96de09719a3576db90146f84f4f0111753772618b403f"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-armistice-reversed",
+        "claim_id": "c2",
+        "messages_sha256": "bbfac90d98960f3998dba96b5d1f126da5005aac457d6a05382ab38452e0c474"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-armistice-reversed",
+        "claim_id": "c3",
+        "messages_sha256": "f7992e5832b591172c0ba0b3b8568120725fb17ae26c500ffbc6353a908fdfa0"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-warm-front-original",
+        "claim_id": "c1",
+        "messages_sha256": "79c022a38e90dabd15dea7ac542ac6036ca5d46a0c358ee858745c3912572fb5"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-warm-front-original",
+        "claim_id": "c2",
+        "messages_sha256": "d50db15d82f297bacbd89e52c94dd2e54b8e069e78f707f11fabe793ac272962"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-warm-front-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "540ceed363f0ff371e1d122276d252eac3e8130a3ad388224c235dc4ac56bafd"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-warm-front-reversed",
+        "claim_id": "c2",
+        "messages_sha256": "541f463327f5e9f1cc0cb2a774862ae209a39f18b8291009222065c93b32a32a"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-tar-heels-original",
+        "claim_id": "c1",
+        "messages_sha256": "5fd397ec7b0e881d2ed7a4829c45c7ee307b0441c80766a9b6dea035f8b7fb68"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-tar-heels-original",
+        "claim_id": "c2",
+        "messages_sha256": "f39f4c9a80bd24d8d4fe687f678633c7e00bd3bb2cab1175865404e73f7eb3d1"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-tar-heels-original",
+        "claim_id": "c3",
+        "messages_sha256": "05c32aa0b8744b769d7fbd924d14ddc33208e76fc21435b613aeae0d1b0c91ac"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-tar-heels-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "a821d62db81375f9a3ea75cd5d35c70f9507c47781cb76f2e91d6e514a53b8a9"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-tar-heels-reversed",
+        "claim_id": "c2",
+        "messages_sha256": "808e418129d382c679d1caed2434ec60f2ef4324395ab09482a729dc1cc9ef60"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-tar-heels-reversed",
+        "claim_id": "c3",
+        "messages_sha256": "1b0461acfaaa59d5b8a6b6b45e0e2b6de632d447cfd69ae7d7d364b984afc545"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-da38af9cd782-original",
+        "claim_id": "c1",
+        "messages_sha256": "0846923453e05b11b1fe1c28e80460348488d923dc51446f9b6a0554d1259518"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-da38af9cd782-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "61af0e80a059a08766de99f7fd6f9c224f1e9da8e86022b1a865147172bf14ba"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-25560cfd1cab-original",
+        "claim_id": "c1",
+        "messages_sha256": "61c664c3c1fdec7622e65765f19d97840858df7a56cbd6f6d88a361d4be218a4"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-25560cfd1cab-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "36509edd1e934c954cfe4d42466adfbced73e60e59c5dec8a8798ee07b6ddc0a"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-dee22fa20655-original",
+        "claim_id": "c1",
+        "messages_sha256": "9e9b4dc810e9fba78416a6348ca793cb2b09e60eb7a941b7bfcb93909e009dba"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-dee22fa20655-original",
+        "claim_id": "c2",
+        "messages_sha256": "d3f5d49045635f2a828a2d8af1ed89f1dae0abc1159ee18dd4529a6bf6626100"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-dee22fa20655-original",
+        "claim_id": "c3",
+        "messages_sha256": "e28a545981f403435bd033c34e7749c0385cd1b3c7eea2d32f82a5a8eb9b7ec3"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-dee22fa20655-original",
+        "claim_id": "c4",
+        "messages_sha256": "fbbf684cad5aa1a796dfbfdc90c8a0dcb0c35bb8af9d96b4bd3a26fcd7adf90d"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-dee22fa20655-original",
+        "claim_id": "c5",
+        "messages_sha256": "d15d1e9b542329209905ee343d23f0f67dbbd328108613f16555c99ac3ca88ed"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-dee22fa20655-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "baab28a2c0c7403119ce443f034b93b9fc532b8b1771eed0cb9ae6aee774a6ba"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-dee22fa20655-reversed",
+        "claim_id": "c2",
+        "messages_sha256": "7bfcc603003ff8acb738c96f05e1de2fcafb90b0bf96712d623b60918e2ba676"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-dee22fa20655-reversed",
+        "claim_id": "c3",
+        "messages_sha256": "b0296f07c78644147e6a542e3b10315e153f12cc0b15f84669e3b2078ae013b4"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-dee22fa20655-reversed",
+        "claim_id": "c4",
+        "messages_sha256": "67bec2fbae9940a731819c8abfa45768e1368d790479e8856309cf1af781a638"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-dee22fa20655-reversed",
+        "claim_id": "c5",
+        "messages_sha256": "4644f9f2aa4c528dcbfcbda0a03e541de0dbeae5d876599ff51fde30b29ac437"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b33c1496859d-original",
+        "claim_id": "c1",
+        "messages_sha256": "5fb1a9b900af97981e2804f3b057c58b9af9681a85d3a5eba41d2a40b2dc3166"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b33c1496859d-original",
+        "claim_id": "c2",
+        "messages_sha256": "aba3abb65b6e5ce42cc2eb0ec43b2de9ee45fc45f7e8352edbbc7143b2e3a0fc"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b33c1496859d-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "65b354b578ac684599ce445830a9d05377e8a46a47fda3ca575e1dcf422d459a"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-b33c1496859d-reversed",
+        "claim_id": "c2",
+        "messages_sha256": "64025de004cc10df9a591e2244bedc7176a9e49ae516d95ef45cbc9829e61d7c"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-c99e26828c62-original",
+        "claim_id": "c1",
+        "messages_sha256": "c562de58dc17b4440ebb543ecda258dc757d8fbb2489cad66b402485e2fd5188"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-c99e26828c62-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "0277ebf2e3155bc5cf6d3a3fd0be4deef225a9b9ebed08659f0f97bfc88a0fca"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-35d3e8259d8f-original",
+        "claim_id": "c1",
+        "messages_sha256": "2e66313d6656c705e1da7f5a86aa8aa18e22857086e3762a7d4b0378b78e64a2"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-35d3e8259d8f-original",
+        "claim_id": "c2",
+        "messages_sha256": "a225c888f4d7562ab594d914f870efa515389cea227d3c83e0e5c9baa177c9f9"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-35d3e8259d8f-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "fbc9fc02d303fda38e9e0a4f913accc85c0bcfd7e33b6c48410e55d711895a02"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-35d3e8259d8f-reversed",
+        "claim_id": "c2",
+        "messages_sha256": "db74bdd724f45e5bda4284a2c8bc7fcfc514751b02b3176ecf06e1f18675a27e"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-6d9820642610-original",
+        "claim_id": "c1",
+        "messages_sha256": "1e15122bc34188db84e1b3e6e81d0344a93a039219c9f8701942c60aacd0e89e"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-6d9820642610-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "987919def5a0fbe33f3a63929df60ed754c4bab969aa104506608ba27fa1e86a"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c1",
+        "messages_sha256": "d20d78613564f1f5dc17239b2ee653681b6b850a235c0bcdf146e8be43de4b20"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c2",
+        "messages_sha256": "cfa3e2af46dd5747af0831965dd3ce07a3a761dd1ebbe05f804bb88efb0cdd85"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c3",
+        "messages_sha256": "09ac33b163ebf1b73c4781bfaac203fb889561a5b73acb741ce465a91361017e"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c4",
+        "messages_sha256": "b0dd5a9aa00b35d158486fff940cec8c7c62fcbb4151bfd661caf8baa425a7a3"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c5",
+        "messages_sha256": "01b3262c1692ffb8c57d8be5f3c15a0c7f77313f34757a5bb9f9c5d8ea66f2fe"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c6",
+        "messages_sha256": "ad068c47e2e7431195b87eb617be0439a9cc9e8796510934187d2bdaa7a500cd"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-original",
+        "claim_id": "c7",
+        "messages_sha256": "c0c6cec2a0c28c664c46c7c2ff3d78a0e2413fe051bac8e8a8f96a646f34ae3f"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "f9541c40c1015ca7098a983e2c6ff20102c1afc53539311d3e63bc86bc60e8b7"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c2",
+        "messages_sha256": "a5eba018e97f3e2b9bb7cc8f2ada1f5af5157bc9bf32187908de444588bed63a"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c3",
+        "messages_sha256": "fae047f37e0c2c75b1da4207e1f0d5b19b4d6b00edd10fce356a9d7651b5da0a"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c4",
+        "messages_sha256": "70aa98074059fe211618aaeab1dd53ed61e6e0b6248476b82e381bf829f58b3e"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c5",
+        "messages_sha256": "d56eb4ec140bed1e9645ee8963eca77f2d20915651ebafd82aaa0c3b280ccbcf"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c6",
+        "messages_sha256": "927629899028834e7bdf3bd932fee1373642ef055505115e32808029661c9314"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-9080b47549bc-reversed",
+        "claim_id": "c7",
+        "messages_sha256": "b6fd51256b6d0941652530d54996ce5481f619a9b8acfbdbc67b48d81af136ad"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-aaba171a10f6-original",
+        "claim_id": "c1",
+        "messages_sha256": "f8fb0deabe2700f51e10a654b4f76c7a2da0ffaf286103668d5f595ae4e01253"
+      },
+      {
+        "group": "whole_known",
+        "condition": "known-gpu-aaba171a10f6-reversed",
+        "claim_id": "c1",
+        "messages_sha256": "f8dc98d2182ab831ed82d966c81841f1d1d23c51cdc78d5a846a0c81354dfd77"
+      }
+    ],
+    "old_sources_expected_gates_ambiguous_and_refusals_unchanged": true,
+    "sealed_artifact_bindings_verified": {
+      "phase11_known_trace_result_v7.json": 93,
+      "phase11_context12k_semantic_result_v1.json": 182,
+      "phase11_q6_resource_feasibility_v1.json": 13,
+      "phase11_main_preparation_validation_v1.json": 18
+    },
+    "native_core27_unchanged": true,
+    "actual_Q6_tokenizer_preflight_and_fresh_format_still_required": true,
+    "new_model_calls": 0,
+    "new_servers": 0,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v15.json",
+    "sha256": "7acb31152e620054186395d050d311ad3fa3f33b5e673da1b974ef7fd4abc73c",
+    "size_bytes": 7563
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-q6-v19-registration-v1/check_contract.py": {
+      "sha256": "7af1161bfe72cc7232391314a6e32e8aaef492e33d5dd6b14a54643105b4d3e3",
+      "size_bytes": 5379
+    },
+    "data/runs/development_screening/phase11-q6-v19-registration-v1/contract.json": {
+      "sha256": "4831757ac07018037dc20cd5bbb567e756c6149fbf34db1493d4165013753833",
+      "size_bytes": 32704
+    },
+    "data/runs/development_screening/phase11-q6-v19-registration-v1/contract_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-v19-registration-v1/contract_stdout.txt": {
+      "sha256": "05cb911c559f451b937df7acc775eae9eff2834e91ef546c5af41a53758b6ae4",
+      "size_bytes": 328
+    },
+    "data/runs/development_screening/phase11-q6-v19-registration-v1/helpers_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q6-v19-registration-v1/pytest.txt": {
+      "sha256": "3d308ecc807ee4af8386e346322576dc7521fd020b9e9231079736fc4016e861",
+      "size_bytes": 4627
+    },
+    "data/runs/development_screening/phase11-q6-v19-registration-v1/resources_before.json": {
+      "sha256": "92f6002fdfb66003022b0f8ada0e6c1a5183111422fd396723c5b7ddd1438ead",
+      "size_bytes": 326
+    },
+    "data/runs/development_screening/phase11-q6-v19-registration-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/acquisition_start.json": {
+      "sha256": "ab0ae389d88b1c20e504c803c0dd16ce0221e2db7ad9acdd206091a72cafa7d4",
+      "size_bytes": 318
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/acquisition_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/acquisition_stdout.txt": {
+      "sha256": "9ee5c382683fd28bfb7fe14bd0492e9b0ea017446e7d8ae8fceec426cd4aa073",
+      "size_bytes": 4423
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v19/acquisition_verified.json": {
+      "sha256": "797e334556559714fa88c24328d712905c315da51c14a9aeb7003abf76f33466",
+      "size_bytes": 898
+    },
+    "configs/phase11_auxiliary_qwen35_9b_q6_v1.json": {
+      "sha256": "e984747dcbeaaed604b0fd56694739a17347485c3153c8111296adfa1f75a8cb",
+      "size_bytes": 654
+    },
+    "configs/phase11_semantic_candidate_v19.yaml": {
+      "sha256": "bf99846483acb794e322515c17c1e20f4a25209c0020a8e4195da07f592598e5",
+      "size_bytes": 2179
+    },
+    "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json": {
+      "sha256": "acadda5c012105a454b07ee95d406a217fe0aab8f498f3988bf44de36ebade65",
+      "size_bytes": 748
+    },
+    "configs/phase11_semantic_prompts_en_v11.yaml": {
+      "sha256": "875b77bfd888d62a9c9255d7a593c1104a9c3c0e3745b09e6151fa97b8373968",
+      "size_bytes": 11044
+    },
+    "configs/phase11_semantic_prompts_ja_v11.yaml": {
+      "sha256": "ff112e327079328d12de65dec5bbde2e1d4f6a7b49253c6fb96a81737861472e",
+      "size_bytes": 11106
+    },
+    "docs/phase11_qwen35_q6_candidate.md": {
+      "sha256": "0092abccb01765a211a4f1eb1c8a485d150f190076cf7af5a16bef5c85fe7a7d",
+      "size_bytes": 4108
+    }
+  },
+  "model_complete_size_and_streamed_sha256_verified": true,
+  "src_changed": false,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "native_GPU_preflight_still_required": true,
+  "fresh_model_specific_format_still_required": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
