@@ -6,6 +6,8 @@
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 
+[候補v20の別v17登録](phase11_q6_temperature_registration_v1.md)を保存。記録試行756/新最大164/累積920・Retry0、旧未知/未使用を保持。全参照9/親144・準備9 Artifact/実95 Source/Core27/予算算術を検証し、追加推論0。登録Commit固定WTで全入力生成0・新形式から進め、旧T1形式は新温度の実績に流用しない。src/全Expected/基準は不変、実新Native/意味/旧回帰採用とMain/Cal/最終凍結は未了。
+
 [低temperature候補v20](phase11_qwen35_q6_low_temperature_candidate.md)を実Loader/全Taskで検証した。v19からStudy Version/補助temperature1.0→0.2だけが差分で、全154 Message・Model/Runtime/Prompt/予算/Seed/全Expected/基準とCore27/実95 Sourceは不変。全761 Test（29.32秒）/Ruff成功。新条件の生成0/新形式/意味/旧回帰はまだ未実施であり、新上限の事前登録後に固定WTで実行する。srcは変更しない。
 
 [Q6旧全回帰v8](phase11_known_trace_direct_result_v8.md)は12条件/42 Call・Critical8/12・誤支持3で終了/不採用、残18未試行。95 Source/元59 File不変・追加0、全42独立Schema/全理由/Source/648点資源を監査し、Raw62/全144 Artifactを正規保存・WT照合した。実Main準備も正規Reportを早期拒否し出力0。src/旧全対象/Expected/基準は不変で、temperatureだけを下げる別候補を準備中。Main/Cal/最終凍結は未了。

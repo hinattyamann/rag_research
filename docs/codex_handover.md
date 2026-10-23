@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+最優先は[temperature0.2候補v20の事前登録](phase11_q6_temperature_registration_v1.md)。a2233ddのQ6旧回帰v8全不採用/次候補準備はPush・リモート一致済み。別v17は記録試行756/新形式10+意味70+条件付き旧全84＝最大164/累積920・Retry0。旧未知1/未使用42/42/81/42を保持する。登録の入力参照9/親144・準備9 Artifact/実95 Source・Core27/算術を検証したが、新条件のNative実走はまだ未実施。次は新Commitへ固定したWT phase11-qwen35-9b-q6-v20で全70実入力生成0/全層CUDA、新形式10、通過後だけ全意味70へ進む。既存T1形式を新温度の実績に流用せず、全旧対象/Expected/基準を維持する。61821/61124/37701/33959は終了済みで再生成しない。Main/予約Cal/最終凍結は未了。
+
 最優先は[Q6旧全回帰v8の全不採用結果](phase11_known_trace_direct_result_v8.md)。61821/監査61124は終了済みで再生成しない。12条件/42 Call・Critical8/12・誤支持3、残18未試行。確定34/40/支持23/24で全74/58精度null、曖昧/F/理由断片を保持。95 Source/元59 File不変・追加Call/Server0、全42独立Schema/21組/全理由/6 QA Sourceと資源648点を監査し、Raw62/全144 Artifactを正規保存・WT照合した。Main準備CLIも正規不採用Reportを早期拒否/出力0。全9B記録試行756（Q4 317/Q5 317/Q6 122）/旧未知1・今回未使用42/旧42/81/42を保持。次は準備済みのtemperature0.2候補v20を別上限へ登録する。全154 Message/Model/Runtime/Prompt/全Expected/基準/Core27・実95 Sourceは不変、全761 Test（29.32秒）/Ruffまで成功したが、新条件のNative実走はまだ未実施。Main/予約Cal/最終凍結は未了。
 
 14:10 JSTにQ6旧回帰v8のTom元c5でNS→Sの確定誤支持1を確認した。radio/miniseriesをfilmへ広げており、現候補はMain基準未達。部分AI v3/元6 File不変をphase11_qwen35_q6_known_partial_failure_v1.jsonへ保存した。同じ61821は残る負例条件を登録どおり継続中で、全結果/実費は終了後に確定する。判定/基準を修復せず、Main/予約Calは開始しない。全終了後だけ全Raw/未知/失敗/未試行/追加0再開・独立Schema/全理由・Source/資源を監査して正規保存し、その証拠から次の候補を検討する。

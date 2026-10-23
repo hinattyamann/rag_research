@@ -7,6 +7,8 @@
 
 ## 1. 今どこまで終わっているか
 
+[temperature0.2候補v20の事前登録](phase11_q6_temperature_registration_v1.md)を保存した。a2233ddへQ6旧回帰v8全不採用/準備v20をCommit・通常Pushしリモート一致を確認後、別v17を登録。記録試行756（Q4 317/Q5 317/Q6 122）から新形式10/意味70/条件付き旧全84＝最大164/累積920・Retry0で、旧未知1/未使用42/42/81/42を保持する。全入力参照9・親144/準備9 Artifact・実95 Source/Core27/予算算術を再検証し追加推論/新規QA本文読込み0。次は登録をCommit固定WTへ再現し、全70入力生成0/新形式から実走する。温度以外の全旧条件/基準は不変、Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
+
 [Q6旧全回帰v8の不採用結果](phase11_known_trace_direct_result_v8.md)を保存した。固定262ba08/session61821は12条件/42 Call・Critical8/12・誤支持3で終了し、残18条件未試行。媒体の元S/逆C、暖鋒逆c1のS→C、語源元c1のNS→C/両c2の誤支持を保持し、確定34/40・支持23/24、全74/58精度nullとする。95 Source/元59 File不変・追加Call/Server0、全42独立Schema/21組・全理由/6 QA Sourceと資源648点/エラー0・最大GPU7674/8151 MiBを監査した。Raw62/全144 Artifactを正規保存・WT照合し、Main準備CLIも早期拒否/出力0。全9B記録試行756/旧未知1/今回未使用42・旧42/81/42を保持。次はtemperatureだけ1.0→0.2の候補v20を別上限へ登録する。全154 Message/全旧条件/基準/Core27・実95 Source不変、全761 Test（29.32秒）/Ruffまで確認したが、新候補のNative実走はまだ未実施。Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
 
 14:10 JSTに[Q6旧回帰v8](phase11_qwen35_q6_known_execution_v1.md)のTom元c5でNS→Sの確定誤支持1を確認した。radio/miniseriesをfilmへ広げており、現候補はMain基準未達。部分AI v3/元6 File不変をphase11_qwen35_q6_known_partial_failure_v1.jsonへ保存。同じ61821で残る負例条件を登録どおり継続し、全結果/実費は終了後に確定する。全Expected/基準/分母を維持し、Main/予約Calへ進まない。全終了後だけ全監査/正規保存を終えて次の候補を検討する。Gate 11未通過、Phase 12未実施。

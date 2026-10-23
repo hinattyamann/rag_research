@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-temperature-v20-registration-validation-not-native-adoption",
+  "recorded_at_utc": "2026-10-23T05:54:47.172303+00:00",
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v17.json",
+    "sha256": "bb1c7d67d834ffedd5523e10f965c5fe4981a19be2284cb0d3ce4d3a8e6da9da",
+    "size_bytes": 8059
+  },
+  "config": {
+    "path": "configs/phase11_semantic_candidate_v20.yaml",
+    "sha256": "baa8c6f5b136d9964ba058736fc4ca242fe7f95f5996f9cc810c35945644225f",
+    "size_bytes": 2184
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-q6-temperature-v20-registration-v1/registration_contract.json": {
+      "sha256": "c18fa9166e7dcba14a084a02e1efb486f923c2ef2be9262e5c9da61498a5b5a9",
+      "size_bytes": 1343
+    },
+    "data/runs/development_screening/phase11-q6-temperature-v20-registration-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q6-temperature-v20-registration-v1/stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-temperature-v20-registration-v1/stdout.txt": {
+      "sha256": "4b51f428797de683031d58c402add10a9b9fbce0313ef01da34153d3b35c9a01",
+      "size_bytes": 1255
+    },
+    "data/runs/development_screening/phase11-q6-temperature-v20-registration-v1/verify_registration.py": {
+      "sha256": "9324148cf7b7623a0bcd09e270048b6b541c542a5f6e03be61c8d8b4022a151e",
+      "size_bytes": 3360
+    },
+    "docs/phase11_q6_temperature_registration_v1.md": {
+      "sha256": "4f61ce0c98dd27e3963911082df0c6d92ccfc35e7e56719174b0bc35720a57d7",
+      "size_bytes": 3483
+    }
+  },
+  "source_unchanged_since_full761_tests": true,
+  "full_pytest": "761 passed in 29.32s",
+  "project_and_preparation_helper_ruff": "passed",
+  "registration_helper_ruff": "passed",
+  "actual_registration_inputs_verified": 9,
+  "parent144_and_preparation9_artifacts_verified": true,
+  "actual_native_sources_verified": 95,
+  "native_core27_unchanged": true,
+  "budget_arithmetic_verified": true,
+  "previous_recorded_attempts": 756,
+  "maximum_new_calls": 164,
+  "maximum_cumulative_calls": 920,
+  "automatic_retries": 0,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "new_qa_rows_read": 0,
+  "new_native_execution_not_started": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

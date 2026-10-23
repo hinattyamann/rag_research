@@ -8,6 +8,8 @@
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
+[候補v20の別事前登録](phase11_q6_temperature_registration_v1.md)は記録試行756から新形式10/意味70/条件付き旧全84＝最大164・累積920/Retry0とし、旧未知/未使用と全Expected/基準を保持する。登録の算術/入力参照/親144・準備9 Artifact/実95 Sourceを検証した。新Native実走/採用・Main/Cal/最終凍結は未了である。
+
 [低temperature候補v20](phase11_qwen35_q6_low_temperature_candidate.md)はStudy Versionと補助temperature1.0→0.2だけを変更する。Judge/書換え双方と同一順序の分散に影響し得るため日英で同じ候補を用い、採用した条件に結論を限定する。全154 Message/Model/Runtime/Prompt/予算/Seed/全Expected/基準は不変、全761 Test（29.32秒）/Ruffまで成功。新条件のNative形式/意味/旧全回帰は未実施で、採用や最終Nの確定ではない。
 
 [Q6旧全回帰v8](phase11_known_trace_direct_result_v8.md)は12条件/42 Call・Critical8/12・誤支持3で不採用、残18条件未試行。確定34/40/支持23/24と全74/58精度nullを維持し、全監査/Raw62・144 Artifactを保存した。目的/Expected/全基準を緩和せず、temperatureだけを下げる別候補の準備を進める。実Main/Cal/最終N/資源/条件/凍結は未了。
