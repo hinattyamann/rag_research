@@ -7,6 +7,8 @@
 
 ## 1. 今どこまで終わっているか
 
+[温度0.2実行記録](phase11_qwen35_q6_temperature_execution_v1.md)へ待機中の旧回帰v9準備/実未完了親の拒否を保存した。Config/Lock/再検証前拒否・出力0、元15 QA/42文/Source25/Expected/基準/裸拒否8・元8 File/実95 Sourceは不変。終了後独立Schema監査に実Sampler照合を加え、実7出力の実温度0.2/Seed42等とメモリ内誤値コピーの拒否を確認した。全12 Artifact/Ruffを保存・WT照合し追加推論/新規QA読込み0、全Raw監査/正の準備は未実施。15:32 JSTの同じ89310は10/58条件・既知Critical4/4まで進んだが、全採否は未確定。全終了後だけ監査・正規保存し、全元基準通過後だけ旧全回帰へ進む。
+
 [温度0.2候補v20の実機確認](phase11_qwen35_q6_temperature_execution_v1.md)を保存した。固定17d57c6のWTへ1537 File Binding/57不変Hardlink/内部相対Symlink10・Offline58 Packageを再現。全70実入力生成0/最大3793 Token/全層CUDA・全14 Artifactに通過し、旧Q6と全Token数が一致した。同じWTの新形式10 Callは全9 Strictに通過し、全10 Native実温度0.20000000298/Seed/主要Sampler・独立JSON/Grammar/Token位置と92 Source/元14 File不変/追加0を照合。入力630/出力1729・生成秒和36.660811秒、資源13点/エラー0/観測最大GPU7624/8151 MiBを保持し、Raw16/全40 Artifactを正規保存・WT照合した。同じWTで全意味58条件/最大70 Callを観測付きsession89310として開始・採否未確定。開始前全9B記録試行766/累積920・Retry0、旧未知/未使用と全対象/Expected/基準を保持する。終了後だけ全監査/正規保存し、全通過後だけ同じ旧全15 QAへ進む。Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
 
 [temperature0.2候補v20の事前登録](phase11_q6_temperature_registration_v1.md)を保存した。a2233ddへQ6旧回帰v8全不採用/準備v20をCommit・通常Pushしリモート一致を確認後、別v17を登録。記録試行756（Q4 317/Q5 317/Q6 122）から新形式10/意味70/条件付き旧全84＝最大164/累積920・Retry0で、旧未知1/未使用42/42/81/42を保持する。全入力参照9・親144/準備9 Artifact・実95 Source/Core27/予算算術を再検証し追加推論/新規QA本文読込み0。次は登録をCommit固定WTへ再現し、全70入力生成0/新形式から実走する。温度以外の全旧条件/基準は不変、Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。

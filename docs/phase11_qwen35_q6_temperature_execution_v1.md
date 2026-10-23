@@ -59,3 +59,25 @@ Rootの新Manifestが過去固定Commitに存在したとは仮定せず、こ�
 全意味採用/監査後だけ同じ旧全15 QAの新前提を作り、負例12条件の完全一致後だけ残18正例条件へ進む。
 Main/予約Cal/Evaluationの新規QAは使っていない。Main/Cal/最終N/資源/条件/凍結は未了、
 Gate 11未通過・Phase 12未実施・Goal継続中である。モデル/Raw/環境はGit Pushでは転送されない。
+
+## 待機中の監査準備と未完了親の拒否
+
+15:32 JST時点で同じ89310は10/58条件まで終了し、既知Critical4条件は4/4一致を確認した。
+全日英意味の採否はまだ未確定であり、人工条件を継続する。
+
+終了後の独立Schema監査を、各Leafの要求設定/Native実Samplerの照合へ拡張した。
+第三引数にConfig v20を渡し、Run ManifestのConfig一致と、実温度/Seed/主要Sampler・動的温度範囲0を検証する。
+終了済みCouncil元7出力で実温度0.20000000298/Seed42等の一致を確認した。
+メモリ内コピーだけを温度1.0/Seed43へ変えたNegative Controlは拒否され、原本8 Fileは不変だった。
+この部分検査は全終了後のSchema監査/追加0再開や意味採用の代用ではなく、原本を改変した意味でもない。
+
+全意味通過/全監査後だけ使う旧回帰v9用Helperを
+`data/runs/development_screening/phase11-known-v9-preparation-v1/prepare.py`へ保存した。
+全58条件/70 Call・費用既知・元Gate通過/全監査と追加0再開を先に要求し、親Rawのコピー上で全再検証してから出力する。
+元15 QA/42文/30条件・84 Call/Source25/全Expected/基準/曖昧/裸拒否8を維持する。
+実未完了の同じWT親を渡したProbeはConfig読込み/Lock/再検証前に拒否・出力なしで、元8 Fileと実95 Sourceは不変だった。
+親パスのOverrideは早期拒否だけに使用し、正の準備はまだ実行していない。
+
+Helper/Probe/部分Sampler検査/ログ/Ruffの全12 Artifactを
+`phase11_qwen35_q6_temperature_known_preparation_pending_v1.json`へ固定し、Root/WT Byte一致を確認した。
+追加Model Call/Server・新規QA本文読込み0。実行中全Raw Inventoryは固定せず、全旧条件/基準と累積920/Retry0を維持する。

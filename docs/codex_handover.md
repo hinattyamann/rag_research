@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+同じ89310の待機中に旧回帰v9準備Helperを保存し、実未完了親のConfig/Lock/再検証前拒否・出力なしを確認した。元15 QA/42文/Source25/Expected/基準/裸拒否8・元8 File/実95 Sourceは不変。独立Schema監査へConfigを第三引数として要求設定/Native実Sampler照合を加え、実7出力の実温度0.2/Seed42等と、メモリ内の誤温度/誤Seedコピーの拒否・原本不変を確認した。全12 Artifactをphase11_qwen35_q6_temperature_known_preparation_pending_v1.jsonへ保存・WT照合。全終了後のSchema監査/正の旧回帰v9準備はまだ未実施、追加推論/新規QA読込み0。15:32 JSTに10/58条件・既知Critical4/4を確認し、同じ89310で継続観測する。全意味採否は未確定で、終了前に再起動/全Raw監査をしない。
+
 最優先は[温度0.2候補v20の実機実行記録](phase11_qwen35_q6_temperature_execution_v1.md)。固定17d57c6のWT phase11-qwen35-9b-q6-v20へ1537 File Binding/57不変Hardlink/内部相対Symlink10・Offline58 Packageを再現。全70入力生成0/最大3793 Token/全層CUDA/全14 Artifactを確認後、新形式10 Call/全9 Strictと全監査を完了し、全40 Artifact/Raw16を正規保存・WT Byte照合した。全10 Native実温度0.20000000298とSeed/主要Sampler・独立JSON/Grammar/Token位置、92 Source/元14 File不変・追加0を確認。準備99908/生成0の69143/形式32143は終了済み。同じWTの全意味58条件/最大70 Callはsession89310・採否未確定で、同じHandleを観測し全終了後だけ全監査/正規保存する。開始前記録試行766/累積上限920・Retry0/旧未知・未使用を保持。開始/形式/生成0のWT実コピーはmodelscreening/q6-v20のlaunch.json/fresh_format_binding.json/preflight_binding.jsonでRootと同じManifestパスを仮定しない。Main/予約Cal/最終凍結は未了。
 
 最優先は[temperature0.2候補v20の事前登録](phase11_q6_temperature_registration_v1.md)。a2233ddのQ6旧回帰v8全不採用/次候補準備はPush・リモート一致済み。別v17は記録試行756/新形式10+意味70+条件付き旧全84＝最大164/累積920・Retry0。旧未知1/未使用42/42/81/42を保持する。登録の入力参照9/親144・準備9 Artifact/実95 Source・Core27/算術を検証したが、新条件のNative実走はまだ未実施。次は新Commitへ固定したWT phase11-qwen35-9b-q6-v20で全70実入力生成0/全層CUDA、新形式10、通過後だけ全意味70へ進む。既存T1形式を新温度の実績に流用せず、全旧対象/Expected/基準を維持する。61821/61124/37701/33959は終了済みで再生成しない。Main/予約Cal/最終凍結は未了。

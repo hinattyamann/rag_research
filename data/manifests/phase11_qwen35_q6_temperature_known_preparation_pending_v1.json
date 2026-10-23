@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-temperature-v20-pending-known9-preparation-and-partial-effective-sampling-validation",
+  "recorded_at_utc": "2026-10-23T06:32:15.200459+00:00",
+  "native_tool_session_id": 89310,
+  "fixed_native_commit": "17d57c6b4186a158685b85eb50da71fb4d04d93b",
+  "input_bindings": {
+    "configs/phase11_semantic_candidate_v20.yaml": {
+      "sha256": "baa8c6f5b136d9964ba058736fc4ca242fe7f95f5996f9cc810c35945644225f",
+      "size_bytes": 2184
+    },
+    "configs/phase11_known_trace_regression_v8.json": {
+      "sha256": "34fdda3023f079bc39412da1348bb58c6b67c48ecbbac71c79b5dde7e23036ef",
+      "size_bytes": 140808
+    },
+    "configs/phase11_known_trace_regression_v1.json": {
+      "sha256": "e1d1584ab7093509b23089594435119c69a55a92baf4e2ff8649d7cbb45df08a",
+      "size_bytes": 140461
+    },
+    "data/manifests/phase11_qwen35_9b_preregistration_v17.json": {
+      "sha256": "bb1c7d67d834ffedd5523e10f965c5fe4981a19be2284cb0d3ce4d3a8e6da9da",
+      "size_bytes": 8059
+    },
+    "data/manifests/phase11_qwen35_q6_temperature_launch_v1.json": {
+      "sha256": "a2f20eca04503703d95c938dad8b7157c1d2c5986c470fa917292d4170d500da",
+      "size_bytes": 2913
+    },
+    "data/manifests/phase11_qwen35_q6_temperature_format_result_v1.json": {
+      "sha256": "e83453953032d0f52c51911980a9d1a55dd5bd82471efad35b1eb6ad773f9d89",
+      "size_bytes": 13243
+    }
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-known-v9-preparation-v1/check_pending.py": {
+      "sha256": "d02c6e8b60d182055dff6099b65328ee2ba40137e9347c00b7b7312205c38735",
+      "size_bytes": 3924
+    },
+    "data/runs/development_screening/phase11-known-v9-preparation-v1/pending_check.json": {
+      "sha256": "7643665ae6507604f123f4c90addbc150d046ba0b2637e416c5ad964b467badc",
+      "size_bytes": 2644
+    },
+    "data/runs/development_screening/phase11-known-v9-preparation-v1/prepare.py": {
+      "sha256": "19e88e05a17596462d0b008bb4b374214e116eaeb3011b707dcba1eca1bbcc69",
+      "size_bytes": 6202
+    },
+    "data/runs/development_screening/phase11-known-v9-preparation-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-known-v9-preparation-v1/stderr.txt": {
+      "sha256": "1d4703b70b3db90dc74ad50d41cf7a488180eda0c188907b51bf3b8864b5ff44",
+      "size_bytes": 162
+    },
+    "data/runs/development_screening/phase11-known-v9-preparation-v1/stdout.txt": {
+      "sha256": "f2e048ad39b9d3dd1f33daa31facde7ab1e68c853d660824342c8c4ac2e44fd1",
+      "size_bytes": 1028
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/check_partial_sampling.py": {
+      "sha256": "e5e1bc268bd1c0ee1be2ef472df2fa45aa985bc7de30f209bf65bf5e12c19ad9",
+      "size_bytes": 2919
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/independent_schema.py": {
+      "sha256": "a82c543b576bc8ca0c7ec1d93c62c85285ed5f44e2a0482d6d1a973715d9051c",
+      "size_bytes": 5533
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/partial_sampling_check.json": {
+      "sha256": "1b1da7effe73418c8545dc5d4ee6d8b1109d25baa0289a5c54ec9e5edfd6a4c7",
+      "size_bytes": 2291
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/partial_sampling_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/partial_sampling_stdout.txt": {
+      "sha256": "a1d32b5ab2408067a3ad35f4e376ab10df6f49eabe805080201ef98d256e9b08",
+      "size_bytes": 711
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/preparation_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    }
+  },
+  "all_artifacts_fixed_checkout_byte_identical": true,
+  "actual_unfinished_parent_rejected": true,
+  "pending_probe_parent_override_only_before_guard": true,
+  "config_load_lock_or_replay_entered": 0,
+  "old_source25_and_whole15_qa42_units30_conditions84_calls_preserved": true,
+  "all_original_expected_gates_ambiguous_and_refusals_unchanged": true,
+  "bare_refusals_preserved_separately": 8,
+  "actual_native_sources_root_and_fixed_checkout_unchanged": 95,
+  "completed_condition_files_unchanged": 8,
+  "partially_checked_native_effective_samplers": 7,
+  "in_memory_tampered_temperature_and_seed_rejected": true,
+  "original_raw_never_tampered": true,
+  "whole_terminal_schema_or_resume_audit_executed": false,
+  "positive_known9_preparation_done": false,
+  "new_plan9_or_config9_generated": false,
+  "live_whole_inventory_frozen": false,
+  "conditional84_calls_already_in_v17_not_an_extension": true,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "new_qa_rows_read": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
