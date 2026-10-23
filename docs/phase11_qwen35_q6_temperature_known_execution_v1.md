@@ -1,5 +1,7 @@
 # Phase 11 温度0.2の既知15 QA回帰v9実行記録
 
+最新: 2026年10月23日16:55 JST。72566はCUDA停止・3条件/15試行/未知1で終了し、監査23121も終了した。[不採用全結果](phase11_known_trace_direct_result_v9.md)を再開先とする。Raw26/110 Artifactは正規保存/WT照合済み。以下は開始/待機中時点の履歴であり、同じRunを再起動しない。
+
 2026年10月23日16:28 JST時点。全意味監査/旧全回帰v9登録を
 `9727409eee7a3f8c1ca76f879234f32de0462bb9`「温度0.2の全意味監査を保存し旧全回帰v9を登録」へ
 Commit・通常Pushし、GitHub mainとの先端一致/追跡差0/0/未Commit0を確認した。
@@ -49,3 +51,7 @@ Raw: `data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regr
 全回帰の採用/監査前に新Main Policyや未使用QAを読み込まない。
 Main各20 QA/全匿名品質・Expected封印と証明、予約Cal、最終N/資源/条件/Validator/凍結は未了。
 Gate 11未通過・Phase 12未実施・Goal継続中。モデル/Raw/環境はGit Pushでは転送されない。
+
+## 待機中の完了診断だけを使った見積り
+
+[温度0.2の暫定Judge時間](phase11_qwen35_q6_temperature_resource_estimate_v1.md)を終了済み70 Call/202 Artifactだけから計算・検証した。Task平均54.964121秒、既知/人工群平均67.577599/51.226794秒。日英それぞれ各20 QA/平均5文/9試行ならJudgeだけMain25.61〜33.79時間、同規模Cal込み51.23〜67.58時間という仮定で、上限/CI/総時間保証ではない。日英で同じ平均文数を仮定した言語別Call算術を明記し、実際は各言語の原子上限を保つ。Task経過とNative生成秒を分け、7 Artifactを検証・固定WT照合した。追加推論/新規QA読込み0、1660/言語と全基準を維持し、Main Policy/最終Nの採用にはしない。稼働中の同じ72566の費用は混ぜず、終了後だけ全回帰を監査する。
