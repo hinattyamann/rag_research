@@ -1,5 +1,7 @@
 # Phase 11 生成温度0.2候補v20の実機確認と意味診断
 
+現在の再開先は[旧全回帰v9実行記録](phase11_qwen35_q6_temperature_known_execution_v1.md)。全意味89310/監査60518は終了・正規保存済みで再生成しない。9727409の新固定WTで旧全回帰session72566を実行中・採否未確定。以下は全意味段階の履歴。
+
 最新: 2026年10月23日16:20 JST。89310/終了後監査60518は終了済み。全58条件/70 Callの元診断基準通過・全監査/Raw136・202 Artifact保存を完了した。[全結果と回帰v9登録](phase11_qwen35_q6_temperature_semantic_result_v1.md)を再開先とする。下記は開始/待機中時点の記録であり、旧Runを再生成しない。新v9のNative回帰はまだ未実施。
 
 2026年10月23日15:12 JST時点。[候補v20の事前登録](phase11_q6_temperature_registration_v1.md)を

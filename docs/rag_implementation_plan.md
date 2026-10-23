@@ -6,6 +6,8 @@
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 
+[温度0.2の旧全回帰v9](phase11_qwen35_q6_temperature_known_execution_v1.md)を開始した。全意味/登録を9727409へCommit・通常Pushしリモート一致後、同Commit固定WTへ1763 File Binding/57不変Hardlink/相対Symlink10・Offline58 Packageを再現。親202/新温度形式40/Core27不変、全84実入力生成0・最大3927 Token/全層CUDAと準備14 Artifact保存/WT照合に成功した。同じWTの回帰は観測付きsession72566で、元全15 QA/42文/30条件・最大84/全9B累積920/Retry0を維持する。負例12条件/42 Call全一致後だけ残18正例条件へ進む。全採否は未確定、全終了後だけ監査/正規保存する。旧未知/未使用と全Source/Expected/基準は不変。Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
+
 [温度0.2の全意味診断と回帰v9登録](phase11_qwen35_q6_temperature_semantic_result_v1.md)を完了した。固定17d57c6/session89310は全58条件/70 Call・Critical4/4・英語24/24・日本語28/30・誤支持0で元基準通過。日本語NS→C2/曖昧Council両NS・F5/7/理由断片を保持し、全68確定Labelは旧T1と同じで改善を主張しない。95 Source/元133 File不変・追加0、全70 Native独立Schema/実温度0.2・主要Sampler/全理由・29全文根拠/772点資源を監査し、Raw136/全202 Artifactを正規保存・WT照合した。親136 Fileコピー上の再検証後、元全15 QA/42文/Source25/Expected/基準/裸拒否8へ新前提を結びv9を作成。正の準備12/登録検証8 Artifact・全761 Test（30.43秒）/Ruff成功。別v18は既存条件付き84だけ/全9B記録836・累積上限920/Retry0で、旧未知/未使用を保持する。新回帰Nativeは未実施。次はCommit・Push後の新固定WTで全84入力生成0/全層CUDA→回帰v9へ進む。Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
 
 [温度0.2候補v20の実機確認](phase11_qwen35_q6_temperature_execution_v1.md)を保存。固定17d57c6へ1537 Binding/57 Hardlink/相対リンク10・Offline58 Packageを再現し、全70入力生成0/全層CUDA、新形式10 Call/全9 StrictとNative実温度/独立Schema/Grammar/Token位置/資源を全監査した。92 Source/元14 File不変・追加0、Raw16/全40 Artifactを正規保存・WT照合。src/Core27/旧対象/全Expected/基準は不変。同じWTで意味session89310を実行中で採否未確定、Main/Cal/最終凍結は未了。

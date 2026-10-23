@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-temperature-whole-known-v9-all84-input-zero-completion-preflight",
+  "recorded_at_utc": "2026-10-23T07:26:29.550068+00:00",
+  "fixed_commit": "9727409eee7a3f8c1ca76f879234f32de0462bb9",
+  "preparation_tool_session_id": 55169,
+  "preflight_observer_tool_session_id": 98818,
+  "regular_file_bindings": 1763,
+  "immutable_hardlinks": 57,
+  "internal_relative_symlinks": 10,
+  "gpu_environment_offline_packages": 58,
+  "context_tokens": 12288,
+  "all84_real_inputs_fit": true,
+  "all84_input_token_counts_match_prior_Q6_T1": true,
+  "max_input_tokens": 3927,
+  "completion_attempts": 0,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "7578 MiB, 8151 MiB",
+  "resource_observation_summary": {
+    "finished_at_utc": "2026-10-23T07:25:48.781229+00:00",
+    "native_runner_returncode": 0,
+    "samples": 6,
+    "native_runner_launch_error": null,
+    "samples_with_observation_errors": 0,
+    "observation_complete": true,
+    "observed_max_gpu_used_mib": 7578,
+    "observed_min_host_available_kib": 4632600,
+    "elapsed_observer_seconds": 20.200345748016844,
+    "sampled_extrema_are_not_continuous_peaks": true,
+    "native_gate_or_semantic_pass_not_asserted": true,
+    "new_model_calls_from_observer": 0
+  },
+  "sampled_extrema_not_continuous_peaks": true,
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v9.yaml",
+    "sha256": "375e9b2296321515d3816e49506d1949caa9ff81bd30a5bf04cb59881828bbc1",
+    "size_bytes": 2190
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v9.json",
+    "sha256": "a7eafc48e0f609ff9abbffc0fd3e7cf09e4eb3db69df5d998893186697791a70",
+    "size_bytes": 140824
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v18.json",
+    "sha256": "b6436577a2898c5d3c37d3dc762213947c3e3a488cdba130cc771a9f0443991a",
+    "size_bytes": 7078
+  },
+  "parent_complete_semantic": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_semantic_result_v1.json",
+    "sha256": "e00f78ffc46afe3b5003ce96aae2ff88e8129082b8ef92719f92ff1046075a52",
+    "size_bytes": 56198
+  },
+  "native_core27_and_current_temperature_Q6_format40_unchanged": true,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/prepare_worktree.py": {
+      "sha256": "eb21347669ae958317c68cb31154b200140845daa137b6eee861c73f83c00562",
+      "size_bytes": 4853
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preparation_v1.json": {
+      "sha256": "c4a24e74e45d023785bf9c63542e36cc7a0e4108f99349f22403e65c1e2fb940",
+      "size_bytes": 448899
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preparation_stdout.txt": {
+      "sha256": "b08272638b5eff3ae540ebce3d61d8249d5aa9884977f20f844fcbfd6538c687",
+      "size_bytes": 250
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preparation_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/uv_sync_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/uv_sync_stderr.txt": {
+      "sha256": "2267c7415d52a4c203ffcbd7a2f3176db81fd81392389783d866c0b29e7a9d19",
+      "size_bytes": 1436
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/assemble_preflight.py": {
+      "sha256": "cd704468d6f6fdd39a66c955d5bded7d6cd6f8404bf13ce8a1b427f2c90c122d",
+      "size_bytes": 5395
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preflight_v1/plan.json": {
+      "sha256": "d1565232cefe05719c2c5ec1fadb063750251aec3278bdbae6d92fd65a904264",
+      "size_bytes": 1220
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preflight_v1/report.json": {
+      "sha256": "6701c8df0d0b3a87e213ca386626e13a7d49e1dbcb7ea7eb67ec8e15b7fc345f",
+      "size_bytes": 35239
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preflight_v1/server.log": {
+      "sha256": "1699e1aec5703e2fa8fc736af7bb56d367f51e58e9119a309f8ef0befa8860f8",
+      "size_bytes": 19190
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-temperature-known-v9-preflight-v1/launch.json": {
+      "sha256": "10ec6824ae296e7bedc5903f4cd440120c4229e97e3371ab006ebe7e6bb747f3",
+      "size_bytes": 1236
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-temperature-known-v9-preflight-v1/samples.jsonl": {
+      "sha256": "bf9e3e205a16b8a7ca1a0407162277537c8f18dec530a975ff67076badfcd209",
+      "size_bytes": 2369
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-temperature-known-v9-preflight-v1/summary.json": {
+      "sha256": "985f6dae7c967e6a4ba3a2c02e85273a0502cdcfff8f78434f29ba70e1ee7fb6",
+      "size_bytes": 495
+    }
+  },
+  "all_artifacts_fixed_checkout_byte_identical": true,
+  "native_regression_not_started": true,
+  "new_model_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

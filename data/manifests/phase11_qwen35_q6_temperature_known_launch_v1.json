@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-Q6-temperature-whole-known-v9-launch-not-adoption",
+  "observed_active_at_utc": "2026-10-23T07:27:59.807504+00:00",
+  "fixed_commit": "9727409eee7a3f8c1ca76f879234f32de0462bb9",
+  "worktree": ".tools/worktrees/phase11-known-trace-regression-v9",
+  "tool_session_id": 72566,
+  "run": "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9",
+  "resource_observations": "data/runs/resource_observation/phase11-qwen35-9b-q6-temperature-known-v9-semantic-v1",
+  "config": {
+    "path": "configs/phase11_known_trace_candidate_v9.yaml",
+    "sha256": "375e9b2296321515d3816e49506d1949caa9ff81bd30a5bf04cb59881828bbc1",
+    "size_bytes": 2190
+  },
+  "plan": {
+    "path": "configs/phase11_known_trace_regression_v9.json",
+    "sha256": "a7eafc48e0f609ff9abbffc0fd3e7cf09e4eb3db69df5d998893186697791a70",
+    "size_bytes": 140824
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v18.json",
+    "sha256": "b6436577a2898c5d3c37d3dc762213947c3e3a488cdba130cc771a9f0443991a",
+    "size_bytes": 7078
+  },
+  "parent_complete_semantic": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_semantic_result_v1.json",
+    "sha256": "e00f78ffc46afe3b5003ce96aae2ff88e8129082b8ef92719f92ff1046075a52",
+    "size_bytes": 56198
+  },
+  "fresh_current_temperature_format": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_format_result_v1.json",
+    "sha256": "e83453953032d0f52c51911980a9d1a55dd5bd82471efad35b1eb6ad773f9d89",
+    "size_bytes": 13243
+  },
+  "preflight": {
+    "path": "data/manifests/phase11_qwen35_q6_temperature_known_preflight_v1.json",
+    "sha256": "7870e6129314838cc635c48a7f3b4a70dff16e5b7a66422c796289970d17313e",
+    "size_bytes": 5543
+  },
+  "temperature": 0.2,
+  "context_tokens": 12288,
+  "whole_old_qa": 15,
+  "fixed_units": 42,
+  "conditions": 30,
+  "maximum_calls": 84,
+  "first_critical_conditions": 12,
+  "first_critical_calls": 42,
+  "remaining_positive_conditions_only_after_all12_exact": 18,
+  "previous_recorded_all9b_attempts": 836,
+  "recorded_Q4_Q5_Q6_attempts_before_regression": {
+    "Q4": 317,
+    "Q5": 317,
+    "Q6": 202
+  },
+  "maximum_cumulative_all9b_attempts": 920,
+  "automatic_retries": 0,
+  "prior_unknown1_and_unused42_42_81_42_not_filled_or_reallocated": true,
+  "all_original_sources_expected_gates_ambiguous_and_refusals_unchanged": true,
+  "observation_interval_seconds": 5,
+  "worktree_launch_alias": "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/launch.json",
+  "worktree_preflight_alias": "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preflight_binding.json",
+  "worktree_current_format_alias": "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/fresh_format_binding.json",
+  "main_or_reserved_calibration_or_evaluation_new_calls": 0,
+  "artifacts": {
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-temperature-known-v9-semantic-v1/launch.json": {
+      "sha256": "e01770748341451f3455711dde514d6252d01a0045a3402f70651ba7b339de32",
+      "size_bytes": 1228
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

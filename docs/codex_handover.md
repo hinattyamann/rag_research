@@ -1,5 +1,9 @@
 # 別チャットから再開するための引継ぎ
 
+[温度0.2の旧全回帰v9](phase11_qwen35_q6_temperature_known_execution_v1.md)を開始した。全意味/登録を9727409へCommit・通常Pushしリモート一致後、同Commit固定WTへ1763 File Binding/57不変Hardlink/相対Symlink10・Offline58 Packageを再現。親202/新温度形式40/Core27不変、全84実入力生成0・最大3927 Token/全層CUDAと準備14 Artifact保存/WT照合に成功した。同じWTの回帰は観測付きsession72566で、元全15 QA/42文/30条件・最大84/全9B累積920/Retry0を維持する。負例12条件/42 Call全一致後だけ残18正例条件へ進む。全採否は未確定、全終了後だけ監査/正規保存する。旧未知/未使用と全Source/Expected/基準は不変。Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
+
+最優先は同じ72566の継続観測。固定WTは.tools/worktrees/phase11-known-trace-regression-v9、Config v9/Plan v9/事前登録v18。55169/98818/89310/60518/32188は終了済みで再生成しない。生Runはphase11-qwen35-9b-q6-temperature-known-regression-v9、資源はphase11-qwen35-9b-q6-temperature-known-v9-semantic-v1。全終了後だけConfig/Run位置引数の汎用Direct監査・独立Schema/実Sampler/理由/Source/資源を監査する。以下の「回帰未実施」は過去時点の記録で、上記を優先する。
+
 [温度0.2の全意味診断と回帰v9登録](phase11_qwen35_q6_temperature_semantic_result_v1.md)を完了した。固定17d57c6/session89310は全58条件/70 Call・Critical4/4・英語24/24・日本語28/30・誤支持0で元基準通過。日本語NS→C2/曖昧Council両NS・F5/7/理由断片を保持し、全68確定Labelは旧T1と同じで改善を主張しない。95 Source/元133 File不変・追加0、全70 Native独立Schema/実温度0.2・主要Sampler/全理由・29全文根拠/772点資源を監査し、Raw136/全202 Artifactを正規保存・WT照合した。親136 Fileコピー上の再検証後、元全15 QA/42文/Source25/Expected/基準/裸拒否8へ新前提を結びv9を作成。正の準備12/登録検証8 Artifact・全761 Test（30.43秒）/Ruff成功。別v18は既存条件付き84だけ/全9B記録836・累積上限920/Retry0で、旧未知/未使用を保持する。新回帰Nativeは未実施。次はCommit・Push後の新固定WTで全84入力生成0/全層CUDA→回帰v9へ進む。Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
 
 89310/60518/40713/50571/32188は終了済み。旧意味Runは再生成しない。新Planはconfigs/phase11_known_trace_regression_v9.json、Configはconfigs/phase11_known_trace_candidate_v9.yaml、事前登録v18。新固定WT名はphase11-known-trace-regression-v9を予定し、現在はまだ作成/Native未実施。最新の工程は上記を優先し、以下は各時点の履歴である。

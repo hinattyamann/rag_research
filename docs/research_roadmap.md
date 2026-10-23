@@ -7,6 +7,8 @@
 
 ## 1. 今どこまで終わっているか
 
+[温度0.2の旧全回帰v9](phase11_qwen35_q6_temperature_known_execution_v1.md)を開始した。全意味/登録を9727409へCommit・通常Pushしリモート一致後、同Commit固定WTへ1763 File Binding/57不変Hardlink/相対Symlink10・Offline58 Packageを再現。親202/新温度形式40/Core27不変、全84実入力生成0・最大3927 Token/全層CUDAと準備14 Artifact保存/WT照合に成功した。同じWTの回帰は観測付きsession72566で、元全15 QA/42文/30条件・最大84/全9B累積920/Retry0を維持する。負例12条件/42 Call全一致後だけ残18正例条件へ進む。全採否は未確定、全終了後だけ監査/正規保存する。旧未知/未使用と全Source/Expected/基準は不変。Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
+
 [温度0.2の全意味診断と回帰v9登録](phase11_qwen35_q6_temperature_semantic_result_v1.md)を完了した。固定17d57c6/session89310は全58条件/70 Call・Critical4/4・英語24/24・日本語28/30・誤支持0で元基準通過。日本語NS→C2/曖昧Council両NS・F5/7/理由断片を保持し、全68確定Labelは旧T1と同じで改善を主張しない。95 Source/元133 File不変・追加0、全70 Native独立Schema/実温度0.2・主要Sampler/全理由・29全文根拠/772点資源を監査し、Raw136/全202 Artifactを正規保存・WT照合した。親136 Fileコピー上の再検証後、元全15 QA/42文/Source25/Expected/基準/裸拒否8へ新前提を結びv9を作成。正の準備12/登録検証8 Artifact・全761 Test（30.43秒）/Ruff成功。別v18は既存条件付き84だけ/全9B記録836・累積上限920/Retry0で、旧未知/未使用を保持する。新回帰Nativeは未実施。次はCommit・Push後の新固定WTで全84入力生成0/全層CUDA→回帰v9へ進む。Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
 
 [温度0.2実行記録](phase11_qwen35_q6_temperature_execution_v1.md)へ待機中の旧回帰v9準備/実未完了親の拒否を保存した。Config/Lock/再検証前拒否・出力0、元15 QA/42文/Source25/Expected/基準/裸拒否8・元8 File/実95 Sourceは不変。終了後独立Schema監査に実Sampler照合を加え、実7出力の実温度0.2/Seed42等とメモリ内誤値コピーの拒否を確認した。全12 Artifact/Ruffを保存・WT照合し追加推論/新規QA読込み0、全Raw監査/正の準備は未実施。15:32 JSTの同じ89310は10/58条件・既知Critical4/4まで進んだが、全採否は未確定。全終了後だけ監査・正規保存し、全元基準通過後だけ旧全回帰へ進む。
