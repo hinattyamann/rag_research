@@ -7,6 +7,8 @@
 
 ## 1. 今どこまで終わっているか
 
+Q6のsession98160は12:35 JSTに6/58条件まで進み、既知Critical4/4完全一致を終えて人工条件へ進行中。全採否は未確定。[実行記録](phase11_qwen35_q6_execution_v1.md)に、全通過後だけ使う旧全回帰v8準備Helperと実未完了親の早期拒否を追加した。Config/Lock/再検証に入る前で停止し出力0、元15 QA/42文/Source25/Expected/基準/裸拒否8と実Native95 Sourceは不変。構文/Ruff・全7 Artifactを保存し、追加推論0。正の引継ぎ/実回帰v8・Main/Cal/最終凍結は未了である。
+
 [Q6実機実行記録](phase11_qwen35_q6_execution_v1.md)を保存した。固定cf489d9の新WTへ1191 File Binding/57不変Hardlink/内部相対Symlink10・Offline58 Packageを再現。生成0の全70実入力/最大3793 Token/12k/全層CUDAに通過し、全11 Artifactを正規保存・WT照合した。同じWTの新Q6形式10 Callは全9 Strictに通過、入力630/出力1768・生成秒和37.804830秒。92 Source/元14 File不変・追加Call/Server0、独立Native JSON/Grammar/Token位置と資源を監査し、Raw16/全37 Artifactを正規保存・WT照合した。NativeはQ6_K/33層CUDA、Runtime一点7589/8151 MiB、形式13点の観測最大7601 MiBで、連続Peak/意味精度とはしない。全58条件/最大70 Callを同じWTで観測付きsession98160として開始し、採否は未確定。開始前全9B記録試行644/累積上限798・Retry0、旧未知/未使用を保持。実Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
 
 [Q6の別候補v19](phase11_qwen35_q6_candidate.md)を登録した。同固定Revisionの7458301152 Byte/公開SHA256を全体照合して取得し、v18からStudy Version/Model Manifestだけを変更した。全154 Message・日英Prompt/Context12288/Task予算/Sampler/全対象/Expected/基準とCore27は不変。全761 Test（29.18秒）/Ruff、旧不採用93/親意味182/資源13/Main準備18 Artifactの再照合も成功。事前登録v15は記録試行634から新形式10＋意味70＋通過時だけ全旧回帰84＝最大164/累積上限798・Retry0で、旧未知1/旧未使用42/81/42を保持する。追加Model Call0、実Q6の生成0全層CUDA/新形式/意味/旧全回帰は未実施である。次はCommit固定の専用WTへ再現し、実入力生成0から確認する。Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施、Goal継続中。

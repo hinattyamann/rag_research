@@ -51,3 +51,23 @@ Rawは`data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-context-v19`、
 全意味診断と監査の通過後だけ、同じ旧全15 QA/42文/30条件・84 Callへ新前提を結ぶ。
 全旧基準通過前に実Main/予約Calへ進まない。最終N/資源/条件/凍結は未了、
 Gate 11未通過・Phase 12未実施、Goal継続中。モデル/Raw/環境はGit Pushの転送対象外である。
+
+## 全意味通過後だけ使う旧全回帰v8の準備
+
+2026年10月23日12:30 JST、全意味診断が未完了の間に、同じ旧15 QA/42文/30条件・84 Callへ
+引き継ぐ条件付きHelperを別保存した。`data/runs/development_screening/phase11-known-v8-preparation-v1/prepare.py`は
+完全通過・費用既知の58条件/70 Callと終了後監査/追加0再開を先に要求し、全Rawのコピー上で再検証してから
+新Config/Planを作る。元Source25/Expected/全基準/曖昧/別保存の裸拒否8は原版不変である。
+
+実行中Q6のWTを親に指定した早期Probeは、Config読込み/Lock/再検証の前で拒否し、
+終了済みCouncil元のAggregate/Leaf8ファイルを変えず、Config/Plan/正のReceiptを生成しなかった。
+稼働中全Inventoryは固定せず、親指定のOverrideはこの早期拒否だけに使用した。
+実Native95 SourceもRoot/WTで不変。追加Model Call/Server・未使用QA読込み0。
+構文/Ruff成功と全7 Artifactを`phase11_qwen35_q6_known_preparation_pending_v1.json`へ結んだ。
+正の引継ぎ・実旧回帰v8の登録/実走は未了で、未完了の親を採用した証拠にはしない。
+
+12:41 JST追記: 既知4条件/16最終判定の理由を読み、部分AI記録を
+`data/runs/development_screening/phase11-q6-v19-semantic-audit-v1/partial_AI_review_v1.json`へ保存した。
+Council c4/Zidane c1のCriticalは両順序でC。曖昧のままのCouncil c6は元C/逆NSで、
+両F5/7は変わらない。旧Q5の「両NS」を新Q6へ転記しない。16判定/4 Aggregateの20 FileだけをHash参照し、
+全稼働中Inventoryは固定しない。human_reviewed=false・同一履歴・非盲検で、全70の終了後監査/採用とは区別する。
