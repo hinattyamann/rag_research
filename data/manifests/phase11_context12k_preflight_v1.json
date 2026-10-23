@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-context12k-v18-all70-input-zero-completion-preflight-with-observation",
+  "recorded_at_utc": "2026-10-22T23:53:54.402649+00:00",
+  "fixed_commit": "5c8b8b03f9f57be281dec671da885390480e9867",
+  "preparation_tool_session_id": 20469,
+  "preflight_observer_tool_session_id": 52836,
+  "regular_file_bindings": 865,
+  "immutable_hardlinks": 56,
+  "internal_relative_symlinks": 10,
+  "gpu_environment_offline_packages": 58,
+  "context_tokens": 12288,
+  "all_70_real_inputs_fit": true,
+  "max_input_tokens": 3793,
+  "all70_input_token_counts_match_prior24k": true,
+  "completion_attempts": 0,
+  "full_gpu_offload": true,
+  "gpu_memory_single_observation": "6872 MiB, 8151 MiB",
+  "resource_observation_summary": {
+    "finished_at_utc": "2026-10-22T23:51:57.181586+00:00",
+    "native_runner_returncode": 0,
+    "samples": 6,
+    "native_runner_launch_error": null,
+    "samples_with_observation_errors": 0,
+    "observation_complete": true,
+    "observed_max_gpu_used_mib": 808,
+    "observed_min_host_available_kib": 4280588,
+    "elapsed_observer_seconds": 20.28399879601784,
+    "sampled_extrema_are_not_continuous_peaks": true,
+    "native_gate_or_semantic_pass_not_asserted": true,
+    "new_model_calls_from_observer": 0
+  },
+  "short_allocation_not_captured_by_5s_samples": true,
+  "runtime_point_and_sampled_extrema_not_interchangeable": true,
+  "config": {
+    "path": "configs/phase11_semantic_candidate_v18.yaml",
+    "sha256": "08bf0afed1ea17acbe77d076ab49766899c04836739f4018e612c3b4a3f659d2",
+    "size_bytes": 2179
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_qwen35_9b_preregistration_v13.json",
+    "sha256": "7abe54e55f2d2f98dc69a82bec00464362de34f7778e8b8e1bc27ea54da41100",
+    "size_bytes": 6483
+  },
+  "observer": {
+    "path": "scripts/observe_native_resources.py",
+    "sha256": "900ca7483d26ba07c6d46526007ff379817f8de99320ce1400e080533366e89e",
+    "size_bytes": 8865
+  },
+  "native_core27_unchanged": true,
+  "artifacts": {
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-v18/prepare_worktree.py": {
+      "sha256": "c38946e11ceca090799cb7dfa460e7adbf169efe8406e1e314a3fa7b7068175c",
+      "size_bytes": 4603
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-v18/preparation_v1.json": {
+      "sha256": "914ef5fda72982fd815ed39c85f6e88907132790a5ff91318650f83d497aa147",
+      "size_bytes": 219473
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-v18/preflight_v1/plan.json": {
+      "sha256": "b5c95a3e06152165afcc8b0c8731bba9f60de6bb58b2b000a14c18af615df4a3",
+      "size_bytes": 1226
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-v18/preflight_v1/report.json": {
+      "sha256": "17e1ed6549b3bb6efe6682dc60c42037b22123b1e49b6736707388d2413e09b8",
+      "size_bytes": 30798
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-v18/preflight_v1/server.log": {
+      "sha256": "b21f7e4f23e62306d330a2b32d53839795d74bae624f999809f03d2fa62b7d4d",
+      "size_bytes": 19239
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q5-context-v18/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q5-v18-preflight-v1/launch.json": {
+      "sha256": "f1653e172a7a14ee602ee95d0b7657abd079321749ad9f1676b3225e7d11a53b",
+      "size_bytes": 1178
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q5-v18-preflight-v1/samples.jsonl": {
+      "sha256": "17498e8f43a2c6d0ba1238f49c9184867c901b09ea56cd5c6a211f780e69bceb",
+      "size_bytes": 2376
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q5-v18-preflight-v1/summary.json": {
+      "sha256": "ea5621e4c52fa129c8771c54d16ab77c109ef168f96e8d6348096038e5a67969",
+      "size_bytes": 493
+    }
+  },
+  "all_artifacts_fixed_checkout_byte_identical": true,
+  "new_format_not_yet_run": true,
+  "meaning_adoption_not_asserted": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
