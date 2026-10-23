@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-context12k-sealed-resource-record-audit-not-native-adoption",
+  "recorded_at_utc": "2026-10-23T00:15:31.103676+00:00",
+  "fixed_commit": "5c8b8b03f9f57be281dec671da885390480e9867",
+  "config": {
+    "path": "configs/phase11_semantic_candidate_v18.yaml",
+    "sha256": "08bf0afed1ea17acbe77d076ab49766899c04836739f4018e612c3b4a3f659d2",
+    "size_bytes": 2179
+  },
+  "observer": {
+    "path": "scripts/observe_native_resources.py",
+    "sha256": "900ca7483d26ba07c6d46526007ff379817f8de99320ce1400e080533366e89e",
+    "size_bytes": 8865
+  },
+  "preflight_parent": {
+    "path": "data/manifests/phase11_context12k_preflight_v1.json",
+    "sha256": "52169425011de9c6eec0a5d15abd3591fe4fb8e023df5e394d457f6110350de9",
+    "size_bytes": 4058
+  },
+  "format_parent": {
+    "path": "data/manifests/phase11_context12k_format_result_v1.json",
+    "sha256": "3a74e5098c2a6c033f93dd75f4dda81602d08c16a9ae93452834e4a4d93c9da5",
+    "size_bytes": 9074
+  },
+  "preflight_samples": 6,
+  "format_samples": 12,
+  "sample_errors": 0,
+  "sample_counts_and_summary_extrema_recomputed": true,
+  "all_input_files_unchanged": true,
+  "short_preflight_allocation_not_reconstructed_or_imputed": true,
+  "RSS_sum_not_unique_physical_memory": true,
+  "sampled_extrema_not_continuous_peaks": true,
+  "pending_semantic_observations_not_audited": true,
+  "artifacts": {
+    "data/runs/development_screening/phase11-context12k-resource-audit-v1/audit_resources.py": {
+      "sha256": "af8e913e81aa4a83290987b4335b25128e0fbb72227cde40fb2d629f3beae8c4",
+      "size_bytes": 5218
+    },
+    "data/runs/development_screening/phase11-context12k-resource-audit-v1/format_resource_audit.json": {
+      "sha256": "bcf606d33a88ff0c6d2aecc1d893dd3dcfb70db8a6e3a4105696e02861345aab",
+      "size_bytes": 1444
+    },
+    "data/runs/development_screening/phase11-context12k-resource-audit-v1/preflight_resource_audit.json": {
+      "sha256": "15b420d94f6b189c410b155c08da59c22a6a86012b30068971c47811ea3ca828",
+      "size_bytes": 1445
+    },
+    "data/runs/development_screening/phase11-context12k-resource-audit-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    }
+  },
+  "ruff": "passed",
+  "product_source_changed": false,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-context12k-v18-known-v7-preparation-guard-not-registration-or-adoption",
+  "recorded_at_utc": "2026-10-23T00:06:33.314383+00:00",
+  "candidate_and_existing_verifiers": {
+    "configs/phase11_semantic_candidate_v18.yaml": {
+      "sha256": "08bf0afed1ea17acbe77d076ab49766899c04836739f4018e612c3b4a3f659d2",
+      "size_bytes": 2179
+    },
+    "configs/phase11_known_trace_regression_v1.json": {
+      "sha256": "e1d1584ab7093509b23089594435119c69a55a92baf4e2ff8649d7cbb45df08a",
+      "size_bytes": 140461
+    },
+    "configs/phase11_known_trace_regression_v6.json": {
+      "sha256": "881d8e58e0d9b2806223f8650b1b3d66c11a862dab007fcc7d726c33ce043e1b",
+      "size_bytes": 140809
+    },
+    "src/rag_research/experiments/bilingual_certification.py": {
+      "sha256": "4c1680b03595a20fcb29fcd87455b6ce8f99678e9a8d929feec7d3dc5a72a4dd",
+      "size_bytes": 23106
+    },
+    "src/rag_research/experiments/semantic_diagnostics.py": {
+      "sha256": "4a43cc49115c45b0cdb774dbe9933392f8860c0dcb96afc9882344604509d565",
+      "size_bytes": 20310
+    },
+    "data/manifests/phase11_qwen35_9b_preregistration_v13.json": {
+      "sha256": "7abe54e55f2d2f98dc69a82bec00464362de34f7778e8b8e1bc27ea54da41100",
+      "size_bytes": 6483
+    },
+    "data/runs/development_screening/phase11-known-v6-preparation-v1/prepare.py": {
+      "sha256": "a94e1eb769527f2961b3b059a6070339d6495832df774f005797f1002627d536",
+      "size_bytes": 6146
+    }
+  },
+  "artifacts": {
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/check_pending.py": {
+      "sha256": "0ce1265fae35816ae8c1ad246a13d087776ec39b789a5149be90f6cb02229ecd",
+      "size_bytes": 3196
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/pending_rejection.json": {
+      "sha256": "4ebba5adec2d654cf4cc1ed0b0d0f54e1f6dc51260ff71129348b39c464b2529",
+      "size_bytes": 1367
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/pending_stderr.txt": {
+      "sha256": "2914107ef01d4fb6f80780119f3874bdc551adf1a24f52463f1a9b7f946dc007",
+      "size_bytes": 691
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/pending_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/prepare.py": {
+      "sha256": "5f331d524f7fa334717ea00e818a0ab3a491755390a4075d241ce0d3cd8a9d3b",
+      "size_bytes": 6142
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-known-v7-preparation-v1/syntax.txt": {
+      "sha256": "cd0da3e644e1ddd47c307f342042ab1010eacab3f5eb953802c1504714740b22",
+      "size_bytes": 65
+    }
+  },
+  "planned_outputs_still_absent": [
+    "configs/phase11_known_trace_candidate_v7.yaml",
+    "configs/phase11_known_trace_regression_v7.json"
+  ],
+  "parent_semantic_tool_session_id": 74326,
+  "parent_canonical_terminal_evidence_required": true,
+  "parent_full_58_conditions_and70_calls_required": true,
+  "full_raw_prerequisite_replay_on_byte_identical_copy_required": true,
+  "actual_pending_prerequisite_rejected": true,
+  "pending_check_detail": "Only PRIOR was redirected to actual live fixed-checkout parent. Guard rejects before config load, locking or replay; two returned leaves remained byte-identical; other live files were not frozen or inventoried.",
+  "positive_rebinding_not_yet_verified": true,
+  "syntax_and_ruff": "passed",
+  "actual_parent_inventory": {
+    "qa": 15,
+    "fixed_units": 42,
+    "conditions": 30,
+    "bare_refusals": 8,
+    "maximum_calls": 84,
+    "source_bindings_verified": 25
+  },
+  "all_original_targets_expected_gates_and_refusals_unchanged": true,
+  "new_model_calls": 0,
+  "new_servers": 0,
+  "product_source_changed": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

@@ -54,3 +54,20 @@ Main/予約Cal/Evaluationの新規QAは使っていない。
 開始記録のWT内実保存先はモデル準備Directoryの`launch.json`、
 Preflight/形式Manifestのコピーは`preflight_binding.json`/`format_result_binding.json`。
 Rootと同じdata/manifestsパスが過去の固定Commit内にあるとは仮定しない。
+
+## 終了前Guardと資源観測の独立再計算
+
+2026年10月23日09:14 JST。全意味の終了を待つ間に、旧全回帰v7用の別準備Helperを保存した。
+全旧15 QA/42文/Source25/Expected/基準/曖昧/裸拒否8と最大84 Callは原版一致。
+実際に稼働中の固定WTをPRIORへ向けた確認だけを行い、終了・監査不足を拒否した。
+正の処理の参照先は正規Runのまま。拒否はConfig読込み/Lock/再開前で、
+返却済みの2 LeafはByte不変、他の稼働中Fileは固定・Inventory化していない。
+Config v7/Plan v7/正のReceiptは未作成、追加Model Call/Server0。構文/Ruffが成功した。
+証拠は`phase11_context12k_known_preparation_pending_v1.json`の7 Artifact。
+
+別の読取り専用Helperで、終了済みPreflight6点/形式12点の資源記録を独立再計算した。
+件数/欠測/観測最大・最小、Config/観測Source/固定Commit、元3 File不変を照合した。
+観測時刻の最大間隔・負の時刻差、Native家族のRSS和も記録し、RSS和は共有Pageを重複計上し得ると明示する。
+短区間の未観測Peakを補完せず、Nativeの意味/Health採用とは別に扱う。
+証拠は`phase11_context12k_resource_audit_v1.json`の4 Artifact、追加Model Call/Server0。
+実行中の意味資源記録には終了後だけ同じHelperを使う。
