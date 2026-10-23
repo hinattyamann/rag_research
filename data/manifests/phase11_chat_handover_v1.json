@@ -1,0 +1,1626 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-chat-migration-evidence-snapshot-not-final-freeze",
+  "recorded_at_utc": "2026-10-23T08:26:26.001751+00:00",
+  "base_commit": "c3f42dc890e456d09fedb2c94d9d3f5942c7be44",
+  "branch": "main",
+  "current_chat_goal_status": "paused",
+  "known_native_and_audit_sessions_terminal": [
+    72566,
+    23121,
+    89310,
+    60518,
+    98818
+  ],
+  "active_native_processes_observed": 0,
+  "verified_evidence_wrappers": {
+    "phase11_qwen35_q6_temperature_semantic_result_v1.json": 202,
+    "phase11_known_trace_result_v9.json": 110,
+    "phase11_qwen35_q6_temperature_resource_estimate_v1.json": 7
+  },
+  "native_run_source_bindings_verified": 95,
+  "files": {
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/audit_check.json": {
+      "sha256": "ce525527ca03c30a6bd3b76caf499545cee904f4809055f4faf7b86ff31f508b",
+      "size_bytes": 54498
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/manifest.json": {
+      "sha256": "5d25ef5bc9775719d68c524be1e30bf20b48e214e774c177ce642bdf0548350d",
+      "size_bytes": 23474
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/report.json": {
+      "sha256": "37a873b11e9cb257463f2e2fdf77c2ec1ec3388032ef206c946da4a52b13bf28",
+      "size_bytes": 6958
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/resume_check.json": {
+      "sha256": "54fa96927a982a5993f181063b9248a1df1d224a84f67d2ec050866fbfac0a11",
+      "size_bytes": 15429
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/semantic_output_audit_v1.json": {
+      "sha256": "27b2b93f46963a82542dd33015643f56c14edf8c5ff46e67d859d3e36b924712",
+      "size_bytes": 64213
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/server-1.log": {
+      "sha256": "d8cefaaca3c588e347d0d1d7a51872b86457600ce689ed04aac48cc3fb8dbd93",
+      "size_bytes": 468758
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/session-1.json": {
+      "sha256": "8339382a46038f83a56d7e2a7b7174969d2cb081d860024018fbbe4f4f89d483",
+      "size_bytes": 9702
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-absent-original.claims/c1.json": {
+      "sha256": "55822daaf7981fda4a9c7a7f64457bc6072610f7dee0e6a0b3a57b361f55ea3e",
+      "size_bytes": 80747
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-absent-original.json": {
+      "sha256": "38be30c38c7aca19d91997232c3a3cde730426d79b7292b163eabe4ced956cb5",
+      "size_bytes": 1678
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-absent-reversed.claims/c1.json": {
+      "sha256": "174a4ad78c534736343d14be9087e9bbd434a9b46b31ec7097c312bf9b038779",
+      "size_bytes": 80748
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-absent-reversed.json": {
+      "sha256": "cdfaa80493a17db65d798e2c22c612365e183a8fc262883581dc207c6549585a",
+      "size_bytes": 1676
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-conflict-original.claims/c1.json": {
+      "sha256": "f01399003ad085a2902ffe009758cf8ef943a598f39d20ccc34984cd8ae50b55",
+      "size_bytes": 69568
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-conflict-original.json": {
+      "sha256": "6ff8ab72791e3cb4c27b2c14dc4eda8efdcb75f644c2977e4afdb33c36a59cff",
+      "size_bytes": 1809
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-conflict-reversed.claims/c1.json": {
+      "sha256": "97cfc038699e9f784f205be65123639cef0364b9fa9a5d4bb22176f583e9f214",
+      "size_bytes": 69570
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-conflict-reversed.json": {
+      "sha256": "d8849cbd7925dcb07386c97844694f353b306796640231dd835c18e103061f8a",
+      "size_bytes": 1809
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-support-original.claims/c1.json": {
+      "sha256": "792a47bb44fd3151879f565cfee30c59384ade76ab3d4f8329940e50938880b1",
+      "size_bytes": 122402
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-support-original.json": {
+      "sha256": "1a0fb15f18eed1c9794341f17ee883b53afd5b9aef2f3aa7ad52447d4b2c1870",
+      "size_bytes": 1811
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-support-reversed.claims/c1.json": {
+      "sha256": "30323c196a6f86e781e7b18c2de3992a9627ba7d772b08b445a4e7563d92f81e",
+      "size_bytes": 122405
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-negation-support-reversed.json": {
+      "sha256": "b52f90735e7e7a92ccb4fd78cb2a0cac14c0de905265284dcb4e9acbf6bcc033",
+      "size_bytes": 1812
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-absent-original.claims/c1.json": {
+      "sha256": "980060800e839afbcd92eb0b214c34cd02891a0f49249364b277ffef7463edaa",
+      "size_bytes": 109524
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-absent-original.json": {
+      "sha256": "626f8cdc91b9b5f42f56ba8bc75cbaa2501eba01ae7f587779988dd0420fa6d2",
+      "size_bytes": 1813
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-absent-reversed.claims/c1.json": {
+      "sha256": "8177ceec3d90801794530eb0260a9dda35a14dfae915699f0ac82c3edcae65f8",
+      "size_bytes": 109522
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-absent-reversed.json": {
+      "sha256": "07f88b0d779d21157bdab6d7453984f466f1b5e7673b7d9daa9b6f16a44ed365",
+      "size_bytes": 1811
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-conflict-original.claims/c1.json": {
+      "sha256": "cce34ed3509ebb7689688f9847dd885b907a6682ea88970ffb83483188b56374",
+      "size_bytes": 94567
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-conflict-original.json": {
+      "sha256": "4f059ce5041eb6469b273590d66c3582f262608461649d81ee6e72f525b12a21",
+      "size_bytes": 1829
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-conflict-reversed.claims/c1.json": {
+      "sha256": "62e21dd41c8b79648a48cb8ce184e828f267924e141eac1d36902845640a74a6",
+      "size_bytes": 94564
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-conflict-reversed.json": {
+      "sha256": "5669d942fd02dcfbe30581ac249a1d1befa28d1707004c0bb16a6e1ad769dc67",
+      "size_bytes": 1826
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-support-original.claims/c1.json": {
+      "sha256": "31f7a0b0fe1ecc69379101ad24b102e1feb183c23d0d0e99ef724cc74154c059",
+      "size_bytes": 79044
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-support-original.json": {
+      "sha256": "529572a1128696d90d4c63251f0ef3394939203d33aa6b2e851a0d01678d46b2",
+      "size_bytes": 1843
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-support-reversed.claims/c1.json": {
+      "sha256": "3346e881943caf30dd65df8e078e68e31342d0159d74d0b4ce66fc4b419e21ac",
+      "size_bytes": 79034
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-number-support-reversed.json": {
+      "sha256": "c00a5fb6321763a7d8a4a6955116bb9395e7b7830fe13412e6cf3d1b7e54d5a1",
+      "size_bytes": 1844
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-absent-original.claims/c1.json": {
+      "sha256": "d6329a53d2b727c3ea7055b6ff1d65579e4c9acb3d97de718427faf2858afafb",
+      "size_bytes": 141174
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-absent-original.json": {
+      "sha256": "07c9df475aad7f4bf970c640e10e0a3734c87218fdc7f29e1fcf890d219337b1",
+      "size_bytes": 1820
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-absent-reversed.claims/c1.json": {
+      "sha256": "e3c3b01dff17fa64c55992b963e0b8b4ba7f2415e38875357557521d8825f416",
+      "size_bytes": 141173
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-absent-reversed.json": {
+      "sha256": "af3ea1e676b1c71eec24618e64e277dabe95f742177df6a9f46dac6e083e1007",
+      "size_bytes": 1820
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-conflict-original.claims/c1.json": {
+      "sha256": "2ddd792a10572bdb69172ff70460dc55a9f4b5f5583cd2fa7d64217834681a79",
+      "size_bytes": 134637
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-conflict-original.json": {
+      "sha256": "8489f0b9ff2eec2a15102a8bba8edbc25b3ec90dfc4faa38e80e705673523eff",
+      "size_bytes": 1845
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-conflict-reversed.claims/c1.json": {
+      "sha256": "9d3292768fe8ff2823a4196becb8b390b37551b78fd7d14a6b8ba4f89efe380e",
+      "size_bytes": 134638
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-conflict-reversed.json": {
+      "sha256": "20f155ac6152ce5b3607b69b30ab1dd643507691f66a78accc8cd7fd8af93771",
+      "size_bytes": 1846
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-support-original.claims/c1.json": {
+      "sha256": "613314b851ec57d103bc6edf14e023fb396eb650dfc31ad5e3e0e2e0a684b4f4",
+      "size_bytes": 76924
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-support-original.json": {
+      "sha256": "96ba2402e67fc89d8a598c0f1f9f963468812ca0bd033ad02848ab101e6b647b",
+      "size_bytes": 1799
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-support-reversed.claims/c1.json": {
+      "sha256": "71b9e28e5ade6c8a384867c0e4a02953c113b4e847e620f0272031006722bcac",
+      "size_bytes": 76926
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-relation-support-reversed.json": {
+      "sha256": "eeee3280581da5813b41dd2a5a94c4ae70271313338df8d4ed43771da0e4d2a3",
+      "size_bytes": 1801
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-absent-original.claims/c1.json": {
+      "sha256": "75c32fdef9951974382278dcc2c1f1c95992a890e8316bc1721555566500dfac",
+      "size_bytes": 137115
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-absent-original.json": {
+      "sha256": "13decf1106bfe44f2299f5fea5d591af76080b09ef6acfb50174f347361ae9cb",
+      "size_bytes": 1785
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-absent-reversed.claims/c1.json": {
+      "sha256": "d9a589e9cb227a6827ee1d8db7862d394d478b45ab0c119ad28b38bdf15eda50",
+      "size_bytes": 137115
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-absent-reversed.json": {
+      "sha256": "5d91af84fa925b7b0b582bf931e551609102b8cece086688d8952cb64ce55a14",
+      "size_bytes": 1785
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-conflict-original.claims/c1.json": {
+      "sha256": "84cff83cca0c516bf971b4ce4f0d95616456a3c293313b9b68431f10f5495912",
+      "size_bytes": 77026
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-conflict-original.json": {
+      "sha256": "a3803f68133e5f96c851627d9798d9fdcff52dd15be8a2e247569aded91a32a5",
+      "size_bytes": 1810
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-conflict-reversed.claims/c1.json": {
+      "sha256": "3ba2a5fca5463248e50e03c51e9eb5aef585441ca4f311db92234f4a8df4bca6",
+      "size_bytes": 77027
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-conflict-reversed.json": {
+      "sha256": "1f124246cd888e416310addf03ec6d3f4a9416a7a2a56b9c83c955c9595dcb8e",
+      "size_bytes": 1810
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-support-original.claims/c1.json": {
+      "sha256": "6d2e3997ba761b5555ddbd75c11646626461f4b788fd66c7af6e01121f5ae945",
+      "size_bytes": 82195
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-support-original.json": {
+      "sha256": "1029cf32dba062a1f6f450b1bb4830f0cbab14bb7012bf99aafe69d9aade92b0",
+      "size_bytes": 1827
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-support-reversed.claims/c1.json": {
+      "sha256": "3a8a2255eab8bb4e31e0bbc5fb88d597c4034907b29e0e9d15e424d38bdae9e0",
+      "size_bytes": 82189
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/en-time-support-reversed.json": {
+      "sha256": "21d675b87f2bbd2aac85179600e2736de00cfa7fd0b7c763bb7015173fb3db2a",
+      "size_bytes": 1822
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-1-original.claims/c1.json": {
+      "sha256": "226f0b55ecddd67c686b887351b5af4faaa504b11e2a44a34af62b1d6b8599c9",
+      "size_bytes": 87641
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-1-original.json": {
+      "sha256": "4ab9442097d9dea3071b0ad73bbf5c078e5c540e96c11d5f53f2401049a5b895",
+      "size_bytes": 1937
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-1-reversed.claims/c1.json": {
+      "sha256": "c7eeedcd5dd6a142e3cf29140527a564b41d98ff6cf552dc5c80d4aedfe7fece",
+      "size_bytes": 87641
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-1-reversed.json": {
+      "sha256": "49febc5ed0e385e8a8bafa8e81f9705588c5cc22f703628224f8f9bdbb418156",
+      "size_bytes": 1938
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-2-original.claims/c1.json": {
+      "sha256": "9e0a6900d76fea8b50e24faf5ed109ce065e832f43c995ed171116351808032e",
+      "size_bytes": 158704
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-2-original.json": {
+      "sha256": "a6656dfc69604add22af7a9c90de5b0774e33be3e01f0779cabdf766fef9caf8",
+      "size_bytes": 1892
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-2-reversed.claims/c1.json": {
+      "sha256": "eb476df8db9ea4c1dd221273666def459373e73deebb35606217095cb1549d8c",
+      "size_bytes": 158707
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-2-reversed.json": {
+      "sha256": "a558b1a94c966fd1abff7293aa134b3448e7f04ed81a70ee728344e562d298ef",
+      "size_bytes": 1892
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-3-original.claims/c1.json": {
+      "sha256": "b455fe1cdc9ee84701cd651106d0c6513655613616ea0d50f4129476ad6ae190",
+      "size_bytes": 104567
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-3-original.json": {
+      "sha256": "496685fba90d4cd9433814a332d0e7a7d7d9f4fc7d0896ee811b5a6afd25eebc",
+      "size_bytes": 1936
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-3-reversed.claims/c1.json": {
+      "sha256": "73a01a9a20f75cee1648ad00f068583600b8902c59e35dac4dc16f19d40e8a3e",
+      "size_bytes": 104568
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-actor-3-reversed.json": {
+      "sha256": "4950875c9bdc51aab54cf53752c32187422e4f7e3005d84962af88e065b05c05",
+      "size_bytes": 1936
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-1-original.claims/c1.json": {
+      "sha256": "457a02ed4b59e023ddf1b50af666ffe4b3cfa33f6e380f36d451d82a04913258",
+      "size_bytes": 117738
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-1-original.json": {
+      "sha256": "fb517e1f52152fec49cd5a82b17b6b663d9788a5ae5ba037640edac27e947f7d",
+      "size_bytes": 1895
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-1-reversed.claims/c1.json": {
+      "sha256": "543319e90c2966b27c0c2a65c9df1167674989b3b862efc7bf1a48da6543d9f5",
+      "size_bytes": 117736
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-1-reversed.json": {
+      "sha256": "3a14384078b85c2ab170d827ab4c611d0c1a480059b0b204044747fa31f81eae",
+      "size_bytes": 1893
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-2-original.claims/c1.json": {
+      "sha256": "e33b3f9e4314c3bbd4ab979ad53a70a4084868533733fa8d116f4774f1fb0430",
+      "size_bytes": 127908
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-2-original.json": {
+      "sha256": "072f107f497b7f8179a990a54e0d573175ed105a631d34385f4aaee80693e318",
+      "size_bytes": 1863
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-2-reversed.claims/c1.json": {
+      "sha256": "e59a4582d6f36c612f5e70570817596cbda4a53949bf274f01657ef02b96b65f",
+      "size_bytes": 127910
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-2-reversed.json": {
+      "sha256": "f2e54943069ddf07ffa7e0913b0f7b1995deb228c3fe0e888d420730588dd995",
+      "size_bytes": 1863
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-3-original.claims/c1.json": {
+      "sha256": "e546a63d31b6f4ad32fa489cdba3763a6f05097db4de9d0b6edcbcb531a3f29b",
+      "size_bytes": 155876
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-3-original.json": {
+      "sha256": "bdf86f89cc02c4e24113d3afb94c26473f1a895438907f5c3ddce7bcab136ff9",
+      "size_bytes": 1879
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-3-reversed.claims/c1.json": {
+      "sha256": "b0e274d923c8e5645b48ca3a365bdf364b596a8fe173a855b89d8d2ada81b533",
+      "size_bytes": 155879
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-compound-3-reversed.json": {
+      "sha256": "9554d8985a91c42d9b697110d341e704f07d5f761b037a0ecf842aacc733b009",
+      "size_bytes": 1880
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-1-original.claims/c1.json": {
+      "sha256": "daaeaababa717d90338c6948711e8e3cce1eca754cc23e894d5dcfaed6fd1fc9",
+      "size_bytes": 104978
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-1-original.json": {
+      "sha256": "2ae8f13c3653418de48e0ab6b36c6d0c948531db4fc3490ffc59c9fc91f3266d",
+      "size_bytes": 1955
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-1-reversed.claims/c1.json": {
+      "sha256": "733927c4509e00cec3641dacaafffaef04c9c9ad24a21a6676327cf007293638",
+      "size_bytes": 104982
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-1-reversed.json": {
+      "sha256": "bff66f84350112bfe253807a9f93b132d57495e0154702f0151c46fe2163fd2f",
+      "size_bytes": 1954
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-2-original.claims/c1.json": {
+      "sha256": "28af99e8037468ce591c8740d275085368f428597d1fee965a451ac0bd0c6843",
+      "size_bytes": 152185
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-2-original.json": {
+      "sha256": "c39058aee3ca08c931b8542e9381bc41d787c53555bc4ff0e06c8cee3802c251",
+      "size_bytes": 1876
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-2-reversed.claims/c1.json": {
+      "sha256": "acb280480d711feb05f33c417ca875d7a1194bd00468604b236f6043f1e1e26d",
+      "size_bytes": 152186
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-2-reversed.json": {
+      "sha256": "3259ec6a88e91f2deb935fe5674b30cfbf04305c04b38f7d21d5624cbbc1f49a",
+      "size_bytes": 1876
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-3-original.claims/c1.json": {
+      "sha256": "299d3e9714ce0606de0066a44b8cec7fb7ea24e7178ed3aa12535370944e35c6",
+      "size_bytes": 155804
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-3-original.json": {
+      "sha256": "f522872fb5bb84f1a21c6f2acb27e4fdbbb99a7ef196f87c819750dcb3b66c9c",
+      "size_bytes": 1900
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-3-reversed.claims/c1.json": {
+      "sha256": "27d0c999aad3aafdcae5e16b65cedc18e8a2051b91b5ebeda9f66845fdb744cc",
+      "size_bytes": 155803
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-count-3-reversed.json": {
+      "sha256": "d6af7b808e8e0a560abe940bbde29eb3db112488d125debfcd9ce8b20647d4d4",
+      "size_bytes": 1900
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-1-original.claims/c1.json": {
+      "sha256": "aba069ae824b3400575cdcb50b0bacd85054fb55b1a94753b4291dc4083b2533",
+      "size_bytes": 139779
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-1-original.json": {
+      "sha256": "9f11202ae895d816c638634bc6c3557fdb265ca314c79791ec7110497fadcb88",
+      "size_bytes": 1942
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-1-reversed.claims/c1.json": {
+      "sha256": "4f4b57a4e1f37e6281dbe511400dcdfc95e8986d24c25219757c54636ea54058",
+      "size_bytes": 139776
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-1-reversed.json": {
+      "sha256": "ee1b90c7ca2ea5342988295ceecc4917955bae99a1c99ca69c076043f41b0995",
+      "size_bytes": 1942
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-2-original.claims/c1.json": {
+      "sha256": "a2ad26bed11f2ffcf742d737aa29227664ea10661eb2c87fb09ad71666de3724",
+      "size_bytes": 116953
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-2-original.json": {
+      "sha256": "026c6e224c5c1cf2f93e7f1640f89fac8f20c67d311fe6f97350efa7eabb7d37",
+      "size_bytes": 1911
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-2-reversed.claims/c1.json": {
+      "sha256": "25c8a79b00ddb501c12e881d50428fadebb3b33b876e3f22e59d123711b5e422",
+      "size_bytes": 116956
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-2-reversed.json": {
+      "sha256": "4230d07edc690c5b16161fd527585a9f5ac1315701f602f667440e3438f26a4f",
+      "size_bytes": 1911
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-3-original.claims/c1.json": {
+      "sha256": "e087b75b067a51844b7483c198f2725d24433d5afeb7a75f3e8bd2ec9ca83328",
+      "size_bytes": 159283
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-3-original.json": {
+      "sha256": "102cb7bda1d6b519f7cf038ddd8ec8dc0ad27d71fa5da50420ce741c1b33de6b",
+      "size_bytes": 1925
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-3-reversed.claims/c1.json": {
+      "sha256": "6c18ec6da5dfbc95b9c54747b751f9cb59908977d84fe58d96ed5e2b1bbfdd61",
+      "size_bytes": 159280
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-qualification-3-reversed.json": {
+      "sha256": "31592c3c6a4477280fe3be52ed4ca6224a33b7db37d605293c58631269ef81f1",
+      "size_bytes": 1925
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-1-original.claims/c1.json": {
+      "sha256": "70ee1d48cef87d32ffcf5cef4eaaf76d2f3fd3cfeabf8e54a2cde740901cecfc",
+      "size_bytes": 142234
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-1-original.json": {
+      "sha256": "981420f6da182a4d9deb7a433e995fa1085eea7271713baf1ad3d0fcf0953f71",
+      "size_bytes": 1887
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-1-reversed.claims/c1.json": {
+      "sha256": "eff9d2b9ea8dc975cc0515f81442e052b999d4ffac60f2ec4515e864771ec02c",
+      "size_bytes": 142235
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-1-reversed.json": {
+      "sha256": "e8f289e2b7477567335818da9d583f60b2caac223f3ec96954b433dee2343341",
+      "size_bytes": 1887
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-2-original.claims/c1.json": {
+      "sha256": "aa4990cb73e98fd2e881502370b95f5ab086bfc4ffe54a227e3ccf7a5a25406d",
+      "size_bytes": 79741
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-2-original.json": {
+      "sha256": "020377f035febb0c8fd017a06e72877978f53e670c5b100a5121affb7a9b4a0b",
+      "size_bytes": 1894
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-2-reversed.claims/c1.json": {
+      "sha256": "f948b28e305113bf8c2902336b2257873374a935d01f294ac656a914049b4e6d",
+      "size_bytes": 79746
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-2-reversed.json": {
+      "sha256": "560be7fad871c8fefefcdd2e14ed979b37de681bdfdf26dda0721d054dc30823",
+      "size_bytes": 1899
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-3-original.claims/c1.json": {
+      "sha256": "b7062f5e3d15d53a46ec5d80ec7be0b2f90d5840618b9de1b36baeba0133bd73",
+      "size_bytes": 132941
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-3-original.json": {
+      "sha256": "8aa2ea21fdcdf96f2de4bb857cccf68e00507af9a454a67a4aadf284269043e0",
+      "size_bytes": 1709
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-3-reversed.claims/c1.json": {
+      "sha256": "fdabc6984b733caa53574942b6b6e67df3518e08a65fb32813931d4dc6744bed",
+      "size_bytes": 132941
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/ja-table-3-reversed.json": {
+      "sha256": "f7a84d95ec07a57f4331ed0114ec8c27fc735809ca252fc3ebd473641818842d",
+      "size_bytes": 1710
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-original.claims/c1.json": {
+      "sha256": "2abbdc7a27b7254ceee948f2950a70d117d9e58f1ba053d61ef98f0f366c4567",
+      "size_bytes": 137437
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-original.claims/c2.json": {
+      "sha256": "01a9251fb53973602d23748a5bc5e6823cb6b9544184b802a1bb86ed481324af",
+      "size_bytes": 150375
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-original.claims/c3.json": {
+      "sha256": "3cac0d410caac85fc33b0ae959e62653783410d4d786df3477b5a3ed02886327",
+      "size_bytes": 187786
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-original.claims/c4.json": {
+      "sha256": "e85986cf7595cb3abc328352e8c487f306745b91a4c8d986fb3994c6c5827d60",
+      "size_bytes": 163002
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-original.claims/c5.json": {
+      "sha256": "af72abb89f9af58c7e8e8263f93783f496f318ae9f167187d40425cf59cdceaf",
+      "size_bytes": 138879
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-original.claims/c6.json": {
+      "sha256": "dc0d12e9a9f4f09716cc781eda82840cbadeb9475f2a2cb18993c49e941180a0",
+      "size_bytes": 187803
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-original.claims/c7.json": {
+      "sha256": "bd510858bf1a6382ab072842fb35b8cb4dafa1c5fa56b7445fff337a4d2f82f1",
+      "size_bytes": 170184
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-original.json": {
+      "sha256": "8522e6e2e1ff2f9e3c7f5827ee4204315911765d95039f09610e28f0292a3b68",
+      "size_bytes": 11668
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-reversed.claims/c1.json": {
+      "sha256": "4fbc6cb85be1fa559a76b26835d58745b60ba622e36d1da54d8c37d2db0f585b",
+      "size_bytes": 195310
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-reversed.claims/c2.json": {
+      "sha256": "52282e79e1c290fad303ed64e9bb4c944c40aef046f351a127da7364c10b34ea",
+      "size_bytes": 188491
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-reversed.claims/c3.json": {
+      "sha256": "13a33d9b03b03fd6e07da9e81a5b1a5162842113398884adba3ed3fa7aa63336",
+      "size_bytes": 139748
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-reversed.claims/c4.json": {
+      "sha256": "3a0f7297bdfab6626b77ca3784640f7f9f6e8eff007600571566e97779a98515",
+      "size_bytes": 197455
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-reversed.claims/c5.json": {
+      "sha256": "65fc7ae8be773adfad4231d0b0b195f99be6f3667c478b2948c442c31dce6010",
+      "size_bytes": 161781
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-reversed.claims/c6.json": {
+      "sha256": "785e2875d169e9cbf7492c602639b942afbee2ca83f21dc99c5c5b10818a525b",
+      "size_bytes": 189279
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-reversed.claims/c7.json": {
+      "sha256": "2237e0aea02f1cf81c84a6f1ed42308e6815fa479e1a04c0eebd9f0d3a682737",
+      "size_bytes": 167947
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-council-reversed.json": {
+      "sha256": "e2e4881724e69e6f3c3ffdaa9a60d4083c61e8ccd85ea7ab8e072a360e9492e1",
+      "size_bytes": 10861
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-zidane-original.claims/c1.json": {
+      "sha256": "88e1a04e2d3443056a0197de73fe73494a80167397c11d67bdb3699ad06ce012",
+      "size_bytes": 197899
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-zidane-original.json": {
+      "sha256": "127d41bd676afa6fe1927df8f2dcface0fd655602669bfb07a5673926c1f0e51",
+      "size_bytes": 4159
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-zidane-reversed.claims/c1.json": {
+      "sha256": "b36a45bd585d9423000afcff629908521e81f084c4635b1ccebd867738e23266",
+      "size_bytes": 201944
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-v20/tasks/known-zidane-reversed.json": {
+      "sha256": "354dc2d9d0ea8091a17cce4ed70b90c240a32f879065561d0fc31d44314a2781",
+      "size_bytes": 4169
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/AI_review_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/AI_review_stdout.txt": {
+      "sha256": "cff1cec4f4096585641440a71cab65dada427a6a8dad7f45c8bf85e5276c50fd",
+      "size_bytes": 177
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/assemble_complete_result.py": {
+      "sha256": "b3cd3cd9117fbb78e86092eb29a9105ffaf2750fab8b1d35e547d4b06c441448",
+      "size_bytes": 7629
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/audit.py": {
+      "sha256": "3a8529888dc08943f1b59d287cfaa1a4520e8ed18c4aae94926a800207330433",
+      "size_bytes": 3873
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/audit_resources.py": {
+      "sha256": "af8e913e81aa4a83290987b4335b25128e0fbb72227cde40fb2d629f3beae8c4",
+      "size_bytes": 5218
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/check_partial_sampling.py": {
+      "sha256": "e5e1bc268bd1c0ee1be2ef472df2fa45aa985bc7de30f209bf65bf5e12c19ad9",
+      "size_bytes": 2919
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/copy_raw_receipt.json": {
+      "sha256": "26493c93a968f6e91bd15b3bd54f2a9c71c94b2d159e81867855345f1cc44319",
+      "size_bytes": 15731
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/helpers_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/independent_schema.json": {
+      "sha256": "1c1d19cf95e9ba2ae81258ac79e1ef9f6f18ef70a2f24b364c91225d32511575",
+      "size_bytes": 52626
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/independent_schema.py": {
+      "sha256": "a82c543b576bc8ca0c7ec1d93c62c85285ed5f44e2a0482d6d1a973715d9051c",
+      "size_bytes": 5533
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/independent_schema_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/independent_schema_stdout.txt": {
+      "sha256": "6077df7f933736ed926dacf3ab0cf83dc31755890d11c074adbb9e6381614c2c",
+      "size_bytes": 129
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/partial_sampling_check.json": {
+      "sha256": "1b1da7effe73418c8545dc5d4ee6d8b1109d25baa0289a5c54ec9e5edfd6a4c7",
+      "size_bytes": 2291
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/partial_sampling_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/partial_sampling_stdout.txt": {
+      "sha256": "a1d32b5ab2408067a3ad35f4e376ab10df6f49eabe805080201ef98d256e9b08",
+      "size_bytes": 711
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/preparation_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/record_AI_review.py": {
+      "sha256": "28f1eb15f141a7eb3032687904b594fd80c32eac8059668898daac49d6bb49c4",
+      "size_bytes": 7110
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/resource_audit_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/resource_audit_stdout.txt": {
+      "sha256": "74c0c244cc94693317cb7fa73984e11834e32c04ef83a5645e3d8a10876cccab",
+      "size_bytes": 118
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/semantic_resource_audit.json": {
+      "sha256": "086773ebeaacb646527f92c80a67fa4a210719b12b457bad0eb3133c1bdcb35c",
+      "size_bytes": 1487
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-v20-semantic-audit-v1/stdout.txt": {
+      "sha256": "f522782532a527787f6b6f43a8b0f480203794e31eb918d0ae078dd3a3c5a6b1",
+      "size_bytes": 2947
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v20-semantic-v1/launch.json": {
+      "sha256": "b284e12a1169800e9e2b6ecf505c2f7d8b8205f961ff6facd4b57908a06f89d2",
+      "size_bytes": 1174
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v20-semantic-v1/samples.jsonl": {
+      "sha256": "3b28380f2b55dab2d4ffbda5c404cbabef8602efbd1bf31165a294ad8f0f9d52",
+      "size_bytes": 377684
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v20-semantic-v1/summary.json": {
+      "sha256": "8b295cb76adaefcf5675f50e9bc61241937fa8b0a09f9966cf1a57d6ccca532d",
+      "size_bytes": 496
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/audit_check.json": {
+      "sha256": "bdde7f490e4f759767d76d6fbc8456411205be6e02b16782548c7757c9ad8091",
+      "size_bytes": 4955
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/legacy-array.json": {
+      "sha256": "13409b933b6d3e8466ef4fd8c0a9a819452b1fc1cf2532b12ad022716b20b302",
+      "size_bytes": 7759
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/plan.json": {
+      "sha256": "c8ecec30933fc8901e2f498b12dba8e26b864b50c4231e79bb855ccd503c72b1",
+      "size_bytes": 29888
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/report.json": {
+      "sha256": "354f150832ccd905c3c9eb8e845248358b407374a15fa9b7cec35c86fc7affd6",
+      "size_bytes": 11766
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/resume_check.json": {
+      "sha256": "c88fb7e94255f0f5cf5158f4e0893fdbdda8aff8570059ae03212c846f234e0f",
+      "size_bytes": 1577
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/server.log": {
+      "sha256": "84bb3c8f07a2e55bdaa508a81e2c5f2dbe2bde72eff6d2f87b1657f890b1ef2f",
+      "size_bytes": 45838
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/strict-array.json": {
+      "sha256": "63fdd4afde1e63f679cb3642b90b1eeb9876e604255eccf014b645d350e01d95",
+      "size_bytes": 8113
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/strict-cited-contradicted.json": {
+      "sha256": "7bfdfdf3ff7a01d0387c04348b05eb5c3c6af9224e40a60f634b9fc1e8e63c3c",
+      "size_bytes": 16732
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/strict-cited-missing-empty.json": {
+      "sha256": "094bf2eff80fc795a535a64526b4c24ac3eeec35345708a7963bd5ca847221c0",
+      "size_bytes": 16639
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/strict-cited-supported.json": {
+      "sha256": "c7bd7b315614d6ccf4c3623219147f624e7ee8e5eff49a426960d7c5c0bbcdd3",
+      "size_bytes": 16731
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/strict-cited-union.json": {
+      "sha256": "3576f2aaac0b8872bed62624861c701ad6672763b8b8af4d87087dc19cdaeefb",
+      "size_bytes": 20005
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/strict-fixed-ids.json": {
+      "sha256": "85931decc78508db800a288998440ddea72da1c03a82336194e854bfc9787633",
+      "size_bytes": 10263
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/strict-prose-fence.json": {
+      "sha256": "0ad27aebf8db7ff7ea93712660bf8d6f4b73e1fd90998abc1c22800eba23d849",
+      "size_bytes": 8205
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/strict-rewrite-bounds.json": {
+      "sha256": "00e965b19e4147d1120a45e8945260b4d3adf156735bfa927f77994d3dcdf32e",
+      "size_bytes": 93113
+    },
+    "data/runs/runtime_screening/phase11-qwen35-9b-q6-temperature-cited-v8/strict-unicode-escape.json": {
+      "sha256": "e22f2cef782e69c1aad5d53186593177e497774dbfb32feb8831145150d431fb",
+      "size_bytes": 8322
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v20-format-v1/launch.json": {
+      "sha256": "b5d0e333e5b48d980306e1ac58c014ddd4b7effe65c30403307a9d6196d9589a",
+      "size_bytes": 1177
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v20-format-v1/samples.jsonl": {
+      "sha256": "3518051ef41ce3797ff9ddaad2f0016d102028fa271ec87c3a72d905dada173a",
+      "size_bytes": 5674
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v20-format-v1/summary.json": {
+      "sha256": "fe2f76d4f572930b41e97ba4c58f14e3a427bc3ff69b373a270b01b80c090169",
+      "size_bytes": 495
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/format_audit.py": {
+      "sha256": "715291e520cce2729201523728d4bf71d1c86da2b53d5323298b49ba3aa0f1e0",
+      "size_bytes": 7334
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/format_rerun_rejection.txt": {
+      "sha256": "594ff06f224b0980a016c434f892d46f8246d0f577ccaaf072685d8472434c6b",
+      "size_bytes": 751
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/format_audit_stdout.txt": {
+      "sha256": "e130394a6f4e60ac8cd5637246d8b672cf0d2f6d084097b7d491916c764e847d",
+      "size_bytes": 220
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/format_audit_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/audit_resources.py": {
+      "sha256": "af8e913e81aa4a83290987b4335b25128e0fbb72227cde40fb2d629f3beae8c4",
+      "size_bytes": 5218
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/preflight_resource_audit.json": {
+      "sha256": "df55572dcee1c4a193a921b1217986b9ea8d7f74b1f637e61e7cdac31bf46c6c",
+      "size_bytes": 1488
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/format_resource_audit.json": {
+      "sha256": "93cb3a23237bee3dd97007b28a12e4bfabc4f949fbc6c1ff11a1b3e60947c3dc",
+      "size_bytes": 1486
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/prepare_worktree.py": {
+      "sha256": "b73e2011c0e0a4c69d5bb0a8d24a0cd66b41f7564f3308fa338f175e7399e781",
+      "size_bytes": 4787
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/preparation_v1.json": {
+      "sha256": "c30e2523a7eb1ba28846816d31bba04242fb6e44777a7cee6e3cf39c09fb78e0",
+      "size_bytes": 391270
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/preparation_stdout.txt": {
+      "sha256": "192ba860505d2f6f902a541d688d6af13176ea36afb3e7af01d049c3ef671672",
+      "size_bytes": 238
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/preparation_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/uv_sync_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/uv_sync_stderr.txt": {
+      "sha256": "bf8bd8ed3589e799121b9231f16b32aa9a1edaa84a87fc5dd8328656848999ec",
+      "size_bytes": 1436
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/assemble_preflight.py": {
+      "sha256": "d4f5a46701be03ae87ba8d7b7303e9d58d5921d2a1b408ef9e9b6dadbfacfedf",
+      "size_bytes": 5470
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/preflight_v1/plan.json": {
+      "sha256": "ec710ae256297d0eec5331751dda85b5fddff66360a74ea3a8965eb7741b37e3",
+      "size_bytes": 1220
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/preflight_v1/report.json": {
+      "sha256": "d6e0eeeb14459dadacce8c28dc3a08a95599b4c0fcf6fdd5e24481d56f1deebd",
+      "size_bytes": 30790
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-v20/preflight_v1/server.log": {
+      "sha256": "0e783264192e2926602e549bf38c17990aa1d56ab96be2ebb1e79e1e711786be",
+      "size_bytes": 19163
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v20-preflight-v1/launch.json": {
+      "sha256": "a16a8758424a5f1681c03485be595ac5079ad03d83debb0e259a4d3fc7199566",
+      "size_bytes": 1170
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v20-preflight-v1/samples.jsonl": {
+      "sha256": "7686bdd91161816de4ccbc930753d844a1a6042fd63cc68b54714950ee5965ed",
+      "size_bytes": 2376
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-v20-preflight-v1/summary.json": {
+      "sha256": "41b50498cae730a7ba046d6edb6cc023043524ff9cfe3263dfd01ea076abdaad",
+      "size_bytes": 495
+    },
+    "data/manifests/phase11_qwen35_q6_temperature_launch_v1.json": {
+      "sha256": "a2f20eca04503703d95c938dad8b7157c1d2c5986c470fa917292d4170d500da",
+      "size_bytes": 2913
+    },
+    "data/manifests/phase11_qwen35_q6_temperature_semantic_result_v1.json": {
+      "sha256": "e00f78ffc46afe3b5003ce96aae2ff88e8129082b8ef92719f92ff1046075a52",
+      "size_bytes": 56198
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/audit_check.json": {
+      "sha256": "c03d370f30129f9f2b7674683aecabd36d4d2ddf4283547dbad974761f4944d1",
+      "size_bytes": 15420
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/manifest.json": {
+      "sha256": "dce70fe50a4f517da773d9d98020a17e9cecc9d3ccadb7a4b60651da73def1dd",
+      "size_bytes": 23474
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/report.json": {
+      "sha256": "5518f3000539ed45e083583d5c8828005538ab8d85c058b176a305fd5a857b3b",
+      "size_bytes": 2372
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/resume_check.json": {
+      "sha256": "1619527040b4e6ab6ccf8e9075fa545db0a603fa2a310fe961ed2fbeb148cfc4",
+      "size_bytes": 2886
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/semantic_output_audit_v1.json": {
+      "sha256": "f18671b2c3c595b71822955bd07fd1254f4b405ece15733adb43f6736eafd7d5",
+      "size_bytes": 22505
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/server-1.log": {
+      "sha256": "12e0d1aa6d56ed8fa87db8abe9ae9e56442272dc5efc254445f1a4d03aa7b815",
+      "size_bytes": 142619
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/session-1.json": {
+      "sha256": "bda36e7f41a26aa4af8ed9e4d65a59144f78703d3ee584f3424be939111e9120",
+      "size_bytes": 9720
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-31e646aa9601-original.claims/c1.json": {
+      "sha256": "0c9903fa0244c026040e2262b56aec365ffd730c0f359920d4b1625243fe8ea6",
+      "size_bytes": 76686
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-31e646aa9601-original.json": {
+      "sha256": "77428bca3c447644b4e65bcbe0ec159354bbc94141261a99537b2ec904e84f88",
+      "size_bytes": 1511
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-original.claims/c1.json": {
+      "sha256": "791e442971ced96d8cdb75619a68a1caf1bdab1d994a7e9b4405117a0000fee5",
+      "size_bytes": 137456
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-original.claims/c2.json": {
+      "sha256": "c3b70413b67eb23717073e75fe16e4137cda3fe49c8c59945b8c8529e2b51951",
+      "size_bytes": 150390
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-original.claims/c3.json": {
+      "sha256": "f09e778df12c03ad19231fb00d092db771d6cc29884cd638574e3cb9f7c73d3e",
+      "size_bytes": 187804
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-original.claims/c4.json": {
+      "sha256": "6fe6bc4cc486f3085cf4ab900a9ae5c88002d4d8d423cb8cd2df2d593c5102ef",
+      "size_bytes": 163022
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-original.claims/c5.json": {
+      "sha256": "27db63191a78ca6e69e1b9b78b2c0fef19e9b7b5a7c563c5feda4b961e1c140f",
+      "size_bytes": 138895
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-original.claims/c6.json": {
+      "sha256": "584eae66724152a40564873e7fa8a4e7fbc2f75b60838cdd963b2f0589a98ee7",
+      "size_bytes": 187822
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-original.claims/c7.json": {
+      "sha256": "4fd274b57d138555b517a0f2251562600054b4a56765f93a589e1c8b6d51f9da",
+      "size_bytes": 170204
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-original.json": {
+      "sha256": "dbb8a54636ba65572110a7cb85cd076800ff59ea40aaeee1d4ef11e0ab239908",
+      "size_bytes": 11741
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-reversed.claims/c1.json": {
+      "sha256": "d1b2e330fb03787180726b02154c8f30aa32eeb13b2c1dcedfb7ab0817e7b58d",
+      "size_bytes": 195328
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-reversed.claims/c2.json": {
+      "sha256": "f042e52bc3d58e15dd5d86cf8204def17b5ce476a953a693b2b1f7998fa9a11e",
+      "size_bytes": 188510
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-reversed.claims/c3.json": {
+      "sha256": "d0dde28b19593110dda51e05d2ea3e6e3f90709fe7f3b282a0ace7fa252840f8",
+      "size_bytes": 139767
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-reversed.claims/c4.json": {
+      "sha256": "bb8364dcf855548b60f15b22569dfe7e497430f4d3659126bb22653e5915f5b9",
+      "size_bytes": 197473
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-reversed.claims/c5.json": {
+      "sha256": "f2905e438c861c6694eda677e9eb2143fce3a69d4f154f18254de4da046fcb16",
+      "size_bytes": 161800
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-reversed.claims/c6.json": {
+      "sha256": "7a5edb19fa97f1472ff27d9185f10f2ed4fa80ddeded6fb92d16b60569b37f5e",
+      "size_bytes": 189296
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-reversed.claims/c7.json": {
+      "sha256": "001ee4e0ee16f5bcd37b55c6a7e0d1515c63b32496539ca896072b065abdf99a",
+      "size_bytes": 167963
+    },
+    "data/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9/tasks/known-gpu-323bf35882bc-reversed.json": {
+      "sha256": "f4a6cd732389c8978dc396d5f3cc1c11e218ddb9c61880071519d5806a7c3658",
+      "size_bytes": 10932
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/AI_review_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/AI_review_stdout.txt": {
+      "sha256": "c09b04b3862d78933b7bd44666f253bc394fdb061e1e3021e4dfa09c09102e85",
+      "size_bytes": 174
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/assemble_result.py": {
+      "sha256": "56c1cc4b642234900f1e3b81db12d914b00ba840685be1c7280cbf2c27f05a9a",
+      "size_bytes": 7689
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/audit.py": {
+      "sha256": "3a8529888dc08943f1b59d287cfaa1a4520e8ed18c4aae94926a800207330433",
+      "size_bytes": 3873
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/audit_resources.py": {
+      "sha256": "af8e913e81aa4a83290987b4335b25128e0fbb72227cde40fb2d629f3beae8c4",
+      "size_bytes": 5218
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/helpers_ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/independent_schema.json": {
+      "sha256": "e38ba9a381cb3ebf21a3241d58be4399ae59e7b5bf2b23fb50f0d293f548ea9e",
+      "size_bytes": 11097
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/independent_schema.py": {
+      "sha256": "c221f5f8476a4700a7a0a6172675a7eb5cbda6b7531952c498b3c48443053f66",
+      "size_bytes": 5854
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/independent_schema_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/independent_schema_stdout.txt": {
+      "sha256": "dc4193ebf3836758784f0202943ef382d59761639c5793659bf801c00fa54705",
+      "size_bytes": 169
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/main_rejection_check.json": {
+      "sha256": "7e1e0855c4faa6aa25f77cf7e1f5d2acf37eb358ec5796d50a0b94f79ce7bdb9",
+      "size_bytes": 560
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/main_rejection_stderr.txt": {
+      "sha256": "898c4bcb1298c305221d1ef5317840ffe18ad2679e4a67de499cb621f85d37dd",
+      "size_bytes": 1147
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/main_rejection_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/record_AI_review.py": {
+      "sha256": "541a077a0c6ad14308bf251ea6e04ed11737f2d638e91888b73b0f7e03caad5e",
+      "size_bytes": 5778
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/resource_audit.json": {
+      "sha256": "f1029c8c5636a3c09e8ae3cb91968b4b5de4873474ebcb431d6b58a142273461",
+      "size_bytes": 1515
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/resource_audit_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/resource_audit_stdout.txt": {
+      "sha256": "86c36ca8c93729894749f69f1b0a5530215252e69142b96bdaa321296e7942ba",
+      "size_bytes": 118
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-temperature-known-v9-audit-v1/stdout.txt": {
+      "sha256": "7c8a0dc9006c5d764a2945bfbddc371b577d7bf894ef4ecb3fbe8eeaa339eb3f",
+      "size_bytes": 259
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-temperature-known-v9-semantic-v1/launch.json": {
+      "sha256": "e01770748341451f3455711dde514d6252d01a0045a3402f70651ba7b339de32",
+      "size_bytes": 1228
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-temperature-known-v9-semantic-v1/samples.jsonl": {
+      "sha256": "8d8dc2b95a3820a082210116a7a7f1911a55fc582aed3a4440b4e9fa4118e90e",
+      "size_bytes": 93852
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-temperature-known-v9-semantic-v1/summary.json": {
+      "sha256": "b075c09611e4d2f2b0996f2d08e34db3f7828ebd2d2972b997e900778c4c0e88",
+      "size_bytes": 496
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/prepare_worktree.py": {
+      "sha256": "eb21347669ae958317c68cb31154b200140845daa137b6eee861c73f83c00562",
+      "size_bytes": 4853
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preparation_v1.json": {
+      "sha256": "c4a24e74e45d023785bf9c63542e36cc7a0e4108f99349f22403e65c1e2fb940",
+      "size_bytes": 448899
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preparation_stdout.txt": {
+      "sha256": "b08272638b5eff3ae540ebce3d61d8249d5aa9884977f20f844fcbfd6538c687",
+      "size_bytes": 250
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preparation_stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/uv_sync_stdout.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/uv_sync_stderr.txt": {
+      "sha256": "2267c7415d52a4c203ffcbd7a2f3176db81fd81392389783d866c0b29e7a9d19",
+      "size_bytes": 1436
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/assemble_preflight.py": {
+      "sha256": "cd704468d6f6fdd39a66c955d5bded7d6cd6f8404bf13ce8a1b427f2c90c122d",
+      "size_bytes": 5395
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preflight_v1/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "size_bytes": 1
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preflight_v1/plan.json": {
+      "sha256": "d1565232cefe05719c2c5ec1fadb063750251aec3278bdbae6d92fd65a904264",
+      "size_bytes": 1220
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preflight_v1/report.json": {
+      "sha256": "6701c8df0d0b3a87e213ca386626e13a7d49e1dbcb7ea7eb67ec8e15b7fc345f",
+      "size_bytes": 35239
+    },
+    "data/runs/model_screening/phase11-qwen35-9b-q6-temperature-known-regression-v9/preflight_v1/server.log": {
+      "sha256": "1699e1aec5703e2fa8fc736af7bb56d367f51e58e9119a309f8ef0befa8860f8",
+      "size_bytes": 19190
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-temperature-known-v9-preflight-v1/launch.json": {
+      "sha256": "10ec6824ae296e7bedc5903f4cd440120c4229e97e3371ab006ebe7e6bb747f3",
+      "size_bytes": 1236
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-temperature-known-v9-preflight-v1/samples.jsonl": {
+      "sha256": "bf9e3e205a16b8a7ca1a0407162277537c8f18dec530a975ff67076badfcd209",
+      "size_bytes": 2369
+    },
+    "data/runs/resource_observation/phase11-qwen35-9b-q6-temperature-known-v9-preflight-v1/summary.json": {
+      "sha256": "985f6dae7c967e6a4ba3a2c02e85273a0502cdcfff8f78434f29ba70e1ee7fb6",
+      "size_bytes": 495
+    },
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/calculate.py": {
+      "sha256": "ba680b474162315d5b1cfa7fdd5ceb0d078d76d499fc988971f6260a7a1a6aab",
+      "size_bytes": 8347
+    },
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/estimate.json": {
+      "sha256": "db6f6ed23729a18f22dcda37c0361438368f7bf1ce47b175cc98e011849481f8",
+      "size_bytes": 36193
+    },
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size_bytes": 19
+    },
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/stdout.txt": {
+      "sha256": "268adfb88cb5bb52530b30dd51963924647120469abdb587b6b33ee93ace6bfc",
+      "size_bytes": 265
+    },
+    "data/runs/development_screening/phase11-q6-temperature-resource-estimate-v1/verification.json": {
+      "sha256": "4a02fc1bb6717613690b1d5334bf64011fb36cadf0eba6e0ecadb682323add36",
+      "size_bytes": 587
+    },
+    "docs/phase11_qwen35_q6_temperature_resource_estimate_v1.md": {
+      "sha256": "064d9a107d249c720aacc986692efe069b7d9ee924993459a8696ae8bd11d073",
+      "size_bytes": 3964
+    },
+    "data/manifests/phase11_qwen35_q6_temperature_known_launch_v1.json": {
+      "sha256": "1d2e3be8d2d95d982b092209bc747a9617d6321f521596607b58bac719129cc8",
+      "size_bytes": 3205
+    },
+    "data/manifests/phase11_known_trace_result_v9.json": {
+      "sha256": "20f2dfb0ef23888ac626646620aad9e2da017a0ebee89c3effda0c7aec661be2",
+      "size_bytes": 31385
+    },
+    "data/manifests/phase11_qwen35_q6_temperature_resource_estimate_v1.json": {
+      "sha256": "d7830985e2d8de39fd0d09b46823d9e3a5eaa91146343024bc800f79b93309f8",
+      "size_bytes": 2724
+    },
+    "src/rag_research/__init__.py": {
+      "sha256": "7b788c2f28d57d6f0c2c532d9b01a3c7b6b6f3d4475e1cf12da028b65ab96b74",
+      "size_bytes": 86
+    },
+    "src/rag_research/baseline.py": {
+      "sha256": "5ae83d487fe46dbc117e2098751374a7fe500378f7e009afd79d950d16a3ad85",
+      "size_bytes": 2008
+    },
+    "src/rag_research/calibration/__init__.py": {
+      "sha256": "0f8f62672aef489bf544efaa7f864caf54dacc9399a9de89af3be6d624574b47",
+      "size_bytes": 79
+    },
+    "src/rag_research/calibration/preparation.py": {
+      "sha256": "c9718d8f341a74088379ab8bb7392978544c51780b4726b0b8564eb590d0b5ee",
+      "size_bytes": 10398
+    },
+    "src/rag_research/calibration/report.py": {
+      "sha256": "6426fc6676c69e94ebd6f41c91df84a40a8c2bf70fe0f15d0b85106999fe93a2",
+      "size_bytes": 4358
+    },
+    "src/rag_research/data/__init__.py": {
+      "sha256": "de362f3487a018cb700e8fb8f12718f5e6dce28a27481d96d8b04f948c29306b",
+      "size_bytes": 53
+    },
+    "src/rag_research/data/baobab_source.py": {
+      "sha256": "29a02661abdf522fea4660deb6bd9c9bec484b09f60276be7d95e6ea22cb178a",
+      "size_bytes": 5810
+    },
+    "src/rag_research/data/clapnq_acquisition.py": {
+      "sha256": "2d089d99532d44abae23b619474cc0cf9e9bd7913693417095af105a970fd393",
+      "size_bytes": 5379
+    },
+    "src/rag_research/data/clapnq_annotations.py": {
+      "sha256": "5c9f9656efdc71756d8ceb804b0bf8ddb7f9c6df6681852365ebbeaee61e4dbb",
+      "size_bytes": 10675
+    },
+    "src/rag_research/data/clapnq_corpus.py": {
+      "sha256": "5e049f3113854a405bbe022895bcb404c62cd65a20f5a8af65bd9a086741015c",
+      "size_bytes": 10114
+    },
+    "src/rag_research/data/clapnq_manifest.py": {
+      "sha256": "9443f15fdc9181875ab1058fd775ed8fa4d3fbef586921c7ded7764703dece3b",
+      "size_bytes": 15740
+    },
+    "src/rag_research/data/clapnq_queries.py": {
+      "sha256": "34a16a1b54846881420f8f566e33ddf7c33c3cc7dbfda7f30a5888d5cfded405",
+      "size_bytes": 9481
+    },
+    "src/rag_research/data/clapnq_records.py": {
+      "sha256": "9efa5c14ded2f0302360236a051c0d4d7dfd9f64636b341cf792761986e6fb22",
+      "size_bytes": 11040
+    },
+    "src/rag_research/data/clapnq_source.py": {
+      "sha256": "bff1e979d6f65a799154590295e0ae61826ef929db9c3e383a10b2baebd4cea0",
+      "size_bytes": 3865
+    },
+    "src/rag_research/data/clapnq_split.py": {
+      "sha256": "a5327fb6c3d5fea39132f28b2c3e03afe4b719a7c70ea2fb9af30f7f94732a8d",
+      "size_bytes": 14456
+    },
+    "src/rag_research/data/japanese_dataset.py": {
+      "sha256": "42baaebaf96a2cb1b75d5b611917aeca01a17ccd8818f93a031d0b8a850e4e97",
+      "size_bytes": 16821
+    },
+    "src/rag_research/data/japanese_evidence.py": {
+      "sha256": "da0459c8fbaec7d735c702669e59864ba996b79c10d1bb3fd8baf3a00eec95e9",
+      "size_bytes": 16692
+    },
+    "src/rag_research/data/japanese_passages.py": {
+      "sha256": "05ab00ea2a4d6c8bf36b4afd4a21a34af66db9dee80cd6804acba418f00671bb",
+      "size_bytes": 4213
+    },
+    "src/rag_research/data/japanese_token_corpus.py": {
+      "sha256": "0e04be836598938cff552c295cc9a36b7b4770892a94d11dbe38e8b041d957ca",
+      "size_bytes": 10439
+    },
+    "src/rag_research/data/source_availability.py": {
+      "sha256": "eaaa4ab5353bdc41262b01e2c814cc198eebac5f3c57cdae8d1fbb869863767a",
+      "size_bytes": 3635
+    },
+    "src/rag_research/data/study_assets.py": {
+      "sha256": "78b33b20578cb1bac2dc4198856627f2a4442de168d58360c463d759dc7296e4",
+      "size_bytes": 4821
+    },
+    "src/rag_research/data/token_bounded_corpus.py": {
+      "sha256": "e3275f37a6f6631bea13270eb54e728b0846db2c78cfed71b3e671d3feaf45a0",
+      "size_bytes": 8264
+    },
+    "src/rag_research/data/wikipedia_reference_projection.py": {
+      "sha256": "3c48860c4a8540344fc35afad7b4ceefde4c12a9578d426e9b395454ce9f7762",
+      "size_bytes": 7860
+    },
+    "src/rag_research/data/wikipedia_snapshot.py": {
+      "sha256": "0cf392491d6c482bb3fccc1db361a580cee1c6327ed96b07d7a31765dd93b80c",
+      "size_bytes": 11887
+    },
+    "src/rag_research/evaluation/__init__.py": {
+      "sha256": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b",
+      "size_bytes": 76
+    },
+    "src/rag_research/evaluation/claims.py": {
+      "sha256": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602",
+      "size_bytes": 1208
+    },
+    "src/rag_research/evaluation/claimwise.py": {
+      "sha256": "2d0045aad140d869aef2ac279cbca3df50cfa7c320d1b06a553904aa29d9b617",
+      "size_bytes": 8008
+    },
+    "src/rag_research/evaluation/judge.py": {
+      "sha256": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2",
+      "size_bytes": 2089
+    },
+    "src/rag_research/evaluation/order.py": {
+      "sha256": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e",
+      "size_bytes": 1606
+    },
+    "src/rag_research/evaluation/quote_alignment.py": {
+      "sha256": "a9bc408e05d9fa25c0902b13b7e70d2e2eb7d3402ba4b10c24184d43759b88bb",
+      "size_bytes": 2606
+    },
+    "src/rag_research/evaluation/reasoned_json.py": {
+      "sha256": "5c6b089e9442d8f23783aaa5afc4c9a9744d9a617ac8ea7064eff47fbc219830",
+      "size_bytes": 5634
+    },
+    "src/rag_research/evaluation/reasoning_budget.py": {
+      "sha256": "f9f933dd20b73e51c15aae87c43dc5e50e22b8c4624f9857c2cb13029b6d91ec",
+      "size_bytes": 2024
+    },
+    "src/rag_research/evaluation/schema.py": {
+      "sha256": "616619fe28b913a309a6676415b2a8d8eb36afa0ddaef0ccb77e214e109a3b42",
+      "size_bytes": 6406
+    },
+    "src/rag_research/evaluation/sentence_claims.py": {
+      "sha256": "a0a3715ab7f1c3b0b8d7766e779c716efc133822a20c524bab1ca8e09d47a0a5",
+      "size_bytes": 6171
+    },
+    "src/rag_research/evaluation/source_reading.py": {
+      "sha256": "ebc5ace62451eb4d8fcdc4380d16be6c0eead9f22d28de6fd96d3f4aac72f693",
+      "size_bytes": 10068
+    },
+    "src/rag_research/evaluation/tasks.py": {
+      "sha256": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+      "size_bytes": 9713
+    },
+    "src/rag_research/experiments/__init__.py": {
+      "sha256": "47047fe0079dd895316a10769822dde18800a51a1198d7731d736fa981d54296",
+      "size_bytes": 56
+    },
+    "src/rag_research/experiments/bilingual_budget.py": {
+      "sha256": "343f77abff44086574e9b466b723483465ad7e276d3265029dbe30c5dc0de2a3",
+      "size_bytes": 4433
+    },
+    "src/rag_research/experiments/bilingual_certification.py": {
+      "sha256": "4c1680b03595a20fcb29fcd87455b6ce8f99678e9a8d929feec7d3dc5a72a4dd",
+      "size_bytes": 23106
+    },
+    "src/rag_research/experiments/bilingual_finalization.py": {
+      "sha256": "892e912551e079b6359b64d6a7af6bc46c2be1155f4d6d102beaed8eb02d4a0d",
+      "size_bytes": 21532
+    },
+    "src/rag_research/experiments/bilingual_main.py": {
+      "sha256": "a9be98ba78b1c670e7bb2f041c89677246dc8dc43354d769642a6df7ce6d5644",
+      "size_bytes": 10271
+    },
+    "src/rag_research/experiments/bilingual_quality.py": {
+      "sha256": "0a4664601956d962650f06d0480879bdf7172dbb79c7a42aec185f3d1dea6265",
+      "size_bytes": 15329
+    },
+    "src/rag_research/experiments/bilingual_runner.py": {
+      "sha256": "bb4a87f008bce425288d2a01a411fcec5dc08d518e1318d4eced5b31e5e26310",
+      "size_bytes": 20140
+    },
+    "src/rag_research/experiments/bilingual_semantics.py": {
+      "sha256": "b1db7b3ecef8801b212d18d28cfd3bb48fdbce9b0b01f10e90a3bfba311b16b7",
+      "size_bytes": 17831
+    },
+    "src/rag_research/experiments/bilingual_statistics.py": {
+      "sha256": "944f85f41ed68f1f135b72b8ac99a40aa0cdd401cfc785c2e4aa2954f43a46c9",
+      "size_bytes": 7314
+    },
+    "src/rag_research/experiments/calibration_analysis.py": {
+      "sha256": "aa9150ef594209a59cdc7c5f48ae7e4264dc66c71fb2c9dd162b6d26bb066211",
+      "size_bytes": 11411
+    },
+    "src/rag_research/experiments/calibration_protocol.py": {
+      "sha256": "4db9ca3a45e9eb0c6703ada88e56e4a92017b21c7c06d03939967d4711e04145",
+      "size_bytes": 16384
+    },
+    "src/rag_research/experiments/calibration_selection.py": {
+      "sha256": "14542517f6d82935d96c26a68119245993e6dc8a6da75c120f342399b08962aa",
+      "size_bytes": 9549
+    },
+    "src/rag_research/experiments/decisions.py": {
+      "sha256": "46567daa5fd1a12092db0fdac7c3827ef55d7ea461815aa0f88b0c5887b3ef1e",
+      "size_bytes": 1655
+    },
+    "src/rag_research/experiments/development_selection.py": {
+      "sha256": "e4557484428d9474c4ec30934719f761c9d0d8a3e90cc9c807410e2e8b8f30dc",
+      "size_bytes": 9370
+    },
+    "src/rag_research/experiments/frozen_trace.py": {
+      "sha256": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4",
+      "size_bytes": 2047
+    },
+    "src/rag_research/experiments/order_runner.py": {
+      "sha256": "4179540c39a0b6b8baa1d9efe6cb1e286a96b1487df30ecc06e1bd3b278e8bee",
+      "size_bytes": 14956
+    },
+    "src/rag_research/experiments/protocol.py": {
+      "sha256": "e5738106f7409313cd27fd052eae61779b40b112c22ec3d299c7932aa52ce3cf",
+      "size_bytes": 10941
+    },
+    "src/rag_research/experiments/quality.py": {
+      "sha256": "ff3063f1f36b663ad8acc6a76db43cdaea8b497d264c71583d8a135541bdb07c",
+      "size_bytes": 21744
+    },
+    "src/rag_research/experiments/quality_form.py": {
+      "sha256": "89cb98cf433950ea3b66c2151712617c938bff557ce6d2871b9d1d1eac541d00",
+      "size_bytes": 9368
+    },
+    "src/rag_research/experiments/repair_runner.py": {
+      "sha256": "8c273482750e1cc37a5d297b47d2dec3acb39458d8e7a95b9b4e3094afb38ee8",
+      "size_bytes": 10589
+    },
+    "src/rag_research/experiments/semantic_diagnostics.py": {
+      "sha256": "4a43cc49115c45b0cdb774dbe9933392f8860c0dcb96afc9882344604509d565",
+      "size_bytes": 20310
+    },
+    "src/rag_research/experiments/statistics.py": {
+      "sha256": "25244b304a0613ccc5cd23f60d98f8c69ddb4f94c7968b1c3eaa1433ef90de3f",
+      "size_bytes": 6868
+    },
+    "src/rag_research/experiments/storage.py": {
+      "sha256": "073f4c89dca883fd0f5c3ab900c722361c720a3cb607faa9903190c15b272165",
+      "size_bytes": 2309
+    },
+    "src/rag_research/generation/__init__.py": {
+      "sha256": "33c1d27b63c42955f7e025298bd2347fbc8cf5afc57216d35516e7701e0e421a",
+      "size_bytes": 72
+    },
+    "src/rag_research/generation/artifacts.py": {
+      "sha256": "bb70ba77b944ecc23a07cc1865a3fafeee610dcd453caebc5a77b8fe79fc44b5",
+      "size_bytes": 5917
+    },
+    "src/rag_research/generation/auxiliary.py": {
+      "sha256": "b702f4762d8da7e892486c1096b7f8c60dabf4d93dd9c3722a8a0904d893c410",
+      "size_bytes": 2138
+    },
+    "src/rag_research/generation/auxiliary_config.py": {
+      "sha256": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+      "size_bytes": 2488
+    },
+    "src/rag_research/generation/config.py": {
+      "sha256": "9a641357a2767322e97d8ee224b2f7d2d0c7bda0a3ff21f7f684fc329175b60e",
+      "size_bytes": 2558
+    },
+    "src/rag_research/generation/context.py": {
+      "sha256": "a86c5fda1a1d7747d3ce9087a732b70e700802b6142e4e5db6adeb1a64b6a63c",
+      "size_bytes": 4715
+    },
+    "src/rag_research/generation/cuda_runtime.py": {
+      "sha256": "b21d13c790071fde655aa6c3601eaf91fc609b842fcdc11725e96e9c641731f9",
+      "size_bytes": 5234
+    },
+    "src/rag_research/generation/generator.py": {
+      "sha256": "3ece4c433d2dec54b4c07dc0b95e42f78a2debde1349ab67d7d852445f9226a1",
+      "size_bytes": 2683
+    },
+    "src/rag_research/generation/json_grammar.py": {
+      "sha256": "c1355a13afa204b8ae1362a87cd928116f180ee07dc8b208e29c91a86bf04c46",
+      "size_bytes": 4634
+    },
+    "src/rag_research/generation/local.py": {
+      "sha256": "271494fa62fa30f40f73e43ff1f2e9de3c5b801cd2baab83d9adc5eb7c7d3feb",
+      "size_bytes": 12431
+    },
+    "src/rag_research/generation/smoke.py": {
+      "sha256": "469dd916567aac7d247dea606f5e885685f3c91d62e79dae683c8f7fa75a063a",
+      "size_bytes": 2019
+    },
+    "src/rag_research/pilot/__init__.py": {
+      "sha256": "ca181baf17b3acfb1dedc3fc8f0364f272437a9a26051e29f8faf2d8c14274d5",
+      "size_bytes": 75
+    },
+    "src/rag_research/pilot/assessment.py": {
+      "sha256": "213d12000a7b94b38cf9c49609fb96005cfd21c9f4d3f6686fe62346c0607ea4",
+      "size_bytes": 4650
+    },
+    "src/rag_research/pilot/baseline.py": {
+      "sha256": "9e76898c903a64a4bb078015f81124be368d0005f28f9f19d0b0a38b05cb2abd",
+      "size_bytes": 8500
+    },
+    "src/rag_research/pilot/internal.py": {
+      "sha256": "79d0f8278f6aa4ff572a2e787bcd4906c83d973de20492759ee9b77ea4f13060",
+      "size_bytes": 12573
+    },
+    "src/rag_research/pilot/materials.py": {
+      "sha256": "ef55d2bb52efed008fdcf7bd69192ec3fb6754fab048fec6f74b4ec9a6fdc977",
+      "size_bytes": 3437
+    },
+    "src/rag_research/pilot/report.py": {
+      "sha256": "3ce2e22af32f85e55fb69b3d4193e307955bb83a5b0d5503acb71380976449e2",
+      "size_bytes": 9559
+    },
+    "src/rag_research/pilot/selection.py": {
+      "sha256": "72513b5bf3a260a467373e30dffbc0fce09fab3433b956e07dfe7244e7d313ae",
+      "size_bytes": 3706
+    },
+    "src/rag_research/recovery/__init__.py": {
+      "sha256": "a248c5acd19ee7a30fcc05f65b985c7a4b207c48dfff29f30ec1b842b364d123",
+      "size_bytes": 84
+    },
+    "src/rag_research/recovery/answer_rewrite.py": {
+      "sha256": "359e2535848182a855cd58b9a6bd52d1893ffea37819a69e68647f1067c87a01",
+      "size_bytes": 6301
+    },
+    "src/rag_research/retrieval/__init__.py": {
+      "sha256": "22c7dcaf10082418687dd9cf7a6333b255e76560e4c11e5a983b32b228fbd2f0",
+      "size_bytes": 69
+    },
+    "src/rag_research/retrieval/bilingual.py": {
+      "sha256": "a22f84c414f9c9da5a659dc324ec7f4c7c642a50c47690060cd28d8a45a25be0",
+      "size_bytes": 1599
+    },
+    "src/rag_research/retrieval/bm25.py": {
+      "sha256": "c99e079567ca7c3b86a38d5708b25facb03837f641c57181b731dfcadd89178e",
+      "size_bytes": 4081
+    },
+    "src/rag_research/retrieval/calibration.py": {
+      "sha256": "32281b5f24690b51903945c3bb492a281ce7fac5279d9754a0539a1917788cb7",
+      "size_bytes": 7958
+    },
+    "src/rag_research/retrieval/common.py": {
+      "sha256": "e54d7e1afc9745822ed574245ea630bbb6bd3224497ba3857baa9fb99408e2b4",
+      "size_bytes": 9026
+    },
+    "src/rag_research/retrieval/dense.py": {
+      "sha256": "9f2a6588ca129fe1d522d09c3d3c7bcef6a5950509d22527675846b1d692ade7",
+      "size_bytes": 12640
+    },
+    "src/rag_research/retrieval/factory.py": {
+      "sha256": "81c13594214eaf095e8e95bdb5a460cc84010f5ee67ec5c7b4b060f81f3bcc00",
+      "size_bytes": 3198
+    },
+    "src/rag_research/retrieval/hybrid.py": {
+      "sha256": "d161d4860fedc0a862e318c3848d7d5abf089a0730e0a2206c3a12e4e5d0ed1d",
+      "size_bytes": 5434
+    },
+    "src/rag_research/retrieval/multilingual.py": {
+      "sha256": "f7f104c07c4c45826a783b22b35735a8ae61b1d7073f2b89aaa8eb3473c63c35",
+      "size_bytes": 10664
+    },
+    "src/rag_research/retrieval/parent_metrics.py": {
+      "sha256": "f1a23aca9ec6f3c6916209a48640d07af2202028e879ba8d16b987eb3596fec5",
+      "size_bytes": 1434
+    },
+    "src/rag_research/retrieval/validation.py": {
+      "sha256": "1a0a0ff58b60ae484c627efbd4cb9e4684110e4a6c1bfbf6c83cbed450733839",
+      "size_bytes": 4925
+    },
+    "configs/phase11_known_trace_candidate_v9.yaml": {
+      "sha256": "375e9b2296321515d3816e49506d1949caa9ff81bd30a5bf04cb59881828bbc1",
+      "size_bytes": 2190
+    },
+    "configs/phase11_known_trace_regression_v9.json": {
+      "sha256": "a7eafc48e0f609ff9abbffc0fd3e7cf09e4eb3db69df5d998893186697791a70",
+      "size_bytes": 140824
+    },
+    "configs/phase11_semantic_prompts_en_v11.yaml": {
+      "sha256": "875b77bfd888d62a9c9255d7a593c1104a9c3c0e3745b09e6151fa97b8373968",
+      "size_bytes": 11044
+    },
+    "configs/phase11_semantic_prompts_ja_v11.yaml": {
+      "sha256": "ff112e327079328d12de65dec5bbde2e1d4f6a7b49253c6fb96a81737861472e",
+      "size_bytes": 11106
+    },
+    "scripts/run_semantic_diagnostics.py": {
+      "sha256": "584483fe59a24e32c62194d161bc8f581de1ebe0302696114d1ce6a09232f60a",
+      "size_bytes": 696
+    },
+    "AGENTS.md": {
+      "sha256": "755b8d81facdd5e4f364fabe646adc07c5f20e4f313fadffbe537a6d6cf3a55b",
+      "size_bytes": 8094
+    },
+    "docs/phase11_handover_2026-10-23.md": {
+      "sha256": "e2ca88d926071d472eaa28812fd908dcd11693b4f141516ddc78583b2854e3cc",
+      "size_bytes": 14792
+    },
+    "docs/phase11_evaluator_review_policy_v1.md": {
+      "sha256": "b705cf58a704b99c064b39cd24f7ce147065b14fe5a863d9744a8bc24aed1ffa",
+      "size_bytes": 9752
+    },
+    "docs/phase11_next_chat_prompt.md": {
+      "sha256": "d297c4e5adf3409724b50d8fcd45580c8821d14e6abb62c0eb443e4bda75bc76",
+      "size_bytes": 6453
+    },
+    "docs/research_roadmap.md": {
+      "sha256": "96eb05ef570b7efabc59ebd5a938247aa6c78f4e619c2e1dee3f174b199a05ce",
+      "size_bytes": 77109
+    },
+    "docs/rag_research_plan.md": {
+      "sha256": "e40216262ddb80bde6f7c1c172bf3e97dc266ff6b3a6962af74e2b034b61db81",
+      "size_bytes": 71683
+    },
+    "docs/rag_implementation_plan.md": {
+      "sha256": "126314045ba110069438924d7831a8d1f5a9be550e6c65f01ae0664b0bfea121",
+      "size_bytes": 88866
+    },
+    "docs/codex_handover.md": {
+      "sha256": "d8210adc084a7e925d522ba8ca25faf988603637cc4f8f12b010d611d4e53dc4",
+      "size_bytes": 77210
+    },
+    "docs/english_japanese_expansion.md": {
+      "sha256": "333e15ef3ff0dd920c348ca02b3726e41ab6b6ebccbd46411060a948d3aa0b6e",
+      "size_bytes": 16263
+    },
+    "docs/ai_quality_protocol.md": {
+      "sha256": "e285e29411e63cf1239b2771d4569a8c233e01b92e5c9b76d2a1242c86d4c3b2",
+      "size_bytes": 8546
+    },
+    "docs/phase11_statistical_plan.md": {
+      "sha256": "225a9210c6226abf623cdbd993f6894a6485396059fe2163c48129f4624d2a1a",
+      "size_bytes": 7260
+    },
+    "docs/phase11_bilingual_finalization.md": {
+      "sha256": "7341f6acb60b6133991fa91a4e82027eca2504b23ba0f0ac2f475519c17c7ee9",
+      "size_bytes": 6780
+    },
+    "docs/phase11_known_trace_direct_result_v9.md": {
+      "sha256": "a8836f3afb17313cca8cf7eb27da1c5978c4e06bff4cd60d87c76bba81db1301",
+      "size_bytes": 4969
+    },
+    "configs/phase11_bilingual_assets_v2.json": {
+      "sha256": "20f5b1eaf77b70cf3721728f5c4708be14b38efe04e71a29134bc8152f21e64b",
+      "size_bytes": 4702
+    },
+    "configs/phase11_bilingual_freeze_decisions_v1.json": {
+      "sha256": "6b2b070651b6fa2719627cdae032d80034258a3cbbd57141c7838fc4e99a4b84",
+      "size_bytes": 3550
+    },
+    "data/manifests/phase11_japanese_source_selection.json": {
+      "sha256": "df2d8cfb82bfffd7b50bd401bf6d26c3becfe92e35c85f6f6b2105b363ae1d88",
+      "size_bytes": 19022
+    },
+    "data/manifests/phase11_japanese_snapshot_group_manifest.json": {
+      "sha256": "824a7891ab2c5886c22d45302ae72c98386c2e10a67f643d24e65a7ac36fc032",
+      "size_bytes": 5237
+    },
+    "data/manifests/phase11_japanese_reference_projection_v2.json": {
+      "sha256": "74e7412c74523e04fa92ad40bfd85a6ba7b8dec5de6986d5e0ce868bf3c2599f",
+      "size_bytes": 10637
+    },
+    "data/manifests/phase11_bilingual_connection_result_v1.json": {
+      "sha256": "c940b2dd197b552e6f3a7b859dbca666ea1b3a344d7e31d4011e993cd4439d49",
+      "size_bytes": 23262
+    },
+    "data/manifests/phase11_bilingual_connection_quality_freeze_v1.json": {
+      "sha256": "778221f1783fbf0c1950188d0667cb88e35830f1d8cb78968c8c7f970bfd68b3",
+      "size_bytes": 1509
+    },
+    "data/manifests/phase11_bilingual_finalization_validation_v2.json": {
+      "sha256": "d62c85618fe66547479e0d3b0a5c5569bb27080ab67d069a89fc121c70931ff9",
+      "size_bytes": 14078
+    },
+    "data/manifests/phase11_main_development_selection_v1.json": {
+      "sha256": "1b05b3834c9179522749a3b6ed7980b883591ad33b00e6e47de1ef29db486a2a",
+      "size_bytes": 34925
+    },
+    "data/manifests/phase11_bilingual_calibration_selection_v1.json": {
+      "sha256": "6c686867da6aeb8192b3bb3a8e1830d77a2af00c2186e3f440ca194a72e6f643",
+      "size_bytes": 50070
+    },
+    "data/manifests/phase11_qwen35_9b_preregistration_v18.json": {
+      "sha256": "b6436577a2898c5d3c37d3dc762213947c3e3a488cdba130cc771a9f0443991a",
+      "size_bytes": 7078
+    },
+    "data/manifests/phase11_known_trace_result_v8.json": {
+      "sha256": "9505dc68acfae73583e1c6f59d281cef0a469f51c7075f1522f693eb1633bf2a",
+      "size_bytes": 39779
+    }
+  },
+  "prompt_characters_including_command": 2721,
+  "new_policy_design_adopted_implementation_pending": true,
+  "old_experiment_adoption_results_unchanged": true,
+  "recorded_all9b_attempts": 851,
+  "recorded_unknown_responses": 2,
+  "old_unused_calls_not_reallocated": [
+    69,
+    42,
+    42,
+    81,
+    42
+  ],
+  "new_development_design_maximum_calls": 188,
+  "new_development_design_maximum_task_seconds": 14400,
+  "new_development_registration_or_native_started": false,
+  "code_unchanged_from_last_761_test_validation": true,
+  "full_model_index_payload_hashes_recomputed_in_this_handover": false,
+  "full_transfer_archive_included": false,
+  "git_does_not_transfer_ignored_model_runtime_index_or_raw_files": true,
+  "new_native_calls_during_review": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

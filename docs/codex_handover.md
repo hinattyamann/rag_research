@@ -1,5 +1,9 @@
 # 別チャットから再開するための引継ぎ
 
+**新チャットはまず[2026-10-23の短い引継ぎ](phase11_handover_2026-10-23.md)と[新しいGoal貼付文](phase11_next_chat_prompt.md)を読む。以下の長い本文は過去の経緯で、最初から全文を読み直さない。**
+
+ユーザーの資源見直し・別チャット移行の依頼を受け、[新チャット引継ぎ](phase11_handover_2026-10-23.md)と[評価器/テスト/資源の見直し](phase11_evaluator_review_policy_v1.md)を保存した。無期限の最適化を終え、支持対非支持の意味検証を主にする新基準Versionを設計採用したが、Guard/Protocolの改訂は未実装で旧失敗の採否は変更しない。追加候補最大1個/新開発188試行またはNative Task4時間・診断24内数を別登録する方針。旧851試行/未知2/未使用69・42/42/81/42を保持し、現行v9はCUDA停止・全監査済み。Main各20/Cal各20と独立品質・費用・最終凍結は未了、Gate11未通過・Phase12未実施。本チャットGoalはpaused、稼働中Nativeなし。次チャットは[貼付用Goal](phase11_next_chat_prompt.md)で新しいGoalを設定し、保存物/新基準実装/Runtime原因調査から再開する。
+
 [温度0.2旧全回帰v9のCUDA停止](phase11_known_trace_direct_result_v9.md)を監査・正規保存した。固定9727409/session72566は3条件/15記録試行・14応答取得/未知1、Zidane元順序の実LogにCUDA launch timeout/応答前切断があり不採用。取得した会議14判定は確定12/12/支持10/10・誤支持0だが、全74/58精度null・残27条件未試行/69枠未使用を保持する。95 Source/元23 File不変・追加0、全15提出Schema/取得14 Native Schema・実Sampler/7組/全14理由/193点資源/実Main準備拒否を確認し、Raw26/全110 ArtifactをWT照合した。全9B記録851（Q4 317/Q5 317/Q6 217）・未知計2、今回未使用69と旧42/42/81/42/累積上限920・Retry0を保持。72566/23121は終了済みで再起動しない。次はGPU/Driver/Kernelと旧停止Logの原因調査で、根本原因や温度効果は未確定。新候補/新Native未登録、Main/予約Cal/最終凍結は未了、Gate 11未通過・Phase 12未実施。
 
 最優先は停止原因の読取り調査。全Rawはdata/runs/semantic_diagnostics/phase11-qwen35-9b-q6-temperature-known-regression-v9へ正規保存済み。固定WTはphase11-known-trace-regression-v9/9727409。未知Leaf c1にNative応答なし/出力Token nullを保ち、途中Logから復元しない。以下の「72566稼働中」は過去時点の記録であり、現在は終了・全監査済み。
