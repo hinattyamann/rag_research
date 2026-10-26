@@ -1,0 +1,113 @@
+{
+  "schema_version": 3,
+  "purpose": "phase11-baseline-known-runtime-probe-v3",
+  "status": "preregistered",
+  "source_scope": "known_development_connection_only",
+  "judge_candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+  "baseline_config": {
+    "path": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+    "sha256": "b1915edaec42c5c451857fdf6ec5c7a92418d0206f2d112eebd58986c646d1cf"
+  },
+  "generation_identity": {
+    "path": "data/manifests/phase11_baseline_graph_off_identity_v3.json",
+    "sha256": "5936565e3627e6fcb4cd9ade8de072e00661181b527fe36222ba13a3c3abb670"
+  },
+  "maximum_calls": 2,
+  "automatic_retries": 0,
+  "phase12_allowed": false,
+  "targets": [
+    {
+      "target_id": "baseline/en/clapnq:c508d78:train:-2421097959159398117:answerable",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-2421097959159398117:answerable",
+      "source_manifest": {
+        "path": "data/runs/bilingual_development/phase11-connection-en-v2/manifest.json",
+        "sha256": "b1f9eab14c4193f4f524d52a91792a7c8e30bf01ac0409cd20630d8f9904d9e2"
+      },
+      "source_record": {
+        "path": "data/runs/bilingual_development/phase11-connection-en-v2/baseline/a80d1b9b25e76848f2e6c729/record.json",
+        "sha256": "2f648305969ee88682196c3a1d4eb8176523d5d9ee4bfb17878df602c1cee27c"
+      },
+      "initial_prompt": {
+        "path": "configs/phase11_bilingual_initial_en_v1.yaml",
+        "sha256": "3f5bd3fd4f1f836f478cae9ba00916025d803196c2b7afcd130fd62223e6a3a2"
+      },
+      "question": "who proposed that atoms are the basic units of matter",
+      "documents": [
+        {
+          "passage_id": "845305320_4200-4964",
+          "title": "Atom",
+          "text": "The idea that matter is made up of discrete units is a very old idea , appearing in many ancient cultures such as Greece and India . The word `` atom '' was coined by the ancient Greek philosophers Leucippus and his pupil Democritus . However , these ideas were founded in philosophical and theological reasoning rather than evidence and experimentation . As a result , their views on what atoms look like and how they behave were incorrect . They also could not convince everybody , so atomism was but one of a number of competing theories on the nature of matter . It was not until the 19th century that the idea was embraced and refined by scientists , when the blossoming science of chemistry produced discoveries that only the concept of atoms could explain ."
+        },
+        {
+          "passage_id": "803775631_8690-9821",
+          "title": "History of chemistry",
+          "text": "Around 420 BC , Empedocles stated that all matter is made up of four elemental substances -- earth , fire , air and water . The early theory of atomism can be traced back to ancient Greece and ancient India . Greek atomism dates back to the Greek philosopher Democritus , who declared that matter is composed of indivisible and indestructible atoms around 380 BC . Leucippus also declared that atoms were the most indivisible part of matter . This coincided with a similar declaration by Indian philosopher Kanada in his Vaisheshika sutras around the same time period . In much the same fashion he discussed the existence of gases . What Kanada declared by sutra , Democritus declared by philosophical musing . Both suffered from a lack of empirical data . Without scientific proof , the existence of atoms was easy to deny . Aristotle opposed the existence of atoms in 330 BC . Earlier , in 380 BC , a Greek text attributed to Polybus argues that the human body is composed of four humours . Around 300 BC , Epicurus postulated a universe of indestructible atoms in which man himself is responsible for achieving a balanced life ."
+        },
+        {
+          "passage_id": "803775631_38239-38869",
+          "title": "History of chemistry",
+          "text": "Dalton also proposed a modern atomic theory in 1803 which stated that all matter was composed of small indivisible particles termed atoms , atoms of a given element possess unique characteristics and weight , and three types of atoms exist : simple ( elements ) , compound ( simple molecules ) , and complex ( complex molecules ) . In 1808 , Dalton first published New System of Chemical Philosophy ( 1808 - 1827 ) , in which he outlined the first modern scientific description of the atomic theory . This work identified chemical elements as a specific type of atom , therefore rejecting Newton 's theory of chemical affinities ."
+        },
+        {
+          "passage_id": "803775631_38870-39708",
+          "title": "History of chemistry",
+          "text": "Instead , Dalton inferred proportions of elements in compounds by taking ratios of the weights of reactants , setting the atomic weight of hydrogen to be identically one . Following Jeremias Benjamin Richter ( known for introducing the term stoichiometry ) , he proposed that chemical elements combine in integral ratios . This is known as the law of multiple proportions or Dalton 's law , and Dalton included a clear description of the law in his New System of Chemical Philosophy . The law of multiple proportions is one of the basic laws of stoichiometry used to establish the atomic theory . Despite the importance of the work as the first view of atoms as physically real entities and introduction of a system of chemical symbols , New System of Chemical Philosophy devoted almost as much space to the caloric theory as to atomism ."
+        },
+        {
+          "passage_id": "803775631_39709-40266",
+          "title": "History of chemistry",
+          "text": "French chemist Joseph Proust proposed the law of definite proportions , which states that elements always combine in small , whole number ratios to form compounds , based on several experiments conducted between 1797 and 1804 Along with the law of multiple proportions , the law of definite proportions forms the basis of stoichiometry . The law of definite proportions and constant composition do not prove that atoms exist , but they are difficult to explain without assuming that chemical compounds are formed when atoms combine in constant proportions ."
+        }
+      ],
+      "input_sha256": "ff1ba6c079eb76c3509532a0a875caeb2d2c32fde34ebe60998523fbe2ffb4d3"
+    },
+    {
+      "target_id": "baseline/ja/whrja:02e85c8:answered:1",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:1",
+      "source_manifest": {
+        "path": "data/runs/bilingual_development/phase11-connection-ja-v1/manifest.json",
+        "sha256": "73225669820f3ababd54c7d47c8f5bdd7f1cc72dd23212df4da311f4be736931"
+      },
+      "source_record": {
+        "path": "data/runs/bilingual_development/phase11-connection-ja-v1/baseline/92f662d74ddcc6f58349135b/record.json",
+        "sha256": "534002bec198cd81f0e5598f9da09e27103db6fd7dbbfb5969b581ee9ee544de"
+      },
+      "initial_prompt": {
+        "path": "configs/phase11_bilingual_initial_ja_v1.yaml",
+        "sha256": "fcae343daf7adc7f0f68e17896b32cb3da0237265a5102d7b871eda55889525d"
+      },
+      "question": "経済産業省の役割について知りたい。",
+      "documents": [
+        {
+          "passage_id": "32832415495868051577657498541_6723-7522",
+          "title": "消費者庁",
+          "text": "経済産業省は、案を備えて表示の標準の策定・改正を要請可。\n法の執行の一部につき、経済産業省に委任。\n住宅の品質確保の促進等に関する法律\n（住宅品確法）\n表示等の企画立案、表示基準の策定は共管。\n執行は国土交通省が行うが、消費者庁が勧告。\n取 引\n消費者契約法\n消費者庁に移管。\n無限連鎖講防止法\n特定商品等の預託等取引契約に関する法律\n（特定商品預託法）\n電子消費者契約及び電子承諾通知に関する民法の特例に関する法律\n（電子消費者契約法）\n内閣府所管部分について消費者庁に移管。\n特定商取引に関する法律\n（特定商取引法）\n消費者保護に係る企画立案、執行を消費者庁に移管。消費者庁は執行を一元的に行う。経済産業省は、商一般等の立場から連携。\n特定電子メールの送信の適正化等に関する法律\n（特定電子メール法）\n消費者保護の観点から行う措置命令等については､消費者庁へ移管。\n金融サービスの提供に関する法律\n（金融サービス提供法）\n消費者庁も所管に加わる。\n出資法\n業 法\n貸金業法\n企画立案は共管、登録・免許、検査、処分は各省庁が行うが、消費者庁は処分について勧告権を持ち、そのための検査権限を持つ。また、処分について事前協議を受ける。\n割賦販売法\n宅建業法\n旅行業法\n安 全\n製造物責任法\n消費者庁へ移管。\n食品安全基本法\n消費者庁へ移管。ただし、食品安全委員会の設置等に関する規定の所管については、引き続き検討。\n消費生活用製品安全法\n重大事故情報報告・公表制度を移管\n安全基準の策定に当たり協議を受ける\n食品衛生法\n安全基準の策定に当たり協議を受ける\n有害物質を含有する家庭用品の規制に関する法律\n（有害物質家庭用品規制法）\n消費者・生活者が主役となる社会の構築等に関する法律\n消費者基本法\n消費者庁へ移管。\n国民生活センター法\n個人情報の保護に関する法律\n（個人情報保護法）\n公益通報者保護法\n"
+        },
+        {
+          "passage_id": "63920848690113955428582684070_2948-3702",
+          "title": "経済産業省",
+          "text": "1972年に田中角栄が通商産業大臣から内閣総理大臣に就任した時、小長啓一から通商産業省出身者が内閣総理大臣秘書官を担当するようになった。これが前例となり、後の内閣も通商産業省から出向で内閣総理大臣秘書官を担当するようになり、首相への通商産業省の影響度が大きくなった。1973年に新たな外局・資源エネルギー庁を設置。\n2001年1月の中央省庁再編に伴い、経済産業省に名称変更された。発足当初、経済産業省は「経済省」という略称を用いていたが、全く定着せず、マスコミなどからは経産省と略される。\n2011年3月に福島第一原子力発電所事故が起きると、原子力安全・保安院を所管していたことから、事故の発生とその対応について責任を問われ、事務次官、資源エネルギー庁長官及び原子力安全保安院長に事実上の更迭がなされた。\n2012年9月19日、原子力規制委員会設置法の施行により、原子力安全・保安院に関する事務が環境省に移管された。原子力安全・保安院（資源エネルギー庁）は廃止され、組織は原子力規制委員会（環境省）に移行した。また、旧保安院の産業保安系5課（保安課、ガス安全課、液化石油ガス保安課、電力安全課、鉱山保安課）は商務情報政策局の3組織（保安課、電力安全課、鉱山・火薬類監理官付）に、産業保安監督部は本省の地方支分部局に再編された。\n所掌事務\n上記の経済産業省設置法3条に示された任務を達成するため、同法4条は計60号にわたって所掌事務を規定する。具体的には以下などに関することがある。\n経済構造改革の推進（1号）\n経済財政諮問会議による企画及び立案への参画（2号）\n産業構造の改善（3号）\n企業間関係その他の産業組織の改善（4号）\n市場における経済取引に係る準則の整備（5号）\n工業所有権の保護及び利用（6号）\n"
+        },
+        {
+          "passage_id": "63920848690113955428582684070_0-802",
+          "title": "経済産業省",
+          "text": "日本の行政機関\n経済産業省\nけいざいさんぎょうしょう\nMinistry of Economy, Trade and Industry\n経済産業省総合庁舎（本館）\n役職\n大臣\n齋藤健\n副大臣\n岩田和親\n上月良祐\n大臣政務官\n吉田宣弘\n石井拓\n事務次官\n飯田祐二\n組織\n上部組織\n内閣\n内部部局\n大臣官房\n経済産業政策局\n通商政策局\n貿易経済協力局\n産業技術環境局\n製造産業局\n商務情報政策局\n審議会等\n産業構造審議会\n消費経済審議会\n日本産業標準調査会\n計量行政審議会\n中央鉱山保安協議会\n電力・ガス取引監視等委員会\n国立研究開発法人審議会\n輸出入取引審議会\n化学物質審議会\n施設等機関\n経済産業研修所\n地方支分部局\n経済産業局\n産業保安監督部\n那覇産業保安監督事務所\n外局\n資源エネルギー庁\n特許庁\n中小企業庁\n概要\n法人番号\n4000012090001\n所在地\n〒100-8901\n東京都千代田区霞が関一丁目3番1号\n北緯35度40分20秒 東経139度45分3秒﻿ / ﻿北緯35.67222度 東経139.75083度﻿ / 35.67222; 139.75083﻿ (METI)座標: 北緯35度40分20秒 東経139度45分3秒﻿ / ﻿北緯35.67222度 東経139.75083度﻿ / 35.67222; 139.75083﻿ (METI)\n定員\n8,001人（2023年9月30日までは、8,036人）\n年間予算\n8808億9356万8千円（2023年度）\n設置根拠法令\n経済産業省設置法\n設置\n2001年（平成13年）1月6日\n前身\n農商務省\n商工省\n軍需省\n通商産業省\n経済企画庁\nウェブサイト\n経済産業省\n経済産業省（けいざいさんぎょうしょう、英: Ministry of Economy, Trade and Industry、略称: METI）は、日本の行政機関のひとつ。"
+        },
+        {
+          "passage_id": "63920848690113955428582684070_4413-5198",
+          "title": "経済産業省",
+          "text": "火薬類の取締り、高圧ガスの保安、鉱山における保安（44号）\n情報処理の促進（45号）\n情報通信の高度化に関する事務のうち情報処理に係るもの（46号）\n鉱物資源及びエネルギーに関する総合的な政策（47号）\n省エネルギー及び新エネルギーに関する政策（48号）\n石油、可燃性天然ガス、石炭、亜炭その他の鉱物等並びにこれらの製品の安定的かつ効率的な供給の確保（49号）\n石油パイプライン事業（50号）\n鉱害の賠償（51号）\n電気、ガス及び熱の安定的かつ効率的な供給の確保（52号）\n電源開発に関する基本的な政策の企画及び立案並びに推進（53号）\nエネルギーに関する原子力政策（54号）\nエネルギーとしての利用に関する原子力の技術開発（55号）\n弁理士（56号）\n中小企業の育成及び発展（57号）\n所掌事務に係る国際協力に関すること（58号）\n文教研修施設において、鉱山における保安に関する技術及び実務の教授並びに所掌事務に関する研修を行うこと（59号）\nその他法律に基づき経済産業省に属させられた事務（60号）\n組織\n経済産業省の内部組織は一般的には、法律の経済産業省設置法、政令の経済産業省組織令及び省令の経済産業省組織規則が階層的に規定している。なお、他の省の外局の多くや経済産業省でも資源エネルギー庁や特許庁はそれぞれの省の設置法に規定されているが、中小企業庁は中小企業庁設置法という個別の法律に基づいている。\n幹部\n経済産業大臣（国家行政組織法第5条、法律2条2項）\n経済産業副大臣（国家行政組織法16条）（2人）\n経済産業大臣政務官（国家行政組織法17条）（2人）\n経済産業大臣補佐官（国家行政組織法第17条の2）（1人、必置ではない）\n経済産業事務次官（国家行政組織法18条）\n経済産業審議官（法律5条1項）\n経済産業大臣秘書官\n内部部局\n大臣官房（政令2条1項）\n"
+        },
+        {
+          "passage_id": "63920848690113955428582684070_802-1558",
+          "title": "経済産業省",
+          "text": "経済および産業の発展ならびに鉱物資源およびエネルギー資源の供給に関する行政を所管する。日本語略称・通称は、経産省（けいさんしょう）。\n概説\n経済産業省設置法第3条の定める任務である「民間の経済活力の向上及び対外経済関係の円滑な発展を中心とする経済及び産業の発展並びに鉱物資源及びエネルギー資源の安定的かつ効率的な供給の確保を図ること」を達成するため、マクロ経済政策、産業政策、通商政策、貿易管理業務、産業技術政策、流通政策、エネルギー政策などを所管する。\n1949年（昭和24年）5月25日から2001年（平成13年）1月5日まで通商産業省（つうしょうさんぎょうしょう、英: Ministry of International Trade and Industry、略称: MITI、日本語略称: 通産省〈つうさんしょう〉）が設置されていたが、2001年（平成13年）1月6日の中央省庁再編によって、通商産業省を改組及び改称する形で経済産業省が設置された。\nかつて、前身の通産省は、日本経済ないし「日本株式会社」の総司令塔たる「経済参謀本部」として高度経済成長の牽引役とされた。米国をはじめ諸外国においても「Notorious MITI」ないし「Mighty MITI」と呼ばれたように、その名は日本官僚の優秀さ（ないし脅威）の代名詞として広く知られていた。その持てる許認可及び行政指導をあまねく駆使し、政府系金融機関の割り"
+        }
+      ],
+      "input_sha256": "414c2b4feba91dcbec5d58272f4d3a00f92976c83ca799f92cd9f5bbba4d9be9"
+    }
+  ],
+  "registered_at_jst": "2026-10-26T18:21:11.466113+09:00"
+}

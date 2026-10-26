@@ -1,12 +1,14 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.74 — 2026年10月26日 自律継続Protocol v3と隔離Runtimeの実装
+## Version 7.75 — 2026年10月26日 自律継続Protocol v3と隔離Runtimeの実装
 
 2026年10月26日、[自律継続Protocol v3](phase11_autonomy_v3.md)へ移行し、全844 Test/Ruffで新Guard/chain/段階継続を検証した。固定d40f927の専用Checkoutを再現し、不変10590File/可変Run13817Fileを照合、GPU環境をuvで再構築した。新Runtimeの生成0全70入力/max3793/全層CUDAを通過し、事前登録Smoke2は2成功/未知0（6874入力/8465出力Token、Task171.951885秒）。旧記録込み911試行/確定未知3を保持する。旧Promptの暖鋒理由の表誤読は残り、Runtime修復/意味採用とは扱わない。改訂Prompt v21の全70入力生成0もmax3171で通過し、形式10件（厳密9成功＋旧方式の失敗対照1）を完了し、固定v21の日英意味70Callを実行中。Main/Cal/最終凍結は未実施、Gate11未通過・Phase12未開始。
 
+初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
+
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.77](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.78](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 

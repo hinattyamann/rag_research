@@ -1,0 +1,114 @@
+{
+  "schema_version": 3,
+  "purpose": "phase11-baseline-runtime-resource-supplement-v3",
+  "status": "preregistered_before_native_outputs",
+  "created_at_jst": "2026-10-26T18:06:51.540181+09:00",
+  "judge_candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+  "baseline_config": {
+    "path": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+    "sha256": "b1915edaec42c5c451857fdf6ec5c7a92418d0206f2d112eebd58986c646d1cf"
+  },
+  "model_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "runtime_manifest": {
+    "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/runtime_manifest.json",
+    "sha256": "150141f370e82faa426cd468af1505584bcc98efd5b2e69d695b19e943a70784"
+  },
+  "runtime_spec": {
+    "path": "configs/lab_cuda_graph_off_runtime_v1.json",
+    "sha256": "d18d6efe8b769a0ddb081ca41d1f4d63fa7a0b6551fd2bbfeea1a77d8b7fb0d5"
+  },
+  "hypothesis": "The same generator on the isolated graph-off runtime can prepare the unchanged tokenizer/message contract and complete two known-language requests without a Health failure. CUDA root cause and numeric output identity are not assumed.",
+  "change": "Only baseline execution.runtime_spec changes; prompts/model/seed/sampler/context limits/retrieval/body selection remain unchanged.",
+  "source_scope": "Two previously used connection_smoke_only Development examples; no Main/Cal/Evaluation question, result or Expected opened.",
+  "preflight": {
+    "completion_calls": 0,
+    "conditions": 2,
+    "request_timeout_seconds": 300,
+    "maximum_wall_seconds": 900,
+    "maximum_tokens_per_call": 512,
+    "required_checks": [
+      "baseline model fresh hash before server load",
+      "manifest/spec/provenance full verification",
+      "37/37 full CUDA offload and server context4096",
+      "same message builder, actual tokenizer and GenerationConfig",
+      "all five saved used documents retained byte-for-byte with ID/Title",
+      "each exact rendered prompt <=3584 tokens, reserve512 output",
+      "source/config/prompt bindings and no Gold/reference in payload"
+    ]
+  },
+  "smoke": {
+    "planned_calls": 2,
+    "maximum_calls": 2,
+    "languages": [
+      "en",
+      "ja"
+    ],
+    "maximum_output_tokens_each": 512,
+    "maximum_tokens_per_call": 512,
+    "estimated_total_tokens": 8192,
+    "estimated_native_seconds": 120,
+    "maximum_wall_seconds": 900,
+    "request_timeout_seconds": 300,
+    "startup_timeout_seconds": 120,
+    "automatic_retries": 0,
+    "stop_on_any_error_or_unknown": true,
+    "replace_failed_target": false,
+    "estimated_time_basis": "Finite conservative planning estimate, not a measurement on the new 3B/runtime combination."
+  },
+  "monitor": {
+    "interval_seconds": 5,
+    "method": "process_journal_resources"
+  },
+  "stop_method": "v3 supervisor terminates only its owned group on timeout/error; keep every input, journal, received response, and unknown cost.",
+  "resume_method": "Never resend a completed or unknown target. A recovery requires a changed registered hypothesis or proven unsent software failure; retain this full stopped run.",
+  "main_cal_resource_effect": {
+    "initial_calls_per_language_each_stage": 20,
+    "total_initial_calls_main_and_cal": 80,
+    "judge_calls_changed": false,
+    "original_20_QA_per_language_unchanged": true,
+    "quality_and_expected_seal_unchanged": true,
+    "time_estimate_update": "Replace baseline time component with smoke/Main measured costs before independent Cal; do not shrink QA/fixed-unit denominators."
+  },
+  "phase12_allowed": false,
+  "entrypoint": {
+    "path": "scripts/probe_phase11_baseline_v3.py",
+    "sha256": "0e586483c611ce28abbc6dc6f6eeb83ec620d243ba0cf2814253f47391c45cfb"
+  },
+  "supervisor_contract": {
+    "context_required": "RAG_PHASE11_AUTONOMY_CONTEXT",
+    "stage_by_mode": {
+      "preflight": "preflight",
+      "smoke": "smoke"
+    },
+    "target_counts": {
+      "qa": 2,
+      "fixed_units": 0,
+      "conditions": 2
+    },
+    "target_ids": [
+      "baseline/en/clapnq:c508d78:train:-2421097959159398117:answerable",
+      "baseline/ja/whrja:02e85c8:answered:1"
+    ],
+    "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+    "required_direct_bindings": [
+      "scripts/probe_phase11_baseline_v3.py",
+      "new baseline config",
+      "promoted preregistered probe-plan JSON",
+      "promoted generation identity supplement JSON"
+    ],
+    "command": "scripts/probe_phase11_baseline_v3.py --mode <preflight|smoke> --config <promoted baseline config> --probe-plan <promoted registered probe plan> --output-dir data/runs/runtime_screening/<fresh output>",
+    "preflight_completions": 0,
+    "smoke_completions": 2
+  },
+  "native_cost_validation": "Keep returned native calls as unvalidated_returned until independent baseline audit. This entrypoint does not create standard Task checkpoints or upgrade Native success counters.",
+  "registered_at_jst": "2026-10-26T18:21:11.466485+09:00",
+  "scientific_adoption_claimed": false,
+  "generation_identity": {
+    "path": "data/manifests/phase11_baseline_graph_off_identity_v3.json",
+    "sha256": "5936565e3627e6fcb4cd9ade8de072e00661181b527fe36222ba13a3c3abb670"
+  },
+  "probe_plan": {
+    "path": "configs/phase11_baseline_probe_inputs_v3.json",
+    "sha256": "74bc1e2327d7c272aebb401c402134681791ca19935b2fcf5857a5cb0215decf"
+  }
+}

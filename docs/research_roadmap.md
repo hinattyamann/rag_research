@@ -1,6 +1,8 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月26日。正本: [研究計画7.74](rag_research_plan.md)、[実装計画8.77](rag_implementation_plan.md)。
+2026-10-26 18:24 JST追記: 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
+
+更新日: 2026年10月26日。正本: [研究計画7.75](rag_research_plan.md)、[実装計画8.78](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。

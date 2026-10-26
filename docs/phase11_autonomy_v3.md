@@ -128,3 +128,27 @@ Camp David c5のExpectedは曖昧のまま。暖鋒はLabelがCでも理由に�
 意味Runの有限予算は70 Call/個別1200秒/壁17810秒/5秒監視、同じ入力の自動再送0。
 見積りNative6012.06秒は旧Promptの長いSmoke2要求からの条件付き目安で、完走保証ではない。
 壁上限は70×6144出力Token÷25 Token/秒＋600秒の保守的計画から登録し、Goal全体の上限にしない。
+
+
+## 初回生成3BのRuntime確認を分離する
+
+Main/Calの旧baselineはGraph ONを参照していた。補助9Bの実Healthと区別し、
+`configs/phase11_bilingual_baseline_graph_off_v3.yaml`へruntime_spec一項目だけを分けた。
+初回Model/日英Prompt/温度0/seed42/Context4096/出力512・全generation値は保持する。
+Runtime間の数値同値は仮定しない。新しい各QAの初回回答と実使用Sourceを一回固定し、以後は提示順だけを変える。
+
+`scripts/probe_phase11_baseline_v3.py`は、旧known connectionのみの日英各1例をHash固定した
+`configs/phase11_baseline_probe_inputs_v3.json`を使う。Main/Cal/Evaluationの本文・結果・Expectedは使わない。
+補足生成identityは`phase11_baseline_graph_off_identity_v3.json`、有限資源は
+`configs/phase11_baseline_runtime_resource_v3.json`。上位v3の別生成0/Smoke2 Run登録がさらに必要である。
+各Runはtimeout300秒/壁900秒/自動再送0/5秒監視、Native前にlive ledgerと全入力Hashを照合する。
+生成0ではprepared-*.jsonに実Token/全文を保存し、Smokeは実baselineのbuilder/Tokenizer/Model/Runtimeを使う。
+
+追加7件を含む実機全851 Test（29.60秒、wrapper30.163459秒）/Ruffと実Contractの生成0照合に成功。
+`phase11_baseline_probe_software_validation_v3.json/.sha256`へ全ログ・93Source・新入力を結んだ。
+実GPUのbaseline確認はまだ未実施で、このソフトウェア検証はRuntimeの採用ではない。
+補足生成identityは補助9Bの6component identityを置換せず、Main/CalのConfig/実Run/最終条件で別にbindする。
+
+Baseline journalは標準Task checkpoint形式ではないため、返却2件はNativeのunvalidated_returnedに残す。
+別の独立監査で全入力/制約/受信/費用を確認し、台帳の標準Task成功へ数を混ぜない。
+未知/中断時はRawと不明総費用nullを保持し、同条件再送しない。
