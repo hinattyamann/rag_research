@@ -36,6 +36,14 @@ class LlamaClient:
         self.opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 
     def request(self, route, payload=None, *, timeout=None):
+        ticket = None
+        if route == "/completion" and os.environ.get("RAG_PHASE11_AUTONOMY_CONTEXT") is not None:
+            from rag_research.experiments.phase11_autonomy import (
+                begin_native_call,
+                finish_native_call,
+            )
+
+            ticket = begin_native_call(route, payload, timeout or self.timeout)
         request = urllib.request.Request(
             self.url + route,
             data=None if payload is None else json.dumps(payload).encode("utf-8"),
@@ -45,9 +53,15 @@ class LlamaClient:
             with self.opener.open(request, timeout=timeout or self.timeout) as response:
                 value = json.load(response)
         except (OSError, ValueError, urllib.error.URLError) as error:
+            if ticket is not None:
+                finish_native_call(ticket, error=f"{type(error).__name__}: {error}")
             raise GenerationError(f"Local runtime request failed ({route}): {error}") from error
         if not isinstance(value, dict) or "error" in value:
+            if ticket is not None:
+                finish_native_call(ticket, error="Invalid native response")
             raise GenerationError(f"Invalid runtime response ({route}): {value}")
+        if ticket is not None:
+            finish_native_call(ticket, response=value)
         return value
 
     def tokenize(self, text, *, special=False):
@@ -132,7 +146,13 @@ class LocalServer:
     def __enter__(self):
         started = time.perf_counter()
         model = self.model_path or verify_model().resolve()
-        executable, self.runtime = verify_cuda_runtime() if self.execution else verify_runtime()
+        if self.execution:
+            runtime_spec = self.execution["runtime_spec"]
+            executable, self.runtime = (verify_cuda_runtime()
+                if runtime_spec == "configs/lab_cuda_runtime.json"
+                else verify_cuda_runtime(runtime_spec))
+        else:
+            executable, self.runtime = verify_runtime()
         self.runtime_version = subprocess.run(
             [str(executable.resolve()), "--version"],
             capture_output=True,

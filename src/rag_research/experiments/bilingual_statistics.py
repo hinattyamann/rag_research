@@ -16,6 +16,7 @@ def condition(manifest):
     config = manifest["config"]
     prompts = yaml.safe_load((ROOT / config["prompts"]).read_text())
     return {**({"semantic_adoption_version": config["semantic_adoption_version"]} if "semantic_adoption_version" in config else {}),
+            **{k: config[k] for k in ("autonomy_protocol_version", "autonomy_protocol", "candidate_identity_sha256") if k in config},
             "baseline_model": manifest["baseline_model"], "auxiliary_model": manifest["auxiliary_model"],
             "baseline": manifest["baseline"], "judge": {k: config.get(k) for k in
             ("trials", "decision", "auxiliary_runtime", "sampling", "tasks", "output_constraints", "execution", "verification_mode",

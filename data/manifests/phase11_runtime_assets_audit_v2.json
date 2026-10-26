@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "purpose": "phase11-runtime-assets-and-host-startup-audit-not-final-freeze",
+  "recorded_at_jst": "2026-10-26T16:39:12.958433+09:00",
+  "completion_calls": 0,
+  "server_starts": 0,
+  "inputs_available": true,
+  "audit_summary": {
+    "all_manifest_comparisons": {
+      "missing": 2,
+      "ok": 6759
+    },
+    "v10_comparisons": {
+      "ok": 198
+    },
+    "active_assets_comparisons": {
+      "ok": 83
+    },
+    "index_and_embedding_payload_comparisons": {
+      "ok": 38
+    },
+    "old_runs": {
+      "all_copies_and_originals_match": true,
+      "bytes": 640340713,
+      "copy_path": "data/runs/lab/phase11-runtime-assets-audit-v2/previous-runs",
+      "files": 5818,
+      "inventory_sha256": "07e0ddae88d3a0dc24b32cdbd670b74a39049b1a8037a6fc4187c244c2f52e36"
+    },
+    "lock_files": 121,
+    "held_locks": [],
+    "historical_issues": [
+      {
+        "actual_sha256": null,
+        "bytes": null,
+        "expected_sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db",
+        "path": "data/models/Qwen2.5-7B-Instruct-GGUF/bb5d59e06d9551d752d08b292a50eb208b07ab1f/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+        "source": "data/manifests/phase10_auxiliary_model_manifest.json",
+        "status": "missing"
+      },
+      {
+        "actual_sha256": null,
+        "bytes": null,
+        "expected_sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a",
+        "path": "data/models/Qwen2.5-7B-Instruct-GGUF/bb5d59e06d9551d752d08b292a50eb208b07ab1f/qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+        "source": "data/manifests/phase10_auxiliary_model_manifest.json",
+        "status": "missing"
+      }
+    ]
+  },
+  "files": {
+    "data/runs/lab/phase11-runtime-assets-audit-v2/report.json": {
+      "sha256": "71c53d79e4f3ae975ffddc4d79054d43f54b47e695d5c9cb7622bde1a8d24fe2",
+      "bytes": 32219
+    },
+    "data/runs/lab/phase11-runtime-assets-audit-v2/old-run-inventory.json": {
+      "sha256": "07e0ddae88d3a0dc24b32cdbd670b74a39049b1a8037a6fc4187c244c2f52e36",
+      "bytes": 1075509
+    },
+    "data/runs/lab/phase11-runtime-assets-audit-v2/manifest-comparisons.json": {
+      "sha256": "f4000d041befdb6479c5238f2ab9e962502c0002363b4531bd3f391bfbe03384",
+      "bytes": 2445198
+    },
+    "data/runs/lab/phase11-runtime-assets-audit-v2/lock-checks.json": {
+      "sha256": "462a4f992082f963ec178e4eaf943c5580d8be4f5896510b2c78736918c09e56",
+      "bytes": 13576
+    },
+    "data/runs/lab/phase11-startup-audit-v3/git-history-difference.txt": {
+      "sha256": "4b14c7b5549e560a68e9c4daaae3fdb8a28fe32d0247050325e7c5a3b2b3271c",
+      "bytes": 4
+    },
+    "data/runs/lab/phase11-startup-audit-v3/git-status.txt": {
+      "sha256": "fbb8f489d2a66093670e70ae8a22a4c2cd99235df6a1a3102d4f8d1c29fccce6",
+      "bytes": 142
+    },
+    "data/runs/lab/phase11-startup-audit-v3/head.txt": {
+      "sha256": "57b4550d11eef50c01af5b5fdcefa67ca00d609970543997937e74884207f13f",
+      "bytes": 41
+    },
+    "data/runs/lab/phase11-startup-audit-v3/host-locks.json": {
+      "sha256": "32da2a14964bef99278dc54a2bd5f52b7f7a306650f7346247cfe0c78232068d",
+      "bytes": 21500
+    },
+    "data/runs/lab/phase11-startup-audit-v3/host-processes.txt": {
+      "sha256": "7ec847b49ba9966a16e267794236eade48e03e54b474a9d4bbd53a4ced1772ce",
+      "bytes": 37785
+    },
+    "data/runs/lab/phase11-startup-audit-v3/nvidia-smi.txt": {
+      "sha256": "3be4d274c3ab9697c6ebc3300fe17f9993eb9292ca1145505dc975801519ecc4",
+      "bytes": 1965
+    },
+    "data/runs/lab/phase11-startup-audit-v3/observed-at.txt": {
+      "sha256": "75031dbd77687e603f466abe32b57b963330724951c1c120d04be9fa650d53d0",
+      "bytes": 26
+    },
+    "data/runs/lab/phase11-startup-audit-v3/remotes.txt": {
+      "sha256": "b1f3fdff2e075cfc8405d67fef34fbcd75998d4a702c73cb2a60250ab0795c97",
+      "bytes": 127
+    },
+    "data/runs/lab/phase11-startup-audit-v3/worktrees.txt": {
+      "sha256": "98f02fc91db913f53be5d4bda17aa56c040c70e6b0a2b32a54a5441c92210cdb",
+      "bytes": 5747
+    }
+  },
+  "historical_missing_model_policy": "Two old Phase10 Qwen2.5-7B split GGUF files are absent. Preserve manifests and failed evidence; no old run or model inference regenerated. Current active models/runtime/corpus/index all match.",
+  "evaluation_content_parsed": false,
+  "old_cumulative_calls_preserved": 909,
+  "old_unknown_preserved": 3,
+  "phase12_allowed": false,
+  "gate11_passed": false
+}

@@ -8,6 +8,7 @@ from rag_research.data.japanese_dataset import REVISION, assign_splits
 from rag_research.data.study_assets import load_assets
 from rag_research.experiments import calibration_analysis, calibration_protocol
 from rag_research.experiments.frozen_trace import digest, require
+from rag_research.experiments.phase11_autonomy import validate_chain_identity
 from rag_research.experiments.semantic_adoption import version
 from rag_research.experiments.storage import checkpoint, read_json, run_lock, verify_checkpoint
 from rag_research.retrieval.common import file_hash, verify_index
@@ -177,6 +178,7 @@ def sealed_evidence(decisions):
     require(protocol["main_inputs"] == decisions["main_inputs"] and protocol["main_certificate"] == decisions["main_certificate"],
             "Final main evidence differs from the evidence authorizing Calibration")
     main = calibration_protocol.verify_main(main_inputs, certificate)
+    validate_chain_identity(decisions, main, current, protocol, root=ROOT)
     require(version(main.get("semantics", {})) == version(current.get("semantics", {})) == version(decisions),
             "Final/Main/Calibration semantic adoption versions differ")
     require(main["condition_sha256"] == current["statistics"]["condition_sha256"] == protocol["condition_sha256"],
@@ -311,6 +313,7 @@ def readiness(decisions_path):
             "validator_validation_sha256": validator["result_sha256"],
             "finalization_source_sha256": source_before, "human_reviewed": False,
             "annotation_history_independence_not_assumed": True, "new_model_calls": 0, "evaluation_qa_rows_read": 0}
+        conditions.update(validate_chain_identity(decisions, main, calibration, root=ROOT) or {})
         return {"gate11_passed": True, "phase12_allowed": True, "checks": checks, "reasons": reasons, "conditions": conditions}
     except (ValueError, KeyError, TypeError, OSError) as error:
         reasons[stage] = str(error)
@@ -327,4 +330,6 @@ def save(decisions_path, output):
         result = readiness(decisions_path)
         require(result["gate11_passed"] is True and all(result["checks"].values()),
                 "Bilingual Gate11 has unmet requirements; no final manifest written: " + str(result["reasons"]))
-        return checkpoint(output, {"schema_version": 2, "purpose": "phase11-bilingual-final-condition-freeze", **result})
+        return checkpoint(output, {"schema_version": 2, "purpose": "phase11-bilingual-final-condition-freeze", **result,
+            **{k: result["conditions"][k] for k in
+               ("autonomy_protocol_version", "autonomy_protocol", "candidate_identity_sha256") if k in result["conditions"]}})

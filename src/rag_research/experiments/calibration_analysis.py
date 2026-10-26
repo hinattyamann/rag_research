@@ -12,6 +12,7 @@ from rag_research.experiments.bilingual_budget import budget_snapshot
 from rag_research.experiments.bilingual_certification import native_cost, resource_sessions
 from rag_research.experiments.calibration_protocol import source_hashes
 from rag_research.experiments.frozen_trace import require
+from rag_research.experiments.phase11_autonomy import validate_chain_identity
 from rag_research.experiments.storage import checkpoint, read_json, run_lock
 from rag_research.retrieval.common import file_hash
 
@@ -121,6 +122,7 @@ def analyze(inputs_path):
                 healthy = False
             health[language] = bool(healthy and all(r["rewrite"]["status"] == "ok" for r in report["records"]))
         require(protocols[0] == protocols[1], "Both Calibration languages must share the same protocol")
+        chain = validate_chain_identity(*[read_json(row["run"] / "manifest.json")["config"] for row in paths], root=ROOT)
         for collection in statistics["all_selected_quality_costs"]:
             actual = measured[collection["language"]]
             if actual is not None:
@@ -156,6 +158,7 @@ def analyze(inputs_path):
             "human_reviewed": False, "annotation_history_independence_not_assumed": True,
             "new_model_calls": 0, "new_model_servers": 0, "research_sample_size_frozen": False,
             "gate11_passed": False, "phase12_allowed": False}
+        result.update(chain or {})
         return original_paths(result, aliases)
 
 

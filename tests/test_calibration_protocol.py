@@ -94,6 +94,7 @@ def test_protocol_binds_complete_main_exact_reserved_groups_and_source_split_wit
     result = module.create(*args)
     assert result["new_model_calls"] == 0 and not result["gate11_passed"] and not result["phase12_allowed"]
     protocol = read_json(args[-1] / "protocol.json")
+    assert protocol["runs"] == {lang: f"data/runs/bilingual_calibration/{args[-1].name}-{lang}" for lang in ("en", "ja")}
     for language in ("en", "ja"):
         config = yaml.safe_load((args[-1] / ("config-" + language + ".yaml")).read_text())
         assert config["data"]["split"] == module.SOURCE_SPLITS[language] and config["analysis_split"] == "calibration"
@@ -104,6 +105,25 @@ def test_protocol_binds_complete_main_exact_reserved_groups_and_source_split_wit
     assert state["calls"] == 3 and len(state["excluded"][-1]) == 2
     with pytest.raises(ValueError, match="new Calibration protocol"):
         module.create(*args)
+
+
+def test_v3_calibration_uses_the_collection_parent_without_changing_historical_run_layout(prerequisite, monkeypatch):
+    """Main certification/identity are doubles; real path and resume validation run."""
+    args, state, root = prerequisite
+    chain = {"autonomy_protocol_version": "phase11-autonomy-v3", "autonomy_protocol": {"synthetic": True},
+        "candidate_identity_sha256": "a" * 64}
+    monkeypatch.setattr(module, "validate_chain_identity", lambda *_values, **_kwargs: chain)
+    monkeypatch.setattr(module, "stage_limits", lambda value, *_args, **_kwargs: value["limits_per_language"])
+    state["main"].update(chain)
+    module.create(*args)
+    protocol = read_json(args[-1] / "protocol.json")
+    assert protocol["runs"] == {lang: f"data/runs/bilingual_calibration/{args[-1].name}/{lang}" for lang in ("en", "ja")}
+    for language in ("en", "ja"):
+        config = yaml.safe_load((args[-1] / ("config-" + language + ".yaml")).read_text())
+        checked, _, _ = module.validate(config, root / protocol["runs"][language])
+        assert checked == protocol
+    # The original fixture above still requires the unchanged legacy '-en/-ja' layout.
+    assert state["excluded"][-1] == [protocol["runs"][lang] for lang in ("en", "ja")]
 
 
 def test_binary_calibration_rules_reject_legacy_main_even_before_inference(prerequisite):

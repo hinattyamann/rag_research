@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-isolated-cuda-graph-off-runtime-build-provenance-correction",
+  "recorded_at_jst": "2026-10-26T16:41:39.927918+09:00",
+  "base_commit": "50374e81f47a3683ad4edbf98678fec2478e4eef",
+  "hypothesis": "A fixed-source CUDA Graph OFF build may avoid the observed launch timeout; root cause remains unproven. A full local CUDA12.9 release rebuild also changes binary/compiler/architecture conditions.",
+  "source_commit": "50569eb87df530daff11afda229ceb9ab8e6cae8",
+  "source_url": "https://codeload.github.com/ggml-org/llama.cpp/tar.gz/50569eb87df530daff11afda229ceb9ab8e6cae8",
+  "source_directory": "data/runtimes/llama.cpp/source-50569eb-graph-off-v1",
+  "runtime_directory": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1",
+  "build_run": "data/runs/runtime_build/phase11-cuda-graph-off-v2",
+  "cmake_options": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CUDA_COMPILER": "/usr/local/cuda-12.9/bin/nvcc",
+    "CUDAToolkit_ROOT": "/usr/local/cuda-12.9",
+    "CMAKE_CUDA_ARCHITECTURES": "120a-real",
+    "GGML_CUDA": "ON",
+    "GGML_CUDA_GRAPHS": "OFF",
+    "LLAMA_BUILD_TESTS": "OFF",
+    "LLAMA_BUILD_EXAMPLES": "OFF",
+    "LLAMA_BUILD_APP": "OFF",
+    "LLAMA_OPENSSL": "OFF",
+    "LLAMA_BUILD_UI": "OFF",
+    "LLAMA_USE_PREBUILT_UI": "OFF",
+    "LLAMA_BUILD_SERVER": "ON",
+    "LLAMA_BUILD_TOOLS": "ON",
+    "LLAMA_BUILD_NUMBER": "11433",
+    "LLAMA_BUILD_COMMIT": "50569eb87df530daff11afda229ceb9ab8e6cae8"
+  },
+  "targets": [
+    "llama-server",
+    "llama-cli"
+  ],
+  "budget": {
+    "completion_calls": 0,
+    "source_download_attempts": 1,
+    "download_timeout_seconds": 300,
+    "configure_attempts": 1,
+    "configure_timeout_seconds": 300,
+    "build_attempts": 1,
+    "build_timeout_seconds": 7200,
+    "build_parallel_jobs": 2,
+    "predicted_build_seconds_min": 1200,
+    "predicted_build_seconds_max": 3600,
+    "post_build_version_timeout_seconds": 15,
+    "total_wall_timeout_seconds": 8100
+  },
+  "monitoring": {
+    "interval_seconds": 60,
+    "artifacts": [
+      "download.log",
+      "configure.log",
+      "build.log",
+      "journal.jsonl"
+    ],
+    "resources": [
+      "free RAM",
+      "disk",
+      "owned compiler processes"
+    ],
+    "stop": "terminate only registered owned process group on timeout; preserve source, partial build and logs",
+    "resume": "no same-condition rerun automatically; inspect journal, determine cause, register a changed follow-up plan"
+  },
+  "validation_scope": [
+    "source archive SHA256 and per-source matching against saved twelve fixed b11433 source files",
+    "compiler/options/CMakeCache/source tree hash provenance",
+    "manifest per-runtime-file streaming SHA256",
+    "llama-server version and CUDA device listing (zero completion)",
+    "separate preregistered smoke/formats/meaning/known required before adoption"
+  ],
+  "unknown_and_cost_policy": "No completion requests are authorized by this registration. Build wall/resource costs remain recorded even if failed.",
+  "root_cause_established": false,
+  "old_runtime_modified": false,
+  "phase12_allowed": false,
+  "previous_build": {
+    "path": "data/runs/runtime_build/phase11-cuda-graph-off-v1",
+    "status": "stopped_before_runtime_created",
+    "reason": "CMake inherited the parent rag_research Git identity into build-info.cpp; fixed source itself unchanged.",
+    "journal_sha256": "5e9f785fd782d11af5f2a5b2372e2d51bd32459ca49e5580097ee688961b703d",
+    "build_info_sha256": "9da0355c5ea89379b193df297a5b63bbf3b516db65bcda2c5efffbf74648a1d3",
+    "registration_sha256": "98cea18398c78ce0b6dc6e18f3853a1b9d08f990a876ae6d643f79cb13a4758f",
+    "partial_object_reuse": "Copy the stopped build directory to v2; remove only copied CMakeCache.txt; reconfigure all generated Makefiles with explicit source commit/number. Preserve v1 tree and all logs unchanged."
+  }
+}

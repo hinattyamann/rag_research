@@ -21,6 +21,7 @@ from rag_research.experiments.bilingual_budget import (
 from rag_research.experiments.bilingual_main import validate_main
 from rag_research.experiments.frozen_trace import digest, freeze_record, require
 from rag_research.experiments.order_runner import evaluate_traces
+from rag_research.experiments.phase11_autonomy import validate_chain_identity
 from rag_research.experiments.protocol import ROOT, task_config, validate_task_contract
 from rag_research.experiments.storage import (
     next_session,
@@ -169,6 +170,8 @@ def _run(config_path, output, *, stage="all", calibration=False):
                     else "known_development_connection_not_calibration",
                 "source_sha256": {p.relative_to(ROOT).as_posix(): file_hash(p) for p in sources},
                 "gate11_passed": False, "phase12_allowed": False}
+    chain = validate_chain_identity(config, root=ROOT)
+    manifest.update(chain or {})
     with run_lock(output):
         immutable(output / "manifest.json", manifest)
         if main:
@@ -311,6 +314,7 @@ def _run(config_path, output, *, stage="all", calibration=False):
                   "language": config["language"], "selected_qa_count": len(rows), "records": assembled,
                   "failures": failures, "quality_status": "pending_external_blinded_annotation",
                   "gate11_passed": False, "phase12_allowed": False}
+        report.update(chain or {})
         write_json(output / "report.private.json", report)
         if main:
             write_json(output / "progress.json", {"stage": "awaiting_both_language_external_labels",

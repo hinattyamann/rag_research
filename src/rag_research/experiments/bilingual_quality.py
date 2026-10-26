@@ -11,6 +11,7 @@ from rag_research.evaluation.claimwise import verify_once
 from rag_research.evaluation.order import trial_plan
 from rag_research.experiments.decisions import decide_with_refusal
 from rag_research.experiments.frozen_trace import digest, freeze_record, require
+from rag_research.experiments.phase11_autonomy import validate_chain_identity
 from rag_research.experiments.protocol import ROOT, task_config
 from rag_research.experiments.quality import (
     blank_annotations,
@@ -60,6 +61,7 @@ def source_split(manifest, split):
 def read_run(run):
     split = analysis_split(run, allow_replay=True)
     manifest, report = read_json(run / "manifest.json"), read_json(run / "report.private.json")
+    validate_chain_identity(manifest["config"], manifest, report, root=ROOT)
     source_split(manifest, split)
     require(report["manifest_sha256"] == digest(manifest), "Bilingual report binding differs")
     for name, expected in manifest["source_sha256"].items():

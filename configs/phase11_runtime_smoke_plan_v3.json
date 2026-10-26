@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-runtime-smoke-v3",
+  "source": {
+    "path": "configs/phase11_known_trace_regression_v10.json",
+    "sha256": "bb6e2afccdcee8ca4eebee45200ce9a1beb4e6a833385ebccf79b639779be119"
+  },
+  "targets": [
+    {
+      "case_id": "known-gpu-dee22fa20655",
+      "claim_id": "c5",
+      "order": "reversed"
+    },
+    {
+      "case_id": "known-warm-front",
+      "claim_id": "c2",
+      "order": "original"
+    }
+  ],
+  "maximum_calls": 2,
+  "automatic_retries": 0,
+  "phase12_allowed": false,
+  "rationale": "Probe the saved v10 timeout input and a table-reading input. Runtime health only; retain all old failures and unknowns; no semantic adoption from two probes."
+}

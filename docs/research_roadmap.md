@@ -1,11 +1,13 @@
 # 研究のフェーズ・現在地・次に行うこと
 
-更新日: 2026年10月24日。正本: [研究計画7.73](rag_research_plan.md)、[実装計画8.76](rag_implementation_plan.md)。
+更新日: 2026年10月26日。正本: [研究計画7.74](rag_research_plan.md)、[実装計画8.77](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
 
 ## 1. 今どこまで終わっているか
+
+2026-10-26、このチャットのGoalをactiveと確認し、Fetch後main/50374e8とorigin/main差0/0・初期未コミット変更なし・実験プロセスなしを確認した。[自律継続Protocol v3](phase11_autonomy_v3.md)へ移行し、新Guard/chain/段階継続/Runtime接続を実装し、実機全844 Test（31.30秒）とRuffに成功した。Graph OFF隔離RuntimeのBuildと生成0のVersion/GPU認識も完了し、Runtime全28File/固定Source全3689Fileを照合した。新2Configは各70入力のModel/Runtime/chain/Message構造を生成0で検証した。旧909試行/未知3と不採用は不変。実生成/意味採用/Main/Cal/最終凍結はこれからでGate11未通過、Phase12未開始。現行資産を照合、旧Run等5818FileをコピーしてHash一致を確認。旧不採用7B2分割の欠落は現行入力に影響しない。以下の旧Goal停止指示は10月24日の許可で置換し、旧結果・未知・未使用枠を保持する。
 
 2026-10-24、ユーザーの研究室PCでの週末自律継続依頼に基づき、[開始プロンプト](phase11_lab_weekend_start.md)と[Goal・実行方針](phase11_lab_weekend_goal.md)を保存した。旧の候補1個/追加188回/4時間/回復可能障害時のGoal停止は、今後の新Protocolで置換する許可を記録。支持/非支持各90%、被覆/Health/未使用性/全採点封印/最終実証拠は維持する。候補の不合格とRuntime障害は保存し、原因に対応する修正・別検証へ継続する。最終到達点はGate11/最終ManifestまででPhase12は始めない。今回は文書作成のみで、実行Guard改訂・新実験・候補採用は未実施。以下の093fd9f時点の失敗実績は変更しない。
 

@@ -7,9 +7,10 @@ from pathlib import Path
 import yaml
 
 from rag_research.experiments.bilingual_certification import certify_main
-from rag_research.experiments.bilingual_main import bound_path, validate_main_policy
+from rag_research.experiments.bilingual_main import bound_path, stage_limits, validate_main_policy
 from rag_research.experiments.calibration_selection import SOURCE_SPLITS, prepare
 from rag_research.experiments.frozen_trace import digest, require
+from rag_research.experiments.phase11_autonomy import validate_chain_identity
 from rag_research.experiments.semantic_adoption import version
 from rag_research.experiments.storage import (
     checkpoint,
@@ -42,12 +43,14 @@ def rules(path):
     value = read_json(path)
     require(value["schema_version"] == 1 and value["purpose"] == "phase11-bilingual-calibration-execution-rules" and
             value["status"] == "preregistered_pending_main_evidence" and value["count_per_language"] == 20 and
-            value["limits_per_language"] == LIMITS and value["main_full_certificate_required"] is True and
+            value["main_full_certificate_required"] is True and
             value["both_language_all_labels_sealed_before_unblinding"] is True and value["phase12_allowed"] is False,
             "Preserve held-out Calibration rules and complete main evidence")
     validate_main_policy(value)
+    limits = stage_limits(value, "cal", root=ROOT)
     resource = value["resource_policy"]
-    require(resource["total_native_call_ceiling"] == 1660 and resource["unknown_outcome"] == "stop_without_retry" and
+    require(resource["total_native_call_ceiling"] == limits["maximum_completion_attempts"] and
+            resource["unknown_outcome"] == "stop_without_retry" and
             resource["no_post_result_budget_or_criteria_relaxation"] is True and
             all(isinstance(resource[k], str) and resource[k].strip() for k in ("token_limits", "time_limits")) and
             all(isinstance(value[k], str) and value[k].strip() for k in ("revision_policy", "sample_size_policy")),
@@ -63,6 +66,7 @@ def verify_main(inputs_path, certificate_path):
             "Use a complete main Development certificate")
     saved = read_json(certificate_path)
     verify_checkpoint(saved)
+    validate_chain_identity(current, saved, root=ROOT)
     require(saved["purpose"] == "phase11-main-development-evidence-certificate" and saved["status"] == "verified" and
             all(saved[k] == current[k] for k in MAIN_FIELDS) and
             saved["inputs"] == binding(inputs_path), "Main certificate differs from reverified complete evidence")
@@ -94,15 +98,23 @@ def source_hashes(*, root=None):
     return {p.relative_to(root).as_posix(): file_hash(p) for p in paths}
 
 
-def configuration(main_config, selected, language):
+def configuration(main_config, selected, language, execution_rules=None):
     config = deepcopy(main_config)
     require(config["execution_scope"] == "main_development_v1" and config["language"] == language and
-            config["main_limits"] == LIMITS, "Use the actual completed main configuration")
+            (validate_chain_identity(main_config, root=ROOT) is not None or config["main_limits"] == LIMITS),
+            "Use the actual completed main configuration")
+    if execution_rules is not None:
+        validate_chain_identity(main_config, execution_rules, root=ROOT)
+        limits = stage_limits(execution_rules, "cal", root=ROOT)
+    else:
+        require(validate_chain_identity(main_config, root=ROOT) is None,
+                "Versioned Calibration needs its separately registered execution rules")
+        limits = LIMITS
     config.update(purpose="phase11-bilingual-calibration-candidate", execution_scope=SCOPE,
         analysis_split="calibration", data={"split": SOURCE_SPLITS[language], "record_ids": [s["record_id"] for s in selected]})
     for key in ("development_selection", "main_execution_policy", "main_limits"):
         config.pop(key)
-    config["calibration_limits"] = deepcopy(LIMITS)
+    config["calibration_limits"] = deepcopy(limits)
     return config
 
 
@@ -120,6 +132,7 @@ def create(inputs_path, certificate_path, reservation_path, policy_path, rules_p
     source_before = source_hashes()
     main = verify_main(inputs_path, certificate_path)
     adoption_rules = rules(rules_path)
+    chain = validate_chain_identity(main, adoption_rules, root=ROOT)
     reserved, fresh = unchanged_selection(reservation_path, policy_path)
     configs, runs, estimates = {}, {}, {}
     for language in ("en", "ja"):
@@ -127,12 +140,14 @@ def create(inputs_path, certificate_path, reservation_path, policy_path, rules_p
         manifest = read_json(main_run / "manifest.json")
         require(version(adoption_rules) == version(manifest["config"]), "Main/Calibration adoption versions differ")
         chosen = fresh["languages"][language]["selected"]
-        config = configuration(manifest["config"], chosen, language)
+        validate_chain_identity(main, manifest["config"], adoption_rules, root=ROOT)
+        config = configuration(manifest["config"], chosen, language, adoption_rules)
         require(config["assets"] == reserved["inputs"]["assets"]["path"], "Calibration assets must match main")
         require(not {s["document_group_id"] for s in chosen} & {
             s["document_group_id"] for s in main["source_runs"][language]["selected"]}, "Calibration overlaps main groups")
         configs[language] = config
-        runs[language] = f"data/runs/bilingual_calibration/{output.name}-{language}"
+        runs[language] = (f"data/runs/bilingual_calibration/{output.name}/{language}" if chain else
+                          f"data/runs/bilingual_calibration/{output.name}-{language}")
         measured = main["source_runs"][language]["native_collection_cost"]
         estimates[language] = {"observed_main_calls": measured["completion_attempts"],
             "observed_main_input_tokens": measured["input_tokens"], "observed_main_output_tokens": measured["output_tokens"],
@@ -152,6 +167,7 @@ def create(inputs_path, certificate_path, reservation_path, policy_path, rules_p
         "config_payload_sha256": {lang: digest(configs[lang]) for lang in configs},
         "unused_inventory_at_preparation_sha256": digest(fresh), "resource_estimates": estimates,
         "source_sha256": source_before, "new_model_calls": 0, "gate11_passed": False, "phase12_allowed": False}
+    protocol.update(chain or {})
     require(source_hashes() == source_before, "Calibration preparation sources changed")
     with run_lock(output):
         require({p.name for p in output.iterdir()} == {".run.lock"}, "Preserve existing protocol")
@@ -176,22 +192,26 @@ def validate(config, output):
             protocol["source_splits"] == SOURCE_SPLITS and protocol["phase12_allowed"] is False,
             "Invalid held-out protocol")
     language = config["language"]
+    execution_rules = rules(bound(protocol["rules"]))
+    validate_chain_identity(config, protocol, execution_rules, root=ROOT)
     require(language in SOURCE_SPLITS and Path(output).resolve() == ROOT / protocol["runs"][language] and
             digest({k: v for k, v in config.items() if k != "calibration_protocol"}) == protocol["config_payload_sha256"][language] and
             config["purpose"] == "phase11-bilingual-calibration-candidate" and config["execution_scope"] == SCOPE and
-            config["data"]["split"] == SOURCE_SPLITS[language] and config["calibration_limits"] == LIMITS,
+            config["data"]["split"] == SOURCE_SPLITS[language] and
+            config["calibration_limits"] == stage_limits(execution_rules, "cal", root=ROOT),
             "Calibration configuration, source split or exact output changed")
     require(source_hashes() == protocol["source_sha256"], "Calibration source changed after preregistration")
-    require(version(rules(bound(protocol["rules"]))) == version(config), "Main/Calibration adoption versions differ")
+    require(version(execution_rules) == version(config), "Main/Calibration adoption versions differ")
     unused_path = bound(protocol["unused_inventory_file"])
     require(digest(read_json(unused_path)) == protocol["unused_inventory_at_preparation_sha256"], "Pre-inference usage proof changed")
     certificate_path = (ROOT / protocol["main_certificate"]["path"]).resolve()
     main = verify_main(bound(protocol["main_inputs"]), certificate_path)
+    validate_chain_identity(main, protocol, config, root=ROOT)
     require(binding(certificate_path) == protocol["main_certificate"], "Bound main certificate changed")
     require(main["condition_sha256"] == protocol["condition_sha256"], "Main conditions changed")
     main_manifest = read_json(ROOT / main["source_runs"][language]["run"] / "manifest.json")
     require({k: v for k, v in config.items() if k != "calibration_protocol"} ==
-            configuration(main_manifest["config"], protocol["selected"][language], language),
+            configuration(main_manifest["config"], protocol["selected"][language], language, execution_rules),
             "Calibration must use the actual adopted main conditions, even with updated protocol hashes")
     own = []
     for lang in ("en", "ja"):

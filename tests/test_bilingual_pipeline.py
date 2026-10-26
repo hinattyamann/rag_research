@@ -289,6 +289,41 @@ def test_common_connection_keeps_failures_resumes_without_server_or_calls(connec
         assert report["failures"][0]["status"] == "error" and not report["records"]
 
 
+def test_versioned_collection_keeps_chain_in_config_manifest_and_report_before_quality_read(connection):
+    from rag_research.experiments.phase11_autonomy import ADOPTION, SCIENTIFIC_RULES, VERSION
+
+    config, output, state = connection
+    root = config.parent
+
+    def bind(name, value):
+        path = root / name
+        write_json(path, value)
+        return {"path": name, "sha256": file_hash(path)}
+
+    authorization = bind("authorization.json", {"authorized": True})
+    legacy = bind("legacy.json", {"cumulative_recorded_all9b_development_attempts": 909,
+        "cumulative_unknown_responses": 3, "known_regression_adopted": False})
+    protocol = bind("autonomy.json", {"version": VERSION, "semantic_adoption_version": ADOPTION,
+        "scientific_rules": SCIENTIFIC_RULES, "authorization": authorization, "legacy_result": legacy,
+        "legacy_attempts": 909, "legacy_unknown": 3, "global_call_ceiling": None,
+        "global_seconds_ceiling": None, "global_candidate_ceiling": None})
+    chain = {"autonomy_protocol_version": VERSION, "autonomy_protocol": protocol,
+        "candidate_identity_sha256": "a" * 64}
+    state["config"].update(chain)
+    runner.run(config, output)
+    manifest, report = quality.read_run(output)
+    assert all(manifest[key] == report[key] == manifest["config"][key] == value for key, value in chain.items())
+    original = deepcopy(report)
+    report["candidate_identity_sha256"] = "b" * 64
+    write_json(output / "report.private.json", report)
+    with pytest.raises(ValueError, match="identity differs"):
+        quality.read_run(output)
+    original.pop("autonomy_protocol_version")
+    write_json(output / "report.private.json", original)
+    with pytest.raises(ValueError, match="Mixed legacy/v3"):
+        quality.read_run(output)
+
+
 def test_started_judge_becomes_unknown_without_resampling(connection):
     config, output, state = connection
     runner.run(config, output)

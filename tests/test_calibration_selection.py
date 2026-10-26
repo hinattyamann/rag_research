@@ -32,18 +32,21 @@ def test_ranking_never_uses_text_quality_gold_or_input_order_and_closes_used_gro
         original[i]["document_group_id"] for i in [0, 2, 4]}
 
 
-def test_resume_inventory_exclusion_is_explicit_and_never_hides_another_run(tmp_path):
-    paths = {"history": "data/runs/phase6/old/record.json", "own": "data/runs/bilingual_calibration/own/baseline/a/record.json",
+@pytest.mark.parametrize("own", ["own", "collection/en"])
+def test_resume_inventory_exclusion_is_explicit_and_never_hides_another_run(tmp_path, own):
+    paths = {"history": "data/runs/phase6/old/record.json", "own": f"data/runs/bilingual_calibration/{own}/baseline/a/record.json",
         "other": "data/runs/bilingual_calibration/other/baseline/a/record.json"}
+    if "/" in own:
+        paths["sibling"] = "data/runs/bilingual_calibration/collection/ja/baseline/a/record.json"
     for record_id, name in paths.items():
         path = tmp_path / name
         path.parent.mkdir(parents=True, exist_ok=True)
         write_json(path, {"record_id": record_id, "status": "started"})
     ids, hashes, _ = used_inventory(tmp_path, inventory_roots=selection.USAGE_ROOTS)
-    assert ids == {"history", "own", "other"} and len(hashes) == 3
+    assert ids == set(paths) and len(hashes) == len(paths)
     ids, hashes, _ = used_inventory(tmp_path, inventory_roots=selection.USAGE_ROOTS,
-        excluded_resume_runs=["data/runs/bilingual_calibration/own"])
-    assert ids == {"history", "other"} and len(hashes) == 2
+        excluded_resume_runs=["data/runs/bilingual_calibration/" + own])
+    assert ids == set(paths) - {"own"} and len(hashes) == len(paths) - 1
     for name in ["data/runs/bilingual_calibration", "data/runs/phase6", "../outside"]:
         with pytest.raises(ValueError, match="validated Calibration"):
             used_inventory(tmp_path, inventory_roots=selection.USAGE_ROOTS, excluded_resume_runs=[name])

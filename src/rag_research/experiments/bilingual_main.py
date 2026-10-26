@@ -1,11 +1,13 @@
 """Read-only adoption and selection gates before a main Development run can start."""
 
+import math
 from pathlib import Path
 
 import yaml
 
 from rag_research.evaluation.claimwise import atomic_steps, verify_once
 from rag_research.experiments.frozen_trace import digest, require
+from rag_research.experiments.phase11_autonomy import validate_chain_identity
 from rag_research.experiments.protocol import ROOT, task_config
 from rag_research.experiments.semantic_adoption import BINARY, BINARY_RULES, version
 from rag_research.experiments.storage import read_json, verify_checkpoint
@@ -27,6 +29,56 @@ REQUIRED_MAIN_POLICY = {
         "human_reviewed": False, "unknown_quality_not_imputed": True, "maximum_candidates_per_qa": 2},
     "decision": {"threshold": .7, "bare_refusal_policy": "rewrite_once", "score_for_no_fixed_units": None},
 }
+LEGACY_LIMITS = {"maximum_completion_attempts": 1660, "maximum_new_qa_per_stage_session": 5,
+    "stop_on_any_task_error": True, "automatic_refill": False}
+
+
+def stage_limits(policy, stage, *, root=None):
+    """Keep historical caps; v3 accepts only a separately hashed finite calculation.
+
+    The resource specification deliberately does not reference an execution plan:
+    that plan binds config/policy/spec later, avoiding a circular hash graph.
+    """
+    root = ROOT if root is None else root
+    chain = validate_chain_identity(policy, root=root)
+    limits = policy.get("limits_per_language")
+    if chain is None:
+        require(limits == LEGACY_LIMITS, "Preserve preregistered legacy stage limits")
+        return limits
+    require(version(policy) == BINARY, "Version 3 resources preserve support-binary-v2 adoption")
+    require(stage in {"main", "cal"}, "Unknown finite resource stage")
+    require(isinstance(limits, dict) and set(limits) == set(LEGACY_LIMITS) and
+            type(limits["maximum_completion_attempts"]) is int and limits["maximum_completion_attempts"] > 0 and
+            type(limits["maximum_new_qa_per_stage_session"]) is int and
+            limits["maximum_new_qa_per_stage_session"] == 5 and
+            limits["stop_on_any_task_error"] is True and limits["automatic_refill"] is False,
+            "Finite v3 stage calls must preserve five-QA sessions and stopping/no refill")
+    registration = read_json(bound_path(policy.get("resource_budget_registration"), root=root))
+    validate_chain_identity(policy, registration, root=root)
+    require(version(registration) == BINARY and
+            registration.get("purpose") == "phase11-finite-stage-resource-registration" and
+            registration.get("stage") == stage and registration.get("count_per_language") == 20 and
+            registration.get("limits_per_language") == limits and
+            registration.get("registered_before_new_outputs") is True,
+            "Stage resources must be registered before new outputs for all original twenty QA")
+    require(all(isinstance(registration.get(k), str) and registration[k].strip() for k in
+            ("call_calculation", "token_time_assumptions", "stop_method", "resume_method")),
+            "Finite resource calculation and stopping/resumption rationale required")
+    budgets = registration.get("budget_per_language")
+    require(isinstance(budgets, dict) and set(budgets) == {"en", "ja"}, "Register both language resource estimates")
+    for budget in budgets.values():
+        require(isinstance(budget, dict) and type(budget.get("planned_calls")) is int and
+                0 < budget["planned_calls"] <= limits["maximum_completion_attempts"] and
+                type(budget.get("maximum_calls")) is int and
+                budget.get("maximum_calls") == limits["maximum_completion_attempts"],
+                "Finite calculated calls must fit the preregistered stage ceiling")
+        require(all(type(budget.get(k)) in {int, float} and math.isfinite(budget[k]) and budget[k] >= 0
+                for k in ("estimated_tokens", "estimated_native_seconds")) and
+                all(type(budget.get(k)) in {int, float} and math.isfinite(budget[k]) and budget[k] > 0
+                for k in ("maximum_wall_seconds", "request_timeout_seconds", "maximum_tokens_per_call")) and
+                budget["maximum_wall_seconds"] > budget["request_timeout_seconds"],
+                "Finite stage token/time estimates and individual timeout required")
+    return limits
 
 
 def validate_main_policy(policy):
@@ -66,6 +118,7 @@ def passing_known_regression(binding):
     config, plan, prompts, plan_path = load_config(config_path)
     require(version(manifest) == version(plan.get("gate", {})) == version(report),
             "Known plan/manifest/report semantic adoption versions differ")
+    validate_chain_identity(config, plan, manifest, report, root=ROOT)
     mode = config.get("verification_mode", "joint")
     expected_calls = 2 * sum(len(c["claims"]) + (mode == "source-reading-v1") for c in plan["cases"])
     require(config == manifest["config"] and plan["purpose"] == "phase11-known-trace-semantic-regression" and
@@ -131,6 +184,7 @@ def validate_main(config, rows, qa_path):
     prior, manifest = passing_known_regression(config.get("adopted_known_regression"))
     require(version(policy) == version(manifest) == version(config), "Known/Main semantic adoption versions differ")
     candidate = yaml.safe_load(bound_path(policy.get("candidate_config")).read_text("utf-8"))
+    validate_chain_identity(prior, manifest, policy, config, candidate, root=ROOT)
     ignored = {"study_version", "diagnostics"}
     require(isinstance(candidate, dict) and candidate.get("purpose") == prior.get("purpose") ==
             "phase11-bilingual-semantic-candidate" and
@@ -151,5 +205,4 @@ def validate_main(config, rows, qa_path):
                 "src/rag_research/experiments/protocol.py", "src/rag_research/experiments/frozen_trace.py",
                 "src/rag_research/experiments/storage.py"}:
             require(file_hash(ROOT / name) == sha, "Adopted Judge core changed; repeat the semantic validation")
-    require(config.get("main_limits") == {"maximum_completion_attempts": 1660, "maximum_new_qa_per_stage_session": 5,
-            "stop_on_any_task_error": True, "automatic_refill": False}, "Preserve preregistered main limits")
+    require(config.get("main_limits") == stage_limits(policy, "main"), "Preserve preregistered main limits")

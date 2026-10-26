@@ -17,6 +17,7 @@ from rag_research.experiments.frozen_trace import (
     require,
     validate_documents,
 )
+from rag_research.experiments.phase11_autonomy import validate_chain_identity
 from rag_research.experiments.protocol import ROOT, task_config, validate_task_contract
 from rag_research.experiments.semantic_adoption import BINARY, KNOWN_GATE_V2, summarize, version
 from rag_research.experiments.storage import (
@@ -45,6 +46,7 @@ def load_config(path):
             "Diagnostic Development config required")
     plan_path = local(config["diagnostics"])
     plan = read_json(plan_path)
+    chain = validate_chain_identity(config, plan, root=ROOT)
     regression = plan["purpose"] == "phase11-known-trace-semantic-regression"
     require(plan["schema_version"] == 1 and plan["purpose"] in {
             "phase11-known-bilingual-semantic-diagnostics", "phase11-known-trace-semantic-regression"} and
@@ -65,6 +67,9 @@ def load_config(path):
         prior_report, prior_manifest = read_json(prerequisite), read_json(prerequisite.parent / "manifest.json")
         prior_plan_path = local(prior_manifest["config"]["diagnostics"])
         prior_plan = read_json(prior_plan_path)
+        if chain:
+            validate_chain_identity(config, plan, prior_manifest, prior_report, prior_plan,
+                                    prior_manifest["config"], root=ROOT)
         prior_mode = prior_manifest["config"].get("verification_mode", "joint")
         prior_calls = 2 * sum(len(c["claims"]) + (prior_mode == "source-reading-v1") for c in prior_plan["cases"])
         require(prior_mode in {"claimwise-v1", "source-reading-v1"} and
@@ -247,6 +252,7 @@ def run(config_path, output):
                 "plan_sha256": file_hash(plan_path), "model": auxiliary_identity(config), **execution_identity(config),
                 "source_sha256": {p.relative_to(ROOT).as_posix(): file_hash(p) for p in sources},
                 "phase12_allowed": False}
+    manifest.update(validate_chain_identity(config, plan, root=ROOT) or {})
     if version(plan["gate"]) == BINARY:
         manifest["semantic_adoption_version"] = BINARY
     selected = specs(plan)
@@ -318,5 +324,6 @@ def run(config_path, output):
                   "summed_task_seconds": sum(t["elapsed_seconds"] for t in results.values()),
                   "task_result_sha256": {key: task["result_sha256"] for key, task in results.items()},
                   "gate11_passed": False, "phase12_allowed": False}
+        report.update(validate_chain_identity(config, plan, manifest, root=ROOT) or {})
         write_json(output / "report.json", report)
         return report

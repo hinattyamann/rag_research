@@ -56,8 +56,14 @@ def test_pending_known_never_reads_main_policy_templates_or_qa(tmp_path, monkeyp
     assert not (tmp_path / "data/runs/bilingual_main_protocol").exists()
 
 
-def test_copied_adopted_conditions_replace_old_templates_without_changing_baseline_or_blind_review():
+@pytest.mark.parametrize("versioned", [False, True])
+def test_copied_adopted_conditions_replace_old_templates_without_changing_baseline_or_blind_review(versioned):
     prior = yaml.safe_load((PROJECT / "configs/phase11_semantic_candidate_v18.yaml").read_text())
+    chain = {"autonomy_protocol_version": "phase11-autonomy-v3",
+        "autonomy_protocol": {"path": "configs/protocol.json", "sha256": "a" * 64},
+        "candidate_identity_sha256": "b" * 64}
+    if versioned:
+        prior.update(chain)
     original = deepcopy(prior)
     for language, name in (("en", "v2"), ("ja", "v1")):
         template = yaml.safe_load((PROJECT / f"configs/phase11_bilingual_connection_{language}_{name}.yaml").read_text())
@@ -73,6 +79,9 @@ def test_copied_adopted_conditions_replace_old_templates_without_changing_baseli
         assert config["assets"] == "new-assets.json"
         assert config["data"]["record_ids"] == [row["record_id"] for row in selected]
         assert config["decision"] == {**prior["decision"], "bare_refusal_policy": "rewrite_once"}
+        if versioned:
+            assert all(config[key] == value for key, value in chain.items())
+            config["autonomy_protocol"]["sha256"] = "c" * 64
         assert config["purpose"] == template["purpose"] and "diagnostics" not in config
         config["sampling"]["top_k"] = 1
         assert prior == original

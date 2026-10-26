@@ -1,0 +1,42 @@
+{
+  "version": "phase11-autonomy-v3",
+  "semantic_adoption_version": "support-binary-v2",
+  "scientific_rules": {
+    "minimum_supported_recall": 0.9,
+    "minimum_negative_specificity": 0.9,
+    "minimum_unique_supported_units": 10,
+    "minimum_unique_negative_units": 5,
+    "minimum_supported_groups": 3,
+    "minimum_negative_groups": 3,
+    "threshold": 0.7,
+    "automatic_retries": 0,
+    "count_per_language": 20,
+    "minimum_complete_comparable_qa_per_language": 10,
+    "full_text_and_fixed_units": true,
+    "same_order_total_trials": 5,
+    "share_original_first_trial": true,
+    "bare_refusal_policy": "rewrite_once",
+    "seal_all_quality_and_expected_before_unblinding": true,
+    "unknown_outcome": "preserve_and_stop_without_resending",
+    "evaluation_outputs_for_tuning": false,
+    "phase12_allowed": false
+  },
+  "authorization": {
+    "path": "docs/phase11_lab_weekend_goal.md",
+    "sha256": "e528a4f1150c7fb46447aceeebf6cc259e98f2c3124d1a815bedbc87967a9f1d"
+  },
+  "legacy_result": {
+    "path": "data/manifests/phase11_known_trace_result_v10.json",
+    "sha256": "dfd7eb4a780d369c83d65ab8ab1432e9bd8d232cf086e39050169c5f1e293b38"
+  },
+  "legacy_attempts": 909,
+  "legacy_unknown": 3,
+  "global_call_ceiling": null,
+  "global_seconds_ceiling": null,
+  "global_candidate_ceiling": null,
+  "legacy_unused_calls_not_reallocated": true,
+  "each_run_budget_required": true,
+  "request_guard": "RAG_PHASE11_AUTONOMY_CONTEXT; durable reservation before /completion; no automatic retries",
+  "process_success_is_not_scientific_adoption": true,
+  "phase12_allowed": false
+}

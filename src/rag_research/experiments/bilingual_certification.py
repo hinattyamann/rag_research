@@ -23,6 +23,7 @@ from rag_research.experiments import (
 from rag_research.experiments.bilingual_budget import budget_snapshot
 from rag_research.experiments.bilingual_main import validate_main
 from rag_research.experiments.frozen_trace import digest, require
+from rag_research.experiments.phase11_autonomy import validate_chain_identity
 from rag_research.experiments.protocol import task_config
 from rag_research.experiments.quality import cost
 from rag_research.experiments.storage import read_json, run_lock, verify_checkpoint
@@ -107,6 +108,9 @@ def adopted_sources(paths):
         roots.add(prior.parent)
         policy_binding = manifest["config"]["main_execution_policy"]
         policy = read_json(bind(policy_binding["path"], policy_binding["sha256"]))
+        if validate_chain_identity(manifest["config"], policy, root=ROOT) is not None:
+            for value in (policy["autonomy_protocol"], policy["resource_budget_registration"]):
+                bind(value["path"], value["sha256"])
         candidate = policy["candidate_config"]
         candidate_path = bind(candidate["path"], candidate["sha256"])
         require(candidate_path.is_relative_to(ROOT / "configs"), "Adopted candidate must stay in configs")
@@ -119,6 +123,7 @@ def verify_prerequisite(report_path, candidate_path):
     """Recompute the entire bilingual diagnostic, rather than trusting a pass flag."""
     config, plan, prompts, plan_path = semantic_diagnostics.load_config(candidate_path)
     report, manifest = read_json(report_path), read_json(report_path.parent / "manifest.json")
+    validate_chain_identity(config, plan, manifest, report, root=ROOT)
     selected = semantic_diagnostics.specs(plan)
     require(plan["purpose"] == "phase11-known-bilingual-semantic-diagnostics" and manifest["config"] == config and
             manifest["plan_sha256"] == file_hash(plan_path) and report["manifest_sha256"] == digest(manifest) and
@@ -266,11 +271,12 @@ def certify_main(inputs_path):
         require(semantics["main_development_semantic_gate_passed"] is True and
                 all(semantics["main_development_semantic_gate_per_language"].get(language) is True
                     for language in ("en", "ja")), "Both full main semantic gates must pass")
-        runs, policies, conditions = {}, [], []
+        runs, policies, conditions, chain_configs = {}, [], [], []
         for language, row in zip(("en", "ja"), paths, strict=True):
             run = row["run"]
             manifest, report = read_json(run / "manifest.json"), read_json(run / "report.private.json")
             config = manifest["config"]
+            chain_configs.append(config)
             require(manifest["language"] == language and config["purpose"] == "phase11-bilingual-development-candidate" and
                     config["execution_scope"] == "main_development_v1" and
                     report["selected_qa_count"] == len(report["records"]) == len(manifest["selection"]) == 20 and
@@ -298,6 +304,7 @@ def certify_main(inputs_path):
                 "recorded_native_attempts": budget["recorded_native_attempts_upper_bound"],
                 "resource_session_files": resource_sessions(run, manifest)}
         require(policies[0] == policies[1] and conditions[0] == conditions[1], "Main policies/conditions must match across languages")
+        chain = validate_chain_identity(*chain_configs, root=ROOT)
         statistics = bilingual_statistics.analyze_runs([
             {"run": r["run"], "bundle": r["quality_bundle"], "annotations": r["quality_annotations"]} for r in replay_inputs])
         require(statistics["condition_sha256"] == conditions[0] and set(statistics["languages"]) == {"en", "ja"},
@@ -342,4 +349,5 @@ def certify_main(inputs_path):
         "human_reviewed": False, "annotation_history_independence_not_assumed": True,
         "new_model_calls": 0, "new_model_servers": 0, "calibration_execution_allowed": False,
         "research_sample_size_frozen": False, "gate11_passed": False, "phase12_allowed": False}
+        result.update(chain or {})
         return original_paths(result, aliases)
