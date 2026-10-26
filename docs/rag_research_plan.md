@@ -1,6 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.77 — 2026年10月26日 新鮮Known84の登録・実行
+## Version 7.78 — 2026年10月26日 Known実走とMain前提の実証明
+
+21:12 JST追記: Known12はTar Heels固定c2の元逆両方で因果結合の誤支持があり、非支持16の最良値も14/16＝87.5%で採用不能。Health良好を意味問題の解消とせず、同Handleの全84/監査/費用を保存して別仮説の候補へ進む。Expected・支持/非支持90%・被覆・全分母・Main/Calの未使用枠を維持する。Main/Calは未開始、Goal active。
+
+20:54 JST現在、固定f0b7c71のKnown v12は54応答＋1処理中・確定未知0/Task失敗0で継続し、全84の採用は未確定。Main開始前の初回生成証拠の橋渡しと強制入口、Graph OFFテンプレート、全単位Scope上界を生成0で検証・保存した。新入口の本番設定との不一致を実Main前に発見・限定修正し、実設定生成関数の日英Main→Cal統合を含む全944 Test/Ruff・独立再監査に通過。94 Core/実行中WT/研究条件は変更せず、実Main/Calは未開始。詳細は[自律継続v3](phase11_autonomy_v3.md)。支持/非支持各0.90・被覆・F0.7・全分母・全匿名採点封印・実証拠要件は不変で、Gate11未通過・Phase12未開始。以下は各時点の履歴として保持する。
 
 19:42 JST現在、固定f0b7c71の専用Checkoutで新鮮Known v12全84 Callを実行中。全84入力の生成0/33層CUDA/Context確認と532資産再現、全条件・Expected不変の独立監査は完了した。Runは84 Call/21250秒・個別1200秒/Retry0へ事前登録し、全完走後のHealth/支持Recall・非支持Specificity各90%/最低被覆/全理由・費用監査まで採用を確定しない。実行Handle/Hash/監視は[自律継続v3](phase11_autonomy_v3.md)と[工程正本](research_roadmap.md)に記録する。Main/Cal/最終凍結は未実施、Goal active・Gate11未通過・Phase12未開始。以下は準備時点の履歴として保持する。
 
@@ -10,7 +14,7 @@
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.80](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.81](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 

@@ -1,5 +1,9 @@
 # 別チャットから再開するための引継ぎ
 
+2026-10-26 21:12 JST追記: Known12のTar Heels元逆c2がともに誤支持で、固定非支持16の最良値も14/16＝87.5%となり採用不能。同Handle17686の全84取得/監査を完了して保存し、別候補の仮説・変更・必要再検証を登録して継続する。65応答＋1処理中時点のHealth失敗/確定未知0を意味採用と混同しない。Main/Calは開始せず、稼働WT/Expected/基準/旧失敗を保つ。このチャットのGoalはactive。
+
+2026-10-26 20:54 JST追記: Knownは同f0b7c71/Handle17686を継続し、54応答＋1処理中・確定未知0/Task失敗0。未完84を採用済みにしない。Main/Cal開始前の新入口/実producer統合/可搬696依存とScope上界証明・Graph OFFテンプレートを保存し、全944 Test/Ruff成功、Source94と稼働WTは不変。正式Main Runplanは新with_bridge入口と全依存を直接bindし、正規root絶対pathの既存v3累積台帳を共有する。既存最小KnownWTの不完全な履歴で未使用性を判定せず、別Main WTへ全利用記録/Manifest/Corpus/Index/Modelを照合・再現する。実Main/Cal/凍結は未開始。詳細は[自律継続v3](phase11_autonomy_v3.md)。
+
 2026-10-26 19:42 JST最新: **このチャットのGoalはactiveで、新鮮Known v12全84 Callを実行中**。固定Checkoutは`.tools/worktrees/phase11-known-v12-f0b7c71`、Commit `f0b7c71c4375a617c7142c67e3aa0610f73edb14`、Handle17686、v3台帳のrun_id `phase11-v3-v12-known`。全84入力生成0/独立事前監査/資産532 Hash照合は完了。実行中CheckoutをPull/編集せず、[工程正本](research_roadmap.md)と[自律継続v3](phase11_autonomy_v3.md)から実Handle/Journalを確認し、重複起動・未知再送を防ぐ。全84完走/監査まで採用は未確定。Main/Cal/最終凍結・Gate11は未完了、Phase12は開始しない。以下の古いpaused/上限/未開始は当時の記録であり、この現在地より優先しない。
 
 2026-10-24の研究室再開は[週末用開始文](phase11_lab_weekend_start.md)と[自律継続Goal](phase11_lab_weekend_goal.md)を優先する。

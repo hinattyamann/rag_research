@@ -3,6 +3,46 @@
 2026年10月26日JST。[詳細要件](phase11_lab_weekend_goal.md)に基づく新規作業。
 Gate11未通過、Main/Calibration/最終凍結は未実施、Phase12は開始しない。
 
+## 21:12 JSTの意味不合格確認と継続
+
+同Known v12/Handle17686は21:09時点65応答＋1処理中、Health失敗/確定未知0である。
+独立意味監査でTar Heels c2が元順・逆順とも固定Expected NSに対してSupportedとなった。
+別々の伝承に含まれる要素をつないで、固定文の結合した因果関係まで支持する誤読である。
+非支持16観測中の誤支持が少なくとも2件のため、残り全正解でも14/16＝87.5%となり90%基準を満たせない。
+全84取得/全監査を完了して不採用・費用・C↔NS・曖昧・順序差を保存し、原因に対応する別候補へ進む。
+Expected/基準/分母は変更せず、同条件再抽選・Main/Calへの進行は行わない。Goalは継続する。
+
+## 20:54 JSTのMain開始前準備
+
+Known v12は同Handle17686/固定f0b7c71で継続し、20:53:48 JST時点54応答＋1処理中、確定未知0/Task失敗0。
+全84完走前の採用は未確定。先行36葉の全文AI意味監査は支持24/24・二値非支持10/10、曖昧2を保持した。
+Tom Bombadil逆c5の「非描写」から「非言及」への拡張はC↔NS誤読/理由の過剰解釈として保存し、
+二値基準に影響しないからといって意味完全一致とは扱わない。理由の途中切れとCouncilの範囲問題も診断へ残す。
+
+Main/Calの新実行入口は`scripts/run_phase11_bilingual_collection_with_bridge_v3.py`。
+`validate_phase11_baseline_bridge_v2.py`で旧実2応答の限られたHealth証拠、旧Execution9aeb/現Adoption91f、
+現94 Core/Native依存36、全698参照を検証する。旧WT内の20 Rawは封印済み同一Byte証明で正規コピーへ解決し、
+696実物を新Checkoutへ再現できる。共有正規v3台帳のlive Run/固定Commit/自己PID・Process群/全config・資源・全Hash一致後だけ、
+既存collectionを同じPID/環境で実行する。正式Main/CalのRunplan commandをこの入口へ固定し、全696依存と入口/元collectionを直接bindする。
+既存汎用Guardが全ての旧直接入口を一律禁止したという主張ではない。
+
+初版の全934 Test/Ruff成功後、独立監査で本番producerが追加する`decision.bare_refusal_policy=rewrite_once`を
+consumerが拒否するP1を発見した。旧script/934ログ/実再現を保全し、期待decisionを候補全項目＋この必須項目だけに限定修正。
+実Main設定生成→Cal設定生成の日英統合と8反証を追加し、新全944 Test（33.20秒）/Ruff、独立24 Test、
+最終bytesの実canonical/旧WTなしportable2正例・4拒否を確認した。新Main/Cal本文参照・Native・collectionは0。
+正式結果は`data/manifests/phase11_baseline_bridge_entry_result_v4.json`、SHA256
+`12a9a18fd6b04b65aef50f1e3a9def236f3cb4d9d91ba9d07bd80cbf5c24cebb`。旧v3結果は上書きしない。
+これらのTestを行った間のKnown Native時間は、並行ソフトウェア確認を含む観測時間で、隔離性能Benchmarkではない。
+
+Graph OFFを指す正式Mainテンプレート日英2個を追加し、旧テンプレートとの差はbaseline_configの一行だけ。
+別の単位Scope証明`data/manifests/phase11_initial_unit_scope_upper_bound_v3.json`（SHA256
+`b2ba969d76b106a32671b106e4d499a0033d1b7e4dfc91800990a027a167586d`）は、
+3B実GGUF metadata全151936語/455808候補片と65536合成byte組を生成0で照合した。
+512出力Tokenから非空文131072/QA・5242880/40QAを計画Scopeの安全上界とする。
+不正UTF8の置換で再UTF8化byte数は増え得るがcodepoint数は元piece byte数以下、非空文は非重複spanである。
+実文数・F/精度/費用分母・必要Callをこの上界で置き換えない。実分母はまだnullである。
+Main/Calの正式Policy/Resource/実config・Known前段証明と本収集は、実Known採用後に行う。
+
 ## 19:42 JSTの実行現在地
 
 全889 Test/Ruffと旧日英意味70 Callの明示的再利用証明を`f0b7c71`へCommit/通常Pushし、Remote先端一致を確認した。

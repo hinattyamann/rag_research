@@ -1,6 +1,10 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.80 — 2026年10月26日 固定CheckoutのKnown84実行
+## Version 8.81 — 2026年10月26日 Main入口の橋渡し強制と実producer統合
+
+21:12 JST追記: Known12の固定非支持c2は元逆とも誤支持で、全16観測の最良値14/16＝87.5%となり採用不能。同Handle17686の全84取得/監査を完了して不採用・費用を保存し、別候補の必要形式/日英意味検証/全Knownを別有限Planへ登録する。旧Guard迂回・同条件再抽選・Expectedや基準の変更は行わない。Source94と稼働WTを保ち、Main/Calは未開始。
+
+20:54 JST現在、Known v12は固定f0b7c71/Handle17686で54応答＋1処理中・確定未知0/Task失敗0。新scripts入口で旧初回生成の698証拠参照→可搬696実物、現94 Core/Native36、共有v3台帳・同一PID/環境を検証してから既存収集へ委譲する。実producerが追加する裸拒否一回書換えのconsumer不一致P1は実Main前に修正し、全944 Test/Ruff・独立再監査と生成0の実可搬再現に通過。新Main/Cal設定の実収集はまだ0、旧934Test/旧script/全失敗・来歴を保存した。全84採用後に正式Runplanの入口/全Hashを固定し、全過去利用記録を別Main Checkoutへ再現する。詳細は[自律継続v3](phase11_autonomy_v3.md)。Source94・稼働WT・研究条件は不変、Gate11未通過・Phase12未開始。以下は各時点の履歴として保持する。
 
 19:42 JST現在、固定f0b7c71/94 Core・候補v23/Receiptv2の専用CheckoutでKnown v12全84 Callを実行中。全84入力生成0・全層CUDA・Token予算と全資産532ファイル/旧証拠のHashを確認し、v3 Plan/実行前独立監査へ結んだ。Runは84 Call/21250秒・個別1200秒/監視5秒/Retry0。既存Handle17686/Journalを監視し、実行中Checkoutを編集しない。完走後は全84 Leaf/30 aggregate/Native Schema・payload/全理由・費用/追加0再読を照合し、実Known採用後だけMainを準備する。詳細は[自律継続v3](phase11_autonomy_v3.md)。Main/Cal/最終凍結は未実施、Gate11未通過、Phase12未開始。以下は準備時点の履歴として保持する。
 
@@ -8,7 +12,7 @@
 
 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-[研究計画 Version 7.77](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.78](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 
