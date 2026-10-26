@@ -39,7 +39,7 @@ def local(value):
     return path
 
 
-def load_config(path):
+def load_config(path, *, allow_reused_view=False):
     config = yaml.safe_load(Path(path).read_text())
     require(config["schema_version"] == 1 and config["purpose"] == "phase11-bilingual-semantic-candidate" and
             config["status"] == "candidate_not_frozen" and config["phase12_allowed"] is False,
@@ -67,9 +67,18 @@ def load_config(path):
         prior_report, prior_manifest = read_json(prerequisite), read_json(prerequisite.parent / "manifest.json")
         prior_plan_path = local(prior_manifest["config"]["diagnostics"])
         prior_plan = read_json(prior_plan_path)
+        reused = None
         if chain:
-            validate_chain_identity(config, plan, prior_manifest, prior_report, prior_plan,
-                                    prior_manifest["config"], root=ROOT)
+            if config.get("semantic_evidence_reuse"):
+                from rag_research.experiments.evidence_reuse import validate_reuse
+
+                reused = validate_reuse(config, root=ROOT, report_override=prerequisite)
+                require(reused["paths"]["source_report"] == prerequisite and
+                        reused["source_config"] == prior_manifest["config"] and
+                        reused["source_plan"] == prior_plan, "Known prerequisite differs from explicit reused evidence")
+            else:
+                validate_chain_identity(config, plan, prior_manifest, prior_report, prior_plan,
+                                        prior_manifest["config"], root=ROOT)
         prior_mode = prior_manifest["config"].get("verification_mode", "joint")
         prior_calls = 2 * sum(len(c["claims"]) + (prior_mode == "source-reading-v1") for c in prior_plan["cases"])
         require(prior_mode in {"claimwise-v1", "source-reading-v1"} and
@@ -81,8 +90,12 @@ def load_config(path):
                 prior_report["completion_attempts_recorded"] == prior_plan["max_completion_attempts"] == prior_calls and
                 prior_report["cost_incomplete"] is False and prior_report["manifest_sha256"] == digest(prior_manifest),
                 "Passing full bilingual diagnostics required")
+        passing_config = prior_manifest["config"]
+        if reused:
+            passing_config = {**passing_config, "candidate_identity_sha256": config["candidate_identity_sha256"],
+                              "semantic_evidence_reuse": config["semantic_evidence_reuse"]}
         require({k: v for k, v in config.items() if k not in {"study_version", "diagnostics"}} ==
-                {k: v for k, v in prior_manifest["config"].items() if k not in {"study_version", "diagnostics"}},
+                {k: v for k, v in passing_config.items() if k not in {"study_version", "diagnostics"}},
                 "Known regression must use the passing candidate settings")
         require(prior_manifest["model"] == auxiliary_identity(config) and
                 all(prior_manifest.get(k) == v for k, v in execution_identity(config).items()),
@@ -92,6 +105,9 @@ def load_config(path):
                     "src/rag_research/experiments/protocol.py", "src/rag_research/experiments/frozen_trace.py",
                     "src/rag_research/experiments/storage.py"}:
                 require(file_hash(local(name)) == sha, "Passing Judge implementation changed")
+    else:
+        require(not config.get("semantic_evidence_reuse") or allow_reused_view,
+                "Reused semantic candidate is a read-only condition view; execute its fresh Known regression instead")
     cases = plan["cases"]
     mode = config.get("verification_mode", "joint")
     require(not regression or mode in {"claimwise-v1", "source-reading-v1"}, "Known regression requires the passing fixed-unit mode")

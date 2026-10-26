@@ -159,7 +159,8 @@ def _run(config_path, output, *, stage="all", calibration=False):
     elif main:
         sources += [ROOT / config["development_selection"]["path"], ROOT / config["adopted_known_regression"]["path"],
                     ROOT / config["main_execution_policy"]["path"]]
-    selection = [{"record_id": r["record_id"], "question": r["question"]} for r in rows]
+    selection = [{k: r[k] for k in (("record_id", "question", "document_group_id") if main
+                                   else ("record_id", "question"))} for r in rows]
     manifest = {"schema_version": 1, "purpose": config["purpose"], "status": "candidate_not_frozen",
                 "language": config["language"], "config": config, "baseline": baseline,
                 "baseline_model": model_identity(), "auxiliary_model": auxiliary_identity(config),

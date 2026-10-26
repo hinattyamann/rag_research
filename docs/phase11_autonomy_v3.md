@@ -152,3 +152,61 @@ Runtime間の数値同値は仮定しない。新しい各QAの初回回答と�
 Baseline journalは標準Task checkpoint形式ではないため、返却2件はNativeのunvalidated_returnedに残す。
 別の独立監査で全入力/制約/受信/費用を確認し、台帳の標準Task成功へ数を混ぜない。
 未知/中断時はRawと不明総費用nullを保持し、同条件再送しない。
+
+
+## 全70の実結果と初回生成の実Health
+
+v21の全29例/35文/58条件/70要求は固定d40で正常終了した。Critical4/4、人工EN24/24・JA30/30、
+入力96960/出力254333 Token、Task5059.542909秒/NativeHTTP5057.123585秒/Run壁5080.031970秒。
+原Raw133/実Source98と全Native/Schema/理由/引用を監査し、58条件のコピー再読は追加Call0。
+曖昧Council2、writer/translatorの排他性を仮定するC理由2、理由末尾切れ2も保持する。
+実Known84の採用や小集合外の精度保証とはしない。正本は`phase11_v3_v21_semantic_result_v1.json/.sha256`。
+
+3B用の生成0はEN1166/JA3584入力＋出力512でContext4096内。既知日英2Smokeは入力4750/出力191、
+Task2.237472秒、EOS/非truncated/37層CUDA/未知0で終了した。原Raw20/実Source105を照合・正規コピーし、
+保存actualTokenizer出力と固定479の実Client/GeneratorのHTTPなし再現に通過。再tokenizeはしていない限界を明記する。
+標準Task成功0/Native未検証返却2を変えず、独立Health2と区別した。
+`phase11_v3_baseline_runtime_result_v1.json/.sha256`が正本。これも新Coreへ自動継承せず、
+Model/Runtime/日英Prompt/Native builder依存36ファイルのHash不変を照合して再利用する。
+
+終了済み7Runの費用v4は新84要求（Runtime2＋形式10＋意味70＋初回生成2）、
+標準Task成功72/Native未検証返却12/新未知0、入力109214/出力264718 Token。
+旧909/未知3を保って累積993。旧未知の全Token/全費用はnull、Native/Task/Run和とGoal壁を混同しない。
+
+## Group保存の修正と旧証拠再利用v1
+
+実producer→二値consumerの生成0監査で、Main/Cal Manifest.selectionから文書Groupが落ちるため、
+日英両経路の意味解析がKeyErrorになることを再現した。新Runでは元hashbound rowsの
+`document_group_id`をselectionへ保存する。旧connection形式は維持し、欠落を推測補充しない。
+修正はrunnerのselection代入だけで、生成/判定の全文・ID・Title・Prompt/Model/Samplerを変えない。
+
+全srcを含む6component identityは非推論修正でも変わるため、旧9aebを新Coreへ偽装しない。
+`evidence_reuse.py`の別Version `phase11-semantic-evidence-reuse-v1`が、旧70群と新群を別々に厳密検証する。
+Model/Runtime/Prompt/Sampler/Schemaの全binding、全資料/Expected/基準/予算、旧93Source snapshot、
+新94Source実物を照合する。差分はGroup登録・厳密な証拠読込み/閉包と追加helperだけを許可し、
+登録した正確なAST追加以外やNative入力Core変更を拒否する。元Rawを変えずコピー上で全70を再読する。
+Receiptは新config自身のHashを含めず、条件digest/新ID/新Plan/旧実Runと全Sourceをbindして循環を避ける。
+Main証明のexternal閉包へ全Receipt/旧Source/条件を取り込み、Cal/Freezeでも再検証する。
+
+初期のv22/Receipt file v1/Known11は、証明書の外側Lockに対する二重取得の見落としを修正する前の
+未実行成果として保全した（Native登録0）。43.876913秒の生成0検証も消さない。
+helperは外側Lockを再取得せず、常に同一Byteコピーで再読・原本前後Hash照合を行う。
+修正版は全889 Test/Ruff・独立AST11負例/92Testと実外側Lock保持下の全70再読に通過した。
+追加Native/socket/process0、実43.082430秒。`phase11_unexecuted_technical_supersession_v1.json`へ
+旧版と理由・全Hashを保存し、同条件の再抽選にはしていない。
+
+現行は`phase11_semantic_candidate_v23.yaml`と未実行条件view `phase11_semantic_diagnostics_v23.json`、
+`phase11_semantic_evidence_reuse_v2.json`。新Identityは
+`91f50601299a8e9b1399b3925acddc36ffb6af9a46032e2adad631770a12d1b5`、
+旧Identityは9aebのまま。viewを新しい意味RunとしてNative実行する入口は拒否する。偽Reportは作らない。
+Known以降は現行Identityへ統一する。新Known v12は元15 QA/42文/元逆30条件/84 Call・
+全Expected/曖昧5文/裸拒否8を保持し、実load_configに通過したが、Nativeはまだ開始していない。
+
+最終Validator検証v5は現94src＋validator/rubric/statplanの97Sourceと889実Test/Ruffをbindし、
+実未達Freeze/失敗v10 Main準備の早期拒否・出力なし・QA本文/Native0を確認した。
+`phase11_bilingual_finalization_validation_v5.json/.sha256`は現Validatorで受理済みだが、
+実Main/Calの証明や最終Gate11通過ではない。
+
+次は今回分をCommit/Pushし、固定CheckoutでKnown v12全84入力生成0→新鮮全84要求を実行・監査する。
+Known実採用後に元Main各20/全匿名品質Expected封印→実主証明→予約Cal各20/全封印→
+最終実Validator/Manifest/Hashへ進む。Phase12は開始しない。

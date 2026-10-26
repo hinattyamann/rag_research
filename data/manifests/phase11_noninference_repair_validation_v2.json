@@ -1,0 +1,1019 @@
+{
+  "schema_version": 2,
+  "purpose": "phase11-non-inference-group-repair-and-lock-safe-real-evidence-validation-not-adoption",
+  "created_at_utc": "2026-10-26T10:25:31.161070+00:00",
+  "tests": {
+    "pytest_passed": 889,
+    "pytest_reported_seconds": 31.45,
+    "pytest_wrapper_seconds": 32.00443445896963,
+    "ruff": "passed",
+    "new_group_integration_cases": 10,
+    "new_reuse_cases": 28
+  },
+  "candidate_identity_sha256": "91f50601299a8e9b1399b3925acddc36ffb6af9a46032e2adad631770a12d1b5",
+  "source_sha256": {
+    "src/rag_research/__init__.py": "7b788c2f28d57d6f0c2c532d9b01a3c7b6b6f3d4475e1cf12da028b65ab96b74",
+    "src/rag_research/baseline.py": "5ae83d487fe46dbc117e2098751374a7fe500378f7e009afd79d950d16a3ad85",
+    "src/rag_research/calibration/__init__.py": "0f8f62672aef489bf544efaa7f864caf54dacc9399a9de89af3be6d624574b47",
+    "src/rag_research/calibration/preparation.py": "c9718d8f341a74088379ab8bb7392978544c51780b4726b0b8564eb590d0b5ee",
+    "src/rag_research/calibration/report.py": "6426fc6676c69e94ebd6f41c91df84a40a8c2bf70fe0f15d0b85106999fe93a2",
+    "src/rag_research/data/__init__.py": "de362f3487a018cb700e8fb8f12718f5e6dce28a27481d96d8b04f948c29306b",
+    "src/rag_research/data/baobab_source.py": "29a02661abdf522fea4660deb6bd9c9bec484b09f60276be7d95e6ea22cb178a",
+    "src/rag_research/data/clapnq_acquisition.py": "2d089d99532d44abae23b619474cc0cf9e9bd7913693417095af105a970fd393",
+    "src/rag_research/data/clapnq_annotations.py": "5c9f9656efdc71756d8ceb804b0bf8ddb7f9c6df6681852365ebbeaee61e4dbb",
+    "src/rag_research/data/clapnq_corpus.py": "5e049f3113854a405bbe022895bcb404c62cd65a20f5a8af65bd9a086741015c",
+    "src/rag_research/data/clapnq_manifest.py": "9443f15fdc9181875ab1058fd775ed8fa4d3fbef586921c7ded7764703dece3b",
+    "src/rag_research/data/clapnq_queries.py": "34a16a1b54846881420f8f566e33ddf7c33c3cc7dbfda7f30a5888d5cfded405",
+    "src/rag_research/data/clapnq_records.py": "9efa5c14ded2f0302360236a051c0d4d7dfd9f64636b341cf792761986e6fb22",
+    "src/rag_research/data/clapnq_source.py": "bff1e979d6f65a799154590295e0ae61826ef929db9c3e383a10b2baebd4cea0",
+    "src/rag_research/data/clapnq_split.py": "a5327fb6c3d5fea39132f28b2c3e03afe4b719a7c70ea2fb9af30f7f94732a8d",
+    "src/rag_research/data/japanese_dataset.py": "42baaebaf96a2cb1b75d5b611917aeca01a17ccd8818f93a031d0b8a850e4e97",
+    "src/rag_research/data/japanese_evidence.py": "da0459c8fbaec7d735c702669e59864ba996b79c10d1bb3fd8baf3a00eec95e9",
+    "src/rag_research/data/japanese_passages.py": "05ab00ea2a4d6c8bf36b4afd4a21a34af66db9dee80cd6804acba418f00671bb",
+    "src/rag_research/data/japanese_token_corpus.py": "0e04be836598938cff552c295cc9a36b7b4770892a94d11dbe38e8b041d957ca",
+    "src/rag_research/data/source_availability.py": "eaaa4ab5353bdc41262b01e2c814cc198eebac5f3c57cdae8d1fbb869863767a",
+    "src/rag_research/data/study_assets.py": "78b33b20578cb1bac2dc4198856627f2a4442de168d58360c463d759dc7296e4",
+    "src/rag_research/data/token_bounded_corpus.py": "e3275f37a6f6631bea13270eb54e728b0846db2c78cfed71b3e671d3feaf45a0",
+    "src/rag_research/data/wikipedia_reference_projection.py": "3c48860c4a8540344fc35afad7b4ceefde4c12a9578d426e9b395454ce9f7762",
+    "src/rag_research/data/wikipedia_snapshot.py": "0cf392491d6c482bb3fccc1db361a580cee1c6327ed96b07d7a31765dd93b80c",
+    "src/rag_research/evaluation/__init__.py": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b",
+    "src/rag_research/evaluation/claims.py": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602",
+    "src/rag_research/evaluation/claimwise.py": "2d0045aad140d869aef2ac279cbca3df50cfa7c320d1b06a553904aa29d9b617",
+    "src/rag_research/evaluation/judge.py": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2",
+    "src/rag_research/evaluation/order.py": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e",
+    "src/rag_research/evaluation/quote_alignment.py": "a9bc408e05d9fa25c0902b13b7e70d2e2eb7d3402ba4b10c24184d43759b88bb",
+    "src/rag_research/evaluation/reasoned_json.py": "5c6b089e9442d8f23783aaa5afc4c9a9744d9a617ac8ea7064eff47fbc219830",
+    "src/rag_research/evaluation/reasoning_budget.py": "f9f933dd20b73e51c15aae87c43dc5e50e22b8c4624f9857c2cb13029b6d91ec",
+    "src/rag_research/evaluation/schema.py": "616619fe28b913a309a6676415b2a8d8eb36afa0ddaef0ccb77e214e109a3b42",
+    "src/rag_research/evaluation/sentence_claims.py": "a0a3715ab7f1c3b0b8d7766e779c716efc133822a20c524bab1ca8e09d47a0a5",
+    "src/rag_research/evaluation/source_reading.py": "ebc5ace62451eb4d8fcdc4380d16be6c0eead9f22d28de6fd96d3f4aac72f693",
+    "src/rag_research/evaluation/tasks.py": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+    "src/rag_research/experiments/__init__.py": "47047fe0079dd895316a10769822dde18800a51a1198d7731d736fa981d54296",
+    "src/rag_research/experiments/bilingual_budget.py": "343f77abff44086574e9b466b723483465ad7e276d3265029dbe30c5dc0de2a3",
+    "src/rag_research/experiments/bilingual_certification.py": "77a19ec484ff962124e16a72ff4a9aeeb6d4d2619a886d5489930e1480e006e6",
+    "src/rag_research/experiments/bilingual_finalization.py": "7a23db3fdfe2925bbe9e8e1e600b5d939a68e0b52fcd5d9620e85ded1b085d7e",
+    "src/rag_research/experiments/bilingual_main.py": "e1a96df9079973eb23b86bc70c423e24dc763e0d7b70c25444078b6bb7a2b75a",
+    "src/rag_research/experiments/bilingual_quality.py": "afd31b0e69e833fb973619e121cf53cf2a64ac489bcb43220a6bf867cb51149f",
+    "src/rag_research/experiments/bilingual_runner.py": "41f08a5fbb0180de2a2fe32e63de2b6546bbd1c3f51c4e3c2442d7ad9e01eb82",
+    "src/rag_research/experiments/bilingual_semantics.py": "536ff5875abf4cfa9a636095b06a319b0f31eff6265b63da2ae4d2b616d21eea",
+    "src/rag_research/experiments/bilingual_statistics.py": "37a51c010da19ea98e89fdab2932124d28d9d866991f44ce30064b089b611573",
+    "src/rag_research/experiments/calibration_analysis.py": "ce1803a7038159caf450dcc30d01facde912066c3a1d00b22e97dcc205765dff",
+    "src/rag_research/experiments/calibration_protocol.py": "2651b6a4aae7a0a869d9ad5f0009ae606baab55902ea280182027ee998ba6c12",
+    "src/rag_research/experiments/calibration_selection.py": "14542517f6d82935d96c26a68119245993e6dc8a6da75c120f342399b08962aa",
+    "src/rag_research/experiments/decisions.py": "46567daa5fd1a12092db0fdac7c3827ef55d7ea461815aa0f88b0c5887b3ef1e",
+    "src/rag_research/experiments/development_selection.py": "e4557484428d9474c4ec30934719f761c9d0d8a3e90cc9c807410e2e8b8f30dc",
+    "src/rag_research/experiments/evidence_reuse.py": "abea53d14fbf00671772952d946e796578601c0f5063db20d5befd7c391fc2a7",
+    "src/rag_research/experiments/frozen_trace.py": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4",
+    "src/rag_research/experiments/order_runner.py": "4179540c39a0b6b8baa1d9efe6cb1e286a96b1487df30ecc06e1bd3b278e8bee",
+    "src/rag_research/experiments/phase11_autonomy.py": "f1c95065e3d5531e14a16e825fc26a6ad89286ec442bd12de1b1dc3a830812a0",
+    "src/rag_research/experiments/phase11_collection.py": "e93b22ed3b2018f25c7660673d2648c29093e8c8a9d4c118c9b616965f67cd85",
+    "src/rag_research/experiments/protocol.py": "e5738106f7409313cd27fd052eae61779b40b112c22ec3d299c7932aa52ce3cf",
+    "src/rag_research/experiments/quality.py": "ff3063f1f36b663ad8acc6a76db43cdaea8b497d264c71583d8a135541bdb07c",
+    "src/rag_research/experiments/quality_form.py": "89cb98cf433950ea3b66c2151712617c938bff557ce6d2871b9d1d1eac541d00",
+    "src/rag_research/experiments/repair_runner.py": "8c273482750e1cc37a5d297b47d2dec3acb39458d8e7a95b9b4e3094afb38ee8",
+    "src/rag_research/experiments/semantic_adoption.py": "e2c16aa7259985727fda76d8257eca8610fa75eb0da9982aad441ff35ea64bb8",
+    "src/rag_research/experiments/semantic_diagnostics.py": "93d821f5af0412fa9f54a198338a93fdca37f902eccac52099647c4f2c509963",
+    "src/rag_research/experiments/statistics.py": "25244b304a0613ccc5cd23f60d98f8c69ddb4f94c7968b1c3eaa1433ef90de3f",
+    "src/rag_research/experiments/storage.py": "073f4c89dca883fd0f5c3ab900c722361c720a3cb607faa9903190c15b272165",
+    "src/rag_research/generation/__init__.py": "33c1d27b63c42955f7e025298bd2347fbc8cf5afc57216d35516e7701e0e421a",
+    "src/rag_research/generation/artifacts.py": "bb70ba77b944ecc23a07cc1865a3fafeee610dcd453caebc5a77b8fe79fc44b5",
+    "src/rag_research/generation/auxiliary.py": "b702f4762d8da7e892486c1096b7f8c60dabf4d93dd9c3722a8a0904d893c410",
+    "src/rag_research/generation/auxiliary_config.py": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+    "src/rag_research/generation/config.py": "9a641357a2767322e97d8ee224b2f7d2d0c7bda0a3ff21f7f684fc329175b60e",
+    "src/rag_research/generation/context.py": "a86c5fda1a1d7747d3ce9087a732b70e700802b6142e4e5db6adeb1a64b6a63c",
+    "src/rag_research/generation/cuda_runtime.py": "207f80bd06cf5efbfcc752ddcefe2d96ba2c671d6c8b90f9e3cd19b988699fde",
+    "src/rag_research/generation/generator.py": "3ece4c433d2dec54b4c07dc0b95e42f78a2debde1349ab67d7d852445f9226a1",
+    "src/rag_research/generation/json_grammar.py": "c1355a13afa204b8ae1362a87cd928116f180ee07dc8b208e29c91a86bf04c46",
+    "src/rag_research/generation/local.py": "817bf5415c2c4a72488ef629026636c8f32994def8898ee26b6b347824fed354",
+    "src/rag_research/generation/smoke.py": "469dd916567aac7d247dea606f5e885685f3c91d62e79dae683c8f7fa75a063a",
+    "src/rag_research/pilot/__init__.py": "ca181baf17b3acfb1dedc3fc8f0364f272437a9a26051e29f8faf2d8c14274d5",
+    "src/rag_research/pilot/assessment.py": "213d12000a7b94b38cf9c49609fb96005cfd21c9f4d3f6686fe62346c0607ea4",
+    "src/rag_research/pilot/baseline.py": "9e76898c903a64a4bb078015f81124be368d0005f28f9f19d0b0a38b05cb2abd",
+    "src/rag_research/pilot/internal.py": "79d0f8278f6aa4ff572a2e787bcd4906c83d973de20492759ee9b77ea4f13060",
+    "src/rag_research/pilot/materials.py": "ef55d2bb52efed008fdcf7bd69192ec3fb6754fab048fec6f74b4ec9a6fdc977",
+    "src/rag_research/pilot/report.py": "3ce2e22af32f85e55fb69b3d4193e307955bb83a5b0d5503acb71380976449e2",
+    "src/rag_research/pilot/selection.py": "72513b5bf3a260a467373e30dffbc0fce09fab3433b956e07dfe7244e7d313ae",
+    "src/rag_research/recovery/__init__.py": "a248c5acd19ee7a30fcc05f65b985c7a4b207c48dfff29f30ec1b842b364d123",
+    "src/rag_research/recovery/answer_rewrite.py": "359e2535848182a855cd58b9a6bd52d1893ffea37819a69e68647f1067c87a01",
+    "src/rag_research/retrieval/__init__.py": "22c7dcaf10082418687dd9cf7a6333b255e76560e4c11e5a983b32b228fbd2f0",
+    "src/rag_research/retrieval/bilingual.py": "a22f84c414f9c9da5a659dc324ec7f4c7c642a50c47690060cd28d8a45a25be0",
+    "src/rag_research/retrieval/bm25.py": "c99e079567ca7c3b86a38d5708b25facb03837f641c57181b731dfcadd89178e",
+    "src/rag_research/retrieval/calibration.py": "32281b5f24690b51903945c3bb492a281ce7fac5279d9754a0539a1917788cb7",
+    "src/rag_research/retrieval/common.py": "e54d7e1afc9745822ed574245ea630bbb6bd3224497ba3857baa9fb99408e2b4",
+    "src/rag_research/retrieval/dense.py": "9f2a6588ca129fe1d522d09c3d3c7bcef6a5950509d22527675846b1d692ade7",
+    "src/rag_research/retrieval/factory.py": "81c13594214eaf095e8e95bdb5a460cc84010f5ee67ec5c7b4b060f81f3bcc00",
+    "src/rag_research/retrieval/hybrid.py": "d161d4860fedc0a862e318c3848d7d5abf089a0730e0a2206c3a12e4e5d0ed1d",
+    "src/rag_research/retrieval/multilingual.py": "f7f104c07c4c45826a783b22b35735a8ae61b1d7073f2b89aaa8eb3473c63c35",
+    "src/rag_research/retrieval/parent_metrics.py": "f1a23aca9ec6f3c6916209a48640d07af2202028e879ba8d16b987eb3596fec5",
+    "src/rag_research/retrieval/validation.py": "1a0a0ff58b60ae484c627efbd4cb9e4684110e4a6c1bfbf6c83cbed450733839"
+  },
+  "actual_evidence": {
+    "old_semantic_native_calls": 70,
+    "old_semantic_reexecuted_native_calls": 0,
+    "real_replay_under_existing_canonical_lock_passed": true,
+    "socket_process_attempts": 0,
+    "fresh_known_load_contract_passed": true,
+    "fresh_known_native_started": false,
+    "main_calibration_native_started": false,
+    "unexecuted_old_v22_known11_preserved": true
+  },
+  "preparation_cost_seconds": {
+    "superseded_production_proof_v1": 43.87691299704602,
+    "lock_safe_production_proof_v2": 43.082430090988055,
+    "full_suite_v1_wrapper": 32.624653200036846,
+    "full_suite_v2_wrapper": 32.00443445896963,
+    "goal_wall_or_total_cost_claimed": false
+  },
+  "artifacts": {
+    "configs/phase11_known_trace_candidate_v11.yaml": {
+      "sha256": "dad2814db5a3f57d43980ca0fdf6fe3ca42201d41d4c3ae8de33e6d7da127cc2",
+      "bytes": 2636
+    },
+    "configs/phase11_known_trace_candidate_v12.yaml": {
+      "sha256": "74596ba939f098e520be2b4fbc46a9b18c2f5465d9e65772f00aa84f6348cfef",
+      "bytes": 2636
+    },
+    "configs/phase11_known_trace_regression_v11.json": {
+      "sha256": "db769f3882805fe9b33bac1c08eb1bf574697c9c9e6ee1433fbaeb83d5ac8aca",
+      "bytes": 141538
+    },
+    "configs/phase11_known_trace_regression_v12.json": {
+      "sha256": "c00e5895075eb8871cc6fafa771f940fd47a7b135c1a4b6d06e1b7c7f2dfecfa",
+      "bytes": 141538
+    },
+    "configs/phase11_semantic_candidate_v22.yaml": {
+      "sha256": "5f5050066356136b63963f46a458be5d2e55814c8222810b4f698190288f3943",
+      "bytes": 2648
+    },
+    "configs/phase11_semantic_candidate_v23.yaml": {
+      "sha256": "3c9e7fab328cb9722bee0c0618b8d49a9f16cc6ee1a5b549f0a43b1b9ab19f86",
+      "bytes": 2645
+    },
+    "configs/phase11_semantic_diagnostics_v22.json": {
+      "sha256": "bdc45412c77183f46c79c21f4c38925c57394c9e77fa6225b2b0d3b9d6b20234",
+      "bytes": 47139
+    },
+    "configs/phase11_semantic_diagnostics_v23.json": {
+      "sha256": "8fd4bc25c038567d7906140bde8e0b23fbb0cd6610640f1e2190c20f896e279c",
+      "bytes": 47141
+    },
+    "data/manifests/phase11_autonomy_cumulative_cost_v4.json": {
+      "sha256": "6e8f21c7c751806036a22bca9029ef0ac1077098fa0712ad33951f637066b479",
+      "bytes": 6901
+    },
+    "data/manifests/phase11_bilingual_finalization_validation_v5.json": {
+      "sha256": "c455f9a5320595e7bbe5db8216330ea84f3cab5c7190da404f67d43e52761507",
+      "bytes": 20079
+    },
+    "data/manifests/phase11_semantic_evidence_reuse_v1.json": {
+      "sha256": "83e7c7df8a6f3b9393c282693e4028b7df9d415d4584201beab820359f3e6c35",
+      "bytes": 81211
+    },
+    "data/manifests/phase11_semantic_evidence_reuse_v2.json": {
+      "sha256": "ee7a928dbf85390b64202e9dd910c9276b07f31aecd9dfc7e989190e9d6c0db1",
+      "bytes": 81211
+    },
+    "data/manifests/phase11_unexecuted_technical_supersession_v1.json": {
+      "sha256": "bad2ef03830462aa61ab3120491aa337f0c338b83b0b2742b1b48173616f7df5",
+      "bytes": 2100
+    },
+    "data/manifests/phase11_v3_baseline_runtime_result_v1.json": {
+      "sha256": "335edf5c2d2c7bcafb62bf2819cd6da51b5aabfdbadf2db681ee45119ad5dd47",
+      "bytes": 96429
+    },
+    "data/manifests/phase11_v3_v21_semantic_result_v1.json": {
+      "sha256": "b411426c4a507125b491164e8b5a7ea5fb63a2796c2d3a3ff04c256151c892e7",
+      "bytes": 84994
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/ast-boundary-review.json": {
+      "sha256": "7c674e2a2b5beb96c15c39862e091367336d3a23105b661cb3c5a9a751bcceec",
+      "bytes": 4502
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/before-exact-boundary/ast-boundary-review.json": {
+      "sha256": "4f17fdb12cb0c2740410c598873714c7215be92628caff75ecc81f46c4302d59",
+      "bytes": 3621
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/before-exact-boundary/pytest-result.json": {
+      "sha256": "21043c5d25d6fb2f361e64618be9288007a522de94e574135e2455649c7b32db",
+      "bytes": 2408
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/before-exact-boundary/pytest.log": {
+      "sha256": "3cf68b8402cd0dd89a84d767116ab51443eacbbf66c432dfd8a2e884507b2db5",
+      "bytes": 179
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/exact-boundary-before-final-tests/ast-boundary-review.json": {
+      "sha256": "9f0897377b4f3533bb7d76216fe6c76e3f4929e166c222c26830a2a8594868db",
+      "bytes": 4502
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/exact-boundary-before-final-tests/pytest-result.json": {
+      "sha256": "50df68da0f8f54628c8453b53e4dea55aebfb071767ad246d876456a1e1a6e54",
+      "bytes": 2408
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/exact-boundary-before-final-tests/pytest.log": {
+      "sha256": "07ed340b8d77805b51fb9709b25a54d80388178e454fcd78353f5ce21fbfa4ef",
+      "bytes": 179
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/guarded-test-check.py": {
+      "sha256": "e36642808907b1037f59f4fde952da757f06381cd69a7c3b3fab9897e1c4defb",
+      "bytes": 2173
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/independent-ast-check.py": {
+      "sha256": "f93a24a5d34019102bada36da2c950a07e9445f157e832389867be2466e995d4",
+      "bytes": 5603
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/pytest-result.json": {
+      "sha256": "4ae8f903b76535f7e1cdd88584c4f76929248e5676a875f55fd9cdd6f33af029",
+      "bytes": 2407
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/pytest.log": {
+      "sha256": "a1e1c59d76a53cb8ab2d11f5dc99bcaa0d7c3ddc55c394facd2678f351826288",
+      "bytes": 179
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/review-result.json": {
+      "sha256": "4d2b2c8b20dd671d8dba852c3d9f760fc2f1deff2b4467f291e1c1726291554d",
+      "bytes": 3379
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/review-result.sha256": {
+      "sha256": "103201d5a15bbd8df634f9c1e393e9667ddbeca646e428f5260f667c045426a0",
+      "bytes": 85
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/review.txt": {
+      "sha256": "5e3c70565bfa2b7680e9f65a5b4f438ac7e4b3fbe5c88b819a5ded73d9784f17",
+      "bytes": 2814
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v1/ruff.log": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/ast-boundary-review.json": {
+      "sha256": "5c05076c9807fee75091bab8798113f5e51883adde0f6d087aec9a082ca09b2d",
+      "bytes": 4502
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/guarded-test-check.py": {
+      "sha256": "b576748e019d8ea29d598da00a92c6c5070212c6bad0b23b33e03614d73ce223",
+      "bytes": 2178
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/independent-ast-check.py": {
+      "sha256": "1231003e498aa24f3bbf3032e21d3f3520bfcc0d624e30f1b1b51fef976c2695",
+      "bytes": 5608
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/pytest-result.json": {
+      "sha256": "8d98467b1c6008372dc8f02fc0ec44b28e3be8751ea446ab9b542429dd7964dd",
+      "bytes": 2407
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/pytest.log": {
+      "sha256": "8336f496d76280c522a592be9c76e5a6ea3224173905c84b6f7fb91c659addfb",
+      "bytes": 179
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/review-result.json": {
+      "sha256": "d8de4f88b5d92d60cd7cc28dd44610d2955e5317abafa5e3d15ba1d7bd7c1b89",
+      "bytes": 4267
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/review-result.sha256": {
+      "sha256": "9689443bc9d46763e8ff56c8ce76b6890004bc812756a75c5f254361617b4370",
+      "bytes": 85
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/source-snapshots/src/rag_research/experiments/bilingual_certification.py": {
+      "sha256": "77a19ec484ff962124e16a72ff4a9aeeb6d4d2619a886d5489930e1480e006e6",
+      "bytes": 24480
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/source-snapshots/src/rag_research/experiments/bilingual_runner.py": {
+      "sha256": "41f08a5fbb0180de2a2fe32e63de2b6546bbd1c3f51c4e3c2442d7ad9e01eb82",
+      "bytes": 20426
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/source-snapshots/src/rag_research/experiments/evidence_reuse.py": {
+      "sha256": "abea53d14fbf00671772952d946e796578601c0f5063db20d5befd7c391fc2a7",
+      "bytes": 23014
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/source-snapshots/src/rag_research/experiments/semantic_diagnostics.py": {
+      "sha256": "93d821f5af0412fa9f54a198338a93fdca37f902eccac52099647c4f2c509963",
+      "bytes": 23332
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/source-snapshots/tests/test_bilingual_certification.py": {
+      "sha256": "f603acb45b7ce8489894b5e674f902e5c665ee0c97f0305563633657232480db",
+      "bytes": 20145
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/source-snapshots/tests/test_bilingual_group_binding_v3.py": {
+      "sha256": "e084e793c5b31de9f9ef3b76496d9eebef354fcd40ea0c70d7fa5da17410f475",
+      "bytes": 12715
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/source-snapshots/tests/test_phase11_evidence_reuse_v1.py": {
+      "sha256": "c4dd98bc7b212b42e4c232454158ca2462d5dd73053e857e42e1c78d551b2aef",
+      "bytes": 19510
+    },
+    "data/runs/development_screening/phase11-evidence-reuse-independent-review-v2-lock/source-snapshots/tests/test_semantic_diagnostics.py": {
+      "sha256": "a544179bfe3e9a40478993c858fdee896e1a5f71ceff007a455aba9b37cd6c10",
+      "bytes": 24984
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/audit.md": {
+      "sha256": "3cb1c331053366335eaa52b1c29e506c1d93a3ab28dac1ec75153aa69a5e612a",
+      "bytes": 7554
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/actual-producer-output/configs/policy-v2.json": {
+      "sha256": "36d29541089b9262d30bfdddaada13a4e194967eb40ffc4b94bd34244cf2974e",
+      "bytes": 3521
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/actual-producer-output/data/runs/bilingual_calibration/en/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/actual-producer-output/data/runs/bilingual_calibration/en/quality/mapping.private.json": {
+      "sha256": "508e72e4dde63a1e06d00d2c173559924483be854f1936bd83dddf8672aefa7d",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/actual-producer-output/data/runs/bilingual_calibration/en/quality/packet.json": {
+      "sha256": "0757caddcf3ddb8633c7fecc8c79908ee9d14909abf7d811c22c475fe3c85338",
+      "bytes": 878
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/actual-producer-output/data/runs/bilingual_calibration/en/quality/units/labels.json": {
+      "sha256": "f104bf9c6b0c4ba139fc7d38dae7cf37747945e8079dbab945cbaeb3e6d7e099",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/actual-producer-output/data/runs/bilingual_calibration/en/quality/units/packet.json": {
+      "sha256": "a5e915bd3f3ef58953b935a94d9845ac915e8da6f75867f2bd1a26d5457910d7",
+      "bytes": 1946
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/actual-producer-output/data/runs/bilingual_calibration/ja/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/actual-producer-output/data/runs/bilingual_calibration/ja/quality/mapping.private.json": {
+      "sha256": "4475d830f4b48f8d8e5796dce4e3cc8842fcb867350b37b62fe3207946b84bac",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/actual-producer-output/data/runs/bilingual_calibration/ja/quality/packet.json": {
+      "sha256": "4646cab7a9d9663d4f56886a11fe85bb1b4e61d84da5fc37a86a40a631203323",
+      "bytes": 887
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/actual-producer-output/data/runs/bilingual_calibration/ja/quality/units/labels.json": {
+      "sha256": "601244748111bd457008a36b028dc30c7f8aedae899eb9d7cec39a51b9a08198",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/actual-producer-output/data/runs/bilingual_calibration/ja/quality/units/packet.json": {
+      "sha256": "57a0614e08aca08b41119107d9378a55dcd2f7573242f2b1400aa295996f477f",
+      "bytes": 2011
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/counterfactual-fixture-only-group-added/configs/policy-v2.json": {
+      "sha256": "36d29541089b9262d30bfdddaada13a4e194967eb40ffc4b94bd34244cf2974e",
+      "bytes": 3521
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/en/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/en/quality/mapping.private.json": {
+      "sha256": "508e72e4dde63a1e06d00d2c173559924483be854f1936bd83dddf8672aefa7d",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/en/quality/packet.json": {
+      "sha256": "0757caddcf3ddb8633c7fecc8c79908ee9d14909abf7d811c22c475fe3c85338",
+      "bytes": 878
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/en/quality/units/labels.json": {
+      "sha256": "f104bf9c6b0c4ba139fc7d38dae7cf37747945e8079dbab945cbaeb3e6d7e099",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/en/quality/units/packet.json": {
+      "sha256": "a5e915bd3f3ef58953b935a94d9845ac915e8da6f75867f2bd1a26d5457910d7",
+      "bytes": 1946
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/ja/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/ja/quality/mapping.private.json": {
+      "sha256": "4475d830f4b48f8d8e5796dce4e3cc8842fcb867350b37b62fe3207946b84bac",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/ja/quality/packet.json": {
+      "sha256": "4646cab7a9d9663d4f56886a11fe85bb1b4e61d84da5fc37a86a40a631203323",
+      "bytes": 887
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/ja/quality/units/labels.json": {
+      "sha256": "601244748111bd457008a36b028dc30c7f8aedae899eb9d7cec39a51b9a08198",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/ja/quality/units/packet.json": {
+      "sha256": "57a0614e08aca08b41119107d9378a55dcd2f7573242f2b1400aa295996f477f",
+      "bytes": 2011
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/actual-producer-output/configs/policy-v2.json": {
+      "sha256": "36d29541089b9262d30bfdddaada13a4e194967eb40ffc4b94bd34244cf2974e",
+      "bytes": 3521
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/actual-producer-output/data/runs/bilingual_calibration/en/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/actual-producer-output/data/runs/bilingual_calibration/en/quality/mapping.private.json": {
+      "sha256": "508e72e4dde63a1e06d00d2c173559924483be854f1936bd83dddf8672aefa7d",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/actual-producer-output/data/runs/bilingual_calibration/en/quality/packet.json": {
+      "sha256": "0757caddcf3ddb8633c7fecc8c79908ee9d14909abf7d811c22c475fe3c85338",
+      "bytes": 878
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/actual-producer-output/data/runs/bilingual_calibration/en/quality/units/labels.json": {
+      "sha256": "f104bf9c6b0c4ba139fc7d38dae7cf37747945e8079dbab945cbaeb3e6d7e099",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/actual-producer-output/data/runs/bilingual_calibration/en/quality/units/packet.json": {
+      "sha256": "a5e915bd3f3ef58953b935a94d9845ac915e8da6f75867f2bd1a26d5457910d7",
+      "bytes": 1946
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/actual-producer-output/data/runs/bilingual_calibration/ja/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/actual-producer-output/data/runs/bilingual_calibration/ja/quality/mapping.private.json": {
+      "sha256": "4475d830f4b48f8d8e5796dce4e3cc8842fcb867350b37b62fe3207946b84bac",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/actual-producer-output/data/runs/bilingual_calibration/ja/quality/packet.json": {
+      "sha256": "4646cab7a9d9663d4f56886a11fe85bb1b4e61d84da5fc37a86a40a631203323",
+      "bytes": 887
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/actual-producer-output/data/runs/bilingual_calibration/ja/quality/units/labels.json": {
+      "sha256": "601244748111bd457008a36b028dc30c7f8aedae899eb9d7cec39a51b9a08198",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/actual-producer-output/data/runs/bilingual_calibration/ja/quality/units/packet.json": {
+      "sha256": "57a0614e08aca08b41119107d9378a55dcd2f7573242f2b1400aa295996f477f",
+      "bytes": 2011
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/counterfactual-fixture-only-group-added/configs/policy-v2.json": {
+      "sha256": "36d29541089b9262d30bfdddaada13a4e194967eb40ffc4b94bd34244cf2974e",
+      "bytes": 3521
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/en/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/en/quality/mapping.private.json": {
+      "sha256": "508e72e4dde63a1e06d00d2c173559924483be854f1936bd83dddf8672aefa7d",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/en/quality/packet.json": {
+      "sha256": "0757caddcf3ddb8633c7fecc8c79908ee9d14909abf7d811c22c475fe3c85338",
+      "bytes": 878
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/en/quality/units/labels.json": {
+      "sha256": "f104bf9c6b0c4ba139fc7d38dae7cf37747945e8079dbab945cbaeb3e6d7e099",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/en/quality/units/packet.json": {
+      "sha256": "a5e915bd3f3ef58953b935a94d9845ac915e8da6f75867f2bd1a26d5457910d7",
+      "bytes": 1946
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/ja/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/ja/quality/mapping.private.json": {
+      "sha256": "4475d830f4b48f8d8e5796dce4e3cc8842fcb867350b37b62fe3207946b84bac",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/ja/quality/packet.json": {
+      "sha256": "4646cab7a9d9663d4f56886a11fe85bb1b4e61d84da5fc37a86a40a631203323",
+      "bytes": 887
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/ja/quality/units/labels.json": {
+      "sha256": "601244748111bd457008a36b028dc30c7f8aedae899eb9d7cec39a51b9a08198",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/heldout_calibration_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_calibration/ja/quality/units/packet.json": {
+      "sha256": "57a0614e08aca08b41119107d9378a55dcd2f7573242f2b1400aa295996f477f",
+      "bytes": 2011
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/actual-producer-output/configs/policy-v2.json": {
+      "sha256": "36d29541089b9262d30bfdddaada13a4e194967eb40ffc4b94bd34244cf2974e",
+      "bytes": 3521
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/actual-producer-output/data/runs/bilingual_development/en/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/actual-producer-output/data/runs/bilingual_development/en/quality/mapping.private.json": {
+      "sha256": "508e72e4dde63a1e06d00d2c173559924483be854f1936bd83dddf8672aefa7d",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/actual-producer-output/data/runs/bilingual_development/en/quality/packet.json": {
+      "sha256": "0757caddcf3ddb8633c7fecc8c79908ee9d14909abf7d811c22c475fe3c85338",
+      "bytes": 878
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/actual-producer-output/data/runs/bilingual_development/en/quality/units/labels.json": {
+      "sha256": "f104bf9c6b0c4ba139fc7d38dae7cf37747945e8079dbab945cbaeb3e6d7e099",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/actual-producer-output/data/runs/bilingual_development/en/quality/units/packet.json": {
+      "sha256": "a5e915bd3f3ef58953b935a94d9845ac915e8da6f75867f2bd1a26d5457910d7",
+      "bytes": 1946
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/actual-producer-output/data/runs/bilingual_development/ja/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/actual-producer-output/data/runs/bilingual_development/ja/quality/mapping.private.json": {
+      "sha256": "4475d830f4b48f8d8e5796dce4e3cc8842fcb867350b37b62fe3207946b84bac",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/actual-producer-output/data/runs/bilingual_development/ja/quality/packet.json": {
+      "sha256": "4646cab7a9d9663d4f56886a11fe85bb1b4e61d84da5fc37a86a40a631203323",
+      "bytes": 887
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/actual-producer-output/data/runs/bilingual_development/ja/quality/units/labels.json": {
+      "sha256": "601244748111bd457008a36b028dc30c7f8aedae899eb9d7cec39a51b9a08198",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/actual-producer-output/data/runs/bilingual_development/ja/quality/units/packet.json": {
+      "sha256": "57a0614e08aca08b41119107d9378a55dcd2f7573242f2b1400aa295996f477f",
+      "bytes": 2011
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/counterfactual-fixture-only-group-added/configs/policy-v2.json": {
+      "sha256": "36d29541089b9262d30bfdddaada13a4e194967eb40ffc4b94bd34244cf2974e",
+      "bytes": 3521
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_development/en/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_development/en/quality/mapping.private.json": {
+      "sha256": "508e72e4dde63a1e06d00d2c173559924483be854f1936bd83dddf8672aefa7d",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_development/en/quality/packet.json": {
+      "sha256": "0757caddcf3ddb8633c7fecc8c79908ee9d14909abf7d811c22c475fe3c85338",
+      "bytes": 878
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_development/en/quality/units/labels.json": {
+      "sha256": "f104bf9c6b0c4ba139fc7d38dae7cf37747945e8079dbab945cbaeb3e6d7e099",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_development/en/quality/units/packet.json": {
+      "sha256": "a5e915bd3f3ef58953b935a94d9845ac915e8da6f75867f2bd1a26d5457910d7",
+      "bytes": 1946
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_development/ja/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_development/ja/quality/mapping.private.json": {
+      "sha256": "4475d830f4b48f8d8e5796dce4e3cc8842fcb867350b37b62fe3207946b84bac",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_development/ja/quality/packet.json": {
+      "sha256": "4646cab7a9d9663d4f56886a11fe85bb1b4e61d84da5fc37a86a40a631203323",
+      "bytes": 887
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_development/ja/quality/units/labels.json": {
+      "sha256": "601244748111bd457008a36b028dc30c7f8aedae899eb9d7cec39a51b9a08198",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/en/counterfactual-fixture-only-group-added/data/runs/bilingual_development/ja/quality/units/packet.json": {
+      "sha256": "57a0614e08aca08b41119107d9378a55dcd2f7573242f2b1400aa295996f477f",
+      "bytes": 2011
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/actual-producer-output/configs/policy-v2.json": {
+      "sha256": "36d29541089b9262d30bfdddaada13a4e194967eb40ffc4b94bd34244cf2974e",
+      "bytes": 3521
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/actual-producer-output/data/runs/bilingual_development/en/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/actual-producer-output/data/runs/bilingual_development/en/quality/mapping.private.json": {
+      "sha256": "508e72e4dde63a1e06d00d2c173559924483be854f1936bd83dddf8672aefa7d",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/actual-producer-output/data/runs/bilingual_development/en/quality/packet.json": {
+      "sha256": "0757caddcf3ddb8633c7fecc8c79908ee9d14909abf7d811c22c475fe3c85338",
+      "bytes": 878
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/actual-producer-output/data/runs/bilingual_development/en/quality/units/labels.json": {
+      "sha256": "f104bf9c6b0c4ba139fc7d38dae7cf37747945e8079dbab945cbaeb3e6d7e099",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/actual-producer-output/data/runs/bilingual_development/en/quality/units/packet.json": {
+      "sha256": "a5e915bd3f3ef58953b935a94d9845ac915e8da6f75867f2bd1a26d5457910d7",
+      "bytes": 1946
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/actual-producer-output/data/runs/bilingual_development/ja/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/actual-producer-output/data/runs/bilingual_development/ja/quality/mapping.private.json": {
+      "sha256": "4475d830f4b48f8d8e5796dce4e3cc8842fcb867350b37b62fe3207946b84bac",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/actual-producer-output/data/runs/bilingual_development/ja/quality/packet.json": {
+      "sha256": "4646cab7a9d9663d4f56886a11fe85bb1b4e61d84da5fc37a86a40a631203323",
+      "bytes": 887
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/actual-producer-output/data/runs/bilingual_development/ja/quality/units/labels.json": {
+      "sha256": "601244748111bd457008a36b028dc30c7f8aedae899eb9d7cec39a51b9a08198",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/actual-producer-output/data/runs/bilingual_development/ja/quality/units/packet.json": {
+      "sha256": "57a0614e08aca08b41119107d9378a55dcd2f7573242f2b1400aa295996f477f",
+      "bytes": 2011
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/counterfactual-fixture-only-group-added/configs/policy-v2.json": {
+      "sha256": "36d29541089b9262d30bfdddaada13a4e194967eb40ffc4b94bd34244cf2974e",
+      "bytes": 3521
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_development/en/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_development/en/quality/mapping.private.json": {
+      "sha256": "508e72e4dde63a1e06d00d2c173559924483be854f1936bd83dddf8672aefa7d",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_development/en/quality/packet.json": {
+      "sha256": "0757caddcf3ddb8633c7fecc8c79908ee9d14909abf7d811c22c475fe3c85338",
+      "bytes": 878
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_development/en/quality/units/labels.json": {
+      "sha256": "f104bf9c6b0c4ba139fc7d38dae7cf37747945e8079dbab945cbaeb3e6d7e099",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_development/en/quality/units/packet.json": {
+      "sha256": "a5e915bd3f3ef58953b935a94d9845ac915e8da6f75867f2bd1a26d5457910d7",
+      "bytes": 1946
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_development/ja/quality/labels.json": {
+      "sha256": "efa82530f0281abdf7bff98dbf617ee4427f964100fa5fe3f2e8673792b268cf",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_development/ja/quality/mapping.private.json": {
+      "sha256": "4475d830f4b48f8d8e5796dce4e3cc8842fcb867350b37b62fe3207946b84bac",
+      "bytes": 467
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_development/ja/quality/packet.json": {
+      "sha256": "4646cab7a9d9663d4f56886a11fe85bb1b4e61d84da5fc37a86a40a631203323",
+      "bytes": 887
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_development/ja/quality/units/labels.json": {
+      "sha256": "601244748111bd457008a36b028dc30c7f8aedae899eb9d7cec39a51b9a08198",
+      "bytes": 893
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/consumer-fixtures/main_development_v1/ja/counterfactual-fixture-only-group-added/data/runs/bilingual_development/ja/quality/units/packet.json": {
+      "sha256": "57a0614e08aca08b41119107d9378a55dcd2f7573242f2b1400aa295996f477f",
+      "bytes": 2011
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/document-group-id-references.txt": {
+      "sha256": "39797b2077d32b1a8d2a5f163f3a39c4ffcad650ae35aa702f71ffa20b9dd0b4",
+      "bytes": 9514
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/draft-reproducer-ruff-final.log": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/draft-reproducer-ruff.log": {
+      "sha256": "aac3a0503d8b95052cc85fb9f1717dc82b74aa55853a5aa9749b41e30275d472",
+      "bytes": 38
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/existing-targeted-pytest.log": {
+      "sha256": "73abcb1c51b9546e2f4c81d63f763d5a8585d31522da406c101b290fa8a2ffd4",
+      "bytes": 99
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/git-status-after.txt": {
+      "sha256": "45460224e31d2750f313770395b1bfab9fd2ceccb189389a9ef28821227a895b",
+      "bytes": 132
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/minimum-fix.draft.diff": {
+      "sha256": "580b40dfd97270185fd4c77794e34acb48954170d7df97b1459b469a698656e0",
+      "bytes": 958
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/observed-at.txt": {
+      "sha256": "bb2598eaa4fcae4086d6477126e44ae037e6cd5876fa47a7050991a2e7509ed7",
+      "bytes": 26
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/post-fix-group-binding-pytest-v2.log": {
+      "sha256": "f109efc9a71bc5934548bd2f371efc0786e4df754d5a4ba13be8ec046a1073d0",
+      "bytes": 99
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/post-fix-group-binding-pytest.log": {
+      "sha256": "a73f7692c8a742c95905118674661c8686734c0ea2594b8a2d7adfeb2d73a30d",
+      "bytes": 17388
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/post-fix-own-source.diff": {
+      "sha256": "eae28b927df75b3109d655b268c6fab9fc4631604eccf298acfed0148eec2972",
+      "bytes": 1101
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/post-fix-related-pytest-v3.log": {
+      "sha256": "f52f2e0439610db2c3e2c135887c994bbb3e2c754e928cd6b251c822b68a6c92",
+      "bytes": 180
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/post-fix-ruff.log": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/post-fix-selection-only-ast-proof.json": {
+      "sha256": "e1a22282dc4b32e6c78569ad5fa82be674786cf38f1029d1d6572875e93c0fbb",
+      "bytes": 1219
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/post-fix-selection-only-ast-proof.sha256": {
+      "sha256": "ffaf00e30e52ae36dc7f111f2b0636c09992eee04fad701888cd609fab3b34b6",
+      "bytes": 65
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/post-fix-validation-receipt.json": {
+      "sha256": "ead12f1156f6d290a988a675547593649567d48c5edfcdd2927edb79f24c457f",
+      "bytes": 2611
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/post-fix-validation-receipt.sha256": {
+      "sha256": "b45717e5a4c80e9ab5e2007193b735031bdbc889ae3633a5de8368a6447b059a",
+      "bytes": 65
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/pre-fix-audit-receipt.json": {
+      "sha256": "66314feb682ec5a0435839164b5073c13711cbdfacf9d025523fa1f227471323",
+      "bytes": 27345
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/pre-fix-audit-receipt.sha256": {
+      "sha256": "2a6aab9b14cdbd532136c8c709dc476aea8884d37e9877c344156c45d6ed4fc2",
+      "bytes": 65
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/reproduce-executed-original.py": {
+      "sha256": "044cabbc4d0c75071400098263b5d46dc5a7adae48886b5ce1eefe2807537084",
+      "bytes": 13868
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/reproduce.py": {
+      "sha256": "805255a43f988f6cc184d0c5a29c88f7bcd07f8e527605f0ed83a56612d12b2d",
+      "bytes": 13867
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/reproduction-result.json": {
+      "sha256": "e640e9d2365e3c0ca26b007ec83398c98c4737583d9c1309972e2e0f861d1a19",
+      "bytes": 51840
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/reproduction-result.sha256": {
+      "sha256": "2620ddbc90ff96e4c69136f4fd16f2379c9c0fa759816f18c2a7d6693969ada5",
+      "bytes": 65
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/reproduction.log": {
+      "sha256": "c9508ad33e7fc65f7ba3ef43bc8dda06e64841501d2791b5feb0a845cc3cf6f2",
+      "bytes": 156
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/assets.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/baseline.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/captured-runner-manifest.json": {
+      "sha256": "dd28bd723361b929c861d9acb88ec53895ef6b80d44a4d1e8067d708b88cd869",
+      "bytes": 4004
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/config.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/data/runs/bilingual_calibration/synthetic/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/initial.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/known.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/policy.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/prompts.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/protocol.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/scripts/run_bilingual_calibration.py": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/scripts/run_bilingual_development.py": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/selection.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/en/synthetic-qa.jsonl": {
+      "sha256": "5fb8478fd33dfd36bf2e0c2f8454fc723d02c0e684afef84a6d18708f0b1a7a0",
+      "bytes": 2770
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/assets.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/baseline.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/captured-runner-manifest.json": {
+      "sha256": "84e2c02ea81eb550fb2460559bb2addb8a18ebc978549926b592df55c947033d",
+      "bytes": 4004
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/config.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/data/runs/bilingual_calibration/synthetic/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/initial.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/known.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/policy.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/prompts.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/protocol.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/scripts/run_bilingual_calibration.py": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/scripts/run_bilingual_development.py": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/selection.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/heldout_calibration_v1/ja/synthetic-qa.jsonl": {
+      "sha256": "2055c5fcaff26a215782b0c280c13d61a58c3b94c65a7269a2dba8e5baaf447f",
+      "bytes": 2770
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/assets.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/baseline.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/captured-runner-manifest.json": {
+      "sha256": "45896a6aae9a00203bbbe741f7b19fe4339bd20b468e4868564f1631f4d40273",
+      "bytes": 4205
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/config.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/data/runs/bilingual_development/synthetic/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/initial.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/known.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/policy.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/prompts.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/protocol.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/scripts/run_bilingual_calibration.py": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/scripts/run_bilingual_development.py": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/selection.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/en/synthetic-qa.jsonl": {
+      "sha256": "5fb8478fd33dfd36bf2e0c2f8454fc723d02c0e684afef84a6d18708f0b1a7a0",
+      "bytes": 2770
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/assets.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/baseline.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/captured-runner-manifest.json": {
+      "sha256": "8fc3386bca942afe9c3ff1a0ea25c01252da44fc2e57baa300b39c491f018f9d",
+      "bytes": 4205
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/config.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/data/runs/bilingual_development/synthetic/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/initial.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/known.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/policy.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/prompts.yaml": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/protocol.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/scripts/run_bilingual_calibration.py": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/scripts/run_bilingual_development.py": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/selection.json": {
+      "sha256": "e369ecad6506f0008a9313286e9d1acd22ab781b712896e2ad8feb0908a54490",
+      "bytes": 24
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/synthetic/main_development_v1/ja/synthetic-qa.jsonl": {
+      "sha256": "2055c5fcaff26a215782b0c280c13d61a58c3b94c65a7269a2dba8e5baaf447f",
+      "bytes": 2770
+    },
+    "data/runs/development_screening/phase11-group-binding-audit-v3/tracked-source-diff-after.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "data/runs/development_screening/phase11-semantic-evidence-reuse-validation-v1/result.json": {
+      "sha256": "fa59356a18d3926176b827df921f3c2a7bc99972a3f8f970e75906c8b5f88f70",
+      "bytes": 1038
+    },
+    "data/runs/development_screening/phase11-semantic-evidence-reuse-validation-v2/result.json": {
+      "sha256": "3e9a75d4bff6859d89181caccff01706167677e48a682ae1465b0fc2bca2525f",
+      "bytes": 1006
+    },
+    "data/runs/lab/phase11-evidence-reuse-software-v2/pytest.log": {
+      "sha256": "50de3053d1015697b617cb78a369b132e7079cb9abf1a96f67572f400ec7c1cc",
+      "bytes": 5427
+    },
+    "data/runs/lab/phase11-evidence-reuse-software-v2/results.json": {
+      "sha256": "33d7645b470a6013b7c62c7c7f333d7e7862a89d03401539a08743f3e8babfa3",
+      "bytes": 164
+    },
+    "data/runs/lab/phase11-evidence-reuse-software-v2/ruff.log": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "tests/test_bilingual_group_binding_v3.py": {
+      "sha256": "e084e793c5b31de9f9ef3b76496d9eebef354fcd40ea0c70d7fa5da17410f475",
+      "bytes": 12715
+    },
+    "tests/test_phase11_evidence_reuse_v1.py": {
+      "sha256": "c4dd98bc7b212b42e4c232454158ca2462d5dd73053e857e42e1c78d551b2aef",
+      "bytes": 19510
+    }
+  },
+  "new_model_calls": 0,
+  "new_model_servers": 0,
+  "human_reviewed": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "result_sha256": "8252d5f8c38cd40c64ce0145600edc10b618aa4529c7631d6cbce665d4c03571"
+}

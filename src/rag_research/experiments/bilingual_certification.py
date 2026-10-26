@@ -114,6 +114,12 @@ def adopted_sources(paths):
         candidate = policy["candidate_config"]
         candidate_path = bind(candidate["path"], candidate["sha256"])
         require(candidate_path.is_relative_to(ROOT / "configs"), "Adopted candidate must stay in configs")
+        candidate_config = yaml.safe_load(candidate_path.read_text("utf-8"))
+        if candidate_config.get("semantic_evidence_reuse"):
+            from rag_research.experiments.evidence_reuse import reused_bindings
+
+            for name, sha in reused_bindings(candidate_config, root=ROOT).items():
+                bind(name, sha)
         require(prior not in prerequisites or prerequisites[prior] == candidate_path, "Prerequisite candidate differs across languages")
         prerequisites[prior] = candidate_path
     return bound, roots, prerequisites
@@ -121,7 +127,16 @@ def adopted_sources(paths):
 
 def verify_prerequisite(report_path, candidate_path):
     """Recompute the entire bilingual diagnostic, rather than trusting a pass flag."""
-    config, plan, prompts, plan_path = semantic_diagnostics.load_config(candidate_path)
+    declared = yaml.safe_load(Path(candidate_path).read_text("utf-8"))
+    if isinstance(declared, dict) and declared.get("semantic_evidence_reuse"):
+        config, plan, prompts, plan_path = semantic_diagnostics.load_config(candidate_path, allow_reused_view=True)
+    else:
+        config, plan, prompts, plan_path = semantic_diagnostics.load_config(candidate_path)
+    if config.get("semantic_evidence_reuse"):
+        from rag_research.experiments.evidence_reuse import validate_reuse
+
+        validate_reuse(config, plan, root=ROOT, report_override=report_path)
+        return
     report, manifest = read_json(report_path), read_json(report_path.parent / "manifest.json")
     validate_chain_identity(config, plan, manifest, report, root=ROOT)
     selected = semantic_diagnostics.specs(plan)

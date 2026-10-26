@@ -1,0 +1,191 @@
+{
+  "schema_version": 3,
+  "purpose": "phase11-baseline-only-fixed-checkout-reproduction-not-runtime-health",
+  "recorded_at_jst": "2026-10-26T18:39:31.291666+09:00",
+  "checkout": ".tools/worktrees/phase11-baseline-v3-4793a17",
+  "fixed_commit": "4793a17fc70e01fb5217be1a3ebd4de4557a4c3e",
+  "detached_head": true,
+  "checkout_source_clean": true,
+  "git_status_porcelain": "",
+  "tracked_files_hashed": 749,
+  "immutable_assets": {
+    "files": 31,
+    "bytes": 10603166196,
+    "mode": "hardlink + same inode/device + streaming SHA256",
+    "all_match": true
+  },
+  "mutable_known_inputs": {
+    "files": 6,
+    "bytes": 686360,
+    "mode": "independent copies + original/copy SHA256 equality before and after validation",
+    "all_match": true,
+    "scope": "old EN/JA connection baselines only plus Runtime provenance/cache; no active semantic data or Main/Cal/Evaluation QA"
+  },
+  "data_symlinks_created": 0,
+  "additional_auxiliary_model_hardlink_reason": "Candidate identity9aeb binds its auxiliary GGUF; copy a hardlink so the ordinary v3 plan validator can check the unchanged chain. No 9B model load or GPU execution.",
+  "python_environment": {
+    "uv_sync_frozen_offline_succeeded": true,
+    "project": "environments/embedding_gpu",
+    "required_process_environment": {
+      "ORT_DISABLE_TELEMETRY": "1"
+    },
+    "uv_lock_sha256": "2df57fadfe7537c4d6b5c87c239949b0aa46763f00a96d590be6945321804126",
+    "pyproject_sha256": "b7947c6874debd7da804d9cdd0e724641e5c1761ccfa8f6c24690fd9e6b6e004"
+  },
+  "entrypoint_load_contract_passed": true,
+  "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+  "candidate_identity_counts": {
+    "model": 2,
+    "runtime": 33,
+    "prompt": 2,
+    "sampler": 1,
+    "schema": 2,
+    "core": 93
+  },
+  "identity_descriptors": [
+    {
+      "path": "data/manifests/phase11-autonomy-v3-identity/sampler-a0347c2f0d6d4d89897e9368fc27401fb59f952d6e74d72057a0783a39a73e6c.json",
+      "sha256": "cf0460ad3bb8d865721a4791a2a2b0fbf1ccc82dc32a369c54e6e3f1ca7a3039",
+      "matches_canonical_relative_path": true
+    },
+    {
+      "path": "data/manifests/phase11-autonomy-v3-identity/schema-7e72d0342e273879cd9a4aa57313396d6680638d27180e14a8d05263c754b085.json",
+      "sha256": "a1d6f588c3864f09b50081da03bdd3b1e3dbd140444dc819c60a2714670d9fc1",
+      "matches_canonical_relative_path": true
+    }
+  ],
+  "baseline_config_sha256": "b1915edaec42c5c451857fdf6ec5c7a92418d0206f2d112eebd58986c646d1cf",
+  "probe_plan_sha256": "74bc1e2327d7c272aebb401c402134681791ca19935b2fcf5857a5cb0215decf",
+  "generation_identity": {
+    "path": "data/manifests/phase11_baseline_graph_off_identity_v3.json",
+    "sha256": "5936565e3627e6fcb4cd9ade8de072e00661181b527fe36222ba13a3c3abb670"
+  },
+  "runtime_manifest_sha256": "150141f370e82faa426cd468af1505584bcc98efd5b2e69d695b19e943a70784",
+  "prepared_validated_canonical_plans": [
+    {
+      "stage": "preflight",
+      "canonical_plan_path": "data/runs/development_screening/phase11-autonomy-v3-plans/baseline-preflight.json",
+      "sha256": "94fe6dedb4e64732a816de7d59340ce56b7eb1ec377ee3af651005486ec7a04e",
+      "checkout_copy_path": ".tools/test-artifacts/phase11-baseline-plan-validation/baseline-preflight-output512.json",
+      "run_id": "phase11-v3-baseline-preflight",
+      "planned_calls": 0,
+      "maximum_calls": 0,
+      "maximum_tokens_per_call": 512,
+      "maximum_wall_seconds": 900,
+      "request_timeout_seconds": 300,
+      "monitor_interval_seconds": 5,
+      "registered": false,
+      "executed": false
+    },
+    {
+      "stage": "smoke",
+      "canonical_plan_path": "data/runs/development_screening/phase11-autonomy-v3-plans/baseline-smoke.json",
+      "sha256": "5a54102895beb5d1b982ab1e846c1f40af3479fdb3530acfff44cafe6957bfb1",
+      "checkout_copy_path": ".tools/test-artifacts/phase11-baseline-plan-validation/baseline-smoke-output512.json",
+      "run_id": "phase11-v3-baseline-smoke",
+      "planned_calls": 2,
+      "maximum_calls": 2,
+      "maximum_tokens_per_call": 512,
+      "maximum_wall_seconds": 900,
+      "request_timeout_seconds": 300,
+      "monitor_interval_seconds": 5,
+      "registered": false,
+      "executed": false
+    }
+  ],
+  "cli_notes": {
+    "path": "data/runs/lab/phase11-baseline-checkout-reproduction-v3/canonical-plans-and-cli-notes.json",
+    "sha256": "9830fe4f8d67685e890e67d5017b4c4fc059d1348d55a56f37817e83c7296d1d"
+  },
+  "preparation_cost": {
+    "copy_and_environment_wall_seconds": 8.597834801999852,
+    "initial_contract_identity_and_plan_validation_seconds": 19.6679270209861,
+    "canonical_plan_validation_seconds": 12.000441814016085,
+    "sum_observed_preparation_seconds": 40.266203637002036,
+    "conservative_elapsed_since_asset_launch_seconds": 484.443037,
+    "worktree_creation_and_tool_roundtrip_seconds": null,
+    "external_paid_api_requests": 0,
+    "monetary_energy_cost": null,
+    "note": "Observed code wall times and conservative elapsed time are separate; electricity price and Git/tool overhead were not metered."
+  },
+  "errors_observed": [],
+  "old_909_manifest_and_unknown3_preserved": true,
+  "completion_calls": 0,
+  "model_loads": 0,
+  "server_starts": 0,
+  "native_device_enumerations": 0,
+  "registrations": 0,
+  "execute_calls": 0,
+  "native_preflight_or_smoke_executed": false,
+  "runtime_health_adoption_claimed": false,
+  "main_cal_or_evaluation_body_opened": false,
+  "active_experiment_checkout_or_process_modified": false,
+  "files": {
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/canonical-plan-validation.json": {
+      "sha256": "406b6bab710acab4f149851968d16b84df64ca84dae6b2e1d20b3d2d7cb362da",
+      "bytes": 1529
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/canonical-plans-and-cli-notes.json": {
+      "sha256": "9830fe4f8d67685e890e67d5017b4c4fc059d1348d55a56f37817e83c7296d1d",
+      "bytes": 3786
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/copy-and-environment.json": {
+      "sha256": "5b2d5820995efcb30e717d7ecf2e4688f6dc8e166af95ae537f97e9f17a0895a",
+      "bytes": 710
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/copy.stdout.log": {
+      "sha256": "4716f1ada0ed4bbec8e7f3acbcd990f9a848d4e25eab5f6791293367ae012210",
+      "bytes": 790
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/entrypoint-and-plan-validation.json": {
+      "sha256": "f1c6ad5bc41001f029a0d067f2e4952c63e215b5b48850cdb9bc63c386905252",
+      "bytes": 2158
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/immutable-inventory.json": {
+      "sha256": "d233603d5f860cbc46a81f374bebb7cd8ef84fb1df673d0703c70e20dc7df6a7",
+      "bytes": 7379
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/launch.json": {
+      "sha256": "e98a610b6053951b1dba579dde2b168a9c80ee0a64373fdeb1946ff4d711fedc",
+      "bytes": 709
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/mutable-known-inputs-inventory.json": {
+      "sha256": "3e9d9b22978dcc8e27d3ec8d9da0abcc87ef70e9d9c589dfd0fef9030ea68649",
+      "bytes": 1439
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/preflight-validated-plan.json": {
+      "sha256": "10adf7748ec74c2f1dab8c50f8c53f17b9bdcd56fd07c5991a48ddfd56423e90",
+      "bytes": 27980
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/reproduce_checkout.py": {
+      "sha256": "04a16f55dd52055d7165fef1007a2980fe8f13812a6bc237b3b1d0bef6f05475",
+      "bytes": 4679
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/smoke-validated-plan.json": {
+      "sha256": "c65dfcfb388d0b74e936a80b9e2167ad2d5d31a6ccd7bec32d2113e7adb92b37",
+      "bytes": 27971
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/tracked-checkout-hashes.json": {
+      "sha256": "46195ed51595fb116bf3521be442323a1301495eba5c1380be3b26243e995035",
+      "bytes": 88653
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/uv-sync.log": {
+      "sha256": "6b9b50f6ddf81415d8d2fdde0977d912acafafebed2df19210e28f9d1b7f04b5",
+      "bytes": 1671
+    },
+    "data/runs/lab/phase11-baseline-checkout-reproduction-v3/worktree-creation-and-final-source.json": {
+      "sha256": "43b478e4da8ecae7803933679a190a834ce6a7ebe6d57269088b06f213670183",
+      "bytes": 754
+    },
+    "data/runs/development_screening/phase11-autonomy-v3-plans/baseline-preflight.json": {
+      "sha256": "94fe6dedb4e64732a816de7d59340ce56b7eb1ec377ee3af651005486ec7a04e",
+      "bytes": 28196
+    },
+    "data/runs/development_screening/phase11-autonomy-v3-plans/baseline-smoke.json": {
+      "sha256": "5a54102895beb5d1b982ab1e846c1f40af3479fdb3530acfff44cafe6957bfb1",
+      "bytes": 28187
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

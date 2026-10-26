@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "purpose": "unexecuted-technical-candidate-supersession-not-resampling",
+  "created_at_utc": "2026-10-26T10:21:38.451371+00:00",
+  "superseded_candidate_identity_sha256": "ea09b9d82b73e26455c536d44b2e49137bc09b22e54149f5d328407057633578",
+  "reason": "Pre-Main review found duplicate acquisition of the semantic canonical lock in the proof helper. Corrected read-only copy replay and tested under the held outer lock.",
+  "preserved_old_artifacts": {
+    "configs/phase11_semantic_candidate_v22.yaml": "5f5050066356136b63963f46a458be5d2e55814c8222810b4f698190288f3943",
+    "configs/phase11_semantic_diagnostics_v22.json": "bdc45412c77183f46c79c21f4c38925c57394c9e77fa6225b2b0d3b9d6b20234",
+    "configs/phase11_known_trace_candidate_v11.yaml": "dad2814db5a3f57d43980ca0fdf6fe3ca42201d41d4c3ae8de33e6d7da127cc2",
+    "configs/phase11_known_trace_regression_v11.json": "db769f3882805fe9b33bac1c08eb1bf574697c9c9e6ee1433fbaeb83d5ac8aca",
+    "data/manifests/phase11_semantic_evidence_reuse_v1.json": "83e7c7df8a6f3b9393c282693e4028b7df9d415d4584201beab820359f3e6c35",
+    "data/runs/development_screening/phase11-semantic-evidence-reuse-validation-v1/result.json": "fa59356a18d3926176b827df921f3c2a7bc99972a3f8f970e75906c8b5f88f70"
+  },
+  "old_proof_elapsed_seconds": 43.87691299704602,
+  "old_candidate_registered_native_runs": 0,
+  "old_known_native_calls": 0,
+  "old_main_calibration_calls": 0,
+  "replacement_candidate": {
+    "path": "configs/phase11_semantic_candidate_v23.yaml",
+    "sha256": "3c9e7fab328cb9722bee0c0618b8d49a9f16cc6ee1a5b549f0a43b1b9ab19f86"
+  },
+  "replacement_known": {
+    "path": "configs/phase11_known_trace_candidate_v12.yaml",
+    "sha256": "74596ba939f098e520be2b4fbc46a9b18c2f5465d9e65772f00aa84f6348cfef"
+  },
+  "replacement_receipt": {
+    "path": "data/manifests/phase11_semantic_evidence_reuse_v2.json",
+    "sha256": "ee7a928dbf85390b64202e9dd910c9276b07f31aecd9dfc7e989190e9d6c0db1"
+  },
+  "original_semantic_seventy_reexecuted": false,
+  "known_main_calibration_adopted": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

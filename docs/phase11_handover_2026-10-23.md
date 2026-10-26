@@ -1,5 +1,7 @@
 # Phase 11 新チャットへの引継ぎ
 
+2026-10-26 19:27 JST最新: 日英意味v21は固定d40で全70要求/58条件を終了し、Critical4/4・人工英語24/24・日本語30/30・未知0で通過した。原Raw133/固定Source98・全Native/理由/費用を独立監査し、追加0再読と正規コピーを完了。初回3BのGraph OFF生成0/既知日英2Smokeも固定479で完了・監査し、累積993試行/旧未知3を保存した。後工程のGroup欠落を非推論修正し、全889 Test/Ruffと実70のLock保持下再検証・最終Validator検証v5を通過。新94Coreの候補v23/Receiptv2へ旧証拠を明示的に結び、元15 QA/42文/30条件/84 CallのKnown v12を準備した。Known新Native、Main/Cal/最終凍結は未実施。Goalはactive、Gate11未通過、Phase12未開始。 以下の記録は各作業時点の履歴として保持する。
+
 2026-10-26 18:24 JST追記: 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
 2026-10-26最新: [自律継続v3](phase11_autonomy_v3.md)を全844Test/Ruffで確認し、d40f927をCommit/通常Push・Remote一致。固定専用WTで現行資産/可変Rawを再現し、Graph OFFの生成0全70入力・Smoke2成功/未知0・新v21生成0全70入力/形式10（Strict9成功＋旧方式対照1）を完了・監査した。終了済み分は旧込み921試行/確定未知3、固定v21の日英意味70Callを実行中。旧v10不採用と暖鋒理由の誤読を保全、Main/Cal/最終凍結は未実施。Goalはactive、Gate11未通過・Phase12未開始。以下の旧停止指示は10月24日の新許可で置換する。

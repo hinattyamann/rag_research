@@ -1,0 +1,208 @@
+"""Read-only adoption and selection gates before a main Development run can start."""
+
+import math
+from pathlib import Path
+
+import yaml
+
+from rag_research.evaluation.claimwise import atomic_steps, verify_once
+from rag_research.experiments.frozen_trace import digest, require
+from rag_research.experiments.phase11_autonomy import validate_chain_identity
+from rag_research.experiments.protocol import ROOT, task_config
+from rag_research.experiments.semantic_adoption import BINARY, BINARY_RULES, version
+from rag_research.experiments.storage import read_json, verify_checkpoint
+from rag_research.generation.auxiliary import auxiliary_identity
+from rag_research.generation.cuda_runtime import execution_identity
+from rag_research.retrieval.common import file_hash
+
+REQUIRED_MAIN_POLICY = {
+    "health_gate": {"selected_qa_completed_per_language": 20, "maximum_task_errors": 0,
+        "maximum_input_overflow": 0, "baseline_requires_actual_used_context": True,
+        "unknown_outcome_stops_without_resampling": True, "missing_or_budget_stopped_qa_remain_in_manifest": True},
+    "semantic_adoption_after_blind_seal": {"minimum_exact_label_accuracy_per_language": .9,
+        "minimum_supported_label_accuracy_per_language": .9, "maximum_definite_negative_false_support": 0,
+        "minimum_complete_comparable_qa_per_language": 10,
+        "ambiguous_units_excluded_only_from_accuracy_not_F": True,
+        "report_all_positive_negative_ambiguous_denominators": True,
+        "AI_expected_labels_frozen_before_internal_verdict_unblinding": True},
+    "quality": {"seal_all_candidates_both_languages_before_internal_unblinding": True,
+        "human_reviewed": False, "unknown_quality_not_imputed": True, "maximum_candidates_per_qa": 2},
+    "decision": {"threshold": .7, "bare_refusal_policy": "rewrite_once", "score_for_no_fixed_units": None},
+}
+LEGACY_LIMITS = {"maximum_completion_attempts": 1660, "maximum_new_qa_per_stage_session": 5,
+    "stop_on_any_task_error": True, "automatic_refill": False}
+
+
+def stage_limits(policy, stage, *, root=None):
+    """Keep historical caps; v3 accepts only a separately hashed finite calculation.
+
+    The resource specification deliberately does not reference an execution plan:
+    that plan binds config/policy/spec later, avoiding a circular hash graph.
+    """
+    root = ROOT if root is None else root
+    chain = validate_chain_identity(policy, root=root)
+    limits = policy.get("limits_per_language")
+    if chain is None:
+        require(limits == LEGACY_LIMITS, "Preserve preregistered legacy stage limits")
+        return limits
+    require(version(policy) == BINARY, "Version 3 resources preserve support-binary-v2 adoption")
+    require(stage in {"main", "cal"}, "Unknown finite resource stage")
+    require(isinstance(limits, dict) and set(limits) == set(LEGACY_LIMITS) and
+            type(limits["maximum_completion_attempts"]) is int and limits["maximum_completion_attempts"] > 0 and
+            type(limits["maximum_new_qa_per_stage_session"]) is int and
+            limits["maximum_new_qa_per_stage_session"] == 5 and
+            limits["stop_on_any_task_error"] is True and limits["automatic_refill"] is False,
+            "Finite v3 stage calls must preserve five-QA sessions and stopping/no refill")
+    registration = read_json(bound_path(policy.get("resource_budget_registration"), root=root))
+    validate_chain_identity(policy, registration, root=root)
+    require(version(registration) == BINARY and
+            registration.get("purpose") == "phase11-finite-stage-resource-registration" and
+            registration.get("stage") == stage and registration.get("count_per_language") == 20 and
+            registration.get("limits_per_language") == limits and
+            registration.get("registered_before_new_outputs") is True,
+            "Stage resources must be registered before new outputs for all original twenty QA")
+    require(all(isinstance(registration.get(k), str) and registration[k].strip() for k in
+            ("call_calculation", "token_time_assumptions", "stop_method", "resume_method")),
+            "Finite resource calculation and stopping/resumption rationale required")
+    budgets = registration.get("budget_per_language")
+    require(isinstance(budgets, dict) and set(budgets) == {"en", "ja"}, "Register both language resource estimates")
+    for budget in budgets.values():
+        require(isinstance(budget, dict) and type(budget.get("planned_calls")) is int and
+                0 < budget["planned_calls"] <= limits["maximum_completion_attempts"] and
+                type(budget.get("maximum_calls")) is int and
+                budget.get("maximum_calls") == limits["maximum_completion_attempts"],
+                "Finite calculated calls must fit the preregistered stage ceiling")
+        require(all(type(budget.get(k)) in {int, float} and math.isfinite(budget[k]) and budget[k] >= 0
+                for k in ("estimated_tokens", "estimated_native_seconds")) and
+                all(type(budget.get(k)) in {int, float} and math.isfinite(budget[k]) and budget[k] > 0
+                for k in ("maximum_wall_seconds", "request_timeout_seconds", "maximum_tokens_per_call")) and
+                budget["maximum_wall_seconds"] > budget["request_timeout_seconds"],
+                "Finite stage token/time estimates and individual timeout required")
+    return limits
+
+
+def validate_main_policy(policy):
+    for section, expected in REQUIRED_MAIN_POLICY.items():
+        if section == "semantic_adoption_after_blind_seal" and version(policy) == BINARY:
+            expected = {k: v for k, v in expected.items() if k not in {
+                "minimum_exact_label_accuracy_per_language", "minimum_supported_label_accuracy_per_language",
+                "maximum_definite_negative_false_support"}} | BINARY_RULES
+        actual = policy.get(section)
+        require(isinstance(actual, dict) and all(k in actual and type(actual[k]) is type(v) and actual[k] == v
+                for k, v in expected.items()), "Preserve preregistered main policy rules: " + section)
+    reason = policy["semantic_adoption_after_blind_seal"].get("comparison_minimum_reason")
+    require(isinstance(reason, str) and reason.strip(), "Main comparison minimum needs its prior rationale")
+
+
+def bound_path(binding, *, root=None):
+    root = ROOT if root is None else root
+    require(isinstance(binding, dict) and set(binding) >= {"path", "sha256"}, "Missing preregistered evidence binding")
+    require(isinstance(binding["path"], str) and not Path(binding["path"]).is_absolute(), "Evidence paths must be repository relative")
+    path = (root / binding["path"]).resolve()
+    require(path.is_relative_to(root) and path.is_file() and file_hash(path) == binding["sha256"], "Main Development evidence changed")
+    return path
+
+
+def passing_known_regression(binding):
+    # Deferred import avoids the semantic runner's use of bilingual immutable().
+    from rag_research.experiments.semantic_diagnostics import assess, load_config, specs
+
+    report_path = bound_path(binding)
+    require(report_path.is_relative_to(ROOT / "data/runs/semantic_diagnostics"), "Known evidence must stay in semantic diagnostics")
+    report, manifest = read_json(report_path), read_json(report_path.parent / "manifest.json")
+    require(report["diagnostic_gate_passed"] is True and report["completed_conditions"] ==
+            report["planned_conditions"] == 30 and not report["not_attempted_ids"] and
+            report["cost_incomplete"] is False,
+            "Known regression must be complete, passing and fully costed")
+    config_path = bound_path(binding["config"])
+    config, plan, prompts, plan_path = load_config(config_path)
+    require(version(manifest) == version(plan.get("gate", {})) == version(report),
+            "Known plan/manifest/report semantic adoption versions differ")
+    validate_chain_identity(config, plan, manifest, report, root=ROOT)
+    mode = config.get("verification_mode", "joint")
+    expected_calls = 2 * sum(len(c["claims"]) + (mode == "source-reading-v1") for c in plan["cases"])
+    require(config == manifest["config"] and plan["purpose"] == "phase11-known-trace-semantic-regression" and
+            len(plan["cases"]) == 15 and sum(len(c["claims"]) for c in plan["cases"]) == 42 and
+            mode in {"source-reading-v1", "claimwise-v1"} and
+            report["completion_attempts_recorded"] == plan["max_completion_attempts"] == expected_calls and
+            set(report["task_result_sha256"]) == {key for _, _, key in specs(plan)} and
+            manifest["plan_sha256"] == file_hash(plan_path) and report["manifest_sha256"] == digest(manifest),
+            "Use the complete passing known-15 regression, not the artificial diagnostic alone")
+    require(manifest["model"] == auxiliary_identity(config) and
+            all(manifest.get(k) == v for k, v in execution_identity(config).items()), "Known model/runtime changed")
+    results = {}
+    for case, order, key in specs(plan):
+        path = report_path.parent / "tasks" / (key + ".json")
+        saved = read_json(path)
+        verify_checkpoint(saved)
+        require(saved["status"] == "ok" and saved["result_sha256"] == report["task_result_sha256"][key],
+                "Known regression raw task missing or changed")
+        documents = case["documents"] if order == "original" else list(reversed(case["documents"]))
+        result = verify_once(None, task_config(config, "verify_claims"), prompts[case["language"]],
+            {"question": case["question"], "answer": case["answer"], "claims": case["claims"], "documents": documents},
+            path, {"manifest_sha256": digest(manifest), "case_id": case["id"], "order": order},
+            constraints=config["output_constraints"], mode=mode,
+            reader_generation=task_config(config, "read_sources") if mode == "source-reading-v1" else None)
+        require(result == saved, "Known raw reading/verdict/cost binding changed")
+        results[key] = result
+    assessed = assess(plan, results)
+    require(all(report.get(k) == v for k, v in assessed.items()) and assessed["diagnostic_gate_passed"] and
+            sum(bool(t["completion_attempted"]) for t in atomic_steps(results.values())) == expected_calls,
+            "Known adoption criteria do not agree with all saved raw results")
+    return config, manifest
+
+
+def validate_main(config, rows, qa_path):
+    policy_path = bound_path(config.get("main_execution_policy"))
+    policy = read_json(policy_path)
+    require(policy["purpose"] == "phase11-main-development-execution-policy" and
+            policy["status"] in {"preregistered_pending_known_regression", "preregistered"} and
+            policy["phase12_allowed"] is False and policy["count_per_language"] == 20 and
+            policy["selection_manifest"] == config.get("development_selection") and
+            policy["limits_per_language"] == config.get("main_limits") and
+            policy["quality"]["seal_all_candidates_both_languages_before_internal_unblinding"] is True,
+            "Main execution policy/limits/selection/seal changed")
+    validate_main_policy(policy)
+    selection_path = bound_path(config.get("development_selection"))
+    selection = read_json(selection_path)
+    verify_checkpoint(selection)
+    require(selection["purpose"] == "phase11-main-development-preselected-ids-not-execution-approval" and
+            selection["split"] == "development" and selection["phase12_allowed"] is False and
+            selection["assets_sha256"] == file_hash(ROOT / config["assets"]) and
+            selection["development_qa_sha256"][Path(qa_path).relative_to(ROOT).as_posix()] == file_hash(qa_path),
+            "Main Development selection/assets changed")
+    language = config["language"]
+    selected = selection["languages"][language]["selected"]
+    require(len(rows) == len(selected) == 20 and
+            [r["record_id"] for r in rows] == [r["record_id"] for r in selected] and
+            [r["document_group_id"] for r in rows] == [r["document_group_id"] for r in selected] and
+            len({r["document_group_id"] for r in rows}) == 20,
+            "Use the preselected 20 QA/groups in the original order; never refill")
+    for name, sha in selection["used_baseline_input_sha256"].items():
+        path = (ROOT / name).resolve()
+        require(path.is_relative_to(ROOT) and file_hash(path) == sha, "Historical usage inventory changed")
+    prior, manifest = passing_known_regression(config.get("adopted_known_regression"))
+    require(version(policy) == version(manifest) == version(config), "Known/Main semantic adoption versions differ")
+    candidate = yaml.safe_load(bound_path(policy.get("candidate_config")).read_text("utf-8"))
+    validate_chain_identity(prior, manifest, policy, config, candidate, root=ROOT)
+    ignored = {"study_version", "diagnostics"}
+    require(isinstance(candidate, dict) and candidate.get("purpose") == prior.get("purpose") ==
+            "phase11-bilingual-semantic-candidate" and
+            {k: v for k, v in candidate.items() if k not in ignored} ==
+            {k: v for k, v in prior.items() if k not in ignored},
+            "Policy candidate must match the completely adopted known-regression conditions")
+    keys = ("auxiliary_runtime", "sampling", "execution", "verification_mode", "output_constraints")
+    tasks = ("verify_claims", "rewrite_answer") + (("read_sources",) if prior.get("verification_mode") == "source-reading-v1" else ())
+    require(all(config.get(k) == prior.get(k) for k in keys) and
+            all(config["tasks"][t] == prior["tasks"][t] for t in tasks) and
+            auxiliary_identity(config) == manifest["model"] and
+            file_hash(ROOT / config["prompts"]) == manifest["source_sha256"][prior["prompts"][language]],
+            "Main Judge model/runtime/prompts/budgets must match the adopted candidate")
+    require(config["decision"]["threshold"] == prior["decision"]["threshold"] and
+            config["decision"].get("bare_refusal_policy") == "rewrite_once", "Preserve threshold and explicit bare-refusal candidate")
+    for name, sha in manifest["source_sha256"].items():
+        if name.startswith(("src/rag_research/evaluation/", "src/rag_research/generation/")) or name in {
+                "src/rag_research/experiments/protocol.py", "src/rag_research/experiments/frozen_trace.py",
+                "src/rag_research/experiments/storage.py"}:
+            require(file_hash(ROOT / name) == sha, "Adopted Judge core changed; repeat the semantic validation")
+    require(config.get("main_limits") == stage_limits(policy, "main"), "Preserve preregistered main limits")

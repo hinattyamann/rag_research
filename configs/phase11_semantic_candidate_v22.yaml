@@ -1,0 +1,87 @@
+auxiliary_runtime:
+  context_tokens: 12288
+  temperature: 0.2
+  seed: 42
+  threads: 6
+  batch_tokens: 128
+  repack: false
+  timeout_seconds: 1200
+  startup_timeout_seconds: 120
+tasks:
+  extract_claims:
+    max_output_tokens: 3072
+  verify_claims:
+    max_output_tokens: 6144
+  rewrite_answer:
+    max_output_tokens: 6144
+trials:
+  order_conditions:
+  - original
+  - reversed
+  - shuffle_1
+  - shuffle_2
+  - shuffle_3
+  shuffle_seed: 42
+  same_order_total_trials: 5
+  share_original_first_trial: true
+  execution_order_seed: 43
+  generation_seed_policy: same_fixed_seed_for_every_trial
+  deduplicate_order_permutations: true
+  repeated_prompt_result_cache: false
+  regenerate_claims_per_trial: false
+  regenerate_answer_per_trial: false
+  repack_or_truncate_per_trial: false
+decision:
+  score: supported_claims_divided_by_fixed_claims
+  threshold: 0.7
+  accept_when: score_greater_than_or_equal_to_threshold
+  unscorable_action: keep_initial_answer_with_separate_fallback_status
+  no_claims_score: null
+  sensitivity_thresholds:
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+errors:
+  automatic_retries: 0
+  input_overflow_action: record_error_without_truncating
+  preserve_failed_attempts: true
+  resume_only_missing_trials: true
+  reject_protocol_hash_mismatch: true
+output_constraints: thinking_json_passage_ids_v3
+auxiliary_model_manifest: data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json
+sampling:
+  version: auxiliary-sampling-v1
+  top_k: 20
+  top_p: 0.95
+  min_p: 0.0
+  presence_penalty: 1.5
+  repeat_last_n: 64
+  reasoning_budget_tokens: 4096
+  final_json_grammar: true
+  final_json_grammar_mode: closing_tag_root_v3
+  reasoning_prefill_mode: chatml_think_suffix_v1
+execution:
+  runtime_spec: configs/lab_cuda_graph_off_runtime_v1.json
+  gpu_layers: 99
+  device: CUDA0
+  require_full_offload: true
+schema_version: 1
+purpose: phase11-bilingual-semantic-candidate
+status: candidate_not_frozen
+study_version: semantic-evidence-audit-graph-off-v22-non-inference-group-repair
+diagnostics: configs/phase11_semantic_diagnostics_v22.json
+prompts:
+  en: configs/phase11_semantic_prompts_en_v12.yaml
+  ja: configs/phase11_semantic_prompts_ja_v12.yaml
+phase12_allowed: false
+verification_mode: claimwise-v1
+autonomy_protocol_version: phase11-autonomy-v3
+autonomy_protocol:
+  path: configs/phase11_autonomy_v3.json
+  sha256: e0dd7fae96939af34232f5a7174cbc400c6e7dfce3eedf584c2a4d08ca09df00
+candidate_identity_sha256: ea09b9d82b73e26455c536d44b2e49137bc09b22e54149f5d328407057633578
+semantic_evidence_reuse:
+  path: data/manifests/phase11_semantic_evidence_reuse_v1.json
+  sha256: 83e7c7df8a6f3b9393c282693e4028b7df9d415d4584201beab820359f3e6c35

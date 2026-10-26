@@ -1,0 +1,179 @@
+{
+  "schema_version": 4,
+  "purpose": "phase11-closed-run-cumulative-cost-snapshot-not-adoption",
+  "recorded_at_utc": "2026-10-26T10:04:02.829997+00:00",
+  "protocol_version": "phase11-autonomy-v3",
+  "protocol_sha256": "e0dd7fae96939af34232f5a7174cbc400c6e7dfce3eedf584c2a4d08ca09df00",
+  "ledger_snapshot": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-snapshot-v4/ledger.json",
+    "sha256": "56e837cb39fb367989c766306c26514a87be976e7e02f50f988a74d68c3c981e"
+  },
+  "legacy": {
+    "attempts": 909,
+    "terminal_unknown": 3,
+    "original_result": {
+      "path": "data/manifests/phase11_known_trace_result_v10.json",
+      "sha256": "dfd7eb4a780d369c83d65ab8ab1432e9bd8d232cf086e39050169c5f1e293b38"
+    },
+    "full_input_output_tokens": null,
+    "full_seconds_or_currency": null,
+    "unknowns_not_imputed": true,
+    "unused_old_calls_not_reallocated": true
+  },
+  "new_closed_runs": {
+    "attempts": 84,
+    "successful": 72,
+    "failed": 0,
+    "unknown": 0,
+    "observed_input_tokens": 109214,
+    "observed_output_tokens": 264718,
+    "known_task_seconds": 5231.494793644699,
+    "known_native_seconds": 5267.461683,
+    "task_failures": 0,
+    "unvalidated_returned": 12,
+    "cumulative_attempts": 993,
+    "cumulative_unknown": 3,
+    "new_wall_seconds": 5385.258234121953,
+    "cost_incomplete": false,
+    "external_paid_api_calls": 0,
+    "electricity_cost_currency": null,
+    "legacy_success_failure_and_cost_not_reconstructed": true
+  },
+  "native_classification": {
+    "standard_checkpoint_successes": 72,
+    "standard_checkpoint_failures": 0,
+    "terminal_unknown": 0,
+    "unvalidated_returned": 12,
+    "unvalidated_breakdown": {
+      "format_legacy_control_and_strict_probes": 10,
+      "baseline_runtime_smoke": 2
+    },
+    "independent_format_or_runtime_audit_required": true
+  },
+  "cumulative": {
+    "attempts": 993,
+    "terminal_unknown": 3,
+    "full_total_input_output_tokens": null,
+    "full_total_cost_seconds_or_currency": null,
+    "incomplete_because_legacy_unknown_outcomes": true
+  },
+  "measurement_scope": {
+    "known_task_seconds": "standard checkpointed tasks only; excludes format and baseline custom journals",
+    "known_native_seconds": "all new /completion elapsed HTTP observations, overlapping task/generation intervals",
+    "new_wall_seconds": "sum of these seven serialized finite Run supervisor walls; excludes other work and is not Goal wall",
+    "raw_output_tokens_new": "all received new native token IDs including reasoning, format control and baseline",
+    "hardware_electricity_cost_currency": null,
+    "external_paid_api_calls": 0
+  },
+  "runs": [
+    {
+      "run_id": "phase11-v3-runtime-preflight",
+      "state": "process_completed",
+      "fixed_commit": "d40f927e24af8ad263fa4e12f21334f7b86388b6",
+      "candidate_identity_sha256": "b74a3b27706eedc83eeb9f0a4b3564f64664b44df06af13c9d3112ad606de8bb",
+      "wall_seconds": 20.345748943975195,
+      "attempts": 0,
+      "standard_successful": 0,
+      "unvalidated_returned": 0,
+      "native_terminal_unknown": 0,
+      "native_http_seconds": 0,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "run_id": "phase11-v3-runtime-smoke",
+      "state": "process_completed",
+      "fixed_commit": "d40f927e24af8ad263fa4e12f21334f7b86388b6",
+      "candidate_identity_sha256": "b74a3b27706eedc83eeb9f0a4b3564f64664b44df06af13c9d3112ad606de8bb",
+      "wall_seconds": 193.62774780200562,
+      "attempts": 2,
+      "standard_successful": 2,
+      "unvalidated_returned": 0,
+      "native_terminal_unknown": 0,
+      "native_http_seconds": 171.773034,
+      "input_tokens": 6874,
+      "output_tokens": 8465
+    },
+    {
+      "run_id": "phase11-v3-semantic-preflight",
+      "state": "process_completed",
+      "fixed_commit": "d40f927e24af8ad263fa4e12f21334f7b86388b6",
+      "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+      "wall_seconds": 20.337676025985274,
+      "attempts": 0,
+      "standard_successful": 0,
+      "unvalidated_returned": 0,
+      "native_terminal_unknown": 0,
+      "native_http_seconds": 0,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "run_id": "phase11-v3-v21-format",
+      "state": "process_completed",
+      "fixed_commit": "d40f927e24af8ad263fa4e12f21334f7b86388b6",
+      "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+      "wall_seconds": 50.64221247396199,
+      "attempts": 10,
+      "standard_successful": 0,
+      "unvalidated_returned": 10,
+      "native_terminal_unknown": 0,
+      "native_http_seconds": 36.332572,
+      "input_tokens": 630,
+      "output_tokens": 1729
+    },
+    {
+      "run_id": "phase11-v3-v21-semantic",
+      "state": "process_completed",
+      "fixed_commit": "d40f927e24af8ad263fa4e12f21334f7b86388b6",
+      "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+      "wall_seconds": 5080.031970276032,
+      "attempts": 70,
+      "standard_successful": 70,
+      "unvalidated_returned": 0,
+      "native_terminal_unknown": 0,
+      "native_http_seconds": 5057.123585,
+      "input_tokens": 96960,
+      "output_tokens": 254333
+    },
+    {
+      "run_id": "phase11-v3-baseline-preflight",
+      "state": "process_completed",
+      "fixed_commit": "4793a17fc70e01fb5217be1a3ebd4de4557a4c3e",
+      "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+      "wall_seconds": 10.125891555973794,
+      "attempts": 0,
+      "standard_successful": 0,
+      "unvalidated_returned": 0,
+      "native_terminal_unknown": 0,
+      "native_http_seconds": 0,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "run_id": "phase11-v3-baseline-smoke",
+      "state": "process_completed",
+      "fixed_commit": "4793a17fc70e01fb5217be1a3ebd4de4557a4c3e",
+      "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+      "wall_seconds": 10.146987044019625,
+      "attempts": 2,
+      "standard_successful": 0,
+      "unvalidated_returned": 2,
+      "native_terminal_unknown": 0,
+      "native_http_seconds": 2.232492,
+      "input_tokens": 4750,
+      "output_tokens": 191
+    }
+  ],
+  "prior_cost_snapshot_preserved": {
+    "path": "data/manifests/phase11_autonomy_cumulative_cost_v3.json",
+    "sha256": "97280491a20ba6022b79a5677e6779cda1cb85009f49cc201fe8fcf615c58f61"
+  },
+  "build_test_annotation_and_preparation_costs": "separate existing build/software/reproduction/review receipts; not silently counted as zero or added twice to these native totals",
+  "human_reviewed": false,
+  "known_regression_adopted": false,
+  "main_calibration_done": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "result_sha256": "dac7ecb1808f7a236525fb9de65335ebed6c7f90c5a6a815aa7562b05f66c339"
+}
