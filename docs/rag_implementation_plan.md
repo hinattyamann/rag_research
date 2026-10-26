@@ -1,12 +1,14 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.79 — 2026年10月26日 Group保存修正と厳密な証拠再利用
+## Version 8.80 — 2026年10月26日 固定CheckoutのKnown84実行
+
+19:42 JST現在、固定f0b7c71/94 Core・候補v23/Receiptv2の専用CheckoutでKnown v12全84 Callを実行中。全84入力生成0・全層CUDA・Token予算と全資産532ファイル/旧証拠のHashを確認し、v3 Plan/実行前独立監査へ結んだ。Runは84 Call/21250秒・個別1200秒/監視5秒/Retry0。既存Handle17686/Journalを監視し、実行中Checkoutを編集しない。完走後は全84 Leaf/30 aggregate/Native Schema・payload/全理由・費用/追加0再読を照合し、実Known採用後だけMainを準備する。詳細は[自律継続v3](phase11_autonomy_v3.md)。Main/Cal/最終凍結は未実施、Gate11未通過、Phase12未開始。以下は準備時点の履歴として保持する。
 
 日英意味v21は固定d40で全70要求/58条件を終了し、Critical4/4・人工英語24/24・日本語30/30・未知0で通過した。原Raw133/固定Source98・全Native/理由/費用を独立監査し、追加0再読と正規コピーを完了。初回3BのGraph OFF生成0/既知日英2Smokeも固定479で完了・監査し、累積993試行/旧未知3を保存した。後工程のGroup欠落を非推論修正し、全889 Test/Ruffと実70のLock保持下再検証・最終Validator検証v5を通過。新94Coreの候補v23/Receiptv2へ旧証拠を明示的に結び、元15 QA/42文/30条件/84 CallのKnown v12を準備した。Known新Native、Main/Cal/最終凍結は未実施。Goalはactive、Gate11未通過、Phase12未開始。
 
 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-[研究計画 Version 7.76](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.77](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 

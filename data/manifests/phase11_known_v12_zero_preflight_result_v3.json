@@ -1,0 +1,122 @@
+{
+  "schema_version": 3,
+  "purpose": "phase11-known-v12-independent-zero-completion-preflight-result",
+  "created_at_utc": "2026-10-26T10:42:07.676763+00:00",
+  "fixed_commit": "f0b7c71c4375a617c7142c67e3aa0610f73edb14",
+  "candidate_identity_sha256": "91f50601299a8e9b1399b3925acddc36ffb6af9a46032e2adad631770a12d1b5",
+  "original": ".tools/worktrees/phase11-known-v12-f0b7c71/data/runs/model_screening/phase11-v3-v12-known-preflight",
+  "canonical": "data/runs/model_screening/phase11-v3-v12-known-preflight",
+  "raw_file_count": 4,
+  "source_before_sha256": {
+    ".run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "plan.json": {
+      "sha256": "2069ba3b326bce691ad29782c77567a3cee09497265fc09a86621db5d43ef93d",
+      "bytes": 1220
+    },
+    "report.json": {
+      "sha256": "e43df0fa03fc39495e686ae54db69be911a3377c6e84eaa7dfedbcc00ef4305a",
+      "bytes": 32475
+    },
+    "server.log": {
+      "sha256": "e7abde1819f63f45a149b68fbf40a02d284318b17a6e126e9c6c7d26b0535fd2",
+      "bytes": 19094
+    }
+  },
+  "canonical_sha256": {
+    ".run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "plan.json": {
+      "sha256": "2069ba3b326bce691ad29782c77567a3cee09497265fc09a86621db5d43ef93d",
+      "bytes": 1220
+    },
+    "report.json": {
+      "sha256": "e43df0fa03fc39495e686ae54db69be911a3377c6e84eaa7dfedbcc00ef4305a",
+      "bytes": 32475
+    },
+    "server.log": {
+      "sha256": "e7abde1819f63f45a149b68fbf40a02d284318b17a6e126e9c6c7d26b0535fd2",
+      "bytes": 19094
+    }
+  },
+  "source_after_sha256": {
+    ".run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "plan.json": {
+      "sha256": "2069ba3b326bce691ad29782c77567a3cee09497265fc09a86621db5d43ef93d",
+      "bytes": 1220
+    },
+    "report.json": {
+      "sha256": "e43df0fa03fc39495e686ae54db69be911a3377c6e84eaa7dfedbcc00ef4305a",
+      "bytes": 32475
+    },
+    "server.log": {
+      "sha256": "e7abde1819f63f45a149b68fbf40a02d284318b17a6e126e9c6c7d26b0535fd2",
+      "bytes": 19094
+    }
+  },
+  "independent_copy_inode_verified": true,
+  "inputs": 84,
+  "selected_qa": 15,
+  "fixed_units": 42,
+  "conditions": 30,
+  "max_input_tokens": 3305,
+  "summed_input_tokens_over_all_84_inputs": 225810,
+  "reserved_output_tokens": 6144,
+  "context_tokens": 12288,
+  "minimum_budget_margin_tokens": 2839,
+  "input_overflow_count": 0,
+  "native_completions_in_original_run": 0,
+  "native_completions_in_audit": 0,
+  "full_cuda_offload": true,
+  "offloaded_layers": 33,
+  "total_layers": 33,
+  "gpu_memory_single_observation": "7586 MiB, 8151 MiB",
+  "server_off_observed_after_finished_at_utc": "2026-10-26T10:39:41.622445+00:00",
+  "host_snapshot": {
+    "path": "data/runs/lab/phase11-known-v12-host-prestart-v3/host-visible/snapshot.json",
+    "sha256": "c7d065a82c790c8100a2d760eb90a60b39f67ac6d9fadeb09678c1df48893f7b"
+  },
+  "checkout_receipt": {
+    "path": "data/manifests/phase11_known_v12_checkout_reproduction_v3.json",
+    "sha256": "6288513be81af3dc05ccb8100fad8fd03faf8626ba002112ea48b16505500451"
+  },
+  "registered_finite_plan": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-plans/v12-known-preflight.json",
+    "sha256": "417575ec8ac58c946dee27c6378d99c2687d7375d1e0570a482e2e6fb282d451"
+  },
+  "supervisor_state": "process_completed",
+  "supervisor_returncode": 0,
+  "supervisor_wall_seconds": 25.518611817038618,
+  "model_startup_seconds": 7.698074242041912,
+  "model_runtime_artifacts_verified": true,
+  "monitor_samples": 6,
+  "supervisor_files_sha256": {
+    "manifest.json": {
+      "sha256": "b5a9c62380a945088cdbed8c1089dde71fabadc16f47ed29f860be5de78a0480",
+      "bytes": 29294
+    },
+    "monitor.jsonl": {
+      "sha256": "b6622c35b865ebe9abd75872e9425d08f42426fde218f65441d11b911c6a9644",
+      "bytes": 5086
+    },
+    "stdout.log": {
+      "sha256": "d9f9754a84d4adb6e5b1727c8e54a034c6d6be984a51876cc54f511ba6dbffb6",
+      "bytes": 172
+    }
+  },
+  "audit_wall_seconds": 7.853726650006138,
+  "external_metered_api_cost": 0,
+  "electricity_cost": null,
+  "current_tracked_source_modified": false,
+  "Main_Cal_Evaluation_reserved_text_read": false,
+  "semantic_adoption_claimed": false,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

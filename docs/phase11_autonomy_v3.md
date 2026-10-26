@@ -3,6 +3,25 @@
 2026年10月26日JST。[詳細要件](phase11_lab_weekend_goal.md)に基づく新規作業。
 Gate11未通過、Main/Calibration/最終凍結は未実施、Phase12は開始しない。
 
+## 19:42 JSTの実行現在地
+
+全889 Test/Ruffと旧日英意味70 Callの明示的再利用証明を`f0b7c71`へCommit/通常Pushし、Remote先端一致を確認した。
+候補v23/Known v12の専用Checkoutへ532ファイルを再現し、94 Core/Model/Runtime/旧Raw/SourceproofのHashを照合した。
+再現Receiptは`data/manifests/phase11_known_v12_checkout_reproduction_v3.json`、
+SHA256 `6288513be81af3dc05ccb8100fad8fd03faf8626ba002112ea48b16505500451`。
+全84入力の生成0 preflightは25.518612秒で通過し、最大3305入力＋6144予約がContext12288以内、33/33層CUDA、完了要求0を実測した。
+生成0結果は`data/manifests/phase11_known_v12_zero_preflight_result_v3.json`（SHA256 `43a654678220c871f2b1d16f89c17bac4f9c5bfc8992f7198a585673e7bc588d`）、
+独立事前監査は`data/manifests/phase11_known_v12_prereg_independent_audit_v1.json`（SHA256 `063f061b6b2ff8c91080297099440536d32dc33dedd37ce3a785de204a61b956`）へ結ぶ。
+
+新鮮な全Known回帰を同じ固定Checkoutで開始した。Run IDは`phase11-v3-v12-known`、実行Handle17686。
+事前計画は`data/runs/development_screening/phase11-autonomy-v3-plans/v12-known.json`、
+SHA256 `7639318280dc22b9e739e52b4f9b7b4a20f7202208ab8e574bea649849a7b3d7`。
+全15 QA/42文/30条件/84 Call、支持58/非支持16/曖昧10の予定観測を固定し、旧Expected・最低被覆・F0.7を変更していない。
+Native見積6707.988084秒は実意味診断の先行既知16 Call/1277.712016秒の外挿で、完了保証や母集団CIではない。
+各Runの有限上限は84 Call/1032192計画Token/21250秒、個別1200秒/6144出力Token、監視5秒、Retry0。
+上限はGoal全体の終了条件にしない。全完走後の独立Raw/理由/費用・追加0再読を経るまで採用を確定しない。
+Main/Cal本文・Evaluation本文はこの準備と実行に使用していない。
+
 ## 引継ぎと生成0の確認
 
 開始時はmain/50374e81f47a3683ad4edbf98678fec2478e4eef、origin/main。

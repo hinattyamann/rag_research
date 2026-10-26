@@ -1,6 +1,8 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.76 — 2026年10月26日 非推論修正と実証拠の引継ぎ
+## Version 7.77 — 2026年10月26日 新鮮Known84の登録・実行
+
+19:42 JST現在、固定f0b7c71の専用Checkoutで新鮮Known v12全84 Callを実行中。全84入力の生成0/33層CUDA/Context確認と532資産再現、全条件・Expected不変の独立監査は完了した。Runは84 Call/21250秒・個別1200秒/Retry0へ事前登録し、全完走後のHealth/支持Recall・非支持Specificity各90%/最低被覆/全理由・費用監査まで採用を確定しない。実行Handle/Hash/監視は[自律継続v3](phase11_autonomy_v3.md)と[工程正本](research_roadmap.md)に記録する。Main/Cal/最終凍結は未実施、Goal active・Gate11未通過・Phase12未開始。以下は準備時点の履歴として保持する。
 
 日英意味v21は固定d40で全70要求/58条件を終了し、Critical4/4・人工英語24/24・日本語30/30・未知0で通過した。原Raw133/固定Source98・全Native/理由/費用を独立監査し、追加0再読と正規コピーを完了。初回3BのGraph OFF生成0/既知日英2Smokeも固定479で完了・監査し、累積993試行/旧未知3を保存した。後工程のGroup欠落を非推論修正し、全889 Test/Ruffと実70のLock保持下再検証・最終Validator検証v5を通過。新94Coreの候補v23/Receiptv2へ旧証拠を明示的に結び、元15 QA/42文/30条件/84 CallのKnown v12を準備した。Known新Native、Main/Cal/最終凍結は未実施。Goalはactive、Gate11未通過、Phase12未開始。
 
@@ -8,7 +10,7 @@
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.79](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.80](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 

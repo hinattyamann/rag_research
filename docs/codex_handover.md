@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+2026-10-26 19:42 JST最新: **このチャットのGoalはactiveで、新鮮Known v12全84 Callを実行中**。固定Checkoutは`.tools/worktrees/phase11-known-v12-f0b7c71`、Commit `f0b7c71c4375a617c7142c67e3aa0610f73edb14`、Handle17686、v3台帳のrun_id `phase11-v3-v12-known`。全84入力生成0/独立事前監査/資産532 Hash照合は完了。実行中CheckoutをPull/編集せず、[工程正本](research_roadmap.md)と[自律継続v3](phase11_autonomy_v3.md)から実Handle/Journalを確認し、重複起動・未知再送を防ぐ。全84完走/監査まで採用は未確定。Main/Cal/最終凍結・Gate11は未完了、Phase12は開始しない。以下の古いpaused/上限/未開始は当時の記録であり、この現在地より優先しない。
+
 2026-10-24の研究室再開は[週末用開始文](phase11_lab_weekend_start.md)と[自律継続Goal](phase11_lab_weekend_goal.md)を優先する。
 旧上限付きGoalは履歴とし、90%の採用基準・旧不採用・実証拠要件を維持してPhase11完了まで進める。文書作成のみで、新実験は未開始。
 

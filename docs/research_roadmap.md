@@ -1,10 +1,12 @@
 # 研究のフェーズ・現在地・次に行うこと
 
+2026-10-26 19:42 JST最新: 新鮮なKnown v12の全84 Callを固定f0b7c71の専用Checkoutで開始した（実行Handle17686、v3台帳run_id `phase11-v3-v12-known`）。事前の全84入力生成0は25.518612秒・最大3305入力Token＋6144出力予約がContext12288以内・33/33層CUDA・Call0で通過。532資産の再現と独立実行前監査も完了し、84 Call/21250秒/個別1200秒/監視5秒/Retry0を新出力前に登録した。実行途中の返却を採用扱いせず、全15 QA/42文/30条件/84 CallのHealth・二値各90%・全理由/費用監査後にだけMainへ進む。Main/Cal/最終凍結は未実施、Goalはactive、Gate11未通過、Phase12未開始。実行中f0b7c71のコード・設定は変更しない。
+
 2026-10-26 19:27 JST最新: 日英意味v21は固定d40で全70要求/58条件を終了し、Critical4/4・人工英語24/24・日本語30/30・未知0で通過した。原Raw133/固定Source98・全Native/理由/費用を独立監査し、追加0再読と正規コピーを完了。初回3BのGraph OFF生成0/既知日英2Smokeも固定479で完了・監査し、累積993試行/旧未知3を保存した。後工程のGroup欠落を非推論修正し、全889 Test/Ruffと実70のLock保持下再検証・最終Validator検証v5を通過。新94Coreの候補v23/Receiptv2へ旧証拠を明示的に結び、元15 QA/42文/30条件/84 CallのKnown v12を準備した。Known新Native、Main/Cal/最終凍結は未実施。Goalはactive、Gate11未通過、Phase12未開始。 以下の記録は各作業時点の履歴として保持する。
 
 2026-10-26 18:24 JST追記: 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-更新日: 2026年10月26日。正本: [研究計画7.76](rag_research_plan.md)、[実装計画8.79](rag_implementation_plan.md)。
+更新日: 2026年10月26日。正本: [研究計画7.77](rag_research_plan.md)、[実装計画8.80](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。
