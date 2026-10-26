@@ -1,0 +1,141 @@
+{
+  "schema_version": 3,
+  "purpose": "phase11-fixed-checkout-input-and-environment-reproduction-zero-generation",
+  "recorded_at_jst": "2026-10-26T17:10:29.554004+09:00",
+  "fixed_commit": "d40f927e24af8ad263fa4e12f21334f7b86388b6",
+  "checkout": ".tools/worktrees/phase11-autonomy-v3-d40f927",
+  "checkout_source_clean": true,
+  "git_status_porcelain": "",
+  "tracked_files_hashed": 731,
+  "immutable_assets": {
+    "files": 10590,
+    "bytes": 35611833932,
+    "copy_mode": "hardlinks; same device/inode + streaming SHA256 verified; internal file symlinks materialized",
+    "all_match": true
+  },
+  "mutable_runs": {
+    "files": 13817,
+    "bytes": 1640824382,
+    "copy_mode": "independent file copies, no shared inodes; before/copy/after hashes verified",
+    "all_originals_and_copies_still_match_startup_inventory": true,
+    "later_new_root_files_excluded_from_snapshot": true
+  },
+  "data_symlinks_created": 0,
+  "python_environment": {
+    "created_by_frozen_offline_uv_sync": true,
+    "uv_sync_returncode": 0,
+    "python_executable": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-autonomy-v3-d40f927/environments/embedding_gpu/.venv/bin/python",
+    "packages": {
+      "onnxruntime-gpu": "1.30.0",
+      "numpy": "2.5.3",
+      "tokenizers": "0.23.2",
+      "psutil": "7.2.2",
+      "pyyaml": "6.0.3"
+    },
+    "required_process_environment": {
+      "ORT_DISABLE_TELEMETRY": "1"
+    },
+    "os_or_security_settings_modified": false
+  },
+  "candidates": [
+    {
+      "config": "configs/phase11_semantic_candidate_v21.yaml",
+      "config_sha256": "1d4486f82cd946fd940a427da8bde6289ae7aeedbb680fab15aa7627aac8da34",
+      "diagnostics": "configs/phase11_semantic_diagnostics_v21.json",
+      "diagnostics_sha256": "73d620867833b0419d29ec71bcf7a70065a8b274ed4662f9eb9d57b38ff81a5a",
+      "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+      "model_manifest_sha256": "acadda5c012105a454b07ee95d406a217fe0aab8f498f3988bf44de36ebade65",
+      "model_path": "data/models/Unsloth-Qwen3.5-9B-GGUF/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q6_K.gguf",
+      "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+      "runtime_identity_sha256": "150141f370e82faa426cd468af1505584bcc98efd5b2e69d695b19e943a70784",
+      "cases": 29,
+      "fixed_units": 35,
+      "conditions": 58,
+      "planned_calls": 70
+    },
+    {
+      "config": "configs/phase11_runtime_graph_off_probe_v1.yaml",
+      "config_sha256": "2e6b0ebc09dcea57eee83e8abe5295f8f87b10edaf03c9ddfddc2d25222f6752",
+      "diagnostics": "configs/phase11_semantic_diagnostics_graph_off_probe_v1.json",
+      "diagnostics_sha256": "a8de6caba0abea96a73aef501f32d506c4c852cb03340cad7c4fa7f75aa01ea1",
+      "candidate_identity_sha256": "b74a3b27706eedc83eeb9f0a4b3564f64664b44df06af13c9d3112ad606de8bb",
+      "model_manifest_sha256": "acadda5c012105a454b07ee95d406a217fe0aab8f498f3988bf44de36ebade65",
+      "model_path": "data/models/Unsloth-Qwen3.5-9B-GGUF/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q6_K.gguf",
+      "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+      "runtime_identity_sha256": "150141f370e82faa426cd468af1505584bcc98efd5b2e69d695b19e943a70784",
+      "cases": 29,
+      "fixed_units": 35,
+      "conditions": 58,
+      "planned_calls": 70
+    }
+  ],
+  "root_zero_generation_plan_validated": {
+    "path": "/tmp/phase11-v3-runtime-preflight-plan.json",
+    "sha256": "de2d8096a891c52aa7588031bfe2b9eaf95da01191a3e6839e2e9322d21b4dae",
+    "run_id": "phase11-v3-runtime-preflight"
+  },
+  "baseline_model_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "new_runtime_provenance_files_all_present_and_verified": true,
+  "telemetry_initial_untracked_artifact_preserved": true,
+  "telemetry_clean_import_rechecked": true,
+  "official_telemetry_opt_out_documentation": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.30.0/docs/Privacy.md",
+  "old_909_trials_3_unknown_preserved": true,
+  "known_historical_model_missing": [
+    "Phase10 discarded Qwen2.5-7B split GGUF part1",
+    "Phase10 discarded Qwen2.5-7B split GGUF part2"
+  ],
+  "old_experiment_regeneration_performed": false,
+  "completion_calls": 0,
+  "model_loads": 0,
+  "server_starts": 0,
+  "native_device_enumerations": 0,
+  "evaluation_body_parsed": false,
+  "files": {
+    "data/runs/lab/phase11-autonomy-checkout-reproduction-v3/copy-and-env-result.json": {
+      "sha256": "bb0215591e3e84938874be82c9fb2bc800179a7afb0bcb151925143c74f1c5b4",
+      "bytes": 821
+    },
+    "data/runs/lab/phase11-autonomy-checkout-reproduction-v3/identity-verification.json": {
+      "sha256": "6413ea08200025c65eb356cd660f82b5831010a6d0bc74a9c882918e34ddadd8",
+      "bytes": 2861
+    },
+    "data/runs/lab/phase11-autonomy-checkout-reproduction-v3/immutable-inventory.json": {
+      "sha256": "99995ad5ba9dc2978bd7bc0efaf6dd606a5226c637f27973418442e422f9b801",
+      "bytes": 3177623
+    },
+    "data/runs/lab/phase11-autonomy-checkout-reproduction-v3/launch.json": {
+      "sha256": "3c9852f911b93ce5629ee8d80c69384a8c036a98cd2d855bbe8ed077e0a2c97d",
+      "bytes": 652
+    },
+    "data/runs/lab/phase11-autonomy-checkout-reproduction-v3/mutable-run-inventory.json": {
+      "sha256": "15963c49288a005a2a6f370411885c5281888cd491c2adf92eb159e3516945b1",
+      "bytes": 4340864
+    },
+    "data/runs/lab/phase11-autonomy-checkout-reproduction-v3/reproduce_checkout.py": {
+      "sha256": "f995bd57b371a0dfb1609a1cac58da9b2f7982c9c33c8f890a4aee3986d39bb7",
+      "bytes": 4019
+    },
+    "data/runs/lab/phase11-autonomy-checkout-reproduction-v3/telemetry-opt-out-verification.json": {
+      "sha256": "96d6ffc21bec159104608210366922f6e2631ef8c0e9b3ec181efeb37209e9c8",
+      "bytes": 517
+    },
+    "data/runs/lab/phase11-autonomy-checkout-reproduction-v3/telemetry-preservation.json": {
+      "sha256": "e96901024093a0219d0a5f73373722b2f387a951df87fca3faf959756ecd1b63",
+      "bytes": 544
+    },
+    "data/runs/lab/phase11-autonomy-checkout-reproduction-v3/tracked-checkout-hashes.json": {
+      "sha256": "3985a6fd01c17ae691075cabb49d3035d57ad96a740fd3fbba6e7e5a827e5740",
+      "bytes": 86330
+    },
+    "data/runs/lab/phase11-autonomy-checkout-reproduction-v3/uv-sync.log": {
+      "sha256": "e59b6abe2e1fef29e071226b4cf13add810d2fcc8c13d9c1eb5f16f3ccc79344",
+      "bytes": 1671
+    },
+    ".tools/worktrees/phase11-autonomy-v3-d40f927/.tools/test-artifacts/onnxruntime-import-v3/:memory:.ses": {
+      "sha256": "94edfad1ebb192c516bf9d7fdb62679cb0019f51bcda548ec472cd7b66c0da6d",
+      "bytes": 51
+    }
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

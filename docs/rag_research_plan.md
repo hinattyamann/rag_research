@@ -2,7 +2,7 @@
 
 ## Version 7.74 — 2026年10月26日 自律継続Protocol v3と隔離Runtimeの実装
 
-2026年10月26日、[自律継続Protocol v3](phase11_autonomy_v3.md)へ移行した。新Guard/chain/段階継続/Runtime接続を実装し、実機全844 Test（31.30秒）とRuffに成功した。Graph OFF隔離RuntimeのBuildと生成0のVersion/GPU認識も完了し、Runtime全28File/固定Source全3689Fileを照合した。新2Configは各70入力のModel/Runtime/chain/Message構造を生成0で検証した。旧909試行/未知3と不採用は不変。実生成/意味採用/Main/Cal/最終凍結はこれからでGate11未通過、Phase12未開始。
+2026年10月26日、[自律継続Protocol v3](phase11_autonomy_v3.md)へ移行し、全844 Test/Ruffで新Guard/chain/段階継続を検証した。固定d40f927の専用Checkoutを再現し、不変10590File/可変Run13817Fileを照合、GPU環境をuvで再構築した。新Runtimeの生成0全70入力/max3793/全層CUDAを通過し、事前登録Smoke2は2成功/未知0（6874入力/8465出力Token、Task171.951885秒）。旧記録込み911試行/確定未知3を保持する。旧Promptの暖鋒理由の表誤読は残り、Runtime修復/意味採用とは扱わない。改訂Prompt v21の全70入力生成0もmax3171で通過し、形式10件（厳密9成功＋旧方式の失敗対照1）を完了し、固定v21の日英意味70Callを実行中。Main/Cal/最終凍結は未実施、Gate11未通過・Phase12未開始。
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。

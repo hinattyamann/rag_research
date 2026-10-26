@@ -80,6 +80,33 @@ Model/Runtime/Prompt条件が変わるため、旧意味70 Callをそのまま�
 通過後に元15QA/42文/30条件/84 Callの新鮮な完全回帰・全理由/Native/費用監査へ進む。
 不通過は保全して原因に対応する別計画へ進み、Expectedや基準を変えて合格を作らない。
 
+## 固定Checkoutと最初の実走結果
+
+固定Commitは`d40f927e24af8ad263fa4e12f21334f7b86388b6`（通常Push/Remote一致）。
+専用WTは`.tools/worktrees/phase11-autonomy-v3-d40f927`。不変10590Fileはhardlink＋Hash、
+可変Run13817Fileは別inodeコピー＋全Hashを確認し、Source731File/HEAD/cleanとGPU uv環境を再現した。
+Receiptは`phase11_autonomy_checkout_reproduction_v3.json/.sha256`。
+ONNX importが作った51Byte補助ファイルは保全し、公式の初期化前`ORT_DISABLE_TELEMETRY=1`で再発しないことを確認した。
+これはプロセス限定設定で、Driver/OS/Source/科学Guardを変更していない。
+
+| 実走 | 結果 |
+|---|---|
+| 旧Prompt/新Runtime preflight | 58条件/70入力、最大3793+6144<12288、33/33層CUDA、Call0、壁20.345749秒 |
+| Runtime Smoke | Camp David逆c5と暖鋒元c2、2 Call/2成功/未知0、入力6874/出力8465、Task171.951885秒 |
+| 改訂Prompt v21 preflight | 58条件/70入力、最大3171+6144<12288、全CUDA、Call0 |
+| v21形式10件 | 厳密9件成功＋旧方式の失敗対照1。10応答/630入力/1729出力Token |
+| v21日英意味 | 固定d40の同一候補で実行中。最大70 Call、全58条件、採否未確定 |
+
+Smoke全9Rawは正規側へコピーし全Byte一致。全Payload/local c1対応、独立Schema、Native実Sampler/Grammar、
+Source/Model/Runtime/費用/監視を照合し、コピー上の再読も追加Call0でRaw不変を確認した。
+結果は`phase11_v3_runtime_preflight_result_v1.json`、`phase11_v3_runtime_smoke_result_v1.json`と同名`.sha256`。
+Camp David c5のExpectedは曖昧のまま。暖鋒はLabelがCでも理由に表の誤読が残り、意味改善の証明に使わない。
+
+費用の17:21:04JST時点snapshotは`phase11_autonomy_cumulative_cost_v3.json/.sha256`。
+新2/成功2/確定未知0、旧込み911/確定未知3。処理中の予約を未確定として別に示し、正常返却の履歴を保存した。
+旧未知の全出力Token/金額はnullのまま。Build864.124237秒・Test31.30秒・Native/Task/Runを別列へ残し、
+並行処理の単純和をGoal全体の壁時計時間と呼ばない。このsnapshotに後続の形式/意味検証を実施済みとして含めない。
+
 ## 次に取り組むべき内容
 
 実装確認は実機全844 pytest（31.30秒）/Ruffに成功した。sandbox内の初回は832成功・ソケット権限1失敗で、実機側で全確認した。新旧Version境界、有限予算、実送信前拒否、未知・費用、複数timeout、Config/Manifest/Report/品質再読のHash改変拒否、5QA段階継続を含む。`phase11_autonomy_software_validation_v3.json/.sha256`へSource93File/実Log/各70入力の構造照合を結ぶ。これは実Main/Calや意味採用の成功ではない。
@@ -88,8 +115,16 @@ Model/Runtime/Prompt条件が変わるため、旧意味70 Callをそのまま�
 全844Test/Ruff LogとSource Hashを結び、実v10のMain準備拒否・未達Freeze拒否/最終出力なしを確認した。
 これも検証処理の証明であり、実Main/Cal/Gate11成功ではない。
 
-1. 確認済みの今回Source/ConfigだけをCommit/通常Pushし、Remote先端一致を確認する。
-2. ビルド完了とRuntime実物Hashの照合後、専用固定Checkoutで各Runを事前登録し、生成0と少数Smokeへ進む。
-3. 日英形式/意味・全Knownの実採用後、元選定Main各20→全品質/Expected封印→実主証明書→予約Cal各20へ進む。
+1. 固定v21の日英意味Run/Handle/Journalを監視し、終了後に全Raw/理由/Schema/Sampler/費用を監査する。
+2. 日英意味通過後だけ、全15 QA/42文/元逆30条件/84 Callの新鮮な完全回帰を別Runへ登録し実行する。
+3. 全KnownのHealth/意味実採用後、元選定Main各20→全品質/Expected封印→実主証明書→予約Cal各20へ進む。
 4. Main/Cal実測から最終EvaluationのN/条件/資源/統計/停止/欠測を固定し、実最終Validator/Manifest/Hashを照合する。
    実証拠がそろうまでGate11未通過を維持し、Phase12は開始しない。
+
+意味開始前の終了済みRunは新12 Call（Smoke2＋形式10）・旧込み921/確定未知3。
+形式10は汎用Task checkpoint対象外のNative返却で、台帳の標準成功2と区別する。
+独立形式監査は全9Strict/旧方式対照1・Grammar/Schema/Sampler/Tokenizer証拠/全Costを確認し、
+`phase11_v3_v21_preflight_format_result_v1.json/.sha256`へ保存した。意味精度の証明ではない。
+意味Runの有限予算は70 Call/個別1200秒/壁17810秒/5秒監視、同じ入力の自動再送0。
+見積りNative6012.06秒は旧Promptの長いSmoke2要求からの条件付き目安で、完走保証ではない。
+壁上限は70×6144出力Token÷25 Token/秒＋600秒の保守的計画から登録し、Goal全体の上限にしない。

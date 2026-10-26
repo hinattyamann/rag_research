@@ -7,7 +7,7 @@
 
 ## 1. 今どこまで終わっているか
 
-2026-10-26、このチャットのGoalをactiveと確認し、Fetch後main/50374e8とorigin/main差0/0・初期未コミット変更なし・実験プロセスなしを確認した。[自律継続Protocol v3](phase11_autonomy_v3.md)へ移行し、新Guard/chain/段階継続/Runtime接続を実装し、実機全844 Test（31.30秒）とRuffに成功した。Graph OFF隔離RuntimeのBuildと生成0のVersion/GPU認識も完了し、Runtime全28File/固定Source全3689Fileを照合した。新2Configは各70入力のModel/Runtime/chain/Message構造を生成0で検証した。旧909試行/未知3と不採用は不変。実生成/意味採用/Main/Cal/最終凍結はこれからでGate11未通過、Phase12未開始。現行資産を照合、旧Run等5818FileをコピーしてHash一致を確認。旧不採用7B2分割の欠落は現行入力に影響しない。以下の旧Goal停止指示は10月24日の許可で置換し、旧結果・未知・未使用枠を保持する。
+2026-10-26、このチャットのGoalはactive。Fetch後にmain/origin一致と実験プロセスなしを確認し、[自律継続v3](phase11_autonomy_v3.md)を実装・全844Test/Ruff成功後、d40f927をCommit/PushしてRemote一致を確認した。固定d40f927の専用Checkoutを再現し、不変10590File/可変Run13817Fileを照合、GPU環境をuvで再構築した。新Runtimeの生成0全70入力/max3793/全層CUDAを通過し、事前登録Smoke2は2成功/未知0（6874入力/8465出力Token、Task171.951885秒）。旧記録込み911試行/確定未知3を保持する。旧Promptの暖鋒理由の表誤読は残り、Runtime修復/意味採用とは扱わない。改訂Prompt v21の全70入力生成0もmax3171で通過し、形式10件（厳密9成功＋旧方式の失敗対照1）を完了し、固定v21の日英意味70Callを実行中。Main/Cal/最終凍結は未実施、Gate11未通過・Phase12未開始。
 
 2026-10-24、ユーザーの研究室PCでの週末自律継続依頼に基づき、[開始プロンプト](phase11_lab_weekend_start.md)と[Goal・実行方針](phase11_lab_weekend_goal.md)を保存した。旧の候補1個/追加188回/4時間/回復可能障害時のGoal停止は、今後の新Protocolで置換する許可を記録。支持/非支持各90%、被覆/Health/未使用性/全採点封印/最終実証拠は維持する。候補の不合格とRuntime障害は保存し、原因に対応する修正・別検証へ継続する。最終到達点はGate11/最終ManifestまででPhase12は始めない。今回は文書作成のみで、実行Guard改訂・新実験・候補採用は未実施。以下の093fd9f時点の失敗実績は変更しない。
 
