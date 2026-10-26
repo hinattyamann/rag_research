@@ -1,5 +1,7 @@
 # 研究のフェーズ・現在地・次に行うこと
 
+2026-10-26 21:36 JST最新: Known12全84/30条件を同固定f0/Handle17686で完走し、未知0/失敗0・支持57/58・非支持14/16で不採用を保存中。全84機械監査/追加0再読/実Main準備Gate拒否・原Raw119独立コピーを確認した。別候補v24/汎用関係端点Prompt v13は旧70入力/Expected不変＋日英独立10文元逆20＝90Callと、新鮮全Known84を必要とする。新Native0、全944Test/Ruff成功。新候補は生成0→別入力Smoke2→意味90→新Known84の順に、別固定Commit/WT・有限Plan/共有v3台帳で実施する。旧909/未知3と今回Known不合格を消さず、累積1077/未知3。Main/Cal・Gate11未達、Goal active、Phase12未開始。
+
 2026-10-26 21:12 JST追記: Known v12は同Handle17686で65返却＋1処理中まで確認、Health失敗/確定未知0。意味監査でTar Heels固定c2の因果関係の誤支持を元逆とも確認した。固定非支持16観測の誤支持が少なくとも2件なので、残り全正解でも14/16＝87.5%となり90%基準に届かない。全84取得/監査を完了して不採用証拠と費用を保存し、同条件再抽選せず因果・限定範囲の読解に対応する別候補へ進む。Main/Cal開始条件は未達、Goal active・Phase12未開始。以下は各観測時点の履歴。
 
 2026-10-26 20:54 JST最新: 同固定f0b7c71/Handle17686のKnown v12は54応答＋1処理中・確定未知0/Task失敗0で継続中。全84採用は未確定。待機中に初回生成の旧証拠/現Core橋渡しとMain/Cal直前の強制入口を実可搬検証し、実Main→Cal設定の日英統合を含む全944 Test/Ruff・独立レビューを完了。初版consumerの裸拒否Policy不一致P1は実Main前に修正し、旧934Test/Source/失敗を保全した。Graph OFF正式テンプレート2個と単位Scope上界証明も生成0で保存。94 Core/稼働WT・全Expected/科学条件は変更していない。次は全Known84/全理由・Raw/費用/追加0再読で実採用→正式Main有限資源・全歴史/資産再現→Main/Cal各20・全封印と実証明→最終Validator/Manifest/Hash。Goal active、Gate11未通過、Phase12未開始。
@@ -10,7 +12,7 @@
 
 2026-10-26 18:24 JST追記: 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-更新日: 2026年10月26日。正本: [研究計画7.78](rag_research_plan.md)、[実装計画8.81](rag_implementation_plan.md)。
+更新日: 2026年10月26日。正本: [研究計画7.79](rag_research_plan.md)、[実装計画8.82](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。

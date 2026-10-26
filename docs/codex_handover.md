@@ -1,5 +1,7 @@
 # 別チャットから再開するための引継ぎ
 
+2026-10-26 21:36 JST最新: Known12/Handle17686は84応答・未知0/失敗0で完了。支持57/58・非支持14/16のため不採用、実Main準備Gate拒否まで確認。別候補v24/Promptv13/新ID26a7…を準備し、生成0→独立Smoke2→全意味90→全Known84を別固定WT/有限Planで行う。旧70の全文/Expectedは保存、追加10日英文は出力前独立レビュー済み。Core94/Model/Runtime/Sampler/Schema/Rewriteは不変、新候補Native0。元Main/Calは未開始・未使用、Goal active・Phase12未開始。旧初回生成bridgev2/入口v4は91fをbindするので、新候補が採用されても自動付替えせず新Adoption向け明示的橋渡し証明が必要。
+
 2026-10-26 21:12 JST追記: Known12のTar Heels元逆c2がともに誤支持で、固定非支持16の最良値も14/16＝87.5%となり採用不能。同Handle17686の全84取得/監査を完了して保存し、別候補の仮説・変更・必要再検証を登録して継続する。65応答＋1処理中時点のHealth失敗/確定未知0を意味採用と混同しない。Main/Calは開始せず、稼働WT/Expected/基準/旧失敗を保つ。このチャットのGoalはactive。
 
 2026-10-26 20:54 JST追記: Knownは同f0b7c71/Handle17686を継続し、54応答＋1処理中・確定未知0/Task失敗0。未完84を採用済みにしない。Main/Cal開始前の新入口/実producer統合/可搬696依存とScope上界証明・Graph OFFテンプレートを保存し、全944 Test/Ruff成功、Source94と稼働WTは不変。正式Main Runplanは新with_bridge入口と全依存を直接bindし、正規root絶対pathの既存v3累積台帳を共有する。既存最小KnownWTの不完全な履歴で未使用性を判定せず、別Main WTへ全利用記録/Manifest/Corpus/Index/Modelを照合・再現する。実Main/Cal/凍結は未開始。詳細は[自律継続v3](phase11_autonomy_v3.md)。

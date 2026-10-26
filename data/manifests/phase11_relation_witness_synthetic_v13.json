@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-preregistered-invented-bilingual-relation-witness-contrasts",
+  "created_at_utc": "2026-10-26T12:24:20.631010+00:00",
+  "status": "registered_before_model_output",
+  "cases": [
+    {
+      "id": "en-relation-witness-joined-cause",
+      "language": "en",
+      "scope": "synthetic_development",
+      "question": "Evaluate the entire supplied statement against the sources.",
+      "answer": "The Aurora catalyst was selected because the monitoring sensor glows blue.",
+      "documents": [
+        {
+          "passage_id": "synthetic-v13-en-separate-1",
+          "title": "Invented independent separate record 1",
+          "text": "The Aurora catalyst was selected because it tolerates high pressure."
+        },
+        {
+          "passage_id": "synthetic-v13-en-separate-2",
+          "title": "Invented independent separate record 2",
+          "text": "The monitoring sensor was nicknamed Aurora because it glows blue."
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "The Aurora catalyst was selected because the monitoring sensor glows blue."
+        }
+      ],
+      "expected": {
+        "c1": "not_supported"
+      },
+      "expected_reasons": {
+        "c1": "Selection of the catalyst and naming of a sensor have different causes; the asserted sensor-to-selection relation is missing."
+      },
+      "critical_claim_ids": []
+    },
+    {
+      "id": "en-relation-witness-same-relation",
+      "language": "en",
+      "scope": "synthetic_development",
+      "question": "Evaluate the entire supplied statement against the sources.",
+      "answer": "The Aurora catalyst was chosen for its ability to withstand high pressure.",
+      "documents": [
+        {
+          "passage_id": "synthetic-v13-en-separate-1",
+          "title": "Invented independent separate record 1",
+          "text": "The Aurora catalyst was selected because it tolerates high pressure."
+        },
+        {
+          "passage_id": "synthetic-v13-en-separate-2",
+          "title": "Invented independent separate record 2",
+          "text": "The monitoring sensor was nicknamed Aurora because it glows blue."
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "The Aurora catalyst was chosen for its ability to withstand high pressure."
+        }
+      ],
+      "expected": {
+        "c1": "supported"
+      },
+      "expected_reasons": {
+        "c1": "High-pressure tolerance is the stated selection reason; the target preserves that relation by paraphrase."
+      },
+      "critical_claim_ids": []
+    },
+    {
+      "id": "en-relation-witness-conjunction",
+      "language": "en",
+      "scope": "synthetic_development",
+      "question": "Evaluate the entire supplied statement against the sources.",
+      "answer": "Iria operates the Maple ferry, whose recorded R7 departure from East Pier was at 07:40.",
+      "documents": [
+        {
+          "passage_id": "synthetic-v13-en-conjunction-1",
+          "title": "Invented independent conjunction record 1",
+          "text": "Iria operates the Maple ferry."
+        },
+        {
+          "passage_id": "synthetic-v13-en-conjunction-2",
+          "title": "Invented independent conjunction record 2",
+          "text": "The recorded R7 departure of the Maple ferry from East Pier was at 07:40, not 08:40."
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "Iria operates the Maple ferry, whose recorded R7 departure from East Pier was at 07:40."
+        }
+      ],
+      "expected": {
+        "c1": "supported"
+      },
+      "expected_reasons": {
+        "c1": "Both sources refer to the same ferry; the fixed recorded R7 departure and operator combine without adding a cause."
+      },
+      "critical_claim_ids": []
+    },
+    {
+      "id": "en-relation-witness-incompatible",
+      "language": "en",
+      "scope": "synthetic_development",
+      "question": "Evaluate the entire supplied statement against the sources.",
+      "answer": "The recorded R7 departure of the Maple ferry from East Pier was at 08:40.",
+      "documents": [
+        {
+          "passage_id": "synthetic-v13-en-conjunction-1",
+          "title": "Invented independent conjunction record 1",
+          "text": "Iria operates the Maple ferry."
+        },
+        {
+          "passage_id": "synthetic-v13-en-conjunction-2",
+          "title": "Invented independent conjunction record 2",
+          "text": "The recorded R7 departure of the Maple ferry from East Pier was at 07:40, not 08:40."
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "The recorded R7 departure of the Maple ferry from East Pier was at 08:40."
+        }
+      ],
+      "expected": {
+        "c1": "contradicted"
+      },
+      "expected_reasons": {
+        "c1": "The same recorded R7 departure is explicitly 07:40 and not 08:40; the target asserts the negated value."
+      },
+      "critical_claim_ids": []
+    },
+    {
+      "id": "en-relation-witness-uncertainty",
+      "language": "en",
+      "scope": "synthetic_development",
+      "question": "Evaluate the entire supplied statement against the sources.",
+      "answer": "A loose cable caused the Canyon Bay antenna noise.",
+      "documents": [
+        {
+          "passage_id": "synthetic-v13-en-uncertain-1",
+          "title": "Invented independent uncertain record 1",
+          "text": "The source of the Canyon Bay antenna noise is undetermined. One proposed explanation is a loose cable."
+        },
+        {
+          "passage_id": "synthetic-v13-en-uncertain-2",
+          "title": "Invented independent uncertain record 2",
+          "text": "Follow-up inspections have not confirmed the proposed loose-cable explanation."
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "A loose cable caused the Canyon Bay antenna noise."
+        }
+      ],
+      "expected": {
+        "c1": "not_supported"
+      },
+      "expected_reasons": {
+        "c1": "An unconfirmed proposed explanation does not establish the unqualified cause, nor does it assert its negation."
+      },
+      "critical_claim_ids": []
+    },
+    {
+      "id": "ja-relation-witness-joined-cause",
+      "language": "ja",
+      "scope": "synthetic_development",
+      "question": "提示した文全体が根拠から支持されるかを判定してください。",
+      "answer": "オーロラ触媒は、監視用センサーが青く光るため採用された。",
+      "documents": [
+        {
+          "passage_id": "synthetic-v13-ja-separate-1",
+          "title": "Invented independent separate record 1",
+          "text": "オーロラ触媒は、高圧に耐えるため採用された。"
+        },
+        {
+          "passage_id": "synthetic-v13-ja-separate-2",
+          "title": "Invented independent separate record 2",
+          "text": "監視用センサーは、青く光るためオーロラという愛称で呼ばれた。"
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "オーロラ触媒は、監視用センサーが青く光るため採用された。"
+        }
+      ],
+      "expected": {
+        "c1": "not_supported"
+      },
+      "expected_reasons": {
+        "c1": "Selection of the catalyst and naming of a sensor have different causes; the asserted sensor-to-selection relation is missing."
+      },
+      "critical_claim_ids": []
+    },
+    {
+      "id": "ja-relation-witness-same-relation",
+      "language": "ja",
+      "scope": "synthetic_development",
+      "question": "提示した文全体が根拠から支持されるかを判定してください。",
+      "answer": "高圧への耐性がオーロラ触媒の採用理由である。",
+      "documents": [
+        {
+          "passage_id": "synthetic-v13-ja-separate-1",
+          "title": "Invented independent separate record 1",
+          "text": "オーロラ触媒は、高圧に耐えるため採用された。"
+        },
+        {
+          "passage_id": "synthetic-v13-ja-separate-2",
+          "title": "Invented independent separate record 2",
+          "text": "監視用センサーは、青く光るためオーロラという愛称で呼ばれた。"
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "高圧への耐性がオーロラ触媒の採用理由である。"
+        }
+      ],
+      "expected": {
+        "c1": "supported"
+      },
+      "expected_reasons": {
+        "c1": "High-pressure tolerance is the stated selection reason; the target preserves that relation by paraphrase."
+      },
+      "critical_claim_ids": []
+    },
+    {
+      "id": "ja-relation-witness-conjunction",
+      "language": "ja",
+      "scope": "synthetic_development",
+      "question": "提示した文全体が根拠から支持されるかを判定してください。",
+      "answer": "イリアが運航するメープル号の、東埠頭からの記録上のR7便の出航時刻は7時40分だった。",
+      "documents": [
+        {
+          "passage_id": "synthetic-v13-ja-conjunction-1",
+          "title": "Invented independent conjunction record 1",
+          "text": "イリアがメープル号のフェリーを運航している。"
+        },
+        {
+          "passage_id": "synthetic-v13-ja-conjunction-2",
+          "title": "Invented independent conjunction record 2",
+          "text": "メープル号の東埠頭からの記録上のR7便の出航時刻は7時40分であり、8時40分ではなかった。"
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "イリアが運航するメープル号の、東埠頭からの記録上のR7便の出航時刻は7時40分だった。"
+        }
+      ],
+      "expected": {
+        "c1": "supported"
+      },
+      "expected_reasons": {
+        "c1": "Both sources refer to the same ferry; the fixed recorded R7 departure and operator combine without adding a cause."
+      },
+      "critical_claim_ids": []
+    },
+    {
+      "id": "ja-relation-witness-incompatible",
+      "language": "ja",
+      "scope": "synthetic_development",
+      "question": "提示した文全体が根拠から支持されるかを判定してください。",
+      "answer": "メープル号の東埠頭からの記録上のR7便の出航時刻は8時40分だった。",
+      "documents": [
+        {
+          "passage_id": "synthetic-v13-ja-conjunction-1",
+          "title": "Invented independent conjunction record 1",
+          "text": "イリアがメープル号のフェリーを運航している。"
+        },
+        {
+          "passage_id": "synthetic-v13-ja-conjunction-2",
+          "title": "Invented independent conjunction record 2",
+          "text": "メープル号の東埠頭からの記録上のR7便の出航時刻は7時40分であり、8時40分ではなかった。"
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "メープル号の東埠頭からの記録上のR7便の出航時刻は8時40分だった。"
+        }
+      ],
+      "expected": {
+        "c1": "contradicted"
+      },
+      "expected_reasons": {
+        "c1": "The same recorded R7 departure is explicitly 07:40 and not 08:40; the target asserts the negated value."
+      },
+      "critical_claim_ids": []
+    },
+    {
+      "id": "ja-relation-witness-uncertainty",
+      "language": "ja",
+      "scope": "synthetic_development",
+      "question": "提示した文全体が根拠から支持されるかを判定してください。",
+      "answer": "ケーブルの緩みが峡湾のアンテナの雑音を引き起こした。",
+      "documents": [
+        {
+          "passage_id": "synthetic-v13-ja-uncertain-1",
+          "title": "Invented independent uncertain record 1",
+          "text": "峡湾のアンテナの雑音の発生源は特定されていない。一つの仮説はケーブルの緩みである。"
+        },
+        {
+          "passage_id": "synthetic-v13-ja-uncertain-2",
+          "title": "Invented independent uncertain record 2",
+          "text": "追加点検では、ケーブルの緩みという仮説は確認されていない。"
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "ケーブルの緩みが峡湾のアンテナの雑音を引き起こした。"
+        }
+      ],
+      "expected": {
+        "c1": "not_supported"
+      },
+      "expected_reasons": {
+        "c1": "An unconfirmed proposed explanation does not establish the unqualified cause, nor does it assert its negation."
+      },
+      "critical_claim_ids": []
+    }
+  ],
+  "expected_annotations": {
+    "actual_author": "Codex AI",
+    "human_reviewed": false,
+    "history_isolated": false,
+    "exact_model_identifier": null,
+    "reviewer_task": "/root/protocol_guard",
+    "annotation_scope": "10 invented cases; no Main, Cal or Evaluation QA"
+  },
+  "orders": [
+    "original",
+    "reversed"
+  ],
+  "completion_calls": 20,
+  "preserved_draft_revisions": [
+    {
+      "path": ".tools/draft-artifacts/phase11-semantic-v13-design-v1/contrast-proposal.json",
+      "sha256": "62812bd2f28e0fe2686af5b23a2e175a1e66ab60e1a1ca5909c1f5beac76fb14"
+    },
+    {
+      "path": ".tools/draft-artifacts/phase11-semantic-v13-design-v1/contrast-proposal-v2.json",
+      "sha256": "2a864ab0287cb34f76ee5adf4a839251f96fab9951bec950d303a2d88db85bc4"
+    },
+    {
+      "path": ".tools/draft-artifacts/phase11-semantic-v13-design-v1/contrast-proposal-v3.json",
+      "sha256": "ac6d5acae0939ed72f18814fbb6b2df2ae0fbf4035b30d08027b538ae07bcb0c"
+    },
+    {
+      "path": ".tools/draft-artifacts/phase11-semantic-v13-design-v1/prompt-proposal.txt",
+      "sha256": "d3dc3f865edb2980c36ebb162997e15b043731454fde9448b52902fdec7a2f67"
+    },
+    {
+      "path": ".tools/draft-artifacts/phase11-semantic-v13-design-v1/prompt-proposal-v2.txt",
+      "sha256": "70f63c03ab0e095c90cde5261c4d974e3a0d90578652529e305c4eaef4d46fe0"
+    }
+  ],
+  "phase12_allowed": false
+}

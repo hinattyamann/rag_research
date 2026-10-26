@@ -1,6 +1,8 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.81 — 2026年10月26日 Main入口の橋渡し強制と実producer統合
+## Version 8.82 — 2026年10月26日 Known84の全監査と関係照合候補の登録準備
+
+21:36 JST現在、Known12全84/30条件のHealthは成功、二値意味は支持57/58・非支持14/16で不採用。原Raw119ファイル/14553982bytesの前後Hashと独立copyを照合し、全84 Native Schema/payload/Sampler/費用/追加0再読後も実Main準備Gateが拒否することを確認した。新候補v24はCore94を変えずJudge Prompt v13だけを変更し、日英同一指示・全旧70＋独立10文元逆20＝90Callを別Planで検証する。新ID26a7e6645b550e7f2c03c57f0ed08fd26fb906872f5246e93fda79c27e74e870、生成0/別入力Smoke2/全90/新Known84の順。旧70用prepare helperを改変せず、90向け全fieldのPlanを同じv3の完全scope検証・登録・実行入口へ渡す。新全944Test/Ruff通過、実新Nativeは0、Main/Calは未開始。
 
 21:12 JST追記: Known12の固定非支持c2は元逆とも誤支持で、全16観測の最良値14/16＝87.5%となり採用不能。同Handle17686の全84取得/監査を完了して不採用・費用を保存し、別候補の必要形式/日英意味検証/全Knownを別有限Planへ登録する。旧Guard迂回・同条件再抽選・Expectedや基準の変更は行わない。Source94と稼働WTを保ち、Main/Calは未開始。
 
@@ -12,7 +14,7 @@
 
 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-[研究計画 Version 7.78](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.79](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 

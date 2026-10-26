@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-separate-invented-smoke-inputs-before-fresh-semantic90",
+  "cases": [
+    {
+      "id": "en-smoke-v24-relation-gap",
+      "language": "en",
+      "scope": "synthetic_development",
+      "question": "Evaluate the supplied complete statement.",
+      "answer": "The Rover robot passed its sensor test because the delivery crate was painted silver.",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "The Rover robot passed its sensor test because the delivery crate was painted silver."
+        }
+      ],
+      "documents": [
+        {
+          "passage_id": "v24-smoke-en-1",
+          "title": "Invented smoke record 1",
+          "text": "The Rover robot passed its sensor test because the lens was calibrated."
+        },
+        {
+          "passage_id": "v24-smoke-en-2",
+          "title": "Invented smoke record 2",
+          "text": "The delivery crate was painted silver to reflect sunlight."
+        }
+      ],
+      "expected": {
+        "c1": "not_supported"
+      },
+      "expected_reasons": {
+        "c1": "The source establishes calibration as a test cause, not a crate-paint-to-test relation. No direct negation of that additional cause is stated."
+      },
+      "critical_claim_ids": []
+    },
+    {
+      "id": "ja-smoke-v24-relation-gap",
+      "language": "ja",
+      "scope": "synthetic_development",
+      "question": "提示された文全体を判定してください。",
+      "answer": "ローバーというロボットは、配送用の箱が銀色に塗られたためセンサー試験に合格した。",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "ローバーというロボットは、配送用の箱が銀色に塗られたためセンサー試験に合格した。"
+        }
+      ],
+      "documents": [
+        {
+          "passage_id": "v24-smoke-ja-1",
+          "title": "Invented smoke record 1",
+          "text": "ローバーというロボットは、レンズの校正によりセンサー試験に合格した。"
+        },
+        {
+          "passage_id": "v24-smoke-ja-2",
+          "title": "Invented smoke record 2",
+          "text": "配送用の箱は、日光を反射するため銀色に塗られた。"
+        }
+      ],
+      "expected": {
+        "c1": "not_supported"
+      },
+      "expected_reasons": {
+        "c1": "The source establishes calibration as a test cause, not a crate-paint-to-test relation. No direct negation of that additional cause is stated."
+      },
+      "critical_claim_ids": []
+    }
+  ],
+  "human_reviewed": false,
+  "exact_model_identifier": null,
+  "history_isolated": false,
+  "native_calls_at_registration": 0,
+  "not_in_semantic90": true,
+  "phase12_allowed": false
+}

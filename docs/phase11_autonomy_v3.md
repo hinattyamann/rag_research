@@ -3,6 +3,37 @@
 2026年10月26日JST。[詳細要件](phase11_lab_weekend_goal.md)に基づく新規作業。
 Gate11未通過、Main/Calibration/最終凍結は未実施、Phase12は開始しない。
 
+## 21:36 JSTのKnown全84と次候補
+
+Known12は21:31:12JSTに同固定f0b7c71/Handle17686でexit0/process_completed、84返却/未知0/失敗0、
+30条件を完了。支持57/58＝98.28%、非支持14/16＝87.5%で不採用。
+三分類68/74、誤支持2/支持見逃し1/C↔NS3・曖昧10を全F/費用へ保持した。
+元逆Tar c2の関係結合誤読、暖鋒逆c1の本文/表のscope緊張、C Moonの名付け由来の範囲を診断へ保存する。
+Modelのreasoningは語/要素の一致を関係の支持と扱い、結果項の異なる『由来』を置換していた。
+両誤支持は4096 reasoning budget到達だが、強制final前から誤支持を明言しており、budgetだけを原因と断定しない。
+
+生成0機械監査は全84 Native Schema/payload/Sampler/Token/Context/費用/Source99と30集約・84葉を照合し、
+独立copy上の追加0再読を完了。実Main準備terminal_gateは正しく拒否した。
+原119ファイル/14553982bytesは前Hash＝canonical copy＝後Hash、全copyは別inode、原WTは不変。
+費用は入力225810/出力324719Token、Task6538.850042秒/NativeHTTP6535.883661秒/Run壁6566.260225秒。
+1286資源sampleでエラー0、GPU観測最大7662MiB。並行ソフトウェア検証を含む実測で、隔離性能保証でも根本原因証明でもない。
+累積snapshot v5は新168試行/標準成功156/未検証返却12/失敗0/未知0、旧909/未知3を保って累積1077/未知3。
+旧総Token/電力金額はnull、外部有料API0。Build/Test/採点/準備時間をNativeへ混ぜない。
+
+別候補は`phase11_semantic_candidate_v24.yaml`、Judge Prompt v13（関係の主語・述語・結果項の根拠照合）で、
+ID `26a7e6645b550e7f2c03c57f0ed08fd26fb906872f5246e93fda79c27e74e870`。
+Core94/Model/Runtime/Sampler/Schema/抽出/Rewriteは不変、旧意味70の新Promptへの等価再利用は主張しない。
+全旧70のcase/Expected/gateを保ち、別領域の日英各5文・各2固定資料の元逆20を追加して新鮮90を検証する。
+追加対照は関係結合NS/同関係paraphrase S/複数資料conjunction S/同一記録便の明示反対C/未確定原因NS。
+Prompt例との語彙重複、1資料の元逆、C対照の時制/複数便曖昧さは出力前レビューで修正し、旧草案を保持した。
+別Smoke2は90に含まれない日英robot/crate関係NSで、失敗/誤読なら保存し候補を見直す。新Nativeは0。
+全90入力生成0→Smoke2→意味90→新Known84を別有限登録で行い、実Known採用後だけMainへ進む。
+形式専用10 Callは候補Judge Promptを使わず、境界依存/専用messages/settings等のHash一致の範囲で再利用する。
+旧strict9通過/intentional legacy1失敗を維持し、これを『新Promptの形式10成功』とは呼ばない。
+新全944 Test（30.62秒、wrapper31.239089秒）/Ruff0.028756秒を通過した。
+旧70固定の便利helper/旧Guardは改変せず、90全分母のPlanを正式v3 validate/register/executeで検査する。
+新IDでは旧baseline bridgev2/validator固定IDをそのまま通せないため、採用後に不変の初回生成依存だけを明示的に橋渡しする。
+
 ## 21:12 JSTの意味不合格確認と継続
 
 同Known v12/Handle17686は21:09時点65応答＋1処理中、Health失敗/確定未知0である。
@@ -269,3 +300,5 @@ Known以降は現行Identityへ統一する。新Known v12は元15 QA/42文/元�
 次は今回分をCommit/Pushし、固定CheckoutでKnown v12全84入力生成0→新鮮全84要求を実行・監査する。
 Known実採用後に元Main各20/全匿名品質Expected封印→実主証明→予約Cal各20/全封印→
 最終実Validator/Manifest/Hashへ進む。Phase12は開始しない。
+
+正式保存: Known12最終結果は`data/manifests/phase11_known_trace_direct_result_v12_v2.json`、SHA `4274729c1bd6224b9b354251cf5e8c6852b83f5e2cc164f2a64bd5d85befab00`。初版も保存し、別の出版相互監査（SHA3ccf2ab2fef69651693b687a10005c9d2b079d4096e7997f4c64f12c10679189）を追補して、119Raw独立copy/84全row/30全F/全費用/99Source/旧v10全82/実Main準備Gate再拒否を追加0で照合した（1.215110秒）。次候補v24事前登録は`data/manifests/phase11_semantic_v24_preregistration_v1.json`、SHA `ed4a43d71c2c4353ec03ef90cea3e58f62652cb9960ddcb235048627c63a00b1`。新候補の意味採用は未了。

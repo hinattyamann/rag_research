@@ -1,6 +1,8 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.78 — 2026年10月26日 Known実走とMain前提の実証明
+## Version 7.79 — 2026年10月26日 Known全84の不採用保存と関係照合候補
+
+21:36 JST現在、Known v12は同固定f0/Handle17686で84応答・未知0/失敗0、全30条件を完了した。支持57/58＝98.28%、非支持14/16＝87.5%で不採用。曖昧10観測をFに保持し、三分類68/74・C↔NS3・誤支持2・支持見逃し1を保存した。全84 Native Schema/payload/費用/Source99照合・追加0再読と実Main準備Gate拒否を確認済み。原因に対応する汎用関係端点照合Prompt v13/候補v24を別保存し、旧70全入力/Expected不変＋新日英10文元逆20Callの全90意味検証と新Known84を必要とする。Model/Runtime/Sampler/Schema/Core94/Rewrite/F0.7/基準を維持する。新候補のNativeはまだ0、Main/Cal/Gate11は未達、Goal active・Phase12未開始。
 
 21:12 JST追記: Known12はTar Heels固定c2の元逆両方で因果結合の誤支持があり、非支持16の最良値も14/16＝87.5%で採用不能。Health良好を意味問題の解消とせず、同Handleの全84/監査/費用を保存して別仮説の候補へ進む。Expected・支持/非支持90%・被覆・全分母・Main/Calの未使用枠を維持する。Main/Calは未開始、Goal active。
 
@@ -14,7 +16,7 @@
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.81](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.82](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
