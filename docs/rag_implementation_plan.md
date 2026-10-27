@@ -1,5 +1,9 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-10-27 22:39 JST追記: [累積費用v19](../data/manifests/phase11_autonomy_cumulative_cost_v19.json) SHA399a40c962dfee50e8f4a01bca032f829cc6deac504761a00d8877ba3958c50aを実発行・独立検算した。閉38 Run/25Guard、新355試行・353返却・未知2、旧込1264試行・確定未知5、観測input724162/output1021409・総output null。Native20604.366958秒は未知HTTP16.895423秒を含む、Task20519.499901718635秒/wall21319.09550735884秒は別scopeで加算しない。旧35行/23Guard・旧未検証返却32をそのまま保存。Rootも全355/28binding等を0.040528225秒で追加検算し全禁止count0、証明74d7fea0へ保存した。v31意味不採用・未使用枠は不変、Main/Cal/Gate11未達・Phase12未開始。
+
+2026-10-27 22:37 JST追記: [v31実結果](phase11_semantic_v31_result_v1.md)を確定した。NS2はHealth/意味2/2でも、帰属C元逆2はHealth2/未知0・両S/Expected C・意味0/2で不採用（正式12f18387）。全10根拠/7固定文・全thinkingを実読し、Pius Vの行為をCouncilへ移す誤りが残った。未実行Rewrite2/全90/Known19等を保存、同条件再送0。次v32はJudge layoutだけをSource→question→fullanswer→claimへ変更する別候補で、指示全文/本文/ID/Title/Expected/基準/Model/Core94等は不変。新鮮検証・実採用は未了、Main/Cal/Gate11未達、Goal active・Phase12未開始。
+
 2026-10-27 22:22 JST追記: [v31実Checkout再現](../data/manifests/phase11_v31_checkout_reproduction_v1.json) SHAf4f6267b652f60d2c87f2b7af3d48c03d36979c5acff45b12e536d1e81af6c44を一回出版し、全58成果・781資産・19 aliases・31 immutable・56独立出版copyのpostcheckに通過した。実初認可/初Plan作成が正式出版より先で、登録/実Runより出版が先という時系列を明記した。uvの実warning/実tool shapeを旧空stderr条件と混同した出版前P1はSourceだけを修正・反証し、実験再送0。
 
 [全90入力生成0の実結果](../data/manifests/phase11_v31_preflight_result_v1.json) SHA79174e07d9209e9770244973e58a348cd685f8fcc88d6cccf934438f55b41e35はHandle53121閉0・wall20.771760929秒、全90入力/95Raw/37CUDA層FAoff/Core94/全監視に通過した。最大入力4218＋出力予約6144≤12288・余裕1926 Token、Native0、監査の全禁止count0。Rootも全104成果Hashを追加照合、生成0だけを意味合格へ読み替えない。次NS2の有限Plan SHA5b40c4c1dfc33538552c0b8976ec02dfbb3135cd8dd482b4959250e2d8dba028を正規Guard/共有台帳へ登録し、固定eb7967c・Handle7313で実行を開始した。2 Call/見積Native109.237918秒/最大wall3000秒/HTTP1200秒/監視5秒/Retry0。意味結果未読・未採用、Main/Cal/Gate11未達・Phase12未開始。

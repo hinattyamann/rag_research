@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v31-finished-attribution-smoke-independent-result-v1",
+  "audit_version": "v31-attribution-smoke-independent-audit-v1-explicit-fixed-plan-binding",
+  "created_at_utc": "2026-10-27T13:30:52.633955+00:00",
+  "candidate_identity_sha256": "dbb9830fc366b8b1631ce8d1feab90403810ad9bb0086f655a08c4ba60ab12e3",
+  "fixed_commit": "eb7967c9939d2ba5f8f04f6aada50a7faf8b853d",
+  "process_state": "process_completed",
+  "process_returncode": 0,
+  "process_finished_at_utc": "2026-10-27T13:28:17.045673+00:00",
+  "runtime_health_passed": true,
+  "actual_native_calls": 2,
+  "native_successful": 2,
+  "native_failed": 0,
+  "native_unknown": 0,
+  "three_class_exact_correct": 0,
+  "three_class_denominator": 2,
+  "C_NS_confusion_count": 0,
+  "binary_non_support_correct": 0,
+  "binary_non_support_denominator": 2,
+  "candidate_accepted": false,
+  "smoke_full_meaning_gate_passed": false,
+  "candidate_rejected_before_semantic90_and_newKnown84": true,
+  "rejection_reason": "At least one fixed target or its full-source/reason review failed. Preserve outputs; no semantic90 or newKnown84 yet.",
+  "single_axis_limitation": "v31 changes only the general bilingual Judge Prompt from v30, adding source grammatical-subject/action/object/time/capacity witness instructions. It retains v30's Core94 including the shared prefill repair, Qwen3-8B Q4_K_M Model, GraphOFF Runtime, explicit FAoff, common4096, Sampler, Schema, fixed inputs and Expected. New semantic outputs and full bilingual regression remain required. This smoke alone does not prove durable repair or full adoption.",
+  "canonical_raw": {
+    "path": "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke",
+    "files": 9,
+    "bytes": 411910,
+    "all_before_copy_after_hashes_equal": true,
+    "independent_inodes": 9
+  },
+  "prior_v26_and_retrospective_supplement_manifests_reverified": {
+    "data/manifests/phase11_v26_smoke_result_v1.json": "081f99239510a0886ee6cf09a365d7356919817bf6c6c30b7be1e04d8466b24a",
+    "data/manifests/phase11_v26_attribution_smoke_result_v1.json": "b529ab848c3951e315c8a7e3e78f06716ade41e8cda6ddd5dc7eadeddc1ca59d",
+    "data/manifests/phase11_v25_rewrite_retrospective_correspondence_v1.json": "960f6b4ccc0331eff62cd11939a04ff1bf3566d024ff81c367ad0f242409cecc",
+    "data/manifests/phase11_v26_attribution_auditor_failure_preservation_v1.json": "47b52326c59b7935e4d178fd199cb24e2158bb6cbdd72a8aababfbb5c98fe785",
+    "data/manifests/phase11_v27_smoke_result_v1.json": "c974606e108818c1fd6ad3a3af14f415b801749e629c93c92e79833d9fb8bfd4",
+    "data/manifests/phase11_v27_attribution_smoke_result_v1.json": "0fc3964d57808d405d836b1a62915bc3dcce180bf56699dc2bbe63c126fdb2c7",
+    "data/manifests/phase11_v27_rewrite_smoke_result_v1.json": "14cfdc0fdf3afb7a6026143abcc0eb3ac90f5c83ad05839b4f10ae13ba9629ef",
+    "data/manifests/phase11_v27_semantic_partial_result_v1.json": "fc02f34714a8b0d303d8bf2764e8eb3df10dfecae06dbaa7e9e8993b189c29dc",
+    "data/manifests/phase11_autonomy_cumulative_cost_v12.json": "09600144c3105e0acb2de8e031f3e57c1a495e574a8e49238de0051f33adbed5"
+  },
+  "source_core_files_verified": 94,
+  "source_manifest_files_verified": 95,
+  "model_entrypoint_from_bound_model_manifest": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v31-eb7967c/data/models/Qwen3-8B-GGUF/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q4_K_M.gguf",
+  "model_id": "Qwen/Qwen3-8B-GGUF",
+  "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+  "model_quantization": "Q4_K_M",
+  "model_GGUF_sha256_from_registered_identity_with_conditional_reproduction_reuse": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+  "model_manifest": {
+    "path": "data/manifests/phase11_auxiliary_qwen3_8b_manifest_v1.json",
+    "sha256": "507390013781f3cee9e9abf34255d5e0a07f1cd660d38ed83e1dccda0ecc3d08"
+  },
+  "actual_full_cuda_layers": "37/37",
+  "context_tokens": 12288,
+  "max_output_tokens": 6144,
+  "reasoning_budget_tokens": 4096,
+  "costs": {
+    "input_tokens": 7942,
+    "output_tokens": 1233,
+    "task_seconds": 25.023891730001196,
+    "native_http_seconds": 24.550066,
+    "supervised_wall_seconds": 40.78626773098949,
+    "startup_seconds": 5.075214090989903,
+    "cost_incomplete": false,
+    "external_metered_API_calls": 0,
+    "electricity_cost": null,
+    "assessor_monetary_cost": null
+  },
+  "monitor_samples": 9,
+  "monitor_resource_errors": 0,
+  "faoff_validation": {
+    "actual_flash_attention": "off",
+    "actual_context_flash_attn": [
+      "disabled"
+    ],
+    "actual_context_tokens": [
+      12288
+    ],
+    "command_and_profile_and_full_log_agree": true,
+    "auto_resolution_disabled_message_required": false
+  },
+  "monitor_validation": {
+    "samples": 9,
+    "all_errors_empty": true,
+    "terminal_snapshot_equal": true,
+    "terminal_unknown": 0,
+    "inflight_reservation_not_treated_as_terminal_unknown": true
+  },
+  "strict_offline_boundary": {
+    "process_starts": 0,
+    "socket_operations": 0,
+    "reserved_QA_opens": 0,
+    "immutable_content_opens": 0
+  },
+  "strict_offline_boundary_events": [],
+  "terminal_ownership_validation": {
+    "all_owned_processes_stopped": true,
+    "roles": {
+      "supervisor": {
+        "pid": 526681,
+        "observed_create_time": null,
+        "alive": false,
+        "registered_create_time": 1793107651.31,
+        "owned_process_alive": false
+      },
+      "child": {
+        "pid": 526709,
+        "observed_create_time": null,
+        "alive": false,
+        "registered_create_time": 1793107655.79,
+        "owned_process_alive": false
+      }
+    },
+    "live_owned_group_members": [],
+    "OS_queries_read_only": true,
+    "signals_sent": 0,
+    "Native_or_GPU_queries": 0
+  },
+  "preregistration_sha256": "2c8ad584be7a9b03db123f0e08252d892197d270b6113e0d5d64bae50a49e6f3",
+  "completed_predecessors_verified": [
+    "preflight",
+    "smoke"
+  ],
+  "conditional_immutable_large_Hash_reuse": {
+    "data/models/Qwen3-8B-GGUF/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q4_K_M.gguf": {
+      "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+      "device": 66306,
+      "inode": 13904826,
+      "bytes": 5027783488,
+      "mtime_ns": 1792574703563448741
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcublas.so.12": {
+      "sha256": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048",
+      "device": 66306,
+      "inode": 14426702,
+      "bytes": 105140976,
+      "mtime_ns": 1762999702576245178
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcublasLt.so.12": {
+      "sha256": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541",
+      "device": 66306,
+      "inode": 14426711,
+      "bytes": 749205904,
+      "mtime_ns": 1762999699887212680
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcudart.so.12": {
+      "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7",
+      "device": 66306,
+      "inode": 14426693,
+      "bytes": 741088,
+      "mtime_ns": 1762999698607884406
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so": {
+      "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+      "device": 66306,
+      "inode": 14426675,
+      "bytes": 955456,
+      "mtime_ns": 1793000509170712580
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so.0": {
+      "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+      "device": 66306,
+      "inode": 14426572,
+      "bytes": 955456,
+      "mtime_ns": 1793000509170712580
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so.0.26.0": {
+      "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+      "device": 66306,
+      "inode": 14426666,
+      "bytes": 955456,
+      "mtime_ns": 1793000509170712580
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so": {
+      "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+      "device": 66306,
+      "inode": 14426636,
+      "bytes": 1418328,
+      "mtime_ns": 1793000509268714689
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so.0": {
+      "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+      "device": 66306,
+      "inode": 14426554,
+      "bytes": 1418328,
+      "mtime_ns": 1793000509268714689
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so.0.26.0": {
+      "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+      "device": 66306,
+      "inode": 14426627,
+      "bytes": 1418328,
+      "mtime_ns": 1793000509268714689
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so": {
+      "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+      "device": 66306,
+      "inode": 14426657,
+      "bytes": 44304624,
+      "mtime_ns": 1793000963397419862
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so.0": {
+      "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+      "device": 66306,
+      "inode": 14426617,
+      "bytes": 44304624,
+      "mtime_ns": 1793000963397419862
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so.0.26.0": {
+      "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+      "device": 66306,
+      "inode": 14426374,
+      "bytes": 44304624,
+      "mtime_ns": 1793000963397419862
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so": {
+      "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+      "device": 66306,
+      "inode": 14426648,
+      "bytes": 60360,
+      "mtime_ns": 1793000964257439984
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so.0": {
+      "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+      "device": 66306,
+      "inode": 14426498,
+      "bytes": 60360,
+      "mtime_ns": 1793000964257439984
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so.0.26.0": {
+      "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+      "device": 66306,
+      "inode": 14426577,
+      "bytes": 60360,
+      "mtime_ns": 1793000964257439984
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-cli-impl.so": {
+      "sha256": "b2a8258ea020b616b95eb3c8d6a86afff16e8f81e5be5129f44327431cb4f4d4",
+      "device": 66306,
+      "inode": 14426576,
+      "bytes": 243128,
+      "mtime_ns": 1793001118387687655
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so": {
+      "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+      "device": 66306,
+      "inode": 14426286,
+      "bytes": 6145992,
+      "mtime_ns": 1793001082609190834
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so.0": {
+      "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+      "device": 66306,
+      "inode": 14426565,
+      "bytes": 6145992,
+      "mtime_ns": 1793001082609190834
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so.0.6.0": {
+      "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+      "device": 66306,
+      "inode": 14426557,
+      "bytes": 6145992,
+      "mtime_ns": 1793001082609190834
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-server-impl.so": {
+      "sha256": "6e4ec475238226091f3c61eb57ee1ee37df9291885e86cf47d39f9539b44a45b",
+      "device": 66306,
+      "inode": 14426394,
+      "bytes": 4017648,
+      "mtime_ns": 1793001113695907954
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so": {
+      "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+      "device": 66306,
+      "inode": 14426559,
+      "bytes": 4897752,
+      "mtime_ns": 1793001005271397246
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so.0": {
+      "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+      "device": 66306,
+      "inode": 14426485,
+      "bytes": 4897752,
+      "mtime_ns": 1793001005271397246
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so.0.6.0": {
+      "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+      "device": 66306,
+      "inode": 14426575,
+      "bytes": 4897752,
+      "mtime_ns": 1793001005271397246
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so": {
+      "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+      "device": 66306,
+      "inode": 14426571,
+      "bytes": 1975408,
+      "mtime_ns": 1793001053641520682
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so.0": {
+      "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+      "device": 66306,
+      "inode": 14426684,
+      "bytes": 1975408,
+      "mtime_ns": 1793001053641520682
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so.0.6.0": {
+      "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+      "device": 66306,
+      "inode": 14426562,
+      "bytes": 1975408,
+      "mtime_ns": 1793001053641520682
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/llama-cli": {
+      "sha256": "659465db4397442b851d7509c590334b513ee5bd5baa32b5980beb0469fd4eb3",
+      "device": 66306,
+      "inode": 14426558,
+      "bytes": 1286672,
+      "mtime_ns": 1793001118538942941
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/llama-server": {
+      "sha256": "e8dc25cdeef9898959e73e58cb79eef964011ea76bd5d919baf3ba373adbfb0a",
+      "device": 66306,
+      "inode": 14426564,
+      "bytes": 17888,
+      "mtime_ns": 1793001113832667260
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/runtime_manifest.json": {
+      "sha256": "150141f370e82faa426cd468af1505584bcc98efd5b2e69d695b19e943a70784",
+      "device": 66306,
+      "inode": 14426720,
+      "bytes": 5212,
+      "mtime_ns": 1793001126439858793
+    }
+  },
+  "all2_complete_saved_thinking_reviewed": true,
+  "v28_failed_partial_preserved_not_adopted": true,
+  "old_v10_files_reverified_unchanged": 82,
+  "old_v12_original_raw_files_reverified_unchanged": 119,
+  "old_v24_smoke_raw_files_reverified_unchanged": 9,
+  "old6577_evidence_reverified_unchanged": 6577,
+  "old_v25_successful_smoke_raw_reverified_unchanged": 9,
+  "old_v25_rejected_partial_raw_reverified_unchanged": 25,
+  "zero_native_disposable_cached_replay_probes": 2,
+  "formal_audit_started_at_utc": "2026-10-27T13:30:50.398060+00:00",
+  "formal_audit_elapsed_seconds": 2.2360545470146462,
+  "ai_full_source_reason_review": {
+    "path": "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/full-source-reason-ai-review.json",
+    "sha256": "4cc00d34d1cec7d80098925107107620a92b01930c4ab9515fb2beedab7ac33a",
+    "measured_joint_two_case_seconds": 106.24880443897564
+  },
+  "timing_limitation": "Separate formal validation/copy/replay and actual joint first-read-to-persisted-AI-review intervals; do not add overlapping scopes or allocate equal per-case time.",
+  "stopped_generation_zero_audit_attempts_this_v31": [],
+  "prior_v26_corrected_c4_to_c1_mapping_failure_retained": "data/manifests/phase11_v26_attribution_auditor_failure_preservation_v1.json",
+  "v26_zero_output_metadata_amendment_applicable_to_v31": false,
+  "old_v24_auditor_failure_retained": "Sampling-only config has no model_path; this audit resolves the entrypoint from the bound model manifest, preserving the old failure separately.",
+  "raw_files_sha256": {
+    "session.json": "a26432280d79a340a752850931f58d6c66236233725b8404fa5ea7ac5afa0790",
+    "probe-2.json": "bf31b118cc3ac133ead68b8499b993822b34f4d02c36e9f3437d66aaa68df3a7",
+    ".run.lock": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "manifest.json": "3195b3ce496b5ec7647452abc1a448b6ee002c57bc82bb3bc5fdecc5617cc4cf",
+    "report.json": "8b7e952ed96f3a46b5e47a7b5d4e9f497f82ce8f0b024284b326283443defd15",
+    "server.log": "f77e7f8594729808cc15a2ee069240540db61e40bd8e55c2f30c8dd52d5f3d3c",
+    "probe-1.json": "aeeecb358ffdc253e80e38515a1b238274c42258f457a601349437af7e2bb1af",
+    "probe-2.claims/c1.json": "723a5cb52434be9ed41b855ede2a1b70fb413021825e3dc932bc94ad64130b95",
+    "probe-1.claims/c1.json": "63ae7da52cd4d130784d4fa5959fd652abfb82b0cd511691922b347c5dc21c0c"
+  },
+  "artifact_files_sha256": {
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/audit-builder.py": "82e01860e1bc040af24a78f1ac33a5c8416ff08154463d4d465bd9e9da32f62c",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/audit-release.json": "121af4d337c10389f590c519c2116663703802e00c34e51a37d84b4a87082f0a",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/audit_helpers.py": "f42c2098f67a9c7070e11eb158d504cef2efdfaf7b32af41fa0dc185104642a9",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/audit_phase11_v31_common_v1.py": "145736122e747426c879a52568710d52c6db9e8730a6d24451512ee08294ffbe",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/audit_support.py": "c612b9dd1016eeb3e3c928b18a591692cca2e60868f333fa2d63af19794f8ad3",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/candidate-stage-preservation.json": "7f7342be8ef91dc5bb462c3e46ddf1449a3506f0144cb2086d4a7693f3912a6d",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/canonical-copy.json": "f0a2f3e67222120254a81e3aba7b8cad684963aad678a6c547e5a3f8bf259a6e",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/copy-receipt.json": "f5e55f63b48118802490d00a148e557f8c10ff7a89f4629c442518f36a5a3115",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/execution-binding.json": "c8401dcb0e78e61ffd70e54447c4c5b2d9fa2c9019fa21b974ab41e3fe6b1ef5",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/execution_binding.py": "7670272775f3f05025b0c233a60f478db9c0fc6f0404a9accddd19e54a837eb0",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/first-read-review-packet.json": "8849e037e909f3cd2ab2d67ef82a3e846ec652b8de27bf4156d333fd53754c83",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/first-read-start.json": "65bf6af7ec61e37fddbc877f8a3da15468e644ee8f7dbabd0c5c20e1462bc7f4",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/full-source-reason-ai-review.json": "4cc00d34d1cec7d80098925107107620a92b01930c4ab9515fb2beedab7ac33a",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/ledger-terminal-record.json": "1ff520da442283c4bdace521e8d49871678bb7d5cdeb5b6ba0df604a0e2c3264",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/ledger-terminal-totals.json": "592b0520d9cda7d46003732064d35b7a346eaf2969eb729bd722188c6367495c",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/native-and-meaning-audit.json": "4027630dfdc61e905607d67be38e4248b7738021401aa520854400a998960df6",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/old-v24-auditor-failure-preserved/audit.py": "c31ff92d0f708e8a7eed65abd63be9560595dcac266c009ade9d96f505d2ce69",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/old-v24-auditor-failure-preserved/failure.json": "2e5f944021691d613f20d264c4054788257ff7052bfa82112bdc9902f9f6433d",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/original-after.json": "f0a2f3e67222120254a81e3aba7b8cad684963aad678a6c547e5a3f8bf259a6e",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/original-before.json": "f0a2f3e67222120254a81e3aba7b8cad684963aad678a6c547e5a3f8bf259a6e",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/registered-run-plan.json": "7a4efeeaf65145e17d8aaa73f2c015fdc70b038e77935c8b388dadea56baa9a7",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/root_terminal_authorization.json": "2a00f4aa99fcb15c42b32ef47e739f2da32b46bf83a54bbca87354d28c97980b",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/root_terminal_row.json": "1ff520da442283c4bdace521e8d49871678bb7d5cdeb5b6ba0df604a0e2c3264",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/runtime_validation.py": "c277fa28c9a91e7cdf970d5082b4187010ca9430e33762a1c3213b8f1aa4c1bf",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/supervisor/manifest.json": "bb5f5a1761f0de74a9b6733f303cc6db9886228d325e59ec5507dca6909e46d1",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/supervisor/monitor.jsonl": "fd078b48324796aaa4d7b414dd3372fe4e426e086e24714730c97aee51c62a9a",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/supervisor/native_guard/calls.json": "fd806034bada5eba22e16f009d9811f23cfc1e9d4eed31600e2cb30f97fd6cf3",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/supervisor/stdout.log": "bacf3489f09de43dc81e21a1cbd066433cf18993a79ee81480fd63b3e360c537",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/terminal_ownership.py": "147ba3c7871f18d99e34d872e42b8af092d09916c0773d2d590af0fe223f2c9e",
+    "data/runs/runtime_screening/phase11-v3-v31-attribution-smoke-audit-v1/zero-native-replay.json": "42b43c2709c63bd7f3c0fc52e1c9f21c526c088f62f7771bf9b42a498fc48789"
+  },
+  "registered_run_plan": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-plans/v31-attribution-smoke.json",
+    "sha256": "7a4efeeaf65145e17d8aaa73f2c015fdc70b038e77935c8b388dadea56baa9a7"
+  },
+  "source_target_plan": {
+    "path": "configs/phase11_attribution_conflict_smoke_v31.json",
+    "sha256": "bc96d499e5780d6880dd7b7f0b5fa884bc2003104fcc43a21cb1acb1de27607d"
+  },
+  "full_expected_and_denominators_unchanged": true,
+  "old_results_regenerated": false,
+  "semantic90_or_old70_meaning_adoption_claimed": false,
+  "new_native_calls_during_audit": 0,
+  "new_model_servers": 0,
+  "new_tokenizers_or_GPU_enumeration": 0,
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "guard": {
+    "subprocess_attempts": 0,
+    "socket_attempts": 0,
+    "reserved_QA_open_attempts": 0
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
