@@ -1,0 +1,396 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v30-fresh-tokenizer11-independent-result",
+  "recorded_at_utc": "2026-10-27T11:34:08.531429+00:00",
+  "candidate_identity_sha256": "87cf5942abf0652849246229c0b2550846c7c674aaa764c3489861e1baba8e6b",
+  "fixed_commit": "0e8fb6e9c10d7e436624f75eed5bb99a3a84d75a",
+  "registered_plan_sha256": "3b029725701c23a9c1c44ec57be6694b91ec8723fd5503e99a3625a11f05a38c",
+  "run_state": "process_completed",
+  "mode": "tokenizer",
+  "raw_files": 16,
+  "native_returned": 0,
+  "unknown": 0,
+  "fresh_tokenizer_witnesses_verified": 11,
+  "old_Model_token_ids_witnesses_or_outputs_reused": 0,
+  "strict9_passed": false,
+  "intentional_legacy1_failed": false,
+  "artificial_tokenizer0_does_not_replace_whole90_preflight": true,
+  "actual_explicit_FAoff_context_and_command_verified": {
+    "version": "cuda-execution-v2",
+    "flash_attention": "off",
+    "actual_context_flash_attn": [
+      "disabled"
+    ],
+    "actual_context_tokens": [
+      12288
+    ],
+    "enabled_or_auto_context_observed": false,
+    "proof": "Explicit disabled implies flash_attn=False/auto_fa=False in pinned Source50569eb; no auto-resolution message required"
+  },
+  "full_cuda_layers": 37,
+  "ownership": {
+    "all_owned_processes_stopped": true,
+    "roles": {
+      "supervisor": {
+        "pid": 503248,
+        "observed_create_time": null,
+        "alive": false,
+        "registered_create_time": 1793100199.03,
+        "owned_process_alive": false
+      },
+      "child": {
+        "pid": 503274,
+        "observed_create_time": null,
+        "alive": false,
+        "registered_create_time": 1793100203.44,
+        "owned_process_alive": false
+      }
+    },
+    "live_owned_group_members": [],
+    "OS_queries_read_only": true,
+    "signals_sent": 0,
+    "Native_or_GPU_queries": 0
+  },
+  "source_core_files_verified": 94,
+  "source_identity_and_direct_bindings_verified": 157,
+  "conditional_immutable_large_Hash_reuse": {
+    "data/models/Qwen3-8B-GGUF/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q4_K_M.gguf": {
+      "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+      "device": 66306,
+      "inode": 13904826,
+      "bytes": 5027783488,
+      "mtime_ns": 1792574703563448741
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcublas.so.12": {
+      "sha256": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048",
+      "device": 66306,
+      "inode": 14426702,
+      "bytes": 105140976,
+      "mtime_ns": 1762999702576245178
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcublasLt.so.12": {
+      "sha256": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541",
+      "device": 66306,
+      "inode": 14426711,
+      "bytes": 749205904,
+      "mtime_ns": 1762999699887212680
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcudart.so.12": {
+      "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7",
+      "device": 66306,
+      "inode": 14426693,
+      "bytes": 741088,
+      "mtime_ns": 1762999698607884406
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so": {
+      "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+      "device": 66306,
+      "inode": 14426675,
+      "bytes": 955456,
+      "mtime_ns": 1793000509170712580
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so.0": {
+      "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+      "device": 66306,
+      "inode": 14426572,
+      "bytes": 955456,
+      "mtime_ns": 1793000509170712580
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so.0.26.0": {
+      "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+      "device": 66306,
+      "inode": 14426666,
+      "bytes": 955456,
+      "mtime_ns": 1793000509170712580
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so": {
+      "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+      "device": 66306,
+      "inode": 14426636,
+      "bytes": 1418328,
+      "mtime_ns": 1793000509268714689
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so.0": {
+      "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+      "device": 66306,
+      "inode": 14426554,
+      "bytes": 1418328,
+      "mtime_ns": 1793000509268714689
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so.0.26.0": {
+      "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+      "device": 66306,
+      "inode": 14426627,
+      "bytes": 1418328,
+      "mtime_ns": 1793000509268714689
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so": {
+      "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+      "device": 66306,
+      "inode": 14426657,
+      "bytes": 44304624,
+      "mtime_ns": 1793000963397419862
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so.0": {
+      "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+      "device": 66306,
+      "inode": 14426617,
+      "bytes": 44304624,
+      "mtime_ns": 1793000963397419862
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so.0.26.0": {
+      "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+      "device": 66306,
+      "inode": 14426374,
+      "bytes": 44304624,
+      "mtime_ns": 1793000963397419862
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so": {
+      "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+      "device": 66306,
+      "inode": 14426648,
+      "bytes": 60360,
+      "mtime_ns": 1793000964257439984
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so.0": {
+      "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+      "device": 66306,
+      "inode": 14426498,
+      "bytes": 60360,
+      "mtime_ns": 1793000964257439984
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so.0.26.0": {
+      "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+      "device": 66306,
+      "inode": 14426577,
+      "bytes": 60360,
+      "mtime_ns": 1793000964257439984
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-cli-impl.so": {
+      "sha256": "b2a8258ea020b616b95eb3c8d6a86afff16e8f81e5be5129f44327431cb4f4d4",
+      "device": 66306,
+      "inode": 14426576,
+      "bytes": 243128,
+      "mtime_ns": 1793001118387687655
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so": {
+      "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+      "device": 66306,
+      "inode": 14426286,
+      "bytes": 6145992,
+      "mtime_ns": 1793001082609190834
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so.0": {
+      "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+      "device": 66306,
+      "inode": 14426565,
+      "bytes": 6145992,
+      "mtime_ns": 1793001082609190834
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so.0.6.0": {
+      "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+      "device": 66306,
+      "inode": 14426557,
+      "bytes": 6145992,
+      "mtime_ns": 1793001082609190834
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-server-impl.so": {
+      "sha256": "6e4ec475238226091f3c61eb57ee1ee37df9291885e86cf47d39f9539b44a45b",
+      "device": 66306,
+      "inode": 14426394,
+      "bytes": 4017648,
+      "mtime_ns": 1793001113695907954
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so": {
+      "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+      "device": 66306,
+      "inode": 14426559,
+      "bytes": 4897752,
+      "mtime_ns": 1793001005271397246
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so.0": {
+      "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+      "device": 66306,
+      "inode": 14426485,
+      "bytes": 4897752,
+      "mtime_ns": 1793001005271397246
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so.0.6.0": {
+      "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+      "device": 66306,
+      "inode": 14426575,
+      "bytes": 4897752,
+      "mtime_ns": 1793001005271397246
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so": {
+      "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+      "device": 66306,
+      "inode": 14426571,
+      "bytes": 1975408,
+      "mtime_ns": 1793001053641520682
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so.0": {
+      "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+      "device": 66306,
+      "inode": 14426684,
+      "bytes": 1975408,
+      "mtime_ns": 1793001053641520682
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so.0.6.0": {
+      "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+      "device": 66306,
+      "inode": 14426562,
+      "bytes": 1975408,
+      "mtime_ns": 1793001053641520682
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/llama-cli": {
+      "sha256": "659465db4397442b851d7509c590334b513ee5bd5baa32b5980beb0469fd4eb3",
+      "device": 66306,
+      "inode": 14426558,
+      "bytes": 1286672,
+      "mtime_ns": 1793001118538942941
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/llama-server": {
+      "sha256": "e8dc25cdeef9898959e73e58cb79eef964011ea76bd5d919baf3ba373adbfb0a",
+      "device": 66306,
+      "inode": 14426564,
+      "bytes": 17888,
+      "mtime_ns": 1793001113832667260
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/runtime_manifest.json": {
+      "sha256": "150141f370e82faa426cd468af1505584bcc98efd5b2e69d695b19e943a70784",
+      "device": 66306,
+      "inode": 14426720,
+      "bytes": 5212,
+      "mtime_ns": 1793001126439858793
+    }
+  },
+  "reproduction_evidence": {
+    "path": "data/manifests/phase11_v30_checkout_reproduction_v1.json",
+    "sha256": "01620a7570b08799f0598a500f32106d186bf753be9e23cf2a09c46549a6e6c8"
+  },
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "tokenization_seconds": 0.18084480101242661,
+  "task_generation_seconds": 0.0,
+  "observed_native_HTTP_seconds": 0,
+  "supervised_wall_seconds": 10.332892455044203,
+  "cost_scopes_overlapping_not_added": true,
+  "monitor_samples": 3,
+  "all_monitor_errors_required_and_empty": true,
+  "final_monitor_snapshot_matches_closed_row": true,
+  "raw_and_supervision_original_before_copy_after_hashes_equal_and_independent": true,
+  "offline_boundary": {
+    "process_starts": 0,
+    "socket_operations": 0,
+    "reserved_QA_opens": 0,
+    "immutable_content_opens": 0
+  },
+  "native_calls_during_audit": 0,
+  "artifacts": {
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/_audit-v1/audit_phase11_v30_common_v1.py": {
+      "sha256": "7fa574c9963815840dcc2ee6dae64c283d507e9ea98da817c3c9cb54ac034d58",
+      "bytes": 19355
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/_audit-v1/audit_phase11_v30_format_v1.py": {
+      "sha256": "c6ae11623fdde58cb7419607a59a9807c37eecb10ca6531e72b03e304ac3e8b0",
+      "bytes": 22946
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/_audit-v1/completed-run-record.json": {
+      "sha256": "5018acb7c9aacc193f93acc2f1f9bef71885e717a26d320bc0423ee38334e060",
+      "bytes": 36620
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/_audit-v1/global-ledger-snapshot.json": {
+      "sha256": "733576da6c69917bf5c82db3c09524554169353a7170d0b00724e67afb3eeccb",
+      "bytes": 1580792
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/_audit-v1/native-payload-schema-format-checks.json": {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/_audit-v1/root-authorization.json": {
+      "sha256": "5bcaeb26f87e4588f6c8d6428de6d41b0e91f9920ce601e028d6c0ef45975871",
+      "bytes": 2447
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/_audit-v1/supervision/manifest.json": {
+      "sha256": "492614621a5afda04cf4cc2f5bd490abb53fa54d11bbc2b37e7f0c7dc4970673",
+      "bytes": 35293
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/_audit-v1/supervision/monitor.jsonl": {
+      "sha256": "0b7164c27fbbb7cd173de6227a9e1e950fcdb4dde1c6debfaa2e7ae3a10f3e38",
+      "bytes": 2572
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/_audit-v1/supervision/stdout.log": {
+      "sha256": "4bdaeda0892887b1d872cefe3996ff5d744086482d5f92eec8e96529706de4ca",
+      "bytes": 903
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/plan.json": {
+      "sha256": "de312ffd8a1737eb39480265efffc67b6ad343a1d848ad49157a96d1eb27fa59",
+      "bytes": 31147
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/report.json": {
+      "sha256": "ea01e477cbb6892902476aa61dcfa577f0d3d647691e350d43cf2d9097d685bd",
+      "bytes": 8784
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/server.log": {
+      "sha256": "3b6cfdcf3738e199345073f982b5e3d1797287abb8704b9ac877d7abb49e6d73",
+      "bytes": 16356
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witness_manifest.json": {
+      "sha256": "84424edfb916b3ef0b082646a72cd16a2fa74adce7e4300721aad5cf6332b501",
+      "bytes": 30875
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witnesses/legacy-array.json": {
+      "sha256": "666c9abd33c78f45c98def100abbfe12947febfdfe98c76daf130bbb6eba0dde",
+      "bytes": 4178
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witnesses/plan.json": {
+      "sha256": "a95076ece95174cbccbc5d10547dce8d11330be04fb9059e2e5750129c7e44ac",
+      "bytes": 29874
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witnesses/strict-array.json": {
+      "sha256": "ed34b453c41a5f09627eff158c1fbb496746528408679032aad24a9969bddc7e",
+      "bytes": 4184
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witnesses/strict-cited-contradicted.json": {
+      "sha256": "22088aec022ec90175e209b5b1ff5b58bfcb21c5425795037e51c7cd5a6a8aec",
+      "bytes": 7629
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witnesses/strict-cited-missing-empty.json": {
+      "sha256": "1d1a8209b1f403aee84875b2d1bac6c1f36de2d1b2872df767af0c8ab82626cc",
+      "bytes": 7632
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witnesses/strict-cited-supported.json": {
+      "sha256": "ec0b7f81029363ce50a9c8b4009dcc58f17ad94307a03d5cd4f3de36cd460df6",
+      "bytes": 7623
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witnesses/strict-cited-union.json": {
+      "sha256": "122f94c9693d7cfcf84881ad49610ffea990355839c0acb5d12c168c4a0c7975",
+      "bytes": 10300
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witnesses/strict-fixed-ids.json": {
+      "sha256": "a299d65dd2b17d3c73cfdff5f0bca1c05c7384803ed09903a0b97aad2b7efddc",
+      "bytes": 5425
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witnesses/strict-prose-fence.json": {
+      "sha256": "0374703d1dceee9eb3f58f9e99ca69dae557642ac27f62645b69fb44b511ab38",
+      "bytes": 4204
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witnesses/strict-rewrite-bounds.json": {
+      "sha256": "dfbd0dcb646d73186d19989f65ffffd44865c35bf67b494d3ff5d1fa359eb25f",
+      "bytes": 4843
+    },
+    "data/runs/runtime_screening/phase11-v3-v30-tokenizer-preflight/tokenizer_witnesses/strict-unicode-escape.json": {
+      "sha256": "aebb010fac90a44f68dbcf1b16c2867dcb806307878d8c6481eb9dbf6d08da61",
+      "bytes": 3835
+    }
+  },
+  "audit_elapsed_seconds_before_publication": 0.34974306100048125,
+  "research_QA_or_semantic_adoption": false,
+  "gate11_passed": false,
+  "phase12_started": false
+}
