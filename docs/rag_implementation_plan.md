@@ -1,6 +1,14 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.83 — 2026年10月27日 v24監査保存とv25書換え検証入口
+## Version 8.84 — 2026年10月27日 v25部分不採用監査と登録予算を照合する書換えv4
+
+12:37 JST現在、固定5043c16/Handle63497は16応答・4条件を完了し、Critical3/4のため予定人工74条件へ進まず不採用。Health16/16/未知0、Task389.068585/Native387.742915/監視壁409.177719秒、入力56250/出力18196。原Raw25独立copy・99Source/Core94・全Native payload/Schema/1024/Token・4条件cached追加0と6577旧証拠不変を照合した。初回部分監査の旧Plan field仮定KeyErrorは保存し、別v2で修正した。全16Source/理由/thinkingのAI共同実時間686.621959秒、全90精度nullと未試行74を保持。結果`phase11_v25_semantic_partial_result_v1.json`、SHAe44114303ec2593a3215f3d28bc3e54aa957d4328480b3b06d3728660ec6dc65。費用v8は新190/標準成功178/未検証返却12/未知0、旧込み1099/旧未知3・Native12424.413741秒。
+
+新v26はCore94/全推論Source・Prompt14/Model/Graph OFF/Schema/その他Sampler/全入力・Expected・基準不変で、共通reasoning4096だけを別候補IDへ登録する。新`run_phase11_rewrite_smoke_v4.py`は旧v3を保存し、必須CLI`--reasoning-budget-tokens`（1024/2048/4096）と実config Task予算の一致を追加した。登録argv/所有PID群/固定Commit/全Identityの既存v3検査、2Call/壁1800/個別1200/6144/12288/Retry0は維持する。新40件を含む全1019 Test（32.74秒）/Ruff成功。実v26は生成0→因果NS2→Council c4元逆C2→Rewrite2/全品質→全90→新Known84の別有限Planを必要とし、未採用のv25橋渡し草案をMainへ昇格しない。Main/Cal/最終凍結・Gate11は未達、Phase12未開始。
+
+以下は各観測時点の履歴。
+
+### Version 8.83 — 2026年10月27日 v24監査保存とv25書換え検証入口
 
 12:09 JST追記: 固定5043c16へ323資産を再現し、専用GPU uv58環境で実load/identityと全Hash/cleanに通過。実生成0は全90/max3644/33CUDA/Call0、Judge2とRewrite2も全Native/Schema/入力/1024budget/費用/全文意味・品質を監査し、原本不変・独立copy・追加0再読を確認した。Rewrite監査のテンプレートを裸JSONと見なした初回失敗を保存し、監査v2だけを追加0で修正/通過した。終端14 Runの費用v7は新174/成功162/未検証返却12/未知0、旧込み1083/旧未知3・入力341549/出力601137/Native12036.670826秒。全90の有限Plan SHA91e816281c35a6a57168e7d0f8a1c442c6b9dcb758971cefda57ed1ed4904a63を共有台帳へ登録し、現在Handle63497で実行中。最初のuv path誤記は登録済み未開始/Call0で保存して修正、二重登録/再生成なし。新鮮Known84/実Main/Cal/最終Validatorは未実施である。
 
@@ -24,7 +32,7 @@ v25はPrompt v14＋共通推論予算1024の共同変更で、94 Coreと既存Gu
 
 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-[研究計画 Version 7.80](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.81](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 

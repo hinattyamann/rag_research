@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-autonomy-v3-cumulative-cost-v8",
+  "recorded_at_utc": "2026-10-27T03:37:15.609953+00:00",
+  "autonomy_protocol_version": "phase11-autonomy-v3",
+  "closed_runs": 15,
+  "legacy_attempts": 909,
+  "legacy_unknown": 3,
+  "legacy_unused_calls_not_reallocated": true,
+  "totals": {
+    "attempts": 190,
+    "successful": 178,
+    "failed": 0,
+    "unknown": 0,
+    "observed_input_tokens": 397799,
+    "observed_output_tokens": 619333,
+    "known_task_seconds": 12393.190704278823,
+    "known_native_seconds": 12424.413741,
+    "task_failures": 0,
+    "unvalidated_returned": 12,
+    "cumulative_attempts": 1099,
+    "cumulative_unknown": 3,
+    "new_wall_seconds": 12716.080705124012,
+    "cost_incomplete": false,
+    "external_paid_api_calls": 0,
+    "electricity_cost_currency": null,
+    "legacy_success_failure_and_cost_not_reconstructed": true
+  },
+  "all190_native_reservations_returned": true,
+  "input_output_sums_reconciled": true,
+  "previous_cost": {
+    "path": "data/manifests/phase11_autonomy_cumulative_cost_v7.json",
+    "sha256": "2c02ee75b7ae6f911108836b8e4c167ffc83d230d4043a2ef26e7ad52e8254f6"
+  },
+  "new_partial_rejection": {
+    "path": "data/manifests/phase11_v25_semantic_partial_result_v1.json",
+    "sha256": "e44114303ec2593a3215f3d28bc3e54aa957d4328480b3b06d3728660ec6dc65"
+  },
+  "immutable_ledger_snapshot": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v8/ledger.json",
+    "sha256": "14a50346fe51ac4a58451a57ea9f3f88ac7b13b41dd3a8ba7eacbdc0b9c28303"
+  },
+  "native_guard_files_sha256": {
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-runtime-smoke/native_guard/calls.json": "e16ce5fc5bbea1e62507d00d993a35d1387c54bba1d7d21ee80a082370154624",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-format/native_guard/calls.json": "d6971537665425b4c3e9867a7f4d21031b1392547d88593a1b2687f9f76c3dd8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-semantic/native_guard/calls.json": "2264ce0d084ee082145592a51ee94c32b00ecb9b818f27daf5068a5cf3a2066d",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-baseline-smoke/native_guard/calls.json": "55148b868d0e832e3cfbe3b1624322bd5e50378967d95ed89d044e5fec6d20bf",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v12-known/native_guard/calls.json": "1546000d71f49d82062300cad0e81b79d4b9bff14d5586107b85faca5c8b5bcb",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-smoke/native_guard/calls.json": "46329eb7f7d7d6593f1a2b833aaac13239bc712b246f5e9af812e41ffa7c9204",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-smoke/native_guard/calls.json": "a38d71bbd09054087303a9f592935ca4476fbc032a2cd6db610d1f44d72dc8d2",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-rewrite-smoke/native_guard/calls.json": "e427670673c9d898eed3d81c449090bfcdc861c34e00602f96fdb7ae59d43fa3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-semantic/native_guard/calls.json": "baf4f1136fdeffc6cf99271f698c986c3e119409bf67ae09f49d47d29c547fb8"
+  },
+  "v25_semantic_scientific_gate_passed": false,
+  "whole90_accuracy": null,
+  "cost_scopes": "Task/Native/wall overlap and must not be summed; AIreview/preparation/failed generation-zero audit costs are separate and remain in bound results.",
+  "external_paid_api_calls": 0,
+  "electricity_cost_currency": null,
+  "legacy_full_cost_not_reconstructed": true,
+  "new_native_calls_during_audit": 0,
+  "gate11_passed": false,
+  "phase12_started": false
+}

@@ -1,5 +1,7 @@
 # 研究のフェーズ・現在地・次に行うこと
 
+2026-10-27 12:37 JST最新: v25全90計画は同固定5043/Handle63497で16応答/4条件・未知0、Critical3/4で事前規則停止し不採用。Council逆c4のC→NSを全16Source/理由/thinkingと機械監査で保存、人工74条件/74Call未試行・全90精度null。Raw25独立copy/99Source/全Native/4cached追加0/6577旧証拠不変を確認し、終端15 Run累積1099/旧未知3・費用v8を保存した。次v26はPrompt14等を固定し共通reasoning1024→4096だけを戻すSampler候補、IDd809dce2…、Native0。新書換えv4/40 Testを追加して全1019 Test/Ruff成功。別固定Commit/WTで生成0→因果NS2→Council c4元逆C2→Rewrite2/全品質→全90→新鮮Known84を必要とする。Main/Cal/最終凍結/Gate11は未達、Goal active、Phase12未開始。以下は各時点の履歴。
+
 2026-10-27 12:09 JST最新: v25を5043c165へCommit/PushしてRemote一致、新固定WTの323資産/専用uv58/実Identity/全Hashを再現。全90入力の生成0は最大3644＋6144/12288・33層CUDA・Call0で通過。Judge Smoke2は両NS・Health2/2・未知0、Rewrite Smoke2も全文の訂正/言語/引用/余分な断定除去とHealth2/2を実監査した。追加0再読/独立copy/全Native/Schema/Sampler1024を確認。終端14 Runの累積は1083試行/旧未知3、Native12036.670826秒。固定5043c16・Handle63497/run_id phase11-v3-v25-semanticで全39QA/45文/78条件/90Callを12:09:26JSTから実行中（有限90/22720秒/個別1200秒/Retry0/監視5秒）。起動パス誤記は未開始/Call0で保存して正しい入口から開始、重複起動していない。稼働WTを編集せず、全90採否は未確定。新鮮Known84・元Main各20・予約Cal各20・Gate11/最終凍結は未達、Goal active、Phase12未開始。以下は各観測時点の履歴。
 
 2026-10-27 11:38 JST最新: Fetch後main/origin/mainは8c17f85で差0/0。全11 Run終端・実験プロセス不在を確認し、同チャットのGoal activeを継承した。v24の全90入力生成0は通過、Judge Smoke2は未知0/Health2/2だが日英ともNS→Cで不採用。全意味90・新Known84は未実施のまま保存、累積1079試行/旧未知3。新v25は原因の非排他性を補うPrompt v14＋共通reasoning1024の共同変更であり、Rewriteにも影響する。Core94を保つ独立v3書換えSmoke入口と35 Testを追加し、全979 Test/Ruff・独立レビューを通過。新候補Native0、次は新固定Commit/専用WTへ全資産を再現し、全90入力生成0→JudgeSmoke2→日英一回書換えSmoke2/全文品質監査→意味90→新鮮Known84/全監査。実採用後だけ元Main各20/全封印・実証明→予約Cal各20/全封印→実測N/最終Validator/Manifest/Hashへ進む。Main/Cal/Gate11未達、Phase12未開始。以下は各観測時点の履歴。
@@ -16,7 +18,7 @@
 
 2026-10-26 18:24 JST追記: 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-更新日: 2026年10月27日。正本: [研究計画7.80](rag_research_plan.md)、[実装計画8.83](rag_implementation_plan.md)。
+更新日: 2026年10月27日。正本: [研究計画7.81](rag_research_plan.md)、[実装計画8.84](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。

@@ -1,5 +1,7 @@
 # Phase11 自律継続Protocol v3と新Runtime・意味候補
 
+2026-10-27 12:37 JST追記: v25全90は16応答/4条件・Health失敗/未知0でCritical3/4の事前停止、不採用。人工74条件/74Call未試行・全90精度nullを維持し、全16Source/理由/thinking、Raw25/99Source/全Native/4cached追加0・旧6577証拠不変を監査した。終端15 Run/累積1099/旧未知3。次v26はPrompt14と全研究条件を維持し共通reasoning4096だけを別候補へ登録する。新書換えv4は明示予算と実configを照合、全1019 Test/Ruff通過、Native0。因果NS2＋Council c4元逆C2を別targetsで事前登録し、Rewrite2/全品質→全90→新鮮Known84を要する。Candidate失敗でGoalを止めず、同条件の成功までの再抽選もしない。Main/Cal/Gate11未達、Phase12未開始。
+
 2026-10-27 12:09 JST追記: 正式5043c16をCommit/Push後、323資産/uv58/実Identity/cleanを専用WTで再現した。生成0全90（max3644＋予約6144/12288・33CUDA）、Judge2の両NS・全Raw/理由監査、Rewrite2の全品質/Native監査が通過。原本不変copyとcached再読Call0を保存し、終端14 Run費用v7は新174/旧込み1083/旧未知3。全90の新有限Plan（SHA91e816281c35a6a57168e7d0f8a1c442c6b9dcb758971cefda57ed1ed4904a63）を登録し、固定5043/Handle63497で実行中。起動パス誤記は未開始/Call0を確認・保存して修正した。全90意味採用と新Known84はまだ未完で、Main/Cal/Gate11を通過扱いにしない。Phase12未開始。
 
 2026-10-27 11:40 JST追記: v24は全90入力生成0を通過したが、別日英Smoke2のNS→C2件で不採用。全意味90/新Known84は未実施で、Raw/費用/Hashを保存した。新v25はJudge Prompt v14＋共通reasoning4096→1024の共同変更で、Rewriteも1024になる。Core94/Model/Runtime/Schema/その他Sampler/全入力・Expected/基準を維持し、既存v3 Guardを通す別書換えSmoke入口を追加、全979 Test/Ruffと独立レビューに通過した。事前登録は`data/manifests/phase11_semantic_v25_preregistration_v1.json`（SHA `1bcf8ea0b7a16e59928af2152cfddd97ad862db61515d1335b3ba2d2e238ebc4`）。各Runは固定Commit後に生成0→JudgeSmoke2→RewriteSmoke2/全文品質→全90→新Known84の順で有限登録し、共有v3台帳を使う。全11 Run終端、新170＋旧909＝1079試行/旧未知3。新v25 Native0、Main/Cal/最終凍結/Gate11未達、Goal active・Phase12未開始。以下は時点別履歴。

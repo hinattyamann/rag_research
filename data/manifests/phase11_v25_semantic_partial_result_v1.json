@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v25-completed-partial-semantic-rejection-with-full16-review",
+  "recorded_at_utc": "2026-10-27T03:37:15.602502+00:00",
+  "candidate_identity_sha256": "2044ad1b52556b4cfa8d16ba2667a2bfea77163e7fc4fca9bd032fc69c48df74",
+  "fixed_commit": "5043c16524b436b54d98884b37b5f933b3e9854b",
+  "machine_result": {
+    "path": "data/manifests/phase11_v25_semantic_partial_machine_result_v1.json",
+    "sha256": "9e9087f1912fa07ee70e38d5d0cbadc4304192855b69b489ef91b826196b0f11"
+  },
+  "meaning_review": {
+    "path": "data/runs/semantic_diagnostics/phase11-v3-v25-semantic-meaning-v1/meaning-review.json",
+    "sha256": "dabcb07a6005efc4a7bd2012629d9609cee562ad82b0bce1f97ea8a0ed4026fc"
+  },
+  "counts": {
+    "planned_QA": 39,
+    "planned_fixed_units": 45,
+    "planned_conditions": 78,
+    "planned_native_calls": 90,
+    "attempted_QA": 2,
+    "attempted_unique_fixed_units": 8,
+    "completed_conditions": 4,
+    "actual_native_calls": 16,
+    "successful_native_calls": 16,
+    "failed_native_calls": 0,
+    "unknown_native_calls": 0,
+    "unattempted_conditions": 74,
+    "unattempted_native_calls": 74,
+    "critical_correct": 3,
+    "critical_denominator": 4,
+    "original_Raw_files": 25,
+    "verified_source_files": 99,
+    "verified_Core_files": 94
+  },
+  "runtime_health_passed_for_observed16": true,
+  "critical_exact_conditions": {
+    "passed": 3,
+    "total": 4
+  },
+  "full16_source_reason_thinking_review_complete": true,
+  "AI_joint_review_elapsed_seconds": 686.621958889009,
+  "review_artifacts_sha256": {
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic-meaning-v1/first-read.log": "42e8cee5cf7b0e8ada7517f3492570141588ff39d83b9559516f3bb4b24cf6a3",
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic-meaning-v1/meaning-review.json": "dabcb07a6005efc4a7bd2012629d9609cee562ad82b0bce1f97ea8a0ed4026fc",
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic-meaning-v1/SHA256SUMS": "4f3b083a11dbfea9f8bbc242d7f7990612a20fa11bc5b2974abb5ae852e02259",
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic-meaning-v1/inspect_terminal.py": "a395686e740ae0f0cabbcfb1fbdbfa4dd9d579225677cedfbb21760e5283cc7f",
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic-meaning-v1/first-read-packet.json": "355283fc68ae74bfa27b5509ba622ed01065f1938a93d020b2931787352d084b",
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic-meaning-v1/REVIEW.md": "311a19080bfe18e2f47c8ab23517169e38ffb52b926368961fb26adac7a2e0e3",
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic-meaning-v1/save_review.py": "da995a384f9e3394159e6949b653b95749f343089c4e51f57580427175be4d6d"
+  },
+  "machine_and_cost_scope": {
+    "input_tokens": 56250,
+    "output_tokens": 18196,
+    "summed_task_seconds": 389.0685854580952,
+    "summed_native_http_seconds": 387.742915,
+    "supervised_wall_seconds": 409.1777192479931,
+    "successful_mechanical_audit_v2_seconds": 13.163753338973038,
+    "failed_initial_mechanical_audit_v1_seconds": null,
+    "old6577_hash_reverification_seconds": 2.182221832976211,
+    "separate_cost_scopes": true,
+    "external_paid_API_calls": 0,
+    "electricity_currency": null
+  },
+  "causal_conclusion": "Observed decision error is C-to-NS on the reversed Council attribution/time claim despite its reason recognizing the decisive actor/time contrast. Budget exhaustion is a plausible intervention hypothesis, not established as necessary, sufficient, or the sole cause; the same-budget original-order decision is correct.",
+  "whole90_accuracy": null,
+  "synthetic74_unattempted": true,
+  "candidate_adopted": false,
+  "freshKnown84_started": false,
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "gate11_passed": false,
+  "phase12_started": false
+}

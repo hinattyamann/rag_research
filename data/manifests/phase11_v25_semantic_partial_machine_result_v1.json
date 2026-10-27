@@ -1,0 +1,396 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v25-partial-semantic16-of90-machine-audit-result",
+  "recorded_at_utc": "2026-10-27T03:35:18.014792+00:00",
+  "status": "candidate_rejected_critical3of4_whole90_incomplete_meaning16_review_pending",
+  "run_id": "phase11-v3-v25-semantic",
+  "canonical_run": "data/runs/semantic_diagnostics/phase11-v3-v25-semantic",
+  "fixed_commit": "5043c16524b436b54d98884b37b5f933b3e9854b",
+  "candidate_identity_sha256": "2044ad1b52556b4cfa8d16ba2667a2bfea77163e7fc4fca9bd032fc69c48df74",
+  "autonomy_protocol_version": "phase11-autonomy-v3",
+  "protocol_sha256": "e0dd7fae96939af34232f5a7174cbc400c6e7dfce3eedf584c2a4d08ca09df00",
+  "semantic_adoption_version": "support-binary-v2",
+  "runtime_health_passed_for_observed16": true,
+  "runtime_root_cause_proven": false,
+  "counts": {
+    "planned_QA": 39,
+    "planned_fixed_units": 45,
+    "planned_conditions": 78,
+    "planned_native_calls": 90,
+    "attempted_QA": 2,
+    "attempted_unique_fixed_units": 8,
+    "completed_conditions": 4,
+    "actual_native_calls": 16,
+    "successful_native_calls": 16,
+    "failed_native_calls": 0,
+    "unknown_native_calls": 0,
+    "unattempted_conditions": 74,
+    "unattempted_native_calls": 74,
+    "critical_correct": 3,
+    "critical_denominator": 4,
+    "original_Raw_files": 25,
+    "verified_source_files": 99,
+    "verified_Core_files": 94
+  },
+  "whole90_accuracy": null,
+  "whole90_supported_recall": null,
+  "whole90_negative_specificity": null,
+  "synthetic": {
+    "en": {
+      "planned_conditions": 34,
+      "completed_conditions": 0,
+      "valid_conditions": 0,
+      "exact_correct_conditions": 0,
+      "accuracy_of_all_planned": null,
+      "false_support_count": 0
+    },
+    "ja": {
+      "planned_conditions": 40,
+      "completed_conditions": 0,
+      "valid_conditions": 0,
+      "exact_correct_conditions": 0,
+      "accuracy_of_all_planned": null,
+      "false_support_count": 0
+    }
+  },
+  "critical_passed": false,
+  "diagnostic_gate_passed": false,
+  "candidate_adopted": false,
+  "freshKnown14_started": false,
+  "planned_Known84_remaining_unstarted": 84,
+  "all90_meaning_adoption_claimed": false,
+  "all16_meaning_review_complete": false,
+  "all16_meaning_review_status": "separate actual AI source/reason/thinking review pending; no fabricated annotation",
+  "evidence": {
+    "machine_audit": {
+      "path": "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/machine-audit-pending-review.json",
+      "sha256": "fbc2e6e29baac2fdf72c3a7439d014309ef9654fafc58d80072a08fa76b3f496"
+    },
+    "all16_native_payload_schema_sampler_tokens": {
+      "path": "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/native-and-payload-audit.json",
+      "sha256": "194bbd195545910c4137f103598bd1906a071898c13ebc894a722951f4515c97"
+    },
+    "cached_additional0_replay": {
+      "path": "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/resume_check.json",
+      "sha256": "8f74a321e9efa3a61ba250f2944c5509688a8c7f0591d23dbb7a42398eac95c0"
+    },
+    "real_original_copy_hash_inode": {
+      "path": "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/copy-hash-inode-receipt.json",
+      "sha256": "a9207a2cfc2570ddac0905572a7429a2a37254f906832d2c8a41a12fbbe70c0f"
+    },
+    "all6577_old_evidence_unchanged": {
+      "path": "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/old-evidence-preservation-reverified.json",
+      "sha256": "755cdb28b569f14a30e5e9e414eaa202b55d89f18a0e571ee692f69b03767268"
+    },
+    "known14_formalization_rejected": {
+      "path": "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/known14-rejected.json",
+      "sha256": "c64a55255fe672e123c4befe93ffe4cb4825c70e704fd4f2e6051fcfbd980779"
+    },
+    "preflight_link_qualification": {
+      "path": "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/preflight-registration-link.json",
+      "sha256": "fd12f6ea09168c34678455b177e5b05f2e9b03654189f9c9c3ca80f925499281"
+    }
+  },
+  "costs": {
+    "input_tokens": 56250,
+    "output_tokens": 18196,
+    "summed_task_seconds": 389.0685854580952,
+    "summed_native_http_seconds": 387.742915,
+    "supervised_wall_seconds": 409.1777192479931,
+    "successful_mechanical_audit_v2_seconds": 13.163753338973038,
+    "failed_initial_mechanical_audit_v1_seconds": null,
+    "old6577_hash_reverification_seconds": 2.182221832976211,
+    "separate_cost_scopes": true,
+    "external_paid_API_calls": 0,
+    "electricity_currency": null
+  },
+  "raw_inodes_independent": true,
+  "all_original_raw_unchanged": true,
+  "source_and_v25_WT_unchanged": true,
+  "additional_Native_calls_or_servers_during_audit": 0,
+  "GPU_or_tokenizer_started": false,
+  "old_evidence_reverified_files": 6577,
+  "legacy909_unknown3_retained": true,
+  "native_timing_not_isolated_population_benchmark": true,
+  "monitor_samples": 82,
+  "monitor_resource_error_count": 0,
+  "sampled_peak_GPU_MiB": 7551,
+  "minimum_available_RAM_bytes": 4615196672,
+  "first_mechanical_attempt": {
+    "failure": "KeyError preflight_and_format_evidence; new direct-binding producer contract differs from old audit",
+    "logs_preserved": ".tools/draft-artifacts/phase11-v25-semantic-partial-audit-v1/",
+    "canonical_attempt_preserved": "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit",
+    "experiment_reexecuted": false
+  },
+  "preflight_scope": "Same prior registered0-call Run/ID5043/2044/config/plan/prompts; report not directly bound in semantic plan, no post-output registration edit",
+  "artifacts": {
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit/completed-run-record.json": {
+      "sha256": "104d755f30b37701d59f4cf1cbe8dbd53c9add020f13dd43e0987d6bbac5caa5",
+      "bytes": 55394
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit/global-ledger-snapshot.json": {
+      "sha256": "14a50346fe51ac4a58451a57ea9f3f88ac7b13b41dd3a8ba7eacbdc0b9c28303",
+      "bytes": 764770
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit/root-terminal-authorization.json": {
+      "sha256": "12dd34beb9f4d34591a16205a709415ffcd1e46367e21f08e20de78ce2ff9ce4",
+      "bytes": 591
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit/run-raw-files-before.json": {
+      "sha256": "e8365f2c30ae7bf640153d5d5559f1421b026416ee5fd2e396d4e6ff932d6123",
+      "bytes": 2728
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit/supervision/manifest.json": {
+      "sha256": "56a18eb7adc813d2b26a323f034b4823a611c8fbe8be6c7f3e46cb4678b78b10",
+      "bytes": 35517
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit/supervision/monitor.jsonl": {
+      "sha256": "f8431db3ca98abeaac24a5c9a1d79f76dcdc2d36f3a5123cf0ef57c8fc93fe68",
+      "bytes": 687307
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit/supervision/native_guard/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit/supervision/native_guard/calls.json": {
+      "sha256": "baf4f1136fdeffc6cf99271f698c986c3e119409bf67ae09f49d47d29c547fb8",
+      "bytes": 11001
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit/supervision/stdout.log": {
+      "sha256": "68a888ad97b0f75da3b8d39c49ef53f4e403875727cdcc955b7019bd27b7245d",
+      "bytes": 1618
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/actual-preflight-registration.json": {
+      "sha256": "004a9dcb7fd6cca1442a04125b4f78cb59bd274a2cf9543ff4b2c76590bb5fe6",
+      "bytes": 36035
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/actual-preflight-whole90.json": {
+      "sha256": "75a242de9fd37c88d2124a8e919799aea2654760190ff40ac2882972c4aae119",
+      "bytes": 33929
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/audit-helper-source/audit_semantic90.py": {
+      "sha256": "5fb9378f3eeab92f57a404498943946052de2ef6c4e3f00ca8b09bd8a6993eec",
+      "bytes": 27088
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/audit-helper-source/finalize_semantic90_audit.py": {
+      "sha256": "0510e7b095dcd63752bf37c9e83ed7de94b91bef61ed9d1303de883211cef5e0",
+      "bytes": 13790
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/audit-helper-source/review_timer.py": {
+      "sha256": "6e689673edbc972fa5dff44946e4983a929fb1c3507e093dc2fb24f227dc0788",
+      "bytes": 4832
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/audit-helper-source/support.py": {
+      "sha256": "82cf802c66a88601d388306a1270912d12650fa565f1af7ae3ef6a4ec92a47ea",
+      "bytes": 9016
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/completed-run-record.json": {
+      "sha256": "104d755f30b37701d59f4cf1cbe8dbd53c9add020f13dd43e0987d6bbac5caa5",
+      "bytes": 55394
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/copy-hash-inode-receipt.json": {
+      "sha256": "a9207a2cfc2570ddac0905572a7429a2a37254f906832d2c8a41a12fbbe70c0f",
+      "bytes": 15067
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/global-ledger-snapshot.json": {
+      "sha256": "14a50346fe51ac4a58451a57ea9f3f88ac7b13b41dd3a8ba7eacbdc0b9c28303",
+      "bytes": 764770
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/known14-rejected.json": {
+      "sha256": "c64a55255fe672e123c4befe93ffe4cb4825c70e704fd4f2e6051fcfbd980779",
+      "bytes": 509
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/known14-rejected.stderr": {
+      "sha256": "a307a32ab12b0a7ca41f87d5c5b571ff8c240022c426d33feaeba22b47bb649c",
+      "bytes": 1641
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/known14-rejected.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/machine-audit-pending-review.json": {
+      "sha256": "fbc2e6e29baac2fdf72c3a7439d014309ef9654fafc58d80072a08fa76b3f496",
+      "bytes": 24486
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/native-and-payload-audit.json": {
+      "sha256": "194bbd195545910c4137f103598bd1906a071898c13ebc894a722951f4515c97",
+      "bytes": 18246
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/old-evidence-preservation-reverified.json": {
+      "sha256": "755cdb28b569f14a30e5e9e414eaa202b55d89f18a0e571ee692f69b03767268",
+      "bytes": 1110246
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/preflight-registration-link.json": {
+      "sha256": "fd12f6ea09168c34678455b177e5b05f2e9b03654189f9c9c3ca80f925499281",
+      "bytes": 545
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/resume_check.json": {
+      "sha256": "8f74a321e9efa3a61ba250f2944c5509688a8c7f0591d23dbb7a42398eac95c0",
+      "bytes": 2920
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/review-packets/001/blank-notes.json": {
+      "sha256": "32e40bf5ee14c746f78c464a1bca5ffcb6e174b583dd3dbd4feaf873670fa7c6",
+      "bytes": 1891
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/review-packets/001/packet.json": {
+      "sha256": "deabbff3b466247f92dcddbce0aa74cf89de20857beeb827a13d118b67f1d7a7",
+      "bytes": 75522
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/review-packets/002/blank-notes.json": {
+      "sha256": "60653bf4ec7ff5d885ab00c872f25bb3e3fc6f42b40cd557c9baeb65f2de0332",
+      "bytes": 1891
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/review-packets/002/packet.json": {
+      "sha256": "b0e9bc66d5760f8b1ed5a4596a7cd6793e6e15ae2b3310a2520ede83588cf8c9",
+      "bytes": 76413
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/review-packets/003/blank-notes.json": {
+      "sha256": "6d26f93e81ec9186af7b9f2f3a37cc98f099ed725ce7800028cadb0171a2b3c6",
+      "bytes": 1265
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/review-packets/003/packet.json": {
+      "sha256": "60f0135a037eac299c6b5b331fbc4bf14bfc4aa8b8e620a826ae372d1b786675",
+      "bytes": 52277
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/root-terminal-authorization.json": {
+      "sha256": "12dd34beb9f4d34591a16205a709415ffcd1e46367e21f08e20de78ce2ff9ce4",
+      "bytes": 591
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/run-raw-files-before.json": {
+      "sha256": "e8365f2c30ae7bf640153d5d5559f1421b026416ee5fd2e396d4e6ff932d6123",
+      "bytes": 2728
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/supervision/manifest.json": {
+      "sha256": "56a18eb7adc813d2b26a323f034b4823a611c8fbe8be6c7f3e46cb4678b78b10",
+      "bytes": 35517
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/supervision/monitor.jsonl": {
+      "sha256": "f8431db3ca98abeaac24a5c9a1d79f76dcdc2d36f3a5123cf0ef57c8fc93fe68",
+      "bytes": 687307
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/supervision/native_guard/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/supervision/native_guard/calls.json": {
+      "sha256": "baf4f1136fdeffc6cf99271f698c986c3e119409bf67ae09f49d47d29c547fb8",
+      "bytes": 11001
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/_audit-attempt-v2/supervision/stdout.log": {
+      "sha256": "68a888ad97b0f75da3b8d39c49ef53f4e403875727cdcc955b7019bd27b7245d",
+      "bytes": 1618
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/manifest.json": {
+      "sha256": "8865d604b92df34b35f50affce76561efea904caa1c3ac6f142383fd366fa0c4",
+      "bytes": 21846
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/report.json": {
+      "sha256": "69eb62da4ff8b594db63da120556ed83a25d4c1ec8b686a89fafc0d034d7d902",
+      "bytes": 4555
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/server-1.log": {
+      "sha256": "df0743e27f054dc6a26f6759a450abcbc750ab4123d3ec727ed5f71ebbb36f73",
+      "bytes": 123461
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/session-1.json": {
+      "sha256": "6ad6a24b9d5e73302666ef523da0314f1deef68bca08c202ebb47e47f62a68c0",
+      "bytes": 6952
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-original.claims/c1.json": {
+      "sha256": "f62df6f183341aa21a64d24e87696bb416d0e3c9d9fd1c268781aebab234f2c5",
+      "bytes": 118199
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-original.claims/c2.json": {
+      "sha256": "12a1e8314fcfaf02aab57c7748011020ba1e85cefae556176429623b081f0693",
+      "bytes": 115988
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-original.claims/c3.json": {
+      "sha256": "f7fb6f3fa4e197499ce1c199066eb537086695612bdbb7fb775665c3186c2059",
+      "bytes": 118542
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-original.claims/c4.json": {
+      "sha256": "f536020b21d274b5205bb1bcb23651065bb2a69c20b11d02f2bdd3d12bd70400",
+      "bytes": 118750
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-original.claims/c5.json": {
+      "sha256": "45b9ac418279d921a7b4c172aeff16a60455dff97351d66d43f3e4c487697e0a",
+      "bytes": 118445
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-original.claims/c6.json": {
+      "sha256": "f91528ccd19d2dd10d2dc6ebd395c5f64254f16b450b2b7eb44ce16408f7446f",
+      "bytes": 119001
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-original.claims/c7.json": {
+      "sha256": "cf0ec080d1c379048147b21c2eed362bd580361bfa8adaa0c4f8246e82bce249",
+      "bytes": 118135
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-original.json": {
+      "sha256": "32a04e402ee179f981e9749957d220b4db6852d480047cd7777a93b96c666bc1",
+      "bytes": 11570
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-reversed.claims/c1.json": {
+      "sha256": "d4dd18899b1f0b68c8328997dbce8a07bf47dda40b02b1d8dea31ebe1fd9b7a7",
+      "bytes": 118363
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-reversed.claims/c2.json": {
+      "sha256": "bcabebf1db3caa0eefb91f657d5e28a7a8bb39bede283c2eee59aec7dcbcbd73",
+      "bytes": 118319
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-reversed.claims/c3.json": {
+      "sha256": "cc12e6edf83a10bf375022cee5c996c6e6b8ad55f391fc9de226ac153d8e157c",
+      "bytes": 118556
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-reversed.claims/c4.json": {
+      "sha256": "2c7b33bb927b09687a042e42e1bf2d63b359a97b02920733de5f27cb9afd031f",
+      "bytes": 119332
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-reversed.claims/c5.json": {
+      "sha256": "ca2d5b7e31373db166fcbefd1d8de4bb49cba3e3c8b0a0fe1ff53aa67aea490a",
+      "bytes": 118425
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-reversed.claims/c6.json": {
+      "sha256": "1bf6d9427ee22377f925fe424baad354b1af2e4b92ef891ffaf7e86fa82e9d77",
+      "bytes": 118768
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-reversed.claims/c7.json": {
+      "sha256": "ec81f8af27ccb5f92d95a79937d131d9c76dfd97fb8379f4cef545d8e5051522",
+      "bytes": 118747
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-council-reversed.json": {
+      "sha256": "350f6beb6e6c4e8445cd430ff3a8c6c9344888c4edc0ee95d7c078edbd0edc17",
+      "bytes": 12736
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-zidane-original.claims/c1.json": {
+      "sha256": "115fb4d7d1a36dea2bb9d0b886df59463435e9c92ad1f7b5a4e6625adc7a2eec",
+      "bytes": 125271
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-zidane-original.json": {
+      "sha256": "ac32c10d98ccb8a432403ca672909ec3cf5fecff5494edee3a8b2942e9eb4e59",
+      "bytes": 2671
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-zidane-reversed.claims/c1.json": {
+      "sha256": "885a7849ae5f9ce656b292a5822a13a960427b51f5f6f3132dce7886779d5c60",
+      "bytes": 126666
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v25-semantic/tasks/known-zidane-reversed.json": {
+      "sha256": "488f0741a38e1ea1e3169d5e3d2e6590e9ce46d80babbc528c33db61293aff23",
+      "bytes": 4124
+    }
+  },
+  "guard": {
+    "process_starts": 0,
+    "socket_operations": 0,
+    "reserved_QA_opens": 0
+  },
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "main_cal_started": false,
+  "gate11_passed": false,
+  "phase12_started": false,
+  "next": "Join actual16 AI review with exact Native row hashes; preserve all remaining74; revise candidate under new hypothesis/version, no same-condition refill"
+}

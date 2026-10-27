@@ -1,6 +1,14 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.80 — 2026年10月27日 v24不採用保存と共同変更候補v25
+## Version 7.81 — 2026年10月27日 v25不採用保存と推論予算の単一軸候補v26
+
+12:37 JST現在、v25の全90計画はCritical3/4で事前規則停止し、取得16/90・4/78条件・未知0を不採用として保存した。Council逆c4で、会議後のPius Vの行為への帰属を根拠から拾いながらCをNSとした。未試行74条件/74Call・全90精度nullを保持し、基準やExpectedを変えない。全16の全文Source/理由/thinkingをAI監査し、全16が1024でforced、出典ID/内容混同や出典外の思考も残ることを記録した。予算不足と断定しない。25原Raw/99Source/全Native16/4条件追加0再読/6577旧証拠不変を監査し、終端15 Runの累積1099試行/旧未知3を保存した。
+
+次候補v26はPrompt v14/Model/Runtime/Schema/Core94/全90入力・Expected・基準を固定し、共通reasoningだけ1024→4096へ戻す。ID`d809dce245eaf0e5780d2df6ac663a6c63459a6f17b0427e1fff5e2519c1f95e`。同条件の再抽選ではなく、長いTask再述・資料一覧で打切られた後の矛盾解消を検証するSampler単一軸の反証可能な仮説である。独立因果NS2＋Council c4元逆C2を別Smokeとして出力前固定し、共通予算が変わるRewrite2、全90、新鮮Known84を必要とする。旧形式は128/512 override後の境界形式条件だけ再利用し、新意味へ流用しない。書換え入口も別v4として登録予算との一致を強制し、全1019 Test/Ruff成功。新v26 Native0、Main/Cal/Gate11は未達、Goal active・Phase12未開始。
+
+以下は各観測時点の履歴。
+
+### Version 7.80 — 2026年10月27日 v24不採用保存と共同変更候補v25
 
 12:09 JST追記: 固定5043c16の資産/環境/実Identity再現、全90入力生成0、日英JudgeSmoke2の両NSと全監査、日英RewriteSmoke2の全品質/Native監査が通過した。現在同固定WTのHandle63497で新鮮な全90意味検証を実行中。共同変更の影響と実費を保存し、Smokeだけで意味採用とせず、全90→新鮮Known84/各90%・被覆→元Main/予約Cal/両言語全封印→最終凍結の順を維持する。稼働WT不変、Main/Cal/Gate11未達、Phase12未開始。
 
@@ -26,7 +34,7 @@
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.83](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.84](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
