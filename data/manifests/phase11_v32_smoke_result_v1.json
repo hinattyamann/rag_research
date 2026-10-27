@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v32-finished-smoke-independent-result-v1",
+  "audit_version": "v32-smoke-independent-audit-v1-explicit-fixed-plan-binding",
+  "created_at_utc": "2026-10-27T14:24:46.607045+00:00",
+  "candidate_identity_sha256": "73d9ac7d429e11129a8c5faceee6d8d50a48b196ccea3d45b85fc631f10512af",
+  "fixed_commit": "81563f7aefe0ca3a659ba0677a74d6d71e05d1bd",
+  "process_state": "process_completed",
+  "process_returncode": 0,
+  "process_finished_at_utc": "2026-10-27T14:23:15.038391+00:00",
+  "runtime_health_passed": true,
+  "actual_native_calls": 2,
+  "native_successful": 2,
+  "native_failed": 0,
+  "native_unknown": 0,
+  "three_class_exact_correct": 2,
+  "three_class_denominator": 2,
+  "C_NS_confusion_count": 0,
+  "binary_non_support_correct": 2,
+  "binary_non_support_denominator": 2,
+  "candidate_accepted": false,
+  "smoke_full_meaning_gate_passed": true,
+  "candidate_rejected_before_semantic90_and_newKnown84": false,
+  "rejection_reason": null,
+  "preserved_rejected_v31_metadata_and_all_declared_Raw_sha256": {
+    "data/manifests/phase11_semantic_v31_preregistration_v1.json": "2c8ad584be7a9b03db123f0e08252d892197d270b6113e0d5d64bae50a49e6f3",
+    "data/manifests/phase11_v31_smoke_result_v1.json": "c2db3ec66fe58e392650bd032530c4b6b2fdf9d77bc6e51495dd37a29cce9b4e",
+    "data/manifests/phase11_v31_attribution_smoke_result_v1.json": "12f18387fbd398bcee1a33e594e38dddc5012f3c6bd4567adbf6fce378f9f7d1",
+    "data/manifests/phase11_autonomy_cumulative_cost_v19.json": "399a40c962dfee50e8f4a01bca032f829cc6deac504761a00d8877ba3958c50a"
+  },
+  "single_axis_limitation": "v32 changes only the existing Judge JSON layout from v31 draft_sources_target to premise_then_claims. All system strings, complete Extract/Rewrite task dictionaries, input_fields and decoded user values remain exact; user key order becomes documents/question/answer/claims. Core94 including the v30 shared prefill repair, Qwen3-8B Q4_K_M, GraphOFF Runtime, explicit FAoff, common4096, Sampler, Schema, fixed inputs and Expected are unchanged. This smoke does not establish durable repair or complete adoption.",
+  "canonical_raw": {
+    "path": "data/runs/runtime_screening/phase11-v3-v32-smoke",
+    "files": 9,
+    "bytes": 265079,
+    "all_before_copy_after_hashes_equal": true,
+    "independent_inodes": 9
+  },
+  "prior_v26_and_retrospective_supplement_manifests_reverified": {
+    "data/manifests/phase11_v26_smoke_result_v1.json": "081f99239510a0886ee6cf09a365d7356919817bf6c6c30b7be1e04d8466b24a",
+    "data/manifests/phase11_v26_attribution_smoke_result_v1.json": "b529ab848c3951e315c8a7e3e78f06716ade41e8cda6ddd5dc7eadeddc1ca59d",
+    "data/manifests/phase11_v25_rewrite_retrospective_correspondence_v1.json": "960f6b4ccc0331eff62cd11939a04ff1bf3566d024ff81c367ad0f242409cecc",
+    "data/manifests/phase11_v26_attribution_auditor_failure_preservation_v1.json": "47b52326c59b7935e4d178fd199cb24e2158bb6cbdd72a8aababfbb5c98fe785",
+    "data/manifests/phase11_v27_smoke_result_v1.json": "c974606e108818c1fd6ad3a3af14f415b801749e629c93c92e79833d9fb8bfd4",
+    "data/manifests/phase11_v27_attribution_smoke_result_v1.json": "0fc3964d57808d405d836b1a62915bc3dcce180bf56699dc2bbe63c126fdb2c7",
+    "data/manifests/phase11_v27_rewrite_smoke_result_v1.json": "14cfdc0fdf3afb7a6026143abcc0eb3ac90f5c83ad05839b4f10ae13ba9629ef",
+    "data/manifests/phase11_v27_semantic_partial_result_v1.json": "fc02f34714a8b0d303d8bf2764e8eb3df10dfecae06dbaa7e9e8993b189c29dc",
+    "data/manifests/phase11_autonomy_cumulative_cost_v12.json": "09600144c3105e0acb2de8e031f3e57c1a495e574a8e49238de0051f33adbed5"
+  },
+  "source_core_files_verified": 94,
+  "source_manifest_files_verified": 95,
+  "model_entrypoint_from_bound_model_manifest": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v32-81563f7/data/models/Qwen3-8B-GGUF/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q4_K_M.gguf",
+  "model_id": "Qwen/Qwen3-8B-GGUF",
+  "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+  "model_quantization": "Q4_K_M",
+  "model_GGUF_sha256_from_registered_identity_with_conditional_reproduction_reuse": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+  "model_manifest": {
+    "path": "data/manifests/phase11_auxiliary_qwen3_8b_manifest_v1.json",
+    "sha256": "507390013781f3cee9e9abf34255d5e0a07f1cd660d38ed83e1dccda0ecc3d08"
+  },
+  "actual_full_cuda_layers": "37/37",
+  "context_tokens": 12288,
+  "max_output_tokens": 6144,
+  "reasoning_budget_tokens": 4096,
+  "costs": {
+    "input_tokens": 3786,
+    "output_tokens": 1034,
+    "task_seconds": 18.086213359958492,
+    "native_http_seconds": 17.655691,
+    "supervised_wall_seconds": 30.64276126108598,
+    "startup_seconds": 4.918553875992075,
+    "cost_incomplete": false,
+    "external_metered_API_calls": 0,
+    "electricity_cost": null,
+    "assessor_monetary_cost": null
+  },
+  "monitor_samples": 7,
+  "monitor_resource_errors": 0,
+  "faoff_validation": {
+    "actual_flash_attention": "off",
+    "actual_context_flash_attn": [
+      "disabled"
+    ],
+    "actual_context_tokens": [
+      12288
+    ],
+    "command_and_profile_and_full_log_agree": true,
+    "auto_resolution_disabled_message_required": false
+  },
+  "monitor_validation": {
+    "samples": 7,
+    "all_errors_empty": true,
+    "terminal_snapshot_equal": true,
+    "terminal_unknown": 0,
+    "inflight_reservation_not_treated_as_terminal_unknown": true
+  },
+  "strict_offline_boundary": {
+    "process_starts": 0,
+    "socket_operations": 0,
+    "reserved_QA_opens": 0,
+    "immutable_content_opens": 0
+  },
+  "strict_offline_boundary_events": [],
+  "terminal_ownership_validation": {
+    "all_owned_processes_stopped": true,
+    "roles": {
+      "supervisor": {
+        "pid": 535259,
+        "observed_create_time": null,
+        "alive": false,
+        "registered_create_time": 1793110959.46,
+        "owned_process_alive": false
+      },
+      "child": {
+        "pid": 535289,
+        "observed_create_time": null,
+        "alive": false,
+        "registered_create_time": 1793110963.93,
+        "owned_process_alive": false
+      }
+    },
+    "live_owned_group_members": [],
+    "OS_queries_read_only": true,
+    "signals_sent": 0,
+    "Native_or_GPU_queries": 0
+  },
+  "preregistration_sha256": "09236fcae9807a780eb175312ed8c2774b01843973defc05f3ae078be09bea1f",
+  "completed_predecessors_verified": [
+    "preflight"
+  ],
+  "conditional_immutable_large_Hash_reuse": {
+    "data/models/Qwen3-8B-GGUF/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q4_K_M.gguf": {
+      "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+      "device": 66306,
+      "inode": 13904826,
+      "bytes": 5027783488,
+      "mtime_ns": 1792574703563448741
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcublas.so.12": {
+      "sha256": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048",
+      "device": 66306,
+      "inode": 14426702,
+      "bytes": 105140976,
+      "mtime_ns": 1762999702576245178
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcublasLt.so.12": {
+      "sha256": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541",
+      "device": 66306,
+      "inode": 14426711,
+      "bytes": 749205904,
+      "mtime_ns": 1762999699887212680
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcudart.so.12": {
+      "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7",
+      "device": 66306,
+      "inode": 14426693,
+      "bytes": 741088,
+      "mtime_ns": 1762999698607884406
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so": {
+      "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+      "device": 66306,
+      "inode": 14426675,
+      "bytes": 955456,
+      "mtime_ns": 1793000509170712580
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so.0": {
+      "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+      "device": 66306,
+      "inode": 14426572,
+      "bytes": 955456,
+      "mtime_ns": 1793000509170712580
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so.0.26.0": {
+      "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+      "device": 66306,
+      "inode": 14426666,
+      "bytes": 955456,
+      "mtime_ns": 1793000509170712580
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so": {
+      "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+      "device": 66306,
+      "inode": 14426636,
+      "bytes": 1418328,
+      "mtime_ns": 1793000509268714689
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so.0": {
+      "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+      "device": 66306,
+      "inode": 14426554,
+      "bytes": 1418328,
+      "mtime_ns": 1793000509268714689
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so.0.26.0": {
+      "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+      "device": 66306,
+      "inode": 14426627,
+      "bytes": 1418328,
+      "mtime_ns": 1793000509268714689
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so": {
+      "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+      "device": 66306,
+      "inode": 14426657,
+      "bytes": 44304624,
+      "mtime_ns": 1793000963397419862
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so.0": {
+      "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+      "device": 66306,
+      "inode": 14426617,
+      "bytes": 44304624,
+      "mtime_ns": 1793000963397419862
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so.0.26.0": {
+      "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+      "device": 66306,
+      "inode": 14426374,
+      "bytes": 44304624,
+      "mtime_ns": 1793000963397419862
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so": {
+      "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+      "device": 66306,
+      "inode": 14426648,
+      "bytes": 60360,
+      "mtime_ns": 1793000964257439984
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so.0": {
+      "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+      "device": 66306,
+      "inode": 14426498,
+      "bytes": 60360,
+      "mtime_ns": 1793000964257439984
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so.0.26.0": {
+      "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+      "device": 66306,
+      "inode": 14426577,
+      "bytes": 60360,
+      "mtime_ns": 1793000964257439984
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-cli-impl.so": {
+      "sha256": "b2a8258ea020b616b95eb3c8d6a86afff16e8f81e5be5129f44327431cb4f4d4",
+      "device": 66306,
+      "inode": 14426576,
+      "bytes": 243128,
+      "mtime_ns": 1793001118387687655
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so": {
+      "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+      "device": 66306,
+      "inode": 14426286,
+      "bytes": 6145992,
+      "mtime_ns": 1793001082609190834
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so.0": {
+      "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+      "device": 66306,
+      "inode": 14426565,
+      "bytes": 6145992,
+      "mtime_ns": 1793001082609190834
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so.0.6.0": {
+      "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+      "device": 66306,
+      "inode": 14426557,
+      "bytes": 6145992,
+      "mtime_ns": 1793001082609190834
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-server-impl.so": {
+      "sha256": "6e4ec475238226091f3c61eb57ee1ee37df9291885e86cf47d39f9539b44a45b",
+      "device": 66306,
+      "inode": 14426394,
+      "bytes": 4017648,
+      "mtime_ns": 1793001113695907954
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so": {
+      "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+      "device": 66306,
+      "inode": 14426559,
+      "bytes": 4897752,
+      "mtime_ns": 1793001005271397246
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so.0": {
+      "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+      "device": 66306,
+      "inode": 14426485,
+      "bytes": 4897752,
+      "mtime_ns": 1793001005271397246
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so.0.6.0": {
+      "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+      "device": 66306,
+      "inode": 14426575,
+      "bytes": 4897752,
+      "mtime_ns": 1793001005271397246
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so": {
+      "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+      "device": 66306,
+      "inode": 14426571,
+      "bytes": 1975408,
+      "mtime_ns": 1793001053641520682
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so.0": {
+      "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+      "device": 66306,
+      "inode": 14426684,
+      "bytes": 1975408,
+      "mtime_ns": 1793001053641520682
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so.0.6.0": {
+      "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+      "device": 66306,
+      "inode": 14426562,
+      "bytes": 1975408,
+      "mtime_ns": 1793001053641520682
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/llama-cli": {
+      "sha256": "659465db4397442b851d7509c590334b513ee5bd5baa32b5980beb0469fd4eb3",
+      "device": 66306,
+      "inode": 14426558,
+      "bytes": 1286672,
+      "mtime_ns": 1793001118538942941
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/llama-server": {
+      "sha256": "e8dc25cdeef9898959e73e58cb79eef964011ea76bd5d919baf3ba373adbfb0a",
+      "device": 66306,
+      "inode": 14426564,
+      "bytes": 17888,
+      "mtime_ns": 1793001113832667260
+    },
+    "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/runtime_manifest.json": {
+      "sha256": "150141f370e82faa426cd468af1505584bcc98efd5b2e69d695b19e943a70784",
+      "device": 66306,
+      "inode": 14426720,
+      "bytes": 5212,
+      "mtime_ns": 1793001126439858793
+    }
+  },
+  "all2_complete_saved_thinking_reviewed": true,
+  "v28_failed_partial_preserved_not_adopted": true,
+  "old_v10_files_reverified_unchanged": 82,
+  "old_v12_original_raw_files_reverified_unchanged": 119,
+  "old_v24_smoke_raw_files_reverified_unchanged": 9,
+  "old6577_evidence_reverified_unchanged": 6577,
+  "old_v25_successful_smoke_raw_reverified_unchanged": 9,
+  "old_v25_rejected_partial_raw_reverified_unchanged": 25,
+  "zero_native_disposable_cached_replay_probes": 2,
+  "formal_audit_started_at_utc": "2026-10-27T14:24:44.417152+00:00",
+  "formal_audit_elapsed_seconds": 2.1900614210171625,
+  "ai_full_source_reason_review": {
+    "path": "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/full-source-reason-ai-review.json",
+    "sha256": "2494ce3b936a3839c917586b38b25746376c59234a8e6246c8f42b1a191c7050",
+    "measured_joint_two_case_seconds": 19.732229150948115
+  },
+  "timing_limitation": "Separate formal validation/copy/replay and actual joint first-read-to-persisted-AI-review intervals; do not add overlapping scopes or allocate equal per-case time.",
+  "stopped_generation_zero_audit_attempts_this_v32": [],
+  "prior_v26_corrected_c4_to_c1_mapping_failure_retained": "data/manifests/phase11_v26_attribution_auditor_failure_preservation_v1.json",
+  "v26_zero_output_metadata_amendment_applicable_to_v32": false,
+  "old_v24_auditor_failure_retained": "Sampling-only config has no model_path; this audit resolves the entrypoint from the bound model manifest, preserving the old failure separately.",
+  "raw_files_sha256": {
+    "session.json": "f6b208ade3d92179ecf650c48331ea7608481ebc23269d59e9223faaf7369c03",
+    "probe-2.json": "f95a8338fef9c4343f42f8b93feafd7f45871e5572de2082a2442920f60419ab",
+    ".run.lock": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "manifest.json": "3179b6c2dd07c5dd804b914fa4afd7bb7a469ce48e82540544f203128db7aa13",
+    "report.json": "49853dd61e6dc0d4045e7b85e70cf84aa7bcc24d3a224c6383a3a014bacdc158",
+    "server.log": "cb5e233ab74f4b51eb1d9c0f728ce5b7abf4a45df4c55cceeda2458719462fa7",
+    "probe-1.json": "7171bc1c00087b2727e8f62d4fcd62b3e752166afb09184683d76f1fb89a3f5d",
+    "probe-2.claims/c1.json": "f9dd32da65e55bdf20a5c6bd638f8b91a4643ca7fa26595cc57967ac560e4e04",
+    "probe-1.claims/c1.json": "381af218ae6e88a37af1162e9c35612e2f3d9215e7efe7ddd6df02be0395fe15"
+  },
+  "artifact_files_sha256": {
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/audit-builder.py": "150d1aba1a9acf564820afd1fa679f1ee0c693177610ad2bf700a8be65740cc3",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/audit-release.json": "4af78ebc8bb3a744719c8ac2f11cb113f794730a3978d28d1e17490c36d915c2",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/audit_helpers.py": "05bfccb0a017a70d936e175e5bad90d03ca673f0fea68391fc03dd60462ca170",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/audit_phase11_v32_common_v1.py": "1ace66b4415502ff3c55d9bb2e0cfa288ab4bf3d87dcf3cb346f117dfc6e1958",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/audit_support.py": "c612b9dd1016eeb3e3c928b18a591692cca2e60868f333fa2d63af19794f8ad3",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/candidate-stage-preservation.json": "c8807da9f255a6f33de525123464ba6a1108eb03aafe8f306fc726704624ed5a",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/canonical-copy.json": "6ec1a59659c87b3997727f489e6febf73e812169d4711728050ba5fd1c87ce7f",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/copy-receipt.json": "c98486ef6b923b2b8fca65cce56dc6115419ef7a68f8735cc0ad9d301da70b56",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/execution-binding.json": "2e2bdd524c0c7747fa547ececa9dd0b39b4e9a8faf719dbb1823aba399354f3b",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/execution_binding.py": "fa694c0ec92563de79b82a170339c79c4a733d177ddb9ab464bcf96779fd2ae6",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/first-read-review-packet.json": "8908e2f6201963f9901af8e62384d809e27c54fa50615e3ca1abd112bbebe53a",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/first-read-start.json": "64e4efa07188280f037701f8096c5a32d9b09fa61947000c25bfbe436238ab92",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/full-source-reason-ai-review.json": "2494ce3b936a3839c917586b38b25746376c59234a8e6246c8f42b1a191c7050",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/ledger-terminal-record.json": "1826614e94f8bd7a41ae8942e941bd32fb68de2be27fdb16f6aa309e0fdb27b5",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/ledger-terminal-totals.json": "e1afe8aa171ab085774392f610fb603104dc451d7860dbdda85c339d6141e313",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/native-and-meaning-audit.json": "dbf8fe7e3b25e588e4c0492c0d476bed03a8e9a2aab4528b617710f2b068f3ed",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/old-v24-auditor-failure-preserved/audit.py": "c31ff92d0f708e8a7eed65abd63be9560595dcac266c009ade9d96f505d2ce69",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/old-v24-auditor-failure-preserved/failure.json": "2e5f944021691d613f20d264c4054788257ff7052bfa82112bdc9902f9f6433d",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/original-after.json": "6ec1a59659c87b3997727f489e6febf73e812169d4711728050ba5fd1c87ce7f",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/original-before.json": "6ec1a59659c87b3997727f489e6febf73e812169d4711728050ba5fd1c87ce7f",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/registered-run-plan.json": "d3c30b8e699adb071b6aee4cfe304f3a9bf2c55f26b34acf4b0a1970120081d4",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/root_terminal_authorization.json": "c409ff373f11dc9adccc689e596b8840676fc94b02eb857e1394e893ea075c55",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/root_terminal_row.json": "1826614e94f8bd7a41ae8942e941bd32fb68de2be27fdb16f6aa309e0fdb27b5",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/runtime_validation.py": "6444f0a0b37486754ed639950419d943d2de94d639a4adf5f284e376ffa32acc",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/supervisor/manifest.json": "3a2f7424c01e61b4ca1e2012cb878d1f85f74cb32fe3dfb8f91e6982623a39f2",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/supervisor/monitor.jsonl": "ac949b2337172aef32c55eff7c827592d0ce74672dd3dda5b0229c57e9f40769",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/supervisor/native_guard/calls.json": "9565b3514a3c28d6af2b905db912e0eec20f8a038e320ff5209b8b15eb4921c6",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/supervisor/stdout.log": "b6936c71599089bac52ea44762339b461b2de6076017b35ffc61fb60bb1cefa5",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/terminal_ownership.py": "147ba3c7871f18d99e34d872e42b8af092d09916c0773d2d590af0fe223f2c9e",
+    "data/runs/runtime_screening/phase11-v3-v32-smoke-audit-v1/zero-native-replay.json": "42b43c2709c63bd7f3c0fc52e1c9f21c526c088f62f7771bf9b42a498fc48789"
+  },
+  "registered_run_plan": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-plans/v32-smoke.json",
+    "sha256": "d3c30b8e699adb071b6aee4cfe304f3a9bf2c55f26b34acf4b0a1970120081d4"
+  },
+  "source_target_plan": {
+    "path": "configs/phase11_relation_witness_smoke_v32.json",
+    "sha256": "bef594348754a9f586435169d01c831eef9e38e7b1555ebe5bf5131152496c79"
+  },
+  "full_expected_and_denominators_unchanged": true,
+  "old_results_regenerated": false,
+  "semantic90_or_old70_meaning_adoption_claimed": false,
+  "new_native_calls_during_audit": 0,
+  "new_model_servers": 0,
+  "new_tokenizers_or_GPU_enumeration": 0,
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "guard": {
+    "subprocess_attempts": 0,
+    "socket_attempts": 0,
+    "reserved_QA_open_attempts": 0
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

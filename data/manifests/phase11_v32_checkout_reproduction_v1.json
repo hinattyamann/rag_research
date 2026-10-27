@@ -1,0 +1,911 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v32-fixed-checkout-reproduction-publication",
+  "recorded_at_utc": "2026-10-27T14:17:48.921715+00:00",
+  "recorded_at_JST": "2026-10-27T23:17:48.921724+09:00",
+  "status": "actual884_alias25_uv58_identity_reproduced_before_initial_authorization_first_Plan_and_experiment",
+  "publication_chronology": {
+    "actual_copy_uv_fixed_WT_loader_preceded_formal_publication": true,
+    "formal_publication_before_initial_Root_authorization_and_first_Plan_by_absence_stat": true,
+    "formal_publication_precedes_fresh_v32_experiment_output_by_absence_stat": true,
+    "initial_Plan_registered_or_executed_by_this_publication": false,
+    "initial_absence_snapshot": {
+      "path": "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/chronology-before-first-Plan-initial.json",
+      "sha256": "41b53287347f44ffd48e267a11a7c92ef9995a6a0977c068903e97d10c248172"
+    },
+    "final_absence_snapshot": {
+      "path": "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/chronology-before-first-Plan-final.json",
+      "sha256": "fcbcf8d36cf8db8cbcb3d920d072ab12b752619c93102eb764484fd22db65bbb"
+    },
+    "new_v32_stage_output_and_Plan_directories_absent_by_stat": true,
+    "experiment_Raw_opened_by_this_publication": 0
+  },
+  "fixed_commit": "81563f7aefe0ca3a659ba0677a74d6d71e05d1bd",
+  "candidate_identity_sha256": "73d9ac7d429e11129a8c5faceee6d8d50a48b196ccea3d45b85fc631f10512af",
+  "release": {
+    "path": "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/checkout_release.json",
+    "sha256": "e6c593f553f3fa9d2a531ebd366cb0d3b45450131ad0838eef37e4ba477d27d9"
+  },
+  "publication_release": {
+    "path": "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/publication-release.json",
+    "sha256": "644a1860084a67987314705b08f359034e1fc57fd4a243381d196a66e2ee33b3"
+  },
+  "actual_copy": {
+    "passed": true,
+    "finished_at_utc": "2026-10-27T14:10:03.033453+00:00",
+    "elapsed_seconds": 1.3033288579899818,
+    "files": 884,
+    "copy_statistics": {
+      "independent_copy_files": 646,
+      "independent_copy_bytes": 15803950,
+      "git_checkout_files": 207,
+      "git_checkout_bytes": 2783957,
+      "immutable_hardlink_files": 31,
+      "immutable_hardlink_bytes": 13526016916
+    },
+    "additional_producer_aliases": 25,
+    "inventory_sha256": "1576e95b6386c045d90dc7bd2087d3609f62dccfaf2411154f710adde91faa35",
+    "fixed_commit": "81563f7aefe0ca3a659ba0677a74d6d71e05d1bd",
+    "candidate_identity_sha256": "73d9ac7d429e11129a8c5faceee6d8d50a48b196ccea3d45b85fc631f10512af",
+    "all_before_copy_after_hashes_equal": true,
+    "immutable_full_hash_not_reread": true,
+    "immutable_hash_time_stat_independently_captured": false,
+    "mutable_inode_shared": false,
+    "Native_Server_Tokenizer_GPU": 0,
+    "QA_body_parse": 0,
+    "operational_ledger_copied": false,
+    "actual_uv_sync_and_load_config_build_identity_pending": true,
+    "gate11_passed": false,
+    "phase12_started": false
+  },
+  "prior_unissued_publication_failure": null,
+  "prior_zero_generation_loader_failure_and_Host_scan_repair": {
+    "host_failure": {
+      "tool": "db8d35",
+      "Host_check_returncode": 1,
+      "outer_shell_returncode": 0,
+      "cause": "Substring matching whole argv falsely included calling Bash heredoc source; dependency shell lacked set-e, so creation of new detached unused WT proceeded after failed read-only check.",
+      "preserved": "No previous WT/runtime/process edited; no assets copied or Native started.",
+      "correction": "Exclude own ancestors and match exact command argument basename; rerun read-only Host scan before all asset copy/Native. Use set-e for dependent shell commands.",
+      "new_Native": 0
+    },
+    "host_corrected": {
+      "recorded_at_utc": "2026-10-27T12:49:22.406470+00:00",
+      "all35_ledger_rows_terminal": true,
+      "experiment_processes": [],
+      "GPU_query_returncode": 0,
+      "GPU_observation": "GPU-cf778571-1854-2793-7ca9-62d4735e1802, 571, 7134, 42",
+      "GPU_query_stderr": "",
+      "read_only": true,
+      "signals_sent": 0,
+      "new_Native": 0
+    },
+    "loader_v1_tool": {
+      "returncode": 1,
+      "actual_child_monotonic_seconds": 0.19821869593579322,
+      "fresh_dedicated_identity_GGUF_Hash_budget": 1,
+      "Native_budget": 0,
+      "timeout_seconds": 120,
+      "Source_sha256": "c0f2087706d713e70452936fdcc76f194ce41d1612fefeac13ee60e484ff981e",
+      "phase12_started": false
+    },
+    "loader_repair": {
+      "purpose": "v31-generation-zero-loader-import-order-repair",
+      "recorded_at_utc": "2026-10-27T12:56:52.930752+00:00",
+      "old_source_sha256": "c0f2087706d713e70452936fdcc76f194ce41d1612fefeac13ee60e484ff981e",
+      "new_source_sha256": "32a71c83a97ec65b6f1a578ee77fea0efb299a89514c096d3d59032191406680",
+      "actual_failed_tool": "3d4ed3",
+      "old_returncode": 1,
+      "failed_child_seconds": 0.19821869593579322,
+      "cause": "Caller invoked strict reuse validator before inserting fixed WT src into sys.path. Source-level schema import failed before actual build_identity or any Native.",
+      "repair": "Insert the same WT src path before configure_release/verify_reuse; all checks, Core, Model, Runtime, Prompt, Sampler, Schema and experiment settings unchanged.",
+      "finite_repair_validation_seconds": 120,
+      "new_actual_loader_GGUF_Hash_budget": 1,
+      "old_loader_GGUF_Hash_actual": 0,
+      "old_Native_actual": 0,
+      "old_output_logs_and_inventory781_preserved": true,
+      "same_research_condition_Native_reroll": false,
+      "phase12_started": false
+    },
+    "prelude_result": {
+      "passed": true,
+      "fixed_loader_prelude_only": true,
+      "before_build_identity": true,
+      "counts": {
+        "immutable_content": 0,
+        "process": 0,
+        "socket": 0
+      },
+      "Native": {
+        "server": 0,
+        "request_or_tokenizer": 0
+      },
+      "offline": {
+        "process_starts": 0,
+        "socket_operations": 0,
+        "reserved_QA_opens": 0
+      },
+      "elapsed_seconds": 0.757232011994347,
+      "actual_fixed_checkout": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v31-eb7967c",
+      "new_Model_Hash": 0,
+      "phase12_started": false
+    }
+  },
+  "prior_loader_Host_failures_are_parent_v31_history_not_new_v32_failures": true,
+  "parent_v31_measured_cost_scopes_preserved_as_history": {
+    "actual_copy_seconds": 1.1483958519529551,
+    "copy_exec_tool_reported_wall_seconds": null,
+    "copy_child_monotonic_seconds": 1.1774800179991871,
+    "copy_exec_reported_wall_and_inner_are_distinct_observations_not_assumed_nested": true,
+    "dedicated_uv_subprocess_wall_seconds_independently_metered": 0.058292889036238194,
+    "dedicated_uv_exec_tool_reported_wall_seconds": null,
+    "uv_installer_reported_milliseconds": 25,
+    "actual_zero_load_identity_inner_seconds": 5.073318066075444,
+    "zero_exec_tool_reported_wall_seconds": null,
+    "zero_parent_child_monotonic_seconds": 5.148438556934707,
+    "failed_loader_v1_child_seconds_Model_Hash0_Native0": 0.19821869593579322,
+    "repaired_loader_v2_model_free_prelude_inner_seconds": 0.757232011994347,
+    "Host_scan_failure_wall_seconds": null,
+    "Root17_alias_creation_wall_seconds": null,
+    "whole_reproduction_wall_seconds": null,
+    "whole_wall_marker_not_recorded": true,
+    "do_not_add_inner_to_child_or_installer_to_uv_tool": true,
+    "publication_component_seconds_before_write": 0.6867961749667302,
+    "external_metered_API_cost": 0,
+    "electricity_cost": null
+  },
+  "new_v32_CPU_failure_evidence": [],
+  "actual_location_only_producer_release": {
+    "path": "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/producer_actual_release.json",
+    "sha256": "e0f04068c7dfa49b0639d31303495d125d819c7e87dedcfbfdeebc03bb2f8db6"
+  },
+  "actual_location_only_reproduction_check": {
+    "location_only_invariant_passed": true,
+    "seven_binding_locations_verified": 7,
+    "required_internal_bindings_checked": 222,
+    "required_count_derived_not_old_v31_literal": true,
+    "evidence_scope": "New v32 loader plus fresh publisher metadata join; no old checker relabeling"
+  },
+  "Root_alias_creation_receipt": {
+    "new_Root_independent_aliases": [
+      "data/runs/lab/phase11-v32-protocol-preparation-v1/identity-evidence.json",
+      "data/runs/lab/phase11-v32-protocol-preparation-v1/produce_plan.py",
+      "data/runs/lab/phase11-v32-protocol-preparation-v1/producer.release.json",
+      "data/runs/lab/phase11-v32-protocol-preparation-v1/issue_artificial_reuse_v32.py",
+      "data/runs/lab/phase11-v32-protocol-preparation-v1/artificial-reuse-protocol-v32.json",
+      "data/runs/lab/phase11-v32-protocol-preparation-v1/actual-identity-build.json"
+    ],
+    "old_Root_aliases_checked_unchanged": [
+      "data/runs/lab/phase11-v28-protocol-preparation-v1/identity-evidence.json",
+      "data/runs/lab/phase11-v28-protocol-preparation-v1/produce_plan.py",
+      "data/runs/lab/phase11-v28-historical-sourceproof-v1/src/rag_research/generation/cuda_runtime.py",
+      "data/runs/lab/phase11-v28-historical-sourceproof-v1/src/rag_research/generation/local.py",
+      "data/runs/lab/phase11-v29-protocol-preparation-v1/identity-evidence.json",
+      "data/runs/lab/phase11-v29-protocol-preparation-v1/produce_plan.py",
+      "data/runs/lab/phase11-v29-protocol-preparation-v1/producer.release.json",
+      "data/runs/lab/phase11-v30-protocol-preparation-v1/identity-evidence.json",
+      "data/runs/lab/phase11-v30-protocol-preparation-v1/produce_plan.py",
+      "data/runs/lab/phase11-v30-protocol-preparation-v1/producer.release.json",
+      "data/runs/lab/phase11-v30-historical-sourceproof-v1/src/rag_research/evaluation/tasks.py",
+      "data/runs/lab/phase11-v30-historical-sourceproof-v1/src/rag_research/generation/auxiliary_config.py",
+      "data/runs/lab/phase11-v30-historical-sourceproof-v1/src/rag_research/recovery/answer_rewrite.py",
+      "data/runs/lab/phase11-v31-protocol-preparation-v1/identity-evidence.json",
+      "data/runs/lab/phase11-v31-protocol-preparation-v1/produce_plan.py",
+      "data/runs/lab/phase11-v31-protocol-preparation-v1/producer.release.json",
+      "data/runs/lab/phase11-v31-protocol-preparation-v1/issue_artificial_reuse_v31.py",
+      "data/runs/lab/phase11-v31-protocol-preparation-v1/artificial-reuse-protocol-v31.json",
+      "data/runs/lab/phase11-v31-protocol-preparation-v1/actual-identity-build.json"
+    ],
+    "actual_release_sha256": "e0f04068c7dfa49b0639d31303495d125d819c7e87dedcfbfdeebc03bb2f8db6",
+    "only_seven_path_locations_allowed_no_Hash_change": true,
+    "WT_actual_release_additional_file_outside884_inventory": {
+      "path": "data/runs/lab/phase11-v32-protocol-preparation-v1/producer.actual.release.json",
+      "sha256": "e0f04068c7dfa49b0639d31303495d125d819c7e87dedcfbfdeebc03bb2f8db6",
+      "independent_inode": true
+    },
+    "new_Native": 0
+  },
+  "actual_producer_identity_and_historical_Core3_aliases": {
+    "aliases": [
+      {
+        "source_path": "data/runs/development_screening/phase11-v28-preregistration-audit-v1/phase11-v28-protocol-preparation-v1/formal-v28-review-result.json",
+        "target_path": "data/runs/lab/phase11-v28-protocol-preparation-v1/identity-evidence.json",
+        "sha256": "a345ce08e397e937e6f5fd7620cbd785810c5d213918964013ea7bc8ceaafc68",
+        "method": "independent_copy",
+        "source_before_sha256": "a345ce08e397e937e6f5fd7620cbd785810c5d213918964013ea7bc8ceaafc68",
+        "target_sha256": "a345ce08e397e937e6f5fd7620cbd785810c5d213918964013ea7bc8ceaafc68",
+        "source_after_sha256": "a345ce08e397e937e6f5fd7620cbd785810c5d213918964013ea7bc8ceaafc68",
+        "source_inode": 14702464,
+        "target_inode": 14825260,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v28-preregistration-audit-v1/phase11-v28-protocol-preparation-v1/produce_plan.py",
+        "target_path": "data/runs/lab/phase11-v28-protocol-preparation-v1/produce_plan.py",
+        "sha256": "75ceeaca8d0b23bced85c8ec0c2fc25a46c51e6a4122a1c13bb5779e1a9f4e9c",
+        "method": "independent_copy",
+        "source_before_sha256": "75ceeaca8d0b23bced85c8ec0c2fc25a46c51e6a4122a1c13bb5779e1a9f4e9c",
+        "target_sha256": "75ceeaca8d0b23bced85c8ec0c2fc25a46c51e6a4122a1c13bb5779e1a9f4e9c",
+        "source_after_sha256": "75ceeaca8d0b23bced85c8ec0c2fc25a46c51e6a4122a1c13bb5779e1a9f4e9c",
+        "source_inode": 14702468,
+        "target_inode": 14825261,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v28-preregistration-audit-v1/comparison-sourceproof/v27-core94-git9312/src/rag_research/generation/cuda_runtime.py",
+        "target_path": "data/runs/lab/phase11-v28-historical-sourceproof-v1/src/rag_research/generation/cuda_runtime.py",
+        "sha256": "207f80bd06cf5efbfcc752ddcefe2d96ba2c671d6c8b90f9e3cd19b988699fde",
+        "method": "independent_copy",
+        "historical_only_never_live_execution_Source": true,
+        "source_before_sha256": "207f80bd06cf5efbfcc752ddcefe2d96ba2c671d6c8b90f9e3cd19b988699fde",
+        "target_sha256": "207f80bd06cf5efbfcc752ddcefe2d96ba2c671d6c8b90f9e3cd19b988699fde",
+        "source_after_sha256": "207f80bd06cf5efbfcc752ddcefe2d96ba2c671d6c8b90f9e3cd19b988699fde",
+        "source_inode": 14702506,
+        "target_inode": 14825266,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v28-preregistration-audit-v1/comparison-sourceproof/v27-core94-git9312/src/rag_research/generation/local.py",
+        "target_path": "data/runs/lab/phase11-v28-historical-sourceproof-v1/src/rag_research/generation/local.py",
+        "sha256": "817bf5415c2c4a72488ef629026636c8f32994def8898ee26b6b347824fed354",
+        "method": "independent_copy",
+        "historical_only_never_live_execution_Source": true,
+        "source_before_sha256": "817bf5415c2c4a72488ef629026636c8f32994def8898ee26b6b347824fed354",
+        "target_sha256": "817bf5415c2c4a72488ef629026636c8f32994def8898ee26b6b347824fed354",
+        "source_after_sha256": "817bf5415c2c4a72488ef629026636c8f32994def8898ee26b6b347824fed354",
+        "source_inode": 14702507,
+        "target_inode": 14825267,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v29-preregistration-audit-v1/phase11-v29-protocol-preparation-v1/formal-v29-review-result.json",
+        "target_path": "data/runs/lab/phase11-v29-protocol-preparation-v1/identity-evidence.json",
+        "sha256": "547cb9f33784e64ff029ada2e0614bcda10288ecc52eb8cd2ff35ad7027bed5d",
+        "method": "independent_copy",
+        "source_before_sha256": "547cb9f33784e64ff029ada2e0614bcda10288ecc52eb8cd2ff35ad7027bed5d",
+        "target_sha256": "547cb9f33784e64ff029ada2e0614bcda10288ecc52eb8cd2ff35ad7027bed5d",
+        "source_after_sha256": "547cb9f33784e64ff029ada2e0614bcda10288ecc52eb8cd2ff35ad7027bed5d",
+        "source_inode": 14813046,
+        "target_inode": 14825269,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v29-preregistration-audit-v1/phase11-v29-protocol-preparation-v1/produce_plan.py",
+        "target_path": "data/runs/lab/phase11-v29-protocol-preparation-v1/produce_plan.py",
+        "sha256": "f46972e71c30561729a20dcafcd9a08d89cdf570452338d08908215ec487c318",
+        "method": "independent_copy",
+        "source_before_sha256": "f46972e71c30561729a20dcafcd9a08d89cdf570452338d08908215ec487c318",
+        "target_sha256": "f46972e71c30561729a20dcafcd9a08d89cdf570452338d08908215ec487c318",
+        "source_after_sha256": "f46972e71c30561729a20dcafcd9a08d89cdf570452338d08908215ec487c318",
+        "source_inode": 14813064,
+        "target_inode": 14825270,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v29-preregistration-audit-v1/phase11-v29-protocol-preparation-v1/producer.release.json",
+        "target_path": "data/runs/lab/phase11-v29-protocol-preparation-v1/producer.release.json",
+        "sha256": "ebe7bd29f961e93d9cb07f55f8bd6c46327ce267fe79d1b1d7c2cd00e469e4a1",
+        "method": "independent_copy",
+        "source_before_sha256": "ebe7bd29f961e93d9cb07f55f8bd6c46327ce267fe79d1b1d7c2cd00e469e4a1",
+        "target_sha256": "ebe7bd29f961e93d9cb07f55f8bd6c46327ce267fe79d1b1d7c2cd00e469e4a1",
+        "source_after_sha256": "ebe7bd29f961e93d9cb07f55f8bd6c46327ce267fe79d1b1d7c2cd00e469e4a1",
+        "source_inode": 14813065,
+        "target_inode": 14825271,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/formal-v30-review-result.json",
+        "target_path": "data/runs/lab/phase11-v30-protocol-preparation-v1/identity-evidence.json",
+        "sha256": "f75d7f0031ae963c0e429a4ee927a33a9899a749282063e0a390834972576578",
+        "method": "independent_copy",
+        "source_before_sha256": "f75d7f0031ae963c0e429a4ee927a33a9899a749282063e0a390834972576578",
+        "target_sha256": "f75d7f0031ae963c0e429a4ee927a33a9899a749282063e0a390834972576578",
+        "source_after_sha256": "f75d7f0031ae963c0e429a4ee927a33a9899a749282063e0a390834972576578",
+        "source_inode": 14815967,
+        "target_inode": 14825273,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/produce_plan.py",
+        "target_path": "data/runs/lab/phase11-v30-protocol-preparation-v1/produce_plan.py",
+        "sha256": "6761a9ac3504581d25bf443ba718cc93c0fb9f484ad3ea125456729bb9f6f4a1",
+        "method": "independent_copy",
+        "source_before_sha256": "6761a9ac3504581d25bf443ba718cc93c0fb9f484ad3ea125456729bb9f6f4a1",
+        "target_sha256": "6761a9ac3504581d25bf443ba718cc93c0fb9f484ad3ea125456729bb9f6f4a1",
+        "source_after_sha256": "6761a9ac3504581d25bf443ba718cc93c0fb9f484ad3ea125456729bb9f6f4a1",
+        "source_inode": 14815978,
+        "target_inode": 14825274,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/producer.release.json",
+        "target_path": "data/runs/lab/phase11-v30-protocol-preparation-v1/producer.release.json",
+        "sha256": "59e41329bb99aac046288be5b125a0aff4e202566a8f1adb8ae43b6fce9d9978",
+        "method": "independent_copy",
+        "source_before_sha256": "59e41329bb99aac046288be5b125a0aff4e202566a8f1adb8ae43b6fce9d9978",
+        "target_sha256": "59e41329bb99aac046288be5b125a0aff4e202566a8f1adb8ae43b6fce9d9978",
+        "source_after_sha256": "59e41329bb99aac046288be5b125a0aff4e202566a8f1adb8ae43b6fce9d9978",
+        "source_inode": 14815982,
+        "target_inode": 14825275,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/runtime_screening/phase11-v29-tokenizer-preflight-failure-v1/fixed-source/src/rag_research/evaluation/tasks.py",
+        "target_path": "data/runs/lab/phase11-v30-historical-sourceproof-v1/src/rag_research/evaluation/tasks.py",
+        "sha256": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+        "method": "independent_copy",
+        "historical_only_never_live_execution_Source": true,
+        "source_before_sha256": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+        "target_sha256": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+        "source_after_sha256": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+        "source_inode": 14815706,
+        "target_inode": 14825280,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/runtime_screening/phase11-v29-tokenizer-preflight-failure-v1/fixed-source/src/rag_research/generation/auxiliary_config.py",
+        "target_path": "data/runs/lab/phase11-v30-historical-sourceproof-v1/src/rag_research/generation/auxiliary_config.py",
+        "sha256": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+        "method": "independent_copy",
+        "historical_only_never_live_execution_Source": true,
+        "source_before_sha256": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+        "target_sha256": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+        "source_after_sha256": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+        "source_inode": 14815739,
+        "target_inode": 14825282,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/runtime_screening/phase11-v29-tokenizer-preflight-failure-v1/fixed-source/src/rag_research/recovery/answer_rewrite.py",
+        "target_path": "data/runs/lab/phase11-v30-historical-sourceproof-v1/src/rag_research/recovery/answer_rewrite.py",
+        "sha256": "359e2535848182a855cd58b9a6bd52d1893ffea37819a69e68647f1067c87a01",
+        "method": "independent_copy",
+        "historical_only_never_live_execution_Source": true,
+        "source_before_sha256": "359e2535848182a855cd58b9a6bd52d1893ffea37819a69e68647f1067c87a01",
+        "target_sha256": "359e2535848182a855cd58b9a6bd52d1893ffea37819a69e68647f1067c87a01",
+        "source_after_sha256": "359e2535848182a855cd58b9a6bd52d1893ffea37819a69e68647f1067c87a01",
+        "source_inode": 14815757,
+        "target_inode": 14825284,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v31-preregistration-audit-v1/input-review/formal-v31-review-result.json",
+        "target_path": "data/runs/lab/phase11-v31-protocol-preparation-v1/identity-evidence.json",
+        "sha256": "bc5779baad8eb777428fabd6b5cccddf0627145c7f271861912ed7dc1183dbb0",
+        "method": "independent_copy",
+        "source_before_sha256": "bc5779baad8eb777428fabd6b5cccddf0627145c7f271861912ed7dc1183dbb0",
+        "target_sha256": "bc5779baad8eb777428fabd6b5cccddf0627145c7f271861912ed7dc1183dbb0",
+        "source_after_sha256": "bc5779baad8eb777428fabd6b5cccddf0627145c7f271861912ed7dc1183dbb0",
+        "source_inode": 14819572,
+        "target_inode": 14825286,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v31-preregistration-audit-v1/phase11-v31-protocol-preparation-v1/produce_plan.py",
+        "target_path": "data/runs/lab/phase11-v31-protocol-preparation-v1/produce_plan.py",
+        "sha256": "b4db8d11772792171ff0d5145baf5fd96219b1791963f4456d889be82856f2a7",
+        "method": "independent_copy",
+        "source_before_sha256": "b4db8d11772792171ff0d5145baf5fd96219b1791963f4456d889be82856f2a7",
+        "target_sha256": "b4db8d11772792171ff0d5145baf5fd96219b1791963f4456d889be82856f2a7",
+        "source_after_sha256": "b4db8d11772792171ff0d5145baf5fd96219b1791963f4456d889be82856f2a7",
+        "source_inode": 14819562,
+        "target_inode": 14825287,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v31-preregistration-audit-v1/phase11-v31-protocol-preparation-v1/producer.release.json",
+        "target_path": "data/runs/lab/phase11-v31-protocol-preparation-v1/producer.release.json",
+        "sha256": "16fca298af0c4cbd6d5031dcd520f1e45b1c92974613eeccb05ddb2c60f9542a",
+        "method": "independent_copy",
+        "source_before_sha256": "16fca298af0c4cbd6d5031dcd520f1e45b1c92974613eeccb05ddb2c60f9542a",
+        "target_sha256": "16fca298af0c4cbd6d5031dcd520f1e45b1c92974613eeccb05ddb2c60f9542a",
+        "source_after_sha256": "16fca298af0c4cbd6d5031dcd520f1e45b1c92974613eeccb05ddb2c60f9542a",
+        "source_inode": 14819564,
+        "target_inode": 14825288,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v31-preregistration-audit-v1/phase11-v31-protocol-preparation-v1/issue_artificial_reuse_v31.py",
+        "target_path": "data/runs/lab/phase11-v31-protocol-preparation-v1/issue_artificial_reuse_v31.py",
+        "sha256": "547648c48d4db38cce9cfef074be2ab8636ffec17e85537ef7c5ea5f627f5da2",
+        "method": "independent_copy",
+        "source_before_sha256": "547648c48d4db38cce9cfef074be2ab8636ffec17e85537ef7c5ea5f627f5da2",
+        "target_sha256": "547648c48d4db38cce9cfef074be2ab8636ffec17e85537ef7c5ea5f627f5da2",
+        "source_after_sha256": "547648c48d4db38cce9cfef074be2ab8636ffec17e85537ef7c5ea5f627f5da2",
+        "source_inode": 14819561,
+        "target_inode": 14825289,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v31-preregistration-audit-v1/phase11-v31-protocol-preparation-v1/artificial-reuse-protocol-v31.json",
+        "target_path": "data/runs/lab/phase11-v31-protocol-preparation-v1/artificial-reuse-protocol-v31.json",
+        "sha256": "7dd8d23694fee343f6e3f183ce79add44173a1f83f06e2422509aba459a320d4",
+        "method": "independent_copy",
+        "source_before_sha256": "7dd8d23694fee343f6e3f183ce79add44173a1f83f06e2422509aba459a320d4",
+        "target_sha256": "7dd8d23694fee343f6e3f183ce79add44173a1f83f06e2422509aba459a320d4",
+        "source_after_sha256": "7dd8d23694fee343f6e3f183ce79add44173a1f83f06e2422509aba459a320d4",
+        "source_inode": 14819554,
+        "target_inode": 14825290,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": ".tools/draft-artifacts/phase11-v31-identity-config-design-v1/identity-build.json",
+        "target_path": "data/runs/lab/phase11-v31-protocol-preparation-v1/actual-identity-build.json",
+        "sha256": "ff6a9aa28dabce251a40ce1d098ccb8219aeb3ed3a3c0723d4c0d6ca2e2b2d18",
+        "method": "independent_copy",
+        "source_before_sha256": "ff6a9aa28dabce251a40ce1d098ccb8219aeb3ed3a3c0723d4c0d6ca2e2b2d18",
+        "target_sha256": "ff6a9aa28dabce251a40ce1d098ccb8219aeb3ed3a3c0723d4c0d6ca2e2b2d18",
+        "source_after_sha256": "ff6a9aa28dabce251a40ce1d098ccb8219aeb3ed3a3c0723d4c0d6ca2e2b2d18",
+        "source_inode": 14188569,
+        "target_inode": 14825291,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v32-preregistration-audit-v1/input-review/formal-v32-review-result.json",
+        "target_path": "data/runs/lab/phase11-v32-protocol-preparation-v1/identity-evidence.json",
+        "sha256": "d0ab6be18a2efcc545129d857fdd44e3cf0889e376d59644e5d0d3285a3c2eda",
+        "method": "independent_copy",
+        "source_before_sha256": "d0ab6be18a2efcc545129d857fdd44e3cf0889e376d59644e5d0d3285a3c2eda",
+        "target_sha256": "d0ab6be18a2efcc545129d857fdd44e3cf0889e376d59644e5d0d3285a3c2eda",
+        "source_after_sha256": "d0ab6be18a2efcc545129d857fdd44e3cf0889e376d59644e5d0d3285a3c2eda",
+        "source_inode": 14823014,
+        "target_inode": 14825293,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v32-preregistration-audit-v1/phase11-v32-protocol-preparation-v1/produce_plan.py",
+        "target_path": "data/runs/lab/phase11-v32-protocol-preparation-v1/produce_plan.py",
+        "sha256": "00fc96973b3073d9a13dbede705517bfacce223b5f96b200099106be4e6d552c",
+        "method": "independent_copy",
+        "source_before_sha256": "00fc96973b3073d9a13dbede705517bfacce223b5f96b200099106be4e6d552c",
+        "target_sha256": "00fc96973b3073d9a13dbede705517bfacce223b5f96b200099106be4e6d552c",
+        "source_after_sha256": "00fc96973b3073d9a13dbede705517bfacce223b5f96b200099106be4e6d552c",
+        "source_inode": 14823004,
+        "target_inode": 14825294,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v32-preregistration-audit-v1/phase11-v32-protocol-preparation-v1/producer.release.json",
+        "target_path": "data/runs/lab/phase11-v32-protocol-preparation-v1/producer.release.json",
+        "sha256": "a3dd41537e5919af020303f2268056c586597fad2c8012e0b624dc54e370cd0f",
+        "method": "independent_copy",
+        "source_before_sha256": "a3dd41537e5919af020303f2268056c586597fad2c8012e0b624dc54e370cd0f",
+        "target_sha256": "a3dd41537e5919af020303f2268056c586597fad2c8012e0b624dc54e370cd0f",
+        "source_after_sha256": "a3dd41537e5919af020303f2268056c586597fad2c8012e0b624dc54e370cd0f",
+        "source_inode": 14823005,
+        "target_inode": 14825295,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v32-preregistration-audit-v1/phase11-v32-protocol-preparation-v1/issue_artificial_reuse_v32.py",
+        "target_path": "data/runs/lab/phase11-v32-protocol-preparation-v1/issue_artificial_reuse_v32.py",
+        "sha256": "59352b8030d38a1a4b19d0dab96f0ce5cf378da19d2187a831687ef4b768e235",
+        "method": "independent_copy",
+        "source_before_sha256": "59352b8030d38a1a4b19d0dab96f0ce5cf378da19d2187a831687ef4b768e235",
+        "target_sha256": "59352b8030d38a1a4b19d0dab96f0ce5cf378da19d2187a831687ef4b768e235",
+        "source_after_sha256": "59352b8030d38a1a4b19d0dab96f0ce5cf378da19d2187a831687ef4b768e235",
+        "source_inode": 14823002,
+        "target_inode": 14825296,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v32-preregistration-audit-v1/phase11-v32-protocol-preparation-v1/artificial-reuse-protocol-v32.json",
+        "target_path": "data/runs/lab/phase11-v32-protocol-preparation-v1/artificial-reuse-protocol-v32.json",
+        "sha256": "1d0cc4ffe38005557f695ceb94e1bf4a99000d8cd0e4a6a33bb85abc4a459f86",
+        "method": "independent_copy",
+        "source_before_sha256": "1d0cc4ffe38005557f695ceb94e1bf4a99000d8cd0e4a6a33bb85abc4a459f86",
+        "target_sha256": "1d0cc4ffe38005557f695ceb94e1bf4a99000d8cd0e4a6a33bb85abc4a459f86",
+        "source_after_sha256": "1d0cc4ffe38005557f695ceb94e1bf4a99000d8cd0e4a6a33bb85abc4a459f86",
+        "source_inode": 14822993,
+        "target_inode": 14825297,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": ".tools/draft-artifacts/phase11-v32-identity-config-design-v1/identity-build.json",
+        "target_path": "data/runs/lab/phase11-v32-protocol-preparation-v1/actual-identity-build.json",
+        "sha256": "d07ff7bcf98531b7dd238699aab27d1d74740638f0646ecc46c10a7a1f5a5037",
+        "method": "independent_copy",
+        "source_before_sha256": "d07ff7bcf98531b7dd238699aab27d1d74740638f0646ecc46c10a7a1f5a5037",
+        "target_sha256": "d07ff7bcf98531b7dd238699aab27d1d74740638f0646ecc46c10a7a1f5a5037",
+        "source_after_sha256": "d07ff7bcf98531b7dd238699aab27d1d74740638f0646ecc46c10a7a1f5a5037",
+        "source_inode": 14822923,
+        "target_inode": 14825298,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      }
+    ],
+    "all_independent_before_copy_after_hashes_equal": true
+  },
+  "actual_dedicated_uv_environment": {
+    "returncode": 0,
+    "actual_child_monotonic_seconds": 0.06654415000230074,
+    "new_dedicated_venv_not_copied": true,
+    "frozen_offline": true,
+    "timeout_seconds": 120
+  },
+  "dedicated_environment_and_identity": {
+    "actual_loader_source_sha256": "e6303815b7bf7088d4704063375d700f7c69dc77589bd89a2bd70168d6168b37",
+    "actual_current_Model_Runtime_full_Hash_scope": "Fresh fixed WT identity builder rereads current8B GGUF and Runtime; copy conditional historical Hash reuse is separate. Initial Root identity proof is not replaced; old9B not rehashed.",
+    "passed": true,
+    "created_at_utc": "2026-10-27T14:12:57.037240+00:00",
+    "actual_checkout_cwd": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v32-81563f7",
+    "actual_fixed_commit": "81563f7aefe0ca3a659ba0677a74d6d71e05d1bd",
+    "candidate_identity_sha256": "73d9ac7d429e11129a8c5faceee6d8d50a48b196ccea3d45b85fc631f10512af",
+    "actual_load_config": true,
+    "actual_build_identity": true,
+    "pure_Source_AST_extraction": {
+      "source_path": "src/rag_research/experiments/semantic_diagnostics.py",
+      "source_sha256": "93d821f5af0412fa9f54a198338a93fdca37f902eccac52099647c4f2c509963",
+      "function_AST_sha256": {
+        "local": "2e4f019907299518a0b05e63805aaed380f902ab6b28458d0e18349d1e40c48c",
+        "load_config": "f965f0927def39fdcee2033e7027d28baaac96be77a36864cc34bf0cacb98da9",
+        "specs": "65b89a4d32aca235eefe6023d0ad8d9d40b1a9a5bd6fa7acffd645f659cb9391",
+        "matches": "c062158223297d143c124d62f6261156ac2d5e39ed22879983670e213daf1e0e",
+        "assess": "f028200d31ed30ff66cfeb58f0be0735b50d04a6894156e260f59996004e49e4",
+        "assess_legacy": "816cddadba28ad7b230ad4c183ec343c6f7aa9ae7040d65df1d34e125c8d9ce4"
+      },
+      "exact_pure_AST_verified": true,
+      "full_semantic_module_imported": false,
+      "allowed_builtins": [
+        "all",
+        "any",
+        "bool",
+        "enumerate",
+        "isinstance",
+        "len",
+        "set",
+        "sorted",
+        "str",
+        "sum"
+      ]
+    },
+    "artificial_reuse_certificate_reverified_before_fresh_inputs": {
+      "path": "data/runs/development_screening/phase11-v32-preregistration-audit-v1/artificial-reuse/certificate.json",
+      "sha256": "b8f40fe7ab3c6e76713dfbd2520bd71823d5c3f316ab307c1508ebcf388450eb"
+    },
+    "meaning_Native_outputs_reused": 0,
+    "asset_inventory_sha256": "1576e95b6386c045d90dc7bd2087d3609f62dccfaf2411154f710adde91faa35",
+    "actual_release_exact_seven_location_only_bindings_verified": 7,
+    "scientific_parent_identity_sha256": "dbb9830fc366b8b1631ce8d1feab90403810ad9bb0086f655a08c4ba60ab12e3",
+    "artificial_original_context_identity_sha256": "87cf5942abf0652849246229c0b2550846c7c674aaa764c3489861e1baba8e6b",
+    "fresh_fixed_WT_identity_build_after_actual_asset_copy": true,
+    "Root_initial_identity_proof_replaced": false,
+    "fixed_diagnostic_contract_parsed": true,
+    "fixed_diagnostic_QA": 39,
+    "fixed_units": 45,
+    "conditions": 78,
+    "planned_fresh_calls": 90,
+    "core_files": 94,
+    "source_trace_bindings": 4,
+    "semantic_evidence_reuse": false,
+    "effective_tasks": {
+      "extract_claims": {
+        "reasoning_budget_tokens": 4096,
+        "max_output_tokens": 3072,
+        "context_tokens": 12288,
+        "timeout_seconds": 1200
+      },
+      "verify_claims": {
+        "reasoning_budget_tokens": 4096,
+        "max_output_tokens": 6144,
+        "context_tokens": 12288,
+        "timeout_seconds": 1200
+      },
+      "rewrite_answer": {
+        "reasoning_budget_tokens": 4096,
+        "max_output_tokens": 6144,
+        "context_tokens": 12288,
+        "timeout_seconds": 1200
+      }
+    },
+    "runtime_metadata_verified_by_actual_identity_builder": true,
+    "validated_execution_profile": {
+      "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+      "gpu_layers": 99,
+      "device": "CUDA0",
+      "require_full_offload": true,
+      "version": "cuda-execution-v2",
+      "flash_attention": "off"
+    },
+    "offline_guard": {
+      "process_starts": 0,
+      "socket_operations": 0,
+      "reserved_QA_opens": 0
+    },
+    "native_guards": {
+      "server": 0,
+      "request_or_tokenizer": 0
+    },
+    "explicit_GPU_device_enumeration_or_tokenizer_or_runtime_started": false,
+    "python_executable": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v32-81563f7/environments/embedding_gpu/.venv/bin/python",
+    "python_prefix": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v32-81563f7/environments/embedding_gpu/.venv",
+    "installed_distributions": 58,
+    "packages": {
+      "onnxruntime-gpu": "1.30.0",
+      "tokenizers": "0.23.2",
+      "psutil": "7.2.2",
+      "PyYAML": "6.0.3",
+      "numpy": "2.5.3",
+      "huggingface-hub": "1.33.0"
+    },
+    "elapsed_seconds": 5.022870994056575,
+    "native_calls": 0,
+    "Main_Cal_Evaluation_QA_read": false,
+    "unused_QA_open_guard_applies_to_canonical_root_all_WTs_realpaths_and_inodes": true,
+    "scoring_or_Gate11_adoption_claimed": false,
+    "phase12_started": false
+  },
+  "strict_execution_configuration_verified": {
+    "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+    "gpu_layers": 99,
+    "device": "CUDA0",
+    "require_full_offload": true,
+    "version": "cuda-execution-v2",
+    "flash_attention": "off"
+  },
+  "actual_GPU_context_FAoff_profile_verified_by_this_reproduction": false,
+  "actual_GPU_preflight_separate_required": true,
+  "complete_reproduction_receipt_files_sha256": {
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/actual-copy-v1/intent.json": "3077e1a40795c3b0174cd88274a280ad5886d96c20d365bbfdefb4842de248f7",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/actual-copy-v1/result.json": "9ffc977d739b280c2de32978d1012139d4c5231d2efb8638b093587b7455c019",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/actual-copy-v1/progress.jsonl": "0fb77764b032f4cb909ff6bda3a328555e4f135319374a760291842b7b435605",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/actual-copy-v1/producer-alias-copy-receipt.json": "fecf25bf6666d44ee3e06268d50d7cefe05732136f0660518e5819ab7e641dff",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/actual-copy-v1/zero-generation-positive.json": "74f137f2258ce55da7c6664d73ca6050851ba2b6f22e124880ebeb991fa124ac",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/publication-release.json": "644a1860084a67987314705b08f359034e1fc57fd4a243381d196a66e2ee33b3",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/checkout_release.json": "e6c593f553f3fa9d2a531ebd366cb0d3b45450131ad0838eef37e4ba477d27d9"
+  },
+  "canonical_preparation_inventory": {
+    "path": "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/inventory.json",
+    "sha256": "1576e95b6386c045d90dc7bd2087d3609f62dccfaf2411154f710adde91faa35"
+  },
+  "canonical_preparation_full_seal": {
+    "path": "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/SHA256SUMS",
+    "sha256": "f75606977c00d16153d0f05f8d57bd6051d5897c4eeea86d92b716301597605c"
+  },
+  "Root_ignored_stage_release_alias": {
+    "path": "data/runs/lab/phase11-v32-stage-evidence-v1/checkout-release.json",
+    "sha256": "e6c593f553f3fa9d2a531ebd366cb0d3b45450131ad0838eef37e4ba477d27d9"
+  },
+  "copytime_closed_source_clean_and_initial_WT_local_ledger_absent": {
+    "verified_by_successful_frozen_runner_conditional_checks": true,
+    "runner_source_sha256": "ad41d693ddcaede90c4a4b0bd58ce81e518d3c7ebe210a0acf87d590a19e0046",
+    "not_a_live_WT_or_current_ledger_recheck": true
+  },
+  "metadata_publication_audit": {
+    "all_progress_rows_exact_inventory_domain": true,
+    "all_before_copy_after_hashes_and_inode_flags_rechecked": true,
+    "immutable_same_inode": 31,
+    "other_independent_inodes": 853,
+    "additional_independent_aliases": 25,
+    "current_Root_small_hashes_checked": 853,
+    "current_source_and_target_stat_inode_checks": 884,
+    "new_heavy_hash_or_WT_content_open": 0,
+    "guard": {
+      "WT_body_opens": 0,
+      "Model_Runtime_body_opens": 0,
+      "ledger_opens": 0,
+      "Main_Cal_Evaluation_opens": 0,
+      "process_starts": 0,
+      "sockets": 0
+    },
+    "old_diagnostic_payloads_or_Main_Cal_Evaluation_QA_parse": 0
+  },
+  "Core3_historical_rebindings": {
+    "src/rag_research/evaluation/tasks.py": {
+      "before_sha256": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+      "after_sha256": "6db561e9bdf06087889517a7e650388ac437a3423fa00dc1e708e97f8921d517",
+      "historical_source": "data/runs/runtime_screening/phase11-v29-tokenizer-preflight-failure-v1/fixed-source/src/rag_research/evaluation/tasks.py"
+    },
+    "src/rag_research/generation/auxiliary_config.py": {
+      "before_sha256": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+      "after_sha256": "9e76be699abcbb966564c6958c2761d48772a5b3f4fc947ed0547ee939ce7d52",
+      "historical_source": "data/runs/runtime_screening/phase11-v29-tokenizer-preflight-failure-v1/fixed-source/src/rag_research/generation/auxiliary_config.py"
+    },
+    "src/rag_research/recovery/answer_rewrite.py": {
+      "before_sha256": "359e2535848182a855cd58b9a6bd52d1893ffea37819a69e68647f1067c87a01",
+      "after_sha256": "3cdb6306f272e3dc77e4916445e328d9d4094475cbdc482b11ec48c801dc8122",
+      "historical_source": "data/runs/runtime_screening/phase11-v29-tokenizer-preflight-failure-v1/fixed-source/src/rag_research/recovery/answer_rewrite.py"
+    }
+  },
+  "Core3_historical_rebindings_are_parent_v30_history_not_new_v32_changes": true,
+  "current_Core_rebindings": {},
+  "Core94_Model_Runtime_Sampler_Schema_unchanged_from_v31": true,
+  "scientific_parent_identity_sha256": "dbb9830fc366b8b1631ce8d1feab90403810ad9bb0086f655a08c4ba60ab12e3",
+  "artificial_original_context_identity_sha256": "87cf5942abf0652849246229c0b2550846c7c674aaa764c3489861e1baba8e6b",
+  "Prompt_only_identity_change": {
+    "before": [
+      {
+        "path": "configs/phase11_semantic_prompts_en_v16.yaml",
+        "sha256": "2c303b9380c81192dc6de51611bcb463c6f0c1b1c48e55f60a5963a4f8143145"
+      },
+      {
+        "path": "configs/phase11_semantic_prompts_ja_v16.yaml",
+        "sha256": "e4365f31f3c24cf96f6269c7e65f03a24f5e5fdfad0aaea143c22d0083fdbc5f"
+      }
+    ],
+    "after": [
+      {
+        "path": "configs/phase11_semantic_prompts_en_v17.yaml",
+        "sha256": "85b737599ff7a12a2a9eca8fc633ef6dc97b145bf1eeaabae7981fa3feeb5879"
+      },
+      {
+        "path": "configs/phase11_semantic_prompts_ja_v17.yaml",
+        "sha256": "ac7ce7a165f6e4794de600c0bbbed21003cbfb955aee44078e71694f0491b9a8"
+      }
+    ]
+  },
+  "parent781_files_and19aliases_preserved": true,
+  "actual_content_hash_scope": {
+    "initial_Root_Model_identity_proof_preserved_not_replaced": {
+      "path": ".tools/draft-artifacts/phase11-v32-identity-config-design-v1/identity-build.json",
+      "sha256": "d07ff7bcf98531b7dd238699aab27d1d74740638f0646ecc46c10a7a1f5a5037"
+    },
+    "initial_Root_identity_GGUF_hash_reads": 1,
+    "copy_time_immutable_content_rehashes": 0,
+    "all31_copy_immutable_Hashes_reuse_authenticated_parent_provenance_stat_and_same_inode": true,
+    "parent_reproduction": {
+      "path": "data/manifests/phase11_v31_checkout_reproduction_v1.json",
+      "sha256": "f4f6267b652f60d2c87f2b7af3d48c03d36979c5acff45b12e536d1e81af6c44"
+    },
+    "new_fixed_WT_actual_build_identity_after_copy": true,
+    "new_fixed_WT_current_8B_and_Runtime_content_hashes_reverified_by_actual_builder": true,
+    "old_unused_9B_content_not_rehashed_by_current_identity_builder": true,
+    "publication_Model_Runtime_content_hashes": 0,
+    "loader_Source": {
+      "path": "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/zero_source.py",
+      "sha256": "e6303815b7bf7088d4704063375d700f7c69dc77589bd89a2bd70168d6168b37"
+    },
+    "basis": "Bound executed loader calls actual build_identity in the new fixed WT; current8B/runtime are reverified there. Copier uses parent authenticated fullHash chain/stat/sameinode; publication never reads immutable bytes."
+  },
+  "measured_cost_scopes": {
+    "actual_copy_seconds": 1.3033288579899818,
+    "copy_exec_tool_reported_wall_seconds": null,
+    "copy_child_monotonic_seconds": 1.3326812610030174,
+    "copy_exec_reported_wall_and_inner_are_distinct_observations_not_assumed_nested": true,
+    "dedicated_uv_subprocess_wall_seconds_independently_metered": 0.06654415000230074,
+    "dedicated_uv_exec_tool_reported_wall_seconds": null,
+    "uv_installer_reported_milliseconds": 30,
+    "actual_zero_load_identity_inner_seconds": 5.022870994056575,
+    "zero_exec_tool_reported_wall_seconds": null,
+    "zero_parent_child_monotonic_seconds": 5.131218316964805,
+    "new_v32_CPU_failure_wall_seconds": null,
+    "Root_alias_creation_wall_seconds": null,
+    "old_v31_failure_costs_are_parent_history_excluded_from_new_v32_costs": true,
+    "whole_reproduction_wall_seconds": null,
+    "whole_wall_marker_not_recorded": true,
+    "do_not_add_inner_to_child_or_installer_to_uv_tool": true,
+    "publication_component_seconds_before_write": 0.6896351310424507,
+    "external_metered_API_cost": 0,
+    "electricity_cost": null
+  },
+  "copy_result_pending_environment_flag_is_historical_stage_snapshot_resolved_by_zero_receipt": true,
+  "review_limitations": {
+    "human_reviewed": false,
+    "history_isolated": false,
+    "exact_assessor_model_identifier": null,
+    "user_reported_setting": "6.1 Sol 極高",
+    "publication_actor": "/root",
+    "publication_Source_preparer": "/root/assets_v25"
+  },
+  "canonical_publication_artifacts_sha256": {
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/chronology-before-first-Plan-final.json": "fcbcf8d36cf8db8cbcb3d920d072ab12b752619c93102eb764484fd22db65bbb",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/independent-publication-copy-receipt.json": "4f3470c69e4994ee58edde6fd8257f17553166d2588fb67f561900303eb5fcd3",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/metadata-current-stat-and-small-hash-check.json": "2329f8d46adcf45117f9f52c0460b672c46d6300018072374f0e2c9650c2c987",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/SHA256SUMS": "f75606977c00d16153d0f05f8d57bd6051d5897c4eeea86d92b716301597605c",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/Root_aliases.json": "76d74457da8f59562ee27175cb7e3a2b0e3b737349c655478581e725f0cd79f1",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/copy_tool.json": "aa320a6723f3ceb59abd49dca9d75c18eb0c910b17ce686efae179966d8deec4",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/inventory.json": "1576e95b6386c045d90dc7bd2087d3609f62dccfaf2411154f710adde91faa35",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/location_check.json": "74f137f2258ce55da7c6664d73ca6050851ba2b6f22e124880ebeb991fa124ac",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/producer_actual_release.json": "e0f04068c7dfa49b0639d31303495d125d819c7e87dedcfbfdeebc03bb2f8db6",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/uv.json": "c4feee6c3a0e9677383619cd5aac9337e92d2de008f521ae3a832d0e241b0917",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/actual-inputs/zero_source.py": "e6303815b7bf7088d4704063375d700f7c69dc77589bd89a2bd70168d6168b37",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/chronology-before-first-Plan-initial.json": "41b53287347f44ffd48e267a11a7c92ef9995a6a0977c068903e97d10c248172",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/environment/0.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/environment/1.stderr": "002ce82f7190c99e4289a2c4387e2c7bc67c6da35d949ae08307d292a331109c",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/execution-records/copy_stderr.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/execution-records/copy_stdout.stdout": "24c6115752816c22bbb5a4f8e9bbabdb94ac45616ca8fbcaf1a398e302afd9c8",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/execution-records/zero_stderr.stderr": "c9df040e7f8ef79cd860182f12e86f8e4a98fb249c3ce2f64c61f34dea56c3fe",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/execution-records/zero_stdout.stdout": "ff249d2c1323cab704397e7a7df68eb37650c741cf3c84fb495e7231d1013289",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/execution-records/zero_tool.json": "6d0bbb88390322429912a902ed8522bb95381da96a157ad991c07921769e2fd7",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/publish.py": "36e784c58a7ccc0efd0792a80e1b0b77760ee37e97a6e4bcff25b12e90fe0b3d",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/README.md": "7872b8b57b3048713b14c5eb161fbd02059c86a3eef797cbe37630bbec3f56c9",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/SHA256SUMS": "1cb37e526f06debb1087ec19ef7133cd57ad510651b7b812a779f5b4c7f98ca6",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/SUMMARY.json": "067e79263503f9c8f66a230c30ca84cf6f9153f8a46fac0d4b2a7d5195afabd2",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/actual-reuse-metadata-join.json": "7737129428cd48dac8ca5b34fd3cc042f2c628509b5f9902ba80506849340e9d",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/close_inventory.py": "f3630c874f07c4fe82d0e39754f6f4afb75b8acd6520f58790e07bbfe5ea70b4",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/closer-pending.stderr": "69d8f9a7bc0f611c82f3ec4961c39fbb5155ffe4b02677d511aaa47e48fd44ae",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/closer-pending.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/copier-pending.stderr": "3f95572ba34fcaac3026572d941b97911217fb4c59f4b5037de75675c5b7495b",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/copier-pending.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/delta-validation.json": "4fa752243fb3c6d0d376bdf47de6dac724c36e8014780fc34bd7bea7ba2dfb41",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/firstgate-and-AST-validation.json": "e09d5ac26500577e2a64a3d0ae8a32a89fe739e615710eda797d61b343e42347",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/intent.json": "e48a486f1d427a354578857bfa193f79d20cc8190764f268ae8c29317ae94352",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/loader-pending.stderr": "4ed9a46cf046eec921ecfee4aa2791d3a127d69bf707e0dc21a5e4fa82c6c851",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/loader-pending.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/pytest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/pytest.stdout": "1af40c49f25815cc43199390723eca0ea305a38da96d85981d7ae68d66a97f6f",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/release.pending.json": "1db800abf05e47a6ff806f585095c2020e05e9f6d7b2c1bb3acc71557f9c8ee6",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/reproduce_assets.py": "ad41d693ddcaede90c4a4b0bd58ce81e518d3c7ebe210a0acf87d590a19e0046",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/ruff.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/ruff.stdout": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "data/runs/lab/phase11-v32-checkout-reproduction-publication-v1/preparation/source-preparation-v2/zero_generation_validate_v2.py": "e6303815b7bf7088d4704063375d700f7c69dc77589bd89a2bd70168d6168b37"
+  },
+  "Native_calls_during_reproduction_and_publication": 0,
+  "semantic_Health_format_quality_adoption_claimed": false,
+  "gate11_passed": false,
+  "phase12_started": false
+}
