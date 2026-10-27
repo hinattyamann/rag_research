@@ -1,6 +1,10 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.84 — 2026年10月27日 v27 CUDA再発の保全と実行条件の切分け
+## Version 7.85 — 2026年10月27日 Flash Attention OFF候補v28の正式事前登録
+
+2026-10-27 16:51 JST現在: 新v28はFAauto→offだけの計算条件変更で、実ID0499a611e9ec8369e5c1958b2ce0e4d25e9095e72aeca6fe13f769e593db982e。[正式事前登録](../data/manifests/phase11_semantic_v28_preregistration_v1.json) SHA e51661318468b95ad28e7689cfdee0b735c0f7ea21ca7481239141b09b3ef68fへ64監査成果・19入力・新形式10を固定した。[実行契約v2](phase11_cuda_execution_v2.md)はCore2/Sampler executionを新Hashへ結び、Model/Runtimeビルド/Prompt15/Schema/4096/batch128/全90入力・Expected・基準を保つ。全1107 Test（36.11秒）/Ruff、有限producer24 Test/実Guard1回、監査v2のmonitor/Source/witness拒否16 Testが成功。旧監査v1の不足は実新出力前に保存・修正し、旧形式出力の採用再利用0。固定Commit専用Checkoutの再現と、生成0→形式10→因果NS2→帰属C2→Rewrite2全文品質→全90→新鮮Known84はこれからで、新Native0・採用未証明。元Main/予約Cal・最終凍結/Gate11未達、Goal active・Phase12未開始。
+
+### Version 7.84 — 2026年10月27日 v27 CUDA再発の保全と実行条件の切分け
 
 2026-10-27 16:32 JST追記: v27失敗の[全72返却・部分監査](../data/manifests/phase11_v27_semantic_partial_result_v1.json)を正式保存した（SHA fc02f34714a8b0d303d8bf2764e8eb3df10dfecae06dbaa7e9e8993b189c29dc）。Raw139・224監査成果・旧6629保存証拠を照合し、全72全文/理由の実AI監査539.881375秒を結合。観測72中のExpected確定70に対しexact68、C–NS混同2・理由の範囲懸念を保存し、全90精度/未知outputはnull・Known16不適格を維持する。支援AI容量による最終通知失敗時点で全72レビューは保存済みで、追加timer/再採点/別モデル回避は0。次v28の実Identityは0499a611e9ec8369e5c1958b2ce0e4d25e9095e72aeca6fe13f769e593db982e、FAoff実行契約の関連86 Testと新全1107 Test（36.11秒）/Ruffは成功した。まだ正式事前登録/専用Checkout/新Nativeは未実施。Goal active・Main/Cal/Gate11未達・Phase12未開始。
 

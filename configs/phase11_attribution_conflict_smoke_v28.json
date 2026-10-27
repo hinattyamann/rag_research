@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-runtime-smoke-v3",
+  "source": {
+    "path": "configs/phase11_semantic_diagnostics_v28.json",
+    "sha256": "055c3d659f28b5e90ef5aeaa2ee10ebb89728d96a0b3d672321d72ab338159df"
+  },
+  "targets": [
+    {
+      "case_id": "known-council",
+      "claim_id": "c4",
+      "order": "original"
+    },
+    {
+      "case_id": "known-council",
+      "claim_id": "c4",
+      "order": "reversed"
+    }
+  ],
+  "maximum_calls": 2,
+  "automatic_retries": 0,
+  "phase12_allowed": false,
+  "rationale": "Runtime-only FA off v28 rechecks the same complete fixed probes under explicit execution-v2; Model/Prompt15/common4096 and all inputs/offlineExpected/targets remain unchanged. Preserve rejected v27 and never resend its unknown request or infer adoption from startup health."
+}

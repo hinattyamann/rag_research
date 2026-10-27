@@ -104,6 +104,17 @@ def execution_kwargs(config):
     execution = config.get("execution")
     if execution is None:
         return {}
+    if isinstance(execution, dict) and execution.get("version") == "cuda-execution-v2":
+        expected = {"runtime_spec", "gpu_layers", "device", "require_full_offload",
+                    "version", "flash_attention"}
+        if (set(execution) != expected
+                or not isinstance(execution["runtime_spec"], str)
+                or execution["runtime_spec"] not in {"configs/lab_cuda_runtime.json", GRAPH_OFF_SPEC}
+                or type(execution["gpu_layers"]) is not int or execution["gpu_layers"] != 99
+                or execution["device"] != "CUDA0" or execution["require_full_offload"] is not True
+                or execution["flash_attention"] != "off"):
+            raise ValueError("Unsupported explicit GPU execution v2 conditions")
+        return {"execution": execution}
     if (not isinstance(execution, dict)
             or execution.get("runtime_spec") not in {"configs/lab_cuda_runtime.json", GRAPH_OFF_SPEC}
             or execution != {"runtime_spec": execution.get("runtime_spec"), "gpu_layers": 99,

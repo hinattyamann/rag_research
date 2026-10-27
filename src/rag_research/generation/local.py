@@ -194,6 +194,8 @@ class LocalServer:
         ]
         if self.execution:
             self.command.extend(["--device", self.execution["device"], "--log-verbosity", "4"])
+            if self.execution.get("version") == "cuda-execution-v2":
+                self.command.extend(["--flash-attn", "off"])
         if not self.config.repack:
             self.command.append("--no-repack")
         if self.jinja:
@@ -234,6 +236,7 @@ class LocalServer:
                 proof = self.offload_report()
                 if not proof["full_gpu_offload"]:
                     raise GenerationError("CUDA execution did not offload all layers; preserve server log")
+                self.execution_profile_report()
             self.startup_seconds = time.perf_counter() - started
             return self
         except BaseException:
@@ -279,7 +282,33 @@ class LocalServer:
             "server_context_tokens": self.props["default_generation_settings"]["n_ctx"],
             **({"execution": self.execution, "runtime": self.runtime,
                 **self.offload_report()} if self.execution else {}),
+            **({"execution_profile_validation": self.execution_profile_report()}
+               if self.execution and self.execution.get("version") == "cuda-execution-v2" else {}),
         }
+
+    def execution_profile_report(self):
+        """Prove explicit FA off before output; old execution has no new condition.
+
+        In pinned Source50569eb, explicit disabled sets flash_attn=False and
+        auto_fa=False. The auto resolver therefore emits no "disabled" message.
+        Require the actual context setting and reject contradictory enablement.
+        """
+        if not self.execution or self.execution.get("version") != "cuda-execution-v2":
+            return {}
+        self.log_file.flush()
+        log = self.log_path.read_text(encoding="utf-8", errors="replace")
+        states = re.findall(r"llama_context:\s+flash_attn\s*=\s*(\S+)", log)
+        contexts = re.findall(r"llama_context:\s+n_ctx\s*=\s*(\d+)", log)
+        if (not states or any(state != "disabled" for state in states)
+                or re.search(r"Flash Attention enabled|\benabling flash_attn\b", log)):
+            raise GenerationError("CUDA execution v2 did not prove Flash Attention off; preserve server log")
+        if not contexts or any(int(value) != self.config.context_tokens for value in contexts):
+            raise GenerationError("CUDA execution v2 actual context log differs from fixed config")
+        return {"version": "cuda-execution-v2", "flash_attention": "off",
+                "actual_context_flash_attn": states,
+                "actual_context_tokens": [int(value) for value in contexts],
+                "enabled_or_auto_context_observed": False,
+                "proof": "Explicit disabled implies flash_attn=False/auto_fa=False in pinned Source50569eb; no auto-resolution message required"}
 
     def __exit__(self, *_):
         if self.process is not None and self.process.poll() is None:
