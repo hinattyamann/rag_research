@@ -1,5 +1,7 @@
 # 研究のフェーズ・現在地・次に行うこと
 
+2026-10-27 12:09 JST最新: v25を5043c165へCommit/PushしてRemote一致、新固定WTの323資産/専用uv58/実Identity/全Hashを再現。全90入力の生成0は最大3644＋6144/12288・33層CUDA・Call0で通過。Judge Smoke2は両NS・Health2/2・未知0、Rewrite Smoke2も全文の訂正/言語/引用/余分な断定除去とHealth2/2を実監査した。追加0再読/独立copy/全Native/Schema/Sampler1024を確認。終端14 Runの累積は1083試行/旧未知3、Native12036.670826秒。固定5043c16・Handle63497/run_id phase11-v3-v25-semanticで全39QA/45文/78条件/90Callを12:09:26JSTから実行中（有限90/22720秒/個別1200秒/Retry0/監視5秒）。起動パス誤記は未開始/Call0で保存して正しい入口から開始、重複起動していない。稼働WTを編集せず、全90採否は未確定。新鮮Known84・元Main各20・予約Cal各20・Gate11/最終凍結は未達、Goal active、Phase12未開始。以下は各観測時点の履歴。
+
 2026-10-27 11:38 JST最新: Fetch後main/origin/mainは8c17f85で差0/0。全11 Run終端・実験プロセス不在を確認し、同チャットのGoal activeを継承した。v24の全90入力生成0は通過、Judge Smoke2は未知0/Health2/2だが日英ともNS→Cで不採用。全意味90・新Known84は未実施のまま保存、累積1079試行/旧未知3。新v25は原因の非排他性を補うPrompt v14＋共通reasoning1024の共同変更であり、Rewriteにも影響する。Core94を保つ独立v3書換えSmoke入口と35 Testを追加し、全979 Test/Ruff・独立レビューを通過。新候補Native0、次は新固定Commit/専用WTへ全資産を再現し、全90入力生成0→JudgeSmoke2→日英一回書換えSmoke2/全文品質監査→意味90→新鮮Known84/全監査。実採用後だけ元Main各20/全封印・実証明→予約Cal各20/全封印→実測N/最終Validator/Manifest/Hashへ進む。Main/Cal/Gate11未達、Phase12未開始。以下は各観測時点の履歴。
 
 2026-10-26 21:36 JST最新: Known12全84/30条件を同固定f0/Handle17686で完走し、未知0/失敗0・支持57/58・非支持14/16で不採用を保存中。全84機械監査/追加0再読/実Main準備Gate拒否・原Raw119独立コピーを確認した。別候補v24/汎用関係端点Prompt v13は旧70入力/Expected不変＋日英独立10文元逆20＝90Callと、新鮮全Known84を必要とする。新Native0、全944Test/Ruff成功。新候補は生成0→別入力Smoke2→意味90→新Known84の順に、別固定Commit/WT・有限Plan/共有v3台帳で実施する。旧909/未知3と今回Known不合格を消さず、累積1077/未知3。Main/Cal・Gate11未達、Goal active、Phase12未開始。

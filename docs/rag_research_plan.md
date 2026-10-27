@@ -2,6 +2,8 @@
 
 ## Version 7.80 — 2026年10月27日 v24不採用保存と共同変更候補v25
 
+12:09 JST追記: 固定5043c16の資産/環境/実Identity再現、全90入力生成0、日英JudgeSmoke2の両NSと全監査、日英RewriteSmoke2の全品質/Native監査が通過した。現在同固定WTのHandle63497で新鮮な全90意味検証を実行中。共同変更の影響と実費を保存し、Smokeだけで意味採用とせず、全90→新鮮Known84/各90%・被覆→元Main/予約Cal/両言語全封印→最終凍結の順を維持する。稼働WT不変、Main/Cal/Gate11未達、Phase12未開始。
+
 11:38 JST現在、v24の生成0全90入力は通過したが、別入力の日英Judge Smoke2は両方NSをCと判定し、不採用とした。Health2/2・未知0だけでは意味採用に進めず、全意味90とKnown84は未実施のまま保存する。入力2383/出力7161 Token・Native141.556498秒、旧909を含む累積1079試行・未知3。結果と累積費用は`phase11_v24_smoke_result_v1.json`と`phase11_autonomy_cumulative_cost_v6.json`へ保存した。旧失敗・未使用枠は変更しない。
 
 新候補v25は、原因の併存可能性を明示するJudge Prompt v14と、共通reasoning budget4096→1024の共同変更である。IDは`2044ad1b52556b4cfa8d16ba2667a2bfea77163e7fc4fca9bd032fc69c48df74`。Rewriteの指示は不変だが実推論予算も1024になるため、別の架空日英各1例の一回書換えSmokeと全文品質監査を追加する。Prompt単独の効果を主張しない。Core94/Model/Graph OFF Runtime/Schema/その他Sampler/全90入力・Expected・分母/元Known全84/F0.7/支持・非支持各90%/被覆/盲検条件は維持する。旧形式10の再利用はoverride後128/512の境界形式条件だけに限定し、新Judge・Rewriteの意味やHealthへ流用しない。全979 Test/Ruffは成功、新候補のNativeは0。次は別固定Commit/Checkoutで生成0→JudgeSmoke2→RewriteSmoke2→全意味90→新鮮Known84。Main/Cal・Gate11は未達、Goal active、Phase12未開始。

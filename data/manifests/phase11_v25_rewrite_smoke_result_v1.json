@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v25-actual-bilingual-rewrite-smoke-result",
+  "audit_version": 2,
+  "stopped_generation_zero_audit_attempts": 1,
+  "recorded_at_utc": "2026-10-27T03:06:09.340730+00:00",
+  "candidate_identity_sha256": "2044ad1b52556b4cfa8d16ba2667a2bfea77163e7fc4fca9bd032fc69c48df74",
+  "fixed_commit": "5043c16524b436b54d98884b37b5f933b3e9854b",
+  "registered_run_plan_sha256": "5354d150f639d1d5e44ae75270f56f0c12d52e26bfdb2570d2643bc9cb282291",
+  "native_calls": 2,
+  "runtime_health_passed": true,
+  "offline_full_text_quality_passed": true,
+  "quality_scope_is_invented_development_smoke_only": true,
+  "rows": [
+    {
+      "case_id": "en-rewrite-synthetic-time-extra",
+      "task_sha256": "68456012725361bedfcba2142d964f2df00cf1f255cb6b8425935409777d69ad",
+      "input_tokens": 634,
+      "output_tokens": 1153,
+      "final_answer_tokens": 21,
+      "task_seconds": 23.3015508929966,
+      "native_seconds": 23.225542,
+      "native_payload_matches": true,
+      "expected_not_passed_to_inference": true,
+      "cached_replay_native_calls": 0,
+      "reasoning_boundary": {
+        "budget": 1024,
+        "tokens_before_end_marker": 1033,
+        "budget_message_tokens": 10,
+        "full_response_tokens": 1153,
+        "includes_runtime_budget_message_when_forced": true,
+        "reasoning_prefill_mode": "chatml_think_suffix_v1",
+        "native_generation_prompt_verified": true,
+        "prefilled_opening_marker_excluded_from_generated_tokens": true
+      }
+    },
+    {
+      "case_id": "ja-rewrite-synthetic-time-extra",
+      "task_sha256": "4e83fa06795155910edfa892bb2c5498ee893f4e7410f7d523b7e0fe82c27823",
+      "input_tokens": 663,
+      "output_tokens": 1176,
+      "final_answer_tokens": 25,
+      "task_seconds": 23.682777957001235,
+      "native_seconds": 23.594851,
+      "native_payload_matches": true,
+      "expected_not_passed_to_inference": true,
+      "cached_replay_native_calls": 0,
+      "reasoning_boundary": {
+        "budget": 1024,
+        "tokens_before_end_marker": 1033,
+        "budget_message_tokens": 10,
+        "full_response_tokens": 1176,
+        "includes_runtime_budget_message_when_forced": true,
+        "reasoning_prefill_mode": "chatml_think_suffix_v1",
+        "native_generation_prompt_verified": true,
+        "prefilled_opening_marker_excluded_from_generated_tokens": true
+      }
+    }
+  ],
+  "costs": {
+    "input_tokens": 1297,
+    "output_tokens": 2329,
+    "task_seconds": 46.98432884999784,
+    "native_seconds": 46.820392999999996,
+    "run_wall_seconds": 71.01966426998843,
+    "AI_joint_review_seconds": 62.815345,
+    "audit_seconds": 5.855466201028321,
+    "overlapping_time_scopes_not_additive": true,
+    "external_paid_api_calls": 0,
+    "electricity_cost_currency": null
+  },
+  "raw_files_sha256": {
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke/session.json": "acb553c415e13306aa30b5a3d0bac702489d8e3a70fbdfeba78fedb9570d177b",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke/.run.lock": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke/manifest.json": "52144346e213bd20d02dfea0f43a204cdd919d05bd94456fa29b447bd648c53f",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke/report.json": "d3686b2d0d74d70b4a4763fec8180f0e98cd298289c7acb05190b5557377f642",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke/server.log": "3fdac6dd48ef30260bb9e6f1ef1edff56f9023f7e874c106c9de30837fd79799",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke/ja-rewrite-synthetic-time-extra.json": "4e83fa06795155910edfa892bb2c5498ee893f4e7410f7d523b7e0fe82c27823",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke/en-rewrite-synthetic-time-extra.json": "68456012725361bedfcba2142d964f2df00cf1f255cb6b8425935409777d69ad"
+  },
+  "audit_artifacts_sha256": {
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke-audit-v1/quality-timing-start.json": "b0277fb716f6432b1647d9ce56023f42211bdec53a4bc2ffe01de855947e0b1b",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke-audit-v1/audit.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke-audit-v1/audit_v2.py": "ad770c57bfc561dff39c4ed5127cfcc3808fc30b8f881eea90766c55478b9ab3",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke-audit-v1/terminal-ledger-row.json": "caa606ece5401c34e1edec7d48a41ff2a4b73745d0a1cc1dce48ef7adbc49059",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke-audit-v1/audit.stderr": "77553487df46cd70fc19ec4ee6cccbdf6db5605e731fc58984251f22ab05e84c",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke-audit-v1/full2-quality-review.json": "065f44c3a6e727d72ec7fdfd6fabf85589ea795f3a0bfab6ff7a991c3eddb5ba",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke-audit-v1/stopped-audit-attempt-1/audit.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke-audit-v1/stopped-audit-attempt-1/audit_phase11_v25_rewrite.py": "e02ce2a708537615eefe5fa32e651550961442e9726608e02b5b74630cb46b43",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke-audit-v1/stopped-audit-attempt-1/failure.json": "85ac3774d6de7a72aac9affc032e7a6ba49279745de218428a6ee3a9bff82a78",
+    "data/runs/runtime_screening/phase11-v3-v25-rewrite-smoke-audit-v1/stopped-audit-attempt-1/audit.stderr": "77553487df46cd70fc19ec4ee6cccbdf6db5605e731fc58984251f22ab05e84c"
+  },
+  "source_core_files_verified": 94,
+  "source_manifest_files_verified": 95,
+  "monitor_samples": 15,
+  "independent_copy_and_original_unchanged": true,
+  "cached_replay_native_calls": 0,
+  "new_native_calls_during_audit": 0,
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "candidate_semantic_adoption_claimed": false,
+  "gate11_passed": false,
+  "phase12_started": false,
+  "offline_guard": {
+    "subprocess_attempts": 0,
+    "socket_attempts": 0,
+    "reserved_QA_open_attempts": 0
+  }
+}

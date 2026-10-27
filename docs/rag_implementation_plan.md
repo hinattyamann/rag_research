@@ -2,6 +2,8 @@
 
 ## Version 8.83 — 2026年10月27日 v24監査保存とv25書換え検証入口
 
+12:09 JST追記: 固定5043c16へ323資産を再現し、専用GPU uv58環境で実load/identityと全Hash/cleanに通過。実生成0は全90/max3644/33CUDA/Call0、Judge2とRewrite2も全Native/Schema/入力/1024budget/費用/全文意味・品質を監査し、原本不変・独立copy・追加0再読を確認した。Rewrite監査のテンプレートを裸JSONと見なした初回失敗を保存し、監査v2だけを追加0で修正/通過した。終端14 Runの費用v7は新174/成功162/未検証返却12/未知0、旧込み1083/旧未知3・入力341549/出力601137/Native12036.670826秒。全90の有限Plan SHA91e816281c35a6a57168e7d0f8a1c442c6b9dcb758971cefda57ed1ed4904a63を共有台帳へ登録し、現在Handle63497で実行中。最初のuv path誤記は登録済み未開始/Call0で保存して修正、二重登録/再生成なし。新鮮Known84/実Main/Cal/最終Validatorは未実施である。
+
 11:38 JST現在、v24の全90入力生成0とJudge Smoke2の全Raw/Schema/Native Sampler/Token/独立copy/費用を監査した。生成0最大3413入力＋6144出力予約は12288以内、全33層CUDA。Smokeは2応答/未知0だが日英ともExpected NSに対しCのため、事前規則に従い全意味90へ進めず不採用とした。前候補を成功するまで繰り返さず、別v25を登録する。共有v3台帳は全11 Run終端、新170試行/成功158/未検証返却12/Health失敗0/未知0、旧909を含め1079試行/旧未知3。Task11911.984004秒とNative11944.901842秒、監視壁12154.239746秒は重なる尺度であり加算しない。外部従量API0、電気代換算は未測定/null。
 
 v25はPrompt v14＋共通推論予算1024の共同変更で、94 Coreと既存Guardは不変。新`run_phase11_rewrite_smoke_v3.py`は専用入口として、実行所有者/PID/create time/期限/固定Commit/共有v3台帳/実argv/全Identityを既存`validate_plan`で再照合し、架空日英2入力だけを既存`rewrite_once`へ渡す。Expectedはofflineだけに保持し、推論はQ・全文回答・全文根拠だけを使用、各1回/Retry0/個別1200秒/壁1800秒/監視5秒。Health通過だけで品質を採用せず、全生成文・言語・引用・余分な断定の別監査を必要とする。新35 Testを含む全979 Test（32.75秒）/Ruff成功、独立レビューに未解決P1/P2なし。正式有限PlanはCommit後の専用CheckoutからHashを照合して生成・共有台帳へ登録し、生成0→JudgeSmoke2→RewriteSmoke2→全90→新Known84の順を守る。実v25 Native/Main/Cal/最終凍結は未実施、Gate11未通過、Phase12未開始。
