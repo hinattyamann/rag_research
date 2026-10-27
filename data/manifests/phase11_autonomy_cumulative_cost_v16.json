@@ -1,0 +1,305 @@
+{
+  "schema_version": 2,
+  "purpose": "phase11-autonomy-v3-cumulative-cost-v16",
+  "recorded_at_utc": "2026-10-27T11:01:40.559873+00:00",
+  "autonomy_protocol_version": "phase11-autonomy-v3",
+  "closed_runs": 30,
+  "legacy_attempts": 909,
+  "legacy_unknown": 3,
+  "legacy_unused_calls_not_reallocated": true,
+  "totals": {
+    "attempts": 337,
+    "successful": 313,
+    "failed": 0,
+    "unknown": 2,
+    "observed_input_tokens": 700900,
+    "observed_output_tokens": 1015308,
+    "known_task_seconds": 20436.771671858558,
+    "known_native_seconds": 20496.807576,
+    "task_failures": 0,
+    "unvalidated_returned": 22,
+    "cumulative_attempts": 1246,
+    "cumulative_unknown": 5,
+    "new_wall_seconds": 21083.81700717582,
+    "cost_incomplete": true,
+    "external_paid_api_calls": 0,
+    "electricity_cost_currency": null,
+    "legacy_success_failure_and_cost_not_reconstructed": true
+  },
+  "new_native_reservations": 337,
+  "new_native_returned": 335,
+  "new_native_unknown": 2,
+  "new_total_output_tokens": null,
+  "unknown_reservations": [
+    {
+      "sequence": 73,
+      "state": "unknown",
+      "started_at_utc": "2026-10-27T06:58:20.594493+00:00",
+      "payload_sha256": "89fc0f71e43ef721d803bdb2b23b0442a252ffa2b08aa3e83eea5d39410bc336",
+      "prompt_sha256": "72e4134da91d479906cc7795b3757dcd8a30a2627e482d3c48eb0173f3ffada5",
+      "input_tokens": 1696,
+      "requested_output_tokens": 6144,
+      "timeout_seconds": 1200,
+      "caller_pid": 439629,
+      "output_tokens": null,
+      "native_response_sha256": null,
+      "finished_at_utc": "2026-10-27T06:58:26.848320+00:00",
+      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "elapsed_seconds": 6.253827
+    },
+    {
+      "sequence": 48,
+      "state": "unknown",
+      "started_at_utc": "2026-10-27T09:25:35.431237+00:00",
+      "payload_sha256": "f20e53b6ac99fde894e83f11417bccbcc6f083ed18a7d77c5e799e807173c845",
+      "prompt_sha256": "398e1c8c317b51cfbbb69d2675fce2fbe1e48278f3313e74e9aa61004bdb7c77",
+      "input_tokens": 1659,
+      "requested_output_tokens": 6144,
+      "timeout_seconds": 1200,
+      "caller_pid": 467852,
+      "output_tokens": null,
+      "native_response_sha256": null,
+      "finished_at_utc": "2026-10-27T09:25:46.072833+00:00",
+      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "elapsed_seconds": 10.641596
+    }
+  ],
+  "known_returned_native_seconds": 20479.912153,
+  "unknown_request_elapsed_seconds_component": 16.895423,
+  "ledger_known_native_seconds_is_all_observed_request_elapsed": 20496.807576,
+  "old29_closed_rows_unchanged": true,
+  "old20_guard_files_unchanged": true,
+  "all_attempted_input_observed_output_Task_Native_wall_sums_reconciled": true,
+  "new_v29_scope": "Tokenizer0 failed first full input witness; tags roundtrip passed but rendered reasoning prefill absent. Native0, no unknown added, no retry. No kernel stability or semantic adoption proof.",
+  "additional_stage_cost": {
+    "stage_wall_seconds": 10.268416896928102,
+    "startup_seconds": 5.0935386039782315,
+    "tokenizer_HTTP_and_CPU_work_nonzero": true,
+    "tokenizer_only_duration_seconds": null,
+    "Native_seconds": 0,
+    "completion_tokens": 0,
+    "startup_and_monitor_resource_snapshot": {
+      "startup_seconds": 5.0935386039782315,
+      "sampled_peak_python_rss_bytes": 56594432,
+      "sampled_peak_server_rss_bytes": 5024337920,
+      "sampled_peak_combined_rss_bytes": 5037547520,
+      "minimum_available_ram_bytes": 3914559488,
+      "sampling_interval_seconds": 0.1,
+      "command": [
+        "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v29-9949f89/data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/llama-server",
+        "--model",
+        "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v29-9949f89/data/models/Qwen3-8B-GGUF/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q4_K_M.gguf",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "35341",
+        "--ctx-size",
+        "12288",
+        "--parallel",
+        "1",
+        "--threads",
+        "6",
+        "--threads-batch",
+        "6",
+        "--gpu-layers",
+        "99",
+        "--batch-size",
+        "128",
+        "--ubatch-size",
+        "128",
+        "--cache-ram",
+        "0",
+        "--no-context-shift",
+        "--offline",
+        "--device",
+        "CUDA0",
+        "--log-verbosity",
+        "4",
+        "--flash-attn",
+        "off",
+        "--no-repack",
+        "--jinja"
+      ],
+      "runtime_version": "version: 0.6.0-dev (build 11433, commit 50569eb87df530daff11afda229ceb9ab8e6cae8)\nbuilt with GNU 13.3.0 for Linux x86_64",
+      "server_context_tokens": 12288,
+      "execution": {
+        "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+        "gpu_layers": 99,
+        "device": "CUDA0",
+        "require_full_offload": true,
+        "version": "cuda-execution-v2",
+        "flash_attention": "off"
+      },
+      "runtime": {
+        "schema_version": 2,
+        "tag": "b11433",
+        "source_commit": "50569eb87df530daff11afda229ceb9ab8e6cae8",
+        "backend": "Ubuntu-x64-CUDA-12.9-graph-off-source-v1",
+        "directory": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1",
+        "build": {
+          "registration": {
+            "path": "data/manifests/phase11_cuda_graph_off_build_registration_v2.json",
+            "sha256": "a80b3036688dbcd4d7105f6d7b8a44e62a1aa372ad7ebd8a0aa2e42e3daa0896"
+          },
+          "source_provenance": {
+            "path": "data/runs/runtime_build/phase11-cuda-graph-off-v2/source_provenance.json",
+            "sha256": "7860f71eaf13ee9212c36f51183ed457016be7a5b1c3644f750b92f6cefcf6e7"
+          },
+          "cmake_cache": {
+            "path": "data/runs/runtime_build/phase11-cuda-graph-off-v2/build/CMakeCache.txt",
+            "sha256": "f76d1397cb0066ac06c445dab6991a340a9e8d6eaa7c6bfaa34b53b1c06f3c5f"
+          }
+        },
+        "cmake_options": {
+          "CMAKE_BUILD_TYPE": "Release",
+          "CMAKE_CUDA_COMPILER": "/usr/local/cuda-12.9/bin/nvcc",
+          "CUDAToolkit_ROOT": "/usr/local/cuda-12.9",
+          "CMAKE_CUDA_ARCHITECTURES": "120a-real",
+          "GGML_CUDA": "ON",
+          "GGML_CUDA_GRAPHS": "OFF",
+          "LLAMA_BUILD_TESTS": "OFF",
+          "LLAMA_BUILD_EXAMPLES": "OFF",
+          "LLAMA_BUILD_APP": "OFF",
+          "LLAMA_OPENSSL": "OFF",
+          "LLAMA_BUILD_UI": "OFF",
+          "LLAMA_USE_PREBUILT_UI": "OFF",
+          "LLAMA_BUILD_SERVER": "ON",
+          "LLAMA_BUILD_TOOLS": "ON",
+          "LLAMA_BUILD_NUMBER": "11433",
+          "LLAMA_BUILD_COMMIT": "50569eb87df530daff11afda229ceb9ab8e6cae8"
+        },
+        "system_libraries": [
+          {
+            "source": "/usr/local/cuda-12.9/lib64/libcudart.so.12.9.79",
+            "name": "libcudart.so.12",
+            "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7"
+          },
+          {
+            "source": "/usr/local/cuda-12.9/lib64/libcublas.so.12.9.1.4",
+            "name": "libcublas.so.12",
+            "sha256": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048"
+          },
+          {
+            "source": "/usr/local/cuda-12.9/lib64/libcublasLt.so.12.9.1.4",
+            "name": "libcublasLt.so.12",
+            "sha256": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541"
+          }
+        ],
+        "old_runtime_modified": false,
+        "phase12_allowed": false,
+        "specification_sha256": "d18d6efe8b769a0ddb081ca41d1f4d63fa7a0b6551fd2bbfeea1a77d8b7fb0d5",
+        "server": "bin/llama-server",
+        "files": {
+          "bin/libcublas.so.12": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048",
+          "bin/libcublasLt.so.12": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541",
+          "bin/libcudart.so.12": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7",
+          "bin/libggml-base.so": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+          "bin/libggml-base.so.0": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+          "bin/libggml-base.so.0.26.0": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+          "bin/libggml-cpu.so": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+          "bin/libggml-cpu.so.0": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+          "bin/libggml-cpu.so.0.26.0": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+          "bin/libggml-cuda.so": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+          "bin/libggml-cuda.so.0": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+          "bin/libggml-cuda.so.0.26.0": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+          "bin/libggml.so": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+          "bin/libggml.so.0": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+          "bin/libggml.so.0.26.0": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+          "bin/libllama-cli-impl.so": "b2a8258ea020b616b95eb3c8d6a86afff16e8f81e5be5129f44327431cb4f4d4",
+          "bin/libllama-common.so": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+          "bin/libllama-common.so.0": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+          "bin/libllama-common.so.0.6.0": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+          "bin/libllama-server-impl.so": "6e4ec475238226091f3c61eb57ee1ee37df9291885e86cf47d39f9539b44a45b",
+          "bin/libllama.so": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+          "bin/libllama.so.0": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+          "bin/libllama.so.0.6.0": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+          "bin/libmtmd.so": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+          "bin/libmtmd.so.0": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+          "bin/libmtmd.so.0.6.0": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+          "bin/llama-cli": "659465db4397442b851d7509c590334b513ee5bd5baa32b5980beb0469fd4eb3",
+          "bin/llama-server": "e8dc25cdeef9898959e73e58cb79eef964011ea76bd5d919baf3ba373adbfb0a"
+        },
+        "cuda_compile_commands": 144,
+        "cuda_graph_macro_absent_from_all_cuda_commands": true,
+        "source_files_verified": 3689,
+        "source_archive_sha256": "10af4d51ee5c29566e1f2899752d12ea41004554ceff7a91ca931b0ace48bc93"
+      },
+      "actual_gpu_offload": true,
+      "offloaded_layers": 37,
+      "total_layers": 37,
+      "full_gpu_offload": true,
+      "execution_profile_validation": {
+        "version": "cuda-execution-v2",
+        "flash_attention": "off",
+        "actual_context_flash_attn": [
+          "disabled"
+        ],
+        "actual_context_tokens": [
+          12288
+        ],
+        "enabled_or_auto_context_observed": false,
+        "proof": "Explicit disabled implies flash_attn=False/auto_fa=False in pinned Source50569eb; no auto-resolution message required"
+      }
+    },
+    "scopes_overlap_do_not_sum": true
+  },
+  "immutable_ledger_snapshot": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v16/ledger.json",
+    "sha256": "f2757388d064d0b02f44b01018afcbea0f408ee90172940e017384a0b45ea218"
+  },
+  "audit_implementation": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v16/audit_source.py",
+    "sha256": "a9c2acb6635fad570f1e4aaba20f26761031fd47f7f34a59c88fbde4fe238d5f"
+  },
+  "native_guard_files_sha256": {
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-runtime-smoke/native_guard/calls.json": "e16ce5fc5bbea1e62507d00d993a35d1387c54bba1d7d21ee80a082370154624",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-format/native_guard/calls.json": "d6971537665425b4c3e9867a7f4d21031b1392547d88593a1b2687f9f76c3dd8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-semantic/native_guard/calls.json": "2264ce0d084ee082145592a51ee94c32b00ecb9b818f27daf5068a5cf3a2066d",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-baseline-smoke/native_guard/calls.json": "55148b868d0e832e3cfbe3b1624322bd5e50378967d95ed89d044e5fec6d20bf",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v12-known/native_guard/calls.json": "1546000d71f49d82062300cad0e81b79d4b9bff14d5586107b85faca5c8b5bcb",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-smoke/native_guard/calls.json": "46329eb7f7d7d6593f1a2b833aaac13239bc712b246f5e9af812e41ffa7c9204",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-smoke/native_guard/calls.json": "a38d71bbd09054087303a9f592935ca4476fbc032a2cd6db610d1f44d72dc8d2",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-rewrite-smoke/native_guard/calls.json": "e427670673c9d898eed3d81c449090bfcdc861c34e00602f96fdb7ae59d43fa3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-semantic/native_guard/calls.json": "baf4f1136fdeffc6cf99271f698c986c3e119409bf67ae09f49d47d29c547fb8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-smoke/native_guard/calls.json": "caaee498e19ffef80523bf752414ff7fe482ced3a9aeea12b784cd7eca294ce4",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-attribution-smoke/native_guard/calls.json": "05e32390ba72a508adb8d3c39cabf3cfc6bf939bc2dbc4d2dcb6d44042e8aed8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-smoke/native_guard/calls.json": "e864213e57df8f4e9f71f9149c9c6035bef5154b148c6bbc4ba6d2855d558fa3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-attribution-smoke/native_guard/calls.json": "ccfc348d1d65189cce3c86d867ac3579365ad78fd37937b03acfcc7d0c8a14c3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-rewrite-smoke/native_guard/calls.json": "0d53d91902b505cedc4efa51311d4d0042bce7ce7b487ed423c54ae852812acd",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-semantic/native_guard/calls.json": "8035f116500dede502fab56fba3615b92ebbe7c1420be56caa21977ec2f1ed57",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-format/native_guard/calls.json": "49f61e6a5c7a3edfdccc0ec64ec9170f919969c7fabd75e05a7a8918a89b289b",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-smoke/native_guard/calls.json": "ccc2d1a3801286b5cee6084555c1dda1be71f7a74b8c53236fdf35c05b396018",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-attribution-smoke/native_guard/calls.json": "129468e9922af64a5421da69f89532618093d391f610dfa25cbecfefbb0e6814",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-rewrite-smoke/native_guard/calls.json": "7777dbb57c479a4ef98073591be09aa5c5133776ed5ddde3caad5b8c52dbd11e",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-semantic/native_guard/calls.json": "d77ec576b34d39f2af44cf0069ee1237f09d725b80002a621be983548750aefa"
+  },
+  "bindings": [
+    {
+      "path": "data/manifests/phase11_autonomy_cumulative_cost_v15.json",
+      "sha256": "7c14c509b5456d98516100d563a66b33cd81fa9e06c43c0eab977c1624adba6e"
+    },
+    {
+      "path": "data/manifests/phase11_v29_tokenizer_preflight_failure_v1.json",
+      "sha256": "48a022bfd6b6ac531c6637f8d7d28a1bda3b7d146788de836330d327deaea962"
+    }
+  ],
+  "artifacts_sha256": {
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v16/audit_source.py": "a9c2acb6635fad570f1e4aaba20f26761031fd47f7f34a59c88fbde4fe238d5f",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v16/copy-receipt.json": "e42e4ca56b22d05281f7450752189b64772723aaaa20c1498bfd4be8e15f1a66",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v16/ledger.json": "f2757388d064d0b02f44b01018afcbea0f408ee90172940e017384a0b45ea218",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v16/tokenizer-preflight-root-terminal-authorization.json": "08ac3fb67649436798bd7c1fb9bac3d7fbe7d6b8ad6094badb76d4ddfe06c9b8",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v16/tokenizer-preflight-terminal-row.json": "e3171efa57984f3fd066ba31b947fcede169231c7f763c6dbe7a72d3ba4cb382"
+  },
+  "cost_scopes": "Task/Native/wall/startup overlap; never sum. Observed Native includes unknown elapsed6.253827+10.641596=16.895423; unknown output totals remain null. Tokenizer stage Native0 has nonzero startup/tokenizer/resource costs. Build/reproduction/AI/audit costs remain separate; electricity/provider actual billing unknown. Paid external inference API calls0.",
+  "audit_boundary_counts": {
+    "Native": 0,
+    "process_starts": 0,
+    "socket_operations": 0,
+    "Model_body_reads": 0,
+    "Main_Cal_Evaluation_body_opens": 0
+  },
+  "new_native_calls_during_audit": 0,
+  "audit_elapsed_seconds_before_publication": 0.11183097306638956,
+  "gate11_passed": false,
+  "phase12_started": false
+}
