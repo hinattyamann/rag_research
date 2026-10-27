@@ -14,6 +14,35 @@ SPEC = ROOT / "configs/lab_cuda_runtime.json"
 GRAPH_OFF_SPEC = "configs/lab_cuda_graph_off_runtime_v1.json"
 GRAPH_OFF_BACKEND = "Ubuntu-x64-CUDA-12.9-graph-off-source-v1"
 FIXED_SOURCE_COMMIT = "50569eb87df530daff11afda229ceb9ab8e6cae8"
+PARTIAL_GPU_VERSION = "cuda-execution-v3-partial"
+PARTIAL_GPU_MODEL_MANIFEST = "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json"
+PARTIAL_GPU_MODEL_MANIFEST_SHA256 = "acadda5c012105a454b07ee95d406a217fe0aab8f498f3988bf44de36ebade65"
+PARTIAL_GPU_MODEL_ENTRYPOINT = (
+    "data/models/Unsloth-Qwen3.5-9B-GGUF/3885219b6810b007914f3a7950a8d1b469d598a5/"
+    "Qwen3.5-9B-Q6_K.gguf"
+)
+PARTIAL_GPU_MODEL_SHA256 = "91898433cf5ce0a8f45516a4cc3e9343b6e01d052d01f684309098c66a326c59"
+
+
+def partial_gpu_model_path():
+    """Bind this narrow profile to fixed Q6 metadata without rehashing the GGUF.
+
+    Auxiliary loading and the candidate identity verify actual Model contents.
+    This additional binding prevents direct LocalServer use with another path.
+    """
+    path = ROOT / PARTIAL_GPU_MODEL_MANIFEST
+    if file_hash(path) != PARTIAL_GPU_MODEL_MANIFEST_SHA256:
+        raise ValueError("Partial GPU model manifest hash differs")
+    manifest = read_json(path)
+    if (manifest.get("entrypoint") != PARTIAL_GPU_MODEL_ENTRYPOINT
+            or manifest.get("model_id") != "unsloth/Qwen3.5-9B-GGUF"
+            or manifest.get("quantization") != "Q6_K"
+            or manifest.get("runtime_options") != {"jinja": True}
+            or manifest.get("files") != [{"path": PARTIAL_GPU_MODEL_ENTRYPOINT,
+                                         "bytes": 7458301152,
+                                         "sha256": PARTIAL_GPU_MODEL_SHA256}]):
+        raise ValueError("Partial GPU fixed Q6 model metadata differs")
+    return (ROOT / PARTIAL_GPU_MODEL_ENTRYPOINT).resolve()
 
 
 def _spec_path(spec_path=None):
@@ -104,6 +133,19 @@ def execution_kwargs(config):
     execution = config.get("execution")
     if execution is None:
         return {}
+    if isinstance(execution, dict) and execution.get("version") == PARTIAL_GPU_VERSION:
+        expected = {"runtime_spec": GRAPH_OFF_SPEC, "gpu_layers": 16, "device": "CUDA0",
+                    "require_full_offload": False, "version": PARTIAL_GPU_VERSION,
+                    "flash_attention": "off", "expected_total_layers": 33,
+                    "model_manifest": PARTIAL_GPU_MODEL_MANIFEST}
+        if (execution != expected or type(execution.get("gpu_layers")) is not int
+                or type(execution.get("expected_total_layers")) is not int
+                or execution.get("require_full_offload") is not False
+                or config.get("auxiliary_model_manifest", PARTIAL_GPU_MODEL_MANIFEST)
+                != PARTIAL_GPU_MODEL_MANIFEST):
+            raise ValueError("Unsupported explicit GPU execution v3 partial conditions")
+        partial_gpu_model_path()
+        return {"execution": execution}
     if isinstance(execution, dict) and execution.get("version") == "cuda-execution-v2":
         expected = {"runtime_spec", "gpu_layers", "device", "require_full_offload",
                     "version", "flash_attention"}

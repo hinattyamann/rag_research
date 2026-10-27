@@ -28,7 +28,12 @@ from rag_research.experiments.protocol import task_config
 from rag_research.experiments.quality import cost
 from rag_research.experiments.storage import read_json, run_lock, verify_checkpoint
 from rag_research.generation.auxiliary import auxiliary_identity
-from rag_research.generation.cuda_runtime import execution_identity
+from rag_research.generation.cuda_runtime import (
+    PARTIAL_GPU_VERSION,
+    execution_identity,
+    execution_kwargs,
+)
+from rag_research.generation.local import partial_gpu_log_profile
 from rag_research.retrieval.common import file_hash
 
 SOURCE_ROOT = Path(__file__).resolve().parents[3]
@@ -212,7 +217,11 @@ def resource_sessions(run, manifest):
             ("baseline", manifest["baseline"], manifest["baseline"]["generation"]["context_tokens"]),
             ("internal", manifest["config"], manifest["config"]["auxiliary_runtime"]["context_tokens"])):
         expected = execution_identity(config)
-        require(expected.get("execution", {}).get("require_full_offload") is True,
+        partial = expected.get("execution", {}).get("version") == PARTIAL_GPU_VERSION
+        if partial:
+            require(stage == "internal", "Partial GPU execution is restricted to the internal auxiliary stage")
+            execution_kwargs(config)
+        require(partial or expected.get("execution", {}).get("require_full_offload") is True,
                 "Main certificate requires explicit CUDA execution")
         directory = run / stage
         sessions = sorted(directory.glob("session-*.json"))
@@ -224,7 +233,16 @@ def resource_sessions(run, manifest):
             log = path.with_name(path.name.replace("session-", "server-").replace(".json", ".log")).read_text("utf-8")
             layers = re.findall(r"offloaded (\d+)/(\d+) layers to GPU", log)
             actual = tuple(map(int, layers[-1])) if layers else (0, 0)
-            require(all(saved.get(k) == v for k, v in expected.items()) and saved["server_context_tokens"] == context and
+            if partial:
+                proof = partial_gpu_log_profile(log, context)
+                require(all(saved.get(k) == v for k, v in expected.items()) and
+                        saved.get("server_context_tokens") == context and
+                        saved.get("actual_gpu_offload") is True and saved.get("full_gpu_offload") is False and
+                        (saved.get("offloaded_layers"), saved.get("total_layers")) == (16, 33) and
+                        saved.get("execution_profile_validation") == proof,
+                        "Main partial session differs from fixed Model/runtime or actual 16/33 FA-off CUDA proof")
+            else:
+                require(all(saved.get(k) == v for k, v in expected.items()) and saved["server_context_tokens"] == context and
                     saved["actual_gpu_offload"] is True and saved["full_gpu_offload"] is True and
                     actual == (saved["offloaded_layers"], saved["total_layers"]) and actual[0] == actual[1] > 0 and
                     re.search(r"using device CUDA\d+|CUDA\d+.*model buffer", log),

@@ -1,5 +1,7 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
+2026-10-27 23:47 JST追記: 部分GPUの[Coreソフトウェア検証](../data/manifests/phase11_partial_gpu_core_validation_v1.json) SHA3d2fba9048bf226d3a918bc06f28f87a95e66ef53094ee0c15999092ab4f7d53を保存した。新cuda-execution-v3-partialは固定9BQ6/GraphOFF/CUDA0/16of33/block32/FAoff/context・Model path/Jinjaを厳密検証し、Mainはinternalだけ許可、baselineの全層条件は維持する。現Core3と2反証testを独立review・Root全文diff/両test/旧実ログheaderで確認し、旧v1/v2のAST不変を保持。差分156pass2.73秒、全体1回1276pass＋sandbox socket失敗1件39.79秒、その旧1件だけHostでpass1/.52秒、Ruff成功を重複合算しない。初Ruffと環境失敗を保存し、実Model/Native0・新16of33実機Health未証明。33独立copy/35成果を封印した。新v33の正式Identity/Runは未発行、最終Validator v7はCore差で現行証拠へ代用せず別v8を準備する。Main/Cal/Gate11未達・Goal active・Phase12未開始。
+
 2026-10-27 23:39 JST追記: [累積費用v20](../data/manifests/phase11_autonomy_cumulative_cost_v20.json) SHAe24b9e4335ad73a8cd608fb032fae0c2f54d41472f083520addcacc556e58ee7を実発行・独立検算した。全41閉Run・旧38行/25Guard/未検証返却32を保存、新359試行357返却/未知2、旧込1268試行/確定未知5。観測input735890/output1023318・総output null、Native20640.602664秒/Task20556.613243884465秒/wall21406.195253131038秒は別scope。Rootも359予約/31binding等を0.018169199秒で追加検算した。v32は不採用、次[v33設計](phase11_semantic_v33_design_v1.md)は保存9BQ6/Prompt15/batch128を使い部分GPU16/33を別契約で検証する方針。新Identity/正式事前登録/実験は未発行。Main/Cal/Gate11未達、Goal active・Phase12未開始。
 
 2026-10-27 23:32 JST追記: [v32実結果](phase11_semantic_v32_result_v1.md)を不採用で確定した。生成0/NS2は通過したが、Council c4元逆2はHealth2/未知0・両S/Expected C・意味0of2（正式a3bbc4aa）。全10根拠/7固定文/全thinkingを読み、根拠先行配置でもPius Vの行為をCouncilへ帰属させる誤りが残った。実4試行/4応答/未知0、input11728/output1909/HTTP36.235706秒を保存。Rootは全41閉行/新3段階と各NS/C39小Hashを追加照合。Rewrite2/全90/Known20等を未使用で保全、同条件再送0。次候補はModel/実行条件を含めて切分け、元Expected/基準を維持する。Main/Cal/Gate11未達・Goal active・Phase12未開始。
@@ -26,7 +28,7 @@
 
 2026-10-27 21:43 JST追記: v31の[正式事前登録](../data/manifests/phase11_semantic_v31_preregistration_v1.json) SHA2c8ad584be7a9b03db123f0e08252d892197d270b6113e0d5d64bae50a49e6f3を発行した。75canonical成果/21正式入力、Prompt16のみのIDdbb9830fとCore94/他5成分不変、旧v30不採用・費用v18・未使用枠、旧IDを保持するTokenizer11/人工形式10の厳格再利用証明361222d4を結合した。意味結果の再利用0。23差分test/.11秒と5stage構築/前段反証1.406401307秒、Root全publisher208行/72原Hashの実読照合後、一回実出版（tool.073648223秒）でNative0。Root関連37test3.99秒・新終端認可6test.02秒/Ruffも通過、旧全1203testは不変Sourceに基づき再利用した。新実入力生成0→NS2→帰属C2→Rewrite2全文品質→全90→新鮮Known84は固定Commit専用WTの実再現後に行う。出版後独立確認/Commit/実再現・新実Runは次工程で、Main/Cal/最終Gate11未達、Goal active・Phase12未開始。
 
-## Version 7.89 — 2026年10月27日 根拠先行レイアウト候補v32
+## Version 7.90 — 2026年10月27日 部分GPUの別実行契約と候補v33
 
 2026-10-27 21:36 JST追記: v30不採用を保存してPush ef5f89f3e91e4daa65e1cca9db7f8bb645a862b1/Remote一致を確認した。次[v31条件](phase11_semantic_v31_preregistration_v1.md)はJudge Prompt16だけの変更、新実IDdbb9830fc366b8b1631ce8d1feab90403810ad9bb0086f655a08c4ba60ab12e3、他5成分/Core94不変。実Identity構築4.306858006秒/GGUFHash1、関連37test3.99秒、独立Promptレビューd3429359は追加P1/P2なし。新全90payload/21正式入力の独立生成0監査bc5779baはSource/Expected/user JSON不変・systemのみ変更・全strict境界0を確認した。不変のTokenizer11/人工形式10は元v30のID/context/実Rawを保持した別再利用証明361222d4be47d6802d82fac24bedad392b92af0c8801b509a2e6ca28b6c34742へ結合し、全old artifacts/五成分/人工messages・設定・Schema/Source/31immutable現statを実照合、意味Native再利用0。証明の実child0.321450467秒/tool0.263951534秒は別観測で包含や加算を仮定しない。新Native0で、正式事前登録・固定Checkout再現・新Prompt入力90の実token収容→新NS/C/Rewrite品質→全90→新鮮Known84はこれから。Main/Cal/Gate11未達、Goal active・Phase12未開始。
 
@@ -108,7 +110,7 @@
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.92](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.93](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 

@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v33-partial-GPU-Core-software-validation-preserved",
+  "recorded_at_utc": "2026-10-27T14:45:56.634524+00:00",
+  "source_sha256": {
+    "src/rag_research/generation/cuda_runtime.py": "6ccece79f1e9cebb30bcf5be3b6fe840100c325a79f4368710ff92f0cec9c2b3",
+    "src/rag_research/generation/local.py": "d7ffa2458c38cdb81ff9d3429c96f65bfd4fb9f8e6df06dcb81b7f21aabc60ac",
+    "src/rag_research/experiments/bilingual_certification.py": "a69be6a024470c61e6f4553692106211d1ded292839c48d850c0ce88c6168d3b",
+    "tests/test_cuda_execution_v3_partial.py": "81a2ec897ae2f863d37157c1657d8ec011f88f93f26421e45026efaefef83d96",
+    "tests/test_bilingual_partial_gpu_certification.py": "fceaec7f426c2d21a87183d39d715714ec454a2d1b11d7e82895edc75b44f059"
+  },
+  "original_author_validation": {
+    "path": ".tools/draft-artifacts/phase11-v33-partial-gpu-core-preparation-v1/validation-result.json",
+    "sha256": "0a4d39ba12c2ac5388628de898a5f29710ea948dfc18fd3b9096f4dcd5ec115f"
+  },
+  "canonical_author_validation": {
+    "path": "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/validation-result.json",
+    "sha256": "0a4d39ba12c2ac5388628de898a5f29710ea948dfc18fd3b9096f4dcd5ec115f"
+  },
+  "independent_Source_review": {
+    "path": "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/independent/review.json",
+    "sha256": "e006f013f02741887c4361a59cf444bd27dcb110df05ba9639429eebe8a43db5"
+  },
+  "Root_review": {
+    "full_current_Core3_diff_read": true,
+    "both_new_test_files_read": true,
+    "actual_old_v28_log_metadata_syntax_checked": true,
+    "actual_v33_GPU_log_or_session_available": false,
+    "tool_chunks": [
+      "2481ae",
+      "660ea8",
+      "3cf2d3"
+    ],
+    "human_reviewed": false,
+    "history_isolated": false,
+    "exact_model_identifier": null,
+    "user_reported_setting": "6.1 Sol 極高"
+  },
+  "tests": {
+    "runs": 1,
+    "exit_code": 1,
+    "passed": 1276,
+    "failed": 1,
+    "pytest_seconds": 39.79,
+    "failure": "Unchanged tests/generation/test_baseline.py::test_server_startup_failure_closes_owned_process_and_log fails at socket.socket creation in sandbox before new profile branch",
+    "log": "full-pytest.stdout"
+  },
+  "isolated_Host_recheck": {
+    "exit_code": 0,
+    "log": "host-single-pytest.stdout",
+    "scope": "Only the environmental failure; real loopback socket plus owned Python interpreter as deliberately invalid server. No actual LLM/Model/GPU. No full-suite rerun."
+  },
+  "targeted": {
+    "result": "156 passed",
+    "pytest_seconds": 2.73,
+    "log": "targeted-v2-pytest.stdout"
+  },
+  "final_ruff": {
+    "exit_code": 0,
+    "log": "ruff-final.stdout"
+  },
+  "no_double_count_of_overlapping_tests": true,
+  "software_contract_validation_passed": true,
+  "actual_partial_GPU_Runtime_verified": false,
+  "scientific_adoption_authorized": false,
+  "Main_Cal_certificates_proven": false,
+  "Native": 0,
+  "Model_Runtime_body_hashes": 0,
+  "gate11_passed": false,
+  "phase12_started": false,
+  "Root_small_hash_copy_component_seconds_before_seal": 0.006810905993916094,
+  "copy_receipt": {
+    "path": "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/independent-copy-receipt.json",
+    "sha256": "e9d564c1a66f33d7308ccef30dca51b30fed983b9416fa044ffc5eb10f1017a8"
+  },
+  "canonical_seal": {
+    "path": "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/SHA256SUMS",
+    "sha256": "f57c3a1d8b8eaff749d0f8264e946ad2153b7e422b05cfbea97a2c0c86d8f244"
+  },
+  "artifacts_sha256": {
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/SHA256SUMS": "f57c3a1d8b8eaff749d0f8264e946ad2153b7e422b05cfbea97a2c0c86d8f244",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/IMPLEMENTATION-INTENT.json": "4f1dc1311121351365724b22b7110f055820c840602afadd5a9d17b31ea310ce",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/IMPLEMENTATION-SCOPE-ADDENDUM.json": "bb2f08d3bce689ac4bc9759448a42f4f2b663ea62c8979ed56c76e28e6512f14",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/README.md": "142c9a631027518bf35d814cb5cdaf3119bcee42fbb1dca7ef9fbe762811c38d",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/SHA256SUMS": "d5289d6f3ed26deccc9aab0c63989046186942e50858a6e98ecf79bf9acd706d",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/bilingual_certification.py": "a69be6a024470c61e6f4553692106211d1ded292839c48d850c0ce88c6168d3b",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/bilingual_certification.py.before": "77a19ec484ff962124e16a72ff4a9aeeb6d4d2619a886d5489930e1480e006e6",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/cuda_runtime.py": "6ccece79f1e9cebb30bcf5be3b6fe840100c325a79f4368710ff92f0cec9c2b3",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/cuda_runtime.py.before": "5f47bd21160a8605c287a368aaa545724595e8aff8e605a9c97f4f1a6a9647db",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/full-pytest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/full-pytest.stdout": "d4be8eae040afdb7f9e3664931d490412e4d2be409ce4884608bf5a5dc2d829c",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/host-single-pytest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/host-single-pytest.stdout": "0cddb2f9522c5fc98e9503738cea759bed811b3ad3b391083a46a5d5f403e174",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/independent-review.json": "e006f013f02741887c4361a59cf444bd27dcb110df05ba9639429eebe8a43db5",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/local.py": "d7ffa2458c38cdb81ff9d3429c96f65bfd4fb9f8e6df06dcb81b7f21aabc60ac",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/local.py.before": "53708682d4de3ff67d2db674e09d972fea3f36c3159dfdd09cc12db4636f1097",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/ruff-final.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/ruff-final.stdout": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/ruff-initial.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/ruff-initial.stdout": "2525c934efe78f57ef45cdf06a25b26b3c3b2bcb31474a3b90d502b7eb687152",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/targeted-pytest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/targeted-pytest.stdout": "6ae89830538fe6e1f9e14548fd443733812513aadc0b7295a9c28b35f0ad9f13",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/targeted-v2-pytest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/targeted-v2-pytest.stdout": "ff9db567c506bec284cdf67f5413c24544c4d4575345fbc9eb3659192c764e2d",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/test_bilingual_partial_gpu_certification.py": "fceaec7f426c2d21a87183d39d715714ec454a2d1b11d7e82895edc75b44f059",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/test_cuda_execution_v3_partial.py": "81a2ec897ae2f863d37157c1657d8ec011f88f93f26421e45026efaefef83d96",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/author/validation-result.json": "0a4d39ba12c2ac5388628de898a5f29710ea948dfc18fd3b9096f4dcd5ec115f",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/current-Source/src/rag_research/experiments/bilingual_certification.py": "a69be6a024470c61e6f4553692106211d1ded292839c48d850c0ce88c6168d3b",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/current-Source/src/rag_research/generation/cuda_runtime.py": "6ccece79f1e9cebb30bcf5be3b6fe840100c325a79f4368710ff92f0cec9c2b3",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/current-Source/src/rag_research/generation/local.py": "d7ffa2458c38cdb81ff9d3429c96f65bfd4fb9f8e6df06dcb81b7f21aabc60ac",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/current-Source/tests/test_bilingual_partial_gpu_certification.py": "fceaec7f426c2d21a87183d39d715714ec454a2d1b11d7e82895edc75b44f059",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/current-Source/tests/test_cuda_execution_v3_partial.py": "81a2ec897ae2f863d37157c1657d8ec011f88f93f26421e45026efaefef83d96",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/independent/SHA256SUMS": "8bdfe0c6d2395b190088d7ae81bd8fa93a00dc25b87ce52a455f5d55a5474c66",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/independent/review.json": "e006f013f02741887c4361a59cf444bd27dcb110df05ba9639429eebe8a43db5",
+    "data/runs/lab/phase11-v33-partial-gpu-core-validation-v1/independent-copy-receipt.json": "e9d564c1a66f33d7308ccef30dca51b30fed983b9416fa044ffc5eb10f1017a8"
+  }
+}

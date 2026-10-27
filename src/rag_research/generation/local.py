@@ -19,7 +19,12 @@ from rag_research.generation.auxiliary_config import (
     FINAL_JSON_TRIGGER_PATTERN,
     THINK_PREFILL,
 )
-from rag_research.generation.cuda_runtime import execution_kwargs, verify_cuda_runtime
+from rag_research.generation.cuda_runtime import (
+    PARTIAL_GPU_VERSION,
+    execution_kwargs,
+    partial_gpu_model_path,
+    verify_cuda_runtime,
+)
 from rag_research.generation.json_grammar import closing_tag_grammar
 
 
@@ -127,6 +132,36 @@ class LlamaClient:
         return self.request("/completion", payload)
 
 
+def partial_gpu_log_profile(log, context_tokens):
+    """Pure actual-log validation shared by startup and completed certificates."""
+    offloads = re.findall(r"offloaded (\d+)/(\d+) layers to GPU", log)
+    devices = re.findall(r"using device (\S+)", log)
+    architectures = re.findall(r"general\.architecture\s+str\s*=\s*(\S+)", log)
+    blocks = re.findall(r"qwen35\.block_count\s+u32\s*=\s*(\d+)", log)
+    layers = re.findall(r"print_info:\s+n_layer_all\s*=\s*(\d+)", log)
+    if (not offloads or any(pair != ("16", "33") for pair in offloads)
+            or not devices or any(device != "CUDA0" for device in devices)
+            or not architectures or any(value != "qwen35" for value in architectures)
+            or not blocks or any(value != "32" for value in blocks)
+            or not layers or any(value != "32" for value in layers)):
+        raise GenerationError("Partial GPU execution did not prove fixed Q6 16/33 CUDA0 offload")
+    states = re.findall(r"llama_context:\s+flash_attn\s*=\s*(\S+)", log)
+    contexts = re.findall(r"llama_context:\s+n_ctx\s*=\s*(\d+)", log)
+    if (not states or any(state != "disabled" for state in states)
+            or re.search(r"Flash Attention enabled|\benabling flash_attn\b", log)):
+        raise GenerationError("Partial GPU execution did not prove Flash Attention off")
+    if not contexts or any(int(value) != context_tokens for value in contexts):
+        raise GenerationError("Partial GPU execution actual context log differs from fixed config")
+    return {"version": PARTIAL_GPU_VERSION, "requested_gpu_layers": 16,
+            "expected_total_layers": 33, "actual_offload_records": [[int(a), int(b)] for a, b in offloads],
+            "actual_devices": devices, "model_architecture": "qwen35", "model_block_count": 32,
+            "actual_gpu_offload": True, "offloaded_layers": 16, "total_layers": 33,
+            "full_gpu_offload": False, "flash_attention": "off",
+            "actual_context_flash_attn": states, "actual_context_tokens": [int(value) for value in contexts],
+            "enabled_or_auto_context_observed": False,
+            "proof": "Pinned Q6 metadata plus every actual CUDA0 16/33 offload, qwen35/32-block, explicit FA-off and context log record"}
+
+
 class LocalServer:
     """Start one verified server, measure both processes, and always stop owned process."""
 
@@ -138,6 +173,9 @@ class LocalServer:
             raise ValueError("Jinja setting must be boolean")
         self.jinja = jinja
         self.model_path = Path(model_path).resolve() if model_path is not None else None
+        if self.execution and self.execution.get("version") == PARTIAL_GPU_VERSION:
+            if self.model_path != partial_gpu_model_path() or not self.jinja:
+                raise ValueError("Partial GPU execution requires the fixed Q6 Model path and Jinja")
         self.log_path = log_path
         self.process = None
         self._stop = threading.Event()
@@ -194,7 +232,7 @@ class LocalServer:
         ]
         if self.execution:
             self.command.extend(["--device", self.execution["device"], "--log-verbosity", "4"])
-            if self.execution.get("version") == "cuda-execution-v2":
+            if self.execution.get("version") in {"cuda-execution-v2", PARTIAL_GPU_VERSION}:
                 self.command.extend(["--flash-attn", "off"])
         if not self.config.repack:
             self.command.append("--no-repack")
@@ -234,7 +272,9 @@ class LocalServer:
                 raise GenerationError("Actual server context differs from fixed config")
             if self.execution:
                 proof = self.offload_report()
-                if not proof["full_gpu_offload"]:
+                if self.execution.get("version") == PARTIAL_GPU_VERSION:
+                    self.partial_gpu_profile_report()
+                elif not proof["full_gpu_offload"]:
                     raise GenerationError("CUDA execution did not offload all layers; preserve server log")
                 self.execution_profile_report()
             self.startup_seconds = time.perf_counter() - started
@@ -284,7 +324,15 @@ class LocalServer:
                 **self.offload_report()} if self.execution else {}),
             **({"execution_profile_validation": self.execution_profile_report()}
                if self.execution and self.execution.get("version") == "cuda-execution-v2" else {}),
+            **({"execution_profile_validation": self.partial_gpu_profile_report()}
+               if self.execution and self.execution.get("version") == PARTIAL_GPU_VERSION else {}),
         }
+
+    def partial_gpu_profile_report(self):
+        """Require every actual offload/Model record to match this 16-of-33 profile."""
+        self.log_file.flush()
+        log = self.log_path.read_text(encoding="utf-8", errors="replace")
+        return partial_gpu_log_profile(log, self.config.context_tokens)
 
     def execution_profile_report(self):
         """Prove explicit FA off before output; old execution has no new condition.

@@ -15,3 +15,5 @@ v30/v31/v32の8B候補ではCouncilの誤支持が残ったため、意味判定
 旧47返却のHTTP2567.091079/47=54.618959秒は9B全層時の参考値。90 Callの参考4915.706321秒、係数2なら9831.412643秒で、部分GPUの速度保証ではない。新Smoke後、全90開始前に意味結果を選別せず資源/時間の見積りだけ更新できる。新費用・Model Hash・資源値は未計測。旧失敗費用と未知を保存し、電気代/AI実費はnull、外部従量APIへ切り替えない。
 
 支持Recall/非支持Specificity各0.90・最低被覆・Health・全固定本文/全分母・F0.7・順序/反復・一回書換え・未使用Group・全採点封印を維持する。Evaluation本文/回答/結果を読まない。Main日英20ずつ、独立Cal20ずつ、最終N/統計/欠測/停止規則・実Validator/Manifest/Hash/Gate11は未了。Phase12を開始しない。
+
+2026-10-27 23:47 JST追記: 部分GPUの[Coreソフトウェア検証](../data/manifests/phase11_partial_gpu_core_validation_v1.json) SHA3d2fba9048bf226d3a918bc06f28f87a95e66ef53094ee0c15999092ab4f7d53を保存した。新cuda-execution-v3-partialは固定9BQ6/GraphOFF/CUDA0/16of33/block32/FAoff/context・Model path/Jinjaを厳密検証し、Mainはinternalだけ許可、baselineの全層条件は維持する。現Core3と2反証testを独立review・Root全文diff/両test/旧実ログheaderで確認し、旧v1/v2のAST不変を保持。差分156pass2.73秒、全体1回1276pass＋sandbox socket失敗1件39.79秒、その旧1件だけHostでpass1/.52秒、Ruff成功を重複合算しない。初Ruffと環境失敗を保存し、実Model/Native0・新16of33実機Health未証明。33独立copy/35成果を封印した。新v33の正式Identity/Runは未発行、最終Validator v7はCore差で現行証拠へ代用せず別v8を準備する。Main/Cal/Gate11未達・Goal active・Phase12未開始。
