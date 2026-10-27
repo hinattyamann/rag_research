@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-autonomy-v3-cumulative-cost-v9",
+  "recorded_at_utc": "2026-10-27T04:42:06.965354+00:00",
+  "autonomy_protocol_version": "phase11-autonomy-v3",
+  "closed_runs": 18,
+  "legacy_attempts": 909,
+  "legacy_unknown": 3,
+  "legacy_unused_calls_not_reallocated": true,
+  "totals": {
+    "attempts": 194,
+    "successful": 182,
+    "failed": 0,
+    "unknown": 0,
+    "observed_input_tokens": 407640,
+    "observed_output_tokens": 636118,
+    "known_task_seconds": 12733.322227019875,
+    "known_native_seconds": 12763.513216,
+    "task_failures": 0,
+    "unvalidated_returned": 12,
+    "cumulative_attempts": 1103,
+    "cumulative_unknown": 3,
+    "new_wall_seconds": 13115.899025640043,
+    "cost_incomplete": false,
+    "external_paid_api_calls": 0,
+    "electricity_cost_currency": null,
+    "legacy_success_failure_and_cost_not_reconstructed": true
+  },
+  "all194_native_reservations_returned": true,
+  "input_output_and_Native_seconds_sums_reconciled": true,
+  "immutable_ledger_snapshot": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v9/ledger.json",
+    "sha256": "0ed9cb76c5e7f8feae6a7fe88040b143486819a7d007ea96a2d4af758d846b48"
+  },
+  "native_guard_files_sha256": {
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-runtime-smoke/native_guard/calls.json": "e16ce5fc5bbea1e62507d00d993a35d1387c54bba1d7d21ee80a082370154624",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-format/native_guard/calls.json": "d6971537665425b4c3e9867a7f4d21031b1392547d88593a1b2687f9f76c3dd8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-semantic/native_guard/calls.json": "2264ce0d084ee082145592a51ee94c32b00ecb9b818f27daf5068a5cf3a2066d",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-baseline-smoke/native_guard/calls.json": "55148b868d0e832e3cfbe3b1624322bd5e50378967d95ed89d044e5fec6d20bf",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v12-known/native_guard/calls.json": "1546000d71f49d82062300cad0e81b79d4b9bff14d5586107b85faca5c8b5bcb",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-smoke/native_guard/calls.json": "46329eb7f7d7d6593f1a2b833aaac13239bc712b246f5e9af812e41ffa7c9204",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-smoke/native_guard/calls.json": "a38d71bbd09054087303a9f592935ca4476fbc032a2cd6db610d1f44d72dc8d2",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-rewrite-smoke/native_guard/calls.json": "e427670673c9d898eed3d81c449090bfcdc861c34e00602f96fdb7ae59d43fa3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-semantic/native_guard/calls.json": "baf4f1136fdeffc6cf99271f698c986c3e119409bf67ae09f49d47d29c547fb8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-smoke/native_guard/calls.json": "caaee498e19ffef80523bf752414ff7fe482ced3a9aeea12b784cd7eca294ce4",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-attribution-smoke/native_guard/calls.json": "05e32390ba72a508adb8d3c39cabf3cfc6bf939bc2dbc4d2dcb6d44042e8aed8"
+  },
+  "bindings": [
+    {
+      "path": "data/manifests/phase11_autonomy_cumulative_cost_v8.json",
+      "sha256": "5f2d36d07d97262a838b49326940c415784a4081dd4879989ba9a42800bef669"
+    },
+    {
+      "path": "data/manifests/phase11_v26_checkout_reproduction_v1.json",
+      "sha256": "d7161dfcec99616fdc1d4832d4cb5d84ed8c2b3897c5aca39c1e53b76f8817e0"
+    },
+    {
+      "path": "data/manifests/phase11_v26_preflight_result_v1.json",
+      "sha256": "2664fbf6da845a208243985da5b27059d9bc8524fe701488b0861c4edc23fa3e"
+    },
+    {
+      "path": "data/manifests/phase11_v26_pre_native_metadata_stop_v1.json",
+      "sha256": "e266c3878b8cf6d67230784269c3b05235543787d1ad49cd3cb8d3ff070b522a"
+    },
+    {
+      "path": "data/manifests/phase11_v26_metadata_repair_result_v1.json",
+      "sha256": "65be10a7cbdc22189cc1ef494c25d7746fa9c474dcbc5883e1057019c728f2de"
+    },
+    {
+      "path": "data/manifests/phase11_v26_smoke_result_v1.json",
+      "sha256": "081f99239510a0886ee6cf09a365d7356919817bf6c6c30b7be1e04d8466b24a"
+    },
+    {
+      "path": "data/manifests/phase11_v26_attribution_smoke_result_v1.json",
+      "sha256": "b529ab848c3951e315c8a7e3e78f06716ade41e8cda6ddd5dc7eadeddc1ca59d"
+    }
+  ],
+  "v26_scopes": {
+    "causal_NS_smoke": {
+      "calls": 2,
+      "exact": 2,
+      "denominator": 2,
+      "health_failures": 0,
+      "unknown": 0
+    },
+    "attribution_C_smoke": {
+      "calls": 2,
+      "exact": 1,
+      "denominator": 2,
+      "health_failures": 0,
+      "unknown": 0,
+      "scientific_gate_passed": false
+    },
+    "rewrite_calls": 0,
+    "whole90_calls": 0,
+    "whole90_accuracy": null,
+    "freshKnown84_calls": 0,
+    "candidate_accepted": false
+  },
+  "pre_native_startup_rejection": {
+    "count_in_this_v26_work": 1,
+    "Native_attempts": 0,
+    "failed_execute_wall_seconds": null,
+    "separately_versioned_metadata_only_repair_preserves_original": true
+  },
+  "cost_scopes": "Task/Native/wall overlap and are not summed; Native0 preflight wall is included in supervisor wall. Build/preparation/AIreview/metadata repair and audit scopes are separate in bound results; failed execute/repair operation wall unmeasured null. No aggregate semantic accuracy is inferred from separate smoke scopes.",
+  "audit_elapsed_seconds": 0.010629249038174748,
+  "external_paid_api_calls": 0,
+  "electricity_cost_currency": null,
+  "legacy_full_cost_not_reconstructed": true,
+  "new_native_calls_during_audit": 0,
+  "gate11_passed": false,
+  "phase12_started": false
+}

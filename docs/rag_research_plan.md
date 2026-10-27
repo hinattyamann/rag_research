@@ -1,6 +1,12 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.82 — 2026年10月27日 生成0実証とNative未開始の配置修復Protocol
+## Version 7.83 — 2026年10月27日 v26帰属不採用とPrompt単一軸候補v27の事前登録
+
+2026-10-27 14:09 JST現在: v26は因果NS2通過後、帰属C2が元NS/逆CでExpected1/2のため不採用。全Raw/意味・費用監査を正式保存し、新194試行・旧込み1103/旧未知3を維持した。次v27はJudge Prompt14→15だけを変更し、Model/Graph OFF Runtime/共通reasoning4096/Schema/Core94/Rewrite・Extract/全90入力・Expected・基準を固定する。候補ID `a0d7d9a09eedc2182eb8443af0d5625012b4ab610c8fee040fec777cbdf18f2b`、正式事前登録[Manifest](../data/manifests/phase11_semantic_v27_preregistration_v1.json) SHA `e589422726c5d41a8bb83a0cfe5e3e297d80a1b950c8542fcd8eedde4f9514cd`。88監査成果・18入力・Core94とPromptのみの差を独立照合、全1065 Test（35.53秒）/Ruff成功。各Run有限予算・共有v3 Guardを維持し、300資産＋alias2の実Checkout再現、生成0→因果NS2→帰属C2→Rewrite2/全文品質→全90→新鮮Known84を必要とする。v27 Native0・意味未採用、Main/Cal/Gate11未達、Goal active・Phase12未開始。以下は観測時点ごとの履歴。
+
+### Version 7.82 — 2026年10月27日 生成0実証とNative未開始の配置修復Protocol
+
+2026-10-27 13:44 JST追記: 実修復はRoot bcd42dbのCommit/Push後に適用・独立再監査し、同登録Runの初回Nativeを実行した。v26因果NS2は2/2通過（理由末尾の断片/両forcedは留保）。次の元c4帰属C2は元NS/逆Cで固定Expected1/2、Health2/2/未知0でも不採用。4Call以外のRewrite/全90/新Known84は未開始、全90精度null。全Raw/全理由/thinking/Native/費用/旧証拠を監査保存し、18終端Run/新194/旧込1103/旧未知3・費用v9を照合。次v27は4096を保つPrompt単一軸の最小案を独立査読中で、Identity/正式登録/Nativeは未了。Main/Cal/Gate11未達、Goal active・Phase12未開始。
 
 13:18 JST現在、固定61f56adのv26は生成0全90・33/33層CUDA・152binding/94Core照合まで実証した。続くSmokeはRootの新結果Manifest配置誤りをclean GuardがNative前拒否した。旧登録/失敗証拠を保存し、新[未開始メタデータ修復v1](phase11_zero_output_metadata_repair_v1.md)を追加する。実開始/PID/予約/出力がない正確な登録行だけに、同Hashの完了証拠JSON2件のbinding.path移設を認め、候補・対象・予算・argv・固定Commit・condition fingerprintは変えない。旧Guard/Core94・旧台帳は保全し、共有OSlock内で全旧値・全Hash・cleanを再検証、元と変更後を別journalで明示保存する。研究目的/仮説/比較条件/基準/Expectedは不変であり、Native再抽選や一般resumeの許可ではない。
 
@@ -42,7 +48,7 @@
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.85](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.86](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 

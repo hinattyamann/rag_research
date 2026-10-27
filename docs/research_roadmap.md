@@ -1,5 +1,9 @@
 # 研究のフェーズ・現在地・次に行うこと
 
+2026-10-27 14:09 JST現在: v26は因果NS2通過後、帰属C2が元NS/逆CでExpected1/2のため不採用。全Raw/意味・費用監査を正式保存し、新194試行・旧込み1103/旧未知3を維持した。次v27はJudge Prompt14→15だけを変更し、Model/Graph OFF Runtime/共通reasoning4096/Schema/Core94/Rewrite・Extract/全90入力・Expected・基準を固定する。候補ID `a0d7d9a09eedc2182eb8443af0d5625012b4ab610c8fee040fec777cbdf18f2b`、正式事前登録[Manifest](../data/manifests/phase11_semantic_v27_preregistration_v1.json) SHA `e589422726c5d41a8bb83a0cfe5e3e297d80a1b950c8542fcd8eedde4f9514cd`。88監査成果・18入力・Core94とPromptのみの差を独立照合、全1065 Test（35.53秒）/Ruff成功。各Run有限予算・共有v3 Guardを維持し、300資産＋alias2の実Checkout再現、生成0→因果NS2→帰属C2→Rewrite2/全文品質→全90→新鮮Known84を必要とする。v27 Native0・意味未採用、Main/Cal/Gate11未達、Goal active・Phase12未開始。以下は観測時点ごとの履歴。
+
+2026-10-27 13:44 JST追記: 実修復はRoot bcd42dbのCommit/Push後に適用・独立再監査し、同登録Runの初回Nativeを実行した。v26因果NS2は2/2通過（理由末尾の断片/両forcedは留保）。次の元c4帰属C2は元NS/逆Cで固定Expected1/2、Health2/2/未知0でも不採用。4Call以外のRewrite/全90/新Known84は未開始、全90精度null。全Raw/全理由/thinking/Native/費用/旧証拠を監査保存し、18終端Run/新194/旧込1103/旧未知3・費用v9を照合。次v27は4096を保つPrompt単一軸の最小案を独立査読中で、Identity/正式登録/Nativeは未了。Main/Cal/Gate11未達、Goal active・Phase12未開始。
+
 2026-10-27 13:18 JST追記: v26実生成0とNative前停止証拠を保存し、同候補/全科学条件不変・Native未開始の2JSON参照先だけを直す別Protocol v1を正式化した。旧Guard/Core94は変えず、全1065 Test（34.49秒）/Ruffと実inspect（OSlock・Git読取8/Native0/WT・台帳無変更）に通過。旧Plan/失敗21証拠/台帳全Byteをpinし、重複・開始済・Native・出力・他の変更を拒否する。独立レビューも完了、Commit/Push後のRoot適用はまだ未実施、意味/新Known84/Main/Cal/Gate11未達、Goal active・Phase12未開始。
 
 2026-10-27 13:02 JST追記: 固定61f56adのv26専用WTで278資産＋alias/専用uv58/実IDを照合し、全90入力の生成0を通過した（20.625538秒、最大3644＋予約6144/12288、33/33層CUDA）。全152binding/Core94/Raw4独立copyを監査し、結果SHA2664fbf6da845a208243985da5b27059d9bc8524fe701488b0861c4edc23fa3eを保存。続く因果Smokeは登録済みだが、新結果Manifest4件をWTへ追加したRootの配置誤りによりclean GuardがNative前拒否した。Native0・元計画/ログ/台帳を保全し、生成結果メタデータの置き場所だけを変える別Version修復手順を検証中。Guardの除外・同条件再登録・黙った台帳変更は行わない。v26の意味採用は未了、Main/Cal/Gate11未達、Goal active・Phase12未開始。
@@ -22,7 +26,7 @@
 
 2026-10-26 18:24 JST追記: 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-更新日: 2026年10月27日。正本: [研究計画7.82](rag_research_plan.md)、[実装計画8.85](rag_implementation_plan.md)。
+更新日: 2026年10月27日。正本: [研究計画7.83](rag_research_plan.md)、[実装計画8.86](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。

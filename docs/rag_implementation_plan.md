@@ -1,6 +1,12 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.85 — 2026年10月27日 Native0・実行前の登録状態に限定した明示メタデータ修復
+## Version 8.86 — 2026年10月27日 Prompt15の全入力・有限Plan検証とv26実Raw監査保存
+
+2026-10-27 14:09 JST現在: v26は因果NS2通過後、帰属C2が元NS/逆CでExpected1/2のため不採用。全Raw/意味・費用監査を正式保存し、新194試行・旧込み1103/旧未知3を維持した。次v27はJudge Prompt14→15だけを変更し、Model/Graph OFF Runtime/共通reasoning4096/Schema/Core94/Rewrite・Extract/全90入力・Expected・基準を固定する。候補ID `a0d7d9a09eedc2182eb8443af0d5625012b4ab610c8fee040fec777cbdf18f2b`、正式事前登録[Manifest](../data/manifests/phase11_semantic_v27_preregistration_v1.json) SHA `e589422726c5d41a8bb83a0cfe5e3e297d80a1b950c8542fcd8eedde4f9514cd`。88監査成果・18入力・Core94とPromptのみの差を独立照合、全1065 Test（35.53秒）/Ruff成功。各Run有限予算・共有v3 Guardを維持し、300資産＋alias2の実Checkout再現、生成0→因果NS2→帰属C2→Rewrite2/全文品質→全90→新鮮Known84を必要とする。v27 Native0・意味未採用、Main/Cal/Gate11未達、Goal active・Phase12未開始。以下は観測時点ごとの履歴。
+
+### Version 8.85 — 2026年10月27日 Native0・実行前の登録状態に限定した明示メタデータ修復
+
+2026-10-27 13:44 JST追記: 実修復はRoot bcd42dbのCommit/Push後に適用・独立再監査し、同登録Runの初回Nativeを実行した。v26因果NS2は2/2通過（理由末尾の断片/両forcedは留保）。次の元c4帰属C2は元NS/逆Cで固定Expected1/2、Health2/2/未知0でも不採用。4Call以外のRewrite/全90/新Known84は未開始、全90精度null。全Raw/全理由/thinking/Native/費用/旧証拠を監査保存し、18終端Run/新194/旧込1103/旧未知3・費用v9を照合。次v27は4096を保つPrompt単一軸の最小案を独立査読中で、Identity/正式登録/Nativeは未了。Main/Cal/Gate11未達、Goal active・Phase12未開始。
 
 13:18 JST現在、新`configs/phase11_zero_output_metadata_repair_v1.json`と`scripts/phase11_zero_output_metadata_repair_v1.py`を正式化した。Protocol SHA22e5c3b17e4e6adc62a0d7baf740f43b29420a6a6204278f8c84f552c1002c6c、Source SHA668068e1954f1af4fcfd80b7283bba5aa8bcdecdca5e773d92d07f1f2a1377a3。今回のv26Smoke旧Plan/registered7field行/台帳全Byte/失敗21bindingと4metadataだけにpinし、2JSON binding.path以外の全Plan変更・実Native/出力/PID/開始記録・重複/partial journal・別汚れ・symlink・競合OSlockを拒否する。元証拠のexclusive保存が先行し、4fileはignoredのRun証拠置場へ移設、実v3全Hash検証と固定HEAD/clean成功後だけ同登録行へ明示amendmentをatomic適用する。Core94/Native入口/候補/予算/targetsは不変、一般resumeや同条件再登録を実装しない。
 
@@ -40,7 +46,7 @@ v25はPrompt v14＋共通推論予算1024の共同変更で、94 Coreと既存Gu
 
 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-[研究計画 Version 7.82](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.83](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 

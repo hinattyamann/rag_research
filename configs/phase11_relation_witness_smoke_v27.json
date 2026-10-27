@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-runtime-smoke-v3",
+  "source": {
+    "path": "data/manifests/phase11_relation_witness_smoke_inputs_v24.json",
+    "sha256": "48970c07f9860d086385d8a393fc7c2b12e70051b472a46aa0fbc5fa3b603213"
+  },
+  "targets": [
+    {
+      "case_id": "en-smoke-v24-relation-gap",
+      "claim_id": "c1",
+      "order": "original"
+    },
+    {
+      "case_id": "ja-smoke-v24-relation-gap",
+      "claim_id": "c1",
+      "order": "original"
+    }
+  ],
+  "maximum_calls": 2,
+  "automatic_retries": 0,
+  "phase12_allowed": false,
+  "rationale": "Prompt-only v27 adopts Judge15 with common4096 and all Model/Runtime/Schema/Core94 unchanged. Recheck both complete fixed causal NS probes after the Judge change; preserve v26 causal2/2 and rejected attribution1/2. No Source/Expected/target/budget change; require fresh full90 and Known84 before Main."
+}

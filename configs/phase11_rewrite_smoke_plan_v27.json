@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-synthetic-rewrite-smoke-v4",
+  "source": {
+    "path": "data/manifests/phase11_rewrite_smoke_inputs_v25.json",
+    "sha256": "c3ce4c42d20d46132188fba469dcf62e481e2a55a9337d4ff79f448dd35e0050"
+  },
+  "targets": [
+    "en-rewrite-synthetic-time-extra",
+    "ja-rewrite-synthetic-time-extra"
+  ],
+  "maximum_calls": 2,
+  "automatic_retries": 0,
+  "phase12_allowed": false,
+  "rationale": "v27 changes only Judge instructions to Prompt15; Rewrite/Extract task instructions, common4096, Model/Runtime/otherSampler remain unchanged. Keep the same v25 invented EN/JA full inputs/offlineExpected and two exact targets with v4 entry. Any required actual Rewrite2 is a separately registered finite run, with full quality/Health and no Gold/Expected in inference; no unchanged-condition retry or adoption is inferred here."
+}

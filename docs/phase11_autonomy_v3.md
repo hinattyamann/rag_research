@@ -1,5 +1,9 @@
 # Phase11 自律継続Protocol v3と新Runtime・意味候補
 
+2026-10-27 14:09 JST現在: v26は因果NS2通過後、帰属C2が元NS/逆CでExpected1/2のため不採用。全Raw/意味・費用監査を正式保存し、新194試行・旧込み1103/旧未知3を維持した。次v27はJudge Prompt14→15だけを変更し、Model/Graph OFF Runtime/共通reasoning4096/Schema/Core94/Rewrite・Extract/全90入力・Expected・基準を固定する。候補ID `a0d7d9a09eedc2182eb8443af0d5625012b4ab610c8fee040fec777cbdf18f2b`、正式事前登録[Manifest](../data/manifests/phase11_semantic_v27_preregistration_v1.json) SHA `e589422726c5d41a8bb83a0cfe5e3e297d80a1b950c8542fcd8eedde4f9514cd`。88監査成果・18入力・Core94とPromptのみの差を独立照合、全1065 Test（35.53秒）/Ruff成功。各Run有限予算・共有v3 Guardを維持し、300資産＋alias2の実Checkout再現、生成0→因果NS2→帰属C2→Rewrite2/全文品質→全90→新鮮Known84を必要とする。v27 Native0・意味未採用、Main/Cal/Gate11未達、Goal active・Phase12未開始。以下は観測時点ごとの履歴。
+
+2026-10-27 13:44 JST追記: 実修復はRoot bcd42dbのCommit/Push後に適用・独立再監査し、同登録Runの初回Nativeを実行した。v26因果NS2は2/2通過（理由末尾の断片/両forcedは留保）。次の元c4帰属C2は元NS/逆Cで固定Expected1/2、Health2/2/未知0でも不採用。4Call以外のRewrite/全90/新Known84は未開始、全90精度null。全Raw/全理由/thinking/Native/費用/旧証拠を監査保存し、18終端Run/新194/旧込1103/旧未知3・費用v9を照合。次v27は4096を保つPrompt単一軸の最小案を独立査読中で、Identity/正式登録/Nativeは未了。Main/Cal/Gate11未達、Goal active・Phase12未開始。
+
 2026-10-27 13:18 JST追記: v26実生成0とNative前停止証拠を保存し、同候補/全科学条件不変・Native未開始の2JSON参照先だけを直す別Protocol v1を正式化した。旧Guard/Core94は変えず、全1065 Test（34.49秒）/Ruffと実inspect（OSlock・Git読取8/Native0/WT・台帳無変更）に通過。旧Plan/失敗21証拠/台帳全Byteをpinし、重複・開始済・Native・出力・他の変更を拒否する。独立レビューも完了、Commit/Push後のRoot適用はまだ未実施、意味/新Known84/Main/Cal/Gate11未達、Goal active・Phase12未開始。
 
 2026-10-27 13:02 JST追記: v26生成0全90/33層CUDAと152binding/Core94/Raw4保存監査は成功。因果Smokeは登録後execute前のclean Guardで停止し、Native0・所有PIDなし・出力未作成。Rootが新実測Manifest4件を固定WTへ未追跡配置したことが原因で、実行条件やCUDA障害ではない。元計画/台帳/失敗ログを保存し、候補/対象/予算/argv/固定Commit不変・未開始/Native0/出力不存在だけに限定した別Versionのメタデータ配置修復を検証する。Git exclude/Guard無効化/同fingerprint再登録/黙った台帳置換は認めない。まだ修復/Smokeの成功とは扱わない。

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-runtime-smoke-v3",
+  "source": {
+    "path": "configs/phase11_semantic_diagnostics_v27.json",
+    "sha256": "ea34d658adc4b7bc7881b869591b5eba4826e01d28e4cd0523276ea2d500e1d9"
+  },
+  "targets": [
+    {
+      "case_id": "known-council",
+      "claim_id": "c4",
+      "order": "original"
+    },
+    {
+      "case_id": "known-council",
+      "claim_id": "c4",
+      "order": "reversed"
+    }
+  ],
+  "maximum_calls": 2,
+  "automatic_retries": 0,
+  "phase12_allowed": false,
+  "rationale": "Prompt-only v27 Judge15 tests the same complete Council c4 original/reversed conflict probes with unchanged Expected C and common4096. Preserve v26 originalNS/reversedC as rejected; source attribution, actor-in-capacity and event-boundary instruction changes are hypotheses, not proven improvements. Whole question/draft/all7fixedunits/all documents/IDs/Titles and both targets remain fixed."
+}
