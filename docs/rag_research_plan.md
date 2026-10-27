@@ -1,5 +1,13 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
+2026-10-27 22:22 JST追記: [v31実Checkout再現](../data/manifests/phase11_v31_checkout_reproduction_v1.json) SHAf4f6267b652f60d2c87f2b7af3d48c03d36979c5acff45b12e536d1e81af6c44を一回出版し、全58成果・781資産・19 aliases・31 immutable・56独立出版copyのpostcheckに通過した。実初認可/初Plan作成が正式出版より先で、登録/実Runより出版が先という時系列を明記した。uvの実warning/実tool shapeを旧空stderr条件と混同した出版前P1はSourceだけを修正・反証し、実験再送0。
+
+[全90入力生成0の実結果](../data/manifests/phase11_v31_preflight_result_v1.json) SHA79174e07d9209e9770244973e58a348cd685f8fcc88d6cccf934438f55b41e35はHandle53121閉0・wall20.771760929秒、全90入力/95Raw/37CUDA層FAoff/Core94/全監視に通過した。最大入力4218＋出力予約6144≤12288・余裕1926 Token、Native0、監査の全禁止count0。Rootも全104成果Hashを追加照合、生成0だけを意味合格へ読み替えない。次NS2の有限Plan SHA5b40c4c1dfc33538552c0b8976ec02dfbb3135cd8dd482b4959250e2d8dba028を正規Guard/共有台帳へ登録し、固定eb7967c・Handle7313で実行を開始した。2 Call/見積Native109.237918秒/最大wall3000秒/HTTP1200秒/監視5秒/Retry0。意味結果未読・未採用、Main/Cal/Gate11未達・Phase12未開始。
+
+2026-10-27 22:13 JST追記: v31固定Commit eb7967cの専用Checkoutへ781資産を再現した（195 Git file、555独立copy、31 immutable hardlink）。専用uv58 packageを新規構築し、別v2ローダーの実identity/Model・Runtime Hash/Core94/全39QA・45文・78条件・90入力契約が一致、Native0である。初回ローダーはWT/src登録より前のimportで停止（0.198218696秒、ModelHash/Native0）し、失敗を保存した。別v2のModel不要prelude確認0.757232012秒後、実再検証5.148438557秒（内部5.073318066秒）で成功した。これらは別scopeで加算しない。正式再現証明の出版待ちで、最初の全90入力0 Plan b747d258は実v3Guard通過・未登録/未実行。Known19は旧v30 Known18準備を保全する別Versionで、同じ元84 Call・Source・Expected・基準を維持する。
+
+[最終Validatorソフトウェア証拠v7](../data/manifests/phase11_bilingual_finalization_validation_v7.json) SHA92b64ae9be81286fb25b27f999ad0e53fd46e95c56c31b3600445b6f73c85899は現97 Sourceを照合し、古いv6がCore3差で拒否されることを実検証した。全1203 testと追加37 testは条件一致で再利用し、重複分を合算しない。旧CLIの履歴Hash取得の限界を保持し、software_only/ready=false・実Main/Cal/最終Freeze/Gate11未達を明記した。Rootも全Source/55 artifactと封印Sourceを照合済み。モデルUI変更はユーザー申告「6.1 Sol 極高」として今後の記録へ反映し、厳密ID null・human_reviewed=false・履歴継承ありを維持する。Goal active・Phase12未開始。
+
 2026-10-27 21:43 JST追記: v31の[正式事前登録](../data/manifests/phase11_semantic_v31_preregistration_v1.json) SHA2c8ad584be7a9b03db123f0e08252d892197d270b6113e0d5d64bae50a49e6f3を発行した。75canonical成果/21正式入力、Prompt16のみのIDdbb9830fとCore94/他5成分不変、旧v30不採用・費用v18・未使用枠、旧IDを保持するTokenizer11/人工形式10の厳格再利用証明361222d4を結合した。意味結果の再利用0。23差分test/.11秒と5stage構築/前段反証1.406401307秒、Root全publisher208行/72原Hashの実読照合後、一回実出版（tool.073648223秒）でNative0。Root関連37test3.99秒・新終端認可6test.02秒/Ruffも通過、旧全1203testは不変Sourceに基づき再利用した。新実入力生成0→NS2→帰属C2→Rewrite2全文品質→全90→新鮮Known84は固定Commit専用WTの実再現後に行う。出版後独立確認/Commit/実再現・新実Runは次工程で、Main/Cal/最終Gate11未達、Goal active・Phase12未開始。
 
 ## Version 7.88 — 2026年10月27日 根拠文の主語を先に結ぶv31
@@ -84,7 +92,7 @@
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.86](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.91](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 
