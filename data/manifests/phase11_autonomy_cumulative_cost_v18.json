@@ -1,0 +1,392 @@
+{
+  "schema_version": 2,
+  "purpose": "phase11-autonomy-v3-cumulative-cost-v18",
+  "recorded_at_utc": "2026-10-27T12:22:08.732492+00:00",
+  "autonomy_protocol_version": "phase11-autonomy-v3",
+  "closed_runs": 35,
+  "closed_stage_prefix": [
+    "smoke",
+    "attribution-smoke"
+  ],
+  "later_v30_stages_not_in_cost_snapshot": [
+    "rewrite-smoke"
+  ],
+  "legacy_attempts": 909,
+  "legacy_unknown": 3,
+  "legacy_unused_calls_not_reallocated": true,
+  "totals": {
+    "attempts": 351,
+    "successful": 317,
+    "failed": 0,
+    "unknown": 2,
+    "observed_input_tokens": 712434,
+    "observed_output_tokens": 1018971,
+    "known_task_seconds": 20473.6984168365,
+    "known_native_seconds": 20559.447274000002,
+    "task_failures": 0,
+    "unvalidated_returned": 32,
+    "cumulative_attempts": 1260,
+    "cumulative_unknown": 5,
+    "new_wall_seconds": 21221.83338040783,
+    "cost_incomplete": true,
+    "external_paid_api_calls": 0,
+    "electricity_cost_currency": null,
+    "legacy_success_failure_and_cost_not_reconstructed": true
+  },
+  "new_native_reservations": 351,
+  "new_native_returned": 349,
+  "new_native_unknown": 2,
+  "new_total_output_tokens": null,
+  "unknown_reservations": [
+    {
+      "sequence": 73,
+      "state": "unknown",
+      "started_at_utc": "2026-10-27T06:58:20.594493+00:00",
+      "payload_sha256": "89fc0f71e43ef721d803bdb2b23b0442a252ffa2b08aa3e83eea5d39410bc336",
+      "prompt_sha256": "72e4134da91d479906cc7795b3757dcd8a30a2627e482d3c48eb0173f3ffada5",
+      "input_tokens": 1696,
+      "requested_output_tokens": 6144,
+      "timeout_seconds": 1200,
+      "caller_pid": 439629,
+      "output_tokens": null,
+      "native_response_sha256": null,
+      "finished_at_utc": "2026-10-27T06:58:26.848320+00:00",
+      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "elapsed_seconds": 6.253827
+    },
+    {
+      "sequence": 48,
+      "state": "unknown",
+      "started_at_utc": "2026-10-27T09:25:35.431237+00:00",
+      "payload_sha256": "f20e53b6ac99fde894e83f11417bccbcc6f083ed18a7d77c5e799e807173c845",
+      "prompt_sha256": "398e1c8c317b51cfbbb69d2675fce2fbe1e48278f3313e74e9aa61004bdb7c77",
+      "input_tokens": 1659,
+      "requested_output_tokens": 6144,
+      "timeout_seconds": 1200,
+      "caller_pid": 467852,
+      "output_tokens": null,
+      "native_response_sha256": null,
+      "finished_at_utc": "2026-10-27T09:25:46.072833+00:00",
+      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "elapsed_seconds": 10.641596
+    }
+  ],
+  "known_returned_native_seconds": 20542.551851,
+  "unknown_request_elapsed_seconds_component": 16.895423,
+  "ledger_known_native_seconds_is_all_observed_request_elapsed": 20559.447274,
+  "old33_closed_rows_unchanged": true,
+  "old21_guard_files_unchanged": true,
+  "selected_prefix_matches_current_even_if_future_runs_added": true,
+  "observed_ledger_rows_at_audit_start": 35,
+  "current_global_totals_not_substituted_for_selected_prefix": true,
+  "all_attempted_input_observed_output_Task_Native_wall_sums_reconciled": true,
+  "actual_additional_stages": {
+    "smoke": {
+      "run_id": "phase11-v3-v30-smoke",
+      "state": "process_completed",
+      "returncode": 0,
+      "started_at_utc": "2026-10-27T11:58:15.570712+00:00",
+      "finished_at_utc": "2026-10-27T11:58:46.276562+00:00",
+      "wall_seconds": 30.680874572950415,
+      "snapshot": {
+        "attempts": 2,
+        "successful": 2,
+        "failed": 0,
+        "unknown": 0,
+        "observed_input_tokens": 3374,
+        "observed_output_tokens": 882,
+        "total_output_tokens": 882,
+        "known_task_seconds": 14.96214544295799,
+        "cost_incomplete": false,
+        "unsent_errors": [],
+        "invalid_journals": [],
+        "raw_calls": [
+          {
+            "path": "probe-1.claims/c1.json",
+            "sha256": "ba1f9e20209a39fa99a2af9347f08a37f8ba29682fc163b951b98b3cde952c07",
+            "status": "ok",
+            "unknown": false,
+            "prompt_sha256": "b970fe516f6716e89e7ea2571212774608216cdabef867108e13129a42ebf8c3",
+            "input_tokens": 1657,
+            "output_tokens": 418,
+            "elapsed_seconds": 7.223628912935965
+          },
+          {
+            "path": "probe-2.claims/c1.json",
+            "sha256": "cfc318400d67272b25dcda4b963939e6d7000b19434d8f34744fafd411fe90bf",
+            "status": "ok",
+            "unknown": false,
+            "prompt_sha256": "f5c3b9f562c10058ed8428b5b49da345c39ca26b138f029fcd0cf5a1c5736a84",
+            "input_tokens": 1717,
+            "output_tokens": 464,
+            "elapsed_seconds": 7.738516530022025
+          }
+        ],
+        "unvalidated_returned": 0,
+        "native_reservations": {
+          "attempts": 2,
+          "returned": 2,
+          "unknown": 0,
+          "terminal_unknown": 0,
+          "observed_input_tokens": 3374,
+          "observed_native_seconds": 14.831444,
+          "observed_output_tokens": 882,
+          "total_output_tokens": 882,
+          "cost_incomplete": false,
+          "calls": [
+            {
+              "sequence": 1,
+              "state": "returned",
+              "started_at_utc": "2026-10-27T11:58:26.501915+00:00",
+              "payload_sha256": "337d1a66a41bfa29a238a592e3543beda6b76ee2d7f28a6b252a64c8d6d415f0",
+              "prompt_sha256": "b970fe516f6716e89e7ea2571212774608216cdabef867108e13129a42ebf8c3",
+              "input_tokens": 1657,
+              "requested_output_tokens": 6144,
+              "timeout_seconds": 1200,
+              "caller_pid": 509659,
+              "output_tokens": 418,
+              "native_response_sha256": "e316ff904ec937da0a6f5a147c0197d13e76d60a197efedbd5b8fc58d3afcce6",
+              "finished_at_utc": "2026-10-27T11:58:33.622548+00:00",
+              "error": null,
+              "elapsed_seconds": 7.120633
+            },
+            {
+              "sequence": 2,
+              "state": "returned",
+              "started_at_utc": "2026-10-27T11:58:33.658916+00:00",
+              "payload_sha256": "a4bd531c15d768bd4be7a3653d29b5fb62fd6d5323e3427364227ad431a439c1",
+              "prompt_sha256": "f5c3b9f562c10058ed8428b5b49da345c39ca26b138f029fcd0cf5a1c5736a84",
+              "input_tokens": 1717,
+              "requested_output_tokens": 6144,
+              "timeout_seconds": 1200,
+              "caller_pid": 509659,
+              "output_tokens": 464,
+              "native_response_sha256": "1b6386d2e1c825cd02400d6ffc8eba83f1492397c44579a9bc48ae67c047298f",
+              "finished_at_utc": "2026-10-27T11:58:41.369727+00:00",
+              "error": null,
+              "elapsed_seconds": 7.710811
+            }
+          ]
+        },
+        "task_failures": 0,
+        "known_native_seconds": 14.831444
+      }
+    },
+    "attribution-smoke": {
+      "run_id": "phase11-v3-v30-attribution-smoke",
+      "state": "process_completed",
+      "returncode": 0,
+      "started_at_utc": "2026-10-27T12:13:41.163781+00:00",
+      "finished_at_utc": "2026-10-27T12:14:16.849321+00:00",
+      "wall_seconds": 35.65492237301078,
+      "snapshot": {
+        "attempts": 2,
+        "successful": 2,
+        "failed": 0,
+        "unknown": 0,
+        "observed_input_tokens": 7530,
+        "observed_output_tokens": 1079,
+        "total_output_tokens": 1079,
+        "known_task_seconds": 21.96459953498561,
+        "cost_incomplete": false,
+        "unsent_errors": [],
+        "invalid_journals": [],
+        "raw_calls": [
+          {
+            "path": "probe-1.claims/c1.json",
+            "sha256": "e4ed60dd4c168455a2dcb25ec9ed8ed2b66ade10e31eaee9de785815c4e84cf0",
+            "status": "ok",
+            "unknown": false,
+            "prompt_sha256": "af766c06c2c5bf30906c8ec13317c86752d8734d85f35f58f41d7b8b0e1f3a5a",
+            "input_tokens": 3765,
+            "output_tokens": 517,
+            "elapsed_seconds": 10.943497027968988
+          },
+          {
+            "path": "probe-2.claims/c1.json",
+            "sha256": "4707fcb0396076038f1d618a3b7c773ea49fcc45baead9eec8cb8fe4d8c4292a",
+            "status": "ok",
+            "unknown": false,
+            "prompt_sha256": "81f21b68d858921e7bb2717e7ee92cdf7788b1d365a5c94300dac8c2db6049b1",
+            "input_tokens": 3765,
+            "output_tokens": 562,
+            "elapsed_seconds": 11.021102507016622
+          }
+        ],
+        "unvalidated_returned": 0,
+        "native_reservations": {
+          "attempts": 2,
+          "returned": 2,
+          "unknown": 0,
+          "terminal_unknown": 0,
+          "observed_input_tokens": 7530,
+          "observed_native_seconds": 21.487008,
+          "observed_output_tokens": 1079,
+          "total_output_tokens": 1079,
+          "cost_incomplete": false,
+          "calls": [
+            {
+              "sequence": 1,
+              "state": "returned",
+              "started_at_utc": "2026-10-27T12:13:52.673685+00:00",
+              "payload_sha256": "91b7fb26b21cf9362cda826ea39826ce40199171825cfea983a0a2f76c5d5f8c",
+              "prompt_sha256": "af766c06c2c5bf30906c8ec13317c86752d8734d85f35f58f41d7b8b0e1f3a5a",
+              "input_tokens": 3765,
+              "requested_output_tokens": 6144,
+              "timeout_seconds": 1200,
+              "caller_pid": 511232,
+              "output_tokens": 517,
+              "native_response_sha256": "c51146fa9836b179a67dbe66b190d4c2adbe4780f182cb129edb97d4b36a1bd7",
+              "finished_at_utc": "2026-10-27T12:14:03.217541+00:00",
+              "error": null,
+              "elapsed_seconds": 10.543856
+            },
+            {
+              "sequence": 2,
+              "state": "returned",
+              "started_at_utc": "2026-10-27T12:14:03.305653+00:00",
+              "payload_sha256": "80de72295009acb1b4b9e4c6979e10865dceb6a1adc4e71157b38b2682221f7a",
+              "prompt_sha256": "81f21b68d858921e7bb2717e7ee92cdf7788b1d365a5c94300dac8c2db6049b1",
+              "input_tokens": 3765,
+              "requested_output_tokens": 6144,
+              "timeout_seconds": 1200,
+              "caller_pid": 511232,
+              "output_tokens": 562,
+              "native_response_sha256": "c53f4e236bc95a02a5a13a3ceacf3d514481a8f30485846fc68616c1d608a6ce",
+              "finished_at_utc": "2026-10-27T12:14:14.248805+00:00",
+              "error": null,
+              "elapsed_seconds": 10.943152
+            }
+          ]
+        },
+        "task_failures": 0,
+        "known_native_seconds": 21.487008
+      }
+    }
+  },
+  "new_Native_planned_maximum": 4,
+  "actual_additional_Native": 4,
+  "NS_C_Rewrite_costs_are_observed_not_planned_successes": true,
+  "immutable_ledger_snapshot": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/ledger.json",
+    "sha256": "4206447666a70940b651428c39d62c5bdc7889a3c1250e32ef66387a36df5cc5"
+  },
+  "audit_implementation": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/audit_source.py",
+    "sha256": "27ad94af1519d48bee9049a8b7eb2bf7522f31c0aae5c7f8c5056513b998d547"
+  },
+  "native_guard_files_sha256": {
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-runtime-smoke/native_guard/calls.json": "e16ce5fc5bbea1e62507d00d993a35d1387c54bba1d7d21ee80a082370154624",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-format/native_guard/calls.json": "d6971537665425b4c3e9867a7f4d21031b1392547d88593a1b2687f9f76c3dd8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-semantic/native_guard/calls.json": "2264ce0d084ee082145592a51ee94c32b00ecb9b818f27daf5068a5cf3a2066d",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-baseline-smoke/native_guard/calls.json": "55148b868d0e832e3cfbe3b1624322bd5e50378967d95ed89d044e5fec6d20bf",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v12-known/native_guard/calls.json": "1546000d71f49d82062300cad0e81b79d4b9bff14d5586107b85faca5c8b5bcb",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-smoke/native_guard/calls.json": "46329eb7f7d7d6593f1a2b833aaac13239bc712b246f5e9af812e41ffa7c9204",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-smoke/native_guard/calls.json": "a38d71bbd09054087303a9f592935ca4476fbc032a2cd6db610d1f44d72dc8d2",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-rewrite-smoke/native_guard/calls.json": "e427670673c9d898eed3d81c449090bfcdc861c34e00602f96fdb7ae59d43fa3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-semantic/native_guard/calls.json": "baf4f1136fdeffc6cf99271f698c986c3e119409bf67ae09f49d47d29c547fb8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-smoke/native_guard/calls.json": "caaee498e19ffef80523bf752414ff7fe482ced3a9aeea12b784cd7eca294ce4",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-attribution-smoke/native_guard/calls.json": "05e32390ba72a508adb8d3c39cabf3cfc6bf939bc2dbc4d2dcb6d44042e8aed8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-smoke/native_guard/calls.json": "e864213e57df8f4e9f71f9149c9c6035bef5154b148c6bbc4ba6d2855d558fa3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-attribution-smoke/native_guard/calls.json": "ccfc348d1d65189cce3c86d867ac3579365ad78fd37937b03acfcc7d0c8a14c3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-rewrite-smoke/native_guard/calls.json": "0d53d91902b505cedc4efa51311d4d0042bce7ce7b487ed423c54ae852812acd",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-semantic/native_guard/calls.json": "8035f116500dede502fab56fba3615b92ebbe7c1420be56caa21977ec2f1ed57",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-format/native_guard/calls.json": "49f61e6a5c7a3edfdccc0ec64ec9170f919969c7fabd75e05a7a8918a89b289b",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-smoke/native_guard/calls.json": "ccc2d1a3801286b5cee6084555c1dda1be71f7a74b8c53236fdf35c05b396018",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-attribution-smoke/native_guard/calls.json": "129468e9922af64a5421da69f89532618093d391f610dfa25cbecfefbb0e6814",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-rewrite-smoke/native_guard/calls.json": "7777dbb57c479a4ef98073591be09aa5c5133776ed5ddde3caad5b8c52dbd11e",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-semantic/native_guard/calls.json": "d77ec576b34d39f2af44cf0069ee1237f09d725b80002a621be983548750aefa",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v30-format/native_guard/calls.json": "252439b9e4dc7a492beee952d877a3ffdfe18b74d5289e95e8f1702df4033be0",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v30-smoke/native_guard/calls.json": "f992c91c055d6d665f80bef6cec2fc608f39468e659fc6810210c933875d8613",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v30-attribution-smoke/native_guard/calls.json": "5765e80e707da1639397d835457a21a3dd7369503cd38824d6df8fafbfc30b85"
+  },
+  "bindings": [
+    {
+      "path": "data/manifests/phase11_autonomy_cumulative_cost_v17.json",
+      "sha256": "74d5170945622f2fa48341154b13583d56dc637a30159bba0b8a478b9c1786dd"
+    },
+    {
+      "path": "data/manifests/phase11_v30_checkout_reproduction_v1.json",
+      "sha256": "01620a7570b08799f0598a500f32106d186bf753be9e23cf2a09c46549a6e6c8"
+    },
+    {
+      "path": "data/manifests/phase11_v30_smoke_result_v1.json",
+      "sha256": "af18e5e61d3d56651a269d192d2b73d1783dd11e30adcde49f4ff07ce4154368"
+    },
+    {
+      "path": "data/manifests/phase11_v30_attribution_smoke_result_v1.json",
+      "sha256": "6f5dbf87a85bc4e9cf8f5e4afc309049ea1317a5524a195d786c1b6b68f90262"
+    }
+  ],
+  "non_Run_CPU_and_reproduction_costs_separate_from_ledger": {
+    "reproduction_cost_scopes": {
+      "actual_copy_seconds": 0.9081988909747452,
+      "copy_exec_tool_reported_wall_seconds": 0.841340096,
+      "copy_exec_reported_wall_and_inner_are_distinct_observations_not_assumed_nested": true,
+      "dedicated_uv_subprocess_wall_seconds_independently_metered": null,
+      "dedicated_uv_exec_tool_reported_wall_seconds": 1.3846e-05,
+      "uv_installer_reported_milliseconds": 21,
+      "actual_zero_load_identity_inner_seconds": 5.82740128505975,
+      "zero_exec_tool_reported_wall_seconds": 5.965302438,
+      "whole_reproduction_wall_seconds": null,
+      "whole_wall_marker_not_recorded": true,
+      "do_not_add_inner_to_child_or_installer_to_uv_tool": true,
+      "publication_component_seconds_before_write": 0.45595324400346726,
+      "external_metered_API_cost": 0,
+      "electricity_cost": null
+    },
+    "Root_identity_build_seconds": 4.781564669916406,
+    "Root_identity_creation_seconds_including_build": 4.971927296021022,
+    "prior_unissued_publisher_v1_failure_preserved": {
+      "failure_preservation": {
+        "path": ".tools/draft-artifacts/phase11-v30-checkout-reproduction-publication-preparation-v2/prior-unissued-v1.json",
+        "sha256": "048b79dedaf67f97b8322e431ead1cf83255b6972c52ed971bb939e02964eaa2"
+      },
+      "old_actualready": {
+        "path": ".tools/draft-artifacts/phase11-v30-checkout-reproduction-publication-execution-v1/release.actual.json",
+        "sha256": "b86edb69b20be6b96257ced85fe7a2b1b50c44f0dedef690767a9e03397b771b"
+      },
+      "old_stderr": {
+        "path": ".tools/draft-artifacts/phase11-v30-checkout-reproduction-publication-execution-v1/publish.stderr",
+        "sha256": "3c71a9734393294116ba86a80e2fc622af41be3f7df9d1c528b6fc9fe8235c6f"
+      },
+      "old_stdout": {
+        "path": ".tools/draft-artifacts/phase11-v30-checkout-reproduction-publication-execution-v1/publish.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "formal_issued_by_failed_v1": false,
+      "Run_copy_loader_tokenizer_reexecutions": 0
+    },
+    "prior_unissued_publisher_v1_independent_wall_seconds": null,
+    "source_preparation_and_AI_provider_cost_actuals_unknown": true,
+    "scopes_overlap_never_add_into_Native_or_total_wall": true
+  },
+  "cost_scopes": "All observed Native elapsed includes unknown HTTP elapsed; unknown output totals stay null. Task/Native/wall/startup overlap. Native0 tokenizer/all90-input stages have nonzero render/tokenize/startup/monitor resource costs. Reproduction, failed publication, identity, Source/tests/AI audit are separate; missing actual wall/currency is null. No unknown resend or QA replacement.",
+  "audit_boundary_counts": {
+    "WT_Model_Runtime_QA_opens": 0,
+    "process_starts": 0,
+    "sockets": 0
+  },
+  "new_native_calls_during_audit": 0,
+  "audit_elapsed_seconds_before_publication": 0.14400883798953146,
+  "artifacts_sha256": {
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/actual-publication-release.json": "753366743bb0b13ab7c36ecf2fa8ca0debee2a7a889c7ec98adb52db06e4651e",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/audit_source.py": "27ad94af1519d48bee9049a8b7eb2bf7522f31c0aae5c7f8c5056513b998d547",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/copy-receipt.json": "07862b411a1793611766616f176090ad8e782d0739f9adf47e2ee3c659150aa8",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/ledger.json": "4206447666a70940b651428c39d62c5bdc7889a3c1250e32ef66387a36df5cc5",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/monitor-cost-observations.json": "5df7ab8b808533b0801b303942d5407b96657805b3e2cead3e4774142fb1b8da",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/observed-ledger-at-audit-start.json": "4206447666a70940b651428c39d62c5bdc7889a3c1250e32ef66387a36df5cc5",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/stage-evidence/0-smoke-root-terminal-authorization.json": "b814063dd4ecf28adf64b9dbc71e3d79b33e9b897c909ec2717b7d9639cdc0b2",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/stage-evidence/1-smoke-terminal-row.json": "7a26c82595656f1cb2b36198416042f1ea910a0a81f405d4de2672335a3a1337",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/stage-evidence/2-manifest.json": "1411c45b800df98524ff2476f67f9b40181034d2d696514c1af5e99695ad90c3",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/stage-evidence/3-monitor.jsonl": "2c39a5c2e547d2306817c51db36afe54c529aa13b3f45a4858d437566bedcdd2",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/stage-evidence/4-stdout.log": "de99422cf5c2c509af5c8924306ac66d6635e2bad67333e1c6d885460225d1fa",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/stage-evidence/5-attribution-smoke-root-terminal-authorization.json": "4499a49263b1b5743179da835d17fbc6e43a80fde6ce38e091486017b9f1d8c3",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/stage-evidence/6-attribution-smoke-terminal-row.json": "f876e9484b33838be77eb9c0fc6eb65576605c86c5ecd2b5c8c15bc5e58db6da",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/stage-evidence/7-manifest.json": "7bab4e071b7a560dfea26292a3ca28486f375091c1216ca52fea77f81eaad5c8",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/stage-evidence/8-monitor.jsonl": "f1e13893249c2f09a0891552461b499a06b32564458307a490bf51a0cdbfd533",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v18/stage-evidence/9-stdout.log": "d2acebc40f4873b3fc11be28bcfdf26697f363f21f7a5d116a42cdbb670cdeeb"
+  },
+  "gate11_passed": false,
+  "phase12_started": false
+}

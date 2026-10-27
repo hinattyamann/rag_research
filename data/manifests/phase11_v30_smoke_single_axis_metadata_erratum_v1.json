@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v30-smoke-single-axis-metadata-erratum-v1",
+  "recorded_at_utc": "2026-10-27T12:15:37.503281+00:00",
+  "original_manifest": {
+    "path": "data/manifests/phase11_v30_smoke_result_v1.json",
+    "sha256": "af18e5e61d3d56651a269d192d2b73d1783dd11e30adcde49f4ff07ce4154368"
+  },
+  "original_sidecar_sha256": "b7ef66978d53e39c5f039007f9489b4cdbd6f911ddb543e2ace960ebb4378805",
+  "candidate_identity_sha256": "87cf5942abf0652849246229c0b2550846c7c674aaa764c3489861e1baba8e6b",
+  "fixed_commit": "0e8fb6e9c10d7e436624f75eed5bb99a3a84d75a",
+  "corrected_field": "single_axis_limitation",
+  "original_value": "New Qwen3-8B Q4_K_M Model only; Core94, GraphOFF, explicit FAoff, Prompt15, common4096, Sampler, Schema, fixed inputs/Expected retained. Fresh tokenizer/format/meaning required. Smoke does not prove durable repair or full adoption.",
+  "corrected_value": "v30 keeps v29's Qwen3-8B Q4_K_M Model, GraphOFF Runtime, explicit FAoff, Prompt15, common4096, Sampler, Schema, fixed inputs and Expected. Its candidate identity changes because three shared Core files now apply reasoning prefill consistently in Extract/Judge/Rewrite; Core still contains 94 files, with these three files changed. Fresh tokenizer/format/preflight/meaning evidence is required. This smoke alone does not prove durable repair or full adoption.",
+  "reason": "Inherited v29 Model-only description was inaccurate for v30's three-file shared Core prefill repair.",
+  "original_manifest_and_sidecar_unchanged": true,
+  "experiment_outputs_expected_scores_costs_adoption_and_gate_unchanged": true,
+  "experiment_reruns": 0,
+  "new_Native_calls": 0,
+  "Raw_QA_WT_Model_Runtime_body_reads": 0,
+  "source": {
+    "path": ".tools/draft-artifacts/phase11-v30-smoke-metadata-erratum-v1/publish_erratum.py",
+    "sha256": "5fb898bf3fd7aa95e9fe10456e7c4bb9ceaafd7530c9b308f9601320a2749deb"
+  },
+  "metadata_validation_seconds_before_publication": 0.0009988188976421952,
+  "candidate_adoption_newly_claimed": false,
+  "gate11_passed": false,
+  "phase12_started": false
+}
