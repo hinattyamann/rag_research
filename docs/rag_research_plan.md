@@ -1,10 +1,14 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
+2026-10-27 20:16 JST追記: v30の[正式事前登録](../data/manifests/phase11_semantic_v30_preregistration_v1.json) SHAa10f5e2c4fa2b0c1ec651b37711dfa3b13f5868b552a45dfdafb3d7830fee4e5を発行した。新実ID87cf5942abf0652849246229c0b2550846c7c674aaa764c3489861e1baba8e6b・22formal入力/91canonical成果を固定し、共通Core3だけのprefill修正と非Core5成分不変、全1203 Test/39.11秒・Ruff、全90payload/Goldなしを結合した。有限producerは差分4 Test/.07秒・実Guard1回4.076925秒・実pending拒否2件が成功し、旧Guard変更/既存失敗の再送0。詳細は[v30条件](phase11_semantic_v30_preregistration_v1.md)。正式事前登録は実機合格ではなく、独立照合/Commit/専用WT実再現とTokenizer0→全90入力0→新形式10→NS/C/Rewrite品質→全90→新鮮Known84はこれから。将来full90監査のnotes/timer結合P1は旧版を保全して別新版で閉じる後段条件とした。Main/Cal/Gate11未達・Goal active・Phase12未開始。
+
+2026-10-27 20:07 JST追記: v29の生成0失敗48a022bfはbare assistant末尾への既存reasoning-prefillの未付与であり、共通Core3だけを修正する別候補v30を準備した。実新ID87cf5942abf0652849246229c0b2550846c7c674aaa764c3489861e1baba8e6b、Model8B/Runtime GraphOFF+FAoff/Prompt15/Sampler/Schema/全90入力・Expected・採用基準は不変。既存modeの厳密bareだけ固定THINK_PREFILLを追加、none/付与済みはtext/token bytes不変、未知suffixやtoken prefixの変化は拒否しraw/effective/追加tokensを保存する。[v30条件](phase11_semantic_v30_preregistration_v1.md)に従い新形式v5/全入力preflightv2を同じhelperへ結ぶ。初回1200pass/3failを保全し、旧fake2のsuffix契約を正した後、loopback可能な承認済み環境で全1203 Test（39.11秒）/Ruff成功。実Identity構築4.781564670秒/ModelHash1・Native0。正式事前登録/固定WT/実検証・意味採用はまだ未了。旧Source/失敗Run/Raw/費用v16を保全し、Main/Cal/Gate11未達・Goal active・Phase12未開始。
+
 2026-10-27 19:26 JST追記: v29正式prereg SHAfa4f54ef17e7a4104d5b3a818f27a6409980af9ba0f5b5e414e888d92f044794を発行し21入力/99監査成果を固定。詳細は[v29条件文書](phase11_semantic_v29_preregistration_v1.md)と[工程正本](research_roadmap.md)。新Native0、専用固定WT/実測Health・意味・品質の採用は未証明。旧v28不採用/未知を保持し、Phase12を開始しない。
 
 2026-10-27 19:03 JST追記: v28は48試行/47返却/未知1でCUDA切断し不採用、全90精度null・Known17不適格。診断20688eb4と閉29Run費用v15（新337/旧込1246・確定未知5）は工程正本と正式Manifestへ保存。次v29は既存Qwen3-8B-Q4_K_MへのModelのみ変更（実ID7d35156207fb6d4ef520412c43036d701c104b18145c13455a56c6e54d64f008）。Model実物Hash実照合済み、Core94/Prompt15/Graph OFF/FAoff/4096/Schema/Sampler/全入力・Expected・採用基準は維持する。新ModelのTokenizer/全GPU層数を実測し直し、新形式10/日英意味/Rewrite品質/全90/新鮮Known84を必須とする。過去8B不合格と旧証拠を保全し、新Native0・採用未証明。詳細は[工程正本](research_roadmap.md)の同時刻追記。Main/Cal/Gate11未達、Phase12を開始しない。
 
-## Version 7.86 — 2026年10月27日 Model変更候補v29の正式事前登録
+## Version 7.87 — 2026年10月27日 明示prefill共通適用候補v30
 
 2026-10-27 17:08 JST追記: 固定291d017/v28の実再現378資産＋別copy4・専用uv58と生成0全90、さらに新形式10の全実監査が通過した。[実再現](../data/manifests/phase11_v28_checkout_reproduction_v1.json) SHA8a09d32575f8d26b00fa3e2a29ccead003f49e67800dd2e4bf95a2049b49b9b8、[生成0](../data/manifests/phase11_v28_preflight_result_v2.json) SHAa0f46a48c8cb71c5a2881a6021aef9516147c972c27cf56d3cb4dd626d7ea6f0、[新形式10](../data/manifests/phase11_v28_format_result_v2.json) SHA3fe0466f70b4de53ba736d7164ad0b2d72523765edf399b62f7dd654f92b3f18。実FAoff/Context12288/33層CUDA、全90最大3926＋予約6144、Strict9＋意図したlegacy失敗1・返却10/未知0を確認。現在同固定WTで日英因果NS2をHandle86697/Plan ea93f03a568800d968a5c212f35312395d28e8560227c7c88d155bb7fc465e24・2Call/壁3000秒/個別1200/Retry0で初回実行中。Kernel安定性・意味採用は未確定で、帰属/Rewrite/全90/新鮮Known84/元Main/予約Cal/Gate11は未了。Goal active・Phase12未開始。
 

@@ -10,6 +10,40 @@ CHATML_THINK_SUFFIX = "<|im_start|>assistant\n<think>\n"
 THINK_PREFILL = "<think>\n"
 
 
+def apply_reasoning_prefill(rendered, mode="none"):
+    """Apply an explicitly configured prefix to exactly a bare assistant turn."""
+    if mode == "none":
+        return rendered
+    if mode != "chatml_think_suffix_v1":
+        raise ValueError("Unknown reasoning prefill mode")
+    if not isinstance(rendered, str):
+        raise ValueError("Reasoning prefill requires an actual rendered string")
+    if rendered.endswith(CHATML_THINK_SUFFIX):
+        return rendered
+    bare = "<|im_start|>assistant\n"
+    if rendered.endswith(bare):
+        return rendered + THINK_PREFILL
+    raise ValueError("Reasoning prefill requires the exact bare or prefilled ChatML assistant suffix")
+
+
+def tokenize_reasoning_prompt(client, rendered, mode="none"):
+    """Count raw/effective prompts and prove any addition leaves prior IDs intact."""
+    effective = apply_reasoning_prefill(rendered, mode)
+    raw_tokens = client.tokenize(rendered, special=True)
+    tokens = raw_tokens if effective == rendered else client.tokenize(effective, special=True)
+    added = []
+    if effective != rendered:
+        added = tokens[len(raw_tokens):]
+        if (tokens[:len(raw_tokens)] != raw_tokens or
+                added != client.tokenize(THINK_PREFILL, special=True)):
+            raise ValueError("Reasoning prefill changed prior tokens or lacks its exact added token suffix")
+    return {"raw_rendered_prompt": rendered, "raw_prompt_tokens": raw_tokens,
+        "rendered_prompt": effective, "prompt_tokens": tokens, "input_tokens": len(tokens),
+        "reasoning_prefill_audit": {"version": "reasoning-prefill-application-v1", "mode": mode,
+            "applied": effective != rendered, "added_text": THINK_PREFILL if effective != rendered else "",
+            "added_tokens": added, "raw_input_tokens": len(raw_tokens), "effective_input_tokens": len(tokens)}}
+
+
 @dataclass(frozen=True)
 class AuxiliaryGenerationConfig(GenerationConfig):
     top_k: int = 20

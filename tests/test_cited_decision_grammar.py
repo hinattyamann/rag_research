@@ -128,7 +128,9 @@ def test_pipeline_new_schema_and_cache_preserve_failed_v2_without_repair(tmp_pat
         schema = None
 
         def render(self, messages):
-            return json.dumps(messages)
+            # This fake uses explicit reasoning-prefill mode, like the actual
+            # model template; parser/cache behavior remains the test's target.
+            return json.dumps(messages) + "<|im_start|>assistant\n<think>\n"
 
         def tokenize(self, text, *, special):
             return [1] * 20

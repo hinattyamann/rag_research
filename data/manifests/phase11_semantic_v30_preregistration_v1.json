@@ -1,0 +1,1144 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v30-Core-prefill-only-candidate-preregistration",
+  "recorded_at_utc": "2026-10-27T11:15:35.450788+00:00",
+  "candidate_identity_sha256": "87cf5942abf0652849246229c0b2550846c7c674aaa764c3489861e1baba8e6b",
+  "parent_candidate_identity_sha256": "7d35156207fb6d4ef520412c43036d701c104b18145c13455a56c6e54d64f008",
+  "autonomy_protocol_version": "phase11-autonomy-v3",
+  "semantic_adoption_version": "support-binary-v2",
+  "effective_change": "Only Core3 common reasoning-prefill preparation changes. Exact bare8B assistant template gets the explicitly declared thinking suffix before token counting; existing full suffix and nonthinking baseline stay byte-identical. Model8B/Runtime graphOFF b11433/FAoff/Prompt15/common4096/Sampler/Schema/all90 Source/Expected/gates unchanged.",
+  "hypothesis": "A shared strict prefill preparation may correct the observed bare-template tokenizer0 failure across Extract/Judge/Rewrite/full90preflight/format. Fresh Runtime, tokenizer11, format10 and semantic90/Known84 remain mandatory; GPU/kernel stability and meaning adoption are unproven.",
+  "identity_files": {
+    "model": [
+      {
+        "path": "data/manifests/phase11_auxiliary_qwen3_8b_manifest_v1.json",
+        "sha256": "507390013781f3cee9e9abf34255d5e0a07f1cd660d38ed83e1dccda0ecc3d08"
+      },
+      {
+        "path": "data/models/Qwen3-8B-GGUF/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q4_K_M.gguf",
+        "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785"
+      }
+    ],
+    "runtime": [
+      {
+        "path": "configs/lab_cuda_graph_off_runtime_v1.json",
+        "sha256": "d18d6efe8b769a0ddb081ca41d1f4d63fa7a0b6551fd2bbfeea1a77d8b7fb0d5"
+      },
+      {
+        "path": "data/manifests/phase11_cuda_graph_off_build_registration_v2.json",
+        "sha256": "a80b3036688dbcd4d7105f6d7b8a44e62a1aa372ad7ebd8a0aa2e42e3daa0896"
+      },
+      {
+        "path": "data/runs/runtime_build/phase11-cuda-graph-off-v2/build/CMakeCache.txt",
+        "sha256": "f76d1397cb0066ac06c445dab6991a340a9e8d6eaa7c6bfaa34b53b1c06f3c5f"
+      },
+      {
+        "path": "data/runs/runtime_build/phase11-cuda-graph-off-v2/source_provenance.json",
+        "sha256": "7860f71eaf13ee9212c36f51183ed457016be7a5b1c3644f750b92f6cefcf6e7"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcublas.so.12",
+        "sha256": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcublasLt.so.12",
+        "sha256": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libcudart.so.12",
+        "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so",
+        "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so.0",
+        "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-base.so.0.26.0",
+        "sha256": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so",
+        "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so.0",
+        "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cpu.so.0.26.0",
+        "sha256": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so",
+        "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so.0",
+        "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml-cuda.so.0.26.0",
+        "sha256": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so",
+        "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so.0",
+        "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libggml.so.0.26.0",
+        "sha256": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-cli-impl.so",
+        "sha256": "b2a8258ea020b616b95eb3c8d6a86afff16e8f81e5be5129f44327431cb4f4d4"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so",
+        "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so.0",
+        "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-common.so.0.6.0",
+        "sha256": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama-server-impl.so",
+        "sha256": "6e4ec475238226091f3c61eb57ee1ee37df9291885e86cf47d39f9539b44a45b"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so",
+        "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so.0",
+        "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libllama.so.0.6.0",
+        "sha256": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so",
+        "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so.0",
+        "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/libmtmd.so.0.6.0",
+        "sha256": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/llama-cli",
+        "sha256": "659465db4397442b851d7509c590334b513ee5bd5baa32b5980beb0469fd4eb3"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/llama-server",
+        "sha256": "e8dc25cdeef9898959e73e58cb79eef964011ea76bd5d919baf3ba373adbfb0a"
+      },
+      {
+        "path": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/runtime_manifest.json",
+        "sha256": "150141f370e82faa426cd468af1505584bcc98efd5b2e69d695b19e943a70784"
+      }
+    ],
+    "prompt": [
+      {
+        "path": "configs/phase11_semantic_prompts_en_v15.yaml",
+        "sha256": "cc1457dfe7924478b416e3372d990dd91e8aa14420c0f0519edc6d464a1fad32"
+      },
+      {
+        "path": "configs/phase11_semantic_prompts_ja_v15.yaml",
+        "sha256": "1ca6700aca8066aeb84969e368c73a6a12680eed371d95d30aa07e76198161e5"
+      }
+    ],
+    "sampler": [
+      {
+        "path": "data/manifests/phase11-autonomy-v3-identity/sampler-ce8ecead90777de2fbd59496bee7ab959414eaca42b710bff8aab27500958774.json",
+        "sha256": "76d5643c828f32f6d51946df740e1c34bbc2d89a2acdcb8365273c84b34a1954"
+      }
+    ],
+    "schema": [
+      {
+        "path": "data/manifests/phase11-autonomy-v3-identity/schema-7e72d0342e273879cd9a4aa57313396d6680638d27180e14a8d05263c754b085.json",
+        "sha256": "a1d6f588c3864f09b50081da03bdd3b1e3dbd140444dc819c60a2714670d9fc1"
+      },
+      {
+        "path": "src/rag_research/evaluation/schema.py",
+        "sha256": "616619fe28b913a309a6676415b2a8d8eb36afa0ddaef0ccb77e214e109a3b42"
+      }
+    ],
+    "core": [
+      {
+        "path": "src/rag_research/__init__.py",
+        "sha256": "7b788c2f28d57d6f0c2c532d9b01a3c7b6b6f3d4475e1cf12da028b65ab96b74"
+      },
+      {
+        "path": "src/rag_research/baseline.py",
+        "sha256": "5ae83d487fe46dbc117e2098751374a7fe500378f7e009afd79d950d16a3ad85"
+      },
+      {
+        "path": "src/rag_research/calibration/__init__.py",
+        "sha256": "0f8f62672aef489bf544efaa7f864caf54dacc9399a9de89af3be6d624574b47"
+      },
+      {
+        "path": "src/rag_research/calibration/preparation.py",
+        "sha256": "c9718d8f341a74088379ab8bb7392978544c51780b4726b0b8564eb590d0b5ee"
+      },
+      {
+        "path": "src/rag_research/calibration/report.py",
+        "sha256": "6426fc6676c69e94ebd6f41c91df84a40a8c2bf70fe0f15d0b85106999fe93a2"
+      },
+      {
+        "path": "src/rag_research/data/__init__.py",
+        "sha256": "de362f3487a018cb700e8fb8f12718f5e6dce28a27481d96d8b04f948c29306b"
+      },
+      {
+        "path": "src/rag_research/data/baobab_source.py",
+        "sha256": "29a02661abdf522fea4660deb6bd9c9bec484b09f60276be7d95e6ea22cb178a"
+      },
+      {
+        "path": "src/rag_research/data/clapnq_acquisition.py",
+        "sha256": "2d089d99532d44abae23b619474cc0cf9e9bd7913693417095af105a970fd393"
+      },
+      {
+        "path": "src/rag_research/data/clapnq_annotations.py",
+        "sha256": "5c9f9656efdc71756d8ceb804b0bf8ddb7f9c6df6681852365ebbeaee61e4dbb"
+      },
+      {
+        "path": "src/rag_research/data/clapnq_corpus.py",
+        "sha256": "5e049f3113854a405bbe022895bcb404c62cd65a20f5a8af65bd9a086741015c"
+      },
+      {
+        "path": "src/rag_research/data/clapnq_manifest.py",
+        "sha256": "9443f15fdc9181875ab1058fd775ed8fa4d3fbef586921c7ded7764703dece3b"
+      },
+      {
+        "path": "src/rag_research/data/clapnq_queries.py",
+        "sha256": "34a16a1b54846881420f8f566e33ddf7c33c3cc7dbfda7f30a5888d5cfded405"
+      },
+      {
+        "path": "src/rag_research/data/clapnq_records.py",
+        "sha256": "9efa5c14ded2f0302360236a051c0d4d7dfd9f64636b341cf792761986e6fb22"
+      },
+      {
+        "path": "src/rag_research/data/clapnq_source.py",
+        "sha256": "bff1e979d6f65a799154590295e0ae61826ef929db9c3e383a10b2baebd4cea0"
+      },
+      {
+        "path": "src/rag_research/data/clapnq_split.py",
+        "sha256": "a5327fb6c3d5fea39132f28b2c3e03afe4b719a7c70ea2fb9af30f7f94732a8d"
+      },
+      {
+        "path": "src/rag_research/data/japanese_dataset.py",
+        "sha256": "42baaebaf96a2cb1b75d5b611917aeca01a17ccd8818f93a031d0b8a850e4e97"
+      },
+      {
+        "path": "src/rag_research/data/japanese_evidence.py",
+        "sha256": "da0459c8fbaec7d735c702669e59864ba996b79c10d1bb3fd8baf3a00eec95e9"
+      },
+      {
+        "path": "src/rag_research/data/japanese_passages.py",
+        "sha256": "05ab00ea2a4d6c8bf36b4afd4a21a34af66db9dee80cd6804acba418f00671bb"
+      },
+      {
+        "path": "src/rag_research/data/japanese_token_corpus.py",
+        "sha256": "0e04be836598938cff552c295cc9a36b7b4770892a94d11dbe38e8b041d957ca"
+      },
+      {
+        "path": "src/rag_research/data/source_availability.py",
+        "sha256": "eaaa4ab5353bdc41262b01e2c814cc198eebac5f3c57cdae8d1fbb869863767a"
+      },
+      {
+        "path": "src/rag_research/data/study_assets.py",
+        "sha256": "78b33b20578cb1bac2dc4198856627f2a4442de168d58360c463d759dc7296e4"
+      },
+      {
+        "path": "src/rag_research/data/token_bounded_corpus.py",
+        "sha256": "e3275f37a6f6631bea13270eb54e728b0846db2c78cfed71b3e671d3feaf45a0"
+      },
+      {
+        "path": "src/rag_research/data/wikipedia_reference_projection.py",
+        "sha256": "3c48860c4a8540344fc35afad7b4ceefde4c12a9578d426e9b395454ce9f7762"
+      },
+      {
+        "path": "src/rag_research/data/wikipedia_snapshot.py",
+        "sha256": "0cf392491d6c482bb3fccc1db361a580cee1c6327ed96b07d7a31765dd93b80c"
+      },
+      {
+        "path": "src/rag_research/evaluation/__init__.py",
+        "sha256": "24e2773056b47f9f7e08f010025fafbbac5f7430b234e01d7294d367494dee7b"
+      },
+      {
+        "path": "src/rag_research/evaluation/claims.py",
+        "sha256": "1c1ea3d6419ba6138f8bce81b184636558f4490f5f8118a8fc0c1ffd83920602"
+      },
+      {
+        "path": "src/rag_research/evaluation/claimwise.py",
+        "sha256": "2d0045aad140d869aef2ac279cbca3df50cfa7c320d1b06a553904aa29d9b617"
+      },
+      {
+        "path": "src/rag_research/evaluation/judge.py",
+        "sha256": "14dc0c9c893bceb1fb07e70aa9e352fd864a6ec8ed96374d5ae2bd8ba422a3f2"
+      },
+      {
+        "path": "src/rag_research/evaluation/order.py",
+        "sha256": "8310a847734274179188ebad5177fd57b842448dff2bed545a8fd8b4dd301d7e"
+      },
+      {
+        "path": "src/rag_research/evaluation/quote_alignment.py",
+        "sha256": "a9bc408e05d9fa25c0902b13b7e70d2e2eb7d3402ba4b10c24184d43759b88bb"
+      },
+      {
+        "path": "src/rag_research/evaluation/reasoned_json.py",
+        "sha256": "5c6b089e9442d8f23783aaa5afc4c9a9744d9a617ac8ea7064eff47fbc219830"
+      },
+      {
+        "path": "src/rag_research/evaluation/reasoning_budget.py",
+        "sha256": "f9f933dd20b73e51c15aae87c43dc5e50e22b8c4624f9857c2cb13029b6d91ec"
+      },
+      {
+        "path": "src/rag_research/evaluation/schema.py",
+        "sha256": "616619fe28b913a309a6676415b2a8d8eb36afa0ddaef0ccb77e214e109a3b42"
+      },
+      {
+        "path": "src/rag_research/evaluation/sentence_claims.py",
+        "sha256": "a0a3715ab7f1c3b0b8d7766e779c716efc133822a20c524bab1ca8e09d47a0a5"
+      },
+      {
+        "path": "src/rag_research/evaluation/source_reading.py",
+        "sha256": "ebc5ace62451eb4d8fcdc4380d16be6c0eead9f22d28de6fd96d3f4aac72f693"
+      },
+      {
+        "path": "src/rag_research/evaluation/tasks.py",
+        "sha256": "6db561e9bdf06087889517a7e650388ac437a3423fa00dc1e708e97f8921d517"
+      },
+      {
+        "path": "src/rag_research/experiments/__init__.py",
+        "sha256": "47047fe0079dd895316a10769822dde18800a51a1198d7731d736fa981d54296"
+      },
+      {
+        "path": "src/rag_research/experiments/bilingual_budget.py",
+        "sha256": "343f77abff44086574e9b466b723483465ad7e276d3265029dbe30c5dc0de2a3"
+      },
+      {
+        "path": "src/rag_research/experiments/bilingual_certification.py",
+        "sha256": "77a19ec484ff962124e16a72ff4a9aeeb6d4d2619a886d5489930e1480e006e6"
+      },
+      {
+        "path": "src/rag_research/experiments/bilingual_finalization.py",
+        "sha256": "7a23db3fdfe2925bbe9e8e1e600b5d939a68e0b52fcd5d9620e85ded1b085d7e"
+      },
+      {
+        "path": "src/rag_research/experiments/bilingual_main.py",
+        "sha256": "e1a96df9079973eb23b86bc70c423e24dc763e0d7b70c25444078b6bb7a2b75a"
+      },
+      {
+        "path": "src/rag_research/experiments/bilingual_quality.py",
+        "sha256": "afd31b0e69e833fb973619e121cf53cf2a64ac489bcb43220a6bf867cb51149f"
+      },
+      {
+        "path": "src/rag_research/experiments/bilingual_runner.py",
+        "sha256": "41f08a5fbb0180de2a2fe32e63de2b6546bbd1c3f51c4e3c2442d7ad9e01eb82"
+      },
+      {
+        "path": "src/rag_research/experiments/bilingual_semantics.py",
+        "sha256": "536ff5875abf4cfa9a636095b06a319b0f31eff6265b63da2ae4d2b616d21eea"
+      },
+      {
+        "path": "src/rag_research/experiments/bilingual_statistics.py",
+        "sha256": "37a51c010da19ea98e89fdab2932124d28d9d866991f44ce30064b089b611573"
+      },
+      {
+        "path": "src/rag_research/experiments/calibration_analysis.py",
+        "sha256": "ce1803a7038159caf450dcc30d01facde912066c3a1d00b22e97dcc205765dff"
+      },
+      {
+        "path": "src/rag_research/experiments/calibration_protocol.py",
+        "sha256": "2651b6a4aae7a0a869d9ad5f0009ae606baab55902ea280182027ee998ba6c12"
+      },
+      {
+        "path": "src/rag_research/experiments/calibration_selection.py",
+        "sha256": "14542517f6d82935d96c26a68119245993e6dc8a6da75c120f342399b08962aa"
+      },
+      {
+        "path": "src/rag_research/experiments/decisions.py",
+        "sha256": "46567daa5fd1a12092db0fdac7c3827ef55d7ea461815aa0f88b0c5887b3ef1e"
+      },
+      {
+        "path": "src/rag_research/experiments/development_selection.py",
+        "sha256": "e4557484428d9474c4ec30934719f761c9d0d8a3e90cc9c807410e2e8b8f30dc"
+      },
+      {
+        "path": "src/rag_research/experiments/evidence_reuse.py",
+        "sha256": "abea53d14fbf00671772952d946e796578601c0f5063db20d5befd7c391fc2a7"
+      },
+      {
+        "path": "src/rag_research/experiments/frozen_trace.py",
+        "sha256": "0c5d47cb8d515e7d75370aa48aa689c4c75a405e2ba0cda5aedfab6bd220aae4"
+      },
+      {
+        "path": "src/rag_research/experiments/order_runner.py",
+        "sha256": "4179540c39a0b6b8baa1d9efe6cb1e286a96b1487df30ecc06e1bd3b278e8bee"
+      },
+      {
+        "path": "src/rag_research/experiments/phase11_autonomy.py",
+        "sha256": "f1c95065e3d5531e14a16e825fc26a6ad89286ec442bd12de1b1dc3a830812a0"
+      },
+      {
+        "path": "src/rag_research/experiments/phase11_collection.py",
+        "sha256": "e93b22ed3b2018f25c7660673d2648c29093e8c8a9d4c118c9b616965f67cd85"
+      },
+      {
+        "path": "src/rag_research/experiments/protocol.py",
+        "sha256": "e5738106f7409313cd27fd052eae61779b40b112c22ec3d299c7932aa52ce3cf"
+      },
+      {
+        "path": "src/rag_research/experiments/quality.py",
+        "sha256": "ff3063f1f36b663ad8acc6a76db43cdaea8b497d264c71583d8a135541bdb07c"
+      },
+      {
+        "path": "src/rag_research/experiments/quality_form.py",
+        "sha256": "89cb98cf433950ea3b66c2151712617c938bff557ce6d2871b9d1d1eac541d00"
+      },
+      {
+        "path": "src/rag_research/experiments/repair_runner.py",
+        "sha256": "8c273482750e1cc37a5d297b47d2dec3acb39458d8e7a95b9b4e3094afb38ee8"
+      },
+      {
+        "path": "src/rag_research/experiments/semantic_adoption.py",
+        "sha256": "e2c16aa7259985727fda76d8257eca8610fa75eb0da9982aad441ff35ea64bb8"
+      },
+      {
+        "path": "src/rag_research/experiments/semantic_diagnostics.py",
+        "sha256": "93d821f5af0412fa9f54a198338a93fdca37f902eccac52099647c4f2c509963"
+      },
+      {
+        "path": "src/rag_research/experiments/statistics.py",
+        "sha256": "25244b304a0613ccc5cd23f60d98f8c69ddb4f94c7968b1c3eaa1433ef90de3f"
+      },
+      {
+        "path": "src/rag_research/experiments/storage.py",
+        "sha256": "073f4c89dca883fd0f5c3ab900c722361c720a3cb607faa9903190c15b272165"
+      },
+      {
+        "path": "src/rag_research/generation/__init__.py",
+        "sha256": "33c1d27b63c42955f7e025298bd2347fbc8cf5afc57216d35516e7701e0e421a"
+      },
+      {
+        "path": "src/rag_research/generation/artifacts.py",
+        "sha256": "bb70ba77b944ecc23a07cc1865a3fafeee610dcd453caebc5a77b8fe79fc44b5"
+      },
+      {
+        "path": "src/rag_research/generation/auxiliary.py",
+        "sha256": "b702f4762d8da7e892486c1096b7f8c60dabf4d93dd9c3722a8a0904d893c410"
+      },
+      {
+        "path": "src/rag_research/generation/auxiliary_config.py",
+        "sha256": "9e76be699abcbb966564c6958c2761d48772a5b3f4fc947ed0547ee939ce7d52"
+      },
+      {
+        "path": "src/rag_research/generation/config.py",
+        "sha256": "9a641357a2767322e97d8ee224b2f7d2d0c7bda0a3ff21f7f684fc329175b60e"
+      },
+      {
+        "path": "src/rag_research/generation/context.py",
+        "sha256": "a86c5fda1a1d7747d3ce9087a732b70e700802b6142e4e5db6adeb1a64b6a63c"
+      },
+      {
+        "path": "src/rag_research/generation/cuda_runtime.py",
+        "sha256": "5f47bd21160a8605c287a368aaa545724595e8aff8e605a9c97f4f1a6a9647db"
+      },
+      {
+        "path": "src/rag_research/generation/generator.py",
+        "sha256": "3ece4c433d2dec54b4c07dc0b95e42f78a2debde1349ab67d7d852445f9226a1"
+      },
+      {
+        "path": "src/rag_research/generation/json_grammar.py",
+        "sha256": "c1355a13afa204b8ae1362a87cd928116f180ee07dc8b208e29c91a86bf04c46"
+      },
+      {
+        "path": "src/rag_research/generation/local.py",
+        "sha256": "53708682d4de3ff67d2db674e09d972fea3f36c3159dfdd09cc12db4636f1097"
+      },
+      {
+        "path": "src/rag_research/generation/smoke.py",
+        "sha256": "469dd916567aac7d247dea606f5e885685f3c91d62e79dae683c8f7fa75a063a"
+      },
+      {
+        "path": "src/rag_research/pilot/__init__.py",
+        "sha256": "ca181baf17b3acfb1dedc3fc8f0364f272437a9a26051e29f8faf2d8c14274d5"
+      },
+      {
+        "path": "src/rag_research/pilot/assessment.py",
+        "sha256": "213d12000a7b94b38cf9c49609fb96005cfd21c9f4d3f6686fe62346c0607ea4"
+      },
+      {
+        "path": "src/rag_research/pilot/baseline.py",
+        "sha256": "9e76898c903a64a4bb078015f81124be368d0005f28f9f19d0b0a38b05cb2abd"
+      },
+      {
+        "path": "src/rag_research/pilot/internal.py",
+        "sha256": "79d0f8278f6aa4ff572a2e787bcd4906c83d973de20492759ee9b77ea4f13060"
+      },
+      {
+        "path": "src/rag_research/pilot/materials.py",
+        "sha256": "ef55d2bb52efed008fdcf7bd69192ec3fb6754fab048fec6f74b4ec9a6fdc977"
+      },
+      {
+        "path": "src/rag_research/pilot/report.py",
+        "sha256": "3ce2e22af32f85e55fb69b3d4193e307955bb83a5b0d5503acb71380976449e2"
+      },
+      {
+        "path": "src/rag_research/pilot/selection.py",
+        "sha256": "72513b5bf3a260a467373e30dffbc0fce09fab3433b956e07dfe7244e7d313ae"
+      },
+      {
+        "path": "src/rag_research/recovery/__init__.py",
+        "sha256": "a248c5acd19ee7a30fcc05f65b985c7a4b207c48dfff29f30ec1b842b364d123"
+      },
+      {
+        "path": "src/rag_research/recovery/answer_rewrite.py",
+        "sha256": "3cdb6306f272e3dc77e4916445e328d9d4094475cbdc482b11ec48c801dc8122"
+      },
+      {
+        "path": "src/rag_research/retrieval/__init__.py",
+        "sha256": "22c7dcaf10082418687dd9cf7a6333b255e76560e4c11e5a983b32b228fbd2f0"
+      },
+      {
+        "path": "src/rag_research/retrieval/bilingual.py",
+        "sha256": "a22f84c414f9c9da5a659dc324ec7f4c7c642a50c47690060cd28d8a45a25be0"
+      },
+      {
+        "path": "src/rag_research/retrieval/bm25.py",
+        "sha256": "c99e079567ca7c3b86a38d5708b25facb03837f641c57181b731dfcadd89178e"
+      },
+      {
+        "path": "src/rag_research/retrieval/calibration.py",
+        "sha256": "32281b5f24690b51903945c3bb492a281ce7fac5279d9754a0539a1917788cb7"
+      },
+      {
+        "path": "src/rag_research/retrieval/common.py",
+        "sha256": "e54d7e1afc9745822ed574245ea630bbb6bd3224497ba3857baa9fb99408e2b4"
+      },
+      {
+        "path": "src/rag_research/retrieval/dense.py",
+        "sha256": "9f2a6588ca129fe1d522d09c3d3c7bcef6a5950509d22527675846b1d692ade7"
+      },
+      {
+        "path": "src/rag_research/retrieval/factory.py",
+        "sha256": "81c13594214eaf095e8e95bdb5a460cc84010f5ee67ec5c7b4b060f81f3bcc00"
+      },
+      {
+        "path": "src/rag_research/retrieval/hybrid.py",
+        "sha256": "d161d4860fedc0a862e318c3848d7d5abf089a0730e0a2206c3a12e4e5d0ed1d"
+      },
+      {
+        "path": "src/rag_research/retrieval/multilingual.py",
+        "sha256": "f7f104c07c4c45826a783b22b35735a8ae61b1d7073f2b89aaa8eb3473c63c35"
+      },
+      {
+        "path": "src/rag_research/retrieval/parent_metrics.py",
+        "sha256": "f1a23aca9ec6f3c6916209a48640d07af2202028e879ba8d16b987eb3596fec5"
+      },
+      {
+        "path": "src/rag_research/retrieval/validation.py",
+        "sha256": "1a0a0ff58b60ae484c627efbd4cb9e4684110e4a6c1bfbf6c83cbed450733839"
+      }
+    ]
+  },
+  "formal_inputs": [
+    {
+      "path": "configs/measurement_diagnostics.json",
+      "sha256": "0d407961783ea387e661609043706fa36ffb120b379cae1e0e3df1d90b117456"
+    },
+    {
+      "path": "configs/phase11_attribution_conflict_smoke_v30.json",
+      "sha256": "0d4bf3fa142ff2959d419936bae85a1621d663ed078b6f92985e2b011fd9e20c"
+    },
+    {
+      "path": "configs/phase11_autonomy_v3.json",
+      "sha256": "e0dd7fae96939af34232f5a7174cbc400c6e7dfce3eedf584c2a4d08ca09df00"
+    },
+    {
+      "path": "configs/phase11_format_tokenizer_candidate_v30.yaml",
+      "sha256": "0e1a645b27f9e1adb9da72daddf4dfdfde63a988b67f2dd82fd28eddbb84e41c"
+    },
+    {
+      "path": "configs/phase11_relation_witness_smoke_v30.json",
+      "sha256": "9a95c88e3b8b9a5aced6f2096f59ba7dcf5ebc1d6fd7350ba98c81cb6c380c33"
+    },
+    {
+      "path": "configs/phase11_rewrite_smoke_plan_v30.json",
+      "sha256": "80d6dcc270a1fa665f02788051a8d7a439454ca04ee775a73a45f30808ed3adf"
+    },
+    {
+      "path": "configs/phase11_semantic_candidate_v30.yaml",
+      "sha256": "dfd520e1497d67ca9a47d8fd27afecf5c2f2abeb14f6370d57b709189a89ff4c"
+    },
+    {
+      "path": "configs/phase11_semantic_diagnostics_v30.json",
+      "sha256": "8a83cff4046cb46131efd9318c2b0d84658729860b6a6ffe533f9c25b17a113e"
+    },
+    {
+      "path": "configs/phase11_semantic_prompts_en_v15.yaml",
+      "sha256": "cc1457dfe7924478b416e3372d990dd91e8aa14420c0f0519edc6d464a1fad32"
+    },
+    {
+      "path": "configs/phase11_semantic_prompts_ja_v15.yaml",
+      "sha256": "1ca6700aca8066aeb84969e368c73a6a12680eed371d95d30aa07e76198161e5"
+    },
+    {
+      "path": "data/manifests/phase11-autonomy-v3-identity/sampler-ce8ecead90777de2fbd59496bee7ab959414eaca42b710bff8aab27500958774.json",
+      "sha256": "76d5643c828f32f6d51946df740e1c34bbc2d89a2acdcb8365273c84b34a1954"
+    },
+    {
+      "path": "data/manifests/phase11_auxiliary_qwen3_8b_manifest_v1.json",
+      "sha256": "507390013781f3cee9e9abf34255d5e0a07f1cd660d38ed83e1dccda0ecc3d08"
+    },
+    {
+      "path": "data/manifests/phase11_relation_witness_smoke_inputs_v24.json",
+      "sha256": "48970c07f9860d086385d8a393fc7c2b12e70051b472a46aa0fbc5fa3b603213"
+    },
+    {
+      "path": "data/manifests/phase11_relation_witness_synthetic_v13.json",
+      "sha256": "ddbf506be977df4ccabc159c7ea9935aad9b6c2a349ae9140e9d78ad36f96d67"
+    },
+    {
+      "path": "data/manifests/phase11_rewrite_smoke_inputs_v25.json",
+      "sha256": "c3ce4c42d20d46132188fba469dcf62e481e2a55a9337d4ff79f448dd35e0050"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/internal/31e646aa96013a84580e692c/trace.json",
+      "sha256": "eb595a143b203554ef1fd60f3c1b5fcaf0cc5a0071be6d8a27e5fe7736588b71"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/internal/323bf35882bc45a96feb3e1d/trace.json",
+      "sha256": "6d3692e8b2f56fb848f71f5e78e9db6e77fcbb1dd6d1dafba0d53cc7012d70f5"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/semantic_audit_v2.json",
+      "sha256": "97f4d1c872827ed8b7570f8cb82458b748d5464bbce2f7f70ecc5800065b9b85"
+    },
+    {
+      "path": "scripts/preflight_semantic_model_v2.py",
+      "sha256": "457c1980efa6da0100b7b62dbe7ec87c4270144259d6a5ef6d0e01694fa24295"
+    },
+    {
+      "path": "scripts/probe_thinking_json_schema_v5.py",
+      "sha256": "df0eb529f2ec50951c46d323e2eeda250986cb2dc4e0562e67e113232738dcd5"
+    },
+    {
+      "path": "scripts/run_phase11_rewrite_smoke_v4.py",
+      "sha256": "f43904d70822e7761692c78acf9bebe992a1146e80703b263d0462ae2332d59e"
+    },
+    {
+      "path": "tests/test_phase11_rewrite_smoke_v4.py",
+      "sha256": "91c19c272a231c27e9ec9e29b1520d198fed82864dbaf557d509e69eeb6a26a9"
+    }
+  ],
+  "identity_evidence": {
+    "path": "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/formal-v30-review-result.json",
+    "sha256": "f75d7f0031ae963c0e429a4ee927a33a9899a749282063e0a390834972576578"
+  },
+  "finite_plan_producer": {
+    "path": "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/produce_plan.py",
+    "sha256": "6761a9ac3504581d25bf443ba718cc93c0fb9f484ad3ea125456729bb9f6f4a1"
+  },
+  "stage_sequence": [
+    {
+      "name": "tokenizer-preflight",
+      "budget": {
+        "planned_calls": 0,
+        "maximum_calls": 0,
+        "estimated_tokens": 0,
+        "estimated_native_seconds": 0.0,
+        "maximum_wall_seconds": 1800,
+        "request_timeout_seconds": 1200,
+        "allowed_request_timeout_seconds": [
+          1200
+        ],
+        "maximum_tokens_per_call": 512
+      },
+      "hypothesis": "Before any new Model generation, fresh actual tag tokenize/render/template/context witnesses match the inspected Model metadata for all ten artificial inputs; this does not replace all90 semantic preflight.",
+      "change": "Core-only exact3-file correction of declared thinking prefill before token counting across Auxiliary Extract/Judge/Rewrite/full90preflight/artificialformat. Preserve raw/effective audit, none/fullsuffix bytes, Model8B/graphOFF b11433/FAoff/Prompt15/common4096/Sampler/Schema/cases/Expected/gates. New Core identity required; failed v29 tokenizer0 and old Native preserved, no old output adoption.",
+      "validation_scope": "Fresh11 tokenizer witnesses only, artificial10 domain, Native0. Preserve all failed witnesses; no old9B token IDs/witness reuse, no Main/Cal/Evaluation inputs.",
+      "finite_calculation": {
+        "reference_v28_returned47_HTTP_native_seconds": 2567.091079,
+        "reference_calls": 47,
+        "reference_native_mean_seconds": 54.61895912765957,
+        "reference_is_partial_returned_subset_not_completed90": true,
+        "unknown48_elapsed_excluded_from_returned_mean": true,
+        "new_8B_native_duration_guaranteed_by_old_mean": false,
+        "reference_unknown48_elapsed_seconds_excluded_from_mean_retained_in_cost": 10.641596,
+        "token_upper_is_context_reservation_not_observed_tokens": true,
+        "context_tokens_per_call": 12288,
+        "format_probe_override_reasoning_budget": 128,
+        "format_probe_override_max_output_tokens": 512,
+        "fresh_format_Native_required": 10,
+        "old_format_Native_reused": 0,
+        "startup_tokenization_CPU_and_audit_costs_separate": true,
+        "preflight_completion_tokens_and_native_calls_zero_not_total_work_zero": true,
+        "finite_wall_is_run_specific_not_goal_cap": true
+      },
+      "monitor": {
+        "method": "process_journal_resources",
+        "interval_seconds": 5
+      },
+      "stop_method": "Use the unchanged v3 supervisor: finite wall, task/journal error, unknown, or call-budget violation stops only its owned process group. Preserve every returned/failed/unknown/unattempted request. Smoke semantic error also requires candidate revision before full90; process health is not semantic adoption.",
+      "resume_method": "Inspect the existing canonical handle/journals/logs, never launch duplicates or resend unknown/error requests. Preserve failed candidate and use cause-specific changed conditions with a new identity/version/finite plan; ordinary completed sessions do not end the overall Goal.",
+      "automatic_retries": 0
+    },
+    {
+      "name": "preflight",
+      "budget": {
+        "planned_calls": 0,
+        "maximum_calls": 0,
+        "estimated_tokens": 0,
+        "estimated_native_seconds": 0.0,
+        "maximum_wall_seconds": 1800,
+        "request_timeout_seconds": 1200,
+        "allowed_request_timeout_seconds": [
+          1200
+        ],
+        "maximum_tokens_per_call": 6144
+      },
+      "hypothesis": "Correcting the common Core application of already declared thinking prefill may permit exact raw/effective ChatML witnesses and subsequent fresh generation on the unchanged8B condition. NewCoreID avoids same-condition retry; no GPU kernel cause, repair or semantic success is established.",
+      "change": "Core-only exact3-file correction of declared thinking prefill before token counting across Auxiliary Extract/Judge/Rewrite/full90preflight/artificialformat. Preserve raw/effective audit, none/fullsuffix bytes, Model8B/graphOFF b11433/FAoff/Prompt15/common4096/Sampler/Schema/cases/Expected/gates. New Core identity required; failed v29 tokenizer0 and old Native preserved, no old output adoption.",
+      "validation_scope": "Full39QA45units78conditions90 inputs plus fresh artificialformat10, causalNS2, Councilc4C2 and separate Rewrite2; freshKnown84 only after actual full90 adoption. No old format or semantic Native reuse. No Main/Cal/Evaluation body access.",
+      "finite_calculation": {
+        "reference_v28_returned47_HTTP_native_seconds": 2567.091079,
+        "reference_calls": 47,
+        "reference_native_mean_seconds": 54.61895912765957,
+        "reference_is_partial_returned_subset_not_completed90": true,
+        "unknown48_elapsed_excluded_from_returned_mean": true,
+        "new_8B_native_duration_guaranteed_by_old_mean": false,
+        "reference_unknown48_elapsed_seconds_excluded_from_mean_retained_in_cost": 10.641596,
+        "token_upper_is_context_reservation_not_observed_tokens": true,
+        "context_tokens_per_call": 12288,
+        "format_probe_override_reasoning_budget": 128,
+        "format_probe_override_max_output_tokens": 512,
+        "fresh_format_Native_required": 10,
+        "old_format_Native_reused": 0,
+        "startup_tokenization_CPU_and_audit_costs_separate": true,
+        "preflight_completion_tokens_and_native_calls_zero_not_total_work_zero": true,
+        "finite_wall_is_run_specific_not_goal_cap": true
+      },
+      "monitor": {
+        "method": "process_journal_resources",
+        "interval_seconds": 5
+      },
+      "stop_method": "Use the unchanged v3 supervisor: finite wall, task/journal error, unknown, or call-budget violation stops only its owned process group. Preserve every returned/failed/unknown/unattempted request. Smoke semantic error also requires candidate revision before full90; process health is not semantic adoption.",
+      "resume_method": "Inspect the existing canonical handle/journals/logs, never launch duplicates or resend unknown/error requests. Preserve failed candidate and use cause-specific changed conditions with a new identity/version/finite plan; ordinary completed sessions do not end the overall Goal.",
+      "automatic_retries": 0
+    },
+    {
+      "name": "format",
+      "budget": {
+        "planned_calls": 10,
+        "maximum_calls": 10,
+        "estimated_tokens": 122880,
+        "estimated_native_seconds": 546.1895912765957,
+        "maximum_wall_seconds": 3000,
+        "request_timeout_seconds": 1200,
+        "allowed_request_timeout_seconds": [
+          1200
+        ],
+        "maximum_tokens_per_call": 512
+      },
+      "hypothesis": "Under the unchanged8B with new common Core prefill and explicit FAoff execution-v2, the unchanged closing-tag grammar constrains all nine strict artificial cases; the single legacy-brace case remains an intentional contrast, not a requirement to pass semantic judgment.",
+      "change": "Core-only exact3-file correction of declared thinking prefill before token counting across Auxiliary Extract/Judge/Rewrite/full90preflight/artificialformat. Preserve raw/effective audit, none/fullsuffix bytes, Model8B/graphOFF b11433/FAoff/Prompt15/common4096/Sampler/Schema/cases/Expected/gates. New Core identity required; failed v29 tokenizer0 and old Native preserved, no old output adoption.",
+      "validation_scope": "Exactly ten existing artificial probe cases: nine strict expected constraints and one declared legacy contrast. Effective reasoning128/output512/context12288. Fresh Native10 required; no research QA, no Judge/Rewrite4096 semantic adoption.",
+      "finite_calculation": {
+        "reference_v28_returned47_HTTP_native_seconds": 2567.091079,
+        "reference_calls": 47,
+        "reference_native_mean_seconds": 54.61895912765957,
+        "reference_is_partial_returned_subset_not_completed90": true,
+        "unknown48_elapsed_excluded_from_returned_mean": true,
+        "new_8B_native_duration_guaranteed_by_old_mean": false,
+        "reference_unknown48_elapsed_seconds_excluded_from_mean_retained_in_cost": 10.641596,
+        "token_upper_is_context_reservation_not_observed_tokens": true,
+        "context_tokens_per_call": 12288,
+        "format_probe_override_reasoning_budget": 128,
+        "format_probe_override_max_output_tokens": 512,
+        "fresh_format_Native_required": 10,
+        "old_format_Native_reused": 0,
+        "startup_tokenization_CPU_and_audit_costs_separate": true,
+        "preflight_completion_tokens_and_native_calls_zero_not_total_work_zero": true,
+        "finite_wall_is_run_specific_not_goal_cap": true
+      },
+      "monitor": {
+        "method": "process_journal_resources",
+        "interval_seconds": 5
+      },
+      "stop_method": "Use the unchanged v3 supervisor: finite wall, task/journal error, unknown, or call-budget violation stops only its owned process group. Preserve every returned/failed/unknown/unattempted request. Smoke semantic error also requires candidate revision before full90; process health is not semantic adoption.",
+      "resume_method": "Inspect the existing canonical handle/journals/logs, never launch duplicates or resend unknown/error requests. Preserve failed candidate and use cause-specific changed conditions with a new identity/version/finite plan; ordinary completed sessions do not end the overall Goal.",
+      "automatic_retries": 0
+    },
+    {
+      "name": "smoke",
+      "budget": {
+        "planned_calls": 2,
+        "maximum_calls": 2,
+        "estimated_tokens": 24576,
+        "estimated_native_seconds": 109.23791825531914,
+        "maximum_wall_seconds": 3000,
+        "request_timeout_seconds": 1200,
+        "allowed_request_timeout_seconds": [
+          1200
+        ],
+        "maximum_tokens_per_call": 6144
+      },
+      "hypothesis": "Correcting the common Core application of already declared thinking prefill may permit exact raw/effective ChatML witnesses and subsequent fresh generation on the unchanged8B condition. NewCoreID avoids same-condition retry; no GPU kernel cause, repair or semantic success is established.",
+      "change": "Core-only exact3-file correction of declared thinking prefill before token counting across Auxiliary Extract/Judge/Rewrite/full90preflight/artificialformat. Preserve raw/effective audit, none/fullsuffix bytes, Model8B/graphOFF b11433/FAoff/Prompt15/common4096/Sampler/Schema/cases/Expected/gates. New Core identity required; failed v29 tokenizer0 and old Native preserved, no old output adoption.",
+      "validation_scope": "Full39QA45units78conditions90 inputs plus fresh artificialformat10, causalNS2, Councilc4C2 and separate Rewrite2; freshKnown84 only after actual full90 adoption. No old format or semantic Native reuse. No Main/Cal/Evaluation body access.",
+      "finite_calculation": {
+        "reference_v28_returned47_HTTP_native_seconds": 2567.091079,
+        "reference_calls": 47,
+        "reference_native_mean_seconds": 54.61895912765957,
+        "reference_is_partial_returned_subset_not_completed90": true,
+        "unknown48_elapsed_excluded_from_returned_mean": true,
+        "new_8B_native_duration_guaranteed_by_old_mean": false,
+        "reference_unknown48_elapsed_seconds_excluded_from_mean_retained_in_cost": 10.641596,
+        "token_upper_is_context_reservation_not_observed_tokens": true,
+        "context_tokens_per_call": 12288,
+        "format_probe_override_reasoning_budget": 128,
+        "format_probe_override_max_output_tokens": 512,
+        "fresh_format_Native_required": 10,
+        "old_format_Native_reused": 0,
+        "startup_tokenization_CPU_and_audit_costs_separate": true,
+        "preflight_completion_tokens_and_native_calls_zero_not_total_work_zero": true,
+        "finite_wall_is_run_specific_not_goal_cap": true
+      },
+      "monitor": {
+        "method": "process_journal_resources",
+        "interval_seconds": 5
+      },
+      "stop_method": "Use the unchanged v3 supervisor: finite wall, task/journal error, unknown, or call-budget violation stops only its owned process group. Preserve every returned/failed/unknown/unattempted request. Smoke semantic error also requires candidate revision before full90; process health is not semantic adoption.",
+      "resume_method": "Inspect the existing canonical handle/journals/logs, never launch duplicates or resend unknown/error requests. Preserve failed candidate and use cause-specific changed conditions with a new identity/version/finite plan; ordinary completed sessions do not end the overall Goal.",
+      "automatic_retries": 0
+    },
+    {
+      "name": "attribution-smoke",
+      "budget": {
+        "planned_calls": 2,
+        "maximum_calls": 2,
+        "estimated_tokens": 24576,
+        "estimated_native_seconds": 109.23791825531914,
+        "maximum_wall_seconds": 3000,
+        "request_timeout_seconds": 1200,
+        "allowed_request_timeout_seconds": [
+          1200
+        ],
+        "maximum_tokens_per_call": 6144
+      },
+      "hypothesis": "Correcting the common Core application of already declared thinking prefill may permit exact raw/effective ChatML witnesses and subsequent fresh generation on the unchanged8B condition. NewCoreID avoids same-condition retry; no GPU kernel cause, repair or semantic success is established.",
+      "change": "Core-only exact3-file correction of declared thinking prefill before token counting across Auxiliary Extract/Judge/Rewrite/full90preflight/artificialformat. Preserve raw/effective audit, none/fullsuffix bytes, Model8B/graphOFF b11433/FAoff/Prompt15/common4096/Sampler/Schema/cases/Expected/gates. New Core identity required; failed v29 tokenizer0 and old Native preserved, no old output adoption.",
+      "validation_scope": "Exactly the existing Council c4 target in original and reversed order with whole question/answer/all7 fixed units/full documents/IDs/Titles preserved. Both unchanged Expected C must match; no failed-QA replacement or withheld source read. The two requests are distinct registered order conditions, not repeats until success.",
+      "finite_calculation": {
+        "reference_v28_returned47_HTTP_native_seconds": 2567.091079,
+        "reference_calls": 47,
+        "reference_native_mean_seconds": 54.61895912765957,
+        "reference_is_partial_returned_subset_not_completed90": true,
+        "unknown48_elapsed_excluded_from_returned_mean": true,
+        "new_8B_native_duration_guaranteed_by_old_mean": false,
+        "reference_unknown48_elapsed_seconds_excluded_from_mean_retained_in_cost": 10.641596,
+        "token_upper_is_context_reservation_not_observed_tokens": true,
+        "context_tokens_per_call": 12288,
+        "format_probe_override_reasoning_budget": 128,
+        "format_probe_override_max_output_tokens": 512,
+        "fresh_format_Native_required": 10,
+        "old_format_Native_reused": 0,
+        "startup_tokenization_CPU_and_audit_costs_separate": true,
+        "preflight_completion_tokens_and_native_calls_zero_not_total_work_zero": true,
+        "finite_wall_is_run_specific_not_goal_cap": true
+      },
+      "monitor": {
+        "method": "process_journal_resources",
+        "interval_seconds": 5
+      },
+      "stop_method": "Use the unchanged v3 supervisor: finite wall, task/journal error, unknown, or call-budget violation stops only its owned process group. Preserve every returned/failed/unknown/unattempted request. Smoke semantic error also requires candidate revision before full90; process health is not semantic adoption.",
+      "resume_method": "Inspect the existing canonical handle/journals/logs, never launch duplicates or resend unknown/error requests. Preserve failed candidate and use cause-specific changed conditions with a new identity/version/finite plan; ordinary completed sessions do not end the overall Goal.",
+      "automatic_retries": 0
+    },
+    {
+      "name": "rewrite-smoke",
+      "budget": {
+        "planned_calls": 2,
+        "maximum_calls": 2,
+        "estimated_tokens": 24576,
+        "estimated_native_seconds": 109.23791825531914,
+        "maximum_wall_seconds": 1800,
+        "request_timeout_seconds": 1200,
+        "allowed_request_timeout_seconds": [
+          1200
+        ],
+        "maximum_tokens_per_call": 6144
+      },
+      "hypothesis": "The unchanged Rewrite instructions and common4096 settings can finish strict checked JSON and correct a wrong time plus an unsupported extra draft detail on both preregistered invented languages under this separately registered candidate. Judge/Rewrite Prompt15 and common4096 stay fixed; the exact3 Core prefill fix is the sole new effective axis; Rewrite quality requires offline full-text review and is not inferred from unchanged instructions.",
+      "change": "Core-only exact3-file correction of declared thinking prefill before token counting across Auxiliary Extract/Judge/Rewrite/full90preflight/artificialformat. Preserve raw/effective audit, none/fullsuffix bytes, Model8B/graphOFF b11433/FAoff/Prompt15/common4096/Sampler/Schema/cases/Expected/gates. New Core identity required; failed v29 tokenizer0 and old Native preserved, no old output adoption.",
+      "validation_scope": "Exactly two complete synthetic rewrites, English and Japanese, using only question/whole draft/full source passages. Keep offline Expected out of inference. This is separate from JudgeSmoke2, semantic90 and Known84 and cannot adopt semantic accuracy or Gate11.",
+      "finite_calculation": {
+        "reference_v28_returned47_HTTP_native_seconds": 2567.091079,
+        "reference_calls": 47,
+        "reference_native_mean_seconds": 54.61895912765957,
+        "reference_is_partial_returned_subset_not_completed90": true,
+        "unknown48_elapsed_excluded_from_returned_mean": true,
+        "new_8B_native_duration_guaranteed_by_old_mean": false,
+        "reference_unknown48_elapsed_seconds_excluded_from_mean_retained_in_cost": 10.641596,
+        "token_upper_is_context_reservation_not_observed_tokens": true,
+        "context_tokens_per_call": 12288,
+        "format_probe_override_reasoning_budget": 128,
+        "format_probe_override_max_output_tokens": 512,
+        "fresh_format_Native_required": 10,
+        "old_format_Native_reused": 0,
+        "startup_tokenization_CPU_and_audit_costs_separate": true,
+        "preflight_completion_tokens_and_native_calls_zero_not_total_work_zero": true,
+        "finite_wall_is_run_specific_not_goal_cap": true,
+        "reference_is_Judge_not_measured_Rewrite": true,
+        "Rewrite_native_seconds_estimate_is_uncalibrated_proxy": true
+      },
+      "monitor": {
+        "method": "process_journal_resources",
+        "interval_seconds": 5
+      },
+      "stop_method": "Use the unchanged v3 supervisor: finite wall, task/journal error, unknown, or call-budget violation stops only its owned process group. Preserve every returned/failed/unknown/unattempted request. Smoke semantic error also requires candidate revision before full90; process health is not semantic adoption. Preserve any Rewrite failure or wrong meaning and revise the candidate instead of overwriting it; fixed wall1800 can stop before two worst-case1200-second requests; preserve any partial or unknown result and do not restart unchanged conditions.",
+      "resume_method": "Inspect the existing canonical handle/journals/logs, never launch duplicates or resend unknown/error requests. Preserve failed candidate and use cause-specific changed conditions with a new identity/version/finite plan; ordinary completed sessions do not end the overall Goal.",
+      "automatic_retries": 0
+    },
+    {
+      "name": "semantic",
+      "budget": {
+        "planned_calls": 90,
+        "maximum_calls": 90,
+        "estimated_tokens": 1105920,
+        "estimated_native_seconds": 4915.7063214893615,
+        "maximum_wall_seconds": 22720,
+        "request_timeout_seconds": 1200,
+        "allowed_request_timeout_seconds": [
+          1200
+        ],
+        "maximum_tokens_per_call": 6144
+      },
+      "hypothesis": "Correcting the common Core application of already declared thinking prefill may permit exact raw/effective ChatML witnesses and subsequent fresh generation on the unchanged8B condition. NewCoreID avoids same-condition retry; no GPU kernel cause, repair or semantic success is established.",
+      "change": "Core-only exact3-file correction of declared thinking prefill before token counting across Auxiliary Extract/Judge/Rewrite/full90preflight/artificialformat. Preserve raw/effective audit, none/fullsuffix bytes, Model8B/graphOFF b11433/FAoff/Prompt15/common4096/Sampler/Schema/cases/Expected/gates. New Core identity required; failed v29 tokenizer0 and old Native preserved, no old output adoption.",
+      "validation_scope": "Full39QA45units78conditions90 inputs plus fresh artificialformat10, causalNS2, Councilc4C2 and separate Rewrite2; freshKnown84 only after actual full90 adoption. No old format or semantic Native reuse. No Main/Cal/Evaluation body access.",
+      "finite_calculation": {
+        "reference_v28_returned47_HTTP_native_seconds": 2567.091079,
+        "reference_calls": 47,
+        "reference_native_mean_seconds": 54.61895912765957,
+        "reference_is_partial_returned_subset_not_completed90": true,
+        "unknown48_elapsed_excluded_from_returned_mean": true,
+        "new_8B_native_duration_guaranteed_by_old_mean": false,
+        "reference_unknown48_elapsed_seconds_excluded_from_mean_retained_in_cost": 10.641596,
+        "token_upper_is_context_reservation_not_observed_tokens": true,
+        "context_tokens_per_call": 12288,
+        "format_probe_override_reasoning_budget": 128,
+        "format_probe_override_max_output_tokens": 512,
+        "fresh_format_Native_required": 10,
+        "old_format_Native_reused": 0,
+        "startup_tokenization_CPU_and_audit_costs_separate": true,
+        "preflight_completion_tokens_and_native_calls_zero_not_total_work_zero": true,
+        "finite_wall_is_run_specific_not_goal_cap": true
+      },
+      "monitor": {
+        "method": "process_journal_resources",
+        "interval_seconds": 5
+      },
+      "stop_method": "Use the unchanged v3 supervisor: finite wall, task/journal error, unknown, or call-budget violation stops only its owned process group. Preserve every returned/failed/unknown/unattempted request. Smoke semantic error also requires candidate revision before full90; process health is not semantic adoption.",
+      "resume_method": "Inspect the existing canonical handle/journals/logs, never launch duplicates or resend unknown/error requests. Preserve failed candidate and use cause-specific changed conditions with a new identity/version/finite plan; ordinary completed sessions do not end the overall Goal.",
+      "automatic_retries": 0
+    }
+  ],
+  "fresh_tokenizer11_before_first_Native_and_again_in_format_Run": true,
+  "fresh_format10_required": true,
+  "old_format_or_semantic_outputs_reused": 0,
+  "new_fresh_Known_after_full90": {
+    "QA": 15,
+    "fixed_units": 42,
+    "conditions": 30,
+    "calls": 84,
+    "support_recall_minimum": 0.9,
+    "non_support_specificity_minimum": 0.9,
+    "unchanged_full_Source_Expected_thresholds_coverage_Health_denominators": true,
+    "own_known84_preflight0_required": true,
+    "plan_only_after_complete_new90_review_and_adoption": true
+  },
+  "finite_rules": {
+    "automatic_retries": 0,
+    "no_goal_wide_candidate_time_cap": true,
+    "request_timeout_seconds": 1200,
+    "maximum_output_tokens": 6144,
+    "context_tokens": 12288,
+    "monitor_seconds": 5,
+    "canonical_shared_ledger": "data/runs/development_screening/phase11-autonomy-v3/ledger.json",
+    "fixed_commit_dedicated_checkout_required": true,
+    "stop_owned_group_preserve_failure_unknown_unattempted": true,
+    "unknown_resend_reroll_QA_replacement_Expected_change": false
+  },
+  "preserved_failed_results_and_cost": [
+    {
+      "path": "data/manifests/phase11_v29_tokenizer_preflight_failure_v1.json",
+      "sha256": "48a022bfd6b6ac531c6637f8d7d28a1bda3b7d146788de836330d327deaea962"
+    },
+    {
+      "path": "data/manifests/phase11_autonomy_cumulative_cost_v16.json",
+      "sha256": "65a866e66716a8568e257bf8629966a7526f22f8490dfc1b5382605a6eb4eaa0"
+    },
+    {
+      "path": "data/manifests/phase11_v28_semantic_partial_result_v1.json",
+      "sha256": "1b925a5dc7e921a2fdce6f1442d8f43636a6dff2b41c8e7581eee77aafc63a35"
+    },
+    {
+      "path": "data/manifests/phase11_v28_semantic_disconnect_diagnosis_v1.json",
+      "sha256": "20688eb4355dd945faf342d0cf39381b56878798f2d757aa95209176cce2f7c1"
+    },
+    {
+      "path": "data/manifests/phase11_semantic_8b_result_v3.json",
+      "sha256": "e56a0d7c3f8eac8a05801d4842717de3ab13219aca2d983a4568a39134aba68d"
+    }
+  ],
+  "software": {
+    "new_Core3_and_entry_full_suite_actual": "1203 passed in39.11s",
+    "ruff_check_dot_exit_code": 0,
+    "source_preparation_summary": {
+      "path": "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/SUMMARY.json",
+      "sha256": "0fa9ecd6e672c3c9938bc4fca9f87e1c12343d0ae5e73cc4ff9ddca25a823345"
+    },
+    "Core94_file_count_unchanged_but_three_bytesets_changed": true,
+    "sealed_parent_preregistration": {
+      "path": "data/manifests/phase11_semantic_v29_preregistration_v1.json",
+      "sha256": "fa4f54ef17e7a4104d5b3a818f27a6409980af9ba0f5b5e414e888d92f044794"
+    },
+    "full_suite_repeated_by_publication": false,
+    "actual_identity_hash_seconds": 4.781564669916406
+  },
+  "review_limitations": {
+    "human_reviewed": false,
+    "history_isolated": false,
+    "exact_assessor_model_identifier": null,
+    "user_reported_setting": "6.1 Sol 極高",
+    "agents_are_not_independent_models": true
+  },
+  "producer_independent_review": {
+    "path": "data/runs/development_screening/phase11-v30-preregistration-audit-v1/root-producer-review/review.json",
+    "sha256": "fc94c85631d75a913154744c9824d78ba9b87aaac6155608a016f92e93a3bb49"
+  },
+  "audit_helpers": {
+    "actual_audits_not_yet_executed": true,
+    "Root_terminal_authorization_and_owned_PID_group_death_before_Raw_required": true,
+    "before_first_tokenizer0": "Separate closed reviewed v30 actual tokenizer auditor plus new fixed-checkout reproduction and finite plan required; preregistration is not execution authorization.",
+    "before_semantic90_Raw_review": "New v30 full90 auditor must close inherited timer-join P1 in a separate sealed version: actual notes/timer hashes, interval/monotonic/after-terminal/agent-fork joins and all90 full-thinking reads; old v29 v1 seal preserved.",
+    "future_full90_and_Known_adoption": false
+  },
+  "artifacts_sha256": {
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/PREREG-RELEASE.json": "b24b2951bf196cbe1a87951db522815ddadd4af9611dcb7ca9d2245dcfb3917c",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/identity-build.json": "9665476a3d14fba81998f01661ab4a917079eef9f76e0db0b0990d8a641b1d2b",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/IDENTITY-BUILDER-RELEASE.json": "9b4869f7afb3733795eadbe4d6e87827860872a2ae4064e894a763ae4657e739",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/PROTOTYPES-DO-NOT-REGISTER/attribution-smoke.json": "c0aeb6cf6dbd7848ae6c692b8cc25bc68113b95ff52650b5764a272376750c0b",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/PROTOTYPES-DO-NOT-REGISTER/format.json": "448704bbb05fbd2e4dfe68ab9266f832a4566201110cb1a6f6b208c45c4b03a7",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/PROTOTYPES-DO-NOT-REGISTER/preflight.json": "1c5ea98cf649ebcd8587259db3863714cf5b83e49a3a25e42230b94a8870a3e2",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/PROTOTYPES-DO-NOT-REGISTER/rewrite-smoke.json": "a966569131bb03e357ec31aafd8fe1823f36b2905b19d80dc9b00d01539f8bee",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/PROTOTYPES-DO-NOT-REGISTER/semantic.json": "a9cd64800e16c5142796005959ca5ab8571081ac2de31460c846fd342d5e2760",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/PROTOTYPES-DO-NOT-REGISTER/smoke.json": "ece2949242d2c4f0a92239c5649c8a281c309ad971e04806ad6d3102abb6e24d",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/PROTOTYPES-DO-NOT-REGISTER/tokenizer-preflight.json": "64a5803eb74ecc3e96c0c1a4fb31ea30ecd74da3a3c8eb3e99daad06ad1037ae",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/README.md": "e39dd29d9403750be384b4514f273b32ecb470b5c09e014758afb08957a15e48",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/SHA256SUMS": "ecc30dac7da04458d04012b591fcf4491e21dd4a30103d7f977b63be2bf0307d",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/SHA256SUMS-BUILDER": "1a7659957bd79d7015cbff1dcdf287314b368e12b8eb65f6d41c51319ac98589",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/SOURCE-VALIDATION-STATUS.json": "db6e5201dbe6579c2f83997b769d5dce9b171ed305b09e6651fa6dc0e9134b87",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/audit_inputs_v30.py": "6ffa9f557914a1405389814a46634ea8967ddadab7d2e196c10698f78a1ae8ba",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/audit_support.py": "c612b9dd1016eeb3e3c928b18a591692cca2e60868f333fa2d63af19794f8ad3",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/build_identity_v30.py": "a330e8c86a47e6b23fec8741fa72c4c99a07bf0485b4d126938dc3eddaf772f8",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/builder-pending-refusal.json": "da0e4a1984f5e6c8e0f80015435ae07750bc2f9577f2b008d2649315d9a0483a",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/builder-ruff.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/builder-ruff.stdout": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/check_finite_prototypes.py": "0e7d0c23b44d7a5d3c9ef4afb1057bc936e5b0d9f322c6bb8c041f79598a8ae6",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/check_pending_producer.py": "46d1913f6614669e1148acda5e5c606900e2da15a5cd393d2a0663c486f043d6",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/delta-pytest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/delta-pytest.stdout": "cf0c2cc2867610db68ff0a051d55d0e206ddaa505c66c6ee68075be937872047",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/final-ruff.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/final-ruff.stdout": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/formal-v30-review-result.json": "f75d7f0031ae963c0e429a4ee927a33a9899a749282063e0a390834972576578",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/fresh-format10-input-contract.json": "f9c3984b6d40ada53e574d97e4721e87defd191d76f9890fd7d15acb84b92fd6",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/guard-route-source-proof.json": "c90079081a4323b1bda74caa4ff20983adb0a64e8cc4170725b5ff5ce3e08bd3",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/input-audit.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/input-audit.stdout": "ade558d7964c68f883bc19b06116f199b3c781e7d80a472ef997545ee92733f2",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/parent-before.json": "9bf838545ea1a9cc9aeb080531b9cf920e0edace3088a09412ec60acfaa2c8ef",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/payloads90.json": "b06839eb71970fffacf2a231bcfdab74dd11b6022cd2275303138d3e26f04d37",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/pending-semantic.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/pending-semantic.stdout": "c3e71f823d124145f708a485e64e9c982b962e5a2eeae9ff2ea25c948946286a",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/pending-tokenizer.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/pending-tokenizer.stdout": "b6875639d012a44641eb49f971652ccdff2600f1ce16b729acfcbf1941944b0c",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/produce_plan.py": "6761a9ac3504581d25bf443ba718cc93c0fb9f484ad3ea125456729bb9f6f4a1",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/producer-positive-result.json": "542330c73cb77c1692eaefa20d8221f00cf858b6686730cf86fac215fb2b6869",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/producer-positive.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/producer-positive.stdout": "95e69c25d9cd38391017b81930d555703a5050aaa86137def5c78919c1f3a94f",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/producer.release.json": "59e41329bb99aac046288be5b125a0aff4e202566a8f1adb8ae43b6fce9d9978",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/reference-v28-returned47.json": "5892cce7eceb25d3cdda3363c4201734269ecc752b1cb5d32e9d05aa04b23442",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/release.pending.json": "635dbc9db4fe311e9a5dd99288ace6884546f818c3177d86933f8cb2580d66dd",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/stage-format.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/stage-format.stdout": "faa7eedcda03151ab1dc814a2110b35596ada269be17db4a3b19ab35e590865a",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/stage_format_config_v30.py": "416de81eafc580b9c4ec76db6c9e86ef531dce3ad0ece25d631028b98cdd3745",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/phase11-v30-protocol-preparation-v1/test_v30_delta.py": "2d8a6f987f3534649e1e373d85429a48d13c052823f2b7aee324a06f283c3b1f",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/README.md": "26ac346cc2ce6f18b95a4efd394d17282b0fa56d2ff5712a3c538014fe38b982",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/SHA256SUMS": "dea80859a2a8ed306f87f6a53bf7a5246bdaaf9739e9c721187aa5c95cbf8adc",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/SUMMARY.json": "0fa9ecd6e672c3c9938bc4fca9f87e1c12343d0ae5e73cc4ff9ddca25a823345",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/before/scripts/preflight_semantic_model.py": "aeeb9b50d572c45518b44ff8a7180e33b219d194907503ce715d5f8d2cf52806",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/before/scripts/probe_thinking_json_schema_v4.py": "e579390e491633c925f9406b155960824548a3948d8203d73e420fbe562c0d35",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/before/src/rag_research/evaluation/tasks.py": "687490a509f3a34f1426df5760802022b9b11094fbafbdccf092660f64fd45f6",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/before/src/rag_research/generation/auxiliary_config.py": "50cf98e4826fad0fd0860ffdf403a4fbbb4b4c4c846b9280c2f84de2edc0e903",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/before/src/rag_research/recovery/answer_rewrite.py": "359e2535848182a855cd58b9a6bd52d1893ffea37819a69e68647f1067c87a01",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/before/tests/test_cited_decision_grammar.py": "a9e73e19ec3f57ed4fedce78d3cc17d7a28d77c1e7b5560c4badb2ef96833405",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/before-source-provenance.json": "660ecbba3a4f412741cbb165177ea6a0b4620c9f9862e276c9946532539cdde8",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/final-source/scripts/preflight_semantic_model_v2.py": "457c1980efa6da0100b7b62dbe7ec87c4270144259d6a5ef6d0e01694fa24295",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/final-source/scripts/probe_thinking_json_schema_v5.py": "df0eb529f2ec50951c46d323e2eeda250986cb2dc4e0562e67e113232738dcd5",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/final-source/src/rag_research/evaluation/tasks.py": "6db561e9bdf06087889517a7e650388ac437a3423fa00dc1e708e97f8921d517",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/final-source/src/rag_research/generation/auxiliary_config.py": "9e76be699abcbb966564c6958c2761d48772a5b3f4fc947ed0547ee939ce7d52",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/final-source/src/rag_research/recovery/answer_rewrite.py": "3cdb6306f272e3dc77e4916445e328d9d4094475cbdc482b11ec48c801dc8122",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/final-source/tests/test_cited_decision_grammar.py": "22aa1248567c6679357681de76605ec55d283d538bcd5a07ce4692721f528f27",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/final-source/tests/test_phase11_tokenizer_witness_v5.py": "eeb9f503a99bc7b037dc59e5a94de8c0eb67a61bfe9e3f3d9a72a4783f7f5c86",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/final-source/tests/test_reasoning_prefill_application.py": "80e69bb3916fd15b857346b465cc4391361d8525124fee351a1b884daea6b84b",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/final-source/tests/test_semantic_prefill_preflight_v2.py": "7f72c07662bb16979883f8aab4a573df34a0fcd841dce2d2199b8abe5c97e346",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/final-source-bindings.json": "3824a5ff2e864b555da34f5b759c47b817e20d691a450a362381a68bc14075b4",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/format-unregistered.stderr": "3311b312ade73bf70aea9641e56125d75757b588ffa2a9487ebb4fde12f74a70",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/format-unregistered.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/pytest-final.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/pytest-final.stdout": "476ee4eb9d7e1fe9d380f31d44b3b6892b6001a42211ccf649c0b0b71ef92096",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/pytest-full-final.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/pytest-full-final.stdout": "190f4fa192c397e64b1c459e495fbd91d6db7553ccfa21462895cd24109f726e",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/pytest-full.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/pytest-full.stdout": "89db615db13fe41fe5a766fad8f0e24c8c6abc2c7c19cfe8c7458acf9bc207ac",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/pytest-initial.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/pytest-initial.stdout": "f121fb31517c27750c84d237bc2028de1c848f6700aa629f7fdd38c7178fe7a4",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/real-cli-refusal-proof.json": "35fa1905517708396e6069273c1d173e64021fa3a8c458a8c5e1dea2e6af20f9",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/ruff-final.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/ruff-final.stdout": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/ruff-root-final.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/ruff-root-final.stdout": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/ruff-root.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/ruff-root.stdout": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/tokenizer-unregistered.stderr": "3311b312ade73bf70aea9641e56125d75757b588ffa2a9487ebb4fde12f74a70",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/prefill-software-preparation/tokenizer-unregistered.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/preserved-failure-cost-review/review.json": "aeca0d2cd8c38dbbcc3fe505a9d7828c1fa36986aa02c0478d5f068039247693",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/publish_preregistration.py": "8193c57ca01e8bec9ccb6ca9f8028cfd69d07abe132973cda5d3df9d469b714a",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/root-core-review/review.json": "2e7d50595fb5d6d4b3d2c92bbc017ec1016d726fd66ffaf6648e5190dbf2ed9d",
+    "data/runs/development_screening/phase11-v30-preregistration-audit-v1/root-producer-review/review.json": "fc94c85631d75a913154744c9824d78ba9b87aaac6155608a016f92e93a3bb49"
+  },
+  "publication_elapsed_seconds_before_write": 0.08293104800395668,
+  "new_Native_calls": 0,
+  "adopted": false,
+  "Main_Cal_started": false,
+  "gate11_passed": false,
+  "phase12_started": false
+}

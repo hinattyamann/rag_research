@@ -26,6 +26,7 @@ from rag_research.experiments.storage import (
     verify_checkpoint,
     write_json,
 )
+from rag_research.generation.auxiliary_config import tokenize_reasoning_prompt
 from rag_research.generation.local import GenerationError
 
 
@@ -92,11 +93,14 @@ def execute_task(client, config, prompts, task, payload, path, binding, *, const
                       elapsed_seconds=time.perf_counter() - started)
         return checkpoint(path, result)
     try:
-        rendered = client.render(messages)
-        tokens = client.tokenize(rendered, special=True)
-        result.update(rendered_prompt=rendered,
+        raw_rendered = client.render(messages)
+        result["raw_rendered_prompt"] = raw_rendered
+        write_json(path, result)
+        prepared = tokenize_reasoning_prompt(client, raw_rendered, getattr(config, "reasoning_prefill_mode", "none"))
+        rendered, tokens = prepared["rendered_prompt"], prepared["prompt_tokens"]
+        result.update(**prepared,
                       rendered_prompt_sha256=hashlib.sha256(rendered.encode("utf-8")).hexdigest(),
-                      prompt_tokens=tokens, input_tokens=len(tokens),
+                      raw_rendered_prompt_sha256=hashlib.sha256(raw_rendered.encode("utf-8")).hexdigest(),
                       prepare_seconds=time.perf_counter() - started)
         if len(tokens) + config.max_output_tokens > config.context_tokens:
             result.update(status="error", error_code="input_overflow",
