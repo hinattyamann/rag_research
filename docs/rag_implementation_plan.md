@@ -1,5 +1,11 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-10-27 23:02 JST追記: v32の[正式事前登録](../data/manifests/phase11_semantic_v32_preregistration_v1.json) SHA09236fcae9807a780eb175312ed8c2774b01843973defc05f3ae078be09bea1fを一回実発行した。全82canonical成果・21正式入力・79独立copy＋補3、実identity73d9/入力reviewd0ab/厳格人工再用b8f/実buildd07fと新3flags/二つの親/全5段階有限予算を結合した。旧v31不採用・費用v19・未実行Known19等を保全し、将来の新Known20は元15QA42文30条件84Call/全基準不変。Source2aa61365とreleasef6ce5658をRoot全文/全24封印・79小Hash照合後、finite120秒/Native0で実出版（child0.107444366秒/tool0.106460551秒は別scope）。新12差分test/Ruff・Root producer deltaレビュー4fdf/新actual header AST照合に通過、旧同一controlflowの構築証拠は条件付き再用とし新real Guardは初fixed Planで実検証する。専用Checkout再現・実GPU入力0・全意味/回帰・Main/Cal/Gate11は未了、Goal active・Phase12未開始。
+
+2026-10-27 22:53 JST追記: v32の全90入力CPU監査d0ab6be18a2efcc545129d857fdd44e3cf0889e376d59644e5d0d3285a3c2edaが実成功した（child0.655508078秒/内部0.571735182秒、21正式入力/英50・日40、全禁止count0）。system同一・decoded本文/Expected/Source同一・キー順だけ変更とGold不在を全件検証し、Rootも21小Hashを追加照合した。旧v30のTokenizer11/人工形式10を元ID/contextのまま保持する厳格再用証明b8f40fe7ab3c6e76713dfbd2520bd71823d5c3f316ab307c1508ebcf388450ebを一回実発行（child0.305462073秒）し、意味Native再用0・重Hash0・新Native0を確認した。二つのchild観測とtoolwall0.927837302秒は別scope。新実Token生成0・意味検証・全回帰・Main/Cal/Gate11は未了。
+
+2026-10-27 22:48 JST追記: [v32候補設計](phase11_semantic_v32_preregistration_v1.md)の実Identity73d9ac7d429e11129a8c5faceee6d8d50a48b196ccea3d45b85fc631f10512afを構築した。科学上はJudge入力レイアウトだけをSource-firstへ変更し、全tasks文字列/全文payload内容と他5Identity成分/Core94は不変。actualproof d07ff7bc、Root一回ModelHash1/Native0・実child4.660438111秒、両Prompt独立review/人工4条件でP1/P2なし。各90入力のsystem同一/decoded同一/JSON key順だけ変更を別監査し、厳格人工再用後も新実入力0/全意味/新鮮Known84が必要。新科学採用/Main/Cal/Gate11未達、Phase12未開始。
+
 2026-10-27 22:39 JST追記: [累積費用v19](../data/manifests/phase11_autonomy_cumulative_cost_v19.json) SHA399a40c962dfee50e8f4a01bca032f829cc6deac504761a00d8877ba3958c50aを実発行・独立検算した。閉38 Run/25Guard、新355試行・353返却・未知2、旧込1264試行・確定未知5、観測input724162/output1021409・総output null。Native20604.366958秒は未知HTTP16.895423秒を含む、Task20519.499901718635秒/wall21319.09550735884秒は別scopeで加算しない。旧35行/23Guard・旧未検証返却32をそのまま保存。Rootも全355/28binding等を0.040528225秒で追加検算し全禁止count0、証明74d7fea0へ保存した。v31意味不採用・未使用枠は不変、Main/Cal/Gate11未達・Phase12未開始。
 
 2026-10-27 22:37 JST追記: [v31実結果](phase11_semantic_v31_result_v1.md)を確定した。NS2はHealth/意味2/2でも、帰属C元逆2はHealth2/未知0・両S/Expected C・意味0/2で不採用（正式12f18387）。全10根拠/7固定文・全thinkingを実読し、Pius Vの行為をCouncilへ移す誤りが残った。未実行Rewrite2/全90/Known19等を保存、同条件再送0。次v32はJudge layoutだけをSource→question→fullanswer→claimへ変更する別候補で、指示全文/本文/ID/Title/Expected/基準/Model/Core94等は不変。新鮮検証・実採用は未了、Main/Cal/Gate11未達、Goal active・Phase12未開始。
@@ -14,7 +20,7 @@
 
 2026-10-27 21:43 JST追記: v31の[正式事前登録](../data/manifests/phase11_semantic_v31_preregistration_v1.json) SHA2c8ad584be7a9b03db123f0e08252d892197d270b6113e0d5d64bae50a49e6f3を発行した。75canonical成果/21正式入力、Prompt16のみのIDdbb9830fとCore94/他5成分不変、旧v30不採用・費用v18・未使用枠、旧IDを保持するTokenizer11/人工形式10の厳格再利用証明361222d4を結合した。意味結果の再利用0。23差分test/.11秒と5stage構築/前段反証1.406401307秒、Root全publisher208行/72原Hashの実読照合後、一回実出版（tool.073648223秒）でNative0。Root関連37test3.99秒・新終端認可6test.02秒/Ruffも通過、旧全1203testは不変Sourceに基づき再利用した。新実入力生成0→NS2→帰属C2→Rewrite2全文品質→全90→新鮮Known84は固定Commit専用WTの実再現後に行う。出版後独立確認/Commit/実再現・新実Runは次工程で、Main/Cal/最終Gate11未達、Goal active・Phase12未開始。
 
-## Version 8.91 — 2026年10月27日 Prompt限定の不変人工証拠再利用とv31
+## Version 8.92 — 2026年10月27日 根拠先行レイアウト候補v32
 
 2026-10-27 21:36 JST追記: v30不採用を保存してPush ef5f89f3e91e4daa65e1cca9db7f8bb645a862b1/Remote一致を確認した。次[v31条件](phase11_semantic_v31_preregistration_v1.md)はJudge Prompt16だけの変更、新実IDdbb9830fc366b8b1631ce8d1feab90403810ad9bb0086f655a08c4ba60ab12e3、他5成分/Core94不変。実Identity構築4.306858006秒/GGUFHash1、関連37test3.99秒、独立Promptレビューd3429359は追加P1/P2なし。新全90payload/21正式入力の独立生成0監査bc5779baはSource/Expected/user JSON不変・systemのみ変更・全strict境界0を確認した。不変のTokenizer11/人工形式10は元v30のID/context/実Rawを保持した別再利用証明361222d4be47d6802d82fac24bedad392b92af0c8801b509a2e6ca28b6c34742へ結合し、全old artifacts/五成分/人工messages・設定・Schema/Source/31immutable現statを実照合、意味Native再利用0。証明の実child0.321450467秒/tool0.263951534秒は別観測で包含や加算を仮定しない。新Native0で、正式事前登録・固定Checkout再現・新Prompt入力90の実token収容→新NS/C/Rewrite品質→全90→新鮮Known84はこれから。Main/Cal/Gate11未達、Goal active・Phase12未開始。
 

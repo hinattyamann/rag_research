@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-synthetic-rewrite-smoke-v4",
+  "source": {
+    "path": "data/manifests/phase11_rewrite_smoke_inputs_v25.json",
+    "sha256": "c3ce4c42d20d46132188fba469dcf62e481e2a55a9337d4ff79f448dd35e0050"
+  },
+  "targets": [
+    "en-rewrite-synthetic-time-extra",
+    "ja-rewrite-synthetic-time-extra"
+  ],
+  "maximum_calls": 2,
+  "automatic_retries": 0,
+  "phase12_allowed": false,
+  "rationale": "Judge-layout-only v32 presents all documents before question/draft/target through existing premise_then_claims; all decoded input values and complete Prompt17 task strings equal Prompt16, with only version/layout metadata changed. Preserve Core94/8B/common4096/GraphOFF/FAoff/Sampler/Schema and fixed complete original targets/Expected. Preserve rejected v31 C2 and old Native; require fresh semantic results, no Main/Cal/Evaluation data or adoption."
+}

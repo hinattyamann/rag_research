@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-runtime-smoke-v3",
+  "source": {
+    "path": "configs/phase11_semantic_diagnostics_v32.json",
+    "sha256": "5539b9a36f4bd43edbbdd33329ce4d865310436b7b6009d912907a28a720390b"
+  },
+  "targets": [
+    {
+      "case_id": "known-council",
+      "claim_id": "c4",
+      "order": "original"
+    },
+    {
+      "case_id": "known-council",
+      "claim_id": "c4",
+      "order": "reversed"
+    }
+  ],
+  "maximum_calls": 2,
+  "automatic_retries": 0,
+  "phase12_allowed": false,
+  "rationale": "Judge-layout-only v32 presents all documents before question/draft/target through existing premise_then_claims; all decoded input values and complete Prompt17 task strings equal Prompt16, with only version/layout metadata changed. Preserve Core94/8B/common4096/GraphOFF/FAoff/Sampler/Schema and fixed complete original targets/Expected. Preserve rejected v31 C2 and old Native; require fresh semantic results, no Main/Cal/Evaluation data or adoption."
+}
