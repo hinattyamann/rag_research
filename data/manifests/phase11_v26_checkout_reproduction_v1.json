@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v26-fixed-checkout-reproduction-publication",
+  "recorded_at_utc": "2026-10-27T03:58:08.397649+00:00",
+  "recorded_at_JST": "2026-10-27T12:58:08.397662+09:00",
+  "status": "reproduced_and_released_before_Root_owned_v26_runs",
+  "release": {
+    "released_at_utc": "2026-10-27T03:53:30.675948+00:00",
+    "released_at_JST": "2026-10-27T12:53:30.675956+09:00",
+    "target_root": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v26-61f56ad",
+    "fixed_commit": "61f56adc84da5de44a473a42c2826c4078a8ecd1",
+    "candidate_identity_sha256": "d809dce245eaf0e5780d2df6ac663a6c63459a6f17b0427e1fff5e2519c1f95e",
+    "original_and_target_full278_Hashes_equal": true,
+    "independent_producer_identity_alias_Hash_equal": true,
+    "dedicated_uv_packages": 58,
+    "actual_load_config_and_identity_success": true,
+    "unseen_Main_Cal_Evaluation_opens": 0,
+    "fixed39_diagnostic_QA_parsed_only_in_generation_zero_check": true,
+    "all_Native_Server_Tokenizer_GPU_calls": 0,
+    "no_WT_local_operational_ledger": true,
+    "new_and_old_WT_Source_clean": true,
+    "WT_writing_stopped_after_this_verification": true,
+    "copy_elapsed_seconds": 24.249955756997224,
+    "uv_sync_elapsed_seconds": 0.09351416100980714,
+    "actual_zero_load_identity_elapsed_seconds": 7.756616992002819,
+    "zero_process_elapsed_seconds": 7.930995389004238,
+    "final_check_elapsed_seconds": 11.898654479999095,
+    "observed_component_seconds_sum_not_end_to_end": 44.173119787010364,
+    "external_metered_API_cost": 0,
+    "electricity_cost": null,
+    "identity_alias_receipt_sha256": "9224e611ac0100ac37d4c0fe412624648624c499659eaf998415c251ed0fbc97",
+    "final_hash_check_sha256": "4bfed873603276cd160cb845d07a4ff1f3ffbfd5a6efe6dbfb44c8a619115652",
+    "positive_zero_generation_sha256": "d21dd345a10b18f4352a54f0402e88e8ef8430f98130f28d6d79231f167aecf0",
+    "gate11_passed": false,
+    "phase12_started": false,
+    "released_to": "Root finite-plan producer and unchanged v3 execution supervisor",
+    "input_union_files": 278,
+    "input_union_bytes": 8501935754,
+    "extra_identity_evidence_alias_targets": 1,
+    "all_input_Hash_and_mutable_inode_checks_passed": true,
+    "dedicated_uv58_and_actual_load_config_build_identity_passed": true,
+    "no_further_target_WT_writes_by_assets_agent": true,
+    "source_clean_checks_are_release_time_snapshot_not_new_native_results": true
+  },
+  "actual_copy": {
+    "passed": true,
+    "finished_at_utc": "2026-10-27T03:51:59.375628+00:00",
+    "elapsed_seconds": 24.249955756997224,
+    "files": 278,
+    "copy_statistics": {
+      "independent_copy_files": 118,
+      "independent_copy_bytes": 2370462,
+      "git_checkout_files": 130,
+      "git_checkout_bytes": 1331864,
+      "immutable_hardlink_files": 30,
+      "immutable_hardlink_bytes": 8498233428
+    },
+    "additional_producer_aliases": 1,
+    "inventory_sha256": "d7d42390e9a8cfe279cd297aafe83bb56402c0673041d2b00c3b5a5c8c094107",
+    "fixed_commit": "61f56adc84da5de44a473a42c2826c4078a8ecd1",
+    "candidate_identity_sha256": "d809dce245eaf0e5780d2df6ac663a6c63459a6f17b0427e1fff5e2519c1f95e",
+    "all_before_copy_after_hashes_equal": true,
+    "mutable_inode_shared": false,
+    "Native_Server_Tokenizer_GPU": 0,
+    "QA_body_parse": 0,
+    "operational_ledger_copied": false,
+    "actual_uv_sync_and_load_config_build_identity_pending": true,
+    "gate11_passed": false,
+    "phase12_started": false
+  },
+  "actual_producer_alias_copy": {
+    "aliases": [
+      {
+        "source_path": "data/runs/development_screening/phase11-v26-preregistration-audit-v2/phase11-v26-protocol-preparation-v1/formal-v26-review-result.json",
+        "target_path": "data/runs/lab/phase11-v26-protocol-preparation-v1/identity-evidence.json",
+        "sha256": "c282e2185a3f72eb5b6b5b6a3263789bbd6a71a7fc301339b40a2eb0e5fe9093",
+        "method": "independent_copy",
+        "producer_registration_must_follow_alias_copy": true,
+        "source_before_sha256": "c282e2185a3f72eb5b6b5b6a3263789bbd6a71a7fc301339b40a2eb0e5fe9093",
+        "target_sha256": "c282e2185a3f72eb5b6b5b6a3263789bbd6a71a7fc301339b40a2eb0e5fe9093",
+        "source_after_sha256": "c282e2185a3f72eb5b6b5b6a3263789bbd6a71a7fc301339b40a2eb0e5fe9093",
+        "source_inode": 14584418,
+        "target_inode": 14683556,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      }
+    ],
+    "all_independent_before_copy_after_hashes_equal": true
+  },
+  "actual_uv_environment": {
+    "command": [
+      "/home/uchida/デスクトップ/code/rag_research/.tools/bin/uv",
+      "sync",
+      "--project",
+      "environments/embedding_gpu",
+      "--frozen",
+      "--offline"
+    ],
+    "cwd": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v26-61f56ad",
+    "returncode": 0,
+    "elapsed_seconds": 0.09351416100980714,
+    "recorded_at_utc": "2026-10-27T03:52:08.153411+00:00",
+    "dedicated_environment": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v26-61f56ad/environments/embedding_gpu/.venv",
+    "root_or_old_WT_venv_reused": false,
+    "ORT_DISABLE_TELEMETRY": "1",
+    "offline_frozen": true,
+    "Native": 0
+  },
+  "dedicated_environment_and_identity": {
+    "passed": true,
+    "created_at_utc": "2026-10-27T03:52:27.454502+00:00",
+    "actual_checkout_cwd": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v26-61f56ad",
+    "actual_fixed_commit": "61f56adc84da5de44a473a42c2826c4078a8ecd1",
+    "candidate_identity_sha256": "d809dce245eaf0e5780d2df6ac663a6c63459a6f17b0427e1fff5e2519c1f95e",
+    "actual_load_config": true,
+    "actual_build_identity": true,
+    "fixed_diagnostic_contract_parsed": true,
+    "fixed_diagnostic_QA": 39,
+    "fixed_units": 45,
+    "conditions": 78,
+    "planned_fresh_calls": 90,
+    "core_files": 94,
+    "source_trace_bindings": 4,
+    "semantic_evidence_reuse": false,
+    "effective_tasks": {
+      "extract_claims": {
+        "reasoning_budget_tokens": 4096,
+        "max_output_tokens": 3072,
+        "context_tokens": 12288,
+        "timeout_seconds": 1200
+      },
+      "verify_claims": {
+        "reasoning_budget_tokens": 4096,
+        "max_output_tokens": 6144,
+        "context_tokens": 12288,
+        "timeout_seconds": 1200
+      },
+      "rewrite_answer": {
+        "reasoning_budget_tokens": 4096,
+        "max_output_tokens": 6144,
+        "context_tokens": 12288,
+        "timeout_seconds": 1200
+      }
+    },
+    "runtime_metadata_verified_by_actual_identity_builder": true,
+    "offline_guard": {
+      "process_starts": 0,
+      "socket_operations": 0,
+      "reserved_QA_opens": 0
+    },
+    "native_guards": {
+      "server": 0,
+      "request_or_tokenizer": 0
+    },
+    "explicit_GPU_device_enumeration_or_tokenizer_or_runtime_started": false,
+    "python_executable": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v26-61f56ad/environments/embedding_gpu/.venv/bin/python",
+    "python_prefix": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v26-61f56ad/environments/embedding_gpu/.venv",
+    "installed_distributions": 58,
+    "packages": {
+      "onnxruntime-gpu": "1.30.0",
+      "tokenizers": "0.23.2",
+      "psutil": "7.2.2",
+      "PyYAML": "6.0.3",
+      "numpy": "2.5.3",
+      "huggingface-hub": "1.33.0"
+    },
+    "elapsed_seconds": 7.756616992002819,
+    "native_calls": 0,
+    "Main_Cal_Evaluation_QA_read": false,
+    "unused_QA_open_guard_applies_to_canonical_root_all_WTs_realpaths_and_inodes": true,
+    "scoring_or_Gate11_adoption_claimed": false,
+    "phase12_started": false
+  },
+  "zero_generation_process": {
+    "command": [
+      "/home/uchida/デスクトップ/code/rag_research/.tools/bin/uv",
+      "run",
+      "--project",
+      "environments/embedding_gpu",
+      "--frozen",
+      "--offline",
+      "python",
+      "/home/uchida/デスクトップ/code/rag_research/data/runs/lab/phase11-v26-checkout-reproduction-v1/zero_generation_validate.py"
+    ],
+    "cwd": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v26-61f56ad",
+    "returncode": 0,
+    "elapsed_seconds": 7.930995389004238,
+    "helper_source_sha256": "00388d6bca8d1987e308825aa15f635016f0740988ec4968342138d8166cbb70",
+    "helper_independent_receipt_copy": true,
+    "fixed_commit": "61f56adc84da5de44a473a42c2826c4078a8ecd1",
+    "dedicated_environment": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v26-61f56ad/environments/embedding_gpu/.venv",
+    "ORT_DISABLE_TELEMETRY": "1",
+    "offline_frozen": true
+  },
+  "final_preservation": {
+    "binding": {
+      "path": "data/runs/lab/phase11-v26-checkout-reproduction-v1/final-postcopy-hash-check.json",
+      "sha256": "4bfed873603276cd160cb845d07a4ff1f3ffbfd5a6efe6dbfb44c8a619115652"
+    },
+    "all278_source_target_Hashes_match": true,
+    "original_before_after_stat_unchanged": true,
+    "immutable_same_inode_files": 30,
+    "other_independent_inode_files": 248,
+    "extra_alias_independent": true,
+    "all_WT_clean_status_at_release": {
+      ".tools/worktrees/phase11-v26-61f56ad": "",
+      ".tools/worktrees/phase11-v25-5043c16": "",
+      ".tools/worktrees/phase11-v24-8c17f85": ""
+    },
+    "WT_local_ledger_exists": false
+  },
+  "preregistration": {
+    "path": "data/manifests/phase11_semantic_v26_preregistration_v1.json",
+    "sha256": "ecd24a83b46e2a463c94930a0200233d19a843019d286367161c8b4940743941"
+  },
+  "copy_inventory": {
+    "path": ".tools/draft-artifacts/phase11-v26-semantic-checkout-copyplan-v2/COPYPLAN-PREREG-ANNEX-v2.json",
+    "sha256": "d7d42390e9a8cfe279cd297aafe83bb56402c0673041d2b00c3b5a5c8c094107"
+  },
+  "copy_inventory_seal": {
+    "path": ".tools/draft-artifacts/phase11-v26-semantic-checkout-copyplan-v2/SHA256SUMS",
+    "sha256": "695d87fe10383b33f4825c77e9dfe847e093cee740fff542878f592630ec7d60"
+  },
+  "canonical_reproduction_closure": {
+    "directory": "data/runs/lab/phase11-v26-checkout-reproduction-v1",
+    "sealed_artifacts": 14,
+    "seal": {
+      "path": "data/runs/lab/phase11-v26-checkout-reproduction-v1/SHA256SUMS",
+      "sha256": "c56fa83701ac0c05adf368054dd021421152f2fae5872aaf1beff2de2b2e9176"
+    },
+    "all14_existing_bytes_reverified_without_modification": true
+  },
+  "artifacts_sha256": {
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/RELEASE.json": "872f3866d059b5db8569434b9fbabbba13b609dbae279f6b2348f51c8774d94a",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/final-postcopy-hash-check.json": "4bfed873603276cd160cb845d07a4ff1f3ffbfd5a6efe6dbfb44c8a619115652",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/intent.json": "a8c5e2aebc59f888187728170840f790ae543264d364797d004a58520564fc89",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/producer-alias-copy-receipt.json": "9224e611ac0100ac37d4c0fe412624648624c499659eaf998415c251ed0fbc97",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/progress.jsonl": "544446d023f1899dd4f7c539ab47e10bed955a3c83129224f2874872e532ef91",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/result.json": "138b906b5bfc4dbebb59658fa821580add72229bd9c8c1b48cf9b237e71514ad",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/uv-sync-result.json": "3650dca20d6171d44ba5a6d35910d2631478d79bc240ffdc9088464379e2a9c1",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/uv-sync.stderr": "6ac3cfe0cf0bd9e31092fc4f63f8013e315c3ea717275dc7f6f0c3d57a39edfc",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/uv-sync.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/zero-generation-positive.json": "d21dd345a10b18f4352a54f0402e88e8ef8430f98130f28d6d79231f167aecf0",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/zero-generation-process-result.json": "572db34a6979de10094feb0b2e5c627bb22951b04e235c8b0c114928cec7b6f0",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/zero-generation.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/zero-generation.stdout": "978acea2eafe68820ea56932fdee129b31f4711addc04fb930f5f4af7841de68",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/zero_generation_validate.py": "00388d6bca8d1987e308825aa15f635016f0740988ec4968342138d8166cbb70",
+    "data/runs/lab/phase11-v26-checkout-reproduction-v1/SHA256SUMS": "c56fa83701ac0c05adf368054dd021421152f2fae5872aaf1beff2de2b2e9176"
+  },
+  "measured_cost": {
+    "observed_serial_work_components_seconds": {
+      "copy_including_extra_identity_alias": 24.249955756997224,
+      "dedicated_uv_sync": 0.09351416100980714,
+      "zero_generation_child_process_wall": 7.930995389004238,
+      "final_postcopy_hash_check": 11.898654479999095
+    },
+    "sum_observed_components_seconds": 44.173119787010364,
+    "actual_positive_load_identity_inner_seconds": 7.756616992002819,
+    "inner_load_identity_is_within_child_wall_and_not_added_twice": true,
+    "sum_is_not_end_to_end_elapsed_or_Native_time": true,
+    "actual_end_to_end_elapsed_seconds": null,
+    "Native_calls": 0,
+    "external_metered_API_cost": 0,
+    "electricity_cost": null,
+    "unmeasured_costs_not_estimated": true
+  },
+  "access_scope": {
+    "asset_metadata_and_copy_phase_QA_body_parse": 0,
+    "fixed_diagnostic_load_QA_parsed": 39,
+    "fixed_diagnostic_load_is_necessary_and_authorized": true,
+    "unseen_Main_Cal_Evaluation_QA_body_opens": 0,
+    "Native_Server_Tokenizer_GPU_calls": 0,
+    "publication_reopened_released_WT_paths": false,
+    "publication_created_only_this_Manifest_and_sidecar": true,
+    "publication_guard": {
+      "process_starts": 0,
+      "socket_operations": 0,
+      "WT_path_opens": 0,
+      "reserved_dataset_opens": 0,
+      "writes_outside_two_formal_files": 0
+    }
+  },
+  "review_limits": {
+    "human_reviewed": false,
+    "history_isolated": false,
+    "exact_assessor_model_identifier": null,
+    "assets_agent": "/root/assets_v25",
+    "semantic_or_quality_scoring_performed": false
+  },
+  "snapshot_caveats": [
+    "The copy result pending flag describes the moment before subsequent uv/load checks; release and zero-generation evidence record their actual later completion.",
+    "The inventory and all clean/inode observations are release-time facts; this publication does not inspect or claim subsequent Root-owned preflight or Native results.",
+    "Source model/runtime data and old evidence were preserved; no historical experiment was regenerated."
+  ],
+  "meaning_or_health_adoption_claimed": false,
+  "Main_Cal_started_by_this_reproduction": false,
+  "gate11_passed": false,
+  "phase12_started": false,
+  "publication_canonical_metadata_verification_elapsed_seconds_before_write": 0.00756403902778402
+}

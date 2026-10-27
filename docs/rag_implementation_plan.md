@@ -1,6 +1,14 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.84 — 2026年10月27日 v25部分不採用監査と登録予算を照合する書換えv4
+## Version 8.85 — 2026年10月27日 Native0・実行前の登録状態に限定した明示メタデータ修復
+
+13:18 JST現在、新`configs/phase11_zero_output_metadata_repair_v1.json`と`scripts/phase11_zero_output_metadata_repair_v1.py`を正式化した。Protocol SHA22e5c3b17e4e6adc62a0d7baf740f43b29420a6a6204278f8c84f552c1002c6c、Source SHA668068e1954f1af4fcfd80b7283bba5aa8bcdecdca5e773d92d07f1f2a1377a3。今回のv26Smoke旧Plan/registered7field行/台帳全Byte/失敗21bindingと4metadataだけにpinし、2JSON binding.path以外の全Plan変更・実Native/出力/PID/開始記録・重複/partial journal・別汚れ・symlink・競合OSlockを拒否する。元証拠のexclusive保存が先行し、4fileはignoredのRun証拠置場へ移設、実v3全Hash検証と固定HEAD/clean成功後だけ同登録行へ明示amendmentをatomic適用する。Core94/Native入口/候補/予算/targetsは不変、一般resumeや同条件再登録を実装しない。
+
+新46件を含む全1065 Test（34.49秒）/Ruff成功。Rootの正式scriptによる実inspectもOSlock内の旧全Guard/全前提を通過（Git読取8、Native/Socket/未使用QA0、WT/台帳無変更）。新Plan予定SHA695b454d1dbfd911d9e9e55b4fdb9102f0558dff482e70b03d4d30f20bdcb6d7だが、まだ実保存/修復/新Planvalidate/clean成功とは扱わない。独立レビュー・Commit/Push後にRootだけが適用し、その結果を監査してから同登録Runの初回Nativeへ進む。[詳細](phase11_zero_output_metadata_repair_v1.md)。Main/Cal/Gate11未達・Phase12未開始。以下は各時点の履歴。
+
+### Version 8.84 — 2026年10月27日 v25部分不採用監査と登録予算を照合する書換えv4
+
+13:02 JST追記: 実61f56ad WTの278資産＋alias/専用uv58/実load-IDを照合し、生成0全90は20.625538秒・最大入力3644・33/33 CUDAで通過。152binding/94Core/Raw4独立copyの監査5.981842秒、結果SHA2664fbf6da845a208243985da5b27059d9bc8524fe701488b0861c4edc23fa3e。監査補助の初回94件仮定/次のsourceキー誤りは別失敗記録を保存してcore実参照へ修正し、追加Native0。因果Smoke登録後のexecute64774は、Rootが未追跡Manifest4件をWTへcopyしたため既存clean GuardがNative前拒否した。元Plan/row/失敗ログを保全し、excludeやGuard迂回を使わず、未開始/Native0/出力不存在に限定した別Versionのメタデータ配置修復を検証中。まだ修復成功・Smoke成功とは扱わない。
 
 12:37 JST現在、固定5043c16/Handle63497は16応答・4条件を完了し、Critical3/4のため予定人工74条件へ進まず不採用。Health16/16/未知0、Task389.068585/Native387.742915/監視壁409.177719秒、入力56250/出力18196。原Raw25独立copy・99Source/Core94・全Native payload/Schema/1024/Token・4条件cached追加0と6577旧証拠不変を照合した。初回部分監査の旧Plan field仮定KeyErrorは保存し、別v2で修正した。全16Source/理由/thinkingのAI共同実時間686.621959秒、全90精度nullと未試行74を保持。結果`phase11_v25_semantic_partial_result_v1.json`、SHAe44114303ec2593a3215f3d28bc3e54aa957d4328480b3b06d3728660ec6dc65。費用v8は新190/標準成功178/未検証返却12/未知0、旧込み1099/旧未知3・Native12424.413741秒。
 
@@ -32,7 +40,7 @@ v25はPrompt v14＋共通推論予算1024の共同変更で、94 Coreと既存Gu
 
 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-[研究計画 Version 7.81](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.82](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 

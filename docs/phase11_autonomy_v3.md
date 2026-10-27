@@ -1,5 +1,9 @@
 # Phase11 自律継続Protocol v3と新Runtime・意味候補
 
+2026-10-27 13:18 JST追記: v26実生成0とNative前停止証拠を保存し、同候補/全科学条件不変・Native未開始の2JSON参照先だけを直す別Protocol v1を正式化した。旧Guard/Core94は変えず、全1065 Test（34.49秒）/Ruffと実inspect（OSlock・Git読取8/Native0/WT・台帳無変更）に通過。旧Plan/失敗21証拠/台帳全Byteをpinし、重複・開始済・Native・出力・他の変更を拒否する。独立レビューも完了、Commit/Push後のRoot適用はまだ未実施、意味/新Known84/Main/Cal/Gate11未達、Goal active・Phase12未開始。
+
+2026-10-27 13:02 JST追記: v26生成0全90/33層CUDAと152binding/Core94/Raw4保存監査は成功。因果Smokeは登録後execute前のclean Guardで停止し、Native0・所有PIDなし・出力未作成。Rootが新実測Manifest4件を固定WTへ未追跡配置したことが原因で、実行条件やCUDA障害ではない。元計画/台帳/失敗ログを保存し、候補/対象/予算/argv/固定Commit不変・未開始/Native0/出力不存在だけに限定した別Versionのメタデータ配置修復を検証する。Git exclude/Guard無効化/同fingerprint再登録/黙った台帳置換は認めない。まだ修復/Smokeの成功とは扱わない。
+
 2026-10-27 12:37 JST追記: v25全90は16応答/4条件・Health失敗/未知0でCritical3/4の事前停止、不採用。人工74条件/74Call未試行・全90精度nullを維持し、全16Source/理由/thinking、Raw25/99Source/全Native/4cached追加0・旧6577証拠不変を監査した。終端15 Run/累積1099/旧未知3。次v26はPrompt14と全研究条件を維持し共通reasoning4096だけを別候補へ登録する。新書換えv4は明示予算と実configを照合、全1019 Test/Ruff通過、Native0。因果NS2＋Council c4元逆C2を別targetsで事前登録し、Rewrite2/全品質→全90→新鮮Known84を要する。Candidate失敗でGoalを止めず、同条件の成功までの再抽選もしない。Main/Cal/Gate11未達、Phase12未開始。
 
 2026-10-27 12:09 JST追記: 正式5043c16をCommit/Push後、323資産/uv58/実Identity/cleanを専用WTで再現した。生成0全90（max3644＋予約6144/12288・33CUDA）、Judge2の両NS・全Raw/理由監査、Rewrite2の全品質/Native監査が通過。原本不変copyとcached再読Call0を保存し、終端14 Run費用v7は新174/旧込み1083/旧未知3。全90の新有限Plan（SHA91e816281c35a6a57168e7d0f8a1c442c6b9dcb758971cefda57ed1ed4904a63）を登録し、固定5043/Handle63497で実行中。起動パス誤記は未開始/Call0を確認・保存して修正した。全90意味採用と新Known84はまだ未完で、Main/Cal/Gate11を通過扱いにしない。Phase12未開始。

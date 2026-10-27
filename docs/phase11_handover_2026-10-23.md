@@ -1,5 +1,9 @@
 # Phase 11 新チャットへの引継ぎ
 
+2026-10-27 13:18 JST追記: v26実生成0とNative前停止証拠を保存し、同候補/全科学条件不変・Native未開始の2JSON参照先だけを直す別Protocol v1を正式化した。旧Guard/Core94は変えず、全1065 Test（34.49秒）/Ruffと実inspect（OSlock・Git読取8/Native0/WT・台帳無変更）に通過。旧Plan/失敗21証拠/台帳全Byteをpinし、重複・開始済・Native・出力・他の変更を拒否する。独立レビューも完了、Commit/Push後のRoot適用はまだ未実施、意味/新Known84/Main/Cal/Gate11未達、Goal active・Phase12未開始。
+
+2026-10-27 13:02 JST最新: v25は16応答/4条件・Critical3/4で不採用、残74Call未試行・全90精度null。終端15 Run累積1099/旧未知3は保存済み。次v26はPrompt14等を固定して共通reasoning4096だけを変えたIDd809。固定61f56ad専用WTの278資産＋alias/uv58/実IDと全90入力生成0（20.625538秒、最大3644＋予約6144/12288、33/33 CUDA）を照合した。因果Smokeは登録済みだがRootが追加配置した未追跡の新実測Manifest4件をclean GuardがNative前拒否し、新Native0。元Plan/row/失敗ログを保全、配置だけを直す別Versionの厳格修復を検証中で、同条件再登録やGuard除外は行わない。Main/Cal/最終凍結/Gate11未達・Goal active・Phase12未開始。以下の記録は各時点の履歴。
+
 2026-10-26 19:27 JST最新: 日英意味v21は固定d40で全70要求/58条件を終了し、Critical4/4・人工英語24/24・日本語30/30・未知0で通過した。原Raw133/固定Source98・全Native/理由/費用を独立監査し、追加0再読と正規コピーを完了。初回3BのGraph OFF生成0/既知日英2Smokeも固定479で完了・監査し、累積993試行/旧未知3を保存した。後工程のGroup欠落を非推論修正し、全889 Test/Ruffと実70のLock保持下再検証・最終Validator検証v5を通過。新94Coreの候補v23/Receiptv2へ旧証拠を明示的に結び、元15 QA/42文/30条件/84 CallのKnown v12を準備した。Known新Native、Main/Cal/最終凍結は未実施。Goalはactive、Gate11未通過、Phase12未開始。 以下の記録は各作業時点の履歴として保持する。
 
 2026-10-26 18:24 JST追記: 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。

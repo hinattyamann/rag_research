@@ -1,6 +1,14 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.81 — 2026年10月27日 v25不採用保存と推論予算の単一軸候補v26
+## Version 7.82 — 2026年10月27日 生成0実証とNative未開始の配置修復Protocol
+
+13:18 JST現在、固定61f56adのv26は生成0全90・33/33層CUDA・152binding/94Core照合まで実証した。続くSmokeはRootの新結果Manifest配置誤りをclean GuardがNative前拒否した。旧登録/失敗証拠を保存し、新[未開始メタデータ修復v1](phase11_zero_output_metadata_repair_v1.md)を追加する。実開始/PID/予約/出力がない正確な登録行だけに、同Hashの完了証拠JSON2件のbinding.path移設を認め、候補・対象・予算・argv・固定Commit・condition fingerprintは変えない。旧Guard/Core94・旧台帳は保全し、共有OSlock内で全旧値・全Hash・cleanを再検証、元と変更後を別journalで明示保存する。研究目的/仮説/比較条件/基準/Expectedは不変であり、Native再抽選や一般resumeの許可ではない。
+
+正式Source/config/testsを同byteで配置し、全1065 Test（34.49秒）/Ruff、実登録のinspect（Native0/WT・台帳無変更）を通過した。まだ実修復/Smoke意味90/新鮮Known84は未了。Main/Cal/Gate11未達、Goal active、Phase12未開始。以下は各時点の履歴。
+
+### Version 7.81 — 2026年10月27日 v25不採用保存と推論予算の単一軸候補v26
+
+13:02 JST追記: v26の専用固定61f56adで全90入力生成0/全層CUDA/入力3644＋出力予約6144がContext12288以内を実確認した。これは意味採用ではない。因果Smokeの登録後に追加した未追跡の実測Manifestがclean Guardに拒否されたため、実Native0のまま保存した。研究条件・候補・全対象・予算を変えず、結果メタデータの配置修復だけを別Versionで検証する。同条件の再抽選/科学基準変更での回避は行わない。
 
 12:37 JST現在、v25の全90計画はCritical3/4で事前規則停止し、取得16/90・4/78条件・未知0を不採用として保存した。Council逆c4で、会議後のPius Vの行為への帰属を根拠から拾いながらCをNSとした。未試行74条件/74Call・全90精度nullを保持し、基準やExpectedを変えない。全16の全文Source/理由/thinkingをAI監査し、全16が1024でforced、出典ID/内容混同や出典外の思考も残ることを記録した。予算不足と断定しない。25原Raw/99Source/全Native16/4条件追加0再読/6577旧証拠不変を監査し、終端15 Runの累積1099試行/旧未知3を保存した。
 
@@ -34,7 +42,7 @@
 
 ユーザーが方向転換を決定したため、本書を今後の研究目的・実験方針の正本とする。
 研究方針の採用と、自己評価・修復の実装や実験結果の完成は区別する。
-実装は[実装計画 Version 8.84](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
+実装は[実装計画 Version 8.85](rag_implementation_plan.md)、工程と現在地は[ロードマップ](research_roadmap.md)、
 Source/Schemaは[Dataset Guide](clapnq_dataset_guide.md)による。
 [旧計画 Version 6.11](archive/rag_research_plan_v6_11.md)は履歴として保存する。
 

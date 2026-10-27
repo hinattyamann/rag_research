@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v26-pre-native-metadata-cleanGuard-stop-publication",
+  "recorded_at_utc": "2026-10-27T04:07:32.150654+00:00",
+  "recorded_at_JST": "2026-10-27T13:07:32.150663+09:00",
+  "status": "registered_zero_output_pre_native_stop_snapshot_preserved_before_any_repair",
+  "run_id": "phase11-v3-v26-smoke",
+  "fixed_commit": "61f56adc84da5de44a473a42c2826c4078a8ecd1",
+  "candidate_identity_sha256": "d809dce245eaf0e5780d2df6ac663a6c63459a6f17b0427e1fff5e2519c1f95e",
+  "failure": {
+    "tool_handle": 64774,
+    "tool_terminal_exit_code": 1,
+    "stderr_message": "Commit code/configuration before Native execution",
+    "classification": "fixed_checkout_cleanGuard_rejected_four_untracked_metadata_files_before_run_start",
+    "actual_full_execute_wall_seconds": null,
+    "terminal_poll_duration_seconds": 3.3218e-05,
+    "poll_duration_is_not_full_process_wall": true,
+    "stdout_bytes": 0,
+    "stderr_bytes": 1256,
+    "registered_at_utc": "2026-10-27T03:59:09.576720+00:00",
+    "old_registered_plan_sha256": "e56b15b70ce3a4c24f5a33dc4fc10f26b0ccdadec2a1639a93cde29e7d6c8431",
+    "old_registered_plan_content_sha256": "6b6f94fc85e185235be4d975724cc4d8892af800500ed7b6dbc18580a737ec39",
+    "old_condition_sha256": "8afe90f67d96c80fc5601e088cf97e3eba233d57f1dba551e8ec94295fbd9444"
+  },
+  "cause_and_scope": {
+    "Root_acknowledged_operational_error": "After assets release, Root copied the four newly published preflight/reproduction metadata files into the fixed WT as untracked files; the two JSONs were direct plan bindings, while the unchanged cleanGuard rejects any untracked files.",
+    "independent_evidence": "The snapshot shows exactly those four untracked paths, identical bytes to Root canonical metadata, two JSON direct plan bindings, unchanged registered state and no Native output/start/PID/reservation.",
+    "actor_identification_source": "Root task instruction; the read-only audit proves file state rather than independently observing the earlier copy operation.",
+    "scientific_Source_Prompt_Model_Runtime_Sampler_Expected_change_observed": false,
+    "candidate_semantic_rejection_or_inference_error": false
+  },
+  "registered_row": {
+    "binding": {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/registered-row.json",
+      "sha256": "4e2e3b2cdb4c6befa90b675bc6c5a2b7f685d7f5fdb4f5b09fb1852242ace395"
+    },
+    "state_at_audit": "registered",
+    "started_at_utc_present": false,
+    "supervisor_child_PID_fields_present": false,
+    "plan_sha256": "e56b15b70ce3a4c24f5a33dc4fc10f26b0ccdadec2a1639a93cde29e7d6c8431"
+  },
+  "no_output_no_start_no_native": {
+    "record_state": "registered",
+    "output_path": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v26-61f56ad/data/runs/runtime_screening/phase11-v3-v26-smoke",
+    "output_exists": false,
+    "monitor_path": "/home/uchida/デスクトップ/code/rag_research/data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-smoke",
+    "monitor_exists": false,
+    "Native_guard_calls_path": "/home/uchida/デスクトップ/code/rag_research/data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-smoke/native_guard/calls.json",
+    "Native_guard_calls_exists": false,
+    "monitor_manifest_exists": false,
+    "monitor_journal_exists": false,
+    "registered_row_has_started_or_PID": false,
+    "run_stdout_log_exists": false
+  },
+  "four_untracked_metadata": {
+    "files": [
+      {
+        "path": "data/manifests/phase11_v26_preflight_result_v1.json",
+        "root_sha256": "2664fbf6da845a208243985da5b27059d9bc8524fe701488b0861c4edc23fa3e",
+        "WT_sha256": "2664fbf6da845a208243985da5b27059d9bc8524fe701488b0861c4edc23fa3e",
+        "bytes": 1767,
+        "root_inode": 13670042,
+        "WT_inode": 14685320,
+        "same_inode": false,
+        "before_after_stat_unchanged": true,
+        "untracked": true,
+        "plan_directly_bound": true
+      },
+      {
+        "path": "data/manifests/phase11_v26_preflight_result_v1.sha256",
+        "root_sha256": "5bd573cfc9756a7815dcfea64fc3325e604f077b75c8fd8bd76b8718a17061a9",
+        "WT_sha256": "5bd573cfc9756a7815dcfea64fc3325e604f077b75c8fd8bd76b8718a17061a9",
+        "bytes": 65,
+        "root_inode": 13670102,
+        "WT_inode": 14685321,
+        "same_inode": false,
+        "before_after_stat_unchanged": true,
+        "untracked": true,
+        "plan_directly_bound": false
+      },
+      {
+        "path": "data/manifests/phase11_v26_checkout_reproduction_v1.json",
+        "root_sha256": "d7161dfcec99616fdc1d4832d4cb5d84ed8c2b3897c5aca39c1e53b76f8817e0",
+        "WT_sha256": "d7161dfcec99616fdc1d4832d4cb5d84ed8c2b3897c5aca39c1e53b76f8817e0",
+        "bytes": 14910,
+        "root_inode": 13670089,
+        "WT_inode": 14685322,
+        "same_inode": false,
+        "before_after_stat_unchanged": true,
+        "untracked": true,
+        "plan_directly_bound": true
+      },
+      {
+        "path": "data/manifests/phase11_v26_checkout_reproduction_v1.sha256",
+        "root_sha256": "ee20a8f6c829db9c7f989302697c7c00e4d995c8f9d88d1721a6f123a0f6a81b",
+        "WT_sha256": "ee20a8f6c829db9c7f989302697c7c00e4d995c8f9d88d1721a6f123a0f6a81b",
+        "bytes": 108,
+        "root_inode": 13670096,
+        "WT_inode": 14685323,
+        "same_inode": false,
+        "before_after_stat_unchanged": true,
+        "untracked": true,
+        "plan_directly_bound": false
+      }
+    ],
+    "exactly_four_untracked": true,
+    "two_JSONs_directly_bound_not_sufficient_for_cleanGuard": true
+  },
+  "Root_metadata_bindings_verified": [
+    {
+      "path": "data/manifests/phase11_v26_preflight_result_v1.json",
+      "sha256": "2664fbf6da845a208243985da5b27059d9bc8524fe701488b0861c4edc23fa3e"
+    },
+    {
+      "path": "data/manifests/phase11_v26_preflight_result_v1.sha256",
+      "sha256": "5bd573cfc9756a7815dcfea64fc3325e604f077b75c8fd8bd76b8718a17061a9"
+    },
+    {
+      "path": "data/manifests/phase11_v26_checkout_reproduction_v1.json",
+      "sha256": "d7161dfcec99616fdc1d4832d4cb5d84ed8c2b3897c5aca39c1e53b76f8817e0"
+    },
+    {
+      "path": "data/manifests/phase11_v26_checkout_reproduction_v1.sha256",
+      "sha256": "ee20a8f6c829db9c7f989302697c7c00e4d995c8f9d88d1721a6f123a0f6a81b"
+    }
+  ],
+  "original_plan_logs_and_tool_result_bindings": [
+    {
+      "path": ".tools/test-artifacts/phase11-v26-execution-v1/smoke-execute.stderr",
+      "sha256": "6f8166bdd13fa6fc0f4ac3ff848522abdf301c2c34d77b725051444a0a0b6412"
+    },
+    {
+      "path": ".tools/test-artifacts/phase11-v26-execution-v1/smoke-execute.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tools/test-artifacts/phase11-v26-execution-v1/smoke-register.json",
+      "sha256": "42b01ee0b09c689ff4dc1a348408485fc4be9d58b3f754772b7465eacff89ff8"
+    },
+    {
+      "path": ".tools/test-artifacts/phase11-v26-execution-v1/smoke-plan.json",
+      "sha256": "9684d89bb385067eea5366c9a452496d11454c55f5f669c071d291982eff1dbb"
+    },
+    {
+      "path": "data/runs/development_screening/phase11-autonomy-v3-plans/v26-smoke.json",
+      "sha256": "e56b15b70ce3a4c24f5a33dc4fc10f26b0ccdadec2a1639a93cde29e7d6c8431"
+    },
+    {
+      "path": ".tools/test-artifacts/phase11-v26-execution-v1/smoke-execute-tool-result-v1.json",
+      "sha256": "74ca07739b53cd7850fb04223c7988daa42cf9948f2814f57ea9801e90da8f92"
+    }
+  ],
+  "canonical_evidence": {
+    "directory": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1",
+    "source_audit_sealed_artifacts": 16,
+    "copied_source_audit_seal_files": 1,
+    "all_source_audit_files_plus_seal_independently_copied": 17,
+    "extra_tool_result_copied": 1,
+    "copy_receipt_files": 1,
+    "canonical_seal_files": 1,
+    "canonical_total_files": 20,
+    "source_audit_seal": {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/source-SHA256SUMS",
+      "sha256": "278886cb8385dcdba84d5c1e4446f48d737de61cef1f86a71d27f489cf2a09d5"
+    },
+    "canonical_seal": {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/SHA256SUMS",
+      "sha256": "4c19c7aacf27a779539bf2f038f7a707f046c1d9b1895f0fae3e6fe668c6dc4e"
+    },
+    "all_before_copy_after_Hashes_and_independent_inodes_verified": true,
+    "copy_verification_elapsed_seconds": 0.016723013948649168
+  },
+  "artifacts_sha256": {
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/AUDIT.json": "e62cd8feeaa5281f696427bd793577512a383cafb68ceb93a82d1a4cac3e32ff",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/FIRST-LOG-READ.json": "200f6d308e1b56dadcc2159287f5d256abccbb7ac9e6c295e07e8e0cfd5bdbc4",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/SHA256SUMS": "4c19c7aacf27a779539bf2f038f7a707f046c1d9b1895f0fae3e6fe668c6dc4e",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/START.json": "03e905bfa136f1d9a5a2342afda2fcbbd69878479c679acd22b37c0be544cabd",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/WT-status.json": "f20beac6c67088e7b4b5ce09a99a11fd1493912c261ecabe63896ec349dfc873",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/canonical-copy-receipt.json": "354ec82133db956bac9b8299c14aa50e319d7f40f96e983cb01bcb5ecfdcf9bd",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/four-untracked-metadata-Hash-equality.json": "9597f3731ea27d783b06335e50454771958b764f2e633a7ffceb1fed0d481d1c",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/independent-copy-receipts.json": "8cee15c6b4fe6bf9148f9d570903356d37942e94c57d10203c161a3c0a0aeaec",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/ledger-after.json": "7247d0621c932db7f2a08b656a84660491eab91bc2c646ac85c3ae198a81af65",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/ledger-before.json": "7247d0621c932db7f2a08b656a84660491eab91bc2c646ac85c3ae198a81af65",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/no-output-no-start-no-Native-reservation.json": "f2676ee30d1c2be008b559612e9b4d59b73c6f6c7b3d2dfc8bb3525c3d6d2385",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/process-lock-readonly.json": "11fe23ca2ce7d8567cde5bbb4fd3356cce69f0cbfa88c8e3e53fdb13544b32a0",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/registered-plan.json": "e56b15b70ce3a4c24f5a33dc4fc10f26b0ccdadec2a1639a93cde29e7d6c8431",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/registered-row.json": "4e2e3b2cdb4c6befa90b675bc6c5a2b7f685d7f5fdb4f5b09fb1852242ace395",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/smoke-execute-tool-result-v1.json": "74ca07739b53cd7850fb04223c7988daa42cf9948f2814f57ea9801e90da8f92",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/smoke-execute.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/smoke-execute.stderr": "6f8166bdd13fa6fc0f4ac3ff848522abdf301c2c34d77b725051444a0a0b6412",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/smoke-plan.json": "9684d89bb385067eea5366c9a452496d11454c55f5f669c071d291982eff1dbb",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/smoke-register.json": "42b01ee0b09c689ff4dc1a348408485fc4be9d58b3f754772b7465eacff89ff8",
+    "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/source-SHA256SUMS": "278886cb8385dcdba84d5c1e4446f48d737de61cef1f86a71d27f489cf2a09d5"
+  },
+  "observed_cost": {
+    "independent_snapshot_audit_seconds_since_pre_log_marker": 0.15598306799074635,
+    "preliminary_Source_ledger_discovery_seconds": null,
+    "original_failed_execute_wall_seconds": null,
+    "canonical_copy_verification_seconds": 0.016723013948649168,
+    "publication_observed_seconds_before_write": 0.03558852098649368,
+    "Native_calls": 0,
+    "unknown_native_calls": 0,
+    "external_metered_API_cost": 0,
+    "electricity_cost": null,
+    "unmeasured_intervals_not_estimated": true
+  },
+  "mutation_and_access": {
+    "WT_modified": false,
+    "ledger_modified": false,
+    "original_logs_modified": false,
+    "old_evidence_modified": false,
+    "publication_only_writes_new_canonical_directory_and_two_formal_manifest_files": true,
+    "publication_WT_path_opens": 0,
+    "Native_Runtime_Server_Tokenizer_GPU_started": 0,
+    "QA_body_opens": 0,
+    "publication_guard": {
+      "process_starts": 0,
+      "socket_operations": 0,
+      "WT_path_opens": 0,
+      "reserved_QA_opens": 0,
+      "unpermitted_writes": 0
+    }
+  },
+  "snapshot_limit": "This preserves the independently observed state before any repair. It does not prove that a later metadata repair succeeded, authorize or prove Native startup, or assert results from any later execution. Live cumulative ledger is not rebound to this historical snapshot.",
+  "repair_performed_by_this_publication": false,
+  "scientific_or_Health_adoption_claimed": false,
+  "gate11_passed": false,
+  "phase12_started": false
+}

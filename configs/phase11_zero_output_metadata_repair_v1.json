@@ -1,0 +1,131 @@
+{
+  "version": "phase11-zero-output-metadata-repair-v1",
+  "purpose": "registered-zero-output-metadata-path-amendment",
+  "maximum_wall_seconds": 1800,
+  "new_native_calls": 0,
+  "phase12_allowed": false,
+  "extension_source_sha256": "668068e1954f1af4fcfd80b7283bba5aa8bcdecdca5e773d92d07f1f2a1377a3",
+  "unchanged_guard_sha256": "f1c95065e3d5531e14a16e825fc26a6ad89286ec442bd12de1b1dc3a830812a0",
+  "run_id": "phase11-v3-v26-smoke",
+  "fixed_commit": "61f56adc84da5de44a473a42c2826c4078a8ecd1",
+  "candidate_identity_sha256": "d809dce245eaf0e5780d2df6ac663a6c63459a6f17b0427e1fff5e2519c1f95e",
+  "old_plan": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-plans/v26-smoke.json",
+    "sha256": "e56b15b70ce3a4c24f5a33dc4fc10f26b0ccdadec2a1639a93cde29e7d6c8431"
+  },
+  "ledger_before_sha256": "7247d0621c932db7f2a08b656a84660491eab91bc2c646ac85c3ae198a81af65",
+  "registered_row_sha256": "a286ebe471fe90916ac84d6885e8c1865a5c5512e1f178acb972da5b2c46cb81",
+  "condition_sha256": "8afe90f67d96c80fc5601e088cf97e3eba233d57f1dba551e8ec94295fbd9444",
+  "relocations": [
+    {
+      "source": "data/manifests/phase11_v26_checkout_reproduction_v1.json",
+      "destination": "data/runs/lab/phase11-v26-zero-output-evidence-v1/phase11_v26_checkout_reproduction_v1.json",
+      "sha256": "d7161dfcec99616fdc1d4832d4cb5d84ed8c2b3897c5aca39c1e53b76f8817e0",
+      "sidecar_sha256": "ee20a8f6c829db9c7f989302697c7c00e4d995c8f9d88d1721a6f123a0f6a81b"
+    },
+    {
+      "source": "data/manifests/phase11_v26_preflight_result_v1.json",
+      "destination": "data/runs/lab/phase11-v26-zero-output-evidence-v1/phase11_v26_preflight_result_v1.json",
+      "sha256": "2664fbf6da845a208243985da5b27059d9bc8524fe701488b0861c4edc23fa3e",
+      "sidecar_sha256": "5bd573cfc9756a7815dcfea64fc3325e604f077b75c8fd8bd76b8718a17061a9"
+    }
+  ],
+  "parent_protocol": {
+    "path": "configs/phase11_autonomy_v3.json",
+    "sha256": "e0dd7fae96939af34232f5a7174cbc400c6e7dfce3eedf584c2a4d08ca09df00"
+  },
+  "new_plan_path": "data/runs/development_screening/phase11-autonomy-v3-plans/v26-smoke-metadata-amendment-v1.json",
+  "journal_path": "data/runs/lab/phase11-zero-output-metadata-repair-v1/v26-smoke-paths-v1",
+  "failure_evidence": [
+    {
+      "path": "data/manifests/phase11_v26_pre_native_metadata_stop_v1.json",
+      "sha256": "e266c3878b8cf6d67230784269c3b05235543787d1ad49cd3cb8d3ff070b522a"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/AUDIT.json",
+      "sha256": "e62cd8feeaa5281f696427bd793577512a383cafb68ceb93a82d1a4cac3e32ff"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/FIRST-LOG-READ.json",
+      "sha256": "200f6d308e1b56dadcc2159287f5d256abccbb7ac9e6c295e07e8e0cfd5bdbc4"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/SHA256SUMS",
+      "sha256": "4c19c7aacf27a779539bf2f038f7a707f046c1d9b1895f0fae3e6fe668c6dc4e"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/START.json",
+      "sha256": "03e905bfa136f1d9a5a2342afda2fcbbd69878479c679acd22b37c0be544cabd"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/WT-status.json",
+      "sha256": "f20beac6c67088e7b4b5ce09a99a11fd1493912c261ecabe63896ec349dfc873"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/canonical-copy-receipt.json",
+      "sha256": "354ec82133db956bac9b8299c14aa50e319d7f40f96e983cb01bcb5ecfdcf9bd"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/four-untracked-metadata-Hash-equality.json",
+      "sha256": "9597f3731ea27d783b06335e50454771958b764f2e633a7ffceb1fed0d481d1c"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/independent-copy-receipts.json",
+      "sha256": "8cee15c6b4fe6bf9148f9d570903356d37942e94c57d10203c161a3c0a0aeaec"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/ledger-after.json",
+      "sha256": "7247d0621c932db7f2a08b656a84660491eab91bc2c646ac85c3ae198a81af65"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/ledger-before.json",
+      "sha256": "7247d0621c932db7f2a08b656a84660491eab91bc2c646ac85c3ae198a81af65"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/no-output-no-start-no-Native-reservation.json",
+      "sha256": "f2676ee30d1c2be008b559612e9b4d59b73c6f6c7b3d2dfc8bb3525c3d6d2385"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/process-lock-readonly.json",
+      "sha256": "11fe23ca2ce7d8567cde5bbb4fd3356cce69f0cbfa88c8e3e53fdb13544b32a0"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/registered-plan.json",
+      "sha256": "e56b15b70ce3a4c24f5a33dc4fc10f26b0ccdadec2a1639a93cde29e7d6c8431"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/registered-row.json",
+      "sha256": "4e2e3b2cdb4c6befa90b675bc6c5a2b7f685d7f5fdb4f5b09fb1852242ace395"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/smoke-execute-tool-result-v1.json",
+      "sha256": "74ca07739b53cd7850fb04223c7988daa42cf9948f2814f57ea9801e90da8f92"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/smoke-execute.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/smoke-execute.stderr",
+      "sha256": "6f8166bdd13fa6fc0f4ac3ff848522abdf301c2c34d77b725051444a0a0b6412"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/smoke-plan.json",
+      "sha256": "9684d89bb385067eea5366c9a452496d11454c55f5f669c071d291982eff1dbb"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/smoke-register.json",
+      "sha256": "42b01ee0b09c689ff4dc1a348408485fc4be9d58b3f754772b7465eacff89ff8"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v26-smoke-pre-native-stop-audit-v1/source-SHA256SUMS",
+      "sha256": "278886cb8385dcdba84d5c1e4446f48d737de61cef1f86a71d27f489cf2a09d5"
+    }
+  ],
+  "scope_note": "Only two JSON binding.path values change, SHA unchanged. The matching four WT metadata files move to the fixed ignored paths. No new native execution or registration; same runID/fingerprint and all other fields unchanged.",
+  "partial_operation_rule": "Immutable intent precedes every WT or ledger mutation. Existing or partial journal refuses re-entry; inspect preserved states and use a separately reviewed version, never automatic resume.",
+  "exact_full_original_failed_execute_wall_seconds": null,
+  "unknown_original_wall_not_imputed": true,
+  "scientific_gate_passed": false,
+  "Gate11_passed": false
+}
