@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v28-finished-attribution-smoke-independent-result-v1",
+  "audit_version": "v28-attribution-smoke-independent-audit-v1-explicit-fixed-plan-binding",
+  "created_at_utc": "2026-10-27T08:27:23.682109+00:00",
+  "candidate_identity_sha256": "0499a611e9ec8369e5c1958b2ce0e4d25e9095e72aeca6fe13f769e593db982e",
+  "fixed_commit": "291d017a1055123e7009cbd617395d6569e28618",
+  "process_state": "process_completed",
+  "process_returncode": 0,
+  "process_finished_at_utc": "2026-10-27T08:22:37.388877+00:00",
+  "runtime_health_passed": true,
+  "actual_native_calls": 2,
+  "native_successful": 2,
+  "native_failed": 0,
+  "native_unknown": 0,
+  "three_class_exact_correct": 2,
+  "three_class_denominator": 2,
+  "C_NS_confusion_count": 0,
+  "binary_non_support_correct": 2,
+  "binary_non_support_denominator": 2,
+  "candidate_accepted": false,
+  "smoke_full_meaning_gate_passed": true,
+  "candidate_rejected_before_semantic90_and_newKnown84": false,
+  "rejection_reason": null,
+  "single_axis_limitation": "FA auto (actually enabled in v27) -> explicit off with strict execution-v2; Core2 and execution-bearing Sampler change. Model, GraphOFF Runtime binary, Prompt15, common4096, Schema, inputs/Expected remain fixed. Smoke cannot prove durable repair, full accuracy or adoption.",
+  "canonical_raw": {
+    "path": "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke",
+    "files": 9,
+    "bytes": 463281,
+    "all_before_copy_after_hashes_equal": true,
+    "independent_inodes": 9
+  },
+  "prior_v26_and_retrospective_supplement_manifests_reverified": {
+    "data/manifests/phase11_v26_smoke_result_v1.json": "081f99239510a0886ee6cf09a365d7356919817bf6c6c30b7be1e04d8466b24a",
+    "data/manifests/phase11_v26_attribution_smoke_result_v1.json": "b529ab848c3951e315c8a7e3e78f06716ade41e8cda6ddd5dc7eadeddc1ca59d",
+    "data/manifests/phase11_v25_rewrite_retrospective_correspondence_v1.json": "960f6b4ccc0331eff62cd11939a04ff1bf3566d024ff81c367ad0f242409cecc",
+    "data/manifests/phase11_v26_attribution_auditor_failure_preservation_v1.json": "47b52326c59b7935e4d178fd199cb24e2158bb6cbdd72a8aababfbb5c98fe785",
+    "data/manifests/phase11_v27_smoke_result_v1.json": "c974606e108818c1fd6ad3a3af14f415b801749e629c93c92e79833d9fb8bfd4",
+    "data/manifests/phase11_v27_attribution_smoke_result_v1.json": "0fc3964d57808d405d836b1a62915bc3dcce180bf56699dc2bbe63c126fdb2c7",
+    "data/manifests/phase11_v27_rewrite_smoke_result_v1.json": "14cfdc0fdf3afb7a6026143abcc0eb3ac90f5c83ad05839b4f10ae13ba9629ef",
+    "data/manifests/phase11_v27_semantic_partial_result_v1.json": "fc02f34714a8b0d303d8bf2764e8eb3df10dfecae06dbaa7e9e8993b189c29dc",
+    "data/manifests/phase11_autonomy_cumulative_cost_v12.json": "09600144c3105e0acb2de8e031f3e57c1a495e574a8e49238de0051f33adbed5"
+  },
+  "source_core_files_verified": 94,
+  "source_manifest_files_verified": 95,
+  "model_entrypoint_from_bound_model_manifest": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v28-291d017/data/models/Unsloth-Qwen3.5-9B-GGUF/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q6_K.gguf",
+  "model_id": "unsloth/Qwen3.5-9B-GGUF",
+  "model_revision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+  "model_quantization": "Q6_K",
+  "model_GGUF_sha256_verified_by_full_identity_guard": "91898433cf5ce0a8f45516a4cc3e9343b6e01d052d01f684309098c66a326c59",
+  "model_manifest": {
+    "path": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+    "sha256": "acadda5c012105a454b07ee95d406a217fe0aab8f498f3988bf44de36ebade65"
+  },
+  "actual_full_cuda_layers": "33/33",
+  "context_tokens": 12288,
+  "max_output_tokens": 6144,
+  "reasoning_budget_tokens": 4096,
+  "costs": {
+    "input_tokens": 7560,
+    "output_tokens": 8428,
+    "task_seconds": 176.75381013203878,
+    "native_http_seconds": 176.204766,
+    "supervised_wall_seconds": 197.41550197894685,
+    "startup_seconds": 7.9543617779854685,
+    "cost_incomplete": false,
+    "external_metered_API_calls": 0,
+    "electricity_cost": null,
+    "assessor_monetary_cost": null
+  },
+  "monitor_samples": 40,
+  "monitor_resource_errors": 0,
+  "faoff_validation": {
+    "actual_flash_attention": "off",
+    "actual_context_flash_attn": [
+      "disabled"
+    ],
+    "actual_context_tokens": [
+      12288
+    ],
+    "command_and_profile_and_full_log_agree": true,
+    "auto_resolution_disabled_message_required": false
+  },
+  "monitor_validation": {
+    "samples": 40,
+    "all_errors_empty": true,
+    "terminal_snapshot_equal": true,
+    "terminal_unknown": 0,
+    "inflight_reservation_not_treated_as_terminal_unknown": true
+  },
+  "terminal_ownership_validation": {
+    "all_owned_processes_stopped": true,
+    "roles": {
+      "supervisor": {
+        "pid": 464500,
+        "observed_create_time": null,
+        "alive": false,
+        "registered_create_time": 1793089152.56,
+        "owned_process_alive": false
+      },
+      "child": {
+        "pid": 464528,
+        "observed_create_time": null,
+        "alive": false,
+        "registered_create_time": 1793089159.51,
+        "owned_process_alive": false
+      }
+    },
+    "live_owned_group_members": [],
+    "OS_queries_read_only": true,
+    "signals_sent": 0,
+    "Native_or_GPU_queries": 0
+  },
+  "preregistration_sha256": "e51661318468b95ad28e7689cfdee0b735c0f7ea21ca7481239141b09b3ef68f",
+  "old_v10_files_reverified_unchanged": 82,
+  "old_v12_original_raw_files_reverified_unchanged": 119,
+  "old_v24_smoke_raw_files_reverified_unchanged": 9,
+  "old6577_evidence_reverified_unchanged": 6577,
+  "old_v25_successful_smoke_raw_reverified_unchanged": 9,
+  "old_v25_rejected_partial_raw_reverified_unchanged": 25,
+  "zero_native_disposable_cached_replay_probes": 2,
+  "formal_audit_started_at_utc": "2026-10-27T08:27:14.963798+00:00",
+  "formal_audit_elapsed_seconds": 8.718638744088821,
+  "ai_full_source_reason_review": {
+    "path": "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/full-source-reason-ai-review.json",
+    "sha256": "02d9a2c8c1a6e56a5b2be54388085e47b34befaaf74b38468ca9e4405e1c0e89",
+    "measured_joint_two_case_seconds": 138.06388639297802
+  },
+  "timing_limitation": "Separate formal validation/copy/replay and actual joint first-read-to-persisted-AI-review intervals; do not add overlapping scopes or allocate equal per-case time.",
+  "stopped_generation_zero_audit_attempts_this_v28": [],
+  "prior_v26_corrected_c4_to_c1_mapping_failure_retained": "data/manifests/phase11_v26_attribution_auditor_failure_preservation_v1.json",
+  "v26_zero_output_metadata_amendment_applicable_to_v28": false,
+  "old_v24_auditor_failure_retained": "Sampling-only config has no model_path; this audit resolves the entrypoint from the bound model manifest, preserving the old failure separately.",
+  "raw_files_sha256": {
+    "session.json": "d9523503f60b98685257fa95430775f96bc47ba3d6009cc615827136e70f4dcd",
+    "probe-2.json": "109687bdf6795cb872e5455f18a82d35043447e145013126ff53394d4bda63bc",
+    ".run.lock": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "manifest.json": "f3943e0c25fe299b2d703ed481dcc78fd40e24c745af022bec692b71362c9d3b",
+    "report.json": "7cd103cb97d75107d4dfd3a13fb4cefae6cab0d4f043c25cdaf800262e1cad4c",
+    "server.log": "3fd7fe44342dfabc0e219d02cf0ad366efb3a9e0c361d232269afffab8b956dd",
+    "probe-1.json": "9c9b7b39dcc48420bc49ae139a8740c9e4aebeb96e9bf7bcb138ffc637949c33",
+    "probe-2.claims/c1.json": "c7f6fb9e2ca83555e7da3eaf4a563f20e9978e3a1134cd903d2ab497accc6fb2",
+    "probe-1.claims/c1.json": "94c6b7c3782f5f806fed3a3be9c86d6d46e8950d3068a24ed55e2f779186ace8"
+  },
+  "artifact_files_sha256": {
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/audit-builder.py": "f6d0dce039bcb5db6f088f9a82942c45889950674a0a4122cb46598cf1beb8fc",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/audit_helpers.py": "b2ecc195733d616e44f0c74f2506c8fae1f71f47c7de6bcce7557a14e881c4fd",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/audit_support.py": "c612b9dd1016eeb3e3c928b18a591692cca2e60868f333fa2d63af19794f8ad3",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/candidate-stage-preservation.json": "f2c60a9f6e2c8387ce3e9fd4e89fc0e48427cb79b3af09e9dc2cbcbc4df7e425",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/canonical-copy.json": "b1c0c09f33c1405481d1503e8df6b174322011d1ebbf313d33d7a4dc318a1806",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/copy-receipt.json": "2c89be9fb57835cf692c959d58a9cac222953f20f4561f81b977154ed4ba16e5",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/execution-binding.json": "11b60b50cd4187b3f21f57373db37064346a8c2f9b6c2426dbb8f38e0902655e",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/execution_binding.py": "a3565d1263dec5afb528e59f42ad067ef0431f5cf66df9047c89c83d6c8e6b05",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/first-read-review-packet.json": "6212297033719496ba06a7595c16a10a80190aec76f4bc328fb707326540bc54",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/first-read-start.json": "4bf6b15d36cd9b58ccec573c9d7c82ddf20a55defe0c2b22237b93488b86ec3d",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/full-source-reason-ai-review.json": "02d9a2c8c1a6e56a5b2be54388085e47b34befaaf74b38468ca9e4405e1c0e89",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/ledger-terminal-record.json": "939ee935273a22bace01e9f04750987994b7cbddae824d9be9b8a5c62658a034",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/ledger-terminal-totals.json": "2f22b6756d79dfa883bd8114764d4e1a131947a7420f164cdc0f09a7a014f543",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/native-and-meaning-audit.json": "add16bb5785c4037fea31975b3d17bda9fd1088b34128067c8c6638c54173e29",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/old-v24-auditor-failure-preserved/audit.py": "c31ff92d0f708e8a7eed65abd63be9560595dcac266c009ade9d96f505d2ce69",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/old-v24-auditor-failure-preserved/failure.json": "2e5f944021691d613f20d264c4054788257ff7052bfa82112bdc9902f9f6433d",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/original-after.json": "b1c0c09f33c1405481d1503e8df6b174322011d1ebbf313d33d7a4dc318a1806",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/original-before.json": "b1c0c09f33c1405481d1503e8df6b174322011d1ebbf313d33d7a4dc318a1806",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/registered-run-plan.json": "43179919916fe43a8562cecf7592d122068ca36712922e3625bcb8707e954f0b",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/root_terminal_authorization.json": "d1b0a6f6c76223201f8eb25df6e0c7418b105cd715470e8e802e7de8f9eb3826",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/root_terminal_row.json": "939ee935273a22bace01e9f04750987994b7cbddae824d9be9b8a5c62658a034",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/runtime_validation.py": "7297d2a0604f99e9000ed502a491cb61dae916f503f6c79af686ed371335721c",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/supervisor/manifest.json": "ec0b5b3465762ee47c5622f1744688800785f8d7c09743c2562751a42649e6c7",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/supervisor/monitor.jsonl": "ddc86b01481259782a6298781682c45f3de1180c8fc92653e9953f5387c24567",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/supervisor/native_guard/calls.json": "129468e9922af64a5421da69f89532618093d391f610dfa25cbecfefbb0e6814",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/supervisor/stdout.log": "8bab181247b4ba47af873b3890df7881d1fcabe85608a70689d9d9839a3379d9",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/terminal_ownership.py": "147ba3c7871f18d99e34d872e42b8af092d09916c0773d2d590af0fe223f2c9e",
+    "data/runs/runtime_screening/phase11-v3-v28-attribution-smoke-audit-v1/zero-native-replay.json": "42b43c2709c63bd7f3c0fc52e1c9f21c526c088f62f7771bf9b42a498fc48789"
+  },
+  "registered_run_plan": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-plans/phase11-v28-attribution-smoke-plan-v1.json",
+    "sha256": "43179919916fe43a8562cecf7592d122068ca36712922e3625bcb8707e954f0b"
+  },
+  "source_target_plan": {
+    "path": "configs/phase11_attribution_conflict_smoke_v28.json",
+    "sha256": "a77ec9951a537846bab9acbc081bb5b99a7a1931440fac47b52481bd34e8804d"
+  },
+  "full_expected_and_denominators_unchanged": true,
+  "old_results_regenerated": false,
+  "semantic90_or_old70_meaning_adoption_claimed": false,
+  "new_native_calls_during_audit": 0,
+  "new_model_servers": 0,
+  "new_tokenizers_or_GPU_enumeration": 0,
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "guard": {
+    "subprocess_attempts": 0,
+    "socket_attempts": 0,
+    "reserved_QA_open_attempts": 0
+  },
+  "gate11_passed": false,
+  "phase12_allowed": false
+}
