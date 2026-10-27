@@ -1,5 +1,7 @@
 # 研究のフェーズ・現在地・次に行うこと
 
+2026-10-27 11:38 JST最新: Fetch後main/origin/mainは8c17f85で差0/0。全11 Run終端・実験プロセス不在を確認し、同チャットのGoal activeを継承した。v24の全90入力生成0は通過、Judge Smoke2は未知0/Health2/2だが日英ともNS→Cで不採用。全意味90・新Known84は未実施のまま保存、累積1079試行/旧未知3。新v25は原因の非排他性を補うPrompt v14＋共通reasoning1024の共同変更であり、Rewriteにも影響する。Core94を保つ独立v3書換えSmoke入口と35 Testを追加し、全979 Test/Ruff・独立レビューを通過。新候補Native0、次は新固定Commit/専用WTへ全資産を再現し、全90入力生成0→JudgeSmoke2→日英一回書換えSmoke2/全文品質監査→意味90→新鮮Known84/全監査。実採用後だけ元Main各20/全封印・実証明→予約Cal各20/全封印→実測N/最終Validator/Manifest/Hashへ進む。Main/Cal/Gate11未達、Phase12未開始。以下は各観測時点の履歴。
+
 2026-10-26 21:36 JST最新: Known12全84/30条件を同固定f0/Handle17686で完走し、未知0/失敗0・支持57/58・非支持14/16で不採用を保存中。全84機械監査/追加0再読/実Main準備Gate拒否・原Raw119独立コピーを確認した。別候補v24/汎用関係端点Prompt v13は旧70入力/Expected不変＋日英独立10文元逆20＝90Callと、新鮮全Known84を必要とする。新Native0、全944Test/Ruff成功。新候補は生成0→別入力Smoke2→意味90→新Known84の順に、別固定Commit/WT・有限Plan/共有v3台帳で実施する。旧909/未知3と今回Known不合格を消さず、累積1077/未知3。Main/Cal・Gate11未達、Goal active、Phase12未開始。
 
 2026-10-26 21:12 JST追記: Known v12は同Handle17686で65返却＋1処理中まで確認、Health失敗/確定未知0。意味監査でTar Heels固定c2の因果関係の誤支持を元逆とも確認した。固定非支持16観測の誤支持が少なくとも2件なので、残り全正解でも14/16＝87.5%となり90%基準に届かない。全84取得/監査を完了して不採用証拠と費用を保存し、同条件再抽選せず因果・限定範囲の読解に対応する別候補へ進む。Main/Cal開始条件は未達、Goal active・Phase12未開始。以下は各観測時点の履歴。
@@ -12,7 +14,7 @@
 
 2026-10-26 18:24 JST追記: 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-更新日: 2026年10月26日。正本: [研究計画7.79](rag_research_plan.md)、[実装計画8.82](rag_implementation_plan.md)。
+更新日: 2026年10月27日。正本: [研究計画7.80](rag_research_plan.md)、[実装計画8.83](rag_implementation_plan.md)。
 テーマは「英語・日本語データにおける根拠提示順序に対するRAG自己評価の感度と修復判断への影響」。
 本書を今後の作業順序とGateの正本とする。過去の日誌・Phase記録は当時の記録として保持する。
 別チャットから再開する場合は [再開用引継ぎ](codex_handover.md)で、関連記録とローカル生データの場所を確認する。

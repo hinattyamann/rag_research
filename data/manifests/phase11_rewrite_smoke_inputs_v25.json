@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-two-invented-rewrite-inputs-before-fresh-semantic90",
+  "cases": [
+    {
+      "id": "en-rewrite-synthetic-time-extra",
+      "language": "en",
+      "scope": "synthetic_development",
+      "question": "When does the Harbor archive ticket desk open?",
+      "answer": "The Harbor archive ticket desk opens at 07:25 and accepts only gold vouchers.",
+      "documents": [
+        {"passage_id": "rewrite-v25-en-time", "title": "Invented opening schedule", "text": "The Harbor archive ticket desk opens at 09:10."},
+        {"passage_id": "rewrite-v25-en-payment", "title": "Invented payment notice", "text": "Visitors may pay by card or cash at the Harbor archive ticket desk."}
+      ],
+      "offline_expected": {
+        "supported_core_fact": "The ticket desk opens at 09:10.",
+        "required_correction": "Replace the draft's 07:25 with 09:10, including ordinary equivalent time notation.",
+        "forbidden_retained_or_invented_claims": ["The ticket desk opens at 07:25.", "Only gold vouchers are accepted."],
+        "optional_supported_detail": "Card or cash payment may be stated accurately; it is not needed to answer the opening-time question.",
+        "expected_answer_language": "en",
+        "necessary_citation": "rewrite-v25-en-time",
+        "full_text_audit": true
+      }
+    },
+    {
+      "id": "ja-rewrite-synthetic-time-extra",
+      "language": "ja",
+      "scope": "synthetic_development",
+      "question": "星見資料室の受付は何時に開きますか。",
+      "answer": "星見資料室の受付は午前7時25分に開き、金色の引換券しか受け付けない。",
+      "documents": [
+        {"passage_id": "rewrite-v25-ja-time", "title": "架空の開室時刻表", "text": "星見資料室の受付は午前9時10分に開く。"},
+        {"passage_id": "rewrite-v25-ja-payment", "title": "架空の支払案内", "text": "星見資料室の受付での支払いには、現金またはカードを利用できる。"}
+      ],
+      "offline_expected": {
+        "supported_core_fact": "受付は午前9時10分に開く。",
+        "required_correction": "午前7時25分を午前9時10分へ修正する。09:10など意味の等しい表記は許容する。",
+        "forbidden_retained_or_invented_claims": ["受付は午前7時25分に開く。", "金色の引換券しか受け付けない。"],
+        "optional_supported_detail": "現金またはカードが使えると正確に述べてもよいが、開く時刻への回答には不要。",
+        "expected_answer_language": "ja",
+        "necessary_citation": "rewrite-v25-ja-time",
+        "full_text_audit": true
+      }
+    }
+  ],
+  "human_reviewed": false,
+  "exact_model_identifier": null,
+  "history_isolated": false,
+  "native_calls_at_registration": 0,
+  "not_from_main_cal_or_evaluation": true,
+  "phase12_allowed": false
+}

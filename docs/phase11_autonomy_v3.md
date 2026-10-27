@@ -1,5 +1,7 @@
 # Phase11 自律継続Protocol v3と新Runtime・意味候補
 
+2026-10-27 11:40 JST追記: v24は全90入力生成0を通過したが、別日英Smoke2のNS→C2件で不採用。全意味90/新Known84は未実施で、Raw/費用/Hashを保存した。新v25はJudge Prompt v14＋共通reasoning4096→1024の共同変更で、Rewriteも1024になる。Core94/Model/Runtime/Schema/その他Sampler/全入力・Expected/基準を維持し、既存v3 Guardを通す別書換えSmoke入口を追加、全979 Test/Ruffと独立レビューに通過した。事前登録は`data/manifests/phase11_semantic_v25_preregistration_v1.json`（SHA `1bcf8ea0b7a16e59928af2152cfddd97ad862db61515d1335b3ba2d2e238ebc4`）。各Runは固定Commit後に生成0→JudgeSmoke2→RewriteSmoke2/全文品質→全90→新Known84の順で有限登録し、共有v3台帳を使う。全11 Run終端、新170＋旧909＝1079試行/旧未知3。新v25 Native0、Main/Cal/最終凍結/Gate11未達、Goal active・Phase12未開始。以下は時点別履歴。
+
 2026年10月26日JST。[詳細要件](phase11_lab_weekend_goal.md)に基づく新規作業。
 Gate11未通過、Main/Calibration/最終凍結は未実施、Phase12は開始しない。
 

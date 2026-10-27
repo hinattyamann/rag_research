@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v24-independent-full90-preflight-result",
+  "status": "passed_actual_zero_completion_preflight_not_semantic_adoption",
+  "issued_at_utc": "2026-10-26T13:04:58.903183+00:00",
+  "passed": true,
+  "created_at_utc": "2026-10-26T13:02:06.090768+00:00",
+  "fixed_commit": "8c17f85c6435434407935a6f626eeed1ce44eb88",
+  "checkout": ".tools/worktrees/phase11-v24-8c17f85",
+  "canonical_run": "data/runs/model_screening/phase11-v3-v24-preflight",
+  "candidate_identity_sha256": "26a7e6645b550e7f2c03c57f0ed08fd26fb906872f5246e93fda79c27e74e870",
+  "source_files": 94,
+  "identity_unique_files_verified": 133,
+  "Runplan": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-plans/v24-preflight.json",
+    "sha256": "6fb7035b1cb526d7708236717d9cc5cbdec36d1a0316621aefcc777a319dbf29"
+  },
+  "entry_anchor_compensation": {
+    "path": "data/runs/lab/phase11-v24-plan-entry-anchor-v1/result.json",
+    "sha256": "01615bb2f670cb7188cd6f394790e83f387db69c43847605549de56a38440373"
+  },
+  "entry_anchor_4_actual_git_blobs_rechecked": true,
+  "stage_state": "process_completed",
+  "stage_returncode": 0,
+  "stage_wall_seconds": 20.563770695007406,
+  "raw_files": 4,
+  "raw_original_copy_original_hashes_equal": true,
+  "independent_copies": true,
+  "complete_scope": {
+    "qa": 39,
+    "fixed_units": 45,
+    "conditions": 78,
+    "input_payloads": 90
+  },
+  "full_input_key_set_verified": true,
+  "maximum_input_tokens": 3413,
+  "reserved_output_tokens": 6144,
+  "actual_context_tokens": 12288,
+  "minimum_context_margin_tokens": 2731,
+  "full_gpu_offload": true,
+  "offloaded_layers": 33,
+  "total_layers": 33,
+  "gpu_memory_single_observation": "7563 MiB, 8151 MiB",
+  "server_startup_seconds": 7.687755683029536,
+  "startup_warnings_preserved": [
+    "0.00.228.723 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)",
+    "0.00.625.464 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort",
+    "0.06.426.945 W srv          init: --cache-idle-slots requires --cache-ram, disabling"
+  ],
+  "startup_warning_interpretation": "The auto-fit warning says explicit gpu_layers99 prevented automatic fitting; subsequent actual load/offload and 12288 context succeeded. No CUDA-fault cause inference or semantic adoption is made.",
+  "cost": {
+    "completion_attempts": 0,
+    "native_token_budget_reserved": 0,
+    "generated_output_tokens": 0,
+    "generation_task_seconds": 0,
+    "stage_wall_seconds": 20.563770695007406,
+    "tokenization_and_startup_are_real_work": true,
+    "external_metered_api_cost": 0,
+    "electricity_cost": null
+  },
+  "source_and_copy_preservation": {
+    "path": "data/runs/lab/phase11-v24-preflight-audit-v1/raw-copy-receipt.json",
+    "sha256": "943c00d7cdb4e08d043e5d9c51a2955992fb232463612e0c151503e4bb870108"
+  },
+  "terminal_row_snapshot": {
+    "path": "data/runs/lab/phase11-v24-preflight-audit-v1/terminal-ledger-row.json",
+    "sha256": "bdeba98d74cad82678ff9b5233b60cf0d34f651d9424635ff59b4ab9094bcd08"
+  },
+  "monitor_files_sha256": {
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-preflight/manifest.json": "99fe9fc5194ed4941f76b29c8c5f20e6ba7066b158c2d065270ad159830e6eb8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-preflight/monitor.jsonl": "a93d377aee1562b9697cc362847d8268dc9ed8f8701065cf39ebb7cb32eee1a5",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-preflight/stdout.log": "72adfe9e06598be35dc2b377380b3a48f4ea7be5d0e6dd10ae550580b035fe01"
+  },
+  "audit_seconds": 6.308900050993543,
+  "no_retokenization_or_payload_regeneration_in_audit": true,
+  "transport_limit": "Saved report contains actual token counts/input identities, not raw tokenizer wire/token-ID responses; this audit verifies fixed code/hash and complete metadata and performs no tokenizer replay.",
+  "new_native_calls": 0,
+  "new_server_tokenizer_GPU": 0,
+  "active_WT_edited_or_copied_into": false,
+  "audit_ran_while_independent_Smoke_in_same_fixed_WT": true,
+  "scientific_adoption_claimed": false,
+  "Main_Cal_Evaluation_QA_read": false,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "audit_result": {
+    "path": "data/runs/lab/phase11-v24-preflight-audit-v1/result.json",
+    "sha256": "db254d35d941b2304edcaae0bedc1e1393cfa73acd3e52e7ae681e29d22e9a08"
+  },
+  "all_settings_verification": {
+    "path": "data/runs/lab/phase11-v24-preflight-audit-v1/settings-verification.json",
+    "sha256": "dfe6ebd490a121df9bfda6c36c6c9edfdc88a96ddd9d1ac7da83e05f5cba4271"
+  },
+  "canonical_report": {
+    "path": "data/runs/model_screening/phase11-v3-v24-preflight/report.json",
+    "sha256": "967f444be65e5b8957d67c2ac7098de5ddd6a8804fc0a14702f71f8cccdb73d7"
+  },
+  "config_source_and_scope_identity_only_no_completion_sampler_observed": true,
+  "actual_preflight_generated_cost_is_zero_but_startup_and_tokenization_wall_not_zero": true,
+  "actual_server_resource_observations": {
+    "startup_seconds": 7.687755683029536,
+    "sampled_peak_python_rss_bytes": 110833664,
+    "sampled_peak_server_rss_bytes": 4802879488,
+    "sampled_peak_combined_rss_bytes": 4815106048,
+    "minimum_available_ram_bytes": 4236808192,
+    "sampling_interval_seconds": 0.1
+  },
+  "raw_hashes_sha256": {
+    ".run.lock": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "plan.json": "44858fe949431f5931297c0b36bbe4e200eb6d31e2f284cedb5b831c649cf294",
+    "report.json": "967f444be65e5b8957d67c2ac7098de5ddd6a8804fc0a14702f71f8cccdb73d7",
+    "server.log": "58ddf1c9ea548e729f924f00225171d520fc53613c021758ebd0a6aa22f47cfd"
+  },
+  "artifact_files_sha256": {
+    "data/runs/lab/phase11-v24-preflight-audit-v1/audit.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v24-preflight-audit-v1/audit.stdout": "6e77de5f615c34d4d3c4f5d9b688963f5b4a411f39be3c57f5f5d1497a81b3b4",
+    "data/runs/lab/phase11-v24-preflight-audit-v1/audit_preflight.py": "44f003a23a2010db452af423cab51e6b82db9c6dadce4a406f0699cf82bfb33c",
+    "data/runs/lab/phase11-v24-preflight-audit-v1/raw-copy-receipt.json": "943c00d7cdb4e08d043e5d9c51a2955992fb232463612e0c151503e4bb870108",
+    "data/runs/lab/phase11-v24-preflight-audit-v1/result.json": "db254d35d941b2304edcaae0bedc1e1393cfa73acd3e52e7ae681e29d22e9a08",
+    "data/runs/lab/phase11-v24-preflight-audit-v1/settings-verification.json": "dfe6ebd490a121df9bfda6c36c6c9edfdc88a96ddd9d1ac7da83e05f5cba4271",
+    "data/runs/lab/phase11-v24-preflight-audit-v1/terminal-ledger-row.json": "bdeba98d74cad82678ff9b5233b60cf0d34f651d9424635ff59b4ab9094bcd08",
+    "data/runs/lab/phase11-v24-preflight-audit-v1/verified-identity-files-sha256.json": "f091ad8bcef860c127c0ef0d010da99d49e92a56036f577fb0ce540b2be01f05",
+    "data/runs/model_screening/phase11-v3-v24-preflight/.run.lock": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "data/runs/model_screening/phase11-v3-v24-preflight/plan.json": "44858fe949431f5931297c0b36bbe4e200eb6d31e2f284cedb5b831c649cf294",
+    "data/runs/model_screening/phase11-v3-v24-preflight/report.json": "967f444be65e5b8957d67c2ac7098de5ddd6a8804fc0a14702f71f8cccdb73d7",
+    "data/runs/model_screening/phase11-v3-v24-preflight/server.log": "58ddf1c9ea548e729f924f00225171d520fc53613c021758ebd0a6aa22f47cfd",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-preflight/manifest.json": "99fe9fc5194ed4941f76b29c8c5f20e6ba7066b158c2d065270ad159830e6eb8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-preflight/monitor.jsonl": "a93d377aee1562b9697cc362847d8268dc9ed8f8701065cf39ebb7cb32eee1a5",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-preflight/stdout.log": "72adfe9e06598be35dc2b377380b3a48f4ea7be5d0e6dd10ae550580b035fe01"
+  }
+}

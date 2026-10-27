@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-synthetic-rewrite-smoke-v3",
+  "source": {
+    "path": "data/manifests/phase11_rewrite_smoke_inputs_v25.json",
+    "sha256": "c3ce4c42d20d46132188fba469dcf62e481e2a55a9337d4ff79f448dd35e0050"
+  },
+  "targets": [
+    "en-rewrite-synthetic-time-extra",
+    "ja-rewrite-synthetic-time-extra"
+  ],
+  "maximum_calls": 2,
+  "automatic_retries": 0,
+  "phase12_allowed": false,
+  "rationale": "The common reasoning budget changes to1024 in joint candidatev25, including rewrite_answer. Test one full invented input per language, one rewrite each with unchanged full Q/answer/two docs and no Expected/Gold in inference. Preserve all output/cost and perform separate offline full-text quality review; Health alone does not adopt rewrite quality or Phase11. No retry, refill or Main/Cal/Evaluation input."
+}

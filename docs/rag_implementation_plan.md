@@ -1,6 +1,14 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
-## Version 8.82 — 2026年10月26日 Known84の全監査と関係照合候補の登録準備
+## Version 8.83 — 2026年10月27日 v24監査保存とv25書換え検証入口
+
+11:38 JST現在、v24の全90入力生成0とJudge Smoke2の全Raw/Schema/Native Sampler/Token/独立copy/費用を監査した。生成0最大3413入力＋6144出力予約は12288以内、全33層CUDA。Smokeは2応答/未知0だが日英ともExpected NSに対しCのため、事前規則に従い全意味90へ進めず不採用とした。前候補を成功するまで繰り返さず、別v25を登録する。共有v3台帳は全11 Run終端、新170試行/成功158/未検証返却12/Health失敗0/未知0、旧909を含め1079試行/旧未知3。Task11911.984004秒とNative11944.901842秒、監視壁12154.239746秒は重なる尺度であり加算しない。外部従量API0、電気代換算は未測定/null。
+
+v25はPrompt v14＋共通推論予算1024の共同変更で、94 Coreと既存Guardは不変。新`run_phase11_rewrite_smoke_v3.py`は専用入口として、実行所有者/PID/create time/期限/固定Commit/共有v3台帳/実argv/全Identityを既存`validate_plan`で再照合し、架空日英2入力だけを既存`rewrite_once`へ渡す。Expectedはofflineだけに保持し、推論はQ・全文回答・全文根拠だけを使用、各1回/Retry0/個別1200秒/壁1800秒/監視5秒。Health通過だけで品質を採用せず、全生成文・言語・引用・余分な断定の別監査を必要とする。新35 Testを含む全979 Test（32.75秒）/Ruff成功、独立レビューに未解決P1/P2なし。正式有限PlanはCommit後の専用CheckoutからHashを照合して生成・共有台帳へ登録し、生成0→JudgeSmoke2→RewriteSmoke2→全90→新Known84の順を守る。実v25 Native/Main/Cal/最終凍結は未実施、Gate11未通過、Phase12未開始。
+
+以下は各観測時点の履歴として保持する。
+
+### Version 8.82 — 2026年10月26日 Known84の全監査と関係照合候補の登録準備
 
 21:36 JST現在、Known12全84/30条件のHealthは成功、二値意味は支持57/58・非支持14/16で不採用。原Raw119ファイル/14553982bytesの前後Hashと独立copyを照合し、全84 Native Schema/payload/Sampler/費用/追加0再読後も実Main準備Gateが拒否することを確認した。新候補v24はCore94を変えずJudge Prompt v13だけを変更し、日英同一指示・全旧70＋独立10文元逆20＝90Callを別Planで検証する。新ID26a7e6645b550e7f2c03c57f0ed08fd26fb906872f5246e93fda79c27e74e870、生成0/別入力Smoke2/全90/新Known84の順。旧70用prepare helperを改変せず、90向け全fieldのPlanを同じv3の完全scope検証・登録・実行入口へ渡す。新全944Test/Ruff通過、実新Nativeは0、Main/Calは未開始。
 
@@ -14,7 +22,7 @@
 
 初回生成3Bの旧Graph ON参照を事前点検で発見し、Model/日英初回Prompt/全generation値を保った新baseline設定（runtime_specだけGraph OFF）と検証入口を追加した。既知接続の日英各1例だけを対象とし、生成0/Smoke2・入力全文・Gold非注入・新出力排他・未知保全を厳密に検査する。新851 Test（29.60秒）/Ruffと実Contractの生成0照合に成功、core93/実行中d40は不変。新初回生成の実Runtime確認は未実施で、ソフトウェア確認を実Health/採用としない。
 
-[研究計画 Version 7.79](rag_research_plan.md)の実装仕様。
+[研究計画 Version 7.80](rag_research_plan.md)の実装仕様。
 [ロードマップ](research_roadmap.md)を工程・現在地の正本とする。
 [旧実装計画 Version 7.15](archive/rag_implementation_plan_v7_15.md)は保存版であり、旧Phase 7以降を実装しない。
 

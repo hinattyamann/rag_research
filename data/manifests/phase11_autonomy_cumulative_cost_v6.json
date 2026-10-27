@@ -1,0 +1,770 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v3-cumulative-cost-after-rejected-v24-smoke",
+  "recorded_at_utc": "2026-10-26T13:16:24.957245+00:00",
+  "recorded_at_jst": "2026-10-26T22:16:24.957245+09:00",
+  "autonomy_protocol_version": "phase11-autonomy-v3",
+  "protocol_sha256": "e0dd7fae96939af34232f5a7174cbc400c6e7dfce3eedf584c2a4d08ca09df00",
+  "previous_closed_cost_snapshot": {
+    "path": "data/manifests/phase11_autonomy_cumulative_cost_v5.json",
+    "sha256": "6e20f4b5f29063e72778edc4357496f295c874ada75f69d59d1ede87497763e3",
+    "bytes": 7101
+  },
+  "immutable_ledger_snapshot": {
+    "path": "data/runs/audits/phase11-autonomy-cost-v6/ledger.snapshot.json",
+    "sha256": "a8f640b1e75e3ec7495740b8a3b30253ca1e9287587d9ded946869f6a15e5c0d",
+    "bytes": 585865
+  },
+  "legacy_result": {
+    "path": "data/manifests/phase11_known_trace_result_v10.json",
+    "sha256": "dfd7eb4a780d369c83d65ab8ab1432e9bd8d232cf086e39050169c5f1e293b38",
+    "bytes": 54985
+  },
+  "legacy_attempts": 909,
+  "legacy_unknown": 3,
+  "legacy_unused_calls_not_reallocated": true,
+  "runs": [
+    {
+      "run_id": "phase11-v3-runtime-preflight",
+      "state": "process_completed",
+      "stage": "preflight",
+      "plan_sha256": "2419718765c1cef1bbbd3c379f5ceec1ea833544cb618be5fcfbbcd688fb1c14",
+      "candidate_identity_sha256": "b74a3b27706eedc83eeb9f0a4b3564f64664b44df06af13c9d3112ad606de8bb",
+      "fixed_commit": "d40f927e24af8ad263fa4e12f21334f7b86388b6",
+      "completion_attempts": 0,
+      "standard_task_successful": 0,
+      "unvalidated_returned": 0,
+      "failed": 0,
+      "unknown": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "native_http_seconds": 0,
+      "standard_task_seconds": 0,
+      "supervised_wall_seconds": 20.345748943975195,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-26T08:13:42.594282+00:00",
+      "copied_evidence": [
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-runtime-preflight/manifest.json",
+            "sha256": "56c8c7ddca07b857081f994d3764dd011016f6bb092dc2c2fd46d95843e0e484",
+            "bytes": 29241
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-runtime-preflight/manifest.json",
+            "sha256": "56c8c7ddca07b857081f994d3764dd011016f6bb092dc2c2fd46d95843e0e484",
+            "bytes": 29241
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-runtime-preflight/monitor.jsonl",
+            "sha256": "e127df9af2244b05cade770b41dba58876025a8cd0588ec77b3bc933d0942e78",
+            "bytes": 4316
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-runtime-preflight/monitor.jsonl",
+            "sha256": "e127df9af2244b05cade770b41dba58876025a8cd0588ec77b3bc933d0942e78",
+            "bytes": 4316
+          },
+          "before_copy_after_bytes_equal": true
+        }
+      ]
+    },
+    {
+      "run_id": "phase11-v3-runtime-smoke",
+      "state": "process_completed",
+      "stage": "smoke",
+      "plan_sha256": "3f12a833564501dc69e46b578e37aaabcc6b0d34b2bd44f94a3decb862b92113",
+      "candidate_identity_sha256": "b74a3b27706eedc83eeb9f0a4b3564f64664b44df06af13c9d3112ad606de8bb",
+      "fixed_commit": "d40f927e24af8ad263fa4e12f21334f7b86388b6",
+      "completion_attempts": 2,
+      "standard_task_successful": 2,
+      "unvalidated_returned": 0,
+      "failed": 0,
+      "unknown": 0,
+      "input_tokens": 6874,
+      "output_tokens": 8465,
+      "native_http_seconds": 171.773034,
+      "standard_task_seconds": 171.9518848269945,
+      "supervised_wall_seconds": 193.62774780200562,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-26T08:20:14.368148+00:00",
+      "copied_evidence": [
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-runtime-smoke/manifest.json",
+            "sha256": "3bdfc311aa9811362f7f4e5e015b480200b043afcf32b3552dc4d826b9eee0e7",
+            "bytes": 27993
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-runtime-smoke/manifest.json",
+            "sha256": "3bdfc311aa9811362f7f4e5e015b480200b043afcf32b3552dc4d826b9eee0e7",
+            "bytes": 27993
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-runtime-smoke/monitor.jsonl",
+            "sha256": "620bc9a10fd697fc60eff3e81302d407739aa0054e7fe0a7cabf737e2e6579e7",
+            "bytes": 77868
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-runtime-smoke/monitor.jsonl",
+            "sha256": "620bc9a10fd697fc60eff3e81302d407739aa0054e7fe0a7cabf737e2e6579e7",
+            "bytes": 77868
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-runtime-smoke/native_guard/calls.json",
+            "sha256": "e16ce5fc5bbea1e62507d00d993a35d1387c54bba1d7d21ee80a082370154624",
+            "bytes": 1533
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-runtime-smoke/native_guard/calls.json",
+            "sha256": "e16ce5fc5bbea1e62507d00d993a35d1387c54bba1d7d21ee80a082370154624",
+            "bytes": 1533
+          },
+          "before_copy_after_bytes_equal": true
+        }
+      ]
+    },
+    {
+      "run_id": "phase11-v3-semantic-preflight",
+      "state": "process_completed",
+      "stage": "preflight",
+      "plan_sha256": "4587cb4b8a801fedf51cde9c8d7c6cb9df528c40786b25a4fd8ebf7639c3d968",
+      "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+      "fixed_commit": "d40f927e24af8ad263fa4e12f21334f7b86388b6",
+      "completion_attempts": 0,
+      "standard_task_successful": 0,
+      "unvalidated_returned": 0,
+      "failed": 0,
+      "unknown": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "native_http_seconds": 0,
+      "standard_task_seconds": 0,
+      "supervised_wall_seconds": 20.337676025985274,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-26T08:23:32.163252+00:00",
+      "copied_evidence": [
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-semantic-preflight/manifest.json",
+            "sha256": "657e6a5edfd6c0c5441e1e625868371408423d2f3d2220f9339f7d872233b580",
+            "bytes": 29013
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-semantic-preflight/manifest.json",
+            "sha256": "657e6a5edfd6c0c5441e1e625868371408423d2f3d2220f9339f7d872233b580",
+            "bytes": 29013
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-semantic-preflight/monitor.jsonl",
+            "sha256": "b82e1a88f5d97369141633c0967d14411c8c39e27b4f165cdd3aff47210764ca",
+            "bytes": 4246
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-semantic-preflight/monitor.jsonl",
+            "sha256": "b82e1a88f5d97369141633c0967d14411c8c39e27b4f165cdd3aff47210764ca",
+            "bytes": 4246
+          },
+          "before_copy_after_bytes_equal": true
+        }
+      ]
+    },
+    {
+      "run_id": "phase11-v3-v21-format",
+      "state": "process_completed",
+      "stage": "format",
+      "plan_sha256": "c07004241b66f840ebc94f658f3092e0e4a556f03fae010c81c9e7f65573f0fa",
+      "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+      "fixed_commit": "d40f927e24af8ad263fa4e12f21334f7b86388b6",
+      "completion_attempts": 10,
+      "standard_task_successful": 0,
+      "unvalidated_returned": 10,
+      "failed": 0,
+      "unknown": 0,
+      "input_tokens": 630,
+      "output_tokens": 1729,
+      "native_http_seconds": 36.332572,
+      "standard_task_seconds": 0,
+      "supervised_wall_seconds": 50.64221247396199,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-26T08:27:19.109984+00:00",
+      "copied_evidence": [
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-format/manifest.json",
+            "sha256": "47d8ba4831e4fcc591f73c0d5b42a86934b5cfd2d75882f2421fd4ec26c48c25",
+            "bytes": 27474
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v21-format/manifest.json",
+            "sha256": "47d8ba4831e4fcc591f73c0d5b42a86934b5cfd2d75882f2421fd4ec26c48c25",
+            "bytes": 27474
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-format/monitor.jsonl",
+            "sha256": "929fd8451a167339c50bd9acaf8e558258d4180277a994d72b768a41afafded0",
+            "bytes": 36542
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v21-format/monitor.jsonl",
+            "sha256": "929fd8451a167339c50bd9acaf8e558258d4180277a994d72b768a41afafded0",
+            "bytes": 36542
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-format/native_guard/calls.json",
+            "sha256": "d6971537665425b4c3e9867a7f4d21031b1392547d88593a1b2687f9f76c3dd8",
+            "bytes": 6889
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v21-format/native_guard/calls.json",
+            "sha256": "d6971537665425b4c3e9867a7f4d21031b1392547d88593a1b2687f9f76c3dd8",
+            "bytes": 6889
+          },
+          "before_copy_after_bytes_equal": true
+        }
+      ]
+    },
+    {
+      "run_id": "phase11-v3-v21-semantic",
+      "state": "process_completed",
+      "stage": "semantic",
+      "plan_sha256": "92c1585555ab90b572425200063a2fa3b6cf86110e7022dba3157f8066be2f5e",
+      "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+      "fixed_commit": "d40f927e24af8ad263fa4e12f21334f7b86388b6",
+      "completion_attempts": 70,
+      "standard_task_successful": 70,
+      "unvalidated_returned": 0,
+      "failed": 0,
+      "unknown": 0,
+      "input_tokens": 96960,
+      "output_tokens": 254333,
+      "native_http_seconds": 5057.123585,
+      "standard_task_seconds": 5059.542908817704,
+      "supervised_wall_seconds": 5080.031970276032,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-26T09:56:41.718050+00:00",
+      "copied_evidence": [
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-semantic/manifest.json",
+            "sha256": "b19e88f2de3ed77525cea26e76033405cbba2aa7972d40462f0b5952a18c9d3a",
+            "bytes": 29906
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v21-semantic/manifest.json",
+            "sha256": "b19e88f2de3ed77525cea26e76033405cbba2aa7972d40462f0b5952a18c9d3a",
+            "bytes": 29906
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-semantic/monitor.jsonl",
+            "sha256": "c262609ab735b0cec3d292bc3dbee0b397cf379e236c07089c709e93c3a7e8b0",
+            "bytes": 33014648
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v21-semantic/monitor.jsonl",
+            "sha256": "c262609ab735b0cec3d292bc3dbee0b397cf379e236c07089c709e93c3a7e8b0",
+            "bytes": 33014648
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-semantic/native_guard/calls.json",
+            "sha256": "2264ce0d084ee082145592a51ee94c32b00ecb9b818f27daf5068a5cf3a2066d",
+            "bytes": 47503
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v21-semantic/native_guard/calls.json",
+            "sha256": "2264ce0d084ee082145592a51ee94c32b00ecb9b818f27daf5068a5cf3a2066d",
+            "bytes": 47503
+          },
+          "before_copy_after_bytes_equal": true
+        }
+      ]
+    },
+    {
+      "run_id": "phase11-v3-baseline-preflight",
+      "state": "process_completed",
+      "stage": "preflight",
+      "plan_sha256": "94fe6dedb4e64732a816de7d59340ce56b7eb1ec377ee3af651005486ec7a04e",
+      "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+      "fixed_commit": "4793a17fc70e01fb5217be1a3ebd4de4557a4c3e",
+      "completion_attempts": 0,
+      "standard_task_successful": 0,
+      "unvalidated_returned": 0,
+      "failed": 0,
+      "unknown": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "native_http_seconds": 0,
+      "standard_task_seconds": 0,
+      "supervised_wall_seconds": 10.125891555973794,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-26T09:58:46.893371+00:00",
+      "copied_evidence": [
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-baseline-preflight/manifest.json",
+            "sha256": "583f6e660b4333e106ca2268195f1913bf207bf062bece3bb4b7827f47ce6842",
+            "bytes": 29774
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-baseline-preflight/manifest.json",
+            "sha256": "583f6e660b4333e106ca2268195f1913bf207bf062bece3bb4b7827f47ce6842",
+            "bytes": 29774
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-baseline-preflight/monitor.jsonl",
+            "sha256": "b78a713e35a42b7e9a36c5d77e70f71bcb92f06994831d8ecda52b712250aacd",
+            "bytes": 2571
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-baseline-preflight/monitor.jsonl",
+            "sha256": "b78a713e35a42b7e9a36c5d77e70f71bcb92f06994831d8ecda52b712250aacd",
+            "bytes": 2571
+          },
+          "before_copy_after_bytes_equal": true
+        }
+      ]
+    },
+    {
+      "run_id": "phase11-v3-baseline-smoke",
+      "state": "process_completed",
+      "stage": "smoke",
+      "plan_sha256": "5a54102895beb5d1b982ab1e846c1f40af3479fdb3530acfff44cafe6957bfb1",
+      "candidate_identity_sha256": "9aebd9f0fb221d5820b1c54a58782ac7bcb46d92ac388ee51bebb3cee932a6a6",
+      "fixed_commit": "4793a17fc70e01fb5217be1a3ebd4de4557a4c3e",
+      "completion_attempts": 2,
+      "standard_task_successful": 0,
+      "unvalidated_returned": 2,
+      "failed": 0,
+      "unknown": 0,
+      "input_tokens": 4750,
+      "output_tokens": 191,
+      "native_http_seconds": 2.232492,
+      "standard_task_seconds": 0,
+      "supervised_wall_seconds": 10.146987044019625,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-26T10:00:22.244656+00:00",
+      "copied_evidence": [
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-baseline-smoke/manifest.json",
+            "sha256": "06f6e6c556b597ec87cf999694e10ffb08a1e7f7d58feb9d8c1383a948b581cb",
+            "bytes": 29765
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-baseline-smoke/manifest.json",
+            "sha256": "06f6e6c556b597ec87cf999694e10ffb08a1e7f7d58feb9d8c1383a948b581cb",
+            "bytes": 29765
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-baseline-smoke/monitor.jsonl",
+            "sha256": "3a9c39824b6fbe77594c0bc50f65602a3ae9fd7a9f8bb17984b77ccff7783829",
+            "bytes": 3755
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-baseline-smoke/monitor.jsonl",
+            "sha256": "3a9c39824b6fbe77594c0bc50f65602a3ae9fd7a9f8bb17984b77ccff7783829",
+            "bytes": 3755
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-baseline-smoke/native_guard/calls.json",
+            "sha256": "55148b868d0e832e3cfbe3b1624322bd5e50378967d95ed89d044e5fec6d20bf",
+            "bytes": 1525
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-baseline-smoke/native_guard/calls.json",
+            "sha256": "55148b868d0e832e3cfbe3b1624322bd5e50378967d95ed89d044e5fec6d20bf",
+            "bytes": 1525
+          },
+          "before_copy_after_bytes_equal": true
+        }
+      ]
+    },
+    {
+      "run_id": "phase11-v3-v12-known-preflight",
+      "state": "process_completed",
+      "stage": "preflight",
+      "plan_sha256": "417575ec8ac58c946dee27c6378d99c2687d7375d1e0570a482e2e6fb282d451",
+      "candidate_identity_sha256": "91f50601299a8e9b1399b3925acddc36ffb6af9a46032e2adad631770a12d1b5",
+      "fixed_commit": "f0b7c71c4375a617c7142c67e3aa0610f73edb14",
+      "completion_attempts": 0,
+      "standard_task_successful": 0,
+      "unvalidated_returned": 0,
+      "failed": 0,
+      "unknown": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "native_http_seconds": 0,
+      "standard_task_seconds": 0,
+      "supervised_wall_seconds": 25.518611817038618,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-26T10:36:57.201236+00:00",
+      "copied_evidence": [
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v12-known-preflight/manifest.json",
+            "sha256": "b5a9c62380a945088cdbed8c1089dde71fabadc16f47ed29f860be5de78a0480",
+            "bytes": 29294
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v12-known-preflight/manifest.json",
+            "sha256": "b5a9c62380a945088cdbed8c1089dde71fabadc16f47ed29f860be5de78a0480",
+            "bytes": 29294
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v12-known-preflight/monitor.jsonl",
+            "sha256": "b6622c35b865ebe9abd75872e9425d08f42426fde218f65441d11b911c6a9644",
+            "bytes": 5086
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v12-known-preflight/monitor.jsonl",
+            "sha256": "b6622c35b865ebe9abd75872e9425d08f42426fde218f65441d11b911c6a9644",
+            "bytes": 5086
+          },
+          "before_copy_after_bytes_equal": true
+        }
+      ]
+    },
+    {
+      "run_id": "phase11-v3-v12-known",
+      "state": "process_completed",
+      "stage": "known",
+      "plan_sha256": "7639318280dc22b9e739e52b4f9b7b4a20f7202208ab8e574bea649849a7b3d7",
+      "candidate_identity_sha256": "91f50601299a8e9b1399b3925acddc36ffb6af9a46032e2adad631770a12d1b5",
+      "fixed_commit": "f0b7c71c4375a617c7142c67e3aa0610f73edb14",
+      "completion_attempts": 84,
+      "standard_task_successful": 84,
+      "unvalidated_returned": 0,
+      "failed": 0,
+      "unknown": 0,
+      "input_tokens": 225810,
+      "output_tokens": 324719,
+      "native_http_seconds": 6535.883661,
+      "standard_task_seconds": 6538.850041914964,
+      "supervised_wall_seconds": 6566.260224726982,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-26T12:31:12.879808+00:00",
+      "copied_evidence": [
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v12-known/manifest.json",
+            "sha256": "3a75efc2c5cba0452dba747e26e2746f3d4e58652cb0db3c5c3bf54d6c551798",
+            "bytes": 30783
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v12-known/manifest.json",
+            "sha256": "3a75efc2c5cba0452dba747e26e2746f3d4e58652cb0db3c5c3bf54d6c551798",
+            "bytes": 30783
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v12-known/monitor.jsonl",
+            "sha256": "fabf207cee93c422b794bdae526069f2603d7fe7a82db71cd692292f9c6103b6",
+            "bytes": 50771698
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v12-known/monitor.jsonl",
+            "sha256": "fabf207cee93c422b794bdae526069f2603d7fe7a82db71cd692292f9c6103b6",
+            "bytes": 50771698
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v12-known/native_guard/calls.json",
+            "sha256": "1546000d71f49d82062300cad0e81b79d4b9bff14d5586107b85faca5c8b5bcb",
+            "bytes": 57030
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v12-known/native_guard/calls.json",
+            "sha256": "1546000d71f49d82062300cad0e81b79d4b9bff14d5586107b85faca5c8b5bcb",
+            "bytes": 57030
+          },
+          "before_copy_after_bytes_equal": true
+        }
+      ]
+    },
+    {
+      "run_id": "phase11-v3-v24-preflight",
+      "state": "process_completed",
+      "stage": "preflight",
+      "plan_sha256": "6fb7035b1cb526d7708236717d9cc5cbdec36d1a0316621aefcc777a319dbf29",
+      "candidate_identity_sha256": "26a7e6645b550e7f2c03c57f0ed08fd26fb906872f5246e93fda79c27e74e870",
+      "fixed_commit": "8c17f85c6435434407935a6f626eeed1ce44eb88",
+      "completion_attempts": 0,
+      "standard_task_successful": 0,
+      "unvalidated_returned": 0,
+      "failed": 0,
+      "unknown": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "native_http_seconds": 0,
+      "standard_task_seconds": 0,
+      "supervised_wall_seconds": 20.563770695007406,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-26T12:55:22.467535+00:00",
+      "copied_evidence": [
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-preflight/manifest.json",
+            "sha256": "99fe9fc5194ed4941f76b29c8c5f20e6ba7066b158c2d065270ad159830e6eb8",
+            "bytes": 34334
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v24-preflight/manifest.json",
+            "sha256": "99fe9fc5194ed4941f76b29c8c5f20e6ba7066b158c2d065270ad159830e6eb8",
+            "bytes": 34334
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-preflight/monitor.jsonl",
+            "sha256": "a93d377aee1562b9697cc362847d8268dc9ed8f8701065cf39ebb7cb32eee1a5",
+            "bytes": 4246
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v24-preflight/monitor.jsonl",
+            "sha256": "a93d377aee1562b9697cc362847d8268dc9ed8f8701065cf39ebb7cb32eee1a5",
+            "bytes": 4246
+          },
+          "before_copy_after_bytes_equal": true
+        }
+      ]
+    },
+    {
+      "run_id": "phase11-v3-v24-smoke",
+      "state": "process_completed",
+      "stage": "smoke",
+      "plan_sha256": "d8957ccc62d931f61c27278ae3f120b808d80a515d49945a26c0d2da7585055e",
+      "candidate_identity_sha256": "26a7e6645b550e7f2c03c57f0ed08fd26fb906872f5246e93fda79c27e74e870",
+      "fixed_commit": "8c17f85c6435434407935a6f626eeed1ce44eb88",
+      "completion_attempts": 2,
+      "standard_task_successful": 2,
+      "unvalidated_returned": 0,
+      "failed": 0,
+      "unknown": 0,
+      "input_tokens": 2383,
+      "output_tokens": 7161,
+      "native_http_seconds": 141.556498,
+      "standard_task_seconds": 141.63916805404006,
+      "supervised_wall_seconds": 156.63890439202078,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-26T13:00:08.973455+00:00",
+      "copied_evidence": [
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-smoke/manifest.json",
+            "sha256": "09ee2180201942381f19d6aa0253500df978a911cc7cde133977ca139311f88d",
+            "bytes": 31566
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v24-smoke/manifest.json",
+            "sha256": "09ee2180201942381f19d6aa0253500df978a911cc7cde133977ca139311f88d",
+            "bytes": 31566
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-smoke/monitor.jsonl",
+            "sha256": "823cd5f08f9aef57f93ec2d82e1958467fbdc16f180d4f4f1b0dc174b29b6eba",
+            "bytes": 61500
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v24-smoke/monitor.jsonl",
+            "sha256": "823cd5f08f9aef57f93ec2d82e1958467fbdc16f180d4f4f1b0dc174b29b6eba",
+            "bytes": 61500
+          },
+          "before_copy_after_bytes_equal": true
+        },
+        {
+          "source": {
+            "path": "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-smoke/native_guard/calls.json",
+            "sha256": "46329eb7f7d7d6593f1a2b833aaac13239bc712b246f5e9af812e41ffa7c9204",
+            "bytes": 1529
+          },
+          "independent_copy": {
+            "path": "data/runs/audits/phase11-autonomy-cost-v6/supervisor/phase11-v3-v24-smoke/native_guard/calls.json",
+            "sha256": "46329eb7f7d7d6593f1a2b833aaac13239bc712b246f5e9af812e41ffa7c9204",
+            "bytes": 1529
+          },
+          "before_copy_after_bytes_equal": true
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "attempts": 170,
+    "successful": 158,
+    "unvalidated_returned": 12,
+    "failed": 0,
+    "unknown": 0,
+    "observed_input_tokens": 337407,
+    "observed_output_tokens": 596598,
+    "known_task_seconds": 11911.984003613703,
+    "known_native_seconds": 11944.901842000001,
+    "task_failures": 0,
+    "cumulative_attempts": 1079,
+    "cumulative_unknown": 3,
+    "new_wall_seconds": 12154.239745753002,
+    "cost_incomplete": false,
+    "external_paid_api_calls": 0,
+    "electricity_cost_currency": null,
+    "legacy_success_failure_and_cost_not_reconstructed": true
+  },
+  "new_standard_task_success_definition": "Validated software Task/Health success, not semantic correctness or scientific adoption.",
+  "unvalidated_returned_definition": "Native returned but absent standard Task request/checkpoint validation: format10 plus baselineSmoke2; retained separately and not promoted to standard successes.",
+  "v24_result": {
+    "path": "data/manifests/phase11_v24_smoke_result_v1.json",
+    "sha256": "e4b0e5ecf2bfcea6b64ef537cf565606342be3598b72c1797e258f94146f952a",
+    "bytes": 7778
+  },
+  "v24_preflight_result": {
+    "path": "data/manifests/phase11_v24_preflight_result_v1.json",
+    "sha256": "0b348b0e0e43b3f93314202fa8a7fe045a7eaaf6a61954419da09ef108c32a66",
+    "bytes": 7919
+  },
+  "v24_semantic_outcome": {
+    "fixed_expected_NS_returned_C": 2,
+    "denominator": 2,
+    "health_failed": 0,
+    "candidate_accepted": false,
+    "semantic90_started": false,
+    "new_known84_started": false,
+    "failure_not_rewritten_as_health_failure": true
+  },
+  "all_new_runs_closed": true,
+  "all_preserved_and_new_cost": {
+    "attempts": 1079,
+    "unknown": 3,
+    "input_tokens": null,
+    "output_tokens": null,
+    "native_seconds": null,
+    "task_seconds": null,
+    "total_inference_cost": null,
+    "reason": "Legacy909 full token/time/cost totals and three unknown outcomes are not reconstructed or estimated from subsets."
+  },
+  "separate_cost_scopes": {
+    "native_http_seconds": 11944.901842000001,
+    "validated_task_seconds": 11911.984003613703,
+    "supervised_run_wall_seconds": 12154.239745753002,
+    "native_task_and_wall_scopes_overlap_and_must_not_be_added": true,
+    "build": {
+      "manifest": {
+        "path": "data/manifests/phase11_cuda_graph_off_runtime_result_v1.json",
+        "sha256": "051b05c95fb1531c271433dc1bf55d3f2ce13249fdd90dab961d0e1c6c781ee1",
+        "bytes": 505594
+      },
+      "initial_stopped_wall_seconds": 245.0352299970109,
+      "corrected_build_wall_seconds": 619.089007246017,
+      "total_observed_build_wall_seconds": 864.1242372430279,
+      "external_paid_api_requests": 0,
+      "monetary_cpu_electricity_cost": null,
+      "note": "Actual tracked build wall times only; download/hash/packaging overhead and energy price are not fully metered."
+    },
+    "AI_assessment_audit_and_preparation": {
+      "total_seconds": null,
+      "monetary_cost": null,
+      "not_zero_cost": true,
+      "not_added_to_native_task_or_supervised_wall": true,
+      "v24_smoke_formal_audit_seconds_observed_subset_only": 6.0777443289989606,
+      "v24_smoke_stopped_gen0_audit_attempts_preserved": [
+        {
+          "reason": "Auditor referenced model_path on sampling-only AuxiliaryGenerationConfig; corrected to use the bound model manifest.",
+          "process_wall_seconds_from_exec_tool": 6.133350095,
+          "new_native_calls": 0,
+          "Raw_config_unchanged": true
+        }
+      ],
+      "scope_limitation": "Exploratory review, tests, hashing, acquisition and other preparation are not fully timed; subset observations are not a complete assessor-cost total."
+    },
+    "goal_elapsed_seconds": null,
+    "build_test_review_wall_intervals_may_overlap": true,
+    "external_paid_api_calls": 0,
+    "electricity_cost_currency": null,
+    "GPU_energy_kwh": null,
+    "GPU_kernel_seconds": null,
+    "total_cash_cost_currency": null
+  },
+  "audit": {
+    "source": {
+      "path": "data/runs/audits/phase11-autonomy-cost-v6/cost_audit_source.py",
+      "sha256": "d9da1e31d1b326148a26b0d768b3ad2647542f4d0fbe53fa950b17bf0a72d88f",
+      "bytes": 14044
+    },
+    "elapsed_seconds": 0.4512062550056726,
+    "supervisor_independent_copies": 28,
+    "standard_raw_journals_verified": 158,
+    "native_call_metadata_verified": 170,
+    "source_ledger_before_after_equal": true,
+    "old_v5_before_after_equal": true,
+    "source_ledger_or_Raw_modified": false,
+    "new_native_calls": 0,
+    "new_servers": 0,
+    "new_tokenizers_or_GPU_enumeration": 0,
+    "Main_Cal_Evaluation_QA_bodies_read": 0,
+    "artifacts": [
+      {
+        "path": "data/runs/audits/phase11-autonomy-cost-v6/ledger.snapshot.json",
+        "sha256": "a8f640b1e75e3ec7495740b8a3b30253ca1e9287587d9ded946869f6a15e5c0d",
+        "bytes": 585865
+      },
+      {
+        "path": "data/runs/audits/phase11-autonomy-cost-v6/raw-journal-sha256.json",
+        "sha256": "d951362465f664286a4e01852759b6d4e2e20c67ef716b6c3491593f6a9eccd6",
+        "bytes": 35923
+      },
+      {
+        "path": "data/runs/audits/phase11-autonomy-cost-v6/evidence-copy-receipts.json",
+        "sha256": "6bbe3e54f13c2a8bbea8945fe14d5c5567a6e36b84617a33407ba71d19265f47",
+        "bytes": 15081
+      }
+    ]
+  },
+  "new_semantic_adoption_claimed": false,
+  "known12_scientific_gate_passed": false,
+  "legacy_full_tokens_and_total_cost_not_reconstructed": null,
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "gate11_passed": false,
+  "phase12_started": false
+}
