@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-runtime-smoke-v3",
+  "source": {
+    "path": "data/manifests/phase11_relation_witness_smoke_inputs_v24.json",
+    "sha256": "48970c07f9860d086385d8a393fc7c2b12e70051b472a46aa0fbc5fa3b603213"
+  },
+  "targets": [
+    {
+      "case_id": "en-smoke-v24-relation-gap",
+      "claim_id": "c1",
+      "order": "original"
+    },
+    {
+      "case_id": "ja-smoke-v24-relation-gap",
+      "claim_id": "c1",
+      "order": "original"
+    }
+  ],
+  "maximum_calls": 2,
+  "automatic_retries": 0,
+  "phase12_allowed": false,
+  "rationale": "Model-only v29: same complete original probe/Expected, Prompt15/common4096/GraphOFF/FAoff/Sampler/Schema/Core94. Fresh Qwen3-8B execution and tokenizer/layers must be independently verified; old8B-v3/v28 Native results are history only. No Main/Cal/Evaluation data or adoption."
+}
