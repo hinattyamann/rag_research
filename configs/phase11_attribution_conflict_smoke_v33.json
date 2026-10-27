@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-runtime-smoke-v3",
+  "source": {
+    "path": "configs/phase11_semantic_diagnostics_v33.json",
+    "sha256": "0f15ef50007ab02f48a9b008650415979c3e24f7f3c1bd6b418f9b296e9c3081"
+  },
+  "targets": [
+    {
+      "case_id": "known-council",
+      "claim_id": "c4",
+      "order": "original"
+    },
+    {
+      "case_id": "known-council",
+      "claim_id": "c4",
+      "order": "reversed"
+    }
+  ],
+  "maximum_calls": 2,
+  "automatic_retries": 0,
+  "phase12_allowed": false,
+  "rationale": "v33 restores scientific parent v28 9B-Q6/Prompt15/4096/GraphOFF/FAoff/batch128 and changes explicit GPU placement to strict16/33. Core6 changes and sampler execution-descriptor change are disclosed. Preserve full original targets/Expected and all prior failures/unknowns/unused budgets; no semantic or fullGPU Native reuse, no repair/adoption claim. Require fresh format/tokenizer and semantic evidence."
+}

@@ -1,5 +1,9 @@
 # 研究のフェーズ・現在地・次に行うこと
 
+2026-10-28 06:32 JST追記: [v33正式事前登録](phase11_semantic_v33_preregistration_v1.md) SHA4f40971725f62293a430c4b4addac42ad31e4d022da695f94e77d061b4444296を実発行した。候補5466・正式22入力/70canonical成果・新鮮7段階有限予算・元Guard・全修正/レビューを結合し、Native0。新固定Checkout/実GPU入力0/形式意味/新鮮Known21はこれからで、Main/Cal/Gate11未達・Goal active・Phase12未開始。
+
+2026-10-28 06:19 JST追記: [v33実行前証拠](phase11_v33_preexecution_evidence_v1.md)を保存。実Identity5466f860・全90入力/正式22監査f29e1bcaが通過し、新形式入口v6 Source証拠70793565と現97Sourceの最終Validatorソフトウェア証拠v8/84112450を確定した。初期失敗と旧証拠を保存し、旧Native再用0。41閉Run・旧込1268試行/確定未知5は不変。新実GPU/意味採用・Main/Cal/Gate11は未了、Goal active・Phase12未開始。
+
 2026-10-27 23:47 JST追記: 部分GPUの[Coreソフトウェア検証](../data/manifests/phase11_partial_gpu_core_validation_v1.json) SHA3d2fba9048bf226d3a918bc06f28f87a95e66ef53094ee0c15999092ab4f7d53を保存した。新cuda-execution-v3-partialは固定9BQ6/GraphOFF/CUDA0/16of33/block32/FAoff/context・Model path/Jinjaを厳密検証し、Mainはinternalだけ許可、baselineの全層条件は維持する。現Core3と2反証testを独立review・Root全文diff/両test/旧実ログheaderで確認し、旧v1/v2のAST不変を保持。差分156pass2.73秒、全体1回1276pass＋sandbox socket失敗1件39.79秒、その旧1件だけHostでpass1/.52秒、Ruff成功を重複合算しない。初Ruffと環境失敗を保存し、実Model/Native0・新16of33実機Health未証明。33独立copy/35成果を封印した。新v33の正式Identity/Runは未発行、最終Validator v7はCore差で現行証拠へ代用せず別v8を準備する。Main/Cal/Gate11未達・Goal active・Phase12未開始。
 
 2026-10-27 23:39 JST追記: [累積費用v20](../data/manifests/phase11_autonomy_cumulative_cost_v20.json) SHAe24b9e4335ad73a8cd608fb032fae0c2f54d41472f083520addcacc556e58ee7を実発行・独立検算した。全41閉Run・旧38行/25Guard/未検証返却32を保存、新359試行357返却/未知2、旧込1268試行/確定未知5。観測input735890/output1023318・総output null、Native20640.602664秒/Task20556.613243884465秒/wall21406.195253131038秒は別scope。Rootも359予約/31binding等を0.018169199秒で追加検算した。v32は不採用、次[v33設計](phase11_semantic_v33_design_v1.md)は保存9BQ6/Prompt15/batch128を使い部分GPU16/33を別契約で検証する方針。新Identity/正式事前登録/実験は未発行。Main/Cal/Gate11未達、Goal active・Phase12未開始。

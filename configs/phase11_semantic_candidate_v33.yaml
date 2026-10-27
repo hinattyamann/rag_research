@@ -1,0 +1,100 @@
+auxiliary_runtime:
+  context_tokens: 12288
+  temperature: 0.2
+  seed: 42
+  threads: 6
+  batch_tokens: 128
+  repack: false
+  timeout_seconds: 1200
+  startup_timeout_seconds: 120
+tasks:
+  extract_claims:
+    max_output_tokens: 3072
+  verify_claims:
+    max_output_tokens: 6144
+  rewrite_answer:
+    max_output_tokens: 6144
+trials:
+  order_conditions:
+  - original
+  - reversed
+  - shuffle_1
+  - shuffle_2
+  - shuffle_3
+  shuffle_seed: 42
+  same_order_total_trials: 5
+  share_original_first_trial: true
+  execution_order_seed: 43
+  generation_seed_policy: same_fixed_seed_for_every_trial
+  deduplicate_order_permutations: true
+  repeated_prompt_result_cache: false
+  regenerate_claims_per_trial: false
+  regenerate_answer_per_trial: false
+  repack_or_truncate_per_trial: false
+decision:
+  score: supported_claims_divided_by_fixed_claims
+  threshold: 0.7
+  accept_when: score_greater_than_or_equal_to_threshold
+  unscorable_action: keep_initial_answer_with_separate_fallback_status
+  no_claims_score: null
+  sensitivity_thresholds:
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+errors:
+  automatic_retries: 0
+  input_overflow_action: record_error_without_truncating
+  preserve_failed_attempts: true
+  resume_only_missing_trials: true
+  reject_protocol_hash_mismatch: true
+output_constraints: thinking_json_passage_ids_v3
+auxiliary_model_manifest: data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json
+sampling:
+  version: auxiliary-sampling-v1
+  top_k: 20
+  top_p: 0.95
+  min_p: 0.0
+  presence_penalty: 1.5
+  repeat_last_n: 64
+  reasoning_budget_tokens: 4096
+  final_json_grammar: true
+  final_json_grammar_mode: closing_tag_root_v3
+  reasoning_prefill_mode: chatml_think_suffix_v1
+execution:
+  runtime_spec: configs/lab_cuda_graph_off_runtime_v1.json
+  gpu_layers: 16
+  device: CUDA0
+  require_full_offload: false
+  version: cuda-execution-v3-partial
+  flash_attention: 'off'
+  expected_total_layers: 33
+  model_manifest: data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json
+schema_version: 1
+purpose: phase11-bilingual-semantic-candidate
+status: candidate_not_frozen
+study_version: semantic-prompt15-reasoning4096-qwen35-9b-q6-partial16-v33
+diagnostics: configs/phase11_semantic_diagnostics_v33.json
+prompts:
+  en: configs/phase11_semantic_prompts_en_v15.yaml
+  ja: configs/phase11_semantic_prompts_ja_v15.yaml
+phase12_allowed: false
+verification_mode: claimwise-v1
+autonomy_protocol_version: phase11-autonomy-v3
+autonomy_protocol:
+  path: configs/phase11_autonomy_v3.json
+  sha256: e0dd7fae96939af34232f5a7174cbc400c6e7dfce3eedf584c2a4d08ca09df00
+candidate_identity_sha256: 5466f860cb3731a946d0f351ea4dd374f5002d0a1eb8fb1045c7e4bd972d676b
+format_tokenizer_contract:
+  version: phase11-tokenizer-v6
+  model_manifest:
+    path: data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json
+    sha256: acadda5c012105a454b07ee95d406a217fe0aab8f498f3988bf44de36ebade65
+  open_token_id: 248068
+  close_token_id: 248069
+  single_token_tags: true
+  fresh_witness_required: 11
+  expected_model_block_count: 32
+  expected_total_layers: 33
+  expected_offloaded_layers: 16

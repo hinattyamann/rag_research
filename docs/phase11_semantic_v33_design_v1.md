@@ -1,6 +1,6 @@
 # Phase11 v33 部分GPU配置候補の設計
 
-記録時間: 2026-10-27 23:39 JST。status=design_not_preregistered。新Identity・固定Commit・実Runは未発行で、生成0/Native0。
+記録時間: 2026-10-27 23:39 JST。status=preregistered_waiting_checkout。実Identity・CPU全入力監査・正式事前登録は完了、固定Commit・実Runは未発行で、生成0/Native0。
 
 v30/v31/v32の8B候補ではCouncilの誤支持が残ったため、意味判定の参考となったv28のQwen3.5-9B Q6_K・Prompt15・推論4096へ戻し、別のGPU配置を検証する。v28の返却47は確定45/45一致でも未知1/未試行42を含む失敗Runであり、全90採用や新候補の意味証拠に流用しない。v32不採用/未使用Rewrite2・全90・Known20は保存する。
 
@@ -12,8 +12,12 @@ v30/v31/v32の8B候補ではCouncilの誤支持が残ったため、意味判定
 
 各Runは正式な新候補Protocol・入力Hash・実行入口・共有累積台帳・Guardへ結合してから出力を生成する。予定段階はTokenizer0→全90入力0→人工形式10→日英NS2→Council元逆C2→日英Rewrite2→全90意味→新鮮Known21元15QA/42文/30条件/84Call。前段合格時だけ後段へ進み、未使用Known20は旧v32予約として残す。新候補の開発予定は最大190 Native Call（10＋2＋2＋2＋90＋84）で、全体Goalの上限ではない。段階ごとの有限Token/時間/個別1200秒timeout・監視5秒・停止/再開方法は、実設定・実測とともに正式事前登録へ記す。
 
-旧47返却のHTTP2567.091079/47=54.618959秒は9B全層時の参考値。90 Callの参考4915.706321秒、係数2なら9831.412643秒で、部分GPUの速度保証ではない。新Smoke後、全90開始前に意味結果を選別せず資源/時間の見積りだけ更新できる。新費用・Model Hash・資源値は未計測。旧失敗費用と未知を保存し、電気代/AI実費はnull、外部従量APIへ切り替えない。
+旧47返却のHTTP2567.091079/47=54.618959秒は9B全層時の参考値。90 Callの参考4915.706321秒、係数2なら9831.412643秒で、部分GPUの速度保証ではない。新Smoke後、全90開始前に意味結果を選別せず資源/時間の見積りだけ更新できる。設計時点では新費用・Model Hash・資源値は未計測で、実Identity構築後の証拠は末尾の追記を参照する。旧失敗費用と未知を保存し、電気代/AI実費はnull、外部従量APIへ切り替えない。
 
 支持Recall/非支持Specificity各0.90・最低被覆・Health・全固定本文/全分母・F0.7・順序/反復・一回書換え・未使用Group・全採点封印を維持する。Evaluation本文/回答/結果を読まない。Main日英20ずつ、独立Cal20ずつ、最終N/統計/欠測/停止規則・実Validator/Manifest/Hash/Gate11は未了。Phase12を開始しない。
 
 2026-10-27 23:47 JST追記: 部分GPUの[Coreソフトウェア検証](../data/manifests/phase11_partial_gpu_core_validation_v1.json) SHA3d2fba9048bf226d3a918bc06f28f87a95e66ef53094ee0c15999092ab4f7d53を保存した。新cuda-execution-v3-partialは固定9BQ6/GraphOFF/CUDA0/16of33/block32/FAoff/context・Model path/Jinjaを厳密検証し、Mainはinternalだけ許可、baselineの全層条件は維持する。現Core3と2反証testを独立review・Root全文diff/両test/旧実ログheaderで確認し、旧v1/v2のAST不変を保持。差分156pass2.73秒、全体1回1276pass＋sandbox socket失敗1件39.79秒、その旧1件だけHostでpass1/.52秒、Ruff成功を重複合算しない。初Ruffと環境失敗を保存し、実Model/Native0・新16of33実機Health未証明。33独立copy/35成果を封印した。新v33の正式Identity/Runは未発行、最終Validator v7はCore差で現行証拠へ代用せず別v8を準備する。Main/Cal/Gate11未達・Goal active・Phase12未開始。
+
+2026-10-28 06:19 JST追記: [v33実行前証拠](phase11_v33_preexecution_evidence_v1.md)を保存。実Identity5466f860・全90入力/正式22監査f29e1bcaが通過し、新形式入口v6 Source証拠70793565と現97Sourceの最終Validatorソフトウェア証拠v8/84112450を確定した。初期失敗と旧証拠を保存し、旧Native再用0。41閉Run・旧込1268試行/確定未知5は不変。新実GPU/意味採用・Main/Cal/Gate11は未了、Goal active・Phase12未開始。
+
+2026-10-28 06:32 JST追記: [v33正式事前登録](phase11_semantic_v33_preregistration_v1.md) SHA4f40971725f62293a430c4b4addac42ad31e4d022da695f94e77d061b4444296を実発行した。候補5466・正式22入力/70canonical成果・新鮮7段階有限予算・元Guard・全修正/レビューを結合し、Native0。新固定Checkout/実GPU入力0/形式意味/新鮮Known21はこれからで、Main/Cal/Gate11未達・Goal active・Phase12未開始。
