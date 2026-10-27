@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-autonomy-v3-cumulative-cost-v12",
+  "recorded_at_utc": "2026-10-27T07:17:49.210549+00:00",
+  "autonomy_protocol_version": "phase11-autonomy-v3",
+  "closed_runs": 23,
+  "legacy_attempts": 909,
+  "legacy_unknown": 3,
+  "legacy_unused_calls_not_reallocated": true,
+  "totals": {
+    "attempts": 273,
+    "successful": 260,
+    "failed": 0,
+    "unknown": 1,
+    "observed_input_tokens": 574804,
+    "observed_output_tokens": 865668,
+    "known_task_seconds": 17378.50097604067,
+    "known_native_seconds": 17404.773044,
+    "task_failures": 0,
+    "unvalidated_returned": 12,
+    "cumulative_attempts": 1182,
+    "cumulative_unknown": 4,
+    "new_wall_seconds": 17856.522309599968,
+    "cost_incomplete": true,
+    "external_paid_api_calls": 0,
+    "electricity_cost_currency": null,
+    "legacy_success_failure_and_cost_not_reconstructed": true
+  },
+  "new_native_reservations": 273,
+  "new_native_returned": 272,
+  "new_native_unknown": 1,
+  "new_total_output_tokens": null,
+  "observed_output_tokens_exclude_unknown": true,
+  "unknown_reservation": {
+    "sequence": 73,
+    "state": "unknown",
+    "started_at_utc": "2026-10-27T06:58:20.594493+00:00",
+    "payload_sha256": "89fc0f71e43ef721d803bdb2b23b0442a252ffa2b08aa3e83eea5d39410bc336",
+    "prompt_sha256": "72e4134da91d479906cc7795b3757dcd8a30a2627e482d3c48eb0173f3ffada5",
+    "input_tokens": 1696,
+    "requested_output_tokens": 6144,
+    "timeout_seconds": 1200,
+    "caller_pid": 439629,
+    "output_tokens": null,
+    "native_response_sha256": null,
+    "finished_at_utc": "2026-10-27T06:58:26.848320+00:00",
+    "error": "RemoteDisconnected: Remote end closed connection without response",
+    "elapsed_seconds": 6.253827
+  },
+  "known_returned_native_seconds": 17398.519217,
+  "unknown_request_elapsed_seconds_component": 6.253827,
+  "ledger_known_native_seconds_is_all_observed_request_elapsed": 17404.773044,
+  "v27_returned72_native_seconds": 4206.71081,
+  "all_attempted_input_observed_output_Task_Native_wall_sums_reconciled": true,
+  "old22_closed_rows_unchanged": true,
+  "immutable_ledger_snapshot": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v12/ledger.json",
+    "sha256": "e8553e9adb4224b4e2b1a554b8f1bbc847bf9821a4a5b23accaaf003f933d5ce"
+  },
+  "audit_implementation": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v12/audit_source.py",
+    "sha256": "70568d9373eb521c612e823cc1b5f56d1b1b165fc50127d41b30aaa194230ce2"
+  },
+  "native_guard_files_sha256": {
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-runtime-smoke/native_guard/calls.json": "e16ce5fc5bbea1e62507d00d993a35d1387c54bba1d7d21ee80a082370154624",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-format/native_guard/calls.json": "d6971537665425b4c3e9867a7f4d21031b1392547d88593a1b2687f9f76c3dd8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-semantic/native_guard/calls.json": "2264ce0d084ee082145592a51ee94c32b00ecb9b818f27daf5068a5cf3a2066d",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-baseline-smoke/native_guard/calls.json": "55148b868d0e832e3cfbe3b1624322bd5e50378967d95ed89d044e5fec6d20bf",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v12-known/native_guard/calls.json": "1546000d71f49d82062300cad0e81b79d4b9bff14d5586107b85faca5c8b5bcb",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-smoke/native_guard/calls.json": "46329eb7f7d7d6593f1a2b833aaac13239bc712b246f5e9af812e41ffa7c9204",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-smoke/native_guard/calls.json": "a38d71bbd09054087303a9f592935ca4476fbc032a2cd6db610d1f44d72dc8d2",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-rewrite-smoke/native_guard/calls.json": "e427670673c9d898eed3d81c449090bfcdc861c34e00602f96fdb7ae59d43fa3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-semantic/native_guard/calls.json": "baf4f1136fdeffc6cf99271f698c986c3e119409bf67ae09f49d47d29c547fb8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-smoke/native_guard/calls.json": "caaee498e19ffef80523bf752414ff7fe482ced3a9aeea12b784cd7eca294ce4",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-attribution-smoke/native_guard/calls.json": "05e32390ba72a508adb8d3c39cabf3cfc6bf939bc2dbc4d2dcb6d44042e8aed8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-smoke/native_guard/calls.json": "e864213e57df8f4e9f71f9149c9c6035bef5154b148c6bbc4ba6d2855d558fa3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-attribution-smoke/native_guard/calls.json": "ccfc348d1d65189cce3c86d867ac3579365ad78fd37937b03acfcc7d0c8a14c3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-rewrite-smoke/native_guard/calls.json": "0d53d91902b505cedc4efa51311d4d0042bce7ce7b487ed423c54ae852812acd",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-semantic/native_guard/calls.json": "8035f116500dede502fab56fba3615b92ebbe7c1420be56caa21977ec2f1ed57"
+  },
+  "bindings": [
+    {
+      "path": "data/manifests/phase11_autonomy_cumulative_cost_v11.json",
+      "sha256": "167f4acc61a332a88b91486ee0d0d771c0174c98868e29fd60288cb10efef745"
+    },
+    {
+      "path": "data/manifests/phase11_v27_semantic_disconnect_diagnosis_v1.json",
+      "sha256": "bf7f1c17a7a9243440041e3c155987cd1d36bdef68c3ecae6c0d0b359ebbd1f7"
+    },
+    {
+      "path": "data/manifests/phase11_semantic_v27_preregistration_v1.json",
+      "sha256": "e589422726c5d41a8bb83a0cfe5e3e297d80a1b950c8542fcd8eedde4f9514cd"
+    },
+    {
+      "path": "data/manifests/phase11_v27_preflight_result_v1.json",
+      "sha256": "f15ae1f7cb0da165e4ae5fee8706871c050144cc496e0f510ed395cbe2d13c38"
+    },
+    {
+      "path": "data/manifests/phase11_v27_smoke_result_v1.json",
+      "sha256": "c974606e108818c1fd6ad3a3af14f415b801749e629c93c92e79833d9fb8bfd4"
+    },
+    {
+      "path": "data/manifests/phase11_v27_attribution_smoke_result_v1.json",
+      "sha256": "0fc3964d57808d405d836b1a62915bc3dcce180bf56699dc2bbe63c126fdb2c7"
+    },
+    {
+      "path": "data/manifests/phase11_v27_rewrite_smoke_result_v1.json",
+      "sha256": "14cfdc0fdf3afb7a6026143abcc0eb3ac90f5c83ad05839b4f10ae13ba9629ef"
+    }
+  ],
+  "new_v27_scope": "Whole90 stopped after 73 reservations: 72 returned, one unknown, 17 unattempted. CUDA synchronize abort and host watchdog/Xid8 are bound by the diagnosis. Whole90 accuracy is null; candidate rejected; no Known16/Main/Cal inference.",
+  "unknown_never_replaced_by_log_n_gen_or_zero": true,
+  "unknown_request_resent": false,
+  "whole90_semantic_accuracy": null,
+  "initial_audit_scope_assertion_failure_preserved": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v12/failure.json",
+    "sha256": "679fa60d5c1eaaee2ab832bfcf762ff526c22b17ee392ddd2550dd95e02b2afa"
+  },
+  "cost_scopes": "Task/Native/wall overlap and must not be added. Existing ledger known_native_seconds sums all observed request elapsed time, including the unknown request's 6.253827 seconds; do not add that component again. Returned-only Native is recorded separately. Unknown output tokens remain null. Build/preparation/Hash/AI review/audit scopes are separate. Legacy full cost, electricity and AI-provider billing are unknown; external paid model API calls remain zero.",
+  "new_native_calls_during_audit": 0,
+  "audit_elapsed_seconds_before_publication": 0.014564877026714385,
+  "gate11_passed": false,
+  "phase12_started": false
+}

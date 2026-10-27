@@ -1,6 +1,14 @@
 # 英語・日本語データにおけるRAG自己評価の根拠提示順序感度と修復判断への影響に関する研究計画
 
-## Version 7.83 — 2026年10月27日 v26帰属不採用とPrompt単一軸候補v27の事前登録
+## Version 7.84 — 2026年10月27日 v27 CUDA再発の保全と実行条件の切分け
+
+2026-10-27 16:32 JST追記: v27失敗の[全72返却・部分監査](../data/manifests/phase11_v27_semantic_partial_result_v1.json)を正式保存した（SHA fc02f34714a8b0d303d8bf2764e8eb3df10dfecae06dbaa7e9e8993b189c29dc）。Raw139・224監査成果・旧6629保存証拠を照合し、全72全文/理由の実AI監査539.881375秒を結合。観測72中のExpected確定70に対しexact68、C–NS混同2・理由の範囲懸念を保存し、全90精度/未知outputはnull・Known16不適格を維持する。支援AI容量による最終通知失敗時点で全72レビューは保存済みで、追加timer/再採点/別モデル回避は0。次v28の実Identityは0499a611e9ec8369e5c1958b2ce0e4d25e9095e72aeca6fe13f769e593db982e、FAoff実行契約の関連86 Testと新全1107 Test（36.11秒）/Ruffは成功した。まだ正式事前登録/専用Checkout/新Nativeは未実施。Goal active・Main/Cal/Gate11未達・Phase12未開始。
+
+2026-10-27 16:20 JST追記: v27のCUDA同期abort/Host watchdog・Xid8を[正式診断](../data/manifests/phase11_v27_semantic_disconnect_diagnosis_v1.json)（SHA bf7f1c17a7a9243440041e3c155987cd1d36bdef68c3ecae6c0d0b359ebbd1f7）へ保存した。共有23 Runは全て終端、新273試行/272返却/未知1・旧込1182/未知4。[累積費用v12](../data/manifests/phase11_autonomy_cumulative_cost_v12.json) SHA09600144c3105e0acb2de8e031f3e57c1a495e574a8e49238de0051f33adbed5は全273予約/15Guardと旧22行不変を実照合した。台帳Native17404.773044秒には未知HTTP経過6.253827秒を含み、返却272のみは17398.519217秒、total outputはnullである。72返却の全文意味監査を分担中。次は実ログで有効だったFlash Attention auto→offだけを別execution-v2契約/新候補v28で切り分ける方針を選び、現在実装・検証中で新Native0。Prompt15/Model/4096/batch128/固定入力・Expected・基準を保つが、実行契約とCore2fileが変わるため旧Core不変や旧形式/意味の無条件再利用を主張しない。生成0/新形式/日英Smoke/Rewrite/全90/新鮮Known84を要し、根治や意味採用は未証明。Main/Cal/Gate11未達、Goal active・Phase12未開始。
+
+### Version 7.83 — 2026年10月27日 v26帰属不採用とPrompt単一軸候補v27の事前登録
+
+2026-10-27 16:09 JST追記: v27全90はHandle65957が2026-10-27T06:58:30.535640UTCにfailed_or_unknownで閉鎖した。73試行/72応答/新未知1/未試行17、全90精度null・不採用。Native73は6.253827秒でRemoteDisconnected、同PID439676のserver CUDA launch timeout/abortと06:58:25UTCのGPU watchdog7秒/Xid8が一致し、HTTP1200秒timeoutではない。Graph OFFだけでは今回の障害は消えなかったが、旧v10との根本原因一致は未証明。現在のHost GPUは応答しowned processは終了済み。未知要求を再送せず、Raw139/台帳/旧証拠・成功72を保全し部分監査と原因に対応する別Runtime条件の調査を進める。Driver/OS変更/Reset/rebootは実施しない。全90/Known16/Main/Cal/Gate11は未達、Goal active・Phase12未開始。以下は時点別履歴。
 
 2026-10-27 14:49 JST現在: v27の因果NS2・帰属C2・日英Rewrite2は全実監査を通過した。帰属結果0fc3964d57808d405d836b1a62915bc3dcce180bf56699dc2bbe63c126fdb2c7、書換え結果14cfdc0fdf3afb7a6026143abcc0eb3ac90f5c83ad05839b4f10ae13ba9629ef。新品質sealは全task/input/answer/Raw7/packet Hashと実時間順を結合し、旧補証を流用しない。終了22 Run時点の費用v11は新200/旧込1109/旧未知3（Manifest167f4acc61a332a88b91486ee0d0d771c0174c98868e29fd60288cb10efef745）。全90意味検証を固定9312e7d/Handle65957/Plan a282e5d64491d5e2468f49f6428a8652f401a26bb4a68a2799fa241a33dcc78bで初回実行中（90Call/22720秒/個別1200/監視5/Retry0、実開始UTC 2026-10-27T05:47:56.302783+00:00）。全90/新鮮Known84の実採用は未了、Main/Cal/Gate11未達、Goal active・Phase12未開始。以下は各時点の履歴。
 

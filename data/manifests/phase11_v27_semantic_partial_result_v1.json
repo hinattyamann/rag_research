@@ -1,0 +1,984 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v27-partial-failure-independent-audit-result",
+  "recorded_at_utc": "2026-10-27T07:29:09.800419+00:00",
+  "status": "failed_unknown_preserved_ineligible_for_Known16",
+  "run_id": "phase11-v3-v27-semantic",
+  "fixed_commit": "9312e7d1ee0bbb537ed413c986fa1e58eec59e50",
+  "candidate_identity_sha256": "a0d7d9a09eedc2182eb8443af0d5625012b4ab610c8fee040fec777cbdf18f2b",
+  "autonomy_protocol_version": "phase11-autonomy-v3",
+  "semantic_adoption_version": "support-binary-v2",
+  "protocol_sha256": "e0dd7fae96939af34232f5a7174cbc400c6e7dfce3eedf584c2a4d08ca09df00",
+  "registered_plan_sha256": "a282e5d64491d5e2468f49f6428a8652f401a26bb4a68a2799fa241a33dcc78b",
+  "scope": {
+    "planned_QA": 39,
+    "planned_fixed_units": 45,
+    "planned_conditions": 78,
+    "planned_Native_calls": 90,
+    "attempts": 73,
+    "returned": 72,
+    "unknown": 1,
+    "unattempted_Native_calls": 17,
+    "observed_aggregate_conditions": 61,
+    "healthy_aggregate_conditions": 60,
+    "failed_aggregate_conditions": 1
+  },
+  "original_Raw_files": 139,
+  "Raw_independent_copy_and_original_unchanged": true,
+  "fixed_Source99_Core94_reverified_against_old_WT": true,
+  "old_evidence_files_unchanged": 6629,
+  "returned_Native_payload_schema_grammar_sampler_audited": 72,
+  "unknown_payload_input_audited": 1,
+  "cached_aggregate_replays": 61,
+  "independent_full_source_reason_reviews": 72,
+  "observed72_exact_correct": 68,
+  "observed72_definite_denominator": 70,
+  "observed72_C_NS_confusions": 2,
+  "reason_scope_concerns": 4,
+  "reason_semantic_overreach_concerns": 6,
+  "whole90_accuracy": null,
+  "unknown_output": null,
+  "unknown_output_tokens": null,
+  "total_output_tokens": null,
+  "cost_incomplete": true,
+  "observed_attempted_input_tokens": 154898,
+  "observed_returned_output_tokens": 208405,
+  "returned72_native_HTTP_seconds": 4206.71081,
+  "unknown_request_elapsed_seconds": 6.253827,
+  "all_observed_request_elapsed_seconds": 4212.964637,
+  "known_task_seconds": 4215.546611167723,
+  "supervised_wall_seconds": 4234.216771285981,
+  "task_HTTP_wall_review_costs_are_overlapping_distinct_scopes_not_added": true,
+  "actual_review_seconds": 539.881375093,
+  "machine_audit_seconds": 3.7151776528917253,
+  "cumulative_cost": {
+    "path": "data/manifests/phase11_autonomy_cumulative_cost_v12.json",
+    "sha256": "09600144c3105e0acb2de8e031f3e57c1a495e574a8e49238de0051f33adbed5"
+  },
+  "independent_cost_check": {
+    "path": "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/independent-cost-v12-check.json",
+    "sha256": "d3cd2e48bd707df047ca2f6301eadaa8d0e0378925f1876f2d8153b746d71f4a"
+  },
+  "new_Native_calls": 0,
+  "unknown_request_resent": false,
+  "heavy_Model_Runtime_rehashes": 0,
+  "Known16_eligible": false,
+  "scientific_adoption_authorized": false,
+  "Main_Cal_started": false,
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "user_reported_agent_setting": "6.1 Sol 極高",
+  "review_agent_ids": [
+    "/root/rewrite_review_v25",
+    "/root/protocol_v25"
+  ],
+  "offline_boundary": {
+    "process_starts": 0,
+    "socket_operations": 0,
+    "reserved_QA_opens": 0
+  },
+  "finalization_seconds": 2.2014897509943694,
+  "canonical_run": "data/runs/semantic_diagnostics/phase11-v3-v27-semantic",
+  "artifacts": {
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/actual-preflight-registration.json": {
+      "sha256": "06b049b2d15880594b080bfb78ae7aef913229249002ff08a0210b42c3fb4030",
+      "bytes": 37837
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/actual-preflight-whole90.json": {
+      "sha256": "17708f92534c49263841e5ff3b81a9624b76c7fa5b21ff0d2cc48caabd37df32",
+      "bytes": 33929
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/audit-helper-source/audit_partial_failure.py": {
+      "sha256": "a55ceb6890db1b1e895224504d8935ef6b00d8db1d4835fa77d1050489ef06f8",
+      "bytes": 33096
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/audit-helper-source/cost-v12-independent-check.py": {
+      "sha256": "c1836d32420c24d335649a558afb62f76c25aa3010d5634ba95f096eae52ea3e",
+      "bytes": 5547
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/audit-helper-source/finalize_partial_failure.py": {
+      "sha256": "84ccc7442c79abdd7300e2a2a7a6e90c331aba528f82562dbc19b9e4f2a0af73",
+      "bytes": 11975
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/audit-helper-source/review_timer.py": {
+      "sha256": "7aed0d2966c7827b2d5a485e4384e2962c956549d33a27ae2e39fe35e03783e6",
+      "bytes": 5742
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/audit-helper-source/support.py": {
+      "sha256": "3635b5a8e9e2a2e6f629e9059dea2f3e58f789e4d33263ee727488929849c1c3",
+      "bytes": 14832
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/completed-run-record.json": {
+      "sha256": "d56c7dcca19609af88ba232afa182e593500fb7013700370caa3b66e4dc85556",
+      "bytes": 123720
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/global-ledger-snapshot.json": {
+      "sha256": "e8553e9adb4224b4e2b1a554b8f1bbc847bf9821a4a5b23accaaf003f933d5ce",
+      "bytes": 1187660
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/independent-cost-v12-check.json": {
+      "sha256": "d3cd2e48bd707df047ca2f6301eadaa8d0e0378925f1876f2d8153b746d71f4a",
+      "bytes": 5324
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/independent-meaning-review.json": {
+      "sha256": "727cac20add86e65a894cecd489103e1783a83ce32590900bca105c3fceeb6eb",
+      "bytes": 142433
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/machine-audit-pending-review.json": {
+      "sha256": "78d6bd13923839795bb3c891dfbc12095f73349bc37a7dc8ed3ff1a983da4240",
+      "bytes": 47163
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/native-and-payload-audit.json": {
+      "sha256": "06b5000f4a823d6b23eab0e8353b0f382fc01b83260f7ce36cba35301ef0bb13",
+      "bytes": 82383
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/old-evidence-preservation-reverified.json": {
+      "sha256": "fcb49412dbf87956b64e263ca0bf38a7275651fbc086615d97c3a70c43477cb1",
+      "bytes": 1119864
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/preflight-registration-link.json": {
+      "sha256": "f46e155d8f4862e69c032bff2b8a0361f366e5028f15927b00897436a24f635c",
+      "bytes": 545
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/resume_check.json": {
+      "sha256": "ebc5a0f6c78698fd6ffdaccabcb4b3a560d142607544fcd8f4db4d66e896a4e2",
+      "bytes": 16305
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/001/blank-notes.json": {
+      "sha256": "32e40bf5ee14c746f78c464a1bca5ffcb6e174b583dd3dbd4feaf873670fa7c6",
+      "bytes": 1891
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/001/manual-notes.json": {
+      "sha256": "7577a86303e5b21d4d554b313c6e9e338dce40dea1d82f0868c6d397ca48454e",
+      "bytes": 5233
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/001/packet.json": {
+      "sha256": "99c7429cf6ca88844139d5241c086651981a7acf82f4a267d3fe9bbdbe7217bc",
+      "bytes": 75623
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/001/review.json": {
+      "sha256": "34ccc1eec6b1efdb6517e14a3d79dc29836b2035e5811d9025d88e5ee42763f9",
+      "bytes": 16537
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/001/timer-start.json": {
+      "sha256": "b669799f6fe07c7ad5a17ae2b30ff516c301e6203975ff967754a5ace92738a1",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/002/blank-notes.json": {
+      "sha256": "60653bf4ec7ff5d885ab00c872f25bb3e3fc6f42b40cd557c9baeb65f2de0332",
+      "bytes": 1891
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/002/manual-notes.json": {
+      "sha256": "a6cd5a3dec60d1cb280c07144cdbaece7fab6863203462f9dc96f9bb106deaaf",
+      "bytes": 4440
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/002/packet.json": {
+      "sha256": "42048cad3adc19f66af62d56a62dbe353a3748e46d4f755d6a10a8ddbb2b0fa5",
+      "bytes": 75373
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/002/review.json": {
+      "sha256": "dfb6be2fe236f253a1ac4b6a89a583816c377b9b44358911aff95bf0675a68a3",
+      "bytes": 15429
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/002/timer-start.json": {
+      "sha256": "c470d997e9b1623ce504f5f4511fbace9cbc634cd9b4153b54535086e938ca38",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/003/blank-notes.json": {
+      "sha256": "2e47e8fbf5852288481844aa60090f9cdc0a5f4bd48e788a5ae65d5853de4ea7",
+      "bytes": 1893
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/003/manual-notes.json": {
+      "sha256": "7cb3fb8bcbcd86ddf7159a838530858177b4b753d071bf831c7315012e0bcede",
+      "bytes": 4521
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/003/packet.json": {
+      "sha256": "b8e3a128a29a54570806bf076f6a8e8e03381072f26269758be5598e873c4776",
+      "bytes": 57234
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/003/review.json": {
+      "sha256": "ecb8578b85a2eeaf18ac5ed93830a246c0bd1274f1a38f0fed35f0b5fc0705bf",
+      "bytes": 16897
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/003/timer-start.json": {
+      "sha256": "cfadce95bb7b69d9c1bee9a3dd518e32c9af68b8ceda013e684ada55783cf2b2",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/004/blank-notes.json": {
+      "sha256": "3c4fe2ea5073136f0b24109a5a294e6c72569ad13ef6a7cdc7ef72bec0c43544",
+      "bytes": 1907
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/004/manual-notes.json": {
+      "sha256": "1ba2e11abd3b02c5b9b732e3c2570a18337215ed37b109effab5c71516f59995",
+      "bytes": 3688
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/004/packet.json": {
+      "sha256": "8a4ae0b2e065b5c9c102fdb5a401eb0b14e95f713b7df77e522ecd0be338d450",
+      "bytes": 13032
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/004/review.json": {
+      "sha256": "20444d416a2030a3099fe997aae35715f428a0c6966779cd52e12151691d7608",
+      "bytes": 10307
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/004/timer-start.json": {
+      "sha256": "9b2f877c60c2bbc85d0ce26800bc18296eff6e9347fd6cb9a3bc617b163b8957",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/005/blank-notes.json": {
+      "sha256": "2dc84f051092bdbb9258a9ff55ca5a0f2d4bb60ee215067570c858a104913b82",
+      "bytes": 1919
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/005/manual-notes.json": {
+      "sha256": "d774d8a08e7634801755a8aaaac7176b29ea16dd28cebace7e039f800838071b",
+      "bytes": 3608
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/005/packet.json": {
+      "sha256": "671da8707f51b7f6ee7107bb83d646eff54bbc8b3d62cccdf8924bb351e718be",
+      "bytes": 13138
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/005/review.json": {
+      "sha256": "5ec57fe272169eb576657f08dccbe569bfc84de7bce41c32fb336844dbfbed98",
+      "bytes": 10277
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/005/timer-start.json": {
+      "sha256": "0645de33f44adb8b262164501258290ac89739d9d6d229d57e8ef9a90dddd949",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/006/blank-notes.json": {
+      "sha256": "eae92d3865b544c55960c8b4d139b15389c087a8053a6b02367d41ca78074046",
+      "bytes": 1927
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/006/manual-notes.json": {
+      "sha256": "d57ccb08dfe64ca7e9c9b256b502805553f2b7ea4c79de21ff9f0dfbdf3f506e",
+      "bytes": 3818
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/006/packet.json": {
+      "sha256": "557ac9312aaa48703102b8c4a82582e49965cd51acf7d7b90f06a7239178f295",
+      "bytes": 13236
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/006/review.json": {
+      "sha256": "439544ed713f80b6cac109c35666f97fa6c84bd54931a7eb2ee436483b487932",
+      "bytes": 10473
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/006/timer-start.json": {
+      "sha256": "b2c8af595daba03f4506661c04a60fcf53bcec91ce19e0fb03bd17c637a9d3fd",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/007/blank-notes.json": {
+      "sha256": "c0b4d4771471f5918bd79dab2021c301f473e66210d2482c68fbc71243e7f159",
+      "bytes": 1909
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/007/manual-notes.json": {
+      "sha256": "81d23a4d8e62f6fcf3509ffcdf2cbe8a96bea53bc2c23512e1b1939dae6b81bd",
+      "bytes": 4997
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/007/packet.json": {
+      "sha256": "ab7ae7c49c4cc496e5f82965e756dc77881466506e2b81b8c33b401b2c35855a",
+      "bytes": 14273
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/007/review.json": {
+      "sha256": "01cea480139e1cb0e5219709ef3cd410f6235e49e1849d77378d8f1ad13881d4",
+      "bytes": 12372
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/007/timer-start.json": {
+      "sha256": "882412f632783591b15a789decedc323896625f1bba877b391f3fea91c3e15ab",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/008/blank-notes.json": {
+      "sha256": "3d43a2615950cb471a064798265de260334779c9e9d43fb3ed79f2c3c0b20920",
+      "bytes": 1873
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/008/manual-notes.json": {
+      "sha256": "c6a30b47e068279dfbb87735e910519bc157d4c08861718ae277ebbb97c0d0b6",
+      "bytes": 4843
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/008/packet.json": {
+      "sha256": "7cb898397fbb5b135e1d8e91928ac07d676b65bc7e8880665a43c4632774539f",
+      "bytes": 15104
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/008/review.json": {
+      "sha256": "2083538292bf3cf91df74189f4927abfcf9337811a815c2c964e9270f7104987",
+      "bytes": 12574
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/008/timer-start.json": {
+      "sha256": "310549d9298b3e66d097583d6e757de6755714cec3441794ec81a598c18aa756",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/009/blank-notes.json": {
+      "sha256": "a8ffee3f0ccb320d7632109eef19097914dbe047a357b6410aceae5112825fd7",
+      "bytes": 1879
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/009/manual-notes.json": {
+      "sha256": "fa373bf59e10d03fb01b646b63b33900aa214130131777639179249f8e53599b",
+      "bytes": 5291
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/009/packet.json": {
+      "sha256": "2f07e7425c1dd43297f56fc0878af01a1c6bd2a415cbe35349761d74e73bc76b",
+      "bytes": 14819
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/009/review.json": {
+      "sha256": "b1c11bfffa5bd13e164de3633f9baaf3c73da4ca2f00a82de9afdffd1c1ed42d",
+      "bytes": 12712
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/009/timer-start.json": {
+      "sha256": "d4a695c4ae153f95ac6f288e2bc9ac1d333b4c6d4b4c569713f57aa12aae37e8",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/010/blank-notes.json": {
+      "sha256": "5e26be8f49229a51fba71f8f40ed692429220ff51afb53709197c91db9a6f891",
+      "bytes": 1901
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/010/manual-notes.json": {
+      "sha256": "f8a984f374bdfa0f4ad8518256ece5dd7cea8e333d37adf52ce9a9151b8a61fa",
+      "bytes": 4631
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/010/packet.json": {
+      "sha256": "d58323deddd9e1a975152d32418e2e5be339faefdb9b986e6896af8d19e239cc",
+      "bytes": 15448
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/010/review.json": {
+      "sha256": "bdb0e355364951e86f155847f127422535a8c0765d35b5206c4b378a75c6d0b3",
+      "bytes": 12138
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/010/timer-start.json": {
+      "sha256": "0bcc52f35ae85990b8158a7cf8da4816256b12f881500801ce7f4ec06b1ae7fa",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/011/blank-notes.json": {
+      "sha256": "3d1e8edabf033b674d9b11e4d5ae2048c141d7bc929cc683b86fc54917c0ffd1",
+      "bytes": 1905
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/011/manual-notes.json": {
+      "sha256": "d11716311371dbc04c4583a6367f6fdd615beb98623f2ddb2b943a58d6f92075",
+      "bytes": 4641
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/011/packet.json": {
+      "sha256": "0e75acfffa61075af9d1c8d61100266f8ee55e57b17924981c2465dab6865eb0",
+      "bytes": 14887
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/011/review.json": {
+      "sha256": "753b1cae975c6cf89ec13a4852c4176c584313086a53d9b6dadd645efc27b5ae",
+      "bytes": 12044
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/011/timer-start.json": {
+      "sha256": "804ee0240541fbd5d6679ac2b1a3e066d60f5c31b69a1ec175c80a04393baf3c",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/012/blank-notes.json": {
+      "sha256": "f5d69e09a66ae8e5c217b6633b2f816eb3bcf1b3fd2f160e4b1696607e67782d",
+      "bytes": 1917
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/012/manual-notes.json": {
+      "sha256": "45b89c8756e9b0dc7b24080c938e7dd5c68f2edb826c5bfe8424c6fa39b1fb2c",
+      "bytes": 6025
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/012/packet.json": {
+      "sha256": "f860a3932116874fcc7ecacc1c59b1a04837b002331e60c4561725e486508eb6",
+      "bytes": 15127
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/012/review.json": {
+      "sha256": "dba26b7638d843f01515525cad286f4f4058b5729f7c36e76aaacca192d6a6a7",
+      "bytes": 13204
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/review-packets/012/timer-start.json": {
+      "sha256": "307b9075bbfc55ab958412dd79de016bcd7de6f2c7e6d53d809ce3258bd7d988",
+      "bytes": 346
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/root-terminal-authorization.json": {
+      "sha256": "db602631fcd48d4793388c8f1dd72c8244b67a71c9c77b7160ba9a4874302161",
+      "bytes": 1292
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/run-raw-files-before.json": {
+      "sha256": "90652991d471cc0720bfa1b36028650de425122cd66b6afd86589beb882f0846",
+      "bytes": 15780
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/supervision/manifest.json": {
+      "sha256": "ea942d250422a15c6975992044e38773c4b34905b75d6762139d89e8ae6b5f38",
+      "bytes": 37813
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/supervision/monitor.jsonl": {
+      "sha256": "4613217ec29af757005657bae299c8f076d962e279489853348b075ccf1badc5",
+      "bytes": 28052850
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/supervision/native_guard/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/supervision/native_guard/calls.json": {
+      "sha256": "8035f116500dede502fab56fba3615b92ebbe7c1420be56caa21977ec2f1ed57",
+      "bytes": 49577
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/supervision/stdout.log": {
+      "sha256": "b9ea12593b968dc7b93a6b7b0ae601d2ebbf64d6194ac0ca0e72f67c8a9d4de9",
+      "bytes": 4416
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/unknown-native-payload-audit.json": {
+      "sha256": "6d3b3acca16c2085e533bb958303e4915780be1c31354db22c53d2ce152f88ee",
+      "bytes": 2086
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/_audit-partial-failure-v1/worker-final-notification-capacity-event.json": {
+      "sha256": "3faef3e115f1ed641ecf490bf85c7ccdce2d08ca5c19c81336184882f3f7a4eb",
+      "bytes": 3107
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/manifest.json": {
+      "sha256": "7eebef98678a9dd113f78a5901f18e9b2dd07d2ed5410e037bd48ce5bfee09f8",
+      "bytes": 21864
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/report.json": {
+      "sha256": "69809e4eca8e5ba31132b484fca0046aea35e3c856b14a06101758b72a287b17",
+      "bytes": 8438
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/server-1.log": {
+      "sha256": "8acbe93a670181603e99c20febfa8ed28aaae3a70d1a3b0af5e9e4bbcd89beb0",
+      "bytes": 506895
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/session-1.json": {
+      "sha256": "983dd68817b127e239b1632618bca7a599a4f4e24fcbbde76ba89cdd58868e6e",
+      "bytes": 6953
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-absent-original.claims/c1.json": {
+      "sha256": "e482c9949aedf77e026262f51acde5daefeafbb307fa3f371dbefc30bb9cb3d5",
+      "bytes": 124092
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-absent-original.json": {
+      "sha256": "9f4cde30e1cf670804c0b353c50ab081930400eab8137a5910308c657ea29c66",
+      "bytes": 1629
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-absent-reversed.claims/c1.json": {
+      "sha256": "d3b88f4e12b005a8724d750e873acb000479a8d97298eaed89d7daba2b00d343",
+      "bytes": 124093
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-absent-reversed.json": {
+      "sha256": "22d7d521db8019a4ae14c08b52924fab64a7ac92551548092e7341fb341aa514",
+      "bytes": 1630
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-conflict-original.claims/c1.json": {
+      "sha256": "bb294a94627cb3deaae8ce92ab60624403ca29888d2ec1ef2deb4bc799e5a729",
+      "bytes": 86302
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-conflict-original.json": {
+      "sha256": "d1a27cf38752fda60f1b6cdb225c9ad44c292c1712abd17ec77599ac468dce01",
+      "bytes": 1831
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-conflict-reversed.claims/c1.json": {
+      "sha256": "bb4857d10170cbc156d994b6d26c18e453421b5b459e2483da591b351fbd5a23",
+      "bytes": 86299
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-conflict-reversed.json": {
+      "sha256": "acca862f12cedf1dd5ed7a585916b5b57b77dc991e9134cc80a48a041f6d573f",
+      "bytes": 1833
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-support-original.claims/c1.json": {
+      "sha256": "0def131cce85ebbeb1f09d6396cf66e578097a49b73ace08ea898b652cc281b5",
+      "bytes": 126128
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-support-original.json": {
+      "sha256": "d73bb35706b630f19810c3ebde2a8b7e8fdfca3576751731e10afabf1db63ecd",
+      "bytes": 1816
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-support-reversed.claims/c1.json": {
+      "sha256": "2d037bcd0cd4a58dacdfd6ff0fec528b888557c0ac94a3e2a8036249c82bd73b",
+      "bytes": 126126
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-negation-support-reversed.json": {
+      "sha256": "e0e68b77a3f2d118daeeaf39ab77b0ef73b703a2866a2b2ed2402d70a1209e76",
+      "bytes": 1816
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-absent-original.claims/c1.json": {
+      "sha256": "d20a126fdf5ca5b20af2e0f24868a7003c6e6195bc15e4f3d2dc19f3a4885cc8",
+      "bytes": 122268
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-absent-original.json": {
+      "sha256": "b4483371115a27daf0ca79d7c2f4da8221a1731c9036429b64e527d104070ba5",
+      "bytes": 1669
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-absent-reversed.claims/c1.json": {
+      "sha256": "9628247074ed831b24a5feb7c7cb84a1937c68e236f5b8f87e45da650b40e968",
+      "bytes": 122270
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-absent-reversed.json": {
+      "sha256": "b6e0df3bfde7b9a31fc2b784dd7def71a9fd5f0a36a88d6f0da3a4f9c9734087",
+      "bytes": 1669
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-conflict-original.claims/c1.json": {
+      "sha256": "a380b1739b9a83bcef3c5c3b1674971e02b06d9de91d07c222ff001bf717c2f1",
+      "bytes": 118865
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-conflict-original.json": {
+      "sha256": "613c340b2ad2e48a6deb796407e0a72c1f1a103e96d43b66ea502f3199989fd8",
+      "bytes": 1800
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-conflict-reversed.claims/c1.json": {
+      "sha256": "b7b4104c21bfafdb6feb39c9816fc650ca61aa3b6eeeaa2aff9aa462adfa89b6",
+      "bytes": 118870
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-conflict-reversed.json": {
+      "sha256": "4528620269c3528a928be9624337dd202d5110618696c803b60ba6a226614a66",
+      "bytes": 1804
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-support-original.claims/c1.json": {
+      "sha256": "7943ea5ee2dc0fb4aff870e7edc15aad7fe3914c3a8399c5fe7265b0029a3700",
+      "bytes": 85862
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-support-original.json": {
+      "sha256": "056b6f5c4e7057f77d4b301b14d171b1168f35dd07868743c9fec3717ded639c",
+      "bytes": 1814
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-support-reversed.claims/c1.json": {
+      "sha256": "be91af74d141cdf4cc1779629d55ffa00b58b48ee9afb3e5c1c5542e9b25b328",
+      "bytes": 85864
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-number-support-reversed.json": {
+      "sha256": "cf89a3b60fce40dfcffdd12838dbddcefa5ef9daae7ee548847a38e292c030a7",
+      "bytes": 1813
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-absent-original.claims/c1.json": {
+      "sha256": "c0c3492aa3325433b35a7a9c64c38767e2b0eec9a3d881784ec312a7587c509b",
+      "bytes": 124192
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-absent-original.json": {
+      "sha256": "6396ddb19a8ca3fd58a2af550591f0606235ed8d6b1aa8cdd6119eccc279fcdc",
+      "bytes": 1851
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-absent-reversed.claims/c1.json": {
+      "sha256": "63a5fb0c3941465969a3bad0e7f80f5524facabaab82c7fe21e76c9ddc7066a8",
+      "bytes": 124192
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-absent-reversed.json": {
+      "sha256": "b46a455f259d09f65b6e4aa70daae0f17b60106ef6464c97fe0fd48c88896a66",
+      "bytes": 1849
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-conflict-original.claims/c1.json": {
+      "sha256": "7ed0249e519c1decb466bcfb3da11ed2e6280aaf356213b2fc9061e1f1480a07",
+      "bytes": 110610
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-conflict-original.json": {
+      "sha256": "115914bbb7d3ecf6fb61c086b1800cc7ad56b921f948d2549df84407f20419ab",
+      "bytes": 1847
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-conflict-reversed.claims/c1.json": {
+      "sha256": "c5d36c3969ecad4e7dec4b4336d4d04f885a9ca8080cbfd68b167ca9dfb039dc",
+      "bytes": 110611
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-conflict-reversed.json": {
+      "sha256": "dadcd10296512dbc73b03f58b9cadc10b48bc146b9f12e3812456e6d00a3f6ff",
+      "bytes": 1849
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-support-original.claims/c1.json": {
+      "sha256": "452be4d1647f207136eb0944dd9517af10869b87cade756559168fdcfab47000",
+      "bytes": 122072
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-support-original.json": {
+      "sha256": "24d68977ed9e2f6b28207b7698fa65bf376aa1e3ae0d9532a466d989d4fca336",
+      "bytes": 1828
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-support-reversed.claims/c1.json": {
+      "sha256": "a4d1823aa3e2bf7cc4cc61ea2088c1781020f87b207ba4c49936bac65dc524ff",
+      "bytes": 122075
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-support-reversed.json": {
+      "sha256": "099a3ec5fbaff0e1863428dca5ad7042551f39ff1e3a48ad29a6ebb73a70bbdf",
+      "bytes": 1829
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-witness-joined-cause-original.claims/c1.json": {
+      "sha256": "0e2c03f8b94ab67cf4ac07c571ba137d19365b6928ec670f4c43493eea471d71",
+      "bytes": 161232
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-witness-joined-cause-original.json": {
+      "sha256": "3bda6aa9e94de390629fc72be2c6b0d5e593656f34f1deb49694b36489d99b2e",
+      "bytes": 2061
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-witness-joined-cause-reversed.claims/c1.json": {
+      "sha256": "e3afc041c8300e32445fc77f93b1694b3ec6cc07f2d5de670697b34ecd4ed1f0",
+      "bytes": 162742
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-witness-joined-cause-reversed.json": {
+      "sha256": "17709baceb82e27e7921c47ff1510077d5e80046367726500240a1a848efb5cc",
+      "bytes": 1891
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-witness-same-relation-original.claims/c1.json": {
+      "sha256": "1b96ddf8b3025957d53aceec055125dd7795bb2eee1bcf4111f6dcaef3b4a121",
+      "bytes": 38386
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-relation-witness-same-relation-original.json": {
+      "sha256": "16f5cc111aeb758e9ed65eec84536fe743425fc7acd04d23fe6c8838cf1f52b3",
+      "bytes": 1533
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-absent-original.claims/c1.json": {
+      "sha256": "d4b68c9a5999c6ada1ab212952ea6a26cb8bf15ce34134dd477101172fdca4fd",
+      "bytes": 145221
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-absent-original.json": {
+      "sha256": "c0c30f6b7fdd483e2ac42371462e85d2ddf97be3f4c800237f80bf2fc3f3511a",
+      "bytes": 1660
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-absent-reversed.claims/c1.json": {
+      "sha256": "7be14a75c61d650b9b8dd9cdf32f35bf8b4321407d40843b23cebaa4439c0f86",
+      "bytes": 145216
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-absent-reversed.json": {
+      "sha256": "b8af8c2cbfffb7115117a20aa297fa5873a76c313345e26541bc159348f68784",
+      "bytes": 1658
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-conflict-original.claims/c1.json": {
+      "sha256": "95009b4f97d9e4d54b0995820ea9e83702187de2f9ed033c295d6d57a63ecbae",
+      "bytes": 93133
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-conflict-original.json": {
+      "sha256": "9b411d5fd0469ef7f7d5e9d5d2c47704ef14ca9ecf3c489778b818b09f9afa5e",
+      "bytes": 1774
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-conflict-reversed.claims/c1.json": {
+      "sha256": "d65cc35fb30b625411f76abd90f1f69838050b024c8cf18e6098650e24e675db",
+      "bytes": 93136
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-conflict-reversed.json": {
+      "sha256": "f2232f262b4ed3bf1f0fab6e1ccf1ac58e8c8fd65618a39976efe241e09f9d2d",
+      "bytes": 1775
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-support-original.claims/c1.json": {
+      "sha256": "0206c2e4aa61a94f1bae383ec0c9cf26e3fd94202204043fa8be7ec8db0b9b3b",
+      "bytes": 91193
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-support-original.json": {
+      "sha256": "23d1b64517600478274d22e1383a0a42fb39f15f78c421f64df2f5ae2c98acd5",
+      "bytes": 1827
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-support-reversed.claims/c1.json": {
+      "sha256": "734c61c798d5adb2fbb976782ffa6886677851e702447e8a89a031c600df04ce",
+      "bytes": 91182
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/en-time-support-reversed.json": {
+      "sha256": "50abc5702f662a04324b084bc13e73af198f1485bf528c0353a6360d586e3df1",
+      "bytes": 1826
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-1-original.claims/c1.json": {
+      "sha256": "8a1cedcdea9a168fbd8014c4d9b2d29c665e51e2f51ef1d0d75145af994a6b52",
+      "bytes": 96630
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-1-original.json": {
+      "sha256": "ee7625e8fab43eddff913ed927083014d61beffc11d3cee454ed94f0b28eddd0",
+      "bytes": 1948
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-1-reversed.claims/c1.json": {
+      "sha256": "b7d86059b3ee44c041e6cdc0c2f2d6af60ac1716a81ba520fe55c255d7978562",
+      "bytes": 96628
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-1-reversed.json": {
+      "sha256": "dda642414855e837cbd9d2423f0e8f73e28ced059fded94a5e1b05d67586f1db",
+      "bytes": 1948
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-2-original.claims/c1.json": {
+      "sha256": "5a6a344b9775260e4f4ae51064d0d9640e109f0b15cd4ab03a61bc49e69ffbcc",
+      "bytes": 125073
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-2-original.json": {
+      "sha256": "2c1b88bb46e27fe6d0eaf3559ed7c49ef3afc49b0f0ef75af0eb6756cae9ad48",
+      "bytes": 1909
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-2-reversed.claims/c1.json": {
+      "sha256": "83d677b3ff5f2dddf80984611ae6211dd08f2d9e0b133db3cb2eed77d5def9b7",
+      "bytes": 125075
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-2-reversed.json": {
+      "sha256": "6eef099e0cb1c3e84f9611ae38e6b335fb6225aecf2a266d9eef58205377f6a6",
+      "bytes": 1909
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-3-original.claims/c1.json": {
+      "sha256": "e8011895bd15b1a7e8b8d1e64de88436f1c46d06419b22aa51794e632cb39857",
+      "bytes": 139024
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-3-original.json": {
+      "sha256": "6a8a87f6e71367db0f10e01c140b9fe0af0478ace2e2d8ca1ae990a04eacc005",
+      "bytes": 1913
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-3-reversed.claims/c1.json": {
+      "sha256": "efacfcd96b744888d9673602a3f2282ba75dc0c688e206a340de1f326d8b4749",
+      "bytes": 139026
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-actor-3-reversed.json": {
+      "sha256": "f4ccca75163873c29b8bcbcb1f0c7134ceb6f011164509f1077b475afd8077f1",
+      "bytes": 1915
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-1-original.claims/c1.json": {
+      "sha256": "8f88669ea889f24b9a8802d0db4c231ce37dc22cfabe723b49b0942e4b7a1ff0",
+      "bytes": 101597
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-1-original.json": {
+      "sha256": "a2cb94c0ba879fcf8599ae86a257302605a3766ad5f1f6832c9758cc7b8da2c0",
+      "bytes": 1868
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-1-reversed.claims/c1.json": {
+      "sha256": "35653392a2b5382a21aa7862c81ea902033387a16737a05dae0f528f5caa9232",
+      "bytes": 101599
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-1-reversed.json": {
+      "sha256": "5009981c8e460fe3e00a6c73ee11b78ea975dbd64f10f6b8f8d4e5df6ca33288",
+      "bytes": 1868
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-2-original.claims/c1.json": {
+      "sha256": "0f42e0deb7959658c468024d7f4a77cddf3f61dd82dcdcc63bd60ec629ecdefc",
+      "bytes": 129273
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-2-original.json": {
+      "sha256": "821496bec687db3af64795261e41fdf3270603c405acd1642db2a64574c5f819",
+      "bytes": 1833
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-2-reversed.claims/c1.json": {
+      "sha256": "2c7c559289331a977ab3ec8a39b733516dd3a32e1808d86caff06d05f3df3724",
+      "bytes": 129274
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-2-reversed.json": {
+      "sha256": "733a1394dbb89578d0fe9f8885972409d26b2fc5ac0a3da56192448cda826f6b",
+      "bytes": 1835
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-3-original.claims/c1.json": {
+      "sha256": "5c90357b66b92c617039e8c2efdbad6748816e30770975b9d133a61625846a73",
+      "bytes": 133797
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-3-original.json": {
+      "sha256": "fad0541303f13efedbf8676225f42549acfbc18a4711c34f92ab7cbb6012c5fc",
+      "bytes": 1899
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-3-reversed.claims/c1.json": {
+      "sha256": "72f031950fb136c8886ae4fc5b2851f3ba671cb0b66a2ccdb86464e9ab9d6fbd",
+      "bytes": 133792
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-compound-3-reversed.json": {
+      "sha256": "8397f18386d076338a7e13d6ceefecb9427df7daba69fc2dac617c9ece120d85",
+      "bytes": 1897
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-1-original.claims/c1.json": {
+      "sha256": "216e9d75a94e740f332a951f9ebea8a864c5595c835c777f99b365a0bbb033f1",
+      "bytes": 155657
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-1-original.json": {
+      "sha256": "b2c39c93cfc7c6709616adffc8994b990326d67efc5e8f090d60609795267432",
+      "bytes": 1959
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-1-reversed.claims/c1.json": {
+      "sha256": "aefdad24e753de5013107b0f790f45b4633b4c90724529008c4db39a01ba6e9b",
+      "bytes": 155658
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-1-reversed.json": {
+      "sha256": "e220c07e84f69246c643703206cd7e8f07adfa12e207497c554f329053ebebcb",
+      "bytes": 1959
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-2-original.claims/c1.json": {
+      "sha256": "679b681e897bf4d1b316a31d6ae0e419579639f2b1b92173c2edcbf96d765a6b",
+      "bytes": 124070
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-2-original.json": {
+      "sha256": "8d99a0bf19e4c1e3ba293fe0eedbab1e59a372942c90265b73b835df00c1627c",
+      "bytes": 1875
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-2-reversed.claims/c1.json": {
+      "sha256": "1023142943739523390ae43b8cd96952576b752d24c7773531806654a3757f60",
+      "bytes": 124069
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-2-reversed.json": {
+      "sha256": "e7977a44c86d4b7e0bb35130a8c2e185274b431ba2e3af5a78aa3e14d7f83007",
+      "bytes": 1876
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-3-original.claims/c1.json": {
+      "sha256": "81490c530ec23f223e9a259a72178ed1e537aab349b5c6e052cc945b3ce372c6",
+      "bytes": 159718
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-3-original.json": {
+      "sha256": "12efdd0a2912e6a344845eed093015aca9880e2ce926682d63f657b8457e0493",
+      "bytes": 1890
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-3-reversed.claims/c1.json": {
+      "sha256": "e7851ab92f64a6d671931ac27bdcc82912467a2eab72716358618b495ef12875",
+      "bytes": 159719
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-count-3-reversed.json": {
+      "sha256": "7992e791434af654004d031c341d939aca2d1c3f370927cc2bce6a746b48fbd2",
+      "bytes": 1892
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-1-original.claims/c1.json": {
+      "sha256": "657e65f38a4e842eeb859d8773bdae29e6f947763c9c34de0f8fb21690198e93",
+      "bytes": 125709
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-1-original.json": {
+      "sha256": "64aba5a07491457a062faa40a24abe823bfd92acead713f134173ebd4d627d7e",
+      "bytes": 1968
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-1-reversed.claims/c1.json": {
+      "sha256": "2c5f9729fda4735a4f65174cc6696cbd07251f9e46485cc5287724ddc4cf70c2",
+      "bytes": 125713
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-1-reversed.json": {
+      "sha256": "9fa5b452087284a14f90904e3af3ed496c2252f5db46d114ab9870b017cfdc77",
+      "bytes": 1966
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-2-original.claims/c1.json": {
+      "sha256": "c51d2bc6c2e1314b51936967635b69782d56db660b939978e56711a49065923d",
+      "bytes": 82552
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-2-original.json": {
+      "sha256": "5de95f9ca72782668d662ec1fe51f6e9a9652480b8ccfdc575956d97e7356a23",
+      "bytes": 1881
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-2-reversed.claims/c1.json": {
+      "sha256": "87942097bea47ab51a7bdafb92dfab1d1fe2f5630ad8fa9454f40dc3d30c8382",
+      "bytes": 82553
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-2-reversed.json": {
+      "sha256": "25c987c1e6aa5d586749ee8b41bc31b6f82da55fcc08dab200e86958ae4d3b56",
+      "bytes": 1883
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-3-original.claims/c1.json": {
+      "sha256": "5580365e0fce9c37334852895eda497386d7b9f6891e65fc9277f9523272b34e",
+      "bytes": 157162
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-3-original.json": {
+      "sha256": "3cd35d2b6ac0fda5e1470e9a30ff1927402c867fc5536fe46d4cc1c1a0ab7650",
+      "bytes": 1879
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-3-reversed.claims/c1.json": {
+      "sha256": "d4820842838cc51a5de711016efb712de73c6099b7ecb74a58e69b0382d01f85",
+      "bytes": 157162
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-qualification-3-reversed.json": {
+      "sha256": "cbcd7afad1a6a4cf8cb4ad672f7e68c7e03ad5795f9b20865639d2e2cc28bfaf",
+      "bytes": 1879
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-1-original.claims/c1.json": {
+      "sha256": "301b2e3176c09e90088fb32c841936857e8827593e8014f3713e3fd3c30081bb",
+      "bytes": 140599
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-1-original.json": {
+      "sha256": "578605b80be3a72dcbccda6935113663ab4dd31b71a7f0640d52b78f1151e2ea",
+      "bytes": 1892
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-1-reversed.claims/c1.json": {
+      "sha256": "dbaa94ab351fad9bd9a0b1fcf38d113dd6e1edc58a1b4703489a7d182c6e55e1",
+      "bytes": 140599
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-1-reversed.json": {
+      "sha256": "efbe00b7c462fefbc85884ece227fdc5ae68385bd7416e401cd321c16ce31162",
+      "bytes": 1892
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-2-original.claims/c1.json": {
+      "sha256": "24892ed9c8fbaeb41a3a6c11f9177bc4db4ebec5ff3f3427b1a47842a2d9d786",
+      "bytes": 102835
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-2-original.json": {
+      "sha256": "a63761e495b92a535128a3269ab687b58cef49f2e335aaadbe2f2c3d65d56958",
+      "bytes": 1872
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-2-reversed.claims/c1.json": {
+      "sha256": "154d6a1830cffbf0d8caf407ba1e2d94b8037f1a77af1d9d593c822247e33daa",
+      "bytes": 102836
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-2-reversed.json": {
+      "sha256": "7ee22ec7cbb21a8968483535cae017be479d8d715865dc678f51753f781c271e",
+      "bytes": 1873
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-3-original.claims/c1.json": {
+      "sha256": "c06dafac848cb9c2777faf3be0cb200767b39b75a1bf06ca50ca3311da4cb07f",
+      "bytes": 114986
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-3-original.json": {
+      "sha256": "6e5f20c8349652f08d4517f2a8a19ea89550a14df38df1a6ef4cece011b9d399",
+      "bytes": 1696
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-3-reversed.claims/c1.json": {
+      "sha256": "529f6120feee9f90e6cc4890b237698c161894203e0e039b527134b7b08cf024",
+      "bytes": 114984
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/ja-table-3-reversed.json": {
+      "sha256": "0b1535d0128a610ee9e4dc24f750d4633c5be9887e7105b99a6dc2056b9e3948",
+      "bytes": 1696
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-original.claims/c1.json": {
+      "sha256": "ea87a92ddf999ce1ee9d02af1f0e57ecb87734a543584a0ffee72c81dd61160a",
+      "bytes": 189721
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-original.claims/c2.json": {
+      "sha256": "c6639434eac29931f69b34c951d120636e77279491df3b5b25b1b9fba8222a90",
+      "bytes": 178478
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-original.claims/c3.json": {
+      "sha256": "21a5ca2a83186ce388e2b32601a106ea0ab9023e04bca65732ee91894fae51ae",
+      "bytes": 194793
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-original.claims/c4.json": {
+      "sha256": "b939c22ebbadb4fe4377529ea74c8b839daff13a8314aa8f9ea3b9acd9b9b1b2",
+      "bytes": 193716
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-original.claims/c5.json": {
+      "sha256": "2eab935d2e334fbaa6f562c6bb3725f34916398e6aa7a9baeacd571678e58d01",
+      "bytes": 146639
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-original.claims/c6.json": {
+      "sha256": "e56a8fc2d2062ceefe34e0f45c7aa3ea2b86887b575027eca929e004198b694f",
+      "bytes": 191267
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-original.claims/c7.json": {
+      "sha256": "20b658d842e40ba4dfca1b76bd600512d729b2b221b258d9d86e5c29eaad5b36",
+      "bytes": 160832
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-original.json": {
+      "sha256": "53027b1ec22d1199cdfe92c2539cf5e2a078bf58844b7b4987c0430b4e8383b6",
+      "bytes": 11669
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-reversed.claims/c1.json": {
+      "sha256": "0935f4a722dbbc44ac74e3c65c804d370b4a998ab68c1d899bc64d46a972dab9",
+      "bytes": 174096
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-reversed.claims/c2.json": {
+      "sha256": "f7676000d53d2de42b85ec115e922f03377cb968f39c693e04427413167b3ec8",
+      "bytes": 165720
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-reversed.claims/c3.json": {
+      "sha256": "d0736693c817de65e7fcb595eb94a98afc771b8127cbaa7c10a5ce18227495bc",
+      "bytes": 154991
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-reversed.claims/c4.json": {
+      "sha256": "b6817a2c16c2db6aca67c89a8498599fc2e4dc70501d699c9ad26e12848c3bcd",
+      "bytes": 193357
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-reversed.claims/c5.json": {
+      "sha256": "4f22ffe780bfab3dd2dcadb49a9936a8f5df032264048e6508b08c67e4dba259",
+      "bytes": 148569
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-reversed.claims/c6.json": {
+      "sha256": "b598a47f90fbb0b40aaa51481c0b06f248a775e8ff2e0695eb916489a3d982b1",
+      "bytes": 189053
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-reversed.claims/c7.json": {
+      "sha256": "5eca824dba066402c266568189e5f9f5987115d59fb205bb5477bdd3ae89fc4a",
+      "bytes": 152307
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-council-reversed.json": {
+      "sha256": "cfbbf28f39320452722410e8b34c7385a49d56ab069a9de4533d06d33d57669e",
+      "bytes": 10805
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-zidane-original.claims/c1.json": {
+      "sha256": "1fcaffefd01c70243e6cc55dae24f4c2122f6fc2d4cbc5a5a141d9c9c93fa9bc",
+      "bytes": 203460
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-zidane-original.json": {
+      "sha256": "a9e695a99d03a20608b7008e4ea4ef11064df450e55b5956bde913fa93443835",
+      "bytes": 4129
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-zidane-reversed.claims/c1.json": {
+      "sha256": "4e759ecbde488c61ff500dfeea7c099ad987c0a6fa90c38b9ba17130da7c9ef5",
+      "bytes": 199972
+    },
+    "data/runs/semantic_diagnostics/phase11-v3-v27-semantic/tasks/known-zidane-reversed.json": {
+      "sha256": "73f6033a42dcba60d59d45434c7f1599fc903bf78bb2eabbafe75748bfeed8ae",
+      "bytes": 4113
+    }
+  },
+  "gate11_passed": false,
+  "phase12_started": false,
+  "result_sha256": "2471a895c091d4af8fedcb2f722cdcd372f6c81bcb46dce520147cc1b81aab28"
+}
