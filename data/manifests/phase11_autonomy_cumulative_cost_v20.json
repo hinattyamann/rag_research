@@ -1,0 +1,550 @@
+{
+  "schema_version": 2,
+  "purpose": "phase11-autonomy-v3-cumulative-cost-v20",
+  "recorded_at_utc": "2026-10-27T14:37:42.671007+00:00",
+  "autonomy_protocol_version": "phase11-autonomy-v3",
+  "closed_runs": 41,
+  "closed_stage_prefix": [
+    "preflight",
+    "smoke",
+    "attribution-smoke"
+  ],
+  "later_v32_prefix_stages_not_in_cost_snapshot": [
+    "rewrite-smoke",
+    "semantic"
+  ],
+  "Known_Main_Cal_costs_not_in_this_finite_publication": true,
+  "unattempted_prefix_tail_costs_not_reconstructed": true,
+  "legacy_attempts": 909,
+  "legacy_unknown": 3,
+  "legacy_unused_calls_not_reallocated": true,
+  "totals": {
+    "attempts": 359,
+    "successful": 325,
+    "failed": 0,
+    "unknown": 2,
+    "observed_input_tokens": 735890,
+    "observed_output_tokens": 1023318,
+    "known_task_seconds": 20556.613243884465,
+    "known_native_seconds": 20640.602664000002,
+    "task_failures": 0,
+    "unvalidated_returned": 32,
+    "cumulative_attempts": 1268,
+    "cumulative_unknown": 5,
+    "new_wall_seconds": 21406.195253131038,
+    "cost_incomplete": true,
+    "external_paid_api_calls": 0,
+    "electricity_cost_currency": null,
+    "legacy_success_failure_and_cost_not_reconstructed": true
+  },
+  "new_native_reservations": 359,
+  "new_native_returned": 357,
+  "new_native_unknown": 2,
+  "new_total_output_tokens": null,
+  "unknown_reservations": [
+    {
+      "sequence": 73,
+      "state": "unknown",
+      "started_at_utc": "2026-10-27T06:58:20.594493+00:00",
+      "payload_sha256": "89fc0f71e43ef721d803bdb2b23b0442a252ffa2b08aa3e83eea5d39410bc336",
+      "prompt_sha256": "72e4134da91d479906cc7795b3757dcd8a30a2627e482d3c48eb0173f3ffada5",
+      "input_tokens": 1696,
+      "requested_output_tokens": 6144,
+      "timeout_seconds": 1200,
+      "caller_pid": 439629,
+      "output_tokens": null,
+      "native_response_sha256": null,
+      "finished_at_utc": "2026-10-27T06:58:26.848320+00:00",
+      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "elapsed_seconds": 6.253827
+    },
+    {
+      "sequence": 48,
+      "state": "unknown",
+      "started_at_utc": "2026-10-27T09:25:35.431237+00:00",
+      "payload_sha256": "f20e53b6ac99fde894e83f11417bccbcc6f083ed18a7d77c5e799e807173c845",
+      "prompt_sha256": "398e1c8c317b51cfbbb69d2675fce2fbe1e48278f3313e74e9aa61004bdb7c77",
+      "input_tokens": 1659,
+      "requested_output_tokens": 6144,
+      "timeout_seconds": 1200,
+      "caller_pid": 467852,
+      "output_tokens": null,
+      "native_response_sha256": null,
+      "finished_at_utc": "2026-10-27T09:25:46.072833+00:00",
+      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "elapsed_seconds": 10.641596
+    }
+  ],
+  "known_returned_native_seconds": 20623.707241,
+  "unknown_request_elapsed_seconds_component": 16.895423,
+  "ledger_known_native_seconds_is_all_observed_request_elapsed": 20640.602664,
+  "old38_closed_rows_unchanged": true,
+  "old25_guard_files_unchanged": true,
+  "selected_prefix_matches_current_even_if_future_runs_added": true,
+  "observed_ledger_rows_at_audit_start": 41,
+  "current_global_totals_not_substituted_for_selected_prefix": true,
+  "all_attempted_input_observed_output_Task_Native_wall_sums_reconciled": true,
+  "actual_additional_stages": {
+    "preflight": {
+      "run_id": "phase11-v3-v32-preflight",
+      "state": "process_completed",
+      "returncode": 0,
+      "started_at_utc": "2026-10-27T14:19:43.037322+00:00",
+      "finished_at_utc": "2026-10-27T14:20:03.832060+00:00",
+      "wall_seconds": 20.765735204098746,
+      "snapshot": {
+        "attempts": 0,
+        "successful": 0,
+        "failed": 0,
+        "unknown": 0,
+        "observed_input_tokens": 0,
+        "observed_output_tokens": 0,
+        "total_output_tokens": 0,
+        "known_task_seconds": 0,
+        "cost_incomplete": false,
+        "unsent_errors": [],
+        "invalid_journals": [],
+        "raw_calls": [],
+        "unvalidated_returned": 0,
+        "native_reservations": {
+          "attempts": 0,
+          "returned": 0,
+          "unknown": 0,
+          "terminal_unknown": 0,
+          "observed_input_tokens": 0,
+          "observed_native_seconds": 0,
+          "observed_output_tokens": 0,
+          "total_output_tokens": 0,
+          "cost_incomplete": false,
+          "calls": []
+        },
+        "task_failures": 0,
+        "known_native_seconds": 0
+      }
+    },
+    "smoke": {
+      "run_id": "phase11-v3-v32-smoke",
+      "state": "process_completed",
+      "returncode": 0,
+      "started_at_utc": "2026-10-27T14:22:44.364807+00:00",
+      "finished_at_utc": "2026-10-27T14:23:15.038391+00:00",
+      "wall_seconds": 30.64276126108598,
+      "snapshot": {
+        "attempts": 2,
+        "successful": 2,
+        "failed": 0,
+        "unknown": 0,
+        "observed_input_tokens": 3786,
+        "observed_output_tokens": 1034,
+        "total_output_tokens": 1034,
+        "known_task_seconds": 18.086213359958492,
+        "cost_incomplete": false,
+        "unsent_errors": [],
+        "invalid_journals": [],
+        "raw_calls": [
+          {
+            "path": "probe-1.claims/c1.json",
+            "sha256": "381af218ae6e88a37af1162e9c35612e2f3d9215e7efe7ddd6df02be0395fe15",
+            "status": "ok",
+            "unknown": false,
+            "prompt_sha256": "7e8d482e1771c7864fe7b6454fd7140031bd9427c7f6a1b69063e2754ec153c8",
+            "input_tokens": 1863,
+            "output_tokens": 474,
+            "elapsed_seconds": 8.598259805003181
+          },
+          {
+            "path": "probe-2.claims/c1.json",
+            "sha256": "f9dd32da65e55bdf20a5c6bd638f8b91a4643ca7fa26595cc57967ac560e4e04",
+            "status": "ok",
+            "unknown": false,
+            "prompt_sha256": "a895d401569c87d4dd3c8ed4c50537edd54c0e508066c68dc9f648329fb5e076",
+            "input_tokens": 1923,
+            "output_tokens": 560,
+            "elapsed_seconds": 9.487953554955311
+          }
+        ],
+        "unvalidated_returned": 0,
+        "native_reservations": {
+          "attempts": 2,
+          "returned": 2,
+          "unknown": 0,
+          "terminal_unknown": 0,
+          "observed_input_tokens": 3786,
+          "observed_native_seconds": 17.655691,
+          "observed_output_tokens": 1034,
+          "total_output_tokens": 1034,
+          "cost_incomplete": false,
+          "calls": [
+            {
+              "sequence": 1,
+              "state": "returned",
+              "started_at_utc": "2026-10-27T14:22:55.628839+00:00",
+              "payload_sha256": "07919935114b4884aeea0f5cd06f2e5473223e84bceb21ab927b00c9c66a7834",
+              "prompt_sha256": "7e8d482e1771c7864fe7b6454fd7140031bd9427c7f6a1b69063e2754ec153c8",
+              "input_tokens": 1863,
+              "requested_output_tokens": 6144,
+              "timeout_seconds": 1200,
+              "caller_pid": 535289,
+              "output_tokens": 474,
+              "native_response_sha256": "695dab75cf142e892fa5a426b6f03ccf955f444f8bae6dc8e1203d0ece45ee3b",
+              "finished_at_utc": "2026-10-27T14:23:03.880690+00:00",
+              "error": null,
+              "elapsed_seconds": 8.251851
+            },
+            {
+              "sequence": 2,
+              "state": "returned",
+              "started_at_utc": "2026-10-27T14:23:03.973398+00:00",
+              "payload_sha256": "093929e61fa6f4ef0ad847d85b37b78fa4529de7793ccf1d76a2e84396a6f9a1",
+              "prompt_sha256": "a895d401569c87d4dd3c8ed4c50537edd54c0e508066c68dc9f648329fb5e076",
+              "input_tokens": 1923,
+              "requested_output_tokens": 6144,
+              "timeout_seconds": 1200,
+              "caller_pid": 535289,
+              "output_tokens": 560,
+              "native_response_sha256": "8cefd9ed1b4d2f564f9bd7f78bfaf57e3bf9c43e26387a255f0b42de264f58d1",
+              "finished_at_utc": "2026-10-27T14:23:13.377238+00:00",
+              "error": null,
+              "elapsed_seconds": 9.40384
+            }
+          ]
+        },
+        "task_failures": 0,
+        "known_native_seconds": 17.655691
+      }
+    },
+    "attribution-smoke": {
+      "run_id": "phase11-v3-v32-attribution-smoke",
+      "state": "process_completed",
+      "returncode": 0,
+      "started_at_utc": "2026-10-27T14:27:03.807321+00:00",
+      "finished_at_utc": "2026-10-27T14:27:39.529557+00:00",
+      "wall_seconds": 35.691249307012185,
+      "snapshot": {
+        "attempts": 2,
+        "successful": 2,
+        "failed": 0,
+        "unknown": 0,
+        "observed_input_tokens": 7942,
+        "observed_output_tokens": 875,
+        "total_output_tokens": 875,
+        "known_task_seconds": 19.027128805872053,
+        "cost_incomplete": false,
+        "unsent_errors": [],
+        "invalid_journals": [],
+        "raw_calls": [
+          {
+            "path": "probe-1.claims/c1.json",
+            "sha256": "3ca0064c027ff7683b549ed62cc95cf57a0029d4bfb3cc2e263c33c2846f26c4",
+            "status": "ok",
+            "unknown": false,
+            "prompt_sha256": "dd9b8eb6fdd37fd981a260068b2f2e1f3559e950c129c3b9bd206e0068251c52",
+            "input_tokens": 3971,
+            "output_tokens": 430,
+            "elapsed_seconds": 9.667926837923005
+          },
+          {
+            "path": "probe-2.claims/c1.json",
+            "sha256": "0204a6359a842d60f270d49436647ff898995edefbb37b3ea8f3901e931ab015",
+            "status": "ok",
+            "unknown": false,
+            "prompt_sha256": "4876f88a53b98dae566146ddf39dba03ca2107389e9e5ddf9c6524fec681699f",
+            "input_tokens": 3971,
+            "output_tokens": 445,
+            "elapsed_seconds": 9.359201967949048
+          }
+        ],
+        "unvalidated_returned": 0,
+        "native_reservations": {
+          "attempts": 2,
+          "returned": 2,
+          "unknown": 0,
+          "terminal_unknown": 0,
+          "observed_input_tokens": 7942,
+          "observed_native_seconds": 18.580015000000003,
+          "observed_output_tokens": 875,
+          "total_output_tokens": 875,
+          "cost_incomplete": false,
+          "calls": [
+            {
+              "sequence": 1,
+              "state": "returned",
+              "started_at_utc": "2026-10-27T14:27:15.215712+00:00",
+              "payload_sha256": "5eb7fc6c77c7e524180e53bd122a7e2da71dee6bfb4dce426d9dc09f568fcdaa",
+              "prompt_sha256": "dd9b8eb6fdd37fd981a260068b2f2e1f3559e950c129c3b9bd206e0068251c52",
+              "input_tokens": 3971,
+              "requested_output_tokens": 6144,
+              "timeout_seconds": 1200,
+              "caller_pid": 535975,
+              "output_tokens": 430,
+              "native_response_sha256": "d33d02c5d98df5a0bca4a08a6808d18f5101690bcd8c72d3e56ba775603ef3cc",
+              "finished_at_utc": "2026-10-27T14:27:24.489349+00:00",
+              "error": null,
+              "elapsed_seconds": 9.273637
+            },
+            {
+              "sequence": 2,
+              "state": "returned",
+              "started_at_utc": "2026-10-27T14:27:24.552407+00:00",
+              "payload_sha256": "5fdd5a56350434269d56f2789940cff50bce9ab55e04bf953a9bf96ecf0e5f1f",
+              "prompt_sha256": "4876f88a53b98dae566146ddf39dba03ca2107389e9e5ddf9c6524fec681699f",
+              "input_tokens": 3971,
+              "requested_output_tokens": 6144,
+              "timeout_seconds": 1200,
+              "caller_pid": 535975,
+              "output_tokens": 445,
+              "native_response_sha256": "4df2ff9a4e202bfc584d8759763c3eb1368778a69133e16642b70f6550775e23",
+              "finished_at_utc": "2026-10-27T14:27:33.858785+00:00",
+              "error": null,
+              "elapsed_seconds": 9.306378
+            }
+          ]
+        },
+        "task_failures": 0,
+        "known_native_seconds": 18.580015000000003
+      }
+    }
+  },
+  "new_Native_planned_maximum": 4,
+  "actual_additional_Native": 4,
+  "Preflight_NS_C_Rewrite_semantic_costs_are_observed_not_planned_successes": true,
+  "old32_unvalidated_returned_preserved_not_reclassified": true,
+  "immutable_ledger_snapshot": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/ledger.json",
+    "sha256": "0d37286582e3fb3a3a47742c12f2d308315aa9cc566b652d898a68a3013bad02"
+  },
+  "audit_implementation": {
+    "path": "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/audit_source.py",
+    "sha256": "5e746893d578fe4d3924cbdbd5b97fef376368b240216d83ac3fb59f7b375fcc"
+  },
+  "native_guard_files_sha256": {
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-runtime-smoke/native_guard/calls.json": "e16ce5fc5bbea1e62507d00d993a35d1387c54bba1d7d21ee80a082370154624",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-format/native_guard/calls.json": "d6971537665425b4c3e9867a7f4d21031b1392547d88593a1b2687f9f76c3dd8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v21-semantic/native_guard/calls.json": "2264ce0d084ee082145592a51ee94c32b00ecb9b818f27daf5068a5cf3a2066d",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-baseline-smoke/native_guard/calls.json": "55148b868d0e832e3cfbe3b1624322bd5e50378967d95ed89d044e5fec6d20bf",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v12-known/native_guard/calls.json": "1546000d71f49d82062300cad0e81b79d4b9bff14d5586107b85faca5c8b5bcb",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v24-smoke/native_guard/calls.json": "46329eb7f7d7d6593f1a2b833aaac13239bc712b246f5e9af812e41ffa7c9204",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-smoke/native_guard/calls.json": "a38d71bbd09054087303a9f592935ca4476fbc032a2cd6db610d1f44d72dc8d2",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-rewrite-smoke/native_guard/calls.json": "e427670673c9d898eed3d81c449090bfcdc861c34e00602f96fdb7ae59d43fa3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v25-semantic/native_guard/calls.json": "baf4f1136fdeffc6cf99271f698c986c3e119409bf67ae09f49d47d29c547fb8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-smoke/native_guard/calls.json": "caaee498e19ffef80523bf752414ff7fe482ced3a9aeea12b784cd7eca294ce4",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v26-attribution-smoke/native_guard/calls.json": "05e32390ba72a508adb8d3c39cabf3cfc6bf939bc2dbc4d2dcb6d44042e8aed8",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-smoke/native_guard/calls.json": "e864213e57df8f4e9f71f9149c9c6035bef5154b148c6bbc4ba6d2855d558fa3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-attribution-smoke/native_guard/calls.json": "ccfc348d1d65189cce3c86d867ac3579365ad78fd37937b03acfcc7d0c8a14c3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-rewrite-smoke/native_guard/calls.json": "0d53d91902b505cedc4efa51311d4d0042bce7ce7b487ed423c54ae852812acd",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v27-semantic/native_guard/calls.json": "8035f116500dede502fab56fba3615b92ebbe7c1420be56caa21977ec2f1ed57",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-format/native_guard/calls.json": "49f61e6a5c7a3edfdccc0ec64ec9170f919969c7fabd75e05a7a8918a89b289b",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-smoke/native_guard/calls.json": "ccc2d1a3801286b5cee6084555c1dda1be71f7a74b8c53236fdf35c05b396018",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-attribution-smoke/native_guard/calls.json": "129468e9922af64a5421da69f89532618093d391f610dfa25cbecfefbb0e6814",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-rewrite-smoke/native_guard/calls.json": "7777dbb57c479a4ef98073591be09aa5c5133776ed5ddde3caad5b8c52dbd11e",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v28-semantic/native_guard/calls.json": "d77ec576b34d39f2af44cf0069ee1237f09d725b80002a621be983548750aefa",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v30-format/native_guard/calls.json": "252439b9e4dc7a492beee952d877a3ffdfe18b74d5289e95e8f1702df4033be0",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v30-smoke/native_guard/calls.json": "f992c91c055d6d665f80bef6cec2fc608f39468e659fc6810210c933875d8613",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v30-attribution-smoke/native_guard/calls.json": "5765e80e707da1639397d835457a21a3dd7369503cd38824d6df8fafbfc30b85",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v31-smoke/native_guard/calls.json": "b7dcdb88006547432039f4881303fe4a25e52fde06e1c9d35143ac3f4d3f848f",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v31-attribution-smoke/native_guard/calls.json": "fd806034bada5eba22e16f009d9811f23cfc1e9d4eed31600e2cb30f97fd6cf3",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v32-smoke/native_guard/calls.json": "9565b3514a3c28d6af2b905db912e0eec20f8a038e320ff5209b8b15eb4921c6",
+    "data/runs/development_screening/phase11-autonomy-v3/phase11-v3-v32-attribution-smoke/native_guard/calls.json": "401f5c3dd29c347f51babc910039935b3289140dfe5e81adcd3d46fc26b82573"
+  },
+  "bindings": [
+    {
+      "path": "data/manifests/phase11_autonomy_cumulative_cost_v19.json",
+      "sha256": "399a40c962dfee50e8f4a01bca032f829cc6deac504761a00d8877ba3958c50a"
+    },
+    {
+      "path": "data/manifests/phase11_v32_checkout_reproduction_v1.json",
+      "sha256": "9bab37b7921713e6b8cf645ed9cdb970d6780d5416f5fc76c3f99c590bd0891a"
+    },
+    {
+      "path": "data/manifests/phase11_v32_preflight_result_v1.json",
+      "sha256": "8a56f9ff578273fd5fb441287f7b651a8d0ffca9b7e886c6bbbe9a6d46f0d408"
+    },
+    {
+      "path": "data/manifests/phase11_v32_smoke_result_v1.json",
+      "sha256": "9bb5b74727ed2aaa77c7a3581a68c7d069af3fc9a21ec251cdca7262014aa480"
+    },
+    {
+      "path": "data/manifests/phase11_v32_attribution_smoke_result_v1.json",
+      "sha256": "a3bbc4aa742b7da7e94b9187cc3bbbbb394091d74a49332cb4a88453a7cf01c4"
+    },
+    {
+      "path": "data/runs/lab/phase11-v32-stage-evidence-v1/attribution-smoke-Root-small-artifact-and-terminal-check.json",
+      "sha256": "8cf6a467b70f5cc55f907a71d2be4e059a6584396e26ad25275a6e4eb2f917be"
+    },
+    {
+      "path": ".tools/draft-artifacts/phase11-cost-v20-preparation-v1/SHA256SUMS",
+      "sha256": "d5dadecf0ac48b67306e3312853e2b3f93e8c79ca6608eca3876678ed8283d74"
+    },
+    {
+      "path": "data/runs/runtime_screening/phase11-v3-v32-attribution-smoke-audit-v1/full-source-reason-ai-review.json",
+      "sha256": "b3fbff2bc061adf6fb2d89b6cdcc9c040d515750e21f67dd87a7d78b4217f16e"
+    },
+    {
+      "path": "data/manifests/phase11_semantic_v32_preregistration_v1.json",
+      "sha256": "09236fcae9807a780eb175312ed8c2774b01843973defc05f3ae078be09bea1f"
+    },
+    {
+      "path": "data/runs/lab/phase11-v32-artificial-reuse-v1/certificate.json",
+      "sha256": "b8f40fe7ab3c6e76713dfbd2520bd71823d5c3f316ab307c1508ebcf388450eb"
+    }
+  ],
+  "non_Run_CPU_and_reproduction_costs_separate_from_ledger": {
+    "reproduction_cost_scopes": {
+      "actual_copy_seconds": 1.3033288579899818,
+      "copy_exec_tool_reported_wall_seconds": null,
+      "copy_child_monotonic_seconds": 1.3326812610030174,
+      "copy_exec_reported_wall_and_inner_are_distinct_observations_not_assumed_nested": true,
+      "dedicated_uv_subprocess_wall_seconds_independently_metered": 0.06654415000230074,
+      "dedicated_uv_exec_tool_reported_wall_seconds": null,
+      "uv_installer_reported_milliseconds": 30,
+      "actual_zero_load_identity_inner_seconds": 5.022870994056575,
+      "zero_exec_tool_reported_wall_seconds": null,
+      "zero_parent_child_monotonic_seconds": 5.131218316964805,
+      "new_v32_CPU_failure_wall_seconds": null,
+      "Root_alias_creation_wall_seconds": null,
+      "old_v31_failure_costs_are_parent_history_excluded_from_new_v32_costs": true,
+      "whole_reproduction_wall_seconds": null,
+      "whole_wall_marker_not_recorded": true,
+      "do_not_add_inner_to_child_or_installer_to_uv_tool": true,
+      "publication_component_seconds_before_write": 0.6896351310424507,
+      "external_metered_API_cost": 0,
+      "electricity_cost": null
+    },
+    "Root_identity_build_seconds": 4.459220423013903,
+    "Root_identity_creation_seconds_including_build": 4.616422838997096,
+    "current_prior_unissued_publication_failure": null,
+    "parent_v31_loader_and_Host_CPU_history_preserved": {
+      "host_failure": {
+        "tool": "db8d35",
+        "Host_check_returncode": 1,
+        "outer_shell_returncode": 0,
+        "cause": "Substring matching whole argv falsely included calling Bash heredoc source; dependency shell lacked set-e, so creation of new detached unused WT proceeded after failed read-only check.",
+        "preserved": "No previous WT/runtime/process edited; no assets copied or Native started.",
+        "correction": "Exclude own ancestors and match exact command argument basename; rerun read-only Host scan before all asset copy/Native. Use set-e for dependent shell commands.",
+        "new_Native": 0
+      },
+      "host_corrected": {
+        "recorded_at_utc": "2026-10-27T12:49:22.406470+00:00",
+        "all35_ledger_rows_terminal": true,
+        "experiment_processes": [],
+        "GPU_query_returncode": 0,
+        "GPU_observation": "GPU-cf778571-1854-2793-7ca9-62d4735e1802, 571, 7134, 42",
+        "GPU_query_stderr": "",
+        "read_only": true,
+        "signals_sent": 0,
+        "new_Native": 0
+      },
+      "loader_v1_tool": {
+        "returncode": 1,
+        "actual_child_monotonic_seconds": 0.19821869593579322,
+        "fresh_dedicated_identity_GGUF_Hash_budget": 1,
+        "Native_budget": 0,
+        "timeout_seconds": 120,
+        "Source_sha256": "c0f2087706d713e70452936fdcc76f194ce41d1612fefeac13ee60e484ff981e",
+        "phase12_started": false
+      },
+      "loader_repair": {
+        "purpose": "v31-generation-zero-loader-import-order-repair",
+        "recorded_at_utc": "2026-10-27T12:56:52.930752+00:00",
+        "old_source_sha256": "c0f2087706d713e70452936fdcc76f194ce41d1612fefeac13ee60e484ff981e",
+        "new_source_sha256": "32a71c83a97ec65b6f1a578ee77fea0efb299a89514c096d3d59032191406680",
+        "actual_failed_tool": "3d4ed3",
+        "old_returncode": 1,
+        "failed_child_seconds": 0.19821869593579322,
+        "cause": "Caller invoked strict reuse validator before inserting fixed WT src into sys.path. Source-level schema import failed before actual build_identity or any Native.",
+        "repair": "Insert the same WT src path before configure_release/verify_reuse; all checks, Core, Model, Runtime, Prompt, Sampler, Schema and experiment settings unchanged.",
+        "finite_repair_validation_seconds": 120,
+        "new_actual_loader_GGUF_Hash_budget": 1,
+        "old_loader_GGUF_Hash_actual": 0,
+        "old_Native_actual": 0,
+        "old_output_logs_and_inventory781_preserved": true,
+        "same_research_condition_Native_reroll": false,
+        "phase12_started": false
+      },
+      "prelude_result": {
+        "passed": true,
+        "fixed_loader_prelude_only": true,
+        "before_build_identity": true,
+        "counts": {
+          "immutable_content": 0,
+          "process": 0,
+          "socket": 0
+        },
+        "Native": {
+          "server": 0,
+          "request_or_tokenizer": 0
+        },
+        "offline": {
+          "process_starts": 0,
+          "socket_operations": 0,
+          "reserved_QA_opens": 0
+        },
+        "elapsed_seconds": 0.757232011994347,
+        "actual_fixed_checkout": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v31-eb7967c",
+        "new_Model_Hash": 0,
+        "phase12_started": false
+      }
+    },
+    "parent_v31_reproduction_measured_cost_history": {
+      "actual_copy_seconds": 1.1483958519529551,
+      "copy_exec_tool_reported_wall_seconds": null,
+      "copy_child_monotonic_seconds": 1.1774800179991871,
+      "copy_exec_reported_wall_and_inner_are_distinct_observations_not_assumed_nested": true,
+      "dedicated_uv_subprocess_wall_seconds_independently_metered": 0.058292889036238194,
+      "dedicated_uv_exec_tool_reported_wall_seconds": null,
+      "uv_installer_reported_milliseconds": 25,
+      "actual_zero_load_identity_inner_seconds": 5.073318066075444,
+      "zero_exec_tool_reported_wall_seconds": null,
+      "zero_parent_child_monotonic_seconds": 5.148438556934707,
+      "failed_loader_v1_child_seconds_Model_Hash0_Native0": 0.19821869593579322,
+      "repaired_loader_v2_model_free_prelude_inner_seconds": 0.757232011994347,
+      "Host_scan_failure_wall_seconds": null,
+      "Root17_alias_creation_wall_seconds": null,
+      "whole_reproduction_wall_seconds": null,
+      "whole_wall_marker_not_recorded": true,
+      "do_not_add_inner_to_child_or_installer_to_uv_tool": true,
+      "publication_component_seconds_before_write": 0.6867961749667302,
+      "external_metered_API_cost": 0,
+      "electricity_cost": null
+    },
+    "new_v32_CPU_failure_evidence": [],
+    "parent_v31_failures_not_recounted_as_new_v32": true,
+    "current_prior_unissued_publication_independent_wall_seconds": null,
+    "source_preparation_and_AI_provider_cost_actuals_unknown": true,
+    "scopes_overlap_never_add_into_Native_or_total_wall": true
+  },
+  "v32_artificial_format10_conditionally_reused_not_new_Native_or_reallocated_old_calls": true,
+  "cost_scopes": "All observed Native elapsed includes unknown HTTP elapsed; unknown output totals stay null. Task/Native/wall/startup overlap. Native0 tokenizer/all90-input stages have nonzero render/tokenize/startup/monitor resource costs. Reproduction, failed publication, identity, Source/tests/AI audit are separate; missing actual wall/currency is null. No unknown resend or QA replacement.",
+  "audit_boundary_counts": {
+    "WT_Model_Runtime_QA_opens": 0,
+    "process_starts": 0,
+    "sockets": 0
+  },
+  "new_native_calls_during_audit": 0,
+  "audit_elapsed_seconds_before_publication": 0.18086372700054199,
+  "artifacts_sha256": {
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/actual-publication-release.json": "7031cdacfc85781b3f3fd6498f14853ed4b4634d5f80a59c1d2a829c45ece46f",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/audit_source.py": "5e746893d578fe4d3924cbdbd5b97fef376368b240216d83ac3fb59f7b375fcc",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/copy-receipt.json": "175c6106ebc5335274782b3911c170af46c3ad4301caa004f97db8d1f2175dd3",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/ledger.json": "0d37286582e3fb3a3a47742c12f2d308315aa9cc566b652d898a68a3013bad02",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/monitor-cost-observations.json": "18d9288e69bd873449dcb56c54308c35b02912c47e5403033fd929ef7ffed256",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/observed-ledger-at-audit-start.json": "0d37286582e3fb3a3a47742c12f2d308315aa9cc566b652d898a68a3013bad02",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/0-preflight-root-terminal-authorization.json": "6041f726d410eebeb88c0fef923d31af04cb4980dd70df4ed1160a4d151b3cc4",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/1-preflight-terminal-row.json": "0536137a32c1b603b5b28c2ce1948d212d25fb7ca45866439702cc960f3270b6",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/10-attribution-smoke-root-terminal-authorization.json": "2f1669c689a187b0135419d5980f3cc37f692ebf1630276ebb72bf88eef9586b",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/11-attribution-smoke-terminal-row.json": "45ce5b8e3188df280ab3413e050c7c0796f34c280c40453ba1bbb33cfcf50838",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/12-manifest.json": "00315bf25188da2290682c99592dcacf5670cb1de15de6acb7333bae275af0a1",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/13-monitor.jsonl": "370103f88e08e3275195e19423830a17a839d3a7212f182386b992ed565cbbaf",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/14-stdout.log": "1ef1a9fa5c8b54a677fa0d00d312c092200244cdcb4dc8e3a7ea402ab9bf30cb",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/2-manifest.json": "5346201fd50446c60ef26f350ba7bbeb6a74d24e554d1907e4c19e2fcb68b410",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/3-monitor.jsonl": "350ab0813e440805158c04a98f55b1082c4a434125b753efb0f730af92245144",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/4-stdout.log": "d8e2b18bae76110dfd856ee9f561374b82dd526873e90fc5944859c268847cd7",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/5-smoke-root-terminal-authorization.json": "c409ff373f11dc9adccc689e596b8840676fc94b02eb857e1394e893ea075c55",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/6-smoke-terminal-row.json": "1826614e94f8bd7a41ae8942e941bd32fb68de2be27fdb16f6aa309e0fdb27b5",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/7-manifest.json": "3a2f7424c01e61b4ca1e2012cb878d1f85f74cb32fe3dfb8f91e6982623a39f2",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/8-monitor.jsonl": "ac949b2337172aef32c55eff7c827592d0ce74672dd3dda5b0229c57e9f40769",
+    "data/runs/development_screening/phase11-autonomy-v3-cost-audit-v20/stage-evidence/9-stdout.log": "b6936c71599089bac52ea44762339b461b2de6076017b35ffc61fb60bb1cefa5"
+  },
+  "gate11_passed": false,
+  "phase12_started": false
+}
