@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v28-full90-zero-generation-preflight-result",
+  "at_utc": "2026-10-27T08:03:12.560716+00:00",
+  "candidate_identity_sha256": "0499a611e9ec8369e5c1958b2ce0e4d25e9095e72aeca6fe13f769e593db982e",
+  "fixed_commit": "291d017a1055123e7009cbd617395d6569e28618",
+  "run_state": "process_completed",
+  "run_wall_seconds": 20.777002977905795,
+  "runtime_health_input_check_passed": true,
+  "explicit_FAoff_actual_profile_verified": {
+    "version": "cuda-execution-v2",
+    "flash_attention": "off",
+    "actual_context_flash_attn": [
+      "disabled"
+    ],
+    "actual_context_tokens": [
+      12288
+    ],
+    "enabled_or_auto_context_observed": false,
+    "proof": "Explicit disabled implies flash_attn=False/auto_fa=False in pinned Source50569eb; no auto-resolution message required"
+  },
+  "all_full_inputs": 90,
+  "native_calls": 0,
+  "maximum_input_tokens": 3926,
+  "reserved_output_tokens": 6144,
+  "context_tokens": 12288,
+  "context_margin_tokens": 2218,
+  "full_cuda_layers": 33,
+  "gpu_memory_single_observation": "7614 MiB, 8151 MiB",
+  "source_core_files_verified": 94,
+  "unique_identity_direct_plan_bindings_verified": 154,
+  "all_identity_and_direct_plan_bindings_verified": true,
+  "canonical_raw_files_sha256": {
+    "data/runs/model_screening/phase11-v3-v28-preflight/.run.lock": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "data/runs/model_screening/phase11-v3-v28-preflight/plan.json": "a57ed586cb5222e6bbfed4d97fd8c676f47cb82e73a6b84f8d9024e3c7656329",
+    "data/runs/model_screening/phase11-v3-v28-preflight/report.json": "52361c94310d49f0a5b3efbd018578a04b7f67188932a09c914c8b600be199ba",
+    "data/runs/model_screening/phase11-v3-v28-preflight/server.log": "e4a7857d47efdbc1bff4bbff3521b782c6e6bb2fb4212948b474cf2162f242d2"
+  },
+  "terminal_row_sha256": "e806ca1ff74055e95b360e73961746c1300c8976b440daf28cf6b99b91e463da",
+  "monitor_samples": 5,
+  "all_monitor_errors_required_and_empty": true,
+  "all_monitor_native_attempts_zero": true,
+  "final_monitor_snapshot_matches_closed_row": true,
+  "supervision_files_sha256": {
+    "data/runs/model_screening/phase11-v3-v28-preflight-audit-v2/supervision/manifest.json": "2f8848d29ca6a87ac465aac4849618dad4c1e3c40df10668246740dbca4edb77",
+    "data/runs/model_screening/phase11-v3-v28-preflight-audit-v2/supervision/monitor.jsonl": "de70b72f16f08f48d56bbbc739e8ab4beabb4de7ce4c0e4af1dd166baf789e74",
+    "data/runs/model_screening/phase11-v3-v28-preflight-audit-v2/supervision/stdout.log": "1c496a03e784383cb875e020c3cbc3d13bef5a450119ccbed69e313a92deb734"
+  },
+  "supervision_original_before_copy_after_hash_equal_and_independent": true,
+  "original_before_copy_after_hash_equal": true,
+  "independent_copy_inodes": true,
+  "audit_elapsed_seconds": 6.343239666894078,
+  "new_native_calls_during_audit": 0,
+  "meaning_adoption_claimed": false,
+  "gate11_passed": false,
+  "phase12_started": false
+}

@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v28-fixed-checkout-reproduction-publication",
+  "recorded_at_utc": "2026-10-27T08:04:49.004709+00:00",
+  "recorded_at_JST": "2026-10-27T17:04:49.004724+09:00",
+  "status": "actual378_alias4_uv58_identity_reproduced_and_released_before_GPU_preflight",
+  "fixed_commit": "291d017a1055123e7009cbd617395d6569e28618",
+  "candidate_identity_sha256": "0499a611e9ec8369e5c1958b2ce0e4d25e9095e72aeca6fe13f769e593db982e",
+  "release": {
+    "path": "data/runs/lab/phase11-v28-checkout-reproduction-v1/RELEASE.json",
+    "sha256": "f7b31d4c46c8886eb96564bb328ee7cd57583820a4bd41d29bbe5eeed1078ef4"
+  },
+  "actual_copy": {
+    "passed": true,
+    "finished_at_utc": "2026-10-27T07:58:57.895605+00:00",
+    "elapsed_seconds": 23.304566082078964,
+    "files": 378,
+    "copy_statistics": {
+      "independent_copy_files": 196,
+      "independent_copy_bytes": 2733547,
+      "git_checkout_files": 152,
+      "git_checkout_bytes": 1726118,
+      "immutable_hardlink_files": 30,
+      "immutable_hardlink_bytes": 8498233428
+    },
+    "additional_producer_aliases": 4,
+    "inventory_sha256": "cb958e374d53854848f19a082c7843442b2e1478802ec6df14f22f43cf603bbe",
+    "fixed_commit": "291d017a1055123e7009cbd617395d6569e28618",
+    "candidate_identity_sha256": "0499a611e9ec8369e5c1958b2ce0e4d25e9095e72aeca6fe13f769e593db982e",
+    "all_before_copy_after_hashes_equal": true,
+    "mutable_inode_shared": false,
+    "Native_Server_Tokenizer_GPU": 0,
+    "QA_body_parse": 0,
+    "operational_ledger_copied": false,
+    "actual_uv_sync_and_load_config_build_identity_pending": true,
+    "gate11_passed": false,
+    "phase12_started": false
+  },
+  "actual_producer_identity_and_historical_Core2_aliases": {
+    "aliases": [
+      {
+        "source_path": "data/runs/development_screening/phase11-v28-preregistration-audit-v1/phase11-v28-protocol-preparation-v1/formal-v28-review-result.json",
+        "target_path": "data/runs/lab/phase11-v28-protocol-preparation-v1/identity-evidence.json",
+        "sha256": "a345ce08e397e937e6f5fd7620cbd785810c5d213918964013ea7bc8ceaafc68",
+        "method": "independent_copy",
+        "source_before_sha256": "a345ce08e397e937e6f5fd7620cbd785810c5d213918964013ea7bc8ceaafc68",
+        "target_sha256": "a345ce08e397e937e6f5fd7620cbd785810c5d213918964013ea7bc8ceaafc68",
+        "source_after_sha256": "a345ce08e397e937e6f5fd7620cbd785810c5d213918964013ea7bc8ceaafc68",
+        "source_inode": 14702464,
+        "target_inode": 14811653,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v28-preregistration-audit-v1/phase11-v28-protocol-preparation-v1/produce_plan.py",
+        "target_path": "data/runs/lab/phase11-v28-protocol-preparation-v1/produce_plan.py",
+        "sha256": "75ceeaca8d0b23bced85c8ec0c2fc25a46c51e6a4122a1c13bb5779e1a9f4e9c",
+        "method": "independent_copy",
+        "source_before_sha256": "75ceeaca8d0b23bced85c8ec0c2fc25a46c51e6a4122a1c13bb5779e1a9f4e9c",
+        "target_sha256": "75ceeaca8d0b23bced85c8ec0c2fc25a46c51e6a4122a1c13bb5779e1a9f4e9c",
+        "source_after_sha256": "75ceeaca8d0b23bced85c8ec0c2fc25a46c51e6a4122a1c13bb5779e1a9f4e9c",
+        "source_inode": 14702468,
+        "target_inode": 14811654,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v28-preregistration-audit-v1/comparison-sourceproof/v27-core94-git9312/src/rag_research/generation/cuda_runtime.py",
+        "target_path": "data/runs/lab/phase11-v28-historical-sourceproof-v1/src/rag_research/generation/cuda_runtime.py",
+        "sha256": "207f80bd06cf5efbfcc752ddcefe2d96ba2c671d6c8b90f9e3cd19b988699fde",
+        "method": "independent_copy",
+        "historical_only_never_live_execution_Source": true,
+        "source_before_sha256": "207f80bd06cf5efbfcc752ddcefe2d96ba2c671d6c8b90f9e3cd19b988699fde",
+        "target_sha256": "207f80bd06cf5efbfcc752ddcefe2d96ba2c671d6c8b90f9e3cd19b988699fde",
+        "source_after_sha256": "207f80bd06cf5efbfcc752ddcefe2d96ba2c671d6c8b90f9e3cd19b988699fde",
+        "source_inode": 14702506,
+        "target_inode": 14811659,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      },
+      {
+        "source_path": "data/runs/development_screening/phase11-v28-preregistration-audit-v1/comparison-sourceproof/v27-core94-git9312/src/rag_research/generation/local.py",
+        "target_path": "data/runs/lab/phase11-v28-historical-sourceproof-v1/src/rag_research/generation/local.py",
+        "sha256": "817bf5415c2c4a72488ef629026636c8f32994def8898ee26b6b347824fed354",
+        "method": "independent_copy",
+        "historical_only_never_live_execution_Source": true,
+        "source_before_sha256": "817bf5415c2c4a72488ef629026636c8f32994def8898ee26b6b347824fed354",
+        "target_sha256": "817bf5415c2c4a72488ef629026636c8f32994def8898ee26b6b347824fed354",
+        "source_after_sha256": "817bf5415c2c4a72488ef629026636c8f32994def8898ee26b6b347824fed354",
+        "source_inode": 14702507,
+        "target_inode": 14811660,
+        "source_device": 66306,
+        "target_device": 66306,
+        "source_before_after_stat_unchanged": true,
+        "same_inode": false
+      }
+    ],
+    "all_independent_before_copy_after_hashes_equal": true
+  },
+  "actual_dedicated_uv_environment": {
+    "recorded_at_utc": "2026-10-27T07:56:54.651893+00:00",
+    "purpose": "new-fixed-checkout-dedicated-offline-uv-setup",
+    "fixed_commit": "291d017a1055123e7009cbd617395d6569e28618",
+    "checkout": ".tools/worktrees/phase11-v28-291d017",
+    "command": "uv sync --project environments/embedding_gpu --frozen --offline",
+    "uv_cache_shared_only": ".tools/uv-cache",
+    "venv_created": "environments/embedding_gpu/.venv",
+    "old_venv_reused": false,
+    "packages_installed": 58,
+    "tool_wall_seconds": 0.041678857,
+    "uv_reported_install_milliseconds": 44,
+    "timing_scopes_distinct_not_added": true,
+    "Native_calls": 0,
+    "Model_Runtime_asset_copy_calls": 0,
+    "dataset_QA_body_opens": 0,
+    "exit_code": 0
+  },
+  "dedicated_environment_and_identity": {
+    "passed": true,
+    "created_at_utc": "2026-10-27T07:59:23.633522+00:00",
+    "actual_checkout_cwd": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v28-291d017",
+    "actual_fixed_commit": "291d017a1055123e7009cbd617395d6569e28618",
+    "candidate_identity_sha256": "0499a611e9ec8369e5c1958b2ce0e4d25e9095e72aeca6fe13f769e593db982e",
+    "actual_load_config": true,
+    "actual_build_identity": true,
+    "fixed_diagnostic_contract_parsed": true,
+    "fixed_diagnostic_QA": 39,
+    "fixed_units": 45,
+    "conditions": 78,
+    "planned_fresh_calls": 90,
+    "core_files": 94,
+    "source_trace_bindings": 4,
+    "semantic_evidence_reuse": false,
+    "effective_tasks": {
+      "extract_claims": {
+        "reasoning_budget_tokens": 4096,
+        "max_output_tokens": 3072,
+        "context_tokens": 12288,
+        "timeout_seconds": 1200
+      },
+      "verify_claims": {
+        "reasoning_budget_tokens": 4096,
+        "max_output_tokens": 6144,
+        "context_tokens": 12288,
+        "timeout_seconds": 1200
+      },
+      "rewrite_answer": {
+        "reasoning_budget_tokens": 4096,
+        "max_output_tokens": 6144,
+        "context_tokens": 12288,
+        "timeout_seconds": 1200
+      }
+    },
+    "runtime_metadata_verified_by_actual_identity_builder": true,
+    "validated_execution_profile": {
+      "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+      "gpu_layers": 99,
+      "device": "CUDA0",
+      "require_full_offload": true,
+      "version": "cuda-execution-v2",
+      "flash_attention": "off"
+    },
+    "offline_guard": {
+      "process_starts": 0,
+      "socket_operations": 0,
+      "reserved_QA_opens": 0
+    },
+    "native_guards": {
+      "server": 0,
+      "request_or_tokenizer": 0
+    },
+    "explicit_GPU_device_enumeration_or_tokenizer_or_runtime_started": false,
+    "python_executable": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v28-291d017/environments/embedding_gpu/.venv/bin/python",
+    "python_prefix": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/phase11-v28-291d017/environments/embedding_gpu/.venv",
+    "installed_distributions": 58,
+    "packages": {
+      "onnxruntime-gpu": "1.30.0",
+      "tokenizers": "0.23.2",
+      "psutil": "7.2.2",
+      "PyYAML": "6.0.3",
+      "numpy": "2.5.3",
+      "huggingface-hub": "1.33.0"
+    },
+    "elapsed_seconds": 7.4972872929647565,
+    "native_calls": 0,
+    "Main_Cal_Evaluation_QA_read": false,
+    "unused_QA_open_guard_applies_to_canonical_root_all_WTs_realpaths_and_inodes": true,
+    "scoring_or_Gate11_adoption_claimed": false,
+    "phase12_started": false
+  },
+  "strict_execution_configuration_verified": {
+    "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+    "gpu_layers": 99,
+    "device": "CUDA0",
+    "require_full_offload": true,
+    "version": "cuda-execution-v2",
+    "flash_attention": "off"
+  },
+  "actual_GPU_context_FAoff_profile_verified_by_this_reproduction": false,
+  "actual_GPU_preflight_separate_required": true,
+  "complete_reproduction_receipt_files_sha256": {
+    "data/runs/lab/phase11-v28-checkout-reproduction-v1/RELEASE.json": "f7b31d4c46c8886eb96564bb328ee7cd57583820a4bd41d29bbe5eeed1078ef4",
+    "data/runs/lab/phase11-v28-checkout-reproduction-v1/intent.json": "b502d9c18d52a22868b0e1ffd1e292c6a041f898f8caa4181fa5fdc70d89501a",
+    "data/runs/lab/phase11-v28-checkout-reproduction-v1/producer-alias-copy-receipt.json": "90ecdfe4e94cfe8eb029febcfb374f9ccae6986d8fbd89305e0a01005fbb8e5a",
+    "data/runs/lab/phase11-v28-checkout-reproduction-v1/progress.jsonl": "a8ed4d29302c84c3255135c90c7319acdc0ffdd2783ddd94028aec052dada6f9",
+    "data/runs/lab/phase11-v28-checkout-reproduction-v1/result.json": "2cc8dd85c704adea1d802ec93df1480a228b29ec333a85db443eaf5622838d8e",
+    "data/runs/lab/phase11-v28-checkout-reproduction-v1/zero-generation-positive.json": "e3da4fa7e9b853477a5ea6c50ded7a1914a3d1d462c7aa89ff5759c08c660fbc"
+  },
+  "canonical_preparation_inventory": {
+    "path": "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/COPYPLAN-PREREG-ANNEX-v2.json",
+    "sha256": "cb958e374d53854848f19a082c7843442b2e1478802ec6df14f22f43cf603bbe"
+  },
+  "canonical_preparation_full_seal": {
+    "path": "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/SHA256SUMS",
+    "sha256": "ac0b77277569bbf10c5bb0bc77e91526f7250a6d205f68a39679a98f6fe4f9ed"
+  },
+  "Root_ignored_stage_release_alias": {
+    "path": "data/runs/lab/phase11-v28-stage-evidence-v1/checkout-release.json",
+    "sha256": "f7b31d4c46c8886eb96564bb328ee7cd57583820a4bd41d29bbe5eeed1078ef4"
+  },
+  "copytime_closed_source_clean_and_initial_WT_local_ledger_absent": {
+    "verified_by_successful_frozen_runner_conditional_checks": true,
+    "runner_source_sha256": "67cb2ef2a7d171297318eba8a08203f3446358ab01eea57f90cba855d4fe9720",
+    "not_a_live_WT_or_current_ledger_recheck": true
+  },
+  "metadata_publication_audit": {
+    "all378_progress_rows_exact_inventory_domain": true,
+    "all_before_copy_after_hashes_and_inode_flags_rechecked": true,
+    "immutable_same_inode": 30,
+    "other_independent_inodes": 348,
+    "additional_independent_aliases": 4,
+    "new_heavy_hash_or_WT_open": 0,
+    "guard": {
+      "WT_opens": 0,
+      "Model_Runtime_opens": 0,
+      "ledger_opens": 0,
+      "process_starts": 0,
+      "sockets": 0
+    },
+    "old_diagnostic_payloads_or_Main_Cal_Evaluation_QA_parse": 0
+  },
+  "measured_cost_scopes": {
+    "actual_copy_seconds": 23.304566082078964,
+    "dedicated_uv_tool_wall_seconds": 0.041678857,
+    "uv_installer_reported_milliseconds": 44,
+    "actual_zero_load_identity_inner_seconds": 7.4972872929647565,
+    "Root_reported_zero_child_tool_wall_seconds": 7.622399,
+    "Root_reported_child_tool_wall_not_independently_logged_in_bound_receipts": true,
+    "whole_reproduction_wall_seconds": null,
+    "whole_wall_marker_not_recorded": true,
+    "do_not_add_inner_to_child_or_installer_to_uv_tool": true,
+    "publication_component_seconds_before_write": 0.052875394001603127,
+    "external_metered_API_cost": 0,
+    "electricity_cost": null
+  },
+  "copy_result_pending_environment_flag_is_historical_stage_snapshot_resolved_by_zero_receipt": true,
+  "review_limitations": {
+    "human_reviewed": false,
+    "history_isolated": false,
+    "exact_assessor_model_identifier": null,
+    "publication_actor": "/root/assets_v25"
+  },
+  "canonical_publication_artifacts_sha256": {
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/independent-publication-copy-receipt.json": "7ec0113195ee3489fe47ae8ce7dfc13a850a1af747538b17871dfb1948f060f4",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/initial-uv-setup.json": "8886990285f1c4f5856e24da9f100e9eba64fca91f27ae9ad53c0aee9fb5cf61",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/ACTUAL-COMPLETE-ACCEPTANCE.json": "46cf91d965ee741323c213912cb1c8f9fee885ab01dda12981b10c4e0e3f5eff",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/COPYPLAN-PREREG-ANNEX-v1.json": "13f9f8faeb854df653f041a263789de6c7408c50177d64b67505a590869f1c94",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/COPYPLAN-PREREG-ANNEX-v2.json": "cb958e374d53854848f19a082c7843442b2e1478802ec6df14f22f43cf603bbe",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/CURRENT-TRACKED-PATHS.nul": "c8b111eddff939f8e8b14daa51e2b223c7f2841679acdf2afcb228db1f2b65f3",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/OBSERVED-ROOT-HEAD.txt": "e65fa2dc4a7023828bfe49ac2c638af28cea740af44ccf33e7ad74beaddb81df",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/OPAQUE-VERIFICATION-v1.json": "0ce4043d0ef4aea1417fd7b49526d06bbd506bddc6dad7a2c55a187dd18de332",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/OPAQUE-VERIFICATION-v2.json": "0ce4043d0ef4aea1417fd7b49526d06bbd506bddc6dad7a2c55a187dd18de332",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/README.md": "e0148d9fc21d2e1e602aa7ae23b08872306aeeea1a34c329896db24c0c92caa2",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/SHA256SUMS": "ac0b77277569bbf10c5bb0bc77e91526f7250a6d205f68a39679a98f6fe4f9ed",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/VALIDATION.json": "6839ac4dccdbce2b88cf12bb830e879bf5812f38f93624d8d56119ed9008e793",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/build-v2.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/build-v2.stdout": "ff7f328cbbe42b83a37fd00bb262f0c2b1a5342c8c63c92c205f13249245434b",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/build.stdout": "1b119f8fa4d58b6e53d4fb8405bf4a2c4eff218ecdc5d7ee9aa38ab08cc4a1ae",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/build_annex-before-ignored-alias-fix.py": "95d119ce0bb0b722c97cf2e0ec41f54f1f06dca2b9c2eff69d370e898280b935",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/build_annex.py": "f8364493334e6b9d34f405f3c351ba63b4d036aea0fd0c14abff780926f96863",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/initial-v1-unissued.txt": "2b2013b4c50adddbc38023378807f1795f908f9bc5ebe1c8bcd71628fa1e50a9",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/preregistration.json": "7f4d0093110157239cb0c396a6f63d3938176fef035e3fae7bc783174e3a2612",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/pytest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/pytest.stdout": "ea7ed0516efe6736a8eaee426685e40a2393fbf3ae84104a743f394204c2ec33",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/reproduce_assets.py": "67cb2ef2a7d171297318eba8a08203f3446358ab01eea57f90cba855d4fe9720",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/ruff-final.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/ruff-final.stdout": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/ruff.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/ruff.stdout": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/test_reproduction_guard.py": "02ed2ff07754d0d8c349f59704a26f16176bdb1834eff66251db9941fad10b82",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/preparation/zero_generation_validate.py": "5716ae445c0667aa69b4ab2f777021a0293b18639d4b01e25484075215fa0ddf",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/publication-preregistration.json": "f497e08130ba5b952e2e8915f262f52c50f4789b27a11e390596d861c0885a14",
+    "data/runs/lab/phase11-v28-checkout-reproduction-publication-v1/publish.py": "8a9ab3b8319ec0d38ce054c95fe8b070bd7bd496bac7b72a5dff2f921527c557"
+  },
+  "Native_calls_during_reproduction_and_publication": 0,
+  "semantic_Health_format_quality_adoption_claimed": false,
+  "gate11_passed": false,
+  "phase12_started": false
+}

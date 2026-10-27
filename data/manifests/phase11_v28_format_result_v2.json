@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v28-fresh-format10-independent-result",
+  "recorded_at_utc": "2026-10-27T08:05:39.473979+00:00",
+  "candidate_identity_sha256": "0499a611e9ec8369e5c1958b2ce0e4d25e9095e72aeca6fe13f769e593db982e",
+  "fixed_commit": "291d017a1055123e7009cbd617395d6569e28618",
+  "registered_plan_sha256": "b1cf0ef82477aa036c1ad40537c9e0d845867af57205b51c6fc41bff835b09be",
+  "raw_files": 14,
+  "raw_before_after_independent_copy_verified": true,
+  "native_returned": 10,
+  "unknown": 0,
+  "strict9_passed": true,
+  "intentional_legacy1_failed": true,
+  "actual_explicit_FAoff_context_and_command_verified": {
+    "version": "cuda-execution-v2",
+    "flash_attention": "off",
+    "actual_context_flash_attn": [
+      "disabled"
+    ],
+    "actual_context_tokens": [
+      12288
+    ],
+    "enabled_or_auto_context_observed": false,
+    "proof": "Explicit disabled implies flash_attn=False/auto_fa=False in pinned Source50569eb; no auto-resolution message required"
+  },
+  "all10_independent_schema_sampler_payload_reasoning_and_token_witnesses_verified": true,
+  "old_actual_input_tokenizer_witnesses_reused_only_for_unchanged_Model_Runtime_tokenizer": true,
+  "old_format_outputs_reused": 0,
+  "research_QA_or_semantic_adoption": false,
+  "source_identity_and_direct_bindings_verified": 154,
+  "input_tokens": 630,
+  "output_tokens": 1722,
+  "task_generation_seconds": 37.06564463896211,
+  "observed_native_HTTP_seconds": 36.928245,
+  "supervised_wall_seconds": 55.94564760499634,
+  "cost_scopes_overlapping_not_added": true,
+  "monitor_samples": 12,
+  "all_monitor_errors_required_and_empty": true,
+  "final_monitor_snapshot_matches_closed_row": true,
+  "supervision_original_before_copy_after_hashes_equal_and_independent": true,
+  "old_input_witness_manifest": {
+    "path": "data/manifests/phase11_v3_v21_preflight_format_result_v1.json",
+    "sha256": "ca1168b5956ff72f2785cb73df559acca2b37fe7b5f21fd0dec090e293922cb1"
+  },
+  "old_input_witness_files_sha256": {
+    "data/runs/runtime_screening/phase11-v3-v21-format/plan.json": "490df38ae66f4d9ec93e0542570df85a4874721b69768d4dcb8d62a6ab83ec1d",
+    "data/runs/runtime_screening/phase11-v3-v21-format/legacy-array.json": "9c8cfdb228229afdac5e0662a9474c48f84f1567363226523725c8c7da10449e",
+    "data/runs/runtime_screening/phase11-v3-v21-format/strict-array.json": "5c66ef9c2ce9c5e998da135a35916aac81a13d05e4e548c53f54717f45cfc857",
+    "data/runs/runtime_screening/phase11-v3-v21-format/strict-prose-fence.json": "cb34530513ccebdf4207bf8aab4e6da7631a251bf96ead38ad1ef2d81230c1dc",
+    "data/runs/runtime_screening/phase11-v3-v21-format/strict-fixed-ids.json": "ff7979d58e90b907ab9bebb56fde1b27ffa4beecb4d60e51681c44fa4fe19c51",
+    "data/runs/runtime_screening/phase11-v3-v21-format/strict-unicode-escape.json": "cf862e2ea992a6813a2485abb3d3590dac63841172b70d0579352929a10d13a6",
+    "data/runs/runtime_screening/phase11-v3-v21-format/strict-rewrite-bounds.json": "1994971f433a2628816ae12ede900b41c3bee3ae5ceab263f0688bd530308814",
+    "data/runs/runtime_screening/phase11-v3-v21-format/strict-cited-supported.json": "68bd54f5a79527866b57cb60489db6c1cbf3f34cccbf086749babb2b101b4810",
+    "data/runs/runtime_screening/phase11-v3-v21-format/strict-cited-contradicted.json": "c269ca7df822328344912fedc94f8047547c4fd2e1cc2f6af3b653136c765b26",
+    "data/runs/runtime_screening/phase11-v3-v21-format/strict-cited-missing-empty.json": "db80bae6c174378bcbc714851e008b4fd2766709a9101fa29f67420c21a6ede0",
+    "data/runs/runtime_screening/phase11-v3-v21-format/strict-cited-union.json": "1460c82a8053bc8f2edd8c1adfdbabafda352e1b8e2e6c38bac98176f49c64eb"
+  },
+  "old_Model_Runtime_identity_bindings_equal_current": true,
+  "Root_imported_Core94_and_probe_entry_equal_fixed_checkout": true,
+  "offline_boundary": {
+    "process_starts": 0,
+    "socket_operations": 0
+  },
+  "native_calls_during_audit": 0,
+  "artifacts": {
+    "data/runs/runtime_screening/phase11-v3-v28-format/legacy-array.json": {
+      "sha256": "2a4bed3be624077a299b35c68b5df29cd8f38076aa7993e005e61d65f23da833",
+      "bytes": 7762
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/strict-cited-missing-empty.json": {
+      "sha256": "e9de274ed3b1c757d1805427c0b6420fcd4330819927c3938f098e85a5d48e34",
+      "bytes": 16641
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/plan.json": {
+      "sha256": "46bd7dccdfcf9540846b08db942989b880d275771c6b36749dd268bee3e0f047",
+      "bytes": 30385
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/strict-array.json": {
+      "sha256": "d4dff137bbea703a8fd309203d1658f5c02e345a3b885055f5c3bd5c2b28b49f",
+      "bytes": 8115
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/report.json": {
+      "sha256": "02d28e55c5904b2f5ab232bb5135cfeec98b024e14c1d73eb0b4e78d9970525b",
+      "bytes": 9534
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/strict-cited-contradicted.json": {
+      "sha256": "c5e76b47605f5ea2e490d30f9e471d098f14ccf95ca7c896510cc5c40c161b5f",
+      "bytes": 16728
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/server.log": {
+      "sha256": "2769b781d60e726eae6bcc62fb1d0dff5b415ec6a23b4ce499b1c3aaacffce82",
+      "bytes": 45802
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/strict-cited-union.json": {
+      "sha256": "f3d5ae98a14d3d956a071e30c57a4d5302c0cb98a33e578dc4f7a72cb2a3283b",
+      "bytes": 20001
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/strict-rewrite-bounds.json": {
+      "sha256": "0fba5112d9042f1df8f2b079a38427697afbb3c9396e4a9b0a750f118aaaaef8",
+      "bytes": 93108
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/strict-unicode-escape.json": {
+      "sha256": "638ca5f981b32eb49a2858a422e4e7f676c7a297cc0fcd917b8c46b819f7d639",
+      "bytes": 8313
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/strict-fixed-ids.json": {
+      "sha256": "245e0c36c91684f518529fc00a1b786b881cbd3685436a5ff0b34f22c3102f33",
+      "bytes": 10203
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/strict-prose-fence.json": {
+      "sha256": "12bb40ee9123e5f430d3163081d88306ad698edb224f22f2c63602ed9b35c8a4",
+      "bytes": 8193
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/strict-cited-supported.json": {
+      "sha256": "3052f44ff141ea3f85f92c25349d6af10ec3e3c023d47658e9fb6dab37bbd149",
+      "bytes": 16725
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/_audit-v2/completed-run-record.json": {
+      "sha256": "a98cdc0201cbfbf42234552162066e01b26d4597adb3a80df5c22a1ab7ae2185",
+      "bytes": 42170
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/_audit-v2/native-payload-schema-format10-checks.json": {
+      "sha256": "c3b2a3995465986cded50cfb0020a1b09e81d2c6423c1eab19db0c311aece67e",
+      "bytes": 2513
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/_audit-v2/audit.py": {
+      "sha256": "e4e5f9b2c7c1a4f7451429139a138278c3a1eb385f6756a93ae80c8d219beb7f",
+      "bytes": 17643
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/_audit-v2/global-ledger-snapshot.json": {
+      "sha256": "a7c8ff9957a00f2699b4d35f4eb9324b72b68007fb30b4bb9b2644262f602c95",
+      "bytes": 1274387
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/_audit-v2/supervision/stdout.log": {
+      "sha256": "ec472cc32cadceaa0ff9d5fa97a5ceffef90b7a1565d968a5acf641e54318397",
+      "bytes": 881
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/_audit-v2/supervision/monitor.jsonl": {
+      "sha256": "298ea5cbd17ea951f9d799fcd4530415a8f4c9b26ed351d56fbe5084eb92032a",
+      "bytes": 42527
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/_audit-v2/supervision/manifest.json": {
+      "sha256": "fbdab5646bced64d4f7095fb9a4b34ac5d25f5e0b59a85a9c7209270c5c580d3",
+      "bytes": 33464
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/_audit-v2/supervision/native_guard/.run.lock": {
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1
+    },
+    "data/runs/runtime_screening/phase11-v3-v28-format/_audit-v2/supervision/native_guard/calls.json": {
+      "sha256": "49f61e6a5c7a3edfdccc0ec64ec9170f919969c7fabd75e05a7a8918a89b289b",
+      "bytes": 6889
+    }
+  },
+  "audit_elapsed_seconds_before_publication": 5.76336987898685,
+  "gate11_passed": false,
+  "phase12_started": false
+}
