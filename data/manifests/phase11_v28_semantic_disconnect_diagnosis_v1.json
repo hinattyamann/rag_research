@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-v28-actual-semantic90-disconnect-diagnosis",
+  "recorded_at_utc": "2026-10-27T09:49:04.812128+00:00",
+  "candidate_identity_sha256": "0499a611e9ec8369e5c1958b2ce0e4d25e9095e72aeca6fe13f769e593db982e",
+  "fixed_commit": "291d017a1055123e7009cbd617395d6569e28618",
+  "run_id": "phase11-v3-v28-semantic",
+  "run_state": "failed_or_unknown",
+  "Native_planned": 90,
+  "Native_attempts": 48,
+  "Native_returned": 47,
+  "Native_unknown": 1,
+  "Native_not_attempted": 42,
+  "request48_elapsed_seconds": 10.641596,
+  "request_timeout_seconds": 1200,
+  "request_error": "RemoteDisconnected: Remote end closed connection without response",
+  "same_server_PID": 467890,
+  "direct_server_failure": "CUDA launch timeout at ggml_backend_cuda_synchronize/cudaStreamSynchronize, ggml-cuda.cu:2606; abort stack",
+  "direct_kernel_failure": "2026-10-27T09:25:44UTC RC watchdog7 seconds/Xid8 samePID467890",
+  "actual_server_exitcode": null,
+  "server_exitcode_not_captured_in_session": true,
+  "Python_child_returncode": 0,
+  "outer_handle_exit_from_Root": 1,
+  "GraphOFF_and_FAoff_did_not_prevent_observed_CUDA_abort": true,
+  "current_Host_GPU_query_succeeded_after_failure": true,
+  "current_GPU_health_does_not_prove_future_stability": true,
+  "old_v10_or_v27_same_underlying_root_cause_proven": false,
+  "kernel_or_Model_underlying_root_cause": null,
+  "QA_claim_reason_Expected_payload_opened": false,
+  "WT_or_old_Raw_edited": false,
+  "unknown48_resent": false,
+  "new_build_Native_Model_heavy_Hash_GPU_reset_Driver_OS_changes": 0,
+  "whole90_accuracy": null,
+  "Known17_eligible": false,
+  "diagnosis": {
+    "path": "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/diagnosis-result.json",
+    "sha256": "39c15945f6e5c711e3a18d4eef9b108d0ff5175768665a679dc060964947fac7"
+  },
+  "copy_receipt": {
+    "path": "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/copy-receipt.json",
+    "sha256": "19ffd173459ad82cdfa9cdb664f32a504190eda37d4d6878f144041c3df34bf7"
+  },
+  "previous_v27_diagnosis_preserved": {
+    "path": "data/manifests/phase11_v27_semantic_disconnect_diagnosis_v1.json",
+    "sha256": "bf7f1c17a7a9243440041e3c155987cd1d36bdef68c3ecae6c0d0b359ebbd1f7"
+  },
+  "closed29_cumulative_cost": {
+    "path": "data/manifests/phase11_autonomy_cumulative_cost_v15.json",
+    "sha256": "7c14c509b5456d98516100d563a66b33cd81fa9e06c43c0eab977c1624adba6e"
+  },
+  "artifacts_sha256": {
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/PREREG.json": {
+      "sha256": "d48476bebb25aa55927dbc335c751d4c7c5efebe47eea6967d3165531299e389",
+      "bytes": 657
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/collect_runtime_evidence.py": {
+      "sha256": "df91f0cf85da9d9f0364ed49600cd0a2e035f273ba73cb684ba7ba0b227d4b73",
+      "bytes": 8661
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/collector-before-ruff.py": {
+      "sha256": "c58612960a745536d0ba9533bd5c33317866b3b1c16e3765396f3a1bced1309b",
+      "bytes": 7634
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/copy-publication-receipt.json": {
+      "sha256": "cb5f47507f3a4cae6fceb7ae7ed283447a270abecdf9f6a27c0c18f9c32aa221",
+      "bytes": 1669
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/copy-receipt.json": {
+      "sha256": "19ffd173459ad82cdfa9cdb664f32a504190eda37d4d6878f144041c3df34bf7",
+      "bytes": 4192
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/diagnosis-result.json": {
+      "sha256": "39c15945f6e5c711e3a18d4eef9b108d0ff5175768665a679dc060964947fac7",
+      "bytes": 3112
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/execute-result.json": {
+      "sha256": "ba463ea1e4636ee6ce597a3450ca82cc17aaf9cc3f287ca92c9639b945e78ce0",
+      "bytes": 75717
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/host-gpu.csv": {
+      "sha256": "a23fb502dca9962859d1df6e07d590df5ca8ae21ae0229e46c8426455008cf17",
+      "bytes": 163
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/host-kernel.log": {
+      "sha256": "361ef156706cfbb22ec912f8e224085210bca432bd961444e64d58478f386bab",
+      "bytes": 251
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/monitor-extract.json": {
+      "sha256": "fe000509e265adff3c843b1cd4b5e83281cd097691e81f66389b0beadb5bbc03",
+      "bytes": 185459
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/native-guard-calls.json": {
+      "sha256": "d77ec576b34d39f2af44cf0069ee1237f09d725b80002a621be983548750aefa",
+      "bytes": 32663
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/publisher.py": {
+      "sha256": "0612e172400db550053ceda97a2cc4e12fce995c876d328812552cfc8f5f06e8",
+      "bytes": 6452
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/root-authorization.json": {
+      "sha256": "d967725a947dfd71ca1bbf97cce8143f26cd05b43aa8c0967f0c3f43062b2826",
+      "bytes": 1999
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/server-1.log": {
+      "sha256": "957d371e14dc6cc614967d81d588f44d5efb3ceb007ddc2cb748aee239635ce8",
+      "bytes": 341505
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/session-1.json": {
+      "sha256": "a52ed360bf4cbc85c4fd8cc6e3e0b33c7a585199eeeb787e40f6e8aab6f293e3",
+      "bytes": 7447
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/supervisor-manifest.json": {
+      "sha256": "7cf790681f492ed26b6d6cb2a17739bd0d64d8ca35ea4cc6f41a46f3b9ac3708",
+      "bytes": 37241
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/supervisor-monitor.jsonl": {
+      "sha256": "991362e0c17c1343b832196763b426bbabe79bf2988ada96cde4e0155d69c601",
+      "bytes": 10632375
+    },
+    "data/runs/runtime_screening/phase11-v28-semantic-disconnect-diagnosis-v1/terminal-row.json": {
+      "sha256": "a564578916dd946912cbc2474d1cc978a0ccdf7641f2376c9c8e684ddcc06b59",
+      "bytes": 94199
+    }
+  },
+  "canonical_artifact_files": 18,
+  "collector_seconds": 0.09066894091665745,
+  "whole_interactive_diagnosis_wall_seconds": null,
+  "publication_seconds_before_write": 0.04356275196187198,
+  "time_scopes_overlap_not_additive": true,
+  "references": [
+    {
+      "title": "NVIDIA CUDA asynchronous error handling",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html",
+      "scope": "Launch-blocking is a diagnostic aid to locate asynchronous errors and may slow execution; no repair claim."
+    }
+  ],
+  "next_hypothesis_only": "Separate candidate v29 changes experimental auxiliary Model to saved Qwen3-8B Q4, retaining GraphOFF/FAoff/Prompt15/common4096/criteria. Different compute paths and footprint may avoid failure; root cause, health and meaning adoption remain unproven.",
+  "CPU_energy_cost": null,
+  "agent_monetary_cost": null,
+  "external_metered_model_API_calls": 0,
+  "human_reviewed": false,
+  "history_isolated": false,
+  "exact_assessor_model_identifier": null,
+  "semantic_accuracy_or_new_candidate_adoption_claimed": false,
+  "Gate11_passed": false,
+  "phase12_allowed": false
+}

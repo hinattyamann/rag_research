@@ -1,5 +1,7 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-10-27 19:03 JST追記: v28は48試行/47返却/未知1でCUDA切断し不採用、全90精度null・Known17不適格。診断20688eb4と閉29Run費用v15（新337/旧込1246・確定未知5）は工程正本と正式Manifestへ保存。次v29は既存Qwen3-8B-Q4_K_MへのModelのみ変更（実ID7d35156207fb6d4ef520412c43036d701c104b18145c13455a56c6e54d64f008）。Model実物Hash実照合済み、Core94/Prompt15/Graph OFF/FAoff/4096/Schema/Sampler/全入力・Expected・採用基準は維持する。新ModelのTokenizer/全GPU層数を実測し直し、新形式10/日英意味/Rewrite品質/全90/新鮮Known84を必須とする。過去8B不合格と旧証拠を保全し、新Native0・採用未証明。詳細は[工程正本](research_roadmap.md)の同時刻追記。Main/Cal/Gate11未達、Phase12を開始しない。
+
 ## Version 8.88 — 2026年10月27日 実行契約v2と新形式10・監査v2の検証
 
 2026-10-27 18:16 JST追記: [最終Validatorのソフトウェア検証v6](../data/manifests/phase11_bilingual_finalization_validation_v6.json) SHAa782db213fe9aebb55d4a6c10b1775fadcee8c4777b6004178ccf3626cca1743を発行した。旧v5は現Core2と不一致として実拒否し、他95Source不変/現97Sourceと封印済みv28全1107 Test（36.11秒）/RuffをHash結合した。新3実CLIはpending review不通過・未達freeze拒否・旧v10 Main拒否、QA/Native/socket/WTアクセス0。独立照合76223f5bcb74534ba8a9a72907e43e28dbdb21b70d0af7f5cb3baedfb984c823も通過、全pytest再実行0。これはソフトウェア証拠のみで実Gate11成功ではない。Known17準備v1/v2の実ログ名不一致/専用生成0欠落は別v3へ修正して独立査読b429656b5f26fa0e1ecf068513cf3173556f0727185644cfdd62907c804cc65cに通過し、実全90採用→新Config2/固定WT→Known全84入力生成0→新84 Callを強制する。実Known17 config/Plan/Runは未作成、Main/Cal/Gate11未達。v28完全90は固定291d/Handle3524で継続中、09:14:49UTC時点34返却/1処理中・新確定未知0。Goal active、Phase12未開始。
