@@ -8,6 +8,7 @@
 - Protocol: `fixed-v23-order-study-v1`、[登録設定](../configs/fixed_v23_study_v1.json)。Mainは元の選定順の英20・日20 QA、別のCal各20 QAは保全する。
 - 専用Checkout: `/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1`。
 - 推論の基準Commit: `f0b7c71c4375a617c7142c67e3aa0610f73edb14`。元の全Python Sourceを保存し、既存ファイルの変更は収集制御の `bilingual_runner.py` のみ。新しい制御モジュール・入口を追加し、全Source/設定/WrapperのHashを `fixed-v23-release.json` へ固定した。最新mainの推論Coreは持ち込まない。
+- 追加制御・設定・実機確認証拠を保存したCommitは `37ea029`。専用CheckoutのHEADは元Commitのままで、追加ファイルの実体は準備Manifest内の全Hashと照合できる。
 - Judge/書換えは元のQwen3.5-9B Q6_K、Prompt en/ja v12、Graph OFF・CUDA0全層、Context12288・温度0.2・seed42・batch128・推論4096・出力予約6144。初回生成は既存の3B/専用初回Promptを維持する。
 - 根拠全文/Title/ID・初回回答・固定文をQA内で保持する。元/逆/Shuffle3と元順序5反復、初回共用の原則9論理試行、共通書換え一つ、主閾値0.7、Retry0を維持する。9試行は9モデル呼出しではない。
 - Knownの非支持14/16=87.5%という旧基準未達を承認した固定研究であり、旧採用基準・結果・Gate11は変更しない。旧意味70/Known84の再実行はしない。

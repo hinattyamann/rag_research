@@ -185,5 +185,3 @@ def test_sealed_release_rejects_new_source_and_any_modified_original(tmp_path, m
 def test_fixed_main_cannot_run_against_unsealed_latest_main_source(tmp_path):
     with pytest.raises(ValueError, match="sealed original-v23"):
         fixed.validate_fixed({}, [], tmp_path / "qa.jsonl", root=tmp_path)
-
-
