@@ -1,0 +1,361 @@
+{
+  "status": "passed",
+  "completion_attempts": 0,
+  "main_started": false,
+  "actual_qa_inference_tested": false,
+  "old_gate11_passed": false,
+  "phase12_allowed": false,
+  "release_sha256": "2daaff4a8ec97304cf08e82ce47e3881d42be93bf277d8fd5a081b84b14edbb8",
+  "checks": [
+    {
+      "language": "en",
+      "synthetic_hybrid_hits": 5
+    },
+    {
+      "language": "ja",
+      "synthetic_hybrid_hits": 5
+    },
+    {
+      "task": "baseline",
+      "language": "en",
+      "input_tokens": 1166,
+      "reserved_output": 512,
+      "source_sha256": "2f648305969ee88682196c3a1d4eb8176523d5d9ee4bfb17878df602c1cee27c",
+      "message_sha256": "1802358b4c54bfbc039cbc6b106469b911deb8159d5bfa59f89d8b9ba4985dcf"
+    },
+    {
+      "task": "baseline",
+      "language": "ja",
+      "input_tokens": 3584,
+      "reserved_output": 512,
+      "source_sha256": "534002bec198cd81f0e5598f9da09e27103db6fd7dbbfb5969b581ee9ee544de",
+      "message_sha256": "197e8ab086cd9346587835512ed774879c3d6784cb52454fde154250dcbed517"
+    },
+    {
+      "task": "verify_claims",
+      "language": "en",
+      "input_tokens": 3023,
+      "reserved_output": 6144,
+      "message_sha256": "5bac42264c58eef7478d9aae83e9b65f20af5aa6f7fa79f0d8e11795bf78fd57",
+      "tokens_sha256": "6825c403bf15c3108cb1c47c0008d9fd9a949b9edaca73c18508c7ecf9cf39a1"
+    },
+    {
+      "task": "rewrite_answer",
+      "language": "en",
+      "input_tokens": 2702,
+      "reserved_output": 6144,
+      "message_sha256": "fc163ed78d9d72c84c8f52d76146000ea7a56f82aa8e044e39ed31a026563fc8",
+      "tokens_sha256": "b575aa2e6025d1158a9db78c779d7fd60aff48f1e65f9d9a20ca63536e0908bc"
+    },
+    {
+      "task": "verify_claims",
+      "language": "ja",
+      "input_tokens": 911,
+      "reserved_output": 6144,
+      "message_sha256": "ac7f804cd1b4f364dc5f89a39e6cdeb442afbbef27a5db1ec2624787856656bb",
+      "tokens_sha256": "cc4b813fcbe9c06cf4c7f5ede57da3ba6f6ac3953485809480850a29cc964b57"
+    },
+    {
+      "task": "rewrite_answer",
+      "language": "ja",
+      "input_tokens": 615,
+      "reserved_output": 6144,
+      "message_sha256": "ecbf1269fa23d471eb176e92d1f19acf7db009aaead806c9ce72c1c97724ffa7",
+      "tokens_sha256": "3a7e62b5c991f94f941732a7b453ccadc4d4de33e9b5ea01e368736ea8bc9f35"
+    }
+  ],
+  "baseline_server": {
+    "startup_seconds": 4.221658541000124,
+    "sampled_peak_python_rss_bytes": 1363095552,
+    "sampled_peak_server_rss_bytes": 2448920576,
+    "sampled_peak_combined_rss_bytes": 3689992192,
+    "minimum_available_ram_bytes": 3865464832,
+    "sampling_interval_seconds": 0.1,
+    "command": [
+      "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/llama-server",
+      "--model",
+      "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/models/Qwen2.5-3B-Instruct-GGUF/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "52655",
+      "--ctx-size",
+      "4096",
+      "--parallel",
+      "1",
+      "--threads",
+      "6",
+      "--threads-batch",
+      "6",
+      "--gpu-layers",
+      "99",
+      "--batch-size",
+      "128",
+      "--ubatch-size",
+      "128",
+      "--cache-ram",
+      "0",
+      "--no-context-shift",
+      "--offline",
+      "--device",
+      "CUDA0",
+      "--log-verbosity",
+      "4",
+      "--no-repack"
+    ],
+    "runtime_version": "version: 0.6.0-dev (build 11433, commit 50569eb87df530daff11afda229ceb9ab8e6cae8)\nbuilt with GNU 13.3.0 for Linux x86_64",
+    "server_context_tokens": 4096,
+    "execution": {
+      "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+      "gpu_layers": 99,
+      "device": "CUDA0",
+      "require_full_offload": true
+    },
+    "runtime": {
+      "schema_version": 2,
+      "tag": "b11433",
+      "source_commit": "50569eb87df530daff11afda229ceb9ab8e6cae8",
+      "backend": "Ubuntu-x64-CUDA-12.9-graph-off-source-v1",
+      "directory": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1",
+      "build": {
+        "registration": {
+          "path": "data/manifests/phase11_cuda_graph_off_build_registration_v2.json",
+          "sha256": "a80b3036688dbcd4d7105f6d7b8a44e62a1aa372ad7ebd8a0aa2e42e3daa0896"
+        },
+        "source_provenance": {
+          "path": "data/runs/runtime_build/phase11-cuda-graph-off-v2/source_provenance.json",
+          "sha256": "7860f71eaf13ee9212c36f51183ed457016be7a5b1c3644f750b92f6cefcf6e7"
+        },
+        "cmake_cache": {
+          "path": "data/runs/runtime_build/phase11-cuda-graph-off-v2/build/CMakeCache.txt",
+          "sha256": "f76d1397cb0066ac06c445dab6991a340a9e8d6eaa7c6bfaa34b53b1c06f3c5f"
+        }
+      },
+      "cmake_options": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CUDA_COMPILER": "/usr/local/cuda-12.9/bin/nvcc",
+        "CUDAToolkit_ROOT": "/usr/local/cuda-12.9",
+        "CMAKE_CUDA_ARCHITECTURES": "120a-real",
+        "GGML_CUDA": "ON",
+        "GGML_CUDA_GRAPHS": "OFF",
+        "LLAMA_BUILD_TESTS": "OFF",
+        "LLAMA_BUILD_EXAMPLES": "OFF",
+        "LLAMA_BUILD_APP": "OFF",
+        "LLAMA_OPENSSL": "OFF",
+        "LLAMA_BUILD_UI": "OFF",
+        "LLAMA_USE_PREBUILT_UI": "OFF",
+        "LLAMA_BUILD_SERVER": "ON",
+        "LLAMA_BUILD_TOOLS": "ON",
+        "LLAMA_BUILD_NUMBER": "11433",
+        "LLAMA_BUILD_COMMIT": "50569eb87df530daff11afda229ceb9ab8e6cae8"
+      },
+      "system_libraries": [
+        {
+          "source": "/usr/local/cuda-12.9/lib64/libcudart.so.12.9.79",
+          "name": "libcudart.so.12",
+          "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7"
+        },
+        {
+          "source": "/usr/local/cuda-12.9/lib64/libcublas.so.12.9.1.4",
+          "name": "libcublas.so.12",
+          "sha256": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048"
+        },
+        {
+          "source": "/usr/local/cuda-12.9/lib64/libcublasLt.so.12.9.1.4",
+          "name": "libcublasLt.so.12",
+          "sha256": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541"
+        }
+      ],
+      "old_runtime_modified": false,
+      "phase12_allowed": false,
+      "specification_sha256": "d18d6efe8b769a0ddb081ca41d1f4d63fa7a0b6551fd2bbfeea1a77d8b7fb0d5",
+      "server": "bin/llama-server",
+      "files": {
+        "bin/libcublas.so.12": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048",
+        "bin/libcublasLt.so.12": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541",
+        "bin/libcudart.so.12": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7",
+        "bin/libggml-base.so": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+        "bin/libggml-base.so.0": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+        "bin/libggml-base.so.0.26.0": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+        "bin/libggml-cpu.so": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+        "bin/libggml-cpu.so.0": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+        "bin/libggml-cpu.so.0.26.0": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+        "bin/libggml-cuda.so": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+        "bin/libggml-cuda.so.0": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+        "bin/libggml-cuda.so.0.26.0": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+        "bin/libggml.so": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+        "bin/libggml.so.0": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+        "bin/libggml.so.0.26.0": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+        "bin/libllama-cli-impl.so": "b2a8258ea020b616b95eb3c8d6a86afff16e8f81e5be5129f44327431cb4f4d4",
+        "bin/libllama-common.so": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+        "bin/libllama-common.so.0": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+        "bin/libllama-common.so.0.6.0": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+        "bin/libllama-server-impl.so": "6e4ec475238226091f3c61eb57ee1ee37df9291885e86cf47d39f9539b44a45b",
+        "bin/libllama.so": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+        "bin/libllama.so.0": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+        "bin/libllama.so.0.6.0": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+        "bin/libmtmd.so": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+        "bin/libmtmd.so.0": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+        "bin/libmtmd.so.0.6.0": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+        "bin/llama-cli": "659465db4397442b851d7509c590334b513ee5bd5baa32b5980beb0469fd4eb3",
+        "bin/llama-server": "e8dc25cdeef9898959e73e58cb79eef964011ea76bd5d919baf3ba373adbfb0a"
+      },
+      "cuda_compile_commands": 144,
+      "cuda_graph_macro_absent_from_all_cuda_commands": true,
+      "source_files_verified": 3689,
+      "source_archive_sha256": "10af4d51ee5c29566e1f2899752d12ea41004554ceff7a91ca931b0ace48bc93"
+    },
+    "actual_gpu_offload": true,
+    "offloaded_layers": 37,
+    "total_layers": 37,
+    "full_gpu_offload": true
+  },
+  "judge_server": {
+    "startup_seconds": 7.662204332999863,
+    "sampled_peak_python_rss_bytes": 1001734144,
+    "sampled_peak_server_rss_bytes": 5517742080,
+    "sampled_peak_combined_rss_bytes": 5830561792,
+    "minimum_available_ram_bytes": 4341329920,
+    "sampling_interval_seconds": 0.1,
+    "command": [
+      "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1/bin/llama-server",
+      "--model",
+      "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/models/Unsloth-Qwen3.5-9B-GGUF/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q6_K.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "58817",
+      "--ctx-size",
+      "12288",
+      "--parallel",
+      "1",
+      "--threads",
+      "6",
+      "--threads-batch",
+      "6",
+      "--gpu-layers",
+      "99",
+      "--batch-size",
+      "128",
+      "--ubatch-size",
+      "128",
+      "--cache-ram",
+      "0",
+      "--no-context-shift",
+      "--offline",
+      "--device",
+      "CUDA0",
+      "--log-verbosity",
+      "4",
+      "--no-repack",
+      "--jinja"
+    ],
+    "runtime_version": "version: 0.6.0-dev (build 11433, commit 50569eb87df530daff11afda229ceb9ab8e6cae8)\nbuilt with GNU 13.3.0 for Linux x86_64",
+    "server_context_tokens": 12288,
+    "execution": {
+      "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+      "gpu_layers": 99,
+      "device": "CUDA0",
+      "require_full_offload": true
+    },
+    "runtime": {
+      "schema_version": 2,
+      "tag": "b11433",
+      "source_commit": "50569eb87df530daff11afda229ceb9ab8e6cae8",
+      "backend": "Ubuntu-x64-CUDA-12.9-graph-off-source-v1",
+      "directory": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1",
+      "build": {
+        "registration": {
+          "path": "data/manifests/phase11_cuda_graph_off_build_registration_v2.json",
+          "sha256": "a80b3036688dbcd4d7105f6d7b8a44e62a1aa372ad7ebd8a0aa2e42e3daa0896"
+        },
+        "source_provenance": {
+          "path": "data/runs/runtime_build/phase11-cuda-graph-off-v2/source_provenance.json",
+          "sha256": "7860f71eaf13ee9212c36f51183ed457016be7a5b1c3644f750b92f6cefcf6e7"
+        },
+        "cmake_cache": {
+          "path": "data/runs/runtime_build/phase11-cuda-graph-off-v2/build/CMakeCache.txt",
+          "sha256": "f76d1397cb0066ac06c445dab6991a340a9e8d6eaa7c6bfaa34b53b1c06f3c5f"
+        }
+      },
+      "cmake_options": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CUDA_COMPILER": "/usr/local/cuda-12.9/bin/nvcc",
+        "CUDAToolkit_ROOT": "/usr/local/cuda-12.9",
+        "CMAKE_CUDA_ARCHITECTURES": "120a-real",
+        "GGML_CUDA": "ON",
+        "GGML_CUDA_GRAPHS": "OFF",
+        "LLAMA_BUILD_TESTS": "OFF",
+        "LLAMA_BUILD_EXAMPLES": "OFF",
+        "LLAMA_BUILD_APP": "OFF",
+        "LLAMA_OPENSSL": "OFF",
+        "LLAMA_BUILD_UI": "OFF",
+        "LLAMA_USE_PREBUILT_UI": "OFF",
+        "LLAMA_BUILD_SERVER": "ON",
+        "LLAMA_BUILD_TOOLS": "ON",
+        "LLAMA_BUILD_NUMBER": "11433",
+        "LLAMA_BUILD_COMMIT": "50569eb87df530daff11afda229ceb9ab8e6cae8"
+      },
+      "system_libraries": [
+        {
+          "source": "/usr/local/cuda-12.9/lib64/libcudart.so.12.9.79",
+          "name": "libcudart.so.12",
+          "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7"
+        },
+        {
+          "source": "/usr/local/cuda-12.9/lib64/libcublas.so.12.9.1.4",
+          "name": "libcublas.so.12",
+          "sha256": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048"
+        },
+        {
+          "source": "/usr/local/cuda-12.9/lib64/libcublasLt.so.12.9.1.4",
+          "name": "libcublasLt.so.12",
+          "sha256": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541"
+        }
+      ],
+      "old_runtime_modified": false,
+      "phase12_allowed": false,
+      "specification_sha256": "d18d6efe8b769a0ddb081ca41d1f4d63fa7a0b6551fd2bbfeea1a77d8b7fb0d5",
+      "server": "bin/llama-server",
+      "files": {
+        "bin/libcublas.so.12": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048",
+        "bin/libcublasLt.so.12": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541",
+        "bin/libcudart.so.12": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7",
+        "bin/libggml-base.so": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+        "bin/libggml-base.so.0": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+        "bin/libggml-base.so.0.26.0": "e49eaac387a46b31f596828840026b0747acf100bce28c60178d1d759c8041b5",
+        "bin/libggml-cpu.so": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+        "bin/libggml-cpu.so.0": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+        "bin/libggml-cpu.so.0.26.0": "fc66650a1d0413c6598b2fd7ad0196996763f67f5027bbde6d03b1e4a3b74fef",
+        "bin/libggml-cuda.so": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+        "bin/libggml-cuda.so.0": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+        "bin/libggml-cuda.so.0.26.0": "20d96df52fde3e516aad0b86855690bc2d0169983c9b0af9d900fbf97eaded53",
+        "bin/libggml.so": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+        "bin/libggml.so.0": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+        "bin/libggml.so.0.26.0": "a3a7a06dad54600ccaaf832c40f339c4e4e3e0c8b46f355c31afa4055f851285",
+        "bin/libllama-cli-impl.so": "b2a8258ea020b616b95eb3c8d6a86afff16e8f81e5be5129f44327431cb4f4d4",
+        "bin/libllama-common.so": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+        "bin/libllama-common.so.0": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+        "bin/libllama-common.so.0.6.0": "28d0b919bbfb09364568501dc0e349e4c0e5e6f5ccb69abfbdceb083c452b8bf",
+        "bin/libllama-server-impl.so": "6e4ec475238226091f3c61eb57ee1ee37df9291885e86cf47d39f9539b44a45b",
+        "bin/libllama.so": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+        "bin/libllama.so.0": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+        "bin/libllama.so.0.6.0": "bb5d0f4509f0cc5ffcbb87fde171260a4e2997bdf965f79cc1d1dfee1504b960",
+        "bin/libmtmd.so": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+        "bin/libmtmd.so.0": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+        "bin/libmtmd.so.0.6.0": "f58e35ccc506e92d626e2d40430f0d2cca3e3b9744f12abbd55a15c2b6cf135e",
+        "bin/llama-cli": "659465db4397442b851d7509c590334b513ee5bd5baa32b5980beb0469fd4eb3",
+        "bin/llama-server": "e8dc25cdeef9898959e73e58cb79eef964011ea76bd5d919baf3ba373adbfb0a"
+      },
+      "cuda_compile_commands": 144,
+      "cuda_graph_macro_absent_from_all_cuda_commands": true,
+      "source_files_verified": 3689,
+      "source_archive_sha256": "10af4d51ee5c29566e1f2899752d12ea41004554ceff7a91ca931b0ace48bc93"
+    },
+    "actual_gpu_offload": true,
+    "offloaded_layers": 33,
+    "total_layers": 33,
+    "full_gpu_offload": true
+  },
+  "wall_seconds": 25.105047190999812
+}

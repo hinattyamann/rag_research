@@ -1,5 +1,11 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-10-28 現行実装方針: [v23固定の単独実行準備](phase11_fixed_v23_preparation_v1.md)へ移行する。既存の推論・収集・匿名Packet処理を再利用し、元f0b7c71の専用Checkoutへ収集制御だけを追加する。全元Sourceと追加Source/設定/入口をHash固定し、Runnerの新scope `fixed_v23_main_v1` でも元Checkout検査を必須とする。旧Main/Cal採用Validatorと不採用Manifestは保持する。
+
+新規処理は `fixed_v23.py`（固定条件検査）、`fixed_v23_control.py`（有限Supervisor/公開状態/安全停止/再開/報告文）、`scripts/fixed_v23.py`（操作入口）、`prepare_fixed_v23.py`（元資産再現/封印）、`preflight_fixed_v23.py`（生成0の実機確認）。既存Runnerは先頭1 QAと元20 QAの同一Binding、内部TraceのPrefix延長、新規QA前の停止要求を対応する。成功済みNativeを再生成せず、既存失敗/未知で停止する。専用uv GPU環境を使い、有料API/Codex CLIは呼ばない。
+
+Mainは元の日英各20 QA、1660 Call/言語・5 QA段階・Retry0。有限Wallは先頭QA各段階4h/通常段階12h/累積Main72hで停止/再開時も持越す。独立プロセスが監視・ログ/資源/所有PID/終了コードを保存し、状態確認はモデルを呼ばず本文・内部F/判断を表示しない。全収集後に品質/文Expected Packetを出して採点待ち終了する。CalはMainの全匿名採点封印・解析後に別Protocolで準備し、ユーザーが起動する。実QA/長時間GPU運転・Main/Cal採点完了を準備成功から推定しない。以下のv33等の改善記録は履歴である。
+
 2026-10-28 06:32 JST追記: [v33正式事前登録](phase11_semantic_v33_preregistration_v1.md) SHA4f40971725f62293a430c4b4addac42ad31e4d022da695f94e77d061b4444296を実発行した。候補5466・正式22入力/70canonical成果・新鮮7段階有限予算・元Guard・全修正/レビューを結合し、Native0。新固定Checkout/実GPU入力0/形式意味/新鮮Known21はこれからで、Main/Cal/Gate11未達・Goal active・Phase12未開始。
 
 2026-10-28 06:19 JST追記: [v33実行前証拠](phase11_v33_preexecution_evidence_v1.md)を保存。実Identity5466f860・全90入力/正式22監査f29e1bcaが通過し、新形式入口v6 Source証拠70793565と現97Sourceの最終Validatorソフトウェア証拠v8/84112450を確定した。初期失敗と旧証拠を保存し、旧Native再用0。41閉Run・旧込1268試行/確定未知5は不変。新実GPU/意味採用・Main/Cal/Gate11は未了、Goal active・Phase12未開始。

@@ -512,6 +512,45 @@ def main_fixture(connection):
     return path, output, state
 
 
+def test_fixed_v23_pilot_extends_same_run_without_repeating_native_calls(connection, monkeypatch):
+    path, output, state = main_fixture(connection)
+    state["config"]["execution_scope"] = "fixed_v23_main_v1"
+    state["config"]["fixed_v23_protocol"] = {"path": "policy.json"}
+    loaded = list(runner.load_config(path))
+    second = deepcopy(loaded[2][0])
+    second.update(record_id="ja-second", document_group_id="second-group")
+    loaded[2].append(second)
+    monkeypatch.setattr(runner, "load_config", lambda p: tuple(loaded))
+    assert runner.run(path, output, stage="baseline", qa_limit=1)["processed_qa"] == 1
+    result = runner.run(path, output, stage="internal", qa_limit=1)
+    assert result["stage"] == "pilot_complete" and result["collection_completed"] is False
+    before = len(state["calls"])
+    pilot_files = {p: p.read_bytes() for p in (output / "internal").glob("*/*") if p.is_file()}
+    assert not (output / "report.private.json").exists()
+    runner.run(path, output, stage="baseline")
+    runner.run(path, output, stage="internal")
+    final = runner.run(path, output, stage="internal")
+    assert final["trace_count"] == 2 and len(state["calls"]) == 2 * before
+    assert all(p.read_bytes() == contents for p, contents in pilot_files.items())
+    assert quality.read_run(output)[1]["selected_qa_count"] == 2
+    calls = len(state["calls"])
+    runner.run(path, output)
+    assert len(state["calls"]) == calls
+
+
+def test_fixed_v23_stop_before_new_qa_does_not_create_unknown_or_request(connection):
+    path, output, state = main_fixture(connection)
+    state["config"]["execution_scope"] = "fixed_v23_main_v1"
+    state["config"]["fixed_v23_protocol"] = {"path": "policy.json"}
+    output.parent.mkdir(parents=True, exist_ok=True)
+    (output.parent / "stop.request").write_text("stop")
+    result = runner.run(path, output, stage="baseline", qa_limit=1)
+    assert result["stage"].endswith("_stopped") and result["reason"] == "user_stop_requested"
+    assert state["calls"] == []
+    (output.parent / "stop.request").unlink()
+    assert runner.run(path, output, stage="baseline", qa_limit=1)["baseline_count"] == 1
+
+
 def test_main_batches_keep_all_selected_qa_resume_and_avoid_duplicate_calls(connection, monkeypatch, capsys):
     path, output, state = main_fixture(connection)
     loaded = list(runner.load_config(path))

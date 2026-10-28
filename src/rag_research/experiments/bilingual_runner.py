@@ -61,7 +61,8 @@ def load_config(path, *, calibration_output=None):
     source_split = ("development" if language == "en" else "calibration") if calibration else "development"
     require(language in {"en", "ja"} and config["data"]["split"] == source_split, "Wrong language/source split")
     scope = config["execution_scope"]
-    require(scope in ({"heldout_calibration_v1"} if calibration else {"connection_smoke_only", "main_development_v1"}),
+    require(scope in ({"heldout_calibration_v1"} if calibration else {
+                "connection_smoke_only", "main_development_v1", "fixed_v23_main_v1"}),
             "Predeclare the matching execution scope")
     if calibration:
         from rag_research.experiments.calibration_protocol import validate
@@ -97,6 +98,10 @@ def load_config(path, *, calibration_output=None):
     require(all(r["is_answerable"] for r in chosen), "Bilingual connection uses source-answered QA")
     if scope == "main_development_v1":
         validate_main(config, chosen, qa_path)
+    elif scope == "fixed_v23_main_v1":
+        from rag_research.experiments.fixed_v23 import validate_fixed
+
+        validate_fixed(config, chosen, qa_path)
     return config, assets, chosen, qa_path, baseline, generation, prompt, prompts
 
 
@@ -112,8 +117,10 @@ def internal_complete(internal, binding, verification_mode="joint"):
     return True
 
 
-def run(config_path, output, *, stage="all"):
-    return guarded_run(config_path, output, stage=stage)
+def run(config_path, output, *, stage="all", qa_limit=None):
+    if qa_limit is None:
+        return guarded_run(config_path, output, stage=stage)
+    return guarded_run(config_path, output, stage=stage, qa_limit=qa_limit)
 
 
 def run_calibration(config_path, output, *, stage="all"):
@@ -126,8 +133,10 @@ def run_calibration(config_path, output, *, stage="all"):
         return guarded_run(config_path, output, stage=stage, calibration=True)
 
 
-def guarded_run(config_path, output, *, stage="all", calibration=False):
+def guarded_run(config_path, output, *, stage="all", calibration=False, qa_limit=None):
     try:
+        if qa_limit is not None:
+            return _run(config_path, output, stage=stage, qa_limit=qa_limit)
         return _run(config_path, output, stage=stage, calibration=True) if calibration else _run(config_path, output, stage=stage)
     except DevelopmentStop as stopped:
         # No task is invented for a resource reservation rejected before a call.
@@ -139,7 +148,7 @@ def guarded_run(config_path, output, *, stage="all", calibration=False):
         return {"stage": report["stage"], "reason": stopped.reason, "phase12_allowed": False}
 
 
-def _run(config_path, output, *, stage="all", calibration=False):
+def _run(config_path, output, *, stage="all", calibration=False, qa_limit=None):
     config_path, output = Path(config_path).resolve(), Path(output).resolve()
     parent = ROOT / ("data/runs/bilingual_calibration" if calibration else "data/runs/bilingual_development")
     require(Path.cwd().resolve() == ROOT and output.is_relative_to(parent) and output != parent,
@@ -149,13 +158,18 @@ def _run(config_path, output, *, stage="all", calibration=False):
     os.environ["LANGCHAIN_TRACING_V2"] = "false"
     contract = load_config(config_path, calibration_output=output) if calibration else load_config(config_path)
     config, assets, rows, qa_path, baseline, generation, initial_prompt, prompts = contract
-    main = config.get("execution_scope") in {"main_development_v1", "heldout_calibration_v1"}
+    fixed = config.get("execution_scope") == "fixed_v23_main_v1"
+    require(qa_limit is None or (fixed and type(qa_limit) is int and qa_limit == 1),
+            "Only the fixed-v23 first-QA pilot may restrict the original selection")
+    main = fixed or config.get("execution_scope") in {"main_development_v1", "heldout_calibration_v1"}
     limits = config.get("calibration_limits" if calibration else "main_limits", {})
     sources = sorted((ROOT / "src/rag_research").rglob("*.py"))
     sources += [config_path, ROOT / config["assets"], ROOT / config["baseline_config"],
                 ROOT / config["baseline_prompts"], ROOT / config["prompts"], ROOT / "scripts/run_bilingual_development.py"]
     if calibration:
         sources += [ROOT / config["calibration_protocol"]["path"], ROOT / "scripts/run_bilingual_calibration.py"]
+    elif fixed:
+        sources += [ROOT / config["fixed_v23_protocol"]["path"]]
     elif main:
         sources += [ROOT / config["development_selection"]["path"], ROOT / config["adopted_known_regression"]["path"],
                     ROOT / config["main_execution_policy"]["path"]]
@@ -180,12 +194,15 @@ def _run(config_path, output, *, stage="all", calibration=False):
         base_dir = output / "baseline"
         base_dir.mkdir(exist_ok=True)
         records = []
+        active_selection = selection if qa_limit is None else selection[:qa_limit]
 
         def collect_baseline(client, retriever):
             new_questions = 0
-            for spec in selection:
+            for spec in active_selection:
                 folder = base_dir / digest(spec["record_id"])[:24]
                 if main and not (folder / "record.json").exists():
+                    if fixed and (output.parent / "stop.request").exists():
+                        raise DevelopmentStop("user_stop_requested", budget_snapshot(output))
                     if new_questions == limits["maximum_new_qa_per_stage_session"]:
                         break
                     reserve_calls(output, limits["maximum_completion_attempts"], 1)
@@ -200,7 +217,7 @@ def _run(config_path, output, *, stage="all", calibration=False):
                                   "planned": len(selection), "status": records[-1]["status"]}), flush=True)
 
         if stage in {"baseline", "all"}:
-            pending = any(not (base_dir / digest(r["record_id"])[:24] / "record.json").exists() for r in selection)
+            pending = any(not (base_dir / digest(r["record_id"])[:24] / "record.json").exists() for r in active_selection)
             session = next_session(base_dir)
             if pending:
                 if main:
@@ -220,7 +237,7 @@ def _run(config_path, output, *, stage="all", calibration=False):
                 write_json(output / "progress.json", progress)
                 return progress
         else:
-            for spec in selection:
+            for spec in active_selection:
                 saved = read_json(base_dir / digest(spec["record_id"])[:24] / "record.json")
                 verify_checkpoint(saved)
                 require(saved["binding"] == {"manifest_sha256": digest(manifest)} and
@@ -248,7 +265,14 @@ def _run(config_path, output, *, stage="all", calibration=False):
         binding = {"manifest_sha256": digest(manifest), "traces": [
             {"record_id": t["record_id"], "directory": digest(t["record_id"])[:24],
              "trace_sha256": t["trace_sha256"], "plan": trial_plan(t, config)} for t in traces]}
-        immutable(internal / "manifest.json", binding)
+        if fixed and (internal / "manifest.json").exists():
+            previous = read_json(internal / "manifest.json")
+            require(previous["manifest_sha256"] == binding["manifest_sha256"] and
+                    previous["traces"] == binding["traces"][:len(previous["traces"])],
+                    "Fixed-v23 pilot may only extend the original trace prefix")
+            write_json(internal / "manifest.json", binding)
+        else:
+            immutable(internal / "manifest.json", binding)
         assembled = []
 
         def collect_internal(client):
@@ -266,6 +290,8 @@ def _run(config_path, output, *, stage="all", calibration=False):
                     reserve = pending_trace_calls(folder, [t["trial_id"] for t in entry["plan"]["trials"]],
                         [c["claim_id"] for c in units], mode=config.get("verification_mode", "joint"))
                     if reserve:
+                        if fixed and (output.parent / "stop.request").exists():
+                            raise DevelopmentStop("user_stop_requested", budget_snapshot(output))
                         if new_questions == limits["maximum_new_qa_per_stage_session"]:
                             break
                         reserve_calls(output, limits["maximum_completion_attempts"], reserve)
@@ -309,6 +335,12 @@ def _run(config_path, output, *, stage="all", calibration=False):
         if main and len(assembled) < len(traces):
             progress = {"stage": "internal_batch_complete", "processed_qa": len(assembled), "selected_qa": len(rows),
                         "not_attempted_ids": [t["record_id"] for t in traces[len(assembled):]], "phase12_allowed": False}
+            write_json(output / "progress.json", progress)
+            return progress
+        if qa_limit is not None:
+            progress = {"stage": "pilot_complete", "processed_qa": len(assembled),
+                        "selected_qa": len(rows), "collection_completed": False,
+                        "quality_and_expected_sealed": False, "phase12_allowed": False}
             write_json(output / "progress.json", progress)
             return progress
         report = {"schema_version": 1, "purpose": config["purpose"], "manifest_sha256": digest(manifest),

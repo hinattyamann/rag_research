@@ -1,0 +1,386 @@
+{
+  "version": "fixed-v23-order-study-v1",
+  "registered_at_utc": "2026-10-28T02:33:41.340958+00:00",
+  "base_commit": "f0b7c71c4375a617c7142c67e3aa0610f73edb14",
+  "candidate_identity_sha256": "91f50601299a8e9b1399b3925acddc36ffb6af9a46032e2adad631770a12d1b5",
+  "mode": "main",
+  "known_limit_acknowledged": true,
+  "old_gate11_passed": false,
+  "phase12_allowed": false,
+  "known_result": {
+    "path": "data/manifests/phase11_known_trace_direct_result_v12_v2.json",
+    "sha256": "4274729c1bd6224b9b354251cf5e8c6852b83f5e2cc164f2a64bd5d85befab00"
+  },
+  "candidate": {
+    "path": "configs/phase11_semantic_candidate_v23.yaml",
+    "sha256": "3c9e7fab328cb9722bee0c0618b8d49a9f16cc6ee1a5b549f0a43b1b9ab19f86"
+  },
+  "selection": {
+    "path": "data/manifests/phase11_main_development_selection_v1.json",
+    "sha256": "1b05b3834c9179522749a3b6ed7980b883591ad33b00e6e47de1ef29db486a2a"
+  },
+  "assets": {
+    "path": "configs/phase11_bilingual_assets_v2.json",
+    "sha256": "20f5b1eaf77b70cf3721728f5c4708be14b38efe04e71a29134bc8152f21e64b"
+  },
+  "baseline": {
+    "path": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+    "sha256": "b1915edaec42c5c451857fdf6ec5c7a92418d0206f2d112eebd58986c646d1cf"
+  },
+  "initial_prompts": {
+    "en": {
+      "path": "configs/phase11_bilingual_initial_en_v1.yaml",
+      "sha256": "3f5bd3fd4f1f836f478cae9ba00916025d803196c2b7afcd130fd62223e6a3a2"
+    },
+    "ja": {
+      "path": "configs/phase11_bilingual_initial_ja_v1.yaml",
+      "sha256": "fcae343daf7adc7f0f68e17896b32cb3da0237265a5102d7b871eda55889525d"
+    }
+  },
+  "count_per_language": 20,
+  "minimum_comparable_per_language": 10,
+  "quality_and_expected_seal": "all_both_languages_before_internal_unblinding",
+  "automatic_retries": 0,
+  "output_dir": "data/runs/bilingual_development/fixed-v23-main-v1",
+  "limits_per_language": {
+    "maximum_completion_attempts": 1660,
+    "maximum_new_qa_per_stage_session": 5,
+    "stop_on_any_task_error": true,
+    "automatic_refill": false
+  },
+  "pilot_wall_seconds": 14400,
+  "session_wall_seconds": 43200,
+  "total_wall_seconds": 259200,
+  "budget_reason": "Keep the original 1660-call ceiling per language; reserve complete QA before execution. First-QA segment <=4h, each five-QA stage <=12h, whole Main collection <=72h including resumptions. These are stop limits, not measured duration guarantees. No automatic extension/refill.",
+  "time_estimate_basis": "Original 84-call known result; update estimates after the user's first QA. Quality annotation and writing are additional. Cal is separately registered only after Main scoring.",
+  "fixed_inputs": [
+    {
+      "path": "configs/lab_cuda_graph_off_runtime_v1.json",
+      "sha256": "d18d6efe8b769a0ddb081ca41d1f4d63fa7a0b6551fd2bbfeea1a77d8b7fb0d5"
+    },
+    {
+      "path": "configs/phase11_bilingual_assets_v2.json",
+      "sha256": "20f5b1eaf77b70cf3721728f5c4708be14b38efe04e71a29134bc8152f21e64b"
+    },
+    {
+      "path": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+      "sha256": "b1915edaec42c5c451857fdf6ec5c7a92418d0206f2d112eebd58986c646d1cf"
+    },
+    {
+      "path": "configs/phase11_bilingual_initial_en_v1.yaml",
+      "sha256": "3f5bd3fd4f1f836f478cae9ba00916025d803196c2b7afcd130fd62223e6a3a2"
+    },
+    {
+      "path": "configs/phase11_bilingual_initial_ja_v1.yaml",
+      "sha256": "fcae343daf7adc7f0f68e17896b32cb3da0237265a5102d7b871eda55889525d"
+    },
+    {
+      "path": "configs/phase11_semantic_candidate_v23.yaml",
+      "sha256": "3c9e7fab328cb9722bee0c0618b8d49a9f16cc6ee1a5b549f0a43b1b9ab19f86"
+    },
+    {
+      "path": "configs/phase11_semantic_diagnostics_v23.json",
+      "sha256": "8fd4bc25c038567d7906140bde8e0b23fbb0cd6610640f1e2190c20f896e279c"
+    },
+    {
+      "path": "configs/phase11_semantic_prompts_en_v12.yaml",
+      "sha256": "c14b4f567a9b2daba98b67d3142d05ebc1e1e95192a8f4e503583a0790b8a13f"
+    },
+    {
+      "path": "configs/phase11_semantic_prompts_ja_v12.yaml",
+      "sha256": "121a6b455d957b6b3bb7e54e30aa92373549e33d92251e619907f12c05a73acf"
+    },
+    {
+      "path": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+      "sha256": "acadda5c012105a454b07ee95d406a217fe0aab8f498f3988bf44de36ebade65"
+    },
+    {
+      "path": "data/manifests/phase11_known_trace_direct_result_v12_v2.json",
+      "sha256": "4274729c1bd6224b9b354251cf5e8c6852b83f5e2cc164f2a64bd5d85befab00"
+    },
+    {
+      "path": "data/manifests/phase11_main_development_selection_v1.json",
+      "sha256": "1b05b3834c9179522749a3b6ed7980b883591ad33b00e6e47de1ef29db486a2a"
+    },
+    {
+      "path": "data/runs/bilingual_development/phase11-connection-en-v2/baseline/a80d1b9b25e76848f2e6c729/record.json",
+      "sha256": "2f648305969ee88682196c3a1d4eb8176523d5d9ee4bfb17878df602c1cee27c"
+    },
+    {
+      "path": "data/runs/bilingual_development/phase11-connection-en-v2/baseline/answers.jsonl",
+      "sha256": "5a3165dccab9936c5a2162f8aff93eda6228412bd88c06c3340e67b9e5344a36"
+    },
+    {
+      "path": "data/runs/bilingual_development/phase11-connection-ja-v1/baseline/92f662d74ddcc6f58349135b/record.json",
+      "sha256": "534002bec198cd81f0e5598f9da09e27103db6fd7dbbfb5969b581ee9ee544de"
+    },
+    {
+      "path": "data/runs/bilingual_development/phase11-connection-ja-v1/baseline/answers.jsonl",
+      "sha256": "f8cec7e91f8ae27eb20f555df362bf9ca65621a147c8ab9bd5f3e74a57ce4a9d"
+    },
+    {
+      "path": "data/runs/calibration/phase11-cpu-five-v1/baseline/059a32cccb4757858307786a/record.json",
+      "sha256": "380fc3ca0bdc4c14a51fdd7bedea1c21f103ef63722fb184b6d13097329d690f"
+    },
+    {
+      "path": "data/runs/calibration/phase11-cpu-five-v1/baseline/2b4504667aa376bbdf15394a/record.json",
+      "sha256": "0b7949169a2273a237a5bd55fb1a94184629093be5b94315e5adeb9d33181571"
+    },
+    {
+      "path": "data/runs/calibration/phase11-cpu-five-v1/baseline/5943129f8007fe02740258c9/record.json",
+      "sha256": "ba636fcab54b9fcf7327a4361069238304241bc97753cda4befa0f65668268fc"
+    },
+    {
+      "path": "data/runs/calibration/phase11-cpu-five-v1/baseline/answers.jsonl",
+      "sha256": "1bde1cf9e6cf4b4b5a0ed498ed2efad1bc2def25091037b0a1bb99a02f1e4a21"
+    },
+    {
+      "path": "data/runs/calibration/phase11-cpu-five-v1/baseline/d19e912b32788252349dddaa/record.json",
+      "sha256": "3c86ff4a13195a10798c0a4303b19cbb213fd553bc76cefb721db0e8c0ba40d9"
+    },
+    {
+      "path": "data/runs/calibration/phase11-cpu-five-v1/baseline/ecdbbd97f7d6b9b1d8a10bc2/record.json",
+      "sha256": "a780605c222653a2f450d8c6ed707e563ec26ea884dd069507bc7fbdd932b507"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/25560cfd1cab3ceb2baea41c/record.json",
+      "sha256": "228914caf3d893f06ec02c7faf0bbd83c7477edbf3f282fe52909a04b89046a6"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/31e646aa96013a84580e692c/record.json",
+      "sha256": "d77738ecb31bfe62ea682d9eafec0a205c2f2652c5df1af71c7fc89db3e92e10"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/323bf35882bc45a96feb3e1d/record.json",
+      "sha256": "aacf5546fda4837775cab2fbf0e273dbc3c7a557371626612cf4872012c329e8"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/35d3e8259d8fcbf0eeb7b5f7/record.json",
+      "sha256": "0e1a7128597f4466a78346b9dc66b3ffc99837c1ed1f81ea768030da626587d9"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/3fef5b8186ed38f71767ae2e/record.json",
+      "sha256": "19c260f55443e632aab662446b54c835c8e9d4ad2f813aed44612ef4ac0f02c9"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/661f1c4b3f3a860b0ee719b6/record.json",
+      "sha256": "49084670032ea7e9d3e3a517ba8d0c82b67268fe3b16f9de11c8d535fcc68d16"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/6d98206426103f028eac41cc/record.json",
+      "sha256": "45dd1b8b656f1333dba6db2f06eccfcb41e137b4e6e6fc62938667dc5c2a22fd"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/7ade999b14d67590a1378ccf/record.json",
+      "sha256": "426a88594523c8ecebf11f6713cf85931e51d44683cd093b175828e4f103ca93"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/9080b47549bc79ea7d851416/record.json",
+      "sha256": "7a003ea3297e93a7c35bdba89911ba1cfdfc5f1421798aba2c3d825fb4f95417"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/a5e76d4ec197b9d22ab1fbc5/record.json",
+      "sha256": "25a365a7252c5cd7d1270e7b6eae1bd8a8766061a5be132d897ce62102ad19d5"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/aa357dd9c0731a4c540586a2/record.json",
+      "sha256": "b996ed080faae00cd16ae49d7988363568ff95bf14aa61d864696320bdaffba9"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/aaba171a10f6d10d5afe0a32/record.json",
+      "sha256": "b79612e1e984ff810e4935c5395a04d3e14f3b40d4086c441d76c274456bb975"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/answers.jsonl",
+      "sha256": "79a4f0595092eca1bc03cc83b81a46f62d13142c10df08a9e47f1a3fd78385f2"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/b33c1496859d06777e66ef40/record.json",
+      "sha256": "9357ac6b6f19fc99aa01e3c4badd87724fd0aea2d1f57d7628e87187778c70de"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/b4291e2a1a09c2bac5b01f6a/record.json",
+      "sha256": "8b6e1accaf5c7948b5b883f7bd348dc9ec46b83cace090268d7c9cf88cf812eb"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/c99e26828c621bcdcb05781f/record.json",
+      "sha256": "9b0b46054b4866289c1600c5ff1c9471b6d07739dadd9eb173206b00eb0e839f"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/d2c38d632c092904269f5217/record.json",
+      "sha256": "73b2ce66a250d1a098cc44ba316f2c512a4ec79e6b9aed8ff90c0abda9c0fe9a"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/da38af9cd782eef4ef7574e6/record.json",
+      "sha256": "574bb38981ceae44fbefa9b09d009cc3503de5420069964acb0c93a5ba6ec2a2"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/dee22fa20655f4b60ac24ce4/record.json",
+      "sha256": "2d5e4276ee3ac67666870127c034ce46cbbdf32de188361afb9eb2cc9fb65809"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/e3f1d10ed59dea03a9363d58/record.json",
+      "sha256": "7ab8f23de2da2fbe2a4b08a80b1343c4a06d85ffa2b9def1f94d2b2733474c3a"
+    },
+    {
+      "path": "data/runs/calibration/phase11-gpu-twenty-v2/baseline/f4653c752104089d7983e2c8/record.json",
+      "sha256": "52ec743de928539b0cd3a3d991ea948a9d11e353384cd75849be0405b1910334"
+    },
+    {
+      "path": "data/runs/phase5/20261006T052839Z-7e26bd70/answers.jsonl",
+      "sha256": "132604c688f3893619baddbef22ea9a9808f19f541c2dab17f51f5f5d913e927"
+    },
+    {
+      "path": "data/runs/phase5/development-five-no-repack-v2/answers.jsonl",
+      "sha256": "c2b560b591360c8deadb009dcf9ce8740e73e773070aeaad2db5133783a0440a"
+    },
+    {
+      "path": "data/runs/phase5/development-five-v1/answers.jsonl",
+      "sha256": "c3a4ece5710e69691b5aa4cd1935ea9ce8a549024782b400cbfb4b0da5aa74e2"
+    },
+    {
+      "path": "data/runs/phase5/plankton-first-v1/answers.jsonl",
+      "sha256": "e477358733bb27d3a4ed2e736997c61f9a0fab441c05205f47906d4a035abf72"
+    },
+    {
+      "path": "data/runs/phase5/plankton-no-repack-v2/answers.jsonl",
+      "sha256": "81fbd3149492b15134067a9f3466dc7b8a9cc0c217a567244a59da5dbc4dffa7"
+    },
+    {
+      "path": "data/runs/phase6/development-five-v1/answers.jsonl",
+      "sha256": "b6dd7dab3da4ec58cf50e7ed5f2be39e31699a8f34eda60e4748264a8b025d95"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-extra-v2/baseline/2d38d5d14dd906914e112a1c/record.json",
+      "sha256": "9277abcc01a7b0626cbc3faeb28be4f914558f1fdd5dc44a19c3c7f88f883609"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-extra-v2/baseline/5f0f6d0b33249f2057f428ee/record.json",
+      "sha256": "2fa1097732fa64ad08c54fcbc54a7bcc3df5a78d1ee245a50d309639b996fb0b"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-extra-v2/baseline/7252105222e6cbad9cb6f691/record.json",
+      "sha256": "771c7e2a5e14b7e733a6dc17fa118468d959fb7f49a4f14402e974f39190fd7c"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-extra-v2/baseline/918e6418290d63af4f972787/record.json",
+      "sha256": "a46f63111e200d2d390a807e693ccd3ead873296371c81dd61b2fe4da044a1b5"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-extra-v2/baseline/95801e191bdca86cf2ad423a/record.json",
+      "sha256": "70f7c4b5fdd9a35d59c137c75900738ae5f056aa0250907e4e9ceba8fddbba60"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-extra-v2/baseline/answers.jsonl",
+      "sha256": "f0b152b793fa700be4455f070fc7f85e6f2440d57ac020dd817cb2d7ed444637"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-v2/baseline/058324c4c9536599ff8e05ee/record.json",
+      "sha256": "2b00460fcc5696e5030177030408abfb37f5dd99fbe4c40430ad2760107eaf07"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-v2/baseline/252ca3b319d8a7a35e065a3d/record.json",
+      "sha256": "ffd702386cfe95606bca9962323fbc80c2739cb2d40dc25ef681909e05a43a34"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-v2/baseline/312bfc698c74563d9816e85b/record.json",
+      "sha256": "b5bf96182b54dda6c3b8ac9fe9a00d480c88f36bddd62fa1b02eaf54d8b81900"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-v2/baseline/answers.jsonl",
+      "sha256": "4c3e7294cf09ccedbb911b6f7a400fbf55f4c16b5fceba3130e1227683f0a803"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-v2/baseline/b45c98f7fd1c841f8906cd88/record.json",
+      "sha256": "f6958184bf62fc6cb8df4b7d43939ceb7176fa1184271ed1880c3de878b2749d"
+    },
+    {
+      "path": "data/runs/pilot/phase10-five-v2/baseline/be467c4f1149e0c1d72874f4/record.json",
+      "sha256": "1ed3df6fb8165005332d51829663a0b7b4b292010c3e36d120e3cd7662a365e4"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/01abfbb0fff39553323e5c67/record.json",
+      "sha256": "77af6ebc37b26cdeb0a954f9e960f53ecd852f1eda5751418364134caad2b73f"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/0401c0a9c3c301cd6f3dbf6e/record.json",
+      "sha256": "659563c3c1872d75affaab58fbb34849c518ec18876c84379c401112fc6316f6"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/3369860ef4e9dad22791a6e0/record.json",
+      "sha256": "744cb950a997a5a4c591c6ac311bb5d696a277c01ef23cab335f252c74872f0e"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/346645a756d17d07d3f3c7a4/record.json",
+      "sha256": "12311df6a19f817e5d0ba8ef805e9d1ff9c2f365b6de3b5c98dc66168d45dc9f"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/3f523b262d5f0387b354ff9f/record.json",
+      "sha256": "ddbb31a9119293582d4b91f38c501d4a1dba81eb65730774d56df57d5e19a430"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/4509560a9ed08b246b81220e/record.json",
+      "sha256": "d5c3de516c90646b3b2b8300a1e77de662050883209bba739aabcbdeaca705df"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/4fe6be1340ea349787c23100/record.json",
+      "sha256": "a3d9797e7902162458e7377eeb1616d654c3834f8403c77d9eef0828ae91e6d5"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/5033dc34b6255bf24608a4e3/record.json",
+      "sha256": "5b7e9015df250b58ab1d163bc47d45ea57d1131b14d19faec98c168ed8ec95d2"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/56017d1b1947252b97d9da02/record.json",
+      "sha256": "75cde3f5cedac8d04fd2d95a13ae1e9a4f4ebaa4181e76c05b25eeacfc6d027d"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/68bb037f0d3e93570c49bffd/record.json",
+      "sha256": "6c08710242b20eabda9dc11888f30a09f01ab3310a83fddb8bc98dd8b2eedfbe"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/6c409b6a20909abdf2400a02/record.json",
+      "sha256": "3efc7de887240cfbdfd4e149c3294f130e97fa2c2703567043dc901061bcf69b"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/94830f7d34bb74dd875e6920/record.json",
+      "sha256": "f99111d8589a05d1e462cad10383313ce44fdbf38c70280f1b40dbbb3dc7abf8"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/98971d30918452ed61590b4c/record.json",
+      "sha256": "5d784de87e7ec8228324df8d2147ea16c85fcb9af936099ce7b5e03715fb2d14"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/9ac8962a5e55d4b96b6009b8/record.json",
+      "sha256": "5ba96b3133a5ea7f1b16e8c0fbc09872bc6aebb27a1b2c3493b54a18dc34eba8"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/adbe8e2adaf6eac18f9355ed/record.json",
+      "sha256": "7bd6dadafb7a4f4b2e8078e1d3543e8bbbc10771e472eb44efccff8af9ffde05"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/aead5a6980f035b5f0b5704d/record.json",
+      "sha256": "396fc535c5a0c7b87321123d17bbf8949299b700a95effb6e10fcc8266e4d0d3"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/answers.jsonl",
+      "sha256": "2cf6f36bdbc2aee37c2ef91d1d9bc4ef2b5eeb911f3e06945c5d69a058e45a0c"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/d07c6915f5d5b407236c6743/record.json",
+      "sha256": "3873ee9d5a747639fca7b7872534218a6c68f3975fed72a2bcafa11d41c3c477"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/d48d108ab352727a3d42c368/record.json",
+      "sha256": "ca474bdf6bb26ef391dc0237590a1aafbed1522415d3c4fca014a829b4e5d782"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/d7c8aae6926eb06625b4e5fa/record.json",
+      "sha256": "477d130a59e8192e5c619e772b43eddf92ac40cc475a22c87a7106a5f52c87f7"
+    },
+    {
+      "path": "data/runs/pilot/phase10-twenty-v1/baseline/e774424c15892aacf285c3b4/record.json",
+      "sha256": "6520a1d641427f278eeefd0713b598f3baf2d623cee120f0adf0ceab6bfcd7aa"
+    }
+  ]
+}
