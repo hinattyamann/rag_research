@@ -1,5 +1,7 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-10-29 再開制御の追加: [Main停止原因・再開手順](phase11_fixed_v23_recovery_v1.md)。新 `scripts/recover_fixed_v23.py` を元専用Checkoutの `src` 外へ追加し、元Release/推論Source/設定/Rawを保存したまま、取得済みの初回512 token上限打切りだけを欠測として継続する。未知/他エラーは停止、Retry0・元Call/累積wall上限を維持する。全665ファイルの独立退避・641科学的記録のHash保護・英語20問の再検証を行い、`recovery_ready` でユーザー起動待ち。推論条件変更や失敗の成功扱いは行わない。
+
 2026-10-28 現行実装方針: [v23固定の単独実行準備](phase11_fixed_v23_preparation_v1.md)へ移行する。既存の推論・収集・匿名Packet処理を再利用し、元f0b7c71の専用Checkoutへ収集制御だけを追加する。全元Sourceと追加Source/設定/入口をHash固定し、Runnerの新scope `fixed_v23_main_v1` でも元Checkout検査を必須とする。旧Main/Cal採用Validatorと不採用Manifestは保持する。
 
 新規処理は `fixed_v23.py`（固定条件検査）、`fixed_v23_control.py`（有限Supervisor/公開状態/安全停止/再開/報告文）、`scripts/fixed_v23.py`（操作入口）、`prepare_fixed_v23.py`（元資産再現/封印）、`preflight_fixed_v23.py`（生成0の実機確認）。既存Runnerは先頭1 QAと元20 QAの同一Binding、内部TraceのPrefix延長、新規QA前の停止要求を対応する。成功済みNativeを再生成せず、既存失敗/未知で停止する。専用uv GPU環境を使い、有料API/Codex CLIは呼ばない。

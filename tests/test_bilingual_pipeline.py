@@ -551,6 +551,64 @@ def test_fixed_v23_stop_before_new_qa_does_not_create_unknown_or_request(connect
     assert runner.run(path, output, stage="baseline", qa_limit=1)["baseline_count"] == 1
 
 
+@pytest.mark.parametrize("new_terminal_limit", [False, True])
+def test_terminal_limit_recovery_keeps_failure_and_resumes_real_runner_primitives(connection, monkeypatch, new_terminal_limit):
+    from test_fixed_v23_recovery import limit_record, recovery
+
+    from rag_research.experiments.storage import checkpoint
+
+    path, output, state = main_fixture(connection)
+    config = state["config"]
+    config["verification_mode"] = "claimwise-v1"
+    state["prompts"].pop("source_reading_auxiliary")
+    (path.parent / "prompts.yaml").write_text(yaml.safe_dump(state["prompts"]))
+    loaded = list(runner.load_config(path))
+    loaded[2].extend([{**deepcopy(loaded[2][0]), "record_id": name, "document_group_id": name}
+                      for name in ("second", "third")])
+    monkeypatch.setattr(runner, "load_config", lambda p: tuple(loaded))
+    assert runner.run(path, output, stage="baseline")["processed_qa"] == 1
+    manifest = read_json(output / "manifest.json")
+    old_path = output / "baseline" / digest(manifest["selection"][0]["record_id"])[:24] / "record.json"
+    failed = {**deepcopy(read_json(old_path)), **limit_record(), "record_id": "second"}
+    failed.pop("result_sha256")
+    failed["request_sha256"] = digest({"binding": failed["binding"], "spec": manifest["selection"][1]})
+    failed_folder = output / "baseline" / digest("second")[:24]
+    failed_folder.mkdir()
+    checkpoint(failed_folder / "record.json", failed)
+    before = {p: p.read_bytes() for p in (old_path, failed_folder / "record.json")}
+    monkeypatch.setattr(recovery, "ROOT", path.parent)
+    write_json(path.parent / recovery.REGISTRATION, {"version": recovery.VERSION})
+    original_once = runner.baseline_once
+
+    def once(*args, **kwargs):
+        value = original_once(*args, **kwargs)
+        if new_terminal_limit and value["record_id"] == "third" and value["status"] == "ok":
+            value = {**value, **limit_record()}
+            value.pop("result_sha256")
+            value = checkpoint(args[6] / "record.json", value)
+        return value
+
+    monkeypatch.setattr(runner, "baseline_once", once)
+    result = recovery.baseline_stage(output, tuple(loaded), manifest)
+    expected_success = 1 if new_terminal_limit else 2
+    expected_failures = 2 if new_terminal_limit else 1
+    assert result["stage_complete"] and result["baseline_ok"] == expected_success
+    assert result["baseline_failures"] == expected_failures
+    assert len(state["calls"]) == 2  # Cached success and received failure were never sent again.
+    assert all(p.read_bytes() == raw for p, raw in before.items())
+    assert recovery.internal_stage(output, tuple(loaded), manifest)["stage_complete"] is new_terminal_limit
+    assert recovery.internal_stage(output, tuple(loaded), manifest)["stage_complete"]
+    _, report = quality.read_run(output)
+    assert len(report["records"]) == expected_success and len(report["failures"]) == expected_failures
+    assert report["selected_qa_count"] == 3
+    assert report["failures"][0]["record_id"] == "second"
+    calls = len(state["calls"])
+    servers = state["servers"]
+    recovery.internal_stage(output, tuple(loaded), manifest)
+    assert len(state["calls"]) == calls and state["servers"] == servers
+    assert all(p.read_bytes() == raw for p, raw in before.items())
+
+
 def test_main_batches_keep_all_selected_qa_resume_and_avoid_duplicate_calls(connection, monkeypatch, capsys):
     path, output, state = main_fixture(connection)
     loaded = list(runner.load_config(path))

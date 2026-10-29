@@ -1,0 +1,56 @@
+{
+  "purpose": "fixed-v23-main-terminal-output-limit-diagnosis",
+  "recorded_at_jst": "2026-10-29T10:45:31.505094+09:00",
+  "checkout": ".tools/worktrees/fixed-v23-study-v1",
+  "run": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1",
+  "failed_record": {
+    "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1/ja/baseline/176a49361256fb5470c0f438/record.json",
+    "sha256": "c471aa9db3cf9237dbebcd7d200bbf101de52e380e9664084ae5f9fd81359f8e",
+    "checkpoint_verified": true
+  },
+  "supervisor_stop_time_utc": "2026-10-28T10:51:57.244555+00:00",
+  "native_observations": {
+    "input_tokens": 3309,
+    "output_tokens": 512,
+    "native_tokens_predicted": 512,
+    "stop_type": "limit",
+    "truncated": false,
+    "output_character_count": 728,
+    "max_24_character_ngram_occurrences": 1,
+    "requested_n_predict": 512,
+    "temperature": 0.0,
+    "seed": 42,
+    "context_tokens": 4096,
+    "input_plus_reserved_output_tokens": 3821,
+    "cost_incomplete": false,
+    "generation_seconds": 4.273655118995521
+  },
+  "counts_at_stop": {
+    "english_completed_qa": 20,
+    "japanese_successful_baselines": 2,
+    "japanese_failed_baselines": 1,
+    "japanese_unattempted_baselines": 17,
+    "japanese_internal_qa": 0,
+    "native_attempts": 410,
+    "unknown": 0
+  },
+  "causal_chain": [
+    "The original 3B generator requested at most 512 output tokens.",
+    "The native response was received with 512 predicted tokens and stop_type=limit, without context truncation.",
+    "LocalGenerator classifies limit termination as an incomplete-answer error.",
+    "The original Main fail-fast policy stopped the collection and its resume guard rejects any recorded error."
+  ],
+  "diagnosis_scope": "Mechanical metadata and source verification only; no quality or internal verdicts inspected. Why the model did not end earlier is not established.",
+  "recovery_policy": "Preserve terminal baseline output-limit failures as missing QA, do not resend or replace them, and continue other original selections with unchanged inference settings. Unknown/transport/GPU/other errors still stop.",
+  "post_outcome_stop_rule_change": true,
+  "new_model_calls": 0,
+  "original_failure_reclassified_as_success": false,
+  "source_sha256": {
+    "src/rag_research/generation/generator.py": "3ece4c433d2dec54b4c07dc0b95e42f78a2debde1349ab67d7d852445f9226a1",
+    "src/rag_research/pilot/baseline.py": "9e76898c903a64a4bb078015f81124be368d0005f28f9f19d0b0a38b05cb2abd",
+    "src/rag_research/experiments/bilingual_runner.py": "369ffade7199f37ab75e227da9140ca3c34eccb8ac3fc300d4fe933ffeaf6a1d",
+    "src/rag_research/experiments/fixed_v23_control.py": "651b9426dfe58dbcb5629794932876f72ad02fd1f8271109b0f690c701ec2753",
+    "configs/phase11_bilingual_baseline_graph_off_v3.yaml": "b1915edaec42c5c451857fdf6ec5c7a92418d0206f2d112eebd58986c646d1cf"
+  },
+  "failed_request_started_at_utc": "2026-10-28T10:51:49.922642+00:00"
+}
