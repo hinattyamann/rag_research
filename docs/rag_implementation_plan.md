@@ -1,5 +1,7 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-10-30 追加再開制御: [復旧v2](phase11_fixed_v23_recovery_v2.md)の新 `scripts/recover_fixed_v23_v2.py` を元Checkoutの `src` 外へ追加する。旧v1登録/入口・元Release/推論Source/RawをHash保護し、自然終了・費用確定・本文512超過だけの書換えエラーを限定分類して続行する。既存の品質Export/方策再構成は失敗書換えを除外し初回保持/書換え失敗として扱う。公開状態は正常完了/初回欠測/書換え欠測/残りを区別する。ユーザーは今回Codexによる続きからの起動を依頼した。未知/他エラー停止、元Call/wall上限・Retry0を維持する。
+
 2026-10-29 再開制御の追加: [Main停止原因・再開手順](phase11_fixed_v23_recovery_v1.md)。新 `scripts/recover_fixed_v23.py` を元専用Checkoutの `src` 外へ追加し、元Release/推論Source/設定/Rawを保存したまま、取得済みの初回512 token上限打切りだけを欠測として継続する。未知/他エラーは停止、Retry0・元Call/累積wall上限を維持する。全665ファイルの独立退避・641科学的記録のHash保護・英語20問の再検証を行い、`recovery_ready` でユーザー起動待ち。推論条件変更や失敗の成功扱いは行わない。
 
 2026-10-28 現行実装方針: [v23固定の単独実行準備](phase11_fixed_v23_preparation_v1.md)へ移行する。既存の推論・収集・匿名Packet処理を再利用し、元f0b7c71の専用Checkoutへ収集制御だけを追加する。全元Sourceと追加Source/設定/入口をHash固定し、Runnerの新scope `fixed_v23_main_v1` でも元Checkout検査を必須とする。旧Main/Cal採用Validatorと不採用Manifestは保持する。
