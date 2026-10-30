@@ -37,7 +37,7 @@ def config(tmp_path):
         "phase12_allowed": False, "api_billing_allowed": False, "maximum_cli_invocations": 5,
         "maximum_cli_job_seconds": 10, "maximum_format_repairs": 1, "annotation_cases_per_job": 4,
         "configured_codex_model": "synthetic-test-model", "configured_codex_reasoning_effort": "high",
-        "codex": "synthetic-codex", "git_publish_interval_seconds": 3600, "poll_seconds": .001,
+        "codex": "synthetic-codex", "git_publish_policy": "events_only", "poll_seconds": .001,
         "cal_launch_authorized": True,
         "deadline_utc": "2099-01-01T00:00:00+00:00", "branch": "main", "remote": "origin"}
 
@@ -368,13 +368,39 @@ def test_waiting_service_does_not_launch_codex_or_another_collector(config, monk
     assert len(checks) == 2 and not list(Path(config["state_dir"]).glob("jobs/*"))
 
 
+def test_hours_of_collection_only_update_local_status_and_publish_on_start_or_failure(config, monkeypatch, tmp_path):
+    path = tmp_path / "config.json"
+    common.write(path, config)
+    clock, documents, publications = [0.], [], []
+    monkeypatch.setattr(service, "time", SimpleNamespace(monotonic=lambda: clock[0], sleep=lambda seconds: None))
+    monkeypatch.setattr(service, "status_documents", lambda cfg, stage, **kw: documents.append((stage, kw.get("error"))))
+    monkeypatch.setattr(service, "publish_git", lambda cfg: publications.append(documents[-1]) or {"pushed": True})
+
+    def ready(cfg):
+        assert len(publications) == 1, "Elapsed hours must not trigger Git publication"
+        clock[0] += 3601
+        if clock[0] > 10800:
+            raise ValueError("Synthetic unexpected collection interruption")
+        return False
+
+    monkeypatch.setattr(service, "main_ready", ready)
+    monkeypatch.setattr(service, "run_owned", lambda *a, **kw: pytest.fail("No model/collector while waiting"))
+    with pytest.raises(ValueError, match="unexpected collection interruption"):
+        service.serve(path)
+    assert len(documents) >= 4  # initial status, two hours of local updates, failure
+    assert publications[0] == ("waiting_main", None)
+    assert publications[1][0] == "failed" and "unexpected collection interruption" in publications[1][1]
+    assert len(publications) == 2
+
+
 @pytest.mark.parametrize("fail_gate", [False, True])
 def test_stage_order_and_failed_gate_never_start_cal(config, monkeypatch, tmp_path, fail_gate):
     config.update(uv="uv", frozen_scripts=str(SCRIPTS))
     path = tmp_path / "config.json"
     common.write(path, config)
-    monkeypatch.setattr(service, "status_documents", lambda *a, **kw: {})
-    monkeypatch.setattr(service, "publish_git", lambda cfg: {"pushed": True})
+    status, publications = [], []
+    monkeypatch.setattr(service, "status_documents", lambda cfg, stage, **kw: status.append(stage))
+    monkeypatch.setattr(service, "publish_git", lambda cfg: publications.append(status[-1]) or {"pushed": True})
     monkeypatch.setattr(service, "main_ready", lambda cfg: True)
     stages = []
 
@@ -390,9 +416,11 @@ def test_stage_order_and_failed_gate_never_start_cal(config, monkeypatch, tmp_pa
         with pytest.raises(ValueError, match="insufficient"):
             service.serve(path)
         assert stages == service.STEPS[:4] and "collect-cal" not in stages
+        assert publications[-1] == "failed"
     else:
         service.serve(path)
         assert stages == service.STEPS
+        assert publications[-1] == "complete" and "collect-cal" in publications and "figures" in publications
 
 
 def test_cal_collection_has_bounded_stages_preserves_spent_wall_on_resume(config, monkeypatch, tmp_path):

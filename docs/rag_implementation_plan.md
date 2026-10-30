@@ -1,8 +1,10 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-10-30 Git反映方針の変更（以前の1時間ごとの送信指定より優先）: ユーザー指示により、収集中の定時Commit/Pushを廃止し、工程の切替・完了、予期しない中断/停止、確定成果の保存など意味のある区切りだけでGitHubへ反映する。ローカルの進捗更新と実プロセス監視は継続する。Main推論・実験条件・Cal進行条件は変更しない。
+
 2026-10-30 外的監視中断の再実行（以下の一般停止規則より限定的に優先）: ユーザーは復旧v2監視による外的中断1件を候補欠測とせず、同じ入力で書換えだけ1回再実行するよう明示した。[復旧v3](phase11_fixed_v23_recovery_v3.md)で元要求/全既存結果・費用不明を保全し、完了済み初回/内部評価を再利用する。旧長さ欠測2件は維持し、他の未知/エラーの再送やCalへの例外拡大はしない。全試行上限・累積wall・条件・全匿名採点封印とCal進行条件は維持する。現在の進捗は `docs/fixed_v23_automation_status.md` を参照する。
 
-2026-10-30 自動実行制御: [Main→Cal→図表の自動化](phase11_fixed_v23_automation_v1.md)を追加する。新 `scripts/automate_fixed_v23.py` と `scripts/fixed_v23_automation/` を元Checkoutのsrc外へHash固定して配置し、独立サービスがMain完了→日英全品質/Expected封印→Main解析/Cal条件確認・専用登録→Cal収集→日英全採点封印/解析→4図・4CSV・結果説明まで進める。旧推論/採用Sourceは変更しない。Calは新専用scopeを厳密な登録と結び、英元Development/日元CalibrationのSourceと両言語Calibrationの分析用途を区別する。APIキーへの切替を禁止し、モデル/努力は既存CLI設定を固定、4候補/Job・最大192起動・1形式修正/Job・40分/Job・Workflow期限11/6 00:00 JST。原則1時間ごとのallowlist Commit/Push、二重起動/Source変更/未知/予算/比較不足の停止を実装する。Matplotlibをroot側uv環境に追加し、実行中GPU環境は変更しない。
+2026-10-30 自動実行制御: [Main→Cal→図表の自動化](phase11_fixed_v23_automation_v1.md)を追加する。新 `scripts/automate_fixed_v23.py` と `scripts/fixed_v23_automation/` を元Checkoutのsrc外へHash固定して配置し、独立サービスがMain完了→日英全品質/Expected封印→Main解析/Cal条件確認・専用登録→Cal収集→日英全採点封印/解析→4図・4CSV・結果説明まで進める。旧推論/採用Sourceは変更しない。Calは新専用scopeを厳密な登録と結び、英元Development/日元CalibrationのSourceと両言語Calibrationの分析用途を区別する。APIキーへの切替を禁止し、モデル/努力は既存CLI設定を固定、4候補/Job・最大192起動・1形式修正/Job・40分/Job・Workflow期限11/6 00:00 JST。工程の切替・完了・停止時のallowlist Commit/Push（定時送信なし）、二重起動/Source変更/未知/予算/比較不足の停止を実装する。Matplotlibをroot側uv環境に追加し、実行中GPU環境は変更しない。
 
 2026-10-30 追加再開制御: [復旧v2](phase11_fixed_v23_recovery_v2.md)の新 `scripts/recover_fixed_v23_v2.py` を元Checkoutの `src` 外へ追加する。旧v1登録/入口・元Release/推論Source/RawをHash保護し、自然終了・費用確定・本文512超過だけの書換えエラーを限定分類して続行する。既存の品質Export/方策再構成は失敗書換えを除外し初回保持/書換え失敗として扱う。公開状態は正常完了/初回欠測/書換え欠測/残りを区別する。ユーザーは今回Codexによる続きからの起動を依頼した。未知/他エラー停止、元Call/wall上限・Retry0を維持する。
 

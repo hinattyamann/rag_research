@@ -30,6 +30,7 @@ def public_status(config, stage, *, error=None):
     value = {"updated_at_utc": now(), "workflow": "fixed-v23-automation-v1", "stage": stage,
         "main": {k: main.get(k) for k in fields}, "progress": progress,
         "cli_invocations": len(ledger["invocations"]), "api_key_fallback": False,
+        "git_publish_policy": config["git_publish_policy"],
         "error": error, "local_raw_data_is_not_transferred_by_git": True,
         "all_figures_completed": stage == "complete", "paper_written": False,
         "gate11_passed": False, "phase12_allowed": False}
@@ -73,7 +74,8 @@ def status_documents(config, stage, *, error=None):
         "外的中断の許可済み再実行がある場合、元要求はarchived_external_attempts/historical_unknown_responsesに残す。"
         "現在のunknownとは別で、過去の応答/最終費用が復元された意味ではない。", "",
         "## ノートPCからの確認", "", "このBranchの最新を取得し、このファイルと `data/manifests/fixed_v23_automation_status_v1.json` を読む。",
-        "集計・図表は `reports/fixed_v23_order_study_v1/`。原則1時間ごと、工程の切替・終了・失敗時にもcommit/pushする。",
+        "集計・図表は `reports/fixed_v23_order_study_v1/`。工程の切替・完了・予期しない停止など、意味のある区切りでcommit/pushする。定時送信はしない。",
+        "GitHubの更新時刻は最後に反映した区切りを示す。収集中は更新がなくても停止とは限らない。ローカルの状態記録は約1分ごとに更新する。",
         "Raw、環境、モデル、採点途中のラベルはGitで転送しない。研究室PC側の稼働を維持する。",
         "同じBranchで同じ箇所を両PCから同時編集しない。ノート側で収集を二重起動しない。", "",
         "## 残る著者作業", "", "図表完了後も、論文執筆・数値/主張/引用の照合・教員確認・投稿形式への整形・提出は未実施。",
@@ -134,15 +136,15 @@ def main_ready(config):
 
 def serve(config_path):
     config = load_config(config_path)
+    require(config["git_publish_policy"] == "events_only", "Publish only meaningful workflow events")
     from rag_research.experiments.storage import run_lock
 
     state = Path(config["state_dir"])
     stage = "waiting_main"
-    last_publication = 0.
     last_status = 0.
 
-    def heartbeat(force=False, error=None):
-        nonlocal last_publication, last_status
+    def heartbeat(event=False, error=None):
+        nonlocal last_status
         load_config(config_path)
         require(datetime.now().timestamp() < datetime.fromisoformat(config["deadline_utc"]).timestamp(),
                 "Finite workflow deadline reached")
@@ -152,26 +154,25 @@ def serve(config_path):
             else:
                 raise ValueError("Workflow stop requested")
         current = time.monotonic()
-        if force or current - last_status >= 60:
+        if event or current - last_status >= 60:
             status_documents(config, stage, error=error)
             last_status = current
-        if force or current - last_publication >= config["git_publish_interval_seconds"]:
+        if event:
             try:
                 write(state / "git_publication.json", publish_git(config))
             except Exception as failure:
                 write(state / "git_publication.json", {"at_utc": now(), "pushed": False,
                     "error": type(failure).__name__ + ": " + str(failure)[:300]})
-            last_publication = current
 
     with run_lock(state / "service-lock"):
         write(state / "owner.json", identity(__import__("os").getpid()))
         try:
-            heartbeat(force=True)
+            heartbeat(event=True)
             while not main_ready(config):
                 heartbeat()
                 time.sleep(config["poll_seconds"])
             for stage in STEPS:
-                heartbeat(force=True)
+                heartbeat(event=True)
                 if stage in {"publish-main", "publish-cal", "figures"}:
                     argv = [config["uv"], "run", "--offline", "--frozen", "--project", config["repo"], "python",
                             str(Path(__file__).with_name("figures.py")), "--config", str(config_path)]
@@ -185,9 +186,9 @@ def serve(config_path):
                     timeout = 259200 if stage == "collect-cal" else 86400 if stage.startswith("review-") else 3600
                 run_owned(argv, cwd=config["checkout"], receipt=state / "steps" / (stage + ".json"),
                           timeout=timeout, heartbeat=heartbeat)
-                heartbeat(force=True)
+                heartbeat(event=True)
             stage = "complete"
-            heartbeat(force=True)
+            heartbeat(event=True)
         except BaseException as failure:
             stage = "stopped" if (state / "stop.request").exists() else "failed"
             error = type(failure).__name__ + ": " + str(failure)[:400]

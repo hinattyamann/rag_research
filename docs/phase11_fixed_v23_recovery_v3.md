@@ -25,7 +25,7 @@
 
 新入口 `scripts/recover_fixed_v23_v3.py` は封印済み復旧v2を読み、監視集計のstarted除外、1要求の照合/送信予約、試行費用保全だけを外側から追加する。新登録 `fixed-v23-recovery-v3.json` に親v2・新入口・Wrapper・保存済み結果・元要求・取消ログをHashで結ぶ。登録後の旧ファイル差替えは行わない。
 
-実験はsystemdユーザーサービス `fixed-v23-main-recovery-v3.service` で起動し、完了後の既存自動化監視も再起動する。ノートPC向け進捗は原則1時間と工程切替/完了/失敗時にGit反映する。
+実験はsystemdユーザーサービス `fixed-v23-main-recovery-v3.service` で起動し、完了後の既存自動化監視も再起動する。ノートPC向け進捗は工程切替・完了・予期しない停止などの区切りでGit反映する。収集中の定時送信は行わない。
 
 ```bash
 ./.tools/worktrees/fixed-v23-study-v1/fixed-v23-recover-v3.sh status --run "$PWD/.tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1"
