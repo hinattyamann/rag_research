@@ -1,8 +1,8 @@
 # 固定v23 自動実行の状況
 
-更新: 2026-10-30 14:07:23 JST
+更新: 2026-10-30 14:07:26 JST
 
-現在の工程: **waiting_main**
+現在の工程: **failed**
 
 Codex CLI起動予約数: 0（ChatGPT認証、APIキーへの切替なし）
 
@@ -20,6 +20,8 @@ Codex CLI起動予約数: 0（ChatGPT認証、APIキーへの切替なし）
 | rewrite_failed_qa | 1 |
 | processed_qa | 24 |
 | remaining_qa | 16 |
+
+停止理由: ValueError: Main collector exited while status still says collecting; preserve unknown outcomes and inspect supervisor.log
 
 ## 工程と完了条件
 
