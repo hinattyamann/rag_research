@@ -1,10 +1,8 @@
 # 固定v23 自動実行の状況
 
-更新: 2026-10-30 14:07:26 JST
+更新: 2026-10-30 14:22:37 JST
 
-現在の工程: **failed（Main中断により自動進行を停止）**
-
-Main欄は13:52:38 JSTの古い公開値です。実プロセスは終了しており、実Rawの監査値は629試行・既知失敗2・応答不明1です。[中断監査](../data/manifests/fixed_v23_main_monitor_interruption_v1.json)と[未実施の復旧案](fixed_v23_interrupted_rewrite_recovery_proposal_v1.md)を参照してください。収集再開・Cal開始は行っていません。
+現在の工程: **recovery_prepared**
 
 Codex CLI起動予約数: 0（ChatGPT認証、APIキーへの切替なし）
 
@@ -12,24 +10,28 @@ Codex CLI起動予約数: 0（ChatGPT認証、APIキーへの切替なし）
 
 | Main項目 | 値 |
 |---|---:|
-| state | collecting |
-| updated_at_utc | 2026-10-30T04:52:38.095388+00:00 |
-| attempts | 628 |
+| state | recovery_ready |
+| updated_at_utc | 2026-10-30T05:21:54.721063+00:00 |
+| attempts | 629 |
 | failed | 2 |
-| unknown | 1 |
+| unknown | 0 |
 | completed_qa | 22 |
 | baseline_failed_qa | 1 |
 | rewrite_failed_qa | 1 |
 | processed_qa | 24 |
 | remaining_qa | 16 |
-
-停止理由: ValueError: Main collector exited while status still says collecting; preserve unknown outcomes and inspect supervisor.log
+| archived_external_attempts | 1 |
+| historical_unknown_responses | 1 |
+| external_reexecutions_started | 0 |
+| token_totals_complete | False |
 
 ## 工程と完了条件
 
 Main収集 → 日英全品質/Expected採点封印 → Main解析 → Cal進行条件確認/登録 → Cal収集 → 日英全採点封印 → Cal解析 → 図表/集計/結果説明資料。
 正常な完了状態を検知して進み、時刻だけでCalを開始しない。比較数不足・未知/他エラー・利用枠不足では保存して停止する。
 実行中のMain unknownは応答待ちのstarted記録を含む。終了済みの応答喪失と同一視しない。
+
+外的中断の許可済み再実行がある場合、元要求はarchived_external_attempts/historical_unknown_responsesに残す。現在のunknownとは別で、過去の応答/最終費用が復元された意味ではない。
 
 ## ノートPCからの確認
 

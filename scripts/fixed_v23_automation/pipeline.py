@@ -33,6 +33,12 @@ def runtime(config):
     recovery = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(recovery)
     recovery.verify_release()
+    if config.get("main_recovery_extension"):
+        extension_spec = importlib.util.spec_from_file_location("registered_v23_reexecution", root / config["main_recovery_extension"])
+        extension = importlib.util.module_from_spec(extension_spec)
+        extension_spec.loader.exec_module(extension)
+        extension.registration(root)
+        recovery.external_attempts = extension.external_attempts
     from rag_research.experiments import bilingual_quality
 
     original_source_split = bilingual_quality.source_split
@@ -87,6 +93,10 @@ def source_hashes(run):
             if path.is_file() and path.name not in {".run.lock", "progress.json"}:
                 require(path.resolve().is_relative_to(run.resolve()), "Source evidence escapes its registered run")
                 files[str(path.relative_to(run))] = sha(path)
+    for path in (run / "external_interruptions").rglob("*"):
+        if path.is_file():
+            require(path.resolve().is_relative_to(run.resolve()), "External attempt evidence escapes its run")
+            files[str(path.relative_to(run))] = sha(path)
     return files
 
 
@@ -103,7 +113,12 @@ def resource_audit(run, manifest, recovery, *, cohort):
         require(logs and set(sessions) <= {p.name for p in logs}, "Missing CUDA resource log")
         expected = recovery.runner.execution_identity(declared)
         snapshot = recovery.reserve(run, 1660)
-        allowed_unpaired = sum(name.startswith(stage + "/") for name in snapshot["error_paths"]) if cohort == "main" else 0
+        external = recovery.external_attempts(run) if cohort == "main" and hasattr(recovery, "external_attempts") else []
+        external_logs = {v["server_log"]: v["server_log_sha256"] for v in external if v["stage"] == stage}
+        require(all(sha(run / name) == value and (run / name).name not in sessions
+                    for name, value in external_logs.items()), "Registered cancelled session differs")
+        allowed_unpaired = (sum(name.startswith(stage + "/") for name in snapshot["error_paths"]) + len(external_logs)
+                            if cohort == "main" else 0)
         require(len(logs) - len(sessions) <= allowed_unpaired, "Unexplained missing session report")
         for path in logs:
             text = path.read_text(encoding="utf-8", errors="replace")
@@ -121,7 +136,10 @@ def resource_audit(run, manifest, recovery, *, cohort):
             checked.append({"stage": stage, "log_sha256": sha(path), "context_tokens": context,
                 "offloaded_layers": layers[-1][0], "total_layers": layers[-1][1],
                 "session_report_present": saved is not None,
-                "missing_report_reason": None if saved else "known Main length failure interrupted report publication; log retained"})
+                "missing_report_reason": None if saved else (
+                    "registered external monitor cancellation; request reexecuted separately"
+                    if str(path.relative_to(run)) in external_logs else
+                    "known Main length failure interrupted report publication; log retained")})
     return checked
 
 
@@ -139,6 +157,20 @@ def annotation_results(run, language):
     labels = validate_unit_annotations(units, read(bundle / "units/annotations.json"), sealed=True)
     require(all(a["label"] != "pending" for a in quality.values()), "Quality still pending")
     return quality, units, labels
+
+
+def collection_cost(snapshot, leaves, report, external):
+    return {"selected_qa": 20, "native_attempts": len(leaves) + len(external),
+        "active_native_attempts": len(leaves), "archived_external_attempts": len(external),
+        "historical_unknown_responses": len(external), "native_cost_complete": not external,
+        "total_output_tokens": None if external else sum(v.get("output_tokens") or 0 for v in leaves),
+        "failed_native_records": len(snapshot["error_paths"]), "unknown": len(snapshot["unknown_or_interrupted_paths"]),
+        "input_tokens": sum(v.get("input_tokens") or 0 for v in leaves) + sum(v["input_tokens"] for v in external),
+        "output_tokens": sum(v.get("output_tokens") or 0 for v in leaves),
+        "summed_observed_task_seconds": sum(v.get("elapsed_seconds") or v.get("generation_seconds") or 0 for v in leaves),
+        "baseline_missing_qa": len(report["failures"]),
+        "rewrite_missing_qa": sum(r["rewrite"]["status"] != "ok" for r in report["records"]),
+        "time_scope": "known observed task steps only; excludes unreceived cancelled-request cost, startup/retrieval/annotation; not route wall time"}
 
 
 def analyze_cohort(config, cohort):
@@ -188,14 +220,8 @@ def analyze_cohort(config, cohort):
         routes[language] = reconstruct(report["records"], assigned)
         snapshot = recovery.reserve(run / language, 1660)
         leaves = [read(run / language / leaf["path"]) for leaf in snapshot["raw_calls"]]
-        costs[language] = {"selected_qa": 20, "native_attempts": len(leaves),
-            "failed_native_records": len(snapshot["error_paths"]), "unknown": len(snapshot["unknown_or_interrupted_paths"]),
-            "input_tokens": sum(v.get("input_tokens") or 0 for v in leaves),
-            "output_tokens": sum(v.get("output_tokens") or 0 for v in leaves),
-            "summed_observed_task_seconds": sum(v.get("elapsed_seconds") or v.get("generation_seconds") or 0 for v in leaves),
-            "baseline_missing_qa": len(report["failures"]),
-            "rewrite_missing_qa": sum(r["rewrite"]["status"] != "ok" for r in report["records"]),
-            "time_scope": "sum of observed task steps; excludes startup/retrieval/annotation and is not route wall time"}
+        external = recovery.external_attempts(run / language) if cohort == "main" and hasattr(recovery, "external_attempts") else []
+        costs[language] = collection_cost(snapshot, leaves, report, external)
         for row in report["records"]:
             evaluation = row["evaluation"]
             scores = [t["score"] for t in evaluation["trials"] if t["status"] == "ok"]
@@ -227,6 +253,8 @@ def analyze_cohort(config, cohort):
         "progression_gate_passed": gate, "gate11_passed": False, "phase12_allowed": False,
         "human_reviewed": False, "history_independence_not_assumed": True,
         "limitations": ["two post-outcome Main stopping-rule amendments", "length-dependent missingness",
+            *(["one externally cancelled Main rewrite was reexecuted once with identical input; original response/cost remain unknown; known costs are lower bounds"]
+              if cohort == "main" and config.get("main_recovery_extension") else []),
             "AI annotations are not human ground truth", "language comparison includes dataset differences",
             "group-bootstrap CI is conditional on comparable observed QA; no seed/model/annotator variability",
             "known v23 negative specificity 87.5% did not meet the old 90% adoption criterion"]}

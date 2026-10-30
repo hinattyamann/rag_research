@@ -292,6 +292,41 @@ def test_analysis_real_seals_semantics_bootstrap_routes_and_native_costs(evidenc
     assert pipeline.analyze_cohort(config, "cal") == result
 
 
+def test_cancelled_request_cost_is_not_erased_or_turned_into_candidate_missing():
+    snapshot = {"error_paths": [], "unknown_or_interrupted_paths": []}
+    leaves = [{"input_tokens": 3211, "output_tokens": 800, "elapsed_seconds": 30}]
+    report = {"failures": [], "records": [{"rewrite": {"status": "ok"}}]}
+    external = [{"input_tokens": 3211, "output_tokens": None, "cost_incomplete": True}]
+    result = pipeline.collection_cost(snapshot, leaves, report, external)
+    assert result["native_attempts"] == 2 and result["input_tokens"] == 6422
+    assert result["output_tokens"] == 800 and result["total_output_tokens"] is None
+    assert result["historical_unknown_responses"] == 1 and result["unknown"] == 0
+    assert result["baseline_missing_qa"] == result["rewrite_missing_qa"] == 0
+    assert not result["native_cost_complete"] and result["summed_observed_task_seconds"] == 30
+
+
+def test_cancelled_session_requires_its_exact_registered_log_hash(tmp_path):
+    folder = tmp_path / "internal"
+    folder.mkdir()
+    for stage, context in (("baseline", 4096), ("internal", 12288)):
+        path = tmp_path / stage
+        path.mkdir(exist_ok=True)
+        (path / "server-1.log").write_text(f"offloaded 37/37 layers to GPU\nusing device CUDA0\nllama_context: n_ctx = {context}\n")
+    cancelled = folder / "server-2.log"
+    cancelled.write_bytes((folder / "server-1.log").read_bytes())
+    attempt = {"stage": "internal", "server_log": "internal/server-2.log", "server_log_sha256": common.sha(cancelled)}
+    fake = SimpleNamespace(runner=SimpleNamespace(execution_identity=lambda cfg: {}),
+        reserve=lambda *a: {"error_paths": ["baseline/a/record.json", "internal/b/rewrite.json"]},
+        external_attempts=lambda path: [attempt])
+    manifest = {"baseline": {"generation": {"context_tokens": 4096}},
+                "config": {"auxiliary_runtime": {"context_tokens": 12288}}}
+    rows = pipeline.resource_audit(tmp_path, manifest, fake, cohort="main")
+    assert any("external monitor cancellation" in (r["missing_report_reason"] or "") for r in rows)
+    cancelled.write_text("different cancelled log")
+    with pytest.raises(ValueError, match="cancelled session differs"):
+        pipeline.resource_audit(tmp_path, manifest, fake, cohort="main")
+
+
 def test_waiting_main_requires_all_packets_and_dead_owners(config, monkeypatch):
     run = Path(config["main_run"])
     common.write(run / "control.json", {})
@@ -447,7 +482,8 @@ def figure_result(cohort):
             "missing_qa_count": 8, "mean_increment": 0., "ci95": [0., 0.]} for lang in ("en", "ja")},
             "qa": [], "ja_minus_en": {"mean": 0., "ci95": [0., 0.]}}, "semantics": {},
         "collection_costs": {lang: {"native_attempts": 220, "output_tokens": 4400,
-            "summed_observed_task_seconds": 1000} for lang in ("en", "ja")},
+            "summed_observed_task_seconds": 1000, "archived_external_attempts": 0,
+            "native_cost_complete": True, "total_output_tokens": 4400} for lang in ("en", "ja")},
         "quality_routes": {lang: {"routes": [{"route": route, "quality_status": "reliable", "fallback": None,
             "operational_cost": {"recorded_completion_attempts": 1, "input_tokens": 10, "output_tokens": 2}}
             for route in ("no_repair", "always_rewrite", "original") for _ in range(20)]} for lang in ("en", "ja")},
@@ -459,8 +495,12 @@ def test_scientific_figures_have_csv_pdf_svg_and_preserve_zero_effect_and_no_ove
     monkeypatch.setattr(figures, "verify_seal", lambda run: {})
     monkeypatch.setattr(figures, "source_hashes", lambda run: {})
     for cohort in ("main", "cal"):
+        result = figure_result(cohort)
+        if cohort == "main":
+            result["collection_costs"]["ja"].update(native_attempts=221, archived_external_attempts=1,
+                native_cost_complete=False, total_output_tokens=None)
         common.write(Path(config["state_dir"]) / cohort / "analysis.private.json", {
-            **figure_result(cohort), "source_files_sha256": {}})
+            **result, "source_files_sha256": {}})
     figures.create_figures(config)
     output = Path(config["public_dir"])
     manifest = common.read(output / "artifact_manifest.json")
@@ -469,6 +509,7 @@ def test_scientific_figures_have_csv_pdf_svg_and_preserve_zero_effect_and_no_ove
     assert not manifest["gate11_passed"] and not manifest["phase12_allowed"]
     assert "0.0" in (output / "primary_comparison.csv").read_text()
     assert "効果なしを証明したとは書かない" in (output / "results_brief.md").read_text()
+    assert "最終費用は不明" in (output / "results_brief.md").read_text()
     before = {name: common.sha(output / name) for name in manifest["files"]}
     figures.create_figures(config)
     assert before == {name: common.sha(output / name) for name in before}

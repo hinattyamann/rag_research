@@ -119,7 +119,7 @@ def create_figures(config):
     csv_file(staging / "collection_cost.csv", costs)
     fig, axes = plt.subplots(1, 3, figsize=(12, 4))
     for ax, key, title, divisor in zip(axes, ["native_attempts", "output_tokens", "summed_observed_task_seconds"],
-            ["All native attempts (includes failures)", "Output tokens (thousands)", "Observed step hours"],
+            ["All attempts (includes cancelled requests)", "Known output tokens (thousands)", "Known observed step hours"],
             [1, 1000, 3600], strict=True):
         ax.bar(range(4), [r[key] / divisor for r in costs], color=["#2563a6", "#36a0aa"] * 2)
         ax.set_xticks(range(4), [f"{r['cohort']}\n{r['language']}" for r in costs])
@@ -159,6 +159,11 @@ def create_figures(config):
         notes.append(f"- {row['cohort']} / {row['language']}: 選定{row['selected_qa']}、完全比較{row['comparable_qa']}、"
             f"比較欠測{row['missing_qa']}。平均増分={row['mean_increment']}、95%区間=[{row['ci95_low']}, {row['ci95_high']}]。")
     for result in results:
+        for language, cost in result["collection_costs"].items():
+            if cost.get("archived_external_attempts", 0):
+                notes.append(f"- {result['cohort']} / {language}: 外的監視中断の要求{cost['archived_external_attempts']}件を同一入力で1回再実行。"
+                    "中断前の要求は試行数に含めるが、応答と最終費用は不明。Token/時間図は既知分の下限で、総費用完全とは扱わない。"
+                    "この外的中断自体を候補欠測にはしていない。")
         for language in ("en", "ja"):
             rows = [r for r in route_rows if r["cohort"] == result["cohort"] and r["language"] == language]
             base = next(r for r in rows if r["route"] == "no_repair")
@@ -173,7 +178,7 @@ def create_figures(config):
         "- 増分はQAごとの順序群不一致率と同順序反復群不一致率の差であり、正答率ではない。",
         "- 区間が0を含む場合、効果なしを証明したとは書かない。少数Groupと欠測による精度の限界を示す。",
         "- 品質図は失敗書換え時に初回保持した運用結果。初回対書換えの品質遷移の欠測とは区別する。",
-        "- Native費用は失敗も含む実収集費用。各方策の運用費用は別CSV、CLI採点費用は別台帳を参照する。",
+        "- Native試行数は失敗/取消も含む。中断応答の費用が不明な場合、Token/時間は既知分で総額ではない。方策の運用費用は別CSVで、外的中断の追加費用と区別し、CLI採点費用は別台帳を参照する。",
         "- 言語間にはDataset/領域/参照構造の差があり、言語単独の因果効果を主張しない。",
         "- Mainの停止規則は2回事後変更した。長さに依存する欠測、AI採点/人手未確認、既知v23の非支持87.5%と旧90%基準未達を明記する。",
         "- Calは調整に使っていない。旧Gate11/Phase12の達成や、一般的なRAG全体への保証として解釈しない。",

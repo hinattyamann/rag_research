@@ -1,30 +1,30 @@
 {
-  "updated_at_utc": "2026-10-30T05:07:26.097605+00:00",
+  "updated_at_utc": "2026-10-30T05:22:37.113171+00:00",
   "workflow": "fixed-v23-automation-v1",
-  "stage": "failed",
+  "stage": "recovery_prepared",
   "main": {
-    "state": "collecting",
-    "updated_at_utc": "2026-10-30T04:52:38.095388+00:00",
-    "attempts": 628,
+    "state": "recovery_ready",
+    "updated_at_utc": "2026-10-30T05:21:54.721063+00:00",
+    "attempts": 629,
     "failed": 2,
-    "unknown": 1,
+    "unknown": 0,
     "completed_qa": 22,
     "baseline_failed_qa": 1,
     "rewrite_failed_qa": 1,
     "processed_qa": 24,
-    "remaining_qa": 16
+    "remaining_qa": 16,
+    "archived_external_attempts": 1,
+    "historical_unknown_responses": 1,
+    "external_reexecutions_started": 0,
+    "token_totals_complete": false
   },
   "progress": {},
   "cli_invocations": 0,
   "api_key_fallback": false,
-  "error": "ValueError: Main collector exited while status still says collecting; preserve unknown outcomes and inspect supervisor.log",
+  "error": null,
   "local_raw_data_is_not_transferred_by_git": true,
   "all_figures_completed": false,
   "paper_written": false,
   "gate11_passed": false,
-  "phase12_allowed": false,
-  "main_status_is_stale": true,
-  "diagnosed_native_attempts_upper_bound": 629,
-  "incident_manifest": "data/manifests/fixed_v23_main_monitor_interruption_v1.json",
-  "continuation_proposal": "docs/fixed_v23_interrupted_rewrite_recovery_proposal_v1.md"
+  "phase12_allowed": false
 }

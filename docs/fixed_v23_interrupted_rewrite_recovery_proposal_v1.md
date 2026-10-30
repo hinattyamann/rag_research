@@ -1,5 +1,7 @@
 # Mainの中断書換え1件を再送せず保全する復旧案（未実施）
 
+2026-10-30 更新: この案は未実施のまま不採用。ユーザーは外的中断の書換えを再実行するよう指示したため、[復旧v3](phase11_fixed_v23_recovery_v3.md)を適用する。
+
 2026-10-30 14:08 JST。現行の復旧v2は未知の応答で停止するため、以下はまだ実行許可・新Protocol登録・Main再開を行っていない案である。[中断監査](../data/manifests/fixed_v23_main_monitor_interruption_v1.json)と[自動化の停止理由](fixed_v23_automation_status.md)を参照する。
 
 対象は監視Callbackの例外後に取消されたMain日本語 `internal/4c57945331dd21845abdf886/rewrite.json` の1要求だけとし、中断監査に保存したHashと一致することを要求する。別の未知やエラーへ一般化しない。

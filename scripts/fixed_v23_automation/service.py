@@ -22,7 +22,8 @@ ARTIFACT_NAMES |= {f"{name}.{extension}" for name in ("01_order_vs_repeat", "02_
 def public_status(config, stage, *, error=None):
     main = read(Path(config["main_run"]) / "status.public.json")
     fields = ("state", "updated_at_utc", "attempts", "failed", "unknown", "completed_qa", "baseline_failed_qa",
-              "rewrite_failed_qa", "processed_qa", "remaining_qa")
+              "rewrite_failed_qa", "processed_qa", "remaining_qa", "archived_external_attempts",
+              "historical_unknown_responses", "external_reexecutions_started", "token_totals_complete")
     state = Path(config["state_dir"])
     ledger = read(state / "cli_ledger.json") if (state / "cli_ledger.json").exists() else {"invocations": []}
     progress = read(state / "progress.json") if (state / "progress.json").exists() else {}
@@ -69,6 +70,8 @@ def status_documents(config, stage, *, error=None):
         "Main収集 → 日英全品質/Expected採点封印 → Main解析 → Cal進行条件確認/登録 → Cal収集 → 日英全採点封印 → Cal解析 → 図表/集計/結果説明資料。",
         "正常な完了状態を検知して進み、時刻だけでCalを開始しない。比較数不足・未知/他エラー・利用枠不足では保存して停止する。",
         "実行中のMain unknownは応答待ちのstarted記録を含む。終了済みの応答喪失と同一視しない。", "",
+        "外的中断の許可済み再実行がある場合、元要求はarchived_external_attempts/historical_unknown_responsesに残す。"
+        "現在のunknownとは別で、過去の応答/最終費用が復元された意味ではない。", "",
         "## ノートPCからの確認", "", "このBranchの最新を取得し、このファイルと `data/manifests/fixed_v23_automation_status_v1.json` を読む。",
         "集計・図表は `reports/fixed_v23_order_study_v1/`。原則1時間ごと、工程の切替・終了・失敗時にもcommit/pushする。",
         "Raw、環境、モデル、採点途中のラベルはGitで転送しない。研究室PC側の稼働を維持する。",
