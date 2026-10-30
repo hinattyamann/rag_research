@@ -1,0 +1,293 @@
+{
+  "version": "fixed-v23-automation-validation-v1",
+  "recorded_at_utc": "2026-10-30T04:54:19.610327+00:00",
+  "config_sha256": "0f31c4a40a7578894a2e2f2cd630513275fa0091a080be9b6fb699e5b5bada6b",
+  "all_14_sealed_inputs_match": true,
+  "new_research_native_calls_in_validation": 0,
+  "cal_collection_started": false,
+  "workflow_completed": false,
+  "tests": {
+    "full_pytest": {
+      "passed": 1383,
+      "seconds": 40.63
+    },
+    "new_automation_tests": {
+      "passed": 21,
+      "included_in_full_pytest": true
+    },
+    "fixed_checkout_source_automation_tests": {
+      "passed": 21,
+      "seconds": 3.84,
+      "new_native_calls": 0
+    },
+    "ruff": "passed",
+    "diff_check": "passed"
+  },
+  "actual_chatgpt_cli_synthetic_preflight": {
+    "synthetic_only": true,
+    "actual_research_native_calls": 0,
+    "cli_invocations": 2,
+    "proofs": [
+      {
+        "kind": "quality",
+        "label_count": 1,
+        "provenance": {
+          "input_sha256": "0393e3f59abca9549001e52feb2f9fff8a3515832ff000ee88ad09f3d57440ba",
+          "output_sha256": "94f0bfa5eb9da3ab6e01db762a712018676b8a9ff627c0b37a5c09487617cc8c",
+          "auth": "chatgpt",
+          "human_reviewed": false,
+          "history_independence_not_assumed": true,
+          "exact_model_identifier": null,
+          "configured_model": "gpt-6.1-sol",
+          "elapsed_seconds": 10.001506678003352,
+          "timing_scope": "whole CLI job, apportioned equally to its annotations",
+          "finished_at_utc": "2026-10-30T04:29:02.996085+00:00",
+          "api_key_fallback": false,
+          "token_usage": [
+            {
+              "input_tokens": 35778,
+              "cached_input_tokens": 17280,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 234,
+              "reasoning_output_tokens": 0
+            }
+          ],
+          "event_model_identifiers": []
+        },
+        "raw_output_sha256": "94f0bfa5eb9da3ab6e01db762a712018676b8a9ff627c0b37a5c09487617cc8c"
+      },
+      {
+        "kind": "units",
+        "label_count": 1,
+        "provenance": {
+          "input_sha256": "e6fa61ac03290daf66d4416ccdcce45a05fc248232aaca8dc874e9e7086c6a78",
+          "output_sha256": "6ba693c5e005d54a1ab5d559159a4d6a53de820ba667905d898931f9ad9eba87",
+          "auth": "chatgpt",
+          "human_reviewed": false,
+          "history_independence_not_assumed": true,
+          "exact_model_identifier": null,
+          "configured_model": "gpt-6.1-sol",
+          "elapsed_seconds": 8.001494388008723,
+          "timing_scope": "whole CLI job, apportioned equally to its annotations",
+          "finished_at_utc": "2026-10-30T04:29:11.029131+00:00",
+          "api_key_fallback": false,
+          "token_usage": [
+            {
+              "input_tokens": 35764,
+              "cached_input_tokens": 17280,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 225,
+              "reasoning_output_tokens": 0
+            }
+          ],
+          "event_model_identifiers": []
+        },
+        "raw_output_sha256": "6ba693c5e005d54a1ab5d559159a4d6a53de820ba667905d898931f9ad9eba87"
+      }
+    ]
+  },
+  "closed_main_resource_header_preflight": {
+    "currently_incomplete_main": true,
+    "languages": {
+      "en": {
+        "closed_session_headers": [
+          {
+            "stage": "baseline",
+            "log_sha256": "d4b352ea87ba4985b73aa3d5d0205d716411c7ab69f777039ad9945a61bffb97",
+            "context_tokens": 4096,
+            "offloaded_layers": 37,
+            "total_layers": 37,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "baseline",
+            "log_sha256": "36fc7a65895385570b4831c0cb286b70dbb3f835aae6a45f21d13c24fea42a7b",
+            "context_tokens": 4096,
+            "offloaded_layers": 37,
+            "total_layers": 37,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "baseline",
+            "log_sha256": "9f7e79f2e45e07af6d991d0a93492254a6d566c0ecfce7f627d70505deb64eee",
+            "context_tokens": 4096,
+            "offloaded_layers": 37,
+            "total_layers": 37,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "baseline",
+            "log_sha256": "901ae1951e5cc716db49383588a66d07fe6bebe6c34748bdbd091850701492ee",
+            "context_tokens": 4096,
+            "offloaded_layers": 37,
+            "total_layers": 37,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "baseline",
+            "log_sha256": "c5dfab0f0508bc79761478502e744d9bf53507e9e196dfcb6e7d24676fb7d50c",
+            "context_tokens": 4096,
+            "offloaded_layers": 37,
+            "total_layers": 37,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "internal",
+            "log_sha256": "a53b1a1134e17d60fb22afe1bb278303f4876d063dda66d7b3cb8ccfff1eaf3b",
+            "context_tokens": 12288,
+            "offloaded_layers": 33,
+            "total_layers": 33,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "internal",
+            "log_sha256": "b87dc30ef1146007419f37e30034fbba6d5c3501fd60209e6e0e3e6ab8e6a663",
+            "context_tokens": 12288,
+            "offloaded_layers": 33,
+            "total_layers": 33,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "internal",
+            "log_sha256": "80ada71c14e185f4e8e3cd4325c652e0c654a383ac81406175f563b08b468eb5",
+            "context_tokens": 12288,
+            "offloaded_layers": 33,
+            "total_layers": 33,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "internal",
+            "log_sha256": "911b253faf3523005f71dd64963b611030f07e096e80cd557ec43e0c9bb503fe",
+            "context_tokens": 12288,
+            "offloaded_layers": 33,
+            "total_layers": 33,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "internal",
+            "log_sha256": "26f2ccad835bc7e3ba3f6f5bec311e0d566f6739aae79b532006ed2141948acd",
+            "context_tokens": 12288,
+            "offloaded_layers": 33,
+            "total_layers": 33,
+            "session_report_present": true,
+            "missing_report_reason": null
+          }
+        ],
+        "excluded_currently_active_logs": [],
+        "actual_research_inference_launched": 0
+      },
+      "ja": {
+        "closed_session_headers": [
+          {
+            "stage": "baseline",
+            "log_sha256": "f3ff15106c78de3bfab4d07061b2657b17f45c1fb574143eecf2cf1088ac3b3d",
+            "context_tokens": 4096,
+            "offloaded_layers": 37,
+            "total_layers": 37,
+            "session_report_present": false,
+            "missing_report_reason": "known Main length failure interrupted report publication; log retained"
+          },
+          {
+            "stage": "baseline",
+            "log_sha256": "8efae9ff6a300f0d69aab0c30d8afa3d3b22d583e8f00032ab531af844e2d91d",
+            "context_tokens": 4096,
+            "offloaded_layers": 37,
+            "total_layers": 37,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "baseline",
+            "log_sha256": "8adea3f32662b0e54abf2a83d301f260bf81b897e32096d033f0e398a1769569",
+            "context_tokens": 4096,
+            "offloaded_layers": 37,
+            "total_layers": 37,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "baseline",
+            "log_sha256": "30ece3c138e95fb940778b47e8656a41947b53d14af4a10ceb5d457470e2ffc8",
+            "context_tokens": 4096,
+            "offloaded_layers": 37,
+            "total_layers": 37,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "baseline",
+            "log_sha256": "925e4842d644fee40480c0750b0ea0075fcdff481236d3bbe46552d5cdb07061",
+            "context_tokens": 4096,
+            "offloaded_layers": 37,
+            "total_layers": 37,
+            "session_report_present": true,
+            "missing_report_reason": null
+          },
+          {
+            "stage": "internal",
+            "log_sha256": "9517435f21f01c6e2ce40231e12eea4fa38511670f500b9af810edf88b07af7e",
+            "context_tokens": 12288,
+            "offloaded_layers": 33,
+            "total_layers": 33,
+            "session_report_present": false,
+            "missing_report_reason": "known Main length failure interrupted report publication; log retained"
+          }
+        ],
+        "excluded_currently_active_logs": [
+          "ja/internal/server-2.log"
+        ],
+        "actual_research_inference_launched": 0
+      }
+    },
+    "new_native_calls": 0,
+    "all_835_original_records_unchanged": true,
+    "automation_source_sha256": "b194d78cd8210f3e25615319c9f61c4b84baa6403df235eb8ad86ae2a495e916"
+  },
+  "no_model_calls_in_watcher_gpu_collection_python_analysis_figures_or_git": true,
+  "chatgpt_auth_forced_api_key_env_removed": true,
+  "api_billing_allowed": false,
+  "codex_cli_version": "0.164.0-alpha.11.1",
+  "deployment_source_matches_tested_source": true,
+  "main_inference_source_and_config_unchanged": true,
+  "old_main_raw_protected": 835,
+  "current_state": {
+    "updated_at_utc": "2026-10-30T04:54:19.609143+00:00",
+    "workflow": "fixed-v23-automation-v1",
+    "stage": "prepared",
+    "main": {
+      "state": "collecting",
+      "updated_at_utc": "2026-10-30T04:52:38.095388+00:00",
+      "attempts": 628,
+      "failed": 2,
+      "unknown": 1,
+      "completed_qa": 22,
+      "baseline_failed_qa": 1,
+      "rewrite_failed_qa": 1,
+      "processed_qa": 24,
+      "remaining_qa": 16
+    },
+    "progress": {},
+    "cli_invocations": 0,
+    "api_key_fallback": false,
+    "error": null,
+    "local_raw_data_is_not_transferred_by_git": true,
+    "all_figures_completed": false,
+    "paper_written": false,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "systemd_user_manager": "running",
+  "service_started": false,
+  "main_cal_real_annotations_not_yet_performed": true,
+  "gate11_passed": false,
+  "phase12_allowed": false
+}

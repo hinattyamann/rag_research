@@ -1,5 +1,7 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-10-30 自動実行制御: [Main→Cal→図表の自動化](phase11_fixed_v23_automation_v1.md)を追加する。新 `scripts/automate_fixed_v23.py` と `scripts/fixed_v23_automation/` を元Checkoutのsrc外へHash固定して配置し、独立サービスがMain完了→日英全品質/Expected封印→Main解析/Cal条件確認・専用登録→Cal収集→日英全採点封印/解析→4図・4CSV・結果説明まで進める。旧推論/採用Sourceは変更しない。Calは新専用scopeを厳密な登録と結び、英元Development/日元CalibrationのSourceと両言語Calibrationの分析用途を区別する。APIキーへの切替を禁止し、モデル/努力は既存CLI設定を固定、4候補/Job・最大192起動・1形式修正/Job・40分/Job・Workflow期限11/6 00:00 JST。原則1時間ごとのallowlist Commit/Push、二重起動/Source変更/未知/予算/比較不足の停止を実装する。Matplotlibをroot側uv環境に追加し、実行中GPU環境は変更しない。
+
 2026-10-30 追加再開制御: [復旧v2](phase11_fixed_v23_recovery_v2.md)の新 `scripts/recover_fixed_v23_v2.py` を元Checkoutの `src` 外へ追加する。旧v1登録/入口・元Release/推論Source/RawをHash保護し、自然終了・費用確定・本文512超過だけの書換えエラーを限定分類して続行する。既存の品質Export/方策再構成は失敗書換えを除外し初回保持/書換え失敗として扱う。公開状態は正常完了/初回欠測/書換え欠測/残りを区別する。ユーザーは今回Codexによる続きからの起動を依頼した。未知/他エラー停止、元Call/wall上限・Retry0を維持する。
 
 2026-10-29 再開制御の追加: [Main停止原因・再開手順](phase11_fixed_v23_recovery_v1.md)。新 `scripts/recover_fixed_v23.py` を元専用Checkoutの `src` 外へ追加し、元Release/推論Source/設定/Rawを保存したまま、取得済みの初回512 token上限打切りだけを欠測として継続する。未知/他エラーは停止、Retry0・元Call/累積wall上限を維持する。全665ファイルの独立退避・641科学的記録のHash保護・英語20問の再検証を行い、`recovery_ready` でユーザー起動待ち。推論条件変更や失敗の成功扱いは行わない。
