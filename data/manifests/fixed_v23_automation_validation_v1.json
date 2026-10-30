@@ -309,5 +309,23 @@
     "subsequent_main_liveness_audit_found_stale_collecting_and_missing_process": true
   },
   "main_monitor_interruption_manifest": "data/manifests/fixed_v23_main_monitor_interruption_v1.json",
-  "workflow_currently_blocked": true
+  "workflow_currently_blocked": true,
+  "final_launch_audit": {
+    "recorded_at_utc": "2026-10-30T05:09:19.765510+00:00",
+    "controller_revision": 2,
+    "stage": "failed",
+    "service_alive": false,
+    "main_collector_alive": false,
+    "workflow_cli_invocations": 0,
+    "automatic_failure_publication": {
+      "at_utc": "2026-10-30T05:07:28.354778+00:00",
+      "commit": "b5013ba37be0d2de6870d9be455623ca7ab3fa1f",
+      "pushed": true,
+      "previous_ahead": 0
+    },
+    "old_collecting_public_status_explicitly_marked_stale": true,
+    "new_native_calls": 0,
+    "cal_collection_started": false,
+    "unexecuted_recovery_proposal": "docs/fixed_v23_interrupted_rewrite_recovery_proposal_v1.md"
+  }
 }

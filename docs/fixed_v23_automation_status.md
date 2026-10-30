@@ -2,7 +2,9 @@
 
 更新: 2026-10-30 14:07:26 JST
 
-現在の工程: **failed**
+現在の工程: **failed（Main中断により自動進行を停止）**
+
+Main欄は13:52:38 JSTの古い公開値です。実プロセスは終了しており、実Rawの監査値は629試行・既知失敗2・応答不明1です。[中断監査](../data/manifests/fixed_v23_main_monitor_interruption_v1.json)と[未実施の復旧案](fixed_v23_interrupted_rewrite_recovery_proposal_v1.md)を参照してください。収集再開・Cal開始は行っていません。
 
 Codex CLI起動予約数: 0（ChatGPT認証、APIキーへの切替なし）
 
