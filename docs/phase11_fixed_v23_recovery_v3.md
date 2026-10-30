@@ -33,3 +33,6 @@ uv run python scripts/automate_fixed_v23.py status
 ```
 
 Wrapperは専用Checkoutへcdするため、Runを明示する場合は絶対Pathを使う。二重起動しない。起動・現在地・テストの実証は `data/manifests/fixed_v23_main_recovery_validation_v3.json` と研究日誌へ記録する。実収集が完了するまでMain完走/実採点/Cal収集/図表完了とは扱わない。
+
+
+2026-10-30 14:29 JST 実起動証拠: 14:24:51 JSTの初回systemd起動はCUDA共有ライブラリPath未継承により `llama-server --version` がexit127で終了し、新Native0/再実行予約未使用だった。通常端末と同じ `LD_LIBRARY_PATH=/usr/local/cuda-12.9/lib64` をMainと自動化双方へ指定し、14:26:34 JSTに再起動した。Supervisor154056/Child154210・collectingを確認。中断書換えは同一request Hash/Token列でstatus=okとなり、既存911記録不変、旧長さ失敗2不変で次QAへ進んだ。自動化監視も14:27:19 JSTに再起動し、waiting_main/CLI0と進捗38adf5dの自動Pushに成功した。現在の応答待ちunknownと、退避した過去応答不明1は区別する。

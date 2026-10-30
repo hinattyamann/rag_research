@@ -1,6 +1,6 @@
 # 固定v23 自動実行の状況
 
-更新: 2026-10-30 14:27:19 JST
+更新: 2026-10-30 14:29:22 JST
 
 現在の工程: **waiting_main**
 
@@ -11,15 +11,15 @@ Codex CLI起動予約数: 0（ChatGPT認証、APIキーへの切替なし）
 | Main項目 | 値 |
 |---|---:|
 | state | collecting |
-| updated_at_utc | 2026-10-30T05:27:13.226205+00:00 |
-| attempts | 630 |
+| updated_at_utc | 2026-10-30T05:29:16.927193+00:00 |
+| attempts | 631 |
 | failed | 2 |
 | unknown | 1 |
-| completed_qa | 22 |
+| completed_qa | 23 |
 | baseline_failed_qa | 1 |
 | rewrite_failed_qa | 1 |
-| processed_qa | 24 |
-| remaining_qa | 16 |
+| processed_qa | 25 |
+| remaining_qa | 15 |
 | archived_external_attempts | 1 |
 | historical_unknown_responses | 1 |
 | external_reexecutions_started | 1 |
