@@ -1,15 +1,15 @@
 {
   "version": "fixed-v23-automation-validation-v1",
-  "recorded_at_utc": "2026-10-30T04:54:19.610327+00:00",
-  "config_sha256": "0f31c4a40a7578894a2e2f2cd630513275fa0091a080be9b6fb699e5b5bada6b",
+  "recorded_at_utc": "2026-10-30T05:06:29.943025+00:00",
+  "config_sha256": "b0df1f1d4ea2d4e066d5b8980d6b8fce5abb9cf09cbacb11eba6a4564efccebd",
   "all_14_sealed_inputs_match": true,
   "new_research_native_calls_in_validation": 0,
   "cal_collection_started": false,
   "workflow_completed": false,
   "tests": {
     "full_pytest": {
-      "passed": 1383,
-      "seconds": 40.63
+      "passed": 1384,
+      "seconds": 44.51
     },
     "new_automation_tests": {
       "passed": 21,
@@ -21,7 +21,12 @@
       "new_native_calls": 0
     },
     "ruff": "passed",
-    "diff_check": "passed"
+    "diff_check": "passed",
+    "related_monitor_and_automation": {
+      "passed": 48,
+      "seconds": 4.79
+    },
+    "new_monitor_regression_included_in_full": true
   },
   "actual_chatgpt_cli_synthetic_preflight": {
     "synthetic_only": true,
@@ -286,8 +291,23 @@
     "phase12_allowed": false
   },
   "systemd_user_manager": "running",
-  "service_started": false,
+  "service_started": true,
   "main_cal_real_annotations_not_yet_performed": true,
   "gate11_passed": false,
-  "phase12_allowed": false
+  "phase12_allowed": false,
+  "initial_configuration_sha256": "0f31c4a40a7578894a2e2f2cd630513275fa0091a080be9b6fb699e5b5bada6b",
+  "controller_revision": 2,
+  "initial_launch_evidence": {
+    "method": "systemd user transient service",
+    "unit": "fixed-v23-automation-v1.service",
+    "started_at_jst": "2026-10-30 14:00:46 JST",
+    "systemd_main_pid": 146808,
+    "python_owner_pid": 146811,
+    "first_progress_git_commit": "6abbe1d2ce333959ef911326c9f8a2f26df0418a",
+    "first_progress_pushed": true,
+    "workflow_cli_invocations": 0,
+    "subsequent_main_liveness_audit_found_stale_collecting_and_missing_process": true
+  },
+  "main_monitor_interruption_manifest": "data/manifests/fixed_v23_main_monitor_interruption_v1.json",
+  "workflow_currently_blocked": true
 }

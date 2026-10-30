@@ -149,6 +149,10 @@ def rewrite_missing_count(output):
     for language in ("en", "ja"):
         for path in (output / language / "internal").glob("*/rewrite.json"):
             task = read_json(path)
+            # The task journal is deliberately unsealed while its request is running.
+            # Monitoring must not kill the collector by verifying that transient state.
+            if task.get("status") == "started":
+                continue
             verify_checkpoint(task)
             summary = path.parent / "summary.json"
             if rewrite_limit(task) and summary.exists() and all(

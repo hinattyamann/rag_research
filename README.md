@@ -1,6 +1,6 @@
 # rag_research
 
-2026-10-30 自動化準備: ユーザーの委任により、[Main収集後からCal解析・図表までの自動進行](docs/phase11_fixed_v23_automation_v1.md)を実装・検証しています。稼働後の工程・停止理由は `docs/fixed_v23_automation_status.md`、確定した図表/集計は `reports/fixed_v23_order_study_v1/` に反映します。収集待ちとローカルGPU収集ではCodexを呼ばず、匿名AI採点でのみChatGPT認証のCLIを使います。
+2026-10-30 自動化実装・停止状況: ユーザーの委任により、[Main収集後からCal解析・図表までの自動進行](docs/phase11_fixed_v23_automation_v1.md)を実装・検証し、14:00 JSTに起動しました。別途、Mainの監視不具合による中断と応答不明1件を検出したため、自動進行は停止しています。詳細は[中断記録](data/manifests/fixed_v23_main_monitor_interruption_v1.json)。工程・停止理由は `docs/fixed_v23_automation_status.md`、確定した図表/集計は `reports/fixed_v23_order_study_v1/` に反映します。収集待ちとローカルGPU収集ではCodexを呼ばず、匿名AI採点でのみChatGPT認証のCLIを使います。
 
 2026-10-30 12:37 JSTの現在地: v23固定Mainを[書換え欠測を保全する復旧v2](docs/phase11_fixed_v23_recovery_v2.md)で同じRunから再開しました。`started=true` / `collecting` を確認し、同種失敗は保存・再送せず次QAへ進みます。再開時は正常完了22/初回欠測1/書換え欠測1/残り16。Main全完了・匿名採点・Calは未実施です。
 

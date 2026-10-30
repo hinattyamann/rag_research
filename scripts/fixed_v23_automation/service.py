@@ -112,6 +112,10 @@ def main_ready(config):
     run = Path(config["main_run"])
     status, control = read(run / "status.public.json"), read(run / "control.json")
     require(status["state"] in {"collecting", "awaiting_scoring"}, "Main stopped before scoring readiness")
+    if status["state"] == "collecting":
+        require(alive(control.get("supervisor", {})),
+                "Main collector exited while status still says collecting; preserve unknown outcomes and inspect supervisor.log")
+        return False
     if status["state"] != "awaiting_scoring" or alive(control.get("supervisor", {})) or alive(control.get("child", {})):
         return False
     require(status["collection_completed"] is True and status["processed_qa"] == 40 and status["remaining_qa"] == 0

@@ -57,3 +57,6 @@ cd '/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23
 追加失敗がなければ最終的に正常完了38/初回欠測1/書換え欠測1/処理済み40/残り0で `awaiting_scoring` となる。書換え欠測が増えれば正常完了数はその分減る。`collection_completed=true` は欠測を含めた収集処理の終了であり、全40成功・全40完全比較ではない。
 
 終了後はCodexが全日英匿名品質/文Expectedを先に封印し、その後内部F/判断と結合して品質・順序対反復・費用/欠測を分析する。両言語10完全比較以上等のCal進行条件は維持し、Calは別Protocol/ユーザー起動、Phase12は開始しない。終了時間は再開後の実測から見直す。
+
+
+2026-10-30 14:04 JST 追記: 実走の監視Callbackがstatus=startedの書換えに完成Hash検証を行い、13:52頃にChild終了/応答不明1件を生じさせた。Root候補はstartedを監視集計から外す修正と再発Testを追加したが、元登録Sourceは保持し、今回の未知は再送せず停止する。詳細は[自動化の起動・中断記録](phase11_fixed_v23_automation_v1.md#2026-10-30-実起動とmain中断の検出)。本文上限512超過の限定許容を未知に拡張した意味ではない。

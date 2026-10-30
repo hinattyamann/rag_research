@@ -296,7 +296,11 @@ def test_waiting_main_requires_all_packets_and_dead_owners(config, monkeypatch):
     run = Path(config["main_run"])
     common.write(run / "control.json", {})
     common.write(run / "status.public.json", {"state": "collecting"})
+    with pytest.raises(ValueError, match="collector exited"):
+        service.main_ready(config)
+    monkeypatch.setattr(service, "alive", lambda owner: True)
     assert service.main_ready(config) is False
+    monkeypatch.setattr(service, "alive", lambda owner: False)
     status = {"state": "awaiting_scoring", "collection_completed": True, "processed_qa": 40,
               "remaining_qa": 0, "unknown": 0, "unhandled_failure_records": 0}
     common.write(run / "status.public.json", status)

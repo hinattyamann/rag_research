@@ -81,6 +81,22 @@ def test_runtime_float32_temperature_is_the_same_fixed_sampler():
     assert not recovery.rewrite_limit(task)
 
 
+def test_rewrite_missing_monitor_ignores_unsealed_running_journal_but_budget_still_blocks(tmp_path):
+    path = tmp_path / "ja/internal/running/rewrite.json"
+    path.parent.mkdir(parents=True)
+    value = {"task": "rewrite_answer", "status": "started", "completion_attempted": True}
+    write_json(path, value)
+    original = path.read_bytes()
+    assert recovery.rewrite_missing_count(tmp_path) == 0
+    assert path.read_bytes() == original
+    with pytest.raises(ValueError, match="Unknown/in-flight"):
+        recovery.reserve(tmp_path / "ja", 1660)
+    value["status"] = "ok"
+    write_json(path, value)
+    with pytest.raises(ValueError, match="Checkpoint hash mismatch"):
+        recovery.rewrite_missing_count(tmp_path)
+
+
 def test_validate_binds_parent_source_and_preserved_records(tmp_path, monkeypatch):
     monkeypatch.setattr(recovery, "ROOT", tmp_path)
     output = tmp_path / recovery.RUN

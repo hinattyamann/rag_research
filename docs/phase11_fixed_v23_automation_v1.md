@@ -57,3 +57,16 @@ uv run python scripts/automate_fixed_v23.py status
 起動済みなら再度startしない。停止要求は `uv run python scripts/automate_fixed_v23.py stop`。Main収集は独立しておりこの停止要求で強制終了しない。Cal収集中は次の新規QA境界で停止要求を処理する。他工程の中断は未確定CLI結果を残し得るため、再開前に記録を確認する。
 
 図表まで完了しても、原稿執筆・図表と主張/引用の照合・教員確認・投稿形式への整形・最終提出は著者の作業として残る。旧Gate11/Phase12は未達のままであり、研究結果や採択を保証するものではない。
+
+
+## 2026-10-30 実起動とMain中断の検出
+
+14:00:46 JSTにsystemdユーザーサービスを実起動し、Python所有PID146811、waiting_main/Workflow CLI0、初回の自動Commit `6abbe1d` とPush成功を確認した。その後の実PID監査でMain Supervisorが終了していることを発見した。元の公開状態は13:52:38 JSTのcollectingで止まっており、それだけで稼働を判断した説明を訂正する。
+
+Mainの復旧v2監視は、13:52:42 JSTに始まった次の書換えのstatus=started（封印前）を完成Checkpointとして検証し、Checkpoint hash mismatchを発生させた。finallyで所有ChildへSIGTERMが送られ、Nativeログにも要求取消を確認した。書換え要求の応答本文・最終Token/時間費用は確定できない。これは受信済み本文512超過とは別である。Raw実数は629試行、既知長さ失敗2、応答不明1。古い進捗628を最終実数とは扱わない。
+
+[中断監査Manifest](../data/manifests/fixed_v23_main_monitor_interruption_v1.json)に原因、未確定記録Hash、Supervisor Log Hash、元835記録の不変、現Run941ファイルの独立退避/全Hash一致を記録した。Retry0、応答不明の成功扱い/費用補完0、Main再開0、Cal開始0。新しい研究推論はこの診断では行っていない。
+
+Rootの復旧v2候補は監視のstartedを集計対象から外し、終了済みのHash不一致は引き続き拒否する。予算Guardはstartedを未知として止めるため、監視修正だけでは今回の要求を再送しない。この修正は元登録済みCollectorへ上書きしていない。別途、凍結した自動化監視のみをRevision2として旧設定/Sourceを退避して再封印し、collecting表示のまま所有Supervisorが終了した場合も明示的にfailed/Pushへ進むようにした。原13入力・推論Core/登録・実験条件は不変。[Revision記録](../data/manifests/fixed_v23_automation_controller_revision2.json)を参照する。
+
+最終検証は全1384 Test成功44.51秒、Ruff成功、関連48 Test成功4.79秒。人工2 CLI Jobは輸送/Schemaの実検証であり、実Main/Calの意味採点完了ではない。今後の続行には、失われた書換え1件の応答/費用不明をどう報告し、現行の未知停止規則・Cal進行条件と整合させるかを明示した別Protocolが必要である。単なるresumeや旧登録Hashの書換えは行わない。
