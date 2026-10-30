@@ -1,7 +1,7 @@
 {
-  "updated_at_utc": "2026-10-30T12:48:55.563139+00:00",
+  "updated_at_utc": "2026-10-30T12:49:44.532919+00:00",
   "workflow": "fixed-v23-automation-v1",
-  "stage": "review-main",
+  "stage": "failed",
   "main": {
     "state": "awaiting_scoring",
     "updated_at_utc": "2026-10-30T12:48:39.021627+00:00",
@@ -18,11 +18,19 @@
     "external_reexecutions_started": 1,
     "token_totals_complete": false
   },
-  "progress": {},
-  "cli_invocations": 0,
+  "progress": {
+    "updated_at_utc": "2026-10-30T12:49:20.858987+00:00",
+    "stage": "review",
+    "cohort": "main",
+    "language": "en",
+    "kind": "quality",
+    "cli_invocations": 2,
+    "codex_running": true
+  },
+  "cli_invocations": 2,
   "api_key_fallback": false,
   "git_publish_policy": "events_only",
-  "error": null,
+  "error": "ValueError: Subprocess failed; preserve receipt/log: /home/uchida/デスクトップ/code/rag_research/.tools/fixed-v23-automation-v1/steps/review-main.json",
   "local_raw_data_is_not_transferred_by_git": true,
   "all_figures_completed": false,
   "paper_written": false,
