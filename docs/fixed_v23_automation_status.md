@@ -1,6 +1,6 @@
 # 固定v23 自動実行の状況
 
-更新: 2026-10-30 14:29:22 JST
+更新: 2026-10-30 15:18:51 JST
 
 現在の工程: **waiting_main**
 
@@ -11,15 +11,15 @@ Codex CLI起動予約数: 0（ChatGPT認証、APIキーへの切替なし）
 | Main項目 | 値 |
 |---|---:|
 | state | collecting |
-| updated_at_utc | 2026-10-30T05:29:16.927193+00:00 |
-| attempts | 631 |
+| updated_at_utc | 2026-10-30T06:18:46.746659+00:00 |
+| attempts | 675 |
 | failed | 2 |
 | unknown | 1 |
-| completed_qa | 23 |
+| completed_qa | 24 |
 | baseline_failed_qa | 1 |
 | rewrite_failed_qa | 1 |
-| processed_qa | 25 |
-| remaining_qa | 15 |
+| processed_qa | 26 |
+| remaining_qa | 14 |
 | archived_external_attempts | 1 |
 | historical_unknown_responses | 1 |
 | external_reexecutions_started | 1 |
@@ -36,7 +36,8 @@ Main収集 → 日英全品質/Expected採点封印 → Main解析 → Cal進行
 ## ノートPCからの確認
 
 このBranchの最新を取得し、このファイルと `data/manifests/fixed_v23_automation_status_v1.json` を読む。
-集計・図表は `reports/fixed_v23_order_study_v1/`。原則1時間ごと、工程の切替・終了・失敗時にもcommit/pushする。
+集計・図表は `reports/fixed_v23_order_study_v1/`。工程の切替・完了・予期しない停止など、意味のある区切りでcommit/pushする。定時送信はしない。
+GitHubの更新時刻は最後に反映した区切りを示す。収集中は更新がなくても停止とは限らない。ローカルの状態記録は約1分ごとに更新する。
 Raw、環境、モデル、採点途中のラベルはGitで転送しない。研究室PC側の稼働を維持する。
 同じBranchで同じ箇所を両PCから同時編集しない。ノート側で収集を二重起動しない。
 
