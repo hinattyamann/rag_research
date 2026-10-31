@@ -85,7 +85,8 @@ def load_config(path):
 def progress(config, stage, **counts):
     require(set(counts) <= {"cohort", "language", "kind", "completed_jobs", "total_jobs", "cli_invocations",
         "baseline_qa", "baseline_failed_qa", "completed_qa", "rewrite_failed_qa", "attempts",
-        "failed", "unknown", "processed_qa", "remaining_qa", "codex_running", "phase", "error"},
+        "failed", "unknown", "processed_qa", "remaining_qa", "codex_running", "phase", "error",
+        "gpu_free_mib", "gpu_required_mib"},
         "Public progress must contain only allowlisted counters")
     write(Path(config["state_dir"]) / "progress.json", {"updated_at_utc": now(), "stage": stage, **counts})
 

@@ -1,0 +1,42 @@
+{
+  "version": "fixed-v23-cal-gpu-recovery-validation-v1",
+  "recorded_at_utc": "2026-10-31T08:53:35.017400+00:00",
+  "state": "deployed_not_yet_restarted",
+  "controller_revision": 6,
+  "previous_configuration_sha256": "a6f3634e4cb6a8d66f028ca31b1f9a26cf74afd1168475c0f7146579ba15ea4f",
+  "configuration_sha256": "f99da88d04b961a8277432705523ce9c4917192562b7742f1ba25d2f13c97782",
+  "cal_protocol_sha256": "dc9b19078b99d8ee64096dc1137b9acdbffe7bede51ff59edb7bb44eb5e89984",
+  "recovery_registration_sha256": "056e55e7b6948cc64f9ed980c7264158c3e6099767918ec81f2181ede4464a59",
+  "original_sealed_inputs_unchanged": 18,
+  "main_source_files_unchanged": 1450,
+  "cal_existing_source_files_unchanged": 375,
+  "cal_native_records_unchanged": 255,
+  "new_native_calls": 0,
+  "all_native_files_precede_failed_startup": true,
+  "startup_error": "cudaMalloc out of memory at model loading; no answer request sent",
+  "failed_startup_utc": "2026-10-31T07:03:26.660006+00:00",
+  "preserved_startup_failure_seconds": 18.029747559980024,
+  "policy": {
+    "internal_min_free_mib": 7100,
+    "baseline_min_free_mib": 3000,
+    "stable_samples": 3,
+    "maximum_wait_seconds": 3600,
+    "poll_seconds": 5,
+    "maximum_startup_failures": 2
+  },
+  "inference_conditions_changed": false,
+  "native_automatic_retries": 0,
+  "cal_stage_wall_seconds": 43200,
+  "cal_total_wall_seconds": 259200,
+  "git_publish_policy": "events_only",
+  "related_tests": {
+    "passed": 36,
+    "seconds": 3.56
+  },
+  "ruff": "passed",
+  "full_tests": {
+    "passed": 1402,
+    "seconds": 45.28
+  },
+  "actual_inference_resume_verified": false
+}

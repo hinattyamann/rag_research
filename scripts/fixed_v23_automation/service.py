@@ -142,9 +142,10 @@ def serve(config_path):
     state = Path(config["state_dir"])
     stage = "waiting_main"
     last_status = 0.
+    gpu_wait_notice = None
 
     def heartbeat(event=False, error=None):
-        nonlocal last_status
+        nonlocal last_status, gpu_wait_notice
         load_config(config_path)
         require(datetime.now().timestamp() < datetime.fromisoformat(config["deadline_utc"]).timestamp(),
                 "Finite workflow deadline reached")
@@ -154,6 +155,11 @@ def serve(config_path):
             else:
                 raise ValueError("Workflow stop requested")
         current = time.monotonic()
+        current_progress = read(state / "progress.json") if (state / "progress.json").exists() else {}
+        waiting = (current_progress.get("language"), current_progress.get("phase")) if current_progress.get("stage") == "waiting_gpu" else None
+        if waiting != gpu_wait_notice:
+            event = True
+            gpu_wait_notice = waiting
         if event or current - last_status >= 60:
             status_documents(config, stage, error=error)
             last_status = current

@@ -93,10 +93,11 @@ def source_hashes(run):
             if path.is_file() and path.name not in {".run.lock", "progress.json"}:
                 require(path.resolve().is_relative_to(run.resolve()), "Source evidence escapes its registered run")
                 files[str(path.relative_to(run))] = sha(path)
-    for path in (run / "external_interruptions").rglob("*"):
-        if path.is_file():
-            require(path.resolve().is_relative_to(run.resolve()), "External attempt evidence escapes its run")
-            files[str(path.relative_to(run))] = sha(path)
+    for folder in ("external_interruptions", "startup_recovery"):
+        for path in (run / folder).rglob("*"):
+            if path.is_file():
+                require(path.resolve().is_relative_to(run.resolve()), "External attempt evidence escapes its run")
+                files[str(path.relative_to(run))] = sha(path)
     return files
 
 
@@ -108,6 +109,11 @@ def resource_audit(run, manifest, recovery, *, cohort):
             ("internal", manifest["config"], manifest["config"]["auxiliary_runtime"]["context_tokens"])):
         folder = run / stage
         logs = sorted(folder.glob("server-*.log"))
+        from gpu_guard import registered_failures
+
+        startup = registered_failures(run.parent, run.name, stage) if cohort == "cal" else []
+        startup_logs = {str(Path(r["server_log"]).relative_to(run.name)): r for r in startup}
+        logs = [p for p in logs if str(p.relative_to(run)) not in startup_logs]
         sessions = {p.name.replace("session-", "server-").replace(".json", ".log"): p
                     for p in folder.glob("session-*.json")}
         require(logs and set(sessions) <= {p.name for p in logs}, "Missing CUDA resource log")
@@ -140,6 +146,10 @@ def resource_audit(run, manifest, recovery, *, cohort):
                     "registered external monitor cancellation; request reexecuted separately"
                     if str(path.relative_to(run)) in external_logs else
                     "known Main length failure interrupted report publication; log retained")})
+        checked.extend({"stage": stage, "log_sha256": r["server_log_sha256"], "session_report_present": False,
+            "startup_failed_before_inference": True, "new_native_calls": 0,
+            "missing_report_reason": "verified CUDA OOM at model loading; raw calls unchanged; startup cost retained"}
+            for r in startup)
     return checked
 
 
@@ -397,11 +407,33 @@ def collect_cal(config, config_path):
                     require(not (Path(config["state_dir"]) / "stop.request").exists(), "Workflow stop requested")
                     receipt = receipts / f"{language}-{phase}-{index}.json"
                     progress(config, "collect_cal", cohort="cal", language=language, phase=phase, codex_running=False)
-                    limit = min(protocol["session_wall_seconds"], protocol["total_wall_seconds"] - spent)
+                    prior_stage_cost = sum(read(p).get("elapsed_seconds", 0) for p in receipts.glob("*.json")
+                        if p.name.startswith(receipt.stem + ".startup-failure-")
+                        or read(p).get("stage_receipt") == receipt.name)
+                    limit = min(protocol["session_wall_seconds"] - prior_stage_cost, protocol["total_wall_seconds"] - spent)
                     require(limit > 0, "Original finite Calibration wall budget exhausted")
-                    run_owned([sys.executable, str(Path(__file__).resolve()), "--config", str(config_path),
-                        "--action", "cal-stage", "--language", language, "--phase", phase],
-                        cwd=config["checkout"], receipt=receipt, timeout=limit)
+                    while True:
+                        fresh = not receipt.exists()
+                        if config.get("cal_gpu_policy") and fresh:
+                            from gpu_guard import archive_startup_oom, raw_snapshot, wait_ready
+
+                            before_wait = sum(read(p).get("elapsed_seconds", 0) for p in receipts.glob("*.json"))
+                            wait_ready(config, language, phase, limit, stage_receipt=receipt.name)
+                            waited = sum(read(p).get("elapsed_seconds", 0) for p in receipts.glob("*.json")) - before_wait
+                            limit -= waited
+                            require(limit > 0, "GPU wait exhausted the original stage wall budget")
+                            progress(config, "collect_cal", cohort="cal", language=language, phase=phase, codex_running=False)
+                            before = raw_snapshot(run / language)
+                        try:
+                            run_owned([sys.executable, str(Path(__file__).resolve()), "--config", str(config_path),
+                                "--action", "cal-stage", "--language", language, "--phase", phase],
+                                cwd=config["checkout"], receipt=receipt, timeout=limit)
+                            break
+                        except ValueError:
+                            if not config.get("cal_gpu_policy") or not fresh:
+                                raise
+                            limit -= archive_startup_oom(config, receipt, before, language, phase)
+                            require(limit > 0, "Original stage wall budget exhausted by startup failures")
                     spent = sum(read(p).get("elapsed_seconds", 0) for p in receipts.glob("*.json"))
                     if read(run / f"result-{language}-{phase}.json")["stage_complete"]:
                         break
