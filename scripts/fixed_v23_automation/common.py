@@ -101,21 +101,24 @@ def terminate_owned(process, owner):
             process.wait(timeout=10)
 
 
-def run_owned(argv, *, cwd, receipt, timeout, heartbeat=None, env=None):
+def run_owned(argv, *, cwd, receipt, timeout, heartbeat=None, env=None, stdin_path=None):
     """An interrupted/failed invocation is durable and never silently resubmitted."""
     receipt = Path(receipt)
+    stdin_hash = sha(stdin_path) if stdin_path is not None else None
     if receipt.exists():
         saved = read(receipt)
         require(saved.get("exit_code") == 0, "Previous invocation failed or has unknown outcome: " + str(receipt))
+        require(saved.get("stdin_sha256") == stdin_hash, "Saved invocation stdin changed")
         return saved
     receipt.parent.mkdir(parents=True, exist_ok=True)
     started = time.monotonic()
-    with receipt.with_suffix(".log").open("ab", buffering=0) as log:
-        process = subprocess.Popen(argv, cwd=cwd, stdin=subprocess.DEVNULL, stdout=log, stderr=log,
+    with receipt.with_suffix(".log").open("ab", buffering=0) as log, \
+            Path(stdin_path if stdin_path is not None else os.devnull).open("rb") as input_stream:
+        process = subprocess.Popen(argv, cwd=cwd, stdin=input_stream, stdout=log, stderr=log,
                                    start_new_session=True, env=clean_env() if env is None else env)
         owner = identity(process.pid)
         saved = {"argv": list(map(str, argv)), "owner": owner, "started_at_utc": now(),
-                 "exit_code": None, "timeout_seconds": timeout}
+                 "exit_code": None, "timeout_seconds": timeout, "stdin_sha256": stdin_hash}
         write(receipt, saved)
         try:
             while process.poll() is None:

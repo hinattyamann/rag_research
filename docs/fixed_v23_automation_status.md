@@ -1,8 +1,8 @@
 # 固定v23 自動実行の状況
 
-更新: 2026-10-30 21:49:44 JST
+更新: 2026-10-31 10:23:08 JST
 
-現在の工程: **failed**
+現在の工程: **annotation_recovery_ready**
 
 Codex CLI起動予約数: 2（ChatGPT認証、APIキーへの切替なし）
 
@@ -26,8 +26,6 @@ Codex CLI起動予約数: 2（ChatGPT認証、APIキーへの切替なし）
 | token_totals_complete | False |
 
 直近の作業: `{'updated_at_utc': '2026-10-30T12:49:20.858987+00:00', 'stage': 'review', 'cohort': 'main', 'language': 'en', 'kind': 'quality', 'cli_invocations': 2, 'codex_running': True}`
-
-停止理由: ValueError: Subprocess failed; preserve receipt/log: /home/uchida/デスクトップ/code/rag_research/.tools/fixed-v23-automation-v1/steps/review-main.json
 
 ## 工程と完了条件
 

@@ -1,0 +1,158 @@
+{
+  "version": "fixed-v23-annotation-recovery-validation-v2",
+  "recorded_at_utc": "2026-10-31T01:23:08.994464+00:00",
+  "controller_revision": 5,
+  "previous_configuration_sha256": "bed53dcb81a7661210950cc12eb583f38bfac3222321c5bbc70dc4a2eafe814b",
+  "configuration_sha256": "a6f3634e4cb6a8d66f028ca31b1f9a26cf74afd1168475c0f7146579ba15ea4f",
+  "cause": "CLI file tools failed with bwrap loopback RTM_NEWADDR Operation not permitted; both outputs were empty arrays despite exit0",
+  "main_collection_completed_at_jst": "2026-10-30 21:48",
+  "stopped_at_jst": "2026-10-30 21:49",
+  "main_status_before": {
+    "state": "awaiting_scoring",
+    "next_owner": "Codex",
+    "next_action": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1/report_to_codex.txt",
+    "updated_at_utc": "2026-10-30T12:48:39.021627+00:00",
+    "reason": null,
+    "run": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1",
+    "status_file": "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1/status.public.json",
+    "attempts": 1005,
+    "unknown": 0,
+    "failed": 2,
+    "input_tokens": 2892671,
+    "output_tokens": 3497339,
+    "observed_task_seconds": 67911.82401467257,
+    "baseline_qa": 39,
+    "completed_qa": 38,
+    "planned_qa": 40,
+    "remaining_qa": 0,
+    "token_totals_complete": false,
+    "rough_remaining_task_seconds": 0.0,
+    "estimate_scope": "observed task-time per finished QA; includes partial work, excludes scoring; not a wall-time guarantee",
+    "collection_completed": true,
+    "quality_and_expected_sealed": false,
+    "old_gate11_passed": false,
+    "phase12_allowed": false,
+    "recovery_protocol": "fixed-v23-external-interruption-reexecution-v3",
+    "baseline_failed_qa": 1,
+    "baseline_processed_qa": 40,
+    "baseline_remaining_qa": 0,
+    "rewrite_failed_qa": 1,
+    "missing_candidate_qa": 2,
+    "processed_qa": 40,
+    "successful_qa": 38,
+    "collection_has_missing": true,
+    "unhandled_failure_records": 0,
+    "failure_counts_are_retained": true,
+    "active_attempts": 1004,
+    "archived_external_attempts": 1,
+    "historical_unknown_responses": 1,
+    "external_reexecutions_started": 1,
+    "total_output_tokens": null,
+    "external_interruption_is_candidate_missing": false,
+    "external_reexecution_registration": {
+      "path": "fixed-v23-recovery-v3.json",
+      "sha256": "b7570ccad187f360ddd88d8424ae428657b624cbce4653a630aa33a3c4733020"
+    }
+  },
+  "all_main_file_count": 1492,
+  "all_main_hashes_preserved": true,
+  "main_hash_manifest_sha256": "a32f8a65759966101ad1a06ec5f28fc522b83cf96766fa90f150bd9226b96a45",
+  "failed_review_receipt_sha256": "30246785836cd2dc0c7bccfcaed5e0520be6c56d2d214aa4a9634f500436c2a3",
+  "failed_cli_invocations_retained": 2,
+  "original_failed_job_evidence_retained": true,
+  "changed_sealed_inputs": [
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/scripts/fixed_v23_automation_v1/common.py",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/scripts/fixed_v23_automation_v1/review.py",
+    "/home/uchida/デスクトップ/code/rag_research/docs/ai_quality_protocol.md"
+  ],
+  "other_15_sealed_inputs_unchanged": true,
+  "stdin_transport_and_cardinality_guards": true,
+  "model_rubric_anonymity_sealing_cal_conditions_unchanged": true,
+  "actual_same_systemd_synthetic_preflight": {
+    "synthetic_only": true,
+    "systemd_same_environment": true,
+    "cli_invocations": 2,
+    "actual_research_native_calls": 0,
+    "proofs": [
+      {
+        "kind": "quality",
+        "language": "en",
+        "rows": 4,
+        "input_bytes": 30008,
+        "proof": {
+          "input_sha256": "63321ea754ace495404ec305ecb904fd1ca425a86d53899cd245ff7a7b6529ec",
+          "output_sha256": "6a994a23862abb0ce194125d8eb6b33027e483059a888eb0ec84f3efb7dd0070",
+          "auth": "chatgpt",
+          "human_reviewed": false,
+          "history_independence_not_assumed": true,
+          "exact_model_identifier": null,
+          "configured_model": "gpt-6.1-sol",
+          "elapsed_seconds": 12.001688849995844,
+          "timing_scope": "whole CLI job, apportioned equally to its annotations",
+          "finished_at_utc": "2026-10-31T01:20:27.943509+00:00",
+          "api_key_fallback": false,
+          "input_transport": "inline_stdin_v2",
+          "stdin_sha256": "3360ac24dc429b8da7284dc135a9bd6a667f9555e34779537722982a14aceb28",
+          "requested_annotations": 4,
+          "token_usage": [
+            {
+              "input_tokens": 22876,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 837,
+              "reasoning_output_tokens": 27
+            }
+          ],
+          "event_model_identifiers": []
+        },
+        "no_cli_tool_events": true
+      },
+      {
+        "kind": "units",
+        "language": "ja",
+        "rows": 4,
+        "input_bytes": 35400,
+        "proof": {
+          "input_sha256": "5be9d11bac7ad39c86c084048762f1246ef68dcd3a1cd6e608acaab8cc06d912",
+          "output_sha256": "8133c0ab25baf79630c0ae5de6c78cf1613ad43e8a896d63a0ffded67957ca33",
+          "auth": "chatgpt",
+          "human_reviewed": false,
+          "history_independence_not_assumed": true,
+          "exact_model_identifier": null,
+          "configured_model": "gpt-6.1-sol",
+          "elapsed_seconds": 10.001323768985458,
+          "timing_scope": "whole CLI job, apportioned equally to its annotations",
+          "finished_at_utc": "2026-10-31T01:20:37.975519+00:00",
+          "api_key_fallback": false,
+          "input_transport": "inline_stdin_v2",
+          "stdin_sha256": "5cb6aa0c85ee895f19a9c171e4bbf3b27cd2406bdaaa2598033a886d4e6ef93d",
+          "requested_annotations": 4,
+          "token_usage": [
+            {
+              "input_tokens": 25086,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 896,
+              "reasoning_output_tokens": 17
+            }
+          ],
+          "event_model_identifiers": []
+        },
+        "no_cli_tool_events": true
+      }
+    ]
+  },
+  "tests": {
+    "pytest_passed": 1392,
+    "pytest_seconds": 45.68,
+    "related_passed": 26,
+    "related_seconds": 4.31,
+    "ruff": "passed",
+    "fixed_checkout_source_passed": 26,
+    "fixed_checkout_source_seconds": 4.94
+  },
+  "new_research_native_calls": 0,
+  "main_recollection": false,
+  "workflow_restarted": false,
+  "phase12_allowed": false
+}

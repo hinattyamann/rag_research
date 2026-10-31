@@ -36,6 +36,7 @@ def config(tmp_path):
         "public_status_json": "status.json", "public_status_markdown": "status.md", "sealed_files": {},
         "phase12_allowed": False, "api_billing_allowed": False, "maximum_cli_invocations": 5,
         "maximum_cli_job_seconds": 10, "maximum_format_repairs": 1, "annotation_cases_per_job": 4,
+        "annotation_transport": "inline_stdin_v2",
         "configured_codex_model": "synthetic-test-model", "configured_codex_reasoning_effort": "high",
         "codex": "synthetic-codex", "git_publish_policy": "events_only", "poll_seconds": .001,
         "cal_launch_authorized": True,
@@ -81,6 +82,21 @@ def test_owned_receipt_never_resubmits_a_failed_or_interrupted_process(tmp_path)
     result = common.run_owned([sys.executable, "-c", "print('synthetic')"], cwd=tmp_path, receipt=receipt, timeout=2)
     assert result["exit_code"] == 0 and common.run_owned(["invalid-command"], cwd=tmp_path,
         receipt=receipt, timeout=2) == result
+
+
+def test_owned_process_receives_large_unicode_input_without_shell_and_rejects_changed_stdin(tmp_path):
+    path = tmp_path / "input.json"
+    text = "匿名の根拠だけを渡す。" * 16000
+    path.write_text(text)
+    receipt = tmp_path / "receipt.json"
+    argv = [sys.executable, "-c", "import sys; print(len(sys.stdin.read()))"]
+    saved = common.run_owned(argv, cwd=tmp_path, receipt=receipt, timeout=3, stdin_path=path)
+    assert saved["stdin_sha256"] == common.sha(path)
+    assert receipt.with_suffix(".log").read_text().strip() == str(len(text))
+    assert common.run_owned(["must-not-run"], cwd=tmp_path, receipt=receipt, timeout=3, stdin_path=path) == saved
+    path.write_text("changed")
+    with pytest.raises(ValueError, match="stdin changed"):
+        common.run_owned(argv, cwd=tmp_path, receipt=receipt, timeout=3, stdin_path=path)
 
 
 def packets(run):
@@ -450,14 +466,20 @@ def test_cal_collection_has_bounded_stages_preserves_spent_wall_on_resume(config
     assert common.read(Path(config["cal_run"]) / "collection_completed.json")["processed_qa"] == 40
 
 
-def test_cli_command_pins_chatgpt_auth_model_sandbox_and_has_durable_provenance(config, monkeypatch, tmp_path):
+@pytest.mark.parametrize("empty", [False, True])
+def test_cli_command_pins_auth_and_delivers_complete_inline_input_without_file_tools(config, monkeypatch, tmp_path, empty):
     monkeypatch.setattr(review, "cli_auth", lambda cfg: None)
     observed = []
 
     def run(argv, *, receipt, **kwargs):
         observed.append(argv)
+        inline = common.read(kwargs["stdin_path"])
+        assert inline["annotation_input"]["canary"] == "Inline evidence: museum closed Sundays."
+        assert inline["output_schema"]["properties"]["annotations"]["minItems"] == 1
+        assert inline["output_schema"]["properties"]["annotations"]["maxItems"] == 1
+        assert "Do not invoke ANY tools" in argv[-1]
         output = Path(argv[argv.index("--output-last-message") + 1])
-        common.write(output, {"annotations": []})
+        common.write(output, {"annotations": [] if empty else [{"annotation_id": "Q-test"}]})
         common.write(receipt, {"exit_code": 0, "elapsed_seconds": 1., "finished_at_utc": "2026-10-30T00:00:00+00:00"})
         receipt.with_suffix(".log").write_text(json.dumps({"type": "turn.completed", "usage": {"input_tokens": 10}}) + "\n")
         return common.read(receipt)
@@ -465,11 +487,21 @@ def test_cli_command_pins_chatgpt_auth_model_sandbox_and_has_durable_provenance(
     monkeypatch.setattr(review, "run_owned", run)
     blank = {"annotation_id": "Q-test", "candidate_sha256": "test", "label": "pending",
         "criteria": {"context_support": "pending"}, "essential_points": "", "reason": "", "evidence": []}
-    result, proof = review.run_job(config, tmp_path / "job", {"cohort": "synthetic", "language": "en"}, blank, "quality")
-    assert result == {"annotations": []}
+    payload = {"cohort": "synthetic", "language": "en", "annotations": [blank],
+               "canary": "Inline evidence: museum closed Sundays."}
+    if empty:
+        with pytest.raises(ValueError, match="incomplete annotation array"):
+            review.run_job(config, tmp_path / "job", payload, blank, "quality")
+        assert not common.read(Path(config["state_dir"]) / "progress.json")["codex_running"]
+        assert (tmp_path / "job/provenance.json").exists()  # retain failed-call usage
+        return
+    result, proof = review.run_job(config, tmp_path / "job", payload, blank, "quality")
+    assert result == {"annotations": [{"annotation_id": "Q-test"}]}
     assert 'forced_login_method="chatgpt"' in observed[0] and "--sandbox" in observed[0]
     assert 'model="synthetic-test-model"' in observed[0]
     assert proof["token_usage"] == [{"input_tokens": 10}] and proof["api_key_fallback"] is False
+    assert proof["input_transport"] == "inline_stdin_v2" and proof["requested_annotations"] == 1
+    assert not common.read(Path(config["state_dir"]) / "progress.json")["codex_running"]
 
 
 def git(cwd, *args):

@@ -73,6 +73,7 @@ def prepare():
         "configured_codex_reasoning_effort": settings.get("model_reasoning_effort", "high"),
         "poll_seconds": 30, "git_publish_policy": "events_only",
         "annotation_cases_per_job": 4, "maximum_cli_invocations": 192,
+        "annotation_transport": "inline_stdin_v2",
         "maximum_format_repairs": 1, "maximum_cli_job_seconds": 2400,
         "deadline_utc": "2026-11-05T15:00:00+00:00", "sealed_files": files,
         "remote": "origin", "remote_url": subprocess.check_output(["git", "remote", "get-url", "origin"], cwd=REPO, text=True).strip(),
