@@ -153,6 +153,92 @@
   },
   "new_research_native_calls": 0,
   "main_recollection": false,
-  "workflow_restarted": false,
-  "phase12_allowed": false
+  "workflow_restarted": true,
+  "phase12_allowed": false,
+  "restarted_at_jst": "2026-10-31 10:24:55 JST",
+  "audit_at_utc": "2026-10-31T01:27:26.876774+00:00",
+  "owner": {
+    "pid": 216909,
+    "created": 1793409895.08
+  },
+  "real_main_jobs_validated": [
+    {
+      "job": "main-en-quality-000-inline-v2",
+      "validated_rows": 4,
+      "validated_file_sha256": "5bd08f0f5523fbaf1354b6a61c4be1770217e124cb8ef8e7d1febba6962f8262",
+      "format_repairs_used": 0
+    },
+    {
+      "job": "main-en-quality-004-inline-v2",
+      "validated_rows": 4,
+      "validated_file_sha256": "a44fee82ebcdb42e6c197d628b8fb409fcdce98b54fb4454d2a325eb76b679bb",
+      "format_repairs_used": 0
+    },
+    {
+      "job": "main-en-quality-008-inline-v2",
+      "validated_rows": 4,
+      "validated_file_sha256": "b1d544b10b49e70630eac0f422c6463752226042333f1e096c096ed6b8fe9726",
+      "format_repairs_used": 0
+    },
+    {
+      "job": "main-en-quality-012-inline-v2",
+      "validated_rows": 4,
+      "validated_file_sha256": "7bee6bc0bae27dabd598074029ba2a9093c6db261842eab74ab18eb1aebf27d0",
+      "format_repairs_used": 0
+    }
+  ],
+  "real_main_validated_rows": 16,
+  "old_failed_cli_ledger_entries_unchanged": true,
+  "current_cli_reservations": 7,
+  "all_1492_original_main_files_unchanged_after_restart": true,
+  "changed_inputs_verified": [
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/scripts/fixed_v23_automation_v1/common.py",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/scripts/fixed_v23_automation_v1/review.py",
+    "/home/uchida/デスクトップ/code/rag_research/docs/ai_quality_protocol.md"
+  ],
+  "status_after_restart": {
+    "updated_at_utc": "2026-10-31T01:26:59.017570+00:00",
+    "workflow": "fixed-v23-automation-v1",
+    "stage": "review-main",
+    "main": {
+      "state": "awaiting_scoring",
+      "updated_at_utc": "2026-10-30T12:48:39.021627+00:00",
+      "attempts": 1005,
+      "failed": 2,
+      "unknown": 0,
+      "completed_qa": 38,
+      "baseline_failed_qa": 1,
+      "rewrite_failed_qa": 1,
+      "processed_qa": 40,
+      "remaining_qa": 0,
+      "archived_external_attempts": 1,
+      "historical_unknown_responses": 1,
+      "external_reexecutions_started": 1,
+      "token_totals_complete": false
+    },
+    "progress": {
+      "updated_at_utc": "2026-10-31T01:26:47.285217+00:00",
+      "stage": "review",
+      "cohort": "main",
+      "language": "en",
+      "kind": "quality",
+      "cli_invocations": 6,
+      "codex_running": true
+    },
+    "cli_invocations": 6,
+    "api_key_fallback": false,
+    "git_publish_policy": "events_only",
+    "error": null,
+    "local_raw_data_is_not_transferred_by_git": true,
+    "all_figures_completed": false,
+    "paper_written": false,
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "initial_restart_publication": {
+    "at_utc": "2026-10-31T01:25:00.756490+00:00",
+    "commit": "df2e8f20cdb2b4b54829b7fff4ce7a737982a764",
+    "pushed": true,
+    "previous_ahead": 0
+  }
 }

@@ -26,3 +26,6 @@ Mainは2026-10-30 21:48 JSTに全40選定の処理を完了した。正常38、�
 設定と凍結HelperはRevision5として旧版を退避・再封印する。停止原因/テスト/再開後の実採点成功は `data/manifests/fixed_v23_annotation_recovery_validation_v2.json` に記録する。全実採点、Main解析、Cal、図表が終了するまでは、それらを完了したとは報告しない。Git反映は従来どおり工程の切替・完了・停止等の区切りだけである。
 
 標準入力による指示とデータの受渡しは[Codex公式の非対話実行仕様](https://learn.chatgpt.com/docs/non-interactive-mode)による。
+
+
+2026-10-31 10:27 JST 実再開: f915f5c「採点資料をCLIへ直接渡して無人実行の読取障害を修正」をCommit/通常Pushし、10:24:55 JSTに同じsystemdサービスを再起動した。review-main/所有者生存/停止理由なしを確認。実Mainの16注釈/4 Jobが既存Validatorに通り、次Jobへ進んだ。Main1492元ファイルのHash不変、旧2回のCLI台帳不変を再照合した。実日英の全採点・Cal以降の完了はまだ主張しない。

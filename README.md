@@ -1,6 +1,6 @@
 # rag_research
 
-2026-10-31 更新: Main収集は全40件の処理を完了しました。採点CLIの入力読取エラーを修正し、[匿名資料を直接渡す方式で採点を再開](docs/phase11_fixed_v23_annotation_recovery_v2.md)します。最新工程は[自動化状況](docs/fixed_v23_automation_status.md)を参照してください。
+2026-10-31 更新: Main収集は全40件の処理を完了しました。採点CLIの入力読取エラーを修正し、[匿名資料を直接渡す方式で採点を再開](docs/phase11_fixed_v23_annotation_recovery_v2.md)しました。10:24 JST再起動後、実Main採点のValidator通過と次Jobへの進行を確認済みです。最新工程は[自動化状況](docs/fixed_v23_automation_status.md)を参照してください。
 
 GitHubの進捗反映は、工程の切替・完了・予期しない停止など意味のある区切りで行います。収集中の定時送信は行わず、ローカル監視・進捗記録は継続します。
 
