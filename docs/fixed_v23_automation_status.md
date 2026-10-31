@@ -1,8 +1,8 @@
 # 固定v23 自動実行の状況
 
-更新: 2026-10-31 10:23:08 JST
+更新: 2026-10-31 10:24:56 JST
 
-現在の工程: **annotation_recovery_ready**
+現在の工程: **waiting_main**
 
 Codex CLI起動予約数: 2（ChatGPT認証、APIキーへの切替なし）
 
