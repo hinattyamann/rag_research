@@ -1,0 +1,648 @@
+{
+  "cohort": "main",
+  "collection_costs": {
+    "en": {
+      "selected_qa": 20,
+      "native_attempts": 407,
+      "active_native_attempts": 407,
+      "archived_external_attempts": 0,
+      "historical_unknown_responses": 0,
+      "native_cost_complete": true,
+      "total_output_tokens": 1449433,
+      "failed_native_records": 0,
+      "unknown": 0,
+      "input_tokens": 776776,
+      "output_tokens": 1449433,
+      "summed_observed_task_seconds": 27806.025776459057,
+      "baseline_missing_qa": 0,
+      "rewrite_missing_qa": 0,
+      "time_scope": "known observed task steps only; excludes unreceived cancelled-request cost, startup/retrieval/annotation; not route wall time"
+    },
+    "ja": {
+      "selected_qa": 20,
+      "native_attempts": 598,
+      "active_native_attempts": 597,
+      "archived_external_attempts": 1,
+      "historical_unknown_responses": 1,
+      "native_cost_complete": false,
+      "total_output_tokens": null,
+      "failed_native_records": 2,
+      "unknown": 0,
+      "input_tokens": 2115895,
+      "output_tokens": 2047906,
+      "summed_observed_task_seconds": 40105.79823821351,
+      "baseline_missing_qa": 1,
+      "rewrite_missing_qa": 1,
+      "time_scope": "known observed task steps only; excludes unreceived cancelled-request cost, startup/retrieval/annotation; not route wall time"
+    }
+  },
+  "condition_sha256": "c01efa41304147a6973f401a352b4cfaf8bc23c289e32fec680a6e57d3b4d5cd",
+  "progression_gate_passed": true,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "human_reviewed": false,
+  "limitations": [
+    "two post-outcome Main stopping-rule amendments",
+    "length-dependent missingness",
+    "one externally cancelled Main rewrite was reexecuted once with identical input; original response/cost remain unknown; known costs are lower bounds",
+    "AI annotations are not human ground truth",
+    "language comparison includes dataset differences",
+    "group-bootstrap CI is conditional on comparable observed QA; no seed/model/annotator variability",
+    "known v23 negative specificity 87.5% did not meet the old 90% adoption criterion"
+  ],
+  "statistics": {
+    "version": "qa-increment-document-group-bootstrap-v1",
+    "numpy_version": "2.5.3",
+    "repetitions": 10000,
+    "seed": 42,
+    "rng": "SeedSequence(seed).spawn(2) in en,ja order",
+    "quantile": "linear_percentile_2.5_97.5",
+    "estimand": "QA-weighted complete-comparison increment, conditional on comparability",
+    "languages": {
+      "en": {
+        "selected_qa_count": 20,
+        "selected_document_groups": 20,
+        "comparable_qa_count": 16,
+        "missing_qa_count": 4,
+        "comparable_document_groups": 16,
+        "mean_increment": 0.0875,
+        "ci95": [
+          0.0,
+          0.1875
+        ],
+        "ci_status": "available"
+      },
+      "ja": {
+        "selected_qa_count": 20,
+        "selected_document_groups": 20,
+        "comparable_qa_count": 13,
+        "missing_qa_count": 7,
+        "comparable_document_groups": 13,
+        "mean_increment": 0.04615384615384615,
+        "ci95": [
+          0.0,
+          0.13846153846153844
+        ],
+        "ci_status": "available"
+      }
+    },
+    "ja_minus_en": {
+      "mean": -0.041346153846153845,
+      "ci95": [
+        -0.1625,
+        0.08846153846153844
+      ]
+    },
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "semantics": {
+    "en": {
+      "planned_definite_unit_conditions": 358,
+      "exact_correct": 270,
+      "planned_supported_unit_conditions": 241,
+      "supported_exact_correct": 230,
+      "planned_definite_negative_unit_conditions": 117,
+      "false_support_count": 66,
+      "ambiguous_unit_conditions_retained_in_F": 9,
+      "invalid_trial_conditions": 0,
+      "complete_comparable_qa": 16,
+      "unique_definite_units": 40,
+      "unique_ambiguous_units": 1,
+      "no_unit_qa": 4,
+      "exact_label_accuracy": 0.7541899441340782,
+      "supported_label_accuracy": 0.9543568464730291,
+      "binary_adoption": {
+        "semantic_adoption_version": "support-binary-v2",
+        "healthy": true,
+        "supported_denominator": 241,
+        "negative_denominator": 117,
+        "supported_correct": 230,
+        "negative_correct": 51,
+        "exact_correct": 270,
+        "missing_outcomes": 0,
+        "false_support_count": 66,
+        "missed_support_count": 11,
+        "C_NS_confusion_count": 11,
+        "ambiguous_unit_conditions_retained_in_F": 9,
+        "unique_supported_units": 27,
+        "unique_negative_units": 13,
+        "supported_groups": 13,
+        "negative_groups": 10,
+        "supported_recall": 0.9543568464730291,
+        "negative_specificity": 0.4358974358974359,
+        "three_label_accuracy": 0.7541899441340782,
+        "binary_accuracy": 0.7849162011173184,
+        "coverage_passed": true,
+        "passed": false,
+        "group_bootstrap": {
+          "unit": "document_group",
+          "groups": 16,
+          "repetitions": 10000,
+          "seed": 42,
+          "metrics": {
+            "supported_recall": {
+              "ci95": [
+                0.8608247422680413,
+                1.0
+              ],
+              "valid_replicates": 10000,
+              "missing_class_replicates": 0
+            },
+            "negative_specificity": {
+              "ci95": [
+                0.16296296296296298,
+                0.7474747474747475
+              ],
+              "valid_replicates": 10000,
+              "missing_class_replicates": 0
+            }
+          },
+          "conditional_on_observed_groups_not_population_error_guarantee": true
+        }
+      }
+    },
+    "ja": {
+      "planned_definite_unit_conditions": 513,
+      "exact_correct": 462,
+      "planned_supported_unit_conditions": 450,
+      "supported_exact_correct": 433,
+      "planned_definite_negative_unit_conditions": 63,
+      "false_support_count": 27,
+      "ambiguous_unit_conditions_retained_in_F": 45,
+      "invalid_trial_conditions": 0,
+      "complete_comparable_qa": 13,
+      "unique_definite_units": 57,
+      "unique_ambiguous_units": 5,
+      "no_unit_qa": 6,
+      "exact_label_accuracy": 0.9005847953216374,
+      "supported_label_accuracy": 0.9622222222222222,
+      "binary_adoption": {
+        "semantic_adoption_version": "support-binary-v2",
+        "healthy": true,
+        "supported_denominator": 450,
+        "negative_denominator": 63,
+        "supported_correct": 433,
+        "negative_correct": 36,
+        "exact_correct": 462,
+        "missing_outcomes": 0,
+        "false_support_count": 27,
+        "missed_support_count": 17,
+        "C_NS_confusion_count": 7,
+        "ambiguous_unit_conditions_retained_in_F": 45,
+        "unique_supported_units": 50,
+        "unique_negative_units": 7,
+        "supported_groups": 13,
+        "negative_groups": 6,
+        "supported_recall": 0.9622222222222222,
+        "negative_specificity": 0.5714285714285714,
+        "three_label_accuracy": 0.9005847953216374,
+        "binary_accuracy": 0.9142300194931774,
+        "coverage_passed": true,
+        "passed": false,
+        "group_bootstrap": {
+          "unit": "document_group",
+          "groups": 13,
+          "repetitions": 10000,
+          "seed": 42,
+          "metrics": {
+            "supported_recall": {
+              "ci95": [
+                0.9074074074074074,
+                0.996031746031746
+              ],
+              "valid_replicates": 10000,
+              "missing_class_replicates": 0
+            },
+            "negative_specificity": {
+              "ci95": [
+                0.25,
+                1.0
+              ],
+              "valid_replicates": 9995,
+              "missing_class_replicates": 5
+            }
+          },
+          "conditional_on_observed_groups_not_population_error_guarantee": true
+        }
+      }
+    }
+  },
+  "quality_routes": [
+    {
+      "cohort": "main",
+      "language": "en",
+      "route": "always_rewrite",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 14,
+      "unreliable": 6,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 40,
+      "input_tokens_sum": 57940,
+      "output_tokens_sum": 84701
+    },
+    {
+      "cohort": "main",
+      "language": "en",
+      "route": "no_repair",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 9,
+      "unreliable": 11,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 20,
+      "input_tokens_sum": 24784,
+      "output_tokens_sum": 1305
+    },
+    {
+      "cohort": "main",
+      "language": "en",
+      "route": "original",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 12,
+      "unreliable": 8,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 69,
+      "input_tokens_sum": 118286,
+      "output_tokens_sum": 180729
+    },
+    {
+      "cohort": "main",
+      "language": "en",
+      "route": "repeat_2",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 12,
+      "unreliable": 8,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 69,
+      "input_tokens_sum": 118286,
+      "output_tokens_sum": 180729
+    },
+    {
+      "cohort": "main",
+      "language": "en",
+      "route": "repeat_3",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 12,
+      "unreliable": 8,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 69,
+      "input_tokens_sum": 118286,
+      "output_tokens_sum": 180729
+    },
+    {
+      "cohort": "main",
+      "language": "en",
+      "route": "repeat_4",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 12,
+      "unreliable": 8,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 69,
+      "input_tokens_sum": 118286,
+      "output_tokens_sum": 180729
+    },
+    {
+      "cohort": "main",
+      "language": "en",
+      "route": "repeat_5",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 12,
+      "unreliable": 8,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 69,
+      "input_tokens_sum": 118286,
+      "output_tokens_sum": 180729
+    },
+    {
+      "cohort": "main",
+      "language": "en",
+      "route": "reversed",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 13,
+      "unreliable": 7,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 70,
+      "input_tokens_sum": 120172,
+      "output_tokens_sum": 192526
+    },
+    {
+      "cohort": "main",
+      "language": "en",
+      "route": "shuffle_1",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 12,
+      "unreliable": 8,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 70,
+      "input_tokens_sum": 120073,
+      "output_tokens_sum": 188689
+    },
+    {
+      "cohort": "main",
+      "language": "en",
+      "route": "shuffle_2",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 10,
+      "unreliable": 9,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 68,
+      "input_tokens_sum": 117502,
+      "output_tokens_sum": 191505
+    },
+    {
+      "cohort": "main",
+      "language": "en",
+      "route": "shuffle_3",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 12,
+      "unreliable": 8,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 70,
+      "input_tokens_sum": 120073,
+      "output_tokens_sum": 192010
+    },
+    {
+      "cohort": "main",
+      "language": "ja",
+      "route": "always_rewrite",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 14,
+      "unreliable": 5,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 1,
+      "native_attempts_sum": 38,
+      "input_tokens_sum": 120942,
+      "output_tokens_sum": 75175
+    },
+    {
+      "cohort": "main",
+      "language": "ja",
+      "route": "no_repair",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 5,
+      "unreliable": 13,
+      "indeterminate": 1,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 19,
+      "input_tokens_sum": 60784,
+      "output_tokens_sum": 2566
+    },
+    {
+      "cohort": "main",
+      "language": "ja",
+      "route": "original",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 10,
+      "unreliable": 9,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 90,
+      "input_tokens_sum": 309182,
+      "output_tokens_sum": 253153
+    },
+    {
+      "cohort": "main",
+      "language": "ja",
+      "route": "repeat_2",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 10,
+      "unreliable": 9,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 90,
+      "input_tokens_sum": 309182,
+      "output_tokens_sum": 253153
+    },
+    {
+      "cohort": "main",
+      "language": "ja",
+      "route": "repeat_3",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 10,
+      "unreliable": 9,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 90,
+      "input_tokens_sum": 309182,
+      "output_tokens_sum": 253153
+    },
+    {
+      "cohort": "main",
+      "language": "ja",
+      "route": "repeat_4",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 10,
+      "unreliable": 9,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 90,
+      "input_tokens_sum": 309182,
+      "output_tokens_sum": 253153
+    },
+    {
+      "cohort": "main",
+      "language": "ja",
+      "route": "repeat_5",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 10,
+      "unreliable": 9,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 90,
+      "input_tokens_sum": 309182,
+      "output_tokens_sum": 253153
+    },
+    {
+      "cohort": "main",
+      "language": "ja",
+      "route": "reversed",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 10,
+      "unreliable": 9,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 89,
+      "input_tokens_sum": 305922,
+      "output_tokens_sum": 258765
+    },
+    {
+      "cohort": "main",
+      "language": "ja",
+      "route": "shuffle_1",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 10,
+      "unreliable": 9,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 89,
+      "input_tokens_sum": 305922,
+      "output_tokens_sum": 259705
+    },
+    {
+      "cohort": "main",
+      "language": "ja",
+      "route": "shuffle_2",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 10,
+      "unreliable": 9,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 90,
+      "input_tokens_sum": 309182,
+      "output_tokens_sum": 254182
+    },
+    {
+      "cohort": "main",
+      "language": "ja",
+      "route": "shuffle_3",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 10,
+      "unreliable": 9,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 89,
+      "input_tokens_sum": 305922,
+      "output_tokens_sum": 255075
+    }
+  ],
+  "threshold_sensitivity": [
+    {
+      "language": "en",
+      "threshold": 0.5,
+      "comparable_qa": 16,
+      "mean_increment": 0.025
+    },
+    {
+      "language": "en",
+      "threshold": 0.6,
+      "comparable_qa": 16,
+      "mean_increment": 0.0875
+    },
+    {
+      "language": "en",
+      "threshold": 0.7,
+      "comparable_qa": 16,
+      "mean_increment": 0.0875
+    },
+    {
+      "language": "en",
+      "threshold": 0.8,
+      "comparable_qa": 16,
+      "mean_increment": 0.0875
+    },
+    {
+      "language": "en",
+      "threshold": 0.9,
+      "comparable_qa": 16,
+      "mean_increment": 0.125
+    },
+    {
+      "language": "ja",
+      "threshold": 0.5,
+      "comparable_qa": 13,
+      "mean_increment": 0.04615384615384615
+    },
+    {
+      "language": "ja",
+      "threshold": 0.6,
+      "comparable_qa": 13,
+      "mean_increment": 0.04615384615384615
+    },
+    {
+      "language": "ja",
+      "threshold": 0.7,
+      "comparable_qa": 13,
+      "mean_increment": 0.04615384615384615
+    },
+    {
+      "language": "ja",
+      "threshold": 0.8,
+      "comparable_qa": 13,
+      "mean_increment": 0.04615384615384615
+    },
+    {
+      "language": "ja",
+      "threshold": 0.9,
+      "comparable_qa": 13,
+      "mean_increment": 0.10769230769230768
+    }
+  ],
+  "source_analysis_sha256": "abdc119684aebd2d5a7eacf170b24341dcb2a6b813a2c1f417e85ec560985232"
+}
