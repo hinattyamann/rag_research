@@ -1,7 +1,7 @@
 {
   "version": "fixed-v23-cal-gpu-recovery-validation-v1",
-  "recorded_at_utc": "2026-10-31T08:53:35.017400+00:00",
-  "state": "deployed_not_yet_restarted",
+  "recorded_at_utc": "2026-10-31T08:55:38.281099+00:00",
+  "state": "service_running_waiting_gpu",
   "controller_revision": 6,
   "previous_configuration_sha256": "a6f3634e4cb6a8d66f028ca31b1f9a26cf74afd1168475c0f7146579ba15ea4f",
   "configuration_sha256": "f99da88d04b961a8277432705523ce9c4917192562b7742f1ba25d2f13c97782",
@@ -38,5 +38,19 @@
     "passed": 1402,
     "seconds": 45.28
   },
-  "actual_inference_resume_verified": false
+  "actual_inference_resume_verified": false,
+  "service_restart_jst": "2026-10-31 17:54:23 JST",
+  "service_main_pid": 430859,
+  "progress": {
+    "updated_at_utc": "2026-10-31T08:54:47.563208+00:00",
+    "stage": "waiting_gpu",
+    "cohort": "cal",
+    "language": "en",
+    "phase": "internal",
+    "gpu_free_mib": 6571,
+    "gpu_required_mib": 7100,
+    "codex_running": false
+  },
+  "git_implementation_commit": "37be698",
+  "implementation_push_succeeded": true
 }

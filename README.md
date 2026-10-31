@@ -1,6 +1,6 @@
 # rag_research
 
-2026-10-31 更新: Main全採点・解析は完了し、Cal収集中です。英語10件の内部評価・書換え完了後、次のモデル起動でGPUメモリ不足となったため、[起動前の空き確認と有限再起動](docs/phase11_fixed_v23_cal_gpu_recovery_v1.md)を検証・配置しています。既存結果と実験条件は保全し、実再開の状態は[自動化状況](docs/fixed_v23_automation_status.md)で確認します。
+2026-10-31 更新: Main全採点・解析は完了し、Cal収集中です。英語10件の内部評価・書換え完了後、次のモデル起動でGPUメモリ不足となったため、[起動前の空き確認と有限再起動](docs/phase11_fixed_v23_cal_gpu_recovery_v1.md)を検証・配置し、17:54 JSTに監視を再起動しました。現在はGPU空き待ちで、まだ推論は再開していません。既存結果と実験条件は保全し、現在の状態は[自動化状況](docs/fixed_v23_automation_status.md)で確認します。
 
 2026-10-31 更新: Main収集は全40件の処理を完了しました。採点CLIの入力読取エラーを修正し、[匿名資料を直接渡す方式で採点を再開](docs/phase11_fixed_v23_annotation_recovery_v2.md)しました。10:24 JST再起動後、実Main採点のValidator通過と次Jobへの進行を確認済みです。最新工程は[自動化状況](docs/fixed_v23_automation_status.md)を参照してください。
 
