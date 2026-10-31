@@ -1,10 +1,10 @@
 # 固定v23 自動実行の状況
 
-更新: 2026-10-31 10:27:59 JST
+更新: 2026-10-31 10:57:14 JST
 
 現在の工程: **review-main**
 
-Codex CLI起動予約数: 8（ChatGPT認証、APIキーへの切替なし）
+Codex CLI起動予約数: 42（ChatGPT認証、APIキーへの切替なし）
 
 収集待ち・GPU収集・通常のPython集計・Git反映ではCodexを呼ばない。CLIは匿名AI採点でのみ起動する。
 
@@ -25,7 +25,7 @@ Codex CLI起動予約数: 8（ChatGPT認証、APIキーへの切替なし）
 | external_reexecutions_started | 1 |
 | token_totals_complete | False |
 
-直近の作業: `{'updated_at_utc': '2026-10-31T01:27:45.469206+00:00', 'stage': 'review', 'cohort': 'main', 'language': 'en', 'kind': 'quality', 'cli_invocations': 8, 'codex_running': True}`
+直近の作業: `{'updated_at_utc': '2026-10-31T01:57:14.576488+00:00', 'stage': 'review', 'cohort': 'main', 'language': 'ja', 'kind': 'units', 'codex_running': False}`
 
 ## 工程と完了条件
 
