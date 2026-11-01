@@ -1,6 +1,6 @@
 # 固定v23 自動実行の状況
 
-更新: 2026-11-01 09:17:44 JST
+更新: 2026-11-01 21:21:16 JST
 
 現在の工程: **collect-cal**
 
@@ -27,13 +27,13 @@ Codex CLI起動予約数: 42（ChatGPT認証、APIキーへの切替なし）
 
 | Cal項目 | 値 |
 |---|---:|
-| baseline_success | 20 |
+| baseline_success | 40 |
 | baseline_failed | 0 |
-| rewrite_success | 10 |
-| rewrite_failed | 0 |
-| completed | False |
+| rewrite_success | 39 |
+| rewrite_failed | 1 |
+| completed | True |
 
-直近の作業: `{'updated_at_utc': '2026-11-01T00:17:43.118928+00:00', 'stage': 'collect_cal', 'cohort': 'cal', 'language': 'en', 'phase': 'internal', 'codex_running': False}`
+直近の作業: `{'updated_at_utc': '2026-11-01T12:21:16.321872+00:00', 'stage': 'cal_awaiting_scoring', 'cohort': 'cal', 'codex_running': False}`
 
 ## 工程と完了条件
 
