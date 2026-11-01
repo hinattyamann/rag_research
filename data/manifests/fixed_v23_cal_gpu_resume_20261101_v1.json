@@ -1,6 +1,6 @@
 {
   "version": "fixed-v23-cal-gpu-resume-20261101-v1",
-  "checked_at_utc": "2026-11-01T00:17:10.243009+00:00",
+  "checked_at_utc": "2026-11-01T00:19:25.461511+00:00",
   "firefox_shutdown_authorized": true,
   "firefox_shutdown_verified": true,
   "shutdown_method": "standard X11 window close; direct signal was blocked by OS AppArmor",
@@ -11,13 +11,31 @@
   "configuration_sha256": "f99da88d04b961a8277432705523ce9c4917192562b7742f1ba25d2f13c97782",
   "cal_protocol_sha256": "dc9b19078b99d8ee64096dc1137b9acdbffe7bede51ff59edb7bb44eb5e89984",
   "inference_conditions_changed": false,
-  "new_native_calls": 0,
-  "state": "independent_service_restarted_waiting_gpu",
-  "inference_resume_verified": false,
+  "new_native_calls": 2,
+  "state": "inference_resumed",
+  "inference_resume_verified": true,
   "additional_application_shutdown_authorization": "VS Code authorized by user",
   "audit": ".tools/fixed-v23-automation-v1/audits/cal-gpu-resource-resume-20261101-v1",
   "vscode_shutdown_authorized": true,
   "service_restart_jst": "2026-11-01 09:14 JST",
   "service_pid": 463793,
-  "independent_verifier_sha256": "b08b869fe965e39c40410ee5516d18f38681818648441282b58577c1d1e0ea80"
+  "independent_verifier_sha256": "b08b869fe965e39c40410ee5516d18f38681818648441282b58577c1d1e0ea80",
+  "vscode_window_close_requested_at_utc": "2026-11-01T00:17:31.334568+00:00",
+  "vscode_window_closed_verified": true,
+  "peak_free_gpu_mib": 7192,
+  "first_new_successful_native": [
+    {
+      "path": "internal/55b31e13e869569b33a94d8e/rewrite.json",
+      "sha256": "5434c872054f6086b0aa5e6c9ca4ed0d00483458e489f88ab9db5b6fb419c032"
+    }
+  ],
+  "preexisting_native_hashes_unchanged": true,
+  "final_progress": {
+    "updated_at_utc": "2026-11-01T00:17:43.118928+00:00",
+    "stage": "collect_cal",
+    "cohort": "cal",
+    "language": "en",
+    "phase": "internal",
+    "codex_running": false
+  }
 }
