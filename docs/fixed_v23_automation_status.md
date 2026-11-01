@@ -1,6 +1,6 @@
 # 固定v23 自動実行の状況
 
-更新: 2026-11-01 09:14:23 JST
+更新: 2026-11-01 09:17:44 JST
 
 現在の工程: **collect-cal**
 
@@ -33,7 +33,7 @@ Codex CLI起動予約数: 42（ChatGPT認証、APIキーへの切替なし）
 | rewrite_failed | 0 |
 | completed | False |
 
-直近の作業: `{'updated_at_utc': '2026-10-31T09:54:43.754340+00:00', 'stage': 'waiting_gpu', 'cohort': 'cal', 'language': 'en', 'phase': 'internal', 'gpu_free_mib': 6609, 'gpu_required_mib': 7100, 'codex_running': False}`
+直近の作業: `{'updated_at_utc': '2026-11-01T00:17:43.118928+00:00', 'stage': 'collect_cal', 'cohort': 'cal', 'language': 'en', 'phase': 'internal', 'codex_running': False}`
 
 ## 工程と完了条件
 
