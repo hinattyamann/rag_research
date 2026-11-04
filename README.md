@@ -1,6 +1,6 @@
 # rag_research
 
-2026-11-04 更新: Cal収集は全40件の処理を完了しました。収集後の匿名採点が引用形式の検証エラーで停止したため、[原文から引用を選ぶ方式](docs/phase11_fixed_v23_annotation_citations_v3.md)を検証・配置しました。元データ/成功済み採点を保全し、[自動化状況](docs/fixed_v23_automation_status.md)で実再開を確認します。
+2026-11-04 更新: Cal収集は全40件の処理を完了しました。収集後の匿名採点が引用形式の検証エラーで停止したため、[原文から引用を選ぶ方式](docs/phase11_fixed_v23_annotation_citations_v3.md)を検証・配置しました。元データ/成功済み採点を保全して09:51 JSTに実再開し、停止していた6注釈が検証に通り次のJobへ進んだことを確認しました。[自動化状況](docs/fixed_v23_automation_status.md)で続きの工程を確認できます。
 
 2026-10-31 更新: Main全採点・解析は完了し、Cal収集中です。英語10件の内部評価・書換え完了後、次のモデル起動でGPUメモリ不足となったため、[起動前の空き確認と有限再起動](docs/phase11_fixed_v23_cal_gpu_recovery_v1.md)を検証・配置し、17:54 JSTに監視を再起動しました。現在はGPU空き待ちで、まだ推論は再開していません。既存結果と実験条件は保全し、現在の状態は[自動化状況](docs/fixed_v23_automation_status.md)で確認します。
 
