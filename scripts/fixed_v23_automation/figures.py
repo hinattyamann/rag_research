@@ -147,6 +147,8 @@ def create_figures(config):
     usage = [u for proof in proofs for u in proof["token_usage"]]
     write(staging / "annotation_cost.json", {"reserved_cli_invocations": len(ledger["invocations"]),
         "recorded_completed_invocations": len(proofs), "summed_cli_job_wall_seconds": sum(p["elapsed_seconds"] for p in proofs),
+        "completed_invocations_by_input_transport": {name: sum(p.get("input_transport", "legacy_file") == name for p in proofs)
+            for name in sorted({p.get("input_transport", "legacy_file") for p in proofs})},
         "observed_input_tokens": sum(u.get("input_tokens", 0) for u in usage),
         "observed_cached_input_tokens_subset": sum(u.get("cached_input_tokens", 0) for u in usage),
         "observed_output_tokens": sum(u.get("output_tokens", 0) for u in usage),
@@ -155,6 +157,11 @@ def create_figures(config):
         "scope": "offline AI annotation including bounded format repairs; separate from GPU collection and operational routes",
         "timing_note": "CLI job wall includes model/tool/startup overhead; not pure reading time or human time"})
     notes = ["# 結果説明資料（論文原稿ではない）", "", "MainとCalは別集合として報告し、統合して件数を水増ししない。", ""]
+    if any(p.get("input_transport") == "inline_citations_v3" for p in proofs):
+        notes += ["Cal採点の途中で、引用の打直しから資料番号の選択・原文の機械的転記へ輸送形式を変更した。"
+            "支持/矛盾には根拠選択を必須とし、元の厳密Validator・採点基準・匿名化・全採点封印を維持した。"
+            "成功済み採点は再利用し、失敗出力と費用を保存した。Main/Calには採点入力形式の差があるため、"
+            "採点手続の事後変更と比較上の限界を明記する。方式別CLI回数はannotation_cost.jsonを参照する。", ""]
     for row in primary:
         notes.append(f"- {row['cohort']} / {row['language']}: 選定{row['selected_qa']}、完全比較{row['comparable_qa']}、"
             f"比較欠測{row['missing_qa']}。平均増分={row['mean_increment']}、95%区間=[{row['ci95_low']}, {row['ci95_high']}]。")

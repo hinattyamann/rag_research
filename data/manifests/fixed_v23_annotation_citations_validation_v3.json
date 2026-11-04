@@ -1,0 +1,89 @@
+{
+  "version": "fixed-v23-annotation-citations-validation-v3",
+  "checked_at_utc": "2026-11-04T00:50:17.455349+00:00",
+  "state": "deployed_not_yet_restarted",
+  "controller_revision": 7,
+  "previous_configuration_sha256": "f99da88d04b961a8277432705523ce9c4917192562b7742f1ba25d2f13c97782",
+  "configuration_sha256": "b7734a65fefe0f5adcb226ea9e59a2e755ec7aa5dd2a2aaf8e132147bfdd26a1",
+  "cal_protocol_sha256": "dc9b19078b99d8ee64096dc1137b9acdbffe7bede51ff59edb7bb44eb5e89984",
+  "recovery_registration_sha256": "7b67da8d8a9990ed28091db827786b20c48538079aafed9c973b87b01e6f1fcb",
+  "original_sealed_inputs_unchanged": 25,
+  "main_source_files_unchanged": 1450,
+  "cal_source_files_unchanged": 1284,
+  "cal_native_counts": {
+    "en": {
+      "native_calls": 417,
+      "unknown": 0,
+      "error_records": 0
+    },
+    "ja": {
+      "native_calls": 440,
+      "unknown": 0,
+      "error_records": 1
+    }
+  },
+  "previous_failed_job_files_unchanged": 19,
+  "previous_validated_cal_jobs_unchanged": 11,
+  "previous_cli_reservations_preserved": 55,
+  "new_research_native_calls": 0,
+  "full_tests": {
+    "passed": 1413,
+    "seconds": 45.28
+  },
+  "related_tests": {
+    "passed": 37,
+    "seconds": 4.81
+  },
+  "ruff": "passed",
+  "synthetic_real_cli": {
+    "at_utc": "2026-11-04T00:48:07.794620+00:00",
+    "research_native_calls": 0,
+    "jobs": [
+      {
+        "language": "en",
+        "kind": "units",
+        "annotations_validated": 2,
+        "provenance_sha256": "6a82a1aef81b5a7f6174b872b937ac27531d171761c33985d80c6e4ccdd2cef1",
+        "elapsed_seconds": 8.001731937052682,
+        "token_usage": [
+          {
+            "input_tokens": 20102,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 89,
+            "reasoning_output_tokens": 0
+          }
+        ],
+        "tool_events": 0
+      },
+      {
+        "language": "ja",
+        "kind": "quality",
+        "annotations_validated": 2,
+        "provenance_sha256": "24a51ea54c297e59199c71e477f4bd7e2199c570f10152671d15e26bf8487125",
+        "elapsed_seconds": 12.00276462698821,
+        "token_usage": [
+          {
+            "input_tokens": 23302,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 373,
+            "reasoning_output_tokens": 56
+          }
+        ],
+        "tool_events": 0
+      }
+    ],
+    "all_validated": true
+  },
+  "failed_at_utc": "2026-11-01T12:31:07.550694+00:00",
+  "root_cause": "Free-text evidence permitted non-verbatim quotes and supported labels without evidence; bounded repair exhausted",
+  "inference_conditions_changed": false,
+  "annotation_transport_changed_posthoc": true,
+  "annotation_model_changed": false,
+  "existing_validated_annotations_reused": true,
+  "full_annotation_seal_required_before_analysis": true,
+  "actual_cal_annotation_resume_verified": false,
+  "deadline_utc": "2026-11-05T15:00:00+00:00",
+  "git_publish_policy": "events_only"
+}

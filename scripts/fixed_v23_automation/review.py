@@ -6,6 +6,7 @@ import sys
 from copy import deepcopy
 from pathlib import Path
 
+from citations import AnnotationFormatError, decode, prepare
 from common import clean_env, immutable, now, progress, read, require, run_owned, sha, write
 
 META = {"elapsed_seconds", "confirmed_at_utc", "annotator", "human_reviewed",
@@ -55,6 +56,11 @@ def run_job(config, job, payload, blank, kind, *, repair=None):
     immutable(job / "input.json", payload)
     count = len(payload["annotations"])
     schema = response_schema(blank, kind, count)
+    citations = config.get("annotation_transport") == "inline_citations_v3" and not job.parent.name.endswith("-inline-v2")
+    binding = None
+    if citations:
+        binding, schema = prepare(payload, kind)
+        immutable(job / "citation_binding.json", binding)
     immutable(job / "schema.json", schema)
     instructions = (
         "This is a delegated anonymous research annotation job, not repository development. "
@@ -79,7 +85,20 @@ def run_job(config, job, payload, blank, kind, *, repair=None):
         immutable(job / "format_repair.json", repair)
         instructions += " Repair the previous schema/validation problem in the supplied format_repair object. "
     instructions += f" Return exactly {count} annotations with the supplied identifiers and hashes. "
-    immutable(job / "stdin.json", {"annotation_input": payload, "output_schema": schema, "format_repair": repair})
+    if citations:
+        instructions += (
+            " For this citation-selection transport, return annotations as an object with every exact aNNN slot key. "
+            "The citation_binding.slots bind these keys to the supplied candidate/unit identifiers and hashes. "
+            "For evidence, select only eNNNN identifiers from citation_binding.catalog for that same candidate. "
+            "The caller copies each selected unchanged source substring verbatim; do not write or invent quote text. "
+            "Supported/contradicted units require at least one actual-document evidence selection. "
+            "Reliable quality requires actual-context evidence and all criteria pass. "
+            "Select labels and reasons by the same supplied rubric; a selectable citation alone does not prove support. "
+            "Read the full supplied documents, including surrounding text, and do not force support when evidence is absent. ")
+    inline = {"annotation_input": payload, "output_schema": schema, "format_repair": repair}
+    if citations:
+        inline["citation_binding"] = binding
+    immutable(job / "stdin.json", inline)
     immutable(job / "prompt.json", {"instructions": instructions})
     output = job / "output.json"
     receipt = job / "invocation.json"
@@ -100,13 +119,12 @@ def run_job(config, job, payload, blank, kind, *, repair=None):
         progress(config, "review", cohort=payload["cohort"], language=payload["language"], kind=kind,
                  cli_invocations=used, codex_running=False)
     require(output.exists(), "CLI finished without annotation output")
-    result = read(output)
     record = {"input_sha256": sha(job / "input.json"), "output_sha256": sha(output),
         "auth": "chatgpt", "human_reviewed": False, "history_independence_not_assumed": True,
         "exact_model_identifier": None, "configured_model": config["configured_codex_model"],
         "elapsed_seconds": saved["elapsed_seconds"], "timing_scope": "whole CLI job, apportioned equally to its annotations",
         "finished_at_utc": saved["finished_at_utc"], "api_key_fallback": False,
-        "input_transport": "inline_stdin_v2", "stdin_sha256": sha(job / "stdin.json"), "requested_annotations": count,
+        "input_transport": "inline_citations_v3" if citations else "inline_stdin_v2", "stdin_sha256": sha(job / "stdin.json"), "requested_annotations": count,
         "token_usage": [], "event_model_identifiers": []}
     for line in receipt.with_suffix(".log").read_text(encoding="utf-8", errors="replace").splitlines():
         try:
@@ -116,6 +134,13 @@ def run_job(config, job, payload, blank, kind, *, repair=None):
         if isinstance(event, dict) and event.get("type") == "turn.completed" and event.get("usage"):
             record["token_usage"].append(event["usage"])
     immutable(job / "provenance.json", record)
+    try:
+        result = read(output)
+    except ValueError as failure:
+        raise AnnotationFormatError("CLI returned invalid JSON") from failure
+    if citations:
+        result = decode(result, binding, kind)
+        immutable(job / "canonical_output.json", result)
     require(isinstance(result.get("annotations"), list) and len(result["annotations"]) == count,
             f"CLI returned an incomplete annotation array; expected {count} rows with inline input")
     return result, record
@@ -152,13 +177,24 @@ def complete_annotations(config, run, cohort):
                     "full_packet_sha256": packet["packet_sha256"], "cases": selected,
                     "rubric_or_instructions": packet.get("rubric", packet.get("instructions")),
                     "annotations": [{k: v for k, v in a.items() if k not in META} for a in requested]}
-                require(config["annotation_transport"] == "inline_stdin_v2", "Use the validated inline annotation transport")
+                require(config["annotation_transport"] in {"inline_stdin_v2", "inline_citations_v3"}, "Use the validated inline annotation transport")
                 job = Path(config["state_dir"]) / "jobs" / f"{cohort}-{language}-{kind}-{start:03d}-inline-v2"
+                if config["annotation_transport"] == "inline_citations_v3" and not (job / "validated.json").exists():
+                    job = job.with_name(f"{cohort}-{language}-{kind}-{start:03d}-citations-v3")
                 error, prior = None, None
                 for attempt in range(config["maximum_format_repairs"] + 1):
                     current = job / f"attempt-{attempt}"
-                    result, provenance = run_job(config, current, payload, requested[0], kind,
-                        repair={"validation_error": error, "previous_output": prior} if error else None)
+                    try:
+                        result, provenance = run_job(config, current, payload, requested[0], kind,
+                            repair={"validation_error": error, "previous_output": prior} if error else None)
+                    except AnnotationFormatError as failure:
+                        error = str(failure)
+                        try:
+                            prior = read(current / "output.json")
+                        except ValueError:
+                            prior = {"invalid_output_sha256": sha(current / "output.json")}
+                        immutable(current / "validation_error.json", {"error": error})
+                        continue
                     try:
                         fields = set(requested[0]) - META
                         rows = result["annotations"]
@@ -190,8 +226,9 @@ def complete_annotations(config, run, cohort):
                         break
                     except (ValueError, KeyError, TypeError) as failure:
                         error, prior = str(failure), result
+                        immutable(current / "validation_error.json", {"error": error})
                 else:
-                    raise ValueError("Annotation validation failed after bounded format repair: " + str(job))
+                    raise ValueError("Annotation validation failed after bounded format repair: " + str(job) + ": " + str(error))
             validator(packet, assembled)
             require(all(a["label"] != "pending" for a in assembled["annotations"]), "Seal all labels, never impute pending")
             immutable(target, assembled)
