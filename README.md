@@ -1,5 +1,7 @@
 # rag_research
 
+2026-11-04 執筆準備: [ICIAE 2027論文専用フォルダ](papers/iciae2027/README.md)を作成し、公式Wordテンプレート・募集要項・[初回投稿条件](papers/iciae2027/notes/submission_requirements.md)を保存しました。本文はWordで執筆し、原稿は `papers/iciae2027/manuscript/` へ格納します。本文DOCX・提出PDFは未作成です。
+
 2026-11-04 完了: Main/Calの収集・全匿名採点封印・解析を終え、10:10 JSTに論文用の図表・CSV・結果説明資料まで保存しました。[結果説明資料](reports/fixed_v23_order_study_v1/results_brief.md)と[図表フォルダ](reports/fixed_v23_order_study_v1/)を確認し、次は原稿執筆・数値/主張/引用の照合・教員確認・提出へ進みます。
 
 2026-11-04 更新: Cal収集は全40件の処理を完了しました。収集後の匿名採点が引用形式の検証エラーで停止したため、[原文から引用を選ぶ方式](docs/phase11_fixed_v23_annotation_citations_v3.md)を検証・配置しました。元データ/成功済み採点を保全して09:51 JSTに実再開し、停止していた6注釈が検証に通り次のJobへ進んだことを確認しました。[自動化状況](docs/fixed_v23_automation_status.md)で続きの工程を確認できます。
