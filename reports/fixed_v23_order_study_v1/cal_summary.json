@@ -1,0 +1,647 @@
+{
+  "cohort": "cal",
+  "collection_costs": {
+    "en": {
+      "selected_qa": 20,
+      "native_attempts": 417,
+      "active_native_attempts": 417,
+      "archived_external_attempts": 0,
+      "historical_unknown_responses": 0,
+      "native_cost_complete": true,
+      "total_output_tokens": 1609364,
+      "failed_native_records": 0,
+      "unknown": 0,
+      "input_tokens": 794786,
+      "output_tokens": 1609364,
+      "summed_observed_task_seconds": 30719.05222802001,
+      "baseline_missing_qa": 0,
+      "rewrite_missing_qa": 0,
+      "time_scope": "known observed task steps only; excludes unreceived cancelled-request cost, startup/retrieval/annotation; not route wall time"
+    },
+    "ja": {
+      "selected_qa": 20,
+      "native_attempts": 440,
+      "active_native_attempts": 440,
+      "archived_external_attempts": 0,
+      "historical_unknown_responses": 0,
+      "native_cost_complete": true,
+      "total_output_tokens": 1584321,
+      "failed_native_records": 1,
+      "unknown": 0,
+      "input_tokens": 1529832,
+      "output_tokens": 1584321,
+      "summed_observed_task_seconds": 30695.305505013617,
+      "baseline_missing_qa": 0,
+      "rewrite_missing_qa": 1,
+      "time_scope": "known observed task steps only; excludes unreceived cancelled-request cost, startup/retrieval/annotation; not route wall time"
+    }
+  },
+  "condition_sha256": "c01efa41304147a6973f401a352b4cfaf8bc23c289e32fec680a6e57d3b4d5cd",
+  "progression_gate_passed": true,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "human_reviewed": false,
+  "limitations": [
+    "two post-outcome Main stopping-rule amendments",
+    "length-dependent missingness",
+    "AI annotations are not human ground truth",
+    "language comparison includes dataset differences",
+    "group-bootstrap CI is conditional on comparable observed QA; no seed/model/annotator variability",
+    "known v23 negative specificity 87.5% did not meet the old 90% adoption criterion"
+  ],
+  "statistics": {
+    "version": "qa-increment-document-group-bootstrap-v1",
+    "numpy_version": "2.5.3",
+    "repetitions": 10000,
+    "seed": 42,
+    "rng": "SeedSequence(seed).spawn(2) in en,ja order",
+    "quantile": "linear_percentile_2.5_97.5",
+    "estimand": "QA-weighted complete-comparison increment, conditional on comparability",
+    "languages": {
+      "en": {
+        "selected_qa_count": 20,
+        "selected_document_groups": 20,
+        "comparable_qa_count": 16,
+        "missing_qa_count": 4,
+        "comparable_document_groups": 16,
+        "mean_increment": 0.125,
+        "ci95": [
+          0.05,
+          0.225
+        ],
+        "ci_status": "available"
+      },
+      "ja": {
+        "selected_qa_count": 20,
+        "selected_document_groups": 20,
+        "comparable_qa_count": 12,
+        "missing_qa_count": 8,
+        "comparable_document_groups": 12,
+        "mean_increment": 0.08333333333333333,
+        "ci95": [
+          0.0,
+          0.20000000000000004
+        ],
+        "ci_status": "available"
+      }
+    },
+    "ja_minus_en": {
+      "mean": -0.04166666666666667,
+      "ci95": [
+        -0.17500000000000002,
+        0.10833333333333334
+      ]
+    },
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "semantics": {
+    "en": {
+      "planned_definite_unit_conditions": 359,
+      "exact_correct": 275,
+      "planned_supported_unit_conditions": 251,
+      "supported_exact_correct": 231,
+      "planned_definite_negative_unit_conditions": 108,
+      "false_support_count": 60,
+      "ambiguous_unit_conditions_retained_in_F": 18,
+      "invalid_trial_conditions": 0,
+      "complete_comparable_qa": 16,
+      "unique_definite_units": 40,
+      "unique_ambiguous_units": 2,
+      "no_unit_qa": 4,
+      "exact_label_accuracy": 0.766016713091922,
+      "supported_label_accuracy": 0.9203187250996016,
+      "binary_adoption": {
+        "semantic_adoption_version": "support-binary-v2",
+        "healthy": true,
+        "supported_denominator": 251,
+        "negative_denominator": 108,
+        "supported_correct": 231,
+        "negative_correct": 48,
+        "exact_correct": 275,
+        "missing_outcomes": 0,
+        "false_support_count": 60,
+        "missed_support_count": 20,
+        "C_NS_confusion_count": 4,
+        "ambiguous_unit_conditions_retained_in_F": 18,
+        "unique_supported_units": 28,
+        "unique_negative_units": 12,
+        "supported_groups": 14,
+        "negative_groups": 8,
+        "supported_recall": 0.9203187250996016,
+        "negative_specificity": 0.4444444444444444,
+        "three_label_accuracy": 0.766016713091922,
+        "binary_accuracy": 0.7771587743732591,
+        "coverage_passed": true,
+        "passed": false,
+        "group_bootstrap": {
+          "unit": "document_group",
+          "groups": 16,
+          "repetitions": 10000,
+          "seed": 42,
+          "metrics": {
+            "supported_recall": {
+              "ci95": [
+                0.8282828282828283,
+                0.9928057553956835
+              ],
+              "valid_replicates": 10000,
+              "missing_class_replicates": 0
+            },
+            "negative_specificity": {
+              "ci95": [
+                0.19255892255892257,
+                0.746031746031746
+              ],
+              "valid_replicates": 9999,
+              "missing_class_replicates": 1
+            }
+          },
+          "conditional_on_observed_groups_not_population_error_guarantee": true
+        }
+      }
+    },
+    "ja": {
+      "planned_definite_unit_conditions": 382,
+      "exact_correct": 307,
+      "planned_supported_unit_conditions": 250,
+      "supported_exact_correct": 250,
+      "planned_definite_negative_unit_conditions": 132,
+      "false_support_count": 67,
+      "ambiguous_unit_conditions_retained_in_F": 18,
+      "invalid_trial_conditions": 0,
+      "complete_comparable_qa": 12,
+      "unique_definite_units": 43,
+      "unique_ambiguous_units": 2,
+      "no_unit_qa": 8,
+      "exact_label_accuracy": 0.8036649214659686,
+      "supported_label_accuracy": 1.0,
+      "binary_adoption": {
+        "semantic_adoption_version": "support-binary-v2",
+        "healthy": true,
+        "supported_denominator": 250,
+        "negative_denominator": 132,
+        "supported_correct": 250,
+        "negative_correct": 65,
+        "exact_correct": 307,
+        "missing_outcomes": 0,
+        "false_support_count": 67,
+        "missed_support_count": 0,
+        "C_NS_confusion_count": 8,
+        "ambiguous_unit_conditions_retained_in_F": 18,
+        "unique_supported_units": 28,
+        "unique_negative_units": 15,
+        "supported_groups": 12,
+        "negative_groups": 9,
+        "supported_recall": 1.0,
+        "negative_specificity": 0.49242424242424243,
+        "three_label_accuracy": 0.8036649214659686,
+        "binary_accuracy": 0.824607329842932,
+        "coverage_passed": true,
+        "passed": false,
+        "group_bootstrap": {
+          "unit": "document_group",
+          "groups": 12,
+          "repetitions": 10000,
+          "seed": 42,
+          "metrics": {
+            "supported_recall": {
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "valid_replicates": 10000,
+              "missing_class_replicates": 0
+            },
+            "negative_specificity": {
+              "ci95": [
+                0.16401420217209692,
+                0.8416666666666667
+              ],
+              "valid_replicates": 10000,
+              "missing_class_replicates": 0
+            }
+          },
+          "conditional_on_observed_groups_not_population_error_guarantee": true
+        }
+      }
+    }
+  },
+  "quality_routes": [
+    {
+      "cohort": "cal",
+      "language": "en",
+      "route": "always_rewrite",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 10,
+      "unreliable": 8,
+      "indeterminate": 2,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 40,
+      "input_tokens_sum": 55669,
+      "output_tokens_sum": 84379
+    },
+    {
+      "cohort": "cal",
+      "language": "en",
+      "route": "no_repair",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 6,
+      "unreliable": 14,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 20,
+      "input_tokens_sum": 23568,
+      "output_tokens_sum": 1472
+    },
+    {
+      "cohort": "cal",
+      "language": "en",
+      "route": "original",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 9,
+      "unreliable": 10,
+      "indeterminate": 1,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 72,
+      "input_tokens_sum": 121532,
+      "output_tokens_sum": 209645
+    },
+    {
+      "cohort": "cal",
+      "language": "en",
+      "route": "repeat_2",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 9,
+      "unreliable": 10,
+      "indeterminate": 1,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 72,
+      "input_tokens_sum": 121532,
+      "output_tokens_sum": 209645
+    },
+    {
+      "cohort": "cal",
+      "language": "en",
+      "route": "repeat_3",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 9,
+      "unreliable": 10,
+      "indeterminate": 1,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 72,
+      "input_tokens_sum": 121532,
+      "output_tokens_sum": 209645
+    },
+    {
+      "cohort": "cal",
+      "language": "en",
+      "route": "repeat_4",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 9,
+      "unreliable": 10,
+      "indeterminate": 1,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 72,
+      "input_tokens_sum": 121532,
+      "output_tokens_sum": 209645
+    },
+    {
+      "cohort": "cal",
+      "language": "en",
+      "route": "repeat_5",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 9,
+      "unreliable": 10,
+      "indeterminate": 1,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 72,
+      "input_tokens_sum": 121532,
+      "output_tokens_sum": 209645
+    },
+    {
+      "cohort": "cal",
+      "language": "en",
+      "route": "reversed",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 9,
+      "unreliable": 10,
+      "indeterminate": 1,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 72,
+      "input_tokens_sum": 121502,
+      "output_tokens_sum": 211431
+    },
+    {
+      "cohort": "cal",
+      "language": "en",
+      "route": "shuffle_1",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 9,
+      "unreliable": 10,
+      "indeterminate": 1,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 74,
+      "input_tokens_sum": 125307,
+      "output_tokens_sum": 219833
+    },
+    {
+      "cohort": "cal",
+      "language": "en",
+      "route": "shuffle_2",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 8,
+      "unreliable": 10,
+      "indeterminate": 1,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 72,
+      "input_tokens_sum": 122424,
+      "output_tokens_sum": 212754
+    },
+    {
+      "cohort": "cal",
+      "language": "en",
+      "route": "shuffle_3",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 8,
+      "unreliable": 11,
+      "indeterminate": 1,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 72,
+      "input_tokens_sum": 121653,
+      "output_tokens_sum": 209319
+    },
+    {
+      "cohort": "cal",
+      "language": "ja",
+      "route": "always_rewrite",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 9,
+      "unreliable": 10,
+      "indeterminate": 1,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 1,
+      "native_attempts_sum": 40,
+      "input_tokens_sum": 125651,
+      "output_tokens_sum": 69529
+    },
+    {
+      "cohort": "cal",
+      "language": "ja",
+      "route": "no_repair",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 4,
+      "unreliable": 16,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 20,
+      "input_tokens_sum": 63185,
+      "output_tokens_sum": 1899
+    },
+    {
+      "cohort": "cal",
+      "language": "ja",
+      "route": "original",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 6,
+      "unreliable": 14,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 77,
+      "input_tokens_sum": 258449,
+      "output_tokens_sum": 204313
+    },
+    {
+      "cohort": "cal",
+      "language": "ja",
+      "route": "repeat_2",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 6,
+      "unreliable": 14,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 77,
+      "input_tokens_sum": 258449,
+      "output_tokens_sum": 204313
+    },
+    {
+      "cohort": "cal",
+      "language": "ja",
+      "route": "repeat_3",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 6,
+      "unreliable": 14,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 77,
+      "input_tokens_sum": 258449,
+      "output_tokens_sum": 204313
+    },
+    {
+      "cohort": "cal",
+      "language": "ja",
+      "route": "repeat_4",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 6,
+      "unreliable": 14,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 77,
+      "input_tokens_sum": 258449,
+      "output_tokens_sum": 204313
+    },
+    {
+      "cohort": "cal",
+      "language": "ja",
+      "route": "repeat_5",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 6,
+      "unreliable": 14,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 77,
+      "input_tokens_sum": 258449,
+      "output_tokens_sum": 204313
+    },
+    {
+      "cohort": "cal",
+      "language": "ja",
+      "route": "reversed",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 6,
+      "unreliable": 14,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 76,
+      "input_tokens_sum": 255380,
+      "output_tokens_sum": 193988
+    },
+    {
+      "cohort": "cal",
+      "language": "ja",
+      "route": "shuffle_1",
+      "selected_qa": 20,
+      "available_initial_qa": 20,
+      "baseline_missing": 0,
+      "reliable": 6,
+      "unreliable": 14,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 76,
+      "input_tokens_sum": 255380,
+      "output_tokens_sum": 199337
+    },
+    {
+      "cohort": "cal",
+      "language": "ja",
+      "route": "shuffle_2",
+      "selected_qa": 20,
+      "available_initial_qa": 18,
+      "baseline_missing": 2,
+      "reliable": 7,
+      "unreliable": 11,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 69,
+      "input_tokens_sum": 230689,
+      "output_tokens_sum": 180324
+    },
+    {
+      "cohort": "cal",
+      "language": "ja",
+      "route": "shuffle_3",
+      "selected_qa": 20,
+      "available_initial_qa": 19,
+      "baseline_missing": 1,
+      "reliable": 6,
+      "unreliable": 13,
+      "indeterminate": 0,
+      "pending": 0,
+      "rewrite_failed_fallbacks": 0,
+      "native_attempts_sum": 74,
+      "input_tokens_sum": 248988,
+      "output_tokens_sum": 194429
+    }
+  ],
+  "threshold_sensitivity": [
+    {
+      "language": "en",
+      "threshold": 0.5,
+      "comparable_qa": 16,
+      "mean_increment": 0.1
+    },
+    {
+      "language": "en",
+      "threshold": 0.6,
+      "comparable_qa": 16,
+      "mean_increment": 0.1125
+    },
+    {
+      "language": "en",
+      "threshold": 0.7,
+      "comparable_qa": 16,
+      "mean_increment": 0.125
+    },
+    {
+      "language": "en",
+      "threshold": 0.8,
+      "comparable_qa": 16,
+      "mean_increment": 0.125
+    },
+    {
+      "language": "en",
+      "threshold": 0.9,
+      "comparable_qa": 16,
+      "mean_increment": 0.125
+    },
+    {
+      "language": "ja",
+      "threshold": 0.5,
+      "comparable_qa": 12,
+      "mean_increment": 0.041666666666666664
+    },
+    {
+      "language": "ja",
+      "threshold": 0.6,
+      "comparable_qa": 12,
+      "mean_increment": 0.075
+    },
+    {
+      "language": "ja",
+      "threshold": 0.7,
+      "comparable_qa": 12,
+      "mean_increment": 0.08333333333333333
+    },
+    {
+      "language": "ja",
+      "threshold": 0.8,
+      "comparable_qa": 12,
+      "mean_increment": 0.049999999999999996
+    },
+    {
+      "language": "ja",
+      "threshold": 0.9,
+      "comparable_qa": 12,
+      "mean_increment": 0.03333333333333333
+    }
+  ],
+  "source_analysis_sha256": "47f551116193ae33da7342b40dd8bf05e51aaf6e33b87303c6816c0b43b1c9ac"
+}
