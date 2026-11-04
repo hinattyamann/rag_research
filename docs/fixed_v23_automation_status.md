@@ -1,6 +1,6 @@
 # 固定v23 自動実行の状況
 
-更新: 2026-11-04 10:10:04 JST
+更新: 2026-11-04 10:10:22 JST
 
 現在の工程: **analyze-cal**
 
@@ -33,7 +33,7 @@ Codex CLI起動予約数: 84（ChatGPT認証、APIキーへの切替なし）
 | rewrite_failed | 1 |
 | completed | True |
 
-直近の作業: `{'updated_at_utc': '2026-11-04T01:09:59.978691+00:00', 'stage': 'review', 'cohort': 'cal', 'language': 'ja', 'kind': 'units', 'codex_running': False}`
+直近の作業: `{'updated_at_utc': '2026-11-04T01:10:21.153732+00:00', 'stage': 'analyzed', 'cohort': 'cal', 'codex_running': False}`
 
 ## 工程と完了条件
 
