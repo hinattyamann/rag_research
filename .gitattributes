@@ -60,3 +60,8 @@ src/rag_research/generation/auxiliary_config.py text eol=lf
 scripts/audit_measurement_recheck.py text eol=lf
 scripts/replay_citation_normalization.py text eol=lf
 docs/phase10_recheck_results.md text eol=lf
+
+# Preserve byte-hashed artifacts across PCs and accept generated SVG/CSV formatting.
+reports/fixed_v23_order_study_v1/** -text
+reports/fixed_v23_order_study_v1/*.svg whitespace=-blank-at-eol
+reports/fixed_v23_order_study_v1/*.csv whitespace=cr-at-eol
