@@ -15,6 +15,7 @@
 | 保存先 | 内容・正本 |
 |---|---|
 | [notes/submission_requirements.md](notes/submission_requirements.md) | 公式投稿条件、書式、未確認事項、提出前チェック |
+| [notes/case_studies_and_materials.md](notes/case_studies_and_materials.md) | 具体例の使い分け、ノートPCの資料所在、研究室PCへの書出し依頼 |
 | [templates/official/](templates/official/) | 配布元から取得した未編集のWordテンプレートと募集要項PDF |
 | [templates/official_sources.json](templates/official_sources.json) | 取得元URL、取得日時、ファイルサイズ、SHA-256、確認方法 |
 | [manuscript/](manuscript/) | Word論文本体一組。提出用 `iciae2027_manuscript_en.docx`、理解用 `iciae2027_manuscript_ja.docx` |
