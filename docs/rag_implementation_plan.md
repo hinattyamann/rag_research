@@ -1,5 +1,7 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-11-06 17:31 JST Cal拡張の実行前準備: ユーザーは11/14収集終了目安・同条件の日英均等追加収集から論文用資料のGit共有までを委任し、VS Code終了を許可した。未使用の日本語元Calibrationは64 Groupのため、事前通知した件数を日英各60・計120問（20問/言語×3 Batch）へ確定。既存80問と新集合を分け、元f0b7c71/Release・科学的条件を固定する。現在は新規研究Native0で準備/検証中。既存Calだけを使う読取専用の資料抽出・科学的オフライン検証、人工日英2 CLIの引用選択/全slot/Tool0を確認した。詳細は[Protocol](cal_extension_protocol_v1.md)。稼働開始後の現在地はdocs/cal_extension_status.mdとdata/manifests/cal_extension_status_v1.jsonを正本とし、原稿Branch/DOCXは変更しない。
+
 2026-11-06 14:41 JST 執筆実装更新: 日英対訳入力を77単位へ拡張し、検証済み方策/具体例を読む2表を加えて計5表とした。生成Manifestを取込Commit・2資料Tree・Manifest Hash・本文Digestへ結合。実DOCX照合3検査/Ruffと両版全14ページの描画確認を実施し、各7ページの初稿2を完成した。公式原本/未編集パッケージ部品/既存成果を保持した。研究用src/設定/依存/Runは変更せず、新規推論/再採点0。[原稿到達点](../papers/iciae2027/notes/draft_status.md)を参照。
 
 2026-11-05 初稿作成: [論文本体](../papers/iciae2027/manuscript/)に日英Word初稿、64単位の対訳入力、公開CSVを使う生成/照合処理を追加した。原稿各6ページ・全12ページの描画確認、実DOCX本文/引用/表・原本保持の専用検査3件に通過。研究用実装・設定・依存ファイル・Run・既存成果を変更せず、新規推論/再採点は行っていない。具体例等の補完は[初稿の残件](../papers/iciae2027/notes/draft_status.md)に記録し、研究室資料共有後に進める。
