@@ -1,0 +1,33 @@
+{
+  "selected_qa_count": 40,
+  "passage_count": 222,
+  "selected_title_count": 121,
+  "original_document_fields_used": [
+    "example_id (only selected ID linkage)",
+    "document_title",
+    "document_url",
+    "document_plaintext (only target text matching)"
+  ],
+  "nonselected_questions_or_annotations_investigated": false,
+  "development_original_documents_scope": "Selected passage document metadata only, not unused Evaluation QA content or results",
+  "candidate_counts": {
+    "1": 166,
+    "2": 33,
+    "0": 23
+  },
+  "known_upstream_deduplication": "retrieval/README.md says differing document versions can be deduplicated with high ROUGE overlap, which does not identify an exact Wikipedia revision.",
+  "upstream_evidence": [
+    {
+      "path": "evidence/english/original_documents_README.md",
+      "source_id": "a04657040d3535ad9c4d92d0",
+      "transformation": "byte_identical"
+    },
+    {
+      "path": "evidence/english/retrieval_README.md",
+      "source_id": "e6d4566f73eb05aed21899fc",
+      "transformation": "byte_identical"
+    }
+  ],
+  "additional_nq_metadata": "No separate original Natural Questions URL/revision mapping asset was located in the registered CLAPNQ acquisition; retained TyDI original_documents were inspected instead.",
+  "candidate_use": "Candidate URLs may guide a later bounded audit; do not present them as confirmed exact corpus revision IDs."
+}

@@ -20,6 +20,7 @@
 | [notes/case_studies_and_materials.md](notes/case_studies_and_materials.md) | 具体例の使い分け、ノートPCの資料所在、研究室PCへの書出し依頼 |
 | [notes/lab_pc_git_materials_prompt.md](notes/lab_pc_git_materials_prompt.md) | 研究室PCで執筆資料を作成・検証しGit共有する実行プロンプト |
 | [notes/lab_pc_provenance_audit_prompt.md](notes/lab_pc_provenance_audit_prompt.md) | 未取得3点の原因・回復可能性と元ログを追加調査する依頼文 |
+| [materials/provenance_audit_v1/](materials/provenance_audit_v1/README.md) | 日本語歴史版の補足回復・84採点Job・英語版候補の追加調査。未解決と証拠は[引継ぎ](notes/provenance_audit_handoff.md)参照 |
 | [materials/](materials/) | 既存Main/Calの[80問資料集](materials/fixed_v23_v1/README.md)。検証・取込は[引継ぎ](notes/materials_handoff.md)を参照 |
 | [templates/official/](templates/official/) | 配布元から取得した未編集のWordテンプレートと募集要項PDF |
 | [templates/official_sources.json](templates/official_sources.json) | 取得元URL、取得日時、ファイルサイズ、SHA-256、確認方法 |

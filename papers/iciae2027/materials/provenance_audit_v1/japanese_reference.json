@@ -1,0 +1,184 @@
+{
+  "record_id": "whrja:02e85c8:answered:857",
+  "cohort": "main",
+  "language": "ja",
+  "investigation_status": "completed",
+  "resolution_status": "historical_reference_recovered_with_limits",
+  "original_acquisition_classification": "http_200_no_revision_returned_before_cutoff",
+  "original_evidence": {
+    "article": {
+      "path": "evidence/japanese/original_0b0739891461f74a49a5d6b0.json",
+      "source_id": "2ee99031e4ca72084e29d5e6",
+      "transformation": "byte_identical"
+    },
+    "request": {
+      "path": "evidence/japanese/original_0b0739891461f74a49a5d6b0-revision.json",
+      "source_id": "c08565f3b98963a34a3b1303",
+      "transformation": "byte_identical"
+    },
+    "acquisition_spec": {
+      "path": "evidence/japanese/original_phase11_japanese_corpus_v1.json",
+      "source_id": "78e2cf9ac2d9e03e762f01f5",
+      "transformation": "byte_identical"
+    },
+    "extractor": {
+      "path": "evidence/japanese/original_wikipedia_snapshot.py",
+      "source_id": "1aaffc645b953a93cd0c4079",
+      "transformation": "byte_identical"
+    }
+  },
+  "cutoff_utc": "2023-12-25T23:59:59Z",
+  "original_page_id": 5273510,
+  "original_revision_id": null,
+  "original_parse_request_exists": false,
+  "facts": [
+    "Original API request succeeded (HTTP 200) but returned no revisions for page 5273510 before the declared cutoff.",
+    "Public move log 8295729 links original logpage 56523 to the move to ニューラルネットワーク (機械学習) on 2026-07-26T15:45:54Z.",
+    "Public earliest revision for current page 5273510 is 110422898 at the same 2026 timestamp, with parentid 0.",
+    "The moved history of page 56523 returns revision 98057227 (2023-11-21T16:00:37Z) at the declared cutoff.",
+    "This public historical body was fetched in this audit, not present in the original corpus or experimental input."
+  ],
+  "causal_interpretation": "The historical lookup used the then-current title/page after a move; the new page history starts after cutoff. This explains the observed empty revision result, not a permission or transport error.",
+  "unrelated_error_not_used": "Page13492/Revision95068750 permissiondenied is a separate article.",
+  "recovered_page_id": 56523,
+  "recovered_revision_id": 98057227,
+  "recovered_revision_timestamp_utc": "2023-11-21T16:00:37Z",
+  "recovered_revision_url": "https://ja.wikipedia.org/w/index.php?oldid=98057227",
+  "response_path": "evidence/japanese/public/historical_parse_response.json",
+  "extracted_text_path": "evidence/japanese/recovered_revision_98057227.txt",
+  "extraction": "Unmodified archived article_text / wikipedia-rendered-article-text-v1 on new parse HTML; UTF-8, no appended newline.",
+  "rendering_identity_with_past_not_established": true,
+  "saved_reference_quote": "第二次世界大戦の最中の1943年のこと、ウォーレン・マカロックとウォルター・ピッツが神経回路網理論を提出したが（形式ニューロンを参照）、この理論は現実の脳と比べてあまりに単純化するものだったので当時はほとんど注目されなかった。また1949年にドナルド・ヘッブが神経回路の学習理論として発表した 「シナプスの可塑性の理論」 も \" 単なる机上の空論 \"　の扱いを受けてしまった[5]。\n状況が変わりはじめたのはまた1949年にドナルド・ヘッブが神経回路の学習理論として発表した 「シナプスの可塑性の理論」 も \" 単なる机上の空論 \"　の扱いを受けてしまった[5]。\n状況が変わりはじめたのは1967年のことで、同年に小脳の神経回路網の構造が明らかになり[6]、そのおかげで上述のマカロック、ピッツ、ヘッブらの理論が現実の小脳をうまくモデル化していることが分かり、すでに発表されて10年ほど経っていたパーセプトロンが俄然ブームとなった[5]。\nところが1970年代になるとマービン・ミンスキーとシーモア・パパートがパーセプトロンの限界を数学的に証明したことで、神経回路網的手法に対する期待が一気にしぼみ、その研究者の数が急激に減ってしまった[5]。それでも地道な研究を続けていた人はおり[5]、（1986年にデビッド・ラメルハートらがバックプロパゲーション（誤差 逆伝播法）を再発見（再提案）したことで、それまでの限界を突破する道がとうとう開け）　「ニューラルネットワーク」として多くの研究者の注目を浴びるようになった[5]。\nところが1970年代になるとマービン・ミンスキーとシーモア・パパートがパーセプトロンの限界を数学的に証明したことで、神経回路網的手法に対する期待が一気にしぼみ、その研究者の数が急激に減ってしまった[5]。それでも地道な研究を続けていた人はおり[5]、（1986年にデビッド・ラメルハートらがバックプロパゲーション（誤差 逆伝播法）を再発見（再提案）したことで、それまでの限界を突破する道がとうとう開け）　「ニューラルネットワーク」として多くの研究者の注目を浴びるようになった[5]。",
+  "entire_reference_quote_verbatim_match": false,
+  "reference_anchor_matches": [
+    {
+      "quote": "第二次世界大戦の最中の1943年のこと、ウォーレン・マカロックとウォルター・ピッツが神経回路網理論を提出したが（形式ニューロンを参照）、この理論は現実の脳と比べてあまりに単純化するものだったので当時はほとんど注目されなかった。",
+      "in_saved_reference": true,
+      "recovered_character_start": 2951
+    },
+    {
+      "quote": "ところが1970年代になるとマービン・ミンスキーとシーモア・パパートがパーセプトロンの限界を数学的に証明したことで、神経回路網的手法に対する期待が一気にしぼみ、その研究者の数が急激に減ってしまった",
+      "in_saved_reference": true,
+      "recovered_character_start": 3272
+    }
+  ],
+  "used_contexts": [
+    {
+      "passage_id": "68225152793527305765845465919_19596-20482",
+      "text_sha256": "467d182dc9591d3aa92b0835d39ee259df0984a2174186a7302e0ef6ccf1a8c6"
+    },
+    {
+      "passage_id": "68225152793527305765845465919_15263-16231",
+      "text_sha256": "2cd2c802eb2624dcfeca76c80c82e9877a03142a1a609f49a7165d6fe8cacb2d"
+    },
+    {
+      "passage_id": "68225152793527305765845465919_3995-4876",
+      "text_sha256": "bcc8666888bcbf98dbd2586846b9185f00fd5bffd2440bdca3d09bc7894f20bb"
+    },
+    {
+      "passage_id": "16939052048679942332242321927_6793-7619",
+      "text_sha256": "d0f798cc9278b5d6b297e049828e8530cfed21c3798a9062e70af3a47a40127c"
+    },
+    {
+      "passage_id": "30927180934176437373684322798_0-783",
+      "text_sha256": "1fb46dae3b72267574dadd549de6c6b80988e1bf78507a0ac4bf6322c4a957bd"
+    }
+  ],
+  "originally_comparable": true,
+  "external_labels_preserved": {
+    "A": {
+      "annotation_id": "Q-8889229a3ca4b6208a1f",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-8889229a3ca4b6208a1f",
+        "candidate_sha256": "2947c533266d6afe86f24eff49584036002cc11e6a23e6ba38571c505f69ce81",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "ニューラルネットワークの基礎研究、研究の隆盛と停滞、バックプロパゲーションなどによる復活という主要な歴史的推移を説明すること。",
+        "reason": "1943年の基礎研究とダートマスの記述は実使用文書に支持される。しかし、商業的成功を1980年代とする記述は、1990年代と明記した実使用文書に反する。また、ダートマスの活動から研究再活発化へ直接つなぐ説明は支持されず、停滞とホップフィールドやラメルハートによる復活という重要な推移も欠けている。参照回答は必要な歴史的推移の確認に用い、誤りと非支持の判定は実使用文書に基づいた。",
+        "evidence": [
+          {
+            "passage_id": "16939052048679942332242321927_6793-7619",
+            "quote": "ウォーレン・マカロックとウォルター・ピッツは「神経活動に内在するアイデアの論理計算」と題する論文を1943年に発表し、ニューラルネットワークの基礎を築いた。"
+          },
+          {
+            "passage_id": "68225152793527305765845465919_15263-16231",
+            "quote": "同じ頃、デビッド・ラメルハートは、ニューラルネットワークの新たな訓練方法である「バックプロパゲーション」を一般化させた（ポール・ワーボスより数年早く発見した）。それら2つの発見によって、1970年以来下火になっていたコネクショニズムが復活した。"
+          },
+          {
+            "passage_id": "68225152793527305765845465919_15263-16231",
+            "quote": "ニューラルネットワークは1990年代には商業的成功を達成し、簡単な光学文字認識や音声認識のプログラムで使われるようになった。"
+          }
+        ],
+        "elapsed_seconds": 8.50107999775355,
+        "confirmed_at_utc": "2026-10-31T01:38:44.816178+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "B": {
+      "annotation_id": "Q-e04add2d0bb235527863",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-e04add2d0bb235527863",
+        "candidate_sha256": "6a03292fbfec1b8b13cbdeeae2c6fc7d7675fd5a81d9107f0815e0af35872c21",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "ニューラルネットワークの初期の理論的基礎、その後の研究の発展・再興と実用化を時系列で説明すること。",
+        "reason": "1943年の基礎研究から初期の実装、1980年代の再興、1990年代の商業利用までを説明している。人物、出来事、年代は実使用Contextに対応する。1982年の記述は資料の「1982年」と「同じ頃」をまとめた概説として許容できる。参考回答にあるヘッブやパーセプトロンの経緯は省略されているが、広い歴史質問への要約として明確な必須要点の欠落とはしない。参考資料だけの情報をContextの支持に代用していない。",
+        "evidence": [
+          {
+            "passage_id": "16939052048679942332242321927_6793-7619",
+            "quote": "ウォーレン・マカロックとウォルター・ピッツは「神経活動に内在するアイデアの論理計算」と題する論文を1943年に発表し、ニューラルネットワークの基礎を築いた。"
+          },
+          {
+            "passage_id": "68225152793527305765845465919_3995-4876",
+            "quote": "1951年、ミンスキーは世界初のニューラルネットマシンSNARCを構築した。"
+          },
+          {
+            "passage_id": "16939052048679942332242321927_6793-7619",
+            "quote": "1956年夏、ダートマス大学が入居している建物の最上階を引き継いだ数学と計算機科学者のグループの一人である若き教授ジョン・マッカーシーはワークショップでのプロポーザルで \"Artificial Intelligence\" という言葉を作り出している。"
+          },
+          {
+            "passage_id": "68225152793527305765845465919_15263-16231",
+            "quote": "1982年、物理学者のジョン・ホップフィールド（後にホップフィールド・ネットワークと呼ばれるようになった）は、ある形式のニューラルネットワークが従来とは全く異なる方法で学習し、情報を処理出来ることを示した。同じ頃、デビッド・ラメルハートは、ニューラルネットワークの新たな訓練方法である「バックプロパゲーション」を一般化させた（ポール・ワーボスより数年早く発見した）。それら2つの発見によって、1970年以来下火になっていたコネクショニズムが復活した。"
+          },
+          {
+            "passage_id": "68225152793527305765845465919_15263-16231",
+            "quote": "1986年にラメルハートと心理学者のジェームズ・マクレランドの出版した2巻の論文集 Parallel Distributed Processing は、PDPモデルを提唱した。\nニューラルネットワークは1990年代には商業的成功を達成し、簡単な光学文字認識や音声認識のプログラムで使われるようになった。"
+          }
+        ],
+        "elapsed_seconds": 12.501642474504479,
+        "confirmed_at_utc": "2026-10-31T01:41:45.069208+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "remaining_unknowns": [
+    "No original acquisition render exists for this article, so byte equality to a hypothetical 2023/2026 render is unprovable.",
+    "The saved dataset reference quote is not a verbatim full-string match to the newly extracted historical text; only the documented anchors match. No reference or label was corrected."
+  ],
+  "evidence_paths": [
+    "evidence/japanese/public/cutoff_request.json",
+    "evidence/japanese/public/cutoff_response.json",
+    "evidence/japanese/public/delete_log_request.json",
+    "evidence/japanese/public/delete_log_response.json",
+    "evidence/japanese/public/earliest_request.json",
+    "evidence/japanese/public/earliest_response.json",
+    "evidence/japanese/public/historical_parse_request.json",
+    "evidence/japanese/public/historical_parse_response.json",
+    "evidence/japanese/public/move_log_request.json",
+    "evidence/japanese/public/move_log_response.json",
+    "evidence/japanese/public/moved_cutoff_request.json",
+    "evidence/japanese/public/moved_cutoff_response.json"
+  ]
+}

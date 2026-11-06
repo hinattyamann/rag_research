@@ -1,0 +1,39 @@
+{
+  "purpose": "historical-wikipedia-api-request",
+  "parameters": {
+    "format": "json",
+    "formatversion": 2,
+    "maxlag": 5,
+    "action": "query",
+    "prop": "revisions",
+    "titles": "ニューラルネットワーク",
+    "redirects": 1,
+    "rvprop": "ids|timestamp",
+    "rvstart": "2023-12-25T23:59:59Z",
+    "rvdir": "older",
+    "rvlimit": 1
+  },
+  "url": "https://ja.wikipedia.org/w/api.php?format=json&formatversion=2&maxlag=5&action=query&prop=revisions&titles=%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%A9%E3%83%AB%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF&redirects=1&rvprop=ids%7Ctimestamp&rvstart=2023-12-25T23%3A59%3A59Z&rvdir=older&rvlimit=1",
+  "status": "ok",
+  "attempts": [
+    {
+      "started_at_utc": "2026-10-21T05:00:44.977852+00:00",
+      "number": 1,
+      "http_status": 200,
+      "response_sha256": "379dceaff9d1a524ec289e30f1da583c2ce0071c44db98d93a21a25c0c995de8"
+    }
+  ],
+  "response": {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 5273510,
+          "ns": 0,
+          "title": "ニューラルネットワーク"
+        }
+      ]
+    }
+  },
+  "result_sha256": "df51fd498f7b0e9533cb219cd0e3a794ef17f31d73dbf4471dc77e999471927b"
+}

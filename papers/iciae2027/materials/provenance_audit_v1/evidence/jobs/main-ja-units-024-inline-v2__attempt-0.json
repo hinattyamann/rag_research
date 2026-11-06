@@ -1,0 +1,259 @@
+{
+  "job_id": "main-ja-units-024-inline-v2/attempt-0",
+  "cohort": "main",
+  "language": "ja",
+  "kind": "units",
+  "investigation_status": "completed",
+  "resolution_status": "exact_serving_identifier_not_observed_in_retained_logs",
+  "source_ids": {
+    "input.json": "b5d3663a3130b9bd50fbf30e",
+    "output.json": "8ac8c792756c13b16e05718c",
+    "provenance.json": "bce9259e1e382e83ca564885",
+    "invocation.json": "e730d873a653549e21492b5c",
+    "schema.json": "1709db55d06e140e8380bfdf",
+    "stdin.json": "c28c1da51d83fa18d052576d",
+    "validated.json": "3f5064aff0f63f0f13466bc3",
+    "invocation.log": "eb1689df4e88fa9da0e20d2e",
+    "session_rollout": "29e71899de679eaeebd0d988"
+  },
+  "thread_id": "01a18fa9-8ef1-7a00-bd5a-d47535584bf8",
+  "input_sha256": "3a0e03c5d2f84a9e100a149c58e30caecb6295c2992b5b474b0edefb33b56710",
+  "output_sha256": "22c241ce385fdde515791a6604aa956972fac0eef9adf7cb610766ab1d7a7433",
+  "full_packet_sha256": "88e66f4b933066edb52217b21466f31330b48fe04d059b43f1ae3d13a6b6eb32",
+  "retained_packet_file_sha256": "42e1ea9e34adfc0c0f7f64143d14d1d113927f0135662be25160f9f5541f1cc8",
+  "packet_source_id": "b9e0c7b398836dc1ae4cf168",
+  "configured_model": "gpt-6.1-sol",
+  "configured_reasoning_effort": "high",
+  "invocation_model_arguments": [
+    "model=\"gpt-6.1-sol\"",
+    "model_reasoning_effort=\"high\""
+  ],
+  "historical_cli_path": "/home/uchida/.vscode/extensions/openai.chatgpt-26.1021.22027-linux-x64/bin/linux-x86_64/codex",
+  "session_context_model": "gpt-6.1-sol",
+  "session_context_effort": "high",
+  "historical_cli_version": "0.164.0-alpha.11.1",
+  "model_provider": "openai",
+  "exact_serving_model_identifier": null,
+  "started_at_utc": "2026-10-31T01:53:36.345960+00:00",
+  "finished_at_utc": "2026-10-31T01:54:56.354848+00:00",
+  "exit_code": 0,
+  "original_input_transport": "inline_stdin_v2",
+  "source_identity_limitation": "Retained model values are local configuration, prompt provenance, world state or thread settings. Model catalog digest and instruction hash are not server snapshot identifiers. Absence in these logs does not prove service-wide non-disclosure.",
+  "annotation_bindings": [
+    {
+      "annotation_id": "Q-08c110cf470bf03421e6",
+      "candidate_hashes": {
+        "quality_candidate_sha256": "20d3ccaacf15d56c0e865416cd76c26663e15365741ac37bccac302b3357fb39",
+        "unit_candidate_sha256": "c8aa12218f19413292d66a7ed671986e8e7b48168a7b4f7ce446929a5de7900a"
+      },
+      "assignments": [
+        {
+          "record_id": "whrja:02e85c8:answered:1214",
+          "stage": "rewritten"
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-b3f93e14260e11d5da30",
+      "candidate_hashes": {
+        "quality_candidate_sha256": "d86b11ff93b8e1518c6baa7d74d6646916b24139c99aba29fdc5dc134d807ad4",
+        "unit_candidate_sha256": "369dc4f128fc8dab27b8971e614ebc15eda129b8934f0e99b6a53c01f0a44af5"
+      },
+      "assignments": [
+        {
+          "record_id": "whrja:02e85c8:answered:186",
+          "stage": "rewritten"
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-d2d36ea5998b91f2a1ea",
+      "candidate_hashes": {
+        "quality_candidate_sha256": "528dc7a5b56e686d9ff020b9d4bc5fc0c6b97c1c03993a6a134c4eed6b00ad74",
+        "unit_candidate_sha256": "81b486314b3c5b977c0fb6618bf5d7460d6b1925248064575e0571b5a692c1d5"
+      },
+      "assignments": [
+        {
+          "record_id": "whrja:02e85c8:answered:340",
+          "stage": "rewritten"
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-27b8d982fe19e409f148",
+      "candidate_hashes": {
+        "quality_candidate_sha256": "428e019d3c33d641cab2d9bbc3dc7c3b122b58b6ce7bbf7b430667b42f58458b",
+        "unit_candidate_sha256": "8450249a66ed29c72b69cbb384a4551c30ffd4d7a45e0599d6bce3c891f1a403"
+      },
+      "assignments": [
+        {
+          "record_id": "whrja:02e85c8:answered:868",
+          "stage": "initial"
+        }
+      ]
+    }
+  ],
+  "cli_events": [
+    {
+      "line": 2,
+      "event_type": "thread.started",
+      "line_sha256": "325026d1ee052cf1d2448ac77e874ad4322900b3cd98a2ec46f7e452e344ce1b",
+      "top_level_keys": [
+        "thread_id",
+        "type"
+      ]
+    },
+    {
+      "line": 3,
+      "event_type": "turn.started",
+      "line_sha256": "cf515a4acc6e41e0f111f01c78b13ba4253f611de9374474864f01e69a90c08f",
+      "top_level_keys": [
+        "type"
+      ]
+    },
+    {
+      "line": 4,
+      "event_type": "item.completed",
+      "line_sha256": "d06fa77c846e6196d7a58c6b137797cec98264561442f37ea4516c4c8bf75507",
+      "top_level_keys": [
+        "item",
+        "type"
+      ]
+    },
+    {
+      "line": 5,
+      "event_type": "turn.completed",
+      "line_sha256": "37216fc06aeaf427957b6ec6be9c68efd959014e1e059cadb865fe476d87ff91",
+      "top_level_keys": [
+        "type",
+        "usage"
+      ]
+    }
+  ],
+  "cli_identifier_fields": [],
+  "session_projections": [
+    {
+      "source_id": "29e71899de679eaeebd0d988",
+      "line": 1,
+      "line_sha256": "a6adcac5f6132a7c05727bd8cbb887797b9b0e23f90420878bcc437984386b46",
+      "event_type": "session_meta",
+      "projection": {
+        "id": "01a18fa9-8ef1-7a00-bd5a-d47535584bf8",
+        "timestamp": "2026-10-31T01:53:36.509Z",
+        "cwd": "/home/uchida/デスクトップ/code/rag_research/.tools/fixed-v23-automation-v1/jobs/main-ja-units-024-inline-v2/attempt-0",
+        "originator": "codex_exec",
+        "cli_version": "0.164.0-alpha.11.1",
+        "source": "exec",
+        "model_provider": "openai"
+      },
+      "identifier_fields": [
+        {
+          "json_pointer": "/payload/model_provider",
+          "value": "openai"
+        },
+        {
+          "json_pointer": "/payload/base_instructions/provenance/model",
+          "value": "gpt-6.1-sol"
+        }
+      ],
+      "transformation": "JSON field projection; account IDs, instructions, tools, messages and unrelated fields omitted"
+    },
+    {
+      "source_id": "29e71899de679eaeebd0d988",
+      "line": 2,
+      "line_sha256": "2ab5c105fc622b3d35d131ec836d268ea26addd8355f94dc36aa645bd348a425",
+      "event_type": "event_msg",
+      "projection": {},
+      "identifier_fields": [
+        {
+          "json_pointer": "/payload/model_context_window",
+          "value": 475000
+        }
+      ],
+      "transformation": "JSON field projection; account IDs, instructions, tools, messages and unrelated fields omitted"
+    },
+    {
+      "source_id": "29e71899de679eaeebd0d988",
+      "line": 9,
+      "line_sha256": "a8b3fba41bd2251dd7d9bccf92db874660d16b8bed089da1a0062d8085ae0490",
+      "event_type": "world_state",
+      "projection": {},
+      "identifier_fields": [
+        {
+          "json_pointer": "/payload/state/collaboration_mode/model",
+          "value": "gpt-6.1-sol"
+        },
+        {
+          "json_pointer": "/payload/state/model/model",
+          "value": "gpt-6.1-sol"
+        },
+        {
+          "json_pointer": "/payload/state/model_catalog",
+          "value": "ea1a55de2973a50e2e404222c5499c24df5591ed"
+        }
+      ],
+      "transformation": "JSON field projection; account IDs, instructions, tools, messages and unrelated fields omitted"
+    },
+    {
+      "source_id": "29e71899de679eaeebd0d988",
+      "line": 10,
+      "line_sha256": "34a0e32c0ebb43a7b5b79aadbe2065e5d5736838847cac93f28a28502a15fd12",
+      "event_type": "turn_context",
+      "projection": {
+        "cwd": "/home/uchida/デスクトップ/code/rag_research/.tools/fixed-v23-automation-v1/jobs/main-ja-units-024-inline-v2/attempt-0",
+        "model": "gpt-6.1-sol",
+        "effort": "high",
+        "turn_id": "01a18fa9-9005-7a81-af35-61d16eacbdce"
+      },
+      "identifier_fields": [
+        {
+          "json_pointer": "/payload/model",
+          "value": "gpt-6.1-sol"
+        },
+        {
+          "json_pointer": "/payload/collaboration_mode/settings/model",
+          "value": "gpt-6.1-sol"
+        }
+      ],
+      "transformation": "JSON field projection; account IDs, instructions, tools, messages and unrelated fields omitted"
+    },
+    {
+      "source_id": "29e71899de679eaeebd0d988",
+      "line": 11,
+      "line_sha256": "14d3a6aa0220e07d6901cdb09478c5ecbadbe56c9a4f12af0767d0bd0f5df9c0",
+      "event_type": "event_msg",
+      "projection": {},
+      "identifier_fields": [
+        {
+          "json_pointer": "/payload/thread_settings/model",
+          "value": "gpt-6.1-sol"
+        },
+        {
+          "json_pointer": "/payload/thread_settings/model_provider_id",
+          "value": "openai"
+        },
+        {
+          "json_pointer": "/payload/thread_settings/collaboration_mode/settings/model",
+          "value": "gpt-6.1-sol"
+        }
+      ],
+      "transformation": "JSON field projection; account IDs, instructions, tools, messages and unrelated fields omitted"
+    },
+    {
+      "source_id": "29e71899de679eaeebd0d988",
+      "line": 23,
+      "line_sha256": "0bdad5cc35b0f12e9ac094240d0225af6df6685cede5a3c45dfc51916d52f9e7",
+      "event_type": "event_msg",
+      "projection": {},
+      "identifier_fields": [
+        {
+          "json_pointer": "/payload/info/model_context_window",
+          "value": 475000
+        }
+      ],
+      "transformation": "JSON field projection; account IDs, instructions, tools, messages and unrelated fields omitted"
+    }
+  ],
+  "identifier_classification": "client_model_alias_and_catalog_metadata_only",
+  "raw_log_bodies_distributed": false
+}
