@@ -16,6 +16,7 @@
 |---|---|
 | [notes/submission_requirements.md](notes/submission_requirements.md) | 公式投稿条件、書式、未確認事項、提出前チェック |
 | [notes/draft_status.md](notes/draft_status.md) | 初稿の到達点、確認内容、研究室資料受領後の更新箇所 |
+| [notes/notebook_materials_review_20261106.md](notes/notebook_materials_review_20261106.md) | ノートPCでの受領・検証結果、加筆可能な内容、未取得情報 |
 | [notes/case_studies_and_materials.md](notes/case_studies_and_materials.md) | 具体例の使い分け、ノートPCの資料所在、研究室PCへの書出し依頼 |
 | [notes/lab_pc_git_materials_prompt.md](notes/lab_pc_git_materials_prompt.md) | 研究室PCで執筆資料を作成・検証しGit共有する実行プロンプト |
 | [materials/](materials/) | 既存Main/Calの[80問資料集](materials/fixed_v23_v1/README.md)。検証・取込は[引継ぎ](notes/materials_handoff.md)を参照 |
