@@ -66,7 +66,7 @@ def make_figures() -> None:
     data = rows("primary_comparison.csv")
     for lang in ("en", "ja"):
         plt.rcParams["font.family"] = "Yu Mincho" if lang == "ja" else "Times New Roman"
-        fig, ax = plt.subplots(figsize=(3.35, 2.5), layout="constrained")
+        fig, ax = plt.subplots(figsize=(3.35, 1.9), layout="constrained")
         for index, row in enumerate(data):
             mean, low, high = (
                 float(row[k]) * 100 for k in ("mean_increment", "ci95_low", "ci95_high")
@@ -109,7 +109,7 @@ def make_figures() -> None:
                 "封印済みの外部AIラベルを結合\n品質と経路費用を比較",
             ]
         )
-        fig, ax = plt.subplots(figsize=(3.35, 3.3), layout="constrained")
+        fig, ax = plt.subplots(figsize=(3.35, 3.0), layout="constrained")
         ax.set_xlim(0, 1)
         ax.set_ylim(0, 6)
         ax.axis("off")
@@ -139,6 +139,62 @@ def make_figures() -> None:
 def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[int]]:
     primary = rows("primary_comparison.csv")
     quality = rows("quality_and_operational_cost.csv")
+    materials = PAPER / "materials/fixed_v23_v1"
+    if key == "selection":
+        with (materials / "policy_outcomes.csv").open(encoding="utf-8", newline="") as stream:
+            policies = list(csv.DictReader(stream))
+        values = []
+        for cohort, language in [("main", "en"), ("main", "ja"), ("cal", "en"), ("cal", "ja")]:
+            observed = [
+                r
+                for r in policies
+                if (r["cohort"], r["language"], r["policy_state"]) == (cohort, language, "observed")
+            ]
+            original = [r for r in observed if r["route"] == "original"]
+            always = [r for r in observed if r["route"] == "always_rewrite"]
+            values.append(
+                [
+                    f"{cohort.capitalize()} {language.upper()}",
+                    str(sum(r["quality_transition"] != "unknown" for r in original)),
+                    str(sum(r["missed_improvement"] == "True" for r in original)),
+                    str(sum(r["harmful_rewrite"] == "True" for r in original)),
+                    str(sum(r["harmful_rewrite"] == "True" for r in always)),
+                ]
+            )
+        return (
+            (
+                ["Cohort", "Pairs", "OE miss", "OE harm", "AR harm"]
+                if lang == "en"
+                else ["区分", "組数", "OE miss", "OE harm", "AR harm"]
+            ),
+            values,
+            [1250, 650, 1000, 1000, 919],
+        )
+    if key == "cases":
+        values = []
+        for identifier, language, orders in [
+            ("case_01", "EN", ("original", "shuffle_3")),
+            ("case_02", "JA", ("original", "shuffle_2")),
+        ]:
+            case = json.loads(
+                (materials / "cases" / (identifier + ".json")).read_text(encoding="utf-8")
+            )
+            for order in orders:
+                trial = next(t for t in case["trials"] if t["trial_id"] == order)
+                policy = next(p for p in case["policy_outcomes"] if p["route"] == order)
+                choice = "A" if policy["selected_stage"] == "initial" else "B"
+                values.append(
+                    [language, order, f"{trial['score']:.2f}", f"{choice} / {policy['quality_y']}"]
+                )
+        return (
+            (
+                ["Case", "Order", "F", "Chosen / Y"]
+                if lang == "en"
+                else ["例", "順序", "F", "選択 / Y"]
+            ),
+            values,
+            [750, 1300, 850, 1919],
+        )
     if key == "primary":
         headers = (
             ["Cohort", "n", "D (pp)", "95% CI (pp)"]
@@ -424,7 +480,7 @@ def build(content: dict, lang: str) -> dict:
         link = E.SubElement(
             p, tag("hyperlink"), {f"{{{R}}}id": relation("hyperlink", ref["url"], True)}
         )
-        add_run(link, ref["url"])
+        add_run(link, ref.get("display_url", ref["url"]))
     body.append(last_section)
     assert original_sections == [E.tostring(s) for s in document.findall(".//w:sectPr", NS)], (
         "Section contract changed"
@@ -504,6 +560,15 @@ def main() -> None:
     assert results[0]["tables"] == results[1]["tables"]
     report = {
         "version": content["version"],
+        "evidence_commit": content["evidence_commit"],
+        "evidence_trees": content.get("evidence_trees", {}),
+        "content_digest": sha(
+            json.dumps(content, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
+        ),
+        "evidence_packages": {
+            name: sha((PAPER / "materials" / name / "artifact_manifest.json").read_bytes())
+            for name in content.get("evidence_trees", {})
+        },
         "template_sha256": TEMPLATE_HASH,
         "block_count": len(ids),
         "documents": results,

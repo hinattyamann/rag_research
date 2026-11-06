@@ -7,8 +7,9 @@
 | `iciae2027_manuscript_en.docx` | 公式テンプレートを用いた提出用英語本文の正本 |
 | `iciae2027_manuscript_ja.docx` | 全本文に対応する理解用日本語原稿の正本 |
 
-2026年11月5日、両DOCXの初稿1を作成した。Word描画では各6ページ、英語要旨は196語。
-研究室資料を受け取る前の段階であり、[到達点・残件](../notes/draft_status.md)を参照する。
+2026年11月6日、研究室から受け取った80問資料と出典監査を検証し、現データの本文初稿を完成した（初稿2）。
+Word描画では各7ページ、英語要旨216語。7章・2図・5表・11文献を収録した。
+著者情報・教員レビュー・提出は別工程であり、[到達点・残件](../notes/draft_status.md)を参照する。
 従来の単一ファイル名 `iciae2027_manuscript.docx` は使用しない。
 
 先に [構成案](outline.md) と [投稿条件](../notes/submission_requirements.md) を確認し、
@@ -27,8 +28,9 @@ Wordの一時ロックファイルはGitへ追加しない。
 
 ## 更新用の入力と確認
 
-[draft_content.json](draft_content.json)は64単位のIDで日英を対応付けた生成入力。
-[build_draft.py](build_draft.py)は未編集の公式テンプレートを使い、本文と公開CSV由来の表・掲載図を両版へ反映する。
+[draft_content.json](draft_content.json)は77単位のIDで日英を対応付けた生成入力。
+[build_draft.py](build_draft.py)は未編集の公式テンプレートを使い、公開CSV・検証済み資料集の方策表/具体例に基づく全表と掲載図を両版へ反映する。
+資料の取込元Commit・2資料Tree・Manifest Hash・本文Digestは[生成記録](../notes/draft_build_manifest.json)へ結び付ける。
 Word正本を直接編集したときは生成入力も同期し、同期前に再生成して手動編集を上書きしない。
 生成前には対象のWord文書を閉じ、両版を同じ作業単位で更新する。
 

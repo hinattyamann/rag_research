@@ -1,0 +1,83 @@
+{
+  "recorded_on": "2026-11-06",
+  "pc": "notebook",
+  "source_branch": "origin/paper/iciae2027",
+  "source_commit": "fb6b8e93c428b7c074e04b562ad2292586f49e36",
+  "git_sync": {
+    "starting_commit": "aff72fd74c1e2e5b8561675573b5534fbea6006c",
+    "starting_worktree_clean": true,
+    "after_fetch_ahead": 0,
+    "after_fetch_behind": 2,
+    "update": "git pull --ff-only"
+  },
+  "material_trees": {
+    "fixed_v23_v1": "5fb236667f6e4411a730187dc1e6ce80f27c710f",
+    "provenance_audit_v1": "2e9bc4cdd1a6eeb97698d426e291a6b604023ebd"
+  },
+  "verification": [
+    {
+      "command": "uv run --no-project python -I papers/iciae2027/materials/provenance_audit_v1/verify_audit.py --audit-open",
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "artifact_files": 123,
+        "japanese_historical_body_recovered": true,
+        "original_render_identity_established": false,
+        "annotation_jobs": 84,
+        "historical_sessions": 84,
+        "exact_serving_identifier_recovered": false,
+        "english_selected_qa": 40,
+        "english_qa_source_urls_identified": 36,
+        "english_passages": 222,
+        "english_passage_candidates": 199,
+        "english_passages_not_recovered": 23,
+        "exact_corpus_revision_bindings_recovered": 0,
+        "original_files_preserved": 3524,
+        "original_run_or_auth_required": false,
+        "new_research_inference_calls": 0,
+        "new_annotation_calls": 0
+      }
+    },
+    {
+      "command": "uv run --no-project python -I papers/iciae2027/materials/fixed_v23_v1/verify_materials.py --audit-open",
+      "exit_code": 0,
+      "result": {
+        "status": "passed",
+        "qa": 80,
+        "strata": 4,
+        "comparable_qa": {
+          "main/en": 16,
+          "main/ja": 13,
+          "cal/en": 16,
+          "cal/ja": 12
+        },
+        "planned_trials": 706,
+        "candidate_stage_assignments": 156,
+        "annotation_jobs": 84,
+        "policy_slots": 880,
+        "observed_policy_outcomes": 864,
+        "cases": 4,
+        "artifact_files": 1043,
+        "semantic_audit": "recomputed",
+        "route_costs": "recomputed",
+        "published_tables": "matched",
+        "bootstrap": "original implementation/version/seed/replicates and exact result retained; not regenerated with a different RNG",
+        "original_run_access_required": false,
+        "new_inference_calls": 0,
+        "new_annotation_calls": 0,
+        "all_data_reads_confined_to_materials": true
+      }
+    }
+  ],
+  "interpretation": {
+    "adequate_for_saved_fixed_input_empirical_draft": true,
+    "all_original_data_transferred": false,
+    "exact_english_corpus_revision_identity_established": false,
+    "exact_assessor_serving_snapshot_identified": false,
+    "later_japanese_body_used_in_original_experiment": false,
+    "labels_or_results_revised": false,
+    "original_files_preserved_count_scope": "lab preservation evidence validated by the audit package, not access to original lab run files on this notebook"
+  },
+  "new_research_inference_calls": 0,
+  "new_annotation_calls": 0
+}

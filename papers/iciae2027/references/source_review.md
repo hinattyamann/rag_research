@@ -15,6 +15,7 @@
 | 8 | [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small) | 提供者のモデルカードと識別子。実使用の資産・検索条件はローカルの固定設定に従う |
 | 9 | [Qwen2.5-3B-Instruct-GGUF](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF) | 公式モデルカード。実ファイルの量子化・Revision/Hashは保存済み生成モデルManifestに従う |
 | 10 | [Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B) | 公式モデルカード。Q6_K実ファイルはUnsloth提供の保存済みManifestに対応し、公式モデルカードを量子化ファイルの配布元と誤認しない |
+| 11 | [固定v23の資料公開版](https://github.com/hinattyamann/rag_research/tree/fb6b8e93c428b7c074e04b562ad2292586f49e36/papers/iciae2027/materials) | 2026年11月6日追記。自研究の固定Commit資料であり、関連研究としての新規性の根拠ではない。ノートPCへ取得して両検証器を実行した。末尾の成果公開段落から、80問資料と後日の出典監査へ参照する。Wordの表示URLはRepository名までとし、Hyperlinkの遷移先に固定Commitとmaterialsパスを保持 |
 
 書誌本文とURLは日英原稿で共通とし、本文の引用番号は出現順の上付き丸括弧にした。
 著者名と文献題名は翻訳せず、原書誌の識別に使う。

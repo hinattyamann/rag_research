@@ -1,0 +1,56 @@
+{
+  "recorded_utc": "2026-11-06T05:43:36.106873+00:00",
+  "version": "draft-2-2026-11-06",
+  "content_digest": "773fa27bc14b4791f4f089c5712cffeeb2d39771927db1b7b67aa803e5bcbead",
+  "renderer": "packaged documents/render_docx.py with native Word read-only PDF and PyMuPDF PNG adapters",
+  "dpi": 140,
+  "review": "Every final page inspected directly or byte-identical to the inspected prior render; all changed pages inspected at full resolution",
+  "document_source_hashes_unchanged_after_export": true,
+  "documents": [
+    {
+      "language": "en",
+      "docx": "papers/iciae2027/manuscript/iciae2027_manuscript_en.docx",
+      "docx_sha256": "d6214b5ca2b1fdea74ab8d7848b3e6e0bb099e412d06c24e06a53a1aa385aa57",
+      "page_count": 7,
+      "reviewed_page_sha256": [
+        "abe59513f2f099b18b0dbcba5f541bdfa1c116e04701cd631c6a73eac9c48d58",
+        "b8bcfcf114fc1c7a552719d8a9cc017976580616a641fbea862b270639ad6ce4",
+        "1603e4140ec57ee65107584cf97882431b4b07247cd7677fcf40c8c4ae7dd487",
+        "a33b489c8a83267f13852c99f1b5e95382a9cf09097c09e0517ac8afa3b646aa",
+        "09d955c7bd2143598002663e3571756069df22b769a08f147d6e39db7f4b29ea",
+        "a9747eabf056f122bf906833d7c1781eabb9b77b3e2b02edea4c310c2c65fab5",
+        "aaf0ddfca9c3e726424d7f931cdb40212ccffcc04c23e3636344a5392a551b89"
+      ]
+    },
+    {
+      "language": "ja",
+      "docx": "papers/iciae2027/manuscript/iciae2027_manuscript_ja.docx",
+      "docx_sha256": "2beaac955211f0d10976ccb3cab191db94350601baa9d1c8878ab19cfbe7c336",
+      "page_count": 7,
+      "reviewed_page_sha256": [
+        "b6846504c3f253fc83e3620a659ee4987b48eb46ec0bec11542a2f42ff792e33",
+        "9a0fb31e1d92228dc3958e73d02c4fabf79fd33659b0c8b2898d1a2304c29d95",
+        "9fd959fec7ba4380bf7fd68e9983b5e8c2ac6ae451bc3e3341db25744d7f6109",
+        "52063f576edb34f678b09a8106884b65c2911c4ae8a193695e799bf2df0ca03d",
+        "161daea5242c4333341322e082bc380187e9a9c5f095181ad41cbaba3aa7d83e",
+        "208385ca2ce00e050a3ae4ca2ee925822ee90f4c661b08dd28aea358527f3490",
+        "0f85afb9d81dfbddf3b8d6008e0488e8720f4bf189992a9817acd5cfb8329b61"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "command": "uv run pytest papers/iciae2027/manuscript/test_draft_artifacts.py -q",
+      "exit_code": 0,
+      "passed": 3
+    },
+    {
+      "command": "uv run ruff check .",
+      "exit_code": 0
+    }
+  ],
+  "paper_markdown_files_checked": 16,
+  "relative_links_checked": 92,
+  "missing_relative_links": 0,
+  "submission_pdf_created": false
+}
