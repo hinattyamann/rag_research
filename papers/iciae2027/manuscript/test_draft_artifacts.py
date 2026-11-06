@@ -56,8 +56,11 @@ def test_word_text_references_and_tables_match_evidence(lang):
     assert citation_runs == [f"({i})" for i in range(1, len(CONTENT["references"]) + 1)]
     assert not any("Preparation of Papers" in p or "Click here" in p for p in paragraphs)
     tables = document.findall("w:body/w:tbl", NS)
-    assert len(tables) == 5
-    primary = table_rows(tables[0])[1:]
+    keys = [b["key"] for b in CONTENT["blocks"] if b["type"] == "table"]
+    assert keys == ["primary", "quality", "selection", "order_quality", "cases", "cost"]
+    assert len(tables) == len(keys)
+    by_key = dict(zip(keys, tables, strict=True))
+    primary = table_rows(by_key["primary"])[1:]
     with (ROOT / "reports/fixed_v23_order_study_v1/primary_comparison.csv").open(
         encoding="utf-8", newline=""
     ) as stream:
@@ -77,10 +80,13 @@ def test_word_text_references_and_tables_match_evidence(lang):
             for r in csv.DictReader(stream)
         }
     route_names = {"NR": "no_repair", "OE": "original", "AR": "always_rewrite"}
-    for actual in table_rows(tables[1])[1:]:
-        expected = routes[(actual[0], route_names[actual[1]])]
-        assert actual[2:] == [expected[key] for key in ("reliable", "unreliable", "indeterminate")]
-    for actual in table_rows(tables[4])[1:]:
+    for actual in table_rows(by_key["quality"])[1:]:
+        for column, short in enumerate(("NR", "OE", "AR"), 1):
+            expected = routes[(actual[0], route_names[short])]
+            assert actual[column].split("/") == [
+                expected[key] for key in ("reliable", "unreliable", "indeterminate")
+            ]
+    for actual in table_rows(by_key["cost"])[1:]:
         expected = routes[(actual[0], route_names[actual[1]])]
         assert actual[2] == expected["native_attempts_sum"]
         assert int(actual[3]) == int(expected["input_tokens_sum"]) + int(
@@ -89,7 +95,7 @@ def test_word_text_references_and_tables_match_evidence(lang):
     material_root = PAPER / "materials/fixed_v23_v1"
     with (material_root / "policy_outcomes.csv").open(encoding="utf-8", newline="") as stream:
         policies = list(csv.DictReader(stream))
-    for actual in table_rows(tables[2])[1:]:
+    for actual in table_rows(by_key["selection"])[1:]:
         original = [
             r
             for r in policies
@@ -110,7 +116,20 @@ def test_word_text_references_and_tables_match_evidence(lang):
             sum(r["harmful_rewrite"] == "True" for r in original),
             sum(r["harmful_rewrite"] == "True" for r in always),
         ]
-    case_rows = table_rows(tables[3])[1:]
+    effects = json.loads((PAPER / "notes/order_effects_v1.json").read_text(encoding="utf-8"))
+    for actual, expected in zip(
+        table_rows(by_key["order_quality"])[1:], effects["strata"], strict=True
+    ):
+        counts = expected["classification_counts"]
+        assert actual[0] == expected["cohort"].capitalize() + " " + expected["language"].upper()
+        assert [int(v) for v in actual[1:]] == [
+            expected["comparable_qa"],
+            expected["decision_change_qa"],
+            counts["decision_change_same_binary_quality"],
+            counts["decision_change_quality_changes"],
+            counts["decision_change_quality_unknown"],
+        ]
+    case_rows = table_rows(by_key["cases"])[1:]
     for actual in case_rows:
         case_id = "case_01" if actual[0] == "EN" else "case_02"
         case = json.loads((material_root / "cases" / f"{case_id}.json").read_text(encoding="utf-8"))
@@ -136,6 +155,16 @@ def test_pair_and_frozen_evidence_integrity():
         assert (
             hashlib.sha256(
                 (PAPER / "materials" / name / "artifact_manifest.json").read_bytes()
+            ).hexdigest()
+            == value
+        )
+    for name, value in manifest["derived_evidence"].items():
+        source = json.loads((PAPER / name).read_text(encoding="utf-8"))
+        assert (
+            hashlib.sha256(
+                json.dumps(
+                    source, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+                ).encode()
             ).hexdigest()
             == value
         )
@@ -170,3 +199,19 @@ def test_pair_and_frozen_evidence_integrity():
     frozen = json.loads((result_dir / "artifact_manifest.json").read_text(encoding="utf-8"))
     for file, digest in frozen["files"].items():
         assert hashlib.sha256((result_dir / file).read_bytes()).hexdigest() == digest
+
+
+def test_case_excerpt_wording_is_present_in_both_actual_documents():
+    excerpts = json.loads((PAPER / "notes/case_excerpts_v1.json").read_text(encoding="utf-8"))
+    for lang in ("en", "ja"):
+        with ZipFile(HERE / f"iciae2027_manuscript_{lang}.docx") as package:
+            document = ET.fromstring(package.read("word/document.xml"))
+        paragraphs = [text(p) for p in document.findall("w:body/w:p", NS)]
+        expected = display_text(
+            next(b[lang] for b in CONTENT["blocks"] if b["id"] == "case-ja-excerpts")
+        )
+        assert expected in paragraphs
+        for quote in excerpts["quotes"]:
+            value = quote["original_ja" if lang == "ja" else "translation_en"]
+            quoted = f"「{value}」" if lang == "ja" else f'"{value}"'
+            assert quoted in expected

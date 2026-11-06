@@ -1,6 +1,6 @@
 {
-  "version": "draft-2-2026-11-06",
-  "evidence_commit": "fb6b8e93c428b7c074e04b562ad2292586f49e36",
+  "version": "draft-3-2026-11-06",
+  "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
   "title": {
     "en": "Evidence Order Sensitivity in RAG Self Evaluation and Its Effects on Decisions, Quality, and Cost",
     "ja": "RAG自己評価の根拠順序感度と判断および品質と費用への影響"
@@ -23,8 +23,8 @@
     {
       "id": "abstract",
       "type": "p",
-      "en": "An internal evaluator in retrieval augmented generation (RAG) determines whether to retain or rewrite an answer. Its sensitivity to evidence order may therefore affect both the delivered answer and computation. We study a fixed evaluator using English and Japanese question answering datasets. Questions, used evidence, initial answers, and sentence units are held fixed while original, reversed, and shuffled evidence orders are compared with repeated evaluation of the original order. One common rewrite per question separates decision changes from changes in rewrite generation. Main and confirmation cohorts each contain 20 selected questions per language. The mean excess of order based over repeat based decision disagreement is 8.75 and 4.62 percentage points in Main English and Japanese, and 12.50 and 8.33 points in confirmation. Only confirmation English has a 95% group bootstrap interval strictly above zero. In Main English, external AI assessment labels 9, 12, and 14 answers reliable under no rewriting, original order evaluation, and always rewriting, respectively; the last two routes require 69 and 40 model calls. In that cohort, original order evaluation misses 3 of 6 available improvements, while always rewriting harms 1 initially reliable answer. These observations motivate joint assessment of order sensitivity, semantic validity, downstream quality, and cost. Small comparable samples, missing outcomes, dataset differences, and AI rather than human assessment limit generalization.",
-      "ja": "検索拡張生成（RAG）の内部評価器は、回答を保持するか書き換えるかを決定する。そのため、根拠提示順序への感度は、最終回答と計算量の双方に影響し得る。本研究では、英語と日本語の質問応答データセットを用いて、固定した評価器を調べる。質問、実使用根拠、初回回答、文単位を固定し、元順序・逆順・シャッフルによる評価を、元順序の反復評価と比較する。質問ごとに共通の書換え回答を一つ用意し、判断の変化と書換え生成の変化を分離する。Mainと確認用の各集合は、言語ごとに選定した20問からなる。順序変更群の判断不一致率から反復群の不一致率を引いた平均増分は、Mainの英語と日本語で8.75および4.62ポイント、確認用集合で12.50および8.33ポイントであった。95%の文書グループ・ブートストラップ区間が厳密に0を上回ったのは、確認用集合の英語のみであった。Main英語では、外部AIが良好と判定した回答数は、書換えなし、元順序評価、常時書換えでそれぞれ9、12、14件であり、後二者の経路は69回と40回のモデル呼出しを要した。同じ集合では、元順序評価は改善可能な6問のうち3問を見逃し、常時書換えは初回が良好な1問を悪化させた。この観測から、順序感度、意味妥当性、最終品質、費用を併せて評価する必要性が示唆される。比較可能標本の小ささ、欠測、データセット差、人手ではなくAIによる採点が一般化を制限する。"
+      "en": "An internal evaluator in retrieval augmented generation (RAG) determines whether to retain or rewrite an answer. Its sensitivity to evidence order may therefore affect both the delivered answer and computation. We study a fixed evaluator using English and Japanese question answering datasets. Questions, used evidence, initial answers, and sentence units are held fixed while original, reversed, and shuffled evidence orders are compared with repeated evaluation of the original order. One common rewrite per question separates decision changes from changes in rewrite generation. Main and confirmation cohorts each contain 20 selected questions per language. The mean excess of order based over repeat based decision disagreement is 8.75 and 4.62 percentage points in Main English and Japanese, and 12.50 and 8.33 points in confirmation. The corresponding complete-comparison sample sizes are 16, 13, 16, and 12. Only confirmation English has a 95% group bootstrap interval strictly above zero. In Main English, external AI assessment labels 9, 12, and 14 answers reliable under no rewriting, original order evaluation, and always rewriting, respectively; the last two routes require 69 and 40 model calls. A post-outcome descriptive analysis finds that 7 of 11 questions with order dependent decisions retain the same binary quality label; 4 change labels. These observations motivate joint assessment of order sensitivity, semantic validity, downstream quality, and cost. Small comparable samples, missing outcomes, dataset differences, and AI rather than human assessment limit generalization.",
+      "ja": "検索拡張生成（RAG）の内部評価器は、回答を保持するか書き換えるかを決定する。そのため、根拠提示順序への感度は、最終回答と計算量の双方に影響し得る。本研究では、英語と日本語の質問応答データセットを用いて、固定した評価器を調べる。質問、実使用根拠、初回回答、文単位を固定し、元順序・逆順・シャッフルによる評価を、元順序の反復評価と比較する。質問ごとに共通の書換え回答を一つ用意し、判断の変化と書換え生成の変化を分離する。Mainと確認用の各集合は、言語ごとに選定した20問からなる。順序変更群の判断不一致率から反復群の不一致率を引いた平均増分は、Mainの英語と日本語で8.75および4.62ポイント、確認用集合で12.50および8.33ポイントであった。各推定の完全比較数は、それぞれ16、13、16、12問であった。95%の文書グループ・ブートストラップ区間が厳密に0を上回ったのは、確認用集合の英語のみであった。Main英語では、外部AIが良好と判定した回答数は、書換えなし、元順序評価、常時書換えでそれぞれ9、12、14件であり、後二者の経路は69回と40回のモデル呼出しを要した。事後の記述分析では、順序によって判断が変わる11問のうち7問は同じ二値品質ラベルを保ち、4問ではラベルも変わった。この観測から、順序感度、意味妥当性、最終品質、費用を併せて評価する必要性が示唆される。比較可能標本の小ささ、欠測、データセット差、人手ではなくAIによる採点が一般化を制限する。"
     },
     {
       "id": "keywords",
@@ -47,8 +47,8 @@
     {
       "id": "intro-2",
       "type": "p",
-      "en": "Evidence order is a useful intervention because the evidence content can remain unchanged. However, an observed judgment difference after reordering is difficult to interpret without measuring variation under repeated evaluation of the same order. Moreover, a changed decision need not change answer quality: the initial and rewritten answers may receive the same quality label. Decision disagreement and downstream quality must therefore be measured separately.",
-      "ja": "根拠の順序は、内容を変えずに操作できる点で有用な介入である。ただし、同じ順序で評価を繰り返した際の変動を測らなければ、並べ替え後に観測した判断差の解釈は難しい。また、判断が変わっても、初回回答と書換え回答に同じ品質ラベルが付く場合には、品質は変わらない。したがって、判断の不一致と最終品質を別々に測る必要がある。"
+      "en": "Evidence order is a useful intervention because the evidence content can remain unchanged. However, an observed judgment difference after reordering is difficult to interpret without measuring variation under repeated evaluation of the same order. Moreover, a changed decision need not change the measured quality label: the initial and rewritten answers may receive the same label. Decision disagreement and downstream quality must therefore be measured separately.",
+      "ja": "根拠の順序は、内容を変えずに操作できる点で有用な介入である。ただし、同じ順序で評価を繰り返した際の変動を測らなければ、並べ替え後に観測した判断差の解釈は難しい。また、判断が変わっても、初回回答と書換え回答に同じラベルが付く場合には、測定した品質ラベルは変わらない。したがって、判断の不一致と最終品質を別々に測る必要がある。"
     },
     {
       "id": "intro-3",
@@ -75,16 +75,22 @@
       "ja": "Liuらは、関連情報の位置が長文脈の質問応答や検索に影響することを示している[[2]]。これに対し本研究では、生成済みの回答を固定し、その評価器へ提示する根拠を並べ替える。これにより、評価器の感度を初回回答生成の変化から分離する。"
     },
     {
+      "id": "related-position-bias",
+      "type": "p",
+      "en": "Wang et al. show that reordering candidate answers can change an LLM judge's ranking[[3]]. Shi et al. study candidate ordering in pairwise and listwise comparisons, including repetition stability, position consistency, and preference fairness[[4]]. Order sensitivity and repetition controls therefore have precedents. Our intervention instead changes the evidence order for a fixed RAG answer and fixed sentence units. We compare accept or rewrite decisions with same order repetition, then use shared initial and rewritten candidates to audit the decisions' consequences for measured quality and reconstructed route costs.",
+      "ja": "Wangらは、候補回答を並べ替えるとLLM評価器の順位付けが変わり得ることを示した[[3]]。Shiらは、反復安定性、位置一貫性、選好公平性を含め、候補の提示順序をペア比較とリスト比較で調べた[[4]]。したがって、順序感度と反復対照には先行研究がある。本研究の介入では、RAGの回答と文単位を固定し、根拠順序を変更する。採用・書換え判断を同順序反復と比較し、共通の初回・書換え候補を用いて、判断が測定品質と再構成した経路費用へ及ぼす影響を監査する。"
+    },
+    {
       "id": "related-2",
       "type": "p",
-      "en": "ConsJudge uses consistency across evaluation dimensions to train a RAG judgment model[[3]]. RAGVUE provides diagnostic evaluation of retrieval, reasoning, and grounding[[4]]. These studies motivate examining evaluator behavior beyond a single score. Our audit keeps the evaluator fixed and connects controlled evidence order changes to a one rewrite decision and its downstream outcomes.",
-      "ja": "ConsJudgeは、評価観点間の判断の一貫性を利用してRAG評価モデルを学習する[[3]]。RAGVUEは、検索、推論、根拠付けを診断する評価を提供する[[4]]。これらの研究は、単一のスコアを超えて評価器の挙動を調べる動機となる。本研究の監査では評価器を固定し、統制した根拠順序の変更を、一回書換えの判断とその下流の結果へ結び付ける。"
+      "en": "ConsJudge uses consistency across evaluation dimensions to train a RAG judgment model[[5]]. RAGVUE provides diagnostic evaluation of retrieval, reasoning, and grounding[[6]]. These studies motivate fixed-evaluator auditing beyond a single aggregate score.",
+      "ja": "ConsJudgeは、評価観点間の判断の一貫性を利用してRAG評価モデルを学習する[[5]]。RAGVUEは、検索、推論、根拠付けを診断する評価を提供する[[6]]。これらの研究は、単一の集計スコアを超えて固定評価器を監査する動機となる。"
     },
     {
       "id": "related-3",
       "type": "p",
-      "en": "The author preprint by Zhang et al. studies selection rules over frozen candidate pools and their effect on delivered answers[[5]]. Accordingly, neither fixed candidates nor the downstream influence of judges is claimed as novel here. Our scope is the joint audit of evidence order, same order repetition, shared initial and rewritten answers, and observed quality and cost in the specified RAG configuration.",
-      "ja": "Zhangらの著者公開論文は、固定した候補群に対する選択規則と、返される回答への影響を扱っている[[5]]。したがって本研究では、候補の固定や評価器の下流への影響そのものを新規性として主張しない。対象は、指定したRAG構成における根拠順序、同順序反復、共通の初回・書換え回答、観測された品質と費用を組み合わせた監査である。"
+      "en": "The author preprint by Zhang et al. studies selection rules over frozen candidate pools and their effect on delivered answers[[7]]. Neither fixed candidates nor the downstream influence of judges is claimed as novel here.",
+      "ja": "Zhangらの著者公開論文は、固定した候補群に対する選択規則と、返される回答への影響を扱っている[[7]]。本研究では、候補の固定や評価器の下流への影響そのものを新規性として主張しない。"
     },
     {
       "id": "h3",
@@ -107,8 +113,15 @@
     {
       "id": "design-2",
       "type": "p",
-      "en": "The order group comprises the original order, its reversal, and three seeded shuffles. The repetition group comprises five evaluations of the original order, sharing its first evaluation with the order group. There are at most nine logical trials per question, with duplicate permutations recorded and removed from the order group. Repetitions invoke the model rather than a result cache. Execution order is randomized with seed 43; shuffle and generation seeds are fixed at 42. Logical trials contain sentence level evaluations and are not equivalent to individual model calls.",
-      "ja": "順序群は元順序、その逆順、シードを固定した三つのシャッフルからなる。反復群は元順序の評価5回からなり、最初の評価を順序群と共用する。質問ごとの論理試行は最大9であり、重複する順列は記録して順序群から除く。反復では結果キャッシュを使わずモデルを呼び出す。実行順はシード43で無作為化し、シャッフルと生成のシードは42に固定する。論理試行は文単位の評価を含み、個々のモデル呼出しとは同義ではない。"
+      "en": "The order group comprises the original order, its reversal, and three seeded shuffles. The repetition group comprises five evaluations of the original order, sharing its first evaluation with the order group. There are at most nine logical trials per question, with duplicate permutations recorded and removed from the order group. Repetitions invoke the model rather than a result cache. Execution order is randomized with seed 43; shuffle and generation seeds are fixed at 42. Logical trials contain sentence level evaluations and are not equivalent to individual model calls. Saved per-question trial plans define group membership.",
+      "ja": "順序群は元順序、その逆順、シードを固定した三つのシャッフルからなる。反復群は元順序の評価5回からなり、最初の評価を順序群と共用する。質問ごとの論理試行は最大9であり、重複する順列は記録して順序群から除く。反復では結果キャッシュを使わずモデルを呼び出す。実行順はシード43で無作為化し、シャッフルと生成のシードは42に固定する。論理試行は文単位の評価を含み、個々のモデル呼出しとは同義ではない。群への所属は質問ごとの保存済み試行計画で定める。"
+    },
+    {
+      "id": "fig1",
+      "type": "figure",
+      "key": "design",
+      "en": "Fig. 1. Fixed inputs, evaluation trials, and selection between shared answer candidates. External assessment is joined after annotation sealing.",
+      "ja": "図1 固定入力、評価試行、共通の回答候補間の選択。外部採点は注釈の封印後に結合する。"
     },
     {
       "id": "h32",
@@ -127,13 +140,6 @@
       "type": "equation",
       "en": "F_it = s_it / m_i     (m_i > 0)                         (1)",
       "ja": "F_it = s_it / m_i     (m_i > 0)                         (1)"
-    },
-    {
-      "id": "fig1",
-      "type": "figure",
-      "key": "design",
-      "en": "Fig. 1. Fixed inputs, evaluation trials, and selection between shared answer candidates. External assessment is joined after annotation sealing.",
-      "ja": "図1 固定入力、評価試行、共通の回答候補間の選択。外部採点は注釈の封印後に結合する。"
     },
     {
       "id": "design-4",
@@ -186,8 +192,8 @@
     {
       "id": "setup-1",
       "type": "p",
-      "en": "English questions come from CLAPNQ[[6]], using the fixed c508d78 source and processed assets. Japanese questions come from wikipedia-human-retrieval-ja[[7]], using source revision 02e85c8 and the study's projected reference and corpus assets. Document groups define the study splits. The datasets differ in language, question distribution, and evidence structure; they are not a parallel bilingual test set.",
-      "ja": "英語の質問にはCLAPNQ[[6]]を用い、固定したc508d78のソースと処理済み資産を使用する。日本語の質問にはwikipedia-human-retrieval-ja[[7]]を用い、ソース改訂02e85c8と、本研究で参照を対応付けた処理済み資産・コーパスを使用する。研究用の分割は文書グループに基づく。両データセットは言語、質問分布、根拠構造が異なり、対訳の二言語テスト集合ではない。"
+      "en": "English questions come from CLAPNQ[[8]], using the fixed c508d78 source and processed assets. Japanese questions come from wikipedia-human-retrieval-ja[[9]], using source revision 02e85c8 and the study's projected reference and corpus assets. Document groups define the study splits. The datasets differ in language, question distribution, and evidence structure; they are not a parallel bilingual test set.",
+      "ja": "英語の質問にはCLAPNQ[[8]]を用い、固定したc508d78のソースと処理済み資産を使用する。日本語の質問にはwikipedia-human-retrieval-ja[[9]]を用い、ソース改訂02e85c8と、本研究で参照を対応付けた処理済み資産・コーパスを使用する。研究用の分割は文書グループに基づく。両データセットは言語、質問分布、根拠構造が異なり、対訳の二言語テスト集合ではない。"
     },
     {
       "id": "setup-2",
@@ -199,13 +205,13 @@
       "id": "setup-provenance-ja",
       "type": "p",
       "en": "One Japanese reference article was absent from the original corpus acquisition: a title lookup returned HTTP 200 but no revision before the cutoff of 25 December 2023. A later audit traced a July 2026 page move and recovered public revision 98057227 of 21 November 2023. This subsequently acquired body was not used as experiment input or grading evidence. Equality to the historical rendered response and to the complete saved reference quotation is not established. The question, saved reference excerpts, five actual context documents, answers, and labels remain unchanged.",
-      "ja": "日本語の参照記事1件は元のCorpus取得時に欠落していた。タイトル検索はHTTP200を返したが、Cutoffの2023年12月25日以前の版を返さなかった。後日の監査で2026年7月の記事移動を追跡し、2023年11月21日の公開版98057227を回復した。この後日取得本文は実験入力や採点根拠には使っていない。当時の描画応答および保存参照引用の全文との同一性は確立していない。質問、保存参照抜粋、実使用根拠5文書、回答、Labelは変更していない。"
+      "ja": "日本語の参照記事1件は元のコーパス取得時に欠落していた。タイトル検索はHTTP200を返したが、取得基準日の2023年12月25日以前の版を返さなかった。後日の監査で2026年7月の記事移動を追跡し、2023年11月21日の公開版98057227を回復した。この後日取得本文は実験入力や採点根拠には使っていない。当時の描画応答および保存参照引用の全文との同一性は確立していない。質問、保存参照抜粋、実使用根拠5文書、回答、ラベルは変更していない。"
     },
     {
       "id": "setup-provenance-en",
       "type": "p",
       "en": "For English provenance, explicit revision URLs were recovered for 36 of 40 original QA documents. Among 222 distinct used or referenced passages, 199 have exact text matches in retained upstream documents and 23 have no match in the inspected sources. These matches supply revision candidates, not exact retrieval corpus revision bindings: construction records are absent and text may persist across revisions. Saved input identity relies on the fixed CLAPNQ revision, passage identifiers, and text hashes.",
-      "ja": "英語の来歴については、元QA文書40件中36件の明示的な版付きURLを回復した。使用または参照した異なる222 Passageのうち199件は保存上流文書内で本文が完全一致し、23件は調査した資料内で一致しなかった。生成時の対応記録がなく、同じ本文が複数の版に残り得るため、この一致は版候補であり、検索Corpusの厳密な版対応ではない。保存入力の同定には、固定CLAPNQ版、Passage識別子、本文Hashを使う。"
+      "ja": "英語の来歴については、元QA文書40件中36件の明示的な版付きURLを回復した。使用または参照した異なる222 パッセージのうち199件は保存上流文書内で本文が完全一致し、23件は調査した資料内で一致しなかった。生成時の対応記録がなく、同じ本文が複数の版に残り得るため、この一致は版候補であり、検索コーパスの厳密な版対応ではない。保存入力の同定には、固定CLAPNQ版、パッセージ識別子、本文ハッシュを使う。"
     },
     {
       "id": "h42",
@@ -216,14 +222,14 @@
     {
       "id": "setup-3",
       "type": "p",
-      "en": "Hybrid retrieval combines BM25 and multilingual-e5-small embeddings[[8]], with 50 candidates, reciprocal rank fusion constant 60, and top-k=5. Initial generation uses Qwen2.5-3B-Instruct Q4_K_M[[9]], context 4096 tokens, temperature 0, and a 512 token output limit. The used evidence is frozen after initial packing, so retrieved candidates and the context actually supplied are distinguished.",
-      "ja": "ハイブリッド検索はBM25とmultilingual-e5-smallの埋込み[[8]]を組み合わせ、候補数50、逆順位融合の定数60、top-k=5を用いる。初回生成にはQwen2.5-3B-Instruct Q4_K_M[[9]]を使い、文脈4096トークン、温度0、出力上限512トークンとする。初回の入力構成後に実使用根拠を固定し、検索候補と実際に渡した文脈を区別する。"
+      "en": "Hybrid retrieval combines BM25 and multilingual-e5-small embeddings[[10]], with 50 candidates, reciprocal rank fusion constant 60, and top-k=5. Initial generation uses Qwen2.5-3B-Instruct Q4_K_M[[11]], context 4096 tokens, temperature 0, and a 512 token output limit. The used evidence is frozen after initial packing, so retrieved candidates and the context actually supplied are distinguished.",
+      "ja": "ハイブリッド検索はBM25とmultilingual-e5-smallの埋込み[[10]]を組み合わせ、候補数50、逆順位融合の定数60、top-k=5を用いる。初回生成にはQwen2.5-3B-Instruct Q4_K_M[[11]]を使い、文脈4096トークン、温度0、出力上限512トークンとする。初回の入力構成後に実使用根拠を固定し、検索候補と実際に渡した文脈を区別する。"
     },
     {
       "id": "setup-4",
       "type": "p",
-      "en": "Evaluation and rewriting use a fixed Qwen3.5-9B Q6_K configuration[[10]], with English and Japanese prompt version 12. The auxiliary context is 12288 tokens, temperature 0.2, seed 42, batch size 128 tokens, and reasoning budget 4096 tokens within a 6144 token task limit. Execution uses CUDA full offload with CUDA graphs disabled. Sentence units are frozen rather than newly extracted for each condition. A completed rewritten answer exceeding the fixed answer length constraint is retained as a failed rewrite, not silently shortened.",
-      "ja": "評価と書換えには、固定したQwen3.5-9B Q6_K構成[[10]]と、英語・日本語のプロンプト第12版を使う。補助モデルの文脈は12288トークン、温度0.2、シード42、バッチサイズ128トークンであり、タスク上限6144トークンの中に推論予算4096トークンを設ける。CUDAグラフを無効化し、CUDAへ全層をオフロードして実行する。文単位は条件ごとに抽出し直さず固定する。生成を完了しても固定の回答長制約を超えた書換えは、黙って短縮せず書換え失敗として保存する。"
+      "en": "Evaluation and rewriting use a fixed Qwen3.5-9B Q6_K configuration[[12]], with English and Japanese prompt version 12. The auxiliary context is 12288 tokens, temperature 0.2, seed 42, batch size 128 tokens, and reasoning budget 4096 tokens within a 6144 token task limit. Execution uses CUDA full offload with CUDA graphs disabled. Sentence units are frozen rather than newly extracted for each condition. A completed rewritten answer exceeding the fixed answer length constraint is retained as a failed rewrite, not silently shortened.",
+      "ja": "評価と書換えには、固定したQwen3.5-9B Q6_K構成[[12]]と、英語・日本語のプロンプト第12版を使う。補助モデルの文脈は12288トークン、温度0.2、シード42、バッチサイズ128トークンであり、タスク上限6144トークンの中に推論予算4096トークンを設ける。CUDAグラフを無効化し、CUDAへ全層をオフロードして実行する。文単位は条件ごとに抽出し直さず固定する。生成を完了しても固定の回答長制約を超えた書換えは、黙って短縮せず書換え失敗として保存する。"
     },
     {
       "id": "h43",
@@ -235,7 +241,7 @@
       "id": "setup-5",
       "type": "p",
       "en": "A Codex based external AI workflow assesses anonymized answer quality using the question, references, and used evidence. Expected sentence support uses only the used evidence. Order condition, score, decision, answer stage, and internal explanations are hidden. Both languages are sealed before joining annotations to internal outcomes. An audit of all 84 annotation jobs and sessions records CLI 0.164.0-alpha.11.1, configured model gpt-6.1-sol, and high reasoning effort. These client records do not establish an exact serving snapshot. Rubrics, schemas, input/output hashes, times, and format repairs are retained. Labels have not been verified by humans, and complete history independence is not assumed.",
-      "ja": "Codexを用いた外部AIの工程で、匿名化した回答品質を質問・参照・実使用根拠と照合して採点する。文単位の期待される支持関係には実使用根拠だけを使う。順序条件、スコア、判断、回答段階、内部説明は隠す。両言語の注釈を封印してから内部結果と結合する。全84採点JobとSessionの監査では、CLI 0.164.0-alpha.11.1、指定モデルgpt-6.1-sol、推論努力highを確認した。このクライアント記録から厳密なServing Snapshotは確定できない。採点基準、Schema、入出力Hash、時刻、形式修正を保存する。Labelは人手確認を経ておらず、履歴の完全独立も仮定しない。"
+      "ja": "Codexを用いた外部AIの工程で、匿名化した回答品質を質問・参照・実使用根拠と照合して採点する。文単位の期待される支持関係には実使用根拠だけを使う。順序条件、スコア、判断、回答段階、内部説明は隠す。両言語の注釈を封印してから内部結果と結合する。全84採点採点ジョブとセッションの監査では、CLI 0.164.0-alpha.11.1、指定モデルgpt-6.1-sol、推論努力highを確認した。このクライアント記録から厳密なモデル提供版は確定できない。採点基準、スキーマ、入出力ハッシュ、時刻、形式修正を保存する。ラベルは人手確認を経ておらず、履歴の完全独立も仮定しない。"
     },
     {
       "id": "setup-6",
@@ -309,14 +315,8 @@
       "id": "table2",
       "type": "table",
       "key": "quality",
-      "en": "Table 2. Reliable, unreliable, and indeterminate answers. NR, OE, and AR are defined in Section 3.2. Main JA additionally has one missing initial answer in each route.",
-      "ja": "表2 良好、不良、判定不能の回答数。NR、OE、ARは3.2節で定義する。Main JAは各経路で、これらに加えて初回回答1問が欠測している。"
-    },
-    {
-      "id": "result-4",
-      "type": "p",
-      "en": "Main English has 6 transitions from Y(A)=0 to Y(B)=1, 1 from 1 to 0, 5 from 0 to 0, and 8 from 1 to 1. Table 3 links quality transitions to selection. OE misses 3 of 6 possible improvements in Main English, 4 of 8 in Main Japanese, 2 of 5 in Cal English, and 3 of 5 in Cal Japanese. OE selects no harmful rewrite among known binary transitions, whereas AR harms one initially reliable Main English answer. Thus, avoiding harmful changes and capturing improvements are different properties; the present OE rule trades off these opportunities without achieving AR quality or cost.",
-      "ja": "Main英語の品質遷移は、Y(A)=0からY(B)=1が6問、1から0が1問、0から0が5問、1から1が8問であった。表3は品質遷移と選択を対応付ける。OEは、改善可能なMain英語の6問中3問、Main日本語の8問中4問、Cal英語の5問中2問、Cal日本語の5問中3問を見逃した。二値遷移が判定可能な範囲でOEの有害な書換え選択は0であった一方、ARはMain英語の初回良好回答1問を悪化させた。したがって、有害な変更を避けることと改善を取り込むことは異なる性質であり、今回のOE規則はこれらの機会を取捨選択したが、ARの品質や費用には達しなかった。"
+      "en": "Table 2. Reliable/unreliable/indeterminate counts (Y=1/0/?) for the Section 3.2 policies. Main JA additionally has one missing initial answer per policy.",
+      "ja": "表2 3.2節の各方策における良好/不良/判定不能の件数（Y=1/0/?）。Main JAは各方策で、これらに加えて初回回答1問が欠測。"
     },
     {
       "id": "table-selection",
@@ -326,10 +326,35 @@
       "key": "selection"
     },
     {
+      "id": "result-4",
+      "type": "p",
+      "en": "Main English has 6 transitions from Y(A)=0 to Y(B)=1, 1 from 1 to 0, 5 from 0 to 0, and 8 from 1 to 1. Table 3 links quality transitions to selection. OE misses 3 of 6 possible improvements in Main English, 4 of 8 in Main Japanese, 2 of 5 in Cal English, and 3 of 5 in Cal Japanese. OE selects no harmful rewrite among known binary transitions, whereas AR harms one initially reliable Main English answer. Avoiding harmful changes and capturing improvements are different properties. In these cohorts, OE has fewer AI-labeled reliable answers and higher recorded route costs than AR.",
+      "ja": "Main英語の品質遷移は、Y(A)=0からY(B)=1が6問、1から0が1問、0から0が5問、1から1が8問であった。表3は品質遷移と選択を対応付ける。OEは、改善可能なMain英語の6問中3問、Main日本語の8問中4問、Cal英語の5問中2問、Cal日本語の5問中3問を見逃した。二値遷移が判定可能な範囲でOEの有害な書換え選択は0であった一方、ARはMain英語の初回良好回答1問を悪化させた。有害な変更を避けることと改善を取り込むことは異なる性質である。本集合では、OEのAI採点上の良好回答数はARより少なく、記録された経路費用は高かった。"
+    },
+    {
       "id": "result-selection-denominators",
       "type": "p",
       "en": "Known A/B pairs number 20, 17, 18, and 18, requiring binary labels for both candidates and a successful rewrite. This differs from the selected and primary comparable samples. Table 2 retains missing, failed, and indeterminate outcomes; unknown transitions are not imputed.",
-      "ja": "A/Bの遷移が判定可能な組は20、17、18、18であり、両候補の二値Labelと書換え成功を要する。全選定数とも主比較可能数とも異なる。表2は欠測・失敗・判定不能を保持し、未知の遷移を補完していない。"
+      "ja": "A/Bの遷移が判定可能な組は20、17、18、18であり、両候補の二値ラベルと書換え成功を要する。全選定数とも主比較可能数とも異なる。表2は欠測・失敗・判定不能を保持し、未知の遷移を補完していない。"
+    },
+    {
+      "id": "result-order-quality",
+      "type": "p",
+      "en": "A post-outcome descriptive analysis links the unique valid order routes to selected Y (Table 4). Among the 11 comparable questions with varying decisions, 7 retain one known binary label and 4 have both Y=0 and Y=1 across orders. None of these 11 has unknown selected Y; a separate Cal English question with stable decisions has unknown Y and remains in Table 2.",
+      "ja": "事後の記述分析で、重複のない有効な順序経路と選択されたYを結合した（表4）。判断が変わる比較可能11問のうち、7問は一つの既知二値ラベルを保ち、4問では順序間でY=0とY=1の両方が現れた。この11問には選択Y不明はないが、判断が一定でY不明の別のCal英語1問は表2に残る。"
+    },
+    {
+      "id": "table-order-quality",
+      "type": "table",
+      "key": "order_quality",
+      "en": "Table 4. Post-outcome counts within n comparable questions. Var. denotes varying decisions; its Same Y, Diff. Y, and unknown Y subsets are mutually exclusive.",
+      "ja": "表4 比較可能n問内の事後集計。変動は判断変動数で、その内訳を同じY、異なるY、Y不明の排他的分類で示す。"
+    },
+    {
+      "id": "order-quality-interpretation",
+      "type": "p",
+      "en": "These four changes include improvement and degradation, depending on the reference order.",
+      "ja": "4問のラベル変化は基準順序に応じた改善・悪化を含む。"
     },
     {
       "id": "h53-cases",
@@ -340,26 +365,32 @@
     {
       "id": "case-selection",
       "type": "p",
-      "en": "Two Cal examples (Table 4) were selected after outcomes as the first lexicographic eligible QA within language and outcome type. They illustrate pathways, not prevalence. Questions, actual evidence text, A, and the common B are fixed.",
-      "ja": "Calの2例（表4）は、結果閲覧後に、言語と結果の型ごとに条件を満たす辞書順先頭のQAとして選んだ。経路を説明するもので、頻度を推定しない。質問、実使用根拠本文、A、共通のBを固定する。"
+      "en": "Two Cal examples (Table 5) were selected after outcomes as the first lexicographic eligible QA within language and outcome type. They illustrate pathways, not prevalence. Questions, actual evidence text, A, and the common B are fixed.",
+      "ja": "Calの2例（表5）は、結果閲覧後に、言語と結果の型ごとに条件を満たす辞書順先頭のQAとして選んだ。経路を説明するもので、頻度を推定しない。質問、実使用根拠本文、A、共通のBを固定する。"
     },
     {
       "id": "case-en",
       "type": "p",
       "en": "The English case asks how and why the United States escalated its role in the Vietnam War. The saved external assessment labels A unreliable because its assertion of a direct response to the growing conflict adds a causal attribution unsupported by the actual evidence. B explains the adviser increase and containment rationale with context support and receives Y=1. Original order gives F=1/3 and selects B, whereas shuffle_3 gives F=1 and retains A. The evidence content and candidate quality labels are unchanged.",
-      "ja": "英語の例は、米国がベトナム戦争への関与をどのように、なぜ拡大したかを問う。保存された外部採点は、Aが拡大する紛争への直接の対応と述べ、実使用根拠に支持されない因果的帰属を加えたとして不良とした。Bは顧問増員と封じ込めの理由を文脈に基づいて説明し、Y=1となった。元順序はF=1/3でBを選ぶ一方、shuffle_3はF=1でAを保持する。根拠の内容と候補の品質Labelは変わらない。"
+      "ja": "英語の例は、米国がベトナム戦争への関与をどのように、なぜ拡大したかを問う。保存された外部採点は、Aが拡大する紛争への直接の対応と述べ、実使用根拠に支持されない因果的帰属を加えたとして不良とした。Bは顧問増員と封じ込めの理由を文脈に基づいて説明し、Y=1となった。元順序はF=1/3でBを選ぶ一方、shuffle_3はF=1でAを保持する。根拠の内容と候補の品質ラベルは変わらない。"
     },
     {
       "id": "case-ja",
       "type": "p",
-      "en": "The Japanese case asks about the difference between moths and butterflies. Its initial answer mixes a figurative meaning of butterfly with biological distinctions and adds an unsupported causal explanation of naming. The external assessment gives Y(A)=0 and Y(B)=1. Original order scores 3/4 and retains A; shuffle_2 scores 2/4 and selects B. B has a misplaced inline citation noted by the assessment, but support exists elsewhere in the used context. Y therefore does not certify every citation location.",
-      "ja": "日本語の例は、蛾と蝶の違いを問う。初回回答は、蝶という語の比喩的意味を生物の区別に混在させ、名称について支持されない因果説明も加えていた。外部採点はY(A)=0、Y(B)=1とした。元順序は3/4と採点してAを保持し、shuffle_2は2/4と採点してBを選ぶ。採点ではBの引用先のずれも指摘されたが、実使用文脈内の別箇所に支持があるとされた。したがって、Yはすべての引用位置の正しさを保証しない。"
+      "en": "The Japanese case asks about moth and butterfly differences. A mixes a figurative meaning of butterfly with biological distinctions and adds naming causation; the saved assessment gives Y(A)=0 and Y(B)=1. Original order scores 3/4 and retains A; shuffle_2 scores 2/4 and selects B.",
+      "ja": "日本語の例は蛾と蝶の違いを問う。Aは蝶という語の比喩的意味と生物の区別を混在させ、名称の因果説明を加える。保存採点はY(A)=0、Y(B)=1とした。元順序は3/4でAを保持し、shuffle_2は2/4でBを選ぶ。"
+    },
+    {
+      "id": "case-ja-excerpts",
+      "type": "p",
+      "en": "For the naming claim (all excerpts translated from Japanese), the used passage states, \"The terms for both butterflies and moths are of Chinese origin.\" A says, \"Moths are often called by a Chinese-derived term because their characteristics differ from those of butterflies.\" B states, \"The terms for both butterflies and moths are of Chinese origin.\" The saved assessor flags A's added causal distinction. B cites the opening passage, although support is in the used \"Language\" passage. This mismatch is retained; Y does not certify every citation location.",
+      "ja": "名称説明の該当原文では、実使用段落に「この蝶と蛾に関しては漢語である。」とある。Aは「蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。」と述べ、Bは「この蝶と蛾に関しては漢語である」と述べる。保存採点器はAの追加した因果的区別を問題とした。Bの引用先は冒頭部分だが、支持は実使用文書の「言葉」部分にある。このずれは保持し、Yを全引用位置の正しさの保証としない。"
     },
     {
       "id": "table-cases",
       "type": "table",
-      "en": "Table 4. Fixed candidate selection in the English and Japanese cases. A is initial and B is the common rewrite; Y is the saved external AI label. F is rounded to two decimals.",
-      "ja": "表4 英語・日本語の例における固定候補の選択。Aは初回、Bは共通書換え、Yは保存済み外部AIラベル。Fは小数第2位に丸めた。",
+      "en": "Table 5. Fixed candidate selection in the English and Japanese cases. A is initial and B is the common rewrite; Y is the saved external AI label. F is rounded to two decimals.",
+      "ja": "表5 英語・日本語の例における固定候補の選択。Aは初回、Bは共通書換え、Yは保存済み外部AIラベル。Fは小数第2位に丸めた。",
       "key": "cases"
     },
     {
@@ -377,21 +408,27 @@
     {
       "id": "result-5",
       "type": "p",
-      "en": "Table 5 compares the reconstructed OE and AR routes. In Main English, OE uses 69 model calls and 299015 input plus output tokens, compared with 40 calls and 142641 tokens for AR, approximately 2.10 times as many tokens. OE also has fewer reliable answers, 12 versus 14. Thus, an evaluator can add substantial cost even when its selection does not yield the largest reliable count. This observation concerns the present models, prompts, budgets, and selected questions.",
-      "ja": "表5で、再構成したOEとARの経路を比較する。Main英語では、OEは69回のモデル呼出しと入出力合計299015トークンを要し、ARの40回、142641トークンと比べて、トークン数は約2.10倍であった。良好件数もOEは12件、ARは14件である。したがって、評価器による選別が最大の良好件数を得られない場合でも、相当の費用を追加することがある。この観測は、今回のモデル、プロンプト、予算、選定質問に関するものである。"
+      "en": "Table 6 compares the reconstructed OE and AR routes. In Main English, OE uses 69 model calls and 299015 input plus output tokens, compared with 40 calls and 142641 tokens for AR, approximately 2.10 times as many tokens. OE also has fewer reliable answers, 12 versus 14. Thus, an evaluator can add substantial cost even when its selection does not yield the largest reliable count. This observation concerns the present models, prompts, budgets, and selected questions.",
+      "ja": "表6で、再構成したOEとARの経路を比較する。Main英語では、OEは69回のモデル呼出しと入出力合計299015トークンを要し、ARの40回、142641トークンと比べて、トークン数は約2.10倍であった。良好件数もOEは12件、ARは14件である。したがって、評価器による選別が最大の良好件数を得られない場合でも、相当の費用を追加することがある。この観測は、今回のモデル、プロンプト、予算、選定質問に関するものである。"
     },
     {
       "id": "table3",
       "type": "table",
       "key": "cost",
-      "en": "Table 5. Calls and input plus output tokens summed over recorded routes (Main JA: 19; others: 20). The additional cost of the interrupted Main JA request is unknown.",
-      "ja": "表5 記録された経路で合計した呼出し回数と入出力トークン数（Main JAは19問、他は20問）。中断したMain JAの要求の追加費用は不明である。"
+      "en": "Table 6. Calls and input plus output tokens summed over recorded routes (Main JA: 19; others: 20). The additional cost of the interrupted Main JA request is unknown.",
+      "ja": "表6 記録された経路で合計した呼出し回数と入出力トークン数（Main JAは19問、他は20問）。中断したMain JAの要求の追加費用は不明である。"
     },
     {
       "id": "result-6",
       "type": "p",
-      "en": "These route costs differ from the cost of collecting every order and repetition condition. For example, Main English collection has 407 native attempts, whereas one OE route requires 69 calls. The cancelled Main Japanese request prevents complete total token and time accounting; observed amounts are lower bounds. Offline AI annotation costs are kept separate, and no claim about complete financial cost or measured deployment latency is made.",
-      "ja": "経路費用は、すべての順序条件と反復条件を収集した費用とは異なる。例えばMain英語の収集は407回の実モデル試行を含む一方、単一のOE経路は69回の呼出しを要する。Main日本語の取消要求により、総トークン数と総時間を完全には集計できず、観測された値は下限である。オフラインAI採点費用は分けて保持し、完全な金銭的費用や、実運用で測定した応答時間を示したとは主張しない。"
+      "en": "These route costs differ from the cost of collecting every order and repetition condition. For example, Main English collection has 407 native attempts, whereas the OE policy over those 20 questions requires 69 calls. The cancelled Main Japanese request prevents complete total token and time accounting; observed amounts are lower bounds. Offline AI annotation costs are kept separate, and no claim about complete financial cost or measured deployment latency is made.",
+      "ja": "経路費用は、すべての順序条件と反復条件を収集した費用とは異なる。例えばMain英語の収集は407回の実モデル試行を含む一方、同じ20問のOE経路合計は69回の呼出しを要する。Main日本語の取消要求により、総トークン数と総時間を完全には集計できず、観測された値は下限である。オフラインAI採点費用は分けて保持し、完全な金銭的費用や、実運用で測定した応答時間を示したとは主張しない。"
+    },
+    {
+      "id": "result-order-cost",
+      "type": "p",
+      "en": "In the same post-outcome analysis, recorded call and input plus output token totals vary across orders in all 11 decision-varying questions, including the 7 with unchanged binary Y. The moth/butterfly case ranges from 5 to 6 calls and 31514 to 40112 tokens per question. These are observed route minima and maxima, not confidence intervals or collection totals.",
+      "ja": "同じ事後分析では、二値Yが変わらない7問を含む判断変動11問すべてで、記録された呼出し回数と入出力合計トークン数が順序間で変わった。蛾と蝶の例では、1問の順序経路が5〜6回、31514〜40112トークンの範囲となった。これは観測経路の最小・最大であり、信頼区間や全収集費用ではない。"
     },
     {
       "id": "h54",
@@ -427,7 +464,8 @@
       "id": "discussion-1",
       "type": "p",
       "en": "For RQ1, the same order control makes the observed excess interpretable relative to repeated execution under the fixed setup. Positive point estimates occur in all four combinations, but uncertainty prevents a common positive conclusion for every combination. A fixed seed does not remove the need for an empirical repetition control. The bootstrap intervals are conditional on observed comparable questions and do not include variability across model choices, seeds, or annotators.",
-      "ja": "RQ1に対しては、同順序の対照を置くことで、固定した構成での反復実行に対する増分として観測を解釈できる。四つの組合せで正の点推定が得られた一方、不確実性があるため、すべてに共通する正の結論は出せない。シードを固定しても、実際の反復対照を測る必要はなくならない。ブートストラップ区間は観測された比較可能質問に条件付きであり、モデルの選択、シード、採点者の変動を含まない。"
+      "ja": "RQ1に対しては、同順序の対照を置くことで、固定した構成での反復実行に対する増分として観測を解釈できる。四つの組合せで正の点推定が得られた一方、不確実性があるため、すべてに共通する正の結論は出せない。シードを固定しても、実際の反復対照を測る必要はなくならない。ブートストラップ区間は観測された比較可能質問に条件付きであり、モデルの選択、シード、採点者の変動を含まない。",
+      "keep_together": true
     },
     {
       "id": "discussion-2",
@@ -451,7 +489,7 @@
       "id": "discussion-provenance",
       "type": "p",
       "en": "Provenance recovery leaves limitations. The Japanese body was acquired later and does not match the full saved quotation verbatim; labels and results were not revised. English revision candidates are not identified corpus revisions. The external assessor serving snapshot remains unknown. The saved fixed-input experiment is auditable, but complete source-history and assessor rerun reproducibility are not established.",
-      "ja": "来歴を回復しても限界は残る。日本語本文は後日取得で、保存引用の全文と逐語一致せず、Labelと結果は修正していない。英語の版候補は同定済みCorpus版ではない。外部採点器のServing Snapshotも不明である。保存された固定入力実験は監査可能だが、情報源履歴と採点器再実行の完全な再現性は確立していない。"
+      "ja": "来歴を回復しても限界は残る。日本語本文は後日取得で、保存引用の全文と逐語一致せず、ラベルと結果は修正していない。英語の版候補は同定済みコーパス版ではない。外部採点器のモデル提供版も不明である。保存された固定入力実験は監査可能だが、情報源履歴と採点器再実行の完全な再現性は確立していない。"
     },
     {
       "id": "discussion-5",
@@ -468,14 +506,15 @@
     {
       "id": "conclusion-1",
       "type": "p",
-      "en": "Controlled evidence reordering versus same order repetition yields positive point estimates of mean excess decision disagreement for the fixed evaluator, with an interval excluding zero only in confirmation English. Fixed initial and rewritten candidates permit separate assessment of decision sensitivity, answer quality, and cost. In all four strata, original order evaluation produces fewer AI-labeled reliable answers and higher known call and token costs than always rewriting. These configuration specific observations do not establish a general repair guarantee or a causal language effect. Further data and human checking are needed to test their scope.",
-      "ja": "根拠順序変更と同順序反復の統制比較では、固定評価器の判断不一致の平均増分は正の点推定となり、区間が0を含まなかったのは確認用英語のみであった。固定した初回・書換え候補により、判断感度、回答品質、費用を分けて評価できる。全4区分で元順序評価は常時書換えよりAI採点の良好件数が少なく、既知の呼出し・トークン費用が大きかった。構成に依存する観測で、一般的修復の保証や言語の因果効果は確立しない。適用範囲の検証には追加データと人手確認を要する。"
+      "en": "Controlled evidence reordering versus same order repetition yields positive point estimates of mean excess decision disagreement for the fixed evaluator, with an interval excluding zero only in confirmation English. Fixed initial and rewritten candidates separate decision sensitivity from measured quality: 7 of 11 decision-varying questions keep the same binary label. In all four strata, original order evaluation produces fewer AI-labeled reliable answers and higher known call and token costs than always rewriting. These configuration specific observations do not establish a general repair guarantee or a causal language effect. Further data and human checking are needed to test their scope.",
+      "ja": "根拠順序変更と同順序反復の統制比較では、固定評価器の判断不一致の平均増分は正の点推定となり、区間が0を含まなかったのは確認用英語のみであった。固定した初回・書換え候補で判断感度と測定品質を分けると、判断が変わる11問中7問は同じ二値ラベルを保った。全4区分で元順序評価は常時書換えよりAI採点の良好件数が少なく、既知の呼出し・トークン費用が大きかった。構成に依存する観測で、一般的修復の保証や言語の因果効果は確立しない。適用範囲の検証には追加データと人手確認を要する。",
+      "keep_together": true
     },
     {
       "id": "data-availability",
       "type": "p",
-      "en": "Selected-question records, used evidence, candidate mappings, sealed annotations, tables, and the supplemental provenance audit are in a fixed artifact release[[11]]. Later reference recovery is separate from original inputs. Additional validation will use separately specified cohorts without replacing these results.",
-      "ja": "選定質問記録、実使用根拠、候補対応、封印注釈、集計表、補足来歴監査を固定成果公開版[[11]]で提供する。後日の参照回復は元入力と分ける。追加検証は既存結果を置換せず、別途定める集合を用いる。"
+      "en": "A fixed repository snapshot identifies the saved inputs, candidate mappings, sealed annotations, descriptive analysis, and separate provenance audit[[13]]. Later source recovery remains separate from original inputs. Additional validation uses separately specified cohorts.",
+      "ja": "固定したリポジトリのスナップショットで、保存入力、候補対応、封印注釈、記述分析、別途の来歴監査を同定できる[[13]]。後日の出典回復は元入力と分ける。追加検証には別途定める集合を用いる。"
     },
     {
       "id": "references-heading",
@@ -497,53 +536,72 @@
     },
     {
       "id": 3,
+      "text": "P. Wang et al., Large Language Models are not Fair Evaluators, Proceedings of ACL 2024 (Volume 1: Long Papers), pp. 9440–9450, 2024.",
+      "url": "https://doi.org/10.18653/v1/2024.acl-long.511"
+    },
+    {
+      "id": 4,
+      "text": "L. Shi et al., Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge, Proceedings of IJCNLP-AACL 2025, pp. 292–314, 2025.",
+      "url": "https://doi.org/10.18653/v1/2025.ijcnlp-long.18"
+    },
+    {
+      "id": 5,
       "text": "S. Liu et al., Judge as A Judge: Improving the Evaluation of Retrieval-Augmented Generation through the Judge-Consistency of Large Language Models, Findings of ACL 2025, pp. 5788–5807, 2025.",
       "url": "https://doi.org/10.18653/v1/2025.findings-acl.301"
     },
     {
-      "id": 4,
+      "id": 6,
       "text": "K. Murugaraj, S. Lamsiyah, and M. Theobald, RAGVUE: A Diagnostic View for Explainable and Automated Evaluation of Retrieval-Augmented Generation, Proceedings of EACL 2026 System Demonstrations, pp. 512–526, 2026.",
       "url": "https://aclanthology.org/2026.eacl-demo.35/"
     },
     {
-      "id": 5,
+      "id": 7,
       "text": "Y. Zhang, D. Goel, and H. Ahmad, When the Judge Should Not Decide: Evidence-Locked, Non-Compensatory Selection Bounds LLM-Judge Failure in Reasoning Pipelines, arXiv:2608.07813v2, author preprint, 2026.",
       "url": "https://arxiv.org/abs/2608.07813v2"
     },
     {
-      "id": 6,
+      "id": 8,
       "text": "S. Rosenthal, A. Sil, R. Florian, and S. Roukos, CLAPNQ: Cohesive Long-form Answers from Passages in Natural Questions for RAG systems, Transactions of the Association for Computational Linguistics, Vol. 13, pp. 53–72, 2025.",
       "url": "https://doi.org/10.1162/tacl_a_00729"
     },
     {
-      "id": 7,
+      "id": 9,
       "text": "Baobab, Inc., wikipedia-human-retrieval-ja, dataset card. Accessed November 4, 2026.",
       "url": "https://huggingface.co/datasets/baobab-trees/wikipedia-human-retrieval-ja"
     },
     {
-      "id": 8,
+      "id": 10,
       "text": "intfloat, multilingual-e5-small, model card. Accessed November 4, 2026.",
       "url": "https://huggingface.co/intfloat/multilingual-e5-small"
     },
     {
-      "id": 9,
+      "id": 11,
       "text": "Qwen Team, Qwen2.5-3B-Instruct-GGUF, model card. Accessed November 4, 2026.",
       "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF"
     },
     {
-      "id": 10,
+      "id": 12,
       "text": "Qwen Team, Qwen3.5-9B, model card. Accessed November 4, 2026.",
       "url": "https://huggingface.co/Qwen/Qwen3.5-9B"
     },
     {
-      "id": 11,
-      "text": "Fixed v23 study artifacts and provenance audit, repository release fb6b8e9, 2026.",
-      "url": "https://github.com/hinattyamann/rag_research/tree/fb6b8e93c428b7c074e04b562ad2292586f49e36/papers/iciae2027/materials",
+      "id": 13,
+      "text": "Saved study inputs, descriptive order-quality analysis, and provenance audit, repository snapshot 92ae552, 2026.",
+      "url": "https://github.com/hinattyamann/rag_research/tree/92ae5525a3a6a0e1046924b5d77f470a31098ad0/papers/iciae2027",
       "display_url": "https://github.com/hinattyamann/rag_research"
     }
   ],
   "evidence_trees": {
     "fixed_v23_v1": "5fb236667f6e4411a730187dc1e6ce80f27c710f",
     "provenance_audit_v1": "2e9bc4cdd1a6eeb97698d426e291a6b604023ebd"
+  },
+  "review_commit": "b595b117fb0ec506fcc5b4c5e7bde36a9336d612",
+  "derived_evidence": [
+    "notes/order_effects_v1.json",
+    "notes/case_excerpts_v1.json"
+  ],
+  "reference_column_break_before": {
+    "en": 9,
+    "ja": 9
   }
 }

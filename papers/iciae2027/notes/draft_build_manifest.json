@@ -1,22 +1,26 @@
 {
-  "version": "draft-2-2026-11-06",
-  "evidence_commit": "fb6b8e93c428b7c074e04b562ad2292586f49e36",
+  "version": "draft-3-2026-11-06",
+  "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
   "evidence_trees": {
     "fixed_v23_v1": "5fb236667f6e4411a730187dc1e6ce80f27c710f",
     "provenance_audit_v1": "2e9bc4cdd1a6eeb97698d426e291a6b604023ebd"
   },
-  "content_digest": "773fa27bc14b4791f4f089c5712cffeeb2d39771927db1b7b67aa803e5bcbead",
+  "content_digest": "6b6b85a3ac3b5325ef938305d8e4fb69b29222f7c295ae51a4d6f9f07e9fdd53",
   "evidence_packages": {
     "fixed_v23_v1": "ce831a133d00e3756287655eb53115a546383288cc5756e75f260cae8595f6bd",
     "provenance_audit_v1": "e305c4ff4aeff858221f4ca4ab35f7c21e0d8b4884857d95d9ac0a3593be530b"
   },
+  "derived_evidence": {
+    "notes/order_effects_v1.json": "e4c0057acf54eb1f57d8dd17641ef278239d252271133ff9b50de0a7bb21e92d",
+    "notes/case_excerpts_v1.json": "1a6a7a03e172789584be0fa81ea1cd30c9d5721e4a972bad8a6eb0c855ca90bb"
+  },
   "template_sha256": "d8e16e91295692e10abab92847abf3e11fa7a66949ff71b31388466949877391",
-  "block_count": 77,
+  "block_count": 83,
   "documents": [
     {
       "language": "en",
       "output": "papers\\iciae2027\\manuscript\\iciae2027_manuscript_en.docx",
-      "sha256": "d6214b5ca2b1fdea74ab8d7848b3e6e0bb099e412d06c24e06a53a1aa385aa57",
+      "sha256": "09712e34ef0da7e5faf81bcad700799f3b551d44c13c101aa43dff4fe60088d6",
       "tables": {
         "primary": [
           [
@@ -47,87 +51,27 @@
         "quality": [
           [
             "Main EN",
-            "NR",
-            "9",
-            "11",
-            "0"
-          ],
-          [
-            "Main EN",
-            "OE",
-            "12",
-            "8",
-            "0"
-          ],
-          [
-            "Main EN",
-            "AR",
-            "14",
-            "6",
-            "0"
+            "9/11/0",
+            "12/8/0",
+            "14/6/0"
           ],
           [
             "Main JA",
-            "NR",
-            "5",
-            "13",
-            "1"
-          ],
-          [
-            "Main JA",
-            "OE",
-            "10",
-            "9",
-            "0"
-          ],
-          [
-            "Main JA",
-            "AR",
-            "14",
-            "5",
-            "0"
+            "5/13/1",
+            "10/9/0",
+            "14/5/0"
           ],
           [
             "Cal EN",
-            "NR",
-            "6",
-            "14",
-            "0"
-          ],
-          [
-            "Cal EN",
-            "OE",
-            "9",
-            "10",
-            "1"
-          ],
-          [
-            "Cal EN",
-            "AR",
-            "10",
-            "8",
-            "2"
+            "6/14/0",
+            "9/10/1",
+            "10/8/2"
           ],
           [
             "Cal JA",
-            "NR",
-            "4",
-            "16",
-            "0"
-          ],
-          [
-            "Cal JA",
-            "OE",
-            "6",
-            "14",
-            "0"
-          ],
-          [
-            "Cal JA",
-            "AR",
-            "9",
-            "10",
-            "1"
+            "4/16/0",
+            "6/14/0",
+            "9/10/1"
           ]
         ],
         "selection": [
@@ -157,6 +101,40 @@
             "18",
             "3",
             "0",
+            "0"
+          ]
+        ],
+        "order_quality": [
+          [
+            "Main EN",
+            "16",
+            "3",
+            "1",
+            "2",
+            "0"
+          ],
+          [
+            "Main JA",
+            "13",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "Cal EN",
+            "16",
+            "5",
+            "4",
+            "1",
+            "0"
+          ],
+          [
+            "Cal JA",
+            "12",
+            "2",
+            "1",
+            "1",
             "0"
           ]
         ],
@@ -267,12 +245,12 @@
           "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
         },
         "word/document.xml": {
-          "bytes": 144575,
-          "sha256": "22097fa8fea7a9d5796ff186d39d2c5636dc29ded96752d34bcbb5b73c750935"
+          "bytes": 147401,
+          "sha256": "1b392f6d1dd4fd9406df906bc8b16b1387ffd49adc49704b215a5dfb89ec82ab"
         },
         "word/_rels/document.xml.rels": {
-          "bytes": 4455,
-          "sha256": "b22649f55822c2757aae1d80c381b13d8e3c363149da163fa422cb0304f7fab7"
+          "bytes": 4825,
+          "sha256": "c27dffa098c8b4f4fd91d9e9c6edbe64f1983e4ac9380b3af34ca80d5c7330e2"
         },
         "word/footnotes.xml": {
           "bytes": 2821,
@@ -363,7 +341,7 @@
     {
       "language": "ja",
       "output": "papers\\iciae2027\\manuscript\\iciae2027_manuscript_ja.docx",
-      "sha256": "2beaac955211f0d10976ccb3cab191db94350601baa9d1c8878ab19cfbe7c336",
+      "sha256": "c107b5b769b2e406189f39cc8abdb2e8c5b65ef088cc232bc2a6516f4eba5cf3",
       "tables": {
         "primary": [
           [
@@ -394,87 +372,27 @@
         "quality": [
           [
             "Main EN",
-            "NR",
-            "9",
-            "11",
-            "0"
-          ],
-          [
-            "Main EN",
-            "OE",
-            "12",
-            "8",
-            "0"
-          ],
-          [
-            "Main EN",
-            "AR",
-            "14",
-            "6",
-            "0"
+            "9/11/0",
+            "12/8/0",
+            "14/6/0"
           ],
           [
             "Main JA",
-            "NR",
-            "5",
-            "13",
-            "1"
-          ],
-          [
-            "Main JA",
-            "OE",
-            "10",
-            "9",
-            "0"
-          ],
-          [
-            "Main JA",
-            "AR",
-            "14",
-            "5",
-            "0"
+            "5/13/1",
+            "10/9/0",
+            "14/5/0"
           ],
           [
             "Cal EN",
-            "NR",
-            "6",
-            "14",
-            "0"
-          ],
-          [
-            "Cal EN",
-            "OE",
-            "9",
-            "10",
-            "1"
-          ],
-          [
-            "Cal EN",
-            "AR",
-            "10",
-            "8",
-            "2"
+            "6/14/0",
+            "9/10/1",
+            "10/8/2"
           ],
           [
             "Cal JA",
-            "NR",
-            "4",
-            "16",
-            "0"
-          ],
-          [
-            "Cal JA",
-            "OE",
-            "6",
-            "14",
-            "0"
-          ],
-          [
-            "Cal JA",
-            "AR",
-            "9",
-            "10",
-            "1"
+            "4/16/0",
+            "6/14/0",
+            "9/10/1"
           ]
         ],
         "selection": [
@@ -504,6 +422,40 @@
             "18",
             "3",
             "0",
+            "0"
+          ]
+        ],
+        "order_quality": [
+          [
+            "Main EN",
+            "16",
+            "3",
+            "1",
+            "2",
+            "0"
+          ],
+          [
+            "Main JA",
+            "13",
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "Cal EN",
+            "16",
+            "5",
+            "4",
+            "1",
+            "0"
+          ],
+          [
+            "Cal JA",
+            "12",
+            "2",
+            "1",
+            "1",
             "0"
           ]
         ],
@@ -614,12 +566,12 @@
           "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
         },
         "word/document.xml": {
-          "bytes": 157605,
-          "sha256": "3516809a0ead886adfdaf6bac2b832fd753feac59cd46750d709765e24e91d5f"
+          "bytes": 160675,
+          "sha256": "aa745ad5ae99d9abc4e544ab9642a054e2572b73ec0cb2f987707ab76435a99c"
         },
         "word/_rels/document.xml.rels": {
-          "bytes": 4455,
-          "sha256": "f39da9a5e08570cf01e9c148b3307e0ec778221030da759d3d722ac7f94af370"
+          "bytes": 4825,
+          "sha256": "4d58f049c2859331dabfb80fe73915e5db283d3dd1c2a6429bb113e1ac6c98a7"
         },
         "word/footnotes.xml": {
           "bytes": 2821,

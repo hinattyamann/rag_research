@@ -1,0 +1,80 @@
+{
+  "recorded_at_utc": "2026-11-06T09:03:53.157179+00:00",
+  "version": "draft-3-2026-11-06",
+  "content_digest": "6b6b85a3ac3b5325ef938305d8e4fb69b29222f7c295ae51a4d6f9f07e9fdd53",
+  "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
+  "evidence_trees": {
+    "fixed_v23_v1": "5fb236667f6e4411a730187dc1e6ce80f27c710f",
+    "provenance_audit_v1": "2e9bc4cdd1a6eeb97698d426e291a6b604023ebd"
+  },
+  "derived_evidence_canonical_sha256": {
+    "notes/order_effects_v1.json": "e4c0057acf54eb1f57d8dd17641ef278239d252271133ff9b50de0a7bb21e92d",
+    "notes/case_excerpts_v1.json": "1a6a7a03e172789584be0fa81ea1cd30c9d5721e4a972bad8a6eb0c855ca90bb"
+  },
+  "documents": [
+    {
+      "language": "en",
+      "path": "papers/iciae2027/manuscript/iciae2027_manuscript_en.docx",
+      "sha256": "09712e34ef0da7e5faf81bcad700799f3b551d44c13c101aa43dff4fe60088d6",
+      "pages": 8,
+      "visually_reviewed_page_sha256": [
+        "b2b6291b50cca23cd4259bf58bb94b591b113c50c94775b4db271cd85dd10c54",
+        "5a8d3331fa2bc14a63ecd617738b47849803f8e7f03430f4e218a22e5fa3b1d0",
+        "671337c4c8ab92d6f3d5b09c7d57947343f05a46949e5f7ae289ba7eca343c32",
+        "86ef5dd5dc8d4321dc8116567dbd3dfcde5e0a8af665c9c749ec7286fcef7ae1",
+        "225ea15e547f1cdde5c02acd8b977fc9808ba2849d8ef24c1fdf0be9dda17eb4",
+        "28de65676f7b5bdb3ca3fd5ff96f1b11ed67b627ed9d277225815b7e4a2053a5",
+        "23e571326bd5545c06ba5c941503e9f256d93588580e085186778f145ea43f8f",
+        "81a73ce0f63ede0be48de113b15f7cd701c3f1d356906a77cf5bae4e596e20a9"
+      ]
+    },
+    {
+      "language": "ja",
+      "path": "papers/iciae2027/manuscript/iciae2027_manuscript_ja.docx",
+      "sha256": "c107b5b769b2e406189f39cc8abdb2e8c5b65ef088cc232bc2a6516f4eba5cf3",
+      "pages": 8,
+      "visually_reviewed_page_sha256": [
+        "b2ed9ac45172d5f4bf471da28757ac7b50fbfcd3e6dc492c598a9fa01d49184b",
+        "2b76a9814372f8ba55f671d0ed166bfe051df377528767fe86437c20a4a9b33e",
+        "937acfa986848e3d016ad5b62adb621b6810efbbcf2ab604361f476215278ba6",
+        "c586679c2fcabfecaa874d9c1f5fa3d946171f12926302fe0aa0ee7a8fca7752",
+        "a929e5accce43015723e0f52b66d837ae742bcdac0b9f9935abb483752e989de",
+        "6dcf62b8cf86581aec03b0555e30c9ec45965de1d0f0c86e0a40def21ed66729",
+        "1e5458564a671762e92b178204303bc68377aeabec04b0d9ccd9b467db2c7c4c",
+        "1921081f634203f04e6e9ce91765c09314bb37419a5ae5fdb45158885ad641c6"
+      ]
+    }
+  ],
+  "all_16_pages_visually_reviewed": true,
+  "docx_hashes_unchanged_after_read_only_word_export": true,
+  "renderer": "packaged render_docx.py with native Word read-only PDF and PyMuPDF PNG adapters, 140 dpi",
+  "pytest": {
+    "command": "uv run pytest papers/iciae2027/manuscript -q",
+    "passed": 18,
+    "exit_code": 0
+  },
+  "ruff": {
+    "command": "uv run ruff check .",
+    "exit_code": 0
+  },
+  "canonical_trial_plans_used": true,
+  "post_outcome_descriptive_counts": {
+    "comparable_qa": 57,
+    "varying_decision_qa": 11,
+    "same_binary_y": 7,
+    "different_binary_y": 4,
+    "unknown_y_within_varying_11": 0,
+    "unknown_y_among_stable_cal_en_qa": 1
+  },
+  "original_case_japanese_text_and_slices_match_analysis_snapshot": true,
+  "new_research_inference_calls": 0,
+  "new_annotation_calls": 0,
+  "new_confidence_intervals": 0,
+  "original_material_verifiers_rerun": false,
+  "unrestricted_public_access_established": false,
+  "repository_visibility_changed": false,
+  "paper_markdown_files_checked": 19,
+  "relative_links_checked": 107,
+  "missing_relative_links": 0,
+  "submission_pdf_created": false
+}

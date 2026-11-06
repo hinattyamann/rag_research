@@ -140,6 +140,28 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
     primary = rows("primary_comparison.csv")
     quality = rows("quality_and_operational_cost.csv")
     materials = PAPER / "materials/fixed_v23_v1"
+    if key == "order_quality":
+        summary = json.loads((PAPER / "notes/order_effects_v1.json").read_text(encoding="utf-8"))
+        values = []
+        for row in summary["strata"]:
+            counts = row["classification_counts"]
+            values.append(
+                [
+                    f"{row['cohort'].capitalize()} {row['language'].upper()}",
+                    str(row["comparable_qa"]),
+                    str(row["decision_change_qa"]),
+                    str(counts["decision_change_same_binary_quality"]),
+                    str(counts["decision_change_quality_changes"]),
+                    str(counts["decision_change_quality_unknown"]),
+                ]
+            )
+        return (
+            ["Cohort", "n", "Var.", "Same Y", "Diff. Y", "Y?"]
+            if lang == "en"
+            else ["区分", "n", "変動", "同Y", "異Y", "Y?"],
+            values,
+            [1250, 350, 650, 900, 900, 769],
+        )
     if key == "selection":
         with (materials / "policy_outcomes.csv").open(encoding="utf-8", newline="") as stream:
             policies = list(csv.DictReader(stream))
@@ -213,15 +235,18 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
         return headers, values, [1250, 380, 850, 2339]
     values = []
     for cohort, language in [("main", "en"), ("main", "ja"), ("cal", "en"), ("cal", "ja")]:
+        label = f"{cohort.capitalize()} {language.upper()}"
+        quality_row = [label]
         for route, short in [("no_repair", "NR"), ("original", "OE"), ("always_rewrite", "AR")]:
             r = next(
                 r
                 for r in quality
                 if (r["cohort"], r["language"], r["route"]) == (cohort, language, route)
             )
-            label = f"{cohort.capitalize()} {language.upper()}"
             if key == "quality":
-                values.append([label, short, r["reliable"], r["unreliable"], r["indeterminate"]])
+                quality_row.append(
+                    "/".join(r[k] for k in ("reliable", "unreliable", "indeterminate"))
+                )
             elif route != "no_repair":
                 values.append(
                     [
@@ -231,15 +256,13 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
                         str(int(r["input_tokens_sum"]) + int(r["output_tokens_sum"])),
                     ]
                 )
+        if key == "quality":
+            values.append(quality_row)
     if key == "quality":
         return (
-            (
-                ["Cohort", "Route", "Y=1", "Y=0", "Y=?"]
-                if lang == "en"
-                else ["区分", "方策", "Y=1", "Y=0", "Y=?"]
-            ),
+            (["Cohort", "NR", "OE", "AR"] if lang == "en" else ["区分", "NR", "OE", "AR"]),
             values,
-            [1350, 850, 873, 873, 873],
+            [1250, 1189, 1190, 1190],
         )
     return (
         (
@@ -366,6 +389,10 @@ def build(content: dict, lang: str) -> dict:
             props.append(element("spacing", before="60", after="100"))
         if kind == "caption":
             props.append(element("keepLines"))
+        if kind in ("p", "keywords"):
+            for node in props.findall("w:widowControl", NS):
+                props.remove(node)
+            props.append(element("widowControl", val="true"))
         if lang == "ja":
             props.append(element("snapToGrid", val="false"))
             spacing = props.find("w:spacing", NS)
@@ -466,8 +493,16 @@ def build(content: dict, lang: str) -> dict:
             parts[f"word/media/{fig_name}"] = picture.read_bytes()
             paragraph(block[lang], "caption")
         else:
-            paragraph(block[lang], kind)
+            p = paragraph(block[lang], kind)
+            if block.get("keep_together"):
+                p.find("w:pPr", NS).append(element("keepLines"))
     for ref in content["references"]:
+        if ref["id"] == content.get("reference_column_break_before", {}).get(lang):
+            p = E.SubElement(body, tag("p"))
+            pp = E.SubElement(p, tag("pPr"))
+            pp.append(element("spacing", before="0", after="0", line="1", lineRule="exact"))
+            run = E.SubElement(p, tag("r"))
+            E.SubElement(run, tag("br"), {tag("type"): "column"})
         p = paragraph(f"({ref['id']}) {ref['text']} ")
         props = p.find("w:pPr", NS)
         for node in props.findall("w:ind", NS):
@@ -543,6 +578,9 @@ def main() -> None:
         action="store_true",
         help="Explicitly rebuild both Word files from the paired source",
     )
+    parser.add_argument(
+        "--refresh-figures", action="store_true", help="Explicitly redraw the two retained figures"
+    )
     args = parser.parse_args()
     if not args.build:
         parser.error("Use --build only after synchronizing source with Word edits")
@@ -555,7 +593,13 @@ def main() -> None:
             block["id"]
         )
     assert len(next(b["en"] for b in content["blocks"] if b["id"] == "abstract").split()) < 300
-    make_figures()
+    required_figures = [
+        PAPER / "figures" / f"{name}_{lang}.png"
+        for name in ("experimental_design", "order_increment")
+        for lang in ("en", "ja")
+    ]
+    if args.refresh_figures or not all(path.exists() for path in required_figures):
+        make_figures()
     results = [build(content, lang) for lang in ("en", "ja")]
     assert results[0]["tables"] == results[1]["tables"]
     report = {
@@ -568,6 +612,17 @@ def main() -> None:
         "evidence_packages": {
             name: sha((PAPER / "materials" / name / "artifact_manifest.json").read_bytes())
             for name in content.get("evidence_trees", {})
+        },
+        "derived_evidence": {
+            name: sha(
+                json.dumps(
+                    json.loads((PAPER / name).read_text(encoding="utf-8")),
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                ).encode()
+            )
+            for name in content.get("derived_evidence", [])
         },
         "template_sha256": TEMPLATE_HASH,
         "block_count": len(ids),

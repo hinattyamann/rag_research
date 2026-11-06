@@ -7,8 +7,8 @@
 | `iciae2027_manuscript_en.docx` | 公式テンプレートを用いた提出用英語本文の正本 |
 | `iciae2027_manuscript_ja.docx` | 全本文に対応する理解用日本語原稿の正本 |
 
-2026年11月6日、研究室から受け取った80問資料と出典監査を検証し、現データの本文初稿を完成した（初稿2）。
-Word描画では各7ページ、英語要旨216語。7章・2図・5表・11文献を収録した。
+2026年11月6日、研究室から受け取った80問資料と出典監査を検証し、現データの本文初稿を補強した（初稿3）。
+Word描画では各8ページ、英語要旨230語。7章・2図・6表・13文献を収録した。
 著者情報・教員レビュー・提出は別工程であり、[到達点・残件](../notes/draft_status.md)を参照する。
 従来の単一ファイル名 `iciae2027_manuscript.docx` は使用しない。
 
@@ -28,7 +28,7 @@ Wordの一時ロックファイルはGitへ追加しない。
 
 ## 更新用の入力と確認
 
-[draft_content.json](draft_content.json)は77単位のIDで日英を対応付けた生成入力。
+[draft_content.json](draft_content.json)は83単位のIDで日英を対応付けた生成入力。
 [build_draft.py](build_draft.py)は未編集の公式テンプレートを使い、公開CSV・検証済み資料集の方策表/具体例に基づく全表と掲載図を両版へ反映する。
 資料の取込元Commit・2資料Tree・Manifest Hash・本文Digestは[生成記録](../notes/draft_build_manifest.json)へ結び付ける。
 Word正本を直接編集したときは生成入力も同期し、同期前に再生成して手動編集を上書きしない。
@@ -43,3 +43,6 @@ uv run ruff check papers/iciae2027/manuscript
 テストは生成済みの実DOCXから本文・引用・全表セル・両版対応と元成果の不変を確認する。
 意味の一致を機械検査だけで保証しない。翻訳を読み合わせ、更新後はWord/PDF描画と全ページの表示確認も行う。
 実験・GPU推論・外部再採点はこの生成処理に含めない。
+
+初稿3は[レビュー対応](../notes/draft3_revision_status.md)を参照。追加の表4は事後記述集計で、先にderive_order_effects.py --checkで保存資料との一致を確認する。
+通常のbuildは掲載図を保持する。図を意図して描き直す場合のみ--refresh-figuresを指定し、元成果と両版の表示を再確認する。

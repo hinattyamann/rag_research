@@ -16,6 +16,8 @@
 |---|---|
 | [notes/submission_requirements.md](notes/submission_requirements.md) | 公式投稿条件、書式、未確認事項、提出前チェック |
 | [notes/draft_status.md](notes/draft_status.md) | 初稿の到達点、確認内容、研究室資料受領後の更新箇所 |
+| [notes/draft3_revision_status.md](notes/draft3_revision_status.md) | 品質レビューへの補強対応、事後集計・原文抜粋と未解決事項 |
+| [notes/order_effects_readme.md](notes/order_effects_readme.md) | 保存済み順序試行から品質/費用へ対応する記述集計の再現手順 |
 | [notes/supervisor_readiness_review_20261106.md](notes/supervisor_readiness_review_20261106.md) | 教員に提示できる完成度かのレビュー結果と、投稿前の改善優先順位 |
 | [notes/notebook_provenance_review_20261106.md](notes/notebook_provenance_review_20261106.md) | 出典補足の受領検証、執筆可能との判断、未解決事項と本文への反映 |
 | [notes/notebook_materials_review_20261106.md](notes/notebook_materials_review_20261106.md) | ノートPCでの受領・検証結果、加筆可能な内容、未取得情報 |
@@ -32,7 +34,7 @@
 | [references/](references/) | 書誌・引用箇所・主張と出典の照合資料 |
 | [submission/](submission/) | 確認済みの提出PDF、提出日時・受付番号等の記録 |
 
-2026年11月6日、検証済みの研究室資料と出典監査を反映し、**既存80問に基づく日英同内容の本文初稿を完成した（初稿2、各7ページ）**。
+2026年11月6日、検証済みの研究室資料と出典監査を反映し、**既存80問に基づく日英同内容の本文初稿を補強した（初稿3、各8ページ）**。
 [英語初稿](manuscript/iciae2027_manuscript_en.docx)と[日本語初稿](manuscript/iciae2027_manuscript_ja.docx)を一組で管理する。
 公式テンプレートの原本は未編集で保持し、例文を実際の研究本文へ置き換えた。提出PDF・投稿は未実施。
 具体例・QA別分析・採点来歴を加筆し、欠測・分母の違い・出典未確定を本文へ残した。
