@@ -1,0 +1,52 @@
+{
+  "version": "fixed-case-excerpts-v1",
+  "case": "case_02",
+  "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+  "source_input": "inputs/cal_ja_7d88f788771d9ca5d8b6acf8.json",
+  "source_input_sha256": "484f07ae97e03e3741a4f423516b0cc99f4ebfdddbcf23b81fd35988aad5fdc2",
+  "supporting_document_id": "51341927839684298188600788009_5092-5792",
+  "supporting_source_url": "https://ja.wikipedia.org/w/index.php?oldid=97513833",
+  "source_type": "actual used evidence and saved candidate answers, not Gold or later recovery",
+  "quotes": [
+    {
+      "role": "evidence",
+      "field_path": [
+        "used_documents",
+        0,
+        "text"
+      ],
+      "start": 457,
+      "stop": 473,
+      "original_ja": "この蝶と蛾に関しては漢語である。",
+      "translation_en": "The terms for both butterflies and moths are of Chinese origin."
+    },
+    {
+      "role": "A",
+      "field_path": [
+        "A",
+        "answer"
+      ],
+      "start": 155,
+      "stop": 187,
+      "original_ja": "蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。",
+      "translation_en": "Moths are often called by a Chinese-derived term because their characteristics differ from butterflies."
+    },
+    {
+      "role": "B",
+      "field_path": [
+        "B",
+        "answer"
+      ],
+      "start": 203,
+      "stop": 218,
+      "original_ja": "この蝶と蛾に関しては漢語である",
+      "translation_en": "The terms for both butterflies and moths are of Chinese origin."
+    }
+  ],
+  "retained_citation_mismatch": {
+    "support_document_index": 0,
+    "B_cited_document_index": 4,
+    "note": "The naming phrase occurs in used_documents[0], while B cites used_documents[4]; the saved assessment accepted B with this mismatch and the label is unchanged."
+  },
+  "new_annotation_calls": 0
+}
