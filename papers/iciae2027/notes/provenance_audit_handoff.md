@@ -28,6 +28,12 @@ uv run --no-project python -I papers/iciae2027/materials/fixed_v23_v1/verify_mat
 
 本文の加筆には[日英文案](../materials/provenance_audit_v1/paper_wording_en_ja.md)を使用できる。原稿は日英同内容で更新し、今回取得した本文で過去のReference/採点や結果を訂正しない。著者確認・文献精読・人手/教員確認・投稿は別工程。
 
+## Gitから取得し直した実検証
+
+資料Commit `f5067325f638aa81c1608b73ddbbf75245a49e7a`をGitHubから新規HTTPS Cloneし、2資料だけをgit archiveで取り出した。元Run/生ログ/認証設定/GPU/ネットワークに依存しない環境で、両方の検証器が成功した。[検証記録](provenance_audit_validation_20261106.json)に実行結果を保存した。
+
+補足資料Treeは`2e9bc4cdd1a6eeb97698d426e291a6b604023ebd`、確定80問資料Treeは`5fb236667f6e4411a730187dc1e6ce80f27c710f`。この案内と検証記録を加える最終Commitでも両Treeは維持する。123成果のHash・84 Job/Session・英語40 QA/222 Passage・回復歴史版の対応を確認し、14 Test（0.44秒）/Ruffも成功した。別途、研究室側の元科学的記録3,524ファイルを再照合して不変、mainは5b866a9のままcleanだった。
+
 ## ノートPCのCodexへ渡す文
 
 Git状態・Branch・remote・追跡先を確認してoriginをFetchし、履歴差分を確認してください。未完成変更を保全し、安全に早送りできる場合だけ更新してください。取込元はorigin/paper/iciae2027-provenance-audit-v1、最終Commitは研究室の終了報告参照。資料はpapers/iciae2027/materials/provenance_audit_v1/です。READMEとfindings.jsonを読み、上記2検証を実行し、回復情報と未解決を区別して日英原稿へ反映してください。DOCXの両PC同時編集は避け、候補oldidを確定版や今回回復本文を当時の実験入力として扱わないでください。

@@ -1,0 +1,66 @@
+{
+  "commit": "f5067325f638aa81c1608b73ddbbf75245a49e7a",
+  "trees": {
+    "papers/iciae2027/materials/provenance_audit_v1": "2e9bc4cdd1a6eeb97698d426e291a6b604023ebd",
+    "papers/iciae2027/materials/fixed_v23_v1": "5fb236667f6e4411a730187dc1e6ce80f27c710f"
+  },
+  "verification": {
+    "papers/iciae2027/materials/provenance_audit_v1": {
+      "status": "passed",
+      "artifact_files": 123,
+      "japanese_historical_body_recovered": true,
+      "original_render_identity_established": false,
+      "annotation_jobs": 84,
+      "historical_sessions": 84,
+      "exact_serving_identifier_recovered": false,
+      "english_selected_qa": 40,
+      "english_qa_source_urls_identified": 36,
+      "english_passages": 222,
+      "english_passage_candidates": 199,
+      "english_passages_not_recovered": 23,
+      "exact_corpus_revision_bindings_recovered": 0,
+      "original_files_preserved": 3524,
+      "original_run_or_auth_required": false,
+      "new_research_inference_calls": 0,
+      "new_annotation_calls": 0
+    },
+    "papers/iciae2027/materials/fixed_v23_v1": {
+      "status": "passed",
+      "qa": 80,
+      "strata": 4,
+      "comparable_qa": {
+        "main/en": 16,
+        "main/ja": 13,
+        "cal/en": 16,
+        "cal/ja": 12
+      },
+      "planned_trials": 706,
+      "candidate_stage_assignments": 156,
+      "annotation_jobs": 84,
+      "policy_slots": 880,
+      "observed_policy_outcomes": 864,
+      "cases": 4,
+      "artifact_files": 1043,
+      "semantic_audit": "recomputed",
+      "route_costs": "recomputed",
+      "published_tables": "matched",
+      "bootstrap": "original implementation/version/seed/replicates and exact result retained; not regenerated with a different RNG",
+      "original_run_access_required": false,
+      "new_inference_calls": 0,
+      "new_annotation_calls": 0,
+      "all_data_reads_confined_to_materials": true
+    }
+  },
+  "git_only_archive": "/tmp/iciae-provenance-git-only-8ewjb9k5/archive-only",
+  "git_clone": "/tmp/iciae-provenance-git-only-8ewjb9k5/fetched",
+  "auth_environment_passed_to_verifiers": false,
+  "original_scientific_files_rechecked": 3524,
+  "original_scientific_files_unchanged": true,
+  "main_unchanged_and_clean": true,
+  "tests": {
+    "pytest": "14 passed in 0.44s",
+    "ruff": "passed"
+  },
+  "validation_scope": "Fresh HTTPS clone and git archive; minimal environment without auth settings; each verifier denies data reads outside its own folder and sockets. Source preservation is a separate lab-side read-only check.",
+  "note": "This receipt records the data commit. The subsequent handoff/receipt-only commit preserves both material trees; final publication commit is reported in the conversation."
+}
