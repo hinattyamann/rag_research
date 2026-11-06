@@ -16,6 +16,7 @@
 |---|---|
 | [notes/submission_requirements.md](notes/submission_requirements.md) | 公式投稿条件、書式、未確認事項、提出前チェック |
 | [notes/draft_status.md](notes/draft_status.md) | 初稿の到達点、確認内容、研究室資料受領後の更新箇所 |
+| [notes/supervisor_readiness_review_20261106.md](notes/supervisor_readiness_review_20261106.md) | 教員に提示できる完成度かのレビュー結果と、投稿前の改善優先順位 |
 | [notes/notebook_provenance_review_20261106.md](notes/notebook_provenance_review_20261106.md) | 出典補足の受領検証、執筆可能との判断、未解決事項と本文への反映 |
 | [notes/notebook_materials_review_20261106.md](notes/notebook_materials_review_20261106.md) | ノートPCでの受領・検証結果、加筆可能な内容、未取得情報 |
 | [notes/case_studies_and_materials.md](notes/case_studies_and_materials.md) | 具体例の使い分け、ノートPCの資料所在、研究室PCへの書出し依頼 |
