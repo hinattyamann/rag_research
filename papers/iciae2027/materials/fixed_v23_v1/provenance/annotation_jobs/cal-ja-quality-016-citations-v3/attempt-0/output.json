@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "reliable",
+      "reason": "住宅市場の悪化、サブプライム住宅ローン危機、リーマン破綻、世界的な信用収縮という因果関係を説明している。破綻日と負債額を含め、回答全体が実使用文書e0001・e0004で支持される。Referenceだけに依存する主張はない。",
+      "evidence": ["e0001", "e0004"],
+      "essential_points": "米国の住宅市場悪化によるサブプライム住宅ローン危機がリーマン・ブラザーズの破綻につながり、世界的な金融危機へ波及したこと。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "実使用文書には日本固有の野生馬の種類数がなく、情報不足という判断自体には理由がある。しかし、他の文書に野生馬への言及がないという説明は、実使用文書e0011の冒頭と明確に矛盾するため、回答全体の文脈支持は失敗する。Referenceのみのe0012が示す8種は日本在来種の数であり、質問の野生馬と同一対象か曖昧なため、必須回答の充足と重大な誤りの有無は確定しない。",
+      "evidence": ["e0009", "e0011", "e0012"],
+      "essential_points": "日本固有の野生馬の種類数を示すこと。在来馬を意味する質問ならReferenceでは8種だが、野生馬との対象の違いを確認する必要がある。",
+      "criteria": {
+        "essential_answer": "uncertain",
+        "no_major_error": "uncertain",
+        "context_support": "fail"
+      }
+    },
+    "a002": {
+      "label": "unreliable",
+      "reason": "家庭裁判所の許可と身分変動による氏の変更については実使用文書e0014が支持する。しかし、Referenceのみのe0019で確認できる、許可後の届出という必要な手続きが回答から欠落している。氏・名それぞれの変更理由の要件も説明されていない。適用条文は実使用文書の第107条という記述とReferenceの名についての第107条の2という記述に差があり、その誤りの評価には不確実性が残る。",
+      "evidence": ["e0014", "e0019"],
+      "essential_points": "身分変動を伴わない氏名変更では、所定の理由に基づき家庭裁判所の許可を得て、その旨を届け出ること。氏と名では理由の要件と適用条文が異なること。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "uncertain",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "スター・チャンネルの放送歴とHBO・Huluへの外部リンクは実使用文書e0020・e0022で確認できる。一方、e0023が示すのはスピンオフのU-NEXT配信であり、本編がU-NEXTの配信対象ではないという否定までは支持しない。Referenceのみのe0026には本編の配信・販売先があるが、この否定の根拠にはならない。回答は放送歴と情報の所在が中心で、視聴先への実質的な回答として十分か、非支持の否定が事実として誤っているかは確定しない。",
+      "evidence": ["e0020", "e0022", "e0023", "e0026"],
+      "essential_points": "本編を視聴できる放送局・配信サービス・映像ソフトなどを具体的に示し、スピンオフの配信情報と区別すること。",
+      "criteria": {
+        "essential_answer": "uncertain",
+        "no_major_error": "uncertain",
+        "context_support": "fail"
+      }
+    }
+  }
+}

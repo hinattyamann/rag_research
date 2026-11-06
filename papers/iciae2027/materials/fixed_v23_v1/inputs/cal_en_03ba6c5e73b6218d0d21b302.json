@@ -1,0 +1,798 @@
+{
+  "qa_key": "cal_en_03ba6c5e73b6218d0d21b302",
+  "cohort": "cal",
+  "language": "en",
+  "analysis_role": "cal",
+  "source_qa_split": "development",
+  "record_id": "clapnq:c508d78:train:7444940798255485789:answerable",
+  "document_group_id": "clapnq-title:red panda",
+  "qa_source": {
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "gold_passage_ids": [
+      "853538822_3814-4715"
+    ],
+    "is_answerable": true,
+    "provided_passage": null,
+    "question": "where do red pandas live in the wild",
+    "record_id": "clapnq:c508d78:train:7444940798255485789:answerable",
+    "reference_answers": [
+      "The red panda is endemic to the temperate forests of the Himalayas, and ranges from the foothills of western Nepal to China in the east. Its range includes southern Tibet, Sikkim and Assam in India, Bhutan, the northern mountains of Burma, and in south western China, in the Hengduan Mountains of Sichuan and the Gongshan Mountains in Yunnan.",
+      "The red panda is endemic to the temperate forests of the Himalayas , and ranges from the foothills of western Nepal to easternmost limit is the Qinling Mountains of the Shaanxi Province in China . Its range includes southern Tibet , Sikkim and Assam in India , Bhutan , the northern mountains of Burma , and in south - western China , in the Hengduan Mountains of Sichuan and the Gongshan Mountains in Yunnan . It may also live in south - west Tibet and northern Arunachal Pradesh , but this has not been documented ."
+    ],
+    "research_split": "development",
+    "selected_sentences_by_reference": [
+      [
+        "The red panda is endemic to the temperate forests of the Himalayas , and ranges from the foothills of western Nepal to China in the east .",
+        "Its range includes southern Tibet , Sikkim and Assam in India , Bhutan , the northern mountains of Burma , and in south - western China , in the Hengduan Mountains of Sichuan and the Gongshan Mountains in Yunnan ."
+      ],
+      [
+        "The red panda is endemic to the temperate forests of the Himalayas , and ranges from the foothills of western Nepal to China in the east .",
+        "Its easternmost limit is the Qinling Mountains of the Shaanxi Province in China .",
+        "Its range includes southern Tibet , Sikkim and Assam in India , Bhutan , the northern mountains of Burma , and in south - western China , in the Hengduan Mountains of Sichuan and the Gongshan Mountains in Yunnan .",
+        "It may also live in south - west Tibet and northern Arunachal Pradesh , but this has not been documented ."
+      ]
+    ],
+    "source_dataset": "CLAPNQ",
+    "source_id": "7444940798255485789",
+    "source_line_index": 355,
+    "source_record_sha256": "afa0ca2c2cce61d8533124246fced5e01f876b43c13856aca434f89a5bd529bc",
+    "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+    "source_split": "train",
+    "source_title": "Red panda"
+  },
+  "source_selection": {
+    "record_id": "clapnq:c508d78:train:7444940798255485789:answerable",
+    "question": "where do red pandas live in the wild",
+    "document_group_id": "clapnq-title:red panda"
+  },
+  "question": "where do red pandas live in the wild",
+  "used_documents": [
+    {
+      "passage_id": "853538822_12093-12739",
+      "title": "Red panda",
+      "text": "The primary threats to red pandas are direct harvest from the wild , live or dead , competition with domestic livestock resulting in habitat degradation , and deforestation resulting in habitat loss or fragmentation . The relative importance of these factors is different in each region , and is not well understood . For instance , in India , the biggest threat seems to be habitat loss followed by poaching , while in China , the biggest threat seems to be hunting and poaching . A 40 % decrease in red panda populations has been reported in China over the last 50 years , and populations in western Himalayan areas are considered to be lower .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_12093-12739",
+        "parent_text_sha256": "4564761c692291fec646cce99fead66a5f6829a0503cd652d64821a1a5632ac4",
+        "passage_id": "853538822_12093-12739",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 152,
+          "end": 646,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "4564761c692291fec646cce99fead66a5f6829a0503cd652d64821a1a5632ac4",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "4564761c692291fec646cce99fead66a5f6829a0503cd652d64821a1a5632ac4",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 646
+      }
+    },
+    {
+      "passage_id": "853538822_18782-18944",
+      "title": "Red panda",
+      "text": "The Padmaja Naidu Himalayan Zoological Park in Darjeeling , India , successfully released four captive - bred red pandas to the wild in August and November 2003 .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_18782-18944",
+        "parent_text_sha256": "13f16b0156f2c9fb19cb6d7e80001e17b66e2b9ef569e65668b7c80b34b4e942",
+        "passage_id": "853538822_18782-18944",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 44,
+          "end": 162,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "13f16b0156f2c9fb19cb6d7e80001e17b66e2b9ef569e65668b7c80b34b4e942",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "13f16b0156f2c9fb19cb6d7e80001e17b66e2b9ef569e65668b7c80b34b4e942",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 162
+      }
+    },
+    {
+      "passage_id": "853538822_4716-5117",
+      "title": "Red panda",
+      "text": "During a survey in the 1970s , signs of red pandas were found in Nepal 's Dhorpatan Hunting Reserve . Their presence was confirmed in spring 2007 when four red pandas were sighted at elevations ranging from 3,220 to 3,610 m ( 10,560 to 11,840 ft ) . The species ' westernmost limit is in Rara National Park located farther west of the Dhorpatan Hunting Reserve . Their presence was confirmed in 2008 .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_4716-5117",
+        "parent_text_sha256": "f6b770d77c16f6fb1254e85f9d6b31633c3b958c45c4be65f6b7d79af61c79cc",
+        "passage_id": "853538822_4716-5117",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 111,
+          "end": 401,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "f6b770d77c16f6fb1254e85f9d6b31633c3b958c45c4be65f6b7d79af61c79cc",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "f6b770d77c16f6fb1254e85f9d6b31633c3b958c45c4be65f6b7d79af61c79cc",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 401
+      }
+    },
+    {
+      "passage_id": "853538822_12740-13253",
+      "title": "Red panda",
+      "text": "Deforestation can inhibit the spread of red pandas and exacerbate the natural population subdivision by topography and ecology , leading to severe fragmentation of the remaining wild population . Fewer than 40 animals in four separate groups share resources with humans in Nepal 's Langtang National Park , where only 6 % of 1,710 km ( 660 sq mi ) is preferred red panda habitat . Although direct competition for food with domestic livestock is not significant , livestock can depress bamboo growth by trampling .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_12740-13253",
+        "parent_text_sha256": "05de5923db98f06966a3b7e70097bdeb9feee9f343016e2b4b90857972676391",
+        "passage_id": "853538822_12740-13253",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 122,
+          "end": 513,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "05de5923db98f06966a3b7e70097bdeb9feee9f343016e2b4b90857972676391",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "05de5923db98f06966a3b7e70097bdeb9feee9f343016e2b4b90857972676391",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 513
+      }
+    },
+    {
+      "passage_id": "853538822_1007-1330",
+      "title": "Red panda",
+      "text": "The red panda has been classified as endangered by the IUCN , because its wild population is estimated at less than 10,000 mature individuals and continues to decline due to habitat loss and fragmentation , poaching , and inbreeding depression , although red pandas are protected by national laws in their range countries .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_1007-1330",
+        "parent_text_sha256": "b7b63d9cc4f755b3f3b19a57151ac53ac24705b0d64923fd950d2c7e790fe4ea",
+        "passage_id": "853538822_1007-1330",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 77,
+          "end": 323,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "b7b63d9cc4f755b3f3b19a57151ac53ac24705b0d64923fd950d2c7e790fe4ea",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "b7b63d9cc4f755b3f3b19a57151ac53ac24705b0d64923fd950d2c7e790fe4ea",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 323
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "853538822_3814-4715",
+      "title": "Red panda",
+      "text": "The red panda is endemic to the temperate forests of the Himalayas , and ranges from the foothills of western Nepal to China in the east . Its easternmost limit is the Qinling Mountains of the Shaanxi Province in China . Its range includes southern Tibet , Sikkim and Assam in India , Bhutan , the northern mountains of Burma , and in south - western China , in the Hengduan Mountains of Sichuan and the Gongshan Mountains in Yunnan . It may also live in south - west Tibet and northern Arunachal Pradesh , but this has not been documented . Locations with the highest density of red pandas include an area in the Himalayas that has been proposed as having been a refuge for a variety of endemic species in the Pleistocene . The distribution range of the red panda should be considered disjunct , rather than continuous . A disjunct population inhabits the Meghalaya Plateau of north - eastern India .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_3814-4715",
+        "parent_text_sha256": "4ed6f749c51534d463f32142a014609d5e6b5a42053d5c74ea089bd79149c202",
+        "passage_id": "853538822_3814-4715",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 245,
+          "end": 901,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "4ed6f749c51534d463f32142a014609d5e6b5a42053d5c74ea089bd79149c202",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "4ed6f749c51534d463f32142a014609d5e6b5a42053d5c74ea089bd79149c202",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 901
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "The red pandas live in Nepal's Dhorpatan Hunting Reserve and Rara National Park. They were also successfully released to the wild in India. Their presence has been confirmed in Langtang National Park in Nepal, where they inhabit areas with less than 6% preferred habitat for red pandas due to deforestation and fragmentation.",
+    "answer_sha256": "3216a14d83883367744af53975f2dc402ab646425023bf6da8f412de8b323023",
+    "quality": {
+      "annotation_id": "Q-bb64d4d7ce99b02427fb",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-bb64d4d7ce99b02427fb",
+        "candidate_sha256": "832b2fda925203a7cc85086a28ea01f2cf341d2c2caa594037ae658601958067",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "Describe red pandas' wild habitat and broad geographic range: temperate Himalayan forests extending from Nepal toward China and other parts of the documented Asian range.",
+        "reason": "The answer gives supported examples of Nepalese locations and an Indian release, but omits the broad habitat and range established by the reference-only document. It also materially misrepresents the actual Langtang evidence: the document says 6% of the park is preferred habitat, not that red pandas inhabit areas with less than 6% preferred habitat because of deforestation. The actual context discusses fragmentation generally but does not establish that specific percentage or causal claim.",
+        "evidence": [
+          {
+            "passage_id": "853538822_3814-4715",
+            "quote": "The red panda is endemic to the temperate forests of the Himalayas , and ranges from the foothills of western Nepal to China in the east ."
+          },
+          {
+            "passage_id": "853538822_4716-5117",
+            "quote": "The species ' westernmost limit is in Rara National Park located farther west of the Dhorpatan Hunting Reserve ."
+          },
+          {
+            "passage_id": "853538822_18782-18944",
+            "quote": "The Padmaja Naidu Himalayan Zoological Park in Darjeeling , India , successfully released four captive - bred red pandas to the wild in August and November 2003 ."
+          },
+          {
+            "passage_id": "853538822_12740-13253",
+            "quote": "Fewer than 40 animals in four separate groups share resources with humans in Nepal 's Langtang National Park , where only 6 % of 1,710 km ( 660 sq mi ) is preferred red panda habitat ."
+          }
+        ],
+        "elapsed_seconds": 14.50193364774168,
+        "confirmed_at_utc": "2026-11-01T12:25:48.506641+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_calibration/fixed-v23-cal-v1/en/baseline/03ba6c5e73b6218d0d21b302/record.json",
+      "sha256": "24bd029ebf4c1b64052fe8b54ab6badd7a0f7972a988681324402fddf64dc4ea"
+    },
+    "copy": "provenance/baselines/cal_en_03ba6c5e73b6218d0d21b302.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "Red pandas live in Nepal's Dhorpatan Hunting Reserve and Rara National Park [853538822_4716-5117]. They were also successfully released to the wild in India [853538822_18782-18944]. Their presence has been confirmed in Langtang National Park in Nepal, where only 6% of the area is preferred red panda habitat [853538822_12740-13253].",
+    "answer_sha256": "199ac37ae87a59fbd3d01bc86bc5345397783a23b6b2971449fa6a4daf68b7fa",
+    "quality": {
+      "annotation_id": "Q-43b60ed1d19ccb3126cf",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-43b60ed1d19ccb3126cf",
+        "candidate_sha256": "2632d8375eb35031b83fc0603be40bc1d7624945b19cc5735e9535822fc3a0c9",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Describe red pandas' wild habitat and broad range: temperate Himalayan forests extending from Nepal to China, including parts of India, Bhutan, and northern Burma.",
+        "reason": "The named Nepal locations, Indian release, and Langtang habitat percentage are supported by the actual context. However, these isolated examples omit the defining habitat and broad geographic range needed for the question. Reference-only gold establishes those missing essentials; it does not supply actual-context support for them.",
+        "evidence": [
+          {
+            "passage_id": "853538822_4716-5117",
+            "quote": "During a survey in the 1970s , signs of red pandas were found in Nepal 's Dhorpatan Hunting Reserve ."
+          },
+          {
+            "passage_id": "853538822_4716-5117",
+            "quote": "The species ' westernmost limit is in Rara National Park located farther west of the Dhorpatan Hunting Reserve . Their presence was confirmed in 2008 ."
+          },
+          {
+            "passage_id": "853538822_18782-18944",
+            "quote": "The Padmaja Naidu Himalayan Zoological Park in Darjeeling , India , successfully released four captive - bred red pandas to the wild in August and November 2003 ."
+          },
+          {
+            "passage_id": "853538822_12740-13253",
+            "quote": "Fewer than 40 animals in four separate groups share resources with humans in Nepal 's Langtang National Park , where only 6 % of 1,710 km ( 660 sq mi ) is preferred red panda habitat ."
+          },
+          {
+            "passage_id": "853538822_3814-4715",
+            "quote": "The red panda is endemic to the temperate forests of the Himalayas , and ranges from the foothills of western Nepal to China in the east ."
+          },
+          {
+            "passage_id": "853538822_3814-4715",
+            "quote": "Its range includes southern Tibet , Sikkim and Assam in India , Bhutan , the northern mountains of Burma , and in south - western China , in the Hengduan Mountains of Sichuan and the Gongshan Mountains in Yunnan ."
+          }
+        ],
+        "elapsed_seconds": 12.50172897450102,
+        "confirmed_at_utc": "2026-11-01T12:28:40.878418+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "The red pandas live in Nepal's Dhorpatan Hunting Reserve and Rara National Park."
+    },
+    {
+      "claim_id": "c2",
+      "text": "They were also successfully released to the wild in India."
+    },
+    {
+      "claim_id": "c3",
+      "text": "Their presence has been confirmed in Langtang National Park in Nepal, where they inhabit areas with less than 6% preferred habitat for red pandas due to deforestation and fragmentation."
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "The red pandas live in Nepal's Dhorpatan Hunting Reserve and Rara National Park."
+      },
+      {
+        "claim_id": "c2",
+        "text": "They were also successfully released to the wild in India."
+      },
+      {
+        "claim_id": "c3",
+        "text": "Their presence has been confirmed in Langtang National Park in Nepal, where they inhabit areas with less than 6% preferred habitat for red pandas due to deforestation and fragmentation."
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-v1",
+    "normalized_prose": "The red pandas live in Nepal's Dhorpatan Hunting Reserve and Rara National Park. They were also successfully released to the wild in India. Their presence has been confirmed in Langtang National Park in Nepal, where they inhabit areas with less than 6% preferred habitat for red pandas due to deforestation and fragmentation.",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 81
+      },
+      {
+        "start": 81,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 325
+      }
+    ]
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "853538822_1007-1330",
+          "853538822_12740-13253",
+          "853538822_4716-5117",
+          "853538822_18782-18944",
+          "853538822_12093-12739"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "853538822_12093-12739",
+          "853538822_18782-18944",
+          "853538822_4716-5117",
+          "853538822_12740-13253",
+          "853538822_1007-1330"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "853538822_12093-12739",
+          "853538822_18782-18944",
+          "853538822_4716-5117",
+          "853538822_12740-13253",
+          "853538822_1007-1330"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "853538822_12093-12739",
+          "853538822_18782-18944",
+          "853538822_4716-5117",
+          "853538822_12740-13253",
+          "853538822_1007-1330"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "853538822_12093-12739",
+          "853538822_18782-18944",
+          "853538822_4716-5117",
+          "853538822_12740-13253",
+          "853538822_1007-1330"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "853538822_12093-12739",
+          "853538822_18782-18944",
+          "853538822_4716-5117",
+          "853538822_12740-13253",
+          "853538822_1007-1330"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "853538822_4716-5117",
+          "853538822_1007-1330",
+          "853538822_12740-13253",
+          "853538822_18782-18944",
+          "853538822_12093-12739"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "853538822_12740-13253",
+          "853538822_18782-18944",
+          "853538822_4716-5117",
+          "853538822_1007-1330",
+          "853538822_12093-12739"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "853538822_12740-13253",
+          "853538822_18782-18944",
+          "853538822_1007-1330",
+          "853538822_12093-12739",
+          "853538822_4716-5117"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "en",
+    "record_id": "clapnq:c508d78:train:7444940798255485789:answerable",
+    "document_group_id": "clapnq-title:red panda",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_calibration/fixed-v23-cal-v1/en/report.private.json",
+    "sha256": "133370ff081fcbfbc6509ae956502112354fa6bf9bd286d0778b0c1a3db09725"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "853538822_1007-1330",
+      "text": "The red panda has been classified as endangered by the IUCN , because its wild population is estimated at less than 10,000 mature individuals and continues to decline due to habitat loss and fragmentation , poaching , and inbreeding depression , although red pandas are protected by national laws in their range countries .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_1007-1330",
+        "parent_text_sha256": "b7b63d9cc4f755b3f3b19a57151ac53ac24705b0d64923fd950d2c7e790fe4ea",
+        "passage_id": "853538822_1007-1330",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 77,
+          "end": 323,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "b7b63d9cc4f755b3f3b19a57151ac53ac24705b0d64923fd950d2c7e790fe4ea",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "853538822_12093-12739",
+      "text": "The primary threats to red pandas are direct harvest from the wild , live or dead , competition with domestic livestock resulting in habitat degradation , and deforestation resulting in habitat loss or fragmentation . The relative importance of these factors is different in each region , and is not well understood . For instance , in India , the biggest threat seems to be habitat loss followed by poaching , while in China , the biggest threat seems to be hunting and poaching . A 40 % decrease in red panda populations has been reported in China over the last 50 years , and populations in western Himalayan areas are considered to be lower .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_12093-12739",
+        "parent_text_sha256": "4564761c692291fec646cce99fead66a5f6829a0503cd652d64821a1a5632ac4",
+        "passage_id": "853538822_12093-12739",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 152,
+          "end": 646,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "4564761c692291fec646cce99fead66a5f6829a0503cd652d64821a1a5632ac4",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "853538822_12740-13253",
+      "text": "Deforestation can inhibit the spread of red pandas and exacerbate the natural population subdivision by topography and ecology , leading to severe fragmentation of the remaining wild population . Fewer than 40 animals in four separate groups share resources with humans in Nepal 's Langtang National Park , where only 6 % of 1,710 km ( 660 sq mi ) is preferred red panda habitat . Although direct competition for food with domestic livestock is not significant , livestock can depress bamboo growth by trampling .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_12740-13253",
+        "parent_text_sha256": "05de5923db98f06966a3b7e70097bdeb9feee9f343016e2b4b90857972676391",
+        "passage_id": "853538822_12740-13253",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 122,
+          "end": 513,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "05de5923db98f06966a3b7e70097bdeb9feee9f343016e2b4b90857972676391",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "853538822_18782-18944",
+      "text": "The Padmaja Naidu Himalayan Zoological Park in Darjeeling , India , successfully released four captive - bred red pandas to the wild in August and November 2003 .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_18782-18944",
+        "parent_text_sha256": "13f16b0156f2c9fb19cb6d7e80001e17b66e2b9ef569e65668b7c80b34b4e942",
+        "passage_id": "853538822_18782-18944",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 44,
+          "end": 162,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "13f16b0156f2c9fb19cb6d7e80001e17b66e2b9ef569e65668b7c80b34b4e942",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "853538822_3814-4715",
+      "text": "The red panda is endemic to the temperate forests of the Himalayas , and ranges from the foothills of western Nepal to China in the east . Its easternmost limit is the Qinling Mountains of the Shaanxi Province in China . Its range includes southern Tibet , Sikkim and Assam in India , Bhutan , the northern mountains of Burma , and in south - western China , in the Hengduan Mountains of Sichuan and the Gongshan Mountains in Yunnan . It may also live in south - west Tibet and northern Arunachal Pradesh , but this has not been documented . Locations with the highest density of red pandas include an area in the Himalayas that has been proposed as having been a refuge for a variety of endemic species in the Pleistocene . The distribution range of the red panda should be considered disjunct , rather than continuous . A disjunct population inhabits the Meghalaya Plateau of north - eastern India .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_3814-4715",
+        "parent_text_sha256": "4ed6f749c51534d463f32142a014609d5e6b5a42053d5c74ea089bd79149c202",
+        "passage_id": "853538822_3814-4715",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 245,
+          "end": 901,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "4ed6f749c51534d463f32142a014609d5e6b5a42053d5c74ea089bd79149c202",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "853538822_4716-5117",
+      "text": "During a survey in the 1970s , signs of red pandas were found in Nepal 's Dhorpatan Hunting Reserve . Their presence was confirmed in spring 2007 when four red pandas were sighted at elevations ranging from 3,220 to 3,610 m ( 10,560 to 11,840 ft ) . The species ' westernmost limit is in Rara National Park located farther west of the Dhorpatan Hunting Reserve . Their presence was confirmed in 2008 .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_4716-5117",
+        "parent_text_sha256": "f6b770d77c16f6fb1254e85f9d6b31633c3b958c45c4be65f6b7d79af61c79cc",
+        "passage_id": "853538822_4716-5117",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 111,
+          "end": 401,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "f6b770d77c16f6fb1254e85f9d6b31633c3b958c45c4be65f6b7d79af61c79cc",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "853538822_3814-4715": {
+      "embedding_token_budget": 512,
+      "language": "en",
+      "parent_passage_id": "853538822_3814-4715",
+      "parent_text_sha256": "4ed6f749c51534d463f32142a014609d5e6b5a42053d5c74ea089bd79149c202",
+      "passage_id": "853538822_3814-4715",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 245,
+        "end": 901,
+        "start": 0
+      },
+      "source_dataset": "CLAPNQ",
+      "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+      "text_sha256": "4ed6f749c51534d463f32142a014609d5e6b5a42053d5c74ea089bd79149c202",
+      "title": "Red panda",
+      "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+      "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+      "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+      "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+        "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "853538822_3814-4715",
+      "text": "The red panda is endemic to the temperate forests of the Himalayas , and ranges from the foothills of western Nepal to China in the east . Its easternmost limit is the Qinling Mountains of the Shaanxi Province in China . Its range includes southern Tibet , Sikkim and Assam in India , Bhutan , the northern mountains of Burma , and in south - western China , in the Hengduan Mountains of Sichuan and the Gongshan Mountains in Yunnan . It may also live in south - west Tibet and northern Arunachal Pradesh , but this has not been documented . Locations with the highest density of red pandas include an area in the Himalayas that has been proposed as having been a refuge for a variety of endemic species in the Pleistocene . The distribution range of the red panda should be considered disjunct , rather than continuous . A disjunct population inhabits the Meghalaya Plateau of north - eastern India .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "853538822_3814-4715",
+        "parent_text_sha256": "4ed6f749c51534d463f32142a014609d5e6b5a42053d5c74ea089bd79149c202",
+        "passage_id": "853538822_3814-4715",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 245,
+          "end": 901,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "4ed6f749c51534d463f32142a014609d5e6b5a42053d5c74ea089bd79149c202",
+        "title": "Red panda",
+        "source_url": "https://en.wikipedia.org/wiki/Red_panda",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Red_panda?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ]
+}

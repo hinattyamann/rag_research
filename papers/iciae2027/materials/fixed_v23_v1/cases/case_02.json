@@ -1,0 +1,1546 @@
+{
+  "case_id": "case_02",
+  "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+  "record_id": "whrja:02e85c8:answered:240",
+  "cohort": "cal",
+  "language": "ja",
+  "selection_rule": "First lexicographic unused ja QA satisfying different_quality",
+  "post_outcome_explanatory_selection": true,
+  "mode": "different_quality",
+  "input_path": "inputs/cal_ja_7d88f788771d9ca5d8b6acf8.json",
+  "trials": [
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "trial_id": "repeat_3",
+      "document_ids": [
+        "51341927839684298188600788009_5092-5792",
+        "51341927839684298188600788009_5792-6556",
+        "48097352051897621373845584567_0-746",
+        "51341927839684298188600788009_6556-6786",
+        "51341927839684298188600788009_0-798"
+      ],
+      "score": 0.75,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "7d88f788771d9ca5d8b6acf8/repeat_3.json",
+      "json_schema_sha256": "9f4c8afbd42ffc631cbe8a8200d0df58f7dc43c668d91c703c0ed4fa85523fd1",
+      "result_sha256": "ac17c0a282d3582789cbbe87eb89d541cf50a5aadeb08d2aac9167e3c45c6564",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "蛾と蝶の違いは以下の通りです： - 蝶はチョウ目（鱗翅目）のうち、Rhopaloceraに分類される生物の総称です。"
+        },
+        {
+          "claim_id": "c2",
+          "text": "- 蛾はチョウ目（鱗翅目）のうち、Rhopaloceraに分類されない生物の総称です。"
+        },
+        {
+          "claim_id": "c3",
+          "text": "- 蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。"
+        },
+        {
+          "claim_id": "c4",
+          "text": "- 蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。"
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 explicitly defines butterflies as organisms classified under Rhopalocera within order Lepidoptera.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 defines Butterflies as Rhopalocera within Lepidoptera and states other Lepidoptera species are Moths.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 5092-5792 explicitly states the symmetry and naming analogy details matching the claim.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        },
+        {
+          "claim_id": "c4",
+          "label": "not_supported",
+          "reason": "Source confirms moths are Kanji words but does not support the causal link to characteristic differences from butterflies (5092-5792).",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 4,
+        "input_tokens": 13251,
+        "output_tokens": 16844,
+        "elapsed_seconds": 325.4085203370196,
+        "generation_seconds": 325.34021819598274,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 3322,
+          "output_tokens": 4232,
+          "elapsed_seconds": 81.75950887199724,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3312,
+          "output_tokens": 4238,
+          "elapsed_seconds": 81.85329983301926,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3314,
+          "output_tokens": 4205,
+          "elapsed_seconds": 81.25563204300124,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3303,
+          "output_tokens": 4169,
+          "elapsed_seconds": 80.54007958900183,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "ac17c0a282d3582789cbbe87eb89d541cf50a5aadeb08d2aac9167e3c45c6564",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "trial_id": "shuffle_3",
+      "document_ids": [
+        "51341927839684298188600788009_0-798",
+        "51341927839684298188600788009_6556-6786",
+        "51341927839684298188600788009_5092-5792",
+        "48097352051897621373845584567_0-746",
+        "51341927839684298188600788009_5792-6556"
+      ],
+      "score": 0.75,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "7d88f788771d9ca5d8b6acf8/shuffle_3.json",
+      "json_schema_sha256": "9f4c8afbd42ffc631cbe8a8200d0df58f7dc43c668d91c703c0ed4fa85523fd1",
+      "result_sha256": "05f1f2bae27a4b68ea1b0c2188b6af3ffccd20d7d4b715f588cd481753a1b96c",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "蛾と蝶の違いは以下の通りです： - 蝶はチョウ目（鱗翅目）のうち、Rhopaloceraに分類される生物の総称です。"
+        },
+        {
+          "claim_id": "c2",
+          "text": "- 蛾はチョウ目（鱗翅目）のうち、Rhopaloceraに分類されない生物の総称です。"
+        },
+        {
+          "claim_id": "c3",
+          "text": "- 蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。"
+        },
+        {
+          "claim_id": "c4",
+          "text": "- 蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。"
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 defines Chou (cho) as organisms classified under Rhopalocera within Lepidoptera.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 states Butterflies are Rhopalocera and other Lepidoptera species are called Moths.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_5092-5792 explicitly states the shape is symmetrical and named by analogy to wings spreading.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        },
+        {
+          "claim_id": "c4",
+          "label": "not_supported",
+          "reason": "Source states both butterflies and moths are Kanji words, but does not link moth's Kanji usage to difference from butterflies.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 4,
+        "input_tokens": 13251,
+        "output_tokens": 16908,
+        "elapsed_seconds": 326.5484459720319,
+        "generation_seconds": 326.49131155293435,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 3322,
+          "output_tokens": 4233,
+          "elapsed_seconds": 81.73302904097363,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3312,
+          "output_tokens": 4233,
+          "elapsed_seconds": 81.74743492901325,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3314,
+          "output_tokens": 4236,
+          "elapsed_seconds": 81.81252230802784,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3303,
+          "output_tokens": 4206,
+          "elapsed_seconds": 81.25545969401719,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "05f1f2bae27a4b68ea1b0c2188b6af3ffccd20d7d4b715f588cd481753a1b96c",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "trial_id": "original",
+      "document_ids": [
+        "51341927839684298188600788009_5092-5792",
+        "51341927839684298188600788009_5792-6556",
+        "48097352051897621373845584567_0-746",
+        "51341927839684298188600788009_6556-6786",
+        "51341927839684298188600788009_0-798"
+      ],
+      "score": 0.75,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "7d88f788771d9ca5d8b6acf8/original.json",
+      "json_schema_sha256": "9f4c8afbd42ffc631cbe8a8200d0df58f7dc43c668d91c703c0ed4fa85523fd1",
+      "result_sha256": "dbd195d05266e5c86e70400b8a93e74f1a0d8632f8e44f8f62d8c01880768a73",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "蛾と蝶の違いは以下の通りです： - 蝶はチョウ目（鱗翅目）のうち、Rhopaloceraに分類される生物の総称です。"
+        },
+        {
+          "claim_id": "c2",
+          "text": "- 蛾はチョウ目（鱗翅目）のうち、Rhopaloceraに分類されない生物の総称です。"
+        },
+        {
+          "claim_id": "c3",
+          "text": "- 蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。"
+        },
+        {
+          "claim_id": "c4",
+          "text": "- 蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。"
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 explicitly defines butterflies as organisms classified under Rhopalocera within order Lepidoptera.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 defines Butterflies as Rhopalocera within Lepidoptera and states other Lepidoptera species are Moths.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 5092-5792 explicitly states the symmetry and naming analogy details matching the claim.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        },
+        {
+          "claim_id": "c4",
+          "label": "not_supported",
+          "reason": "Source confirms moths are Kanji words but does not support the causal link to characteristic differences from butterflies (5092-5792).",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 4,
+        "input_tokens": 13251,
+        "output_tokens": 16844,
+        "elapsed_seconds": 325.03207125497283,
+        "generation_seconds": 324.973577768018,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 3322,
+          "output_tokens": 4232,
+          "elapsed_seconds": 81.59245280001778,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3312,
+          "output_tokens": 4238,
+          "elapsed_seconds": 81.62514178297715,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3314,
+          "output_tokens": 4205,
+          "elapsed_seconds": 81.23719596298179,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3303,
+          "output_tokens": 4169,
+          "elapsed_seconds": 80.57728070899611,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "dbd195d05266e5c86e70400b8a93e74f1a0d8632f8e44f8f62d8c01880768a73",
+      "shared_original_not_two_calls": true
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "trial_id": "repeat_5",
+      "document_ids": [
+        "51341927839684298188600788009_5092-5792",
+        "51341927839684298188600788009_5792-6556",
+        "48097352051897621373845584567_0-746",
+        "51341927839684298188600788009_6556-6786",
+        "51341927839684298188600788009_0-798"
+      ],
+      "score": 0.75,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "7d88f788771d9ca5d8b6acf8/repeat_5.json",
+      "json_schema_sha256": "9f4c8afbd42ffc631cbe8a8200d0df58f7dc43c668d91c703c0ed4fa85523fd1",
+      "result_sha256": "c166e1b171ed0040f64f42861e20636f11c4a03acd09ac4196896f51a27aa34f",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "蛾と蝶の違いは以下の通りです： - 蝶はチョウ目（鱗翅目）のうち、Rhopaloceraに分類される生物の総称です。"
+        },
+        {
+          "claim_id": "c2",
+          "text": "- 蛾はチョウ目（鱗翅目）のうち、Rhopaloceraに分類されない生物の総称です。"
+        },
+        {
+          "claim_id": "c3",
+          "text": "- 蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。"
+        },
+        {
+          "claim_id": "c4",
+          "text": "- 蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。"
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 explicitly defines butterflies as organisms classified under Rhopalocera within order Lepidoptera.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 defines Butterflies as Rhopalocera within Lepidoptera and states other Lepidoptera species are Moths.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 5092-5792 explicitly states the symmetry and naming analogy details matching the claim.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        },
+        {
+          "claim_id": "c4",
+          "label": "not_supported",
+          "reason": "Source confirms moths are Kanji words but does not support the causal link to characteristic differences from butterflies (5092-5792).",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 4,
+        "input_tokens": 13251,
+        "output_tokens": 16844,
+        "elapsed_seconds": 325.37111043703044,
+        "generation_seconds": 325.31205519806826,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 3322,
+          "output_tokens": 4232,
+          "elapsed_seconds": 81.70419402804691,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3312,
+          "output_tokens": 4238,
+          "elapsed_seconds": 81.82427431299584,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3314,
+          "output_tokens": 4205,
+          "elapsed_seconds": 81.25160699797561,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3303,
+          "output_tokens": 4169,
+          "elapsed_seconds": 80.59103509801207,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "c166e1b171ed0040f64f42861e20636f11c4a03acd09ac4196896f51a27aa34f",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "trial_id": "repeat_2",
+      "document_ids": [
+        "51341927839684298188600788009_5092-5792",
+        "51341927839684298188600788009_5792-6556",
+        "48097352051897621373845584567_0-746",
+        "51341927839684298188600788009_6556-6786",
+        "51341927839684298188600788009_0-798"
+      ],
+      "score": 0.75,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "7d88f788771d9ca5d8b6acf8/repeat_2.json",
+      "json_schema_sha256": "9f4c8afbd42ffc631cbe8a8200d0df58f7dc43c668d91c703c0ed4fa85523fd1",
+      "result_sha256": "95dbe77049a7c3098de264ae518856080e586aaeb74d23dcf5cdd849e4881fbe",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "蛾と蝶の違いは以下の通りです： - 蝶はチョウ目（鱗翅目）のうち、Rhopaloceraに分類される生物の総称です。"
+        },
+        {
+          "claim_id": "c2",
+          "text": "- 蛾はチョウ目（鱗翅目）のうち、Rhopaloceraに分類されない生物の総称です。"
+        },
+        {
+          "claim_id": "c3",
+          "text": "- 蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。"
+        },
+        {
+          "claim_id": "c4",
+          "text": "- 蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。"
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 explicitly defines butterflies as organisms classified under Rhopalocera within order Lepidoptera.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 defines Butterflies as Rhopalocera within Lepidoptera and states other Lepidoptera species are Moths.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 5092-5792 explicitly states the symmetry and naming analogy details matching the claim.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        },
+        {
+          "claim_id": "c4",
+          "label": "not_supported",
+          "reason": "Source confirms moths are Kanji words but does not support the causal link to characteristic differences from butterflies (5092-5792).",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 4,
+        "input_tokens": 13251,
+        "output_tokens": 16844,
+        "elapsed_seconds": 325.2071690208977,
+        "generation_seconds": 325.14623580296757,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 3322,
+          "output_tokens": 4232,
+          "elapsed_seconds": 81.46057522896444,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3312,
+          "output_tokens": 4238,
+          "elapsed_seconds": 81.8277857839712,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3314,
+          "output_tokens": 4205,
+          "elapsed_seconds": 81.28982429299504,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3303,
+          "output_tokens": 4169,
+          "elapsed_seconds": 80.62898371496703,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "95dbe77049a7c3098de264ae518856080e586aaeb74d23dcf5cdd849e4881fbe",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "trial_id": "shuffle_2",
+      "document_ids": [
+        "48097352051897621373845584567_0-746",
+        "51341927839684298188600788009_0-798",
+        "51341927839684298188600788009_5792-6556",
+        "51341927839684298188600788009_6556-6786",
+        "51341927839684298188600788009_5092-5792"
+      ],
+      "score": 0.5,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "7d88f788771d9ca5d8b6acf8/shuffle_2.json",
+      "json_schema_sha256": "9f4c8afbd42ffc631cbe8a8200d0df58f7dc43c668d91c703c0ed4fa85523fd1",
+      "result_sha256": "48ec70474043709b482274197fffda8b35b15abf302678029feb1f646df581b3",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "蛾と蝶の違いは以下の通りです： - 蝶はチョウ目（鱗翅目）のうち、Rhopaloceraに分類される生物の総称です。"
+        },
+        {
+          "claim_id": "c2",
+          "text": "- 蛾はチョウ目（鱗翅目）のうち、Rhopaloceraに分類されない生物の総称です。"
+        },
+        {
+          "claim_id": "c3",
+          "text": "- 蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。"
+        },
+        {
+          "claim_id": "c4",
+          "text": "- 蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。"
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passage 51341927839684298188600788009_0-798 explicitly states Chou (Butterfly) is the general term for organisms classified under Rhopalocera within Lepidoptera",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 defines Butterflies as Rhopalocera and states other Lepidoptera species are called Moths, supporting the claim.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "not_supported",
+          "reason": "Source describes shapes named after butterflies, not butterflies themselves being named.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        },
+        {
+          "claim_id": "c4",
+          "label": "not_supported",
+          "reason": "Source states both butterflies and moths are Chinese words, but does not link Kanji usage to characteristic differences from butterflies.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 4,
+        "input_tokens": 13251,
+        "output_tokens": 16880,
+        "elapsed_seconds": 326.21627245104173,
+        "generation_seconds": 326.1539876660099,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 3322,
+          "output_tokens": 4241,
+          "elapsed_seconds": 81.90433970402228,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3312,
+          "output_tokens": 4240,
+          "elapsed_seconds": 81.95614802202908,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3314,
+          "output_tokens": 4195,
+          "elapsed_seconds": 81.10969244199805,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3303,
+          "output_tokens": 4204,
+          "elapsed_seconds": 81.24609228299232,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "48ec70474043709b482274197fffda8b35b15abf302678029feb1f646df581b3",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "trial_id": "reversed",
+      "document_ids": [
+        "51341927839684298188600788009_0-798",
+        "51341927839684298188600788009_6556-6786",
+        "48097352051897621373845584567_0-746",
+        "51341927839684298188600788009_5792-6556",
+        "51341927839684298188600788009_5092-5792"
+      ],
+      "score": 0.75,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "7d88f788771d9ca5d8b6acf8/reversed.json",
+      "json_schema_sha256": "9f4c8afbd42ffc631cbe8a8200d0df58f7dc43c668d91c703c0ed4fa85523fd1",
+      "result_sha256": "d8702d23b237a5dcb9dd078c34e716e33946b7261185581aa8b1b89a6e87bebc",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "蛾と蝶の違いは以下の通りです： - 蝶はチョウ目（鱗翅目）のうち、Rhopaloceraに分類される生物の総称です。"
+        },
+        {
+          "claim_id": "c2",
+          "text": "- 蛾はチョウ目（鱗翅目）のうち、Rhopaloceraに分類されない生物の総称です。"
+        },
+        {
+          "claim_id": "c3",
+          "text": "- 蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。"
+        },
+        {
+          "claim_id": "c4",
+          "text": "- 蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。"
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 explicitly defines Chou (Butterfly) as organisms classified under Rhopalocera within Lepidoptera. No conflicts found.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 defines Butterflies as Rhopalocera within Lepidoptera and Moths as other Lepidoptera species, supporting the claim.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 5092-5792 explicitly states shapes symmetrical with spreading ends are named by analogy to a butterfly's wings.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        },
+        {
+          "claim_id": "c4",
+          "label": "not_supported",
+          "reason": "Source states both butterfly and moth are Kanji words compared to other insects, not that moths are Kanji because they differ from butterflies.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 4,
+        "input_tokens": 13251,
+        "output_tokens": 15300,
+        "elapsed_seconds": 296.0926350460504,
+        "generation_seconds": 296.0314926430001,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 3322,
+          "output_tokens": 4240,
+          "elapsed_seconds": 81.88755551702343,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3312,
+          "output_tokens": 4243,
+          "elapsed_seconds": 82.01937785802875,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3314,
+          "output_tokens": 4211,
+          "elapsed_seconds": 81.4546726240078,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3303,
+          "output_tokens": 2606,
+          "elapsed_seconds": 50.73102904699044,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "d8702d23b237a5dcb9dd078c34e716e33946b7261185581aa8b1b89a6e87bebc",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "trial_id": "repeat_4",
+      "document_ids": [
+        "51341927839684298188600788009_5092-5792",
+        "51341927839684298188600788009_5792-6556",
+        "48097352051897621373845584567_0-746",
+        "51341927839684298188600788009_6556-6786",
+        "51341927839684298188600788009_0-798"
+      ],
+      "score": 0.75,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "7d88f788771d9ca5d8b6acf8/repeat_4.json",
+      "json_schema_sha256": "9f4c8afbd42ffc631cbe8a8200d0df58f7dc43c668d91c703c0ed4fa85523fd1",
+      "result_sha256": "3fc47cd62af9e7005b6b308074c7d9a2dd7f5d7855259c8ec4669feaba291be0",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "蛾と蝶の違いは以下の通りです： - 蝶はチョウ目（鱗翅目）のうち、Rhopaloceraに分類される生物の総称です。"
+        },
+        {
+          "claim_id": "c2",
+          "text": "- 蛾はチョウ目（鱗翅目）のうち、Rhopaloceraに分類されない生物の総称です。"
+        },
+        {
+          "claim_id": "c3",
+          "text": "- 蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。"
+        },
+        {
+          "claim_id": "c4",
+          "text": "- 蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。"
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 explicitly defines butterflies as organisms classified under Rhopalocera within order Lepidoptera.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 defines Butterflies as Rhopalocera within Lepidoptera and states other Lepidoptera species are Moths.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 5092-5792 explicitly states the symmetry and naming analogy details matching the claim.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        },
+        {
+          "claim_id": "c4",
+          "label": "not_supported",
+          "reason": "Source confirms moths are Kanji words but does not support the causal link to characteristic differences from butterflies (5092-5792).",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 4,
+        "input_tokens": 13251,
+        "output_tokens": 16844,
+        "elapsed_seconds": 325.49753010703716,
+        "generation_seconds": 325.4374959379202,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 3322,
+          "output_tokens": 4232,
+          "elapsed_seconds": 81.76197457604576,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3312,
+          "output_tokens": 4238,
+          "elapsed_seconds": 81.84339914697921,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3314,
+          "output_tokens": 4205,
+          "elapsed_seconds": 81.26735010801349,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3303,
+          "output_tokens": 4169,
+          "elapsed_seconds": 80.62480627599871,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "3fc47cd62af9e7005b6b308074c7d9a2dd7f5d7855259c8ec4669feaba291be0",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "trial_id": "shuffle_1",
+      "document_ids": [
+        "51341927839684298188600788009_0-798",
+        "48097352051897621373845584567_0-746",
+        "51341927839684298188600788009_5792-6556",
+        "51341927839684298188600788009_6556-6786",
+        "51341927839684298188600788009_5092-5792"
+      ],
+      "score": 0.75,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "7d88f788771d9ca5d8b6acf8/shuffle_1.json",
+      "json_schema_sha256": "9f4c8afbd42ffc631cbe8a8200d0df58f7dc43c668d91c703c0ed4fa85523fd1",
+      "result_sha256": "812a244536dd15c675a9495c11a6f934c746a63ca50977b0b400c2e76dede984",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "蛾と蝶の違いは以下の通りです： - 蝶はチョウ目（鱗翅目）のうち、Rhopaloceraに分類される生物の総称です。"
+        },
+        {
+          "claim_id": "c2",
+          "text": "- 蛾はチョウ目（鱗翅目）のうち、Rhopaloceraに分類されない生物の総称です。"
+        },
+        {
+          "claim_id": "c3",
+          "text": "- 蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。"
+        },
+        {
+          "claim_id": "c4",
+          "text": "- 蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。"
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 51341927839684298188600788009_0-798 explicitly defines butterflies as Rhopalocera within Lepidoptera order.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source defines Butterflies as Rhopalocera within Lepidoptera and states other Lepidoptera species are called Moths, supporting the claim that Moths are non-Rhop",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_0-798",
+              "quote": "チョウ\n生息年代: 始新世-現世\nミヤマカラスアゲハ Papilio maackii\n分類\n界\n:\n動物界 Animalia\n門\n:\n節足動物門 Arthropoda\n綱\n:\n昆虫綱 Insecta\n目\n:\nチョウ目（鱗翅目） Lepidoptera\n亜目\n:\nGlossata\n階級なし\n:\nNeolepidoptera\n下目\n:\nHeteroneura\n階級なし\n:\n二門類 Ditrysia\n階級なし\n:\nチョウ Rhopalocera\n学名\nRhopalocera Duméril, 1823\n英名\nButterfly\n上科\nアゲハチョウ上科 Papilionoidea\nセセリチョウ上科 Hesperioidea\nシャクガモドキ上科 Hedyloidea\nチョウ（蝶）は、昆虫綱チョウ目（鱗翅目、ガ目とも）のうち、Rhopalocera に分類される生物の総称である。\nチョウ目の21上科のうち、アゲハチョウ上科、セセリチョウ上科、シャクガモドキ上科の3上科が、いくつかの特徴を共有し、Rhopalocera に分類される、すなわちチョウである。\nその他のチョウ目の種はガ（蛾）と呼ばれるが、チョウはチョウ目の系統の中でかなり深いところにある派生的な系統で、それに対しガは「チョウでない」としか定義できない側系統であり、チョウ目をチョウとガに分けるのは自然な分類ではない。（チョウ目#チョウとガの区別参照）しかし、一般には完全に区別して扱われる。\n分布\n南極大陸、大きな砂漠の中心部、万年氷床となる標高6,000メートル以上の高山帯を除く全世界の森林・草原・高山など、ほぼ全ての陸上環境に分布する。広い分布域を持つものもいれば、その地域の環境に特異的に適応したものもいる。17,600種ほどが知られている。\n日本では250種類ほどが知られている。\n→詳細は「日本のチョウ」を参照\n特徴\n"
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 5092-5792 states symmetrical shapes with spreading ends are sometimes named by analogy to a butterfly spreading wings, supporting the claim's description",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        },
+        {
+          "claim_id": "c4",
+          "label": "not_supported",
+          "reason": "Source states both are Chinese words but does not link naming to characteristic difference.",
+          "evidence": [
+            {
+              "passage_id": "51341927839684298188600788009_5092-5792",
+              "quote": "奥州白石では、チョウが大好きだった女性が死に、遺体から虫が湧いて無数のチョウと化したという話が伝わる。また秋田県上総川の上流で、かつて備中という侍が沼に落ちて死に、チョウに化身して沼に住み着き、現在に至るまで曇った日や月の夜に飛び上がって人を脅かすという。そのことからこの沼を備中沼、または別蝶沼ともいう。\n害虫\n幼虫はイモムシであり草食なので、食草が栽培植物であれば害虫扱いされる。日本ではモンシロチョウがキャベツなどアブラナ科の野菜、アゲハチョウ類がミカン類、キアゲハがニンジンなどのセリ科の害虫とされている。\n17世紀上半期 兜\n言葉\n左右対称でその各端が広がっている形状を、蝶が羽を開いた姿に例えて呼称することがある。「蝶ねじ」「蝶番」「蝶ネクタイ」「蝶結び」「バタフライ」「バタフライ・ノット」など。\n花札の絵柄の一つに「牡丹に蝶」がある。「萩に猪」「紅葉に鹿」と組み合わせると「猪鹿蝶」という役になる。\n日本語では、ハエ、ハチ、バッタ、トンボ、セミなど多くの虫の名称が大和言葉（固有語）であるのに対し、この蝶と蛾に関しては漢語である。蝶や蛾もかつては、かはひらこ、ひひる、ひむし、といった大和言葉で呼ばれていたが、現在ではそのような名称は一般的ではない。\n万葉集には、蝶を読んだ歌は一つもない。\n「蝶」は中国の名であり、日本語では本来「てこな」「てんがらこ」「かはびらこ」などと言う。\n揚羽蝶（あげはちょう）\n対い蝶（むかいちょう）\n備前蝶（びぜんちょう）\n家紋\n家紋に、「蝶紋（ちょうもん）」がある。桓武平氏の一族やそれを称する一族、末裔を称する一族などによって用いられることがあった。"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 4,
+        "input_tokens": 13251,
+        "output_tokens": 16332,
+        "elapsed_seconds": 315.6460570350755,
+        "generation_seconds": 315.5854833649937,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 3322,
+          "output_tokens": 3706,
+          "elapsed_seconds": 71.63947812200058,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3312,
+          "output_tokens": 4215,
+          "elapsed_seconds": 81.41061165701831,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3314,
+          "output_tokens": 4215,
+          "elapsed_seconds": 81.47530988504877,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 3303,
+          "output_tokens": 4196,
+          "elapsed_seconds": 81.12065737100784,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "812a244536dd15c675a9495c11a6f934c746a63ca50977b0b400c2e76dede984",
+      "shared_original_not_two_calls": false
+    }
+  ],
+  "policy_outcomes": [
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "route": "no_repair",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "32047bd717f1dea860d7f876f988d04fd3c8a6885c65c97f89146f17146b6081",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 1,
+      "recorded_completion_attempts": 1,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 2826,
+      "output_tokens": 137,
+      "summed_step_seconds": 1.5150566239608452,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "route": "always_rewrite",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "f3627593a50ccc730f0bebf157587bbe32d33bb72b7df55380556198de18a51f",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 2,
+      "recorded_completion_attempts": 2,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 5828,
+      "output_tokens": 4153,
+      "summed_step_seconds": 78.97441163496114,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "route": "original",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "32047bd717f1dea860d7f876f988d04fd3c8a6885c65c97f89146f17146b6081",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 16077,
+      "output_tokens": 16981,
+      "summed_step_seconds": 326.5475707059377,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "route": "reversed",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "32047bd717f1dea860d7f876f988d04fd3c8a6885c65c97f89146f17146b6081",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 16077,
+      "output_tokens": 15437,
+      "summed_step_seconds": 297.60813449701527,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "route": "shuffle_1",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "32047bd717f1dea860d7f876f988d04fd3c8a6885c65c97f89146f17146b6081",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 16077,
+      "output_tokens": 16469,
+      "summed_step_seconds": 317.16155648604035,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "route": "shuffle_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "f3627593a50ccc730f0bebf157587bbe32d33bb72b7df55380556198de18a51f",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 6,
+      "recorded_completion_attempts": 6,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 19079,
+      "output_tokens": 21033,
+      "summed_step_seconds": 405.1911269130069,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "route": "shuffle_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "32047bd717f1dea860d7f876f988d04fd3c8a6885c65c97f89146f17146b6081",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 16077,
+      "output_tokens": 17045,
+      "summed_step_seconds": 328.06394542299677,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "route": "repeat_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "32047bd717f1dea860d7f876f988d04fd3c8a6885c65c97f89146f17146b6081",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 16077,
+      "output_tokens": 16981,
+      "summed_step_seconds": 326.72266847186256,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "route": "repeat_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "32047bd717f1dea860d7f876f988d04fd3c8a6885c65c97f89146f17146b6081",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 16077,
+      "output_tokens": 16981,
+      "summed_step_seconds": 326.92401978798443,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "route": "repeat_4",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "32047bd717f1dea860d7f876f988d04fd3c8a6885c65c97f89146f17146b6081",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 16077,
+      "output_tokens": 16981,
+      "summed_step_seconds": 327.013029558002,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_ja_7d88f788771d9ca5d8b6acf8",
+      "cohort": "cal",
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:240",
+      "route": "repeat_5",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "32047bd717f1dea860d7f876f988d04fd3c8a6885c65c97f89146f17146b6081",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 16077,
+      "output_tokens": 16981,
+      "summed_step_seconds": 326.8866098879953,
+      "incomplete": false
+    }
+  ],
+  "original_file_copies": [
+    "provenance/cases/case_02/trace.json",
+    "provenance/cases/case_02/summary.json",
+    "provenance/cases/case_02/rewrite.json",
+    "provenance/cases/case_02/original.claims/c1.json",
+    "provenance/cases/case_02/original.claims/c2.json",
+    "provenance/cases/case_02/original.claims/c3.json",
+    "provenance/cases/case_02/original.claims/c4.json",
+    "provenance/cases/case_02/repeat_2.claims/c1.json",
+    "provenance/cases/case_02/repeat_2.claims/c2.json",
+    "provenance/cases/case_02/repeat_2.claims/c3.json",
+    "provenance/cases/case_02/repeat_2.claims/c4.json",
+    "provenance/cases/case_02/repeat_3.claims/c1.json",
+    "provenance/cases/case_02/repeat_3.claims/c2.json",
+    "provenance/cases/case_02/repeat_3.claims/c3.json",
+    "provenance/cases/case_02/repeat_3.claims/c4.json",
+    "provenance/cases/case_02/repeat_4.claims/c1.json",
+    "provenance/cases/case_02/repeat_4.claims/c2.json",
+    "provenance/cases/case_02/repeat_4.claims/c3.json",
+    "provenance/cases/case_02/repeat_4.claims/c4.json",
+    "provenance/cases/case_02/repeat_5.claims/c1.json",
+    "provenance/cases/case_02/repeat_5.claims/c2.json",
+    "provenance/cases/case_02/repeat_5.claims/c3.json",
+    "provenance/cases/case_02/repeat_5.claims/c4.json",
+    "provenance/cases/case_02/reversed.claims/c1.json",
+    "provenance/cases/case_02/reversed.claims/c2.json",
+    "provenance/cases/case_02/reversed.claims/c3.json",
+    "provenance/cases/case_02/reversed.claims/c4.json",
+    "provenance/cases/case_02/shuffle_1.claims/c1.json",
+    "provenance/cases/case_02/shuffle_1.claims/c2.json",
+    "provenance/cases/case_02/shuffle_1.claims/c3.json",
+    "provenance/cases/case_02/shuffle_1.claims/c4.json",
+    "provenance/cases/case_02/shuffle_2.claims/c1.json",
+    "provenance/cases/case_02/shuffle_2.claims/c2.json",
+    "provenance/cases/case_02/shuffle_2.claims/c3.json",
+    "provenance/cases/case_02/shuffle_2.claims/c4.json",
+    "provenance/cases/case_02/shuffle_3.claims/c1.json",
+    "provenance/cases/case_02/shuffle_3.claims/c2.json",
+    "provenance/cases/case_02/shuffle_3.claims/c3.json",
+    "provenance/cases/case_02/shuffle_3.claims/c4.json"
+  ]
+}

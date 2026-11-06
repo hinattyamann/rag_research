@@ -1,7 +1,7 @@
 # 論文執筆用の共有資料
 
 研究室PCの既存成果から抽出・検証し、Git共有する執筆資料を格納する。
-初回の出力予定先は fixed_v23_v1/。**現時点でこの資料集はまだ作成・転送されていない。**
+2026-11-06、既存Main/Calの80問に限った[固定v23資料集](fixed_v23_v1/README.md)を抽出した。検証方法・取込元・不足情報は[引継ぎ](../notes/materials_handoff.md)を参照する。
 
 [研究室PC用の実行プロンプト](../notes/lab_pc_git_materials_prompt.md)に、共有範囲・必要な内容・検証・Push手順を定める。
 元Run・全Corpus・モデル・Indexをそのまま置く場所ではない。

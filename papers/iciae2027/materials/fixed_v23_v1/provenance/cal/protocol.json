@@ -1,0 +1,373 @@
+{
+  "version": "fixed-v23-additional-calibration-v1",
+  "configs": {
+    "en": {
+      "schema_version": 1,
+      "study_version": "fixed-v23-additional-cal-v1-en",
+      "purpose": "phase11-bilingual-calibration-candidate",
+      "status": "candidate_not_frozen",
+      "baseline_config": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+      "prompts": "configs/phase11_semantic_prompts_en_v12.yaml",
+      "quality_rubric_version": "order-quality-pilot-v1",
+      "data": {
+        "split": "development",
+        "answerable_only": true,
+        "record_ids": [
+          "clapnq:c508d78:train:4785505644437778470:answerable",
+          "clapnq:c508d78:train:-5110788854487138343:answerable",
+          "clapnq:c508d78:train:-7372791785008475487:answerable",
+          "clapnq:c508d78:dev:-2652183708580968768:answerable",
+          "clapnq:c508d78:train:-5607690022829878056:answerable",
+          "clapnq:c508d78:train:-7318175597836867154:answerable",
+          "clapnq:c508d78:train:4340816326306561463:answerable",
+          "clapnq:c508d78:dev:-4015235538120941066:answerable",
+          "clapnq:c508d78:train:-8351626961304559570:answerable",
+          "clapnq:c508d78:train:-5898262852153213627:answerable",
+          "clapnq:c508d78:train:-588553238820942603:answerable",
+          "clapnq:c508d78:train:6842134809914363415:answerable",
+          "clapnq:c508d78:train:8711591614614982106:answerable",
+          "clapnq:c508d78:train:4157180524671955230:answerable",
+          "clapnq:c508d78:train:7444940798255485789:answerable",
+          "clapnq:c508d78:train:-6850152747785056705:answerable",
+          "clapnq:c508d78:train:-7371331706135275345:answerable",
+          "clapnq:c508d78:train:-5319683884407734497:answerable",
+          "clapnq:c508d78:train:-7880647666697668846:answerable",
+          "clapnq:c508d78:train:-5292625611113623071:answerable"
+        ]
+      },
+      "identity_manifest": "data/manifests/phase11_gpu_generation_manifest.json",
+      "auxiliary_runtime": {
+        "context_tokens": 12288,
+        "temperature": 0.2,
+        "seed": 42,
+        "threads": 6,
+        "batch_tokens": 128,
+        "repack": false,
+        "timeout_seconds": 1200,
+        "startup_timeout_seconds": 120
+      },
+      "tasks": {
+        "extract_claims": {
+          "max_output_tokens": 3072
+        },
+        "verify_claims": {
+          "max_output_tokens": 6144
+        },
+        "rewrite_answer": {
+          "max_output_tokens": 6144
+        }
+      },
+      "trials": {
+        "order_conditions": [
+          "original",
+          "reversed",
+          "shuffle_1",
+          "shuffle_2",
+          "shuffle_3"
+        ],
+        "shuffle_seed": 42,
+        "same_order_total_trials": 5,
+        "share_original_first_trial": true,
+        "execution_order_seed": 43,
+        "generation_seed_policy": "same_fixed_seed_for_every_trial",
+        "deduplicate_order_permutations": true,
+        "repeated_prompt_result_cache": false,
+        "regenerate_claims_per_trial": false,
+        "regenerate_answer_per_trial": false,
+        "repack_or_truncate_per_trial": false
+      },
+      "decision": {
+        "score": "supported_claims_divided_by_fixed_claims",
+        "threshold": 0.7,
+        "accept_when": "score_greater_than_or_equal_to_threshold",
+        "unscorable_action": "keep_initial_answer_with_separate_fallback_status",
+        "no_claims_score": null,
+        "sensitivity_thresholds": [
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "bare_refusal_policy": "rewrite_once"
+      },
+      "rewrite": {
+        "input_document_order": "original_used_context",
+        "include_initial_answer": true,
+        "include_judge_feedback": false,
+        "reuse_one_candidate_across_trials": true,
+        "retrieve_again": false,
+        "maximum_answer_candidates": 2,
+        "failure_action": "keep_initial_answer_with_rewrite_failed_status"
+      },
+      "errors": {
+        "automatic_retries": 0,
+        "input_overflow_action": "record_error_without_truncating",
+        "preserve_failed_attempts": true,
+        "resume_only_missing_trials": true,
+        "reject_protocol_hash_mismatch": true
+      },
+      "quality": {
+        "annotator": "Codex_AI",
+        "human_reviewed": false,
+        "internal_judge_is_quality_truth": false,
+        "llm_labels_are_final": false,
+        "hide": [
+          "condition",
+          "score",
+          "decision",
+          "answer_stage",
+          "judge_claims",
+          "judge_reasons"
+        ],
+        "outcomes": [
+          "reliable",
+          "unreliable",
+          "indeterminate"
+        ],
+        "save_reasons_and_evidence": true
+      },
+      "costs": {
+        "separate_collection_route_and_offline_costs": true,
+        "charge_reused_candidates_to_each_operational_route": true
+      },
+      "output_constraints": "thinking_json_passage_ids_v3",
+      "auxiliary_model_manifest": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+      "sampling": {
+        "version": "auxiliary-sampling-v1",
+        "top_k": 20,
+        "top_p": 0.95,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "repeat_last_n": 64,
+        "reasoning_budget_tokens": 4096,
+        "final_json_grammar": true,
+        "final_json_grammar_mode": "closing_tag_root_v3",
+        "reasoning_prefill_mode": "chatml_think_suffix_v1"
+      },
+      "execution": {
+        "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+        "gpu_layers": 99,
+        "device": "CUDA0",
+        "require_full_offload": true
+      },
+      "phase12_allowed": false,
+      "execution_scope": "fixed_v23_calibration_v1",
+      "language": "en",
+      "assets": "configs/phase11_bilingual_assets_v2.json",
+      "baseline_prompts": "configs/phase11_bilingual_initial_en_v1.yaml",
+      "verification_mode": "claimwise-v1",
+      "main_limits": {
+        "maximum_completion_attempts": 1660,
+        "maximum_new_qa_per_stage_session": 5,
+        "stop_on_any_task_error": true,
+        "automatic_refill": false
+      },
+      "analysis_split": "calibration"
+    },
+    "ja": {
+      "schema_version": 1,
+      "study_version": "fixed-v23-additional-cal-v1-ja",
+      "purpose": "phase11-bilingual-calibration-candidate",
+      "status": "candidate_not_frozen",
+      "baseline_config": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+      "prompts": "configs/phase11_semantic_prompts_ja_v12.yaml",
+      "quality_rubric_version": "order-quality-pilot-v1",
+      "data": {
+        "split": "calibration",
+        "answerable_only": true,
+        "record_ids": [
+          "whrja:02e85c8:answered:524",
+          "whrja:02e85c8:answered:1250",
+          "whrja:02e85c8:answered:1123",
+          "whrja:02e85c8:answered:234",
+          "whrja:02e85c8:answered:1254",
+          "whrja:02e85c8:answered:758",
+          "whrja:02e85c8:answered:803",
+          "whrja:02e85c8:answered:801",
+          "whrja:02e85c8:answered:903",
+          "whrja:02e85c8:answered:1208",
+          "whrja:02e85c8:answered:826",
+          "whrja:02e85c8:answered:783",
+          "whrja:02e85c8:answered:427",
+          "whrja:02e85c8:answered:240",
+          "whrja:02e85c8:answered:418",
+          "whrja:02e85c8:answered:1080",
+          "whrja:02e85c8:answered:782",
+          "whrja:02e85c8:answered:953",
+          "whrja:02e85c8:answered:290",
+          "whrja:02e85c8:answered:814"
+        ]
+      },
+      "identity_manifest": "data/manifests/phase11_gpu_generation_manifest.json",
+      "auxiliary_runtime": {
+        "context_tokens": 12288,
+        "temperature": 0.2,
+        "seed": 42,
+        "threads": 6,
+        "batch_tokens": 128,
+        "repack": false,
+        "timeout_seconds": 1200,
+        "startup_timeout_seconds": 120
+      },
+      "tasks": {
+        "extract_claims": {
+          "max_output_tokens": 3072
+        },
+        "verify_claims": {
+          "max_output_tokens": 6144
+        },
+        "rewrite_answer": {
+          "max_output_tokens": 6144
+        }
+      },
+      "trials": {
+        "order_conditions": [
+          "original",
+          "reversed",
+          "shuffle_1",
+          "shuffle_2",
+          "shuffle_3"
+        ],
+        "shuffle_seed": 42,
+        "same_order_total_trials": 5,
+        "share_original_first_trial": true,
+        "execution_order_seed": 43,
+        "generation_seed_policy": "same_fixed_seed_for_every_trial",
+        "deduplicate_order_permutations": true,
+        "repeated_prompt_result_cache": false,
+        "regenerate_claims_per_trial": false,
+        "regenerate_answer_per_trial": false,
+        "repack_or_truncate_per_trial": false
+      },
+      "decision": {
+        "score": "supported_claims_divided_by_fixed_claims",
+        "threshold": 0.7,
+        "accept_when": "score_greater_than_or_equal_to_threshold",
+        "unscorable_action": "keep_initial_answer_with_separate_fallback_status",
+        "no_claims_score": null,
+        "sensitivity_thresholds": [
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "bare_refusal_policy": "rewrite_once"
+      },
+      "rewrite": {
+        "input_document_order": "original_used_context",
+        "include_initial_answer": true,
+        "include_judge_feedback": false,
+        "reuse_one_candidate_across_trials": true,
+        "retrieve_again": false,
+        "maximum_answer_candidates": 2,
+        "failure_action": "keep_initial_answer_with_rewrite_failed_status"
+      },
+      "errors": {
+        "automatic_retries": 0,
+        "input_overflow_action": "record_error_without_truncating",
+        "preserve_failed_attempts": true,
+        "resume_only_missing_trials": true,
+        "reject_protocol_hash_mismatch": true
+      },
+      "quality": {
+        "annotator": "Codex_AI",
+        "human_reviewed": false,
+        "internal_judge_is_quality_truth": false,
+        "llm_labels_are_final": false,
+        "hide": [
+          "condition",
+          "score",
+          "decision",
+          "answer_stage",
+          "judge_claims",
+          "judge_reasons"
+        ],
+        "outcomes": [
+          "reliable",
+          "unreliable",
+          "indeterminate"
+        ],
+        "save_reasons_and_evidence": true
+      },
+      "costs": {
+        "separate_collection_route_and_offline_costs": true,
+        "charge_reused_candidates_to_each_operational_route": true
+      },
+      "output_constraints": "thinking_json_passage_ids_v3",
+      "auxiliary_model_manifest": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+      "sampling": {
+        "version": "auxiliary-sampling-v1",
+        "top_k": 20,
+        "top_p": 0.95,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "repeat_last_n": 64,
+        "reasoning_budget_tokens": 4096,
+        "final_json_grammar": true,
+        "final_json_grammar_mode": "closing_tag_root_v3",
+        "reasoning_prefill_mode": "chatml_think_suffix_v1"
+      },
+      "execution": {
+        "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+        "gpu_layers": 99,
+        "device": "CUDA0",
+        "require_full_offload": true
+      },
+      "phase12_allowed": false,
+      "execution_scope": "fixed_v23_calibration_v1",
+      "language": "ja",
+      "assets": "configs/phase11_bilingual_assets_v2.json",
+      "baseline_prompts": "configs/phase11_bilingual_initial_ja_v1.yaml",
+      "verification_mode": "claimwise-v1",
+      "main_limits": {
+        "maximum_completion_attempts": 1660,
+        "maximum_new_qa_per_stage_session": 5,
+        "stop_on_any_task_error": true,
+        "automatic_refill": false
+      },
+      "analysis_split": "calibration"
+    }
+  },
+  "source_splits": {
+    "en": "development",
+    "ja": "calibration"
+  },
+  "main_gate_passed": true,
+  "main_analysis_sha256": "abdc119684aebd2d5a7eacf170b24341dcb2a6b813a2c1f417e85ec560985232",
+  "original_release_sha256": "2daaff4a8ec97304cf08e82ce47e3881d42be93bf277d8fd5a081b84b14edbb8",
+  "minimum_comparable_main_per_language": 10,
+  "maximum_calls_per_language": 1660,
+  "maximum_new_qa_per_stage": 5,
+  "session_wall_seconds": 43200,
+  "total_wall_seconds": 259200,
+  "automatic_retries": 0,
+  "replacement_qa": false,
+  "token_limit_failure_policy": "same_as_main_recovery_v2",
+  "purpose": "additional_confirmation_not_tuning",
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "inputs": {
+    "/home/uchida/デスクトップ/code/rag_research/.tools/fixed-v23-automation-v1/main/analysis.private.json": "abdc119684aebd2d5a7eacf170b24341dcb2a6b813a2c1f417e85ec560985232",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1/all_annotations.seal.json": "f572ca7427d33b3fdb3f87d29aedf26b19376466ced099970f132cc1e2a6e848",
+    "/home/uchida/デスクトップ/code/rag_research/data/manifests/phase11_bilingual_calibration_selection_v1.json": "6c686867da6aeb8192b3bb3a8e1830d77a2af00c2186e3f440ca194a72e6f643",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/fixed-v23-release.json": "2daaff4a8ec97304cf08e82ce47e3881d42be93bf277d8fd5a081b84b14edbb8",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/fixed-v23-recovery-v2.json": "bea134d2d9074317203a57c0a1f32b7d2567930bcd07be447cb1eb37a5f43791",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/scripts/fixed_v23_automation_v1/common.py": "6d03d9c97484858b9a0f6944c800a83eba2dd6af3b2e2a7ff652656af79757c5",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/scripts/fixed_v23_automation_v1/figures.py": "9c552309be36ca069f3c0f83a570dbbd1b47c9ed83858d48d1f4ec140cd52f0a",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/scripts/fixed_v23_automation_v1/pipeline.py": "0763556f8efb68ae4945b6b333b74d4a0fef0f4fcdd5c88b74aa12a639414096",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/scripts/fixed_v23_automation_v1/review.py": "068d77d390296b4a36f012cfc4aaa8a83e97b0e6cb4a10ad341d96d79742bc13",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/scripts/fixed_v23_automation_v1/service.py": "09c1e858944ac814127cce98f60c558f549385f84d062fc2d043d72245cca13e",
+    "/home/uchida/デスクトップ/code/rag_research/pyproject.toml": "21fb22bf9b62d0f9307602355ef706b216922e291346f595aa1e7bd07d699e23",
+    "/home/uchida/デスクトップ/code/rag_research/uv.lock": "d8929ddebed9ee6e7634a47924adf5525c3719918ec78cb676bba5287f9d49a7",
+    "/home/uchida/デスクトップ/code/rag_research/docs/order_quality_rubric.md": "11118d7840e616edb5ff2b999ce5b239a141c2747751e2cca13d26d10d040b79",
+    "/home/uchida/デスクトップ/code/rag_research/docs/phase11_statistical_plan.md": "225a9210c6226abf623cdbd993f6894a6485396059fe2163c48129f4624d2a1a",
+    "/home/uchida/デスクトップ/code/rag_research/docs/ai_quality_protocol.md": "a8c3f145a682702bb756b6aa3068aea4e13d77fdfd9c34650bbc8ad59db1a83a",
+    "/home/uchida/デスクトップ/code/rag_research/configs/phase11_bilingual_calibration_selection_policy_v1.json": "7ebac8c3d50f7347ee96336d71368f2a2c3a186fc84ca4cfce51626a69a971a5",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/fixed-v23-recovery-v3.json": "b7570ccad187f360ddd88d8424ae428657b624cbce4653a630aa33a3c4733020",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/scripts/recover_fixed_v23_v3.py": "e8505941dc613c2fb64654697ee7fae401bd99e5e02b8c4be812ee5b1e35b6e5",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/fixed-v23-recover-v3.sh": "7de33de1229314ef41a8aa7bdb599ec1288174ccb8917dde7c5e6da78218ce49",
+    "/home/uchida/デスクトップ/code/rag_research/data/manifests/fixed_v23_main_monitor_interruption_v1.json": "e9093ef864362fae1971d1e57fc2f95ae7474ecaecb5aac9e97dc778b3e5b836"
+  }
+}

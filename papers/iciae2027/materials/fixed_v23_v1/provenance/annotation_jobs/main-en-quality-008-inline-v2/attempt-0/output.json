@@ -1,0 +1,104 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "Q-40948a44d2ad058c8ce9",
+      "candidate_sha256": "25d025ac7056972c16bdf737526e22805a97f5bfec344cdc7d8e18581cd96db5",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      },
+      "essential_points": "Identify Michael Jackson as the most awarded recording artist according to the supplied context.",
+      "reason": "The identification is supported by an actual document, which explicitly calls Jackson the most awarded recording artist. However, the answer's supporting comparison is materially misleading: 13 Grammys does not distinguish Jackson from Fitzgerald, and Houston is explicitly credited with 415 career awards. The assertion that no other artist is mentioned with such a high award count is not supported by the actual context. The reference supports the identification but does not repair this faulty comparison.",
+      "evidence": [
+        {
+          "passage_id": "856668085_1212-2253",
+          "quote": "Jackson has also won hundreds of other awards , making him the most awarded recording artist in the history of popular music ."
+        },
+        {
+          "passage_id": "845152698_12415-13495",
+          "quote": "In her lifetime , she won 13 Grammy awards and sold over 40 million albums ."
+        },
+        {
+          "passage_id": "818789759_77871-78521",
+          "quote": "Houston was the most awarded female artist of all time , according to Guinness World Records , with two Emmy Awards , six Grammy Awards , 30 Billboard Music Awards , 22 American Music Awards , among a total of 415 career awards as of 2010 ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-bc492c4c0bc0344ed3ac",
+      "candidate_sha256": "3b9bed94a437a85cc6037f7f7b9a62b67bfe79d522fa413f50fc6e25374647bd",
+      "label": "reliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Answer yes: the Filipino alphabet includes f.",
+      "reason": "The answer directly supplies the required yes and accurately describes both cited actual documents. The lowercase listing explicitly includes f, and the second passage confirms inclusion of the entire ISO basic Latin alphabet. The reference agrees; support is independently present in the actual context.",
+      "evidence": [
+        {
+          "passage_id": "805398005_1092-1280",
+          "quote": "Lower case d f g h i j k l m n ñ ng o p q r s u w x y z"
+        },
+        {
+          "passage_id": "805398005_78-780",
+          "quote": "The Modern Filipino alphabet is made up of 28 letters , which includes the entire 26 - letter set of the ISO basic Latin alphabet , the Spanish Ñ and the Ng digraph of Tagalog ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-4b88064f5071f965c4c8",
+      "candidate_sha256": "fd5ef3c9c8db6e91e1219850cfdcc08ad2a70f043158aba3631205b9d318061e",
+      "label": "reliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Explain that the early Crusades sought Jerusalem and the Holy Land from Muslim control, with the First Crusade called in response to Byzantine requests for military aid.",
+      "reason": "The answer explains the territorial objective and the initiating request for Byzantine assistance, with all dates, actors, and the subsequent capture supported by actual documents. It appropriately limits its scope to the most commonly known Crusades. Reference-only material adds pilgrim access and a possible church-unification strategy, but those elaborations do not make this supported explanation materially incomplete.",
+      "evidence": [
+        {
+          "passage_id": "856995355_64191-65217",
+          "quote": "The crusades were intended to seize Jerusalem from Muslim control ."
+        },
+        {
+          "passage_id": "856995355_64191-65217",
+          "quote": "The First Crusade was proclaimed by Pope Urban II ( pope 1088 -- 99 ) at the Council of Clermont in 1095 in response to a request from the Byzantine Emperor Alexios I Komnenos ( r . 1081 -- 1118 ) for aid against further Muslim advances ."
+        },
+        {
+          "passage_id": "856995355_64191-65217",
+          "quote": "Tens of thousands of people from all levels of society mobilised across Europe and captured Jerusalem in 1099 ."
+        },
+        {
+          "passage_id": "801426592_1933-2570",
+          "quote": "The most commonly known Crusades were the campaigns in the Eastern Mediterranean aimed at recovering the Holy Land from Muslim rule , but the term `` Crusades '' is also applied to other church - sanctioned campaigns ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-dc116da75828898c5a63",
+      "candidate_sha256": "e7271db3b85d37ae70bec2ab455de3706a7769027bd0d1ac77989c7af94440a0",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      },
+      "essential_points": "Answer yes: the Filipino alphabet includes f.",
+      "reason": "The answer inappropriately abstains despite an explicit lowercase f in the actual context. Its claim that the passages provide insufficient information conflicts with that listing, and it omits the required yes. The reference agrees with the affirmative answer, but the failure is established directly by the actual documents.",
+      "evidence": [
+        {
+          "passage_id": "805398005_1092-1280",
+          "quote": "Lower case d f g h i j k l m n ñ ng o p q r s u w x y z"
+        },
+        {
+          "passage_id": "805398005_78-780",
+          "quote": "The Modern Filipino alphabet is made up of 28 letters , which includes the entire 26 - letter set of the ISO basic Latin alphabet , the Spanish Ñ and the Ng digraph of Tagalog ."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1249 @@
+{
+  "type": "object",
+  "properties": {
+    "annotations": {
+      "type": "object",
+      "properties": {
+        "a000": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a001": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a002": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a003": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a004": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a005": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a006": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a007": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a008": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013",
+                      "e0014"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a009": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a010": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a011": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a012": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a013": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a014": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a015": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018",
+                      "e0019"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "a000",
+        "a001",
+        "a002",
+        "a003",
+        "a004",
+        "a005",
+        "a006",
+        "a007",
+        "a008",
+        "a009",
+        "a010",
+        "a011",
+        "a012",
+        "a013",
+        "a014",
+        "a015"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "annotations"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "annotations": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "properties": {
+          "annotation_id": {
+            "type": "string"
+          },
+          "unit_candidate_sha256": {
+            "type": "string"
+          },
+          "claim_id": {
+            "type": "string"
+          },
+          "claim_text_sha256": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string",
+            "enum": [
+              "supported",
+              "contradicted",
+              "not_supported",
+              "ambiguous"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "passage_id": {
+                  "type": "string"
+                },
+                "quote": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "passage_id",
+                "quote"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "annotation_id",
+          "unit_candidate_sha256",
+          "claim_id",
+          "claim_text_sha256",
+          "label",
+          "reason",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "annotations"
+  ],
+  "additionalProperties": false
+}

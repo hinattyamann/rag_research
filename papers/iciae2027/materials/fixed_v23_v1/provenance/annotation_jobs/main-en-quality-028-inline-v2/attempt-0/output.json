@@ -1,0 +1,100 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "Q-e309d617345f63002c91",
+      "candidate_sha256": "7d7076d2a8fdaa24dc536e577b1bac3ee6b82f663bc242eb50b19a31a9ce5e8a",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Identify the occasion when Katherine leaves Elena's body: Stefan stabs her after she kisses him at the Salvatore house.",
+      "reason": "The answer provides no requested event, so essential-answer completeness fails. Its statement about insufficient retrieved information is accurate: the actual context does not describe Katherine leaving Elena's body. The expected event is established only by reference-only gold, which cannot supply actual-context support.",
+      "evidence": [
+        {
+          "passage_id": "804222128_3246-3996",
+          "quote": "She kisses him and Stefan stabs her . Katherine collapses and leaves Elena 's body ."
+        },
+        {
+          "passage_id": "853989298_15093-16099",
+          "quote": "While everyone is distracted , Katherine steals Elena 's body and traps it in the boiler room to ensure Elena dies in the Hellfire ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-8f26d866675fa88ee9fc",
+      "candidate_sha256": "e3e523ccaaba571774e68a136701632c6aee466179a6d260e51dc6e68171a49f",
+      "label": "reliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Explain the initial aim of recovering Jerusalem from Muslim control and providing military assistance to the Byzantine emperor.",
+      "reason": "The answer gives the original territorial aim and the Byzantine request that prompted the First Crusade. Every additional detail is directly supported by the actual cited context. Reference-only gold adds pilgrim access and possible church unification motives, but their omission does not invalidate this substantive explanation.",
+      "evidence": [
+        {
+          "passage_id": "856995355_64191-65217",
+          "quote": "The crusades were intended to seize Jerusalem from Muslim control ."
+        },
+        {
+          "passage_id": "856995355_64191-65217",
+          "quote": "The First Crusade was proclaimed by Pope Urban II ( pope 1088 -- 99 ) at the Council of Clermont in 1095 in response to a request from the Byzantine Emperor Alexios I Komnenos ( r . 1081 -- 1118 ) for aid against further Muslim advances ."
+        },
+        {
+          "passage_id": "856995355_64191-65217",
+          "quote": "Tens of thousands of people from all levels of society mobilised across Europe and captured Jerusalem in 1099 ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-59be777d0e70d6f1a34a",
+      "candidate_sha256": "6cf7da7ba7ada31afdbe9194db36fdf982eca40b7a1ca0d44fde144788ac63e9",
+      "label": "reliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Identify the source of the Bronx's name; the actual context identifies the Bronx River as the region's immediate namesake.",
+      "reason": "The answer supplies a substantive, directly supported explanation of the immediate namesake, including the documented 1874 usage. Reference-only gold traces the name further back to Jonas Bronck through the river; that compatible deeper origin does not make the immediate-namesake answer incorrect. Omitting 'apparently' slightly strengthens the source's wording but does not constitute a major error here.",
+      "evidence": [
+        {
+          "passage_id": "854641588_7908-8944",
+          "quote": "The region was apparently named after the Bronx River and first appeared in the `` Annexed District of The Bronx '' created in 1874 out of part of Westchester County ."
+        },
+        {
+          "passage_id": "854641588_6761-7874",
+          "quote": "He eventually accumulated 500 acres ( 200 ha ) between the Harlem River and the Aquahung , which became known as Bronck 's River or the Bronx ( River ) ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-99ba16d931cfd7eaa5b2",
+      "candidate_sha256": "3301154319637809474858a3fab7ef69444837d54282ecd7d9d5067d10cc27b5",
+      "label": "reliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Distinguish Catalonia, an autonomous community of Spain, from Barcelona, its capital and largest city; Barcelona is also a province within Catalonia.",
+      "reason": "The answer clearly distinguishes the autonomous community from its capital city and correctly notes the province with the same name. All claims are supported by the actual cited passage, which also appears in gold.",
+      "evidence": [
+        {
+          "passage_id": "809180503_2081-3047",
+          "quote": "Catalonia ( Catalan : Catalunya , Occitan : Catalonha , Spanish : Cataluña ) is an autonomous community of Spain located on the northeastern extremity of the Iberian Peninsula ."
+        },
+        {
+          "passage_id": "809180503_2081-3047",
+          "quote": "Catalonia consists of four provinces : Barcelona , Girona , Lleida , and Tarragona ."
+        },
+        {
+          "passage_id": "809180503_2081-3047",
+          "quote": "The capital and largest city is Barcelona , the second-most populated municipality in Spain and the core of the seventh most populous urban area in the European Union ."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1374 @@
+{
+  "case_id": "case_01",
+  "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+  "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+  "cohort": "cal",
+  "language": "en",
+  "selection_rule": "First lexicographic unused en QA satisfying different_quality",
+  "post_outcome_explanatory_selection": true,
+  "mode": "different_quality",
+  "input_path": "inputs/cal_en_f94093f2dcb620bdcf4bdb09.json",
+  "trials": [
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "trial_id": "repeat_4",
+      "document_ids": [
+        "842827984_782-1199",
+        "846300055_19938-20339",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "835683107_33420-34043"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/repeat_4.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "d08c92449a25d5529cbf5b0d15ae7015a014f1629d68a2b00675d1031254395b",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The United States escalated its role in the Vietnam War due to the escalation of military advisers ordered to the Republic of Vietnam in 1964, bringing the total American troop level to 21,000."
+        },
+        {
+          "claim_id": "c2",
+          "text": "This increase was a direct response to the growing conflict and the need to support South Vietnam against North Vietnam's communist domination."
+        },
+        {
+          "claim_id": "c3",
+          "text": "The United States' involvement escalated further as it sought to prevent the spread of communism in Southeast Asia, aligning with its national security interests. and provide detailed information on the escalation and the broader context of U.S. involvement in Vietnam."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 846300055_19938-20339 explicitly states 5,000 advisers ordered in July 1964 to RVN, bringing total to 21,000.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources describe troop increase and general motivation separately; explicit causal link for specific increase not stated.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            },
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "not_supported",
+          "reason": "First part supported by 846300055_356-1813 on communism/security. Second part unsupported as meta-text not in sources.",
+          "evidence": [
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5831,
+        "output_tokens": 12615,
+        "elapsed_seconds": 240.51200816204073,
+        "generation_seconds": 240.39603864302626,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1950,
+          "output_tokens": 4217,
+          "elapsed_seconds": 80.44270524400054,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1929,
+          "output_tokens": 4201,
+          "elapsed_seconds": 80.07907372701447,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1952,
+          "output_tokens": 4197,
+          "elapsed_seconds": 79.99022919102572,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "d08c92449a25d5529cbf5b0d15ae7015a014f1629d68a2b00675d1031254395b",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "trial_id": "repeat_3",
+      "document_ids": [
+        "842827984_782-1199",
+        "846300055_19938-20339",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "835683107_33420-34043"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/repeat_3.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "ef95a14b893f2ef9c18682de4a7860bbbcefb373c2b715114310a954ce3b13b5",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The United States escalated its role in the Vietnam War due to the escalation of military advisers ordered to the Republic of Vietnam in 1964, bringing the total American troop level to 21,000."
+        },
+        {
+          "claim_id": "c2",
+          "text": "This increase was a direct response to the growing conflict and the need to support South Vietnam against North Vietnam's communist domination."
+        },
+        {
+          "claim_id": "c3",
+          "text": "The United States' involvement escalated further as it sought to prevent the spread of communism in Southeast Asia, aligning with its national security interests. and provide detailed information on the escalation and the broader context of U.S. involvement in Vietnam."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 846300055_19938-20339 explicitly states 5,000 advisers ordered in July 1964 to RVN, bringing total to 21,000.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources describe troop increase and general motivation separately; explicit causal link for specific increase not stated.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            },
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "not_supported",
+          "reason": "First part supported by 846300055_356-1813 on communism/security. Second part unsupported as meta-text not in sources.",
+          "evidence": [
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5831,
+        "output_tokens": 12615,
+        "elapsed_seconds": 240.1180222000694,
+        "generation_seconds": 240.08044354902813,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1950,
+          "output_tokens": 4217,
+          "elapsed_seconds": 80.29295289801667,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1929,
+          "output_tokens": 4201,
+          "elapsed_seconds": 79.94878929603146,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1952,
+          "output_tokens": 4197,
+          "elapsed_seconds": 79.87628000602126,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "ef95a14b893f2ef9c18682de4a7860bbbcefb373c2b715114310a954ce3b13b5",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "trial_id": "shuffle_2",
+      "document_ids": [
+        "835683107_33420-34043",
+        "846300055_19938-20339",
+        "841739696_22613-23156",
+        "842827984_782-1199",
+        "846300055_356-1813"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/shuffle_2.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "82ad590c874ec8aff82ad0520f2b125d372b52fcbe4516b5aeec108474469646",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The United States escalated its role in the Vietnam War due to the escalation of military advisers ordered to the Republic of Vietnam in 1964, bringing the total American troop level to 21,000."
+        },
+        {
+          "claim_id": "c2",
+          "text": "This increase was a direct response to the growing conflict and the need to support South Vietnam against North Vietnam's communist domination."
+        },
+        {
+          "claim_id": "c3",
+          "text": "The United States' involvement escalated further as it sought to prevent the spread of communism in Southeast Asia, aligning with its national security interests. and provide detailed information on the escalation and the broader context of U.S. involvement in Vietnam."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 846300055_19938-20339 confirms US advisers ordered to RVN in July 1964, bringing total troops to 21,000.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources describe increase and general motivation separately; no explicit causal link for 1964 increase to conflict/domination.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            },
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "not_supported",
+          "reason": "Factual motivation supported by 846300055_356-1813, but clause 'provide detailed information' lacks source basis and attributes document function to US.",
+          "evidence": [
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5831,
+        "output_tokens": 12622,
+        "elapsed_seconds": 240.54042929894058,
+        "generation_seconds": 240.50378388201352,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1950,
+          "output_tokens": 4212,
+          "elapsed_seconds": 80.23612719395896,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1929,
+          "output_tokens": 4207,
+          "elapsed_seconds": 80.11758154298877,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1952,
+          "output_tokens": 4203,
+          "elapsed_seconds": 80.18672056199284,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "82ad590c874ec8aff82ad0520f2b125d372b52fcbe4516b5aeec108474469646",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "trial_id": "repeat_2",
+      "document_ids": [
+        "842827984_782-1199",
+        "846300055_19938-20339",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "835683107_33420-34043"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/repeat_2.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "b94b2ae22ec988c315529aa15ba3ecc369e2db0e8193d93220e863f6e0324bd2",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The United States escalated its role in the Vietnam War due to the escalation of military advisers ordered to the Republic of Vietnam in 1964, bringing the total American troop level to 21,000."
+        },
+        {
+          "claim_id": "c2",
+          "text": "This increase was a direct response to the growing conflict and the need to support South Vietnam against North Vietnam's communist domination."
+        },
+        {
+          "claim_id": "c3",
+          "text": "The United States' involvement escalated further as it sought to prevent the spread of communism in Southeast Asia, aligning with its national security interests. and provide detailed information on the escalation and the broader context of U.S. involvement in Vietnam."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 846300055_19938-20339 explicitly states 5,000 advisers ordered in July 1964 to RVN, bringing total to 21,000.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources describe troop increase and general motivation separately; explicit causal link for specific increase not stated.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            },
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "not_supported",
+          "reason": "First part supported by 846300055_356-1813 on communism/security. Second part unsupported as meta-text not in sources.",
+          "evidence": [
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5831,
+        "output_tokens": 12615,
+        "elapsed_seconds": 240.36696059204405,
+        "generation_seconds": 240.3316015159944,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1950,
+          "output_tokens": 4217,
+          "elapsed_seconds": 80.28869714098983,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1929,
+          "output_tokens": 4201,
+          "elapsed_seconds": 80.0502428120235,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1952,
+          "output_tokens": 4197,
+          "elapsed_seconds": 80.02802063903073,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "b94b2ae22ec988c315529aa15ba3ecc369e2db0e8193d93220e863f6e0324bd2",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "trial_id": "repeat_5",
+      "document_ids": [
+        "842827984_782-1199",
+        "846300055_19938-20339",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "835683107_33420-34043"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/repeat_5.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "5957cf8fec304f3d46c620d65327f4642af970ca1246b74dcebdf4fbfd7b20ea",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The United States escalated its role in the Vietnam War due to the escalation of military advisers ordered to the Republic of Vietnam in 1964, bringing the total American troop level to 21,000."
+        },
+        {
+          "claim_id": "c2",
+          "text": "This increase was a direct response to the growing conflict and the need to support South Vietnam against North Vietnam's communist domination."
+        },
+        {
+          "claim_id": "c3",
+          "text": "The United States' involvement escalated further as it sought to prevent the spread of communism in Southeast Asia, aligning with its national security interests. and provide detailed information on the escalation and the broader context of U.S. involvement in Vietnam."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 846300055_19938-20339 explicitly states 5,000 advisers ordered in July 1964 to RVN, bringing total to 21,000.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources describe troop increase and general motivation separately; explicit causal link for specific increase not stated.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            },
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "not_supported",
+          "reason": "First part supported by 846300055_356-1813 on communism/security. Second part unsupported as meta-text not in sources.",
+          "evidence": [
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5831,
+        "output_tokens": 12615,
+        "elapsed_seconds": 240.3969534750213,
+        "generation_seconds": 240.35969395103166,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1950,
+          "output_tokens": 4217,
+          "elapsed_seconds": 80.33734518103302,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1929,
+          "output_tokens": 4201,
+          "elapsed_seconds": 80.0559349359828,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1952,
+          "output_tokens": 4197,
+          "elapsed_seconds": 80.00367335800547,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "5957cf8fec304f3d46c620d65327f4642af970ca1246b74dcebdf4fbfd7b20ea",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "trial_id": "original",
+      "document_ids": [
+        "842827984_782-1199",
+        "846300055_19938-20339",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "835683107_33420-34043"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/original.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "cd86d2e273f7a1819c01daf40de33672cd4de48ab4852263426906379e2b0d48",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The United States escalated its role in the Vietnam War due to the escalation of military advisers ordered to the Republic of Vietnam in 1964, bringing the total American troop level to 21,000."
+        },
+        {
+          "claim_id": "c2",
+          "text": "This increase was a direct response to the growing conflict and the need to support South Vietnam against North Vietnam's communist domination."
+        },
+        {
+          "claim_id": "c3",
+          "text": "The United States' involvement escalated further as it sought to prevent the spread of communism in Southeast Asia, aligning with its national security interests. and provide detailed information on the escalation and the broader context of U.S. involvement in Vietnam."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 846300055_19938-20339 explicitly states 5,000 advisers ordered in July 1964 to RVN, bringing total to 21,000.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources describe troop increase and general motivation separately; explicit causal link for specific increase not stated.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            },
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "not_supported",
+          "reason": "First part supported by 846300055_356-1813 on communism/security. Second part unsupported as meta-text not in sources.",
+          "evidence": [
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5831,
+        "output_tokens": 12615,
+        "elapsed_seconds": 240.36851559998468,
+        "generation_seconds": 240.3333372909692,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1950,
+          "output_tokens": 4217,
+          "elapsed_seconds": 80.3441611629678,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1929,
+          "output_tokens": 4201,
+          "elapsed_seconds": 79.99867670401,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1952,
+          "output_tokens": 4197,
+          "elapsed_seconds": 80.02567773300689,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "cd86d2e273f7a1819c01daf40de33672cd4de48ab4852263426906379e2b0d48",
+      "shared_original_not_two_calls": true
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "trial_id": "shuffle_3",
+      "document_ids": [
+        "835683107_33420-34043",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "842827984_782-1199",
+        "846300055_19938-20339"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/shuffle_3.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "6ba64b1b71ac58a1bec90f1c44253b7e66540ce2b6e7b953c7021d407b52382e",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The United States escalated its role in the Vietnam War due to the escalation of military advisers ordered to the Republic of Vietnam in 1964, bringing the total American troop level to 21,000."
+        },
+        {
+          "claim_id": "c2",
+          "text": "This increase was a direct response to the growing conflict and the need to support South Vietnam against North Vietnam's communist domination."
+        },
+        {
+          "claim_id": "c3",
+          "text": "The United States' involvement escalated further as it sought to prevent the spread of communism in Southeast Asia, aligning with its national security interests. and provide detailed information on the escalation and the broader context of U.S. involvement in Vietnam."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 846300055_19938-20339 confirms advisers ordered in 1964 and total troop level of 21,000. Source 846300055_356-1813 supports general escalation context.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            },
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Documents support general motivation for involvement and specific 1964 troop increase separately, linking them via context of US role.",
+          "evidence": [
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            },
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 846300055_356-1813 confirms US involvement, communist prevention, and national security interests.",
+          "evidence": [
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5831,
+        "output_tokens": 12651,
+        "elapsed_seconds": 240.99054875201546,
+        "generation_seconds": 240.95379151205998,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1950,
+          "output_tokens": 4253,
+          "elapsed_seconds": 81.00983064703178,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1929,
+          "output_tokens": 4207,
+          "elapsed_seconds": 80.13301586499438,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1952,
+          "output_tokens": 4191,
+          "elapsed_seconds": 79.8477022399893,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "6ba64b1b71ac58a1bec90f1c44253b7e66540ce2b6e7b953c7021d407b52382e",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "trial_id": "reversed",
+      "document_ids": [
+        "835683107_33420-34043",
+        "841739696_22613-23156",
+        "846300055_356-1813",
+        "846300055_19938-20339",
+        "842827984_782-1199"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/reversed.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "f0c356dc178d92435b22156ad57e91bee3040db0adcd35aab6ec9c79b174fa35",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The United States escalated its role in the Vietnam War due to the escalation of military advisers ordered to the Republic of Vietnam in 1964, bringing the total American troop level to 21,000."
+        },
+        {
+          "claim_id": "c2",
+          "text": "This increase was a direct response to the growing conflict and the need to support South Vietnam against North Vietnam's communist domination."
+        },
+        {
+          "claim_id": "c3",
+          "text": "The United States' involvement escalated further as it sought to prevent the spread of communism in Southeast Asia, aligning with its national security interests. and provide detailed information on the escalation and the broader context of U.S. involvement in Vietnam."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 846300055_19938-20339 confirms the 1964 adviser order, total of 21,000 troops, and escalation context. No conflicts found.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Documents 846300055_356-1813 and 846300055_19938-20339 support the escalation, troop levels, and motivation to restrict communist domination.",
+          "evidence": [
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            },
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "not_supported",
+          "reason": "Factual assertions supported by 846300055_356-1813 and 846300055_19938-20339, but 'provide detailed information' clause lacks source basis.",
+          "evidence": [
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            },
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5831,
+        "output_tokens": 12695,
+        "elapsed_seconds": 241.64955013798317,
+        "generation_seconds": 241.6147198859835,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1950,
+          "output_tokens": 4214,
+          "elapsed_seconds": 80.01898488798179,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1929,
+          "output_tokens": 4240,
+          "elapsed_seconds": 80.73468415101524,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1952,
+          "output_tokens": 4241,
+          "elapsed_seconds": 80.89588109898614,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "f0c356dc178d92435b22156ad57e91bee3040db0adcd35aab6ec9c79b174fa35",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "trial_id": "shuffle_1",
+      "document_ids": [
+        "846300055_19938-20339",
+        "842827984_782-1199",
+        "835683107_33420-34043",
+        "846300055_356-1813",
+        "841739696_22613-23156"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/shuffle_1.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "de79e96f0ae1f5301fac8a73faa34a93987d32b215186c3761284f97e8afa182",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The United States escalated its role in the Vietnam War due to the escalation of military advisers ordered to the Republic of Vietnam in 1964, bringing the total American troop level to 21,000."
+        },
+        {
+          "claim_id": "c2",
+          "text": "This increase was a direct response to the growing conflict and the need to support South Vietnam against North Vietnam's communist domination."
+        },
+        {
+          "claim_id": "c3",
+          "text": "The United States' involvement escalated further as it sought to prevent the spread of communism in Southeast Asia, aligning with its national security interests. and provide detailed information on the escalation and the broader context of U.S. involvement in Vietnam."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Document 846300055_19938-20339 explicitly confirms July 27, 1964 advisers ordered to RVN bringing total to 21,000.",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Doc 1 states an incident escalated conflict shortly after the troop order, not that the order was a response to it; Doc 4 supports general motivation but not 19",
+          "evidence": [
+            {
+              "passage_id": "846300055_19938-20339",
+              "quote": "On July 27 , 1964 , 5,000 additional U.S. military advisers were ordered to the Republic of Vietnam ( RVN or South Vietnam ) , bringing the total American troop level to 21,000 . Shortly thereafter an incident occurred off the coast of the Democratic Republic of Vietnam ( North Vietnam ) that was destined to escalate the conflict to new levels and lead to the full scale Americanization of the war ."
+            },
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Historical assertions on escalation, communism prevention, and national security interests are supported by passage 846300055_356-1813.",
+          "evidence": [
+            {
+              "passage_id": "846300055_356-1813",
+              "quote": "The role of the United States in the Vietnam War began after World War II and escalated into full commitment during the Vietnam War from 1955 to 1975 . The U.S. involvement in South Vietnam stemmed from 20 long years of political and economic action . These had the common incentive of ending the growing communist domination in Vietnam . At the time , French forces , allies of the U.S. , were backed by America -- President Harry S. Truman provided progressively increasing amounts of financial and military assistance to French forces fighting in Vietnam . From the spring of 1950 , their involvement increased from just assisting French troops to providing direct military assistance to the associated states ( Vietnam , Laos , Cambodia ) . Eventually , U.S. missions were carried out at a more constant rate by sending out increasing number of military assistance from the United States . Their main intent was to restrict the Communist domination that was present in the government of Vietnam as it would soon lead to a chain of neighbouring countries adopting the same . This would have resulted in a change in balance of power throughout Southeast Asia . The U.S. foreign policy establishment saw national security interests being disturbed due to the rise of this communist expansion and strived to take any measure to end it . Their actions came to be questioned by other segments of government and society , however , including the US congress. ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5831,
+        "output_tokens": 12629,
+        "elapsed_seconds": 240.81535870902007,
+        "generation_seconds": 240.78047698398586,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1950,
+          "output_tokens": 4213,
+          "elapsed_seconds": 80.26950540504185,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1929,
+          "output_tokens": 4219,
+          "elapsed_seconds": 80.50838212901726,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1952,
+          "output_tokens": 4197,
+          "elapsed_seconds": 80.03747117496096,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "de79e96f0ae1f5301fac8a73faa34a93987d32b215186c3761284f97e8afa182",
+      "shared_original_not_two_calls": false
+    }
+  ],
+  "policy_outcomes": [
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "route": "no_repair",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "3c00be332448add67e170b93489a8d79dd47afb1012d27fb3022bcab63928707",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 1,
+      "recorded_completion_attempts": 1,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 1096,
+      "output_tokens": 160,
+      "summed_step_seconds": 1.3230871379782911,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "route": "always_rewrite",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "a71e33fd779bba04c7a2cde2b7e921071941329fb6ce3c3d20dd7086b2313434",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 2,
+      "recorded_completion_attempts": 2,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 2709,
+      "output_tokens": 4845,
+      "summed_step_seconds": 90.84574080401217,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "route": "original",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "a71e33fd779bba04c7a2cde2b7e921071941329fb6ce3c3d20dd7086b2313434",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8540,
+      "output_tokens": 17460,
+      "summed_step_seconds": 331.21487293901737,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "route": "reversed",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "a71e33fd779bba04c7a2cde2b7e921071941329fb6ce3c3d20dd7086b2313434",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8540,
+      "output_tokens": 17540,
+      "summed_step_seconds": 332.49590747701586,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "route": "shuffle_1",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "a71e33fd779bba04c7a2cde2b7e921071941329fb6ce3c3d20dd7086b2313434",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8540,
+      "output_tokens": 17474,
+      "summed_step_seconds": 331.66171604805277,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "route": "shuffle_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "a71e33fd779bba04c7a2cde2b7e921071941329fb6ce3c3d20dd7086b2313434",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8540,
+      "output_tokens": 17467,
+      "summed_step_seconds": 331.3867866379733,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "route": "shuffle_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "3c00be332448add67e170b93489a8d79dd47afb1012d27fb3022bcab63928707",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 4,
+      "recorded_completion_attempts": 4,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 6927,
+      "output_tokens": 12811,
+      "summed_step_seconds": 242.31425242501427,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "route": "repeat_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "a71e33fd779bba04c7a2cde2b7e921071941329fb6ce3c3d20dd7086b2313434",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8540,
+      "output_tokens": 17460,
+      "summed_step_seconds": 331.21331793107674,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "route": "repeat_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "a71e33fd779bba04c7a2cde2b7e921071941329fb6ce3c3d20dd7086b2313434",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8540,
+      "output_tokens": 17460,
+      "summed_step_seconds": 330.9643795391021,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "route": "repeat_4",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "a71e33fd779bba04c7a2cde2b7e921071941329fb6ce3c3d20dd7086b2313434",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8540,
+      "output_tokens": 17460,
+      "summed_step_seconds": 331.3583655010734,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_f94093f2dcb620bdcf4bdb09",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+      "route": "repeat_5",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "a71e33fd779bba04c7a2cde2b7e921071941329fb6ce3c3d20dd7086b2313434",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8540,
+      "output_tokens": 17460,
+      "summed_step_seconds": 331.243310814054,
+      "incomplete": false
+    }
+  ],
+  "original_file_copies": [
+    "provenance/cases/case_01/trace.json",
+    "provenance/cases/case_01/summary.json",
+    "provenance/cases/case_01/rewrite.json",
+    "provenance/cases/case_01/original.claims/c1.json",
+    "provenance/cases/case_01/original.claims/c2.json",
+    "provenance/cases/case_01/original.claims/c3.json",
+    "provenance/cases/case_01/repeat_2.claims/c1.json",
+    "provenance/cases/case_01/repeat_2.claims/c2.json",
+    "provenance/cases/case_01/repeat_2.claims/c3.json",
+    "provenance/cases/case_01/repeat_3.claims/c1.json",
+    "provenance/cases/case_01/repeat_3.claims/c2.json",
+    "provenance/cases/case_01/repeat_3.claims/c3.json",
+    "provenance/cases/case_01/repeat_4.claims/c1.json",
+    "provenance/cases/case_01/repeat_4.claims/c2.json",
+    "provenance/cases/case_01/repeat_4.claims/c3.json",
+    "provenance/cases/case_01/repeat_5.claims/c1.json",
+    "provenance/cases/case_01/repeat_5.claims/c2.json",
+    "provenance/cases/case_01/repeat_5.claims/c3.json",
+    "provenance/cases/case_01/reversed.claims/c1.json",
+    "provenance/cases/case_01/reversed.claims/c2.json",
+    "provenance/cases/case_01/reversed.claims/c3.json",
+    "provenance/cases/case_01/shuffle_1.claims/c1.json",
+    "provenance/cases/case_01/shuffle_1.claims/c2.json",
+    "provenance/cases/case_01/shuffle_1.claims/c3.json",
+    "provenance/cases/case_01/shuffle_2.claims/c1.json",
+    "provenance/cases/case_01/shuffle_2.claims/c2.json",
+    "provenance/cases/case_01/shuffle_2.claims/c3.json",
+    "provenance/cases/case_01/shuffle_3.claims/c1.json",
+    "provenance/cases/case_01/shuffle_3.claims/c2.json",
+    "provenance/cases/case_01/shuffle_3.claims/c3.json"
+  ]
+}

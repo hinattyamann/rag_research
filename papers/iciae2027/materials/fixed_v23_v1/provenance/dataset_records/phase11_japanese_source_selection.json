@@ -1,0 +1,526 @@
+{
+  "schema_version": 1,
+  "purpose": "phase11-japanese-source-selection-not-final-freeze",
+  "status": "selected_for_phase11_preparation",
+  "recorded_at_utc": "2026-10-21T04:15:19.754924+00:00",
+  "repository_commit_at_screening": "1f3fb5792609beb756e937483c257a5ad0c29279",
+  "dataset_id": "baobab-trees/wikipedia-human-retrieval-ja",
+  "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+  "dataset_card_url": "https://huggingface.co/datasets/baobab-trees/wikipedia-human-retrieval-ja/blob/02e85c83a64f345aee62fba3a35af99c075a331f/README.md",
+  "annotation_license_declared": "Apache-2.0",
+  "wikipedia_content_rights_retained_separately": true,
+  "files": [
+    {
+      "file": "data/answered.jsonl",
+      "local": "huggingface--baobab-trees--wikipedia-human-retrieval-ja/answered.jsonl",
+      "url": "https://huggingface.co/datasets/baobab-trees/wikipedia-human-retrieval-ja/resolve/02e85c83a64f345aee62fba3a35af99c075a331f/data/answered.jsonl",
+      "sha256": "f72a43a9661496acb050a98dfd21c6f1b331a7e834b2fca975fcbbdcb8ec960b",
+      "bytes": 2397512,
+      "verified_git_blob": "f66ca2f65bfa13d5725df8ad2fb99095aa7fa60a"
+    },
+    {
+      "file": "data/not_answered.jsonl",
+      "local": "huggingface--baobab-trees--wikipedia-human-retrieval-ja/not_answered.jsonl",
+      "url": "https://huggingface.co/datasets/baobab-trees/wikipedia-human-retrieval-ja/resolve/02e85c83a64f345aee62fba3a35af99c075a331f/data/not_answered.jsonl",
+      "sha256": "3c42639197a192f57deee70ca229bae2f6cbcdf69c393fe2f93aacda4e671e7e",
+      "bytes": 336992,
+      "verified_git_blob": "ba61253e40c1f18dbbc18415eaa8d238cd12a802"
+    }
+  ],
+  "structural_audit": {
+    "answered_rows": 838,
+    "not_answered_rows": 433,
+    "unique_ids": 1271,
+    "references": {
+      "quote": 1651,
+      "summary": 103
+    },
+    "unique_retrieved_titles": 2178,
+    "cited_title_group_components": 737,
+    "largest_cited_title_group_sizes": [
+      7,
+      4,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "answer_characters": {
+      "min": 28,
+      "median": 222.5,
+      "p90": 288,
+      "max": 321
+    },
+    "answer_sentence_count_distribution": {
+      "1": 16,
+      "2": 149,
+      "3": 303,
+      "4": 250,
+      "5": 120
+    },
+    "errors": []
+  },
+  "development_reservation": {
+    "rule": "first 100 source-order answered rows and cited-title connected closure; expand after redirect canonicalization",
+    "reserved_source_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      12,
+      13,
+      14,
+      19,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      44,
+      47,
+      48,
+      49,
+      50,
+      51,
+      53,
+      54,
+      56,
+      58,
+      60,
+      61,
+      63,
+      65,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      76,
+      80,
+      83,
+      85,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      114,
+      116,
+      117,
+      119,
+      120,
+      121,
+      122,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      136,
+      142,
+      154,
+      170,
+      208,
+      237,
+      279,
+      339,
+      450,
+      470,
+      481,
+      482,
+      544,
+      561,
+      564,
+      578,
+      667,
+      675,
+      759,
+      787,
+      817,
+      887,
+      928,
+      936,
+      938,
+      970,
+      1008,
+      1046,
+      1120,
+      1154,
+      1170,
+      1245,
+      1248
+    ],
+    "reserved_count": 132,
+    "remaining_count": 706,
+    "not_final_split": true
+  },
+  "cited_nonquote_reference_qa_count": 94,
+  "not_answered_is_corpus_level_unanswerable": false,
+  "corpus": {
+    "status": "not_prepared",
+    "candidate_article_cutoff_utc": "2023-12-25T23:59:59Z",
+    "article_revision_probe": "data/runs/dataset_screening/phase11-ja-source-v1/wikipedia_historical_revision_probe.json",
+    "full_article_retrieval_required": true,
+    "per_question_gold_injection": false,
+    "quoted_reference_only_is_not_the_main_retrieval_condition": true
+  },
+  "other_source_revisions": [
+    {
+      "provider": "github",
+      "name": "hotchpotch/JQaRA",
+      "revision": "845ff348b77580a05e150239e860313ecd9ddc35"
+    },
+    {
+      "provider": "github",
+      "name": "SkelterLabsInc/JaQuAD",
+      "revision": "23f5d72cc273c49b35e2d9efe0f51757aa1770bd"
+    },
+    {
+      "provider": "github",
+      "name": "aiishii/JEMHopQA",
+      "revision": "fed5024f4f39f02727e699cb7ccb67935a779a5a"
+    },
+    {
+      "provider": "github",
+      "name": "sbintuitions/nonexistent_japanese_rag_benchmark",
+      "revision": "170e9333d5b43060ab7d8fa570365bcb2582c93d"
+    },
+    {
+      "provider": "github",
+      "name": "Koki-Itai/LIT-RAGBench",
+      "revision": "5c3f30d924bc1615c08eb85f560f3aceb2fac7d4"
+    },
+    {
+      "provider": "github",
+      "name": "mizuumi/JDocQA",
+      "revision": "e65c6c7d4a3ac869b48641eb94ed1f8b0ddf886a"
+    },
+    {
+      "provider": "github",
+      "name": "pfnet-research/tmg-cqa-eval",
+      "revision": "d6d890a039351784b27adf568ca7e7ca4495dc4e"
+    },
+    {
+      "provider": "huggingface",
+      "name": "alt-dev/jcrrag",
+      "revision": "60e424fa89a002a0d43f538a291fa751bc684f2e"
+    },
+    {
+      "provider": "huggingface",
+      "name": "shanearora/CaLMQA",
+      "revision": "626f90c7122efba3cce70281c25da44a944f0aab"
+    },
+    {
+      "provider": "huggingface",
+      "name": "SakanaAI/ChouBun",
+      "revision": "3378915723514cccd186ec05211478401f371226"
+    },
+    {
+      "provider": "huggingface",
+      "name": "pfnet/tmg-cqa",
+      "revision": "2515a8d2b2c75e0b071caa0603172779e51300fb"
+    },
+    {
+      "provider": "huggingface",
+      "name": "llm-jp/llm-jp-longbench-JEMHop",
+      "revision": "d4f1ca4759b537904cdb803ce7df9f772c40a461"
+    }
+  ],
+  "evidence_artifacts": {
+    "data/runs/dataset_screening/phase11-ja-source-v1/additional_downloads_verified.json": {
+      "sha256": "1db596cd530f2c504ec3f7371c556e572dab5f934c3964778834429df00cd649",
+      "bytes": 732
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/additional_sample_plan.json": {
+      "sha256": "5c87e8cf3e47a41f9394eddabb74a0e54409a18c143f02cadaf224e10fbb7385",
+      "bytes": 613
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/baobab_sample_plan.json": {
+      "sha256": "35231baf3e3a3bb756793218d049a93900bfbce48356b59435f3a80585074457",
+      "bytes": 476
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/baobab_structural_audit.json": {
+      "sha256": "43d0238551d30eb204059effaf4ac95c8e94af498bb88b469289bf2164848809",
+      "bytes": 45060
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/candidate_file_summary.json": {
+      "sha256": "932d07f2b0fe75f5e9049fcedcea40fe4e01818884a8d3272535e326a6ecf3f8",
+      "bytes": 65657
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--Koki-Itai--LIT-RAGBench/README.md": {
+      "sha256": "ca6f3bf43589c342c7b0dd233c43d9e72773cd8b3e96c63c6a88f5ebe57430f7",
+      "bytes": 2625
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--Koki-Itai--LIT-RAGBench/commit.json": {
+      "sha256": "9648fc8851756376a6075f67b620b4a2758abbfe473ea1864fd4735b959bfbd8",
+      "bytes": 4375
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--Koki-Itai--LIT-RAGBench/ja.jsonl": {
+      "sha256": "20a8b17240710f196ee7cfb6e1c5997c44f54aaaee2fa7eea5db517ed7fb2d17",
+      "bytes": 2012335
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--Koki-Itai--LIT-RAGBench/tree.json": {
+      "sha256": "4ccc907725596c88140291ce745ae12b18137c0f3f855a67bd7b99dd70fd0347",
+      "bytes": 5284
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--SkelterLabsInc--JaQuAD/README.md": {
+      "sha256": "852d968c374f601f19c4df9699c169d44ba5ab08aa768d9413da15f413ea524d",
+      "bytes": 3936
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--SkelterLabsInc--JaQuAD/commit.json": {
+      "sha256": "15b4f53eeca6afd69ce897cbd504cb5014b8de2b472f953eb8936c3fb412e825",
+      "bytes": 3335
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--SkelterLabsInc--JaQuAD/jaquad_train_0000.json": {
+      "sha256": "7c76df56ad78b2e083eddfa79d0d2af216b9ef6f7d8d5f9cf58104319cbdbabd",
+      "bytes": 790020
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--SkelterLabsInc--JaQuAD/tree.json": {
+      "sha256": "d0f2c8eafd24ebf9709070e6536d0df302bef27ae9e965e31e731ec7d8694064",
+      "bytes": 10120
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--aiishii--JEMHopQA/README.md": {
+      "sha256": "36c274bfcd030f296c1f62d100590e84b45b8090cc6bc5c61ac8347165b0d778",
+      "bytes": 8788
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--aiishii--JEMHopQA/commit.json": {
+      "sha256": "f6601e2c19227aa8d5c0bc75eabdbce28ad907703badd4dcde103e9687ffec91",
+      "bytes": 3228
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--aiishii--JEMHopQA/tree.json": {
+      "sha256": "ee57624d60a00b6f872e5d85d5f6b5e84f740cb4aa15b488cffb9fb1f1eb101c",
+      "bytes": 4720
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--hotchpotch--JQaRA/README.md": {
+      "sha256": "58627b8335f3cb43f2529f499735f665685fc76f771365f5a648d9a9efc6d9bc",
+      "bytes": 20380
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--hotchpotch--JQaRA/commit.json": {
+      "sha256": "4a6ce72e77bd72b863fcca58ea9676f11f4076fdab8b05a252c697736b9389cd",
+      "bytes": 4853
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--hotchpotch--JQaRA/tree.json": {
+      "sha256": "633c5e28106ea2981c377b5fe07032ab7251aa0ed9b6c0552e2abb11827596cb",
+      "bytes": 18784
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--mizuumi--JDocQA/README.md": {
+      "sha256": "f7c84456599d63af94ba08398e67b8e8f02c489985263eb77f2c14b0f2e1d482",
+      "bytes": 3475
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--mizuumi--JDocQA/commit.json": {
+      "sha256": "d557b733e0465cf1ebb6fe23200e9fb5aa7cfe7ec295dbd2e7453392d7ac57e5",
+      "bytes": 4291
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--mizuumi--JDocQA/jdocqa_train_all.json": {
+      "sha256": "d64681aeca1d1266c551f273485821f9703c25f500eacc5f08b892ef5fcaa4ad",
+      "bytes": 92600960
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--mizuumi--JDocQA/tree.json": {
+      "sha256": "525186c60f26463646573fb34fd5558c5295443fd0c18aace551a0d5c2f18d94",
+      "bytes": 2235
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--pfnet-research--tmg-cqa-eval/README.md": {
+      "sha256": "b21745251c67d76dd3666bb75e69c17abd045a1a15327dd96040072355c244b4",
+      "bytes": 5955
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--pfnet-research--tmg-cqa-eval/commit.json": {
+      "sha256": "30adb13fc4b9670b5630a19e9dd62f8e7a4707bf8e854b58e400be3dd7a6b0ee",
+      "bytes": 3241
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--pfnet-research--tmg-cqa-eval/tree.json": {
+      "sha256": "92847e8f67b029ec47aefa24c3ef316e5f795e5d5a20a4b44e3c0dd7033dc51d",
+      "bytes": 6307
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--sbintuitions--nonexistent_japanese_rag_benchmark/README.md": {
+      "sha256": "85c5477d84b4077207c4297c854300dcd9d13fdd482163a26c15d8669bf84f4a",
+      "bytes": 8018
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--sbintuitions--nonexistent_japanese_rag_benchmark/commit.json": {
+      "sha256": "96a983f9a435bd3475c887445531160714fd827bbf72a6da7dba2deaf1b857ad",
+      "bytes": 4446
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/github--sbintuitions--nonexistent_japanese_rag_benchmark/tree.json": {
+      "sha256": "b75eee23a15c9e53a4ec37c3b14bdc981c7e13d57921ccde72791cf378538385",
+      "bytes": 741
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--SakanaAI--ChouBun/README.md": {
+      "sha256": "8c952363a9c74dfc1d06607f47a8e09e80c63c358f0a76522c2ac7dd1391df92",
+      "bytes": 6112
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--SakanaAI--ChouBun/dataset.json": {
+      "sha256": "b316ad686e9a09b147ca91fca30951942413e8cf97f41df20553f0805ea0485f",
+      "bytes": 3836
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--alt-dev--jcrrag/README.md": {
+      "sha256": "7a95709239d325d7f1c16f7b303109093b36ba510d92d89ed2bfe62d03cf1d84",
+      "bytes": 2073
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--alt-dev--jcrrag/dataset.json": {
+      "sha256": "0d79a6b9328f3869978a6926473bfe5fec207bae008c09150862c817d7fa9261",
+      "bytes": 1538
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--alt-dev--jcrrag/download.json": {
+      "sha256": "acb41a561d86b9c0c02d556dfa66ce20b0af5f9f7af9b4d8fa518316a4890d8b",
+      "bytes": 224
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--alt-dev--jcrrag/jcrrag.json": {
+      "sha256": "94443f710e1e3dbae40231e7c7dd27718c1f9051b83ce9b1bb4940530e643992",
+      "bytes": 74504500
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--alt-dev--jcrrag/tree.json": {
+      "sha256": "fc89442ae2a0475e0d6c9147e13c97bc7398f5f76a8152f0eee6b7f5d78b55ae",
+      "bytes": 492
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--baobab-trees--wikipedia-human-retrieval-ja/README.md": {
+      "sha256": "030fcc3dd955c623901a99b78f00d45440e459b155f3cc2afb2fd40dc84825b9",
+      "bytes": 8311
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--baobab-trees--wikipedia-human-retrieval-ja/answered.jsonl": {
+      "sha256": "f72a43a9661496acb050a98dfd21c6f1b331a7e834b2fca975fcbbdcb8ec960b",
+      "bytes": 2397512
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--baobab-trees--wikipedia-human-retrieval-ja/dataset.json": {
+      "sha256": "25e9aface59b0fd086a28de2788a2a317c4fda667f0cb6464c21b9784a6276e3",
+      "bytes": 1504
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--baobab-trees--wikipedia-human-retrieval-ja/downloads.json": {
+      "sha256": "e70274bdec39de19427062ca12cac1bc0b501ac9c4bfe478f37e1571180a2541",
+      "bytes": 934
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--baobab-trees--wikipedia-human-retrieval-ja/not_answered.jsonl": {
+      "sha256": "3c42639197a192f57deee70ca229bae2f6cbcdf69c393fe2f93aacda4e671e7e",
+      "bytes": 336992
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--baobab-trees--wikipedia-human-retrieval-ja/snapshot.json": {
+      "sha256": "0d81db505464dd66047fce776c2a9ec519fe4fdbc3830da1fec22251dacc3438",
+      "bytes": 991
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--baobab-trees--wikipedia-human-retrieval-ja/tree.json": {
+      "sha256": "91d41b06a3866cd1c07745bbeaf23d757618b9efc4c2880205194a98e819cfdb",
+      "bytes": 512
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--llm-jp--llm-jp-longbench-JEMHop/README.md": {
+      "sha256": "149073d1f1b4e3c2f42632e27363afcd81e27197802e022581e91119e8abb121",
+      "bytes": 3310
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--llm-jp--llm-jp-longbench-JEMHop/dataset.json": {
+      "sha256": "da0f507d151cb58bbae1aa64ee328facadf22e29ac4575022cac8f93d1591a92",
+      "bytes": 2062
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--pfnet--tmg-cqa/README.md": {
+      "sha256": "8eac709448d3d64275f8ed6e1b2ec507baa9fb3ee0bb4b411c1f45b114ba6b4b",
+      "bytes": 2899
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--pfnet--tmg-cqa/dataset.json": {
+      "sha256": "5bcf155ab49b5483cf8b856f5c203d184f97087011cb9a79645cb9667a6bfa78",
+      "bytes": 2064
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--shanearora--CaLMQA/README.md": {
+      "sha256": "03674114bfcc668702f92b3d197f19d2b31aa42c94efccee21494455c1e104c4",
+      "bytes": 8295
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/huggingface--shanearora--CaLMQA/dataset.json": {
+      "sha256": "d5a93b63c00cfabb4eeddf61242d7d9a0ac2fb4c3cba334dbfac4dbe322a8a25",
+      "bytes": 2638
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/inspect_sources.py": {
+      "sha256": "1a36ed0c2fdfd80c3e191e2e14c22602252f40b82d16cf411a87892967391852",
+      "bytes": 3599
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/jcrrag_sample_plan.json": {
+      "sha256": "2b7993b5c8a22c879d6ea88504459163c2d0ceec2772c609bb49c4dd8a7bb842",
+      "bytes": 446
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/jcrrag_structural_screening.json": {
+      "sha256": "1fb3210c2012c74457fa7a37481ea2adfbd89a9d3f53d390c0749720b584ed43",
+      "bytes": 25580
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/metadata_manifest.json": {
+      "sha256": "4c4790f959e4cde98e918e96be2ed995557898ff85229fd0dcfab90f4d9dca13",
+      "bytes": 20950
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/probe_candidate_files.py": {
+      "sha256": "90869f95c9dde3c6e4fa8198c8d7aa643efbc8ed4041e616f826d83593cb7f7b",
+      "bytes": 3270
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/probe_file_format_failure.json": {
+      "sha256": "4dd53611fc6018de59e626d8e491d38c8e592f71a1d73014507daa7a881bd4e4",
+      "bytes": 287
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/protected_existing_runs_baseline.json": {
+      "sha256": "7f00147ed99ba4e20d44b56578c7fc8344f5d6cd1989fde8aab0d7a69f37657b",
+      "bytes": 394554
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/summarize_candidate_files.py": {
+      "sha256": "9b560044759586a82c8c3ac58991b22665838a7b8a4418f4ac8a09d141d146b5",
+      "bytes": 4135
+    },
+    "data/runs/dataset_screening/phase11-ja-source-v1/wikipedia_historical_revision_probe.json": {
+      "sha256": "f16c9d8dd96ada0efce7bc8c7ead54950efa650231c4819d0d1404da9f65d864",
+      "bytes": 914
+    }
+  },
+  "old_run_file_count_before_implementation": 2500,
+  "model_calls": 0,
+  "gate11_passed": false,
+  "phase12_allowed": false,
+  "pending": [
+    "full_corpus_and_source_alignment",
+    "canonical_document_groups_and_splits",
+    "japanese_pipeline_and_english_regression",
+    "development_semantic_and_quality_validation",
+    "preregistered_unused_bilingual_calibration",
+    "sample_scale_and_analysis",
+    "bilingual_validator_and_final_freeze"
+  ]
+}

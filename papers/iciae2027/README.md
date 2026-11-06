@@ -18,7 +18,7 @@
 | [notes/draft_status.md](notes/draft_status.md) | 初稿の到達点、確認内容、研究室資料受領後の更新箇所 |
 | [notes/case_studies_and_materials.md](notes/case_studies_and_materials.md) | 具体例の使い分け、ノートPCの資料所在、研究室PCへの書出し依頼 |
 | [notes/lab_pc_git_materials_prompt.md](notes/lab_pc_git_materials_prompt.md) | 研究室PCで執筆資料を作成・検証しGit共有する実行プロンプト |
-| [materials/](materials/) | 検証済み執筆資料の格納先。現在は作成待ち |
+| [materials/](materials/) | 既存Main/Calの[80問資料集](materials/fixed_v23_v1/README.md)。検証・取込は[引継ぎ](notes/materials_handoff.md)を参照 |
 | [templates/official/](templates/official/) | 配布元から取得した未編集のWordテンプレートと募集要項PDF |
 | [templates/official_sources.json](templates/official_sources.json) | 取得元URL、取得日時、ファイルサイズ、SHA-256、確認方法 |
 | [manuscript/](manuscript/) | Word論文本体一組。提出用 `iciae2027_manuscript_en.docx`、理解用 `iciae2027_manuscript_ja.docx` |

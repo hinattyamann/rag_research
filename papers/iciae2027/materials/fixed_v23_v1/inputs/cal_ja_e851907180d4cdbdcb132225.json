@@ -1,0 +1,833 @@
+{
+  "qa_key": "cal_ja_e851907180d4cdbdcb132225",
+  "cohort": "cal",
+  "language": "ja",
+  "analysis_role": "cal",
+  "source_qa_split": "calibration",
+  "record_id": "whrja:02e85c8:answered:1254",
+  "document_group_id": "whrja-group:3fdd3c55b6f66fc22677f65b",
+  "qa_source": {
+    "answerability_scope": "human_answer_in_source_not_verified_common_corpus_coverage",
+    "corpus_answerability": "not_annotated_no_relabel_from_body_or_quote_availability",
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "document_group_id": "whrja-group:3fdd3c55b6f66fc22677f65b",
+    "gold_parent_ids": [
+      "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d"
+    ],
+    "gold_passage_ids": [
+      "39160034943022124285461180038_0-786"
+    ],
+    "gold_passage_ids_scope": "verified_literal_quote_overlap_children_only_not_metric_gold",
+    "gold_passage_mapping_status": "audited_cited_article_and_source_reference_markup_mapping_v2",
+    "gold_relevance_unit": "available_cited_source_article",
+    "is_answerable": true,
+    "language": "ja",
+    "provided_passage": null,
+    "question": "スポーツで使われているボールと言われるアイテムは何種類ある？",
+    "record_id": "whrja:02e85c8:answered:1254",
+    "reference_answer_sentences": [
+      {
+        "citations": [
+          0
+        ],
+        "text": "ボールは球技や遊戯などのゲームに使う球形の用具であり、中は空洞で球形の皮膜や外殻に包まれていることが多いですが、ビリヤードの球など中まで詰まったボールや、ラグビーやアメリカンフットボールの長球形のボールなど球形でないボールもあります。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "サッカーボール、野球ボール、バスケットボール、クリケットボール、ビリヤードボールなど、少なくとも17種類のボールが存在します。"
+      }
+    ],
+    "reference_answers": [
+      "ボールは球技や遊戯などのゲームに使う球形の用具であり、中は空洞で球形の皮膜や外殻に包まれていることが多いですが、ビリヤードの球など中まで詰まったボールや、ラグビーやアメリカンフットボールの長球形のボールなど球形でないボールもあります。サッカーボール、野球ボール、バスケットボール、クリケットボール、ビリヤードボールなど、少なくとも17種類のボールが存在します。"
+    ],
+    "reference_corpus_mapping": [
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "39160034943022124285461180038_0-786"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "exact",
+          "spans": [
+            {
+              "end": 173,
+              "source_span_sha256": "97dbe9b61cbe286ebfdccfc6783099725f9a03d6e1c0e58a85a7d212fff84c4c",
+              "start": 34
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "raw_article_status": "ok",
+        "reference_index": 0,
+        "source_reference_unit_id": "jawiki-page:1012084"
+      },
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          1
+        ],
+        "has_human_summary_not_literal_source": true,
+        "literal_overlap_child_ids": [],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": null,
+          "spans": [],
+          "status": "no_literal_quote"
+        },
+        "parent_passage_id": "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "raw_article_status": "ok",
+        "reference_index": 1,
+        "source_reference_unit_id": "jawiki-page:1012084"
+      }
+    ],
+    "reference_corpus_metadata_offline_only": true,
+    "reference_evidence": [
+      {
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "ボール（ball）はゲーム（球技や遊戯）などに使う球形の用具。中は空洞で球形の皮膜や外殻に包まれていることが多いが、中まで詰まったボール（例：ビリヤードの球や、芯にコルクなどを利用する野球ボール）や球形でないボール（例：ラグビーやアメリカンフットボールの長球形のボール）もある。",
+        "reference_index": 0,
+        "title": "ボール",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%BC%E3%83%AB"
+      },
+      {
+        "cited_by_answer_sentence_indices": [
+          1
+        ],
+        "human_summary_not_literal_source": "サッカーボール、野球ボール、バスケットボール、クリケットボール、ビリヤードボールなど、少なくとも17種類のボールが存在します。",
+        "quote": null,
+        "reference_index": 1,
+        "title": "ボール",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%BC%E3%83%AB"
+      }
+    ],
+    "research_split": "calibration",
+    "selected_sentences_by_reference": [
+      [
+        "ボール（ball）はゲーム（球技や遊戯）などに使う球形の用具。中は空洞で球形の皮膜や外殻に包まれていることが多いが、中まで詰まったボール（例：ビリヤードの球や、芯にコルクなどを利用する野球ボール）や球形でないボール（例：ラグビーやアメリカンフットボールの長球形のボール）もある。"
+      ]
+    ],
+    "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+    "source_id": "1254",
+    "source_line_index": 824,
+    "source_record_sha256": "065c24b6ba3b1375e2d433174083297645c6c710c86ddd0e28568a2e0ce930fd",
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "source_split": "answered",
+    "source_title": "ボール",
+    "unavailable_cited_reference_ids": []
+  },
+  "source_selection": {
+    "record_id": "whrja:02e85c8:answered:1254",
+    "question": "スポーツで使われているボールと言われるアイテムは何種類ある？",
+    "document_group_id": "whrja-group:3fdd3c55b6f66fc22677f65b"
+  },
+  "question": "スポーツで使われているボールと言われるアイテムは何種類ある？",
+  "used_documents": [
+    {
+      "passage_id": "39160034943022124285461180038_786-1505",
+      "title": "ボール",
+      "text": "スペイン人たちは中南米各地で、弾むボール（中身までゴムの詰まった、空気で膨らませないボール）が儀式や遊戯としての球技（詳細はメソアメリカの球技 / Mesoamerican ballgame を参照）に使われているのを見て目を見張った。\nヨーロッパ大陸では手でボールを打ち合うテニスの原形のようなスポーツ（イギリスでは「ファイブス」と呼ばれた）があり、やがて手を保護する手袋（グローブ）や木の棒を用いて打つようになり、テニスやホッケーやクリケットの元になった。またイギリスでは、年に一度教会に公認された祝日などにボールを村人・市民総出で奪い合う熱狂的なゲームがあり、サッカー（フットボール）のもととなった。プレイヤーたちはボールを足で蹴ったり手で持ったりしながら走っていたが、ゴムでなく木屑を詰めた動物の皮革でできたボールはよく飛ばず地面を転がるだけだった。フットボール用のボールの起源として、しばしば人の生首や頭蓋骨が使われた、という伝説がある。たとえばヴァイキングたちがイギリスの村々を略奪した際、船で帰る前に海岸で住民の首を使い球技をして遊んだ話や、都市のフットボールに最初は捕虜の首が使われていたという言い伝え、などである。\nなお、ソフトテニスやバレーボールなど主にゴム製ボールの空気穴のことを、「へそ」と呼ぶことがある。\n語源\nサッカーボール\n球形で遊戯に使われる物体という意味の「ボール」という英語は、1205年にラヤモン（Laȝamon、Layamon）によって書かれた英国史『ブルート』（Layamon’s Brut）に初出する。\nSumme heo driuen balles wide ȝeond Þa feldes\n",
+      "source_metadata": {
+        "article_text_sha256": "4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "39160034943022124285461180038_786-1505",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 425,
+          "end": 1505,
+          "start": 786
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368",
+        "text_sha256": "19d61ee19c9fd4a8d6a3997549e2eabf2e565e7ca946b2f3a87fded76dc46d6e",
+        "title": "ボール",
+        "wikipedia_page_id": 1012084,
+        "wikipedia_revision_id": 97669368,
+        "wikipedia_revision_timestamp_utc": "2023-10-30T10:03:22Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "19d61ee19c9fd4a8d6a3997549e2eabf2e565e7ca946b2f3a87fded76dc46d6e",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 719
+      }
+    },
+    {
+      "passage_id": "39160034943022124285461180038_0-786",
+      "title": "ボール",
+      "text": "クッション製ボール\nスポーツ用品売り場に陳列されたバスケットボール\nボール（ball）はゲーム（球技や遊戯）などに使う球形の用具。中は空洞で球形の皮膜や外殻に包まれていることが多いが、中まで詰まったボール（例：ビリヤードの球や、芯にコルクなどを利用する野球ボール）や球形でないボール（例：ラグビーやアメリカンフットボールの長球形のボール）もある。\nチーム競技にはボールを使った球技が多い。球技では、ゲームの成り行きはプレイヤーが投げたり打ったり蹴ったりしたボールの状態に左右される。またボールは一人や少人数でできる遊び、たとえばキャッチボールやビー玉、ジャグリング（ボールジャグリング）などにも使われる。\n歴史\nクリケットボール\nボールを用いた遊戯は古くから自然に行なわれていた。初期のボールは羊毛や髪の毛などの繊維を布や革の袋に詰めたもので重いものだった。\n古代ローマでは球技ごとに異なるボールが用いられ、中に羽毛を詰めたボール、中に砂を詰めたボール、空気で膨らませたボールが存在した。ただし、空気で膨らませたものは動物の腸を素材にしたもので完全な球形ではなくエアチューブを小さくまとめたような形状だったと考えられている。\n日本の蹴鞠用の鞠は鹿皮でできていた。中国では蹴鞠は戦国時代より軍事用の訓練として始められ、漢代以後チーム対抗球技として発展し、唐代には鞠はより弾むように羽根を詰めたものから空気を入れた動物の膀胱へと改良されたが、宋代に得点を競う球技から地面に落さないことを競う球技へと変化し、やがて風俗の退廃などを理由に清代に禁止令が出されほぼ消滅した。蹴鞠が伝わった東南アジアでは籐で編んだ籠状の鞠による球技が行われ、現在のセパタクローへと発展した。\nクリストファー・コロンブスによるアメリカ到達前の時代には、南北アメリカ大陸以外ではゴムは知られていなかった。",
+      "source_metadata": {
+        "article_text_sha256": "4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "39160034943022124285461180038_0-786",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 491,
+          "end": 786,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368",
+        "text_sha256": "4d776bf77a1ad3c4fdc9c5efceed5ef5b135da90f19f368bc794854b7451c6f5",
+        "title": "ボール",
+        "wikipedia_page_id": 1012084,
+        "wikipedia_revision_id": 97669368,
+        "wikipedia_revision_timestamp_utc": "2023-10-30T10:03:22Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "4d776bf77a1ad3c4fdc9c5efceed5ef5b135da90f19f368bc794854b7451c6f5",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 786
+      }
+    },
+    {
+      "passage_id": "39160034943022124285461180038_1505-2359",
+      "title": "ボール",
+      "text": "これは中英語の bal （ball-e, -es と変化する）から来たものであり、そのもとは古ノルド語の böllr （古いスウェーデン語の baller や現代のスウェーデン語 boll の原形）や、ゲルマン祖語の ballu-z （中高ドイツ語の bal, ball-es、中世オランダ語の bal の原形）であり、古高ドイツ語の ballo やpallo、ballâ （ゲルマン祖語の *ballon や *ballôn から来ている）と語源を同じくする。もし、ball- がゲルマン語由来の言葉であれば、その語源はラテン語の foll-is （膨らませるもの）と同じである可能性がある。\n中世英語の後期の綴り「balle」はフランス語でボールを意味する「balle」と形が同じだが、これを理由に「ボールという語はフランス語から英語に入った」という誤った説が伝えられている。フランス語の balle も、ゲルマン語起源だったと見られる。\nギャラリー\nコンピュータで断層撮影したサッカーボール (Video)\n野球のボール\nバスケットボールのボール\nクリケットのボール\nビリヤードボール\nラクロスのボール\nオーストラリアン・ルールズ・フットボール\nテニスのボール\nアメリカンフットボール\nゴルフボールと内部のディンプル\nビーチバレー用のボール\nセパタクロー用のボール\nラグビーボール\nラグビーボール\nソフトボール用ボール\nペタンクのボール（ブール）\n玩具のスーパーボール\nバンディ\nボウリングの球は、英語で「Bowling ball」\n脚注\n関連項目\n球技\nゴール (スポーツ)\nフィットネスボール（メディシンボール、エクササイズボール） ‐ リハビリやトレーニングに使う重さのあるボール\n外部リンク\n加藤元和, 「Carl Diem の世界スポーツ文化史の研究(4) : 近代初期ヨーロッパの場合(3)イギリス」『京都教育大学紀要』 108巻 p.19-32 2006年, ISSN 0387-7833",
+      "source_metadata": {
+        "article_text_sha256": "4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "39160034943022124285461180038_1505-2359",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 496,
+          "end": 2359,
+          "start": 1505
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368",
+        "text_sha256": "1d554aa5a6819a3c2ef330707897f17635d93106e43c7969aeb8b8d82fcd07cb",
+        "title": "ボール",
+        "wikipedia_page_id": 1012084,
+        "wikipedia_revision_id": 97669368,
+        "wikipedia_revision_timestamp_utc": "2023-10-30T10:03:22Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "1d554aa5a6819a3c2ef330707897f17635d93106e43c7969aeb8b8d82fcd07cb",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 854
+      }
+    },
+    {
+      "passage_id": "70505583351356579012158738619_823-1615",
+      "title": "ジャグリング",
+      "text": "この弄丸の単語自体は、10世紀の『和名類聚抄』巻四・射撃部「雑芸類」にも記述がみられる（説明によれば、中国由来とある）。\nジャグリングの種類\nトスジャグリング\n手に持った、通常複数の道具を空中へ投げたりキャッチしたりを繰り返すことで、空中に1つ以上の道具が浮いている状態を保ち続ける技術である。競技人口も多く、ジャグリングの基礎ともいえる。典型的にはボールやクラブが使われるが、手に保持できる程度の大きさのものなら原理的にはジャグリングできる。\nジャグリングでは同じ個数でも違う投げ方が多く登場する。そういう概念を扱うには「サイトスワップ」が多用されている。\nよく使われる道具には、ボール（ビーンバッグ、ロシアンボールなど）、クラブ、リングなどがある。ボールの種類には、他にも、地面や壁で弾ませるバウンスボール、発光することで見栄えを良くしたグローボールなどもある。\n→詳細は「トスジャグリング」を参照\nコンタクトジャグリング\n身体の上や手の上で道具を転がすジャグリング。典型的には透明なクリスタルボールが使われる。\n→詳細は「コンタクトジャグリング」を参照\nバランス\n道具を身体の上で立てた状態でバランスを取りつづける。\nオブジェクトマニピュレーション\nシガーボックスを用いたジャグリング\nいわゆる広義のジャグリング。\nシガーボックス\n直方体の箱。主に3つ以上を使い、挟み込んで箱の位置を入れ替えたりバランスを取ったりするジャグリングに使われる。\nデビルスティック\nセンタースティックと呼ばれる長い棒を、手に持った棒で扱う。\nディアボロ\n中国ゴマとも呼ばれる。お椀を2個つなげたようなコマを、2本のハンドスティックに通した糸でディアボロをまわすことにより遠心力をかけ、微調整をしながら安定させ操る。\nカードフラリッシュ\nカードを用いたジャグリング。\nヨーヨー\n軸と糸が連結してある。",
+      "source_metadata": {
+        "article_text_sha256": "a514aeeefb389320eadb6be8d06037a280060e9ee662f394182a0bda02ce974c",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:77838:94704930:a514aeeefb389320eadb6be8d06037a280060e9ee662f394182a0bda02ce974c",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "70505583351356579012158738619_823-1615",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 488,
+          "end": 1615,
+          "start": 823
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=94704930",
+        "text_sha256": "43d2ba6e16f287b80403ce8f15beade63733354843ddd263dfb498a3f48abe53",
+        "title": "ジャグリング",
+        "wikipedia_page_id": 77838,
+        "wikipedia_revision_id": 94704930,
+        "wikipedia_revision_timestamp_utc": "2023-04-09T05:41:16Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=94704930&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "43d2ba6e16f287b80403ce8f15beade63733354843ddd263dfb498a3f48abe53",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 792
+      }
+    },
+    {
+      "passage_id": "34638512171463197433661155681_0-689",
+      "title": "カット・ファスト・ボール",
+      "text": "カット・ファスト・ボール（英: Cut Fastball）は、野球における球種の1つ。日本ではカットボール、真っスラ、アメリカ合衆国ではカッター（英: Cutter）と呼ばれることが多い。\n概要\nカットファストボールの握りの例\n直球の握りから人差し指を少し中指側にずらして握り、リリースの際にボールを切る（カットする）様に投げる。直球とほぼ同じ球速で小さく鋭く変化するため、打者からは直球との見分けがつきにくく、直球と思ってスイングしに行った打者のバットの芯から外させて凡打に打ち取る目的で使われることが多い。特に投げ手の逆側の打席に入る打者の内角に投じ、バットを詰まらせるのが有効であるとされる。横に曲がる、斜めに落ちる、縦に落ちるといった変化の種類があり、速球が真っ直ぐ進まずに常時このような変化をする投手もいる。\n代表的な使い手としてはマリアノ・リベラやアンディ・ペティット、ロイ・ハラデイ、ジョン・レスター、ケンリー・ジャンセンなどがいる。特にマリアノ・リベラは史上最高のカッターの使い手として知られ、球種がフォーシームかカッターのみという非常に珍しい投球スタイルでMLB屈指のクローザーとして活躍した。リベラのカッターは90mph半ば（約153km/h以上）を超える球速で約20cm変化すると言われ、空振りを狙うことも可能であった。\n日本人選手ではカットボールを広めたのは武田一浩と言われている。ファイターズ時代にチームメイトだったマット・ウインタースからカットボールの存在を聞き習得し、武田のドラゴンズ移籍後に川上憲伸がこれを習得、日本屈指のカットボーラーとなった。",
+      "source_metadata": {
+        "article_text_sha256": "57058b04d4ed229de0f2b4d99506e224e53bdc5ab91c0409d25d848a5067b27b",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:308286:95979211:57058b04d4ed229de0f2b4d99506e224e53bdc5ab91c0409d25d848a5067b27b",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34638512171463197433661155681_0-689",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 440,
+          "end": 689,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=95979211",
+        "text_sha256": "0ed2f809c864dc340716dcd5d06253d8a33bac6378524afb2c7a4a0cf8395f8d",
+        "title": "カット・ファスト・ボール",
+        "wikipedia_page_id": 308286,
+        "wikipedia_revision_id": 95979211,
+        "wikipedia_revision_timestamp_utc": "2023-07-12T07:53:38Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=95979211&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "0ed2f809c864dc340716dcd5d06253d8a33bac6378524afb2c7a4a0cf8395f8d",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 689
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "39160034943022124285461180038_0-786",
+      "title": "ボール",
+      "text": "クッション製ボール\nスポーツ用品売り場に陳列されたバスケットボール\nボール（ball）はゲーム（球技や遊戯）などに使う球形の用具。中は空洞で球形の皮膜や外殻に包まれていることが多いが、中まで詰まったボール（例：ビリヤードの球や、芯にコルクなどを利用する野球ボール）や球形でないボール（例：ラグビーやアメリカンフットボールの長球形のボール）もある。\nチーム競技にはボールを使った球技が多い。球技では、ゲームの成り行きはプレイヤーが投げたり打ったり蹴ったりしたボールの状態に左右される。またボールは一人や少人数でできる遊び、たとえばキャッチボールやビー玉、ジャグリング（ボールジャグリング）などにも使われる。\n歴史\nクリケットボール\nボールを用いた遊戯は古くから自然に行なわれていた。初期のボールは羊毛や髪の毛などの繊維を布や革の袋に詰めたもので重いものだった。\n古代ローマでは球技ごとに異なるボールが用いられ、中に羽毛を詰めたボール、中に砂を詰めたボール、空気で膨らませたボールが存在した。ただし、空気で膨らませたものは動物の腸を素材にしたもので完全な球形ではなくエアチューブを小さくまとめたような形状だったと考えられている。\n日本の蹴鞠用の鞠は鹿皮でできていた。中国では蹴鞠は戦国時代より軍事用の訓練として始められ、漢代以後チーム対抗球技として発展し、唐代には鞠はより弾むように羽根を詰めたものから空気を入れた動物の膀胱へと改良されたが、宋代に得点を競う球技から地面に落さないことを競う球技へと変化し、やがて風俗の退廃などを理由に清代に禁止令が出されほぼ消滅した。蹴鞠が伝わった東南アジアでは籐で編んだ籠状の鞠による球技が行われ、現在のセパタクローへと発展した。\nクリストファー・コロンブスによるアメリカ到達前の時代には、南北アメリカ大陸以外ではゴムは知られていなかった。",
+      "source_metadata": {
+        "article_text_sha256": "4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "39160034943022124285461180038_0-786",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 491,
+          "end": 786,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368",
+        "text_sha256": "4d776bf77a1ad3c4fdc9c5efceed5ef5b135da90f19f368bc794854b7451c6f5",
+        "title": "ボール",
+        "wikipedia_page_id": 1012084,
+        "wikipedia_revision_id": 97669368,
+        "wikipedia_revision_timestamp_utc": "2023-10-30T10:03:22Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "4d776bf77a1ad3c4fdc9c5efceed5ef5b135da90f19f368bc794854b7451c6f5",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 786
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "提示された根拠には、この質問に答えるための十分な情報がありません。",
+    "answer_sha256": "d25ff74c172ecb4fe8ba4aa0b3c1adf0389697dfa4b835b84705cfe73db3f307",
+    "quality": {
+      "annotation_id": "Q-12e11669973ca77ac420",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-12e11669973ca77ac420",
+        "candidate_sha256": "172f6985a741b54ee419e43275503982f69ee011b4aa5ba35bb46556bd36e485",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "uncertain",
+          "context_support": "fail"
+        },
+        "essential_points": "スポーツ用ボールの種類数を、集計範囲を明示して示す。提示資料からは少なくとも17種類を挙げられる。",
+        "reason": "実使用Contextのギャラリーには、重複するラグビーボールと玩具を除いても17種類の競技用ボールが列挙されている。Referenceの「少なくとも17種類」は、この実使用Contextからも回答できる。全種類の総数が確定しない点は残るが、種類数の下限も示さず情報不足として拒否するのは不適切である。",
+        "evidence": [
+          {
+            "passage_id": "39160034943022124285461180038_0-786",
+            "quote": "クッション製ボール\nスポーツ用品売り場に陳列されたバスケットボール\nボール（ball）はゲーム（球技や遊戯）などに使う球形の用具。中は空洞で球形の皮膜や外殻に包まれていることが多いが、中まで詰まったボール（例：ビリヤードの球や、芯にコルクなどを利用する野球ボール）や球形でないボール（例：ラグビーやアメリカンフットボールの長球形のボール）もある。\nチーム競技にはボールを使った球技が多い。球技では、ゲームの成り行きはプレイヤーが投げたり打ったり蹴ったりしたボールの状態に左右される。またボールは一人や少人数でできる遊び、たとえばキャッチボールやビー玉、ジャグリング（ボールジャグリング）などにも使われる。\n歴史\nクリケットボール\nボールを用いた遊戯は古くから自然に行なわれていた。初期のボールは羊毛や髪の毛などの繊維を布や革の袋に詰めたもので重いものだった。\n古代ローマでは球技ごとに異なるボールが用いられ、中に羽毛を詰めたボール、中に砂を詰めたボール、空気で膨らませたボールが存在した。ただし、空気で膨らませたものは動物の腸を素材にしたもので完全な球形ではなくエアチューブを小さくまとめたような形状だったと考えられている。\n日本の蹴鞠用の鞠は鹿皮でできていた。中国では蹴鞠は戦国時代より軍事用の訓練として始められ、漢代以後チーム対抗球技として発展し、唐代には鞠はより弾むように羽根を詰めたものから空気を入れた動物の膀胱へと改良されたが、宋代に得点を競う球技から地面に落さないことを競う球技へと変化し、やがて風俗の退廃などを理由に清代に禁止令が出されほぼ消滅した。蹴鞠が伝わった東南アジアでは籐で編んだ籠状の鞠による球技が行われ、現在のセパタクローへと発展した。\nクリストファー・コロンブスによるアメリカ到達前の時代には、南北アメリカ大陸以外ではゴムは知られていなかった。"
+          },
+          {
+            "passage_id": "39160034943022124285461180038_1505-2359",
+            "quote": "これは中英語の bal （ball-e, -es と変化する）から来たものであり、そのもとは古ノルド語の böllr （古いスウェーデン語の baller や現代のスウェーデン語 boll の原形）や、ゲルマン祖語の ballu-z （中高ドイツ語の bal, ball-es、中世オランダ語の bal の原形）であり、古高ドイツ語の ballo やpallo、ballâ （ゲルマン祖語の *ballon や *ballôn から来ている）と語源を同じくする。もし、ball- がゲルマン語由来の言葉であれば、その語源はラテン語の foll-is （膨らませるもの）と同じである可能性がある。\n中世英語の後期の綴り「balle」はフランス語でボールを意味する「balle」と形が同じだが、これを理由に「ボールという語はフランス語から英語に入った」という誤った説が伝えられている。フランス語の balle も、ゲルマン語起源だったと見られる。\nギャラリー\nコンピュータで断層撮影したサッカーボール (Video)\n野球のボール\nバスケットボールのボール\nクリケットのボール\nビリヤードボール\nラクロスのボール\nオーストラリアン・ルールズ・フットボール\nテニスのボール\nアメリカンフットボール\nゴルフボールと内部のディンプル\nビーチバレー用のボール\nセパタクロー用のボール\nラグビーボール\nラグビーボール\nソフトボール用ボール\nペタンクのボール（ブール）\n玩具のスーパーボール\nバンディ\nボウリングの球は、英語で「Bowling ball」\n脚注\n関連項目\n球技\nゴール (スポーツ)\nフィットネスボール（メディシンボール、エクササイズボール） ‐ リハビリやトレーニングに使う重さのあるボール\n外部リンク\n加藤元和, 「Carl Diem の世界スポーツ文化史の研究(4) : 近代初期ヨーロッパの場合(3)イギリス」『京都教育大学紀要』 108巻 p.19-32 2006年, ISSN 0387-7833"
+          }
+        ],
+        "elapsed_seconds": 14.501808652479667,
+        "confirmed_at_utc": "2026-11-04T00:59:20.465322+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_calibration/fixed-v23-cal-v1/ja/baseline/e851907180d4cdbdcb132225/record.json",
+      "sha256": "c2bab6f10b73c903849d9478c61ed2f7ebfcfbce1064f80a585c97397f533b0f"
+    },
+    "copy": "provenance/baselines/cal_ja_e851907180d4cdbdcb132225.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "提示された文書には、スポーツで使われるボールの総数が明記されていません。ただし、具体的な種類としてバスケットボール、クリケットボール、ビリヤードボール、ラグビーボール、アメリカンフットボール、テニスのボール、ゴルフボール、ボウリングの球、ペタンクのボール（ブール）、セパタクロー用のボールなどが挙げられています【39160034943022124285461180038_0-786, 39160034943022124285461180038_1505-2359】。また、ギャラリーにはサッカーボール、野球のボール、ソフトボール用ボール、バンディなどもリストされています【39160034943022124285461180038_1505-2359】。",
+    "answer_sha256": "55b665f3da21c79ba7befe21439c540605d0cb4cdb8ce6929369f4615c586e9f",
+    "quality": {
+      "annotation_id": "Q-a54d815e33325d534de4",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-a54d815e33325d534de4",
+        "candidate_sha256": "512f48b129977964ffc0a01d3937827fb7d96c9c03eb4ffd75e39641e80335d5",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "スポーツ用ボールの種類数について、数え方と範囲を示し、資料から確認できる少なくとも17種類という下限を答える。全体の厳密な総数とは区別する。",
+        "reason": "列挙された種類と、総数の明記がないという説明は実使用文書に支持される。しかし、種類数を尋ねる質問に数値を示していない。実使用文書のギャラリーでも、重複するラグビーボールと玩具のスーパーボールを除いて17種類を数えられ、少なくともその下限を回答できる。参考回答だけに依存した不足判定ではない。",
+        "evidence": [
+          {
+            "passage_id": "39160034943022124285461180038_0-786",
+            "quote": "クッション製ボール\nスポーツ用品売り場に陳列されたバスケットボール\nボール（ball）はゲーム（球技や遊戯）などに使う球形の用具。中は空洞で球形の皮膜や外殻に包まれていることが多いが、中まで詰まったボール（例：ビリヤードの球や、芯にコルクなどを利用する野球ボール）や球形でないボール（例：ラグビーやアメリカンフットボールの長球形のボール）もある。\nチーム競技にはボールを使った球技が多い。球技では、ゲームの成り行きはプレイヤーが投げたり打ったり蹴ったりしたボールの状態に左右される。またボールは一人や少人数でできる遊び、たとえばキャッチボールやビー玉、ジャグリング（ボールジャグリング）などにも使われる。\n歴史\nクリケットボール\nボールを用いた遊戯は古くから自然に行なわれていた。初期のボールは羊毛や髪の毛などの繊維を布や革の袋に詰めたもので重いものだった。\n古代ローマでは球技ごとに異なるボールが用いられ、中に羽毛を詰めたボール、中に砂を詰めたボール、空気で膨らませたボールが存在した。ただし、空気で膨らませたものは動物の腸を素材にしたもので完全な球形ではなくエアチューブを小さくまとめたような形状だったと考えられている。\n日本の蹴鞠用の鞠は鹿皮でできていた。中国では蹴鞠は戦国時代より軍事用の訓練として始められ、漢代以後チーム対抗球技として発展し、唐代には鞠はより弾むように羽根を詰めたものから空気を入れた動物の膀胱へと改良されたが、宋代に得点を競う球技から地面に落さないことを競う球技へと変化し、やがて風俗の退廃などを理由に清代に禁止令が出されほぼ消滅した。蹴鞠が伝わった東南アジアでは籐で編んだ籠状の鞠による球技が行われ、現在のセパタクローへと発展した。\nクリストファー・コロンブスによるアメリカ到達前の時代には、南北アメリカ大陸以外ではゴムは知られていなかった。"
+          },
+          {
+            "passage_id": "39160034943022124285461180038_1505-2359",
+            "quote": "これは中英語の bal （ball-e, -es と変化する）から来たものであり、そのもとは古ノルド語の böllr （古いスウェーデン語の baller や現代のスウェーデン語 boll の原形）や、ゲルマン祖語の ballu-z （中高ドイツ語の bal, ball-es、中世オランダ語の bal の原形）であり、古高ドイツ語の ballo やpallo、ballâ （ゲルマン祖語の *ballon や *ballôn から来ている）と語源を同じくする。もし、ball- がゲルマン語由来の言葉であれば、その語源はラテン語の foll-is （膨らませるもの）と同じである可能性がある。\n中世英語の後期の綴り「balle」はフランス語でボールを意味する「balle」と形が同じだが、これを理由に「ボールという語はフランス語から英語に入った」という誤った説が伝えられている。フランス語の balle も、ゲルマン語起源だったと見られる。\nギャラリー\nコンピュータで断層撮影したサッカーボール (Video)\n野球のボール\nバスケットボールのボール\nクリケットのボール\nビリヤードボール\nラクロスのボール\nオーストラリアン・ルールズ・フットボール\nテニスのボール\nアメリカンフットボール\nゴルフボールと内部のディンプル\nビーチバレー用のボール\nセパタクロー用のボール\nラグビーボール\nラグビーボール\nソフトボール用ボール\nペタンクのボール（ブール）\n玩具のスーパーボール\nバンディ\nボウリングの球は、英語で「Bowling ball」\n脚注\n関連項目\n球技\nゴール (スポーツ)\nフィットネスボール（メディシンボール、エクササイズボール） ‐ リハビリやトレーニングに使う重さのあるボール\n外部リンク\n加藤元和, 「Carl Diem の世界スポーツ文化史の研究(4) : 近代初期ヨーロッパの場合(3)イギリス」『京都教育大学紀要』 108巻 p.19-32 2006年, ISSN 0387-7833"
+          }
+        ],
+        "elapsed_seconds": 10.001357201991292,
+        "confirmed_at_utc": "2026-11-04T01:03:39.032217+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [],
+  "extraction_audit": {
+    "claims": [],
+    "unit_version": "verbatim-sentence-units-ja-v1",
+    "normalized_prose": "提示された根拠には、この質問に答えるための十分な情報がありません。",
+    "exclusion": "standalone_refusal",
+    "spans": [],
+    "unclosed_delimiters": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "39160034943022124285461180038_1505-2359",
+          "39160034943022124285461180038_0-786",
+          "34638512171463197433661155681_0-689",
+          "70505583351356579012158738619_823-1615",
+          "39160034943022124285461180038_786-1505"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "39160034943022124285461180038_0-786",
+          "70505583351356579012158738619_823-1615",
+          "39160034943022124285461180038_1505-2359",
+          "39160034943022124285461180038_786-1505",
+          "34638512171463197433661155681_0-689"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "39160034943022124285461180038_786-1505",
+          "39160034943022124285461180038_0-786",
+          "39160034943022124285461180038_1505-2359",
+          "70505583351356579012158738619_823-1615",
+          "34638512171463197433661155681_0-689"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "34638512171463197433661155681_0-689",
+          "70505583351356579012158738619_823-1615",
+          "39160034943022124285461180038_1505-2359",
+          "39160034943022124285461180038_0-786",
+          "39160034943022124285461180038_786-1505"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "39160034943022124285461180038_786-1505",
+          "39160034943022124285461180038_0-786",
+          "39160034943022124285461180038_1505-2359",
+          "70505583351356579012158738619_823-1615",
+          "34638512171463197433661155681_0-689"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "39160034943022124285461180038_786-1505",
+          "39160034943022124285461180038_0-786",
+          "39160034943022124285461180038_1505-2359",
+          "70505583351356579012158738619_823-1615",
+          "34638512171463197433661155681_0-689"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "70505583351356579012158738619_823-1615",
+          "34638512171463197433661155681_0-689",
+          "39160034943022124285461180038_1505-2359",
+          "39160034943022124285461180038_786-1505",
+          "39160034943022124285461180038_0-786"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "39160034943022124285461180038_786-1505",
+          "39160034943022124285461180038_0-786",
+          "39160034943022124285461180038_1505-2359",
+          "70505583351356579012158738619_823-1615",
+          "34638512171463197433661155681_0-689"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "39160034943022124285461180038_786-1505",
+          "39160034943022124285461180038_0-786",
+          "39160034943022124285461180038_1505-2359",
+          "70505583351356579012158738619_823-1615",
+          "34638512171463197433661155681_0-689"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "ja",
+    "record_id": "whrja:02e85c8:answered:1254",
+    "document_group_id": "whrja-group:3fdd3c55b6f66fc22677f65b",
+    "comparable": false,
+    "increment": null,
+    "partial_pair_increment_exploratory": null,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 0,
+      "valid_pairs": 0,
+      "disagreeing_pairs": 0,
+      "rate": null
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 0,
+      "valid_pairs": 0,
+      "disagreeing_pairs": 0,
+      "rate": null
+    },
+    "reason": "invalid_or_unscorable_trials"
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_calibration/fixed-v23-cal-v1/ja/report.private.json",
+    "sha256": "3651654ab2169fd76be09dde5420f6830270bea70acd945043fa93b8ce5265fd"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "34638512171463197433661155681_0-689",
+      "text": "カット・ファスト・ボール（英: Cut Fastball）は、野球における球種の1つ。日本ではカットボール、真っスラ、アメリカ合衆国ではカッター（英: Cutter）と呼ばれることが多い。\n概要\nカットファストボールの握りの例\n直球の握りから人差し指を少し中指側にずらして握り、リリースの際にボールを切る（カットする）様に投げる。直球とほぼ同じ球速で小さく鋭く変化するため、打者からは直球との見分けがつきにくく、直球と思ってスイングしに行った打者のバットの芯から外させて凡打に打ち取る目的で使われることが多い。特に投げ手の逆側の打席に入る打者の内角に投じ、バットを詰まらせるのが有効であるとされる。横に曲がる、斜めに落ちる、縦に落ちるといった変化の種類があり、速球が真っ直ぐ進まずに常時このような変化をする投手もいる。\n代表的な使い手としてはマリアノ・リベラやアンディ・ペティット、ロイ・ハラデイ、ジョン・レスター、ケンリー・ジャンセンなどがいる。特にマリアノ・リベラは史上最高のカッターの使い手として知られ、球種がフォーシームかカッターのみという非常に珍しい投球スタイルでMLB屈指のクローザーとして活躍した。リベラのカッターは90mph半ば（約153km/h以上）を超える球速で約20cm変化すると言われ、空振りを狙うことも可能であった。\n日本人選手ではカットボールを広めたのは武田一浩と言われている。ファイターズ時代にチームメイトだったマット・ウインタースからカットボールの存在を聞き習得し、武田のドラゴンズ移籍後に川上憲伸がこれを習得、日本屈指のカットボーラーとなった。",
+      "source_metadata": {
+        "article_text_sha256": "57058b04d4ed229de0f2b4d99506e224e53bdc5ab91c0409d25d848a5067b27b",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:308286:95979211:57058b04d4ed229de0f2b4d99506e224e53bdc5ab91c0409d25d848a5067b27b",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34638512171463197433661155681_0-689",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 440,
+          "end": 689,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=95979211",
+        "text_sha256": "0ed2f809c864dc340716dcd5d06253d8a33bac6378524afb2c7a4a0cf8395f8d",
+        "title": "カット・ファスト・ボール",
+        "wikipedia_page_id": 308286,
+        "wikipedia_revision_id": 95979211,
+        "wikipedia_revision_timestamp_utc": "2023-07-12T07:53:38Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=95979211&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "39160034943022124285461180038_0-786",
+      "text": "クッション製ボール\nスポーツ用品売り場に陳列されたバスケットボール\nボール（ball）はゲーム（球技や遊戯）などに使う球形の用具。中は空洞で球形の皮膜や外殻に包まれていることが多いが、中まで詰まったボール（例：ビリヤードの球や、芯にコルクなどを利用する野球ボール）や球形でないボール（例：ラグビーやアメリカンフットボールの長球形のボール）もある。\nチーム競技にはボールを使った球技が多い。球技では、ゲームの成り行きはプレイヤーが投げたり打ったり蹴ったりしたボールの状態に左右される。またボールは一人や少人数でできる遊び、たとえばキャッチボールやビー玉、ジャグリング（ボールジャグリング）などにも使われる。\n歴史\nクリケットボール\nボールを用いた遊戯は古くから自然に行なわれていた。初期のボールは羊毛や髪の毛などの繊維を布や革の袋に詰めたもので重いものだった。\n古代ローマでは球技ごとに異なるボールが用いられ、中に羽毛を詰めたボール、中に砂を詰めたボール、空気で膨らませたボールが存在した。ただし、空気で膨らませたものは動物の腸を素材にしたもので完全な球形ではなくエアチューブを小さくまとめたような形状だったと考えられている。\n日本の蹴鞠用の鞠は鹿皮でできていた。中国では蹴鞠は戦国時代より軍事用の訓練として始められ、漢代以後チーム対抗球技として発展し、唐代には鞠はより弾むように羽根を詰めたものから空気を入れた動物の膀胱へと改良されたが、宋代に得点を競う球技から地面に落さないことを競う球技へと変化し、やがて風俗の退廃などを理由に清代に禁止令が出されほぼ消滅した。蹴鞠が伝わった東南アジアでは籐で編んだ籠状の鞠による球技が行われ、現在のセパタクローへと発展した。\nクリストファー・コロンブスによるアメリカ到達前の時代には、南北アメリカ大陸以外ではゴムは知られていなかった。",
+      "source_metadata": {
+        "article_text_sha256": "4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "39160034943022124285461180038_0-786",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 491,
+          "end": 786,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368",
+        "text_sha256": "4d776bf77a1ad3c4fdc9c5efceed5ef5b135da90f19f368bc794854b7451c6f5",
+        "title": "ボール",
+        "wikipedia_page_id": 1012084,
+        "wikipedia_revision_id": 97669368,
+        "wikipedia_revision_timestamp_utc": "2023-10-30T10:03:22Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "39160034943022124285461180038_1505-2359",
+      "text": "これは中英語の bal （ball-e, -es と変化する）から来たものであり、そのもとは古ノルド語の böllr （古いスウェーデン語の baller や現代のスウェーデン語 boll の原形）や、ゲルマン祖語の ballu-z （中高ドイツ語の bal, ball-es、中世オランダ語の bal の原形）であり、古高ドイツ語の ballo やpallo、ballâ （ゲルマン祖語の *ballon や *ballôn から来ている）と語源を同じくする。もし、ball- がゲルマン語由来の言葉であれば、その語源はラテン語の foll-is （膨らませるもの）と同じである可能性がある。\n中世英語の後期の綴り「balle」はフランス語でボールを意味する「balle」と形が同じだが、これを理由に「ボールという語はフランス語から英語に入った」という誤った説が伝えられている。フランス語の balle も、ゲルマン語起源だったと見られる。\nギャラリー\nコンピュータで断層撮影したサッカーボール (Video)\n野球のボール\nバスケットボールのボール\nクリケットのボール\nビリヤードボール\nラクロスのボール\nオーストラリアン・ルールズ・フットボール\nテニスのボール\nアメリカンフットボール\nゴルフボールと内部のディンプル\nビーチバレー用のボール\nセパタクロー用のボール\nラグビーボール\nラグビーボール\nソフトボール用ボール\nペタンクのボール（ブール）\n玩具のスーパーボール\nバンディ\nボウリングの球は、英語で「Bowling ball」\n脚注\n関連項目\n球技\nゴール (スポーツ)\nフィットネスボール（メディシンボール、エクササイズボール） ‐ リハビリやトレーニングに使う重さのあるボール\n外部リンク\n加藤元和, 「Carl Diem の世界スポーツ文化史の研究(4) : 近代初期ヨーロッパの場合(3)イギリス」『京都教育大学紀要』 108巻 p.19-32 2006年, ISSN 0387-7833",
+      "source_metadata": {
+        "article_text_sha256": "4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "39160034943022124285461180038_1505-2359",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 496,
+          "end": 2359,
+          "start": 1505
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368",
+        "text_sha256": "1d554aa5a6819a3c2ef330707897f17635d93106e43c7969aeb8b8d82fcd07cb",
+        "title": "ボール",
+        "wikipedia_page_id": 1012084,
+        "wikipedia_revision_id": 97669368,
+        "wikipedia_revision_timestamp_utc": "2023-10-30T10:03:22Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "39160034943022124285461180038_786-1505",
+      "text": "スペイン人たちは中南米各地で、弾むボール（中身までゴムの詰まった、空気で膨らませないボール）が儀式や遊戯としての球技（詳細はメソアメリカの球技 / Mesoamerican ballgame を参照）に使われているのを見て目を見張った。\nヨーロッパ大陸では手でボールを打ち合うテニスの原形のようなスポーツ（イギリスでは「ファイブス」と呼ばれた）があり、やがて手を保護する手袋（グローブ）や木の棒を用いて打つようになり、テニスやホッケーやクリケットの元になった。またイギリスでは、年に一度教会に公認された祝日などにボールを村人・市民総出で奪い合う熱狂的なゲームがあり、サッカー（フットボール）のもととなった。プレイヤーたちはボールを足で蹴ったり手で持ったりしながら走っていたが、ゴムでなく木屑を詰めた動物の皮革でできたボールはよく飛ばず地面を転がるだけだった。フットボール用のボールの起源として、しばしば人の生首や頭蓋骨が使われた、という伝説がある。たとえばヴァイキングたちがイギリスの村々を略奪した際、船で帰る前に海岸で住民の首を使い球技をして遊んだ話や、都市のフットボールに最初は捕虜の首が使われていたという言い伝え、などである。\nなお、ソフトテニスやバレーボールなど主にゴム製ボールの空気穴のことを、「へそ」と呼ぶことがある。\n語源\nサッカーボール\n球形で遊戯に使われる物体という意味の「ボール」という英語は、1205年にラヤモン（Laȝamon、Layamon）によって書かれた英国史『ブルート』（Layamon’s Brut）に初出する。\nSumme heo driuen balles wide ȝeond Þa feldes\n",
+      "source_metadata": {
+        "article_text_sha256": "4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "39160034943022124285461180038_786-1505",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 425,
+          "end": 1505,
+          "start": 786
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368",
+        "text_sha256": "19d61ee19c9fd4a8d6a3997549e2eabf2e565e7ca946b2f3a87fded76dc46d6e",
+        "title": "ボール",
+        "wikipedia_page_id": 1012084,
+        "wikipedia_revision_id": 97669368,
+        "wikipedia_revision_timestamp_utc": "2023-10-30T10:03:22Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "70505583351356579012158738619_823-1615",
+      "text": "この弄丸の単語自体は、10世紀の『和名類聚抄』巻四・射撃部「雑芸類」にも記述がみられる（説明によれば、中国由来とある）。\nジャグリングの種類\nトスジャグリング\n手に持った、通常複数の道具を空中へ投げたりキャッチしたりを繰り返すことで、空中に1つ以上の道具が浮いている状態を保ち続ける技術である。競技人口も多く、ジャグリングの基礎ともいえる。典型的にはボールやクラブが使われるが、手に保持できる程度の大きさのものなら原理的にはジャグリングできる。\nジャグリングでは同じ個数でも違う投げ方が多く登場する。そういう概念を扱うには「サイトスワップ」が多用されている。\nよく使われる道具には、ボール（ビーンバッグ、ロシアンボールなど）、クラブ、リングなどがある。ボールの種類には、他にも、地面や壁で弾ませるバウンスボール、発光することで見栄えを良くしたグローボールなどもある。\n→詳細は「トスジャグリング」を参照\nコンタクトジャグリング\n身体の上や手の上で道具を転がすジャグリング。典型的には透明なクリスタルボールが使われる。\n→詳細は「コンタクトジャグリング」を参照\nバランス\n道具を身体の上で立てた状態でバランスを取りつづける。\nオブジェクトマニピュレーション\nシガーボックスを用いたジャグリング\nいわゆる広義のジャグリング。\nシガーボックス\n直方体の箱。主に3つ以上を使い、挟み込んで箱の位置を入れ替えたりバランスを取ったりするジャグリングに使われる。\nデビルスティック\nセンタースティックと呼ばれる長い棒を、手に持った棒で扱う。\nディアボロ\n中国ゴマとも呼ばれる。お椀を2個つなげたようなコマを、2本のハンドスティックに通した糸でディアボロをまわすことにより遠心力をかけ、微調整をしながら安定させ操る。\nカードフラリッシュ\nカードを用いたジャグリング。\nヨーヨー\n軸と糸が連結してある。",
+      "source_metadata": {
+        "article_text_sha256": "a514aeeefb389320eadb6be8d06037a280060e9ee662f394182a0bda02ce974c",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:77838:94704930:a514aeeefb389320eadb6be8d06037a280060e9ee662f394182a0bda02ce974c",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "70505583351356579012158738619_823-1615",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 488,
+          "end": 1615,
+          "start": 823
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=94704930",
+        "text_sha256": "43d2ba6e16f287b80403ce8f15beade63733354843ddd263dfb498a3f48abe53",
+        "title": "ジャグリング",
+        "wikipedia_page_id": 77838,
+        "wikipedia_revision_id": 94704930,
+        "wikipedia_revision_timestamp_utc": "2023-04-09T05:41:16Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=94704930&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "39160034943022124285461180038_0-786": {
+      "article_text_sha256": "4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "39160034943022124285461180038_0-786",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 491,
+        "end": 786,
+        "start": 0
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368",
+      "text_sha256": "4d776bf77a1ad3c4fdc9c5efceed5ef5b135da90f19f368bc794854b7451c6f5",
+      "title": "ボール",
+      "wikipedia_page_id": 1012084,
+      "wikipedia_revision_id": 97669368,
+      "wikipedia_revision_timestamp_utc": "2023-10-30T10:03:22Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "39160034943022124285461180038_0-786",
+      "text": "クッション製ボール\nスポーツ用品売り場に陳列されたバスケットボール\nボール（ball）はゲーム（球技や遊戯）などに使う球形の用具。中は空洞で球形の皮膜や外殻に包まれていることが多いが、中まで詰まったボール（例：ビリヤードの球や、芯にコルクなどを利用する野球ボール）や球形でないボール（例：ラグビーやアメリカンフットボールの長球形のボール）もある。\nチーム競技にはボールを使った球技が多い。球技では、ゲームの成り行きはプレイヤーが投げたり打ったり蹴ったりしたボールの状態に左右される。またボールは一人や少人数でできる遊び、たとえばキャッチボールやビー玉、ジャグリング（ボールジャグリング）などにも使われる。\n歴史\nクリケットボール\nボールを用いた遊戯は古くから自然に行なわれていた。初期のボールは羊毛や髪の毛などの繊維を布や革の袋に詰めたもので重いものだった。\n古代ローマでは球技ごとに異なるボールが用いられ、中に羽毛を詰めたボール、中に砂を詰めたボール、空気で膨らませたボールが存在した。ただし、空気で膨らませたものは動物の腸を素材にしたもので完全な球形ではなくエアチューブを小さくまとめたような形状だったと考えられている。\n日本の蹴鞠用の鞠は鹿皮でできていた。中国では蹴鞠は戦国時代より軍事用の訓練として始められ、漢代以後チーム対抗球技として発展し、唐代には鞠はより弾むように羽根を詰めたものから空気を入れた動物の膀胱へと改良されたが、宋代に得点を競う球技から地面に落さないことを競う球技へと変化し、やがて風俗の退廃などを理由に清代に禁止令が出されほぼ消滅した。蹴鞠が伝わった東南アジアでは籐で編んだ籠状の鞠による球技が行われ、現在のセパタクローへと発展した。\nクリストファー・コロンブスによるアメリカ到達前の時代には、南北アメリカ大陸以外ではゴムは知られていなかった。",
+      "source_metadata": {
+        "article_text_sha256": "4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1012084:97669368:4fa222d0a50e156d871807b371a54f4bfe1526e77b66264d12e4030353fc133d",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "39160034943022124285461180038_0-786",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 491,
+          "end": 786,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368",
+        "text_sha256": "4d776bf77a1ad3c4fdc9c5efceed5ef5b135da90f19f368bc794854b7451c6f5",
+        "title": "ボール",
+        "wikipedia_page_id": 1012084,
+        "wikipedia_revision_id": 97669368,
+        "wikipedia_revision_timestamp_utc": "2023-10-30T10:03:22Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97669368&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ]
+}

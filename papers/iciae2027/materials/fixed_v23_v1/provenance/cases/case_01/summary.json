@@ -1,0 +1,320 @@
+{
+  "record_id": "clapnq:c508d78:train:6842134809914363415:answerable",
+  "trace_sha256": "ac980c9f45b62e491e972748e4ec5f63112ccc7f3428cde9642e0da842938e94",
+  "extraction_status": "ok",
+  "claims": [
+    {
+      "claim_id": "c1",
+      "text": "The United States escalated its role in the Vietnam War due to the escalation of military advisers ordered to the Republic of Vietnam in 1964, bringing the total American troop level to 21,000."
+    },
+    {
+      "claim_id": "c2",
+      "text": "This increase was a direct response to the growing conflict and the need to support South Vietnam against North Vietnam's communist domination."
+    },
+    {
+      "claim_id": "c3",
+      "text": "The United States' involvement escalated further as it sought to prevent the spread of communism in Southeast Asia, aligning with its national security interests. and provide detailed information on the escalation and the broader context of U.S. involvement in Vietnam."
+    }
+  ],
+  "extraction_audit_warnings": [],
+  "claims_sha256": "a76c8f9b2daeed7213c45b6bd88471f9edfeb532b5853a817051ec305c1d7b42",
+  "extraction_result_sha256": "fa6cb3c17522ca4f3547bcd09d8c2cd99af093ddb2c0dd8165e64a75fd9ec6a7",
+  "threshold": 0.7,
+  "plan": {
+    "trials": [
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "842827984_782-1199",
+          "846300055_19938-20339",
+          "846300055_356-1813",
+          "841739696_22613-23156",
+          "835683107_33420-34043"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "842827984_782-1199",
+          "846300055_19938-20339",
+          "846300055_356-1813",
+          "841739696_22613-23156",
+          "835683107_33420-34043"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "835683107_33420-34043",
+          "846300055_19938-20339",
+          "841739696_22613-23156",
+          "842827984_782-1199",
+          "846300055_356-1813"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "842827984_782-1199",
+          "846300055_19938-20339",
+          "846300055_356-1813",
+          "841739696_22613-23156",
+          "835683107_33420-34043"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "842827984_782-1199",
+          "846300055_19938-20339",
+          "846300055_356-1813",
+          "841739696_22613-23156",
+          "835683107_33420-34043"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "842827984_782-1199",
+          "846300055_19938-20339",
+          "846300055_356-1813",
+          "841739696_22613-23156",
+          "835683107_33420-34043"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "835683107_33420-34043",
+          "846300055_356-1813",
+          "841739696_22613-23156",
+          "842827984_782-1199",
+          "846300055_19938-20339"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "835683107_33420-34043",
+          "841739696_22613-23156",
+          "846300055_356-1813",
+          "846300055_19938-20339",
+          "842827984_782-1199"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "846300055_19938-20339",
+          "842827984_782-1199",
+          "835683107_33420-34043",
+          "846300055_356-1813",
+          "841739696_22613-23156"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "trials": [
+    {
+      "trial_id": "repeat_4",
+      "document_ids": [
+        "842827984_782-1199",
+        "846300055_19938-20339",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "835683107_33420-34043"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/repeat_4.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "d08c92449a25d5529cbf5b0d15ae7015a014f1629d68a2b00675d1031254395b",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "repeat_3",
+      "document_ids": [
+        "842827984_782-1199",
+        "846300055_19938-20339",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "835683107_33420-34043"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/repeat_3.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "ef95a14b893f2ef9c18682de4a7860bbbcefb373c2b715114310a954ce3b13b5",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "shuffle_2",
+      "document_ids": [
+        "835683107_33420-34043",
+        "846300055_19938-20339",
+        "841739696_22613-23156",
+        "842827984_782-1199",
+        "846300055_356-1813"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/shuffle_2.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "82ad590c874ec8aff82ad0520f2b125d372b52fcbe4516b5aeec108474469646",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "repeat_2",
+      "document_ids": [
+        "842827984_782-1199",
+        "846300055_19938-20339",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "835683107_33420-34043"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/repeat_2.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "b94b2ae22ec988c315529aa15ba3ecc369e2db0e8193d93220e863f6e0324bd2",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "repeat_5",
+      "document_ids": [
+        "842827984_782-1199",
+        "846300055_19938-20339",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "835683107_33420-34043"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/repeat_5.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "5957cf8fec304f3d46c620d65327f4642af970ca1246b74dcebdf4fbfd7b20ea",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "original",
+      "document_ids": [
+        "842827984_782-1199",
+        "846300055_19938-20339",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "835683107_33420-34043"
+      ],
+      "score": 0.3333333333333333,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/original.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "cd86d2e273f7a1819c01daf40de33672cd4de48ab4852263426906379e2b0d48",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "shuffle_3",
+      "document_ids": [
+        "835683107_33420-34043",
+        "846300055_356-1813",
+        "841739696_22613-23156",
+        "842827984_782-1199",
+        "846300055_19938-20339"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/shuffle_3.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "6ba64b1b71ac58a1bec90f1c44253b7e66540ce2b6e7b953c7021d407b52382e",
+      "decision": "accept",
+      "action": "keep_initial"
+    },
+    {
+      "trial_id": "reversed",
+      "document_ids": [
+        "835683107_33420-34043",
+        "841739696_22613-23156",
+        "846300055_356-1813",
+        "846300055_19938-20339",
+        "842827984_782-1199"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/reversed.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "f0c356dc178d92435b22156ad57e91bee3040db0adcd35aab6ec9c79b174fa35",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "shuffle_1",
+      "document_ids": [
+        "846300055_19938-20339",
+        "842827984_782-1199",
+        "835683107_33420-34043",
+        "846300055_356-1813",
+        "841739696_22613-23156"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "f94093f2dcb620bdcf4bdb09/shuffle_1.json",
+      "json_schema_sha256": "1c7d6facaf94e5b9b58f179b1526cfe8f1e3f1aa6a7cfb81c44107dc6e81bb79",
+      "result_sha256": "de79e96f0ae1f5301fac8a73faa34a93987d32b215186c3761284f97e8afa182",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    }
+  ],
+  "order_group": {
+    "planned_trials": 5,
+    "valid_trials": 5,
+    "valid_pairs": 10,
+    "disagreeing_pairs": 4,
+    "both_decisions_observed": true
+  },
+  "repeat_group": {
+    "planned_trials": 5,
+    "valid_trials": 5,
+    "valid_pairs": 10,
+    "disagreeing_pairs": 0,
+    "both_decisions_observed": false
+  }
+}

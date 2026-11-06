@@ -1,0 +1,837 @@
+{
+  "qa_key": "cal_ja_bcc347443382bbc0a9522c4b",
+  "cohort": "cal",
+  "language": "ja",
+  "analysis_role": "cal",
+  "source_qa_split": "calibration",
+  "record_id": "whrja:02e85c8:answered:418",
+  "document_group_id": "whrja-group:746d92d688815aa05d0a2cf9",
+  "qa_source": {
+    "answerability_scope": "human_answer_in_source_not_verified_common_corpus_coverage",
+    "corpus_answerability": "not_annotated_no_relabel_from_body_or_quote_availability",
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "document_group_id": "whrja-group:746d92d688815aa05d0a2cf9",
+    "gold_parent_ids": [
+      "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3"
+    ],
+    "gold_passage_ids": [
+      "64303677342119676409074468465_0-889"
+    ],
+    "gold_passage_ids_scope": "verified_literal_quote_overlap_children_only_not_metric_gold",
+    "gold_passage_mapping_status": "audited_cited_article_and_source_reference_markup_mapping_v2",
+    "gold_relevance_unit": "available_cited_source_article",
+    "is_answerable": true,
+    "language": "ja",
+    "provided_passage": null,
+    "question": "GPSについて詳しく解説願います。",
+    "record_id": "whrja:02e85c8:answered:418",
+    "reference_answer_sentences": [
+      {
+        "citations": [
+          0
+        ],
+        "text": "GPSとは、アメリカ合衆国によって運用される衛星測位システム（地球上の現在位置を測定するためのシステムのこと）を指します。"
+      },
+      {
+        "citations": [
+          0
+        ],
+        "text": "GPSは、ロラン-Cシステムの後継にあたります。"
+      },
+      {
+        "citations": [
+          0
+        ],
+        "text": "アメリカ合衆国が打ち上げた約30個のGPS衛星のうち、上空にある数個の衛星からの信号をGPS受信機で受け取り、受信者が自身の現在位置を知るシステムです。"
+      }
+    ],
+    "reference_answers": [
+      "GPSとは、アメリカ合衆国によって運用される衛星測位システム（地球上の現在位置を測定するためのシステムのこと）を指します。GPSは、ロラン-Cシステムの後継にあたります。アメリカ合衆国が打ち上げた約30個のGPS衛星のうち、上空にある数個の衛星からの信号をGPS受信機で受け取り、受信者が自身の現在位置を知るシステムです。"
+    ],
+    "reference_corpus_mapping": [
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0,
+          1,
+          2
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "64303677342119676409074468465_0-889"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "exact",
+          "spans": [
+            {
+              "end": 291,
+              "source_span_sha256": "f0d711c0add583518c76002b3a4bb6daa8d7f15ade156bfb29e3e9b9b79b5d37",
+              "start": 10
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "raw_article_status": "ok",
+        "reference_index": 0,
+        "source_reference_unit_id": "jawiki-page:6838"
+      }
+    ],
+    "reference_corpus_metadata_offline_only": true,
+    "reference_evidence": [
+      {
+        "cited_by_answer_sentence_indices": [
+          0,
+          1,
+          2
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "グローバル・ポジショニング・システム（英語: Global Positioning System, Global Positioning Satellite, GPS、全地球測位システム）とは、アメリカ合衆国によって運用される衛星測位システム（地球上の現在位置を測定するためのシステムのこと）を指す。\nロラン-C（Loran-C: Long Range Navigation C）システムの後継にあたる。\nアメリカ合衆国が打ち上げた約30個のGPS衛星のうち、上空にある数個の衛星からの信号をGPS受信機で受け取り、受信者が自身の現在位置を知るシステムである。\n",
+        "reference_index": 0,
+        "title": "グローバル・ポジショニング・システム",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%AB%E3%83%BB%E3%83%9D%E3%82%B8%E3%82%B7%E3%83%A7%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%BB%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0"
+      }
+    ],
+    "research_split": "calibration",
+    "selected_sentences_by_reference": [
+      [
+        "グローバル・ポジショニング・システム（英語: Global Positioning System, Global Positioning Satellite, GPS、全地球測位システム）とは、アメリカ合衆国によって運用される衛星測位システム（地球上の現在位置を測定するためのシステムのこと）を指す。\nロラン-C（Loran-C: Long Range Navigation C）システムの後継にあたる。\nアメリカ合衆国が打ち上げた約30個のGPS衛星のうち、上空にある数個の衛星からの信号をGPS受信機で受け取り、受信者が自身の現在位置を知るシステムである。\n"
+      ]
+    ],
+    "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+    "source_id": "418",
+    "source_line_index": 270,
+    "source_record_sha256": "caa4dd300336a66dc91f0387eaf00d813300f4621b642411a8a4299a366718c2",
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "source_split": "answered",
+    "source_title": "グローバル・ポジショニング・システム",
+    "unavailable_cited_reference_ids": []
+  },
+  "source_selection": {
+    "record_id": "whrja:02e85c8:answered:418",
+    "question": "GPSについて詳しく解説願います。",
+    "document_group_id": "whrja-group:746d92d688815aa05d0a2cf9"
+  },
+  "question": "GPSについて詳しく解説願います。",
+  "used_documents": [
+    {
+      "passage_id": "64303677342119676409074468465_18018-18868",
+      "title": "グローバル・ポジショニング・システム",
+      "text": "国土地理院による定点観測\n国土地理院は、日本列島のあらゆる地点にGPSを定期的に受信する電子基準点を設置し、地殻の変化を3次元的に詳細に観測することができる。2011年の東北地方太平洋沖地震（東日本大震災）では、1メートル以上の地盤沈降や、5メートル以上の水平移動が観測されている。\nGPSにまつわる誤解\n以下の言説は、すべて誤解である。\nGPS衛星はGPS受信機（カーナビ等）に直接その受信機がいる座標値 (x, y, z) を教えている。\nGPS衛星がカーナビのルートを作成している。\nGPS衛星はGPS受信機の位置を逆探知できる。\nGPS衛星とGPS受信機が相互に通信をしている。\nGPS信号によって方位も決定している。(ただし、GPSコンパスを実装している製品を除く)\n運送荷物の追跡システムは、荷物のどこかにGPS発信機が内蔵されている。販売者が追跡できる。\n「GPS信号」とはGPS衛星が発している電波のことであり、受信機が発する信号は「GPS情報」である。\nGPS衛星は、地球に向けて時報と発信元衛星の天体暦（軌道）情報を発しているのみの衛星である。GPS受信機はGPS衛星からの電波を受信して、GPS衛星それぞれとの距離を算出しているに過ぎない。\nまた、方位についてはGPSコンパスと呼ばれるような機能によって、ある程度離した二つ以上のアンテナによって受信したGPSの位相信号と、そのアンテナたちの相対的な位置関係から方位を算出することができる。しかし、その機能を実装していない多くの製品においては、ジャイロ機構や方位コンパスを使用していない場合、静止している受信機器の向いている方位を知ることはできない。なお、進行方向については移動しながら累積した複数の位置座標から、ある程度求める事が出来る。\nGPS受信機は、基本的に送信機を保有していないため、位置情報をGPS衛星に通知するのは原理上そもそも不可能である。つまり、GPS受信機は受信するだけ、GPS衛星は送信するだけなのである。",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_18018-18868",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 472,
+          "end": 18868,
+          "start": 18018
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "a5f39bd8ce64159c49639fc69ed9a17ce995ff606f3bb2f2858d0bf5240dc8fc",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "a5f39bd8ce64159c49639fc69ed9a17ce995ff606f3bb2f2858d0bf5240dc8fc",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 850
+      }
+    },
+    {
+      "passage_id": "64303677342119676409074468465_0-889",
+      "title": "グローバル・ポジショニング・システム",
+      "text": "船舶用GPS受信機\nグローバル・ポジショニング・システム（英語: Global Positioning System, Global Positioning Satellite, GPS、全地球測位システム）とは、アメリカ合衆国によって運用される衛星測位システム（地球上の現在位置を測定するためのシステムのこと）を指す。\nロラン-C（Loran-C: Long Range Navigation C）システムの後継にあたる。\nアメリカ合衆国が打ち上げた約30個のGPS衛星のうち、上空にある数個の衛星からの信号をGPS受信機で受け取り、受信者が自身の現在位置を知るシステムである。\n1973年にアメリカ国防総省の軍事プロジェクトとして開始され、最初の試験衛星は1978年に打ち上げられた。元来その利用は軍事用途に制限されていたが、1983年の大韓航空機撃墜事件発生後、民間機の安全な航行のため民間利用にGPSを開放する事がレーガン大統領により表明された。その後、民生運用に足る精度を満たした「初期運用宣言」は1993年に、軍事運用可能な精度を満たした「完全運用宣言」は1995年に成された。\nGPSは地上局を利用するロラン(LORAN)-Cと異なり、受信機の上部を遮られない限り、地形の影響を受けて受信不能に陥る事が少ない。\nGPS衛星からの信号には、衛星に搭載された原子時計からの時刻のデータ、衛星の天体暦（軌道）の情報などが含まれている。受信機はGPS衛星からの電波を受信し、その発信時刻を測定し、発信と受信との時刻差に、電波の伝播速度（光速）を掛けることによって、その衛星からの距離がわかる。受信機座標（3次元空間上の点）はこれらから求められる。\nただし多くのGPS受信機に搭載されている時計では精度が不足し、そのままでは受信時刻値は不正確となる。そこで、多くの受信機の測位計算では、4つ以上のGPS衛星からの電波を受信し、受信機座標に加え受信時刻も未知数とする形で求める。\nGPS衛星は約20,000kmの高度を一周約12時間で動く準同期衛星である（静止衛星ではない）。",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_0-889",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 483,
+          "end": 889,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "4c750d2542450dc93aff8dbbf4a4b29dd01616a01b7695295e1805dcdb6e8e97",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "4c750d2542450dc93aff8dbbf4a4b29dd01616a01b7695295e1805dcdb6e8e97",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 889
+      }
+    },
+    {
+      "passage_id": "64303677342119676409074468465_21477-21565",
+      "title": "グローバル・ポジショニング・システム",
+      "text": "GPSデータクリアリングハウス\n電子基準点データ提供サービス\n「交点プロジェクト」サイト （英語）\nGPS: The Global Positioning System（英語）",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_21477-21565",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 35,
+          "end": 21565,
+          "start": 21477
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "5ae7aa2d7d7c7f1ce506156c4d7d97b004b768a01e7a195463757ac14719dffd",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "5ae7aa2d7d7c7f1ce506156c4d7d97b004b768a01e7a195463757ac14719dffd",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 88
+      }
+    },
+    {
+      "passage_id": "64303677342119676409074468465_2663-3493",
+      "title": "グローバル・ポジショニング・システム",
+      "text": "民間利用が許されている暗号化されていないC/Aコードのデータを用いると、95%以上の確率で正確な緯度経度から10m以内の座標が得られる程度の精度となる。これは短時間での精度であり、長期間受信し続けることにより精密な測量も可能である。\n測位法\nGPSの測位方法は、コード（搬送波の変調）に基づく方法（コード測位方式）と、搬送波の位相に基づく方法（搬送波測位方式）に分けられる。一般にはコード測位が用いられているが、精密測位には搬送波測位が用いられる。\n単独測位\nコード測位。誤差10m程度（民生用）。\nDGPS(ディファレンシャルGPS)\n→詳細は「ディファレンシャルGPS」を参照\nDifferential GPS（相対測位方式）。コード測位。測位対象となる移動局のほかに、位置のわかっている基地局でもGPS電波を受信し、誤差を消去する方法。基地局で生成された補正情報を送信し、移動局で受信すれば、実時間でDGPSの補正処理を行うことができる。誤差数m。日本国内では海上保安庁の中波ビーコンにより補正情報が送信されていたが、「GPS精度の向上」、「衛星等による別の補正システムの運用開始」、「2019年（平成31年）4月7日に発生するロールオーバー（後述の『1999年8月21日問題』を参照）による信頼性が保証できない」を理由として、2019年（平成31年）3月1日正午をもって廃止となった。\nRTK測位\nReal Time Kinematic GPS。干渉測位方式。DGPSと同様に、電子基準点から受信する電波の位相差を計測し、測位計算。測位時間1分以下、誤差数cmが可能。測量地点では、基準受信機を参照基準点（既知）に設置し、（複数の）移動受信機で測位。\n高速スタティック測位\n干渉測位方式。測量地点で、複数のアンテナを固定設置し、測位時間30分以下、誤差1cm以下が可能。\nVRS測位\nVirtual Reference Station RTK-GPS。",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_2663-3493",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 3493,
+          "start": 2663
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "97de44e7f084cca64c65371f1013d3ec49f6976c5caceb25059a1f8de65ba7cb",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "97de44e7f084cca64c65371f1013d3ec49f6976c5caceb25059a1f8de65ba7cb",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 830
+      }
+    },
+    {
+      "passage_id": "64303677342119676409074468465_11150-12042",
+      "title": "グローバル・ポジショニング・システム",
+      "text": "PCやPDAの接続も、かつてはシリアルポート接続やPCMCIA（PCカード）・CFカード規格が多かったが、現在はBluetoothで測位情報を本体に転送するものもある。\nゲーム・スポーツ\n登山用\n山林の中で移動するために、かつては方位磁針と地図で現在地を推察するしかなかったが、GPSはそれを全て解決し、安全性を大きく高めた。\nフィールド用\nアスリート用に走行距離、ラップ、走行経路のアップダウンなどを表示する、腕時計のような形態の非常に小型の製品も実用化されている（GPS腕時計）。\nジオキャッシング\nジオキャッシングはネット上で公開されたキャッシュ（宝）の緯度・経度とヒントを元にGPSを利用しキャッシュを探すゲームである。当初はGPSのSA解除に伴い、GPSの精度でどのくらい位置を精密に特定できるか、というネットニュース上での問いかけに応じる興味で始まったものである。10年以上・数百万人以上のプレイヤーがいる現在では、類似のハイテク宝探しの元祖として、趣味として確立されている。キャッシュには様々なタイプがあるが、実体があるキャッシュ (物理キャッシュ) の実体は、数ccのチューブ〜数十Lのバケツ以上の大きさの容器 (コンテナ) であり、ログブック (見つけた日時・ジオキャッシングIDを記録する) や交換アイテム (オプション) などが入っている。見つけた人はログブックに記録しオンラインのログにも記録する。\nGPS絵画（GPSドローイング）\nGPS絵画（GPSドローイング）はGPSロガーで描いた緯度・経度の軌跡により、文字やイラスト等のイメージを制作する行為である。軌跡はGoogle Earthなど地図ソフトウェア上に表示ができる。\nパラグライディング競技・パラシューティング競技\nこれらのスポーツでは、(1) 競技者がGPSを公式な記録として提出することができる、(2) GPSを用いてより良い記録を出すことを目指す、などの利用がなされている。滑空距離や落下位置の正確さを競うこれらの競技では、従来写真による記録や審判員による目視で記録がなされることが多かった。",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_11150-12042",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 480,
+          "end": 12042,
+          "start": 11150
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "2e09619a5027ce715e456aa3aabcb77a6541b44d15dd3ca7455154ca50ac7a0c",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "2e09619a5027ce715e456aa3aabcb77a6541b44d15dd3ca7455154ca50ac7a0c",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 892
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "64303677342119676409074468465_0-889",
+      "title": "グローバル・ポジショニング・システム",
+      "text": "船舶用GPS受信機\nグローバル・ポジショニング・システム（英語: Global Positioning System, Global Positioning Satellite, GPS、全地球測位システム）とは、アメリカ合衆国によって運用される衛星測位システム（地球上の現在位置を測定するためのシステムのこと）を指す。\nロラン-C（Loran-C: Long Range Navigation C）システムの後継にあたる。\nアメリカ合衆国が打ち上げた約30個のGPS衛星のうち、上空にある数個の衛星からの信号をGPS受信機で受け取り、受信者が自身の現在位置を知るシステムである。\n1973年にアメリカ国防総省の軍事プロジェクトとして開始され、最初の試験衛星は1978年に打ち上げられた。元来その利用は軍事用途に制限されていたが、1983年の大韓航空機撃墜事件発生後、民間機の安全な航行のため民間利用にGPSを開放する事がレーガン大統領により表明された。その後、民生運用に足る精度を満たした「初期運用宣言」は1993年に、軍事運用可能な精度を満たした「完全運用宣言」は1995年に成された。\nGPSは地上局を利用するロラン(LORAN)-Cと異なり、受信機の上部を遮られない限り、地形の影響を受けて受信不能に陥る事が少ない。\nGPS衛星からの信号には、衛星に搭載された原子時計からの時刻のデータ、衛星の天体暦（軌道）の情報などが含まれている。受信機はGPS衛星からの電波を受信し、その発信時刻を測定し、発信と受信との時刻差に、電波の伝播速度（光速）を掛けることによって、その衛星からの距離がわかる。受信機座標（3次元空間上の点）はこれらから求められる。\nただし多くのGPS受信機に搭載されている時計では精度が不足し、そのままでは受信時刻値は不正確となる。そこで、多くの受信機の測位計算では、4つ以上のGPS衛星からの電波を受信し、受信機座標に加え受信時刻も未知数とする形で求める。\nGPS衛星は約20,000kmの高度を一周約12時間で動く準同期衛星である（静止衛星ではない）。",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_0-889",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 483,
+          "end": 889,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "4c750d2542450dc93aff8dbbf4a4b29dd01616a01b7695295e1805dcdb6e8e97",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "4c750d2542450dc93aff8dbbf4a4b29dd01616a01b7695295e1805dcdb6e8e97",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 889
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "GPSはアメリカ合衆国によって運用される衛星測位システムで、地上局を利用するロラン(C)と異なり、受信機の上部を遮られない限り、地形の影響を受けて受信不能に陥る可能性が少ないです。GPS衛星からの信号には、衛星に搭載された原子時計からの時刻のデータ、衛星の天体暦（軌道）の情報などが含まれています。受信機はGPS衛星からの電波を受信し、その発信時刻を測定し、発信と受信との時刻差に、電波の伝播速度（光速）を掛けることによって、その衛星からの距離がわかると計算します。GPS衛星は約20,000kmの高度を一周約12時間で動く準同期衛星です。",
+    "answer_sha256": "8aab2c14f7c72a2c774e6d20bb58c3cf7ed4f6bd3faab4f37de82776c9b15779",
+    "quality": {
+      "annotation_id": "Q-1e7113a75fb52272f8e2",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-1e7113a75fb52272f8e2",
+        "candidate_sha256": "63c40211901202093af3d550ab3a3d44ea5e94e781e0ef393745e8aaba23caf7",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "GPSが米国運用の衛星測位システムであり、衛星信号を受信して距離を計算し、位置の測定に利用する仕組みを説明する。",
+        "reason": "米国が運用する衛星測位システムという定義に加え、受信条件、信号に含まれる時刻と軌道情報、時刻差による距離計算、衛星の高度と周期を説明している。これらはすべて実使用Contextに直接支持される。参照回答の衛星数や後継関係を列挙していないことは、この説明の実質的不足や重大な誤りには当たらない。",
+        "evidence": [
+          {
+            "passage_id": "64303677342119676409074468465_0-889",
+            "quote": "船舶用GPS受信機\nグローバル・ポジショニング・システム（英語: Global Positioning System, Global Positioning Satellite, GPS、全地球測位システム）とは、アメリカ合衆国によって運用される衛星測位システム（地球上の現在位置を測定するためのシステムのこと）を指す。\nロラン-C（Loran-C: Long Range Navigation C）システムの後継にあたる。\nアメリカ合衆国が打ち上げた約30個のGPS衛星のうち、上空にある数個の衛星からの信号をGPS受信機で受け取り、受信者が自身の現在位置を知るシステムである。\n1973年にアメリカ国防総省の軍事プロジェクトとして開始され、最初の試験衛星は1978年に打ち上げられた。元来その利用は軍事用途に制限されていたが、1983年の大韓航空機撃墜事件発生後、民間機の安全な航行のため民間利用にGPSを開放する事がレーガン大統領により表明された。その後、民生運用に足る精度を満たした「初期運用宣言」は1993年に、軍事運用可能な精度を満たした「完全運用宣言」は1995年に成された。\nGPSは地上局を利用するロラン(LORAN)-Cと異なり、受信機の上部を遮られない限り、地形の影響を受けて受信不能に陥る事が少ない。\nGPS衛星からの信号には、衛星に搭載された原子時計からの時刻のデータ、衛星の天体暦（軌道）の情報などが含まれている。受信機はGPS衛星からの電波を受信し、その発信時刻を測定し、発信と受信との時刻差に、電波の伝播速度（光速）を掛けることによって、その衛星からの距離がわかる。受信機座標（3次元空間上の点）はこれらから求められる。\nただし多くのGPS受信機に搭載されている時計では精度が不足し、そのままでは受信時刻値は不正確となる。そこで、多くの受信機の測位計算では、4つ以上のGPS衛星からの電波を受信し、受信機座標に加え受信時刻も未知数とする形で求める。\nGPS衛星は約20,000kmの高度を一周約12時間で動く準同期衛星である（静止衛星ではない）。"
+          }
+        ],
+        "elapsed_seconds": 9.001290530984988,
+        "confirmed_at_utc": "2026-11-04T01:01:20.727264+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_calibration/fixed-v23-cal-v1/ja/baseline/bcc347443382bbc0a9522c4b/record.json",
+      "sha256": "a90a621fbea10bc13534efdfa9f800aec0a742c621c6a6ba85107feb8ca25037"
+    },
+    "copy": "provenance/baselines/cal_ja_bcc347443382bbc0a9522c4b.json"
+  },
+  "B": {
+    "status": "error",
+    "answer": null,
+    "answer_sha256": null,
+    "quality": {
+      "annotation_id": null,
+      "status": "candidate_unavailable",
+      "y": null,
+      "annotation": null
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "GPSはアメリカ合衆国によって運用される衛星測位システムで、地上局を利用するロラン(C)と異なり、受信機の上部を遮られない限り、地形の影響を受けて受信不能に陥る可能性が少ないです。"
+    },
+    {
+      "claim_id": "c2",
+      "text": "GPS衛星からの信号には、衛星に搭載された原子時計からの時刻のデータ、衛星の天体暦（軌道）の情報などが含まれています。"
+    },
+    {
+      "claim_id": "c3",
+      "text": "受信機はGPS衛星からの電波を受信し、その発信時刻を測定し、発信と受信との時刻差に、電波の伝播速度（光速）を掛けることによって、その衛星からの距離がわかると計算します。"
+    },
+    {
+      "claim_id": "c4",
+      "text": "GPS衛星は約20,000kmの高度を一周約12時間で動く準同期衛星です。"
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "GPSはアメリカ合衆国によって運用される衛星測位システムで、地上局を利用するロラン(C)と異なり、受信機の上部を遮られない限り、地形の影響を受けて受信不能に陥る可能性が少ないです。"
+      },
+      {
+        "claim_id": "c2",
+        "text": "GPS衛星からの信号には、衛星に搭載された原子時計からの時刻のデータ、衛星の天体暦（軌道）の情報などが含まれています。"
+      },
+      {
+        "claim_id": "c3",
+        "text": "受信機はGPS衛星からの電波を受信し、その発信時刻を測定し、発信と受信との時刻差に、電波の伝播速度（光速）を掛けることによって、その衛星からの距離がわかると計算します。"
+      },
+      {
+        "claim_id": "c4",
+        "text": "GPS衛星は約20,000kmの高度を一周約12時間で動く準同期衛星です。"
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-ja-v1",
+    "normalized_prose": "GPSはアメリカ合衆国によって運用される衛星測位システムで、地上局を利用するロラン(C)と異なり、受信機の上部を遮られない限り、地形の影響を受けて受信不能に陥る可能性が少ないです。GPS衛星からの信号には、衛星に搭載された原子時計からの時刻のデータ、衛星の天体暦（軌道）の情報などが含まれています。受信機はGPS衛星からの電波を受信し、その発信時刻を測定し、発信と受信との時刻差に、電波の伝播速度（光速）を掛けることによって、その衛星からの距離がわかると計算します。GPS衛星は約20,000kmの高度を一周約12時間で動く準同期衛星です。",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 90
+      },
+      {
+        "start": 90,
+        "end": 149
+      },
+      {
+        "start": 149,
+        "end": 233
+      },
+      {
+        "start": 233,
+        "end": 270
+      }
+    ],
+    "unclosed_delimiters": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "64303677342119676409074468465_2663-3493",
+          "64303677342119676409074468465_0-889",
+          "64303677342119676409074468465_18018-18868",
+          "64303677342119676409074468465_11150-12042",
+          "64303677342119676409074468465_21477-21565"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "64303677342119676409074468465_18018-18868",
+          "64303677342119676409074468465_0-889",
+          "64303677342119676409074468465_21477-21565",
+          "64303677342119676409074468465_2663-3493",
+          "64303677342119676409074468465_11150-12042"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "64303677342119676409074468465_18018-18868",
+          "64303677342119676409074468465_0-889",
+          "64303677342119676409074468465_21477-21565",
+          "64303677342119676409074468465_2663-3493",
+          "64303677342119676409074468465_11150-12042"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "64303677342119676409074468465_21477-21565",
+          "64303677342119676409074468465_18018-18868",
+          "64303677342119676409074468465_0-889",
+          "64303677342119676409074468465_2663-3493",
+          "64303677342119676409074468465_11150-12042"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "64303677342119676409074468465_0-889",
+          "64303677342119676409074468465_18018-18868",
+          "64303677342119676409074468465_21477-21565",
+          "64303677342119676409074468465_2663-3493",
+          "64303677342119676409074468465_11150-12042"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "64303677342119676409074468465_18018-18868",
+          "64303677342119676409074468465_0-889",
+          "64303677342119676409074468465_21477-21565",
+          "64303677342119676409074468465_2663-3493",
+          "64303677342119676409074468465_11150-12042"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "64303677342119676409074468465_18018-18868",
+          "64303677342119676409074468465_0-889",
+          "64303677342119676409074468465_21477-21565",
+          "64303677342119676409074468465_2663-3493",
+          "64303677342119676409074468465_11150-12042"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "64303677342119676409074468465_11150-12042",
+          "64303677342119676409074468465_2663-3493",
+          "64303677342119676409074468465_21477-21565",
+          "64303677342119676409074468465_0-889",
+          "64303677342119676409074468465_18018-18868"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "64303677342119676409074468465_18018-18868",
+          "64303677342119676409074468465_0-889",
+          "64303677342119676409074468465_21477-21565",
+          "64303677342119676409074468465_2663-3493",
+          "64303677342119676409074468465_11150-12042"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "ja",
+    "record_id": "whrja:02e85c8:answered:418",
+    "document_group_id": "whrja-group:746d92d688815aa05d0a2cf9",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_calibration/fixed-v23-cal-v1/ja/report.private.json",
+    "sha256": "3651654ab2169fd76be09dde5420f6830270bea70acd945043fa93b8ce5265fd"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "64303677342119676409074468465_0-889",
+      "text": "船舶用GPS受信機\nグローバル・ポジショニング・システム（英語: Global Positioning System, Global Positioning Satellite, GPS、全地球測位システム）とは、アメリカ合衆国によって運用される衛星測位システム（地球上の現在位置を測定するためのシステムのこと）を指す。\nロラン-C（Loran-C: Long Range Navigation C）システムの後継にあたる。\nアメリカ合衆国が打ち上げた約30個のGPS衛星のうち、上空にある数個の衛星からの信号をGPS受信機で受け取り、受信者が自身の現在位置を知るシステムである。\n1973年にアメリカ国防総省の軍事プロジェクトとして開始され、最初の試験衛星は1978年に打ち上げられた。元来その利用は軍事用途に制限されていたが、1983年の大韓航空機撃墜事件発生後、民間機の安全な航行のため民間利用にGPSを開放する事がレーガン大統領により表明された。その後、民生運用に足る精度を満たした「初期運用宣言」は1993年に、軍事運用可能な精度を満たした「完全運用宣言」は1995年に成された。\nGPSは地上局を利用するロラン(LORAN)-Cと異なり、受信機の上部を遮られない限り、地形の影響を受けて受信不能に陥る事が少ない。\nGPS衛星からの信号には、衛星に搭載された原子時計からの時刻のデータ、衛星の天体暦（軌道）の情報などが含まれている。受信機はGPS衛星からの電波を受信し、その発信時刻を測定し、発信と受信との時刻差に、電波の伝播速度（光速）を掛けることによって、その衛星からの距離がわかる。受信機座標（3次元空間上の点）はこれらから求められる。\nただし多くのGPS受信機に搭載されている時計では精度が不足し、そのままでは受信時刻値は不正確となる。そこで、多くの受信機の測位計算では、4つ以上のGPS衛星からの電波を受信し、受信機座標に加え受信時刻も未知数とする形で求める。\nGPS衛星は約20,000kmの高度を一周約12時間で動く準同期衛星である（静止衛星ではない）。",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_0-889",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 483,
+          "end": 889,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "4c750d2542450dc93aff8dbbf4a4b29dd01616a01b7695295e1805dcdb6e8e97",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "64303677342119676409074468465_11150-12042",
+      "text": "PCやPDAの接続も、かつてはシリアルポート接続やPCMCIA（PCカード）・CFカード規格が多かったが、現在はBluetoothで測位情報を本体に転送するものもある。\nゲーム・スポーツ\n登山用\n山林の中で移動するために、かつては方位磁針と地図で現在地を推察するしかなかったが、GPSはそれを全て解決し、安全性を大きく高めた。\nフィールド用\nアスリート用に走行距離、ラップ、走行経路のアップダウンなどを表示する、腕時計のような形態の非常に小型の製品も実用化されている（GPS腕時計）。\nジオキャッシング\nジオキャッシングはネット上で公開されたキャッシュ（宝）の緯度・経度とヒントを元にGPSを利用しキャッシュを探すゲームである。当初はGPSのSA解除に伴い、GPSの精度でどのくらい位置を精密に特定できるか、というネットニュース上での問いかけに応じる興味で始まったものである。10年以上・数百万人以上のプレイヤーがいる現在では、類似のハイテク宝探しの元祖として、趣味として確立されている。キャッシュには様々なタイプがあるが、実体があるキャッシュ (物理キャッシュ) の実体は、数ccのチューブ〜数十Lのバケツ以上の大きさの容器 (コンテナ) であり、ログブック (見つけた日時・ジオキャッシングIDを記録する) や交換アイテム (オプション) などが入っている。見つけた人はログブックに記録しオンラインのログにも記録する。\nGPS絵画（GPSドローイング）\nGPS絵画（GPSドローイング）はGPSロガーで描いた緯度・経度の軌跡により、文字やイラスト等のイメージを制作する行為である。軌跡はGoogle Earthなど地図ソフトウェア上に表示ができる。\nパラグライディング競技・パラシューティング競技\nこれらのスポーツでは、(1) 競技者がGPSを公式な記録として提出することができる、(2) GPSを用いてより良い記録を出すことを目指す、などの利用がなされている。滑空距離や落下位置の正確さを競うこれらの競技では、従来写真による記録や審判員による目視で記録がなされることが多かった。",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_11150-12042",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 480,
+          "end": 12042,
+          "start": 11150
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "2e09619a5027ce715e456aa3aabcb77a6541b44d15dd3ca7455154ca50ac7a0c",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "64303677342119676409074468465_18018-18868",
+      "text": "国土地理院による定点観測\n国土地理院は、日本列島のあらゆる地点にGPSを定期的に受信する電子基準点を設置し、地殻の変化を3次元的に詳細に観測することができる。2011年の東北地方太平洋沖地震（東日本大震災）では、1メートル以上の地盤沈降や、5メートル以上の水平移動が観測されている。\nGPSにまつわる誤解\n以下の言説は、すべて誤解である。\nGPS衛星はGPS受信機（カーナビ等）に直接その受信機がいる座標値 (x, y, z) を教えている。\nGPS衛星がカーナビのルートを作成している。\nGPS衛星はGPS受信機の位置を逆探知できる。\nGPS衛星とGPS受信機が相互に通信をしている。\nGPS信号によって方位も決定している。(ただし、GPSコンパスを実装している製品を除く)\n運送荷物の追跡システムは、荷物のどこかにGPS発信機が内蔵されている。販売者が追跡できる。\n「GPS信号」とはGPS衛星が発している電波のことであり、受信機が発する信号は「GPS情報」である。\nGPS衛星は、地球に向けて時報と発信元衛星の天体暦（軌道）情報を発しているのみの衛星である。GPS受信機はGPS衛星からの電波を受信して、GPS衛星それぞれとの距離を算出しているに過ぎない。\nまた、方位についてはGPSコンパスと呼ばれるような機能によって、ある程度離した二つ以上のアンテナによって受信したGPSの位相信号と、そのアンテナたちの相対的な位置関係から方位を算出することができる。しかし、その機能を実装していない多くの製品においては、ジャイロ機構や方位コンパスを使用していない場合、静止している受信機器の向いている方位を知ることはできない。なお、進行方向については移動しながら累積した複数の位置座標から、ある程度求める事が出来る。\nGPS受信機は、基本的に送信機を保有していないため、位置情報をGPS衛星に通知するのは原理上そもそも不可能である。つまり、GPS受信機は受信するだけ、GPS衛星は送信するだけなのである。",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_18018-18868",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 472,
+          "end": 18868,
+          "start": 18018
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "a5f39bd8ce64159c49639fc69ed9a17ce995ff606f3bb2f2858d0bf5240dc8fc",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "64303677342119676409074468465_21477-21565",
+      "text": "GPSデータクリアリングハウス\n電子基準点データ提供サービス\n「交点プロジェクト」サイト （英語）\nGPS: The Global Positioning System（英語）",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_21477-21565",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 35,
+          "end": 21565,
+          "start": 21477
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "5ae7aa2d7d7c7f1ce506156c4d7d97b004b768a01e7a195463757ac14719dffd",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "64303677342119676409074468465_2663-3493",
+      "text": "民間利用が許されている暗号化されていないC/Aコードのデータを用いると、95%以上の確率で正確な緯度経度から10m以内の座標が得られる程度の精度となる。これは短時間での精度であり、長期間受信し続けることにより精密な測量も可能である。\n測位法\nGPSの測位方法は、コード（搬送波の変調）に基づく方法（コード測位方式）と、搬送波の位相に基づく方法（搬送波測位方式）に分けられる。一般にはコード測位が用いられているが、精密測位には搬送波測位が用いられる。\n単独測位\nコード測位。誤差10m程度（民生用）。\nDGPS(ディファレンシャルGPS)\n→詳細は「ディファレンシャルGPS」を参照\nDifferential GPS（相対測位方式）。コード測位。測位対象となる移動局のほかに、位置のわかっている基地局でもGPS電波を受信し、誤差を消去する方法。基地局で生成された補正情報を送信し、移動局で受信すれば、実時間でDGPSの補正処理を行うことができる。誤差数m。日本国内では海上保安庁の中波ビーコンにより補正情報が送信されていたが、「GPS精度の向上」、「衛星等による別の補正システムの運用開始」、「2019年（平成31年）4月7日に発生するロールオーバー（後述の『1999年8月21日問題』を参照）による信頼性が保証できない」を理由として、2019年（平成31年）3月1日正午をもって廃止となった。\nRTK測位\nReal Time Kinematic GPS。干渉測位方式。DGPSと同様に、電子基準点から受信する電波の位相差を計測し、測位計算。測位時間1分以下、誤差数cmが可能。測量地点では、基準受信機を参照基準点（既知）に設置し、（複数の）移動受信機で測位。\n高速スタティック測位\n干渉測位方式。測量地点で、複数のアンテナを固定設置し、測位時間30分以下、誤差1cm以下が可能。\nVRS測位\nVirtual Reference Station RTK-GPS。",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_2663-3493",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 3493,
+          "start": 2663
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "97de44e7f084cca64c65371f1013d3ec49f6976c5caceb25059a1f8de65ba7cb",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "64303677342119676409074468465_0-889": {
+      "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "64303677342119676409074468465_0-889",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 483,
+        "end": 889,
+        "start": 0
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+      "text_sha256": "4c750d2542450dc93aff8dbbf4a4b29dd01616a01b7695295e1805dcdb6e8e97",
+      "title": "グローバル・ポジショニング・システム",
+      "wikipedia_page_id": 6838,
+      "wikipedia_revision_id": 97414057,
+      "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "64303677342119676409074468465_0-889",
+      "text": "船舶用GPS受信機\nグローバル・ポジショニング・システム（英語: Global Positioning System, Global Positioning Satellite, GPS、全地球測位システム）とは、アメリカ合衆国によって運用される衛星測位システム（地球上の現在位置を測定するためのシステムのこと）を指す。\nロラン-C（Loran-C: Long Range Navigation C）システムの後継にあたる。\nアメリカ合衆国が打ち上げた約30個のGPS衛星のうち、上空にある数個の衛星からの信号をGPS受信機で受け取り、受信者が自身の現在位置を知るシステムである。\n1973年にアメリカ国防総省の軍事プロジェクトとして開始され、最初の試験衛星は1978年に打ち上げられた。元来その利用は軍事用途に制限されていたが、1983年の大韓航空機撃墜事件発生後、民間機の安全な航行のため民間利用にGPSを開放する事がレーガン大統領により表明された。その後、民生運用に足る精度を満たした「初期運用宣言」は1993年に、軍事運用可能な精度を満たした「完全運用宣言」は1995年に成された。\nGPSは地上局を利用するロラン(LORAN)-Cと異なり、受信機の上部を遮られない限り、地形の影響を受けて受信不能に陥る事が少ない。\nGPS衛星からの信号には、衛星に搭載された原子時計からの時刻のデータ、衛星の天体暦（軌道）の情報などが含まれている。受信機はGPS衛星からの電波を受信し、その発信時刻を測定し、発信と受信との時刻差に、電波の伝播速度（光速）を掛けることによって、その衛星からの距離がわかる。受信機座標（3次元空間上の点）はこれらから求められる。\nただし多くのGPS受信機に搭載されている時計では精度が不足し、そのままでは受信時刻値は不正確となる。そこで、多くの受信機の測位計算では、4つ以上のGPS衛星からの電波を受信し、受信機座標に加え受信時刻も未知数とする形で求める。\nGPS衛星は約20,000kmの高度を一周約12時間で動く準同期衛星である（静止衛星ではない）。",
+      "source_metadata": {
+        "article_text_sha256": "36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6838:97414057:36a8c0e33c1abfae3e28a539aaf90babdcc33db2f8bf1e74327bbf51e62728c3",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "64303677342119676409074468465_0-889",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 483,
+          "end": 889,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057",
+        "text_sha256": "4c750d2542450dc93aff8dbbf4a4b29dd01616a01b7695295e1805dcdb6e8e97",
+        "title": "グローバル・ポジショニング・システム",
+        "wikipedia_page_id": 6838,
+        "wikipedia_revision_id": 97414057,
+        "wikipedia_revision_timestamp_utc": "2023-10-14T22:45:23Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97414057&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ]
+}

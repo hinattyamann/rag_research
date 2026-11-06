@@ -1,0 +1,993 @@
+{
+  "qa_key": "cal_ja_e94a9895d00ae3465c677643",
+  "cohort": "cal",
+  "language": "ja",
+  "analysis_role": "cal",
+  "source_qa_split": "calibration",
+  "record_id": "whrja:02e85c8:answered:814",
+  "document_group_id": "whrja-group:c35664ef931d0c0ab425622e",
+  "qa_source": {
+    "answerability_scope": "human_answer_in_source_not_verified_common_corpus_coverage",
+    "corpus_answerability": "not_annotated_no_relabel_from_body_or_quote_availability",
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "document_group_id": "whrja-group:c35664ef931d0c0ab425622e",
+    "gold_parent_ids": [
+      "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20"
+    ],
+    "gold_passage_ids": [
+      "9382562907581163334463312548_0-857",
+      "9382562907581163334463312548_857-1580"
+    ],
+    "gold_passage_ids_scope": "verified_literal_quote_overlap_children_only_not_metric_gold",
+    "gold_passage_mapping_status": "audited_cited_article_and_source_reference_markup_mapping_v2",
+    "gold_relevance_unit": "available_cited_source_article",
+    "is_answerable": true,
+    "language": "ja",
+    "provided_passage": null,
+    "question": "人気ドラマ「ゲーム・オブ・スローンズ」はどこで視聴できますか",
+    "record_id": "whrja:02e85c8:answered:814",
+    "reference_answer_sentences": [
+      {
+        "citations": [
+          0
+        ],
+        "text": "人気ドラマ「ゲーム・オブ・スローンズ」は、日本ではスター・チャンネルにおいて2013年1月から放送され、第6シーズンからは日米同時放送されています。"
+      },
+      {
+        "citations": [
+          0
+        ],
+        "text": "2016年2月18日からはHuluで配信が開始されおり、2017年からはAmazonビデオでも配信されているので、スターチャンネル、Hulu、Amazonビデオで視聴することができます。"
+      },
+      {
+        "citations": [
+          0
+        ],
+        "text": "ワーナー エンターテイメント ジャパンからDVD&Blu-rayが発売されているのでDVD&Blu-rayで視聴することもできます。"
+      }
+    ],
+    "reference_answers": [
+      "人気ドラマ「ゲーム・オブ・スローンズ」は、日本ではスター・チャンネルにおいて2013年1月から放送され、第6シーズンからは日米同時放送されています。2016年2月18日からはHuluで配信が開始されおり、2017年からはAmazonビデオでも配信されているので、スターチャンネル、Hulu、Amazonビデオで視聴することができます。ワーナー エンターテイメント ジャパンからDVD&Blu-rayが発売されているのでDVD&Blu-rayで視聴することもできます。"
+    ],
+    "reference_corpus_mapping": [
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0,
+          1,
+          2
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "9382562907581163334463312548_0-857",
+          "9382562907581163334463312548_857-1580"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "exact",
+          "spans": [
+            {
+              "end": 950,
+              "source_span_sha256": "d1657f77ae968700e7c4a5aed5afef3448dd223b52a1199fc9e49aaebad25610",
+              "start": 807
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "raw_article_status": "ok",
+        "reference_index": 0,
+        "source_reference_unit_id": "jawiki-page:2607002"
+      }
+    ],
+    "reference_corpus_metadata_offline_only": true,
+    "reference_evidence": [
+      {
+        "cited_by_answer_sentence_indices": [
+          0,
+          1,
+          2
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "日本ではスター・チャンネルにおいて2013年1月から放送され、第6シーズンからは日米同時放送された。ワーナー エンターテイメント ジャパンからDVD&Blu-rayが発売されている。2016年2月18日、Huluで配信が開始された。2017年からはAmazonビデオでも配信されている。",
+        "reference_index": 0,
+        "title": "ゲーム・オブ・スローンズ",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%B3%E3%82%BA"
+      }
+    ],
+    "research_split": "calibration",
+    "selected_sentences_by_reference": [
+      [
+        "日本ではスター・チャンネルにおいて2013年1月から放送され、第6シーズンからは日米同時放送された。ワーナー エンターテイメント ジャパンからDVD&Blu-rayが発売されている。2016年2月18日、Huluで配信が開始された。2017年からはAmazonビデオでも配信されている。"
+      ]
+    ],
+    "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+    "source_id": "814",
+    "source_line_index": 556,
+    "source_record_sha256": "9bdb12074af14baabe2463aabb8bda42f9cb1b65d7e5554d3d40d106550c40aa",
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "source_split": "answered",
+    "source_title": "ゲーム・オブ・スローンズ",
+    "unavailable_cited_reference_ids": []
+  },
+  "source_selection": {
+    "record_id": "whrja:02e85c8:answered:814",
+    "question": "人気ドラマ「ゲーム・オブ・スローンズ」はどこで視聴できますか",
+    "document_group_id": "whrja-group:c35664ef931d0c0ab425622e"
+  },
+  "question": "人気ドラマ「ゲーム・オブ・スローンズ」はどこで視聴できますか",
+  "used_documents": [
+    {
+      "passage_id": "9382562907581163334463312548_0-857",
+      "title": "ゲーム・オブ・スローンズ",
+      "text": "ゲーム・オブ・スローンズ\nGame of Thrones\nジャンル\nファンタジー\nドラマ\n原案\nデイヴィッド・ベニオフ\nD・B・ワイス\n作曲\nラミン・ジャヴァディ\n国・地域\nアメリカ合衆国\n言語\n英語\nシーズン数\n8\n話数\n73(各話リスト)\n各話の長さ\n50-82分\n製作\n製作総指揮\nデイヴィッド・ベニオフ\nD・B・ワイス\nフランク・ドールガー\nバーナデッテ・コールフィールド\nキャロライン・ストラウス\nジョージ・R・R・マーティン\n撮影地\n北アイルランド\nマルタ\nクロアチア\nアイスランド\nモロッコ\nスコットランド\nアメリカ合衆国\nスペイン\nカナダ\n赤道ギニア\nインドネシア\nブラジル\n製作\nHBO Entertainment、Television 360、Grok! Television、Generator Entertainment、Startling Television、Bighead Littlehead\n配給\nワーナー・ブラザース・テレビジョン\n放送\n放送チャンネル HBO\n映像形式 1080i (HDTV)\n音声形式 ドルビーデジタル 5.1\n放送期間 2011年4月17日 (2011-04-17) - 2019年5月19日 (2019-5-19)\n公式ウェブサイト\n公式ウェブサイト2\n『ゲーム・オブ・スローンズ』（原題：Game of Thrones、略称GOT）は、ジョージ・R・R・マーティン著のファンタジー小説シリーズ『氷と炎の歌』を原作としたHBOのテレビドラマシリーズ。中世ヨーロッパに類似するがドラゴンや魔法が存在する架空の世界において、多くの登場人物が入り乱れる群像劇である。北アイルランド、マルタ、クロアチア、アイスランド、モロッコ、スコットランド、アメリカ合衆国、スペインで撮影されている。2011年春から放送が始まり、最終話は2019年5月19日に放送された。\n日本ではスター・チャンネルにおいて2013年1月から放送され、第6シーズンからは日米同時放送された。",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_0-857",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 484,
+          "end": 857,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "91f4619a9c57e9e5aac01da170d58990eadf3f4880349544d64fc1fa3e5ab3f6",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "91f4619a9c57e9e5aac01da170d58990eadf3f4880349544d64fc1fa3e5ab3f6",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 857
+      }
+    },
+    {
+      "passage_id": "9382562907581163334463312548_31323-32211",
+      "title": "ゲーム・オブ・スローンズ",
+      "text": "また、『ハウス・オブ・ザ・ドラゴン』と『ゲーム・オブ・ザ・スローンズ』に挟まれる時代を舞台とし、『七王国の騎士』を原作としたドラマシリーズも発表されている。\n前日譚アニメーション\n2017年9月、HBOは \"Game of Thrones: Conquest & Rebellion\"と題したアニメーションのシリーズの製作を発表し、一部をYouTubeで公開した。シリーズはエイゴン・ターガリエン一世と妻でもある姉妹たちによる七王国征服から、300年後の〈ロバートの反乱〉までを描く。エピソード1である“Valyria’s Last Scion: House Targaryen”はヴァリリアを滅ぼした〈破滅〉と呼ばれる出来事を描き、シーズン7のDVDおよびBlu-rayのボーナスディスクに期間限定で含まれる予定である。ハリー・ロイドがヴィセーリス・ターガリエン役でナレーションを担当する。\nドキュメンタリー\n2019年5月26日、全シーズン終了の一週間後に、メイキングのドキュメンタリー\"Game of Thrones: The Last Watch\"が放送された。\n賞\nプライムタイム・エミー賞、ゴールデングローブ賞など数多くの賞を受賞している。2018年現在、プライムタイム・エミー賞では通算で132賞にノミネートされそのうち47賞を受賞し、史上もっとも多くを獲得したドラマとなっている。特に2015年、2016年、2018年と三回にわたって作品賞ドラマシリーズ部門を受賞している。\n2011年\n賞\nカテゴリー\n受賞者\nアメリカン・フィルム・インスティチュート賞\nAFI TV Award\nプライムタイム・エミー賞\nメインタイトルデザイン賞\nAngus Wall, Hameed Shaukat, Kirk Shintani and Robert Feng\n助演男優賞ドラマ部門\nピーター・ディンクレイジ\nゴールデングローブ賞\n助演男優賞ドラマ部門\nピーター・ディンクレイジ\nピーボディ賞\nサテライト賞\n助演男優賞\nピーター・ディンクレイジ\nスクリーム賞\n助演男優賞\n",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_31323-32211",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 32211,
+          "start": 31323
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "8aa2bb360d8ccc023926c3cd130987df1109693f75ae6954f94661feb76ab8d0",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "8aa2bb360d8ccc023926c3cd130987df1109693f75ae6954f94661feb76ab8d0",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 888
+      }
+    },
+    {
+      "passage_id": "9382562907581163334463312548_47491-47724",
+      "title": "ゲーム・オブ・スローンズ",
+      "text": "スタント・コーディネーション賞シリーズ/リミテッドシリーズ/テレビ映画賞\nRowley Irlam\n脚注\n関連項目\nセックスポジション - このドラマがきっかけになって作られた新語で、ナラティブの技法の一種\n外部リンク\nGame of Thrones - HBO （英語）\nゲーム・オブ・スローンズ - スターチャンネル\nゲーム・オブ・スローンズ - ワーナー・ブラザース\nゲーム・オブ・スローンズ - Hulu\nGame of Thrones - IMDb（英語）",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_47491-47724",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 125,
+          "end": 47724,
+          "start": 47491
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "879fa65303d9e23d8496614bca5380ee18ab79f1c8c51ea37c954e2b7ce99935",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "879fa65303d9e23d8496614bca5380ee18ab79f1c8c51ea37c954e2b7ce99935",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 233
+      }
+    },
+    {
+      "passage_id": "9382562907581163334463312548_30557-31323",
+      "title": "ゲーム・オブ・スローンズ",
+      "text": "オベリン・マーテルなどのドーン人はスペイン語なまりの英語を話す。エッソスなど、ウェスタロスの外の出身人物は共通語として、外国語なまりの英語を話す。\nプロデューサーはデイヴィッド・J・ピーターソンに依頼してマーティンの原作にあるいくつかの言葉に基づいて、ドスラク語およびヴァリリア語群を製作した。どちらもサブタイトルで英語訳が表示される。ドスラク語はドスラク人によって話される。ヴァリリア語はさらに高ヴァリリア語および低ヴァリリア語に分かれ、前者は今は崩壊したヴァリリア帝国全盛時に話され、いまだに学問や洗練された会話で使われる。後者は奴隷商人湾一帯の庶民によって話される。さらに、ヴァリリア帝国が倒した古代ギス帝国で話された古代ギスカル語の断片も、奴隷商人湾には残る。\nスピンオフドラマ\n2017年5月、HBOは5人の脚本家にそれぞれ別のスピンオフドラマを検討させると発表した。\n2018年6月8日、HBOは5本のアイデアの中からジェーン・ゴールドマンの提案した前日譚となるドラマシリーズを選び、そのパイロット版を発注した。シリーズはゲーム・オブ・スローンズの約1万年前に始まり、諸名家の創設、ホワイト・ウォーカーの到来を告げる〈長い夜〉、そしてエッソスからのアンダル人の侵略を描く予定であった。だが2019年10月29日、HBOは製作中止を決定した。\n2019年10月29日、『炎と血』(\"Fire & Blood\")を原作とし、数百年前のターガリエン家の没落の始まりを描く『ハウス・オブ・ザ・ドラゴン』(House of the Dragon)の製作が、パイロット版を経ずに発表された。10話からなるシリーズは、2022年8月21日から放送されている。日本では、2022年8月22日よりU-NEXTで全米と同時配信されている。\n",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_30557-31323",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 486,
+          "end": 31323,
+          "start": 30557
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "9fc9c0c5d5cd7cae6b5421bd4e60a2b865e7626d5a2c6d910eef033efafda803",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "9fc9c0c5d5cd7cae6b5421bd4e60a2b865e7626d5a2c6d910eef033efafda803",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 766
+      }
+    },
+    {
+      "passage_id": "34817713264084522459580067668_9653-10413",
+      "title": "GACKT",
+      "text": "MOON SAGA 番外編「義経 熱血学園物語」〜第二章〜 （2015年1月8日） -（原作/脚本/演出/主演:GACKT）\nイベント\n謙信公祭（2007年、2008年、2010年 - 2013年、2015年8月開催、新潟県上越市） - 大河ドラマ「風林火山」で演じた上杉謙信役で出演。\nネットドラマ\n恋愛は必然である〜ドラマで分かる！新感覚恋愛法則〜（2014年、Bee TV） - ストーリーテラー 役\n踊る大宣伝会議、或いは私は如何にして踊るのを止めてゲームのルールを変えるに至ったか。Season2（2015年、ネスレシアター） - GACKT（本人） 役\nその他ネット番組\nGACKT/井上正大インタビュー モッテコ書店 （2010年1月8日）\nシャープ エモパーmovie「エモ動」第2弾「emopa life story」\nGACKTなゲーム！？ガメ先手ル！ (2014年7月1日-2015年6月30日)\nGACKTなゲーム！？帰ってきたガメセンテル （2015年9月1日-2016年8月31日）\nGACKT【公式】チャンネル FRESH! （2017年7月4日）\nGACKT完全プロデュース!ヘッズアップポーカー\"タイマン\"（2017年9月23日、AbemaTV、司会）\nGACKTプロデュース！POKER×POKER〜業界タイマントーナメント（2018年5月5日 - 2019年11月14日、AbemaTV、司会）\nOVA\n新・北斗の拳 - セイジ 役\n殿といっしょ - 上杉謙信 役\nSUPERNATURAL: THE ANIMATION - アンディ 役\nゲーム\n2000年代\n武刃街（2003年、劉王羽）\nダージュ オブ ケルベロス ファイナルファンタジーVII（2006年、G〈ジェネシス〉）\n",
+      "source_metadata": {
+        "article_text_sha256": "ce39eb1e79f22c3e802fbbad3f72b044291d8b5dd9f6b039e6032982a72ce23b",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2827473:98591968:ce39eb1e79f22c3e802fbbad3f72b044291d8b5dd9f6b039e6032982a72ce23b",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34817713264084522459580067668_9653-10413",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 486,
+          "end": 10413,
+          "start": 9653
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98591968",
+        "text_sha256": "a4a979c9e093b0c4ae31292b997b129b68daa1849453edd740efadf33ea8efae",
+        "title": "GACKT",
+        "wikipedia_page_id": 2827473,
+        "wikipedia_revision_id": 98591968,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T01:39:20Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98591968&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "a4a979c9e093b0c4ae31292b997b129b68daa1849453edd740efadf33ea8efae",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 760
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "9382562907581163334463312548_0-857",
+      "title": "ゲーム・オブ・スローンズ",
+      "text": "ゲーム・オブ・スローンズ\nGame of Thrones\nジャンル\nファンタジー\nドラマ\n原案\nデイヴィッド・ベニオフ\nD・B・ワイス\n作曲\nラミン・ジャヴァディ\n国・地域\nアメリカ合衆国\n言語\n英語\nシーズン数\n8\n話数\n73(各話リスト)\n各話の長さ\n50-82分\n製作\n製作総指揮\nデイヴィッド・ベニオフ\nD・B・ワイス\nフランク・ドールガー\nバーナデッテ・コールフィールド\nキャロライン・ストラウス\nジョージ・R・R・マーティン\n撮影地\n北アイルランド\nマルタ\nクロアチア\nアイスランド\nモロッコ\nスコットランド\nアメリカ合衆国\nスペイン\nカナダ\n赤道ギニア\nインドネシア\nブラジル\n製作\nHBO Entertainment、Television 360、Grok! Television、Generator Entertainment、Startling Television、Bighead Littlehead\n配給\nワーナー・ブラザース・テレビジョン\n放送\n放送チャンネル HBO\n映像形式 1080i (HDTV)\n音声形式 ドルビーデジタル 5.1\n放送期間 2011年4月17日 (2011-04-17) - 2019年5月19日 (2019-5-19)\n公式ウェブサイト\n公式ウェブサイト2\n『ゲーム・オブ・スローンズ』（原題：Game of Thrones、略称GOT）は、ジョージ・R・R・マーティン著のファンタジー小説シリーズ『氷と炎の歌』を原作としたHBOのテレビドラマシリーズ。中世ヨーロッパに類似するがドラゴンや魔法が存在する架空の世界において、多くの登場人物が入り乱れる群像劇である。北アイルランド、マルタ、クロアチア、アイスランド、モロッコ、スコットランド、アメリカ合衆国、スペインで撮影されている。2011年春から放送が始まり、最終話は2019年5月19日に放送された。\n日本ではスター・チャンネルにおいて2013年1月から放送され、第6シーズンからは日米同時放送された。",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_0-857",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 484,
+          "end": 857,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "91f4619a9c57e9e5aac01da170d58990eadf3f4880349544d64fc1fa3e5ab3f6",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "91f4619a9c57e9e5aac01da170d58990eadf3f4880349544d64fc1fa3e5ab3f6",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 857
+      }
+    },
+    {
+      "passage_id": "9382562907581163334463312548_857-1580",
+      "title": "ゲーム・オブ・スローンズ",
+      "text": "ワーナー エンターテイメント ジャパンからDVD&Blu-rayが発売されている。2016年2月18日、Huluで配信が開始された。2017年からはAmazonビデオでも配信されている。なお、各シーズンの副題は日本独自につけられている。\n背景\n→「氷と炎の歌の世界」も参照\n一つの季節が不規則に数年間も続く大陸ウェスタロスと、海を隔てた東の大陸エッソスが主な舞台である。古代には、ウェスタロスには〈森の子ら〉と呼ばれる小柄な種族が住んでいたが、ここに〈最初の人々〉と呼ばれる民族が侵入して〈森の子ら〉との戦争の後に講和し、〈ホワイト・ウォーカー〉と呼ばれる北からの超自然的脅威に備えるために、協力して〈壁〉と呼ばれる魔法的防壁を築いた。〈壁〉は歴代の王によって支持され、志願者および追放された犯罪者が送られて防御されている。北部にはいまだに〈最初の人々〉の影響が色濃く残り、〈古の神々〉があがめられる。\nその後、アンダル人がウェスタロスを征服し、七王国を成立させた。アンダル人の持ちこんだ〈七神正教〉は、北部と〈鉄諸島〉を除くウェスタロス中で信奉されている。\n物語の数百年前、エッソスでは古代ヴァリリア帝国が崩壊し、ヴァリリア人のターガリエン家がドラゴンを使ってウェスタロスに襲来し、七王国を征服、解体してターガリエン統一王朝を開き、倒した敵の剣を溶かして作られた〈鉄の玉座〉に座ることになった。\n物語の十数年前に、〈ロバートの反乱〉と呼ばれる出来事があった。ターガリエン家の庶流であるバラシオン家がターガリエン王朝を倒して〈鉄の玉座〉に座り、ターガリエン王朝のほとんどは殺されたが、デナーリス・ターガリエンなど一部の血縁の者はエッソスに逃れた。",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_857-1580",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 482,
+          "end": 1580,
+          "start": 857
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "959924695d78d48c249735299e1b54e2e708133727390b232799cf509ea01710",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "959924695d78d48c249735299e1b54e2e708133727390b232799cf509ea01710",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 723
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "人気ドラマ「ゲーム・オブ・スローンズ」はHBOの公式ウェブサイトやHulu、U-NEXTなどの動画配信サービスで視聴できます。また、日本ではスター・チャンネルで2013年1月から放送され、第6シーズンからは日米同時放送されました。",
+    "answer_sha256": "e8b0390ed70b69563148817830023ddb9ec1d823df4033cc5b62b27c4ba63a47",
+    "quality": {
+      "annotation_id": "Q-97f64656c25427d9784f",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-97f64656c25427d9784f",
+        "candidate_sha256": "257086a745e29d88802b0bfea2fd8f18f3bbbfe2c75dcb266b7e2e092014e509",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "uncertain",
+          "context_support": "fail"
+        },
+        "essential_points": "ゲーム・オブ・スローンズ本編を視聴できる放送局や配信サービスなどを、別作品の配信情報と区別して示す。",
+        "reason": "視聴先を挙げており、参考根拠でもHulu配信が確認できるため、質問への実質的な回答はある。しかし、実使用文書で確認できるのはスター・チャンネルの放送歴とHBO・Hulu等への外部リンクであり、公式サイトでの本編視聴は裏付けられない。U-NEXTの記述は別作品のハウス・オブ・ザ・ドラゴンについてで、本編の配信を支持しない。参考根拠のHulu配信情報も実使用文書の支持を代替できず、回答全体の文脈支持は不合格となる。非支持の視聴先が実際に誤りかは、 supplied資料だけでは確定できない。",
+        "evidence": [
+          {
+            "passage_id": "9382562907581163334463312548_0-857",
+            "quote": "ゲーム・オブ・スローンズ\nGame of Thrones\nジャンル\nファンタジー\nドラマ\n原案\nデイヴィッド・ベニオフ\nD・B・ワイス\n作曲\nラミン・ジャヴァディ\n国・地域\nアメリカ合衆国\n言語\n英語\nシーズン数\n8\n話数\n73(各話リスト)\n各話の長さ\n50-82分\n製作\n製作総指揮\nデイヴィッド・ベニオフ\nD・B・ワイス\nフランク・ドールガー\nバーナデッテ・コールフィールド\nキャロライン・ストラウス\nジョージ・R・R・マーティン\n撮影地\n北アイルランド\nマルタ\nクロアチア\nアイスランド\nモロッコ\nスコットランド\nアメリカ合衆国\nスペイン\nカナダ\n赤道ギニア\nインドネシア\nブラジル\n製作\nHBO Entertainment、Television 360、Grok! Television、Generator Entertainment、Startling Television、Bighead Littlehead\n配給\nワーナー・ブラザース・テレビジョン\n放送\n放送チャンネル HBO\n映像形式 1080i (HDTV)\n音声形式 ドルビーデジタル 5.1\n放送期間 2011年4月17日 (2011-04-17) - 2019年5月19日 (2019-5-19)\n公式ウェブサイト\n公式ウェブサイト2\n『ゲーム・オブ・スローンズ』（原題：Game of Thrones、略称GOT）は、ジョージ・R・R・マーティン著のファンタジー小説シリーズ『氷と炎の歌』を原作としたHBOのテレビドラマシリーズ。中世ヨーロッパに類似するがドラゴンや魔法が存在する架空の世界において、多くの登場人物が入り乱れる群像劇である。北アイルランド、マルタ、クロアチア、アイスランド、モロッコ、スコットランド、アメリカ合衆国、スペインで撮影されている。2011年春から放送が始まり、最終話は2019年5月19日に放送された。\n日本ではスター・チャンネルにおいて2013年1月から放送され、第6シーズンからは日米同時放送された。"
+          },
+          {
+            "passage_id": "9382562907581163334463312548_47491-47724",
+            "quote": "スタント・コーディネーション賞シリーズ/リミテッドシリーズ/テレビ映画賞\nRowley Irlam\n脚注\n関連項目\nセックスポジション - このドラマがきっかけになって作られた新語で、ナラティブの技法の一種\n外部リンク\nGame of Thrones - HBO （英語）\nゲーム・オブ・スローンズ - スターチャンネル\nゲーム・オブ・スローンズ - ワーナー・ブラザース\nゲーム・オブ・スローンズ - Hulu\nGame of Thrones - IMDb（英語）"
+          },
+          {
+            "passage_id": "9382562907581163334463312548_30557-31323",
+            "quote": "オベリン・マーテルなどのドーン人はスペイン語なまりの英語を話す。エッソスなど、ウェスタロスの外の出身人物は共通語として、外国語なまりの英語を話す。\nプロデューサーはデイヴィッド・J・ピーターソンに依頼してマーティンの原作にあるいくつかの言葉に基づいて、ドスラク語およびヴァリリア語群を製作した。どちらもサブタイトルで英語訳が表示される。ドスラク語はドスラク人によって話される。ヴァリリア語はさらに高ヴァリリア語および低ヴァリリア語に分かれ、前者は今は崩壊したヴァリリア帝国全盛時に話され、いまだに学問や洗練された会話で使われる。後者は奴隷商人湾一帯の庶民によって話される。さらに、ヴァリリア帝国が倒した古代ギス帝国で話された古代ギスカル語の断片も、奴隷商人湾には残る。\nスピンオフドラマ\n2017年5月、HBOは5人の脚本家にそれぞれ別のスピンオフドラマを検討させると発表した。\n2018年6月8日、HBOは5本のアイデアの中からジェーン・ゴールドマンの提案した前日譚となるドラマシリーズを選び、そのパイロット版を発注した。シリーズはゲーム・オブ・スローンズの約1万年前に始まり、諸名家の創設、ホワイト・ウォーカーの到来を告げる〈長い夜〉、そしてエッソスからのアンダル人の侵略を描く予定であった。だが2019年10月29日、HBOは製作中止を決定した。\n2019年10月29日、『炎と血』(\"Fire & Blood\")を原作とし、数百年前のターガリエン家の没落の始まりを描く『ハウス・オブ・ザ・ドラゴン』(House of the Dragon)の製作が、パイロット版を経ずに発表された。10話からなるシリーズは、2022年8月21日から放送されている。日本では、2022年8月22日よりU-NEXTで全米と同時配信されている。\n"
+          },
+          {
+            "passage_id": "9382562907581163334463312548_857-1580",
+            "quote": "ワーナー エンターテイメント ジャパンからDVD&Blu-rayが発売されている。2016年2月18日、Huluで配信が開始された。2017年からはAmazonビデオでも配信されている。なお、各シーズンの副題は日本独自につけられている。\n背景\n→「氷と炎の歌の世界」も参照\n一つの季節が不規則に数年間も続く大陸ウェスタロスと、海を隔てた東の大陸エッソスが主な舞台である。古代には、ウェスタロスには〈森の子ら〉と呼ばれる小柄な種族が住んでいたが、ここに〈最初の人々〉と呼ばれる民族が侵入して〈森の子ら〉との戦争の後に講和し、〈ホワイト・ウォーカー〉と呼ばれる北からの超自然的脅威に備えるために、協力して〈壁〉と呼ばれる魔法的防壁を築いた。〈壁〉は歴代の王によって支持され、志願者および追放された犯罪者が送られて防御されている。北部にはいまだに〈最初の人々〉の影響が色濃く残り、〈古の神々〉があがめられる。\nその後、アンダル人がウェスタロスを征服し、七王国を成立させた。アンダル人の持ちこんだ〈七神正教〉は、北部と〈鉄諸島〉を除くウェスタロス中で信奉されている。\n物語の数百年前、エッソスでは古代ヴァリリア帝国が崩壊し、ヴァリリア人のターガリエン家がドラゴンを使ってウェスタロスに襲来し、七王国を征服、解体してターガリエン統一王朝を開き、倒した敵の剣を溶かして作られた〈鉄の玉座〉に座ることになった。\n物語の十数年前に、〈ロバートの反乱〉と呼ばれる出来事があった。ターガリエン家の庶流であるバラシオン家がターガリエン王朝を倒して〈鉄の玉座〉に座り、ターガリエン王朝のほとんどは殺されたが、デナーリス・ターガリエンなど一部の血縁の者はエッソスに逃れた。"
+          }
+        ],
+        "elapsed_seconds": 11.501435631740605,
+        "confirmed_at_utc": "2026-11-04T00:57:48.252721+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_calibration/fixed-v23-cal-v1/ja/baseline/e94a9895d00ae3465c677643/record.json",
+      "sha256": "fa46ee921f7b651806df83b2d23faa0103e8eb16d96e389529c4f8fe97ad163f"
+    },
+    "copy": "provenance/baselines/cal_ja_e94a9895d00ae3465c677643.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "「ゲーム・オブ・スローンズ」は、HBO の公式ウェブサイトおよび Hulu などの外部リンクで視聴情報が提供されています。日本ではスター・チャンネルで2013年1月から放送され、第6シーズンからは日米同時放送されました [p1]。U-NEXT はスピンオフ作品『ハウス・オブ・ザ・ドラゴン』の配信先であり、本作品ではありません [p4]。",
+    "answer_sha256": "f6d0bb034d721260c45147363f3fa0fa993590bdd3e0cad942f00ebb8a1e06f6",
+    "quality": {
+      "annotation_id": "Q-811f6208f3116cc12c82",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-811f6208f3116cc12c82",
+        "candidate_sha256": "12f9fcedfb29af5b07983a1bd80b43323136d4fe8349aa046d96d9cd31104d84",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "uncertain",
+          "no_major_error": "uncertain",
+          "context_support": "fail"
+        },
+        "essential_points": "本編を視聴できる放送局・配信サービス・映像ソフトなどを具体的に示し、スピンオフの配信情報と区別すること。",
+        "reason": "スター・チャンネルの放送歴とHBO・Huluへの外部リンクは実使用文書e0020・e0022で確認できる。一方、e0023が示すのはスピンオフのU-NEXT配信であり、本編がU-NEXTの配信対象ではないという否定までは支持しない。Referenceのみのe0026には本編の配信・販売先があるが、この否定の根拠にはならない。回答は放送歴と情報の所在が中心で、視聴先への実質的な回答として十分か、非支持の否定が事実として誤っているかは確定しない。",
+        "evidence": [
+          {
+            "passage_id": "9382562907581163334463312548_0-857",
+            "quote": "ゲーム・オブ・スローンズ\nGame of Thrones\nジャンル\nファンタジー\nドラマ\n原案\nデイヴィッド・ベニオフ\nD・B・ワイス\n作曲\nラミン・ジャヴァディ\n国・地域\nアメリカ合衆国\n言語\n英語\nシーズン数\n8\n話数\n73(各話リスト)\n各話の長さ\n50-82分\n製作\n製作総指揮\nデイヴィッド・ベニオフ\nD・B・ワイス\nフランク・ドールガー\nバーナデッテ・コールフィールド\nキャロライン・ストラウス\nジョージ・R・R・マーティン\n撮影地\n北アイルランド\nマルタ\nクロアチア\nアイスランド\nモロッコ\nスコットランド\nアメリカ合衆国\nスペイン\nカナダ\n赤道ギニア\nインドネシア\nブラジル\n製作\nHBO Entertainment、Television 360、Grok! Television、Generator Entertainment、Startling Television、Bighead Littlehead\n配給\nワーナー・ブラザース・テレビジョン\n放送\n放送チャンネル HBO\n映像形式 1080i (HDTV)\n音声形式 ドルビーデジタル 5.1\n放送期間 2011年4月17日 (2011-04-17) - 2019年5月19日 (2019-5-19)\n公式ウェブサイト\n公式ウェブサイト2\n『ゲーム・オブ・スローンズ』（原題：Game of Thrones、略称GOT）は、ジョージ・R・R・マーティン著のファンタジー小説シリーズ『氷と炎の歌』を原作としたHBOのテレビドラマシリーズ。中世ヨーロッパに類似するがドラゴンや魔法が存在する架空の世界において、多くの登場人物が入り乱れる群像劇である。北アイルランド、マルタ、クロアチア、アイスランド、モロッコ、スコットランド、アメリカ合衆国、スペインで撮影されている。2011年春から放送が始まり、最終話は2019年5月19日に放送された。\n日本ではスター・チャンネルにおいて2013年1月から放送され、第6シーズンからは日米同時放送された。"
+          },
+          {
+            "passage_id": "9382562907581163334463312548_47491-47724",
+            "quote": "スタント・コーディネーション賞シリーズ/リミテッドシリーズ/テレビ映画賞\nRowley Irlam\n脚注\n関連項目\nセックスポジション - このドラマがきっかけになって作られた新語で、ナラティブの技法の一種\n外部リンク\nGame of Thrones - HBO （英語）\nゲーム・オブ・スローンズ - スターチャンネル\nゲーム・オブ・スローンズ - ワーナー・ブラザース\nゲーム・オブ・スローンズ - Hulu\nGame of Thrones - IMDb（英語）"
+          },
+          {
+            "passage_id": "9382562907581163334463312548_30557-31323",
+            "quote": "オベリン・マーテルなどのドーン人はスペイン語なまりの英語を話す。エッソスなど、ウェスタロスの外の出身人物は共通語として、外国語なまりの英語を話す。\nプロデューサーはデイヴィッド・J・ピーターソンに依頼してマーティンの原作にあるいくつかの言葉に基づいて、ドスラク語およびヴァリリア語群を製作した。どちらもサブタイトルで英語訳が表示される。ドスラク語はドスラク人によって話される。ヴァリリア語はさらに高ヴァリリア語および低ヴァリリア語に分かれ、前者は今は崩壊したヴァリリア帝国全盛時に話され、いまだに学問や洗練された会話で使われる。後者は奴隷商人湾一帯の庶民によって話される。さらに、ヴァリリア帝国が倒した古代ギス帝国で話された古代ギスカル語の断片も、奴隷商人湾には残る。\nスピンオフドラマ\n2017年5月、HBOは5人の脚本家にそれぞれ別のスピンオフドラマを検討させると発表した。\n2018年6月8日、HBOは5本のアイデアの中からジェーン・ゴールドマンの提案した前日譚となるドラマシリーズを選び、そのパイロット版を発注した。シリーズはゲーム・オブ・スローンズの約1万年前に始まり、諸名家の創設、ホワイト・ウォーカーの到来を告げる〈長い夜〉、そしてエッソスからのアンダル人の侵略を描く予定であった。だが2019年10月29日、HBOは製作中止を決定した。\n2019年10月29日、『炎と血』(\"Fire & Blood\")を原作とし、数百年前のターガリエン家の没落の始まりを描く『ハウス・オブ・ザ・ドラゴン』(House of the Dragon)の製作が、パイロット版を経ずに発表された。10話からなるシリーズは、2022年8月21日から放送されている。日本では、2022年8月22日よりU-NEXTで全米と同時配信されている。\n"
+          },
+          {
+            "passage_id": "9382562907581163334463312548_857-1580",
+            "quote": "ワーナー エンターテイメント ジャパンからDVD&Blu-rayが発売されている。2016年2月18日、Huluで配信が開始された。2017年からはAmazonビデオでも配信されている。なお、各シーズンの副題は日本独自につけられている。\n背景\n→「氷と炎の歌の世界」も参照\n一つの季節が不規則に数年間も続く大陸ウェスタロスと、海を隔てた東の大陸エッソスが主な舞台である。古代には、ウェスタロスには〈森の子ら〉と呼ばれる小柄な種族が住んでいたが、ここに〈最初の人々〉と呼ばれる民族が侵入して〈森の子ら〉との戦争の後に講和し、〈ホワイト・ウォーカー〉と呼ばれる北からの超自然的脅威に備えるために、協力して〈壁〉と呼ばれる魔法的防壁を築いた。〈壁〉は歴代の王によって支持され、志願者および追放された犯罪者が送られて防御されている。北部にはいまだに〈最初の人々〉の影響が色濃く残り、〈古の神々〉があがめられる。\nその後、アンダル人がウェスタロスを征服し、七王国を成立させた。アンダル人の持ちこんだ〈七神正教〉は、北部と〈鉄諸島〉を除くウェスタロス中で信奉されている。\n物語の数百年前、エッソスでは古代ヴァリリア帝国が崩壊し、ヴァリリア人のターガリエン家がドラゴンを使ってウェスタロスに襲来し、七王国を征服、解体してターガリエン統一王朝を開き、倒した敵の剣を溶かして作られた〈鉄の玉座〉に座ることになった。\n物語の十数年前に、〈ロバートの反乱〉と呼ばれる出来事があった。ターガリエン家の庶流であるバラシオン家がターガリエン王朝を倒して〈鉄の玉座〉に座り、ターガリエン王朝のほとんどは殺されたが、デナーリス・ターガリエンなど一部の血縁の者はエッソスに逃れた。"
+          }
+        ],
+        "elapsed_seconds": 11.501600060233613,
+        "confirmed_at_utc": "2026-11-04T01:00:06.548034+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "人気ドラマ「ゲーム・オブ・スローンズ」はHBOの公式ウェブサイトやHulu、U-NEXTなどの動画配信サービスで視聴できます。"
+    },
+    {
+      "claim_id": "c2",
+      "text": "また、日本ではスター・チャンネルで2013年1月から放送され、第6シーズンからは日米同時放送されました。"
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "人気ドラマ「ゲーム・オブ・スローンズ」はHBOの公式ウェブサイトやHulu、U-NEXTなどの動画配信サービスで視聴できます。"
+      },
+      {
+        "claim_id": "c2",
+        "text": "また、日本ではスター・チャンネルで2013年1月から放送され、第6シーズンからは日米同時放送されました。"
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-ja-v1",
+    "normalized_prose": "人気ドラマ「ゲーム・オブ・スローンズ」はHBOの公式ウェブサイトやHulu、U-NEXTなどの動画配信サービスで視聴できます。また、日本ではスター・チャンネルで2013年1月から放送され、第6シーズンからは日米同時放送されました。",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 63
+      },
+      {
+        "start": 63,
+        "end": 115
+      }
+    ],
+    "unclosed_delimiters": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "9382562907581163334463312548_0-857",
+          "9382562907581163334463312548_31323-32211",
+          "9382562907581163334463312548_47491-47724",
+          "9382562907581163334463312548_30557-31323",
+          "34817713264084522459580067668_9653-10413"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "9382562907581163334463312548_0-857",
+          "9382562907581163334463312548_31323-32211",
+          "9382562907581163334463312548_47491-47724",
+          "9382562907581163334463312548_30557-31323",
+          "34817713264084522459580067668_9653-10413"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "34817713264084522459580067668_9653-10413",
+          "9382562907581163334463312548_30557-31323",
+          "9382562907581163334463312548_47491-47724",
+          "9382562907581163334463312548_31323-32211",
+          "9382562907581163334463312548_0-857"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "9382562907581163334463312548_0-857",
+          "34817713264084522459580067668_9653-10413",
+          "9382562907581163334463312548_30557-31323",
+          "9382562907581163334463312548_31323-32211",
+          "9382562907581163334463312548_47491-47724"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "9382562907581163334463312548_31323-32211",
+          "9382562907581163334463312548_0-857",
+          "34817713264084522459580067668_9653-10413",
+          "9382562907581163334463312548_47491-47724",
+          "9382562907581163334463312548_30557-31323"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "9382562907581163334463312548_47491-47724",
+          "9382562907581163334463312548_0-857",
+          "9382562907581163334463312548_30557-31323",
+          "34817713264084522459580067668_9653-10413",
+          "9382562907581163334463312548_31323-32211"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "9382562907581163334463312548_0-857",
+          "9382562907581163334463312548_31323-32211",
+          "9382562907581163334463312548_47491-47724",
+          "9382562907581163334463312548_30557-31323",
+          "34817713264084522459580067668_9653-10413"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "9382562907581163334463312548_0-857",
+          "9382562907581163334463312548_31323-32211",
+          "9382562907581163334463312548_47491-47724",
+          "9382562907581163334463312548_30557-31323",
+          "34817713264084522459580067668_9653-10413"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "9382562907581163334463312548_0-857",
+          "9382562907581163334463312548_31323-32211",
+          "9382562907581163334463312548_47491-47724",
+          "9382562907581163334463312548_30557-31323",
+          "34817713264084522459580067668_9653-10413"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "ja",
+    "record_id": "whrja:02e85c8:answered:814",
+    "document_group_id": "whrja-group:c35664ef931d0c0ab425622e",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_calibration/fixed-v23-cal-v1/ja/report.private.json",
+    "sha256": "3651654ab2169fd76be09dde5420f6830270bea70acd945043fa93b8ce5265fd"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "34817713264084522459580067668_9653-10413",
+      "text": "MOON SAGA 番外編「義経 熱血学園物語」〜第二章〜 （2015年1月8日） -（原作/脚本/演出/主演:GACKT）\nイベント\n謙信公祭（2007年、2008年、2010年 - 2013年、2015年8月開催、新潟県上越市） - 大河ドラマ「風林火山」で演じた上杉謙信役で出演。\nネットドラマ\n恋愛は必然である〜ドラマで分かる！新感覚恋愛法則〜（2014年、Bee TV） - ストーリーテラー 役\n踊る大宣伝会議、或いは私は如何にして踊るのを止めてゲームのルールを変えるに至ったか。Season2（2015年、ネスレシアター） - GACKT（本人） 役\nその他ネット番組\nGACKT/井上正大インタビュー モッテコ書店 （2010年1月8日）\nシャープ エモパーmovie「エモ動」第2弾「emopa life story」\nGACKTなゲーム！？ガメ先手ル！ (2014年7月1日-2015年6月30日)\nGACKTなゲーム！？帰ってきたガメセンテル （2015年9月1日-2016年8月31日）\nGACKT【公式】チャンネル FRESH! （2017年7月4日）\nGACKT完全プロデュース!ヘッズアップポーカー\"タイマン\"（2017年9月23日、AbemaTV、司会）\nGACKTプロデュース！POKER×POKER〜業界タイマントーナメント（2018年5月5日 - 2019年11月14日、AbemaTV、司会）\nOVA\n新・北斗の拳 - セイジ 役\n殿といっしょ - 上杉謙信 役\nSUPERNATURAL: THE ANIMATION - アンディ 役\nゲーム\n2000年代\n武刃街（2003年、劉王羽）\nダージュ オブ ケルベロス ファイナルファンタジーVII（2006年、G〈ジェネシス〉）\n",
+      "source_metadata": {
+        "article_text_sha256": "ce39eb1e79f22c3e802fbbad3f72b044291d8b5dd9f6b039e6032982a72ce23b",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2827473:98591968:ce39eb1e79f22c3e802fbbad3f72b044291d8b5dd9f6b039e6032982a72ce23b",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34817713264084522459580067668_9653-10413",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 486,
+          "end": 10413,
+          "start": 9653
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98591968",
+        "text_sha256": "a4a979c9e093b0c4ae31292b997b129b68daa1849453edd740efadf33ea8efae",
+        "title": "GACKT",
+        "wikipedia_page_id": 2827473,
+        "wikipedia_revision_id": 98591968,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T01:39:20Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98591968&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "9382562907581163334463312548_0-857",
+      "text": "ゲーム・オブ・スローンズ\nGame of Thrones\nジャンル\nファンタジー\nドラマ\n原案\nデイヴィッド・ベニオフ\nD・B・ワイス\n作曲\nラミン・ジャヴァディ\n国・地域\nアメリカ合衆国\n言語\n英語\nシーズン数\n8\n話数\n73(各話リスト)\n各話の長さ\n50-82分\n製作\n製作総指揮\nデイヴィッド・ベニオフ\nD・B・ワイス\nフランク・ドールガー\nバーナデッテ・コールフィールド\nキャロライン・ストラウス\nジョージ・R・R・マーティン\n撮影地\n北アイルランド\nマルタ\nクロアチア\nアイスランド\nモロッコ\nスコットランド\nアメリカ合衆国\nスペイン\nカナダ\n赤道ギニア\nインドネシア\nブラジル\n製作\nHBO Entertainment、Television 360、Grok! Television、Generator Entertainment、Startling Television、Bighead Littlehead\n配給\nワーナー・ブラザース・テレビジョン\n放送\n放送チャンネル HBO\n映像形式 1080i (HDTV)\n音声形式 ドルビーデジタル 5.1\n放送期間 2011年4月17日 (2011-04-17) - 2019年5月19日 (2019-5-19)\n公式ウェブサイト\n公式ウェブサイト2\n『ゲーム・オブ・スローンズ』（原題：Game of Thrones、略称GOT）は、ジョージ・R・R・マーティン著のファンタジー小説シリーズ『氷と炎の歌』を原作としたHBOのテレビドラマシリーズ。中世ヨーロッパに類似するがドラゴンや魔法が存在する架空の世界において、多くの登場人物が入り乱れる群像劇である。北アイルランド、マルタ、クロアチア、アイスランド、モロッコ、スコットランド、アメリカ合衆国、スペインで撮影されている。2011年春から放送が始まり、最終話は2019年5月19日に放送された。\n日本ではスター・チャンネルにおいて2013年1月から放送され、第6シーズンからは日米同時放送された。",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_0-857",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 484,
+          "end": 857,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "91f4619a9c57e9e5aac01da170d58990eadf3f4880349544d64fc1fa3e5ab3f6",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "9382562907581163334463312548_30557-31323",
+      "text": "オベリン・マーテルなどのドーン人はスペイン語なまりの英語を話す。エッソスなど、ウェスタロスの外の出身人物は共通語として、外国語なまりの英語を話す。\nプロデューサーはデイヴィッド・J・ピーターソンに依頼してマーティンの原作にあるいくつかの言葉に基づいて、ドスラク語およびヴァリリア語群を製作した。どちらもサブタイトルで英語訳が表示される。ドスラク語はドスラク人によって話される。ヴァリリア語はさらに高ヴァリリア語および低ヴァリリア語に分かれ、前者は今は崩壊したヴァリリア帝国全盛時に話され、いまだに学問や洗練された会話で使われる。後者は奴隷商人湾一帯の庶民によって話される。さらに、ヴァリリア帝国が倒した古代ギス帝国で話された古代ギスカル語の断片も、奴隷商人湾には残る。\nスピンオフドラマ\n2017年5月、HBOは5人の脚本家にそれぞれ別のスピンオフドラマを検討させると発表した。\n2018年6月8日、HBOは5本のアイデアの中からジェーン・ゴールドマンの提案した前日譚となるドラマシリーズを選び、そのパイロット版を発注した。シリーズはゲーム・オブ・スローンズの約1万年前に始まり、諸名家の創設、ホワイト・ウォーカーの到来を告げる〈長い夜〉、そしてエッソスからのアンダル人の侵略を描く予定であった。だが2019年10月29日、HBOは製作中止を決定した。\n2019年10月29日、『炎と血』(\"Fire & Blood\")を原作とし、数百年前のターガリエン家の没落の始まりを描く『ハウス・オブ・ザ・ドラゴン』(House of the Dragon)の製作が、パイロット版を経ずに発表された。10話からなるシリーズは、2022年8月21日から放送されている。日本では、2022年8月22日よりU-NEXTで全米と同時配信されている。\n",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_30557-31323",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 486,
+          "end": 31323,
+          "start": 30557
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "9fc9c0c5d5cd7cae6b5421bd4e60a2b865e7626d5a2c6d910eef033efafda803",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "9382562907581163334463312548_31323-32211",
+      "text": "また、『ハウス・オブ・ザ・ドラゴン』と『ゲーム・オブ・ザ・スローンズ』に挟まれる時代を舞台とし、『七王国の騎士』を原作としたドラマシリーズも発表されている。\n前日譚アニメーション\n2017年9月、HBOは \"Game of Thrones: Conquest & Rebellion\"と題したアニメーションのシリーズの製作を発表し、一部をYouTubeで公開した。シリーズはエイゴン・ターガリエン一世と妻でもある姉妹たちによる七王国征服から、300年後の〈ロバートの反乱〉までを描く。エピソード1である“Valyria’s Last Scion: House Targaryen”はヴァリリアを滅ぼした〈破滅〉と呼ばれる出来事を描き、シーズン7のDVDおよびBlu-rayのボーナスディスクに期間限定で含まれる予定である。ハリー・ロイドがヴィセーリス・ターガリエン役でナレーションを担当する。\nドキュメンタリー\n2019年5月26日、全シーズン終了の一週間後に、メイキングのドキュメンタリー\"Game of Thrones: The Last Watch\"が放送された。\n賞\nプライムタイム・エミー賞、ゴールデングローブ賞など数多くの賞を受賞している。2018年現在、プライムタイム・エミー賞では通算で132賞にノミネートされそのうち47賞を受賞し、史上もっとも多くを獲得したドラマとなっている。特に2015年、2016年、2018年と三回にわたって作品賞ドラマシリーズ部門を受賞している。\n2011年\n賞\nカテゴリー\n受賞者\nアメリカン・フィルム・インスティチュート賞\nAFI TV Award\nプライムタイム・エミー賞\nメインタイトルデザイン賞\nAngus Wall, Hameed Shaukat, Kirk Shintani and Robert Feng\n助演男優賞ドラマ部門\nピーター・ディンクレイジ\nゴールデングローブ賞\n助演男優賞ドラマ部門\nピーター・ディンクレイジ\nピーボディ賞\nサテライト賞\n助演男優賞\nピーター・ディンクレイジ\nスクリーム賞\n助演男優賞\n",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_31323-32211",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 32211,
+          "start": 31323
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "8aa2bb360d8ccc023926c3cd130987df1109693f75ae6954f94661feb76ab8d0",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "9382562907581163334463312548_47491-47724",
+      "text": "スタント・コーディネーション賞シリーズ/リミテッドシリーズ/テレビ映画賞\nRowley Irlam\n脚注\n関連項目\nセックスポジション - このドラマがきっかけになって作られた新語で、ナラティブの技法の一種\n外部リンク\nGame of Thrones - HBO （英語）\nゲーム・オブ・スローンズ - スターチャンネル\nゲーム・オブ・スローンズ - ワーナー・ブラザース\nゲーム・オブ・スローンズ - Hulu\nGame of Thrones - IMDb（英語）",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_47491-47724",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 125,
+          "end": 47724,
+          "start": 47491
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "879fa65303d9e23d8496614bca5380ee18ab79f1c8c51ea37c954e2b7ce99935",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "9382562907581163334463312548_857-1580",
+      "text": "ワーナー エンターテイメント ジャパンからDVD&Blu-rayが発売されている。2016年2月18日、Huluで配信が開始された。2017年からはAmazonビデオでも配信されている。なお、各シーズンの副題は日本独自につけられている。\n背景\n→「氷と炎の歌の世界」も参照\n一つの季節が不規則に数年間も続く大陸ウェスタロスと、海を隔てた東の大陸エッソスが主な舞台である。古代には、ウェスタロスには〈森の子ら〉と呼ばれる小柄な種族が住んでいたが、ここに〈最初の人々〉と呼ばれる民族が侵入して〈森の子ら〉との戦争の後に講和し、〈ホワイト・ウォーカー〉と呼ばれる北からの超自然的脅威に備えるために、協力して〈壁〉と呼ばれる魔法的防壁を築いた。〈壁〉は歴代の王によって支持され、志願者および追放された犯罪者が送られて防御されている。北部にはいまだに〈最初の人々〉の影響が色濃く残り、〈古の神々〉があがめられる。\nその後、アンダル人がウェスタロスを征服し、七王国を成立させた。アンダル人の持ちこんだ〈七神正教〉は、北部と〈鉄諸島〉を除くウェスタロス中で信奉されている。\n物語の数百年前、エッソスでは古代ヴァリリア帝国が崩壊し、ヴァリリア人のターガリエン家がドラゴンを使ってウェスタロスに襲来し、七王国を征服、解体してターガリエン統一王朝を開き、倒した敵の剣を溶かして作られた〈鉄の玉座〉に座ることになった。\n物語の十数年前に、〈ロバートの反乱〉と呼ばれる出来事があった。ターガリエン家の庶流であるバラシオン家がターガリエン王朝を倒して〈鉄の玉座〉に座り、ターガリエン王朝のほとんどは殺されたが、デナーリス・ターガリエンなど一部の血縁の者はエッソスに逃れた。",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_857-1580",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 482,
+          "end": 1580,
+          "start": 857
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "959924695d78d48c249735299e1b54e2e708133727390b232799cf509ea01710",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "9382562907581163334463312548_0-857": {
+      "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "9382562907581163334463312548_0-857",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 484,
+        "end": 857,
+        "start": 0
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+      "text_sha256": "91f4619a9c57e9e5aac01da170d58990eadf3f4880349544d64fc1fa3e5ab3f6",
+      "title": "ゲーム・オブ・スローンズ",
+      "wikipedia_page_id": 2607002,
+      "wikipedia_revision_id": 97416572,
+      "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    },
+    "9382562907581163334463312548_857-1580": {
+      "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "9382562907581163334463312548_857-1580",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 482,
+        "end": 1580,
+        "start": 857
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+      "text_sha256": "959924695d78d48c249735299e1b54e2e708133727390b232799cf509ea01710",
+      "title": "ゲーム・オブ・スローンズ",
+      "wikipedia_page_id": 2607002,
+      "wikipedia_revision_id": 97416572,
+      "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "9382562907581163334463312548_0-857",
+      "text": "ゲーム・オブ・スローンズ\nGame of Thrones\nジャンル\nファンタジー\nドラマ\n原案\nデイヴィッド・ベニオフ\nD・B・ワイス\n作曲\nラミン・ジャヴァディ\n国・地域\nアメリカ合衆国\n言語\n英語\nシーズン数\n8\n話数\n73(各話リスト)\n各話の長さ\n50-82分\n製作\n製作総指揮\nデイヴィッド・ベニオフ\nD・B・ワイス\nフランク・ドールガー\nバーナデッテ・コールフィールド\nキャロライン・ストラウス\nジョージ・R・R・マーティン\n撮影地\n北アイルランド\nマルタ\nクロアチア\nアイスランド\nモロッコ\nスコットランド\nアメリカ合衆国\nスペイン\nカナダ\n赤道ギニア\nインドネシア\nブラジル\n製作\nHBO Entertainment、Television 360、Grok! Television、Generator Entertainment、Startling Television、Bighead Littlehead\n配給\nワーナー・ブラザース・テレビジョン\n放送\n放送チャンネル HBO\n映像形式 1080i (HDTV)\n音声形式 ドルビーデジタル 5.1\n放送期間 2011年4月17日 (2011-04-17) - 2019年5月19日 (2019-5-19)\n公式ウェブサイト\n公式ウェブサイト2\n『ゲーム・オブ・スローンズ』（原題：Game of Thrones、略称GOT）は、ジョージ・R・R・マーティン著のファンタジー小説シリーズ『氷と炎の歌』を原作としたHBOのテレビドラマシリーズ。中世ヨーロッパに類似するがドラゴンや魔法が存在する架空の世界において、多くの登場人物が入り乱れる群像劇である。北アイルランド、マルタ、クロアチア、アイスランド、モロッコ、スコットランド、アメリカ合衆国、スペインで撮影されている。2011年春から放送が始まり、最終話は2019年5月19日に放送された。\n日本ではスター・チャンネルにおいて2013年1月から放送され、第6シーズンからは日米同時放送された。",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_0-857",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 484,
+          "end": 857,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "91f4619a9c57e9e5aac01da170d58990eadf3f4880349544d64fc1fa3e5ab3f6",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "9382562907581163334463312548_857-1580",
+      "text": "ワーナー エンターテイメント ジャパンからDVD&Blu-rayが発売されている。2016年2月18日、Huluで配信が開始された。2017年からはAmazonビデオでも配信されている。なお、各シーズンの副題は日本独自につけられている。\n背景\n→「氷と炎の歌の世界」も参照\n一つの季節が不規則に数年間も続く大陸ウェスタロスと、海を隔てた東の大陸エッソスが主な舞台である。古代には、ウェスタロスには〈森の子ら〉と呼ばれる小柄な種族が住んでいたが、ここに〈最初の人々〉と呼ばれる民族が侵入して〈森の子ら〉との戦争の後に講和し、〈ホワイト・ウォーカー〉と呼ばれる北からの超自然的脅威に備えるために、協力して〈壁〉と呼ばれる魔法的防壁を築いた。〈壁〉は歴代の王によって支持され、志願者および追放された犯罪者が送られて防御されている。北部にはいまだに〈最初の人々〉の影響が色濃く残り、〈古の神々〉があがめられる。\nその後、アンダル人がウェスタロスを征服し、七王国を成立させた。アンダル人の持ちこんだ〈七神正教〉は、北部と〈鉄諸島〉を除くウェスタロス中で信奉されている。\n物語の数百年前、エッソスでは古代ヴァリリア帝国が崩壊し、ヴァリリア人のターガリエン家がドラゴンを使ってウェスタロスに襲来し、七王国を征服、解体してターガリエン統一王朝を開き、倒した敵の剣を溶かして作られた〈鉄の玉座〉に座ることになった。\n物語の十数年前に、〈ロバートの反乱〉と呼ばれる出来事があった。ターガリエン家の庶流であるバラシオン家がターガリエン王朝を倒して〈鉄の玉座〉に座り、ターガリエン王朝のほとんどは殺されたが、デナーリス・ターガリエンなど一部の血縁の者はエッソスに逃れた。",
+      "source_metadata": {
+        "article_text_sha256": "3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2607002:97416572:3ac3882e5e7891ad518d9d3579c50f665e01a93ad164575ed9e22ce512c4ce20",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "9382562907581163334463312548_857-1580",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 482,
+          "end": 1580,
+          "start": 857
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572",
+        "text_sha256": "959924695d78d48c249735299e1b54e2e708133727390b232799cf509ea01710",
+        "title": "ゲーム・オブ・スローンズ",
+        "wikipedia_page_id": 2607002,
+        "wikipedia_revision_id": 97416572,
+        "wikipedia_revision_timestamp_utc": "2023-10-15T01:29:25Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97416572&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ]
+}

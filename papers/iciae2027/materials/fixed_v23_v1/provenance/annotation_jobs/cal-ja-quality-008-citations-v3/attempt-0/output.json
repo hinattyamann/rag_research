@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "reliable",
+      "reason": "気象情報の専門チャンネルの運営会社だったことを明確に答えている。設立年月と事業内容、2010年の統合・法人消滅・事業承継、チャンネルの旧称と運営会社は、Referenceだけでなく実使用Contextで支持される。重大な誤りはない。",
+      "evidence": ["e0000", "e0001", "e0002"],
+      "essential_points": "eTENが運営していたのは、天気予報などの気象情報を提供する専門チャンネルであること。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "reliable",
+      "reason": "楽器の分類、構造、基本的な弦数、演奏方法を説明し、質問に十分答えている。使用ジャンルや演奏者の呼称も含め、回答全体が実使用Contextのギター本文で直接支持される。Referenceのみの根拠には依存していない。",
+      "evidence": ["e0007"],
+      "essential_points": "ギターは基本的に6本の弦とフレット付きの指板を持ち、指やピックで弦を弾いて演奏する、リュート属の撥弦楽器であること。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a002": {
+      "label": "reliable",
+      "reason": "住宅市場の悪化からサブプライム住宅ローン危機、リーマンの破綻、世界的な信用収縮へ至る因果関係を説明している。破綻日、負債額、米国史上最大の企業倒産という補足も実使用Contextで支持される。参照回答にある用語定義の省略は、原因への回答を損なっていない。",
+      "evidence": ["e0014"],
+      "essential_points": "米国住宅市場の悪化によるサブプライム住宅ローン危機を背景にリーマンが破綻し、信用収縮と世界金融危機につながったこと。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "法的制裁や条例による対策は示している。しかし実使用Contextの渋谷区ルールは3駅から半径300メートル以内の重点地区が対象で、灰皿のある場所も例外である。回答はこれらの条件を落として禁止範囲を広げている。また新宿区の罰則を、実使用Contextの「罰金」から「過料」に変更している。これらはReferenceとの違いではなく、実使用Contextに対する不整合である。",
+      "evidence": ["e0021", "e0022", "e0024"],
+      "essential_points": "罰則やポイ捨て禁止条例などの具体的な抑止策を示し、自治体例では適用区域・例外・罰則の種類を正確に説明すること。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    }
+  }
+}

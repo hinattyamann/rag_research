@@ -1,0 +1,92 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "Q-16a7ecb18e1354e9c023",
+      "candidate_sha256": "6e7aed22ba29aa4eacf1513e55ac45e15cd46fd8402e534f7e7e67785f313b5c",
+      "label": "reliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Jenilee Harrison played Cindy Snow, Chrissy Snow's cousin, on Three's Company.",
+      "reason": "The answer identifies the actress and character correctly. The actual context directly supports both claims and includes the cited passage; support does not depend on reference-only material.",
+      "evidence": [
+        {
+          "passage_id": "793206091_1240-2457",
+          "quote": "Harrison 's character , Cindy Snow , was created to be Chrissy Snow 's cousin ."
+        },
+        {
+          "passage_id": "793206091_1240-2457",
+          "quote": "Harrison debuted on Three 's Company in the episode entitled `` Chrissy 's Cousin '' ( season 5 , episode 7 ) ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-9da6a97aca11b1f4cbf4",
+      "candidate_sha256": "e090aaab5b5ccd4810b0614377a629f73a93c42394e09f6f46a6d54e647cb13a",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      },
+      "essential_points": "Catalonia is an autonomous community of Spain; Barcelona is its capital and largest city. Barcelona also names one of Catalonia's provinces.",
+      "reason": "The answer refuses despite sufficient actual context to explain the distinction. Its claim of insufficient information is directly refuted by the retrieved Catalonia passage. The reference agrees with that passage, but actual context independently establishes the failure.",
+      "evidence": [
+        {
+          "passage_id": "809180503_2081-3047",
+          "quote": "Catalonia ( Catalan : Catalunya , Occitan : Catalonha , Spanish : Cataluña ) is an autonomous community of Spain located on the northeastern extremity of the Iberian Peninsula ."
+        },
+        {
+          "passage_id": "809180503_2081-3047",
+          "quote": "Catalonia consists of four provinces : Barcelona , Girona , Lleida , and Tarragona . The capital and largest city is Barcelona , the second-most populated municipality in Spain and the core of the seventh most populous urban area in the European Union ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-99100bf32200443ada02",
+      "candidate_sha256": "f21509f4f60d427ea44a201f8c6136e56a489e629aded05b8d680653c47ee093",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      },
+      "essential_points": "Carol kills Lizzie after Lizzie stabs her sister Mika to death. The reference further specifies that Carol takes Lizzie outside to look at the flowers.",
+      "reason": "The answer gives earlier events but omits Lizzie's decisive fate, which both the reference and an actual-context review passage establish. This omission materially prevents it from answering what happened to her. It also incorrectly places Carol's admonition in Isolation; the actual narrative places it before the Isolation events. The flowers detail is reference-only and is not needed to establish these failures.",
+      "evidence": [
+        {
+          "passage_id": "826430256_7825-8298",
+          "quote": "it 's hard to imagine any as shocking and sad as seeing insane little Lizzie standing over the sister she just stabbed to death , no concept of what she 'd just done , fully expecting her to ' come back . ' Carol being forced to kill Lizzie was a close second ."
+        },
+        {
+          "passage_id": "826430256_2373-3962",
+          "quote": "Carol does it instead , and later tells Lizzie she is weak and needs to toughen up . Mika calms down her sister by telling her to `` look at the flowers '' . In the episode `` Isolation '' , Lizzie gets the flu and is forced into quarantine , and Carol is disturbed by Lizzie 's apparently personal connection with walkers ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-a3d4d7de529f0368cd53",
+      "candidate_sha256": "56b4a4cad262c2908f00a7eda0db8004f6b7bdc1e724a7601abc4796684ac14d",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "In 1935, Reza Shah Pahlavi asked foreign delegates to use Iran in formal correspondence.",
+      "reason": "The answer does not supply the required date, so essential_answer fails. However, the abstention accurately describes the actual context: it explains the names but supplies no date for the diplomatic naming request. The 1935 answer appears only in reference/gold material, not in the actual documents, and cannot substitute for actual-context support. The unreliable label reflects the missing essential answer, not an unjustified refusal or factual error.",
+      "evidence": [
+        {
+          "passage_id": "794012871_9059-9623",
+          "quote": "Persia is the Western name of the country , and Iranians were calling their country Iran for over a millennium ."
+        },
+        {
+          "passage_id": "794012871_68-807",
+          "quote": "In 1935 , Reza Shah Pahlavi asked foreign delegates to use the term Iran , the historical name of the country , used by its native people , in formal correspondence ."
+        }
+      ]
+    }
+  ]
+}

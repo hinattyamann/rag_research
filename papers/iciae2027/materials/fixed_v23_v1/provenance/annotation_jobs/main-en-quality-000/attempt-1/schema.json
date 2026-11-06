@@ -1,0 +1,101 @@
+{
+  "type": "object",
+  "properties": {
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "annotation_id": {
+            "type": "string"
+          },
+          "candidate_sha256": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string",
+            "enum": [
+              "reliable",
+              "unreliable",
+              "indeterminate"
+            ]
+          },
+          "criteria": {
+            "type": "object",
+            "properties": {
+              "essential_answer": {
+                "type": "string",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "uncertain"
+                ]
+              },
+              "no_major_error": {
+                "type": "string",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "uncertain"
+                ]
+              },
+              "context_support": {
+                "type": "string",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "uncertain"
+                ]
+              }
+            },
+            "required": [
+              "essential_answer",
+              "no_major_error",
+              "context_support"
+            ],
+            "additionalProperties": false
+          },
+          "essential_points": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "passage_id": {
+                  "type": "string"
+                },
+                "quote": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "passage_id",
+                "quote"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "annotation_id",
+          "candidate_sha256",
+          "label",
+          "criteria",
+          "essential_points",
+          "reason",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "annotations"
+  ],
+  "additionalProperties": false
+}

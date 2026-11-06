@@ -1,0 +1,307 @@
+{
+  "manifest_schema_version": "1.0",
+  "dataset": {
+    "name": "CLAPNQ",
+    "repository_url": "https://github.com/primeqa/clapnq.git",
+    "revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+    "checkout_layout": "data/raw/clapnq/c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+    "acquired_at": "2026-08-26T08:54:43Z"
+  },
+  "license_lineage": [
+    {
+      "dataset": "CLAPNQ",
+      "license_name": "Apache License 2.0",
+      "source_url": "https://github.com/primeqa/clapnq/blob/c508d78d8c5c2eecbf172fcf5f789004206e11fb/LICENSE"
+    },
+    {
+      "dataset": "Natural Questions",
+      "license_name": "CC BY-SA 3.0",
+      "source_url": "https://ai.google.com/research/NaturalQuestions/download"
+    }
+  ],
+  "files": [
+    {
+      "relative_path": "annotated_data/train/clapnq_train_answerable.jsonl",
+      "role": "annotation",
+      "source_split": "train",
+      "is_answerable": true,
+      "sha256": "ec50383e9c7f9b43eb0ae4dd40d0f3aa033ebc8d83bcad71ab98abe7fd032078",
+      "size_bytes": 6630093,
+      "record_count": 1954,
+      "expected_record_count": 1954,
+      "schema": {
+        "format": "jsonl",
+        "top_level_fields": [
+          "id",
+          "input",
+          "output",
+          "passages"
+        ],
+        "fields_present_in_every_record": [
+          "id",
+          "input",
+          "output",
+          "passages"
+        ],
+        "top_level_types": {
+          "id": [
+            "string"
+          ],
+          "input": [
+            "string"
+          ],
+          "output": [
+            "array"
+          ],
+          "passages": [
+            "array"
+          ]
+        }
+      }
+    },
+    {
+      "relative_path": "annotated_data/train/clapnq_train_unanswerable.jsonl",
+      "role": "annotation",
+      "source_split": "train",
+      "is_answerable": false,
+      "sha256": "f1a32e3a1693c6605566c66d0971bdca084792eb95102b6bb59c518545152e8c",
+      "size_bytes": 4645428,
+      "record_count": 1791,
+      "expected_record_count": 1791,
+      "schema": {
+        "format": "jsonl",
+        "top_level_fields": [
+          "id",
+          "input",
+          "output",
+          "passages"
+        ],
+        "fields_present_in_every_record": [
+          "id",
+          "input",
+          "output",
+          "passages"
+        ],
+        "top_level_types": {
+          "id": [
+            "string"
+          ],
+          "input": [
+            "string"
+          ],
+          "output": [
+            "array"
+          ],
+          "passages": [
+            "array"
+          ]
+        }
+      }
+    },
+    {
+      "relative_path": "annotated_data/dev/clapnq_dev_answerable.jsonl",
+      "role": "annotation",
+      "source_split": "dev",
+      "is_answerable": true,
+      "sha256": "6700e5e1664f08c5050f7f97688bda2101d0707aa055eae48c0d6e31621ca974",
+      "size_bytes": 986056,
+      "record_count": 300,
+      "expected_record_count": 300,
+      "schema": {
+        "format": "jsonl",
+        "top_level_fields": [
+          "id",
+          "input",
+          "output",
+          "passages"
+        ],
+        "fields_present_in_every_record": [
+          "id",
+          "input",
+          "output",
+          "passages"
+        ],
+        "top_level_types": {
+          "id": [
+            "string"
+          ],
+          "input": [
+            "string"
+          ],
+          "output": [
+            "array"
+          ],
+          "passages": [
+            "array"
+          ]
+        }
+      }
+    },
+    {
+      "relative_path": "annotated_data/dev/clapnq_dev_unanswerable.jsonl",
+      "role": "annotation",
+      "source_split": "dev",
+      "is_answerable": false,
+      "sha256": "262d4147fd631090d14d8de1af3bb0a38cb4e2c6b7a1df290a9bc4ca14f51b23",
+      "size_bytes": 790447,
+      "record_count": 300,
+      "expected_record_count": 300,
+      "schema": {
+        "format": "jsonl",
+        "top_level_fields": [
+          "id",
+          "input",
+          "output",
+          "passages"
+        ],
+        "fields_present_in_every_record": [
+          "id",
+          "input",
+          "output",
+          "passages"
+        ],
+        "top_level_types": {
+          "id": [
+            "string"
+          ],
+          "input": [
+            "string"
+          ],
+          "output": [
+            "array"
+          ],
+          "passages": [
+            "array"
+          ]
+        }
+      }
+    },
+    {
+      "relative_path": "retrieval/train/question_train_answerable.tsv",
+      "role": "retrieval_query",
+      "source_split": "train",
+      "is_answerable": true,
+      "sha256": "f781dc07f181e93fb30c975118ff57253db7906b23fa019450bc533da78b09f9",
+      "size_bytes": 971358,
+      "record_count": 1954,
+      "expected_record_count": 1954,
+      "schema": {
+        "format": "tsv",
+        "columns": [
+          "id",
+          "question",
+          "doc-id-list",
+          "answers"
+        ]
+      }
+    },
+    {
+      "relative_path": "retrieval/train/question_train_unanswerable.tsv",
+      "role": "retrieval_query",
+      "source_split": "train",
+      "is_answerable": false,
+      "sha256": "b9459ffd08ceddfc74e08671fddaa8b6b1e658bbb689db432880276a24e52cba",
+      "size_bytes": 132792,
+      "record_count": 1791,
+      "expected_record_count": 1791,
+      "schema": {
+        "format": "tsv",
+        "columns": [
+          "id",
+          "question",
+          "doc-id-list",
+          "answers"
+        ]
+      }
+    },
+    {
+      "relative_path": "retrieval/dev/question_dev_answerable.tsv",
+      "role": "retrieval_query",
+      "source_split": "dev",
+      "is_answerable": true,
+      "sha256": "9088a1a75751150a7c96d119b98c44d4568c81e2282f3b628143e543233d75ca",
+      "size_bytes": 159271,
+      "record_count": 300,
+      "expected_record_count": 300,
+      "schema": {
+        "format": "tsv",
+        "columns": [
+          "id",
+          "question",
+          "doc-id-list",
+          "answers"
+        ]
+      }
+    },
+    {
+      "relative_path": "retrieval/dev/question_dev_unanswerable.tsv",
+      "role": "retrieval_query",
+      "source_split": "dev",
+      "is_answerable": false,
+      "sha256": "fcef931dcbb100533bbabf5724d20608f3c88f09a6a416fed565f0f53c694b66",
+      "size_bytes": 22624,
+      "record_count": 300,
+      "expected_record_count": 300,
+      "schema": {
+        "format": "tsv",
+        "columns": [
+          "id",
+          "question",
+          "doc-id-list",
+          "answers"
+        ]
+      }
+    },
+    {
+      "relative_path": "retrieval/passages.tsv.zip",
+      "role": "retrieval_corpus",
+      "source_split": null,
+      "is_answerable": null,
+      "sha256": "5a14f56f3dde373d7063a2ea904c7b831e9b18cdce02ed0085ad039a04798c50",
+      "size_bytes": 42008945,
+      "record_count": 178890,
+      "expected_record_count": 178890,
+      "schema": {
+        "format": "zip",
+        "entry_path": "passages.tsv",
+        "entry_size_bytes": 119744907,
+        "entry_format": "tsv",
+        "columns": [
+          "id",
+          "text",
+          "title"
+        ]
+      }
+    },
+    {
+      "relative_path": "LICENSE",
+      "role": "license",
+      "source_split": null,
+      "is_answerable": null,
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "size_bytes": 11560,
+      "record_count": null,
+      "expected_record_count": null,
+      "schema": {
+        "format": "text",
+        "encoding": "utf-8"
+      }
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "required_file_count": 10,
+    "missing_file_count": 0,
+    "annotation_record_count": 4345,
+    "annotation_record_count_by_source_split": {
+      "train": 3745,
+      "dev": 600
+    },
+    "query_record_count": 4345,
+    "corpus_passage_count": 178890,
+    "corpus_passage_ids_unique": true,
+    "answerable_gold_passage_id_count": 2074,
+    "missing_gold_passage_id_count": 0,
+    "unanswerable_rows_with_gold_passage_id": 0
+  }
+}

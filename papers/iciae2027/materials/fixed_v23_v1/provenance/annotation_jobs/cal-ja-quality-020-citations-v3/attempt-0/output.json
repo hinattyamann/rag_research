@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "unreliable",
+      "reason": "実使用Contextには、半導体がグループの稼ぎ頭の一つであることと、生命保険・映画・ゲームなども事業の柱であることが明記されている。単一の最大事業を数量的に確定する情報はなくても、半導体の位置づけと事業の多様性は回答できるため、全面的な情報不足という拒否は不適切。Referenceのみを根拠にした判定ではない。",
+      "evidence": ["e0000", "e0004"],
+      "essential_points": "半導体はソニーグループの主要事業の一つであり、生命保険・映画・ゲームなど複数の事業の柱があることを説明する。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "fail"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "実使用Contextに、一般的な用法として情緒不安定、些細なことを気にする性格、取り越し苦労をしやすい気質が明記されている。質問へ直接回答できる情報があるのに情報不足としており、必須要点を全く答えていない。Referenceだけに存在する情報ではない。",
+      "evidence": ["e0009"],
+      "essential_points": "一般に、些細なことを気にしたり、取り越し苦労をしやすかったりする性格・気質などを神経質と呼ぶことを説明する。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "fail"
+      }
+    },
+    "a002": {
+      "label": "reliable",
+      "reason": "競走中・調教中の脚部故障と回復困難という主な原因を示し、健全肢への過負荷による疾病、術後ストレスと二次的疾病、暴れて開放骨折に至る場合も説明している。各項目は実使用Contextの説明や事例に支持され、可能性としての表現も適切。Referenceによる補完を必要としない。",
+      "evidence": ["e0015", "e0018", "e0016"],
+      "essential_points": "競走中や調教中の骨折などの脚部故障で回復が極めて困難になることを主因として説明し、必要に応じて合併症や術後悪化も挙げる。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "reliable",
+      "reason": "所在地、大手海運会社としての位置づけ、三菱グループとの関係、設立経緯に加え、事業内容と運航規模、代表者、上場情報、資本金・従業員数を説明している。これらは実使用Contextに明記され、概数や2021年の数値という限定も整合している。Referenceの列挙事項をすべて再現してはいないが、会社の詳しい説明として主要な要点を満たし、Referenceのみへの依存もない。",
+      "evidence": ["e0021", "e0022"],
+      "essential_points": "日本郵船の所在地と海運会社としての概要、三菱グループとの関係、設立の経緯、主な事業や規模を説明する。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    }
+  }
+}

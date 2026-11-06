@@ -1,0 +1,1438 @@
+{
+  "case_id": "case_03",
+  "qa_key": "cal_en_736a378735160bb469f1b9b7",
+  "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+  "cohort": "cal",
+  "language": "en",
+  "selection_rule": "First lexicographic unused any language QA satisfying same_quality",
+  "post_outcome_explanatory_selection": true,
+  "mode": "same_quality",
+  "input_path": "inputs/cal_en_736a378735160bb469f1b9b7.json",
+  "trials": [
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "trial_id": "reversed",
+      "document_ids": [
+        "810572008_3809-4436",
+        "827724067_10159-11489",
+        "810572008_4761-5676",
+        "837717284_33570-34159",
+        "810572008_5677-6655"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/reversed.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "5c725724469990a01c1fe0de1f9400d4e82e7839a23fb3038c8d99b13d73e442",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The idea of fried green tomatoes did not originate from the passage provided."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The passages focus on the introduction and acceptance of tomatoes in Europe, their culinary use, and the development of tomato sauces in Neapolitan cuisine."
+        },
+        {
+          "claim_id": "c3",
+          "text": "There is no mention of fried green tomatoes or their origin."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Documents cover tomato history and harvesting but contain no mention of fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_3809-4436",
+              "quote": "Tomatoes , which came to Europe from the New World via Spain , were initially prized in Italy mainly for their ornamental value ( see below ) . From the 19th century tomato sauces became typical of Neapolitan cuisine and , ultimately , Italian cuisine in general . Coffee ( introduced in the Americas circa 1720 ) from Africa and the Middle East and sugarcane ( introduced from South Asia ) from the Spanish West Indies became the main export commodity crops of extensive Latin American plantations . Introduced to India by the Portuguese , chili and potatoes from South America have become an integral part of Indian cuisine ."
+            },
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Passages 810572008_3809-4436, 810572008_4761-5676, and 810572008_5677-6655 support the focus on European introduction, acceptance, culinary use, and Neapolitan/",
+          "evidence": [
+            {
+              "passage_id": "810572008_3809-4436",
+              "quote": "Tomatoes , which came to Europe from the New World via Spain , were initially prized in Italy mainly for their ornamental value ( see below ) . From the 19th century tomato sauces became typical of Neapolitan cuisine and , ultimately , Italian cuisine in general . Coffee ( introduced in the Americas circa 1720 ) from Africa and the Middle East and sugarcane ( introduced from South Asia ) from the Spanish West Indies became the main export commodity crops of extensive Latin American plantations . Introduced to India by the Portuguese , chili and potatoes from South America have become an integral part of Indian cuisine ."
+            },
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Documents cover tomato history but lack reference to fried green tomatoes.",
+          "evidence": [
+            {
+              "passage_id": "810572008_3809-4436",
+              "quote": "Tomatoes , which came to Europe from the New World via Spain , were initially prized in Italy mainly for their ornamental value ( see below ) . From the 19th century tomato sauces became typical of Neapolitan cuisine and , ultimately , Italian cuisine in general . Coffee ( introduced in the Americas circa 1720 ) from Africa and the Middle East and sugarcane ( introduced from South Asia ) from the Spanish West Indies became the main export commodity crops of extensive Latin American plantations . Introduced to India by the Portuguese , chili and potatoes from South America have become an integral part of Indian cuisine ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 6223,
+        "output_tokens": 12655,
+        "elapsed_seconds": 242.0598371910164,
+        "generation_seconds": 241.99860543897375,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 2070,
+          "output_tokens": 4198,
+          "elapsed_seconds": 80.31734377000248,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2085,
+          "output_tokens": 4263,
+          "elapsed_seconds": 81.593403182982,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2068,
+          "output_tokens": 4194,
+          "elapsed_seconds": 80.14909023803193,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "5c725724469990a01c1fe0de1f9400d4e82e7839a23fb3038c8d99b13d73e442",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "trial_id": "repeat_2",
+      "document_ids": [
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/repeat_2.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "6b4b22685feb4c4e1273de0e5d314bbde1c5d368d23e7a12674734622e008412",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The idea of fried green tomatoes did not originate from the passage provided."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The passages focus on the introduction and acceptance of tomatoes in Europe, their culinary use, and the development of tomato sauces in Neapolitan cuisine."
+        },
+        {
+          "claim_id": "c3",
+          "text": "There is no mention of fried green tomatoes or their origin."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Documents discuss tomato history and cultivation but contain no mention of fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Claim asserts all passages focus on European tomato history, but passages 837717284_33570-34159 and 827724067_10159-11489 focus on Americas agriculture and US-C",
+          "evidence": [
+            {
+              "passage_id": "810572008_4761-5676",
+              "quote": "It took three centuries after their introduction in Europe for tomatoes to become widely accepted . Of all the New World plants introduced to Italy , only the potato took as long as the tomato to gain acceptance . In large part this was due to 16th - century physicians believing that this native Mexican fruit was poisonous and the generator of `` melancholic humours . '' In 1544 , Pietro Andrea Mattioli , a Tuscan physician and botanist , suggested that tomatoes might be edible , but no record exists of anyone consuming them at this time . On October 31 , 1548 the tomato was given its first name anywhere in Europe when a house steward of Cosimo I de ' Medici , Duke of Florence , wrote to the De ' Medici 's private secretary that the basket of pomi d'oro `` had arrived safely . '' At this time , the label pomi d'oro was also used to refer to figs , melons , and citrus fruits in treatises by scientists ."
+            },
+            {
+              "passage_id": "810572008_3809-4436",
+              "quote": "Tomatoes , which came to Europe from the New World via Spain , were initially prized in Italy mainly for their ornamental value ( see below ) . From the 19th century tomato sauces became typical of Neapolitan cuisine and , ultimately , Italian cuisine in general . Coffee ( introduced in the Americas circa 1720 ) from Africa and the Middle East and sugarcane ( introduced from South Asia ) from the Spanish West Indies became the main export commodity crops of extensive Latin American plantations . Introduced to India by the Portuguese , chili and potatoes from South America have become an integral part of Indian cuisine ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Documents cover tomato history and cultivation but do not mention fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 6223,
+        "output_tokens": 12646,
+        "elapsed_seconds": 241.9615328439977,
+        "generation_seconds": 241.92687313898932,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 2070,
+          "output_tokens": 4200,
+          "elapsed_seconds": 80.35996037599398,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2085,
+          "output_tokens": 4247,
+          "elapsed_seconds": 81.3707030590158,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2068,
+          "output_tokens": 4199,
+          "elapsed_seconds": 80.23086940898793,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "6b4b22685feb4c4e1273de0e5d314bbde1c5d368d23e7a12674734622e008412",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "trial_id": "shuffle_2",
+      "document_ids": [
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436",
+        "810572008_5677-6655"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/shuffle_2.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "056f163f17c61358e7b284065984017408cf8b2b0fae7ca75b36b07573d1aeb8",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The idea of fried green tomatoes did not originate from the passage provided."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The passages focus on the introduction and acceptance of tomatoes in Europe, their culinary use, and the development of tomato sauces in Neapolitan cuisine."
+        },
+        {
+          "claim_id": "c3",
+          "text": "There is no mention of fried green tomatoes or their origin."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "No passages mention fried green tomatoes or their origin; documents cover tomato history and agriculture.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "837717284_33570-34159",
+              "quote": "Early inhabitants of the Americas developed agriculture , developing and breeding maize ( corn ) from ears 2 -- 5 cm in length to the current size are familiar today . Potatoes , tomatoes , tomatillos ( a husked green tomato ) , pumpkins , chili peppers , squash , beans , pineapple , sweet potatoes , the grains quinoa and amaranth , cocoa beans , vanilla , onion , peanuts , strawberries , raspberries , blueberries , blackberries , papaya , and avocados were among other plants grown by natives . Over two - thirds of all types of food crops grown worldwide are native to the Americas ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Claim generalizes all passages to Europe/Neapolitan focus, but Doc 1 covers Pre-Columbian Americas and Doc 3 covers California mechanization.",
+          "evidence": [
+            {
+              "passage_id": "837717284_33570-34159",
+              "quote": "Early inhabitants of the Americas developed agriculture , developing and breeding maize ( corn ) from ears 2 -- 5 cm in length to the current size are familiar today . Potatoes , tomatoes , tomatillos ( a husked green tomato ) , pumpkins , chili peppers , squash , beans , pineapple , sweet potatoes , the grains quinoa and amaranth , cocoa beans , vanilla , onion , peanuts , strawberries , raspberries , blueberries , blackberries , papaya , and avocados were among other plants grown by natives . Over two - thirds of all types of food crops grown worldwide are native to the Americas ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Passages 810572008_5677-6655 and 827724067_10159-11489 discuss tomato history/harvesting but omit fried green tomatoes or their origin. No conflict found.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 6223,
+        "output_tokens": 12694,
+        "elapsed_seconds": 242.96295581100276,
+        "generation_seconds": 242.93007773999125,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 2070,
+          "output_tokens": 4231,
+          "elapsed_seconds": 81.1846310190158,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2085,
+          "output_tokens": 4216,
+          "elapsed_seconds": 80.51709110301454,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2068,
+          "output_tokens": 4247,
+          "elapsed_seconds": 81.26123368897242,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "056f163f17c61358e7b284065984017408cf8b2b0fae7ca75b36b07573d1aeb8",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "trial_id": "repeat_5",
+      "document_ids": [
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/repeat_5.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "ffde2f565d4265132fcede8ec859bc00a118c7976dcc23970a04670ff7cd52b6",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The idea of fried green tomatoes did not originate from the passage provided."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The passages focus on the introduction and acceptance of tomatoes in Europe, their culinary use, and the development of tomato sauces in Neapolitan cuisine."
+        },
+        {
+          "claim_id": "c3",
+          "text": "There is no mention of fried green tomatoes or their origin."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Documents discuss tomato history and cultivation but contain no mention of fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Claim asserts all passages focus on European tomato history, but passages 837717284_33570-34159 and 827724067_10159-11489 focus on Americas agriculture and US-C",
+          "evidence": [
+            {
+              "passage_id": "810572008_4761-5676",
+              "quote": "It took three centuries after their introduction in Europe for tomatoes to become widely accepted . Of all the New World plants introduced to Italy , only the potato took as long as the tomato to gain acceptance . In large part this was due to 16th - century physicians believing that this native Mexican fruit was poisonous and the generator of `` melancholic humours . '' In 1544 , Pietro Andrea Mattioli , a Tuscan physician and botanist , suggested that tomatoes might be edible , but no record exists of anyone consuming them at this time . On October 31 , 1548 the tomato was given its first name anywhere in Europe when a house steward of Cosimo I de ' Medici , Duke of Florence , wrote to the De ' Medici 's private secretary that the basket of pomi d'oro `` had arrived safely . '' At this time , the label pomi d'oro was also used to refer to figs , melons , and citrus fruits in treatises by scientists ."
+            },
+            {
+              "passage_id": "810572008_3809-4436",
+              "quote": "Tomatoes , which came to Europe from the New World via Spain , were initially prized in Italy mainly for their ornamental value ( see below ) . From the 19th century tomato sauces became typical of Neapolitan cuisine and , ultimately , Italian cuisine in general . Coffee ( introduced in the Americas circa 1720 ) from Africa and the Middle East and sugarcane ( introduced from South Asia ) from the Spanish West Indies became the main export commodity crops of extensive Latin American plantations . Introduced to India by the Portuguese , chili and potatoes from South America have become an integral part of Indian cuisine ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Documents cover tomato history and cultivation but do not mention fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 6223,
+        "output_tokens": 12646,
+        "elapsed_seconds": 241.92101190204266,
+        "generation_seconds": 241.8889001199277,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 2070,
+          "output_tokens": 4200,
+          "elapsed_seconds": 80.30216515401844,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2085,
+          "output_tokens": 4247,
+          "elapsed_seconds": 81.37191273801727,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2068,
+          "output_tokens": 4199,
+          "elapsed_seconds": 80.24693401000695,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "ffde2f565d4265132fcede8ec859bc00a118c7976dcc23970a04670ff7cd52b6",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "trial_id": "shuffle_1",
+      "document_ids": [
+        "837717284_33570-34159",
+        "827724067_10159-11489",
+        "810572008_3809-4436",
+        "810572008_5677-6655",
+        "810572008_4761-5676"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/shuffle_1.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "a21c741ade8e99c8fdbc11691835fa27ef898f5ecafda85d02a891700fc765e2",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The idea of fried green tomatoes did not originate from the passage provided."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The passages focus on the introduction and acceptance of tomatoes in Europe, their culinary use, and the development of tomato sauces in Neapolitan cuisine."
+        },
+        {
+          "claim_id": "c3",
+          "text": "There is no mention of fried green tomatoes or their origin."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Documents discuss tomato history and harvesting without mentioning fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "P1 and P2 focus on Americas/California, not Europe/Neapolitan; claim generalizes 'The passages' incorrectly.",
+          "evidence": [
+            {
+              "passage_id": "837717284_33570-34159",
+              "quote": "Early inhabitants of the Americas developed agriculture , developing and breeding maize ( corn ) from ears 2 -- 5 cm in length to the current size are familiar today . Potatoes , tomatoes , tomatillos ( a husked green tomato ) , pumpkins , chili peppers , squash , beans , pineapple , sweet potatoes , the grains quinoa and amaranth , cocoa beans , vanilla , onion , peanuts , strawberries , raspberries , blueberries , blackberries , papaya , and avocados were among other plants grown by natives . Over two - thirds of all types of food crops grown worldwide are native to the Americas ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "All passages cover tomato history/crops but lack 'fried green tomatoes' or origin details. (837717284_33570-34159, 810572008_5677-6655)",
+          "evidence": [
+            {
+              "passage_id": "837717284_33570-34159",
+              "quote": "Early inhabitants of the Americas developed agriculture , developing and breeding maize ( corn ) from ears 2 -- 5 cm in length to the current size are familiar today . Potatoes , tomatoes , tomatillos ( a husked green tomato ) , pumpkins , chili peppers , squash , beans , pineapple , sweet potatoes , the grains quinoa and amaranth , cocoa beans , vanilla , onion , peanuts , strawberries , raspberries , blueberries , blackberries , papaya , and avocados were among other plants grown by natives . Over two - thirds of all types of food crops grown worldwide are native to the Americas ."
+            },
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 6223,
+        "output_tokens": 12654,
+        "elapsed_seconds": 241.96429988997988,
+        "generation_seconds": 241.93102718202863,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 2070,
+          "output_tokens": 4197,
+          "elapsed_seconds": 80.27416906697908,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2085,
+          "output_tokens": 4211,
+          "elapsed_seconds": 80.55646935099503,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2068,
+          "output_tokens": 4246,
+          "elapsed_seconds": 81.13366147200577,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "a21c741ade8e99c8fdbc11691835fa27ef898f5ecafda85d02a891700fc765e2",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "trial_id": "repeat_3",
+      "document_ids": [
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/repeat_3.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "16769cfe1c09d5a74be8e98c4bf7b262d0b9e9d3c15426feac91d64d7b3f16af",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The idea of fried green tomatoes did not originate from the passage provided."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The passages focus on the introduction and acceptance of tomatoes in Europe, their culinary use, and the development of tomato sauces in Neapolitan cuisine."
+        },
+        {
+          "claim_id": "c3",
+          "text": "There is no mention of fried green tomatoes or their origin."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Documents discuss tomato history and cultivation but contain no mention of fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Claim asserts all passages focus on European tomato history, but passages 837717284_33570-34159 and 827724067_10159-11489 focus on Americas agriculture and US-C",
+          "evidence": [
+            {
+              "passage_id": "810572008_4761-5676",
+              "quote": "It took three centuries after their introduction in Europe for tomatoes to become widely accepted . Of all the New World plants introduced to Italy , only the potato took as long as the tomato to gain acceptance . In large part this was due to 16th - century physicians believing that this native Mexican fruit was poisonous and the generator of `` melancholic humours . '' In 1544 , Pietro Andrea Mattioli , a Tuscan physician and botanist , suggested that tomatoes might be edible , but no record exists of anyone consuming them at this time . On October 31 , 1548 the tomato was given its first name anywhere in Europe when a house steward of Cosimo I de ' Medici , Duke of Florence , wrote to the De ' Medici 's private secretary that the basket of pomi d'oro `` had arrived safely . '' At this time , the label pomi d'oro was also used to refer to figs , melons , and citrus fruits in treatises by scientists ."
+            },
+            {
+              "passage_id": "810572008_3809-4436",
+              "quote": "Tomatoes , which came to Europe from the New World via Spain , were initially prized in Italy mainly for their ornamental value ( see below ) . From the 19th century tomato sauces became typical of Neapolitan cuisine and , ultimately , Italian cuisine in general . Coffee ( introduced in the Americas circa 1720 ) from Africa and the Middle East and sugarcane ( introduced from South Asia ) from the Spanish West Indies became the main export commodity crops of extensive Latin American plantations . Introduced to India by the Portuguese , chili and potatoes from South America have become an integral part of Indian cuisine ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Documents cover tomato history and cultivation but do not mention fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 6223,
+        "output_tokens": 12646,
+        "elapsed_seconds": 241.9662643749616,
+        "generation_seconds": 241.93282291293144,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 2070,
+          "output_tokens": 4200,
+          "elapsed_seconds": 80.30391073401552,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2085,
+          "output_tokens": 4247,
+          "elapsed_seconds": 81.3446720619686,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2068,
+          "output_tokens": 4199,
+          "elapsed_seconds": 80.3176815789775,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "16769cfe1c09d5a74be8e98c4bf7b262d0b9e9d3c15426feac91d64d7b3f16af",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "trial_id": "shuffle_3",
+      "document_ids": [
+        "827724067_10159-11489",
+        "810572008_3809-4436",
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/shuffle_3.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "efb5d927b438b89f2f446ef93b22d887e7b66018e46e65678aad104f4e740178",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The idea of fried green tomatoes did not originate from the passage provided."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The passages focus on the introduction and acceptance of tomatoes in Europe, their culinary use, and the development of tomato sauces in Neapolitan cuisine."
+        },
+        {
+          "claim_id": "c3",
+          "text": "There is no mention of fried green tomatoes or their origin."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passages cover tomato history and green harvesting but do not mention fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Claim generalizes all passages to European tomato history, but some documents cover California mechanization or Pre-Columbian Americas.",
+          "evidence": [
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            },
+            {
+              "passage_id": "837717284_33570-34159",
+              "quote": "Early inhabitants of the Americas developed agriculture , developing and breeding maize ( corn ) from ears 2 -- 5 cm in length to the current size are familiar today . Potatoes , tomatoes , tomatillos ( a husked green tomato ) , pumpkins , chili peppers , squash , beans , pineapple , sweet potatoes , the grains quinoa and amaranth , cocoa beans , vanilla , onion , peanuts , strawberries , raspberries , blueberries , blackberries , papaya , and avocados were among other plants grown by natives . Over two - thirds of all types of food crops grown worldwide are native to the Americas ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "None of the passages mention fried green tomatoes or their origin; they focus on harvesting, history, and plant types.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 6223,
+        "output_tokens": 12586,
+        "elapsed_seconds": 240.75794124498498,
+        "generation_seconds": 240.72442468703957,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 2070,
+          "output_tokens": 4173,
+          "elapsed_seconds": 79.82071527699009,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2085,
+          "output_tokens": 4208,
+          "elapsed_seconds": 80.49545725801727,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2068,
+          "output_tokens": 4205,
+          "elapsed_seconds": 80.44176870997762,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "efb5d927b438b89f2f446ef93b22d887e7b66018e46e65678aad104f4e740178",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "trial_id": "repeat_4",
+      "document_ids": [
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/repeat_4.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "80e149163377d278822e5f8dcff7bff6bd0456b6062fab92babca749984c9a0c",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The idea of fried green tomatoes did not originate from the passage provided."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The passages focus on the introduction and acceptance of tomatoes in Europe, their culinary use, and the development of tomato sauces in Neapolitan cuisine."
+        },
+        {
+          "claim_id": "c3",
+          "text": "There is no mention of fried green tomatoes or their origin."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Documents discuss tomato history and cultivation but contain no mention of fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Claim asserts all passages focus on European tomato history, but passages 837717284_33570-34159 and 827724067_10159-11489 focus on Americas agriculture and US-C",
+          "evidence": [
+            {
+              "passage_id": "810572008_4761-5676",
+              "quote": "It took three centuries after their introduction in Europe for tomatoes to become widely accepted . Of all the New World plants introduced to Italy , only the potato took as long as the tomato to gain acceptance . In large part this was due to 16th - century physicians believing that this native Mexican fruit was poisonous and the generator of `` melancholic humours . '' In 1544 , Pietro Andrea Mattioli , a Tuscan physician and botanist , suggested that tomatoes might be edible , but no record exists of anyone consuming them at this time . On October 31 , 1548 the tomato was given its first name anywhere in Europe when a house steward of Cosimo I de ' Medici , Duke of Florence , wrote to the De ' Medici 's private secretary that the basket of pomi d'oro `` had arrived safely . '' At this time , the label pomi d'oro was also used to refer to figs , melons , and citrus fruits in treatises by scientists ."
+            },
+            {
+              "passage_id": "810572008_3809-4436",
+              "quote": "Tomatoes , which came to Europe from the New World via Spain , were initially prized in Italy mainly for their ornamental value ( see below ) . From the 19th century tomato sauces became typical of Neapolitan cuisine and , ultimately , Italian cuisine in general . Coffee ( introduced in the Americas circa 1720 ) from Africa and the Middle East and sugarcane ( introduced from South Asia ) from the Spanish West Indies became the main export commodity crops of extensive Latin American plantations . Introduced to India by the Portuguese , chili and potatoes from South America have become an integral part of Indian cuisine ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Documents cover tomato history and cultivation but do not mention fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 6223,
+        "output_tokens": 12646,
+        "elapsed_seconds": 242.07256661803694,
+        "generation_seconds": 242.0389554320136,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 2070,
+          "output_tokens": 4200,
+          "elapsed_seconds": 80.33970130200032,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2085,
+          "output_tokens": 4247,
+          "elapsed_seconds": 81.40027259703493,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2068,
+          "output_tokens": 4199,
+          "elapsed_seconds": 80.3325927190017,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "80e149163377d278822e5f8dcff7bff6bd0456b6062fab92babca749984c9a0c",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "trial_id": "original",
+      "document_ids": [
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/original.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "0789e1b0f96ec6a34b3acd35aa4e3b6b6c67b9c3efb837d9e9241d46e941444d",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The idea of fried green tomatoes did not originate from the passage provided."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The passages focus on the introduction and acceptance of tomatoes in Europe, their culinary use, and the development of tomato sauces in Neapolitan cuisine."
+        },
+        {
+          "claim_id": "c3",
+          "text": "There is no mention of fried green tomatoes or their origin."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Documents discuss tomato history and cultivation but contain no mention of fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Claim asserts all passages focus on European tomato history, but passages 837717284_33570-34159 and 827724067_10159-11489 focus on Americas agriculture and US-C",
+          "evidence": [
+            {
+              "passage_id": "810572008_4761-5676",
+              "quote": "It took three centuries after their introduction in Europe for tomatoes to become widely accepted . Of all the New World plants introduced to Italy , only the potato took as long as the tomato to gain acceptance . In large part this was due to 16th - century physicians believing that this native Mexican fruit was poisonous and the generator of `` melancholic humours . '' In 1544 , Pietro Andrea Mattioli , a Tuscan physician and botanist , suggested that tomatoes might be edible , but no record exists of anyone consuming them at this time . On October 31 , 1548 the tomato was given its first name anywhere in Europe when a house steward of Cosimo I de ' Medici , Duke of Florence , wrote to the De ' Medici 's private secretary that the basket of pomi d'oro `` had arrived safely . '' At this time , the label pomi d'oro was also used to refer to figs , melons , and citrus fruits in treatises by scientists ."
+            },
+            {
+              "passage_id": "810572008_3809-4436",
+              "quote": "Tomatoes , which came to Europe from the New World via Spain , were initially prized in Italy mainly for their ornamental value ( see below ) . From the 19th century tomato sauces became typical of Neapolitan cuisine and , ultimately , Italian cuisine in general . Coffee ( introduced in the Americas circa 1720 ) from Africa and the Middle East and sugarcane ( introduced from South Asia ) from the Spanish West Indies became the main export commodity crops of extensive Latin American plantations . Introduced to India by the Portuguese , chili and potatoes from South America have become an integral part of Indian cuisine ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Documents cover tomato history and cultivation but do not mention fried green tomatoes or their origin.",
+          "evidence": [
+            {
+              "passage_id": "810572008_5677-6655",
+              "quote": "In the early years , tomatoes were mainly grown as ornamentals in Italy . For example , the Florentine aristocrat Giovan Vettorio Soderini wrote how they `` were to be sought only for their beauty '' and were grown only in gardens or flower beds . Tomatoes were grown in elite town and country gardens in the fifty years or so following their arrival in Europe and were only occasionally depicted in works of art . However , in 1592 the head gardener at the botanical garden of Aranjuez near Madrid , under the patronage of Philip II of Spain wrote , `` it is said ( tomatoes ) are good for sauces . '' Besides this account , tomatoes remained exotic plants grown for ornamental purposes , but rarely for culinary use . The combination of pasta with tomato sauce was developed only in the late nineteenth century . Today around 32,000 acres ( 12,950 ha ) of tomatoes are cultivated in Italy , although there are still areas where relatively few tomatoes are grown and consumed ."
+            },
+            {
+              "passage_id": "827724067_10159-11489",
+              "quote": "According to a 1977 report by the California Agrarian Action Project , during the summer of 1976 in California , many harvest machines had been equipped with a photo - electric scanner that sorted out green tomatoes among the ripe red ones using infrared lights and colour sensors . It worked in lieu of 5,000 hand harvesters causing displacement of innumerable farm labourers as well as wage cuts and shorter work periods . Migrant workers were hit the hardest . To withstand the rigour of the machines , new crop varieties were bred to match the automated pickers . UC Davis Professor G.C. Hanna propagated a thick - skinned tomato called VF - 145 . But even still , millions were damaged with impact cracks and university breeders produced a more tougher and juiceless `` square round '' tomato . Small farms were of insufficient size to obtain financing to purchase the equipment and within 10 years , 85 % of the state 's 4,000 cannery tomato farmers were out of the business . This led to a concentrated tomato industry in California that `` now packed 85 % of the nation 's tomato products '' . The monoculture fields fostered rapid pest growth , requiring the use of `` more than four million pounds of pesticides each year '' which greatly affected the health of the soil , the farm workers , and possibly the consumers ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 6223,
+        "output_tokens": 12646,
+        "elapsed_seconds": 241.9707997739897,
+        "generation_seconds": 241.93681371794082,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 2070,
+          "output_tokens": 4200,
+          "elapsed_seconds": 80.28954226797214,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2085,
+          "output_tokens": 4247,
+          "elapsed_seconds": 81.37088411703007,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 2068,
+          "output_tokens": 4199,
+          "elapsed_seconds": 80.3103733889875,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "0789e1b0f96ec6a34b3acd35aa4e3b6b6c67b9c3efb837d9e9241d46e941444d",
+      "shared_original_not_two_calls": true
+    }
+  ],
+  "policy_outcomes": [
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "route": "no_repair",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "0839b6e64e0b7d3a4e9be956e3d319f28854dbb67d0be3aea6ceb1001d0441cc",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 1,
+      "recorded_completion_attempts": 1,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 1332,
+      "output_tokens": 77,
+      "summed_step_seconds": 0.8249603119911626,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "route": "always_rewrite",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "0375239112d0cc6bb898ddab0817ecb8f38d4191de28f447c7ee513d93982327",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 2,
+      "recorded_completion_attempts": 2,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 3096,
+      "output_tokens": 4631,
+      "summed_step_seconds": 88.00989177299198,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "route": "original",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "0375239112d0cc6bb898ddab0817ecb8f38d4191de28f447c7ee513d93982327",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 9319,
+      "output_tokens": 17277,
+      "summed_step_seconds": 329.981283369998,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "route": "reversed",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "0839b6e64e0b7d3a4e9be956e3d319f28854dbb67d0be3aea6ceb1001d0441cc",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 4,
+      "recorded_completion_attempts": 4,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 7555,
+      "output_tokens": 12732,
+      "summed_step_seconds": 242.88538932602387,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "route": "shuffle_1",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "0375239112d0cc6bb898ddab0817ecb8f38d4191de28f447c7ee513d93982327",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 9319,
+      "output_tokens": 17285,
+      "summed_step_seconds": 329.97478348598816,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "route": "shuffle_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "0375239112d0cc6bb898ddab0817ecb8f38d4191de28f447c7ee513d93982327",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 9319,
+      "output_tokens": 17325,
+      "summed_step_seconds": 330.973439407011,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "route": "shuffle_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "0375239112d0cc6bb898ddab0817ecb8f38d4191de28f447c7ee513d93982327",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 9319,
+      "output_tokens": 17217,
+      "summed_step_seconds": 328.76842484099325,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "route": "repeat_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "0375239112d0cc6bb898ddab0817ecb8f38d4191de28f447c7ee513d93982327",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 9319,
+      "output_tokens": 17277,
+      "summed_step_seconds": 329.972016440006,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "route": "repeat_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "0375239112d0cc6bb898ddab0817ecb8f38d4191de28f447c7ee513d93982327",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 9319,
+      "output_tokens": 17277,
+      "summed_step_seconds": 329.9767479709699,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "route": "repeat_4",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "0375239112d0cc6bb898ddab0817ecb8f38d4191de28f447c7ee513d93982327",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 9319,
+      "output_tokens": 17277,
+      "summed_step_seconds": 330.0830502140452,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_736a378735160bb469f1b9b7",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+      "route": "repeat_5",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "0375239112d0cc6bb898ddab0817ecb8f38d4191de28f447c7ee513d93982327",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 9319,
+      "output_tokens": 17277,
+      "summed_step_seconds": 329.93149549805094,
+      "incomplete": false
+    }
+  ],
+  "original_file_copies": [
+    "provenance/cases/case_03/trace.json",
+    "provenance/cases/case_03/summary.json",
+    "provenance/cases/case_03/rewrite.json",
+    "provenance/cases/case_03/original.claims/c1.json",
+    "provenance/cases/case_03/original.claims/c2.json",
+    "provenance/cases/case_03/original.claims/c3.json",
+    "provenance/cases/case_03/repeat_2.claims/c1.json",
+    "provenance/cases/case_03/repeat_2.claims/c2.json",
+    "provenance/cases/case_03/repeat_2.claims/c3.json",
+    "provenance/cases/case_03/repeat_3.claims/c1.json",
+    "provenance/cases/case_03/repeat_3.claims/c2.json",
+    "provenance/cases/case_03/repeat_3.claims/c3.json",
+    "provenance/cases/case_03/repeat_4.claims/c1.json",
+    "provenance/cases/case_03/repeat_4.claims/c2.json",
+    "provenance/cases/case_03/repeat_4.claims/c3.json",
+    "provenance/cases/case_03/repeat_5.claims/c1.json",
+    "provenance/cases/case_03/repeat_5.claims/c2.json",
+    "provenance/cases/case_03/repeat_5.claims/c3.json",
+    "provenance/cases/case_03/reversed.claims/c1.json",
+    "provenance/cases/case_03/reversed.claims/c2.json",
+    "provenance/cases/case_03/reversed.claims/c3.json",
+    "provenance/cases/case_03/shuffle_1.claims/c1.json",
+    "provenance/cases/case_03/shuffle_1.claims/c2.json",
+    "provenance/cases/case_03/shuffle_1.claims/c3.json",
+    "provenance/cases/case_03/shuffle_2.claims/c1.json",
+    "provenance/cases/case_03/shuffle_2.claims/c2.json",
+    "provenance/cases/case_03/shuffle_2.claims/c3.json",
+    "provenance/cases/case_03/shuffle_3.claims/c1.json",
+    "provenance/cases/case_03/shuffle_3.claims/c2.json",
+    "provenance/cases/case_03/shuffle_3.claims/c3.json"
+  ]
+}

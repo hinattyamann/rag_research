@@ -1,0 +1,96 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "Q-4960a07b961b7e2a6f32",
+      "candidate_sha256": "b200ef3a741b9e6f1a6ed3915e882d79f712865b6f3e32203e1a3ad00c85e855",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      },
+      "essential_points": "Identify the filming locations; the actual context supports at least Switzerland, England, and Portugal.",
+      "reason": "The answer incorrectly claims insufficient information even though an actual used passage directly names three filming countries. The reference-only material supplies more detailed locations, but it is unnecessary to establish this failure.",
+      "evidence": [
+        {
+          "passage_id": "824299547_1684-2346",
+          "quote": "It was shot in Switzerland , England , and Portugal from October 1968 to May 1969 ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-3618ac195cda0196e648",
+      "candidate_sha256": "f01a94edf91b2edc7bfa9b3c9b61e42d390f3eb0600e2a39326e740088491c38",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "State whether Georgia requires an open-carry license, distinguishing handguns from long guns. The supplied reference specifies a license requirement for handguns.",
+      "reason": "The answer accurately describes the actual context's coverage and lack of Georgia information, but does not answer the licensing question. This is a definite essential-answer omission, rather than an unsupported legal claim. The Georgia requirement appears only in reference/gold material and cannot substitute for actual-context support.",
+      "evidence": [
+        {
+          "passage_id": "22610413072504456622677175549_1755-3483",
+          "quote": "However , Oregon law allows a city or county to regulate open carry of loaded firearms in public places , but holders of concealed carry permits are exempt ."
+        },
+        {
+          "passage_id": "812572113_7011-7699",
+          "quote": "Open carry when on foot in a public area is generally illegal , but is permitted in certain circumstances , as defined by Florida statute 790.25 ( 3 ) ."
+        },
+        {
+          "passage_id": "801284260_6042-7003",
+          "quote": "Open carry of handguns allowed with a license issued under O.C.G.A § 16 - 11 - 129 ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-7221165b0ee2ad9cd77f",
+      "candidate_sha256": "c8d9f7e52a745b23a474585a856068098ba58ee70971270c8cfbaf206bfa8d18",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Identify the 1953 legislation, explain its segregated educational provisions, and address why it was introduced: the argued aim of directing black youth toward unskilled labour and Verwoerd's stated ethnic-policy rationale. Distinguish passage from implementation timing where evidence permits.",
+      "reason": "The answer's factual summary is supported by the actual used passage, which also appears as gold. However, its generic description of apartheid omits the specific purposes supplied by that passage and emphasized in both references, leaving the 'why' component materially incomplete. It also gives no distinct implementation timing; the supplied evidence does not establish a separate commencement date, so no alternative date is inferred.",
+      "evidence": [
+        {
+          "passage_id": "854919925_601-1807",
+          "quote": "Its major provision was enforcing racially separated educational facilities ."
+        },
+        {
+          "passage_id": "854919925_601-1807",
+          "quote": "It is often argued that the policy of Bantu ( African ) education was aimed to direct black or non-white youth to the unskilled labour market , although Hendrik Verwoerd , at the time Minister of Native Affairs , claimed that the aim was to solve South Africa 's `` ethnic problems '' by creating complementary economic and political units for different ethnic group ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-8f9582ecee09d94112b4",
+      "candidate_sha256": "c8d24e567f8cabee4a7717086e6d51ba972678e74abb56a0401852ec43bde0d8",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "State whether Georgia requires an open-carry license, distinguishing handguns from long guns. The supplied reference specifies a license requirement for handguns.",
+      "reason": "The actual used documents concern other states and support the stated information gap. Nevertheless, the answer supplies none of the requested Georgia licensing information, so essential-answer coverage fails. The requirement is established only by reference/gold material, which cannot provide actual-context support for a substantive answer.",
+      "evidence": [
+        {
+          "passage_id": "22610413072504456622677175549_1755-3483",
+          "quote": "However , Oregon law allows a city or county to regulate open carry of loaded firearms in public places , but holders of concealed carry permits are exempt ."
+        },
+        {
+          "passage_id": "812572113_7011-7699",
+          "quote": "Open carry when on foot in a public area is generally illegal , but is permitted in certain circumstances , as defined by Florida statute 790.25 ( 3 ) ."
+        },
+        {
+          "passage_id": "801284260_6042-7003",
+          "quote": "Open carry of handguns allowed with a license issued under O.C.G.A § 16 - 11 - 129 ."
+        }
+      ]
+    }
+  ]
+}

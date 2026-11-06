@@ -1,0 +1,26 @@
+{
+  "selected_qa": 40,
+  "failures": [
+    {
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:318",
+      "raw_path": "ja/baseline/176a49361256fb5470c0f438/record.json",
+      "sha256": "c471aa9db3cf9237dbebcd7d200bbf101de52e380e9664084ae5f9fd81359f8e",
+      "reason": "baseline_output_limit",
+      "replacement_or_retry": false
+    },
+    {
+      "language": "ja",
+      "record_id": "whrja:02e85c8:answered:540",
+      "raw_path": "ja/internal/ec2517b043a6f05d2d7de87d/rewrite.json",
+      "sha256": "4c7794d4bd255979ec1874d9533828810012bfeae6a6871f6fcc29a8a6586966",
+      "reason": "rewrite_final_answer_token_limit",
+      "replacement_or_retry": false,
+      "initial_answer_and_evaluation_retained": true,
+      "failure_action": "keep_initial_answer_with_rewrite_failed_status"
+    }
+  ],
+  "failed_qa_retained_in_selected_denominator": true,
+  "phase12_allowed": false,
+  "result_sha256": "03770eee78b9e591e0babe1b1abd34817fa60a9eeea6cc98295ea92a3f4881fa"
+}

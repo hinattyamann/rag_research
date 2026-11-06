@@ -1,0 +1,96 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "Q-118e3ffe3a866e03cd51",
+      "candidate_sha256": "a6acc6f6485fbb881f3023b472ada69ddfcdfcf990b7cb664ec9500e43b956f1",
+      "label": "reliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Identify where the film was shot: Switzerland, England, and Portugal.",
+      "reason": "The answer correctly identifies all three filming countries and is directly supported by the cited actual context. The reference provides finer location details, but the question does not explicitly require that granularity.",
+      "evidence": [
+        {
+          "passage_id": "824299547_1684-2346",
+          "quote": "It was shot in Switzerland , England , and Portugal from October 1968 to May 1969 ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-7076f24dcd5ac41d0115",
+      "candidate_sha256": "85cd1337ecb9b1d54783dae07156442a029339912fba2f38e275cc189c436f56",
+      "label": "reliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Explain that the United States has no operating embassy in Iran, distinguishing the former Tehran embassy building from an active diplomatic mission.",
+      "reason": "Under the ordinary reading of an operating embassy, the answer addresses the question correctly. Actual context supports the severance of diplomatic relations, the November 1979 seizure, and the site's subsequent status as a former embassy. The reference-only affirmative wording describes the physical location; its accompanying closure information is consistent with the operational distinction.",
+      "evidence": [
+        {
+          "passage_id": "852168105_690-1013",
+          "quote": "The Embassy of the United States of America in Tehran was the United States of America 's diplomatic mission in the Imperial State of Iran . Direct bilateral diplomatic relations between the two governments were severed following the Iranian Revolution in 1979 , and the subsequent seizure of the embassy in November 1979 ."
+        },
+        {
+          "passage_id": "852168105_2184-2856",
+          "quote": "Part of the embassy has been turned into an anti-American museum , and several student organizations maintain offices in the former embassy complex ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-59702e0e3572a70e4e70",
+      "candidate_sha256": "d370c22790fb3e2e333b9bc0404c4ebd43dd0d181b858372d2441f93747cc8e7",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Address prospective continuation after the 2018 game: further games featuring Kratos were confirmed, although a particular sequel title or release date is not established.",
+      "reason": "The candidate accurately describes the limited actual context, but does not supply the essential prospective answer established by the reference. Discussing the 2007 game and reporting insufficient retrieved information leaves the intended sequel question unanswered. The future-game confirmation below is reference-only evidence of required content, not support available in the actual context.",
+      "evidence": [
+        {
+          "passage_id": "843493176_17267-18532",
+          "quote": "Barlog has been a major contributor in the development of the God of War series since the original installment in 2005 , with his prior most notable role being game director of God of War II ( 2007 ) . This new installment was his fifth God of War game ."
+        },
+        {
+          "passage_id": "843493176_19366-21112",
+          "quote": "It was also confirmed that this would not be Kratos ' last game ."
+        },
+        {
+          "passage_id": "843493176_19366-21112",
+          "quote": "Barlog also said that he liked the idea of having different directors for each game , seen throughout the first seven games , and although he may not direct another God of War , he would still be at Santa Monica to work on future games ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-ca5bd4671943cc588a3c",
+      "candidate_sha256": "5fe07b8a099ccab180f454d99e852b917d19fb33a76c53a088e956db95230d78",
+      "label": "indeterminate",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "uncertain",
+        "context_support": "uncertain"
+      },
+      "essential_points": "Explain that no operating United States embassy remains in Iran and distinguish it from the former Tehran embassy complex.",
+      "reason": "Actual context supports the main operational answer, diplomatic rupture, seizure date, and museum use. However, the answer says the site is now a training center, whereas the passage describes training-center use in the past and explicitly continues only maintenance of the complex. Whether training use continues is ambiguous, so this qualification prevents an all-pass judgment without establishing a definite factual error. Reference-only closure information does not resolve that ambiguity.",
+      "evidence": [
+        {
+          "passage_id": "852168105_690-1013",
+          "quote": "Direct bilateral diplomatic relations between the two governments were severed following the Iranian Revolution in 1979 , and the subsequent seizure of the embassy in November 1979 ."
+        },
+        {
+          "passage_id": "852168105_2184-2856",
+          "quote": "After the fall of the embassy , the Revolutionary Guard used it as a training center , and continue to maintain the complex ."
+        },
+        {
+          "passage_id": "852168105_2184-2856",
+          "quote": "Part of the embassy has been turned into an anti-American museum , and several student organizations maintain offices in the former embassy complex ."
+        }
+      ]
+    }
+  ]
+}

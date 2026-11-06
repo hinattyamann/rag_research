@@ -1,0 +1,320 @@
+{
+  "record_id": "clapnq:c508d78:train:-5607690022829878056:answerable",
+  "trace_sha256": "ff8f10e1637b05667aadacae38335a868a144ed18321daa41e09050db8bd3489",
+  "extraction_status": "ok",
+  "claims": [
+    {
+      "claim_id": "c1",
+      "text": "The idea of fried green tomatoes did not originate from the passage provided."
+    },
+    {
+      "claim_id": "c2",
+      "text": "The passages focus on the introduction and acceptance of tomatoes in Europe, their culinary use, and the development of tomato sauces in Neapolitan cuisine."
+    },
+    {
+      "claim_id": "c3",
+      "text": "There is no mention of fried green tomatoes or their origin."
+    }
+  ],
+  "extraction_audit_warnings": [],
+  "claims_sha256": "30a1c2a4db81deead56700d4b708d1b88886a0abe29150c7b94395dd3b933dd3",
+  "extraction_result_sha256": "52df2a2879778327247c56381378733ec050376fd05801847abc2685ca16c3fb",
+  "threshold": 0.7,
+  "plan": {
+    "trials": [
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "810572008_3809-4436",
+          "827724067_10159-11489",
+          "810572008_4761-5676",
+          "837717284_33570-34159",
+          "810572008_5677-6655"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "810572008_5677-6655",
+          "837717284_33570-34159",
+          "810572008_4761-5676",
+          "827724067_10159-11489",
+          "810572008_3809-4436"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "837717284_33570-34159",
+          "810572008_4761-5676",
+          "827724067_10159-11489",
+          "810572008_3809-4436",
+          "810572008_5677-6655"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "810572008_5677-6655",
+          "837717284_33570-34159",
+          "810572008_4761-5676",
+          "827724067_10159-11489",
+          "810572008_3809-4436"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "837717284_33570-34159",
+          "827724067_10159-11489",
+          "810572008_3809-4436",
+          "810572008_5677-6655",
+          "810572008_4761-5676"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "810572008_5677-6655",
+          "837717284_33570-34159",
+          "810572008_4761-5676",
+          "827724067_10159-11489",
+          "810572008_3809-4436"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "827724067_10159-11489",
+          "810572008_3809-4436",
+          "810572008_5677-6655",
+          "837717284_33570-34159",
+          "810572008_4761-5676"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "810572008_5677-6655",
+          "837717284_33570-34159",
+          "810572008_4761-5676",
+          "827724067_10159-11489",
+          "810572008_3809-4436"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "810572008_5677-6655",
+          "837717284_33570-34159",
+          "810572008_4761-5676",
+          "827724067_10159-11489",
+          "810572008_3809-4436"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "trials": [
+    {
+      "trial_id": "reversed",
+      "document_ids": [
+        "810572008_3809-4436",
+        "827724067_10159-11489",
+        "810572008_4761-5676",
+        "837717284_33570-34159",
+        "810572008_5677-6655"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/reversed.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "5c725724469990a01c1fe0de1f9400d4e82e7839a23fb3038c8d99b13d73e442",
+      "decision": "accept",
+      "action": "keep_initial"
+    },
+    {
+      "trial_id": "repeat_2",
+      "document_ids": [
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/repeat_2.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "6b4b22685feb4c4e1273de0e5d314bbde1c5d368d23e7a12674734622e008412",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "shuffle_2",
+      "document_ids": [
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436",
+        "810572008_5677-6655"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/shuffle_2.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "056f163f17c61358e7b284065984017408cf8b2b0fae7ca75b36b07573d1aeb8",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "repeat_5",
+      "document_ids": [
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/repeat_5.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "ffde2f565d4265132fcede8ec859bc00a118c7976dcc23970a04670ff7cd52b6",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "shuffle_1",
+      "document_ids": [
+        "837717284_33570-34159",
+        "827724067_10159-11489",
+        "810572008_3809-4436",
+        "810572008_5677-6655",
+        "810572008_4761-5676"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/shuffle_1.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "a21c741ade8e99c8fdbc11691835fa27ef898f5ecafda85d02a891700fc765e2",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "repeat_3",
+      "document_ids": [
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/repeat_3.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "16769cfe1c09d5a74be8e98c4bf7b262d0b9e9d3c15426feac91d64d7b3f16af",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "shuffle_3",
+      "document_ids": [
+        "827724067_10159-11489",
+        "810572008_3809-4436",
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/shuffle_3.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "efb5d927b438b89f2f446ef93b22d887e7b66018e46e65678aad104f4e740178",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "repeat_4",
+      "document_ids": [
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/repeat_4.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "80e149163377d278822e5f8dcff7bff6bd0456b6062fab92babca749984c9a0c",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    },
+    {
+      "trial_id": "original",
+      "document_ids": [
+        "810572008_5677-6655",
+        "837717284_33570-34159",
+        "810572008_4761-5676",
+        "827724067_10159-11489",
+        "810572008_3809-4436"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "736a378735160bb469f1b9b7/original.json",
+      "json_schema_sha256": "0e071f6ab3aa21746872e5a4990293891324a9e88aafceadd96fd42866f2ed42",
+      "result_sha256": "0789e1b0f96ec6a34b3acd35aa4e3b6b6c67b9c3efb837d9e9241d46e941444d",
+      "decision": "rewrite",
+      "action": "rewrite_requested"
+    }
+  ],
+  "order_group": {
+    "planned_trials": 5,
+    "valid_trials": 5,
+    "valid_pairs": 10,
+    "disagreeing_pairs": 4,
+    "both_decisions_observed": true
+  },
+  "repeat_group": {
+    "planned_trials": 5,
+    "valid_trials": 5,
+    "valid_pairs": 10,
+    "disagreeing_pairs": 0,
+    "both_decisions_observed": false
+  }
+}

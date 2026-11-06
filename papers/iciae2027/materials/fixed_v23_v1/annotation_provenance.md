@@ -1,0 +1,13 @@
+# AI採点の条件と来歴
+
+configured model=gpt-6.1-sol、reasoning effort=high、ChatGPT認証。保持されたprovenanceのexact_model_identifierはnullであり、別の実Serving Model名を推測しない。履歴の完全隔離も主張しない。研究採点のCLI予約は84で、失敗や形式修正を含む。人工輸送検証のJobは研究台帳へ混ぜていない。
+
+provenance/annotation_jobsに各実Jobのモデル設定、測定wall、開始/終了時刻、入力/出力/標準入力Hash、利用Tokenと形式修正履歴、指示とSchemaを保存した。認証ファイル、環境変数、CLIの巨大Eventログは共有しない。実験の論理試行と採点Jobは別単位である。
+
+各candidate/固定文はannotationsのPacket、各Label/理由/逐語引用はannotations.json、匿名IDと元QA/initial・rewrittenの対応はmapping.private.jsonで確認する。同じ候補内容に同じ注釈を共用した対応を残した。日英全品質/全文Expectedを封印してから内部Fと結合したことはprovenanceのSealで確認する。
+
+品質採点ではReference/Goldと実使用Contextを区別し、Expectedは実使用Contextだけを渡した。遮蔽したものは順序条件/F/判断/候補段階/内部Judge理由であり、完全なモデル学習歴の独立を意味しない。
+
+旧file読取失敗2 Job、inline_stdin_v2、inline_citations_v3を分ける。v3は候補ごとに元Passage全文の番号を選び、プログラムが元文字列を引用へ展開する。支持/矛盾の根拠必須・Slot/ID/Hash検証を追加した。成功済みLabelを再採点せず、無効Job全体を別名で再開した。元Rubricの全文・来歴・Schemaは同梱テキストとJobファイルを参照。
+
+注釈ごとの秒はCLI Job wallの件数等配分で、純読解時間や人手時間ではない。採点者の正しさや人手一致率が実証されたと書かない。

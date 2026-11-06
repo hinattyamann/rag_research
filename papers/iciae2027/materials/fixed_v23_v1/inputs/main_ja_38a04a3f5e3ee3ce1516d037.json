@@ -1,0 +1,907 @@
+{
+  "qa_key": "main_ja_38a04a3f5e3ee3ce1516d037",
+  "cohort": "main",
+  "language": "ja",
+  "analysis_role": "main",
+  "source_qa_split": "development",
+  "record_id": "whrja:02e85c8:answered:767",
+  "document_group_id": "whrja-group:8e5bd0a6e94e4b343a3b37b3",
+  "qa_source": {
+    "answerability_scope": "human_answer_in_source_not_verified_common_corpus_coverage",
+    "corpus_answerability": "not_annotated_no_relabel_from_body_or_quote_availability",
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "document_group_id": "whrja-group:8e5bd0a6e94e4b343a3b37b3",
+    "gold_parent_ids": [
+      "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6"
+    ],
+    "gold_passage_ids": [
+      "21824844991023293161944807354_0-765"
+    ],
+    "gold_passage_ids_scope": "verified_literal_quote_overlap_children_only_not_metric_gold",
+    "gold_passage_mapping_status": "audited_cited_article_and_source_reference_markup_mapping_v2",
+    "gold_relevance_unit": "available_cited_source_article",
+    "is_answerable": true,
+    "language": "ja",
+    "provided_passage": null,
+    "question": "どうして電子レンジで卵を温めたらダメなんですか？",
+    "record_id": "whrja:02e85c8:answered:767",
+    "reference_answer_sentences": [
+      {
+        "citations": [
+          1
+        ],
+        "text": "電子レンジで殻のままの卵を加熱すると、以下のような理由で破裂してしまうからです。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "電子レンジによる加熱で卵の中心部から均等に加熱されることにより、黄身の部分から水分の沸騰が発生します。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "黄身は白身と殻に包まれているために外気よりも高圧となり、水の沸点が上昇し、黄身は熱膨張による体積の増加に伴い、白身と殻を押し破って外気に触れ、この瞬間に急激な減圧が起こります。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "沸点が下がることで黄身に含まれる水分が一気に蒸発気化し、平衡破綻型の水蒸気爆発が発生します。"
+      },
+      {
+        "citations": [
+          2
+        ],
+        "text": "また生卵の黄身のみであっても電子レンジで加熱すると破裂します。"
+      }
+    ],
+    "reference_answers": [
+      "電子レンジで殻のままの卵を加熱すると、以下のような理由で破裂してしまうからです。電子レンジによる加熱で卵の中心部から均等に加熱されることにより、黄身の部分から水分の沸騰が発生します。黄身は白身と殻に包まれているために外気よりも高圧となり、水の沸点が上昇し、黄身は熱膨張による体積の増加に伴い、白身と殻を押し破って外気に触れ、この瞬間に急激な減圧が起こります。沸点が下がることで黄身に含まれる水分が一気に蒸発気化し、平衡破綻型の水蒸気爆発が発生します。また生卵の黄身のみであっても電子レンジで加熱すると破裂します。"
+    ],
+    "reference_corpus_mapping": [
+      {
+        "body_available": true,
+        "cited": false,
+        "cited_by_answer_sentence_indices": [],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": null,
+          "spans": [],
+          "status": "no_literal_quote"
+        },
+        "parent_passage_id": "jawiki:17051:98330892:b74b9b542714e6144e453896ada11419db3b3191875fd85cc104f68bfd873198",
+        "raw_article_status": "ok",
+        "reference_index": 0,
+        "source_reference_unit_id": "jawiki-page:17051"
+      },
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "21824844991023293161944807354_0-765"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "verified_source_reference_markup",
+          "projection_policy": "source-html-reference-superscript-exact-body-projection-v1",
+          "request_journal_sha256": "b2f73edee79d12ddc741dceae637a6c63905f86d34b379e6c9ba8c52dfc683a2",
+          "source_html_sha256": "dc69d7538a473af95f89ff59c934dce17c485f11d9f1e37fb866131f165c5a69",
+          "spans": [
+            {
+              "end": 326,
+              "omitted_reference_markup": [
+                {
+                  "html_end": 4401,
+                  "html_start": 4230,
+                  "marker_html_sha256": "298e2ee21b2ecf2f9847d4d33922827d25df86eae9bc4167c1d2f68334c1e526",
+                  "marker_id": 2,
+                  "marker_text": "[3]"
+                }
+              ],
+              "source_span_sha256": "c9c7860f4bf9d4e42aad1d1c5aca0773842e1a53d410b9e8f3b2d966219de468",
+              "start": 85
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "raw_article_status": "ok",
+        "reference_index": 1,
+        "source_reference_unit_id": "jawiki-page:281112"
+      },
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          4
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "21824844991023293161944807354_0-765"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "exact",
+          "spans": [
+            {
+              "end": 538,
+              "source_span_sha256": "4a4d5a101b73d8e89222a5b6a7bd6fe7add8e28747c109e7874bf680f8c29153",
+              "start": 508
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "raw_article_status": "ok",
+        "reference_index": 2,
+        "source_reference_unit_id": "jawiki-page:281112"
+      }
+    ],
+    "reference_corpus_metadata_offline_only": true,
+    "reference_evidence": [
+      {
+        "cited_by_answer_sentence_indices": [],
+        "human_summary_not_literal_source": null,
+        "quote": null,
+        "reference_index": 0,
+        "title": "電子レンジ",
+        "url": "https://ja.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E3%83%AC%E3%83%B3%E3%82%B8"
+      },
+      {
+        "cited_by_answer_sentence_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "電子レンジで殻のままの卵を加熱すると、通常はレンジ内で破裂してしまう。これは以下のような理由によるものである。[3]\n電子レンジによる加熱で卵の中心部から均等に加熱されることにより、黄身の部分から水分の沸騰が発生する。\n黄身は白身と殻に包まれているために外気よりも高圧となり、水の沸点が上昇する。\n黄身は熱膨張による体積の増加に伴い、白身と殻を押し破って外気に触れ、この瞬間に急激な減圧が起こる。\n沸点が下がることで黄身に含まれる水分が一気に蒸発気化し、平衡破綻型の水蒸気爆発が発生する。",
+        "reference_index": 1,
+        "title": "爆発卵",
+        "url": "https://ja.wikipedia.org/wiki/%E7%88%86%E7%99%BA%E5%8D%B5"
+      },
+      {
+        "cited_by_answer_sentence_indices": [
+          4
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "また生卵の黄身のみであっても電子レンジで加熱すると破裂する。",
+        "reference_index": 2,
+        "title": "爆発卵",
+        "url": "https://ja.wikipedia.org/wiki/%E7%88%86%E7%99%BA%E5%8D%B5"
+      }
+    ],
+    "research_split": "development",
+    "selected_sentences_by_reference": [
+      [
+        "電子レンジで殻のままの卵を加熱すると、通常はレンジ内で破裂してしまう。これは以下のような理由によるものである。[3]\n電子レンジによる加熱で卵の中心部から均等に加熱されることにより、黄身の部分から水分の沸騰が発生する。\n黄身は白身と殻に包まれているために外気よりも高圧となり、水の沸点が上昇する。\n黄身は熱膨張による体積の増加に伴い、白身と殻を押し破って外気に触れ、この瞬間に急激な減圧が起こる。\n沸点が下がることで黄身に含まれる水分が一気に蒸発気化し、平衡破綻型の水蒸気爆発が発生する。",
+        "また生卵の黄身のみであっても電子レンジで加熱すると破裂する。"
+      ]
+    ],
+    "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+    "source_id": "767",
+    "source_line_index": 525,
+    "source_record_sha256": "53897209290ff3ea5edaa28e0ecdb19ddc23507f44b41af05b931776431a43f8",
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "source_split": "answered",
+    "source_title": "爆発卵",
+    "unavailable_cited_reference_ids": []
+  },
+  "source_selection": {
+    "record_id": "whrja:02e85c8:answered:767",
+    "question": "どうして電子レンジで卵を温めたらダメなんですか？",
+    "document_group_id": "whrja-group:8e5bd0a6e94e4b343a3b37b3"
+  },
+  "question": "どうして電子レンジで卵を温めたらダメなんですか？",
+  "used_documents": [
+    {
+      "passage_id": "76527755996126547347873513264_658-1440",
+      "title": "ゆで卵",
+      "text": "または、頂部など1箇所だけを剥き、エッグスタンドに立ててスプーンで中をえぐって食べる方法もある。\n調理したゆで卵は外側から圧迫して型付けを行うこともある。また、卵黄と卵白に分け、卵黄をフォークの先でほぐして調味したものを半分に切った卵白に詰めなおしたもの、卵白を細く刻んだものや卵黄をほぐしたものを生野菜とともに和えたものなどもある。\n調理法\n加熱時間\n全熟卵（かたゆで卵）の場合、通常は沸騰後に室温の卵を入れて10分から12分加熱する（あるいは再沸騰後に12～13分加熱する）。水から茹でる方法もあり、卵と水を一緒に加熱してゆき95℃以上の状態で10から12分加熱する。\n水から茹でる場合、水の量や火力、気温によって温度の上がり方が変わるためにタイミングを見極めるのが難しいが、調理時間はやや短くなり、卵が割れる危険性も少ない。一方、沸騰させてから卵を入れた場合これらのメリットはなくなるが、好みの硬さに仕上げるための時間管理が楽になる。\n沸騰後に卵を入れる場合には、急激な温度差で卵の殻が割れることがあるため室温にしておくことが重要とされる。\nこのために「エッグメーター」と呼ばれる一種の温度計を一緒に茹でる方法がある。また、常に一定の時間で仕上げるために、卵は80 ℃程度で白身と黄身がともに固まることを利用し、多めのお湯をあらかじめ沸騰させておき、そこに卵を入れて蓋をして、あとは熱を加えずに放置する方法（余熱調理）もある。鍋を利用する方法以外に、ゆで卵調理専用の機器として卵ゆで器がある。\nなお、卵と卵が十分没する量の水を入れた器を電子レンジにかけてゆで卵を作る方法は、卵が爆発するとともに水が突沸するので絶対にやってはならない（爆発卵の項を参照）。また殻をむいた調理済みのゆで卵であっても電子レンジによって再加熱すると爆発することがある。\n卵黄の状態\n",
+      "source_metadata": {
+        "article_text_sha256": "fbb44b740b125571b226df0fa55adcece90ae78b2a2de375620775ef5236b420",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:260271:98183984:fbb44b740b125571b226df0fa55adcece90ae78b2a2de375620775ef5236b420",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "76527755996126547347873513264_658-1440",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 487,
+          "end": 1440,
+          "start": 658
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98183984",
+        "text_sha256": "8555e6399de5da678be7f1899931598e0468f03f228358462b8bf161110bd09a",
+        "title": "ゆで卵",
+        "wikipedia_page_id": 260271,
+        "wikipedia_revision_id": 98183984,
+        "wikipedia_revision_timestamp_utc": "2023-11-27T15:00:05Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98183984&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "8555e6399de5da678be7f1899931598e0468f03f228358462b8bf161110bd09a",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 782
+      }
+    },
+    {
+      "passage_id": "21824844991023293161944807354_765-1541",
+      "title": "爆発卵",
+      "text": "卵を金属殻で覆うことで卵に直接電磁波を当てず、容器の水位線まで入れた水を加熱することで卵を茹でる電子レンジ調理器も市販されており、国民生活センターによるテストでは水位線まで水を入れて使用すれば破裂は起きないが、水の量が半分より少ないと破裂するという結果が出ている。製品評価技術基盤機構によれば、ふたがずれた状態で使用したために破裂した事故も起きている\n養鶏分野において\n養鶏分野における爆発卵とは、孵卵中の卵が腐敗し、卵内に産生したガスによって大きな音を立てて破裂する現象をいう。薬浴によるサルモネラ菌・大腸菌対策は緑膿菌による爆発卵を誘発し、発生まで無精卵や中止卵を除かずに孵卵を行うと緑膿菌が増殖し爆発卵となって鶏群全体を高濃度に汚染してしまう。\n関連事項\nゆで卵\n電子レンジ\n探偵!ナイトスクープ\n脚注\n参考文献\nゆげひろのぶ『なぜ、指揮官は馬に乗るのか? 組織で悩むアナタのための世界史 世界史専門・ゆげ塾の実況シリーズ』星海社、2018年、21頁。ISBN 9784065107676。https://ji-sedai.jp/book/publication/works/yuge.pdf#page=23。2022年8月1日閲覧。\n板垣勝正, 今津忠志, 加藤義文「緑膿菌に起因すると思われる爆発卵の発生」『鶏病研究会報』第11巻第4号、鶏病研究会、1975年、162-166頁、ISSN 0285-709X、NAID 220000007088、CRID 1050564288517730688、2022年7月30日閲覧。\n製品評価技術基盤機構「新生活スタート暮らしに潜む危険」『製品安全点検日セミナー』第13号、経済産業省、2008年、4-6頁、2022年8月15日閲覧。\n生活文化局消費生活部生活安全課「電子レンジを使った卵の加熱に注意！",
+      "source_metadata": {
+        "article_text_sha256": "084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21824844991023293161944807354_765-1541",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 497,
+          "end": 1541,
+          "start": 765
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289",
+        "text_sha256": "0f7ca2a17bc72af26278bfb7ae8a98ae9064f09ccb6d4e493809a62a7fd9e945",
+        "title": "爆発卵",
+        "wikipedia_page_id": 281112,
+        "wikipedia_revision_id": 92330289,
+        "wikipedia_revision_timestamp_utc": "2022-11-07T23:45:27Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "0f7ca2a17bc72af26278bfb7ae8a98ae9064f09ccb6d4e493809a62a7fd9e945",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 776
+      }
+    },
+    {
+      "passage_id": "21824844991023293161944807354_0-765",
+      "title": "爆発卵",
+      "text": "爆発卵（ばくはつたまご）とは、電子レンジで殻のまま加熱してレンジ内で破裂する卵の俗称である。\n養鶏分野においては、孵卵器内で腐敗ガスにより破裂する卵のことも指す。\n概要\n電子レンジで殻のままの卵を加熱すると、通常はレンジ内で破裂してしまう。これは以下のような理由によるものである。\n電子レンジによる加熱で卵の中心部から均等に加熱されることにより、黄身の部分から水分の沸騰が発生する。\n黄身は白身と殻に包まれているために外気よりも高圧となり、水の沸点が上昇する。\n黄身は熱膨張による体積の増加に伴い、白身と殻を押し破って外気に触れ、この瞬間に急激な減圧が起こる。\n沸点が下がることで黄身に含まれる水分が一気に蒸発気化し、平衡破綻型の水蒸気爆発が発生する。\nところが、破裂する前に取り出された場合にも、白身に包まれた内部には100 ℃を超えても沸騰せずに残留している水分が存在しているため、殻むきの際や口に運んだ時に黄身が外気にさらされれば同様の爆発が発生することになる。こうした現象は殻をむいた状態のゆで卵の再加熱においても発生するほか、圧力鍋による加熱、ごく稀ではあるが通常の鍋による調理によっても起こることがある。また生卵の黄身のみであっても電子レンジで加熱すると破裂する。\nまた、殻が付いたままの銀杏や栗、薄い膜で覆われているイカやソーセージでも、こうした破裂が発生するので、電子レンジで調理する場合は、殻をむくなり切れ込みを入れるなりして、水蒸気を逃がす必要がある。\nパーシー・スペンサーも電子レンジ開発中の2回目の実験で起こしたとも言われる。\n影響\n電子レンジ内で破裂してレンジが壊れたり、人が持った時に破裂して火傷する事故も発生し、電子レンジによっては、解きほぐしていない卵の加熱を取扱説明書にて禁止している商品もある。",
+      "source_metadata": {
+        "article_text_sha256": "084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21824844991023293161944807354_0-765",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 492,
+          "end": 765,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289",
+        "text_sha256": "5363bf0312640b705205a4fa6da6b31906293289f68c13fa6d9e2e4f31a7c4a6",
+        "title": "爆発卵",
+        "wikipedia_page_id": 281112,
+        "wikipedia_revision_id": 92330289,
+        "wikipedia_revision_timestamp_utc": "2022-11-07T23:45:27Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "5363bf0312640b705205a4fa6da6b31906293289f68c13fa6d9e2e4f31a7c4a6",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 765
+      }
+    },
+    {
+      "passage_id": "21824844991023293161944807354_1541-2349",
+      "title": "爆発卵",
+      "text": "」『危害・危険情報』、生活文化局、2019年、5-7頁、2022年8月15日閲覧。\n商品テスト部「ゆで卵を作る電子レンジ調理器で卵が破裂」『相談解決のためのテストから』第150号、独立行政法人国民生活センター、2021年、1-2頁、2022年8月15日閲覧。\n丸山義人、森満佐美「薬剤に代わる殺菌法としての養鶏へのオゾン利用について(1)」『静岡県中小家畜試験場研究報告』第4号、静岡県中小家畜試験場、1991年、39-44頁、ISSN 0914-6520、NAID 220000059105、CRID 1050001338631844096、2022年7月30日閲覧。\n家畜改良センター「ふ卵技術」『鶏の繁殖技術』、家畜改良センター、2021年、58-77頁、2022年7月30日閲覧。\n高瀬公三、西川比呂志、山田進二「鶏ひなの脳病巣から分離した緑膿菌に対するひなの感受性」『日本獣医師会雑誌』第36巻第12号、日本獣医師会、1983年、717-720頁、doi:10.12935/jvma1951.36.717、ISSN 0446-6454、NAID 130004050838、CRID 1390001204711649664、2022年7月30日閲覧。\n山本ゆり『syunkon日記おしゃべりな人見知り』扶桑社、2021年、132頁。ISBN 9784594087920。https://books.google.co.jp/books?id=eKcmEAAAQBAJ&pg=PT132#v=onepage&q&f=false。2022年8月2日閲覧。\n外部リンク\n日本火山学会2005年秋季大会 電子レンジ卵の爆発実験 - 爆発たまごのメカニズム\n電子レンジ、正しく使ってますか…ゆで卵注意を!（神戸新聞…Internet Archive） - 『探偵!ナイトスクープ』で放送されたことに関する記述がある。\n",
+      "source_metadata": {
+        "article_text_sha256": "084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21824844991023293161944807354_1541-2349",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 491,
+          "end": 2349,
+          "start": 1541
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289",
+        "text_sha256": "ab03741e1e98f6764f65bb244e8fbbf2cdfef6bc221b2198112b5c1c888c01ee",
+        "title": "爆発卵",
+        "wikipedia_page_id": 281112,
+        "wikipedia_revision_id": 92330289,
+        "wikipedia_revision_timestamp_utc": "2022-11-07T23:45:27Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "ab03741e1e98f6764f65bb244e8fbbf2cdfef6bc221b2198112b5c1c888c01ee",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 808
+      }
+    },
+    {
+      "passage_id": "48871894383592996618502246487_6366-7185",
+      "title": "電子レンジ",
+      "text": "一般に、50 Hz用のものを60 Hzで使用すると出力が定格を超えてしまい、逆の場合は内部の変圧器で過電流が発生し、焼損や温度ヒューズの溶断をもたらす。これを逆手に取り、回路を50 Hz用で設計し、60 Hzで使用されていることを検知した場合には、自動的にマグネトロンを断続運転とすることで「時間平均」での出力の帳尻合わせを行うことで、ヘルツフリーを実現している製品もある。また、従来型回路で出力を可変する（例えば定格500 Wの機種で200 W出力を行う）ためには、断続運転が一般的な手法であり、瞬時出力は変化しない。このため、ごく短い運転時間では500 Wも200 Wも同じ結果となる。\n電子レンジに、他の機能を付加した製品も多く登場してきている。その代表的な例が、オーブン機能のついた電子レンジ「オーブンレンジ」である。電子レンジには出来ない「焼く」という機能を、電熱線やガス燃焼を使ったオーブン機能で行い、オーブンと電子レンジの双方の利点をミックスしている。スチームを利用して加熱したり、あるいは食品の温度を計測しながら、自動的に加熱時間を調整するなど、多機能化した電子レンジも登場している。\n調理方法\n電子レンジでの調理は一般に庫内ターンテーブル片側に調理物を置きドアを閉めてスタートする（中央ではマイクロ波が十分に照射されない）。特に調理物の温度を赤外線センサーで確認しながら制御している機種などでは庫内に調理物が置かれていないと正常な調理ができないことがある。\n電子レンジの調理方法について、高機能化した電子レンジではなく単機能の電子レンジであっても、「冷めた料理や素材を温める」「冷凍食品を解凍する」といった使い方のほかに、煮る・煮込むといった加熱調理器具としての位置づけもある。多機能レンジにおいて調理法は各食品・料理に適した機能を選択して行う必要がある。\n電子レンジであたためを行う場合、通常は器にラップをかけて行う。",
+      "source_metadata": {
+        "article_text_sha256": "b74b9b542714e6144e453896ada11419db3b3191875fd85cc104f68bfd873198",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:17051:98330892:b74b9b542714e6144e453896ada11419db3b3191875fd85cc104f68bfd873198",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "48871894383592996618502246487_6366-7185",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 482,
+          "end": 7185,
+          "start": 6366
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98330892",
+        "text_sha256": "deaeed67abac01621f10243315f75c8c357ee5a82f7df840e09df3609facd5b4",
+        "title": "電子レンジ",
+        "wikipedia_page_id": 17051,
+        "wikipedia_revision_id": 98330892,
+        "wikipedia_revision_timestamp_utc": "2023-12-04T14:18:08Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98330892&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "deaeed67abac01621f10243315f75c8c357ee5a82f7df840e09df3609facd5b4",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 819
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "21824844991023293161944807354_0-765",
+      "title": "爆発卵",
+      "text": "爆発卵（ばくはつたまご）とは、電子レンジで殻のまま加熱してレンジ内で破裂する卵の俗称である。\n養鶏分野においては、孵卵器内で腐敗ガスにより破裂する卵のことも指す。\n概要\n電子レンジで殻のままの卵を加熱すると、通常はレンジ内で破裂してしまう。これは以下のような理由によるものである。\n電子レンジによる加熱で卵の中心部から均等に加熱されることにより、黄身の部分から水分の沸騰が発生する。\n黄身は白身と殻に包まれているために外気よりも高圧となり、水の沸点が上昇する。\n黄身は熱膨張による体積の増加に伴い、白身と殻を押し破って外気に触れ、この瞬間に急激な減圧が起こる。\n沸点が下がることで黄身に含まれる水分が一気に蒸発気化し、平衡破綻型の水蒸気爆発が発生する。\nところが、破裂する前に取り出された場合にも、白身に包まれた内部には100 ℃を超えても沸騰せずに残留している水分が存在しているため、殻むきの際や口に運んだ時に黄身が外気にさらされれば同様の爆発が発生することになる。こうした現象は殻をむいた状態のゆで卵の再加熱においても発生するほか、圧力鍋による加熱、ごく稀ではあるが通常の鍋による調理によっても起こることがある。また生卵の黄身のみであっても電子レンジで加熱すると破裂する。\nまた、殻が付いたままの銀杏や栗、薄い膜で覆われているイカやソーセージでも、こうした破裂が発生するので、電子レンジで調理する場合は、殻をむくなり切れ込みを入れるなりして、水蒸気を逃がす必要がある。\nパーシー・スペンサーも電子レンジ開発中の2回目の実験で起こしたとも言われる。\n影響\n電子レンジ内で破裂してレンジが壊れたり、人が持った時に破裂して火傷する事故も発生し、電子レンジによっては、解きほぐしていない卵の加熱を取扱説明書にて禁止している商品もある。",
+      "source_metadata": {
+        "article_text_sha256": "084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21824844991023293161944807354_0-765",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 492,
+          "end": 765,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289",
+        "text_sha256": "5363bf0312640b705205a4fa6da6b31906293289f68c13fa6d9e2e4f31a7c4a6",
+        "title": "爆発卵",
+        "wikipedia_page_id": 281112,
+        "wikipedia_revision_id": 92330289,
+        "wikipedia_revision_timestamp_utc": "2022-11-07T23:45:27Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "5363bf0312640b705205a4fa6da6b31906293289f68c13fa6d9e2e4f31a7c4a6",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 765
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "提示された根拠には、この質問に答えるための十分な情報がありません。",
+    "answer_sha256": "d25ff74c172ecb4fe8ba4aa0b3c1adf0389697dfa4b835b84705cfe73db3f307",
+    "quality": {
+      "annotation_id": "Q-a1ed97d246ef68315998",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-a1ed97d246ef68315998",
+        "candidate_sha256": "9307a489e593cd365f5e8e04b055bff0ca5102dd73bc6fce2a8acb816829556b",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "電子レンジで卵を加熱すると、内部の水分の加熱、圧力上昇と急減圧によって破裂し、火傷などの危険があることを説明すること。",
+        "reason": "実使用文書に破裂の仕組みと事故の危険が明記されており、質問に答えられる。「十分な情報がありません」という判断は文書内容と整合せず、必要な説明を一切提供しない不適切な回答拒否である。参照回答だけでなく、実使用文書そのものから不足を確定できる。",
+        "evidence": [
+          {
+            "passage_id": "21824844991023293161944807354_0-765",
+            "quote": "黄身は白身と殻に包まれているために外気よりも高圧となり、水の沸点が上昇する。\n黄身は熱膨張による体積の増加に伴い、白身と殻を押し破って外気に触れ、この瞬間に急激な減圧が起こる。\n沸点が下がることで黄身に含まれる水分が一気に蒸発気化し、平衡破綻型の水蒸気爆発が発生する。"
+          },
+          {
+            "passage_id": "21824844991023293161944807354_0-765",
+            "quote": "電子レンジ内で破裂してレンジが壊れたり、人が持った時に破裂して火傷する事故も発生し、電子レンジによっては、解きほぐしていない卵の加熱を取扱説明書にて禁止している商品もある。"
+          }
+        ],
+        "elapsed_seconds": 8.50107999775355,
+        "confirmed_at_utc": "2026-10-31T01:38:44.816178+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1/ja/baseline/38a04a3f5e3ee3ce1516d037/record.json",
+      "sha256": "8ede65ed0d4ace68de58e6cd7ccd84a6a9761608379d9c125faee60ac0c6c85b"
+    },
+    "copy": "provenance/baselines/main_ja_38a04a3f5e3ee3ce1516d037.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "電子レンジで卵を加熱するとダメなのは、中心部から均等に加熱され黄身の水分が沸騰するためです。黄身は白身と殻に包まれているため外気より高圧となり沸点が上昇します。熱膨張で殻や白身を押し破り、急激な減圧により水蒸気爆発が発生する [21824844991023293161944807354_0-765]。また、殻をむいた調理済みのゆで卵であっても再加熱すると爆発することがある [21824844991023293161944807354_0-765]。電子レンジでゆで卵を作る方法は、卵が爆発するとともに水が突沸するので絶対にやってはならない [76527755996126547347873513264_658-1440]。",
+    "answer_sha256": "1ee1acf26521b5e63a1eeddd49f69be5e5068692e939d042de31cd3e7402c757",
+    "quality": {
+      "annotation_id": "Q-2132d8a8e022604ee761",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-2132d8a8e022604ee761",
+        "candidate_sha256": "34305e631b79eeb1b06af09d9715b44f7dddb1818005a83e8add47368c9d3c2a",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "卵内部の加熱・圧力上昇と急減圧によって破裂するため危険であり、殻をむいたゆで卵でも起こり得ることを説明する。禁止する調理方法の条件を保つ。",
+        "reason": "破裂の仕組みと殻をむいたゆで卵の危険は実使用Contextに支持され、質問の核心に答えている。しかし最後の文は、卵と水を器に入れる方法という限定を落とし、電子レンジでゆで卵を作る方法全般を絶対禁止としている。実使用Contextには、専用調理器を規定の水量で使用した場合には破裂しなかったという明示的な例外があり、この一般化は重大な条件脱落である。判定根拠は実使用Contextであり、参照専用Goldに依存していない。",
+        "evidence": [
+          {
+            "passage_id": "21824844991023293161944807354_0-765",
+            "quote": "黄身は白身と殻に包まれているために外気よりも高圧となり、水の沸点が上昇する。\n黄身は熱膨張による体積の増加に伴い、白身と殻を押し破って外気に触れ、この瞬間に急激な減圧が起こる。\n沸点が下がることで黄身に含まれる水分が一気に蒸発気化し、平衡破綻型の水蒸気爆発が発生する。"
+          },
+          {
+            "passage_id": "76527755996126547347873513264_658-1440",
+            "quote": "なお、卵と卵が十分没する量の水を入れた器を電子レンジにかけてゆで卵を作る方法は、卵が爆発するとともに水が突沸するので絶対にやってはならない（爆発卵の項を参照）。また殻をむいた調理済みのゆで卵であっても電子レンジによって再加熱すると爆発することがある。"
+          },
+          {
+            "passage_id": "21824844991023293161944807354_765-1541",
+            "quote": "卵を金属殻で覆うことで卵に直接電磁波を当てず、容器の水位線まで入れた水を加熱することで卵を茹でる電子レンジ調理器も市販されており、国民生活センターによるテストでは水位線まで水を入れて使用すれば破裂は起きないが、水の量が半分より少ないと破裂するという結果が出ている。"
+          }
+        ],
+        "elapsed_seconds": 20.00220147024811,
+        "confirmed_at_utc": "2026-10-31T01:46:09.483729+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [],
+  "extraction_audit": {
+    "claims": [],
+    "unit_version": "verbatim-sentence-units-ja-v1",
+    "normalized_prose": "提示された根拠には、この質問に答えるための十分な情報がありません。",
+    "exclusion": "standalone_refusal",
+    "spans": [],
+    "unclosed_delimiters": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "76527755996126547347873513264_658-1440",
+          "21824844991023293161944807354_765-1541",
+          "21824844991023293161944807354_0-765",
+          "21824844991023293161944807354_1541-2349",
+          "48871894383592996618502246487_6366-7185"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "76527755996126547347873513264_658-1440",
+          "21824844991023293161944807354_765-1541",
+          "21824844991023293161944807354_0-765",
+          "21824844991023293161944807354_1541-2349",
+          "48871894383592996618502246487_6366-7185"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "76527755996126547347873513264_658-1440",
+          "21824844991023293161944807354_765-1541",
+          "21824844991023293161944807354_0-765",
+          "21824844991023293161944807354_1541-2349",
+          "48871894383592996618502246487_6366-7185"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "48871894383592996618502246487_6366-7185",
+          "21824844991023293161944807354_0-765",
+          "76527755996126547347873513264_658-1440",
+          "21824844991023293161944807354_765-1541",
+          "21824844991023293161944807354_1541-2349"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "76527755996126547347873513264_658-1440",
+          "21824844991023293161944807354_765-1541",
+          "21824844991023293161944807354_0-765",
+          "21824844991023293161944807354_1541-2349",
+          "48871894383592996618502246487_6366-7185"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "48871894383592996618502246487_6366-7185",
+          "76527755996126547347873513264_658-1440",
+          "21824844991023293161944807354_1541-2349",
+          "21824844991023293161944807354_765-1541",
+          "21824844991023293161944807354_0-765"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "21824844991023293161944807354_765-1541",
+          "76527755996126547347873513264_658-1440",
+          "21824844991023293161944807354_0-765",
+          "21824844991023293161944807354_1541-2349",
+          "48871894383592996618502246487_6366-7185"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "76527755996126547347873513264_658-1440",
+          "21824844991023293161944807354_765-1541",
+          "21824844991023293161944807354_0-765",
+          "21824844991023293161944807354_1541-2349",
+          "48871894383592996618502246487_6366-7185"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "48871894383592996618502246487_6366-7185",
+          "21824844991023293161944807354_1541-2349",
+          "21824844991023293161944807354_0-765",
+          "21824844991023293161944807354_765-1541",
+          "76527755996126547347873513264_658-1440"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "ja",
+    "record_id": "whrja:02e85c8:answered:767",
+    "document_group_id": "whrja-group:8e5bd0a6e94e4b343a3b37b3",
+    "comparable": false,
+    "increment": null,
+    "partial_pair_increment_exploratory": null,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 0,
+      "valid_pairs": 0,
+      "disagreeing_pairs": 0,
+      "rate": null
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 0,
+      "valid_pairs": 0,
+      "disagreeing_pairs": 0,
+      "rate": null
+    },
+    "reason": "invalid_or_unscorable_trials"
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1/ja/report.private.json",
+    "sha256": "036c0a5b0b5d934074a661a828f4156341cd1f03e0ea846caf5eb214d466d771"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "21824844991023293161944807354_0-765",
+      "text": "爆発卵（ばくはつたまご）とは、電子レンジで殻のまま加熱してレンジ内で破裂する卵の俗称である。\n養鶏分野においては、孵卵器内で腐敗ガスにより破裂する卵のことも指す。\n概要\n電子レンジで殻のままの卵を加熱すると、通常はレンジ内で破裂してしまう。これは以下のような理由によるものである。\n電子レンジによる加熱で卵の中心部から均等に加熱されることにより、黄身の部分から水分の沸騰が発生する。\n黄身は白身と殻に包まれているために外気よりも高圧となり、水の沸点が上昇する。\n黄身は熱膨張による体積の増加に伴い、白身と殻を押し破って外気に触れ、この瞬間に急激な減圧が起こる。\n沸点が下がることで黄身に含まれる水分が一気に蒸発気化し、平衡破綻型の水蒸気爆発が発生する。\nところが、破裂する前に取り出された場合にも、白身に包まれた内部には100 ℃を超えても沸騰せずに残留している水分が存在しているため、殻むきの際や口に運んだ時に黄身が外気にさらされれば同様の爆発が発生することになる。こうした現象は殻をむいた状態のゆで卵の再加熱においても発生するほか、圧力鍋による加熱、ごく稀ではあるが通常の鍋による調理によっても起こることがある。また生卵の黄身のみであっても電子レンジで加熱すると破裂する。\nまた、殻が付いたままの銀杏や栗、薄い膜で覆われているイカやソーセージでも、こうした破裂が発生するので、電子レンジで調理する場合は、殻をむくなり切れ込みを入れるなりして、水蒸気を逃がす必要がある。\nパーシー・スペンサーも電子レンジ開発中の2回目の実験で起こしたとも言われる。\n影響\n電子レンジ内で破裂してレンジが壊れたり、人が持った時に破裂して火傷する事故も発生し、電子レンジによっては、解きほぐしていない卵の加熱を取扱説明書にて禁止している商品もある。",
+      "source_metadata": {
+        "article_text_sha256": "084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21824844991023293161944807354_0-765",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 492,
+          "end": 765,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289",
+        "text_sha256": "5363bf0312640b705205a4fa6da6b31906293289f68c13fa6d9e2e4f31a7c4a6",
+        "title": "爆発卵",
+        "wikipedia_page_id": 281112,
+        "wikipedia_revision_id": 92330289,
+        "wikipedia_revision_timestamp_utc": "2022-11-07T23:45:27Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "21824844991023293161944807354_1541-2349",
+      "text": "」『危害・危険情報』、生活文化局、2019年、5-7頁、2022年8月15日閲覧。\n商品テスト部「ゆで卵を作る電子レンジ調理器で卵が破裂」『相談解決のためのテストから』第150号、独立行政法人国民生活センター、2021年、1-2頁、2022年8月15日閲覧。\n丸山義人、森満佐美「薬剤に代わる殺菌法としての養鶏へのオゾン利用について(1)」『静岡県中小家畜試験場研究報告』第4号、静岡県中小家畜試験場、1991年、39-44頁、ISSN 0914-6520、NAID 220000059105、CRID 1050001338631844096、2022年7月30日閲覧。\n家畜改良センター「ふ卵技術」『鶏の繁殖技術』、家畜改良センター、2021年、58-77頁、2022年7月30日閲覧。\n高瀬公三、西川比呂志、山田進二「鶏ひなの脳病巣から分離した緑膿菌に対するひなの感受性」『日本獣医師会雑誌』第36巻第12号、日本獣医師会、1983年、717-720頁、doi:10.12935/jvma1951.36.717、ISSN 0446-6454、NAID 130004050838、CRID 1390001204711649664、2022年7月30日閲覧。\n山本ゆり『syunkon日記おしゃべりな人見知り』扶桑社、2021年、132頁。ISBN 9784594087920。https://books.google.co.jp/books?id=eKcmEAAAQBAJ&pg=PT132#v=onepage&q&f=false。2022年8月2日閲覧。\n外部リンク\n日本火山学会2005年秋季大会 電子レンジ卵の爆発実験 - 爆発たまごのメカニズム\n電子レンジ、正しく使ってますか…ゆで卵注意を!（神戸新聞…Internet Archive） - 『探偵!ナイトスクープ』で放送されたことに関する記述がある。\n",
+      "source_metadata": {
+        "article_text_sha256": "084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21824844991023293161944807354_1541-2349",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 491,
+          "end": 2349,
+          "start": 1541
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289",
+        "text_sha256": "ab03741e1e98f6764f65bb244e8fbbf2cdfef6bc221b2198112b5c1c888c01ee",
+        "title": "爆発卵",
+        "wikipedia_page_id": 281112,
+        "wikipedia_revision_id": 92330289,
+        "wikipedia_revision_timestamp_utc": "2022-11-07T23:45:27Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "21824844991023293161944807354_765-1541",
+      "text": "卵を金属殻で覆うことで卵に直接電磁波を当てず、容器の水位線まで入れた水を加熱することで卵を茹でる電子レンジ調理器も市販されており、国民生活センターによるテストでは水位線まで水を入れて使用すれば破裂は起きないが、水の量が半分より少ないと破裂するという結果が出ている。製品評価技術基盤機構によれば、ふたがずれた状態で使用したために破裂した事故も起きている\n養鶏分野において\n養鶏分野における爆発卵とは、孵卵中の卵が腐敗し、卵内に産生したガスによって大きな音を立てて破裂する現象をいう。薬浴によるサルモネラ菌・大腸菌対策は緑膿菌による爆発卵を誘発し、発生まで無精卵や中止卵を除かずに孵卵を行うと緑膿菌が増殖し爆発卵となって鶏群全体を高濃度に汚染してしまう。\n関連事項\nゆで卵\n電子レンジ\n探偵!ナイトスクープ\n脚注\n参考文献\nゆげひろのぶ『なぜ、指揮官は馬に乗るのか? 組織で悩むアナタのための世界史 世界史専門・ゆげ塾の実況シリーズ』星海社、2018年、21頁。ISBN 9784065107676。https://ji-sedai.jp/book/publication/works/yuge.pdf#page=23。2022年8月1日閲覧。\n板垣勝正, 今津忠志, 加藤義文「緑膿菌に起因すると思われる爆発卵の発生」『鶏病研究会報』第11巻第4号、鶏病研究会、1975年、162-166頁、ISSN 0285-709X、NAID 220000007088、CRID 1050564288517730688、2022年7月30日閲覧。\n製品評価技術基盤機構「新生活スタート暮らしに潜む危険」『製品安全点検日セミナー』第13号、経済産業省、2008年、4-6頁、2022年8月15日閲覧。\n生活文化局消費生活部生活安全課「電子レンジを使った卵の加熱に注意！",
+      "source_metadata": {
+        "article_text_sha256": "084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21824844991023293161944807354_765-1541",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 497,
+          "end": 1541,
+          "start": 765
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289",
+        "text_sha256": "0f7ca2a17bc72af26278bfb7ae8a98ae9064f09ccb6d4e493809a62a7fd9e945",
+        "title": "爆発卵",
+        "wikipedia_page_id": 281112,
+        "wikipedia_revision_id": 92330289,
+        "wikipedia_revision_timestamp_utc": "2022-11-07T23:45:27Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "48871894383592996618502246487_6366-7185",
+      "text": "一般に、50 Hz用のものを60 Hzで使用すると出力が定格を超えてしまい、逆の場合は内部の変圧器で過電流が発生し、焼損や温度ヒューズの溶断をもたらす。これを逆手に取り、回路を50 Hz用で設計し、60 Hzで使用されていることを検知した場合には、自動的にマグネトロンを断続運転とすることで「時間平均」での出力の帳尻合わせを行うことで、ヘルツフリーを実現している製品もある。また、従来型回路で出力を可変する（例えば定格500 Wの機種で200 W出力を行う）ためには、断続運転が一般的な手法であり、瞬時出力は変化しない。このため、ごく短い運転時間では500 Wも200 Wも同じ結果となる。\n電子レンジに、他の機能を付加した製品も多く登場してきている。その代表的な例が、オーブン機能のついた電子レンジ「オーブンレンジ」である。電子レンジには出来ない「焼く」という機能を、電熱線やガス燃焼を使ったオーブン機能で行い、オーブンと電子レンジの双方の利点をミックスしている。スチームを利用して加熱したり、あるいは食品の温度を計測しながら、自動的に加熱時間を調整するなど、多機能化した電子レンジも登場している。\n調理方法\n電子レンジでの調理は一般に庫内ターンテーブル片側に調理物を置きドアを閉めてスタートする（中央ではマイクロ波が十分に照射されない）。特に調理物の温度を赤外線センサーで確認しながら制御している機種などでは庫内に調理物が置かれていないと正常な調理ができないことがある。\n電子レンジの調理方法について、高機能化した電子レンジではなく単機能の電子レンジであっても、「冷めた料理や素材を温める」「冷凍食品を解凍する」といった使い方のほかに、煮る・煮込むといった加熱調理器具としての位置づけもある。多機能レンジにおいて調理法は各食品・料理に適した機能を選択して行う必要がある。\n電子レンジであたためを行う場合、通常は器にラップをかけて行う。",
+      "source_metadata": {
+        "article_text_sha256": "b74b9b542714e6144e453896ada11419db3b3191875fd85cc104f68bfd873198",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:17051:98330892:b74b9b542714e6144e453896ada11419db3b3191875fd85cc104f68bfd873198",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "48871894383592996618502246487_6366-7185",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 482,
+          "end": 7185,
+          "start": 6366
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98330892",
+        "text_sha256": "deaeed67abac01621f10243315f75c8c357ee5a82f7df840e09df3609facd5b4",
+        "title": "電子レンジ",
+        "wikipedia_page_id": 17051,
+        "wikipedia_revision_id": 98330892,
+        "wikipedia_revision_timestamp_utc": "2023-12-04T14:18:08Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98330892&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "76527755996126547347873513264_658-1440",
+      "text": "または、頂部など1箇所だけを剥き、エッグスタンドに立ててスプーンで中をえぐって食べる方法もある。\n調理したゆで卵は外側から圧迫して型付けを行うこともある。また、卵黄と卵白に分け、卵黄をフォークの先でほぐして調味したものを半分に切った卵白に詰めなおしたもの、卵白を細く刻んだものや卵黄をほぐしたものを生野菜とともに和えたものなどもある。\n調理法\n加熱時間\n全熟卵（かたゆで卵）の場合、通常は沸騰後に室温の卵を入れて10分から12分加熱する（あるいは再沸騰後に12～13分加熱する）。水から茹でる方法もあり、卵と水を一緒に加熱してゆき95℃以上の状態で10から12分加熱する。\n水から茹でる場合、水の量や火力、気温によって温度の上がり方が変わるためにタイミングを見極めるのが難しいが、調理時間はやや短くなり、卵が割れる危険性も少ない。一方、沸騰させてから卵を入れた場合これらのメリットはなくなるが、好みの硬さに仕上げるための時間管理が楽になる。\n沸騰後に卵を入れる場合には、急激な温度差で卵の殻が割れることがあるため室温にしておくことが重要とされる。\nこのために「エッグメーター」と呼ばれる一種の温度計を一緒に茹でる方法がある。また、常に一定の時間で仕上げるために、卵は80 ℃程度で白身と黄身がともに固まることを利用し、多めのお湯をあらかじめ沸騰させておき、そこに卵を入れて蓋をして、あとは熱を加えずに放置する方法（余熱調理）もある。鍋を利用する方法以外に、ゆで卵調理専用の機器として卵ゆで器がある。\nなお、卵と卵が十分没する量の水を入れた器を電子レンジにかけてゆで卵を作る方法は、卵が爆発するとともに水が突沸するので絶対にやってはならない（爆発卵の項を参照）。また殻をむいた調理済みのゆで卵であっても電子レンジによって再加熱すると爆発することがある。\n卵黄の状態\n",
+      "source_metadata": {
+        "article_text_sha256": "fbb44b740b125571b226df0fa55adcece90ae78b2a2de375620775ef5236b420",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:260271:98183984:fbb44b740b125571b226df0fa55adcece90ae78b2a2de375620775ef5236b420",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "76527755996126547347873513264_658-1440",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 487,
+          "end": 1440,
+          "start": 658
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98183984",
+        "text_sha256": "8555e6399de5da678be7f1899931598e0468f03f228358462b8bf161110bd09a",
+        "title": "ゆで卵",
+        "wikipedia_page_id": 260271,
+        "wikipedia_revision_id": 98183984,
+        "wikipedia_revision_timestamp_utc": "2023-11-27T15:00:05Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98183984&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "21824844991023293161944807354_0-765": {
+      "article_text_sha256": "084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "21824844991023293161944807354_0-765",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 492,
+        "end": 765,
+        "start": 0
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289",
+      "text_sha256": "5363bf0312640b705205a4fa6da6b31906293289f68c13fa6d9e2e4f31a7c4a6",
+      "title": "爆発卵",
+      "wikipedia_page_id": 281112,
+      "wikipedia_revision_id": 92330289,
+      "wikipedia_revision_timestamp_utc": "2022-11-07T23:45:27Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "21824844991023293161944807354_0-765",
+      "text": "爆発卵（ばくはつたまご）とは、電子レンジで殻のまま加熱してレンジ内で破裂する卵の俗称である。\n養鶏分野においては、孵卵器内で腐敗ガスにより破裂する卵のことも指す。\n概要\n電子レンジで殻のままの卵を加熱すると、通常はレンジ内で破裂してしまう。これは以下のような理由によるものである。\n電子レンジによる加熱で卵の中心部から均等に加熱されることにより、黄身の部分から水分の沸騰が発生する。\n黄身は白身と殻に包まれているために外気よりも高圧となり、水の沸点が上昇する。\n黄身は熱膨張による体積の増加に伴い、白身と殻を押し破って外気に触れ、この瞬間に急激な減圧が起こる。\n沸点が下がることで黄身に含まれる水分が一気に蒸発気化し、平衡破綻型の水蒸気爆発が発生する。\nところが、破裂する前に取り出された場合にも、白身に包まれた内部には100 ℃を超えても沸騰せずに残留している水分が存在しているため、殻むきの際や口に運んだ時に黄身が外気にさらされれば同様の爆発が発生することになる。こうした現象は殻をむいた状態のゆで卵の再加熱においても発生するほか、圧力鍋による加熱、ごく稀ではあるが通常の鍋による調理によっても起こることがある。また生卵の黄身のみであっても電子レンジで加熱すると破裂する。\nまた、殻が付いたままの銀杏や栗、薄い膜で覆われているイカやソーセージでも、こうした破裂が発生するので、電子レンジで調理する場合は、殻をむくなり切れ込みを入れるなりして、水蒸気を逃がす必要がある。\nパーシー・スペンサーも電子レンジ開発中の2回目の実験で起こしたとも言われる。\n影響\n電子レンジ内で破裂してレンジが壊れたり、人が持った時に破裂して火傷する事故も発生し、電子レンジによっては、解きほぐしていない卵の加熱を取扱説明書にて禁止している商品もある。",
+      "source_metadata": {
+        "article_text_sha256": "084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:281112:92330289:084e6838b9225de801ba2a9bbef7f3d75244898c07e93c7a5aaf01640e03bfb6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21824844991023293161944807354_0-765",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 492,
+          "end": 765,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289",
+        "text_sha256": "5363bf0312640b705205a4fa6da6b31906293289f68c13fa6d9e2e4f31a7c4a6",
+        "title": "爆発卵",
+        "wikipedia_page_id": 281112,
+        "wikipedia_revision_id": 92330289,
+        "wikipedia_revision_timestamp_utc": "2022-11-07T23:45:27Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=92330289&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ]
+}

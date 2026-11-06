@@ -1,0 +1,787 @@
+{
+  "qa_key": "main_en_59074adcb9e7c12dfc6d222c",
+  "cohort": "main",
+  "language": "en",
+  "analysis_role": "main",
+  "source_qa_split": "development",
+  "record_id": "clapnq:c508d78:train:7505837749424830684:answerable",
+  "document_group_id": "clapnq-title:crusades",
+  "qa_source": {
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "gold_passage_ids": [
+      "801426592_2571-3953"
+    ],
+    "is_answerable": true,
+    "provided_passage": null,
+    "question": "what was the original purpose of the crusades",
+    "record_id": "clapnq:c508d78:train:7505837749424830684:answerable",
+    "reference_answers": [
+      "In 1095, Pope Urban II called for the First Crusade in a sermon at the Council of Clermont. He encouraged military support for the Byzantine Empire and its Emperor, Alexios I, who needed reinforcements for his conflict with westward migrating Turks colonizing Anatolia. Urban's strategy may have been to unite the Eastern and Western branches of Christendom.",
+      "The Crusade was to support the Byzantine Empire and its Emperor , Alexios I , who needed reinforcements for his conflict with westward migrating Turks colonizing Anatolia, to guarantee pilgrims access to the Eastern Mediterranean holy sites that were under Muslim control, and to unite the Eastern and Western branches of Christendom , which had been divided since the East -- West Schism of 1054 and to establish Pope Urban II, who called for the first crusade, as head of the unified Church ."
+    ],
+    "research_split": "development",
+    "selected_sentences_by_reference": [
+      [
+        "In 1095 , Pope Urban II called for the First Crusade in a sermon at the Council of Clermont .",
+        "He encouraged military support for the Byzantine Empire and its Emperor , Alexios I , who needed reinforcements for his conflict with westward migrating Turks colonizing Anatolia .",
+        "Urban 's strategy may have been to unite the Eastern and Western branches of Christendom , which had been divided since the East -- West Schism of 1054 and to establish himself as head of the unified Church ."
+      ],
+      [
+        "In 1095 , Pope Urban II called for the First Crusade in a sermon at the Council of Clermont .",
+        "He encouraged military support for the Byzantine Empire and its Emperor , Alexios I , who needed reinforcements for his conflict with westward migrating Turks colonizing Anatolia .",
+        "One of Urban 's aims was to guarantee pilgrims access to the Eastern Mediterranean holy sites that were under Muslim control but scholars disagree as to whether this was the primary motive for Urban or those who heeded his call .",
+        "Urban 's strategy may have been to unite the Eastern and Western branches of Christendom , which had been divided since the East -- West Schism of 1054 and to establish himself as head of the unified Church ."
+      ]
+    ],
+    "source_dataset": "CLAPNQ",
+    "source_id": "7505837749424830684",
+    "source_line_index": 1695,
+    "source_record_sha256": "f64b1fc5f8237450c76cfd9d27a948d7d02ea17e3228e0c6455d7ee071cfe639",
+    "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+    "source_split": "train",
+    "source_title": "Crusades"
+  },
+  "source_selection": {
+    "record_id": "clapnq:c508d78:train:7505837749424830684:answerable",
+    "question": "what was the original purpose of the crusades",
+    "document_group_id": "clapnq-title:crusades"
+  },
+  "question": "what was the original purpose of the crusades",
+  "used_documents": [
+    {
+      "passage_id": "856995355_64191-65217",
+      "title": "Middle Ages",
+      "text": "The crusades were intended to seize Jerusalem from Muslim control . The First Crusade was proclaimed by Pope Urban II ( pope 1088 -- 99 ) at the Council of Clermont in 1095 in response to a request from the Byzantine Emperor Alexios I Komnenos ( r . 1081 -- 1118 ) for aid against further Muslim advances . Urban promised indulgence to anyone who took part . Tens of thousands of people from all levels of society mobilised across Europe and captured Jerusalem in 1099 . One feature of the crusades was the pogroms against local Jews that often took place as the crusaders left their countries for the East . These were especially brutal during the First Crusade , when the Jewish communities in Cologne , Mainz , and Worms were destroyed , and other communities in cities between the rivers Seine and the Rhine suffered destruction . Another outgrowth of the crusades was the foundation of a new type of monastic order , the military orders of the Templars and Hospitallers , which fused monastic life with military service .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "856995355_64191-65217",
+        "parent_text_sha256": "9fe995cd0527c7f4b3cc0cdc3386f6c1a8d9a629f57dfd39ecae87303889d4bb",
+        "passage_id": "856995355_64191-65217",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 260,
+          "end": 1026,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "9fe995cd0527c7f4b3cc0cdc3386f6c1a8d9a629f57dfd39ecae87303889d4bb",
+        "title": "Middle Ages",
+        "source_url": "https://en.wikipedia.org/wiki/Middle_Ages",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Middle_Ages?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "9fe995cd0527c7f4b3cc0cdc3386f6c1a8d9a629f57dfd39ecae87303889d4bb",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 1026
+      }
+    },
+    {
+      "passage_id": "856995355_66074-66998",
+      "title": "Middle Ages",
+      "text": "Popes called for crusades to take place elsewhere besides the Holy Land : in Spain , southern France , and along the Baltic . The Spanish crusades became fused with the Reconquista of Spain from the Muslims . Although the Templars and Hospitallers took part in the Spanish crusades , similar Spanish military religious orders were founded , most of which had become part of the two main orders of Calatrava and Santiago by the beginning of the 12th century . Northern Europe also remained outside Christian influence until the 11th century or later , and became a crusading venue as part of the Northern Crusades of the 12th to 14th centuries . These crusades also spawned a military order , the Order of the Sword Brothers . Another order , the Teutonic Knights , although founded in the crusader states , focused much of its activity in the Baltic after 1225 , and in 1309 moved its headquarters to Marienburg in Prussia .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "856995355_66074-66998",
+        "parent_text_sha256": "7195109c3faa2c28077d56172034ac34f465ae1f37770efb50e821203a633859",
+        "passage_id": "856995355_66074-66998",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 234,
+          "end": 924,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "7195109c3faa2c28077d56172034ac34f465ae1f37770efb50e821203a633859",
+        "title": "Middle Ages",
+        "source_url": "https://en.wikipedia.org/wiki/Middle_Ages",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Middle_Ages?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "7195109c3faa2c28077d56172034ac34f465ae1f37770efb50e821203a633859",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 924
+      }
+    },
+    {
+      "passage_id": "832692595_12692-13427",
+      "title": "Lebanon",
+      "text": "Following the fall of Roman Anatolia to the Muslim Turks , the Byzantines put out a call to the Pope in Rome for assistance in the 11th century . The result was a series of wars known as the Crusades launched by the Franks in Western Europe to reclaim the former Byzantine Christian territories in the Eastern Mediterranean , especially Syria and Palestine ( the Levant ) . The First Crusade succeeded in temporarily establishing the Kingdom of Jerusalem and the County of Tripoli as Roman Catholic Christian states along the coast . These crusader states made a lasting impact on the region , though their control was limited , and the region returned to full Muslim control after two centuries following the conquest by the Mamluks .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "832692595_12692-13427",
+        "parent_text_sha256": "f26c99b8f89054de33f08a172edb2816a800d6b2b967dac91e34d6c60a920916",
+        "passage_id": "832692595_12692-13427",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 173,
+          "end": 735,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "f26c99b8f89054de33f08a172edb2816a800d6b2b967dac91e34d6c60a920916",
+        "title": "Lebanon",
+        "source_url": "https://en.wikipedia.org/wiki/Lebanon",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Lebanon?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "f26c99b8f89054de33f08a172edb2816a800d6b2b967dac91e34d6c60a920916",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 735
+      }
+    },
+    {
+      "passage_id": "801426592_239-932",
+      "title": "Crusades",
+      "text": "( hide ) Crusades In the Holy Land ( 1095 -- 1291 ) First 1101 Norwegian Venetian Second Third 1197 Fourth Fifth Sixth Barons ' Seventh Eighth Ninth After 1291 Smyrniote 1343 -- 1351 Alexandrian 1365 Savoyard 1366 Barbary 1390 Nicopolis 1396 Varna 1443 Portuguese 1481 Northern Crusades ( 1147 -- 1410 ) Wendish 1147 Swedish 1150 1249 1293 Livonian 1198 -- 1290 Prussian 1217 -- 1274 Lithuanian 1283 -- 1410 Popular crusades People 's 1096 Children 's 1212 Shepherds ' 1251 Poor 1309 Shepherds ' 1320 Against Christians Bosnian 1235 -- 1241 Albigensian 1209 -- 1229 Aragonese 1284 / 5 Despenser 's 1382 / 3 Hussite 1419 -- 1434 Reconquista ( 718 -- 1492 ) Book : The Crusades Portal : Crusades",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "801426592_239-932",
+        "parent_text_sha256": "1c4e9c734374f3a7839ce5990640431dd73a5965833aaedcf36dad9cd3fe6bf4",
+        "passage_id": "801426592_239-932",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 222,
+          "end": 693,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "1c4e9c734374f3a7839ce5990640431dd73a5965833aaedcf36dad9cd3fe6bf4",
+        "title": "Crusades",
+        "source_url": "https://en.wikipedia.org/wiki/Crusades",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Crusades?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "1c4e9c734374f3a7839ce5990640431dd73a5965833aaedcf36dad9cd3fe6bf4",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 693
+      }
+    },
+    {
+      "passage_id": "801426592_1933-2570",
+      "title": "Crusades",
+      "text": "The Crusades were a series of religious wars sanctioned by the Latin Church in the medieval period . The most commonly known Crusades were the campaigns in the Eastern Mediterranean aimed at recovering the Holy Land from Muslim rule , but the term `` Crusades '' is also applied to other church - sanctioned campaigns . These were fought for a variety of reasons including the suppression of paganism and heresy , the resolution of conflict among rival Roman Catholic groups , or for political and territorial advantage . At the time of the early Crusades the word did not exist , only becoming the leading descriptive term around 1760 .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "801426592_1933-2570",
+        "parent_text_sha256": "1f95d3dacd3b0729fcbb3c0719bcd40d365661de63d2f560cb37dd6d233c3416",
+        "passage_id": "801426592_1933-2570",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 149,
+          "end": 637,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "1f95d3dacd3b0729fcbb3c0719bcd40d365661de63d2f560cb37dd6d233c3416",
+        "title": "Crusades",
+        "source_url": "https://en.wikipedia.org/wiki/Crusades",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Crusades?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "1f95d3dacd3b0729fcbb3c0719bcd40d365661de63d2f560cb37dd6d233c3416",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 637
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "801426592_2571-3953",
+      "title": "Crusades",
+      "text": "In 1095 , Pope Urban II called for the First Crusade in a sermon at the Council of Clermont . He encouraged military support for the Byzantine Empire and its Emperor , Alexios I , who needed reinforcements for his conflict with westward migrating Turks colonizing Anatolia . One of Urban 's aims was to guarantee pilgrims access to the Eastern Mediterranean holy sites that were under Muslim control but scholars disagree as to whether this was the primary motive for Urban or those who heeded his call . Urban 's strategy may have been to unite the Eastern and Western branches of Christendom , which had been divided since the East -- West Schism of 1054 and to establish himself as head of the unified Church . The initial success of the Crusade established the first four Crusader states in the Eastern Mediterranean : the County of Edessa , the Principality of Antioch , the Kingdom of Jerusalem and the County of Tripoli . The enthusiastic response to Urban 's preaching from all classes in Western Europe established a precedent for other Crusades . Volunteers became Crusaders by taking a public vow and receiving plenary indulgences from the Church . Some were hoping for a mass ascension into heaven at Jerusalem or God 's forgiveness for all their sins . Others participated to satisfy feudal obligations , obtain glory and honour or to seek economic and political gain .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "801426592_2571-3953",
+        "parent_text_sha256": "6d171fdba7ffcfced0d6874895aea4740db464eb27bed84c6b233a2ee6252784",
+        "passage_id": "801426592_2571-3953",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 336,
+          "end": 1382,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "6d171fdba7ffcfced0d6874895aea4740db464eb27bed84c6b233a2ee6252784",
+        "title": "Crusades",
+        "source_url": "https://en.wikipedia.org/wiki/Crusades",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Crusades?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "6d171fdba7ffcfced0d6874895aea4740db464eb27bed84c6b233a2ee6252784",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 1382
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "The original purpose of the crusades was to seize Jerusalem from Muslim control. This was proclaimed by Pope Urban II at the Council of Clermont in 1095 in response to a request from the Byzantine Emperor Alexios I Komnenos for aid against further Muslim advances. Tens of thousands of people from all levels of society mobilized across Europe and captured Jerusalem in 1099. [856995355_64191-65217]",
+    "answer_sha256": "9736c81b4a859526e8a080ac00b9a983c96796f1936a5a2a81be23c8b5eac72b",
+    "quality": {
+      "annotation_id": "Q-8f26d866675fa88ee9fc",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-8f26d866675fa88ee9fc",
+        "candidate_sha256": "e3e523ccaaba571774e68a136701632c6aee466179a6d260e51dc6e68171a49f",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Explain the initial aim of recovering Jerusalem from Muslim control and providing military assistance to the Byzantine emperor.",
+        "reason": "The answer gives the original territorial aim and the Byzantine request that prompted the First Crusade. Every additional detail is directly supported by the actual cited context. Reference-only gold adds pilgrim access and possible church unification motives, but their omission does not invalidate this substantive explanation.",
+        "evidence": [
+          {
+            "passage_id": "856995355_64191-65217",
+            "quote": "The crusades were intended to seize Jerusalem from Muslim control ."
+          },
+          {
+            "passage_id": "856995355_64191-65217",
+            "quote": "The First Crusade was proclaimed by Pope Urban II ( pope 1088 -- 99 ) at the Council of Clermont in 1095 in response to a request from the Byzantine Emperor Alexios I Komnenos ( r . 1081 -- 1118 ) for aid against further Muslim advances ."
+          },
+          {
+            "passage_id": "856995355_64191-65217",
+            "quote": "Tens of thousands of people from all levels of society mobilised across Europe and captured Jerusalem in 1099 ."
+          }
+        ],
+        "elapsed_seconds": 11.001288663996093,
+        "confirmed_at_utc": "2026-10-31T01:29:59.661205+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1/en/baseline/59074adcb9e7c12dfc6d222c/record.json",
+      "sha256": "55cbf6e0430e5b1d0fb362ff47f725f41a502fe7b6969d1a6342abef64ba683b"
+    },
+    "copy": "provenance/baselines/main_en_59074adcb9e7c12dfc6d222c.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "The original purpose of the most commonly known Crusades was to seize Jerusalem from Muslim control and recover the Holy Land [856995355_64191-65217][801426592_1933-2570]. This was proclaimed by Pope Urban II at the Council of Clermont in 1095 in response to a request from Byzantine Emperor Alexios I Komnenos for aid against Muslim advances [856995355_64191-65217]. Tens of thousands mobilized across Europe and captured Jerusalem in 1099 [856995355_64191-65217].",
+    "answer_sha256": "fe8a44e1cb0258f39b943516cc94cedd2f1ab42c3c3b04d7907daea168374860",
+    "quality": {
+      "annotation_id": "Q-4b88064f5071f965c4c8",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-4b88064f5071f965c4c8",
+        "candidate_sha256": "fd5ef3c9c8db6e91e1219850cfdcc08ad2a70f043158aba3631205b9d318061e",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Explain that the early Crusades sought Jerusalem and the Holy Land from Muslim control, with the First Crusade called in response to Byzantine requests for military aid.",
+        "reason": "The answer explains the territorial objective and the initiating request for Byzantine assistance, with all dates, actors, and the subsequent capture supported by actual documents. It appropriately limits its scope to the most commonly known Crusades. Reference-only material adds pilgrim access and a possible church-unification strategy, but those elaborations do not make this supported explanation materially incomplete.",
+        "evidence": [
+          {
+            "passage_id": "856995355_64191-65217",
+            "quote": "The crusades were intended to seize Jerusalem from Muslim control ."
+          },
+          {
+            "passage_id": "856995355_64191-65217",
+            "quote": "The First Crusade was proclaimed by Pope Urban II ( pope 1088 -- 99 ) at the Council of Clermont in 1095 in response to a request from the Byzantine Emperor Alexios I Komnenos ( r . 1081 -- 1118 ) for aid against further Muslim advances ."
+          },
+          {
+            "passage_id": "856995355_64191-65217",
+            "quote": "Tens of thousands of people from all levels of society mobilised across Europe and captured Jerusalem in 1099 ."
+          },
+          {
+            "passage_id": "801426592_1933-2570",
+            "quote": "The most commonly known Crusades were the campaigns in the Eastern Mediterranean aimed at recovering the Holy Land from Muslim rule , but the term `` Crusades '' is also applied to other church - sanctioned campaigns ."
+          }
+        ],
+        "elapsed_seconds": 8.000894259501365,
+        "confirmed_at_utc": "2026-10-31T01:26:47.192952+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "The original purpose of the crusades was to seize Jerusalem from Muslim control."
+    },
+    {
+      "claim_id": "c2",
+      "text": "This was proclaimed by Pope Urban II at the Council of Clermont in 1095 in response to a request from the Byzantine Emperor Alexios I Komnenos for aid against further Muslim advances."
+    },
+    {
+      "claim_id": "c3",
+      "text": "Tens of thousands of people from all levels of society mobilized across Europe and captured Jerusalem in 1099."
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "The original purpose of the crusades was to seize Jerusalem from Muslim control."
+      },
+      {
+        "claim_id": "c2",
+        "text": "This was proclaimed by Pope Urban II at the Council of Clermont in 1095 in response to a request from the Byzantine Emperor Alexios I Komnenos for aid against further Muslim advances."
+      },
+      {
+        "claim_id": "c3",
+        "text": "Tens of thousands of people from all levels of society mobilized across Europe and captured Jerusalem in 1099."
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-v1",
+    "normalized_prose": "The original purpose of the crusades was to seize Jerusalem from Muslim control. This was proclaimed by Pope Urban II at the Council of Clermont in 1095 in response to a request from the Byzantine Emperor Alexios I Komnenos for aid against further Muslim advances. Tens of thousands of people from all levels of society mobilized across Europe and captured Jerusalem in 1099.",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 81
+      },
+      {
+        "start": 81,
+        "end": 265
+      },
+      {
+        "start": 265,
+        "end": 375
+      }
+    ]
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "856995355_64191-65217",
+          "856995355_66074-66998",
+          "832692595_12692-13427",
+          "801426592_239-932",
+          "801426592_1933-2570"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "856995355_64191-65217",
+          "856995355_66074-66998",
+          "832692595_12692-13427",
+          "801426592_239-932",
+          "801426592_1933-2570"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "832692595_12692-13427",
+          "856995355_64191-65217",
+          "801426592_239-932",
+          "801426592_1933-2570",
+          "856995355_66074-66998"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "801426592_1933-2570",
+          "801426592_239-932",
+          "832692595_12692-13427",
+          "856995355_66074-66998",
+          "856995355_64191-65217"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "801426592_1933-2570",
+          "801426592_239-932",
+          "856995355_66074-66998",
+          "856995355_64191-65217",
+          "832692595_12692-13427"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "832692595_12692-13427",
+          "801426592_1933-2570",
+          "801426592_239-932",
+          "856995355_64191-65217",
+          "856995355_66074-66998"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "856995355_64191-65217",
+          "856995355_66074-66998",
+          "832692595_12692-13427",
+          "801426592_239-932",
+          "801426592_1933-2570"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "856995355_64191-65217",
+          "856995355_66074-66998",
+          "832692595_12692-13427",
+          "801426592_239-932",
+          "801426592_1933-2570"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "856995355_64191-65217",
+          "856995355_66074-66998",
+          "832692595_12692-13427",
+          "801426592_239-932",
+          "801426592_1933-2570"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "en",
+    "record_id": "clapnq:c508d78:train:7505837749424830684:answerable",
+    "document_group_id": "clapnq-title:crusades",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1/en/report.private.json",
+    "sha256": "cc15fbcd7dccb4b1877f4257cf2d0170e16d0172e2c600dbded21f5754ce3408"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "801426592_1933-2570",
+      "text": "The Crusades were a series of religious wars sanctioned by the Latin Church in the medieval period . The most commonly known Crusades were the campaigns in the Eastern Mediterranean aimed at recovering the Holy Land from Muslim rule , but the term `` Crusades '' is also applied to other church - sanctioned campaigns . These were fought for a variety of reasons including the suppression of paganism and heresy , the resolution of conflict among rival Roman Catholic groups , or for political and territorial advantage . At the time of the early Crusades the word did not exist , only becoming the leading descriptive term around 1760 .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "801426592_1933-2570",
+        "parent_text_sha256": "1f95d3dacd3b0729fcbb3c0719bcd40d365661de63d2f560cb37dd6d233c3416",
+        "passage_id": "801426592_1933-2570",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 149,
+          "end": 637,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "1f95d3dacd3b0729fcbb3c0719bcd40d365661de63d2f560cb37dd6d233c3416",
+        "title": "Crusades",
+        "source_url": "https://en.wikipedia.org/wiki/Crusades",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Crusades?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "801426592_239-932",
+      "text": "( hide ) Crusades In the Holy Land ( 1095 -- 1291 ) First 1101 Norwegian Venetian Second Third 1197 Fourth Fifth Sixth Barons ' Seventh Eighth Ninth After 1291 Smyrniote 1343 -- 1351 Alexandrian 1365 Savoyard 1366 Barbary 1390 Nicopolis 1396 Varna 1443 Portuguese 1481 Northern Crusades ( 1147 -- 1410 ) Wendish 1147 Swedish 1150 1249 1293 Livonian 1198 -- 1290 Prussian 1217 -- 1274 Lithuanian 1283 -- 1410 Popular crusades People 's 1096 Children 's 1212 Shepherds ' 1251 Poor 1309 Shepherds ' 1320 Against Christians Bosnian 1235 -- 1241 Albigensian 1209 -- 1229 Aragonese 1284 / 5 Despenser 's 1382 / 3 Hussite 1419 -- 1434 Reconquista ( 718 -- 1492 ) Book : The Crusades Portal : Crusades",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "801426592_239-932",
+        "parent_text_sha256": "1c4e9c734374f3a7839ce5990640431dd73a5965833aaedcf36dad9cd3fe6bf4",
+        "passage_id": "801426592_239-932",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 222,
+          "end": 693,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "1c4e9c734374f3a7839ce5990640431dd73a5965833aaedcf36dad9cd3fe6bf4",
+        "title": "Crusades",
+        "source_url": "https://en.wikipedia.org/wiki/Crusades",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Crusades?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "801426592_2571-3953",
+      "text": "In 1095 , Pope Urban II called for the First Crusade in a sermon at the Council of Clermont . He encouraged military support for the Byzantine Empire and its Emperor , Alexios I , who needed reinforcements for his conflict with westward migrating Turks colonizing Anatolia . One of Urban 's aims was to guarantee pilgrims access to the Eastern Mediterranean holy sites that were under Muslim control but scholars disagree as to whether this was the primary motive for Urban or those who heeded his call . Urban 's strategy may have been to unite the Eastern and Western branches of Christendom , which had been divided since the East -- West Schism of 1054 and to establish himself as head of the unified Church . The initial success of the Crusade established the first four Crusader states in the Eastern Mediterranean : the County of Edessa , the Principality of Antioch , the Kingdom of Jerusalem and the County of Tripoli . The enthusiastic response to Urban 's preaching from all classes in Western Europe established a precedent for other Crusades . Volunteers became Crusaders by taking a public vow and receiving plenary indulgences from the Church . Some were hoping for a mass ascension into heaven at Jerusalem or God 's forgiveness for all their sins . Others participated to satisfy feudal obligations , obtain glory and honour or to seek economic and political gain .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "801426592_2571-3953",
+        "parent_text_sha256": "6d171fdba7ffcfced0d6874895aea4740db464eb27bed84c6b233a2ee6252784",
+        "passage_id": "801426592_2571-3953",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 336,
+          "end": 1382,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "6d171fdba7ffcfced0d6874895aea4740db464eb27bed84c6b233a2ee6252784",
+        "title": "Crusades",
+        "source_url": "https://en.wikipedia.org/wiki/Crusades",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Crusades?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "832692595_12692-13427",
+      "text": "Following the fall of Roman Anatolia to the Muslim Turks , the Byzantines put out a call to the Pope in Rome for assistance in the 11th century . The result was a series of wars known as the Crusades launched by the Franks in Western Europe to reclaim the former Byzantine Christian territories in the Eastern Mediterranean , especially Syria and Palestine ( the Levant ) . The First Crusade succeeded in temporarily establishing the Kingdom of Jerusalem and the County of Tripoli as Roman Catholic Christian states along the coast . These crusader states made a lasting impact on the region , though their control was limited , and the region returned to full Muslim control after two centuries following the conquest by the Mamluks .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "832692595_12692-13427",
+        "parent_text_sha256": "f26c99b8f89054de33f08a172edb2816a800d6b2b967dac91e34d6c60a920916",
+        "passage_id": "832692595_12692-13427",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 173,
+          "end": 735,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "f26c99b8f89054de33f08a172edb2816a800d6b2b967dac91e34d6c60a920916",
+        "title": "Lebanon",
+        "source_url": "https://en.wikipedia.org/wiki/Lebanon",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Lebanon?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "856995355_64191-65217",
+      "text": "The crusades were intended to seize Jerusalem from Muslim control . The First Crusade was proclaimed by Pope Urban II ( pope 1088 -- 99 ) at the Council of Clermont in 1095 in response to a request from the Byzantine Emperor Alexios I Komnenos ( r . 1081 -- 1118 ) for aid against further Muslim advances . Urban promised indulgence to anyone who took part . Tens of thousands of people from all levels of society mobilised across Europe and captured Jerusalem in 1099 . One feature of the crusades was the pogroms against local Jews that often took place as the crusaders left their countries for the East . These were especially brutal during the First Crusade , when the Jewish communities in Cologne , Mainz , and Worms were destroyed , and other communities in cities between the rivers Seine and the Rhine suffered destruction . Another outgrowth of the crusades was the foundation of a new type of monastic order , the military orders of the Templars and Hospitallers , which fused monastic life with military service .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "856995355_64191-65217",
+        "parent_text_sha256": "9fe995cd0527c7f4b3cc0cdc3386f6c1a8d9a629f57dfd39ecae87303889d4bb",
+        "passage_id": "856995355_64191-65217",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 260,
+          "end": 1026,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "9fe995cd0527c7f4b3cc0cdc3386f6c1a8d9a629f57dfd39ecae87303889d4bb",
+        "title": "Middle Ages",
+        "source_url": "https://en.wikipedia.org/wiki/Middle_Ages",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Middle_Ages?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "856995355_66074-66998",
+      "text": "Popes called for crusades to take place elsewhere besides the Holy Land : in Spain , southern France , and along the Baltic . The Spanish crusades became fused with the Reconquista of Spain from the Muslims . Although the Templars and Hospitallers took part in the Spanish crusades , similar Spanish military religious orders were founded , most of which had become part of the two main orders of Calatrava and Santiago by the beginning of the 12th century . Northern Europe also remained outside Christian influence until the 11th century or later , and became a crusading venue as part of the Northern Crusades of the 12th to 14th centuries . These crusades also spawned a military order , the Order of the Sword Brothers . Another order , the Teutonic Knights , although founded in the crusader states , focused much of its activity in the Baltic after 1225 , and in 1309 moved its headquarters to Marienburg in Prussia .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "856995355_66074-66998",
+        "parent_text_sha256": "7195109c3faa2c28077d56172034ac34f465ae1f37770efb50e821203a633859",
+        "passage_id": "856995355_66074-66998",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 234,
+          "end": 924,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "7195109c3faa2c28077d56172034ac34f465ae1f37770efb50e821203a633859",
+        "title": "Middle Ages",
+        "source_url": "https://en.wikipedia.org/wiki/Middle_Ages",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Middle_Ages?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "801426592_2571-3953": {
+      "embedding_token_budget": 512,
+      "language": "en",
+      "parent_passage_id": "801426592_2571-3953",
+      "parent_text_sha256": "6d171fdba7ffcfced0d6874895aea4740db464eb27bed84c6b233a2ee6252784",
+      "passage_id": "801426592_2571-3953",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 336,
+        "end": 1382,
+        "start": 0
+      },
+      "source_dataset": "CLAPNQ",
+      "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+      "text_sha256": "6d171fdba7ffcfced0d6874895aea4740db464eb27bed84c6b233a2ee6252784",
+      "title": "Crusades",
+      "source_url": "https://en.wikipedia.org/wiki/Crusades",
+      "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+      "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+      "contributors_history_url": "https://en.wikipedia.org/wiki/Crusades?action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+        "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "801426592_2571-3953",
+      "text": "In 1095 , Pope Urban II called for the First Crusade in a sermon at the Council of Clermont . He encouraged military support for the Byzantine Empire and its Emperor , Alexios I , who needed reinforcements for his conflict with westward migrating Turks colonizing Anatolia . One of Urban 's aims was to guarantee pilgrims access to the Eastern Mediterranean holy sites that were under Muslim control but scholars disagree as to whether this was the primary motive for Urban or those who heeded his call . Urban 's strategy may have been to unite the Eastern and Western branches of Christendom , which had been divided since the East -- West Schism of 1054 and to establish himself as head of the unified Church . The initial success of the Crusade established the first four Crusader states in the Eastern Mediterranean : the County of Edessa , the Principality of Antioch , the Kingdom of Jerusalem and the County of Tripoli . The enthusiastic response to Urban 's preaching from all classes in Western Europe established a precedent for other Crusades . Volunteers became Crusaders by taking a public vow and receiving plenary indulgences from the Church . Some were hoping for a mass ascension into heaven at Jerusalem or God 's forgiveness for all their sins . Others participated to satisfy feudal obligations , obtain glory and honour or to seek economic and political gain .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "801426592_2571-3953",
+        "parent_text_sha256": "6d171fdba7ffcfced0d6874895aea4740db464eb27bed84c6b233a2ee6252784",
+        "passage_id": "801426592_2571-3953",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 336,
+          "end": 1382,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "6d171fdba7ffcfced0d6874895aea4740db464eb27bed84c6b233a2ee6252784",
+        "title": "Crusades",
+        "source_url": "https://en.wikipedia.org/wiki/Crusades",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Crusades?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/fixed-v23-study-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ]
+}

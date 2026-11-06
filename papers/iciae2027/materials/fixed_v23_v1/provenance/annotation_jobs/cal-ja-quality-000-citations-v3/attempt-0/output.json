@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "reliable",
+      "reason": "蝶をRhopalocera、それ以外のチョウ目を蛾とする区別と、その二分が自然な分類ではない点を説明している。これらは実使用文書e0004で、漢語についての追加説明は実使用文書e0000で支持される。追加説明の引用先はずれているが、実使用Context全体に裏付けがあり、重大な誤りではない。Referenceだけに依存した判定ではない。",
+      "evidence": ["e0004", "e0000"],
+      "essential_points": "蝶はチョウ目のRhopaloceraに属する群で、それ以外を蛾と呼ぶが、この二分は自然な系統分類ではないこと。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "情報不足の表明だけで、生育環境について実質的に回答していない。必須要点である常に暖かい場所への自生はReference側のe0011にあり、実使用Contextにはない。一方、実使用文書e0007には乾燥耐性や乾季の休眠があるものの最適条件は示されず、情報不足という説明自体には重大な誤りや非支持を認めない。必須回答の不足により判定する。",
+      "evidence": ["e0007", "e0011"],
+      "essential_points": "バオバブが常に暖かい場所に自生することを中心に、生育に適する環境を説明すること。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a002": {
+      "label": "unreliable",
+      "reason": "実使用文書e0013に、戸籍上の本名の改名には家庭裁判所の許可が必要と明記されているため、情報不足だけを述べる全面的な回答拒否は不適切である。Reference側のe0018にある届出や事由の詳細は実使用Contextとは区別するが、それらがなくても主要手続の一つには回答できる。",
+      "evidence": ["e0013", "e0018"],
+      "essential_points": "日本の本名の改名について家庭裁判所の許可と届出を説明し、氏と名で変更理由の条件が異なることを示すこと。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "乾燥耐性、乾季の休眠、幹内の水分蓄積、生育地の要約は実使用文書e0020に支持され、最適条件が明示されていないという限定も妥当である。しかし、生育環境への回答として必須の暖かさを示していない。この要点はReference側のe0024にのみあり、実使用Contextから補うことはできない。文書説明は正確でも、質問への必須回答が不足している。",
+      "evidence": ["e0020", "e0024"],
+      "essential_points": "バオバブが常に暖かい場所に自生することを中心に、生育に適する環境を説明し、最適条件として確定できない事項は限定すること。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    }
+  }
+}
