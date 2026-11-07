@@ -1,0 +1,58 @@
+{
+  "schema_version": 2,
+  "tag": "b11433",
+  "source_commit": "50569eb87df530daff11afda229ceb9ab8e6cae8",
+  "backend": "Ubuntu-x64-CUDA-12.9-graph-off-source-v1",
+  "directory": "data/runtimes/llama.cpp/b11433-cuda12.9-graph-off-v1",
+  "build": {
+    "registration": {
+      "path": "data/manifests/phase11_cuda_graph_off_build_registration_v2.json",
+      "sha256": "a80b3036688dbcd4d7105f6d7b8a44e62a1aa372ad7ebd8a0aa2e42e3daa0896"
+    },
+    "source_provenance": {
+      "path": "data/runs/runtime_build/phase11-cuda-graph-off-v2/source_provenance.json",
+      "sha256": "7860f71eaf13ee9212c36f51183ed457016be7a5b1c3644f750b92f6cefcf6e7"
+    },
+    "cmake_cache": {
+      "path": "data/runs/runtime_build/phase11-cuda-graph-off-v2/build/CMakeCache.txt",
+      "sha256": "f76d1397cb0066ac06c445dab6991a340a9e8d6eaa7c6bfaa34b53b1c06f3c5f"
+    }
+  },
+  "cmake_options": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CUDA_COMPILER": "/usr/local/cuda-12.9/bin/nvcc",
+    "CUDAToolkit_ROOT": "/usr/local/cuda-12.9",
+    "CMAKE_CUDA_ARCHITECTURES": "120a-real",
+    "GGML_CUDA": "ON",
+    "GGML_CUDA_GRAPHS": "OFF",
+    "LLAMA_BUILD_TESTS": "OFF",
+    "LLAMA_BUILD_EXAMPLES": "OFF",
+    "LLAMA_BUILD_APP": "OFF",
+    "LLAMA_OPENSSL": "OFF",
+    "LLAMA_BUILD_UI": "OFF",
+    "LLAMA_USE_PREBUILT_UI": "OFF",
+    "LLAMA_BUILD_SERVER": "ON",
+    "LLAMA_BUILD_TOOLS": "ON",
+    "LLAMA_BUILD_NUMBER": "11433",
+    "LLAMA_BUILD_COMMIT": "50569eb87df530daff11afda229ceb9ab8e6cae8"
+  },
+  "system_libraries": [
+    {
+      "source": "/usr/local/cuda-12.9/lib64/libcudart.so.12.9.79",
+      "name": "libcudart.so.12",
+      "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7"
+    },
+    {
+      "source": "/usr/local/cuda-12.9/lib64/libcublas.so.12.9.1.4",
+      "name": "libcublas.so.12",
+      "sha256": "d63456d94f1b8e2408a8a9538c8740eb474c9eba48a84f420b15e2e10fbcd048"
+    },
+    {
+      "source": "/usr/local/cuda-12.9/lib64/libcublasLt.so.12.9.1.4",
+      "name": "libcublasLt.so.12",
+      "sha256": "96ddf4891ca4f4ed1475966783a9185df2abd64a81c3cc713b96d036696fc541"
+    }
+  ],
+  "old_runtime_modified": false,
+  "phase12_allowed": false
+}

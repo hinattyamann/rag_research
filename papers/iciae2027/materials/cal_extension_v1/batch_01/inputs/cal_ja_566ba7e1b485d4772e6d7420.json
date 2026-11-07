@@ -1,0 +1,1021 @@
+{
+  "qa_key": "cal_ja_566ba7e1b485d4772e6d7420",
+  "cohort": "cal",
+  "language": "ja",
+  "analysis_role": "cal",
+  "source_qa_split": "calibration",
+  "record_id": "whrja:02e85c8:answered:962",
+  "document_group_id": "whrja-group:ce14eb446582cd58cac80f8f",
+  "qa_source": {
+    "answerability_scope": "human_answer_in_source_not_verified_common_corpus_coverage",
+    "corpus_answerability": "not_annotated_no_relabel_from_body_or_quote_availability",
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "document_group_id": "whrja-group:ce14eb446582cd58cac80f8f",
+    "gold_parent_ids": [
+      "jawiki:1120347:97072514:2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+      "jawiki:539557:97846001:6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432"
+    ],
+    "gold_passage_ids": [
+      "21731309393422971430902538739_0-757",
+      "72622262875811269806527557790_0-936"
+    ],
+    "gold_passage_ids_scope": "verified_literal_quote_overlap_children_only_not_metric_gold",
+    "gold_passage_mapping_status": "audited_cited_article_and_source_reference_markup_mapping_v2",
+    "gold_relevance_unit": "available_cited_source_article",
+    "is_answerable": true,
+    "language": "ja",
+    "provided_passage": null,
+    "question": "プレゼントとギフトの違いは？",
+    "record_id": "whrja:02e85c8:answered:962",
+    "reference_answer_sentences": [
+      {
+        "citations": [
+          0
+        ],
+        "text": "プレゼントは、日本語では贈り物の意味で用いられます。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "贈り物とは何か出来事があった際に贈る特別なものを指し、同義語としてギフト・ご進物があります。"
+      }
+    ],
+    "reference_answers": [
+      "プレゼントは、日本語では贈り物の意味で用いられます。贈り物とは何か出来事があった際に贈る特別なものを指し、同義語としてギフト・ご進物があります。"
+    ],
+    "reference_corpus_mapping": [
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "72622262875811269806527557790_0-936"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "exact",
+          "spans": [
+            {
+              "end": 58,
+              "source_span_sha256": "14632d43ac2abbbe16a5aa561d8a433031a54cf5425b5979ddc106799d9abbcd",
+              "start": 21
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:539557:97846001:6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+        "raw_article_status": "ok",
+        "reference_index": 0,
+        "source_reference_unit_id": "jawiki-page:539557"
+      },
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          1
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "21731309393422971430902538739_0-757"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "exact",
+          "spans": [
+            {
+              "end": 84,
+              "source_span_sha256": "ac9cd66949bca2af56daf8552c2ddf3115af9f7f159fd6eeb8bc72a019e8b09e",
+              "start": 21
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:1120347:97072514:2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "raw_article_status": "ok",
+        "reference_index": 1,
+        "source_reference_unit_id": "jawiki-page:1120347"
+      }
+    ],
+    "reference_corpus_metadata_offline_only": true,
+    "reference_evidence": [
+      {
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "プレゼント（英語：present）は、日本語では贈り物の意味で用いられる。",
+        "reference_index": 0,
+        "title": "プレゼント",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88"
+      },
+      {
+        "cited_by_answer_sentence_indices": [
+          1
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "贈り物（おくりもの）とは、何か出来事があった際に贈る特別なものを指す。同義語にプレゼント・ギフト・ご進物（ごしんもつ）がある。",
+        "reference_index": 1,
+        "title": "贈り物",
+        "url": "https://ja.wikipedia.org/wiki/%E8%B4%88%E3%82%8A%E7%89%A9"
+      }
+    ],
+    "research_split": "calibration",
+    "selected_sentences_by_reference": [
+      [
+        "プレゼント（英語：present）は、日本語では贈り物の意味で用いられる。",
+        "贈り物（おくりもの）とは、何か出来事があった際に贈る特別なものを指す。同義語にプレゼント・ギフト・ご進物（ごしんもつ）がある。"
+      ]
+    ],
+    "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+    "source_id": "962",
+    "source_line_index": 634,
+    "source_record_sha256": "eac5396d2e2c99bf08ce4e6fa8eead0d3e25087ab4560033a030ac58829ee6f0",
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "source_split": "answered",
+    "source_title": "プレゼント",
+    "unavailable_cited_reference_ids": []
+  },
+  "source_selection": {
+    "record_id": "whrja:02e85c8:answered:962",
+    "question": "プレゼントとギフトの違いは？",
+    "document_group_id": "whrja-group:ce14eb446582cd58cac80f8f"
+  },
+  "question": "プレゼントとギフトの違いは？",
+  "used_documents": [
+    {
+      "passage_id": "21731309393422971430902538739_2321-2950",
+      "title": "贈り物",
+      "text": "圧歳銭（日本でいうお年玉に相当）\nネイティブ・アメリカン\nポトラッチ\n民俗学的考察\n人類学者のブロニスワフ・マリノフスキはトロブリアンド諸島の部族が持つクラという交易の風習を研究し、その贈答・交換の儀式が、社会関係の形成や維持に貢献しているとした。\nマルセル・モースはクラやポトラッチといった贈与習俗を調査・研究した上で、売買という経済活動の起源は単純な物々交換ではなく、贈り物の提供・受容・返礼という宗教的観念を背景とした儀礼にあるとした。\n柳田國男は日本人の贈答でなぜ食物が重視されるかを考察した。そしてその起源は、節や祝祭で神を祀り、その供物を人にも提供したことにある、すなわち食物としての贈り物は本来、神に対する供物であったとした。\n和歌森太郎は柳田の考察を引き継いだ上で、まずは祭りの供物を神と祭祀に関わる者が共に食す神人共食思想があり、それが祭りに参加する人々も含めた共食へ広がり、人々の間でやりとりされる贈答という習慣につながったとし、また受け取った贈り物の一部を返す習俗はこの共食思想の名残とした。\n禁止\n1941年 - 戦時色が強くなった日本では歳暮、中元等の贈答廃止運動が行われた。\n脚注\n出典\n関連項目\n祝儀\n中元、歳暮\n懸賞\n賞品\n賞金（懸賞金）\nプレゼント（曖昧さ回避）\nギフト（曖昧さ回避）\nギフトショップ - 贈り物用の品を販売する店。\nカタログギフト - 任意の商品を受け取り手に選ばせるサービス。\n献上品\n供物\n投げ銭\n贈賄",
+      "source_metadata": {
+        "article_text_sha256": "2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1120347:97072514:2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21731309393422971430902538739_2321-2950",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 439,
+          "end": 2950,
+          "start": 2321
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514",
+        "text_sha256": "ab250a086fdb35a4d456c824173e0f95fca96c4ff8ba4517106d2bb1689a0fc1",
+        "title": "贈り物",
+        "wikipedia_page_id": 1120347,
+        "wikipedia_revision_id": 97072514,
+        "wikipedia_revision_timestamp_utc": "2023-09-23T23:40:14Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "ab250a086fdb35a4d456c824173e0f95fca96c4ff8ba4517106d2bb1689a0fc1",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 629
+      }
+    },
+    {
+      "passage_id": "21731309393422971430902538739_0-757",
+      "title": "贈り物",
+      "text": "クリスマスツリーの下に置かれたプレゼント\n贈り物（おくりもの）とは、何か出来事があった際に贈る特別なものを指す。同義語にプレゼント・ギフト・ご進物（ごしんもつ）がある。\n特徴\nいわゆる「商品」でない「贈り物」の特徴として、以下の3点が挙げられる。\n贈り物を媒介として、前の所有者の人格や感情が伝達される。\n友情や信頼の持続性を表明するため、お返しには一定の間隔をおく。\n贈り物では、交換価値（例えば金額換算）という思考が通常は排除される。\nマルセル・モースは『贈与論』において、贈与をめぐる3つの義務を提示した。\n贈り物を与える義務 - 動機は様々だが、先例や慣習といった暗黙の圧力や、受贈者が自分と他の贈与者候補を比量した時の結果を恐れる心理から発生する義務感によって贈られる。人は意識的、無意識的に受贈者から見返りを回収することを期待する。\nそれを受ける義務 - 贈り物を受けることで債務意識が生じる。しかし、贈り物を拒むことは人間関係を築く上で禍根を残すこともある。そのため、贈り物を受けることは関係を維持するための基本的なマナーとなる。\nお返しの義務 - 「貸し」「借り」を作ったままでは双方が落ち着かないのでお返しをする。こうした受贈者に生じる返礼の義務感を互酬性(reciprocity)とも呼ぶ。\nのちに、モーリス・ゴドリエは第4の義務として「神々や神を代表する人間へ贈与する義務」を追加した。歴史を遡るほど人々の生活の中で第4の義務の比重は高くなる。\n動機の例\n音楽ライブ会場のプレゼントBOX（日本）\n愛情\n祝福\n集合的無意識\nお見舞い\n餞別、土産\n富の再分配\n同調の確認（贈ること自体が目的の相互贈与）\n賄賂\n地域別の習慣\n地域を問わず見られるもの\n結婚\n出産\n誕生日\n結婚記念日\n葬儀\n日本\n",
+      "source_metadata": {
+        "article_text_sha256": "2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1120347:97072514:2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21731309393422971430902538739_0-757",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 757,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514",
+        "text_sha256": "cc7f7d5a63cea8fa1aefe971ec70b1e24f9940ee8ddb2cac8626e1fa41d8609c",
+        "title": "贈り物",
+        "wikipedia_page_id": 1120347,
+        "wikipedia_revision_id": 97072514,
+        "wikipedia_revision_timestamp_utc": "2023-09-23T23:40:14Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "cc7f7d5a63cea8fa1aefe971ec70b1e24f9940ee8ddb2cac8626e1fa41d8609c",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 757
+      }
+    },
+    {
+      "passage_id": "25617406510805866357707748936_822-1704",
+      "title": "パーティー",
+      "text": "バースデーパーティー（誕生日会、生誕祭）は、祝われる人物が生まれた記念の祝賀である。この伝統は西洋で19世紀半ばに始まったが20世紀半ばまで普及しなかった。現在では誕生日会が多くの文化で行われている。\n西洋文化では、バースデーパーティーに多くの一般的な儀式が含まれる。来客（ゲスト）側には、誕生日を迎える人へのプレゼントを持ってくるよう要請される場合もある。パーティー会場が、風船やリボン等で華やかに装飾されることも多い。バースデーケーキが一般に火を灯した蝋燭と共に提供され、誕生日を祝う言葉が掛けられた後に火が吹き消される。誕生日を迎えた人には、最初にケーキを切り分けた部分が与えられる。バースデーケーキがテーブルに持ち込まれる際には、誕生日を祝う「ハッピーバースデートゥーユー」などの歌がゲスト側によって歌われる。\n子供向けのバースデーパーティーでは、お祝いとして渡されたプレゼントをひとつひとつ開ける時間が取られることも多い。また子供向けの誕生日会では、主催側が来てくれた子達に「グッディバッグ(goodie bag)」という形でお返しのギフトをするのも一般的である。子供や大人でもカラフルなコーン型のパーティーハットをかぶることがある。\nバースデーパーティーは、文化の中で節目の年と見なされる年齢に達した人を祝う場合に、より盛大かつ豪華になる事が多い。欧米では幼少期から成人期への移行を祝うのが伝統で、北米の16歳誕生日 (Sweet sixteen (birthday)) やラテンアメリカの15歳誕生日（キンセアニェーラ）などがある。ユダヤ教徒も、成人期への移行を祝うバル・ミツワーを行う。\n日本では、60歳の還暦、77歳の喜寿、88歳の米寿など、高齢の誕生日で賀の祝いを盛大に行なうことがある。\nサプライズパーティー\nサプライズパーティーは、祝われる当人には事前告知することなく突然お祝いをするパーティーである。\n誕生日のサプライズパーティーが最も一般的な形である。大半のこうしたパーティーでは、ホスト側のほうが当人の来る1時間ほど前に到着している。",
+      "source_metadata": {
+        "article_text_sha256": "e979fb9afed78e8ddc1b437757604e29b4c5be6eb489a1ba9d0bfd13d44d4f9c",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:313436:97576148:e979fb9afed78e8ddc1b437757604e29b4c5be6eb489a1ba9d0bfd13d44d4f9c",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "25617406510805866357707748936_822-1704",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 499,
+          "end": 1704,
+          "start": 822
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97576148",
+        "text_sha256": "07b2d38179984282f6fbd5eb2e337ab6a39cf027b485cb99859ec06f2869c4e4",
+        "title": "パーティー",
+        "wikipedia_page_id": 313436,
+        "wikipedia_revision_id": 97576148,
+        "wikipedia_revision_timestamp_utc": "2023-10-24T04:32:57Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97576148&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "07b2d38179984282f6fbd5eb2e337ab6a39cf027b485cb99859ec06f2869c4e4",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 882
+      }
+    },
+    {
+      "passage_id": "72622262875811269806527557790_936-1326",
+      "title": "プレゼント",
+      "text": "『第82回 NHK全国学校音楽コンクール 中学校の部』課題曲。\nPRESENT (Mrs. GREEN APPLEの曲) - Mrs. GREEN APPLEの配信シングル（2020年）\nその他\nプレザン (Present) - ベルギーのプログレッシブ・ロック・グループ。\nたておか夏希の漫画。1988年 講談社コミックスなかよし ISBN 4061786067\nPRESENT BY LESLIE KEE - レスリー・キーによる写真集。\nTHE PRESENT - 2012年からベイエフエムで放送されているラジオ番組。パーソナリティーは宮澤エマ。\nプレゼント (映画) - 2020年のパレスチナの短編映画。\n関連項目\nプレゼンター (曖昧さ回避)\nプレゼンテーション\nギフト (曖昧さ回避)\n「プレゼント」で始まるページの一覧\nタイトルに「プレゼント」を含むページの一覧",
+      "source_metadata": {
+        "article_text_sha256": "6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:539557:97846001:6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "72622262875811269806527557790_936-1326",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 218,
+          "end": 1326,
+          "start": 936
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001",
+        "text_sha256": "9d6dc983314693ad20959bd8c4c39e07629c4001ea05b6e7d08683b013c3bbf6",
+        "title": "プレゼント",
+        "wikipedia_page_id": 539557,
+        "wikipedia_revision_id": 97846001,
+        "wikipedia_revision_timestamp_utc": "2023-11-11T08:02:41Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "9d6dc983314693ad20959bd8c4c39e07629c4001ea05b6e7d08683b013c3bbf6",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 390
+      }
+    },
+    {
+      "passage_id": "67847893339294733509848349636_8236-8992",
+      "title": "クリスマス",
+      "text": "ドイツの一部地域やオランダなどでは、12月6日が聖ニコラウスの日で、子供達は聖ニコラウスからプレゼントをもらうか、ニコラウスが連れてくるクネヒト・ループレヒトに罰を与えられる。プレゼントを貰えるのは、それまでの1年間に良い子だった子供だけで、悪い子は石炭を与えられたり、木の枝で打たれることになっている地域もある。さらに12月24日のクリスマス・イヴにもプレゼントが配られる。ドイツ語圏で24日にプレゼントを持ってくるのは、北部ではヴァイナハツマン（Weihnachtsmann：「聖夜の男」）、南部ではクリストキント（Christkind：「幼子キリスト」）とされている。\nドイツやオーストリア各地の町では、アドベントからクリスマスにかけて、町の中心部の広場にクリスマスマーケット（ヴァイナハツマルクト）が建ち、クリスマスプレゼントや、家庭でのクリスマスの祝いに備えた食品や飾りなどを買ったり、グリューワイン（クローブ、シナモンなど甘い香りのするスパイスで香りを付け、熱燗にしたワイン）を飲んで温まる。他にもドイツは、クリスマスツリーやアドベントリース（アドベントクランツ）、アドベントカレンダーなど、西方教会圏の多くに伝わるクリスマスの諸風習の発祥地とされる。近年では日本でもドイツ風のクリスマスマーケットが催されることがある。（「#商工業」も参照）\nナチス・ドイツ時代\n貧しい人へのクリスマス・プレゼント(1935年)\n→詳細は「ナチス・ドイツにおけるクリスマス」を参照\nナチス・ドイツにおけるクリスマスは、ナチ党のイデオロギーと整合させるための努力の賜物であった。ユダヤの出自を持つ、ユダヤ人の救世主イエスの誕生を記念する行事であるクリスマスは、ナチスの人種主義と折り合いをつけるのが困難な催しであった。",
+      "source_metadata": {
+        "article_text_sha256": "dc47d11f42bc81094881a7419af634c01c4fe302cbb9b86dac1e86228f53f17a",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:254559:98598920:dc47d11f42bc81094881a7419af634c01c4fe302cbb9b86dac1e86228f53f17a",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "67847893339294733509848349636_8236-8992",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 456,
+          "end": 8992,
+          "start": 8236
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98598920",
+        "text_sha256": "5eb939bf2cab8e3fcd3697345003cd7a3aead699a1d4f6887b1a83ca2c55c221",
+        "title": "クリスマス",
+        "wikipedia_page_id": 254559,
+        "wikipedia_revision_id": 98598920,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T13:51:06Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98598920&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "5eb939bf2cab8e3fcd3697345003cd7a3aead699a1d4f6887b1a83ca2c55c221",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 756
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "21731309393422971430902538739_0-757",
+      "title": "贈り物",
+      "text": "クリスマスツリーの下に置かれたプレゼント\n贈り物（おくりもの）とは、何か出来事があった際に贈る特別なものを指す。同義語にプレゼント・ギフト・ご進物（ごしんもつ）がある。\n特徴\nいわゆる「商品」でない「贈り物」の特徴として、以下の3点が挙げられる。\n贈り物を媒介として、前の所有者の人格や感情が伝達される。\n友情や信頼の持続性を表明するため、お返しには一定の間隔をおく。\n贈り物では、交換価値（例えば金額換算）という思考が通常は排除される。\nマルセル・モースは『贈与論』において、贈与をめぐる3つの義務を提示した。\n贈り物を与える義務 - 動機は様々だが、先例や慣習といった暗黙の圧力や、受贈者が自分と他の贈与者候補を比量した時の結果を恐れる心理から発生する義務感によって贈られる。人は意識的、無意識的に受贈者から見返りを回収することを期待する。\nそれを受ける義務 - 贈り物を受けることで債務意識が生じる。しかし、贈り物を拒むことは人間関係を築く上で禍根を残すこともある。そのため、贈り物を受けることは関係を維持するための基本的なマナーとなる。\nお返しの義務 - 「貸し」「借り」を作ったままでは双方が落ち着かないのでお返しをする。こうした受贈者に生じる返礼の義務感を互酬性(reciprocity)とも呼ぶ。\nのちに、モーリス・ゴドリエは第4の義務として「神々や神を代表する人間へ贈与する義務」を追加した。歴史を遡るほど人々の生活の中で第4の義務の比重は高くなる。\n動機の例\n音楽ライブ会場のプレゼントBOX（日本）\n愛情\n祝福\n集合的無意識\nお見舞い\n餞別、土産\n富の再分配\n同調の確認（贈ること自体が目的の相互贈与）\n賄賂\n地域別の習慣\n地域を問わず見られるもの\n結婚\n出産\n誕生日\n結婚記念日\n葬儀\n日本\n",
+      "source_metadata": {
+        "article_text_sha256": "2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1120347:97072514:2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21731309393422971430902538739_0-757",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 757,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514",
+        "text_sha256": "cc7f7d5a63cea8fa1aefe971ec70b1e24f9940ee8ddb2cac8626e1fa41d8609c",
+        "title": "贈り物",
+        "wikipedia_page_id": 1120347,
+        "wikipedia_revision_id": 97072514,
+        "wikipedia_revision_timestamp_utc": "2023-09-23T23:40:14Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "cc7f7d5a63cea8fa1aefe971ec70b1e24f9940ee8ddb2cac8626e1fa41d8609c",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 757
+      }
+    },
+    {
+      "passage_id": "72622262875811269806527557790_0-936",
+      "title": "プレゼント",
+      "text": "クリスマスツリーの下に置かれたプレゼント\nプレゼント（英語：present）は、日本語では贈り物の意味で用いられる。\n音楽\nアルバム\nPresent (浅香唯のアルバム) - 浅香唯のベストアルバム（1987年）\nPRESENT (RAZZ MA TAZZのアルバム) - RAZZ MA TAZZのアルバム（1996年）\n水色時代 キャラクター・ソング・コレクション Present - テレビアニメ『水色時代』のキャラクターソングアルバム（1996年）\nPresent (内田有紀のアルバム) - 内田有紀のベストアルバム（1997年）\nPresent (BONNIE PINKのアルバム) - BONNIE PINKのアルバム（2003年）。表題曲を収録。\nプレゼント (飯塚雅弓のアルバム) - 飯塚雅弓のミニアルバム（2005年）\nPresent (伊藤静のアルバム) - 伊藤静のミニアルバム（2011年）\nPRESENT (VALSHEのアルバム) - VALSHEのアルバム（2020年）。表題曲「present.」を収録。\nPRESENT (Ms.OOJAのアルバム) - Ms.OOJAのアルバム（2021年）\n楽曲\nプレゼント (JITTERIN'JINNの曲) - JITTERIN'JINNのシングル（1990年）\nプレゼント (東京少年の曲) - 東京少年のシングル（1990年）。フジテレビ系アニメ『らんま1/2 熱闘編』EDテーマ。\nプレゼント (3B LAB.☆の曲) - 3B LAB.☆のシングル（2003年）\nプレゼント (玉置浩二の曲) - 玉置浩二のシングル（2005年）。日本テレビ系 水曜ドラマ『あいのうた』主題歌。\nPRESENT (JUJUの曲) - JUJUのシングル（2009年）。映画『Disney's クリスマス・キャロル』イメージソング。\nPresent (flumpoolの曲) - flumpoolのシングル（2011年）。テレビ朝日『お願い!ランキング』EDテーマ。\nプレゼント (SEKAI NO OWARIの曲) - SEKAI NO OWARIのシングル『SOS/プレゼント』に収録（2015年）。",
+      "source_metadata": {
+        "article_text_sha256": "6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:539557:97846001:6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "72622262875811269806527557790_0-936",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 482,
+          "end": 936,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001",
+        "text_sha256": "a35f0d5701681bbb685f6ef20c2b6af4bb2a7193ab28c31aa9d0197551e853db",
+        "title": "プレゼント",
+        "wikipedia_page_id": 539557,
+        "wikipedia_revision_id": 97846001,
+        "wikipedia_revision_timestamp_utc": "2023-11-11T08:02:41Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "a35f0d5701681bbb685f6ef20c2b6af4bb2a7193ab28c31aa9d0197551e853db",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 936
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "プレゼントとギフトの違いは、贈り物の目的や背景、文化や地域によって微妙に異なる場合があります。贈り物は何か出来事があった際に贈る特別なものを指し、贈り物を媒介として、前の所有者の人格や感情が伝達されるという特徴があります。一方、ギフトは贈り物の一種で、贈り物を媒介として、友情や信頼の持続性を表明するため、お返しには一定の間隔をおくという特徴があります。また、贈り物では、交換価値という思考が通常は排除される一方、ギフトでは、贈り物の価値や意味がより重視されることがあります。",
+    "answer_sha256": "e8fa466fa9497e08487f6d690be607ae54a7180ec3179257742522da768eee03",
+    "quality": {
+      "annotation_id": "Q-f36430feac02d1222882",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-f36430feac02d1222882",
+        "candidate_sha256": "919b9c8a9c46c2031e25c5555c585baf7d177ec8e7f1a9dabce826c034318474",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "日本語ではプレゼントとギフトはいずれも贈り物を意味する同義語であること。",
+        "reason": "実使用文書e0001はプレゼントとギフトを贈り物の同義語としている。回答はこの要点を示さず、贈り物全般の特徴を両者の違いとして割り振っている。文化・地域による意味の差や、ギフトで価値がより重視されるという比較も実使用文書に根拠がない。",
+        "evidence": [
+          {
+            "passage_id": "21731309393422971430902538739_0-757",
+            "quote": "クリスマスツリーの下に置かれたプレゼント\n贈り物（おくりもの）とは、何か出来事があった際に贈る特別なものを指す。同義語にプレゼント・ギフト・ご進物（ごしんもつ）がある。\n特徴\nいわゆる「商品」でない「贈り物」の特徴として、以下の3点が挙げられる。\n贈り物を媒介として、前の所有者の人格や感情が伝達される。\n友情や信頼の持続性を表明するため、お返しには一定の間隔をおく。\n贈り物では、交換価値（例えば金額換算）という思考が通常は排除される。\nマルセル・モースは『贈与論』において、贈与をめぐる3つの義務を提示した。\n贈り物を与える義務 - 動機は様々だが、先例や慣習といった暗黙の圧力や、受贈者が自分と他の贈与者候補を比量した時の結果を恐れる心理から発生する義務感によって贈られる。人は意識的、無意識的に受贈者から見返りを回収することを期待する。\nそれを受ける義務 - 贈り物を受けることで債務意識が生じる。しかし、贈り物を拒むことは人間関係を築く上で禍根を残すこともある。そのため、贈り物を受けることは関係を維持するための基本的なマナーとなる。\nお返しの義務 - 「貸し」「借り」を作ったままでは双方が落ち着かないのでお返しをする。こうした受贈者に生じる返礼の義務感を互酬性(reciprocity)とも呼ぶ。\nのちに、モーリス・ゴドリエは第4の義務として「神々や神を代表する人間へ贈与する義務」を追加した。歴史を遡るほど人々の生活の中で第4の義務の比重は高くなる。\n動機の例\n音楽ライブ会場のプレゼントBOX（日本）\n愛情\n祝福\n集合的無意識\nお見舞い\n餞別、土産\n富の再分配\n同調の確認（贈ること自体が目的の相互贈与）\n賄賂\n地域別の習慣\n地域を問わず見られるもの\n結婚\n出産\n誕生日\n結婚記念日\n葬儀\n日本\n"
+          }
+        ],
+        "elapsed_seconds": 7.5012275627523195,
+        "confirmed_at_utc": "2026-11-07T10:45:37.562402+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_01/ja/baseline/566ba7e1b485d4772e6d7420/record.json",
+      "sha256": "30728a783e7f6293df61b1386eff7643fd1cf7ba0a3c624c05528c7ed1ee9604"
+    },
+    "copy": "provenance/baselines/cal_ja_566ba7e1b485d4772e6d7420.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "提供された文書によると、「プレゼント」と「ギフト」は「贈り物（おくりもの）」の同義語として扱われ、明確な違いは定義されていない [21731309393422971430902538739_0-757]。両者は以下の共通する特徴を持つとされている。\n1. 贈り物を媒介として、前の所有者の人格や感情が伝達される [21731309393422971430902538739_0-757]。\n2. 友情や信頼の持続性を表明するため、お返しには一定の間隔をおく [21731309393422971430902538739_0-757]。\n3. 交換価値（例えば金額換算）という思考が通常は排除される [21731309393422971430902538739_0-757]。",
+    "answer_sha256": "5349d3c040ed110542f77ad50c43b4750fe56786b3f88f4a5e0afb1108ef2e02",
+    "quality": {
+      "annotation_id": "Q-b6e2c729a4f0d319dd56",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-b6e2c729a4f0d319dd56",
+        "candidate_sha256": "17c9e1c6339f21ad40408f932bfd72c1d4ae2c8d4ccaf8c851f8a24459f13f5e",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "プレゼントとギフトは、提供文書では共に贈り物を意味する同義語として扱われ、明確な区別は示されていないこと。",
+        "reason": "両語が贈り物の同義語であるという質問の核心に答えている。違いが定義されていないという説明は提供文書内に範囲を限定しており、追加の三つの特徴も実使用Contextのe0007に記載されている。Referenceのみの文書で支持を補う必要はない。",
+        "evidence": [
+          {
+            "passage_id": "21731309393422971430902538739_0-757",
+            "quote": "クリスマスツリーの下に置かれたプレゼント\n贈り物（おくりもの）とは、何か出来事があった際に贈る特別なものを指す。同義語にプレゼント・ギフト・ご進物（ごしんもつ）がある。\n特徴\nいわゆる「商品」でない「贈り物」の特徴として、以下の3点が挙げられる。\n贈り物を媒介として、前の所有者の人格や感情が伝達される。\n友情や信頼の持続性を表明するため、お返しには一定の間隔をおく。\n贈り物では、交換価値（例えば金額換算）という思考が通常は排除される。\nマルセル・モースは『贈与論』において、贈与をめぐる3つの義務を提示した。\n贈り物を与える義務 - 動機は様々だが、先例や慣習といった暗黙の圧力や、受贈者が自分と他の贈与者候補を比量した時の結果を恐れる心理から発生する義務感によって贈られる。人は意識的、無意識的に受贈者から見返りを回収することを期待する。\nそれを受ける義務 - 贈り物を受けることで債務意識が生じる。しかし、贈り物を拒むことは人間関係を築く上で禍根を残すこともある。そのため、贈り物を受けることは関係を維持するための基本的なマナーとなる。\nお返しの義務 - 「貸し」「借り」を作ったままでは双方が落ち着かないのでお返しをする。こうした受贈者に生じる返礼の義務感を互酬性(reciprocity)とも呼ぶ。\nのちに、モーリス・ゴドリエは第4の義務として「神々や神を代表する人間へ贈与する義務」を追加した。歴史を遡るほど人々の生活の中で第4の義務の比重は高くなる。\n動機の例\n音楽ライブ会場のプレゼントBOX（日本）\n愛情\n祝福\n集合的無意識\nお見舞い\n餞別、土産\n富の再分配\n同調の確認（贈ること自体が目的の相互贈与）\n賄賂\n地域別の習慣\n地域を問わず見られるもの\n結婚\n出産\n誕生日\n結婚記念日\n葬儀\n日本\n"
+          }
+        ],
+        "elapsed_seconds": 10.501374964253046,
+        "confirmed_at_utc": "2026-11-07T10:49:44.042204+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "プレゼントとギフトの違いは、贈り物の目的や背景、文化や地域によって微妙に異なる場合があります。"
+    },
+    {
+      "claim_id": "c2",
+      "text": "贈り物は何か出来事があった際に贈る特別なものを指し、贈り物を媒介として、前の所有者の人格や感情が伝達されるという特徴があります。"
+    },
+    {
+      "claim_id": "c3",
+      "text": "一方、ギフトは贈り物の一種で、贈り物を媒介として、友情や信頼の持続性を表明するため、お返しには一定の間隔をおくという特徴があります。"
+    },
+    {
+      "claim_id": "c4",
+      "text": "また、贈り物では、交換価値という思考が通常は排除される一方、ギフトでは、贈り物の価値や意味がより重視されることがあります。"
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "プレゼントとギフトの違いは、贈り物の目的や背景、文化や地域によって微妙に異なる場合があります。"
+      },
+      {
+        "claim_id": "c2",
+        "text": "贈り物は何か出来事があった際に贈る特別なものを指し、贈り物を媒介として、前の所有者の人格や感情が伝達されるという特徴があります。"
+      },
+      {
+        "claim_id": "c3",
+        "text": "一方、ギフトは贈り物の一種で、贈り物を媒介として、友情や信頼の持続性を表明するため、お返しには一定の間隔をおくという特徴があります。"
+      },
+      {
+        "claim_id": "c4",
+        "text": "また、贈り物では、交換価値という思考が通常は排除される一方、ギフトでは、贈り物の価値や意味がより重視されることがあります。"
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-ja-v1",
+    "normalized_prose": "プレゼントとギフトの違いは、贈り物の目的や背景、文化や地域によって微妙に異なる場合があります。贈り物は何か出来事があった際に贈る特別なものを指し、贈り物を媒介として、前の所有者の人格や感情が伝達されるという特徴があります。一方、ギフトは贈り物の一種で、贈り物を媒介として、友情や信頼の持続性を表明するため、お返しには一定の間隔をおくという特徴があります。また、贈り物では、交換価値という思考が通常は排除される一方、ギフトでは、贈り物の価値や意味がより重視されることがあります。",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 47
+      },
+      {
+        "start": 47,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 177
+      },
+      {
+        "start": 177,
+        "end": 238
+      }
+    ],
+    "unclosed_delimiters": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "21731309393422971430902538739_2321-2950",
+          "21731309393422971430902538739_0-757",
+          "25617406510805866357707748936_822-1704",
+          "72622262875811269806527557790_936-1326",
+          "67847893339294733509848349636_8236-8992"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "21731309393422971430902538739_0-757",
+          "72622262875811269806527557790_936-1326",
+          "67847893339294733509848349636_8236-8992",
+          "21731309393422971430902538739_2321-2950",
+          "25617406510805866357707748936_822-1704"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "21731309393422971430902538739_2321-2950",
+          "21731309393422971430902538739_0-757",
+          "25617406510805866357707748936_822-1704",
+          "72622262875811269806527557790_936-1326",
+          "67847893339294733509848349636_8236-8992"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "21731309393422971430902538739_2321-2950",
+          "21731309393422971430902538739_0-757",
+          "25617406510805866357707748936_822-1704",
+          "72622262875811269806527557790_936-1326",
+          "67847893339294733509848349636_8236-8992"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "72622262875811269806527557790_936-1326",
+          "21731309393422971430902538739_0-757",
+          "25617406510805866357707748936_822-1704",
+          "21731309393422971430902538739_2321-2950",
+          "67847893339294733509848349636_8236-8992"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "21731309393422971430902538739_2321-2950",
+          "21731309393422971430902538739_0-757",
+          "25617406510805866357707748936_822-1704",
+          "72622262875811269806527557790_936-1326",
+          "67847893339294733509848349636_8236-8992"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "21731309393422971430902538739_2321-2950",
+          "21731309393422971430902538739_0-757",
+          "25617406510805866357707748936_822-1704",
+          "72622262875811269806527557790_936-1326",
+          "67847893339294733509848349636_8236-8992"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "67847893339294733509848349636_8236-8992",
+          "25617406510805866357707748936_822-1704",
+          "72622262875811269806527557790_936-1326",
+          "21731309393422971430902538739_2321-2950",
+          "21731309393422971430902538739_0-757"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "67847893339294733509848349636_8236-8992",
+          "72622262875811269806527557790_936-1326",
+          "25617406510805866357707748936_822-1704",
+          "21731309393422971430902538739_0-757",
+          "21731309393422971430902538739_2321-2950"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "ja",
+    "record_id": "whrja:02e85c8:answered:962",
+    "document_group_id": "whrja-group:ce14eb446582cd58cac80f8f",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_01/ja/report.private.json",
+    "sha256": "382554fbfe0caa296ea4fc35ad323d81f4470505cae1901f6834c90d39b7d7a8"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "21731309393422971430902538739_0-757",
+      "text": "クリスマスツリーの下に置かれたプレゼント\n贈り物（おくりもの）とは、何か出来事があった際に贈る特別なものを指す。同義語にプレゼント・ギフト・ご進物（ごしんもつ）がある。\n特徴\nいわゆる「商品」でない「贈り物」の特徴として、以下の3点が挙げられる。\n贈り物を媒介として、前の所有者の人格や感情が伝達される。\n友情や信頼の持続性を表明するため、お返しには一定の間隔をおく。\n贈り物では、交換価値（例えば金額換算）という思考が通常は排除される。\nマルセル・モースは『贈与論』において、贈与をめぐる3つの義務を提示した。\n贈り物を与える義務 - 動機は様々だが、先例や慣習といった暗黙の圧力や、受贈者が自分と他の贈与者候補を比量した時の結果を恐れる心理から発生する義務感によって贈られる。人は意識的、無意識的に受贈者から見返りを回収することを期待する。\nそれを受ける義務 - 贈り物を受けることで債務意識が生じる。しかし、贈り物を拒むことは人間関係を築く上で禍根を残すこともある。そのため、贈り物を受けることは関係を維持するための基本的なマナーとなる。\nお返しの義務 - 「貸し」「借り」を作ったままでは双方が落ち着かないのでお返しをする。こうした受贈者に生じる返礼の義務感を互酬性(reciprocity)とも呼ぶ。\nのちに、モーリス・ゴドリエは第4の義務として「神々や神を代表する人間へ贈与する義務」を追加した。歴史を遡るほど人々の生活の中で第4の義務の比重は高くなる。\n動機の例\n音楽ライブ会場のプレゼントBOX（日本）\n愛情\n祝福\n集合的無意識\nお見舞い\n餞別、土産\n富の再分配\n同調の確認（贈ること自体が目的の相互贈与）\n賄賂\n地域別の習慣\n地域を問わず見られるもの\n結婚\n出産\n誕生日\n結婚記念日\n葬儀\n日本\n",
+      "source_metadata": {
+        "article_text_sha256": "2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1120347:97072514:2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21731309393422971430902538739_0-757",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 757,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514",
+        "text_sha256": "cc7f7d5a63cea8fa1aefe971ec70b1e24f9940ee8ddb2cac8626e1fa41d8609c",
+        "title": "贈り物",
+        "wikipedia_page_id": 1120347,
+        "wikipedia_revision_id": 97072514,
+        "wikipedia_revision_timestamp_utc": "2023-09-23T23:40:14Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "21731309393422971430902538739_2321-2950",
+      "text": "圧歳銭（日本でいうお年玉に相当）\nネイティブ・アメリカン\nポトラッチ\n民俗学的考察\n人類学者のブロニスワフ・マリノフスキはトロブリアンド諸島の部族が持つクラという交易の風習を研究し、その贈答・交換の儀式が、社会関係の形成や維持に貢献しているとした。\nマルセル・モースはクラやポトラッチといった贈与習俗を調査・研究した上で、売買という経済活動の起源は単純な物々交換ではなく、贈り物の提供・受容・返礼という宗教的観念を背景とした儀礼にあるとした。\n柳田國男は日本人の贈答でなぜ食物が重視されるかを考察した。そしてその起源は、節や祝祭で神を祀り、その供物を人にも提供したことにある、すなわち食物としての贈り物は本来、神に対する供物であったとした。\n和歌森太郎は柳田の考察を引き継いだ上で、まずは祭りの供物を神と祭祀に関わる者が共に食す神人共食思想があり、それが祭りに参加する人々も含めた共食へ広がり、人々の間でやりとりされる贈答という習慣につながったとし、また受け取った贈り物の一部を返す習俗はこの共食思想の名残とした。\n禁止\n1941年 - 戦時色が強くなった日本では歳暮、中元等の贈答廃止運動が行われた。\n脚注\n出典\n関連項目\n祝儀\n中元、歳暮\n懸賞\n賞品\n賞金（懸賞金）\nプレゼント（曖昧さ回避）\nギフト（曖昧さ回避）\nギフトショップ - 贈り物用の品を販売する店。\nカタログギフト - 任意の商品を受け取り手に選ばせるサービス。\n献上品\n供物\n投げ銭\n贈賄",
+      "source_metadata": {
+        "article_text_sha256": "2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1120347:97072514:2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21731309393422971430902538739_2321-2950",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 439,
+          "end": 2950,
+          "start": 2321
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514",
+        "text_sha256": "ab250a086fdb35a4d456c824173e0f95fca96c4ff8ba4517106d2bb1689a0fc1",
+        "title": "贈り物",
+        "wikipedia_page_id": 1120347,
+        "wikipedia_revision_id": 97072514,
+        "wikipedia_revision_timestamp_utc": "2023-09-23T23:40:14Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "25617406510805866357707748936_822-1704",
+      "text": "バースデーパーティー（誕生日会、生誕祭）は、祝われる人物が生まれた記念の祝賀である。この伝統は西洋で19世紀半ばに始まったが20世紀半ばまで普及しなかった。現在では誕生日会が多くの文化で行われている。\n西洋文化では、バースデーパーティーに多くの一般的な儀式が含まれる。来客（ゲスト）側には、誕生日を迎える人へのプレゼントを持ってくるよう要請される場合もある。パーティー会場が、風船やリボン等で華やかに装飾されることも多い。バースデーケーキが一般に火を灯した蝋燭と共に提供され、誕生日を祝う言葉が掛けられた後に火が吹き消される。誕生日を迎えた人には、最初にケーキを切り分けた部分が与えられる。バースデーケーキがテーブルに持ち込まれる際には、誕生日を祝う「ハッピーバースデートゥーユー」などの歌がゲスト側によって歌われる。\n子供向けのバースデーパーティーでは、お祝いとして渡されたプレゼントをひとつひとつ開ける時間が取られることも多い。また子供向けの誕生日会では、主催側が来てくれた子達に「グッディバッグ(goodie bag)」という形でお返しのギフトをするのも一般的である。子供や大人でもカラフルなコーン型のパーティーハットをかぶることがある。\nバースデーパーティーは、文化の中で節目の年と見なされる年齢に達した人を祝う場合に、より盛大かつ豪華になる事が多い。欧米では幼少期から成人期への移行を祝うのが伝統で、北米の16歳誕生日 (Sweet sixteen (birthday)) やラテンアメリカの15歳誕生日（キンセアニェーラ）などがある。ユダヤ教徒も、成人期への移行を祝うバル・ミツワーを行う。\n日本では、60歳の還暦、77歳の喜寿、88歳の米寿など、高齢の誕生日で賀の祝いを盛大に行なうことがある。\nサプライズパーティー\nサプライズパーティーは、祝われる当人には事前告知することなく突然お祝いをするパーティーである。\n誕生日のサプライズパーティーが最も一般的な形である。大半のこうしたパーティーでは、ホスト側のほうが当人の来る1時間ほど前に到着している。",
+      "source_metadata": {
+        "article_text_sha256": "e979fb9afed78e8ddc1b437757604e29b4c5be6eb489a1ba9d0bfd13d44d4f9c",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:313436:97576148:e979fb9afed78e8ddc1b437757604e29b4c5be6eb489a1ba9d0bfd13d44d4f9c",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "25617406510805866357707748936_822-1704",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 499,
+          "end": 1704,
+          "start": 822
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97576148",
+        "text_sha256": "07b2d38179984282f6fbd5eb2e337ab6a39cf027b485cb99859ec06f2869c4e4",
+        "title": "パーティー",
+        "wikipedia_page_id": 313436,
+        "wikipedia_revision_id": 97576148,
+        "wikipedia_revision_timestamp_utc": "2023-10-24T04:32:57Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97576148&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "67847893339294733509848349636_8236-8992",
+      "text": "ドイツの一部地域やオランダなどでは、12月6日が聖ニコラウスの日で、子供達は聖ニコラウスからプレゼントをもらうか、ニコラウスが連れてくるクネヒト・ループレヒトに罰を与えられる。プレゼントを貰えるのは、それまでの1年間に良い子だった子供だけで、悪い子は石炭を与えられたり、木の枝で打たれることになっている地域もある。さらに12月24日のクリスマス・イヴにもプレゼントが配られる。ドイツ語圏で24日にプレゼントを持ってくるのは、北部ではヴァイナハツマン（Weihnachtsmann：「聖夜の男」）、南部ではクリストキント（Christkind：「幼子キリスト」）とされている。\nドイツやオーストリア各地の町では、アドベントからクリスマスにかけて、町の中心部の広場にクリスマスマーケット（ヴァイナハツマルクト）が建ち、クリスマスプレゼントや、家庭でのクリスマスの祝いに備えた食品や飾りなどを買ったり、グリューワイン（クローブ、シナモンなど甘い香りのするスパイスで香りを付け、熱燗にしたワイン）を飲んで温まる。他にもドイツは、クリスマスツリーやアドベントリース（アドベントクランツ）、アドベントカレンダーなど、西方教会圏の多くに伝わるクリスマスの諸風習の発祥地とされる。近年では日本でもドイツ風のクリスマスマーケットが催されることがある。（「#商工業」も参照）\nナチス・ドイツ時代\n貧しい人へのクリスマス・プレゼント(1935年)\n→詳細は「ナチス・ドイツにおけるクリスマス」を参照\nナチス・ドイツにおけるクリスマスは、ナチ党のイデオロギーと整合させるための努力の賜物であった。ユダヤの出自を持つ、ユダヤ人の救世主イエスの誕生を記念する行事であるクリスマスは、ナチスの人種主義と折り合いをつけるのが困難な催しであった。",
+      "source_metadata": {
+        "article_text_sha256": "dc47d11f42bc81094881a7419af634c01c4fe302cbb9b86dac1e86228f53f17a",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:254559:98598920:dc47d11f42bc81094881a7419af634c01c4fe302cbb9b86dac1e86228f53f17a",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "67847893339294733509848349636_8236-8992",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 456,
+          "end": 8992,
+          "start": 8236
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98598920",
+        "text_sha256": "5eb939bf2cab8e3fcd3697345003cd7a3aead699a1d4f6887b1a83ca2c55c221",
+        "title": "クリスマス",
+        "wikipedia_page_id": 254559,
+        "wikipedia_revision_id": 98598920,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T13:51:06Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98598920&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "72622262875811269806527557790_0-936",
+      "text": "クリスマスツリーの下に置かれたプレゼント\nプレゼント（英語：present）は、日本語では贈り物の意味で用いられる。\n音楽\nアルバム\nPresent (浅香唯のアルバム) - 浅香唯のベストアルバム（1987年）\nPRESENT (RAZZ MA TAZZのアルバム) - RAZZ MA TAZZのアルバム（1996年）\n水色時代 キャラクター・ソング・コレクション Present - テレビアニメ『水色時代』のキャラクターソングアルバム（1996年）\nPresent (内田有紀のアルバム) - 内田有紀のベストアルバム（1997年）\nPresent (BONNIE PINKのアルバム) - BONNIE PINKのアルバム（2003年）。表題曲を収録。\nプレゼント (飯塚雅弓のアルバム) - 飯塚雅弓のミニアルバム（2005年）\nPresent (伊藤静のアルバム) - 伊藤静のミニアルバム（2011年）\nPRESENT (VALSHEのアルバム) - VALSHEのアルバム（2020年）。表題曲「present.」を収録。\nPRESENT (Ms.OOJAのアルバム) - Ms.OOJAのアルバム（2021年）\n楽曲\nプレゼント (JITTERIN'JINNの曲) - JITTERIN'JINNのシングル（1990年）\nプレゼント (東京少年の曲) - 東京少年のシングル（1990年）。フジテレビ系アニメ『らんま1/2 熱闘編』EDテーマ。\nプレゼント (3B LAB.☆の曲) - 3B LAB.☆のシングル（2003年）\nプレゼント (玉置浩二の曲) - 玉置浩二のシングル（2005年）。日本テレビ系 水曜ドラマ『あいのうた』主題歌。\nPRESENT (JUJUの曲) - JUJUのシングル（2009年）。映画『Disney's クリスマス・キャロル』イメージソング。\nPresent (flumpoolの曲) - flumpoolのシングル（2011年）。テレビ朝日『お願い!ランキング』EDテーマ。\nプレゼント (SEKAI NO OWARIの曲) - SEKAI NO OWARIのシングル『SOS/プレゼント』に収録（2015年）。",
+      "source_metadata": {
+        "article_text_sha256": "6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:539557:97846001:6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "72622262875811269806527557790_0-936",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 482,
+          "end": 936,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001",
+        "text_sha256": "a35f0d5701681bbb685f6ef20c2b6af4bb2a7193ab28c31aa9d0197551e853db",
+        "title": "プレゼント",
+        "wikipedia_page_id": 539557,
+        "wikipedia_revision_id": 97846001,
+        "wikipedia_revision_timestamp_utc": "2023-11-11T08:02:41Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "72622262875811269806527557790_936-1326",
+      "text": "『第82回 NHK全国学校音楽コンクール 中学校の部』課題曲。\nPRESENT (Mrs. GREEN APPLEの曲) - Mrs. GREEN APPLEの配信シングル（2020年）\nその他\nプレザン (Present) - ベルギーのプログレッシブ・ロック・グループ。\nたておか夏希の漫画。1988年 講談社コミックスなかよし ISBN 4061786067\nPRESENT BY LESLIE KEE - レスリー・キーによる写真集。\nTHE PRESENT - 2012年からベイエフエムで放送されているラジオ番組。パーソナリティーは宮澤エマ。\nプレゼント (映画) - 2020年のパレスチナの短編映画。\n関連項目\nプレゼンター (曖昧さ回避)\nプレゼンテーション\nギフト (曖昧さ回避)\n「プレゼント」で始まるページの一覧\nタイトルに「プレゼント」を含むページの一覧",
+      "source_metadata": {
+        "article_text_sha256": "6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:539557:97846001:6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "72622262875811269806527557790_936-1326",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 218,
+          "end": 1326,
+          "start": 936
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001",
+        "text_sha256": "9d6dc983314693ad20959bd8c4c39e07629c4001ea05b6e7d08683b013c3bbf6",
+        "title": "プレゼント",
+        "wikipedia_page_id": 539557,
+        "wikipedia_revision_id": 97846001,
+        "wikipedia_revision_timestamp_utc": "2023-11-11T08:02:41Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "21731309393422971430902538739_0-757": {
+      "article_text_sha256": "2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:1120347:97072514:2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "21731309393422971430902538739_0-757",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 498,
+        "end": 757,
+        "start": 0
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514",
+      "text_sha256": "cc7f7d5a63cea8fa1aefe971ec70b1e24f9940ee8ddb2cac8626e1fa41d8609c",
+      "title": "贈り物",
+      "wikipedia_page_id": 1120347,
+      "wikipedia_revision_id": 97072514,
+      "wikipedia_revision_timestamp_utc": "2023-09-23T23:40:14Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    },
+    "72622262875811269806527557790_0-936": {
+      "article_text_sha256": "6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:539557:97846001:6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "72622262875811269806527557790_0-936",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 482,
+        "end": 936,
+        "start": 0
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001",
+      "text_sha256": "a35f0d5701681bbb685f6ef20c2b6af4bb2a7193ab28c31aa9d0197551e853db",
+      "title": "プレゼント",
+      "wikipedia_page_id": 539557,
+      "wikipedia_revision_id": 97846001,
+      "wikipedia_revision_timestamp_utc": "2023-11-11T08:02:41Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "21731309393422971430902538739_0-757",
+      "text": "クリスマスツリーの下に置かれたプレゼント\n贈り物（おくりもの）とは、何か出来事があった際に贈る特別なものを指す。同義語にプレゼント・ギフト・ご進物（ごしんもつ）がある。\n特徴\nいわゆる「商品」でない「贈り物」の特徴として、以下の3点が挙げられる。\n贈り物を媒介として、前の所有者の人格や感情が伝達される。\n友情や信頼の持続性を表明するため、お返しには一定の間隔をおく。\n贈り物では、交換価値（例えば金額換算）という思考が通常は排除される。\nマルセル・モースは『贈与論』において、贈与をめぐる3つの義務を提示した。\n贈り物を与える義務 - 動機は様々だが、先例や慣習といった暗黙の圧力や、受贈者が自分と他の贈与者候補を比量した時の結果を恐れる心理から発生する義務感によって贈られる。人は意識的、無意識的に受贈者から見返りを回収することを期待する。\nそれを受ける義務 - 贈り物を受けることで債務意識が生じる。しかし、贈り物を拒むことは人間関係を築く上で禍根を残すこともある。そのため、贈り物を受けることは関係を維持するための基本的なマナーとなる。\nお返しの義務 - 「貸し」「借り」を作ったままでは双方が落ち着かないのでお返しをする。こうした受贈者に生じる返礼の義務感を互酬性(reciprocity)とも呼ぶ。\nのちに、モーリス・ゴドリエは第4の義務として「神々や神を代表する人間へ贈与する義務」を追加した。歴史を遡るほど人々の生活の中で第4の義務の比重は高くなる。\n動機の例\n音楽ライブ会場のプレゼントBOX（日本）\n愛情\n祝福\n集合的無意識\nお見舞い\n餞別、土産\n富の再分配\n同調の確認（贈ること自体が目的の相互贈与）\n賄賂\n地域別の習慣\n地域を問わず見られるもの\n結婚\n出産\n誕生日\n結婚記念日\n葬儀\n日本\n",
+      "source_metadata": {
+        "article_text_sha256": "2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:1120347:97072514:2ff9ebd8ca67e6e135fcb627a80f6a9fea8c45b60df5dd6d1f94e43a6956469e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21731309393422971430902538739_0-757",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 757,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514",
+        "text_sha256": "cc7f7d5a63cea8fa1aefe971ec70b1e24f9940ee8ddb2cac8626e1fa41d8609c",
+        "title": "贈り物",
+        "wikipedia_page_id": 1120347,
+        "wikipedia_revision_id": 97072514,
+        "wikipedia_revision_timestamp_utc": "2023-09-23T23:40:14Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97072514&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "72622262875811269806527557790_0-936",
+      "text": "クリスマスツリーの下に置かれたプレゼント\nプレゼント（英語：present）は、日本語では贈り物の意味で用いられる。\n音楽\nアルバム\nPresent (浅香唯のアルバム) - 浅香唯のベストアルバム（1987年）\nPRESENT (RAZZ MA TAZZのアルバム) - RAZZ MA TAZZのアルバム（1996年）\n水色時代 キャラクター・ソング・コレクション Present - テレビアニメ『水色時代』のキャラクターソングアルバム（1996年）\nPresent (内田有紀のアルバム) - 内田有紀のベストアルバム（1997年）\nPresent (BONNIE PINKのアルバム) - BONNIE PINKのアルバム（2003年）。表題曲を収録。\nプレゼント (飯塚雅弓のアルバム) - 飯塚雅弓のミニアルバム（2005年）\nPresent (伊藤静のアルバム) - 伊藤静のミニアルバム（2011年）\nPRESENT (VALSHEのアルバム) - VALSHEのアルバム（2020年）。表題曲「present.」を収録。\nPRESENT (Ms.OOJAのアルバム) - Ms.OOJAのアルバム（2021年）\n楽曲\nプレゼント (JITTERIN'JINNの曲) - JITTERIN'JINNのシングル（1990年）\nプレゼント (東京少年の曲) - 東京少年のシングル（1990年）。フジテレビ系アニメ『らんま1/2 熱闘編』EDテーマ。\nプレゼント (3B LAB.☆の曲) - 3B LAB.☆のシングル（2003年）\nプレゼント (玉置浩二の曲) - 玉置浩二のシングル（2005年）。日本テレビ系 水曜ドラマ『あいのうた』主題歌。\nPRESENT (JUJUの曲) - JUJUのシングル（2009年）。映画『Disney's クリスマス・キャロル』イメージソング。\nPresent (flumpoolの曲) - flumpoolのシングル（2011年）。テレビ朝日『お願い!ランキング』EDテーマ。\nプレゼント (SEKAI NO OWARIの曲) - SEKAI NO OWARIのシングル『SOS/プレゼント』に収録（2015年）。",
+      "source_metadata": {
+        "article_text_sha256": "6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:539557:97846001:6e9a872be895db8967c22982ddcee4092715bfedb4e20bdd9de946bd67a63432",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "72622262875811269806527557790_0-936",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 482,
+          "end": 936,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001",
+        "text_sha256": "a35f0d5701681bbb685f6ef20c2b6af4bb2a7193ab28c31aa9d0197551e853db",
+        "title": "プレゼント",
+        "wikipedia_page_id": 539557,
+        "wikipedia_revision_id": 97846001,
+        "wikipedia_revision_timestamp_utc": "2023-11-11T08:02:41Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97846001&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ]
+}

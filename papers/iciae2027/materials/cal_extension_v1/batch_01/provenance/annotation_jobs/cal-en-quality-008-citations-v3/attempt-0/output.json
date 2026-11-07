@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "indeterminate",
+      "reason": "Actual context supports the answer's classification of Irish music as Celtic and its explanation of shared heritage, but also defines Celtic music as a broader grouping. The reference says yes, while reference-only gold likewise includes other regional traditions. Because 'the same' could mean classification or strict equivalence, whether the qualified answer satisfies the question is uncertain; its opening claim of insufficient information is questionable under the classification reading.",
+      "evidence": ["e0000", "e0004", "e0005"],
+      "essential_points": "Explain whether Irish music is considered Celtic and whether the two terms have identical scope.",
+      "criteria": {
+        "essential_answer": "uncertain",
+        "no_major_error": "pass",
+        "context_support": "uncertain"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "The answer transfers Gillette Stadium's financing history to Atlanta. Actual context explicitly connects Kraft's complete construction funding after the Hartford proposal failed to Gillette Stadium in Foxborough, and does not support an Atlanta Falcons connection. Reference-only gold instead identifies public hotel-motel tax funding and an NFL loan for Atlanta.",
+      "evidence": ["e0007", "e0009", "e0011"],
+      "essential_points": "Identify Atlanta stadium financing: a maximum $200 million public contribution from Atlanta and unincorporated Fulton County hotel-motel taxes, plus a $200 million NFL loan to the Falcons.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a002": {
+      "label": "unreliable",
+      "reason": "The answer accurately describes the actual context's limitation: none of the supplied passages gives the verdict. Nevertheless, it does not answer who won the case. Reference-only gold establishes that the jury convicted Tom Robinson, meaning the prosecution prevailed; that missing outcome cannot be supplied by the actual context. The definite failure is essential-answer completeness, rather than an unsupported factual assertion.",
+      "evidence": ["e0012", "e0013", "e0014", "e0015", "e0016", "e0017"],
+      "essential_points": "State that Tom Robinson was convicted, so the prosecution or accusers prevailed despite evidence of his innocence.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "The refusal is inappropriate because actual context explicitly states that neither side won the Monitor–Merrimack encounter and that the result was a draw; another actual passage calls it a stalemate. The assertion that the passages contain insufficient information is therefore incorrect. Reference material agrees, but actual context alone establishes the failure.",
+      "evidence": ["e0019", "e0022"],
+      "essential_points": "Neither side won the Monitor–Merrimack encounter; it ended in a draw or stalemate.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    }
+  }
+}

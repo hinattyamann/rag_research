@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "unreliable",
+      "reason": "The actual context explicitly compares the mythological Pluto and Hades and identifies them as the same figure with different portrayals. The answer instead interprets Pluto as the dwarf planet and incorrectly denies that a comparison is available. This failure is established by actual documents, independently of the reference.",
+      "evidence": ["e0001", "e0003"],
+      "essential_points": "Pluto and Hades name the same underworld god, but Pluto has a more positive portrayal as a stern ruler and loving husband, whereas Hades is portrayed as Persephone's dark and violent abductor.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "The answer does not identify the Falcons stadium's funding sources. Reference-only evidence establishes the public tax contribution and NFL loan; these details are absent from the actual context. The actual documents support the separate Gillette Stadium statement, Blank's ownership, and the stated retrieval limitation, so the definite failure is answer completeness.",
+      "evidence": ["e0007", "e0008", "e0010", "e0011"],
+      "essential_points": "Identify the maximum $200 million public contribution from Atlanta and unincorporated Fulton County hotel-motel taxes and the $200 million NFL loan approved for the Falcons organization.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a002": {
+      "label": "unreliable",
+      "reason": "The bare insufficiency statement omits the substantive scheduling information available in the actual context: the intended launch moved from 2016 to 2018, with construction status unannounced as of April 2018. Its caution about a definite launch date is supportable, but it does not convey that available answer. The halted-work and website-update details occur only in reference evidence and cannot be treated as actual-context support.",
+      "evidence": ["e0012", "e0017"],
+      "essential_points": "Explain the available launch schedule and its uncertainty: originally 2016, delayed to 2018, with no formal construction-status announcement as of April 2018. Reference-only material additionally reports halted work and no website updates after May 2014.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "reliable",
+      "reason": "The actual context directly supports the conflicting origin claims, the Brač/Pučišća attribution, the Aquia Creek location, and researchers' distinction between limestone used in 1902 renovations and original construction. The answer preserves these qualifications and satisfies the reference's essential content without relying on reference-only evidence.",
+      "evidence": ["e0018"],
+      "essential_points": "Report the disputed sandstone origins, including Aquia Creek in Stafford County, Virginia, and the competing Brač claim, while distinguishing researchers' attribution of island limestone to the 1902 renovations.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    }
+  }
+}

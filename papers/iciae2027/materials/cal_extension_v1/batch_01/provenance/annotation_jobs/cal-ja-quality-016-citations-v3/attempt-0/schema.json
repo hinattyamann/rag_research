@@ -1,0 +1,1457 @@
+{
+  "type": "object",
+  "properties": {
+    "annotations": {
+      "type": "object",
+      "properties": {
+        "a000": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "reliable"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0000",
+                      "e0001",
+                      "e0002",
+                      "e0003",
+                      "e0004"
+                    ]
+                  },
+                  "minItems": 1
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "type": "object",
+                  "properties": {
+                    "essential_answer": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    },
+                    "no_major_error": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    },
+                    "context_support": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "essential_answer",
+                    "no_major_error",
+                    "context_support"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "unreliable"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0000",
+                      "e0001",
+                      "e0002",
+                      "e0003",
+                      "e0004",
+                      "e0005",
+                      "e0006"
+                    ]
+                  },
+                  "minItems": 0
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "indeterminate"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0000",
+                      "e0001",
+                      "e0002",
+                      "e0003",
+                      "e0004",
+                      "e0005",
+                      "e0006"
+                    ]
+                  },
+                  "minItems": 0
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a001": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "reliable"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0007",
+                      "e0008",
+                      "e0009",
+                      "e0010",
+                      "e0011"
+                    ]
+                  },
+                  "minItems": 1
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "type": "object",
+                  "properties": {
+                    "essential_answer": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    },
+                    "no_major_error": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    },
+                    "context_support": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "essential_answer",
+                    "no_major_error",
+                    "context_support"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "unreliable"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0007",
+                      "e0008",
+                      "e0009",
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013"
+                    ]
+                  },
+                  "minItems": 0
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "indeterminate"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0007",
+                      "e0008",
+                      "e0009",
+                      "e0010",
+                      "e0011",
+                      "e0012",
+                      "e0013"
+                    ]
+                  },
+                  "minItems": 0
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a002": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "reliable"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0014",
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018"
+                    ]
+                  },
+                  "minItems": 1
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "type": "object",
+                  "properties": {
+                    "essential_answer": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    },
+                    "no_major_error": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    },
+                    "context_support": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "essential_answer",
+                    "no_major_error",
+                    "context_support"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "unreliable"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0014",
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018"
+                    ]
+                  },
+                  "minItems": 0
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "indeterminate"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0014",
+                      "e0015",
+                      "e0016",
+                      "e0017",
+                      "e0018"
+                    ]
+                  },
+                  "minItems": 0
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a003": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "reliable"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0019",
+                      "e0020",
+                      "e0021",
+                      "e0022",
+                      "e0023"
+                    ]
+                  },
+                  "minItems": 1
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "type": "object",
+                  "properties": {
+                    "essential_answer": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    },
+                    "no_major_error": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    },
+                    "context_support": {
+                      "type": "string",
+                      "enum": [
+                        "pass"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "essential_answer",
+                    "no_major_error",
+                    "context_support"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "unreliable"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0019",
+                      "e0020",
+                      "e0021",
+                      "e0022",
+                      "e0023",
+                      "e0024",
+                      "e0025"
+                    ]
+                  },
+                  "minItems": 0
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "fail",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "fail"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "indeterminate"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0019",
+                      "e0020",
+                      "e0021",
+                      "e0022",
+                      "e0023",
+                      "e0024",
+                      "e0025"
+                    ]
+                  },
+                  "minItems": 0
+                },
+                "essential_points": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "criteria": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "essential_answer": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "no_major_error": {
+                          "type": "string",
+                          "enum": [
+                            "pass",
+                            "uncertain"
+                          ]
+                        },
+                        "context_support": {
+                          "type": "string",
+                          "enum": [
+                            "uncertain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "essential_answer",
+                        "no_major_error",
+                        "context_support"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence",
+                "essential_points",
+                "criteria"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "a000",
+        "a001",
+        "a002",
+        "a003"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "annotations"
+  ],
+  "additionalProperties": false
+}

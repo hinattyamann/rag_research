@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "unreliable",
+      "reason": "The answer accurately describes the actual context's lack of Scottish scoring records, but does not answer the question. Reference-only evidence identifies McGrory's overall record and Boyd's SPL record; it establishes the missing essential content without supplying actual-context support.",
+      "evidence": ["e0000", "e0001", "e0002", "e0003", "e0004", "e0005"],
+      "essential_points": "Identify Jimmy McGrory's overall Scottish top-flight record of 408 goals, distinguishing Kris Boyd's SPL-era record of 167 goals.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "reliable",
+      "reason": "The answer directly supplies the requested 30-year interval. The cited actual document explicitly supports that setting, so support does not depend on reference-only evidence.",
+      "evidence": ["e0007"],
+      "essential_points": "The Force Awakens takes place 30 years after Return of the Jedi.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a002": {
+      "label": "unreliable",
+      "reason": "The actual documents do not disclose the trial's outcome, making the statement about insufficient retrieved information accurate. Nevertheless, the answer omits the requested result. Reference-only evidence establishes that Tom Robinson is convicted and the accusers prevail; that evidence is not actual-context support.",
+      "evidence": ["e0013", "e0014", "e0017"],
+      "essential_points": "Explain that the jury convicts Tom Robinson, so the accusers Mayella and Bob Ewell prevail despite evidence of his innocence.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "indeterminate",
+      "reason": "Actual context supports the general appellate function and the explanation of error review and infrequent appeals. However, the question specifies no jurisdiction, while the reference-only material concerns the Philippine Court of Appeals and its particular review powers. Whether that institutional coverage is essential cannot be resolved from the question; the generic answer therefore has no definite demonstrated failure.",
+      "evidence": ["e0018", "e0020", "e0023"],
+      "essential_points": "Generally, explain review of decisions from trial courts or lower tribunals. If the Philippine institution is intended, address its review of Regional Trial Court decisions and relevant agency and NLRC decisions, respecting the supplied CTA qualification.",
+      "criteria": {
+        "essential_answer": "uncertain",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    }
+  }
+}

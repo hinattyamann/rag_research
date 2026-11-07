@@ -1,0 +1,171 @@
+{
+  "type": "object",
+  "properties": {
+    "annotations": {
+      "type": "object",
+      "properties": {
+        "a000": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0005",
+                      "e0006",
+                      "e0007",
+                      "e0008",
+                      "e0009"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0005",
+                      "e0006",
+                      "e0007",
+                      "e0008",
+                      "e0009"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "a001": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "supported",
+                    "contradicted"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0005",
+                      "e0006",
+                      "e0007",
+                      "e0008",
+                      "e0009"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "enum": [
+                    "not_supported",
+                    "ambiguous"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "e0005",
+                      "e0006",
+                      "e0007",
+                      "e0008",
+                      "e0009"
+                    ]
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "label",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "a000",
+        "a001"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "annotations"
+  ],
+  "additionalProperties": false
+}

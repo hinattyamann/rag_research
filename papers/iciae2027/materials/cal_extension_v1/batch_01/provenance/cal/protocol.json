@@ -1,0 +1,557 @@
+{
+  "version": "fixed-v23-cal-extension-v1",
+  "batch_id": "batch_01",
+  "configs": {
+    "en": {
+      "schema_version": 1,
+      "study_version": "fixed-v23-extension-batch_01-en",
+      "purpose": "phase11-bilingual-calibration-candidate",
+      "status": "candidate_not_frozen",
+      "baseline_config": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+      "prompts": "configs/phase11_semantic_prompts_en_v12.yaml",
+      "quality_rubric_version": "order-quality-pilot-v1",
+      "data": {
+        "split": "development",
+        "answerable_only": true,
+        "record_ids": [
+          "clapnq:c508d78:train:-5912327246881931315:answerable",
+          "clapnq:c508d78:dev:4088290661268897018:answerable",
+          "clapnq:c508d78:train:-2988423735175025305:answerable",
+          "clapnq:c508d78:train:8103354363860237577:answerable",
+          "clapnq:c508d78:train:-8956266160858224023:answerable",
+          "clapnq:c508d78:train:-2795650974172775315:answerable",
+          "clapnq:c508d78:train:-5220264934011134798:answerable",
+          "clapnq:c508d78:train:5035135110024786818:answerable",
+          "clapnq:c508d78:train:5411741647237125341:answerable",
+          "clapnq:c508d78:train:-2619341853819375368:answerable",
+          "clapnq:c508d78:train:-1781279705336481949:answerable",
+          "clapnq:c508d78:train:8686797710880303142:answerable",
+          "clapnq:c508d78:train:-7768981697819247700:answerable",
+          "clapnq:c508d78:dev:825713187881645325:answerable",
+          "clapnq:c508d78:train:562267940317886300:answerable",
+          "clapnq:c508d78:train:8658816831446727938:answerable",
+          "clapnq:c508d78:train:6350575950900222585:answerable",
+          "clapnq:c508d78:train:-9217111645848091265:answerable",
+          "clapnq:c508d78:train:7732774843336374617:answerable",
+          "clapnq:c508d78:train:6024288240639443811:answerable"
+        ]
+      },
+      "identity_manifest": "data/manifests/phase11_gpu_generation_manifest.json",
+      "auxiliary_runtime": {
+        "context_tokens": 12288,
+        "temperature": 0.2,
+        "seed": 42,
+        "threads": 6,
+        "batch_tokens": 128,
+        "repack": false,
+        "timeout_seconds": 1200,
+        "startup_timeout_seconds": 120
+      },
+      "tasks": {
+        "extract_claims": {
+          "max_output_tokens": 3072
+        },
+        "verify_claims": {
+          "max_output_tokens": 6144
+        },
+        "rewrite_answer": {
+          "max_output_tokens": 6144
+        }
+      },
+      "trials": {
+        "order_conditions": [
+          "original",
+          "reversed",
+          "shuffle_1",
+          "shuffle_2",
+          "shuffle_3"
+        ],
+        "shuffle_seed": 42,
+        "same_order_total_trials": 5,
+        "share_original_first_trial": true,
+        "execution_order_seed": 43,
+        "generation_seed_policy": "same_fixed_seed_for_every_trial",
+        "deduplicate_order_permutations": true,
+        "repeated_prompt_result_cache": false,
+        "regenerate_claims_per_trial": false,
+        "regenerate_answer_per_trial": false,
+        "repack_or_truncate_per_trial": false
+      },
+      "decision": {
+        "score": "supported_claims_divided_by_fixed_claims",
+        "threshold": 0.7,
+        "accept_when": "score_greater_than_or_equal_to_threshold",
+        "unscorable_action": "keep_initial_answer_with_separate_fallback_status",
+        "no_claims_score": null,
+        "sensitivity_thresholds": [
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "bare_refusal_policy": "rewrite_once"
+      },
+      "rewrite": {
+        "input_document_order": "original_used_context",
+        "include_initial_answer": true,
+        "include_judge_feedback": false,
+        "reuse_one_candidate_across_trials": true,
+        "retrieve_again": false,
+        "maximum_answer_candidates": 2,
+        "failure_action": "keep_initial_answer_with_rewrite_failed_status"
+      },
+      "errors": {
+        "automatic_retries": 0,
+        "input_overflow_action": "record_error_without_truncating",
+        "preserve_failed_attempts": true,
+        "resume_only_missing_trials": true,
+        "reject_protocol_hash_mismatch": true
+      },
+      "quality": {
+        "annotator": "Codex_AI",
+        "human_reviewed": false,
+        "internal_judge_is_quality_truth": false,
+        "llm_labels_are_final": false,
+        "hide": [
+          "condition",
+          "score",
+          "decision",
+          "answer_stage",
+          "judge_claims",
+          "judge_reasons"
+        ],
+        "outcomes": [
+          "reliable",
+          "unreliable",
+          "indeterminate"
+        ],
+        "save_reasons_and_evidence": true
+      },
+      "costs": {
+        "separate_collection_route_and_offline_costs": true,
+        "charge_reused_candidates_to_each_operational_route": true
+      },
+      "output_constraints": "thinking_json_passage_ids_v3",
+      "auxiliary_model_manifest": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+      "sampling": {
+        "version": "auxiliary-sampling-v1",
+        "top_k": 20,
+        "top_p": 0.95,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "repeat_last_n": 64,
+        "reasoning_budget_tokens": 4096,
+        "final_json_grammar": true,
+        "final_json_grammar_mode": "closing_tag_root_v3",
+        "reasoning_prefill_mode": "chatml_think_suffix_v1"
+      },
+      "execution": {
+        "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+        "gpu_layers": 99,
+        "device": "CUDA0",
+        "require_full_offload": true
+      },
+      "phase12_allowed": false,
+      "execution_scope": "fixed_v23_calibration_v1",
+      "language": "en",
+      "assets": "configs/phase11_bilingual_assets_v2.json",
+      "baseline_prompts": "configs/phase11_bilingual_initial_en_v1.yaml",
+      "verification_mode": "claimwise-v1",
+      "main_limits": {
+        "maximum_completion_attempts": 1660,
+        "maximum_new_qa_per_stage_session": 5,
+        "stop_on_any_task_error": true,
+        "automatic_refill": false
+      },
+      "analysis_split": "calibration"
+    },
+    "ja": {
+      "schema_version": 1,
+      "study_version": "fixed-v23-extension-batch_01-ja",
+      "purpose": "phase11-bilingual-calibration-candidate",
+      "status": "candidate_not_frozen",
+      "baseline_config": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+      "prompts": "configs/phase11_semantic_prompts_ja_v12.yaml",
+      "quality_rubric_version": "order-quality-pilot-v1",
+      "data": {
+        "split": "calibration",
+        "answerable_only": true,
+        "record_ids": [
+          "whrja:02e85c8:answered:570",
+          "whrja:02e85c8:answered:498",
+          "whrja:02e85c8:answered:784",
+          "whrja:02e85c8:answered:182",
+          "whrja:02e85c8:answered:486",
+          "whrja:02e85c8:answered:558",
+          "whrja:02e85c8:answered:603",
+          "whrja:02e85c8:answered:962",
+          "whrja:02e85c8:answered:668",
+          "whrja:02e85c8:answered:616",
+          "whrja:02e85c8:answered:806",
+          "whrja:02e85c8:answered:139",
+          "whrja:02e85c8:answered:797",
+          "whrja:02e85c8:answered:568",
+          "whrja:02e85c8:answered:1276",
+          "whrja:02e85c8:answered:1028",
+          "whrja:02e85c8:answered:228",
+          "whrja:02e85c8:answered:1029",
+          "whrja:02e85c8:answered:967",
+          "whrja:02e85c8:answered:306"
+        ]
+      },
+      "identity_manifest": "data/manifests/phase11_gpu_generation_manifest.json",
+      "auxiliary_runtime": {
+        "context_tokens": 12288,
+        "temperature": 0.2,
+        "seed": 42,
+        "threads": 6,
+        "batch_tokens": 128,
+        "repack": false,
+        "timeout_seconds": 1200,
+        "startup_timeout_seconds": 120
+      },
+      "tasks": {
+        "extract_claims": {
+          "max_output_tokens": 3072
+        },
+        "verify_claims": {
+          "max_output_tokens": 6144
+        },
+        "rewrite_answer": {
+          "max_output_tokens": 6144
+        }
+      },
+      "trials": {
+        "order_conditions": [
+          "original",
+          "reversed",
+          "shuffle_1",
+          "shuffle_2",
+          "shuffle_3"
+        ],
+        "shuffle_seed": 42,
+        "same_order_total_trials": 5,
+        "share_original_first_trial": true,
+        "execution_order_seed": 43,
+        "generation_seed_policy": "same_fixed_seed_for_every_trial",
+        "deduplicate_order_permutations": true,
+        "repeated_prompt_result_cache": false,
+        "regenerate_claims_per_trial": false,
+        "regenerate_answer_per_trial": false,
+        "repack_or_truncate_per_trial": false
+      },
+      "decision": {
+        "score": "supported_claims_divided_by_fixed_claims",
+        "threshold": 0.7,
+        "accept_when": "score_greater_than_or_equal_to_threshold",
+        "unscorable_action": "keep_initial_answer_with_separate_fallback_status",
+        "no_claims_score": null,
+        "sensitivity_thresholds": [
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "bare_refusal_policy": "rewrite_once"
+      },
+      "rewrite": {
+        "input_document_order": "original_used_context",
+        "include_initial_answer": true,
+        "include_judge_feedback": false,
+        "reuse_one_candidate_across_trials": true,
+        "retrieve_again": false,
+        "maximum_answer_candidates": 2,
+        "failure_action": "keep_initial_answer_with_rewrite_failed_status"
+      },
+      "errors": {
+        "automatic_retries": 0,
+        "input_overflow_action": "record_error_without_truncating",
+        "preserve_failed_attempts": true,
+        "resume_only_missing_trials": true,
+        "reject_protocol_hash_mismatch": true
+      },
+      "quality": {
+        "annotator": "Codex_AI",
+        "human_reviewed": false,
+        "internal_judge_is_quality_truth": false,
+        "llm_labels_are_final": false,
+        "hide": [
+          "condition",
+          "score",
+          "decision",
+          "answer_stage",
+          "judge_claims",
+          "judge_reasons"
+        ],
+        "outcomes": [
+          "reliable",
+          "unreliable",
+          "indeterminate"
+        ],
+        "save_reasons_and_evidence": true
+      },
+      "costs": {
+        "separate_collection_route_and_offline_costs": true,
+        "charge_reused_candidates_to_each_operational_route": true
+      },
+      "output_constraints": "thinking_json_passage_ids_v3",
+      "auxiliary_model_manifest": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+      "sampling": {
+        "version": "auxiliary-sampling-v1",
+        "top_k": 20,
+        "top_p": 0.95,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "repeat_last_n": 64,
+        "reasoning_budget_tokens": 4096,
+        "final_json_grammar": true,
+        "final_json_grammar_mode": "closing_tag_root_v3",
+        "reasoning_prefill_mode": "chatml_think_suffix_v1"
+      },
+      "execution": {
+        "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+        "gpu_layers": 99,
+        "device": "CUDA0",
+        "require_full_offload": true
+      },
+      "phase12_allowed": false,
+      "execution_scope": "fixed_v23_calibration_v1",
+      "language": "ja",
+      "assets": "configs/phase11_bilingual_assets_v2.json",
+      "baseline_prompts": "configs/phase11_bilingual_initial_ja_v1.yaml",
+      "verification_mode": "claimwise-v1",
+      "main_limits": {
+        "maximum_completion_attempts": 1660,
+        "maximum_new_qa_per_stage_session": 5,
+        "stop_on_any_task_error": true,
+        "automatic_refill": false
+      },
+      "analysis_split": "calibration"
+    }
+  },
+  "source_splits": {
+    "en": "development",
+    "ja": "calibration"
+  },
+  "original_release_sha256": "2daaff4a8ec97304cf08e82ce47e3881d42be93bf277d8fd5a081b84b14edbb8",
+  "plan_sha256": "1bbbc1b61f0150159093db162473e64d9136e2bdfdec4e74ba790f6f55e67f9f",
+  "selection": {
+    "en": [
+      {
+        "record_id": "clapnq:c508d78:train:-5912327246881931315:answerable",
+        "document_group_id": "clapnq-title:titanic ii",
+        "selection_rank_sha256": "044f4106d23f6f3aa37ec096ee2ebdb5e7e1ba3e1e7280c4618360b045a4dd01"
+      },
+      {
+        "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+        "document_group_id": "clapnq-title:court of appeals of the philippines",
+        "selection_rank_sha256": "04573dfd38438762a35b4fe0ebefe0abe1d29d864c4b5d12b2219b4fc8d7923a"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-2988423735175025305:answerable",
+        "document_group_id": "clapnq-title:red coat (pretty little liars)",
+        "selection_rank_sha256": "04a1adede57a886ea827580a56916418709ba671270be3376ece5dcd49a8862f"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:8103354363860237577:answerable",
+        "document_group_id": "clapnq-title:to kill a mockingbird",
+        "selection_rank_sha256": "04b9db57d94d2d7ed02597ca4da17af0f1970644f95ae142e50285b67c6e1abb"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-8956266160858224023:answerable",
+        "document_group_id": "clapnq-title:industrial revolution",
+        "selection_rank_sha256": "04e3d2d4ac55db49d56f101a2b9d48adf708a77e10020b3648ae12047165574b"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-2795650974172775315:answerable",
+        "document_group_id": "clapnq-title:celtic music",
+        "selection_rank_sha256": "04f4571d836ed2b623b1a80ca7ab77f75e07f116a6d83ce58b223f1221f73707"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-5220264934011134798:answerable",
+        "document_group_id": "clapnq-title:beth (song)",
+        "selection_rank_sha256": "053397803e8228152959fafa6563c9a2f8365cdf0d5271bbc0a4bb0adbad38dd"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:5035135110024786818:answerable",
+        "document_group_id": "clapnq-title:pluto (mythology)",
+        "selection_rank_sha256": "05875e2178798670a711bdb8d03fc5e974a88fcc9fb0b1dbb9163ea140f92103"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:5411741647237125341:answerable",
+        "document_group_id": "clapnq-title:star wars: the force awakens",
+        "selection_rank_sha256": "058fea2c1b4b67d31cb1e56e26a73a131783af04ed46dccb07ab705cf2d57f3c"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-2619341853819375368:answerable",
+        "document_group_id": "clapnq-title:life in a northern town",
+        "selection_rank_sha256": "05a00a25b53353f31573dc09a2f63495b51aca95103510b98d6cbf12c7977221"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-1781279705336481949:answerable",
+        "document_group_id": "clapnq-title:foul ball",
+        "selection_rank_sha256": "05a06e8bc86f99062264207367aa9593c9ea9c1252e99c8f33152198e2e639f8"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:8686797710880303142:answerable",
+        "document_group_id": "clapnq-title:white house",
+        "selection_rank_sha256": "05c73dd30485e405d25d3db3f8a64631106fbd77b2b3180c1e3a8324d4c373c0"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-7768981697819247700:answerable",
+        "document_group_id": "clapnq-title:princess fiona",
+        "selection_rank_sha256": "05e0855de0257497d1654a233b616bc5cfa8bc9cbe298bd1a93be18b17386107"
+      },
+      {
+        "record_id": "clapnq:c508d78:dev:825713187881645325:answerable",
+        "document_group_id": "clapnq-title:dead sea",
+        "selection_rank_sha256": "05e4481a2f10e9697b9c67f875e24918ed31e0d258ccc6d122d22eabd8b176a3"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:562267940317886300:answerable",
+        "document_group_id": "clapnq-title:battle of hampton roads",
+        "selection_rank_sha256": "0658df7377458a273217cf220fe9a8710837d7d2c2dd965753f89b307ce779d1"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:8658816831446727938:answerable",
+        "document_group_id": "clapnq-title:scottish premier league",
+        "selection_rank_sha256": "065a00ac9baae6e7c0e1a984e443e7c03d2c12023fe0a40e0d023fd1af888410"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:6350575950900222585:answerable",
+        "document_group_id": "clapnq-title:mercedes-benz stadium",
+        "selection_rank_sha256": "0662785037685f839f72a86ae73635b6481473bf166a0850282346d4a06d742a"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-9217111645848091265:answerable",
+        "document_group_id": "clapnq-title:chola dynasty",
+        "selection_rank_sha256": "06a70163eae54db6fd404670940a3c33f957004ddb375366f43dffd960685ac4"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:7732774843336374617:answerable",
+        "document_group_id": "clapnq-title:penny board",
+        "selection_rank_sha256": "06b5b0552bce254a3a411d56727697d7b97f58eb68bc565ae56163abac28e089"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:6024288240639443811:answerable",
+        "document_group_id": "clapnq-title:maritime lien",
+        "selection_rank_sha256": "06db5631990882147b88e27af21756a256e0da733b206439b411f5f5650162c7"
+      }
+    ],
+    "ja": [
+      {
+        "record_id": "whrja:02e85c8:answered:570",
+        "document_group_id": "whrja-group:c5e8a5e10e0c90ab96dfe9c3",
+        "selection_rank_sha256": "35835e8881f1d3a9936c8e7a5c8cf1af2aa0167e1c5b1d683de0ee428cb015b5"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:498",
+        "document_group_id": "whrja-group:a90849e2ad006652f8cff8fc",
+        "selection_rank_sha256": "36758eb4dc3c832b9d25873d00b1f95bad89df65f7d175a61cedc06894135e30"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:784",
+        "document_group_id": "whrja-group:07f97674844214c82052346b",
+        "selection_rank_sha256": "38b80a78f6b91c1ecfcb4dc98c4358b4ff6cfbec6c3a3951e1f1dd8127cb4d91"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:182",
+        "document_group_id": "whrja-group:f8fee5de895ed83e71ede05a",
+        "selection_rank_sha256": "3c769d42f0e3ba35f0877dc4140e97abaad1b0588fa529c1f54540c50c5ca53d"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:486",
+        "document_group_id": "whrja-group:7098ed740cfe8536ee6d595e",
+        "selection_rank_sha256": "3c9473730823bf2ff6ffd4365eead2a9821fabaca5a4757175fa375451d51bd7"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:558",
+        "document_group_id": "whrja-group:583dc1acb02369d50e4919e5",
+        "selection_rank_sha256": "3db3caef979bef1056d4dd567cb2d37d867d9c89861d2c984b0b4e274bcd58b3"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:603",
+        "document_group_id": "whrja-group:7d23ed341c46d4115006a0c6",
+        "selection_rank_sha256": "43bc94d017486c737dc5de01fe1cc2879c667cfab3f6650cad1c4d57214739a9"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:962",
+        "document_group_id": "whrja-group:ce14eb446582cd58cac80f8f",
+        "selection_rank_sha256": "451d32b1479dd0f922a57cccaa6bfb6f910b63c7af9d4e56460a1f33bff66da0"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:668",
+        "document_group_id": "whrja-group:3b224a3404705977b986ed7d",
+        "selection_rank_sha256": "45c91dd8ab6e4bf3037a1464d1f70191b9d29046b5308aa53307a82ec23a69ab"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:616",
+        "document_group_id": "whrja-group:144505330b176e39b42c8ed6",
+        "selection_rank_sha256": "45c93f337f980eba157355f18af8c930b8d60217b10a41a20add75244676502b"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:806",
+        "document_group_id": "whrja-group:eca449b5d871e7041cc8f334",
+        "selection_rank_sha256": "495de867b19ffbcc78bc0d915b3a3e18ac9b05ad807d1ac3d2ccbf6dbe6ca81f"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:139",
+        "document_group_id": "whrja-group:d2e30be817f1942d855e0a7d",
+        "selection_rank_sha256": "49fe5164a2f4479bc9d5e185a3494fe1b25f28421841bdd2c7002753958c4412"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:797",
+        "document_group_id": "whrja-group:1246f51143842d27fdbfd085",
+        "selection_rank_sha256": "4c0ecf1906f21a7ee6dcca7044bb8f8abedeedf34d081326aeac53ba277dec3a"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:568",
+        "document_group_id": "whrja-group:ac11900ee2af3292404fab94",
+        "selection_rank_sha256": "56aa8d7290b9d692c8c21d5435fc1b67d1e23e896c7bc823ee79ec9301525c79"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:1276",
+        "document_group_id": "whrja-group:649c51f8f9478fba1f2afe0c",
+        "selection_rank_sha256": "576988f6878cb79ff364e0bc37fc60d517438ee9b25fdc78bb711c597d0fd01d"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:1028",
+        "document_group_id": "whrja-group:734686031682d11519a0f09d",
+        "selection_rank_sha256": "5a7d4027c41915657835be00a41fead8116f8df8220288d04b636d485f0e60f8"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:228",
+        "document_group_id": "whrja-group:fae8bba7561f4ed4a7d5ba3f",
+        "selection_rank_sha256": "5a8fdd7a1c4d2d641b98e2936cc28a26ce9fa2cac7b7ce46b48540a2ad0e817e"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:1029",
+        "document_group_id": "whrja-group:986a9703c3cf2c84815ae780",
+        "selection_rank_sha256": "5d77bddbb43d0b0412f3aa3831c99b1500bb3ba0f56e7809670240332a06ce48"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:967",
+        "document_group_id": "whrja-group:0ddf08423df0b8c38c2d9cfd",
+        "selection_rank_sha256": "60bfc5d65f18f3373574dd043d26ddf01e33854241f9cbf1bf8ba2ee9242cd10"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:306",
+        "document_group_id": "whrja-group:70a48eb1cf2b67ab402e8636",
+        "selection_rank_sha256": "68720cc4cb870ca0842aba3be3ab2f2f6e3e9150c105097a068e08fd861213ac"
+      }
+    ]
+  },
+  "maximum_calls_per_language": 1660,
+  "session_wall_seconds": 43200,
+  "total_wall_seconds": 259200,
+  "automatic_retries": 0,
+  "purpose": "additional_confirmation_not_tuning",
+  "phase12_allowed": false,
+  "inputs": {
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/cal-extension-authoring-v1/data/manifests/cal_extension_plan_v1.json": "1bbbc1b61f0150159093db162473e64d9136e2bdfdec4e74ba790f6f55e67f9f",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1/all_annotations.seal.json": "f572ca7427d33b3fdb3f87d29aedf26b19376466ced099970f132cc1e2a6e848",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_calibration/fixed-v23-cal-v1/all_annotations.seal.json": "67902300ef6d2eac951cf89942fdc6d7f3e8f3ab7f4421c85d9176e4ac0848e3"
+  }
+}
