@@ -1,0 +1,853 @@
+{
+  "qa_key": "cal_ja_9fabab443b6c8ade3eb2bf52",
+  "cohort": "cal",
+  "language": "ja",
+  "analysis_role": "cal",
+  "source_qa_split": "calibration",
+  "record_id": "whrja:02e85c8:answered:1225",
+  "document_group_id": "whrja-group:41a35d8d81faba46c2a75ec1",
+  "qa_source": {
+    "answerability_scope": "human_answer_in_source_not_verified_common_corpus_coverage",
+    "corpus_answerability": "not_annotated_no_relabel_from_body_or_quote_availability",
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "document_group_id": "whrja-group:41a35d8d81faba46c2a75ec1",
+    "gold_parent_ids": [
+      "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121"
+    ],
+    "gold_passage_ids": [
+      "55874612486961049849990795139_0-798"
+    ],
+    "gold_passage_ids_scope": "verified_literal_quote_overlap_children_only_not_metric_gold",
+    "gold_passage_mapping_status": "audited_cited_article_and_source_reference_markup_mapping_v2",
+    "gold_relevance_unit": "available_cited_source_article",
+    "is_answerable": true,
+    "language": "ja",
+    "provided_passage": null,
+    "question": "東南アジアは何か国ありますか？",
+    "record_id": "whrja:02e85c8:answered:1225",
+    "reference_answer_sentences": [
+      {
+        "citations": [
+          0
+        ],
+        "text": "東南アジアに属する国家は、ブルネイ、カンボジア、インドネシア、ラオス、マレーシア、ミャンマー、フィリピン、シンガポール、タイ、東ティモール、ベトナムの11か国です。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "日本の旅行案内書などでは「香港・マカオ・台湾など」を含めていることもありますが、通常は東アジアの扱いとなります。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "イギリス英語やフランス語では、東南アジアという概念に島嶼部を含めないことが多いです。"
+      }
+    ],
+    "reference_answers": [
+      "東南アジアに属する国家は、ブルネイ、カンボジア、インドネシア、ラオス、マレーシア、ミャンマー、フィリピン、シンガポール、タイ、東ティモール、ベトナムの11か国です。日本の旅行案内書などでは「香港・マカオ・台湾など」を含めていることもありますが、通常は東アジアの扱いとなります。イギリス英語やフランス語では、東南アジアという概念に島嶼部を含めないことが多いです。"
+    ],
+    "reference_corpus_mapping": [
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "has_human_summary_not_literal_source": true,
+        "literal_overlap_child_ids": [],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": null,
+          "spans": [],
+          "status": "no_literal_quote"
+        },
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "raw_article_status": "ok",
+        "reference_index": 0,
+        "source_reference_unit_id": "jawiki-page:3881"
+      },
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          1,
+          2
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "55874612486961049849990795139_0-798"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "verified_source_reference_markup",
+          "projection_policy": "source-html-reference-superscript-exact-body-projection-v1",
+          "request_journal_sha256": "d0fa78bfea8c918b18599e7d7b1fc048e9a1baf6f8b446deaf0e10c186dac222",
+          "source_html_sha256": "43ca4d0475ed6d2a12578a2242a828f0e24aa2b58c4a859789131fcd89db576c",
+          "spans": [
+            {
+              "end": 724,
+              "omitted_reference_markup": [
+                {
+                  "html_end": 24397,
+                  "html_start": 24242,
+                  "marker_html_sha256": "b2fe95737387c24b905328e8535838f47a5c15fda6f7ecead6ad6298e6cdef44",
+                  "marker_id": 2,
+                  "marker_text": "[3]"
+                }
+              ],
+              "source_span_sha256": "ca5bc245d5b80bbea4acc1103217d3972d64e6564c9504e66c28c30cc418e06f",
+              "start": 624
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "raw_article_status": "ok",
+        "reference_index": 1,
+        "source_reference_unit_id": "jawiki-page:3881"
+      }
+    ],
+    "reference_corpus_metadata_offline_only": true,
+    "reference_evidence": [
+      {
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "human_summary_not_literal_source": "東南アジアに属する国家は、ブルネイ、カンボジア、インドネシア、ラオス、マレーシア、ミャンマー、フィリピン、シンガポール、タイ、東ティモール、ベトナムの11か国です。",
+        "quote": null,
+        "reference_index": 0,
+        "title": "東南アジア",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%8D%97%E3%82%A2%E3%82%B8%E3%82%A2"
+      },
+      {
+        "cited_by_answer_sentence_indices": [
+          1,
+          2
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "ただし、現在でもイギリス英語やフランス語では、東南アジアという概念に島嶼部を含めないことが多い[3]。日本の旅行案内書などでは「香港・マカオ・台湾など」を含めていることもあるが、通常は東アジアの扱いとなる。",
+        "reference_index": 1,
+        "title": "東南アジア",
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%8D%97%E3%82%A2%E3%82%B8%E3%82%A2"
+      }
+    ],
+    "research_split": "calibration",
+    "selected_sentences_by_reference": [
+      [
+        "ただし、現在でもイギリス英語やフランス語では、東南アジアという概念に島嶼部を含めないことが多い[3]。日本の旅行案内書などでは「香港・マカオ・台湾など」を含めていることもあるが、通常は東アジアの扱いとなる。"
+      ]
+    ],
+    "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+    "source_id": "1225",
+    "source_line_index": 802,
+    "source_record_sha256": "69026c4227a7ac553c43e0e588a77ea42f6dc6a3eb8bb82cc3d10e02a2f049d3",
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "source_split": "answered",
+    "source_title": "東南アジア",
+    "unavailable_cited_reference_ids": []
+  },
+  "source_selection": {
+    "record_id": "whrja:02e85c8:answered:1225",
+    "question": "東南アジアは何か国ありますか？",
+    "document_group_id": "whrja-group:41a35d8d81faba46c2a75ec1"
+  },
+  "question": "東南アジアは何か国ありますか？",
+  "used_documents": [
+    {
+      "passage_id": "55874612486961049849990795139_0-798",
+      "title": "東南アジア",
+      "text": "東南アジア\n国家\nブルネイ\nカンボジア\nインドネシア\nラオス\nマレーシア\nミャンマー\nフィリピン\nシンガポール\nタイ\n東ティモール\nベトナム\n扶養地域\n中華人民共和国 海南島\nインド アンダマン・ニコバル諸島\nオーストラリア クリスマス島\nオーストラリア ココス諸島\n面積\n• 合計\n4,545,792 km\n人口\n• 合計\n641,775,797人\n• 密度\n140人/km\n等時帯\nUTC+6:30（ミャンマー）\nUTC+7（カンボジア、ラオス、インドネシア、タイ、ベトナム）\nUTC+8（ブルネイ、インドネシア、マレーシア）、フィリピン、シンガポール）\nUTC+9（東ティモール、インドネシア）\n東南アジア（とうなんアジア、英語: Southeast Asia, Southeastern Asia）は、アジアのうち南シナ海周辺に位置している国々を指す地域区分である。インドシナ半島、マレー半島、インドネシア諸島、フィリピン諸島アジアと島嶼部東南アジアに分けられる。\n国連による世界地理区分\n概要\n東南アジアという用語は比較的新しく、初出は1830年代である。当時の地理学や歴史学が国家論や支配論に偏っていたこともあり、当初は考古学や民族学用語としてのみ普及した。地理概念として一般化したのは、1942年に連合国軍が「東南アジア司令部」をセイロンに設置し、戦後処理を進める連合軍の作戦領域名として政治的にも公式化されるようになってからである。ただし、現在でもイギリス英語やフランス語では、東南アジアという概念に島嶼部を含めないことが多い。日本の旅行案内書などでは「香港・マカオ・台湾など」を含めていることもあるが、通常は東アジアの扱いとなる。\n地理\n東南アジアの地図\n東南アジアの範域\n国際連合によるアジアの地域の分類\n北アジア\n中央アジア\n西アジア\n南アジア\n東アジア\n東南アジア\n気候\n",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_0-798",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 798,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "eaa9ac8396085f4c4282b4700f2e112d891b89bb42cc9e2531fa4ca12d775684",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "eaa9ac8396085f4c4282b4700f2e112d891b89bb42cc9e2531fa4ca12d775684",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 798
+      }
+    },
+    {
+      "passage_id": "55874612486961049849990795139_5091-5897",
+      "title": "東南アジア",
+      "text": "\nミャンマーは、三度に渡るイギリスの侵略(英緬戦争)を受け、英領インド帝国の一州に組み込まれた。\nタイは、イギリス、フランスの侵略に悩まされるが、政治や教育などの近代化政策と巧みな外交、領土割譲といった代償によって、東南アジアで唯一独立を保ち、英仏の緩衝国家となった。\nこのような植民地支配の確立は現地民の反発を招き、19世紀末から20世紀初めにかけて、遅速の差があるが東南アジア世界にナショナリズムの芽が生まれてきていた。\n太平洋戦争\n「東南アジア」の呼称が広く用いられるようになったきっかけは、1942年に連合国軍が「東南アジア司令部」を設置したときである。日本軍の作戦区域であるイギリス領ビルマおよびマラヤ、フランス領インドシナ、オランダ領東インド、アメリカ領フィリピンの4植民地およびタイ王国を包括するような概念がなく、このときに「東南アジア」なる用語が取り上げられた。さらに、太平洋戦争後には、戦後処理を進める連合軍の作戦領域名として政治的にも公式化されることになった。この後、米国を中心とする「東南アジア」研究者たちによって広く用いられるようになり、やがて一般的にも使われるようになった。なお、戦中期の日本にも「東南アジヤ」の呼称を用いる研究者がいたが、戦前、戦中の日本においては、現在の太平洋地域を含めて「南方」や「南洋」と呼ぶ事が多かった。\nアセアン（ASEAN）成立以後の東南アジア諸国の協調体制\n→詳細は「東南アジア諸国連合」を参照\n1967年8月には、インドネシア・マレーシア・フィリピン・シンガポール・タイの5か国によって東南アジア諸国連合（アセアン）が成立。当初は、冷戦構造との自律的関係および地域紛争の自主的、平和的解決を目的としており（とはいえ、加盟国はいずれも反共であった）、とりわけ1975年のサイゴン陥落以後の緊張関係を乗り切ったことで、国際社会でも注目を浴びるようになった。",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_5091-5897",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 5897,
+          "start": 5091
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "e9e76b4216ae5bdabcf43768e39dc7974ba680e664d10bfb0dae51118d2c7540",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "e9e76b4216ae5bdabcf43768e39dc7974ba680e664d10bfb0dae51118d2c7540",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 806
+      }
+    },
+    {
+      "passage_id": "55874612486961049849990795139_6601-6872",
+      "title": "東南アジア",
+      "text": "池端雪浦（1994）「東南アジア史へのアプローチ」池端雪浦編『変わる東南アジア史像』山川出版.\n永積昭（1977）『東南アジアの歴史 新書東洋史 (7)』 講談社.\n桃木至朗（1996）『歴史世界としての東南アジア』山川出版社 ISBN 978-4-63-434120-3\n関連項目\n東南アジア諸国連合（ASEAN）- 東南アジア10カ国（2005年時点）が加盟\n東洋区 - 東南アジアを含む生物地理区\n外部リンク\nウィキボヤージュには、東南アジアに関する旅行情報があります。\n『東南アジア』 - コトバンク\n『東南アジア史』 - コトバンク",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_6601-6872",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 175,
+          "end": 6872,
+          "start": 6601
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "d927ddba9c94b64080d37c0f57214558176a86cfcbc845f34b09eaa147b71464",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "d927ddba9c94b64080d37c0f57214558176a86cfcbc845f34b09eaa147b71464",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 271
+      }
+    },
+    {
+      "passage_id": "55874612486961049849990795139_2913-3638",
+      "title": "東南アジア",
+      "text": "厚手軟質で無文様、叩き締め技法で叩く棒に巻いた繊維の跡が全体についている。この技法は中国から南下した。放射線炭素年代では約6000年前である。ゲアン省クインヴァン遺跡は海の貝からなる大きな貝塚で、大きな石を打ち割った石器や少量の全磨製石斧、粗雑な尖底の土器を伴う。放射性炭素年代は4700年前である。\n農耕\n東南アジアは基本的に多くの民族が農耕民族である。ベトナムでは4000年ほど前から農耕を始め、現在のタイ王国の周辺でも紀元前300年頃には農耕が始まっていた。カンボジアでも4世紀頃にもなると、東南アジア有数の稲作地帯となっていた。現在でも東南アジアは世界有数の農業国家群である。\n中国、インドの影響と伝統的国家の成立\n東南アジアは、（フィリピンを除き）中国とインドの交易ルートの中間地帯にあり、中継点として古くから発展し、中国ないしインドからの文化的影響下のもとに各地に伝統的国家が成立することになり（インド化）、その後、それぞれが独自の歴史的発展を遂げた。古代インド人は、この地を「黄金州」ないし「黄金の地（スヴァルナブーミ/スワンナプーム（सुवर्णभूमि/สุวรรณภูมิ））」と呼び、中国人は「南海」と称していた。\n東南アジア海域の政治勢力は、扶南を経由して中国南朝の各朝と交渉してきたが、6世紀の前半には、南シナ海、マレー半島、マラッカ海峡、ジャワ島、バリ島にそれぞれ国が形成され、中国南朝と直接交渉をもつようになり、積極的に朝貢するようになった。しかし、中国人の東南アジアに対する認識は、依然として島嶼部または大陸部沿岸の港市国家群の世界であった。\n4世紀末からインド思想が、東南アジアの王権システムそのものに影響を与えた。",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_2913-3638",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 474,
+          "end": 3638,
+          "start": 2913
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "7b19f6b57ef0a3dbe4420ee3491cf8450ef905aa3be003d89024a6c658622495",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "7b19f6b57ef0a3dbe4420ee3491cf8450ef905aa3be003d89024a6c658622495",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 725
+      }
+    },
+    {
+      "passage_id": "55874612486961049849990795139_1459-2202",
+      "title": "東南アジア",
+      "text": "しかし、雨季には河川が洪水を引き起こすほどである。\n国名リスト\n東南アジアに属する国家を、英語表記順に国名 - 首都の順で表記する。\nブルネイ - バンダルスリブガワン\nカンボジア（カンプチア） - プノンペン\nインドネシア - ジャカルタ （パプア島のパプア州、西パプア州はオセアニア地域に属す）\nラオス - ヴィエンチャン\nマレーシア - クアラルンプール\nミャンマー（ビルマ） - ネピドー\nフィリピン（ピリピナス） - マニラ\nシンガポール - シンガポール（都市国家）\nタイ - バンコク\n東ティモール - ディリ（ティモール島の原住民はメラネシア系でオセアニア地域と民族的に近縁）\nベトナム - ハノイ （ベトナムは漢字文化圏に属しており、稀に東アジアに含む場合がある）\n東南アジアの歴史\n東南アジア諸国の各国の歴史については、以下を参照。\nインドネシアの歴史 - カンボジアの歴史 - シンガポールの歴史 - タイの歴史 - フィリピンの歴史 - ブルネイの歴史 - ベトナムの歴史 - マレーシアの歴史 - ミャンマーの歴史 - ラオスの歴史 - 東ティモールの歴史- バミューダの歴史\n東南アジアの原歴史\n東南アジアの歴史は、各国の歴史として著述されることが多い。しかし特にマレー半島および島嶼部では、各国の領域は19世紀から20世紀初めにかけて、欧米列強が植民地主義に基づき東南アジアを分割した結果生じたものが後に独立国家として認められたものであり、政治的色彩が非常に濃いといえる。\n東南アジアの歴史は、そのような政治的な現代国家の歴史を離れ、伝統的な政治圏、つまり、政治的・文化的中心都市とその周辺の圏的な空間の歴史、別な言葉で言えば歴史圏を対象とするものである。",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_1459-2202",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 495,
+          "end": 2202,
+          "start": 1459
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "224062ae86be8ed8baf0467a7ac57a45fcb5aee99cb854384cbae65b2d158263",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "224062ae86be8ed8baf0467a7ac57a45fcb5aee99cb854384cbae65b2d158263",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 743
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "55874612486961049849990795139_0-798",
+      "title": "東南アジア",
+      "text": "東南アジア\n国家\nブルネイ\nカンボジア\nインドネシア\nラオス\nマレーシア\nミャンマー\nフィリピン\nシンガポール\nタイ\n東ティモール\nベトナム\n扶養地域\n中華人民共和国 海南島\nインド アンダマン・ニコバル諸島\nオーストラリア クリスマス島\nオーストラリア ココス諸島\n面積\n• 合計\n4,545,792 km\n人口\n• 合計\n641,775,797人\n• 密度\n140人/km\n等時帯\nUTC+6:30（ミャンマー）\nUTC+7（カンボジア、ラオス、インドネシア、タイ、ベトナム）\nUTC+8（ブルネイ、インドネシア、マレーシア）、フィリピン、シンガポール）\nUTC+9（東ティモール、インドネシア）\n東南アジア（とうなんアジア、英語: Southeast Asia, Southeastern Asia）は、アジアのうち南シナ海周辺に位置している国々を指す地域区分である。インドシナ半島、マレー半島、インドネシア諸島、フィリピン諸島アジアと島嶼部東南アジアに分けられる。\n国連による世界地理区分\n概要\n東南アジアという用語は比較的新しく、初出は1830年代である。当時の地理学や歴史学が国家論や支配論に偏っていたこともあり、当初は考古学や民族学用語としてのみ普及した。地理概念として一般化したのは、1942年に連合国軍が「東南アジア司令部」をセイロンに設置し、戦後処理を進める連合軍の作戦領域名として政治的にも公式化されるようになってからである。ただし、現在でもイギリス英語やフランス語では、東南アジアという概念に島嶼部を含めないことが多い。日本の旅行案内書などでは「香港・マカオ・台湾など」を含めていることもあるが、通常は東アジアの扱いとなる。\n地理\n東南アジアの地図\n東南アジアの範域\n国際連合によるアジアの地域の分類\n北アジア\n中央アジア\n西アジア\n南アジア\n東アジア\n東南アジア\n気候\n",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_0-798",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 798,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "eaa9ac8396085f4c4282b4700f2e112d891b89bb42cc9e2531fa4ca12d775684",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "eaa9ac8396085f4c4282b4700f2e112d891b89bb42cc9e2531fa4ca12d775684",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 798
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "提示された根拠には、この質問に答えるための十分な情報がありません。",
+    "answer_sha256": "d25ff74c172ecb4fe8ba4aa0b3c1adf0389697dfa4b835b84705cfe73db3f307",
+    "quality": {
+      "annotation_id": "Q-a1f00d7c6c066d1b892f",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-a1f00d7c6c066d1b892f",
+        "candidate_sha256": "4650fd1af8cfe675684a6aac24a01b98a45ba71bb1133daa885a031b49b4c52c",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "東南アジアに属する国家は11か国と答えること。",
+        "reason": "実使用文書の国家一覧と国名リストから11か国と数えられるため、情報不足という拒否は不適切であり、求められた国数も回答していない。これは参照回答だけに依存せず、実使用文書で確認できる失敗である。",
+        "evidence": [
+          {
+            "passage_id": "55874612486961049849990795139_0-798",
+            "quote": "東南アジア\n国家\nブルネイ\nカンボジア\nインドネシア\nラオス\nマレーシア\nミャンマー\nフィリピン\nシンガポール\nタイ\n東ティモール\nベトナム\n扶養地域\n中華人民共和国 海南島\nインド アンダマン・ニコバル諸島\nオーストラリア クリスマス島\nオーストラリア ココス諸島\n面積\n• 合計\n4,545,792 km\n人口\n• 合計\n641,775,797人\n• 密度\n140人/km\n等時帯\nUTC+6:30（ミャンマー）\nUTC+7（カンボジア、ラオス、インドネシア、タイ、ベトナム）\nUTC+8（ブルネイ、インドネシア、マレーシア）、フィリピン、シンガポール）\nUTC+9（東ティモール、インドネシア）\n東南アジア（とうなんアジア、英語: Southeast Asia, Southeastern Asia）は、アジアのうち南シナ海周辺に位置している国々を指す地域区分である。インドシナ半島、マレー半島、インドネシア諸島、フィリピン諸島アジアと島嶼部東南アジアに分けられる。\n国連による世界地理区分\n概要\n東南アジアという用語は比較的新しく、初出は1830年代である。当時の地理学や歴史学が国家論や支配論に偏っていたこともあり、当初は考古学や民族学用語としてのみ普及した。地理概念として一般化したのは、1942年に連合国軍が「東南アジア司令部」をセイロンに設置し、戦後処理を進める連合軍の作戦領域名として政治的にも公式化されるようになってからである。ただし、現在でもイギリス英語やフランス語では、東南アジアという概念に島嶼部を含めないことが多い。日本の旅行案内書などでは「香港・マカオ・台湾など」を含めていることもあるが、通常は東アジアの扱いとなる。\n地理\n東南アジアの地図\n東南アジアの範域\n国際連合によるアジアの地域の分類\n北アジア\n中央アジア\n西アジア\n南アジア\n東アジア\n東南アジア\n気候\n"
+          },
+          {
+            "passage_id": "55874612486961049849990795139_1459-2202",
+            "quote": "しかし、雨季には河川が洪水を引き起こすほどである。\n国名リスト\n東南アジアに属する国家を、英語表記順に国名 - 首都の順で表記する。\nブルネイ - バンダルスリブガワン\nカンボジア（カンプチア） - プノンペン\nインドネシア - ジャカルタ （パプア島のパプア州、西パプア州はオセアニア地域に属す）\nラオス - ヴィエンチャン\nマレーシア - クアラルンプール\nミャンマー（ビルマ） - ネピドー\nフィリピン（ピリピナス） - マニラ\nシンガポール - シンガポール（都市国家）\nタイ - バンコク\n東ティモール - ディリ（ティモール島の原住民はメラネシア系でオセアニア地域と民族的に近縁）\nベトナム - ハノイ （ベトナムは漢字文化圏に属しており、稀に東アジアに含む場合がある）\n東南アジアの歴史\n東南アジア諸国の各国の歴史については、以下を参照。\nインドネシアの歴史 - カンボジアの歴史 - シンガポールの歴史 - タイの歴史 - フィリピンの歴史 - ブルネイの歴史 - ベトナムの歴史 - マレーシアの歴史 - ミャンマーの歴史 - ラオスの歴史 - 東ティモールの歴史- バミューダの歴史\n東南アジアの原歴史\n東南アジアの歴史は、各国の歴史として著述されることが多い。しかし特にマレー半島および島嶼部では、各国の領域は19世紀から20世紀初めにかけて、欧米列強が植民地主義に基づき東南アジアを分割した結果生じたものが後に独立国家として認められたものであり、政治的色彩が非常に濃いといえる。\n東南アジアの歴史は、そのような政治的な現代国家の歴史を離れ、伝統的な政治圏、つまり、政治的・文化的中心都市とその周辺の圏的な空間の歴史、別な言葉で言えば歴史圏を対象とするものである。"
+          }
+        ],
+        "elapsed_seconds": 9.001135728962254,
+        "confirmed_at_utc": "2026-11-09T22:03:19.692211+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/ja/baseline/9fabab443b6c8ade3eb2bf52/record.json",
+      "sha256": "d017f375826f03d1739f5fa9651758767c5234224162939ade128a0d704797b2"
+    },
+    "copy": "provenance/baselines/cal_ja_9fabab443b6c8ade3eb2bf52.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "東南アジアには11カ国の国家があります。ブルネイ、カンボジア、インドネシア、ラオス、マレーシア、ミャンマー、フィリピン、シンガポール、タイ、東ティモール、ベトナムです [0-798]。また、アセアン（ASEAN）は2005年時点で10カ国が加盟しています [6601-6872]。",
+    "answer_sha256": "e1729e502faed9278cb332643b0e7c37aa82c0331b92a7b0128bfd43cb4940d7",
+    "quality": {
+      "annotation_id": "Q-97aaa51add19d2c48710",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-97aaa51add19d2c48710",
+        "candidate_sha256": "0944cd799bb547e556dc8bded29e7723e3db1b1e9cb00868cc6f44851fb306d6",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "東南アジアに属する国家は11か国であること。地域の国数とASEANの加盟国数を混同しないこと。",
+        "reason": "11か国という数と列挙した国名は、実使用Contextのe0012の国家一覧と一致する。追加のASEAN加盟国数も、2005年時点という限定を含めe0014で支持される。参照回答にある地域概念の差異は、この一般的な国数の質問への回答に必須ではない。",
+        "evidence": [
+          {
+            "passage_id": "55874612486961049849990795139_0-798",
+            "quote": "東南アジア\n国家\nブルネイ\nカンボジア\nインドネシア\nラオス\nマレーシア\nミャンマー\nフィリピン\nシンガポール\nタイ\n東ティモール\nベトナム\n扶養地域\n中華人民共和国 海南島\nインド アンダマン・ニコバル諸島\nオーストラリア クリスマス島\nオーストラリア ココス諸島\n面積\n• 合計\n4,545,792 km\n人口\n• 合計\n641,775,797人\n• 密度\n140人/km\n等時帯\nUTC+6:30（ミャンマー）\nUTC+7（カンボジア、ラオス、インドネシア、タイ、ベトナム）\nUTC+8（ブルネイ、インドネシア、マレーシア）、フィリピン、シンガポール）\nUTC+9（東ティモール、インドネシア）\n東南アジア（とうなんアジア、英語: Southeast Asia, Southeastern Asia）は、アジアのうち南シナ海周辺に位置している国々を指す地域区分である。インドシナ半島、マレー半島、インドネシア諸島、フィリピン諸島アジアと島嶼部東南アジアに分けられる。\n国連による世界地理区分\n概要\n東南アジアという用語は比較的新しく、初出は1830年代である。当時の地理学や歴史学が国家論や支配論に偏っていたこともあり、当初は考古学や民族学用語としてのみ普及した。地理概念として一般化したのは、1942年に連合国軍が「東南アジア司令部」をセイロンに設置し、戦後処理を進める連合軍の作戦領域名として政治的にも公式化されるようになってからである。ただし、現在でもイギリス英語やフランス語では、東南アジアという概念に島嶼部を含めないことが多い。日本の旅行案内書などでは「香港・マカオ・台湾など」を含めていることもあるが、通常は東アジアの扱いとなる。\n地理\n東南アジアの地図\n東南アジアの範域\n国際連合によるアジアの地域の分類\n北アジア\n中央アジア\n西アジア\n南アジア\n東アジア\n東南アジア\n気候\n"
+          },
+          {
+            "passage_id": "55874612486961049849990795139_6601-6872",
+            "quote": "池端雪浦（1994）「東南アジア史へのアプローチ」池端雪浦編『変わる東南アジア史像』山川出版.\n永積昭（1977）『東南アジアの歴史 新書東洋史 (7)』 講談社.\n桃木至朗（1996）『歴史世界としての東南アジア』山川出版社 ISBN 978-4-63-434120-3\n関連項目\n東南アジア諸国連合（ASEAN）- 東南アジア10カ国（2005年時点）が加盟\n東洋区 - 東南アジアを含む生物地理区\n外部リンク\nウィキボヤージュには、東南アジアに関する旅行情報があります。\n『東南アジア』 - コトバンク\n『東南アジア史』 - コトバンク"
+          }
+        ],
+        "elapsed_seconds": 8.501134530000854,
+        "confirmed_at_utc": "2026-11-09T22:00:55.304926+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [],
+  "extraction_audit": {
+    "claims": [],
+    "unit_version": "verbatim-sentence-units-ja-v1",
+    "normalized_prose": "提示された根拠には、この質問に答えるための十分な情報がありません。",
+    "exclusion": "standalone_refusal",
+    "spans": [],
+    "unclosed_delimiters": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "55874612486961049849990795139_6601-6872",
+          "55874612486961049849990795139_5091-5897",
+          "55874612486961049849990795139_2913-3638",
+          "55874612486961049849990795139_0-798",
+          "55874612486961049849990795139_1459-2202"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "55874612486961049849990795139_0-798",
+          "55874612486961049849990795139_5091-5897",
+          "55874612486961049849990795139_6601-6872",
+          "55874612486961049849990795139_2913-3638",
+          "55874612486961049849990795139_1459-2202"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "55874612486961049849990795139_0-798",
+          "55874612486961049849990795139_5091-5897",
+          "55874612486961049849990795139_2913-3638",
+          "55874612486961049849990795139_6601-6872",
+          "55874612486961049849990795139_1459-2202"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "55874612486961049849990795139_0-798",
+          "55874612486961049849990795139_5091-5897",
+          "55874612486961049849990795139_6601-6872",
+          "55874612486961049849990795139_2913-3638",
+          "55874612486961049849990795139_1459-2202"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "55874612486961049849990795139_1459-2202",
+          "55874612486961049849990795139_6601-6872",
+          "55874612486961049849990795139_2913-3638",
+          "55874612486961049849990795139_0-798",
+          "55874612486961049849990795139_5091-5897"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "55874612486961049849990795139_1459-2202",
+          "55874612486961049849990795139_2913-3638",
+          "55874612486961049849990795139_6601-6872",
+          "55874612486961049849990795139_5091-5897",
+          "55874612486961049849990795139_0-798"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "55874612486961049849990795139_0-798",
+          "55874612486961049849990795139_5091-5897",
+          "55874612486961049849990795139_6601-6872",
+          "55874612486961049849990795139_2913-3638",
+          "55874612486961049849990795139_1459-2202"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "55874612486961049849990795139_0-798",
+          "55874612486961049849990795139_5091-5897",
+          "55874612486961049849990795139_6601-6872",
+          "55874612486961049849990795139_2913-3638",
+          "55874612486961049849990795139_1459-2202"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "55874612486961049849990795139_0-798",
+          "55874612486961049849990795139_5091-5897",
+          "55874612486961049849990795139_6601-6872",
+          "55874612486961049849990795139_2913-3638",
+          "55874612486961049849990795139_1459-2202"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "ja",
+    "record_id": "whrja:02e85c8:answered:1225",
+    "document_group_id": "whrja-group:41a35d8d81faba46c2a75ec1",
+    "comparable": false,
+    "increment": null,
+    "partial_pair_increment_exploratory": null,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 0,
+      "valid_pairs": 0,
+      "disagreeing_pairs": 0,
+      "rate": null
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 0,
+      "valid_pairs": 0,
+      "disagreeing_pairs": 0,
+      "rate": null
+    },
+    "reason": "invalid_or_unscorable_trials"
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/ja/report.private.json",
+    "sha256": "ef51adc02fb2abcf10c5e74670fd115bb927642040a37bc5ac514f40a67c1cad"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "55874612486961049849990795139_0-798",
+      "text": "東南アジア\n国家\nブルネイ\nカンボジア\nインドネシア\nラオス\nマレーシア\nミャンマー\nフィリピン\nシンガポール\nタイ\n東ティモール\nベトナム\n扶養地域\n中華人民共和国 海南島\nインド アンダマン・ニコバル諸島\nオーストラリア クリスマス島\nオーストラリア ココス諸島\n面積\n• 合計\n4,545,792 km\n人口\n• 合計\n641,775,797人\n• 密度\n140人/km\n等時帯\nUTC+6:30（ミャンマー）\nUTC+7（カンボジア、ラオス、インドネシア、タイ、ベトナム）\nUTC+8（ブルネイ、インドネシア、マレーシア）、フィリピン、シンガポール）\nUTC+9（東ティモール、インドネシア）\n東南アジア（とうなんアジア、英語: Southeast Asia, Southeastern Asia）は、アジアのうち南シナ海周辺に位置している国々を指す地域区分である。インドシナ半島、マレー半島、インドネシア諸島、フィリピン諸島アジアと島嶼部東南アジアに分けられる。\n国連による世界地理区分\n概要\n東南アジアという用語は比較的新しく、初出は1830年代である。当時の地理学や歴史学が国家論や支配論に偏っていたこともあり、当初は考古学や民族学用語としてのみ普及した。地理概念として一般化したのは、1942年に連合国軍が「東南アジア司令部」をセイロンに設置し、戦後処理を進める連合軍の作戦領域名として政治的にも公式化されるようになってからである。ただし、現在でもイギリス英語やフランス語では、東南アジアという概念に島嶼部を含めないことが多い。日本の旅行案内書などでは「香港・マカオ・台湾など」を含めていることもあるが、通常は東アジアの扱いとなる。\n地理\n東南アジアの地図\n東南アジアの範域\n国際連合によるアジアの地域の分類\n北アジア\n中央アジア\n西アジア\n南アジア\n東アジア\n東南アジア\n気候\n",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_0-798",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 798,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "eaa9ac8396085f4c4282b4700f2e112d891b89bb42cc9e2531fa4ca12d775684",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "55874612486961049849990795139_1459-2202",
+      "text": "しかし、雨季には河川が洪水を引き起こすほどである。\n国名リスト\n東南アジアに属する国家を、英語表記順に国名 - 首都の順で表記する。\nブルネイ - バンダルスリブガワン\nカンボジア（カンプチア） - プノンペン\nインドネシア - ジャカルタ （パプア島のパプア州、西パプア州はオセアニア地域に属す）\nラオス - ヴィエンチャン\nマレーシア - クアラルンプール\nミャンマー（ビルマ） - ネピドー\nフィリピン（ピリピナス） - マニラ\nシンガポール - シンガポール（都市国家）\nタイ - バンコク\n東ティモール - ディリ（ティモール島の原住民はメラネシア系でオセアニア地域と民族的に近縁）\nベトナム - ハノイ （ベトナムは漢字文化圏に属しており、稀に東アジアに含む場合がある）\n東南アジアの歴史\n東南アジア諸国の各国の歴史については、以下を参照。\nインドネシアの歴史 - カンボジアの歴史 - シンガポールの歴史 - タイの歴史 - フィリピンの歴史 - ブルネイの歴史 - ベトナムの歴史 - マレーシアの歴史 - ミャンマーの歴史 - ラオスの歴史 - 東ティモールの歴史- バミューダの歴史\n東南アジアの原歴史\n東南アジアの歴史は、各国の歴史として著述されることが多い。しかし特にマレー半島および島嶼部では、各国の領域は19世紀から20世紀初めにかけて、欧米列強が植民地主義に基づき東南アジアを分割した結果生じたものが後に独立国家として認められたものであり、政治的色彩が非常に濃いといえる。\n東南アジアの歴史は、そのような政治的な現代国家の歴史を離れ、伝統的な政治圏、つまり、政治的・文化的中心都市とその周辺の圏的な空間の歴史、別な言葉で言えば歴史圏を対象とするものである。",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_1459-2202",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 495,
+          "end": 2202,
+          "start": 1459
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "224062ae86be8ed8baf0467a7ac57a45fcb5aee99cb854384cbae65b2d158263",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "55874612486961049849990795139_2913-3638",
+      "text": "厚手軟質で無文様、叩き締め技法で叩く棒に巻いた繊維の跡が全体についている。この技法は中国から南下した。放射線炭素年代では約6000年前である。ゲアン省クインヴァン遺跡は海の貝からなる大きな貝塚で、大きな石を打ち割った石器や少量の全磨製石斧、粗雑な尖底の土器を伴う。放射性炭素年代は4700年前である。\n農耕\n東南アジアは基本的に多くの民族が農耕民族である。ベトナムでは4000年ほど前から農耕を始め、現在のタイ王国の周辺でも紀元前300年頃には農耕が始まっていた。カンボジアでも4世紀頃にもなると、東南アジア有数の稲作地帯となっていた。現在でも東南アジアは世界有数の農業国家群である。\n中国、インドの影響と伝統的国家の成立\n東南アジアは、（フィリピンを除き）中国とインドの交易ルートの中間地帯にあり、中継点として古くから発展し、中国ないしインドからの文化的影響下のもとに各地に伝統的国家が成立することになり（インド化）、その後、それぞれが独自の歴史的発展を遂げた。古代インド人は、この地を「黄金州」ないし「黄金の地（スヴァルナブーミ/スワンナプーム（सुवर्णभूमि/สุวรรณภูมิ））」と呼び、中国人は「南海」と称していた。\n東南アジア海域の政治勢力は、扶南を経由して中国南朝の各朝と交渉してきたが、6世紀の前半には、南シナ海、マレー半島、マラッカ海峡、ジャワ島、バリ島にそれぞれ国が形成され、中国南朝と直接交渉をもつようになり、積極的に朝貢するようになった。しかし、中国人の東南アジアに対する認識は、依然として島嶼部または大陸部沿岸の港市国家群の世界であった。\n4世紀末からインド思想が、東南アジアの王権システムそのものに影響を与えた。",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_2913-3638",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 474,
+          "end": 3638,
+          "start": 2913
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "7b19f6b57ef0a3dbe4420ee3491cf8450ef905aa3be003d89024a6c658622495",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "55874612486961049849990795139_5091-5897",
+      "text": "\nミャンマーは、三度に渡るイギリスの侵略(英緬戦争)を受け、英領インド帝国の一州に組み込まれた。\nタイは、イギリス、フランスの侵略に悩まされるが、政治や教育などの近代化政策と巧みな外交、領土割譲といった代償によって、東南アジアで唯一独立を保ち、英仏の緩衝国家となった。\nこのような植民地支配の確立は現地民の反発を招き、19世紀末から20世紀初めにかけて、遅速の差があるが東南アジア世界にナショナリズムの芽が生まれてきていた。\n太平洋戦争\n「東南アジア」の呼称が広く用いられるようになったきっかけは、1942年に連合国軍が「東南アジア司令部」を設置したときである。日本軍の作戦区域であるイギリス領ビルマおよびマラヤ、フランス領インドシナ、オランダ領東インド、アメリカ領フィリピンの4植民地およびタイ王国を包括するような概念がなく、このときに「東南アジア」なる用語が取り上げられた。さらに、太平洋戦争後には、戦後処理を進める連合軍の作戦領域名として政治的にも公式化されることになった。この後、米国を中心とする「東南アジア」研究者たちによって広く用いられるようになり、やがて一般的にも使われるようになった。なお、戦中期の日本にも「東南アジヤ」の呼称を用いる研究者がいたが、戦前、戦中の日本においては、現在の太平洋地域を含めて「南方」や「南洋」と呼ぶ事が多かった。\nアセアン（ASEAN）成立以後の東南アジア諸国の協調体制\n→詳細は「東南アジア諸国連合」を参照\n1967年8月には、インドネシア・マレーシア・フィリピン・シンガポール・タイの5か国によって東南アジア諸国連合（アセアン）が成立。当初は、冷戦構造との自律的関係および地域紛争の自主的、平和的解決を目的としており（とはいえ、加盟国はいずれも反共であった）、とりわけ1975年のサイゴン陥落以後の緊張関係を乗り切ったことで、国際社会でも注目を浴びるようになった。",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_5091-5897",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 5897,
+          "start": 5091
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "e9e76b4216ae5bdabcf43768e39dc7974ba680e664d10bfb0dae51118d2c7540",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "55874612486961049849990795139_6601-6872",
+      "text": "池端雪浦（1994）「東南アジア史へのアプローチ」池端雪浦編『変わる東南アジア史像』山川出版.\n永積昭（1977）『東南アジアの歴史 新書東洋史 (7)』 講談社.\n桃木至朗（1996）『歴史世界としての東南アジア』山川出版社 ISBN 978-4-63-434120-3\n関連項目\n東南アジア諸国連合（ASEAN）- 東南アジア10カ国（2005年時点）が加盟\n東洋区 - 東南アジアを含む生物地理区\n外部リンク\nウィキボヤージュには、東南アジアに関する旅行情報があります。\n『東南アジア』 - コトバンク\n『東南アジア史』 - コトバンク",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_6601-6872",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 175,
+          "end": 6872,
+          "start": 6601
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "d927ddba9c94b64080d37c0f57214558176a86cfcbc845f34b09eaa147b71464",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "55874612486961049849990795139_0-798": {
+      "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "55874612486961049849990795139_0-798",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 500,
+        "end": 798,
+        "start": 0
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+      "text_sha256": "eaa9ac8396085f4c4282b4700f2e112d891b89bb42cc9e2531fa4ca12d775684",
+      "title": "東南アジア",
+      "wikipedia_page_id": 3881,
+      "wikipedia_revision_id": 98439269,
+      "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "55874612486961049849990795139_0-798",
+      "text": "東南アジア\n国家\nブルネイ\nカンボジア\nインドネシア\nラオス\nマレーシア\nミャンマー\nフィリピン\nシンガポール\nタイ\n東ティモール\nベトナム\n扶養地域\n中華人民共和国 海南島\nインド アンダマン・ニコバル諸島\nオーストラリア クリスマス島\nオーストラリア ココス諸島\n面積\n• 合計\n4,545,792 km\n人口\n• 合計\n641,775,797人\n• 密度\n140人/km\n等時帯\nUTC+6:30（ミャンマー）\nUTC+7（カンボジア、ラオス、インドネシア、タイ、ベトナム）\nUTC+8（ブルネイ、インドネシア、マレーシア）、フィリピン、シンガポール）\nUTC+9（東ティモール、インドネシア）\n東南アジア（とうなんアジア、英語: Southeast Asia, Southeastern Asia）は、アジアのうち南シナ海周辺に位置している国々を指す地域区分である。インドシナ半島、マレー半島、インドネシア諸島、フィリピン諸島アジアと島嶼部東南アジアに分けられる。\n国連による世界地理区分\n概要\n東南アジアという用語は比較的新しく、初出は1830年代である。当時の地理学や歴史学が国家論や支配論に偏っていたこともあり、当初は考古学や民族学用語としてのみ普及した。地理概念として一般化したのは、1942年に連合国軍が「東南アジア司令部」をセイロンに設置し、戦後処理を進める連合軍の作戦領域名として政治的にも公式化されるようになってからである。ただし、現在でもイギリス英語やフランス語では、東南アジアという概念に島嶼部を含めないことが多い。日本の旅行案内書などでは「香港・マカオ・台湾など」を含めていることもあるが、通常は東アジアの扱いとなる。\n地理\n東南アジアの地図\n東南アジアの範域\n国際連合によるアジアの地域の分類\n北アジア\n中央アジア\n西アジア\n南アジア\n東アジア\n東南アジア\n気候\n",
+      "source_metadata": {
+        "article_text_sha256": "d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3881:98439269:d1cd449a4824579156861aef5d0455653b052364c734fcdaf493807c74a1b121",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "55874612486961049849990795139_0-798",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 798,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269",
+        "text_sha256": "eaa9ac8396085f4c4282b4700f2e112d891b89bb42cc9e2531fa4ca12d775684",
+        "title": "東南アジア",
+        "wikipedia_page_id": 3881,
+        "wikipedia_revision_id": 98439269,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T08:21:03Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98439269&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ]
+}

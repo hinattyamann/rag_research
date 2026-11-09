@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "unreliable",
+      "reason": "The answer correctly describes the insufficiency of the actual context, which does not identify the video's dancers, but supplies none of the requested identities. Reference-only evidence identifies Mr. Wiggles and five girls dancing with Fred Durst; it establishes the missing answer content without supplying actual-context support.",
+      "evidence": ["e0000", "e0005"],
+      "essential_points": "Identify break dancer Mr. Wiggles and mention the five girls dancing with Fred Durst.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "reliable",
+      "reason": "Actual context explicitly identifies Rachael Harris as Greg's mother in the first three films and states that the mother character, Susan, was called Ann Heffley in the online book. The second sentence is naturally understood as referring to that character. Both claims are supported by actual documents, without relying on reference-only evidence.",
+      "evidence": ["e0008", "e0009"],
+      "essential_points": "Identify Rachael Harris as the actress portraying Greg's mother in the first three films.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a002": {
+      "label": "unreliable",
+      "reason": "The answer confuses an early chartered railroad with the first railroad across the country. Actual context supports B&O's charter and initial operations, but neither its alleged construction in 1827 nor the transcontinental conclusion. Reference-only evidence identifies Western Pacific, Central Pacific, and Union Pacific as the builders, establishing that the central answer is wrong; those builders are not established by the actual context.",
+      "evidence": ["e0012", "e0017"],
+      "essential_points": "Identify Western Pacific Railroad Company, Central Pacific Railroad Company of California, and Union Pacific as the builders of the first transcontinental railroad.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a003": {
+      "label": "reliable",
+      "reason": "The answer supplies both requested facts: Dutch ownership and the previous name New Amsterdam. Actual context supports the English capture, Dutch relinquishment, and renaming in 1664. Although the attached citation alone does not establish the previous city name, another actual document does. The reference's 1665 reincorporation is a distinct event and does not contradict the supported renaming date.",
+      "evidence": ["e0019", "e0020"],
+      "essential_points": "State that the English took it from the Dutch and that its previous name was New Amsterdam.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    }
+  }
+}

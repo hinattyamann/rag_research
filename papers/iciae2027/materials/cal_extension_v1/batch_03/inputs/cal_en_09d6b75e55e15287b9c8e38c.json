@@ -1,0 +1,774 @@
+{
+  "qa_key": "cal_en_09d6b75e55e15287b9c8e38c",
+  "cohort": "cal",
+  "language": "en",
+  "analysis_role": "cal",
+  "source_qa_split": "development",
+  "record_id": "clapnq:c508d78:train:-5431175315239443030:answerable",
+  "document_group_id": "clapnq-title:catawba river",
+  "qa_source": {
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "gold_passage_ids": [
+      "837563468_735-1749"
+    ],
+    "is_answerable": true,
+    "provided_passage": null,
+    "question": "where does the catawba river start and end",
+    "record_id": "clapnq:c508d78:train:-5431175315239443030:answerable",
+    "reference_answers": [
+      "It rises in the Blue Ridge Mountains in western McDowell County, North Carolina, approximately 20 miles east of Asheville.    It flows into northern South Carolina, passing Rock Hill, then through Fishing Creek Reservoir near Great Falls, and then into the Lake Wateree reservoir, approximately 30 miles northeast of Columbia.  At the now-submerged confluence with Wateree Creek, it becomes the Wateree River.",
+      "The Catawba River rises in the Blue Ridge Mountains in western McDowell County, North Carolina, approximately 20 miles east of Asheville. It flows into northern South Carolina, passing Rock Hill, then through Fishing Creek Reservoir near Great Falls, and then into the Lake Wateree reservoir, approximately 30 miles northeast of Columbia. At the now-submerged confluence with Wateree Creek, it becomes the Wateree River."
+    ],
+    "research_split": "development",
+    "selected_sentences_by_reference": [
+      [
+        "It rises in the Blue Ridge Mountains in western McDowell County , North Carolina , approximately 20 miles ( 30 km ) east of Asheville .",
+        "It flows into northern South Carolina , passing Rock Hill , then through Fishing Creek Reservoir near Great Falls , and then into the Lake Wateree reservoir , approximately 30 miles ( 50 km ) northeast of Columbia .",
+        "At the now - submerged confluence with Wateree Creek , it becomes the Wateree River ."
+      ],
+      [
+        "It rises in the Blue Ridge Mountains in western McDowell County , North Carolina , approximately 20 miles ( 30 km ) east of Asheville .",
+        "It flows into northern South Carolina , passing Rock Hill , then through Fishing Creek Reservoir near Great Falls , and then into the Lake Wateree reservoir , approximately 30 miles ( 50 km ) northeast of Columbia .",
+        "At the now - submerged confluence with Wateree Creek , it becomes the Wateree River ."
+      ]
+    ],
+    "source_dataset": "CLAPNQ",
+    "source_id": "-5431175315239443030",
+    "source_line_index": 1526,
+    "source_record_sha256": "b3df0d1d8c4a444b35c51951b1923f53e8a0b7ccef0b57af841b5ed80b9a424e",
+    "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+    "source_split": "train",
+    "source_title": "Catawba River"
+  },
+  "source_selection": {
+    "record_id": "clapnq:c508d78:train:-5431175315239443030:answerable",
+    "question": "where does the catawba river start and end",
+    "document_group_id": "clapnq-title:catawba river"
+  },
+  "question": "where does the catawba river start and end",
+  "used_documents": [
+    {
+      "passage_id": "837563468_158-734",
+      "title": "Catawba River",
+      "text": "The Catawba River ( named after the Native American tribes that first settled on the banks ) originates in Western North Carolina and the name of the river changes to the Wateree River in South Carolina . The river is approximately 220 miles ( 350 km ) long . It rises in the Appalachian Mountains and drains into Piedmont , and is impounded through a series of reservoirs for flood control and hydroelectricity . The river is named after the Catawba tribe of Native Americans . In their Siouan language , they identified as the Kawahcatawbas , `` the people of the river '' .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837563468_158-734",
+        "parent_text_sha256": "650fc36824cddf2784893164df28a3c96e08d25f15d65fd6de491bfe43800d98",
+        "passage_id": "837563468_158-734",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 150,
+          "end": 576,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "650fc36824cddf2784893164df28a3c96e08d25f15d65fd6de491bfe43800d98",
+        "title": "Catawba River",
+        "source_url": "https://en.wikipedia.org/wiki/Catawba_River",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Catawba_River?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "650fc36824cddf2784893164df28a3c96e08d25f15d65fd6de491bfe43800d98",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 576
+      }
+    },
+    {
+      "passage_id": "837563468_5702-5994",
+      "title": "Catawba River",
+      "text": "In April 2008 the environmental group American Rivers named the Catawba - Wateree River `` the most endangered river in America . '' Reasons cited for the river 's condition are the drought , the presence of 11 hydroelectric dams , global warming , and unchecked development along its banks .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837563468_5702-5994",
+        "parent_text_sha256": "913199ba1ffdd6a47065b62a22d0d0f49e2937fd237966f69a520b321f7d4bd6",
+        "passage_id": "837563468_5702-5994",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 77,
+          "end": 292,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "913199ba1ffdd6a47065b62a22d0d0f49e2937fd237966f69a520b321f7d4bd6",
+        "title": "Catawba River",
+        "source_url": "https://en.wikipedia.org/wiki/Catawba_River",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Catawba_River?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "913199ba1ffdd6a47065b62a22d0d0f49e2937fd237966f69a520b321f7d4bd6",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 292
+      }
+    },
+    {
+      "passage_id": "837032107_31872-32141",
+      "title": "Nile",
+      "text": "On 30 April 2005 a team led by South Africans Peter Meredith and Hendrik Coetzee became the first to navigate the major remote source of the White Nile , the Akagera river that starts as the Ruvyironza in Bururi Province , Burundi , and ends at Lake Victoria , Uganda .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837032107_31872-32141",
+        "parent_text_sha256": "40cb206624c72679a50dd321e2c28cca82126d0a8d30963f9442337ed67d7de2",
+        "passage_id": "837032107_31872-32141",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 76,
+          "end": 269,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "40cb206624c72679a50dd321e2c28cca82126d0a8d30963f9442337ed67d7de2",
+        "title": "Nile",
+        "source_url": "https://en.wikipedia.org/wiki/Nile",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Nile?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "40cb206624c72679a50dd321e2c28cca82126d0a8d30963f9442337ed67d7de2",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 269
+      }
+    },
+    {
+      "passage_id": "837032107_6827-7659",
+      "title": "Nile",
+      "text": "The Nile leaves Lake Nyanza ( Victoria ) at Ripon Falls near Jinja , Uganda , as the Victoria Nile . It flows north for some 130 kilometers ( 81 mi ) , to Lake Kyoga . The last part of the approximately 200 kilometers ( 120 mi ) river section starts from the western shores of the lake and flows at first to the west until just south of Masindi Port , where the river turns north , then makes a great half circle to the east and north until Karuma Falls . For the remaining part it flows merely westerly through the Murchison Falls until it reaches the very northern shores of Lake Albert where it forms a significant river delta . The lake itself is on the border of DR Congo , but the Nile is not a border river at this point . After leaving Lake Albert , the river continues north through Uganda and is known as the Albert Nile .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837032107_6827-7659",
+        "parent_text_sha256": "47f86da818eee6470056079f081684ee4e7e9c5704a5c6ff3a582c91ba235ecf",
+        "passage_id": "837032107_6827-7659",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 214,
+          "end": 832,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "47f86da818eee6470056079f081684ee4e7e9c5704a5c6ff3a582c91ba235ecf",
+        "title": "Nile",
+        "source_url": "https://en.wikipedia.org/wiki/Nile",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Nile?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "47f86da818eee6470056079f081684ee4e7e9c5704a5c6ff3a582c91ba235ecf",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 832
+      }
+    },
+    {
+      "passage_id": "837563468_3109-3441",
+      "title": "Catawba River",
+      "text": "Though neither Concord nor Kannapolis are located in the Catawba River basin ( both are located in the Pee Dee River basin ) , the cities said the Catawba River is a regional resource . Opponents of the IBT argued that towns and cities along the Catawba River basin are growing as well , and that the cities ' request is too large .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837563468_3109-3441",
+        "parent_text_sha256": "b541f01ec3f85e395ba8b8de6f06c5794cd191097bfab2146a59d0f40d5cfce0",
+        "passage_id": "837563468_3109-3441",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 90,
+          "end": 332,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "b541f01ec3f85e395ba8b8de6f06c5794cd191097bfab2146a59d0f40d5cfce0",
+        "title": "Catawba River",
+        "source_url": "https://en.wikipedia.org/wiki/Catawba_River",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Catawba_River?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "b541f01ec3f85e395ba8b8de6f06c5794cd191097bfab2146a59d0f40d5cfce0",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 332
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "837563468_735-1749",
+      "title": "Catawba River",
+      "text": "It rises in the Blue Ridge Mountains in western McDowell County , North Carolina , approximately 20 miles ( 30 km ) east of Asheville . It flows ENE , forming , along with the Linville River , Lake James . It then passes north of Morganton , then southeast through Lake Hickory just north of Hickory , NC , and into the Lake Norman reservoir . From Lake Norman it flows south , passing west of Charlotte , then flowing through the Mountain Island Lake and Lake Wylie reservoirs , where it forms approximately 10 miles ( 15 km ) of the border between North Carolina and South Carolina , also the confluence of the South Fork Catawba River and Catawba River is submerged by Lake Wylie near the NC / SC state line . It flows into northern South Carolina , passing Rock Hill , then through Fishing Creek Reservoir near Great Falls , and then into the Lake Wateree reservoir , approximately 30 miles ( 50 km ) northeast of Columbia . At the now - submerged confluence with Wateree Creek , it becomes the Wateree River .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837563468_735-1749",
+        "parent_text_sha256": "9bf3df35e97afaa52f3c2a9389649ffb51365ae9669ca436808bed58a7433a7c",
+        "passage_id": "837563468_735-1749",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 272,
+          "end": 1014,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "9bf3df35e97afaa52f3c2a9389649ffb51365ae9669ca436808bed58a7433a7c",
+        "title": "Catawba River",
+        "source_url": "https://en.wikipedia.org/wiki/Catawba_River",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Catawba_River?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "9bf3df35e97afaa52f3c2a9389649ffb51365ae9669ca436808bed58a7433a7c",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 1014
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "The Catawba River starts in Western North Carolina and changes its name to the Wateree River in South Carolina. It is approximately 220 miles long and originates in the Appalachian Mountains. The river ends at Lake Victoria in Uganda. [837563468_158-734]",
+    "answer_sha256": "5e2369a5331d80abb8f4215ad8b0cfd671225923f716772fd544ead951b204a2",
+    "quality": {
+      "annotation_id": "Q-16726382259f5c8f1bcd",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-16726382259f5c8f1bcd",
+        "candidate_sha256": "5772f382d0bc3f4394b25149b87793417fa6189d219e1b6521d53c805330813e",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "Describe the source in the Blue Ridge Mountains of western North Carolina and the downstream transition to the Wateree River in South Carolina.",
+        "reason": "Actual Catawba context supports the broad origin, length, and change to the Wateree name. The Lake Victoria endpoint is incorrectly transferred from an actual passage about the Akagera River. Reference-only evidence supplies the more precise Catawba source and its transition at the submerged Wateree Creek confluence; it does not support the claimed Uganda endpoint.",
+        "evidence": [
+          {
+            "passage_id": "837563468_158-734",
+            "quote": "The Catawba River ( named after the Native American tribes that first settled on the banks ) originates in Western North Carolina and the name of the river changes to the Wateree River in South Carolina . The river is approximately 220 miles ( 350 km ) long . It rises in the Appalachian Mountains and drains into Piedmont , and is impounded through a series of reservoirs for flood control and hydroelectricity . The river is named after the Catawba tribe of Native Americans . In their Siouan language , they identified as the Kawahcatawbas , `` the people of the river '' ."
+          },
+          {
+            "passage_id": "837032107_31872-32141",
+            "quote": "On 30 April 2005 a team led by South Africans Peter Meredith and Hendrik Coetzee became the first to navigate the major remote source of the White Nile , the Akagera river that starts as the Ruvyironza in Bururi Province , Burundi , and ends at Lake Victoria , Uganda ."
+          },
+          {
+            "passage_id": "837563468_735-1749",
+            "quote": "It rises in the Blue Ridge Mountains in western McDowell County , North Carolina , approximately 20 miles ( 30 km ) east of Asheville . It flows ENE , forming , along with the Linville River , Lake James . It then passes north of Morganton , then southeast through Lake Hickory just north of Hickory , NC , and into the Lake Norman reservoir . From Lake Norman it flows south , passing west of Charlotte , then flowing through the Mountain Island Lake and Lake Wylie reservoirs , where it forms approximately 10 miles ( 15 km ) of the border between North Carolina and South Carolina , also the confluence of the South Fork Catawba River and Catawba River is submerged by Lake Wylie near the NC / SC state line . It flows into northern South Carolina , passing Rock Hill , then through Fishing Creek Reservoir near Great Falls , and then into the Lake Wateree reservoir , approximately 30 miles ( 50 km ) northeast of Columbia . At the now - submerged confluence with Wateree Creek , it becomes the Wateree River ."
+          }
+        ],
+        "elapsed_seconds": 8.501352079969365,
+        "confirmed_at_utc": "2026-11-09T21:48:59.440727+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/en/baseline/09d6b75e55e15287b9c8e38c/record.json",
+      "sha256": "a94f507629c62263ac2b39b8730ddd2a05496eff54bbee86e84b1a6f7a4e6723"
+    },
+    "copy": "provenance/baselines/cal_en_09d6b75e55e15287b9c8e38c.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "The Catawba River originates in Western North Carolina and rises in the Appalachian Mountains [837563468_158-734]. It changes its name to the Wateree River in South Carolina [837563468_158-734] and drains into Piedmont [837563468_158-734].",
+    "answer_sha256": "948cf2ff5dd03ab27fe87a334ac260536722118dec18c8127007970727dafb24",
+    "quality": {
+      "annotation_id": "Q-6b65132a7331562b4709",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-6b65132a7331562b4709",
+        "candidate_sha256": "4ad55d15c1779016d0ea3b6741e2d8bc02cfed17eef2e91fe6b4bfe9384e0ea9",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Identify the origin in western North Carolina's mountains and the downstream transition to the Wateree River in South Carolina.",
+        "reason": "The answer substantively identifies both ends at a broad geographic level: the mountain origin in western North Carolina and continuation as the Wateree River in South Carolina. Actual context supports every statement. The reference provides more precise locations, but those additional details are not necessary for this broad answer.",
+        "evidence": [
+          {
+            "passage_id": "837563468_158-734",
+            "quote": "The Catawba River ( named after the Native American tribes that first settled on the banks ) originates in Western North Carolina and the name of the river changes to the Wateree River in South Carolina . The river is approximately 220 miles ( 350 km ) long . It rises in the Appalachian Mountains and drains into Piedmont , and is impounded through a series of reservoirs for flood control and hydroelectricity . The river is named after the Catawba tribe of Native Americans . In their Siouan language , they identified as the Kawahcatawbas , `` the people of the river '' ."
+          }
+        ],
+        "elapsed_seconds": 11.001514406467322,
+        "confirmed_at_utc": "2026-11-09T21:53:48.155680+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "The Catawba River starts in Western North Carolina and changes its name to the Wateree River in South Carolina."
+    },
+    {
+      "claim_id": "c2",
+      "text": "It is approximately 220 miles long and originates in the Appalachian Mountains."
+    },
+    {
+      "claim_id": "c3",
+      "text": "The river ends at Lake Victoria in Uganda."
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "The Catawba River starts in Western North Carolina and changes its name to the Wateree River in South Carolina."
+      },
+      {
+        "claim_id": "c2",
+        "text": "It is approximately 220 miles long and originates in the Appalachian Mountains."
+      },
+      {
+        "claim_id": "c3",
+        "text": "The river ends at Lake Victoria in Uganda."
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-v1",
+    "normalized_prose": "The Catawba River starts in Western North Carolina and changes its name to the Wateree River in South Carolina. It is approximately 220 miles long and originates in the Appalachian Mountains. The river ends at Lake Victoria in Uganda.",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 112
+      },
+      {
+        "start": 112,
+        "end": 192
+      },
+      {
+        "start": 192,
+        "end": 234
+      }
+    ]
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "837563468_158-734",
+          "837563468_5702-5994",
+          "837032107_31872-32141",
+          "837032107_6827-7659",
+          "837563468_3109-3441"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "837563468_158-734",
+          "837563468_5702-5994",
+          "837032107_31872-32141",
+          "837032107_6827-7659",
+          "837563468_3109-3441"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "837563468_158-734",
+          "837563468_3109-3441",
+          "837032107_6827-7659",
+          "837563468_5702-5994",
+          "837032107_31872-32141"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "837563468_158-734",
+          "837563468_5702-5994",
+          "837032107_31872-32141",
+          "837032107_6827-7659",
+          "837563468_3109-3441"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "837563468_158-734",
+          "837563468_3109-3441",
+          "837032107_31872-32141",
+          "837032107_6827-7659",
+          "837563468_5702-5994"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "837563468_5702-5994",
+          "837563468_3109-3441",
+          "837032107_31872-32141",
+          "837563468_158-734",
+          "837032107_6827-7659"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "837563468_3109-3441",
+          "837032107_6827-7659",
+          "837032107_31872-32141",
+          "837563468_5702-5994",
+          "837563468_158-734"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "837563468_158-734",
+          "837563468_5702-5994",
+          "837032107_31872-32141",
+          "837032107_6827-7659",
+          "837563468_3109-3441"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "837563468_158-734",
+          "837563468_5702-5994",
+          "837032107_31872-32141",
+          "837032107_6827-7659",
+          "837563468_3109-3441"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "en",
+    "record_id": "clapnq:c508d78:train:-5431175315239443030:answerable",
+    "document_group_id": "clapnq-title:catawba river",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/en/report.private.json",
+    "sha256": "535145ce16e3acce818e40a50a12893363033bf6ffc9783088016ea02cd98da7"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "837032107_31872-32141",
+      "text": "On 30 April 2005 a team led by South Africans Peter Meredith and Hendrik Coetzee became the first to navigate the major remote source of the White Nile , the Akagera river that starts as the Ruvyironza in Bururi Province , Burundi , and ends at Lake Victoria , Uganda .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837032107_31872-32141",
+        "parent_text_sha256": "40cb206624c72679a50dd321e2c28cca82126d0a8d30963f9442337ed67d7de2",
+        "passage_id": "837032107_31872-32141",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 76,
+          "end": 269,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "40cb206624c72679a50dd321e2c28cca82126d0a8d30963f9442337ed67d7de2",
+        "title": "Nile",
+        "source_url": "https://en.wikipedia.org/wiki/Nile",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Nile?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "837032107_6827-7659",
+      "text": "The Nile leaves Lake Nyanza ( Victoria ) at Ripon Falls near Jinja , Uganda , as the Victoria Nile . It flows north for some 130 kilometers ( 81 mi ) , to Lake Kyoga . The last part of the approximately 200 kilometers ( 120 mi ) river section starts from the western shores of the lake and flows at first to the west until just south of Masindi Port , where the river turns north , then makes a great half circle to the east and north until Karuma Falls . For the remaining part it flows merely westerly through the Murchison Falls until it reaches the very northern shores of Lake Albert where it forms a significant river delta . The lake itself is on the border of DR Congo , but the Nile is not a border river at this point . After leaving Lake Albert , the river continues north through Uganda and is known as the Albert Nile .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837032107_6827-7659",
+        "parent_text_sha256": "47f86da818eee6470056079f081684ee4e7e9c5704a5c6ff3a582c91ba235ecf",
+        "passage_id": "837032107_6827-7659",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 214,
+          "end": 832,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "47f86da818eee6470056079f081684ee4e7e9c5704a5c6ff3a582c91ba235ecf",
+        "title": "Nile",
+        "source_url": "https://en.wikipedia.org/wiki/Nile",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Nile?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "837563468_158-734",
+      "text": "The Catawba River ( named after the Native American tribes that first settled on the banks ) originates in Western North Carolina and the name of the river changes to the Wateree River in South Carolina . The river is approximately 220 miles ( 350 km ) long . It rises in the Appalachian Mountains and drains into Piedmont , and is impounded through a series of reservoirs for flood control and hydroelectricity . The river is named after the Catawba tribe of Native Americans . In their Siouan language , they identified as the Kawahcatawbas , `` the people of the river '' .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837563468_158-734",
+        "parent_text_sha256": "650fc36824cddf2784893164df28a3c96e08d25f15d65fd6de491bfe43800d98",
+        "passage_id": "837563468_158-734",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 150,
+          "end": 576,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "650fc36824cddf2784893164df28a3c96e08d25f15d65fd6de491bfe43800d98",
+        "title": "Catawba River",
+        "source_url": "https://en.wikipedia.org/wiki/Catawba_River",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Catawba_River?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "837563468_3109-3441",
+      "text": "Though neither Concord nor Kannapolis are located in the Catawba River basin ( both are located in the Pee Dee River basin ) , the cities said the Catawba River is a regional resource . Opponents of the IBT argued that towns and cities along the Catawba River basin are growing as well , and that the cities ' request is too large .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837563468_3109-3441",
+        "parent_text_sha256": "b541f01ec3f85e395ba8b8de6f06c5794cd191097bfab2146a59d0f40d5cfce0",
+        "passage_id": "837563468_3109-3441",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 90,
+          "end": 332,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "b541f01ec3f85e395ba8b8de6f06c5794cd191097bfab2146a59d0f40d5cfce0",
+        "title": "Catawba River",
+        "source_url": "https://en.wikipedia.org/wiki/Catawba_River",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Catawba_River?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "837563468_5702-5994",
+      "text": "In April 2008 the environmental group American Rivers named the Catawba - Wateree River `` the most endangered river in America . '' Reasons cited for the river 's condition are the drought , the presence of 11 hydroelectric dams , global warming , and unchecked development along its banks .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837563468_5702-5994",
+        "parent_text_sha256": "913199ba1ffdd6a47065b62a22d0d0f49e2937fd237966f69a520b321f7d4bd6",
+        "passage_id": "837563468_5702-5994",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 77,
+          "end": 292,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "913199ba1ffdd6a47065b62a22d0d0f49e2937fd237966f69a520b321f7d4bd6",
+        "title": "Catawba River",
+        "source_url": "https://en.wikipedia.org/wiki/Catawba_River",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Catawba_River?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "837563468_735-1749",
+      "text": "It rises in the Blue Ridge Mountains in western McDowell County , North Carolina , approximately 20 miles ( 30 km ) east of Asheville . It flows ENE , forming , along with the Linville River , Lake James . It then passes north of Morganton , then southeast through Lake Hickory just north of Hickory , NC , and into the Lake Norman reservoir . From Lake Norman it flows south , passing west of Charlotte , then flowing through the Mountain Island Lake and Lake Wylie reservoirs , where it forms approximately 10 miles ( 15 km ) of the border between North Carolina and South Carolina , also the confluence of the South Fork Catawba River and Catawba River is submerged by Lake Wylie near the NC / SC state line . It flows into northern South Carolina , passing Rock Hill , then through Fishing Creek Reservoir near Great Falls , and then into the Lake Wateree reservoir , approximately 30 miles ( 50 km ) northeast of Columbia . At the now - submerged confluence with Wateree Creek , it becomes the Wateree River .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837563468_735-1749",
+        "parent_text_sha256": "9bf3df35e97afaa52f3c2a9389649ffb51365ae9669ca436808bed58a7433a7c",
+        "passage_id": "837563468_735-1749",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 272,
+          "end": 1014,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "9bf3df35e97afaa52f3c2a9389649ffb51365ae9669ca436808bed58a7433a7c",
+        "title": "Catawba River",
+        "source_url": "https://en.wikipedia.org/wiki/Catawba_River",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Catawba_River?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "837563468_735-1749": {
+      "embedding_token_budget": 512,
+      "language": "en",
+      "parent_passage_id": "837563468_735-1749",
+      "parent_text_sha256": "9bf3df35e97afaa52f3c2a9389649ffb51365ae9669ca436808bed58a7433a7c",
+      "passage_id": "837563468_735-1749",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 272,
+        "end": 1014,
+        "start": 0
+      },
+      "source_dataset": "CLAPNQ",
+      "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+      "text_sha256": "9bf3df35e97afaa52f3c2a9389649ffb51365ae9669ca436808bed58a7433a7c",
+      "title": "Catawba River",
+      "source_url": "https://en.wikipedia.org/wiki/Catawba_River",
+      "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+      "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+      "contributors_history_url": "https://en.wikipedia.org/wiki/Catawba_River?action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+        "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "837563468_735-1749",
+      "text": "It rises in the Blue Ridge Mountains in western McDowell County , North Carolina , approximately 20 miles ( 30 km ) east of Asheville . It flows ENE , forming , along with the Linville River , Lake James . It then passes north of Morganton , then southeast through Lake Hickory just north of Hickory , NC , and into the Lake Norman reservoir . From Lake Norman it flows south , passing west of Charlotte , then flowing through the Mountain Island Lake and Lake Wylie reservoirs , where it forms approximately 10 miles ( 15 km ) of the border between North Carolina and South Carolina , also the confluence of the South Fork Catawba River and Catawba River is submerged by Lake Wylie near the NC / SC state line . It flows into northern South Carolina , passing Rock Hill , then through Fishing Creek Reservoir near Great Falls , and then into the Lake Wateree reservoir , approximately 30 miles ( 50 km ) northeast of Columbia . At the now - submerged confluence with Wateree Creek , it becomes the Wateree River .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "837563468_735-1749",
+        "parent_text_sha256": "9bf3df35e97afaa52f3c2a9389649ffb51365ae9669ca436808bed58a7433a7c",
+        "passage_id": "837563468_735-1749",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 272,
+          "end": 1014,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "9bf3df35e97afaa52f3c2a9389649ffb51365ae9669ca436808bed58a7433a7c",
+        "title": "Catawba River",
+        "source_url": "https://en.wikipedia.org/wiki/Catawba_River",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Catawba_River?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "indeterminate",
+      "reason": "実使用文書e0001は、一方のコイルへの通電で生じた磁束が他方に起電力を発生させると説明する。候補はこの核心を述べる一方、コイル間を電流が直接流れるとも読めるため、単なる表現の粗さか仕組みの誤認かが曖昧である。通信と異物検出・電力管理は実使用文書e0004に支持される。ReferenceのQi2の説明は質問の必須要点ではない。",
+      "evidence": ["e0001", "e0004"],
+      "essential_points": "一方のコイルへの通電で生じる磁束を介し、他方のコイルに起電力が発生することで、接続ケーブルなしに電力を伝えられること。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "uncertain",
+        "context_support": "uncertain"
+      }
+    },
+    "a001": {
+      "label": "reliable",
+      "reason": "米国・韓国などの国名を挙げ、設計開発と生産の地域的な分布を説明しており、質問に実質的に答えている。分布と2008年の売上額はいずれも実使用文書e0008に明記されている。Referenceにある企業名や本社所在地は必須ではなく、実使用Contextの支持を代替する根拠には用いていない。",
+      "evidence": ["e0008"],
+      "essential_points": "半導体製造で知られる代表的な国・地域を具体的に挙げること。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a002": {
+      "label": "unreliable",
+      "reason": "Referenceのみのe0021は、消費・投資・政府支出に輸出を加え、輸入を差し引く計算を示す。候補の支出面の説明は輸入控除を欠き、各部門の支出を単純加算するため、計算方法として重要な不足・誤りがある。実使用文書e0020は経済部門を列挙するが、その単純加算を支持しない。定義や実質GDPの説明は実使用文書e0016・e0017に支持される。",
+      "evidence": ["e0016", "e0017", "e0020", "e0021"],
+      "essential_points": "GDPを求める具体的な集計方法を説明すること。支出面ではGDP＝消費＋投資＋政府支出＋輸出－輸入とし、各項目と輸入控除を明示すること。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a003": {
+      "label": "reliable",
+      "reason": "電波、光、X線、ガンマ線を挙げ、光の内訳も示しており、種類を尋ねる質問に答えている。分類と数値はすべて実使用文書e0024に対応する。X線・ガンマ線の波長による説明も概略の分類として読め、重大な誤りは確認できない。Referenceの要約を実使用Contextの代わりには用いていない。",
+      "evidence": ["e0024"],
+      "essential_points": "電磁波の主な種類として電波、赤外線・可視光線・紫外線を含む光、X線、ガンマ線を挙げ、波長による分類を説明すること。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    }
+  }
+}

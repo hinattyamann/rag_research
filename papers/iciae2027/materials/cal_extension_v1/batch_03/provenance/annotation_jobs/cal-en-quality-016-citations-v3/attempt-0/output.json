@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "reliable",
+      "reason": "The answer identifies the New England Patriots, matching the reference's intended loss. Actual context independently supports the opponent, Super Bowl LI, and the 2016 season; reference-only evidence is unnecessary.",
+      "evidence": ["e0002"],
+      "essential_points": "Identify the New England Patriots as the team that defeated the Falcons in the intended Super Bowl loss.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "The answer never identifies the builders of the first transcontinental railroad, so it fails the essential-answer criterion. Reference-only evidence identifies Western Pacific, Central Pacific, and Union Pacific. Actual context supports the B&O statement and does omit those builders, making the stated context limitation accurate, but that does not supply the required answer.",
+      "evidence": ["e0006", "e0011"],
+      "essential_points": "Identify Western Pacific Railroad Company, Central Pacific Railroad Company of California, and Union Pacific as the builders of the first transcontinental railroad.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a002": {
+      "label": "reliable",
+      "reason": "The answer explains both the anonymous authorship and the traditional attribution to Luke the Evangelist. Actual context supports the shared authorship with Luke, scholarly rejection of the traditional identification, the narrative description, and both attributed date ranges. Reference-only evidence is unnecessary.",
+      "evidence": ["e0012", "e0016"],
+      "essential_points": "Explain that Acts has an unnamed author shared with the Gospel of Luke and is traditionally attributed to Luke the Evangelist, with scholarly reservations about that identification.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "The answer confuses Mr. Noodle with his brother Mister Noodle. Actual context assigns Mr. Noodle to Bill Irwin and identifies Michael Jeter as the brother's performer. The cited character summary supports Irwin's different role, not the answer's attribution. This failure is established by actual context without relying on reference-only evidence.",
+      "evidence": ["e0018", "e0019", "e0021"],
+      "essential_points": "Identify Michael Jeter as Mr. Noodle's brother Mister Noodle; distinguish that role from Bill Irwin's Mr. Noodle.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    }
+  }
+}

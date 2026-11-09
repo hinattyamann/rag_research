@@ -1,0 +1,696 @@
+{
+  "qa_key": "cal_ja_744a790487be09731572b4aa",
+  "cohort": "cal",
+  "language": "ja",
+  "analysis_role": "cal",
+  "source_qa_split": "calibration",
+  "record_id": "whrja:02e85c8:answered:880",
+  "document_group_id": "whrja-group:144ee6df300bd98453371fc7",
+  "qa_source": {
+    "answerability_scope": "human_answer_in_source_not_verified_common_corpus_coverage",
+    "corpus_answerability": "not_annotated_no_relabel_from_body_or_quote_availability",
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "document_group_id": "whrja-group:144ee6df300bd98453371fc7",
+    "gold_parent_ids": [
+      "jawiki:7383:98459498:fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8"
+    ],
+    "gold_passage_ids": [],
+    "gold_passage_ids_scope": "verified_literal_quote_overlap_children_only_not_metric_gold",
+    "gold_passage_mapping_status": "audited_cited_article_and_source_reference_markup_mapping_v2",
+    "gold_relevance_unit": "available_cited_source_article",
+    "is_answerable": true,
+    "language": "ja",
+    "provided_passage": null,
+    "question": "電磁波にはどのような種類がありますか？",
+    "record_id": "whrja:02e85c8:answered:880",
+    "reference_answer_sentences": [
+      {
+        "citations": [
+          0
+        ],
+        "text": "電波は、波長が 100 μm 以上の電磁波すべてを指し、低周波・超長波・長波・中波・短波・超短波・マイクロ波と細分化されます。"
+      },
+      {
+        "citations": [
+          0
+        ],
+        "text": "光は、波長が 1 mm から 2 nm 程度のものを指し、赤外線・可視光線・紫外線に分けられます。\n"
+      },
+      {
+        "citations": [
+          0
+        ],
+        "text": "X線、ガンマ線とは、元々はX線は電子励起から発生する電磁波、ガンマ線は核内励起から発生する電磁波というように発生機構によって区分けされているものでありまあすが、大雑把に波長が 10 nm 以下のものをX線、さらに短い 10 pm 以下のものをガンマ線と呼ぶことも多いです。"
+      }
+    ],
+    "reference_answers": [
+      "電波は、波長が 100 μm 以上の電磁波すべてを指し、低周波・超長波・長波・中波・短波・超短波・マイクロ波と細分化されます。光は、波長が 1 mm から 2 nm 程度のものを指し、赤外線・可視光線・紫外線に分けられます。\nX線、ガンマ線とは、元々はX線は電子励起から発生する電磁波、ガンマ線は核内励起から発生する電磁波というように発生機構によって区分けされているものでありまあすが、大雑把に波長が 10 nm 以下のものをX線、さらに短い 10 pm 以下のものをガンマ線と呼ぶことも多いです。"
+    ],
+    "reference_corpus_mapping": [
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0,
+          1,
+          2
+        ],
+        "has_human_summary_not_literal_source": true,
+        "literal_overlap_child_ids": [],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": null,
+          "spans": [],
+          "status": "no_literal_quote"
+        },
+        "parent_passage_id": "jawiki:7383:98459498:fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "raw_article_status": "ok",
+        "reference_index": 0,
+        "source_reference_unit_id": "jawiki-page:7383"
+      }
+    ],
+    "reference_corpus_metadata_offline_only": true,
+    "reference_evidence": [
+      {
+        "cited_by_answer_sentence_indices": [
+          0,
+          1,
+          2
+        ],
+        "human_summary_not_literal_source": "電波は、波長が 100 μm 以上（周波数が 3 THz 以下）の電磁波すべてを指し、さらに波長域によって低周波・超長波・長波・中波・短波・超短波・マイクロ波と細分化される。\n光は、波長が 1 mm から 2 nm 程度のものを指し、波長域によって赤外線・可視光線・紫外線に分けられている。\nX線、ガンマ線とは、元々はX線は電子励起（及び制動放射等の電子由来の機構）から発生する電磁波、ガンマ線は核内励起から発生する電磁波というように発生機構によって区分けされているものであるが、大雑把に波長が 10 nm 以下のものをX線、さらに短い 10 pm 以下のものをガンマ線と呼ぶことも多い。",
+        "quote": null,
+        "reference_index": 0,
+        "title": "電磁波",
+        "url": "https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%A3%81%E6%B3%A2"
+      }
+    ],
+    "research_split": "calibration",
+    "selected_sentences_by_reference": [
+      []
+    ],
+    "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+    "source_id": "880",
+    "source_line_index": 587,
+    "source_record_sha256": "dc1e8f7a97c0bd4c43c97361616b0115c9739d51b9f504bae9974665f4808056",
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "source_split": "answered",
+    "source_title": "電磁波",
+    "unavailable_cited_reference_ids": []
+  },
+  "source_selection": {
+    "record_id": "whrja:02e85c8:answered:880",
+    "question": "電磁波にはどのような種類がありますか？",
+    "document_group_id": "whrja-group:144ee6df300bd98453371fc7"
+  },
+  "question": "電磁波にはどのような種類がありますか？",
+  "used_documents": [
+    {
+      "passage_id": "69402127978296807180434160794_0-723",
+      "title": "電磁波",
+      "text": "空間を伝わる電磁波。横軸は電磁波の進行方向を指す。縦軸は電場と磁場であり、磁場の軸は奥行き方向に倒して描かれている。図に示されるように、電磁波は横波として伝播する。\n電磁波（でんじは、英: electromagnetic wave）は、電場と磁場の変化を伝搬する波（波動）である。電磁波は波と粒子の性質を併せ持ち、散乱や屈折、反射、また回折や干渉など、波長によって様々な波としての性質を示す一方で、微視的には粒子として個数を数えることができる。電磁波の量子は光子である。電磁放射（英: electromagnetic radiation）とも呼ばれる。\n日常生活で知られる光や電波などは電磁波の一種である（詳細は「種類」の項目を参照のこと）。\n理論\n電磁波を説明する理論は、歴史的経緯や議論の側面によって光学、電磁気学、量子力学において統合的かつ整合的に扱われる。\n電磁波は、その一種である光、特に可視光線について古くから研究されてきた。光の性質を研究する学問は、光学と呼ばれている。\n光学とは別に、静電気（摩擦電気）や、磁石の磁力などの研究において、電場（電界）と磁場（磁界）という二つの場によって物理現象を記述することが試みられた。この学問を電磁気学といい、伝搬する電磁場の振動として電磁波の存在が知られるようになった。\n量子力学は、古典的な電磁気学に反する現象が知られるようになり、電磁気学を修正する試みの中で構築された。これに伴い、電磁波の理論も量子力学、特に場の量子論（単に場の理論とも）によって記述されることになった。たとえば、自然放出や誘導放出などの電磁波の放出現象などは、量子力学的な粒子と場の相互作用によって説明される。\n光学\n",
+      "source_metadata": {
+        "article_text_sha256": "fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:7383:98459498:fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "69402127978296807180434160794_0-723",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 491,
+          "end": 723,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498",
+        "text_sha256": "c7dfe98440da6154a66dd2beed77a94fb6ae09b16112d8a746164f8abc3979b1",
+        "title": "電磁波",
+        "wikipedia_page_id": 7383,
+        "wikipedia_revision_id": 98459498,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T01:53:16Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "c7dfe98440da6154a66dd2beed77a94fb6ae09b16112d8a746164f8abc3979b1",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 723
+      }
+    },
+    {
+      "passage_id": "69402127978296807180434160794_5386-6190",
+      "title": "電磁波",
+      "text": "そのため、電磁場の振幅はその振動数の平方根に比例し、また光子の個数密度の平方根にも比例する。\n種類\n→「周波数の比較」および「電波の周波数による分類」も参照\n電磁波は波長によって呼び名・用途が異なる。\n電磁波は波長によって様々な分類がされており、波長の長い方から電波・光・X線・ガンマ線などと呼ばれる。\n電波\n波長が 100 μm 以上（周波数が 3 THz 以下）の電磁波すべてを指し、さらに波長域によって低周波・超長波・長波・中波・短波・超短波・マイクロ波と細分化される。\n光\n波長が 1 mm から 2 nm 程度のものを指し、波長域によって赤外線・可視光線・紫外線に分けられている。\nX線、ガンマ線\n元々はX線は電子励起（及び制動放射等の電子由来の機構）から発生する電磁波、ガンマ線は核内励起から発生する電磁波というように発生機構によって区分けされているものであるが、大雑把に波長が 10 nm 以下のものをX線、さらに短い 10 pm 以下のものをガンマ線と呼ぶことも多い。はるかに短くなると、波長ではなく光子エネルギーで表すことが多く、人間が生成できる最大が1 GeVオーダー、観測上最大がガンマ線バーストによる1兆eVと言われる。\n波長による電磁波の分類\n分類\n波長/nm\n周波数（振動数）/THz\n光子のエネルギー/eV\nガンマ線\n< 0.01\n> 3 × 10\n> 1 × 10\nX線\n0.01 – 10\n3 × 10 – 3 × 10\n1 × 10 – 100\n紫外線\n10 – 380\n3 × 10 – 800\n100 – 3\n可視光線\n380 – 760\n800 – 400\n3 – 1.6\n赤外線\n760 – 1 × 10\n400 – 0.3\n1.6 – 1 × 10\n電波\n> 1 × 10\n< 3\n< 0.01\nマイクロ波\n1 × 10 – 1 × 10\n3 – 3 × 10\n",
+      "source_metadata": {
+        "article_text_sha256": "fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:7383:98459498:fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "69402127978296807180434160794_5386-6190",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 496,
+          "end": 6190,
+          "start": 5386
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498",
+        "text_sha256": "fa5f3d6ef6e223892bc3dbab0aebd3d9ce5c1edd8c987bc0eef18976dcd62722",
+        "title": "電磁波",
+        "wikipedia_page_id": 7383,
+        "wikipedia_revision_id": 98459498,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T01:53:16Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "fa5f3d6ef6e223892bc3dbab0aebd3d9ce5c1edd8c987bc0eef18976dcd62722",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 804
+      }
+    },
+    {
+      "passage_id": "68021532921165767642741599844_0-691",
+      "title": "ラジオ",
+      "text": "ラジオのしくみ。音響→マイクロフォン→電気信号→送信機（変調）→送信アンテナ→電磁波による無線方式の伝送→受信アンテナ→受信機（復調）→電気信号→スピーカー→音響。\nラジオ放送局のスタジオ\nラジオ放送局の送信機\nラジオ放送の送信アンテナ（AM、米国）\nラジオ放送受信機\nラジオ（英: radio）\n電磁波による信号の、無線方式による送信や受信\n電磁波を、音響を信号に変換して無線で伝えるのに使うこと。\n（上で説明した）電磁波による信号を受信するための装置。\n概要\nもともとの意味は冒頭で示した定義文のように「電磁波による無線方式の送受信」全般を意味する言葉である。しかし、日本において一般的には、電波による音声放送（ラジオ放送）とその受信機（ラジオ放送受信機）を指して使っていることが多い。\n当記事ではいずれも扱う。つまり、音響（音声や音楽など）を電磁波の信号に変換し無線でつまり送信側と受信側を電線で繋いだりせずに信号を送信・受信する技術、その技術を用いた放送、その放送を受信するための装置、いずれも扱う。\n電磁波による無線方式の送受信技術\n→「§ 無線電話の始まり」、および「無線」も参照\nラジオ放送\n→「ラジオ放送」も参照\nいくつかの方式があり、最も歴史の長いのは振幅変調による中波放送（AM放送）で、基本的な方式は100年間ほど変わらなかったが、同じく振幅変調方式であるが波長の短い短波放送（SW放送）も（国境を越えるような放送で）使われ、さらに1937年には周波数変調方式のFM放送も登場し、地域放送などで活用されるようになった。→#ラジオ放送の種類。\nラジオ放送受信機\n",
+      "source_metadata": {
+        "article_text_sha256": "760b4a1ef46fe5ae01eefeace6c7f91ecd41e61dc13ac18d157a454ac371c1bb",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3239:98573538:760b4a1ef46fe5ae01eefeace6c7f91ecd41e61dc13ac18d157a454ac371c1bb",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "68021532921165767642741599844_0-691",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 449,
+          "end": 691,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98573538",
+        "text_sha256": "13d5d3fb2e57215fe57e2dd67e717e709b9c12792f63c443854a45da5c7b7d34",
+        "title": "ラジオ",
+        "wikipedia_page_id": 3239,
+        "wikipedia_revision_id": 98573538,
+        "wikipedia_revision_timestamp_utc": "2023-12-23T11:12:53Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98573538&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "13d5d3fb2e57215fe57e2dd67e717e709b9c12792f63c443854a45da5c7b7d34",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 691
+      }
+    },
+    {
+      "passage_id": "69402127978296807180434160794_1440-2149",
+      "title": "電磁波",
+      "text": "そのため、ある基準よりも波長の長い電磁波を「赤い」、波長の短い電磁波を「青い」と表現することがある。\n前述の通り、真空中では電磁波の速さは一定であるため、波長の長い電磁波は振動数が小さく、波長の短い電磁波は振動数が大きい。\n電磁波には重ね合わせの原理が成り立ち、電磁波は線型性を持つことが知られる。線型性によって、電磁波を平面波、すなわち特定の振動方向と進行方向を持つ波の重ね合わせとして表現することができる。平面波はまた、同じ方向へ進む正弦波を用いて分解することができる。各々の正弦波は、波長、振幅、伝播方向、偏光、位相によって特徴付けられる。\nある電磁波を多くの正弦波の重ね合わせとみなしたとき、波長ごと、あるいは振動数ごとの成分の大きさの分布をスペクトルという。\n例えば、理想的な白色光はすべての波長成分が一様に含まれている。逆に単色光は一つの波長成分だけを持つ。\n電磁気学\n1864年にジェームズ・クラーク・マクスウェルは、それまでに明らかにされていた、\nファラデーの電磁誘導の法則\nアンペール＝マクスウェルの法則\n電場に関するガウスの法則\n磁場に関するガウスの法則\nという電磁場に関する四つの法則を統合することによって、マクスウェルの方程式を完成させた。これは電磁気学の基本原理である。電磁波は振動する電磁場であるため、マクスウェルの方程式によって電磁波も記述することができる。\nマクスウェルの方程式は、電荷も電流もない空間では電場に対する波動方程式と磁場に対する波動方程式に帰着する。電磁場が波動方程式によって記述されるということは、電荷の運動に起因する電磁場の振動が波として空間を伝わるということである。",
+      "source_metadata": {
+        "article_text_sha256": "fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:7383:98459498:fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "69402127978296807180434160794_1440-2149",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 474,
+          "end": 2149,
+          "start": 1440
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498",
+        "text_sha256": "bdc3499eaa7f887425c0de53a34df623f1d1fc20ca8ac15e0bf8fed6c779d519",
+        "title": "電磁波",
+        "wikipedia_page_id": 7383,
+        "wikipedia_revision_id": 98459498,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T01:53:16Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "bdc3499eaa7f887425c0de53a34df623f1d1fc20ca8ac15e0bf8fed6c779d519",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 709
+      }
+    },
+    {
+      "passage_id": "21098152479961314725369065144_0-899",
+      "title": "電波",
+      "text": "アンテナ（中央）から電波が放射される様子を表した図\nダイポールアンテナが電波を受信する様子を表す模式図。緑の矢印が電波による電界であり、黒の矢印が電流である。\n電波（でんぱ、（英: radio wave）とは、電磁波のうち、比較的周波数の低いもの。日本の電波法などでは300万メガヘルツ以下のものと定義される。\n概要\n電磁波の存在を初めて実証したハインリヒ・ヘルツは著書『Electric Waves』（1893年）の中で、電磁波を「Electromagnetics wave in air（空中の電磁波）」と「The propagation of electric Waves bymeans of wire（線上の電磁波）」に区別しており、電波に関する国際機関ITU-Rにおけるradio waveの定義も\nradio waves or hertzian waves:Electromagnetics waves of frequencies arbitrarily lower than 3000GHz,propagated in space without artificial guide. — 『ARTICLE 1 Terms and definitions,1.5』、ITU（1992）\nとあるように、「人工的なガイドなしで空中を伝搬する電磁波」であることを明確化している。\n用途\n電波の用途としては、次のようなものを挙げることができる。\n通信・放送 類\n放送（地上波や衛星放送。ラジオやテレビ）\n行政無線（防災無線、警察無線、消防無線など）\n業務無線（船舶無線、航空管制、鉄道無線、マルチチャネルアクセス無線など）\nアマチュア無線\n携帯電話（スマートフォン、フィーチャーフォン、PHS、衛星電話など）\nコードレス電話\n遠隔のデータ取得（テレメータ、ラジオゾンデなど）\n近距離のデータ送受（無線LAN、Wi-Fi、Bluetoothなど。またVICSも）\n遠隔操作（ラジコン）\n位置測定（GPS、ロランなど）\nレーダー\n加熱（電子レンジなど）\n核磁気共鳴分光法\n電子スピン共鳴\n歴史\n",
+      "source_metadata": {
+        "article_text_sha256": "23aa8c33f587700c3e3c2aa519156eb57fd57869a4a48562d93a43d15c889948",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:5798:98331203:23aa8c33f587700c3e3c2aa519156eb57fd57869a4a48562d93a43d15c889948",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21098152479961314725369065144_0-899",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 483,
+          "end": 899,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98331203",
+        "text_sha256": "9123fd8f978729ca5a9c8a5c78113cf2a3a11a0f2afc960d727cfafd017ab93b",
+        "title": "電波",
+        "wikipedia_page_id": 5798,
+        "wikipedia_revision_id": 98331203,
+        "wikipedia_revision_timestamp_utc": "2023-12-04T14:35:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98331203&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "9123fd8f978729ca5a9c8a5c78113cf2a3a11a0f2afc960d727cfafd017ab93b",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 899
+      }
+    }
+  ],
+  "gold_documents": [],
+  "A": {
+    "status": "ok",
+    "answer": "電磁波には以下の種類があります：\n\n- 電波（波長が100 μm以上、周波数が3 THz以下）\n- 光（波長が1 mmから2 nm程度）\n- X線、ガンマ線（波長が10 nm以下、さらに短い10 pm以下）\n\nこれらの種類は、波長によって呼び名や用途が異なる。",
+    "answer_sha256": "791dc92879e25a8d30092ec874ad65665ed84399809dfcb70e53fe5827a888e6",
+    "quality": {
+      "annotation_id": "Q-920ecd5d77aff236d479",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-920ecd5d77aff236d479",
+        "candidate_sha256": "b63b4d949ad86e039578c3640f0bc88adf42c024901242695d85d6897c5e930d",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "電磁波には電波、光、X線、ガンマ線などがあり、波長域によって分類される。",
+        "reason": "電波・光・X線・ガンマ線という主要な種類を挙げ、波長による分類を説明している。数値と呼び名・用途についての主張は実使用Contextのe0008に支持される。X線とガンマ線の説明は簡略だが、同文書が示す大まかな波長分類に対応し、重大な誤りとはいえない。参照情報による支持の代用はしていない。",
+        "evidence": [
+          {
+            "passage_id": "69402127978296807180434160794_5386-6190",
+            "quote": "そのため、電磁場の振幅はその振動数の平方根に比例し、また光子の個数密度の平方根にも比例する。\n種類\n→「周波数の比較」および「電波の周波数による分類」も参照\n電磁波は波長によって呼び名・用途が異なる。\n電磁波は波長によって様々な分類がされており、波長の長い方から電波・光・X線・ガンマ線などと呼ばれる。\n電波\n波長が 100 μm 以上（周波数が 3 THz 以下）の電磁波すべてを指し、さらに波長域によって低周波・超長波・長波・中波・短波・超短波・マイクロ波と細分化される。\n光\n波長が 1 mm から 2 nm 程度のものを指し、波長域によって赤外線・可視光線・紫外線に分けられている。\nX線、ガンマ線\n元々はX線は電子励起（及び制動放射等の電子由来の機構）から発生する電磁波、ガンマ線は核内励起から発生する電磁波というように発生機構によって区分けされているものであるが、大雑把に波長が 10 nm 以下のものをX線、さらに短い 10 pm 以下のものをガンマ線と呼ぶことも多い。はるかに短くなると、波長ではなく光子エネルギーで表すことが多く、人間が生成できる最大が1 GeVオーダー、観測上最大がガンマ線バーストによる1兆eVと言われる。\n波長による電磁波の分類\n分類\n波長/nm\n周波数（振動数）/THz\n光子のエネルギー/eV\nガンマ線\n< 0.01\n> 3 × 10\n> 1 × 10\nX線\n0.01 – 10\n3 × 10 – 3 × 10\n1 × 10 – 100\n紫外線\n10 – 380\n3 × 10 – 800\n100 – 3\n可視光線\n380 – 760\n800 – 400\n3 – 1.6\n赤外線\n760 – 1 × 10\n400 – 0.3\n1.6 – 1 × 10\n電波\n> 1 × 10\n< 3\n< 0.01\nマイクロ波\n1 × 10 – 1 × 10\n3 – 3 × 10\n"
+          }
+        ],
+        "elapsed_seconds": 9.001240016776137,
+        "confirmed_at_utc": "2026-11-09T22:04:59.892569+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/ja/baseline/744a790487be09731572b4aa/record.json",
+      "sha256": "5a93e951d5f7e9a94cb25ad9d49a011b1938e766ff2581070d75b51c45d198a7"
+    },
+    "copy": "provenance/baselines/cal_ja_744a790487be09731572b4aa.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "電磁波は波長によって呼び名・用途が異なる [69402127978296807180434160794_5386-6190]。主な種類は以下の通りである：\n\n- 電波：波長が 100 μm 以上（周波数が 3 THz 以下） [69402127978296807180434160794_5386-6190]\n- 光：波長が 1 mm から 2 nm 程度（赤外線・可視光線・紫外線に分けられている） [69402127978296807180434160794_5386-6190]\n- X 線：大雑把に波長が 10 nm 以下のもの [69402127978296807180434160794_5386-6190]\n- ガンマ線：さらに短い 10 pm 以下のもの [69402127978296807180434160794_5386-6190]",
+    "answer_sha256": "3e66bbcb36399b080c22ad1d04f7a4da6f4142d8ef0a774d3ebef4e69d2342b0",
+    "quality": {
+      "annotation_id": "Q-3cc313f8d209fdfb4969",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-3cc313f8d209fdfb4969",
+        "candidate_sha256": "ca5135bed1ad933cc5d5a931f49288626399270a8bc74eea1a3942344aa770c6",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "電磁波の主な種類として電波、赤外線・可視光線・紫外線を含む光、X線、ガンマ線を挙げ、波長による分類を説明すること。",
+        "reason": "電波、光、X線、ガンマ線を挙げ、光の内訳も示しており、種類を尋ねる質問に答えている。分類と数値はすべて実使用文書e0024に対応する。X線・ガンマ線の波長による説明も概略の分類として読め、重大な誤りは確認できない。Referenceの要約を実使用Contextの代わりには用いていない。",
+        "evidence": [
+          {
+            "passage_id": "69402127978296807180434160794_5386-6190",
+            "quote": "そのため、電磁場の振幅はその振動数の平方根に比例し、また光子の個数密度の平方根にも比例する。\n種類\n→「周波数の比較」および「電波の周波数による分類」も参照\n電磁波は波長によって呼び名・用途が異なる。\n電磁波は波長によって様々な分類がされており、波長の長い方から電波・光・X線・ガンマ線などと呼ばれる。\n電波\n波長が 100 μm 以上（周波数が 3 THz 以下）の電磁波すべてを指し、さらに波長域によって低周波・超長波・長波・中波・短波・超短波・マイクロ波と細分化される。\n光\n波長が 1 mm から 2 nm 程度のものを指し、波長域によって赤外線・可視光線・紫外線に分けられている。\nX線、ガンマ線\n元々はX線は電子励起（及び制動放射等の電子由来の機構）から発生する電磁波、ガンマ線は核内励起から発生する電磁波というように発生機構によって区分けされているものであるが、大雑把に波長が 10 nm 以下のものをX線、さらに短い 10 pm 以下のものをガンマ線と呼ぶことも多い。はるかに短くなると、波長ではなく光子エネルギーで表すことが多く、人間が生成できる最大が1 GeVオーダー、観測上最大がガンマ線バーストによる1兆eVと言われる。\n波長による電磁波の分類\n分類\n波長/nm\n周波数（振動数）/THz\n光子のエネルギー/eV\nガンマ線\n< 0.01\n> 3 × 10\n> 1 × 10\nX線\n0.01 – 10\n3 × 10 – 3 × 10\n1 × 10 – 100\n紫外線\n10 – 380\n3 × 10 – 800\n100 – 3\n可視光線\n380 – 760\n800 – 400\n3 – 1.6\n赤外線\n760 – 1 × 10\n400 – 0.3\n1.6 – 1 × 10\n電波\n> 1 × 10\n< 3\n< 0.01\nマイクロ波\n1 × 10 – 1 × 10\n3 – 3 × 10\n"
+          }
+        ],
+        "elapsed_seconds": 15.002115013485309,
+        "confirmed_at_utc": "2026-11-09T22:05:59.982881+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "電磁波には以下の種類があります： - 電波（波長が100 μm以上、周波数が3 THz以下） - 光（波長が1 mmから2 nm程度） - X線、ガンマ線（波長が10 nm以下、さらに短い10 pm以下） これらの種類は、波長によって呼び名や用途が異なる。"
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "電磁波には以下の種類があります： - 電波（波長が100 μm以上、周波数が3 THz以下） - 光（波長が1 mmから2 nm程度） - X線、ガンマ線（波長が10 nm以下、さらに短い10 pm以下） これらの種類は、波長によって呼び名や用途が異なる。"
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-ja-v1",
+    "normalized_prose": "電磁波には以下の種類があります： - 電波（波長が100 μm以上、周波数が3 THz以下） - 光（波長が1 mmから2 nm程度） - X線、ガンマ線（波長が10 nm以下、さらに短い10 pm以下） これらの種類は、波長によって呼び名や用途が異なる。",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 128
+      }
+    ],
+    "unclosed_delimiters": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "21098152479961314725369065144_0-899",
+          "69402127978296807180434160794_1440-2149",
+          "68021532921165767642741599844_0-691",
+          "69402127978296807180434160794_5386-6190",
+          "69402127978296807180434160794_0-723"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "69402127978296807180434160794_0-723",
+          "69402127978296807180434160794_5386-6190",
+          "68021532921165767642741599844_0-691",
+          "69402127978296807180434160794_1440-2149",
+          "21098152479961314725369065144_0-899"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "69402127978296807180434160794_0-723",
+          "69402127978296807180434160794_5386-6190",
+          "68021532921165767642741599844_0-691",
+          "69402127978296807180434160794_1440-2149",
+          "21098152479961314725369065144_0-899"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "21098152479961314725369065144_0-899",
+          "69402127978296807180434160794_1440-2149",
+          "68021532921165767642741599844_0-691",
+          "69402127978296807180434160794_0-723",
+          "69402127978296807180434160794_5386-6190"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "69402127978296807180434160794_0-723",
+          "69402127978296807180434160794_5386-6190",
+          "68021532921165767642741599844_0-691",
+          "69402127978296807180434160794_1440-2149",
+          "21098152479961314725369065144_0-899"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "69402127978296807180434160794_0-723",
+          "69402127978296807180434160794_5386-6190",
+          "68021532921165767642741599844_0-691",
+          "69402127978296807180434160794_1440-2149",
+          "21098152479961314725369065144_0-899"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "68021532921165767642741599844_0-691",
+          "69402127978296807180434160794_0-723",
+          "69402127978296807180434160794_5386-6190",
+          "21098152479961314725369065144_0-899",
+          "69402127978296807180434160794_1440-2149"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "69402127978296807180434160794_0-723",
+          "69402127978296807180434160794_5386-6190",
+          "68021532921165767642741599844_0-691",
+          "69402127978296807180434160794_1440-2149",
+          "21098152479961314725369065144_0-899"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {
+      "shuffle_3": "original"
+    },
+    "unique_order_count": 4
+  },
+  "statistical_comparison": {
+    "language": "ja",
+    "record_id": "whrja:02e85c8:answered:880",
+    "document_group_id": "whrja-group:144ee6df300bd98453371fc7",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 4,
+      "valid_trials": 4,
+      "valid_pairs": 6,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/ja/report.private.json",
+    "sha256": "ef51adc02fb2abcf10c5e74670fd115bb927642040a37bc5ac514f40a67c1cad"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "21098152479961314725369065144_0-899",
+      "text": "アンテナ（中央）から電波が放射される様子を表した図\nダイポールアンテナが電波を受信する様子を表す模式図。緑の矢印が電波による電界であり、黒の矢印が電流である。\n電波（でんぱ、（英: radio wave）とは、電磁波のうち、比較的周波数の低いもの。日本の電波法などでは300万メガヘルツ以下のものと定義される。\n概要\n電磁波の存在を初めて実証したハインリヒ・ヘルツは著書『Electric Waves』（1893年）の中で、電磁波を「Electromagnetics wave in air（空中の電磁波）」と「The propagation of electric Waves bymeans of wire（線上の電磁波）」に区別しており、電波に関する国際機関ITU-Rにおけるradio waveの定義も\nradio waves or hertzian waves:Electromagnetics waves of frequencies arbitrarily lower than 3000GHz,propagated in space without artificial guide. — 『ARTICLE 1 Terms and definitions,1.5』、ITU（1992）\nとあるように、「人工的なガイドなしで空中を伝搬する電磁波」であることを明確化している。\n用途\n電波の用途としては、次のようなものを挙げることができる。\n通信・放送 類\n放送（地上波や衛星放送。ラジオやテレビ）\n行政無線（防災無線、警察無線、消防無線など）\n業務無線（船舶無線、航空管制、鉄道無線、マルチチャネルアクセス無線など）\nアマチュア無線\n携帯電話（スマートフォン、フィーチャーフォン、PHS、衛星電話など）\nコードレス電話\n遠隔のデータ取得（テレメータ、ラジオゾンデなど）\n近距離のデータ送受（無線LAN、Wi-Fi、Bluetoothなど。またVICSも）\n遠隔操作（ラジコン）\n位置測定（GPS、ロランなど）\nレーダー\n加熱（電子レンジなど）\n核磁気共鳴分光法\n電子スピン共鳴\n歴史\n",
+      "source_metadata": {
+        "article_text_sha256": "23aa8c33f587700c3e3c2aa519156eb57fd57869a4a48562d93a43d15c889948",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:5798:98331203:23aa8c33f587700c3e3c2aa519156eb57fd57869a4a48562d93a43d15c889948",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "21098152479961314725369065144_0-899",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 483,
+          "end": 899,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98331203",
+        "text_sha256": "9123fd8f978729ca5a9c8a5c78113cf2a3a11a0f2afc960d727cfafd017ab93b",
+        "title": "電波",
+        "wikipedia_page_id": 5798,
+        "wikipedia_revision_id": 98331203,
+        "wikipedia_revision_timestamp_utc": "2023-12-04T14:35:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98331203&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "68021532921165767642741599844_0-691",
+      "text": "ラジオのしくみ。音響→マイクロフォン→電気信号→送信機（変調）→送信アンテナ→電磁波による無線方式の伝送→受信アンテナ→受信機（復調）→電気信号→スピーカー→音響。\nラジオ放送局のスタジオ\nラジオ放送局の送信機\nラジオ放送の送信アンテナ（AM、米国）\nラジオ放送受信機\nラジオ（英: radio）\n電磁波による信号の、無線方式による送信や受信\n電磁波を、音響を信号に変換して無線で伝えるのに使うこと。\n（上で説明した）電磁波による信号を受信するための装置。\n概要\nもともとの意味は冒頭で示した定義文のように「電磁波による無線方式の送受信」全般を意味する言葉である。しかし、日本において一般的には、電波による音声放送（ラジオ放送）とその受信機（ラジオ放送受信機）を指して使っていることが多い。\n当記事ではいずれも扱う。つまり、音響（音声や音楽など）を電磁波の信号に変換し無線でつまり送信側と受信側を電線で繋いだりせずに信号を送信・受信する技術、その技術を用いた放送、その放送を受信するための装置、いずれも扱う。\n電磁波による無線方式の送受信技術\n→「§ 無線電話の始まり」、および「無線」も参照\nラジオ放送\n→「ラジオ放送」も参照\nいくつかの方式があり、最も歴史の長いのは振幅変調による中波放送（AM放送）で、基本的な方式は100年間ほど変わらなかったが、同じく振幅変調方式であるが波長の短い短波放送（SW放送）も（国境を越えるような放送で）使われ、さらに1937年には周波数変調方式のFM放送も登場し、地域放送などで活用されるようになった。→#ラジオ放送の種類。\nラジオ放送受信機\n",
+      "source_metadata": {
+        "article_text_sha256": "760b4a1ef46fe5ae01eefeace6c7f91ecd41e61dc13ac18d157a454ac371c1bb",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3239:98573538:760b4a1ef46fe5ae01eefeace6c7f91ecd41e61dc13ac18d157a454ac371c1bb",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "68021532921165767642741599844_0-691",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 449,
+          "end": 691,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98573538",
+        "text_sha256": "13d5d3fb2e57215fe57e2dd67e717e709b9c12792f63c443854a45da5c7b7d34",
+        "title": "ラジオ",
+        "wikipedia_page_id": 3239,
+        "wikipedia_revision_id": 98573538,
+        "wikipedia_revision_timestamp_utc": "2023-12-23T11:12:53Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98573538&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "69402127978296807180434160794_0-723",
+      "text": "空間を伝わる電磁波。横軸は電磁波の進行方向を指す。縦軸は電場と磁場であり、磁場の軸は奥行き方向に倒して描かれている。図に示されるように、電磁波は横波として伝播する。\n電磁波（でんじは、英: electromagnetic wave）は、電場と磁場の変化を伝搬する波（波動）である。電磁波は波と粒子の性質を併せ持ち、散乱や屈折、反射、また回折や干渉など、波長によって様々な波としての性質を示す一方で、微視的には粒子として個数を数えることができる。電磁波の量子は光子である。電磁放射（英: electromagnetic radiation）とも呼ばれる。\n日常生活で知られる光や電波などは電磁波の一種である（詳細は「種類」の項目を参照のこと）。\n理論\n電磁波を説明する理論は、歴史的経緯や議論の側面によって光学、電磁気学、量子力学において統合的かつ整合的に扱われる。\n電磁波は、その一種である光、特に可視光線について古くから研究されてきた。光の性質を研究する学問は、光学と呼ばれている。\n光学とは別に、静電気（摩擦電気）や、磁石の磁力などの研究において、電場（電界）と磁場（磁界）という二つの場によって物理現象を記述することが試みられた。この学問を電磁気学といい、伝搬する電磁場の振動として電磁波の存在が知られるようになった。\n量子力学は、古典的な電磁気学に反する現象が知られるようになり、電磁気学を修正する試みの中で構築された。これに伴い、電磁波の理論も量子力学、特に場の量子論（単に場の理論とも）によって記述されることになった。たとえば、自然放出や誘導放出などの電磁波の放出現象などは、量子力学的な粒子と場の相互作用によって説明される。\n光学\n",
+      "source_metadata": {
+        "article_text_sha256": "fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:7383:98459498:fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "69402127978296807180434160794_0-723",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 491,
+          "end": 723,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498",
+        "text_sha256": "c7dfe98440da6154a66dd2beed77a94fb6ae09b16112d8a746164f8abc3979b1",
+        "title": "電磁波",
+        "wikipedia_page_id": 7383,
+        "wikipedia_revision_id": 98459498,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T01:53:16Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "69402127978296807180434160794_1440-2149",
+      "text": "そのため、ある基準よりも波長の長い電磁波を「赤い」、波長の短い電磁波を「青い」と表現することがある。\n前述の通り、真空中では電磁波の速さは一定であるため、波長の長い電磁波は振動数が小さく、波長の短い電磁波は振動数が大きい。\n電磁波には重ね合わせの原理が成り立ち、電磁波は線型性を持つことが知られる。線型性によって、電磁波を平面波、すなわち特定の振動方向と進行方向を持つ波の重ね合わせとして表現することができる。平面波はまた、同じ方向へ進む正弦波を用いて分解することができる。各々の正弦波は、波長、振幅、伝播方向、偏光、位相によって特徴付けられる。\nある電磁波を多くの正弦波の重ね合わせとみなしたとき、波長ごと、あるいは振動数ごとの成分の大きさの分布をスペクトルという。\n例えば、理想的な白色光はすべての波長成分が一様に含まれている。逆に単色光は一つの波長成分だけを持つ。\n電磁気学\n1864年にジェームズ・クラーク・マクスウェルは、それまでに明らかにされていた、\nファラデーの電磁誘導の法則\nアンペール＝マクスウェルの法則\n電場に関するガウスの法則\n磁場に関するガウスの法則\nという電磁場に関する四つの法則を統合することによって、マクスウェルの方程式を完成させた。これは電磁気学の基本原理である。電磁波は振動する電磁場であるため、マクスウェルの方程式によって電磁波も記述することができる。\nマクスウェルの方程式は、電荷も電流もない空間では電場に対する波動方程式と磁場に対する波動方程式に帰着する。電磁場が波動方程式によって記述されるということは、電荷の運動に起因する電磁場の振動が波として空間を伝わるということである。",
+      "source_metadata": {
+        "article_text_sha256": "fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:7383:98459498:fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "69402127978296807180434160794_1440-2149",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 474,
+          "end": 2149,
+          "start": 1440
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498",
+        "text_sha256": "bdc3499eaa7f887425c0de53a34df623f1d1fc20ca8ac15e0bf8fed6c779d519",
+        "title": "電磁波",
+        "wikipedia_page_id": 7383,
+        "wikipedia_revision_id": 98459498,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T01:53:16Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "69402127978296807180434160794_5386-6190",
+      "text": "そのため、電磁場の振幅はその振動数の平方根に比例し、また光子の個数密度の平方根にも比例する。\n種類\n→「周波数の比較」および「電波の周波数による分類」も参照\n電磁波は波長によって呼び名・用途が異なる。\n電磁波は波長によって様々な分類がされており、波長の長い方から電波・光・X線・ガンマ線などと呼ばれる。\n電波\n波長が 100 μm 以上（周波数が 3 THz 以下）の電磁波すべてを指し、さらに波長域によって低周波・超長波・長波・中波・短波・超短波・マイクロ波と細分化される。\n光\n波長が 1 mm から 2 nm 程度のものを指し、波長域によって赤外線・可視光線・紫外線に分けられている。\nX線、ガンマ線\n元々はX線は電子励起（及び制動放射等の電子由来の機構）から発生する電磁波、ガンマ線は核内励起から発生する電磁波というように発生機構によって区分けされているものであるが、大雑把に波長が 10 nm 以下のものをX線、さらに短い 10 pm 以下のものをガンマ線と呼ぶことも多い。はるかに短くなると、波長ではなく光子エネルギーで表すことが多く、人間が生成できる最大が1 GeVオーダー、観測上最大がガンマ線バーストによる1兆eVと言われる。\n波長による電磁波の分類\n分類\n波長/nm\n周波数（振動数）/THz\n光子のエネルギー/eV\nガンマ線\n< 0.01\n> 3 × 10\n> 1 × 10\nX線\n0.01 – 10\n3 × 10 – 3 × 10\n1 × 10 – 100\n紫外線\n10 – 380\n3 × 10 – 800\n100 – 3\n可視光線\n380 – 760\n800 – 400\n3 – 1.6\n赤外線\n760 – 1 × 10\n400 – 0.3\n1.6 – 1 × 10\n電波\n> 1 × 10\n< 3\n< 0.01\nマイクロ波\n1 × 10 – 1 × 10\n3 – 3 × 10\n",
+      "source_metadata": {
+        "article_text_sha256": "fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:7383:98459498:fc489df7395b287f788da62ae22e8552e6201b5cabd67ca4a969dd23d24f73c8",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "69402127978296807180434160794_5386-6190",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 496,
+          "end": 6190,
+          "start": 5386
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498",
+        "text_sha256": "fa5f3d6ef6e223892bc3dbab0aebd3d9ce5c1edd8c987bc0eef18976dcd62722",
+        "title": "電磁波",
+        "wikipedia_page_id": 7383,
+        "wikipedia_revision_id": 98459498,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T01:53:16Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98459498&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {},
+  "gold_corpus_documents": []
+}

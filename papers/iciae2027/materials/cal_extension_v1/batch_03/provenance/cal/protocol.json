@@ -1,0 +1,557 @@
+{
+  "version": "fixed-v23-cal-extension-v1",
+  "batch_id": "batch_03",
+  "configs": {
+    "en": {
+      "schema_version": 1,
+      "study_version": "fixed-v23-extension-batch_03-en",
+      "purpose": "phase11-bilingual-calibration-candidate",
+      "status": "candidate_not_frozen",
+      "baseline_config": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+      "prompts": "configs/phase11_semantic_prompts_en_v12.yaml",
+      "quality_rubric_version": "order-quality-pilot-v1",
+      "data": {
+        "split": "development",
+        "answerable_only": true,
+        "record_ids": [
+          "clapnq:c508d78:train:1689449386353198859:answerable",
+          "clapnq:c508d78:train:5973133297880755732:answerable",
+          "clapnq:c508d78:train:4237032561027244584:answerable",
+          "clapnq:c508d78:train:6444449308928916806:answerable",
+          "clapnq:c508d78:train:-8062809459390959673:answerable",
+          "clapnq:c508d78:train:5733787053155245501:answerable",
+          "clapnq:c508d78:train:-7737524045131103528:answerable",
+          "clapnq:c508d78:train:-3749177814501001596:answerable",
+          "clapnq:c508d78:train:-1077268850320597688:answerable",
+          "clapnq:c508d78:train:-7046188315681934491:answerable",
+          "clapnq:c508d78:train:-5431175315239443030:answerable",
+          "clapnq:c508d78:train:4887703811831610706:answerable",
+          "clapnq:c508d78:train:2769891724589562860:answerable",
+          "clapnq:c508d78:train:2670263968390861782:answerable",
+          "clapnq:c508d78:dev:3800568474599943409:answerable",
+          "clapnq:c508d78:dev:1748177535249649888:answerable",
+          "clapnq:c508d78:train:1298473356907262315:answerable",
+          "clapnq:c508d78:dev:1688288076551153504:answerable",
+          "clapnq:c508d78:dev:1897426264536254359:answerable",
+          "clapnq:c508d78:train:2839799694676987689:answerable"
+        ]
+      },
+      "identity_manifest": "data/manifests/phase11_gpu_generation_manifest.json",
+      "auxiliary_runtime": {
+        "context_tokens": 12288,
+        "temperature": 0.2,
+        "seed": 42,
+        "threads": 6,
+        "batch_tokens": 128,
+        "repack": false,
+        "timeout_seconds": 1200,
+        "startup_timeout_seconds": 120
+      },
+      "tasks": {
+        "extract_claims": {
+          "max_output_tokens": 3072
+        },
+        "verify_claims": {
+          "max_output_tokens": 6144
+        },
+        "rewrite_answer": {
+          "max_output_tokens": 6144
+        }
+      },
+      "trials": {
+        "order_conditions": [
+          "original",
+          "reversed",
+          "shuffle_1",
+          "shuffle_2",
+          "shuffle_3"
+        ],
+        "shuffle_seed": 42,
+        "same_order_total_trials": 5,
+        "share_original_first_trial": true,
+        "execution_order_seed": 43,
+        "generation_seed_policy": "same_fixed_seed_for_every_trial",
+        "deduplicate_order_permutations": true,
+        "repeated_prompt_result_cache": false,
+        "regenerate_claims_per_trial": false,
+        "regenerate_answer_per_trial": false,
+        "repack_or_truncate_per_trial": false
+      },
+      "decision": {
+        "score": "supported_claims_divided_by_fixed_claims",
+        "threshold": 0.7,
+        "accept_when": "score_greater_than_or_equal_to_threshold",
+        "unscorable_action": "keep_initial_answer_with_separate_fallback_status",
+        "no_claims_score": null,
+        "sensitivity_thresholds": [
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "bare_refusal_policy": "rewrite_once"
+      },
+      "rewrite": {
+        "input_document_order": "original_used_context",
+        "include_initial_answer": true,
+        "include_judge_feedback": false,
+        "reuse_one_candidate_across_trials": true,
+        "retrieve_again": false,
+        "maximum_answer_candidates": 2,
+        "failure_action": "keep_initial_answer_with_rewrite_failed_status"
+      },
+      "errors": {
+        "automatic_retries": 0,
+        "input_overflow_action": "record_error_without_truncating",
+        "preserve_failed_attempts": true,
+        "resume_only_missing_trials": true,
+        "reject_protocol_hash_mismatch": true
+      },
+      "quality": {
+        "annotator": "Codex_AI",
+        "human_reviewed": false,
+        "internal_judge_is_quality_truth": false,
+        "llm_labels_are_final": false,
+        "hide": [
+          "condition",
+          "score",
+          "decision",
+          "answer_stage",
+          "judge_claims",
+          "judge_reasons"
+        ],
+        "outcomes": [
+          "reliable",
+          "unreliable",
+          "indeterminate"
+        ],
+        "save_reasons_and_evidence": true
+      },
+      "costs": {
+        "separate_collection_route_and_offline_costs": true,
+        "charge_reused_candidates_to_each_operational_route": true
+      },
+      "output_constraints": "thinking_json_passage_ids_v3",
+      "auxiliary_model_manifest": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+      "sampling": {
+        "version": "auxiliary-sampling-v1",
+        "top_k": 20,
+        "top_p": 0.95,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "repeat_last_n": 64,
+        "reasoning_budget_tokens": 4096,
+        "final_json_grammar": true,
+        "final_json_grammar_mode": "closing_tag_root_v3",
+        "reasoning_prefill_mode": "chatml_think_suffix_v1"
+      },
+      "execution": {
+        "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+        "gpu_layers": 99,
+        "device": "CUDA0",
+        "require_full_offload": true
+      },
+      "phase12_allowed": false,
+      "execution_scope": "fixed_v23_calibration_v1",
+      "language": "en",
+      "assets": "configs/phase11_bilingual_assets_v2.json",
+      "baseline_prompts": "configs/phase11_bilingual_initial_en_v1.yaml",
+      "verification_mode": "claimwise-v1",
+      "main_limits": {
+        "maximum_completion_attempts": 1660,
+        "maximum_new_qa_per_stage_session": 5,
+        "stop_on_any_task_error": true,
+        "automatic_refill": false
+      },
+      "analysis_split": "calibration"
+    },
+    "ja": {
+      "schema_version": 1,
+      "study_version": "fixed-v23-extension-batch_03-ja",
+      "purpose": "phase11-bilingual-calibration-candidate",
+      "status": "candidate_not_frozen",
+      "baseline_config": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+      "prompts": "configs/phase11_semantic_prompts_ja_v12.yaml",
+      "quality_rubric_version": "order-quality-pilot-v1",
+      "data": {
+        "split": "calibration",
+        "answerable_only": true,
+        "record_ids": [
+          "whrja:02e85c8:answered:691",
+          "whrja:02e85c8:answered:802",
+          "whrja:02e85c8:answered:686",
+          "whrja:02e85c8:answered:235",
+          "whrja:02e85c8:answered:893",
+          "whrja:02e85c8:answered:666",
+          "whrja:02e85c8:answered:511",
+          "whrja:02e85c8:answered:1247",
+          "whrja:02e85c8:answered:994",
+          "whrja:02e85c8:answered:1225",
+          "whrja:02e85c8:answered:502",
+          "whrja:02e85c8:answered:1185",
+          "whrja:02e85c8:answered:1074",
+          "whrja:02e85c8:answered:880",
+          "whrja:02e85c8:answered:404",
+          "whrja:02e85c8:answered:1057",
+          "whrja:02e85c8:answered:1168",
+          "whrja:02e85c8:answered:1002",
+          "whrja:02e85c8:answered:461",
+          "whrja:02e85c8:answered:629"
+        ]
+      },
+      "identity_manifest": "data/manifests/phase11_gpu_generation_manifest.json",
+      "auxiliary_runtime": {
+        "context_tokens": 12288,
+        "temperature": 0.2,
+        "seed": 42,
+        "threads": 6,
+        "batch_tokens": 128,
+        "repack": false,
+        "timeout_seconds": 1200,
+        "startup_timeout_seconds": 120
+      },
+      "tasks": {
+        "extract_claims": {
+          "max_output_tokens": 3072
+        },
+        "verify_claims": {
+          "max_output_tokens": 6144
+        },
+        "rewrite_answer": {
+          "max_output_tokens": 6144
+        }
+      },
+      "trials": {
+        "order_conditions": [
+          "original",
+          "reversed",
+          "shuffle_1",
+          "shuffle_2",
+          "shuffle_3"
+        ],
+        "shuffle_seed": 42,
+        "same_order_total_trials": 5,
+        "share_original_first_trial": true,
+        "execution_order_seed": 43,
+        "generation_seed_policy": "same_fixed_seed_for_every_trial",
+        "deduplicate_order_permutations": true,
+        "repeated_prompt_result_cache": false,
+        "regenerate_claims_per_trial": false,
+        "regenerate_answer_per_trial": false,
+        "repack_or_truncate_per_trial": false
+      },
+      "decision": {
+        "score": "supported_claims_divided_by_fixed_claims",
+        "threshold": 0.7,
+        "accept_when": "score_greater_than_or_equal_to_threshold",
+        "unscorable_action": "keep_initial_answer_with_separate_fallback_status",
+        "no_claims_score": null,
+        "sensitivity_thresholds": [
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "bare_refusal_policy": "rewrite_once"
+      },
+      "rewrite": {
+        "input_document_order": "original_used_context",
+        "include_initial_answer": true,
+        "include_judge_feedback": false,
+        "reuse_one_candidate_across_trials": true,
+        "retrieve_again": false,
+        "maximum_answer_candidates": 2,
+        "failure_action": "keep_initial_answer_with_rewrite_failed_status"
+      },
+      "errors": {
+        "automatic_retries": 0,
+        "input_overflow_action": "record_error_without_truncating",
+        "preserve_failed_attempts": true,
+        "resume_only_missing_trials": true,
+        "reject_protocol_hash_mismatch": true
+      },
+      "quality": {
+        "annotator": "Codex_AI",
+        "human_reviewed": false,
+        "internal_judge_is_quality_truth": false,
+        "llm_labels_are_final": false,
+        "hide": [
+          "condition",
+          "score",
+          "decision",
+          "answer_stage",
+          "judge_claims",
+          "judge_reasons"
+        ],
+        "outcomes": [
+          "reliable",
+          "unreliable",
+          "indeterminate"
+        ],
+        "save_reasons_and_evidence": true
+      },
+      "costs": {
+        "separate_collection_route_and_offline_costs": true,
+        "charge_reused_candidates_to_each_operational_route": true
+      },
+      "output_constraints": "thinking_json_passage_ids_v3",
+      "auxiliary_model_manifest": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+      "sampling": {
+        "version": "auxiliary-sampling-v1",
+        "top_k": 20,
+        "top_p": 0.95,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "repeat_last_n": 64,
+        "reasoning_budget_tokens": 4096,
+        "final_json_grammar": true,
+        "final_json_grammar_mode": "closing_tag_root_v3",
+        "reasoning_prefill_mode": "chatml_think_suffix_v1"
+      },
+      "execution": {
+        "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+        "gpu_layers": 99,
+        "device": "CUDA0",
+        "require_full_offload": true
+      },
+      "phase12_allowed": false,
+      "execution_scope": "fixed_v23_calibration_v1",
+      "language": "ja",
+      "assets": "configs/phase11_bilingual_assets_v2.json",
+      "baseline_prompts": "configs/phase11_bilingual_initial_ja_v1.yaml",
+      "verification_mode": "claimwise-v1",
+      "main_limits": {
+        "maximum_completion_attempts": 1660,
+        "maximum_new_qa_per_stage_session": 5,
+        "stop_on_any_task_error": true,
+        "automatic_refill": false
+      },
+      "analysis_split": "calibration"
+    }
+  },
+  "source_splits": {
+    "en": "development",
+    "ja": "calibration"
+  },
+  "original_release_sha256": "2daaff4a8ec97304cf08e82ce47e3881d42be93bf277d8fd5a081b84b14edbb8",
+  "plan_sha256": "1bbbc1b61f0150159093db162473e64d9136e2bdfdec4e74ba790f6f55e67f9f",
+  "selection": {
+    "en": [
+      {
+        "record_id": "clapnq:c508d78:train:1689449386353198859:answerable",
+        "document_group_id": "clapnq-title:2016 atlanta falcons season",
+        "selection_rank_sha256": "09f376ce0ddf96f3be46615878fe6bba91b2b977ea81fe7720d8090b8ff1d873"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:5973133297880755732:answerable",
+        "document_group_id": "clapnq-title:right of children to free and compulsory education act, 2009",
+        "selection_rank_sha256": "0a25fdb4303902b298e28bbc19941c3466edd23420d1e4cc740ebd4c7f7af3e5"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:4237032561027244584:answerable",
+        "document_group_id": "clapnq-title:coureur des bois",
+        "selection_rank_sha256": "0a4dab637a36de8a139a690f477c9ae8d3f69ff08e6a364bce0e00e663a81746"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:6444449308928916806:answerable",
+        "document_group_id": "clapnq-title:yellowstone river",
+        "selection_rank_sha256": "0aa3b7e9e90a9a532108d9e426d60cd509ea34032af40eaff0ba2504a6debcc3"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-8062809459390959673:answerable",
+        "document_group_id": "clapnq-title:separation of church and state in the united states",
+        "selection_rank_sha256": "0aeee98a4ca1c0292d52d2f64aa884477091fddd37e8eb9190d69429695afc9e"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:5733787053155245501:answerable",
+        "document_group_id": "clapnq-title:matthew 5:22",
+        "selection_rank_sha256": "0b25372dc7675ab312b9beabcedb3926e3c237b42b64224366975a2767fb5207"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-7737524045131103528:answerable",
+        "document_group_id": "clapnq-title:log horizon",
+        "selection_rank_sha256": "0bc8c6c74c9e0d7bef596367284ba996b158c2d7aaa0f79fe5fff10e9390a832"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-3749177814501001596:answerable",
+        "document_group_id": "clapnq-title:barrett m82",
+        "selection_rank_sha256": "0bce0e061b9f576b5f37f91ee821629778c3c16b7f2479b131507afaeca664a0"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-1077268850320597688:answerable",
+        "document_group_id": "clapnq-title:acts of the apostles",
+        "selection_rank_sha256": "0bcff917d9b4251df260d9f39d1ae5928d3159111712d88037ade9c22305ef6f"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-7046188315681934491:answerable",
+        "document_group_id": "clapnq-title:history of the pittsburgh pirates",
+        "selection_rank_sha256": "0c2d0878d0729be7fd271efb2ca1c039aacb95e6c569b91c276d70dd2da22f75"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-5431175315239443030:answerable",
+        "document_group_id": "clapnq-title:catawba river",
+        "selection_rank_sha256": "0c2d4dfea048b80b9a4500ef8d28760fb16b698d157396e51f77775aaa4c178a"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+        "document_group_id": "clapnq-title:mr. noodle",
+        "selection_rank_sha256": "0c5ae2a8d4f6da0068199f534968d6d99da58a10a04050f8202eae4df52abf7c"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:2769891724589562860:answerable",
+        "document_group_id": "clapnq-title:spanish–american war",
+        "selection_rank_sha256": "0c9b5c48c4ff397f77f399d33f5775678c1e34ef0596148243296175b7f77a04"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:2670263968390861782:answerable",
+        "document_group_id": "clapnq-title:first transcontinental railroad",
+        "selection_rank_sha256": "0cbed8aabf72371a80f2f14bffc1fc4ca7ed7a65ca49dad1e5e1201eaeae5111"
+      },
+      {
+        "record_id": "clapnq:c508d78:dev:3800568474599943409:answerable",
+        "document_group_id": "clapnq-title:mustang",
+        "selection_rank_sha256": "0d1a2842c17b3f6659396278607deb448ba0755516f608572b4f489239921c65"
+      },
+      {
+        "record_id": "clapnq:c508d78:dev:1748177535249649888:answerable",
+        "document_group_id": "clapnq-title:list of diary of a wimpy kid characters",
+        "selection_rank_sha256": "0d3ee7b53227625b404c9ffc4692d654f48f62edbb00efb2a4ed241082459c9a"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:1298473356907262315:answerable",
+        "document_group_id": "clapnq-title:rollin' (limp bizkit song)",
+        "selection_rank_sha256": "0d5ff0b6a4367a5475596e3f09da8551f4a2faf8102ef2e76e447b285e0d7c02"
+      },
+      {
+        "record_id": "clapnq:c508d78:dev:1688288076551153504:answerable",
+        "document_group_id": "clapnq-title:guy's grocery games",
+        "selection_rank_sha256": "0d82d0b3414f176cc71c11c8e6c5fe826fd50b911b0072cf406c128e2d58d15b"
+      },
+      {
+        "record_id": "clapnq:c508d78:dev:1897426264536254359:answerable",
+        "document_group_id": "clapnq-title:new amsterdam",
+        "selection_rank_sha256": "0dd89fd30821f69cd2383779a101438b1f6330a5fe5a939796e385865ecd506e"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:2839799694676987689:answerable",
+        "document_group_id": "clapnq-title:dine and dash",
+        "selection_rank_sha256": "0dd9691a7df63d649098fb1828a9f46a056e6a1575b3ffd6c3d06c5ac03129d4"
+      }
+    ],
+    "ja": [
+      {
+        "record_id": "whrja:02e85c8:answered:691",
+        "document_group_id": "whrja-group:a6a1e1c02aaabd84f3b2e98b",
+        "selection_rank_sha256": "af3e7bbd548b64435f470dcb63a8f121df14b2ee73515433af3e2b355d9aa55d"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:802",
+        "document_group_id": "whrja-group:3f6222814c47aa6981b1bc01",
+        "selection_rank_sha256": "b0167e2baedfe757ff859e9857c29d2a914e09ec81c1788c2826acb120b52f36"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:686",
+        "document_group_id": "whrja-group:40cf87227ca612c51a0a4c69",
+        "selection_rank_sha256": "b15e32824d720f26db400f3a8df0b351a7a9afbe59c0762984e56725cace5c5e"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:235",
+        "document_group_id": "whrja-group:a48179d1ccd63ae20a6fcfc4",
+        "selection_rank_sha256": "bd45c74215c41891e2291c818e342140360e06e3fab7aaa48a5f5935a13212e2"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:893",
+        "document_group_id": "whrja-group:8ac91ba3ff889010fc92498b",
+        "selection_rank_sha256": "bf318836d96b36336ac1de7cdbcaca8c69c44e4a4562ff0f8ba077cc5a7eda70"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:666",
+        "document_group_id": "whrja-group:f8183306c9ee19469accaf05",
+        "selection_rank_sha256": "bfc6fbbf4be93537accc6159ae7653cf80b86366f46d4b6cb368da5e38ec053d"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:511",
+        "document_group_id": "whrja-group:673d941f612ad62a019213db",
+        "selection_rank_sha256": "c6ea1796fb8c353f2ffa39510ab11f6d1b97cc541f308cea72da834d3bb59d82"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:1247",
+        "document_group_id": "whrja-group:c63d18ea117577411d4eeb91",
+        "selection_rank_sha256": "c8be0ae8c3d2cf19d294d2d05ccd45731339e5448cddc7274d540207c809840d"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:994",
+        "document_group_id": "whrja-group:19f5b54c3223153413c6792a",
+        "selection_rank_sha256": "ca2a820b09619263e0dddddbb1b80ce64de1caeb61beb677f8117ef244088bb2"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:1225",
+        "document_group_id": "whrja-group:41a35d8d81faba46c2a75ec1",
+        "selection_rank_sha256": "cd92839d125794074a428eaa474c539540f2102d90d5b219a31560be7e860c1d"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:502",
+        "document_group_id": "whrja-group:c32682a8a4d2d1c503491402",
+        "selection_rank_sha256": "cf010dd99095f43d7cb603b7a26d87e0041caa7d53454ef8efe4ea8aa603c250"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:1185",
+        "document_group_id": "whrja-group:e9aa363e39b7b6d5d3d19193",
+        "selection_rank_sha256": "d07e3fcdc4a407887bb1074dce7467edb0bd01722e281d00b61eeec73b93f336"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:1074",
+        "document_group_id": "whrja-group:9be6364ca291f8892286b311",
+        "selection_rank_sha256": "d4eda117109b99828c9dd79b7aad9f48c452e94734538b46f833e13f38f9b0cc"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:880",
+        "document_group_id": "whrja-group:144ee6df300bd98453371fc7",
+        "selection_rank_sha256": "d7859f63892743bd8d44f4b160c4ec0f9b1c16a1fc4405f1464d202fe9f57902"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:404",
+        "document_group_id": "whrja-group:a172f7f4916f020db9e01fe0",
+        "selection_rank_sha256": "dc6b9e9621115d561f2fc87069bd15ed6b6b02d73db71a2df301740a85623208"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:1057",
+        "document_group_id": "whrja-group:b972c233f63dadb32f06d4b0",
+        "selection_rank_sha256": "de8c2b8c2e85d03d6fa46a5164316e8f65e57afecafc5610ca13c32b7316869d"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:1168",
+        "document_group_id": "whrja-group:88b84edf1437aa33445efc26",
+        "selection_rank_sha256": "e0db146b70e0b1edc24cfae8da7a5e06211ce599fa82e8737b2243408d751bf6"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:1002",
+        "document_group_id": "whrja-group:4ebc33bccf75568168100eb6",
+        "selection_rank_sha256": "e4825452aa5281ed8dfef8e6c73e5c5fdeb3ecfb835c89043448a18421dd5741"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:461",
+        "document_group_id": "whrja-group:86168389a9c05b28e6708d4d",
+        "selection_rank_sha256": "e65aaa6decdda469d7d95c34e579622a7bea3006fe7f21eb44c089c9051f9e7b"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:629",
+        "document_group_id": "whrja-group:5be5a1d227ceefdf9827f96c",
+        "selection_rank_sha256": "eea380d73bee522c60845386e0168c928c2212ffe90ef829aab436f0ab1ec7a9"
+      }
+    ]
+  },
+  "maximum_calls_per_language": 1660,
+  "session_wall_seconds": 43200,
+  "total_wall_seconds": 259200,
+  "automatic_retries": 0,
+  "purpose": "additional_confirmation_not_tuning",
+  "phase12_allowed": false,
+  "inputs": {
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/cal-extension-authoring-v1/data/manifests/cal_extension_plan_v1.json": "1bbbc1b61f0150159093db162473e64d9136e2bdfdec4e74ba790f6f55e67f9f",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1/all_annotations.seal.json": "f572ca7427d33b3fdb3f87d29aedf26b19376466ced099970f132cc1e2a6e848",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_calibration/fixed-v23-cal-v1/all_annotations.seal.json": "67902300ef6d2eac951cf89942fdc6d7f3e8f3ab7f4421c85d9176e4ac0848e3"
+  }
+}

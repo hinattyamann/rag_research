@@ -1,0 +1,1087 @@
+{
+  "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+  "cohort": "cal",
+  "language": "ja",
+  "analysis_role": "cal",
+  "source_qa_split": "calibration",
+  "record_id": "whrja:02e85c8:answered:511",
+  "document_group_id": "whrja-group:673d941f612ad62a019213db",
+  "qa_source": {
+    "answerability_scope": "human_answer_in_source_not_verified_common_corpus_coverage",
+    "corpus_answerability": "not_annotated_no_relabel_from_body_or_quote_availability",
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "document_group_id": "whrja-group:673d941f612ad62a019213db",
+    "gold_parent_ids": [
+      "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6"
+    ],
+    "gold_passage_ids": [
+      "77333489118002544406049112959_0-821",
+      "77333489118002544406049112959_821-1761"
+    ],
+    "gold_passage_ids_scope": "verified_literal_quote_overlap_children_only_not_metric_gold",
+    "gold_passage_mapping_status": "audited_cited_article_and_source_reference_markup_mapping_v2",
+    "gold_relevance_unit": "available_cited_source_article",
+    "is_answerable": true,
+    "language": "ja",
+    "provided_passage": null,
+    "question": "ワイヤレス充電は、なぜケーブルなしで充電できるの？",
+    "record_id": "whrja:02e85c8:answered:511",
+    "reference_answer_sentences": [
+      {
+        "citations": [
+          1
+        ],
+        "text": "Qi（ワイヤレス給電）は、インダクティブ充電を使用したワイヤレス電力伝送のインターフェース規格で、スマートフォン等の互換性のあるデバイスをQi充電パッドに置くと充電できるようになりました。"
+      },
+      {
+        "citations": [
+          2
+        ],
+        "text": "初期のQiは、「電磁誘導方式」を元にした、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、もう片方に起電力が発生する電磁誘導の原理を用いたものです。"
+      },
+      {
+        "citations": [
+          3
+        ],
+        "text": "コイルの中心が一致したとき最大の効率が得られ、ズレると効率が落ち、この問題を解消すべく、2023年1月にQi2を発表しました。"
+      },
+      {
+        "citations": [
+          3
+        ],
+        "text": "Qi2ではコイルを囲むように磁石が配置され、デバイスを近づけると磁力によりコイルの中心同士が一致する仕組みとなっています。"
+      }
+    ],
+    "reference_answers": [
+      "Qi（ワイヤレス給電）は、インダクティブ充電を使用したワイヤレス電力伝送のインターフェース規格で、スマートフォン等の互換性のあるデバイスをQi充電パッドに置くと充電できるようになりました。初期のQiは、「電磁誘導方式」を元にした、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、もう片方に起電力が発生する電磁誘導の原理を用いたものです。コイルの中心が一致したとき最大の効率が得られ、ズレると効率が落ち、この問題を解消すべく、2023年1月にQi2を発表しました。Qi2ではコイルを囲むように磁石が配置され、デバイスを近づけると磁力によりコイルの中心同士が一致する仕組みとなっています。"
+    ],
+    "reference_corpus_mapping": [
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "77333489118002544406049112959_0-821"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "verified_source_reference_markup",
+          "projection_policy": "source-html-reference-superscript-exact-body-projection-v1",
+          "request_journal_sha256": "336f8262957622f529eea711c9c49d486a29b73992594f829e485aa5c1a18ee8",
+          "source_html_sha256": "ddcfc2d2ad0c5b66134f2f728496416e287c5cc1facdd12684fb7458458a66f1",
+          "spans": [
+            {
+              "end": 293,
+              "omitted_reference_markup": [
+                {
+                  "html_end": 3044,
+                  "html_start": 2875,
+                  "marker_html_sha256": "810b46fd45882519d9f52034eabdd11706cf6526ab7ff2dfa5c7da1710a42d0b",
+                  "marker_id": 0,
+                  "marker_text": "[1]"
+                },
+                {
+                  "html_end": 3664,
+                  "html_start": 3463,
+                  "marker_html_sha256": "0c69cf8860f209305a32f11fbb6c580fa8dad8d7bb3192b0f3cf0e31361b6a2d",
+                  "marker_id": 1,
+                  "marker_text": "[2]"
+                }
+              ],
+              "source_span_sha256": "e057117cffd8bb85fc1007046d80f3022964df7557312d6648a9b349ca1698b0",
+              "start": 117
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "raw_article_status": "ok",
+        "reference_index": 1,
+        "source_reference_unit_id": "jawiki-page:2385731"
+      },
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          1
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "77333489118002544406049112959_0-821"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "exact",
+          "spans": [
+            {
+              "end": 409,
+              "source_span_sha256": "dc6d4999e7eb00a44e239cb8eb2a6fed8689f288be5fb49a029fa7c50c49e20f",
+              "start": 297
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "raw_article_status": "ok",
+        "reference_index": 2,
+        "source_reference_unit_id": "jawiki-page:2385731"
+      },
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          2,
+          3
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "77333489118002544406049112959_821-1761"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "verified_source_reference_markup",
+          "projection_policy": "source-html-reference-superscript-exact-body-projection-v1",
+          "request_journal_sha256": "336f8262957622f529eea711c9c49d486a29b73992594f829e485aa5c1a18ee8",
+          "source_html_sha256": "ddcfc2d2ad0c5b66134f2f728496416e287c5cc1facdd12684fb7458458a66f1",
+          "spans": [
+            {
+              "end": 1584,
+              "omitted_reference_markup": [
+                {
+                  "html_end": 8680,
+                  "html_start": 8522,
+                  "marker_html_sha256": "6e9ccd5ba1f1b1a2882733c6300a6d5e8411eaeddc36b16be95051d936622e6c",
+                  "marker_id": 14,
+                  "marker_text": "[11]"
+                }
+              ],
+              "source_span_sha256": "ae33aeca2e0acdd60c8d810415b3d32022b97828a668cc743d86ba72e09c662f",
+              "start": 1386
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "raw_article_status": "ok",
+        "reference_index": 3,
+        "source_reference_unit_id": "jawiki-page:2385731"
+      }
+    ],
+    "reference_corpus_metadata_offline_only": true,
+    "reference_evidence": [
+      {
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "Qi（チー、発音 [tʃiː] CHEE;[1] 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格[2]。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。",
+        "reference_index": 1,
+        "title": "Qi (ワイヤレス給電)",
+        "url": "https://ja.wikipedia.org/wiki/Qi_(%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E7%B5%A6%E9%9B%BB)"
+      },
+      {
+        "cited_by_answer_sentence_indices": [
+          1
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。",
+        "reference_index": 2,
+        "title": "Qi (ワイヤレス給電)",
+        "url": "https://ja.wikipedia.org/wiki/Qi_(%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E7%B5%A6%E9%9B%BB)"
+      },
+      {
+        "cited_by_answer_sentence_indices": [
+          2,
+          3
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "ただ、既存のQi規格はホストとクライアントのコイルの中心が一致したときにのみ最大の効率が得られ、少しでもズレると効率が落ちる問題があった。この問題を解消すべく、2023年1月、WPCはAppleと協力し、MagSafeの技術を積極的に取り入れたQi2を発表した。[11]\nQi2ではコイルを囲むように磁石が配置されており、デバイスを近づけると磁力によりコイルの中心同士が一致させられる仕組みとなっている。",
+        "reference_index": 3,
+        "title": "Qi (ワイヤレス給電)",
+        "url": "https://ja.wikipedia.org/wiki/Qi_(%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E7%B5%A6%E9%9B%BB)"
+      }
+    ],
+    "research_split": "calibration",
+    "selected_sentences_by_reference": [
+      [
+        "Qi（チー、発音 [tʃiː] CHEE;[1] 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格[2]。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。",
+        "初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。",
+        "ただ、既存のQi規格はホストとクライアントのコイルの中心が一致したときにのみ最大の効率が得られ、少しでもズレると効率が落ちる問題があった。この問題を解消すべく、2023年1月、WPCはAppleと協力し、MagSafeの技術を積極的に取り入れたQi2を発表した。[11]\nQi2ではコイルを囲むように磁石が配置されており、デバイスを近づけると磁力によりコイルの中心同士が一致させられる仕組みとなっている。"
+      ]
+    ],
+    "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+    "source_id": "511",
+    "source_line_index": 346,
+    "source_record_sha256": "1bfcf9c4c5e5b717a726f2b021e1f4d9470999fc2461ac13f9ef945263d564c5",
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "source_split": "answered",
+    "source_title": "Qi (ワイヤレス給電)",
+    "unavailable_cited_reference_ids": []
+  },
+  "source_selection": {
+    "record_id": "whrja:02e85c8:answered:511",
+    "question": "ワイヤレス充電は、なぜケーブルなしで充電できるの？",
+    "document_group_id": "whrja-group:673d941f612ad62a019213db"
+  },
+  "question": "ワイヤレス充電は、なぜケーブルなしで充電できるの？",
+  "used_documents": [
+    {
+      "passage_id": "62140494316782455077420531643_34595-35488",
+      "title": "NTTドコモ",
+      "text": "ポケットチャージャー 01/02/03（スマートフォン向けに出力と容量をアップした、リチウムイオン電池を内蔵した繰り返し型充電アダプタ 三洋電機製）…02/03はQiでの充電に対応。\nワイヤレスチャージャー 01/02/03（三洋電機製）・・・おくだけ充電（Qi）対応端末共通のコイル入り充電台。端末附属のワイヤレスチャージャーは端末と同じ製造元（NECカシオ製端末用であれば、「ワイヤレスチャージャー N01」のようになる）となるが、試供品扱いとなり、非売品となるため、オプションとして別途設定されている。\n卓上ホルダ（各携帯電話端末によって異なる HTシリーズは無し）\nキャリングケース L01・S01（ソニー・エリクソン・モバイルコミュニケーションズ製 各携帯電話端末によって異なる）\nキャリングケース 02（パナソニック モバイルコミュニケーションズ製 各携帯電話端末によって異なる）\n平型ステレオイヤホンセット P01（パナソニック モバイルコミュニケーションズ製）\n平型スイッチ付イヤホンセット P02（パナソニック モバイルコミュニケーションズ製）\nステレオイヤホンマイク 01（パナソニック モバイルコミュニケーションズ製）\nステレオイヤホンマイク 02（パナソニック モバイルコミュニケーションズ製）\nイヤホンマイク 01（パナソニック モバイルコミュニケーションズ製）\nイヤホン変換アダプタ 01（パナソニック モバイルコミュニケーションズ製）\n外部接続用イヤホン変換アダプタ 01（富士通製）\nFOMA 充電機能付USB接続ケーブル 01（ミツミ電機製）\nFOMA 充電機能付USB接続ケーブル 02（ミツミ電機製）\nBluetoothワイヤレスステレオイヤホンセットP01/P02（パナソニック製）\nBluetoothワイヤレスイヤホンセットP03（パナソニック製）\n骨伝導レシーバマイク 01 サウンドリーフ（NECトーキン製）\n骨伝導レシーバマイク 02 サウンドリーフプラス（NECトーキン製）\nBluetoothヘッドセットF01（富士通製 通話専用）\n",
+      "source_metadata": {
+        "article_text_sha256": "6d9b930f9e448ddd3add44d35e6e1c80e6f897e4f0229b4b50baaba2f2506497",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:4495:98205919:6d9b930f9e448ddd3add44d35e6e1c80e6f897e4f0229b4b50baaba2f2506497",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "62140494316782455077420531643_34595-35488",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 35488,
+          "start": 34595
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98205919",
+        "text_sha256": "0d415c711662e7cf90f419c488d6240d58b9648a8da8a45e083fe9469222be5b",
+        "title": "NTTドコモ",
+        "wikipedia_page_id": 4495,
+        "wikipedia_revision_id": 98205919,
+        "wikipedia_revision_timestamp_utc": "2023-11-28T16:51:00Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98205919&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "0d415c711662e7cf90f419c488d6240d58b9648a8da8a45e083fe9469222be5b",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 893
+      }
+    },
+    {
+      "passage_id": "77333489118002544406049112959_0-821",
+      "title": "Qi (ワイヤレス給電)",
+      "text": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。",
+      "source_metadata": {
+        "article_text_sha256": "3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "77333489118002544406049112959_0-821",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 479,
+          "end": 821,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653",
+        "text_sha256": "3e39afe5ddc14d0922a93b19aa9f5a93e25e93ea715516bcb1dbf54115ab90ce",
+        "title": "Qi (ワイヤレス給電)",
+        "wikipedia_page_id": 2385731,
+        "wikipedia_revision_id": 98505653,
+        "wikipedia_revision_timestamp_utc": "2023-12-17T15:06:57Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "3e39afe5ddc14d0922a93b19aa9f5a93e25e93ea715516bcb1dbf54115ab90ce",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 821
+      }
+    },
+    {
+      "passage_id": "29797275621430404600408944239_14420-15232",
+      "title": "Eneloop",
+      "text": "単3形エネループ4本付急速充電器セット (K-KJ55HCD40) - 「eneloop pro」の電池・充電器セットのため、充電器（BQ-CC55）は電池本体に合わせてセット品限定カラーのブラックとなる。\nスペーサー\n単1サイズ対応2本入 (NCS-TG1-2BP)\n単1サイズ対応スペーサーは「eneloop pro (HR-3UWX)」とHR-3UGには使用不可なので注意が必要（電池の直径がほかの三洋製電池よりも少し大きいため）。\n単2サイズ対応2本入 (NCS-TG2-2BP)\nケース\n単3形・単4形ニッケル水素電池専用充電機能付キャリングケースセット (N-WL01S) - 普段は「eneloop」シリーズを収納できるキャリングケースとして使用できるが、ワイヤレス充電の国際規格である「Qi（チー）」に対応しており、「Qi（チー）」に対応した充電用パッドに置くだけで無接点充電が可能（親会社のパナソニックが発売する無接点充電パッド (QE-TM101-W) はもちろんのこと、「Qi（チー）」に対応している無接点充電パッドであればメーカーや機種を問わず使用可能）。カラーはブラックとホワイトの2色で、単3形「eneloop」2本が同梱される。\n単3形・単4形対応電池ケース (HR-CASE) - 持ち運びや保管時に傷や外部短絡から守るキャリングケース。単3形なら最大4本まで、単4形なら最大5本まで収納可能。\nゲーム機用\n三洋はかつてTOY CELLという任天堂ライセンス品の玩具向け充電乾電池を発売したことがあり、その後継として、WiiやニンテンドーDS向けに任天堂ライセンス品の充電池を発売していたが、2012年に製造を終了した。\nWiiリモコン専用無接点充電セット (N-WR01S/WR03S)\n任天堂ライセンスを取得したWiiリモコン専用充電池。充電式電池パックは充電池と蓋の一体型となっている。",
+      "source_metadata": {
+        "article_text_sha256": "585b35eda8dc537eb32cb9add6a702427dab6228567eaf4103cb869f25a16d28",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:416326:97105804:585b35eda8dc537eb32cb9add6a702427dab6228567eaf4103cb869f25a16d28",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "29797275621430404600408944239_14420-15232",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 493,
+          "end": 15232,
+          "start": 14420
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97105804",
+        "text_sha256": "7eb0d44465474105d32ac0eafc3f9084e434db985a75ece3c8dd6ddf028e0f82",
+        "title": "Eneloop",
+        "wikipedia_page_id": 416326,
+        "wikipedia_revision_id": 97105804,
+        "wikipedia_revision_timestamp_utc": "2023-09-26T05:47:40Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97105804&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "7eb0d44465474105d32ac0eafc3f9084e434db985a75ece3c8dd6ddf028e0f82",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 812
+      }
+    },
+    {
+      "passage_id": "69421786893977090645045364892_54924-55890",
+      "title": "IPhone",
+      "text": "なお、通信会社提供ではなく、保守製品かと思われるSIMカードによってアクティベーションに成功した報告例もある。また、iOSのメジャーアップデートの際にもアクティベーションが必要である。\n充電\niPhoneは、iPad同様に通常充電モードと高速充電モードの2つの充電モードが存在する。通常充電ではUSB 2.0規格に準ずるUSBポートと接続することにより、およそ500 mAを充電できる。高速充電モードを利用するには、1A以上の高出力のUSBポートを利用する必要があり、またUSBピンアサインのD+D-データラインに特殊のバイアス信号による高速充電モードの起動が必要である。通常のUSB 2.0規格に準ずるUSBポートであっても、一部のバイアスを供給する市販商品を使用すれば、約700mAの高速充電モードを起動させることができる。特にiPhone 6, 6 Plus以降の機種であれば、1.6Aや2.1Aでの充電が可能である。\niPhone 8/8 Plus, X以降では、USB-C電源アダプタを使うことで高速充電（PD充電）ができるようになったほか、Qi準拠のワイヤレス充電にも対応している。\nバッテリ容量の50％までは急速充電、80％までは高速充電し、その後、低速のトリクル充電に切り替えることで充電時間を短縮しつつバッテリ耐用年数も延ばしている。\n沿革\n2005年\n9月7日 - モトローラよりiTunesを搭載した携帯電話Motorola ROKR E1が発売される。アメリカで販売を担当する携帯電話事業者はシンギュラー・ワイヤレス（2007年1月15日よりAT&Tモビリティに社名変更）。\n2005年 - モトローラ社よりiTunesを搭載した携帯電話Motorola RAZR V3iが発売される。\n2006年\n1月31日 - モトローラよりiTunesを搭載した携帯電話Motorola SLVR L7が発売される。アメリカで販売を担当する携帯電話事業者はシンギュラー・ワイヤレス。\n2007年\n1月9日 - Macworldで初代iPhoneが発表される。同日「Apple Computer」が「Apple」に社名を変更する。\n1月10日 - シスコシステムズが商標権を不当に侵害されたとしてAppleを提訴する。\n",
+      "source_metadata": {
+        "article_text_sha256": "669bf927283c6b8bf47c65d5e47f2e0a1326fa1a3fa19676a25cf3c2c1bb3f9b",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2115905:98435247:669bf927283c6b8bf47c65d5e47f2e0a1326fa1a3fa19676a25cf3c2c1bb3f9b",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "69421786893977090645045364892_54924-55890",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 55890,
+          "start": 54924
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98435247",
+        "text_sha256": "6a2843d2ab3746ead74397dbbfe22d95d655fd36b0649d83cc790c1f04e0d98a",
+        "title": "IPhone",
+        "wikipedia_page_id": 2115905,
+        "wikipedia_revision_id": 98435247,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T01:31:53Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98435247&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "6a2843d2ab3746ead74397dbbfe22d95d655fd36b0649d83cc790c1f04e0d98a",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 966
+      }
+    },
+    {
+      "passage_id": "77333489118002544406049112959_1761-2583",
+      "title": "Qi (ワイヤレス給電)",
+      "text": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n",
+      "source_metadata": {
+        "article_text_sha256": "3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "77333489118002544406049112959_1761-2583",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 461,
+          "end": 2583,
+          "start": 1761
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653",
+        "text_sha256": "45473a68a7f859a90d13c84edd44cbabb10087d7c16d802fca19ab72a5c6fdee",
+        "title": "Qi (ワイヤレス給電)",
+        "wikipedia_page_id": 2385731,
+        "wikipedia_revision_id": 98505653,
+        "wikipedia_revision_timestamp_utc": "2023-12-17T15:06:57Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "45473a68a7f859a90d13c84edd44cbabb10087d7c16d802fca19ab72a5c6fdee",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 822
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "77333489118002544406049112959_0-821",
+      "title": "Qi (ワイヤレス給電)",
+      "text": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。",
+      "source_metadata": {
+        "article_text_sha256": "3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "77333489118002544406049112959_0-821",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 479,
+          "end": 821,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653",
+        "text_sha256": "3e39afe5ddc14d0922a93b19aa9f5a93e25e93ea715516bcb1dbf54115ab90ce",
+        "title": "Qi (ワイヤレス給電)",
+        "wikipedia_page_id": 2385731,
+        "wikipedia_revision_id": 98505653,
+        "wikipedia_revision_timestamp_utc": "2023-12-17T15:06:57Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "3e39afe5ddc14d0922a93b19aa9f5a93e25e93ea715516bcb1dbf54115ab90ce",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 821
+      }
+    },
+    {
+      "passage_id": "77333489118002544406049112959_821-1761",
+      "title": "Qi (ワイヤレス給電)",
+      "text": "その後、v 1.21では受電側の共振は断念され、送電側のみが共振する構成となっている。\nさらにWPCでは中電力向けQi規格（Volume II Middle Power）の検討が進められている。この中電力向けQi規格v 1.2ではまず15Wでの充電に対応し、将来的に200Wまで供給する事が可能となる。そして2015年6月23日に15W規格書が策定された。\n当初（2011年頃）、NTTドコモを中心とした日本企業が本規格を推進していたが、前述の充電の遅さに加え、当時はワイヤレス給電規格が複数存在しており、スマートフォン業界がどの方式を採用するかの方向性が定まっていなかったこと、更にQiを推進していた一部のスマートフォンメーカー（パナソニック モバイルコミュニケーションズやNECカシオモバイルコミュニケーションズなど）がスマートフォンの製造・販売を終了し、後継のスマートフォンが出てこなかったこともあり、一時期劣勢を強いられていたこともあった。\nその後、2010年代後半に大容量電力送信の規格書が策定され、急速充電の問題が解消されたことやスマートフォン市場で高いシェアを占めているサムスン電子（Samsung Galaxyシリーズ）とApple（iPhoneシリーズ）が本規格を採用したこともあり、対応機器が一気に増加した。\nただ、既存のQi規格はホストとクライアントのコイルの中心が一致したときにのみ最大の効率が得られ、少しでもズレると効率が落ちる問題があった。この問題を解消すべく、2023年1月、WPCはAppleと協力し、MagSafeの技術を積極的に取り入れたQi2を発表した。\nQi2ではコイルを囲むように磁石が配置されており、デバイスを近づけると磁力によりコイルの中心同士が一致させられる仕組みとなっている。また、この技術によりコイルのズレにより発生する可能性が指摘されている高出力での発熱の問題が解消される見通しで、WPCはQi2を2024年中旬までに15Wを超える出力に対応させると約束している。\n2023年9月12日、初めてQi2に公式に対応したデバイスIPhone 15/15 Plus及びIPhone 15 Pro/Pro Maxが発表された。\n通信\n",
+      "source_metadata": {
+        "article_text_sha256": "3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "77333489118002544406049112959_821-1761",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 499,
+          "end": 1761,
+          "start": 821
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653",
+        "text_sha256": "044cda1e432bd5cf9c791bcfd4da8a33e9446987ef4433d3a7057f66bc90f6ea",
+        "title": "Qi (ワイヤレス給電)",
+        "wikipedia_page_id": 2385731,
+        "wikipedia_revision_id": 98505653,
+        "wikipedia_revision_timestamp_utc": "2023-12-17T15:06:57Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "044cda1e432bd5cf9c791bcfd4da8a33e9446987ef4433d3a7057f66bc90f6ea",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 940
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。",
+    "answer_sha256": "e8ba1b86223dbeaff111b90d32cbbfe803a2e8a0f053c2ae0ff9aef9f627c6fa",
+    "quality": {
+      "annotation_id": "Q-77d1f27cce43d83826d3",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-77d1f27cce43d83826d3",
+        "candidate_sha256": "cdb78f8f4cef36748ffa408324ea6b96a51c4723eaba127e7bd918c140c280a2",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "送電側コイルの電流で生じる磁束が受電側コイルに起電力を生む電磁誘導により、接続ケーブルなしで電力を伝えられること。",
+        "reason": "実使用文書には、コイル間の磁束による電磁誘導が給電の原理として説明されている。回答はこの必須説明を欠き、受電側からの通信をケーブルなしで充電できる原因としており、給電と制御通信を混同している。パケットによる機器・異物の判別自体は実使用文書に支持されるが、回答全体の因果説明は支持されない。判定に参照専用文書は用いていない。",
+        "evidence": [
+          {
+            "passage_id": "77333489118002544406049112959_0-821",
+            "quote": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。"
+          },
+          {
+            "passage_id": "77333489118002544406049112959_1761-2583",
+            "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+          }
+        ],
+        "elapsed_seconds": 9.001135728962254,
+        "confirmed_at_utc": "2026-11-09T22:03:19.692211+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/ja/baseline/7cb24e630cde87734dcd7e1c/record.json",
+      "sha256": "5b181114684b5a5f91dbe001059c1b02c559249c248049685455932508321fb5"
+    },
+    "copy": "provenance/baselines/cal_ja_7cb24e630cde87734dcd7e1c.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "ワイヤレス充電がケーブルなしで充電できるのは、インダクティブ充電（非接触充電）という方式を使用しているためです。具体的には、電磁誘導の原理を用いて、隣接するコイル間に電流を流し、磁束を媒介して起電力が発生させることで電力を伝送します [p=77333489118002544406049112959_0-821]。Qi規格では、この充電台と携帯機器の間で受電側から送電側への単方向通信が行われ、異物検出や電力管理を行います [p=77333489118002544406049112959_1761-2583]。",
+    "answer_sha256": "27a3058449cb25eaa60d2101c78d4539b44b540a7186324e4c5c3ebeef6cff99",
+    "quality": {
+      "annotation_id": "Q-7078a2beb65be23bc6bf",
+      "status": "indeterminate",
+      "y": null,
+      "annotation": {
+        "annotation_id": "Q-7078a2beb65be23bc6bf",
+        "candidate_sha256": "d607b15a71c8fc50d07d10812373cb2976064dde439eb74b7d05a21abc126320",
+        "label": "indeterminate",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "uncertain",
+          "context_support": "uncertain"
+        },
+        "essential_points": "一方のコイルへの通電で生じる磁束を介し、他方のコイルに起電力が発生することで、接続ケーブルなしに電力を伝えられること。",
+        "reason": "実使用文書e0001は、一方のコイルへの通電で生じた磁束が他方に起電力を発生させると説明する。候補はこの核心を述べる一方、コイル間を電流が直接流れるとも読めるため、単なる表現の粗さか仕組みの誤認かが曖昧である。通信と異物検出・電力管理は実使用文書e0004に支持される。ReferenceのQi2の説明は質問の必須要点ではない。",
+        "evidence": [
+          {
+            "passage_id": "77333489118002544406049112959_0-821",
+            "quote": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。"
+          },
+          {
+            "passage_id": "77333489118002544406049112959_1761-2583",
+            "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+          }
+        ],
+        "elapsed_seconds": 15.002115013485309,
+        "confirmed_at_utc": "2026-11-09T22:05:59.982881+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。"
+    },
+    {
+      "claim_id": "c2",
+      "text": "Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。"
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。"
+      },
+      {
+        "claim_id": "c2",
+        "text": "Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。"
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-ja-v1",
+    "normalized_prose": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 180
+      }
+    ],
+    "unclosed_delimiters": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "62140494316782455077420531643_34595-35488",
+          "77333489118002544406049112959_0-821",
+          "29797275621430404600408944239_14420-15232",
+          "69421786893977090645045364892_54924-55890",
+          "77333489118002544406049112959_1761-2583"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "62140494316782455077420531643_34595-35488",
+          "77333489118002544406049112959_0-821",
+          "29797275621430404600408944239_14420-15232",
+          "69421786893977090645045364892_54924-55890",
+          "77333489118002544406049112959_1761-2583"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "62140494316782455077420531643_34595-35488",
+          "77333489118002544406049112959_0-821",
+          "29797275621430404600408944239_14420-15232",
+          "69421786893977090645045364892_54924-55890",
+          "77333489118002544406049112959_1761-2583"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "62140494316782455077420531643_34595-35488",
+          "77333489118002544406049112959_0-821",
+          "29797275621430404600408944239_14420-15232",
+          "69421786893977090645045364892_54924-55890",
+          "77333489118002544406049112959_1761-2583"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "77333489118002544406049112959_0-821",
+          "29797275621430404600408944239_14420-15232",
+          "62140494316782455077420531643_34595-35488",
+          "69421786893977090645045364892_54924-55890",
+          "77333489118002544406049112959_1761-2583"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "77333489118002544406049112959_1761-2583",
+          "62140494316782455077420531643_34595-35488",
+          "69421786893977090645045364892_54924-55890",
+          "77333489118002544406049112959_0-821",
+          "29797275621430404600408944239_14420-15232"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "77333489118002544406049112959_1761-2583",
+          "69421786893977090645045364892_54924-55890",
+          "77333489118002544406049112959_0-821",
+          "29797275621430404600408944239_14420-15232",
+          "62140494316782455077420531643_34595-35488"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "77333489118002544406049112959_1761-2583",
+          "69421786893977090645045364892_54924-55890",
+          "29797275621430404600408944239_14420-15232",
+          "77333489118002544406049112959_0-821",
+          "62140494316782455077420531643_34595-35488"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "62140494316782455077420531643_34595-35488",
+          "77333489118002544406049112959_0-821",
+          "29797275621430404600408944239_14420-15232",
+          "69421786893977090645045364892_54924-55890",
+          "77333489118002544406049112959_1761-2583"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "ja",
+    "record_id": "whrja:02e85c8:answered:511",
+    "document_group_id": "whrja-group:673d941f612ad62a019213db",
+    "comparable": true,
+    "increment": 0.4,
+    "partial_pair_increment_exploratory": 0.4,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 4,
+      "rate": 0.4
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/ja/report.private.json",
+    "sha256": "ef51adc02fb2abcf10c5e74670fd115bb927642040a37bc5ac514f40a67c1cad"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "29797275621430404600408944239_14420-15232",
+      "text": "単3形エネループ4本付急速充電器セット (K-KJ55HCD40) - 「eneloop pro」の電池・充電器セットのため、充電器（BQ-CC55）は電池本体に合わせてセット品限定カラーのブラックとなる。\nスペーサー\n単1サイズ対応2本入 (NCS-TG1-2BP)\n単1サイズ対応スペーサーは「eneloop pro (HR-3UWX)」とHR-3UGには使用不可なので注意が必要（電池の直径がほかの三洋製電池よりも少し大きいため）。\n単2サイズ対応2本入 (NCS-TG2-2BP)\nケース\n単3形・単4形ニッケル水素電池専用充電機能付キャリングケースセット (N-WL01S) - 普段は「eneloop」シリーズを収納できるキャリングケースとして使用できるが、ワイヤレス充電の国際規格である「Qi（チー）」に対応しており、「Qi（チー）」に対応した充電用パッドに置くだけで無接点充電が可能（親会社のパナソニックが発売する無接点充電パッド (QE-TM101-W) はもちろんのこと、「Qi（チー）」に対応している無接点充電パッドであればメーカーや機種を問わず使用可能）。カラーはブラックとホワイトの2色で、単3形「eneloop」2本が同梱される。\n単3形・単4形対応電池ケース (HR-CASE) - 持ち運びや保管時に傷や外部短絡から守るキャリングケース。単3形なら最大4本まで、単4形なら最大5本まで収納可能。\nゲーム機用\n三洋はかつてTOY CELLという任天堂ライセンス品の玩具向け充電乾電池を発売したことがあり、その後継として、WiiやニンテンドーDS向けに任天堂ライセンス品の充電池を発売していたが、2012年に製造を終了した。\nWiiリモコン専用無接点充電セット (N-WR01S/WR03S)\n任天堂ライセンスを取得したWiiリモコン専用充電池。充電式電池パックは充電池と蓋の一体型となっている。",
+      "source_metadata": {
+        "article_text_sha256": "585b35eda8dc537eb32cb9add6a702427dab6228567eaf4103cb869f25a16d28",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:416326:97105804:585b35eda8dc537eb32cb9add6a702427dab6228567eaf4103cb869f25a16d28",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "29797275621430404600408944239_14420-15232",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 493,
+          "end": 15232,
+          "start": 14420
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=97105804",
+        "text_sha256": "7eb0d44465474105d32ac0eafc3f9084e434db985a75ece3c8dd6ddf028e0f82",
+        "title": "Eneloop",
+        "wikipedia_page_id": 416326,
+        "wikipedia_revision_id": 97105804,
+        "wikipedia_revision_timestamp_utc": "2023-09-26T05:47:40Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=97105804&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "62140494316782455077420531643_34595-35488",
+      "text": "ポケットチャージャー 01/02/03（スマートフォン向けに出力と容量をアップした、リチウムイオン電池を内蔵した繰り返し型充電アダプタ 三洋電機製）…02/03はQiでの充電に対応。\nワイヤレスチャージャー 01/02/03（三洋電機製）・・・おくだけ充電（Qi）対応端末共通のコイル入り充電台。端末附属のワイヤレスチャージャーは端末と同じ製造元（NECカシオ製端末用であれば、「ワイヤレスチャージャー N01」のようになる）となるが、試供品扱いとなり、非売品となるため、オプションとして別途設定されている。\n卓上ホルダ（各携帯電話端末によって異なる HTシリーズは無し）\nキャリングケース L01・S01（ソニー・エリクソン・モバイルコミュニケーションズ製 各携帯電話端末によって異なる）\nキャリングケース 02（パナソニック モバイルコミュニケーションズ製 各携帯電話端末によって異なる）\n平型ステレオイヤホンセット P01（パナソニック モバイルコミュニケーションズ製）\n平型スイッチ付イヤホンセット P02（パナソニック モバイルコミュニケーションズ製）\nステレオイヤホンマイク 01（パナソニック モバイルコミュニケーションズ製）\nステレオイヤホンマイク 02（パナソニック モバイルコミュニケーションズ製）\nイヤホンマイク 01（パナソニック モバイルコミュニケーションズ製）\nイヤホン変換アダプタ 01（パナソニック モバイルコミュニケーションズ製）\n外部接続用イヤホン変換アダプタ 01（富士通製）\nFOMA 充電機能付USB接続ケーブル 01（ミツミ電機製）\nFOMA 充電機能付USB接続ケーブル 02（ミツミ電機製）\nBluetoothワイヤレスステレオイヤホンセットP01/P02（パナソニック製）\nBluetoothワイヤレスイヤホンセットP03（パナソニック製）\n骨伝導レシーバマイク 01 サウンドリーフ（NECトーキン製）\n骨伝導レシーバマイク 02 サウンドリーフプラス（NECトーキン製）\nBluetoothヘッドセットF01（富士通製 通話専用）\n",
+      "source_metadata": {
+        "article_text_sha256": "6d9b930f9e448ddd3add44d35e6e1c80e6f897e4f0229b4b50baaba2f2506497",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:4495:98205919:6d9b930f9e448ddd3add44d35e6e1c80e6f897e4f0229b4b50baaba2f2506497",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "62140494316782455077420531643_34595-35488",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 35488,
+          "start": 34595
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98205919",
+        "text_sha256": "0d415c711662e7cf90f419c488d6240d58b9648a8da8a45e083fe9469222be5b",
+        "title": "NTTドコモ",
+        "wikipedia_page_id": 4495,
+        "wikipedia_revision_id": 98205919,
+        "wikipedia_revision_timestamp_utc": "2023-11-28T16:51:00Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98205919&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "69421786893977090645045364892_54924-55890",
+      "text": "なお、通信会社提供ではなく、保守製品かと思われるSIMカードによってアクティベーションに成功した報告例もある。また、iOSのメジャーアップデートの際にもアクティベーションが必要である。\n充電\niPhoneは、iPad同様に通常充電モードと高速充電モードの2つの充電モードが存在する。通常充電ではUSB 2.0規格に準ずるUSBポートと接続することにより、およそ500 mAを充電できる。高速充電モードを利用するには、1A以上の高出力のUSBポートを利用する必要があり、またUSBピンアサインのD+D-データラインに特殊のバイアス信号による高速充電モードの起動が必要である。通常のUSB 2.0規格に準ずるUSBポートであっても、一部のバイアスを供給する市販商品を使用すれば、約700mAの高速充電モードを起動させることができる。特にiPhone 6, 6 Plus以降の機種であれば、1.6Aや2.1Aでの充電が可能である。\niPhone 8/8 Plus, X以降では、USB-C電源アダプタを使うことで高速充電（PD充電）ができるようになったほか、Qi準拠のワイヤレス充電にも対応している。\nバッテリ容量の50％までは急速充電、80％までは高速充電し、その後、低速のトリクル充電に切り替えることで充電時間を短縮しつつバッテリ耐用年数も延ばしている。\n沿革\n2005年\n9月7日 - モトローラよりiTunesを搭載した携帯電話Motorola ROKR E1が発売される。アメリカで販売を担当する携帯電話事業者はシンギュラー・ワイヤレス（2007年1月15日よりAT&Tモビリティに社名変更）。\n2005年 - モトローラ社よりiTunesを搭載した携帯電話Motorola RAZR V3iが発売される。\n2006年\n1月31日 - モトローラよりiTunesを搭載した携帯電話Motorola SLVR L7が発売される。アメリカで販売を担当する携帯電話事業者はシンギュラー・ワイヤレス。\n2007年\n1月9日 - Macworldで初代iPhoneが発表される。同日「Apple Computer」が「Apple」に社名を変更する。\n1月10日 - シスコシステムズが商標権を不当に侵害されたとしてAppleを提訴する。\n",
+      "source_metadata": {
+        "article_text_sha256": "669bf927283c6b8bf47c65d5e47f2e0a1326fa1a3fa19676a25cf3c2c1bb3f9b",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2115905:98435247:669bf927283c6b8bf47c65d5e47f2e0a1326fa1a3fa19676a25cf3c2c1bb3f9b",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "69421786893977090645045364892_54924-55890",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 55890,
+          "start": 54924
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98435247",
+        "text_sha256": "6a2843d2ab3746ead74397dbbfe22d95d655fd36b0649d83cc790c1f04e0d98a",
+        "title": "IPhone",
+        "wikipedia_page_id": 2115905,
+        "wikipedia_revision_id": 98435247,
+        "wikipedia_revision_timestamp_utc": "2023-12-12T01:31:53Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98435247&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "77333489118002544406049112959_0-821",
+      "text": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。",
+      "source_metadata": {
+        "article_text_sha256": "3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "77333489118002544406049112959_0-821",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 479,
+          "end": 821,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653",
+        "text_sha256": "3e39afe5ddc14d0922a93b19aa9f5a93e25e93ea715516bcb1dbf54115ab90ce",
+        "title": "Qi (ワイヤレス給電)",
+        "wikipedia_page_id": 2385731,
+        "wikipedia_revision_id": 98505653,
+        "wikipedia_revision_timestamp_utc": "2023-12-17T15:06:57Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "77333489118002544406049112959_1761-2583",
+      "text": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n",
+      "source_metadata": {
+        "article_text_sha256": "3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "77333489118002544406049112959_1761-2583",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 461,
+          "end": 2583,
+          "start": 1761
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653",
+        "text_sha256": "45473a68a7f859a90d13c84edd44cbabb10087d7c16d802fca19ab72a5c6fdee",
+        "title": "Qi (ワイヤレス給電)",
+        "wikipedia_page_id": 2385731,
+        "wikipedia_revision_id": 98505653,
+        "wikipedia_revision_timestamp_utc": "2023-12-17T15:06:57Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "77333489118002544406049112959_821-1761",
+      "text": "その後、v 1.21では受電側の共振は断念され、送電側のみが共振する構成となっている。\nさらにWPCでは中電力向けQi規格（Volume II Middle Power）の検討が進められている。この中電力向けQi規格v 1.2ではまず15Wでの充電に対応し、将来的に200Wまで供給する事が可能となる。そして2015年6月23日に15W規格書が策定された。\n当初（2011年頃）、NTTドコモを中心とした日本企業が本規格を推進していたが、前述の充電の遅さに加え、当時はワイヤレス給電規格が複数存在しており、スマートフォン業界がどの方式を採用するかの方向性が定まっていなかったこと、更にQiを推進していた一部のスマートフォンメーカー（パナソニック モバイルコミュニケーションズやNECカシオモバイルコミュニケーションズなど）がスマートフォンの製造・販売を終了し、後継のスマートフォンが出てこなかったこともあり、一時期劣勢を強いられていたこともあった。\nその後、2010年代後半に大容量電力送信の規格書が策定され、急速充電の問題が解消されたことやスマートフォン市場で高いシェアを占めているサムスン電子（Samsung Galaxyシリーズ）とApple（iPhoneシリーズ）が本規格を採用したこともあり、対応機器が一気に増加した。\nただ、既存のQi規格はホストとクライアントのコイルの中心が一致したときにのみ最大の効率が得られ、少しでもズレると効率が落ちる問題があった。この問題を解消すべく、2023年1月、WPCはAppleと協力し、MagSafeの技術を積極的に取り入れたQi2を発表した。\nQi2ではコイルを囲むように磁石が配置されており、デバイスを近づけると磁力によりコイルの中心同士が一致させられる仕組みとなっている。また、この技術によりコイルのズレにより発生する可能性が指摘されている高出力での発熱の問題が解消される見通しで、WPCはQi2を2024年中旬までに15Wを超える出力に対応させると約束している。\n2023年9月12日、初めてQi2に公式に対応したデバイスIPhone 15/15 Plus及びIPhone 15 Pro/Pro Maxが発表された。\n通信\n",
+      "source_metadata": {
+        "article_text_sha256": "3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "77333489118002544406049112959_821-1761",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 499,
+          "end": 1761,
+          "start": 821
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653",
+        "text_sha256": "044cda1e432bd5cf9c791bcfd4da8a33e9446987ef4433d3a7057f66bc90f6ea",
+        "title": "Qi (ワイヤレス給電)",
+        "wikipedia_page_id": 2385731,
+        "wikipedia_revision_id": 98505653,
+        "wikipedia_revision_timestamp_utc": "2023-12-17T15:06:57Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "77333489118002544406049112959_0-821": {
+      "article_text_sha256": "3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "77333489118002544406049112959_0-821",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 479,
+        "end": 821,
+        "start": 0
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653",
+      "text_sha256": "3e39afe5ddc14d0922a93b19aa9f5a93e25e93ea715516bcb1dbf54115ab90ce",
+      "title": "Qi (ワイヤレス給電)",
+      "wikipedia_page_id": 2385731,
+      "wikipedia_revision_id": 98505653,
+      "wikipedia_revision_timestamp_utc": "2023-12-17T15:06:57Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    },
+    "77333489118002544406049112959_821-1761": {
+      "article_text_sha256": "3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "77333489118002544406049112959_821-1761",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 499,
+        "end": 1761,
+        "start": 821
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653",
+      "text_sha256": "044cda1e432bd5cf9c791bcfd4da8a33e9446987ef4433d3a7057f66bc90f6ea",
+      "title": "Qi (ワイヤレス給電)",
+      "wikipedia_page_id": 2385731,
+      "wikipedia_revision_id": 98505653,
+      "wikipedia_revision_timestamp_utc": "2023-12-17T15:06:57Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "77333489118002544406049112959_0-821",
+      "text": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。",
+      "source_metadata": {
+        "article_text_sha256": "3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "77333489118002544406049112959_0-821",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 479,
+          "end": 821,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653",
+        "text_sha256": "3e39afe5ddc14d0922a93b19aa9f5a93e25e93ea715516bcb1dbf54115ab90ce",
+        "title": "Qi (ワイヤレス給電)",
+        "wikipedia_page_id": 2385731,
+        "wikipedia_revision_id": 98505653,
+        "wikipedia_revision_timestamp_utc": "2023-12-17T15:06:57Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "77333489118002544406049112959_821-1761",
+      "text": "その後、v 1.21では受電側の共振は断念され、送電側のみが共振する構成となっている。\nさらにWPCでは中電力向けQi規格（Volume II Middle Power）の検討が進められている。この中電力向けQi規格v 1.2ではまず15Wでの充電に対応し、将来的に200Wまで供給する事が可能となる。そして2015年6月23日に15W規格書が策定された。\n当初（2011年頃）、NTTドコモを中心とした日本企業が本規格を推進していたが、前述の充電の遅さに加え、当時はワイヤレス給電規格が複数存在しており、スマートフォン業界がどの方式を採用するかの方向性が定まっていなかったこと、更にQiを推進していた一部のスマートフォンメーカー（パナソニック モバイルコミュニケーションズやNECカシオモバイルコミュニケーションズなど）がスマートフォンの製造・販売を終了し、後継のスマートフォンが出てこなかったこともあり、一時期劣勢を強いられていたこともあった。\nその後、2010年代後半に大容量電力送信の規格書が策定され、急速充電の問題が解消されたことやスマートフォン市場で高いシェアを占めているサムスン電子（Samsung Galaxyシリーズ）とApple（iPhoneシリーズ）が本規格を採用したこともあり、対応機器が一気に増加した。\nただ、既存のQi規格はホストとクライアントのコイルの中心が一致したときにのみ最大の効率が得られ、少しでもズレると効率が落ちる問題があった。この問題を解消すべく、2023年1月、WPCはAppleと協力し、MagSafeの技術を積極的に取り入れたQi2を発表した。\nQi2ではコイルを囲むように磁石が配置されており、デバイスを近づけると磁力によりコイルの中心同士が一致させられる仕組みとなっている。また、この技術によりコイルのズレにより発生する可能性が指摘されている高出力での発熱の問題が解消される見通しで、WPCはQi2を2024年中旬までに15Wを超える出力に対応させると約束している。\n2023年9月12日、初めてQi2に公式に対応したデバイスIPhone 15/15 Plus及びIPhone 15 Pro/Pro Maxが発表された。\n通信\n",
+      "source_metadata": {
+        "article_text_sha256": "3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:2385731:98505653:3968c68849abad4b18ef7a8c3235969ed10380f3b52a8cfd1a044a4d187877b6",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "77333489118002544406049112959_821-1761",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 499,
+          "end": 1761,
+          "start": 821
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653",
+        "text_sha256": "044cda1e432bd5cf9c791bcfd4da8a33e9446987ef4433d3a7057f66bc90f6ea",
+        "title": "Qi (ワイヤレス給電)",
+        "wikipedia_page_id": 2385731,
+        "wikipedia_revision_id": 98505653,
+        "wikipedia_revision_timestamp_utc": "2023-12-17T15:06:57Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98505653&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ]
+}

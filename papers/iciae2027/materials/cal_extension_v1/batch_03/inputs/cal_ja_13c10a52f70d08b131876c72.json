@@ -1,0 +1,1098 @@
+{
+  "qa_key": "cal_ja_13c10a52f70d08b131876c72",
+  "cohort": "cal",
+  "language": "ja",
+  "analysis_role": "cal",
+  "source_qa_split": "calibration",
+  "record_id": "whrja:02e85c8:answered:666",
+  "document_group_id": "whrja-group:f8183306c9ee19469accaf05",
+  "qa_source": {
+    "answerability_scope": "human_answer_in_source_not_verified_common_corpus_coverage",
+    "corpus_answerability": "not_annotated_no_relabel_from_body_or_quote_availability",
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "document_group_id": "whrja-group:f8183306c9ee19469accaf05",
+    "gold_parent_ids": [
+      "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f"
+    ],
+    "gold_passage_ids": [
+      "34856293274070759949001304669_19270-19990",
+      "34856293274070759949001304669_19990-20739"
+    ],
+    "gold_passage_ids_scope": "verified_literal_quote_overlap_children_only_not_metric_gold",
+    "gold_passage_mapping_status": "audited_cited_article_and_source_reference_markup_mapping_v2",
+    "gold_relevance_unit": "available_cited_source_article",
+    "is_answerable": true,
+    "language": "ja",
+    "provided_passage": null,
+    "question": "ヘリコプターは、なぜ、機体が回転しないのですか？",
+    "record_id": "whrja:02e85c8:answered:666",
+    "reference_answer_sentences": [
+      {
+        "citations": [
+          0
+        ],
+        "text": "ヘリコプターはローターが回転し、揚力を生み出すことで浮遊しますが、機体側がローターを回転させることの反作用として、ローターが機体を逆方向に回転させようとするモーメントが生じ、これは「反トルク」、カウンタートルク、トルク効果などと呼ばれます。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "このとき「メインローターが1つのシングルローター機」では2つのメインローターを持つ機体のように互いのトルクを相殺する手法が使えないため、回転翼の駆動に伴う反作用〔反トルク〕を打ち消すため、尾部に備えたローター（テールローター）により横向きの推力を生み出し、その推力によるモーメントで打ち消します。"
+      }
+    ],
+    "reference_answers": [
+      "ヘリコプターはローターが回転し、揚力を生み出すことで浮遊しますが、機体側がローターを回転させることの反作用として、ローターが機体を逆方向に回転させようとするモーメントが生じ、これは「反トルク」、カウンタートルク、トルク効果などと呼ばれます。このとき「メインローターが1つのシングルローター機」では2つのメインローターを持つ機体のように互いのトルクを相殺する手法が使えないため、回転翼の駆動に伴う反作用〔反トルク〕を打ち消すため、尾部に備えたローター（テールローター）により横向きの推力を生み出し、その推力によるモーメントで打ち消します。"
+    ],
+    "reference_corpus_mapping": [
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "34856293274070759949001304669_19270-19990"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "exact",
+          "spans": [
+            {
+              "end": 19989,
+              "source_span_sha256": "ffdce8a6d10308f8d9773f4336afab7a18a10e7f40ac55d1da36705f5a4abf08",
+              "start": 19871
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "raw_article_status": "ok",
+        "reference_index": 0,
+        "source_reference_unit_id": "jawiki-page:20223"
+      },
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          1
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "34856293274070759949001304669_19990-20739"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "exact",
+          "spans": [
+            {
+              "end": 20136,
+              "source_span_sha256": "c915326c1a25b0f9f7a2054eb0e9598c9b9badefa3eccb46ddfff9cd7af73e40",
+              "start": 19990
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "raw_article_status": "ok",
+        "reference_index": 1,
+        "source_reference_unit_id": "jawiki-page:20223"
+      },
+      {
+        "body_available": true,
+        "cited": false,
+        "cited_by_answer_sentence_indices": [],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": null,
+          "spans": [],
+          "status": "no_literal_quote"
+        },
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "raw_article_status": "ok",
+        "reference_index": 2,
+        "source_reference_unit_id": "jawiki-page:20223"
+      }
+    ],
+    "reference_corpus_metadata_offline_only": true,
+    "reference_evidence": [
+      {
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "ヘリコプターはローターが回転し、揚力を生み出すことで浮遊する。機体側がローターを回転させることの反作用として、ローターが機体を逆方向に回転させようとするモーメントが生じる。これは「反トルク」、カウンタートルク、トルク効果などと呼ばれる。",
+        "reference_index": 0,
+        "title": "ヘリコプター",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%98%E3%83%AA%E3%82%B3%E3%83%97%E3%82%BF%E3%83%BC"
+      },
+      {
+        "cited_by_answer_sentence_indices": [
+          1
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "このとき「メインローターが1つのシングルローター機」では2つのメインローターを持つ機体のように互いのトルクを相殺する手法が使えないため、回転翼の駆動に伴う反作用〔反トルク〕を打ち消すため、尾部に備えたローター（テールローター）により横向きの推力を生み出し、その推力によるモーメントで打ち消す。",
+        "reference_index": 1,
+        "title": "ヘリコプター",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%98%E3%83%AA%E3%82%B3%E3%83%97%E3%82%BF%E3%83%BC"
+      },
+      {
+        "cited_by_answer_sentence_indices": [],
+        "human_summary_not_literal_source": null,
+        "quote": null,
+        "reference_index": 2,
+        "title": "ヘリコプター",
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%98%E3%83%AA%E3%82%B3%E3%83%97%E3%82%BF%E3%83%BC"
+      }
+    ],
+    "research_split": "calibration",
+    "selected_sentences_by_reference": [
+      [
+        "ヘリコプターはローターが回転し、揚力を生み出すことで浮遊する。機体側がローターを回転させることの反作用として、ローターが機体を逆方向に回転させようとするモーメントが生じる。これは「反トルク」、カウンタートルク、トルク効果などと呼ばれる。",
+        "このとき「メインローターが1つのシングルローター機」では2つのメインローターを持つ機体のように互いのトルクを相殺する手法が使えないため、回転翼の駆動に伴う反作用〔反トルク〕を打ち消すため、尾部に備えたローター（テールローター）により横向きの推力を生み出し、その推力によるモーメントで打ち消す。"
+      ]
+    ],
+    "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+    "source_id": "666",
+    "source_line_index": 456,
+    "source_record_sha256": "18ecb3c3810e8963a92562cd424aac7f8ba1fd32f24f3a88d1613fc5d659997f",
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "source_split": "answered",
+    "source_title": "ヘリコプター",
+    "unavailable_cited_reference_ids": []
+  },
+  "source_selection": {
+    "record_id": "whrja:02e85c8:answered:666",
+    "question": "ヘリコプターは、なぜ、機体が回転しないのですか？",
+    "document_group_id": "whrja-group:f8183306c9ee19469accaf05"
+  },
+  "question": "ヘリコプターは、なぜ、機体が回転しないのですか？",
+  "used_documents": [
+    {
+      "passage_id": "8968314086735061477008631130_2415-3164",
+      "title": "航空機",
+      "text": "日本の航空法では着陸（水）装置および動力装置を装備した簡易構造の航行機は飛行機ではなく超軽量動力機と分類する。\n垂直離着陸機\nパワード・リフトとも称される、ヘリコプターのように垂直に離着陸が可能な飛行機。ジェット機ではエンジンノズルを下方に向けるものや、垂直離着陸用のリフトエンジンを推進用とは別に装備しているものなどある。ローターを傾けることで垂直離着陸をするティルトローター機などは、回転翼機の特徴も併せ持つ。また、垂直には離陸できないものの短距離離陸垂直着陸機（STOVL）と呼ばれるものも存在する。\nグライダー（滑空機）\n固定翼機のうち動力を持たないもの。別の飛行機による牽引や、地上のウインチによるケーブル巻き取りなどといった、外部の動力によって離陸し、離陸後は切り離されて滑空する。離陸・再上昇用の推進装置を備えたものはモーターグライダーと呼ばれる。現在日本では乗員は2名までに制限されているが、海外及び過去の日本ではもっと多人数乗りの機体も作られた。\nパラグライダーやハンググライダーは、日本の航空法では航空機に該当しない。\n重飛行船\n船体全体がリフティングボディとなり、プロペラなどで推進力を得て船体の揚力で浮上する。\n回転翼機\n回転する翼（ローター）により揚力を発生させ、これにより空中に浮ぶ航空機。\nヘリコプター\nエンジンの動力でローターを駆動するもの。推進力は回転翼の軸をわずかに傾けることで得る。\nオートジャイロ\n回転翼に動力が伝達されていない航空機。前進用の推進装置を持つ。\n複合ヘリコプター\n通常のヘリコプターに推進器を付けた物や、巡航飛行時にはリフト用回転翼の回転を止め固定翼として使うか別途装備した主翼で揚力を得る機体などが含まれる。\nオーニソプター（羽ばたき機）\n",
+      "source_metadata": {
+        "article_text_sha256": "a37ac4da1a29bedd922b6f2594a882cd32b0e123f7018a1579743d123a053bdb",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:10687:98254900:a37ac4da1a29bedd922b6f2594a882cd32b0e123f7018a1579743d123a053bdb",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "8968314086735061477008631130_2415-3164",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 496,
+          "end": 3164,
+          "start": 2415
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98254900",
+        "text_sha256": "2192060afe4cdabcdf2159b12ffd6e9a6e5dbb13fe62a136c1766b01f34a6e2a",
+        "title": "航空機",
+        "wikipedia_page_id": 10687,
+        "wikipedia_revision_id": 98254900,
+        "wikipedia_revision_timestamp_utc": "2023-12-01T05:15:16Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98254900&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "2192060afe4cdabcdf2159b12ffd6e9a6e5dbb13fe62a136c1766b01f34a6e2a",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 749
+      }
+    },
+    {
+      "passage_id": "34856293274070759949001304669_5043-5730",
+      "title": "ヘリコプター",
+      "text": "人員や貨物の輸送では、滑走路のない離島、山間部、石油プラットフォーム、ヘリポートのある都市部のビル屋上への離着陸。\n空き地などへの離着陸も可能なため救急搬送用のドクターヘリ、ホバリングも可能なので災害救助用の警察や消防などの防災ヘリコプター、船舶のヘリパッドにも離着陸できるため沿岸警備隊や海上保安庁の巡視船での洋上捜索救難活動にも使用される。\n軍事用としては、警戒監視、対潜哨戒機や攻撃機としての用途もある。その他、テレビ局の報道中継用、空撮、農薬散布用の小型機、遊覧飛行用などとしても使われる。\n用語\n構造\nヘリコプターはその機構の複雑さからか「機械仕掛けの神」と称される事もあり、航空宇宙工学の一分野としてヘリコプタ工学がある。\nメインローター\n機体上部で回転する翼のことで、これが回転翼の名称由来になっている。回転する事により飛行に必要な揚力を得る。また、回転面を傾ける事により、前後左右の飛行が可能となる。エンジンで生み出された動力は、メイン・トランスミッションを介して望ましい回転数まで減速させてからメインロータを300 - 400rpmで回転させて飛行する。また型式や配列により、様々な種類に分類される。\nテールローター\n機体尾部にある小さな回転翼。メインローターが回転することで、機体が反作用によって逆回転方向の反作用「反トルク」（逆トルク、アンチ・トルク）を受ける。このままでは、機体が回転して操縦不能となるため、機体尾部に長く伸びた先のテールローターによって横方向に押す力を生み出し、メインローターの回転とは反対方向に回転力を与え、機首方向の安定を図る。",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_5043-5730",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 454,
+          "end": 5730,
+          "start": 5043
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "290bfd06297ad02dbe2e3ac94a74c276a2db5bbce50f9b7342e09644980713f2",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "290bfd06297ad02dbe2e3ac94a74c276a2db5bbce50f9b7342e09644980713f2",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 687
+      }
+    },
+    {
+      "passage_id": "34856293274070759949001304669_0-766",
+      "title": "ヘリコプター",
+      "text": "一般的なシングルローター形態のヘリコプター（AS350）\nヘリコプター（英語: helicopter、ドイツ語: Hubschrauber）は、回転翼機に分類される航空機の一種。漢字表記は螺旋翼機（らせんよくき）。\n垂直方向の軸に配置したローター（回転翼）をエンジンの力で回転させて揚力を得て、出力やローターの描く面（回転面・円盤面）を変化させることで進行方向への推進力を得たり、ホバリング（空中での停止）を含めて高度を調整したりできる。飛行にはローターで動かす大気の存在が前提となる。\n世界初の安定して飛行できて実用に耐えるヘリコプターは、ナチス・ドイツ時代に開発され1936年6月26日に初飛行したフォッケウルフ Fw 61であるとされる（#歴史を参照）。\n発着に滑走路が不要なため、現代においては民生と軍事（攻撃ヘリコプターなど）を含む幅広い用途で使われている（#用途を参照）。無人ヘリコプターも実用化されているが、安定した飛行がしやすいようにローターを多数（4つや8つなど）備えた無人航空機はドローンに分類されることが多い。\n名称\nヘリコプターという名称はギリシャ語のヘリックス (ἕλιξ hélix・螺旋) とプテロン (πτερόν pterón・翼) を語源とする。このヘリックスに由来する接頭辞エリコ (フランス語: helico-・螺旋の）とプテロンを組み合わせて作られた造語・エリコプテール (フランス語: hélicoptère) が1861年にギュスターヴ・ポントン・ダメクールによって命名された。この単語が英語ではヘリコプター (helicopter) という形になり、日本語のヘリコプターという表記も英語の発音に由来する。\n日本語では英語を直接音訳して「ヘリコプター」と呼称される。漢字表記は螺旋翼機。",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_0-766",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 488,
+          "end": 766,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "a9722a38fe5e03aa3b88c4e193273e3558aad4e81f5ed1a1a5db891923237c27",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "a9722a38fe5e03aa3b88c4e193273e3558aad4e81f5ed1a1a5db891923237c27",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 766
+      }
+    },
+    {
+      "passage_id": "34856293274070759949001304669_28300-28959",
+      "title": "ヘリコプター",
+      "text": "なお日本の航空法では回転翼航空機の曲技について規定されておらず、民間機の曲技飛行は行われていないが、耐空類別の対象外である陸上自衛隊のOH-1などが航空祭でループやピボットターンを披露している。\n事件・事故\n航空事故の一覧も参照\n1988年佐田岬半島米軍ヘリ墜落事故\n沖国大米軍ヘリ墜落事件（2004年）\n佐柳島沖海保ヘリ墜落事故（2010年）\n脚注\n注釈\n出典\n関連項目\nヘリコプターの一覧\n回転翼機： ヘリコプター - オートジャイロ - ティルトローター - 複合ヘリコプター\n攻撃ヘリコプター\n無線操縦ヘリコプター\nヘリボーン\n航空救急 - 捜索救難や、いわゆるドクターヘリについて\nイーゴリ・シコールスキイ\nヘリポート\nヘリコプター弦楽四重奏曲 - 編成にヘリコプターが4台含まれている。\n垂直離着陸機\nヘリコプターのローター\nヘリコプターの操縦装置\nドローン\n飛行高度記録 - 回転翼機の到達高度は、40,814 feet (12,440 m）\nヘリコプターペアレント - 過保護な親が子供を常時監視する様子を上空でホバリングするヘリコプターに例えている。\nクワッドローター\nマルチコプター\n外部リンク\nヘリコプターの飛ぶしくみ - エアバス・ヘリコプターズ・ジャパン\nAirliners.net - Helicopter (Photo)（英語）\nHelicopter history site（英語）\nHelicopter Yaw Control Methods（英語）\n『ヘリコプター』 - コトバンク",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_28300-28959",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 442,
+          "end": 28959,
+          "start": 28300
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "f4b282acbc266fd66a30820be0eff1bcb723b6bae05a209de439a2d232ac67c5",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "f4b282acbc266fd66a30820be0eff1bcb723b6bae05a209de439a2d232ac67c5",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 659
+      }
+    },
+    {
+      "passage_id": "34856293274070759949001304669_9536-10354",
+      "title": "ヘリコプター",
+      "text": "エンジン回転数を一定に保ちながら、必要な馬力に応じてエンジンのスロットルを開閉させて出力トルクを増減させるため、コレクティブピッチレバーの位置に連動してエンジンのスロットルが動くようになっており、コレクティブピッチレバーの先端には、コレクティブピッチレバーの位置はそのままにエンジンの回転数だけを修正するスロットルコントロールグリップがあり、グリップを回すことでエンジンのスロットルが動くようになっている。\nターボシャフトエンジン\n→詳細は「ターボシャフトエンジン」を参照\nエンジン自体に、機体側に掛かる負荷に対して常にエンジン回転数を一定に保つ燃料コントロール装置が装備されており、エンジン回転数の制御はエンジンをカットオフからフライトアイドルまでを制御するスロットレバーとフライトアイドルから最大出力までを制御する回転数コントロールレバーにより行われるが、エンジンの種類によっては、これらのレバーを1本のレバーにまとめたものがある。そのため、エンジン回転数を制御するには、コレクティブピッチレバーに連動して回転数コントロールレバーを動かす必要がある。また、コレクティブピッチレバーの先端には、エンジンの回転数を任意に制御できるビーブトリムスイッチがある。\n電動機\n単座の電動ヘリコプターSolution F/Chretien helicopter\n他の動力と同様に、回転数を一定に保ちローターのピッチ角で揚力の制御を行うものもある。マルチコプターなど複数のローターを備えるものは固定ピッチで、各電動機の回転制御のみで揚力や姿勢を制御している。\n有人機では電動機を動力とする電動ヘリコプターの試作が行われている。日本では有人搭乗操縦電池電源電動ヘリコプターに対応する航空従事者技能証明などの「航空機の種類についての限定」制度が存在しない。\n無人機では小型のマルチコプターが普及しており、趣味、撮影、農薬散布などの用途で使われている。\n",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_9536-10354",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 10354,
+          "start": 9536
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "e49f40c404333c97a1da2d77a17363304f8e9580f0b798d2ab300cff503a5c75",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "e49f40c404333c97a1da2d77a17363304f8e9580f0b798d2ab300cff503a5c75",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 818
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "34856293274070759949001304669_19270-19990",
+      "title": "ヘリコプター",
+      "text": "交差双ローター式\n機体直上の近接した位置に2つのローターを持つが、互いに衝突しないよう同調しており、わずかに外側に傾けて取りつけられている。同調機構から「シンクロプター」とも呼ばれる。自律安定性に優れ、テールローターで無駄になる動力が無い為効率が高く、操縦特性が左右同じで機体を小さくまとめる事ができるが、ローター取り付け部や伝動装置が複雑になり、重量が増加するなどの、不利な点もある。アメリカ合衆国のカマン・エアロスペースが採用している。\nマルチローター式\n→詳細は「マルチコプター」を参照\nローターが3つ以上あるもので、タンデムローター式とサイドバイサイド式の利点と、全速度域にわたり静的に安定である利点を持つ。\n無人のラジコン等には、固定ピッチブレードのローター4つで、それぞれに電動機があり、回転数を独立に制御するような機構が単純な物がある。\n動力集中式の搭乗機では、部品数が多くなり、動力を伝達する機構が複雑になる事などから実用性には乏しく、Mi-32などの構想あったが実用機には採用されていない。以降は電動機により伝達機構を廃したタイプの研究開発にシフトしており、2011年にはドイツの企業が16枚の回転翼を持つ有人の電動機を試作、ロシアの企業が1人乗りのクワッドローター を開発している。\nテールローター\nNH90のテールローターの中心部分\nテールブームが上方にある例。BK117-B2\nヘリコプターはローターが回転し、揚力を生み出すことで浮遊する。機体側がローターを回転させることの反作用として、ローターが機体を逆方向に回転させようとするモーメントが生じる。これは「反トルク」、カウンタートルク、トルク効果などと呼ばれる。\n",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_19270-19990",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 462,
+          "end": 19990,
+          "start": 19270
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "afb1cabcbbdbecac73fd0630a2b8ccfd717b8c4f0f67634d392313b7e344afb3",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "afb1cabcbbdbecac73fd0630a2b8ccfd717b8c4f0f67634d392313b7e344afb3",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 720
+      }
+    },
+    {
+      "passage_id": "34856293274070759949001304669_19990-20739",
+      "title": "ヘリコプター",
+      "text": "このとき「メインローターが1つのシングルローター機」では2つのメインローターを持つ機体のように互いのトルクを相殺する手法が使えないため、回転翼の駆動に伴う反作用〔反トルク〕を打ち消すため、尾部に備えたローター（テールローター）により横向きの推力を生み出し、その推力によるモーメントで打ち消す。機体の回転方向と推力の向きの関係により、プッシャータイプ（推進式、テールローターの推進力で尾部を押す）とトラクタータイプ（牽引式、テールローターの推進力で尾部を引っ張る）がある。\nテールローターはメインローターと異なり、比較的低い位置にある場合、乗降時に人がテールローターに接触する危険がある。このためテールブーム（胴体からテールローターへつながる構造部分）の取付け位置を高くし、テールローターが低い位置にならないよう設計された機体もある。これらの機体は、テールローターに人が接触する危険性が低いので、機体後部に安全に近寄る事ができる。また、胴体後部に観音開きのドアを取り付ける事で人員や貨物の収容性が良くなり、ストレッチャーなども収容し易くなるため、ドクターヘリ向けの機体に採用されている。\nまた空力的な致命的問題点としては、背風 (追い風)かつ前進(対気)速度が低い、発動機が高出力〔最大出力までの余裕が無い〕の条件では、テールローターは回転している(機能は有効)のに、その効果が失われる現象(効果は無効)が発生し、致命的な事故を引き起こす。\n→詳細は「テールローターの効果喪失」を参照\n現在のヘリコプターではテールローターが一般的であるが、下記のような方式も存在する。\nノーター\nMD500Nのノーター\nノーター ではテールブーム基部のファンにより低圧縮高ボリュームの空気をテールブーム内に送り込む。",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_19990-20739",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 493,
+          "end": 20739,
+          "start": 19990
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "3c36b397ba745a6f50e1268bd005510296d69c8cb9df9a46f77f15da77aca797",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "3c36b397ba745a6f50e1268bd005510296d69c8cb9df9a46f77f15da77aca797",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 749
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "ヘリコプターは、機体が回転しないように設計されています。これは主に、回転翼（ローター）が飛行に必要な揚力を得るためです。ヘリコプターのローターは、エンジンの力で回転し、その回転によって大気を押し上げ、飛行に必要な推進力を得ます。また、回転面を傾けることで、前後左右の飛行が可能となります。このように、ヘリコプターは回転翼の回転を利用して飛行を可能にしています。",
+    "answer_sha256": "8945ee535d0846c7d54290e610cfa42ec22d1f75023e7d79be9de54de1dff26d",
+    "quality": {
+      "annotation_id": "Q-348991ee56a2f1a4d019",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-348991ee56a2f1a4d019",
+        "candidate_sha256": "76c59023d6337d6e24f5cfa76c247e143e9621b1b36991ec42cb2320118d1223",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "ローターの駆動によって機体に反トルクが生じ、一般的な単一メインローター機ではテールローターの推力によるモーメントで打ち消すため、機体の回転を防げる。",
+        "reason": "実使用文書e0007には、メインローターによる反トルクと、テールローターの横向きの力による機首方向の安定が説明されている。回答はこの核心を欠き、揚力の発生を機体が回転しない理由として提示している。また、大気を押し上げて推進力を得るという説明も実使用文書には支持されない。参照専用資料に依存せず失敗を確認できる。",
+        "evidence": [
+          {
+            "passage_id": "34856293274070759949001304669_5043-5730",
+            "quote": "人員や貨物の輸送では、滑走路のない離島、山間部、石油プラットフォーム、ヘリポートのある都市部のビル屋上への離着陸。\n空き地などへの離着陸も可能なため救急搬送用のドクターヘリ、ホバリングも可能なので災害救助用の警察や消防などの防災ヘリコプター、船舶のヘリパッドにも離着陸できるため沿岸警備隊や海上保安庁の巡視船での洋上捜索救難活動にも使用される。\n軍事用としては、警戒監視、対潜哨戒機や攻撃機としての用途もある。その他、テレビ局の報道中継用、空撮、農薬散布用の小型機、遊覧飛行用などとしても使われる。\n用語\n構造\nヘリコプターはその機構の複雑さからか「機械仕掛けの神」と称される事もあり、航空宇宙工学の一分野としてヘリコプタ工学がある。\nメインローター\n機体上部で回転する翼のことで、これが回転翼の名称由来になっている。回転する事により飛行に必要な揚力を得る。また、回転面を傾ける事により、前後左右の飛行が可能となる。エンジンで生み出された動力は、メイン・トランスミッションを介して望ましい回転数まで減速させてからメインロータを300 - 400rpmで回転させて飛行する。また型式や配列により、様々な種類に分類される。\nテールローター\n機体尾部にある小さな回転翼。メインローターが回転することで、機体が反作用によって逆回転方向の反作用「反トルク」（逆トルク、アンチ・トルク）を受ける。このままでは、機体が回転して操縦不能となるため、機体尾部に長く伸びた先のテールローターによって横方向に押す力を生み出し、メインローターの回転とは反対方向に回転力を与え、機首方向の安定を図る。"
+          },
+          {
+            "passage_id": "34856293274070759949001304669_0-766",
+            "quote": "一般的なシングルローター形態のヘリコプター（AS350）\nヘリコプター（英語: helicopter、ドイツ語: Hubschrauber）は、回転翼機に分類される航空機の一種。漢字表記は螺旋翼機（らせんよくき）。\n垂直方向の軸に配置したローター（回転翼）をエンジンの力で回転させて揚力を得て、出力やローターの描く面（回転面・円盤面）を変化させることで進行方向への推進力を得たり、ホバリング（空中での停止）を含めて高度を調整したりできる。飛行にはローターで動かす大気の存在が前提となる。\n世界初の安定して飛行できて実用に耐えるヘリコプターは、ナチス・ドイツ時代に開発され1936年6月26日に初飛行したフォッケウルフ Fw 61であるとされる（#歴史を参照）。\n発着に滑走路が不要なため、現代においては民生と軍事（攻撃ヘリコプターなど）を含む幅広い用途で使われている（#用途を参照）。無人ヘリコプターも実用化されているが、安定した飛行がしやすいようにローターを多数（4つや8つなど）備えた無人航空機はドローンに分類されることが多い。\n名称\nヘリコプターという名称はギリシャ語のヘリックス (ἕλιξ hélix・螺旋) とプテロン (πτερόν pterón・翼) を語源とする。このヘリックスに由来する接頭辞エリコ (フランス語: helico-・螺旋の）とプテロンを組み合わせて作られた造語・エリコプテール (フランス語: hélicoptère) が1861年にギュスターヴ・ポントン・ダメクールによって命名された。この単語が英語ではヘリコプター (helicopter) という形になり、日本語のヘリコプターという表記も英語の発音に由来する。\n日本語では英語を直接音訳して「ヘリコプター」と呼称される。漢字表記は螺旋翼機。"
+          },
+          {
+            "passage_id": "8968314086735061477008631130_2415-3164",
+            "quote": "日本の航空法では着陸（水）装置および動力装置を装備した簡易構造の航行機は飛行機ではなく超軽量動力機と分類する。\n垂直離着陸機\nパワード・リフトとも称される、ヘリコプターのように垂直に離着陸が可能な飛行機。ジェット機ではエンジンノズルを下方に向けるものや、垂直離着陸用のリフトエンジンを推進用とは別に装備しているものなどある。ローターを傾けることで垂直離着陸をするティルトローター機などは、回転翼機の特徴も併せ持つ。また、垂直には離陸できないものの短距離離陸垂直着陸機（STOVL）と呼ばれるものも存在する。\nグライダー（滑空機）\n固定翼機のうち動力を持たないもの。別の飛行機による牽引や、地上のウインチによるケーブル巻き取りなどといった、外部の動力によって離陸し、離陸後は切り離されて滑空する。離陸・再上昇用の推進装置を備えたものはモーターグライダーと呼ばれる。現在日本では乗員は2名までに制限されているが、海外及び過去の日本ではもっと多人数乗りの機体も作られた。\nパラグライダーやハンググライダーは、日本の航空法では航空機に該当しない。\n重飛行船\n船体全体がリフティングボディとなり、プロペラなどで推進力を得て船体の揚力で浮上する。\n回転翼機\n回転する翼（ローター）により揚力を発生させ、これにより空中に浮ぶ航空機。\nヘリコプター\nエンジンの動力でローターを駆動するもの。推進力は回転翼の軸をわずかに傾けることで得る。\nオートジャイロ\n回転翼に動力が伝達されていない航空機。前進用の推進装置を持つ。\n複合ヘリコプター\n通常のヘリコプターに推進器を付けた物や、巡航飛行時にはリフト用回転翼の回転を止め固定翼として使うか別途装備した主翼で揚力を得る機体などが含まれる。\nオーニソプター（羽ばたき機）\n"
+          }
+        ],
+        "elapsed_seconds": 16.00215797300916,
+        "confirmed_at_utc": "2026-11-09T22:04:23.793716+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/ja/baseline/13c10a52f70d08b131876c72/record.json",
+      "sha256": "9d11cb4d459b04c936d404947ae535a8737007da717bea0821bd106139783213"
+    },
+    "copy": "provenance/baselines/cal_ja_13c10a52f70d08b131876c72.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "ヘリコプターの機体が回転しないのは、メインローターの回転による反作用「反トルク」で機体が回転するのを防ぐためです。メインローターが回転することで機体は逆回転方向の反作用を受け、このままでは操縦不能となるため、尾部のテールローターによって反対方向に回転力を与え、機首方向の安定を図っています [34856293274070759949001304669_5043-5730]。",
+    "answer_sha256": "ea9e5b8e2b314f1caa1a5992eb3cd6c82b64ceae90c18eb027d20cb9371216b2",
+    "quality": {
+      "annotation_id": "Q-7ebb8f5a3886eb2e26f9",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-7ebb8f5a3886eb2e26f9",
+        "candidate_sha256": "679ee3d7f3c095ecb9cd8e3826bbd4bbd369959d6361d1ff21484319ee70f84c",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "メインローターの駆動により機体を逆方向へ回そうとする反トルクが生じ、一般的なシングルローター機ではテールローターの推力によるモーメントでこれを打ち消すこと。",
+        "reason": "冒頭は説明が循環的だが、続く文でメインローターによる反作用と、テールローターが回転力を与えて機首を安定させる仕組みを説明している。一般的なテールローター方式の説明として必須要点を満たし、その内容は参考資料だけでなく実使用文書に支持される。",
+        "evidence": [
+          {
+            "passage_id": "34856293274070759949001304669_5043-5730",
+            "quote": "人員や貨物の輸送では、滑走路のない離島、山間部、石油プラットフォーム、ヘリポートのある都市部のビル屋上への離着陸。\n空き地などへの離着陸も可能なため救急搬送用のドクターヘリ、ホバリングも可能なので災害救助用の警察や消防などの防災ヘリコプター、船舶のヘリパッドにも離着陸できるため沿岸警備隊や海上保安庁の巡視船での洋上捜索救難活動にも使用される。\n軍事用としては、警戒監視、対潜哨戒機や攻撃機としての用途もある。その他、テレビ局の報道中継用、空撮、農薬散布用の小型機、遊覧飛行用などとしても使われる。\n用語\n構造\nヘリコプターはその機構の複雑さからか「機械仕掛けの神」と称される事もあり、航空宇宙工学の一分野としてヘリコプタ工学がある。\nメインローター\n機体上部で回転する翼のことで、これが回転翼の名称由来になっている。回転する事により飛行に必要な揚力を得る。また、回転面を傾ける事により、前後左右の飛行が可能となる。エンジンで生み出された動力は、メイン・トランスミッションを介して望ましい回転数まで減速させてからメインロータを300 - 400rpmで回転させて飛行する。また型式や配列により、様々な種類に分類される。\nテールローター\n機体尾部にある小さな回転翼。メインローターが回転することで、機体が反作用によって逆回転方向の反作用「反トルク」（逆トルク、アンチ・トルク）を受ける。このままでは、機体が回転して操縦不能となるため、機体尾部に長く伸びた先のテールローターによって横方向に押す力を生み出し、メインローターの回転とは反対方向に回転力を与え、機首方向の安定を図る。"
+          }
+        ],
+        "elapsed_seconds": 8.001388426753692,
+        "confirmed_at_utc": "2026-11-09T22:01:27.390524+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "ヘリコプターは、機体が回転しないように設計されています。"
+    },
+    {
+      "claim_id": "c2",
+      "text": "これは主に、回転翼（ローター）が飛行に必要な揚力を得るためです。"
+    },
+    {
+      "claim_id": "c3",
+      "text": "ヘリコプターのローターは、エンジンの力で回転し、その回転によって大気を押し上げ、飛行に必要な推進力を得ます。"
+    },
+    {
+      "claim_id": "c4",
+      "text": "また、回転面を傾けることで、前後左右の飛行が可能となります。"
+    },
+    {
+      "claim_id": "c5",
+      "text": "このように、ヘリコプターは回転翼の回転を利用して飛行を可能にしています。"
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "ヘリコプターは、機体が回転しないように設計されています。"
+      },
+      {
+        "claim_id": "c2",
+        "text": "これは主に、回転翼（ローター）が飛行に必要な揚力を得るためです。"
+      },
+      {
+        "claim_id": "c3",
+        "text": "ヘリコプターのローターは、エンジンの力で回転し、その回転によって大気を押し上げ、飛行に必要な推進力を得ます。"
+      },
+      {
+        "claim_id": "c4",
+        "text": "また、回転面を傾けることで、前後左右の飛行が可能となります。"
+      },
+      {
+        "claim_id": "c5",
+        "text": "このように、ヘリコプターは回転翼の回転を利用して飛行を可能にしています。"
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-ja-v1",
+    "normalized_prose": "ヘリコプターは、機体が回転しないように設計されています。これは主に、回転翼（ローター）が飛行に必要な揚力を得るためです。ヘリコプターのローターは、エンジンの力で回転し、その回転によって大気を押し上げ、飛行に必要な推進力を得ます。また、回転面を傾けることで、前後左右の飛行が可能となります。このように、ヘリコプターは回転翼の回転を利用して飛行を可能にしています。",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 28
+      },
+      {
+        "start": 28,
+        "end": 60
+      },
+      {
+        "start": 60,
+        "end": 114
+      },
+      {
+        "start": 114,
+        "end": 144
+      },
+      {
+        "start": 144,
+        "end": 180
+      }
+    ],
+    "unclosed_delimiters": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "8968314086735061477008631130_2415-3164",
+          "34856293274070759949001304669_5043-5730",
+          "34856293274070759949001304669_0-766",
+          "34856293274070759949001304669_28300-28959",
+          "34856293274070759949001304669_9536-10354"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "8968314086735061477008631130_2415-3164",
+          "34856293274070759949001304669_5043-5730",
+          "34856293274070759949001304669_0-766",
+          "34856293274070759949001304669_28300-28959",
+          "34856293274070759949001304669_9536-10354"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "8968314086735061477008631130_2415-3164",
+          "34856293274070759949001304669_5043-5730",
+          "34856293274070759949001304669_0-766",
+          "34856293274070759949001304669_28300-28959",
+          "34856293274070759949001304669_9536-10354"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "34856293274070759949001304669_5043-5730",
+          "8968314086735061477008631130_2415-3164",
+          "34856293274070759949001304669_0-766",
+          "34856293274070759949001304669_28300-28959",
+          "34856293274070759949001304669_9536-10354"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "34856293274070759949001304669_9536-10354",
+          "34856293274070759949001304669_28300-28959",
+          "34856293274070759949001304669_0-766",
+          "34856293274070759949001304669_5043-5730",
+          "8968314086735061477008631130_2415-3164"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "34856293274070759949001304669_9536-10354",
+          "34856293274070759949001304669_28300-28959",
+          "8968314086735061477008631130_2415-3164",
+          "34856293274070759949001304669_5043-5730",
+          "34856293274070759949001304669_0-766"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "8968314086735061477008631130_2415-3164",
+          "34856293274070759949001304669_5043-5730",
+          "34856293274070759949001304669_0-766",
+          "34856293274070759949001304669_28300-28959",
+          "34856293274070759949001304669_9536-10354"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "34856293274070759949001304669_5043-5730",
+          "8968314086735061477008631130_2415-3164",
+          "34856293274070759949001304669_28300-28959",
+          "34856293274070759949001304669_0-766",
+          "34856293274070759949001304669_9536-10354"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "8968314086735061477008631130_2415-3164",
+          "34856293274070759949001304669_5043-5730",
+          "34856293274070759949001304669_0-766",
+          "34856293274070759949001304669_28300-28959",
+          "34856293274070759949001304669_9536-10354"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "ja",
+    "record_id": "whrja:02e85c8:answered:666",
+    "document_group_id": "whrja-group:f8183306c9ee19469accaf05",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/ja/report.private.json",
+    "sha256": "ef51adc02fb2abcf10c5e74670fd115bb927642040a37bc5ac514f40a67c1cad"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "34856293274070759949001304669_0-766",
+      "text": "一般的なシングルローター形態のヘリコプター（AS350）\nヘリコプター（英語: helicopter、ドイツ語: Hubschrauber）は、回転翼機に分類される航空機の一種。漢字表記は螺旋翼機（らせんよくき）。\n垂直方向の軸に配置したローター（回転翼）をエンジンの力で回転させて揚力を得て、出力やローターの描く面（回転面・円盤面）を変化させることで進行方向への推進力を得たり、ホバリング（空中での停止）を含めて高度を調整したりできる。飛行にはローターで動かす大気の存在が前提となる。\n世界初の安定して飛行できて実用に耐えるヘリコプターは、ナチス・ドイツ時代に開発され1936年6月26日に初飛行したフォッケウルフ Fw 61であるとされる（#歴史を参照）。\n発着に滑走路が不要なため、現代においては民生と軍事（攻撃ヘリコプターなど）を含む幅広い用途で使われている（#用途を参照）。無人ヘリコプターも実用化されているが、安定した飛行がしやすいようにローターを多数（4つや8つなど）備えた無人航空機はドローンに分類されることが多い。\n名称\nヘリコプターという名称はギリシャ語のヘリックス (ἕλιξ hélix・螺旋) とプテロン (πτερόν pterón・翼) を語源とする。このヘリックスに由来する接頭辞エリコ (フランス語: helico-・螺旋の）とプテロンを組み合わせて作られた造語・エリコプテール (フランス語: hélicoptère) が1861年にギュスターヴ・ポントン・ダメクールによって命名された。この単語が英語ではヘリコプター (helicopter) という形になり、日本語のヘリコプターという表記も英語の発音に由来する。\n日本語では英語を直接音訳して「ヘリコプター」と呼称される。漢字表記は螺旋翼機。",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_0-766",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 488,
+          "end": 766,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "a9722a38fe5e03aa3b88c4e193273e3558aad4e81f5ed1a1a5db891923237c27",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "34856293274070759949001304669_19270-19990",
+      "text": "交差双ローター式\n機体直上の近接した位置に2つのローターを持つが、互いに衝突しないよう同調しており、わずかに外側に傾けて取りつけられている。同調機構から「シンクロプター」とも呼ばれる。自律安定性に優れ、テールローターで無駄になる動力が無い為効率が高く、操縦特性が左右同じで機体を小さくまとめる事ができるが、ローター取り付け部や伝動装置が複雑になり、重量が増加するなどの、不利な点もある。アメリカ合衆国のカマン・エアロスペースが採用している。\nマルチローター式\n→詳細は「マルチコプター」を参照\nローターが3つ以上あるもので、タンデムローター式とサイドバイサイド式の利点と、全速度域にわたり静的に安定である利点を持つ。\n無人のラジコン等には、固定ピッチブレードのローター4つで、それぞれに電動機があり、回転数を独立に制御するような機構が単純な物がある。\n動力集中式の搭乗機では、部品数が多くなり、動力を伝達する機構が複雑になる事などから実用性には乏しく、Mi-32などの構想あったが実用機には採用されていない。以降は電動機により伝達機構を廃したタイプの研究開発にシフトしており、2011年にはドイツの企業が16枚の回転翼を持つ有人の電動機を試作、ロシアの企業が1人乗りのクワッドローター を開発している。\nテールローター\nNH90のテールローターの中心部分\nテールブームが上方にある例。BK117-B2\nヘリコプターはローターが回転し、揚力を生み出すことで浮遊する。機体側がローターを回転させることの反作用として、ローターが機体を逆方向に回転させようとするモーメントが生じる。これは「反トルク」、カウンタートルク、トルク効果などと呼ばれる。\n",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_19270-19990",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 462,
+          "end": 19990,
+          "start": 19270
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "afb1cabcbbdbecac73fd0630a2b8ccfd717b8c4f0f67634d392313b7e344afb3",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "34856293274070759949001304669_19990-20739",
+      "text": "このとき「メインローターが1つのシングルローター機」では2つのメインローターを持つ機体のように互いのトルクを相殺する手法が使えないため、回転翼の駆動に伴う反作用〔反トルク〕を打ち消すため、尾部に備えたローター（テールローター）により横向きの推力を生み出し、その推力によるモーメントで打ち消す。機体の回転方向と推力の向きの関係により、プッシャータイプ（推進式、テールローターの推進力で尾部を押す）とトラクタータイプ（牽引式、テールローターの推進力で尾部を引っ張る）がある。\nテールローターはメインローターと異なり、比較的低い位置にある場合、乗降時に人がテールローターに接触する危険がある。このためテールブーム（胴体からテールローターへつながる構造部分）の取付け位置を高くし、テールローターが低い位置にならないよう設計された機体もある。これらの機体は、テールローターに人が接触する危険性が低いので、機体後部に安全に近寄る事ができる。また、胴体後部に観音開きのドアを取り付ける事で人員や貨物の収容性が良くなり、ストレッチャーなども収容し易くなるため、ドクターヘリ向けの機体に採用されている。\nまた空力的な致命的問題点としては、背風 (追い風)かつ前進(対気)速度が低い、発動機が高出力〔最大出力までの余裕が無い〕の条件では、テールローターは回転している(機能は有効)のに、その効果が失われる現象(効果は無効)が発生し、致命的な事故を引き起こす。\n→詳細は「テールローターの効果喪失」を参照\n現在のヘリコプターではテールローターが一般的であるが、下記のような方式も存在する。\nノーター\nMD500Nのノーター\nノーター ではテールブーム基部のファンにより低圧縮高ボリュームの空気をテールブーム内に送り込む。",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_19990-20739",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 493,
+          "end": 20739,
+          "start": 19990
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "3c36b397ba745a6f50e1268bd005510296d69c8cb9df9a46f77f15da77aca797",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "34856293274070759949001304669_28300-28959",
+      "text": "なお日本の航空法では回転翼航空機の曲技について規定されておらず、民間機の曲技飛行は行われていないが、耐空類別の対象外である陸上自衛隊のOH-1などが航空祭でループやピボットターンを披露している。\n事件・事故\n航空事故の一覧も参照\n1988年佐田岬半島米軍ヘリ墜落事故\n沖国大米軍ヘリ墜落事件（2004年）\n佐柳島沖海保ヘリ墜落事故（2010年）\n脚注\n注釈\n出典\n関連項目\nヘリコプターの一覧\n回転翼機： ヘリコプター - オートジャイロ - ティルトローター - 複合ヘリコプター\n攻撃ヘリコプター\n無線操縦ヘリコプター\nヘリボーン\n航空救急 - 捜索救難や、いわゆるドクターヘリについて\nイーゴリ・シコールスキイ\nヘリポート\nヘリコプター弦楽四重奏曲 - 編成にヘリコプターが4台含まれている。\n垂直離着陸機\nヘリコプターのローター\nヘリコプターの操縦装置\nドローン\n飛行高度記録 - 回転翼機の到達高度は、40,814 feet (12,440 m）\nヘリコプターペアレント - 過保護な親が子供を常時監視する様子を上空でホバリングするヘリコプターに例えている。\nクワッドローター\nマルチコプター\n外部リンク\nヘリコプターの飛ぶしくみ - エアバス・ヘリコプターズ・ジャパン\nAirliners.net - Helicopter (Photo)（英語）\nHelicopter history site（英語）\nHelicopter Yaw Control Methods（英語）\n『ヘリコプター』 - コトバンク",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_28300-28959",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 442,
+          "end": 28959,
+          "start": 28300
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "f4b282acbc266fd66a30820be0eff1bcb723b6bae05a209de439a2d232ac67c5",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "34856293274070759949001304669_5043-5730",
+      "text": "人員や貨物の輸送では、滑走路のない離島、山間部、石油プラットフォーム、ヘリポートのある都市部のビル屋上への離着陸。\n空き地などへの離着陸も可能なため救急搬送用のドクターヘリ、ホバリングも可能なので災害救助用の警察や消防などの防災ヘリコプター、船舶のヘリパッドにも離着陸できるため沿岸警備隊や海上保安庁の巡視船での洋上捜索救難活動にも使用される。\n軍事用としては、警戒監視、対潜哨戒機や攻撃機としての用途もある。その他、テレビ局の報道中継用、空撮、農薬散布用の小型機、遊覧飛行用などとしても使われる。\n用語\n構造\nヘリコプターはその機構の複雑さからか「機械仕掛けの神」と称される事もあり、航空宇宙工学の一分野としてヘリコプタ工学がある。\nメインローター\n機体上部で回転する翼のことで、これが回転翼の名称由来になっている。回転する事により飛行に必要な揚力を得る。また、回転面を傾ける事により、前後左右の飛行が可能となる。エンジンで生み出された動力は、メイン・トランスミッションを介して望ましい回転数まで減速させてからメインロータを300 - 400rpmで回転させて飛行する。また型式や配列により、様々な種類に分類される。\nテールローター\n機体尾部にある小さな回転翼。メインローターが回転することで、機体が反作用によって逆回転方向の反作用「反トルク」（逆トルク、アンチ・トルク）を受ける。このままでは、機体が回転して操縦不能となるため、機体尾部に長く伸びた先のテールローターによって横方向に押す力を生み出し、メインローターの回転とは反対方向に回転力を与え、機首方向の安定を図る。",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_5043-5730",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 454,
+          "end": 5730,
+          "start": 5043
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "290bfd06297ad02dbe2e3ac94a74c276a2db5bbce50f9b7342e09644980713f2",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "34856293274070759949001304669_9536-10354",
+      "text": "エンジン回転数を一定に保ちながら、必要な馬力に応じてエンジンのスロットルを開閉させて出力トルクを増減させるため、コレクティブピッチレバーの位置に連動してエンジンのスロットルが動くようになっており、コレクティブピッチレバーの先端には、コレクティブピッチレバーの位置はそのままにエンジンの回転数だけを修正するスロットルコントロールグリップがあり、グリップを回すことでエンジンのスロットルが動くようになっている。\nターボシャフトエンジン\n→詳細は「ターボシャフトエンジン」を参照\nエンジン自体に、機体側に掛かる負荷に対して常にエンジン回転数を一定に保つ燃料コントロール装置が装備されており、エンジン回転数の制御はエンジンをカットオフからフライトアイドルまでを制御するスロットレバーとフライトアイドルから最大出力までを制御する回転数コントロールレバーにより行われるが、エンジンの種類によっては、これらのレバーを1本のレバーにまとめたものがある。そのため、エンジン回転数を制御するには、コレクティブピッチレバーに連動して回転数コントロールレバーを動かす必要がある。また、コレクティブピッチレバーの先端には、エンジンの回転数を任意に制御できるビーブトリムスイッチがある。\n電動機\n単座の電動ヘリコプターSolution F/Chretien helicopter\n他の動力と同様に、回転数を一定に保ちローターのピッチ角で揚力の制御を行うものもある。マルチコプターなど複数のローターを備えるものは固定ピッチで、各電動機の回転制御のみで揚力や姿勢を制御している。\n有人機では電動機を動力とする電動ヘリコプターの試作が行われている。日本では有人搭乗操縦電池電源電動ヘリコプターに対応する航空従事者技能証明などの「航空機の種類についての限定」制度が存在しない。\n無人機では小型のマルチコプターが普及しており、趣味、撮影、農薬散布などの用途で使われている。\n",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_9536-10354",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 500,
+          "end": 10354,
+          "start": 9536
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "e49f40c404333c97a1da2d77a17363304f8e9580f0b798d2ab300cff503a5c75",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "8968314086735061477008631130_2415-3164",
+      "text": "日本の航空法では着陸（水）装置および動力装置を装備した簡易構造の航行機は飛行機ではなく超軽量動力機と分類する。\n垂直離着陸機\nパワード・リフトとも称される、ヘリコプターのように垂直に離着陸が可能な飛行機。ジェット機ではエンジンノズルを下方に向けるものや、垂直離着陸用のリフトエンジンを推進用とは別に装備しているものなどある。ローターを傾けることで垂直離着陸をするティルトローター機などは、回転翼機の特徴も併せ持つ。また、垂直には離陸できないものの短距離離陸垂直着陸機（STOVL）と呼ばれるものも存在する。\nグライダー（滑空機）\n固定翼機のうち動力を持たないもの。別の飛行機による牽引や、地上のウインチによるケーブル巻き取りなどといった、外部の動力によって離陸し、離陸後は切り離されて滑空する。離陸・再上昇用の推進装置を備えたものはモーターグライダーと呼ばれる。現在日本では乗員は2名までに制限されているが、海外及び過去の日本ではもっと多人数乗りの機体も作られた。\nパラグライダーやハンググライダーは、日本の航空法では航空機に該当しない。\n重飛行船\n船体全体がリフティングボディとなり、プロペラなどで推進力を得て船体の揚力で浮上する。\n回転翼機\n回転する翼（ローター）により揚力を発生させ、これにより空中に浮ぶ航空機。\nヘリコプター\nエンジンの動力でローターを駆動するもの。推進力は回転翼の軸をわずかに傾けることで得る。\nオートジャイロ\n回転翼に動力が伝達されていない航空機。前進用の推進装置を持つ。\n複合ヘリコプター\n通常のヘリコプターに推進器を付けた物や、巡航飛行時にはリフト用回転翼の回転を止め固定翼として使うか別途装備した主翼で揚力を得る機体などが含まれる。\nオーニソプター（羽ばたき機）\n",
+      "source_metadata": {
+        "article_text_sha256": "a37ac4da1a29bedd922b6f2594a882cd32b0e123f7018a1579743d123a053bdb",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:10687:98254900:a37ac4da1a29bedd922b6f2594a882cd32b0e123f7018a1579743d123a053bdb",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "8968314086735061477008631130_2415-3164",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 496,
+          "end": 3164,
+          "start": 2415
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98254900",
+        "text_sha256": "2192060afe4cdabcdf2159b12ffd6e9a6e5dbb13fe62a136c1766b01f34a6e2a",
+        "title": "航空機",
+        "wikipedia_page_id": 10687,
+        "wikipedia_revision_id": 98254900,
+        "wikipedia_revision_timestamp_utc": "2023-12-01T05:15:16Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98254900&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "34856293274070759949001304669_19270-19990": {
+      "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "34856293274070759949001304669_19270-19990",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 462,
+        "end": 19990,
+        "start": 19270
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+      "text_sha256": "afb1cabcbbdbecac73fd0630a2b8ccfd717b8c4f0f67634d392313b7e344afb3",
+      "title": "ヘリコプター",
+      "wikipedia_page_id": 20223,
+      "wikipedia_revision_id": 98600735,
+      "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    },
+    "34856293274070759949001304669_19990-20739": {
+      "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "34856293274070759949001304669_19990-20739",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 493,
+        "end": 20739,
+        "start": 19990
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+      "text_sha256": "3c36b397ba745a6f50e1268bd005510296d69c8cb9df9a46f77f15da77aca797",
+      "title": "ヘリコプター",
+      "wikipedia_page_id": 20223,
+      "wikipedia_revision_id": 98600735,
+      "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "34856293274070759949001304669_19270-19990",
+      "text": "交差双ローター式\n機体直上の近接した位置に2つのローターを持つが、互いに衝突しないよう同調しており、わずかに外側に傾けて取りつけられている。同調機構から「シンクロプター」とも呼ばれる。自律安定性に優れ、テールローターで無駄になる動力が無い為効率が高く、操縦特性が左右同じで機体を小さくまとめる事ができるが、ローター取り付け部や伝動装置が複雑になり、重量が増加するなどの、不利な点もある。アメリカ合衆国のカマン・エアロスペースが採用している。\nマルチローター式\n→詳細は「マルチコプター」を参照\nローターが3つ以上あるもので、タンデムローター式とサイドバイサイド式の利点と、全速度域にわたり静的に安定である利点を持つ。\n無人のラジコン等には、固定ピッチブレードのローター4つで、それぞれに電動機があり、回転数を独立に制御するような機構が単純な物がある。\n動力集中式の搭乗機では、部品数が多くなり、動力を伝達する機構が複雑になる事などから実用性には乏しく、Mi-32などの構想あったが実用機には採用されていない。以降は電動機により伝達機構を廃したタイプの研究開発にシフトしており、2011年にはドイツの企業が16枚の回転翼を持つ有人の電動機を試作、ロシアの企業が1人乗りのクワッドローター を開発している。\nテールローター\nNH90のテールローターの中心部分\nテールブームが上方にある例。BK117-B2\nヘリコプターはローターが回転し、揚力を生み出すことで浮遊する。機体側がローターを回転させることの反作用として、ローターが機体を逆方向に回転させようとするモーメントが生じる。これは「反トルク」、カウンタートルク、トルク効果などと呼ばれる。\n",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_19270-19990",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 462,
+          "end": 19990,
+          "start": 19270
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "afb1cabcbbdbecac73fd0630a2b8ccfd717b8c4f0f67634d392313b7e344afb3",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "34856293274070759949001304669_19990-20739",
+      "text": "このとき「メインローターが1つのシングルローター機」では2つのメインローターを持つ機体のように互いのトルクを相殺する手法が使えないため、回転翼の駆動に伴う反作用〔反トルク〕を打ち消すため、尾部に備えたローター（テールローター）により横向きの推力を生み出し、その推力によるモーメントで打ち消す。機体の回転方向と推力の向きの関係により、プッシャータイプ（推進式、テールローターの推進力で尾部を押す）とトラクタータイプ（牽引式、テールローターの推進力で尾部を引っ張る）がある。\nテールローターはメインローターと異なり、比較的低い位置にある場合、乗降時に人がテールローターに接触する危険がある。このためテールブーム（胴体からテールローターへつながる構造部分）の取付け位置を高くし、テールローターが低い位置にならないよう設計された機体もある。これらの機体は、テールローターに人が接触する危険性が低いので、機体後部に安全に近寄る事ができる。また、胴体後部に観音開きのドアを取り付ける事で人員や貨物の収容性が良くなり、ストレッチャーなども収容し易くなるため、ドクターヘリ向けの機体に採用されている。\nまた空力的な致命的問題点としては、背風 (追い風)かつ前進(対気)速度が低い、発動機が高出力〔最大出力までの余裕が無い〕の条件では、テールローターは回転している(機能は有効)のに、その効果が失われる現象(効果は無効)が発生し、致命的な事故を引き起こす。\n→詳細は「テールローターの効果喪失」を参照\n現在のヘリコプターではテールローターが一般的であるが、下記のような方式も存在する。\nノーター\nMD500Nのノーター\nノーター ではテールブーム基部のファンにより低圧縮高ボリュームの空気をテールブーム内に送り込む。",
+      "source_metadata": {
+        "article_text_sha256": "79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:20223:98600735:79689fc4eda47b4f12ff2547642e4cca3eae00afd9a3b8a5625ce55148d67f2f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "34856293274070759949001304669_19990-20739",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 493,
+          "end": 20739,
+          "start": 19990
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735",
+        "text_sha256": "3c36b397ba745a6f50e1268bd005510296d69c8cb9df9a46f77f15da77aca797",
+        "title": "ヘリコプター",
+        "wikipedia_page_id": 20223,
+        "wikipedia_revision_id": 98600735,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T17:32:13Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600735&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ]
+}

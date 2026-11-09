@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "reliable",
+      "reason": "Actual context e0003 directly supports both filming locations and their season assignments. The answer satisfies the reference's essential content without relying on reference-only evidence.",
+      "evidence": ["e0003"],
+      "essential_points": "Season 1 was filmed at Field's Market in West Hills, California; Season 2 used a warehouse market in Santa Rosa, California.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "Actual context e0008 identifies the New England Patriots as the opponent in the Falcons' 28–34 Super Bowl loss and states that Atlanta won its Divisional Round game. It also places their previous Super Bowl appearance 18 years earlier. The candidate incorrectly says Atlanta lost to itself and confuses a championship-game milestone with a Super Bowl appearance. Its cited actual passage e0006 concerns the Panthers losing the division title, not these claims.",
+      "evidence": ["e0006", "e0008"],
+      "essential_points": "For the 2016 season described in the supplied materials, the Falcons lost Super Bowl LI to the New England Patriots, 28–34.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a002": {
+      "label": "unreliable",
+      "reason": "Actual context e0014 supports the core meaning, Aramaic derivation, and disagreement over severity. However, it distinguishes moros meaning godless from a similar Greek word meaning apostate, which Albright and Mann conjecture was intended. The answer extends moros itself to apostasy and blurs that distinction. That added semantic claim lacks actual-context support; reference-only evidence is not used to supply it.",
+      "evidence": ["e0014"],
+      "essential_points": "Raca most commonly refers to Aramaic reka, literally empty one and probably meaning empty headed or foolish.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "uncertain",
+        "context_support": "fail"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "Actual context e0019 supports the education entitlement and government obligations. Actual context e0022 supports school norms and the reimbursed 25% quota, but explicitly exempts minority institutions. The answer states the private-school mandate without that material exception, overstating its scope. The failure is established by actual context rather than reference-only evidence.",
+      "evidence": ["e0019", "e0022"],
+      "essential_points": "Explain free and compulsory elementary education for ages 6–14, government responsibility for admission, attendance and completion, and school standards; qualify the private-school quota with the minority-institution exemption.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    }
+  }
+}

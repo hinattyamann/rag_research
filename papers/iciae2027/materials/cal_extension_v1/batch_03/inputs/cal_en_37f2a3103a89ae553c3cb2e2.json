@@ -1,0 +1,736 @@
+{
+  "qa_key": "cal_en_37f2a3103a89ae553c3cb2e2",
+  "cohort": "cal",
+  "language": "en",
+  "analysis_role": "cal",
+  "source_qa_split": "development",
+  "record_id": "clapnq:c508d78:dev:3800568474599943409:answerable",
+  "document_group_id": "clapnq-title:mustang",
+  "qa_source": {
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "gold_passage_ids": [
+      "826713020_21300-22103"
+    ],
+    "is_answerable": true,
+    "provided_passage": null,
+    "question": "where are wild horses found in the us",
+    "record_id": "clapnq:c508d78:dev:3800568474599943409:answerable",
+    "reference_answers": [
+      "A few hundred free - roaming horses survive in Alberta and British Columbia . More than half of all mustangs in North America are found in Nevada ( which features the horses on its State Quarter ) , with other significant populations in California , Oregon , Utah , Montana , and Wyoming . Another 34,000 horses are in holding facilities .",
+      "A few hundred free - roaming horses survive in Alberta and British Columbia . More than half of all mustangs in North America are found in Nevada, with other significant populations in California , Oregon , Utah , Montana , and Wyoming . Another 34,000 horses are in holding facilities ."
+    ],
+    "research_split": "development",
+    "selected_sentences_by_reference": [
+      [
+        "A few hundred free - roaming horses survive in Alberta and British Columbia .",
+        "More than half of all mustangs in North America are found in Nevada ( which features the horses on its State Quarter ) , with other significant populations in California , Oregon , Utah , Montana , and Wyoming .",
+        "Another 34,000 horses are in holding facilities ."
+      ],
+      [
+        "A few hundred free - roaming horses survive in Alberta and British Columbia .",
+        "More than half of all mustangs in North America are found in Nevada ( which features the horses on its State Quarter ) , with other significant populations in California , Oregon , Utah , Montana , and Wyoming .",
+        "Another 34,000 horses are in holding facilities ."
+      ]
+    ],
+    "source_dataset": "CLAPNQ",
+    "source_id": "3800568474599943409",
+    "source_line_index": 99,
+    "source_record_sha256": "da86b8180d8cdd81896275ed9a63416875f40550044f60852e3ce26e46e7649b",
+    "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+    "source_split": "dev",
+    "source_title": "Mustang"
+  },
+  "source_selection": {
+    "record_id": "clapnq:c508d78:dev:3800568474599943409:answerable",
+    "question": "where are wild horses found in the us",
+    "document_group_id": "clapnq-title:mustang"
+  },
+  "question": "where are wild horses found in the us",
+  "used_documents": [
+    {
+      "passage_id": "826713020_2854-3153",
+      "title": "Mustang",
+      "text": "Mustangs are often referred to as wild horses , but since all free - roaming horses now in the Americas descended from horses that were once domesticated , a more proper term is feral horses . Unlike Przewalski 's horse , the only extant wild horse , the mustang descended from domesticated horses .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_2854-3153",
+        "parent_text_sha256": "3ad61b68540ec83650e9ef011acc09381351c355b87039ad25dd403cd04913de",
+        "passage_id": "826713020_2854-3153",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 85,
+          "end": 299,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "3ad61b68540ec83650e9ef011acc09381351c355b87039ad25dd403cd04913de",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "3ad61b68540ec83650e9ef011acc09381351c355b87039ad25dd403cd04913de",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 299
+      }
+    },
+    {
+      "passage_id": "826713020_21300-22103",
+      "title": "Mustang",
+      "text": "The BLM has established Herd Management Areas to determine where and how many animals will be sustained as free - roaming populations . Some populations of free - roaming horses and burros remain protected under the Act , but others have disappeared from places where there were once established populations . A few hundred free - roaming horses survive in Alberta and British Columbia . The BLM considers roughly 26,000 individuals a manageable number , but the feral mustang population in February 2010 was 33,700 horses and 4,700 burros . More than half of all mustangs in North America are found in Nevada ( which features the horses on its State Quarter ) , with other significant populations in California , Oregon , Utah , Montana , and Wyoming . Another 34,000 horses are in holding facilities .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_21300-22103",
+        "parent_text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+        "passage_id": "826713020_21300-22103",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 194,
+          "end": 803,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 803
+      }
+    },
+    {
+      "passage_id": "826713020_8526-9039",
+      "title": "Mustang",
+      "text": "The horse family Equidae and the genus Equus evolved in North America . Fossil evidence dating to the Eocene Studies using ancient DNA as well as DNA of recent individuals shows there once were two unrelated horse species in North America , the wild horse ( Equus ferus ) , Horses existed in Canada as recently as 12,000 years ago , and a 1992 study produced evidence that horses existed in the Americas until 8,000 -- 10,000 years ago . and Haringtonhippus francisci or the `` New World stilt - legged horse '' .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_8526-9039",
+        "parent_text_sha256": "22d718d428a0977e31814e3d9764c231f795924722e6d5543ad3fc9a778e5a12",
+        "passage_id": "826713020_8526-9039",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 130,
+          "end": 513,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "22d718d428a0977e31814e3d9764c231f795924722e6d5543ad3fc9a778e5a12",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "22d718d428a0977e31814e3d9764c231f795924722e6d5543ad3fc9a778e5a12",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 513
+      }
+    },
+    {
+      "passage_id": "826713020_451-1237",
+      "title": "Mustang",
+      "text": "The mustang is a free - roaming horse of the American west that first descended from horses brought to the Americas by the Spanish . Mustangs are often referred to as wild horses , but because they are descended from once - domesticated horses , they are properly defined as feral horses . The original mustangs were Colonial Spanish horses , but many other breeds and types of horses contributed to the modern mustang , resulting in varying phenotypes . In the 21st century , mustang herds vary in the degree to which they can be traced to original Iberian horses . Some contain a greater genetic mixture of ranch stock and more recent breed releases , while others are relatively unchanged from the original Iberian stock , most strongly represented in the most isolated populations .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_451-1237",
+        "parent_text_sha256": "962237c3ff2d340b95b995f8c9bf75c47d0bd3a9aec64f33a593b33fe025933f",
+        "passage_id": "826713020_451-1237",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 201,
+          "end": 786,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "962237c3ff2d340b95b995f8c9bf75c47d0bd3a9aec64f33a593b33fe025933f",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "962237c3ff2d340b95b995f8c9bf75c47d0bd3a9aec64f33a593b33fe025933f",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 786
+      }
+    },
+    {
+      "passage_id": "826713020_14019-14874",
+      "title": "Mustang",
+      "text": "In the upper Mississippi basin and Great Lakes regions , the French were another source of horses . Although horse trading with native people was prohibited , there were individuals willing to indulge in illegal dealing , and as early as 1675 , the Illinois people had horses . Animals identified as `` Canadian , '' `` French '' , or `` Norman '' were located in the Great Lakes region , with a 1782 census at Fort Detroit listing over 1000 animals . By 1770 , Spanish horses were found in that area , and there was a clear zone from Ontario and Saskatchewan to St. Louis where Canadian - type horses , particularly the smaller varieties , crossbred with mustangs of Spanish ancestry . French - Canadian horses were also allowed to roam freely , and moved west , particularly influencing horse herds in the northern plains and inland northwest . Comanche",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_14019-14874",
+        "parent_text_sha256": "4c748465734522558d415c5a642ac47c61559d3b00994c1c75710f12c5310afb",
+        "passage_id": "826713020_14019-14874",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 215,
+          "end": 855,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "4c748465734522558d415c5a642ac47c61559d3b00994c1c75710f12c5310afb",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "4c748465734522558d415c5a642ac47c61559d3b00994c1c75710f12c5310afb",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 855
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "826713020_21300-22103",
+      "title": "Mustang",
+      "text": "The BLM has established Herd Management Areas to determine where and how many animals will be sustained as free - roaming populations . Some populations of free - roaming horses and burros remain protected under the Act , but others have disappeared from places where there were once established populations . A few hundred free - roaming horses survive in Alberta and British Columbia . The BLM considers roughly 26,000 individuals a manageable number , but the feral mustang population in February 2010 was 33,700 horses and 4,700 burros . More than half of all mustangs in North America are found in Nevada ( which features the horses on its State Quarter ) , with other significant populations in California , Oregon , Utah , Montana , and Wyoming . Another 34,000 horses are in holding facilities .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_21300-22103",
+        "parent_text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+        "passage_id": "826713020_21300-22103",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 194,
+          "end": 803,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 803
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "Wild horses, or mustangs, are found in various states across the western United States, including Nevada, California, Oregon, Utah, Montana, and Wyoming. The BLM manages free-roaming horse populations in these areas, with some populations remaining protected under the Act.",
+    "answer_sha256": "9260c4342361fab613a5b24227ba925a953fef45cae0034b84c247fc2e946c56",
+    "quality": {
+      "annotation_id": "Q-6ef93c060bbabc48b865",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-6ef93c060bbabc48b865",
+        "candidate_sha256": "ca6d23dbee5da76c769275658bf180461284ab551dfd1753bddff66a673be64c",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Locate free-roaming mustangs in the western US, including Nevada, California, Oregon, Utah, Montana, and Wyoming.",
+        "reason": "Actual context supports all six named states, the western setting, BLM management, and protection of some populations. The answer adequately identifies US locations; Canadian populations and holding-facility counts in the reference are unnecessary for this question.",
+        "evidence": [
+          {
+            "passage_id": "826713020_21300-22103",
+            "quote": "The BLM has established Herd Management Areas to determine where and how many animals will be sustained as free - roaming populations . Some populations of free - roaming horses and burros remain protected under the Act , but others have disappeared from places where there were once established populations . A few hundred free - roaming horses survive in Alberta and British Columbia . The BLM considers roughly 26,000 individuals a manageable number , but the feral mustang population in February 2010 was 33,700 horses and 4,700 burros . More than half of all mustangs in North America are found in Nevada ( which features the horses on its State Quarter ) , with other significant populations in California , Oregon , Utah , Montana , and Wyoming . Another 34,000 horses are in holding facilities ."
+          },
+          {
+            "passage_id": "826713020_451-1237",
+            "quote": "The mustang is a free - roaming horse of the American west that first descended from horses brought to the Americas by the Spanish . Mustangs are often referred to as wild horses , but because they are descended from once - domesticated horses , they are properly defined as feral horses . The original mustangs were Colonial Spanish horses , but many other breeds and types of horses contributed to the modern mustang , resulting in varying phenotypes . In the 21st century , mustang herds vary in the degree to which they can be traced to original Iberian horses . Some contain a greater genetic mixture of ranch stock and more recent breed releases , while others are relatively unchanged from the original Iberian stock , most strongly represented in the most isolated populations ."
+          }
+        ],
+        "elapsed_seconds": 8.501352079969365,
+        "confirmed_at_utc": "2026-11-09T21:48:59.440727+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/en/baseline/37f2a3103a89ae553c3cb2e2/record.json",
+      "sha256": "f7ccb5d8ad5fa69dabd24dffa07d9197ab941e4c99dec65c5bef3096359e554f"
+    },
+    "copy": "provenance/baselines/cal_en_37f2a3103a89ae553c3cb2e2.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "Mustangs, often referred to as wild horses, are found in various states across the western United States, including Nevada, California, Oregon, Utah, Montana, and Wyoming [826713020_21300-22103]. More than half of all mustangs in North America are found in Nevada [826713020_21300-22103]. The BLM manages these free-roaming populations through Herd Management Areas, and some populations remain protected under the Act [826713020_21300-22103].",
+    "answer_sha256": "be49bca07a426a1fa8520ad9a4ef1db40ed439a753bfe114f27f274f8c896229",
+    "quality": {
+      "annotation_id": "Q-72f5b52281e36f19d924",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-72f5b52281e36f19d924",
+        "candidate_sha256": "5abdd2c49da35a2d200bacbeafe4d26855c22d6a9a898510ef518a2c3887d3e7",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Locate free-roaming mustangs in the western United States, especially Nevada, with populations in California, Oregon, Utah, Montana and Wyoming.",
+        "reason": "Actual context supports the common wild-horse terminology, all six states, Nevada's majority of North American mustangs, and the BLM management and protection statements. The answer addresses the US location question; the reference's Canadian locations and holding-facility count are unnecessary.",
+        "evidence": [
+          {
+            "passage_id": "826713020_2854-3153",
+            "quote": "Mustangs are often referred to as wild horses , but since all free - roaming horses now in the Americas descended from horses that were once domesticated , a more proper term is feral horses . Unlike Przewalski 's horse , the only extant wild horse , the mustang descended from domesticated horses ."
+          },
+          {
+            "passage_id": "826713020_21300-22103",
+            "quote": "The BLM has established Herd Management Areas to determine where and how many animals will be sustained as free - roaming populations . Some populations of free - roaming horses and burros remain protected under the Act , but others have disappeared from places where there were once established populations . A few hundred free - roaming horses survive in Alberta and British Columbia . The BLM considers roughly 26,000 individuals a manageable number , but the feral mustang population in February 2010 was 33,700 horses and 4,700 burros . More than half of all mustangs in North America are found in Nevada ( which features the horses on its State Quarter ) , with other significant populations in California , Oregon , Utah , Montana , and Wyoming . Another 34,000 horses are in holding facilities ."
+          },
+          {
+            "passage_id": "826713020_451-1237",
+            "quote": "The mustang is a free - roaming horse of the American west that first descended from horses brought to the Americas by the Spanish . Mustangs are often referred to as wild horses , but because they are descended from once - domesticated horses , they are properly defined as feral horses . The original mustangs were Colonial Spanish horses , but many other breeds and types of horses contributed to the modern mustang , resulting in varying phenotypes . In the 21st century , mustang herds vary in the degree to which they can be traced to original Iberian horses . Some contain a greater genetic mixture of ranch stock and more recent breed releases , while others are relatively unchanged from the original Iberian stock , most strongly represented in the most isolated populations ."
+          }
+        ],
+        "elapsed_seconds": 11.501493741001468,
+        "confirmed_at_utc": "2026-11-09T21:51:15.872722+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "Wild horses, or mustangs, are found in various states across the western United States, including Nevada, California, Oregon, Utah, Montana, and Wyoming."
+    },
+    {
+      "claim_id": "c2",
+      "text": "The BLM manages free-roaming horse populations in these areas, with some populations remaining protected under the Act."
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "Wild horses, or mustangs, are found in various states across the western United States, including Nevada, California, Oregon, Utah, Montana, and Wyoming."
+      },
+      {
+        "claim_id": "c2",
+        "text": "The BLM manages free-roaming horse populations in these areas, with some populations remaining protected under the Act."
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-v1",
+    "normalized_prose": "Wild horses, or mustangs, are found in various states across the western United States, including Nevada, California, Oregon, Utah, Montana, and Wyoming. The BLM manages free-roaming horse populations in these areas, with some populations remaining protected under the Act.",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 154
+      },
+      {
+        "start": 154,
+        "end": 273
+      }
+    ]
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "826713020_451-1237",
+          "826713020_21300-22103",
+          "826713020_8526-9039",
+          "826713020_2854-3153",
+          "826713020_14019-14874"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "826713020_2854-3153",
+          "826713020_21300-22103",
+          "826713020_8526-9039",
+          "826713020_451-1237",
+          "826713020_14019-14874"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "826713020_2854-3153",
+          "826713020_21300-22103",
+          "826713020_8526-9039",
+          "826713020_451-1237",
+          "826713020_14019-14874"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "826713020_2854-3153",
+          "826713020_21300-22103",
+          "826713020_8526-9039",
+          "826713020_451-1237",
+          "826713020_14019-14874"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "826713020_14019-14874",
+          "826713020_451-1237",
+          "826713020_8526-9039",
+          "826713020_21300-22103",
+          "826713020_2854-3153"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "826713020_14019-14874",
+          "826713020_451-1237",
+          "826713020_2854-3153",
+          "826713020_8526-9039",
+          "826713020_21300-22103"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "826713020_14019-14874",
+          "826713020_2854-3153",
+          "826713020_21300-22103",
+          "826713020_451-1237",
+          "826713020_8526-9039"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "826713020_2854-3153",
+          "826713020_21300-22103",
+          "826713020_8526-9039",
+          "826713020_451-1237",
+          "826713020_14019-14874"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "826713020_2854-3153",
+          "826713020_21300-22103",
+          "826713020_8526-9039",
+          "826713020_451-1237",
+          "826713020_14019-14874"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "en",
+    "record_id": "clapnq:c508d78:dev:3800568474599943409:answerable",
+    "document_group_id": "clapnq-title:mustang",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/en/report.private.json",
+    "sha256": "535145ce16e3acce818e40a50a12893363033bf6ffc9783088016ea02cd98da7"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "826713020_14019-14874",
+      "text": "In the upper Mississippi basin and Great Lakes regions , the French were another source of horses . Although horse trading with native people was prohibited , there were individuals willing to indulge in illegal dealing , and as early as 1675 , the Illinois people had horses . Animals identified as `` Canadian , '' `` French '' , or `` Norman '' were located in the Great Lakes region , with a 1782 census at Fort Detroit listing over 1000 animals . By 1770 , Spanish horses were found in that area , and there was a clear zone from Ontario and Saskatchewan to St. Louis where Canadian - type horses , particularly the smaller varieties , crossbred with mustangs of Spanish ancestry . French - Canadian horses were also allowed to roam freely , and moved west , particularly influencing horse herds in the northern plains and inland northwest . Comanche",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_14019-14874",
+        "parent_text_sha256": "4c748465734522558d415c5a642ac47c61559d3b00994c1c75710f12c5310afb",
+        "passage_id": "826713020_14019-14874",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 215,
+          "end": 855,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "4c748465734522558d415c5a642ac47c61559d3b00994c1c75710f12c5310afb",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "826713020_21300-22103",
+      "text": "The BLM has established Herd Management Areas to determine where and how many animals will be sustained as free - roaming populations . Some populations of free - roaming horses and burros remain protected under the Act , but others have disappeared from places where there were once established populations . A few hundred free - roaming horses survive in Alberta and British Columbia . The BLM considers roughly 26,000 individuals a manageable number , but the feral mustang population in February 2010 was 33,700 horses and 4,700 burros . More than half of all mustangs in North America are found in Nevada ( which features the horses on its State Quarter ) , with other significant populations in California , Oregon , Utah , Montana , and Wyoming . Another 34,000 horses are in holding facilities .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_21300-22103",
+        "parent_text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+        "passage_id": "826713020_21300-22103",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 194,
+          "end": 803,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "826713020_2854-3153",
+      "text": "Mustangs are often referred to as wild horses , but since all free - roaming horses now in the Americas descended from horses that were once domesticated , a more proper term is feral horses . Unlike Przewalski 's horse , the only extant wild horse , the mustang descended from domesticated horses .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_2854-3153",
+        "parent_text_sha256": "3ad61b68540ec83650e9ef011acc09381351c355b87039ad25dd403cd04913de",
+        "passage_id": "826713020_2854-3153",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 85,
+          "end": 299,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "3ad61b68540ec83650e9ef011acc09381351c355b87039ad25dd403cd04913de",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "826713020_451-1237",
+      "text": "The mustang is a free - roaming horse of the American west that first descended from horses brought to the Americas by the Spanish . Mustangs are often referred to as wild horses , but because they are descended from once - domesticated horses , they are properly defined as feral horses . The original mustangs were Colonial Spanish horses , but many other breeds and types of horses contributed to the modern mustang , resulting in varying phenotypes . In the 21st century , mustang herds vary in the degree to which they can be traced to original Iberian horses . Some contain a greater genetic mixture of ranch stock and more recent breed releases , while others are relatively unchanged from the original Iberian stock , most strongly represented in the most isolated populations .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_451-1237",
+        "parent_text_sha256": "962237c3ff2d340b95b995f8c9bf75c47d0bd3a9aec64f33a593b33fe025933f",
+        "passage_id": "826713020_451-1237",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 201,
+          "end": 786,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "962237c3ff2d340b95b995f8c9bf75c47d0bd3a9aec64f33a593b33fe025933f",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "826713020_8526-9039",
+      "text": "The horse family Equidae and the genus Equus evolved in North America . Fossil evidence dating to the Eocene Studies using ancient DNA as well as DNA of recent individuals shows there once were two unrelated horse species in North America , the wild horse ( Equus ferus ) , Horses existed in Canada as recently as 12,000 years ago , and a 1992 study produced evidence that horses existed in the Americas until 8,000 -- 10,000 years ago . and Haringtonhippus francisci or the `` New World stilt - legged horse '' .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_8526-9039",
+        "parent_text_sha256": "22d718d428a0977e31814e3d9764c231f795924722e6d5543ad3fc9a778e5a12",
+        "passage_id": "826713020_8526-9039",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 130,
+          "end": 513,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "22d718d428a0977e31814e3d9764c231f795924722e6d5543ad3fc9a778e5a12",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "826713020_21300-22103": {
+      "embedding_token_budget": 512,
+      "language": "en",
+      "parent_passage_id": "826713020_21300-22103",
+      "parent_text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+      "passage_id": "826713020_21300-22103",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 194,
+        "end": 803,
+        "start": 0
+      },
+      "source_dataset": "CLAPNQ",
+      "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+      "text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+      "title": "Mustang",
+      "source_url": "https://en.wikipedia.org/wiki/Mustang",
+      "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+      "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+      "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+        "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "826713020_21300-22103",
+      "text": "The BLM has established Herd Management Areas to determine where and how many animals will be sustained as free - roaming populations . Some populations of free - roaming horses and burros remain protected under the Act , but others have disappeared from places where there were once established populations . A few hundred free - roaming horses survive in Alberta and British Columbia . The BLM considers roughly 26,000 individuals a manageable number , but the feral mustang population in February 2010 was 33,700 horses and 4,700 burros . More than half of all mustangs in North America are found in Nevada ( which features the horses on its State Quarter ) , with other significant populations in California , Oregon , Utah , Montana , and Wyoming . Another 34,000 horses are in holding facilities .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "826713020_21300-22103",
+        "parent_text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+        "passage_id": "826713020_21300-22103",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 194,
+          "end": 803,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "ee7b378931b5bf160ef79a7146979db4d1b981df43e2ad182a9c39f38181469d",
+        "title": "Mustang",
+        "source_url": "https://en.wikipedia.org/wiki/Mustang",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Mustang?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ]
+}
