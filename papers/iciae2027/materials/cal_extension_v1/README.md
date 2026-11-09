@@ -1,13 +1,13 @@
-# Cal拡張の執筆資料（自動作成予定）
+# Cal拡張の論文用資料
 
-追加予定は英語60問・日本語60問、計120問。既存Main/Calを保持した別の確認実験として、日英各20問のBatchを3回収集する。
+完了Batch: batch_01, batch_02, batch_03。予定120問中、封印済み資料の選定数120。
 
-この時点では実装・実行前確認中で、追加収集や資料完成を示す記録ではない。
-各Batchの収集・全採点封印・解析・検証が終わると、batch_01/等へ全文/出典/採点/費用/図表/検証入口を保存する。
-最終完了時にこのREADMEとcompletion.jsonを更新し、新規集合だけの統合結果・未収集/未封印の残件を明示する。
+各batch_XX/README.mdから全文・出典・採点・判断・費用・図表・検証入口へ進む。
+pooled_new_extension.jsonは新規追加集合だけの統合。既存Main/Calを合算していない。Batch別の結果も保持。
+未収集/未封印の予定QAを成功扱いにせず、completion.jsonの残件数を参照する。
 
-取込元Branch: `research/cal-extension-v1`。ノートPCではGit状態・Fetch後差分を確認し、未完成原稿を保全して必要な資料だけ取り込む。
-原稿Branchと同じ箇所を研究室から同時編集せず、研究室側ではDOCXを変更しない。
-
-計画・進捗はRepository Rootのdocs/cal_extension_protocol_v1.md、docs/cal_extension_status.md、data/manifests/cal_extension_status_v1.jsonを参照。
-収集/採点中のF・Labelや未封印資料をGitに載せない。元資料fixed_v23_v1とprovenance_audit_v1は不変。
+ノートPCではGit状態とFetch後の履歴差分を確認し、未完成原稿を保全して取込む。同一DOCXの両PC同時編集を避ける。
+取込元Branch: research/cal-extension-v1。研究室側ではDOCXを編集していない。
+全体検証: `uv run --no-project python -I verify_collection.py --audit-open`。各Batchにも独立した検証入口を同梱。
+方法・欠測・分母・AI採点/人手未確認・時期差・Serving版不明を保持して日英両原稿へ反映する。
+論文への反映、教員確認、引用最終照合、投稿は著者の作業。
