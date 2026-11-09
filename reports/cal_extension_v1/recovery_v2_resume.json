@@ -1,0 +1,245 @@
+{
+  "verified_at_utc": "2026-11-09T01:49:47.448247+00:00",
+  "verified": true,
+  "service": "cal-extension-v2.service",
+  "service_active": true,
+  "restarted_at_utc": "2026-11-09T01:44:50.316421+00:00",
+  "implementation_commit": "d4acaef248159f2e354f4d4463432fd643d272e5",
+  "recovered_stage": "batch_02/export",
+  "export_receipt_exit_code": 0,
+  "batch_02_git_only_verification": {
+    "commit": "b1fe764f539d2d2566524b4cfce91c0ab9379659",
+    "verified_at_utc": "2026-11-09T01:47:03.209708+00:00",
+    "batches": {
+      "batch_02": {
+        "status": "passed",
+        "qa": 40,
+        "strata": 2,
+        "comparable_qa": {
+          "cal/en": 14,
+          "cal/ja": 14
+        },
+        "planned_trials": 357,
+        "candidate_stage_assignments": 80,
+        "annotation_jobs": 40,
+        "policy_slots": 440,
+        "observed_policy_outcomes": 437,
+        "cases": 2,
+        "artifact_files": 510,
+        "semantic_audit": "recomputed",
+        "route_costs": "recomputed",
+        "published_tables": "matched",
+        "bootstrap": "original implementation/version/seed/replicates and exact result retained; not regenerated with a different RNG",
+        "original_run_access_required": false,
+        "new_inference_calls": 0,
+        "new_annotation_calls": 0,
+        "all_data_reads_confined_to_materials": true
+      }
+    },
+    "fresh_git_copy": true,
+    "original_run_or_auth_used_by_verifier": false,
+    "final": false
+  },
+  "current_stage": "batch_03 baseline collection",
+  "completed_collection_qa": 80,
+  "planned_collection_qa": 120,
+  "new_batch_03_baseline_ok_at_check": {
+    "en": 10,
+    "ja": 10
+  },
+  "successful_new_native_samples": [
+    {
+      "language": "en",
+      "path": "en/baseline/025460481e0c8fb7f2537409/record.json",
+      "sha256": "83b99d779aa53e33652190323027ca3af0c7b0d7e97f1f6b2fa94ecbc2c31a4d",
+      "started_at_utc": "2026-11-09T01:48:41.275086+00:00",
+      "input_tokens": 1139,
+      "output_tokens": 138,
+      "generation_settings": {
+        "temperature": 0.0,
+        "seed": 42,
+        "n_predict": 512
+      }
+    },
+    {
+      "language": "en",
+      "path": "en/baseline/08d4c5cad4d184fb01cf277b/record.json",
+      "sha256": "aafa9197aadd96ed171914f891139b33f300d6d44410468b98957718cb665db0",
+      "started_at_utc": "2026-11-09T01:47:34.160275+00:00",
+      "input_tokens": 1187,
+      "output_tokens": 66,
+      "generation_settings": {
+        "temperature": 0.0,
+        "seed": 42,
+        "n_predict": 512
+      }
+    },
+    {
+      "language": "en",
+      "path": "en/baseline/0d64873646c62fb7c7eabfd9/record.json",
+      "sha256": "fd3deb01c4f1f3318e105d66a3c6c18f81ede2290309cb5cbcbe8cf91c9afb8b",
+      "started_at_utc": "2026-11-09T01:48:42.544571+00:00",
+      "input_tokens": 1154,
+      "output_tokens": 142,
+      "generation_settings": {
+        "temperature": 0.0,
+        "seed": 42,
+        "n_predict": 512
+      }
+    },
+    {
+      "language": "en",
+      "path": "en/baseline/64e3959b81058b221c264362/record.json",
+      "sha256": "361e9fa3f0c4c979b9d7ca6088ac5d84af9c33590aa70a54edfaeb356a2a0208",
+      "started_at_utc": "2026-11-09T01:48:43.868446+00:00",
+      "input_tokens": 1424,
+      "output_tokens": 122,
+      "generation_settings": {
+        "temperature": 0.0,
+        "seed": 42,
+        "n_predict": 512
+      }
+    },
+    {
+      "language": "en",
+      "path": "en/baseline/7ce7caf17486fdaafa8e48e2/record.json",
+      "sha256": "07a3e70be3718fa985183cc944753acd48cc29e837016e9221be5eaa62f543e7",
+      "started_at_utc": "2026-11-09T01:47:38.160558+00:00",
+      "input_tokens": 1584,
+      "output_tokens": 59,
+      "generation_settings": {
+        "temperature": 0.0,
+        "seed": 42,
+        "n_predict": 512
+      }
+    },
+    {
+      "language": "ja",
+      "path": "ja/baseline/010847d6b4df0f0671c0fcef/record.json",
+      "sha256": "85894f5f09ee0eb807bfc7a87a9cdae9abd9f7d539428bff55f85a702292c8db",
+      "started_at_utc": "2026-11-09T01:48:17.232560+00:00",
+      "input_tokens": 3584,
+      "output_tokens": 55,
+      "generation_settings": {
+        "temperature": 0.0,
+        "seed": 42,
+        "n_predict": 512
+      }
+    },
+    {
+      "language": "ja",
+      "path": "ja/baseline/13c10a52f70d08b131876c72/record.json",
+      "sha256": "9d11cb4d459b04c936d404947ae535a8737007da717bea0821bd106139783213",
+      "started_at_utc": "2026-11-09T01:49:09.812943+00:00",
+      "input_tokens": 3214,
+      "output_tokens": 131,
+      "generation_settings": {
+        "temperature": 0.0,
+        "seed": 42,
+        "n_predict": 512
+      }
+    },
+    {
+      "language": "ja",
+      "path": "ja/baseline/509cc6c3e3bb70707a8f64f6/record.json",
+      "sha256": "ee59ad235e99a0a6884ff21cfb37221729dbdf73c35988889fdbff1b27368033",
+      "started_at_utc": "2026-11-09T01:49:14.544868+00:00",
+      "input_tokens": 3483,
+      "output_tokens": 267,
+      "generation_settings": {
+        "temperature": 0.0,
+        "seed": 42,
+        "n_predict": 512
+      }
+    },
+    {
+      "language": "ja",
+      "path": "ja/baseline/5fa5db6a75dbeca814d6c7b9/record.json",
+      "sha256": "49f93c4a8c1306d3fdc7e59a77ce29f12a6449e54483a605fd101ffdf3e2247d",
+      "started_at_utc": "2026-11-09T01:49:13.293622+00:00",
+      "input_tokens": 3337,
+      "output_tokens": 75,
+      "generation_settings": {
+        "temperature": 0.0,
+        "seed": 42,
+        "n_predict": 512
+      }
+    },
+    {
+      "language": "ja",
+      "path": "ja/baseline/710643e4f638f987be3449f5/record.json",
+      "sha256": "b1389c04d5fa0517c43cd824f1d65a17f9f84e04e720c388fb960399f7af8fc6",
+      "started_at_utc": "2026-11-09T01:48:16.403936+00:00",
+      "input_tokens": 3247,
+      "output_tokens": 22,
+      "generation_settings": {
+        "temperature": 0.0,
+        "seed": 42,
+        "n_predict": 512
+      }
+    }
+  ],
+  "cuda_logs": [
+    {
+      "path": "en/baseline/server-1.log",
+      "sha256_at_check": "3abe3d2b06254434aab8e01cf8200f68f8c033833fb475fe0789e4d40c9d26bc",
+      "offloaded_layers": [
+        [
+          37,
+          37
+        ]
+      ],
+      "context_tokens": [
+        4096
+      ]
+    },
+    {
+      "path": "en/baseline/server-2.log",
+      "sha256_at_check": "e26ff96694bd80fc7fb02b153d21d6234d3b5e359b8f41f24c665c2cc39c9f95",
+      "offloaded_layers": [
+        [
+          37,
+          37
+        ]
+      ],
+      "context_tokens": [
+        4096
+      ]
+    },
+    {
+      "path": "ja/baseline/server-1.log",
+      "sha256_at_check": "dfa2493f5bad36de0a2e0afeb1a5c25f4db6d0505454bf25290d52948e3ee8a3",
+      "offloaded_layers": [
+        [
+          37,
+          37
+        ]
+      ],
+      "context_tokens": [
+        4096
+      ]
+    },
+    {
+      "path": "ja/baseline/server-2.log",
+      "sha256_at_check": "adb793dfd3dcbd998ac09044c79a218cb779c3582f253dd2a49e6a4ce5ce0bd8",
+      "offloaded_layers": [
+        [
+          37,
+          37
+        ]
+      ],
+      "context_tokens": [
+        4096
+      ]
+    }
+  ],
+  "existing_completed_research_annotation_files_rechecked_unchanged": 4288,
+  "original_main_cal_files_rechecked_unchanged": 2785,
+  "scientific_conditions_changed": false,
+  "new_annotation_calls_during_recovery": 0,
+  "model_calls_by_verifier": 0,
+  "failed_export_and_elapsed_time_preserved": true,
+  "publication_policy": "events_only",
+  "next": "Finish batch_03 under frozen conditions; seal all annotations; analyze/export; pool new batches; Git-only verify final writing package",
+  "workflow_completed": false
+}
