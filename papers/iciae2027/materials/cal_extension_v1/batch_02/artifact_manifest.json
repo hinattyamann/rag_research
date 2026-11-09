@@ -1,0 +1,2047 @@
+{
+  "version": "fixed-v23-paper-materials-v1",
+  "files": {
+    ".gitattributes": {
+      "sha256": "36fd0468cdb34092ffc95affda7bb40c24e5b14cb837a75d463f348f58aa56bf",
+      "bytes": 51
+    },
+    "README.md": {
+      "sha256": "3153088beab91bc0f6dd6c288973bf6df15d25bfaeb02ab699446736edf62d56",
+      "bytes": 2991
+    },
+    "analysis/cal.private.json": {
+      "sha256": "127b333dbadfc39e58371568c23c7a98e15f88bacc5fddd9cb723a3d18f1dfdc",
+      "bytes": 606145
+    },
+    "analysis/external_attempts.json": {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    "analysis/native_calls.jsonl": {
+      "sha256": "5688a4773d501f3b07552914c6357ed53b09b0ac5723ecb7337e12e2166122a3",
+      "bytes": 717483
+    },
+    "annotations/cal/en/annotations.json": {
+      "sha256": "d7a8d1e4c1ee12c806106ae7ac7e9e4386f0d3ddc2cedaf12fca35f41f5ed19a",
+      "bytes": 123235
+    },
+    "annotations/cal/en/mapping.private.json": {
+      "sha256": "9d76aecd306c6788d4a443421ed704fad2143091d83a59c64c2a92f42701398b",
+      "bytes": 6682
+    },
+    "annotations/cal/en/packet.json": {
+      "sha256": "4d271db31af91cecf07a015088f3293d1f71ad81b28435f8033821fcd81fbe0a",
+      "bytes": 312623
+    },
+    "annotations/cal/en/units/annotations.json": {
+      "sha256": "91b32546e881f2c77fa3f88544f7b5ee678ebfe297dcc9782915f376c54b0632",
+      "bytes": 220503
+    },
+    "annotations/cal/en/units/packet.json": {
+      "sha256": "869761c5bbd963dbe2656031b95bdfff099eb9f293552a3ed955ae317f6c0bbd",
+      "bytes": 257543
+    },
+    "annotations/cal/ja/annotations.json": {
+      "sha256": "a3a61dfa82e82bee3c2d03609d0c2924b4a665da033548c2c9c105d4026e028c",
+      "bytes": 246193
+    },
+    "annotations/cal/ja/mapping.private.json": {
+      "sha256": "4a347662679b0eeeaff25efc43386a5c66fbfde7e50a9772b98b69ec0d1ae965",
+      "bytes": 5678
+    },
+    "annotations/cal/ja/packet.json": {
+      "sha256": "a60eae81bd7da2b1adbd440ad76725c7588601756eb19f6468538687c49dd851",
+      "bytes": 861200
+    },
+    "annotations/cal/ja/units/annotations.json": {
+      "sha256": "5e64c8a3c8077a08230813ba914992ac941882809a92c3f7af285de8795ccfa9",
+      "bytes": 499843
+    },
+    "annotations/cal/ja/units/packet.json": {
+      "sha256": "365e75b8e194e5d679ae91407f79914716ead90cb11f5fcb40930817ce9d6df4",
+      "bytes": 554849
+    },
+    "cases/case_en.json": {
+      "sha256": "0791ffd3f7a7dd1cd9ab5b7e1c5e32c234dda562b6f0f6c0ff0c0e25f657acca",
+      "bytes": 79321
+    },
+    "cases/case_ja.json": {
+      "sha256": "5864219a444df7be9bae2015cd064caaee1ad600e722584178bfe1ae9c6e55b9",
+      "bytes": 222421
+    },
+    "cases/index.json": {
+      "sha256": "43d6fbaddfa2726facea8f5a4555d15021956718dd07c7e307ce5c53ba047491",
+      "bytes": 315184
+    },
+    "inputs/cal_en_0582e50cbef3f46a26bdcf54.json": {
+      "sha256": "4443d81f29514cf58f4cda37fb9d84fa39c07eaa210d868eae9c1b70f9a90892",
+      "bytes": 45806
+    },
+    "inputs/cal_en_1014da42ab0cc969221d0198.json": {
+      "sha256": "19472f0f40523def5375b912c6d382e3dce71ccc062367ddf740234fe6231d94",
+      "bytes": 45569
+    },
+    "inputs/cal_en_173d494e3aff26b18287a733.json": {
+      "sha256": "de6f449a2900c49bc2105d082f118c35dd1adff9596484c1ddb8cde64214e67d",
+      "bytes": 47767
+    },
+    "inputs/cal_en_20ed6e9746469dc526c32bb0.json": {
+      "sha256": "13e259731b431254be0a5c5fe3501ce4453eb5563a802e1707dcc54b1ec7905f",
+      "bytes": 47035
+    },
+    "inputs/cal_en_523bdfc2b6d035bd89bfdeb4.json": {
+      "sha256": "186d4a082290e1c58f03877de3ab76ad663ed2f32c4053f2f75c87c772d9a560",
+      "bytes": 47638
+    },
+    "inputs/cal_en_5b3502dab63dd2eb70a3bb3c.json": {
+      "sha256": "31a4cd1043b61452d2f1e03c4edbba3fcbe81a79323b6ec7166b1c50520a44cd",
+      "bytes": 48727
+    },
+    "inputs/cal_en_67e72600f3c09f9e8cd843d6.json": {
+      "sha256": "e4082a072d08bebc3898e6dfd3ad2a9517d44d67f74516a3858a44ac3f0cd5c7",
+      "bytes": 52996
+    },
+    "inputs/cal_en_748a1913df890799a8a4c53e.json": {
+      "sha256": "f4446c8227a3b9978ff657edc816cb40fa4e376d50ae0260bc2a14f15bebeb36",
+      "bytes": 52281
+    },
+    "inputs/cal_en_7d77399f3fa6437a7ac334d0.json": {
+      "sha256": "5ed6fd0d9d16891cc2cd931602f9ad07d308f44ca2039c29a31a16deaf6bfae7",
+      "bytes": 44801
+    },
+    "inputs/cal_en_7f6db95afc7eb1d8338367d3.json": {
+      "sha256": "11feee7b3657524f09d38d94e15075eb2a36ef99f8fdabe7674d60fb25911d66",
+      "bytes": 43733
+    },
+    "inputs/cal_en_8d7e70f8aae0982e7c541054.json": {
+      "sha256": "8b0e63770f69176befee5070f4694de681f59632d2dc00ee20cb1f096086abaf",
+      "bytes": 47969
+    },
+    "inputs/cal_en_990135ecfbae94072157e25e.json": {
+      "sha256": "281ff5a3b5d799f143f3b6a04b85b896af650bee80e25753e702d5f363cf4dfe",
+      "bytes": 50875
+    },
+    "inputs/cal_en_b5f2207556bcd37e7e840599.json": {
+      "sha256": "ab821991e5aeec0c0e674ef38f19d57a8670da8cb79393dd902fdb9bb70574fa",
+      "bytes": 41107
+    },
+    "inputs/cal_en_beacdbf19981034ccfe1fcca.json": {
+      "sha256": "1919c1584bafa833728f22d96b6e2a688f0723fa26eb0f5b06d12f7177f21c3e",
+      "bytes": 45263
+    },
+    "inputs/cal_en_c3bb619a09d253e6451a48e3.json": {
+      "sha256": "e70b33b21cda16f57db331f37629e9fc8312737481263b5002f9a3a98de6135b",
+      "bytes": 62388
+    },
+    "inputs/cal_en_cfd70a0dc39769dab4217df5.json": {
+      "sha256": "46c9a853c8b56120497ec9a955babd161e7a12c3d7070495e040e53a91f56fe2",
+      "bytes": 50658
+    },
+    "inputs/cal_en_d6b6cf12988c49bd1a6e9833.json": {
+      "sha256": "8863e5a01b7c750c14dc3f2de7f931afdbe7b44b86e7d9716abdf3a4020f86ff",
+      "bytes": 46825
+    },
+    "inputs/cal_en_d749822f641dfb25b8b19fbc.json": {
+      "sha256": "ac6688552a65468a10da4d96340c5e62a015a081de933eeeb7ae64c54addb6e6",
+      "bytes": 47092
+    },
+    "inputs/cal_en_e7671f1eaede6b44ec72a39d.json": {
+      "sha256": "1fb07cc4800c386675010fffe15411342a9ddef08a62a0054d9ca0d152d723ef",
+      "bytes": 48902
+    },
+    "inputs/cal_en_e989dcd6a3debe2613f2a599.json": {
+      "sha256": "d1710861aab7c9f93e5a349b35e57606980600dcc8e10fc143bf989264728f94",
+      "bytes": 42206
+    },
+    "inputs/cal_ja_04f30b1c8c8c22d8d604b4ef.json": {
+      "sha256": "1441b579517b823d7c13a9346fed1005b40aeda39cdeeaa9990e80fd0c3d4db8",
+      "bytes": 70991
+    },
+    "inputs/cal_ja_10c22fc3275f4c84758b9cfb.json": {
+      "sha256": "77522971052ecdea3403c1077117aa62fc3df1b1b1a77f108ea9ecc0bc4fe4a7",
+      "bytes": 77625
+    },
+    "inputs/cal_ja_1b3eeda8324d7593c7d644c0.json": {
+      "sha256": "e1bd959e141c0271fc8c8ed7ad518f93eeed4af28d67d0d0bc1306c430475bfb",
+      "bytes": 93906
+    },
+    "inputs/cal_ja_21680c889778d9cfa97e9a96.json": {
+      "sha256": "475135455374765346ff0b94b703dcf2ddb40d3ae4256f4298b2cb1f02528c03",
+      "bytes": 138876
+    },
+    "inputs/cal_ja_21b83f993e7ff674762c4a06.json": {
+      "sha256": "1c22d71af16547553f787fefbefe9375a67832204018b3280859bffbdd00cf18",
+      "bytes": 90268
+    },
+    "inputs/cal_ja_316f3bdd38e560d99f5f2e37.json": {
+      "sha256": "9881ba5d9a48e1c1f3299788a3caa3fdf4ef98ac5f23e2278163bc341a69d022",
+      "bytes": 101643
+    },
+    "inputs/cal_ja_37b557ff58099be7d8324f2a.json": {
+      "sha256": "641fc7b874d4d33c42d47dd1a0df216f332b2cb0c01add2fab4a47a89494c683",
+      "bytes": 90615
+    },
+    "inputs/cal_ja_4409dfb365eec9e73aeac563.json": {
+      "sha256": "86d1f12423cb1ba6dd4ec03e4f9f72d5f553e3e0503c1e2eb4e0bddb27cb7e16",
+      "bytes": 85223
+    },
+    "inputs/cal_ja_4434a7d81489062f26a9ef53.json": {
+      "sha256": "01683e767f95f7453a32d76a74b38c9527efbf93ad1ab3f6e0d5883eeda8c179",
+      "bytes": 122015
+    },
+    "inputs/cal_ja_55c0899795ced0ba25f5cfca.json": {
+      "sha256": "d18f742e6d8bc6f7e3075e035c406f452ed067316fd69ab14cfb6867768a95e7",
+      "bytes": 76600
+    },
+    "inputs/cal_ja_688e200d116e7f81be2ba68d.json": {
+      "sha256": "9bc85be4cfbf4d66af41d1934820038ea2774f1d4697df8c884db6ccf372c89c",
+      "bytes": 66970
+    },
+    "inputs/cal_ja_6bb75b8fa6e22144b137ebc6.json": {
+      "sha256": "09edd75e15e6c6e7c2617d80e34afe9ce81e7409ce1f108c8081e3df77a5c7bc",
+      "bytes": 87436
+    },
+    "inputs/cal_ja_729cce6675f1556b22f620d3.json": {
+      "sha256": "56ad3914f62fd1c4f432ba4247057cc3bc317a64549fa47d04e00a484670d3c0",
+      "bytes": 90422
+    },
+    "inputs/cal_ja_7aab67a2dfc534c0f28c528b.json": {
+      "sha256": "8d90e234e36e9b96eb30869ea44f2fab3ba303cdd97a65ec271d7383d8e862e2",
+      "bytes": 107026
+    },
+    "inputs/cal_ja_971a02ba7a2d02ca7538e86e.json": {
+      "sha256": "0e3fbc094fadb70bb9c52bd9e79c68f7bfd5cc49ecab16c045e51569c0800484",
+      "bytes": 70290
+    },
+    "inputs/cal_ja_a1a408d88465270c3f51a17d.json": {
+      "sha256": "1b62b1741da3a87580c89c97660a5c94d62ef41153583e75260b013d55a3c0e1",
+      "bytes": 96292
+    },
+    "inputs/cal_ja_acbe1c76f8601a04aefa2041.json": {
+      "sha256": "4bff6e70c0e621f8ac3a459e821e103475f226120c4e09ebd714bcea21657d73",
+      "bytes": 93539
+    },
+    "inputs/cal_ja_bb14e9adeb558ff63fd00fa4.json": {
+      "sha256": "aeef6507fb2a3f34be6617f3745223cf46e8bd2a8e4de2bfad2b58998f78aa12",
+      "bytes": 77185
+    },
+    "inputs/cal_ja_c80ab64b76de340570a6d557.json": {
+      "sha256": "c0ad482db8bfd2aa8232f0f8878ab9a4345b3aff298cf30889a4603f38464cfc",
+      "bytes": 70737
+    },
+    "inputs/cal_ja_e9a4a5919f7bfce3644c0779.json": {
+      "sha256": "356fcd2bee372e62d92add2ff3e5ed18ca582eb933742da9675a7afc814a28c7",
+      "bytes": 109295
+    },
+    "licenses/CLAPNQ-Apache-2.0.txt": {
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "bytes": 11560
+    },
+    "licenses/Japanese-dataset-card-preface.txt": {
+      "sha256": "629c51cbd5e32a24ad0e96dfdc3c87e8ceba31403037e2f046e200e842af6019",
+      "bytes": 4921
+    },
+    "licenses/Qwen2.5-3B-model-license.txt": {
+      "sha256": "ef52482bb785733093dc9a2e8edd8e764c77d12d8e9d8f10a80c9b547d32d0f9",
+      "bytes": 7388
+    },
+    "licenses/source_notices.json": {
+      "sha256": "5f6b73cc2e4c2baa061a4c1d9d389ea7fb1ad6705024a6d67f603e12d0b1642d",
+      "bytes": 1469
+    },
+    "missing_information.json": {
+      "sha256": "e0a1238be5ffa10c830e861adc0f9b3b00b12b97a0fdab5dd1271cd981534776",
+      "bytes": 248
+    },
+    "policy_outcomes.csv": {
+      "sha256": "e67bded55008c881aabd85905bfd60d358c916442f1b50effd638f63884ecc77",
+      "bytes": 112084
+    },
+    "provenance/analysis_code/citations.py.txt": {
+      "sha256": "9878ed490ec61b48de6674822a949a20473a10a27af8adcb333e0e93a6190184",
+      "bytes": 5661
+    },
+    "provenance/analysis_code/common.py.txt": {
+      "sha256": "6571d2e6fcebdccecc6147a8d98b783d4ac9b413769262a89d30b30b14e40648",
+      "bytes": 5464
+    },
+    "provenance/analysis_code/gpu_guard.py.txt": {
+      "sha256": "10a55f50e4724adbff055e8c8ec2410fafe97d930e2efd1833ac87373d8c3f3b",
+      "bytes": 5537
+    },
+    "provenance/analysis_code/pipeline.py.txt": {
+      "sha256": "e02564b4919b08407e2f646450fd6cdb59a703eea39efde544af25545b5e2a7d",
+      "bytes": 31420
+    },
+    "provenance/analysis_code/review.py.txt": {
+      "sha256": "2ad685ee29c39327cba37de763b0e80519db209f157a8c75c7bc425f02b89330",
+      "bytes": 16118
+    },
+    "provenance/annotation_jobs/cal-en-quality-000-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "54bff18244fc33b31e6618c131c6cfb347624b870b4c6d48796c7bd3ea821930",
+      "bytes": 14040
+    },
+    "provenance/annotation_jobs/cal-en-quality-000-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "a526b8f5557abfac601c7b578d3222cc3b2d996dff5896901b466769a7cfe326",
+      "bytes": 22783
+    },
+    "provenance/annotation_jobs/cal-en-quality-000-citations-v3/attempt-0/input.json": {
+      "sha256": "7930ca8aff079f715f122c5cb3ef7f1645ba50b6aed287186a75f250e5564239",
+      "bytes": 32845
+    },
+    "provenance/annotation_jobs/cal-en-quality-000-citations-v3/attempt-0/invocation.json": {
+      "sha256": "009ea00b60f94e0aa6c70f1dfe9c72eedfe253dd3f4a8d89cb3de97ddd37c777",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-en-quality-000-citations-v3/attempt-0/output.json": {
+      "sha256": "11f2efafbc52e62bb7e722991fbdfcb51a7e36babe2d29c4acdc1664151f8463",
+      "bytes": 3040
+    },
+    "provenance/annotation_jobs/cal-en-quality-000-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-quality-000-citations-v3/attempt-0/provenance.json": {
+      "sha256": "2812c23028550425a60678cb4ee204f0999aa93ea40d76345efad37c78137984",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-en-quality-000-citations-v3/attempt-0/schema.json": {
+      "sha256": "1cdde1f384563ec0970a2ac65fe5154d6a4f1a61f31c39ddb40036c19a84a071",
+      "bytes": 46835
+    },
+    "provenance/annotation_jobs/cal-en-quality-000-citations-v3/attempt-0/stdin.json": {
+      "sha256": "22bc825dbc8ee59d449e2861352a3b235c29529dbc0711aa5f6e40c5c916d5a0",
+      "bytes": 106573
+    },
+    "provenance/annotation_jobs/cal-en-quality-004-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "9e27524c60bddbd49f0bc7f063eede96d8acf30bde8c55b2dcb9780ee837e743",
+      "bytes": 12309
+    },
+    "provenance/annotation_jobs/cal-en-quality-004-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "bf009d7f38ff95da507d0969def1191b754ba3376da3e60bb5aabe98f8fb9df0",
+      "bytes": 22530
+    },
+    "provenance/annotation_jobs/cal-en-quality-004-citations-v3/attempt-0/input.json": {
+      "sha256": "757a4e22ab65ef8bb3b51834a2d914dc36104d017f9d6a75efd76527dd54eb00",
+      "bytes": 31037
+    },
+    "provenance/annotation_jobs/cal-en-quality-004-citations-v3/attempt-0/invocation.json": {
+      "sha256": "a114013f5a5fcafdaed2e78fced615004e0aafb4a42adccd94f2128a84072b39",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-en-quality-004-citations-v3/attempt-0/output.json": {
+      "sha256": "4805548aa41e8d1ae04fdcdff0e8f6fbaa9ad80ec3f1ccbca0345dae104ffd98",
+      "bytes": 3023
+    },
+    "provenance/annotation_jobs/cal-en-quality-004-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-quality-004-citations-v3/attempt-0/provenance.json": {
+      "sha256": "c428dc8f4528894fe8e1503f80f5d136219c6d0839d1a2cea253808ab5738998",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-en-quality-004-citations-v3/attempt-0/schema.json": {
+      "sha256": "1cdde1f384563ec0970a2ac65fe5154d6a4f1a61f31c39ddb40036c19a84a071",
+      "bytes": 46835
+    },
+    "provenance/annotation_jobs/cal-en-quality-004-citations-v3/attempt-0/stdin.json": {
+      "sha256": "6eba8047e57bd4a173c81e1ebfa72b200b5be93c24b5836fcd1107556f4342f8",
+      "bytes": 104478
+    },
+    "provenance/annotation_jobs/cal-en-quality-008-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "a720a305ce1c6ff6b69a2882d73c59d5106e47a548b83ff075eab563608daa36",
+      "bytes": 11788
+    },
+    "provenance/annotation_jobs/cal-en-quality-008-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "038f5da925168c8dfbffde41bb47825b972b1155780e7266562da8c884ed822d",
+      "bytes": 22569
+    },
+    "provenance/annotation_jobs/cal-en-quality-008-citations-v3/attempt-0/input.json": {
+      "sha256": "8b176165d9a1c62c0d79f7928b1fb30a3c077bc20b91964a9d082a191fab2b53",
+      "bytes": 31846
+    },
+    "provenance/annotation_jobs/cal-en-quality-008-citations-v3/attempt-0/invocation.json": {
+      "sha256": "d12c7840b04d74e0e3edee160c8858b4d2c4a5c25ac8fc3970a0590a1314f565",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-en-quality-008-citations-v3/attempt-0/output.json": {
+      "sha256": "3ec403bf1b33be3ea2d95388e86b265c3a9634cf833106fa6266fdd6c19f7e2c",
+      "bytes": 3150
+    },
+    "provenance/annotation_jobs/cal-en-quality-008-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-quality-008-citations-v3/attempt-0/provenance.json": {
+      "sha256": "5d162c7bade7839e242850d16ede58434e26a4a1a253e22cf043b0a2930dfc3f",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-en-quality-008-citations-v3/attempt-0/schema.json": {
+      "sha256": "1cdde1f384563ec0970a2ac65fe5154d6a4f1a61f31c39ddb40036c19a84a071",
+      "bytes": 46835
+    },
+    "provenance/annotation_jobs/cal-en-quality-008-citations-v3/attempt-0/stdin.json": {
+      "sha256": "5c32ee29937ac19155370d3b5d2db0fea422b87ba121b62c96a4c1fa97e6f3e9",
+      "bytes": 105326
+    },
+    "provenance/annotation_jobs/cal-en-quality-012-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "387c6d49cc94c2a71d909127056814c1a04299acdf2106b9356aae2ca58c3611",
+      "bytes": 10134
+    },
+    "provenance/annotation_jobs/cal-en-quality-012-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "c837e75748f1736ce53693bc261137e9982d552f811028ac6822e9f9f4b77621",
+      "bytes": 26061
+    },
+    "provenance/annotation_jobs/cal-en-quality-012-citations-v3/attempt-0/input.json": {
+      "sha256": "02a4b0b46325aa79cd1adbe3117792292177da8fe65028b95cd9e70ca3c1a72f",
+      "bytes": 38794
+    },
+    "provenance/annotation_jobs/cal-en-quality-012-citations-v3/attempt-0/invocation.json": {
+      "sha256": "ea3d196195d20d9903f8476297b9bf5fcdab37dfe757edca31e99aeda17eddf4",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-en-quality-012-citations-v3/attempt-0/output.json": {
+      "sha256": "5c85d187479e89dfa400cad0b6d5561d8cfee0ddd9c35e982cd017cd5317c7d6",
+      "bytes": 3021
+    },
+    "provenance/annotation_jobs/cal-en-quality-012-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-quality-012-citations-v3/attempt-0/provenance.json": {
+      "sha256": "ef7489edf878d2f4b55c9f5912b9f8a4983120ea25ce2864fedef1a5f5e64f29",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-en-quality-012-citations-v3/attempt-0/schema.json": {
+      "sha256": "1cdde1f384563ec0970a2ac65fe5154d6a4f1a61f31c39ddb40036c19a84a071",
+      "bytes": 46835
+    },
+    "provenance/annotation_jobs/cal-en-quality-012-citations-v3/attempt-0/stdin.json": {
+      "sha256": "a6b9fd7e19ef7d448d3b710f5954a2f6874c9cfc81dd3a6b8a9184db1d3a6e1d",
+      "bytes": 115798
+    },
+    "provenance/annotation_jobs/cal-en-quality-016-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "e906f9cf8cdf71fd60b30bba1db92487856d2aa03042e4cdf45ac3db8f192c5b",
+      "bytes": 10802
+    },
+    "provenance/annotation_jobs/cal-en-quality-016-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "d4b4662e115dd65a8bffe1853b7ee2fc53d3857234fc99a10ced1c3901fb9576",
+      "bytes": 25751
+    },
+    "provenance/annotation_jobs/cal-en-quality-016-citations-v3/attempt-0/input.json": {
+      "sha256": "2c75762b88b7a389131e664eb2df6e07838a988081d85539f836dd3a9d1edac4",
+      "bytes": 35724
+    },
+    "provenance/annotation_jobs/cal-en-quality-016-citations-v3/attempt-0/invocation.json": {
+      "sha256": "0f9ec290fb1d333a963ffb7364516473dfd0d0cee48859bf8fd6740df35815d7",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-en-quality-016-citations-v3/attempt-0/output.json": {
+      "sha256": "3771d397e108278d0d144bf92a1b3b56953015d21406b602fa720429238ec9f1",
+      "bytes": 3085
+    },
+    "provenance/annotation_jobs/cal-en-quality-016-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-quality-016-citations-v3/attempt-0/provenance.json": {
+      "sha256": "a97d9786d1bf446c6a427501e0fea9339394c2544b930617c7890ac014f7eba3",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-en-quality-016-citations-v3/attempt-0/schema.json": {
+      "sha256": "1cdde1f384563ec0970a2ac65fe5154d6a4f1a61f31c39ddb40036c19a84a071",
+      "bytes": 46835
+    },
+    "provenance/annotation_jobs/cal-en-quality-016-citations-v3/attempt-0/stdin.json": {
+      "sha256": "9ba10d2f04ff2d4da335c73aefdbbb918bee577d3e3c06feb6c45564c0fcf461",
+      "bytes": 112402
+    },
+    "provenance/annotation_jobs/cal-en-quality-020-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "9a399dad2df5232e8eb4a98010ba11344422429c20bcacca17cc496b48bd7c61",
+      "bytes": 13076
+    },
+    "provenance/annotation_jobs/cal-en-quality-020-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "7c0eb421fbf2b20c92fbf39a0452f57ef541bfae994876c14329b17357417902",
+      "bytes": 27982
+    },
+    "provenance/annotation_jobs/cal-en-quality-020-citations-v3/attempt-0/input.json": {
+      "sha256": "2b5a965222b6e794daa1abafd785ccf5c2d95509db7abe01564df557b313ab08",
+      "bytes": 38084
+    },
+    "provenance/annotation_jobs/cal-en-quality-020-citations-v3/attempt-0/invocation.json": {
+      "sha256": "d46abc6e6e84b49d22c231db6fcdf1957fee9212a9acca518ae7ac7979ef56fd",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-en-quality-020-citations-v3/attempt-0/output.json": {
+      "sha256": "9382bdfd9ae3b88dabc5704fd61fcea2c9546603388789c6675904a5a0aaa7e4",
+      "bytes": 3204
+    },
+    "provenance/annotation_jobs/cal-en-quality-020-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-quality-020-citations-v3/attempt-0/provenance.json": {
+      "sha256": "ed5f9bd0ce92511974e725672106711f4424a2d4719c7a47c2e5943ce13634d8",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-en-quality-020-citations-v3/attempt-0/schema.json": {
+      "sha256": "a2a227a7009437fa5af145ca40979d4009a06a7f4862cb1d8b1c9c649aab2e2f",
+      "bytes": 46897
+    },
+    "provenance/annotation_jobs/cal-en-quality-020-citations-v3/attempt-0/stdin.json": {
+      "sha256": "61b01cab4fb3cd876e7b81b14e4ff8c1f2d8f045dcefb795a87371121521b21e",
+      "bytes": 117087
+    },
+    "provenance/annotation_jobs/cal-en-quality-024-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "177a1a51fb0ba7a43697507d17479cd69eb44c41653aff3257b628409bc72603",
+      "bytes": 9448
+    },
+    "provenance/annotation_jobs/cal-en-quality-024-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "ab283c178558c8939a93af61c4f154643027bd561fed457feccfdfc651c75756",
+      "bytes": 21990
+    },
+    "provenance/annotation_jobs/cal-en-quality-024-citations-v3/attempt-0/input.json": {
+      "sha256": "f34435c1267deb7e7d9053235ad846995aafb1ffa20ccad188a1b3badbfac85c",
+      "bytes": 30923
+    },
+    "provenance/annotation_jobs/cal-en-quality-024-citations-v3/attempt-0/invocation.json": {
+      "sha256": "de5055eeb0fd70f2a237c468cae0a780e10c83fa3ab6769d7094dc16083e5518",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-en-quality-024-citations-v3/attempt-0/output.json": {
+      "sha256": "c74e012373d7d7ee0ad54c3ec932c4bfe48110811ca6b3a1926af03500a89410",
+      "bytes": 3050
+    },
+    "provenance/annotation_jobs/cal-en-quality-024-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-quality-024-citations-v3/attempt-0/provenance.json": {
+      "sha256": "ae666aeb06a0e915ebe0f049e8158178a41ed21eddc538bbffa4753bbdcffce2",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-en-quality-024-citations-v3/attempt-0/schema.json": {
+      "sha256": "1cdde1f384563ec0970a2ac65fe5154d6a4f1a61f31c39ddb40036c19a84a071",
+      "bytes": 46835
+    },
+    "provenance/annotation_jobs/cal-en-quality-024-citations-v3/attempt-0/stdin.json": {
+      "sha256": "d9e8bd5bdcfbbf22500975d289184e8bf0a4ed1ebb34273171e30caa238e9157",
+      "bytes": 103818
+    },
+    "provenance/annotation_jobs/cal-en-quality-028-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "cffcee61a8c7b3f0f24bb03344f07ee436575f373a91afe340821f296429850f",
+      "bytes": 10828
+    },
+    "provenance/annotation_jobs/cal-en-quality-028-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "65637479b48ff3df67df3b327127de9b2db1f51c294ccf19e35a0c7bdd3231e4",
+      "bytes": 28098
+    },
+    "provenance/annotation_jobs/cal-en-quality-028-citations-v3/attempt-0/input.json": {
+      "sha256": "b9b8370a4695e394ddefff2b2b32a049c483eeed802f58ab2f8e4971bfc14a76",
+      "bytes": 38414
+    },
+    "provenance/annotation_jobs/cal-en-quality-028-citations-v3/attempt-0/invocation.json": {
+      "sha256": "ed86b7ebdd2e03ec2e3f972a77c8369948b8540796109ad3bf746aa547d130b5",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-en-quality-028-citations-v3/attempt-0/output.json": {
+      "sha256": "a44595357cc5d1d56ed9a6d43a9f585a9db79cd7f0b137344711ac5d0e694451",
+      "bytes": 2686
+    },
+    "provenance/annotation_jobs/cal-en-quality-028-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-quality-028-citations-v3/attempt-0/provenance.json": {
+      "sha256": "973fd3f231232c5d09794d57cbc740683217ef1c3be36b4067bdcf9c21593274",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-en-quality-028-citations-v3/attempt-0/schema.json": {
+      "sha256": "b9689d7f09902490c173ae36f936a78bf3291fd1a1e1db2aeb9b8bd5f1f35b67",
+      "bytes": 46897
+    },
+    "provenance/annotation_jobs/cal-en-quality-028-citations-v3/attempt-0/stdin.json": {
+      "sha256": "85d64060036694168e01da7bbcb3ec7ceac53b8e3965e6ddca7bc106a591a341",
+      "bytes": 117545
+    },
+    "provenance/annotation_jobs/cal-en-quality-032-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "10d31dae2891a0e6e67a3fc959168abc13ec825bbb4063c48cdc2452164639a5",
+      "bytes": 10973
+    },
+    "provenance/annotation_jobs/cal-en-quality-032-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "7600f53d5ea224453f771a4f03bb2adf696db9580fcea292f80aa305ad32d2d2",
+      "bytes": 26701
+    },
+    "provenance/annotation_jobs/cal-en-quality-032-citations-v3/attempt-0/input.json": {
+      "sha256": "a5b8016a25a0f4254b8cf5933734294c4c5d0e554497b340a81ca1c40ea5bea9",
+      "bytes": 36805
+    },
+    "provenance/annotation_jobs/cal-en-quality-032-citations-v3/attempt-0/invocation.json": {
+      "sha256": "d34dac127d195555caec610920a94322c1c66092b1d659c25775bfd474a00f48",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-en-quality-032-citations-v3/attempt-0/output.json": {
+      "sha256": "f0cc1682e415970b06d49167d5b1b8cc7cfbf7f2a08af5b3b724209823845a92",
+      "bytes": 3331
+    },
+    "provenance/annotation_jobs/cal-en-quality-032-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-quality-032-citations-v3/attempt-0/provenance.json": {
+      "sha256": "f26fa233a7610dee77f84c016084b35e0f18571cb4a52678d8026d728266ab38",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-en-quality-032-citations-v3/attempt-0/schema.json": {
+      "sha256": "1cdde1f384563ec0970a2ac65fe5154d6a4f1a61f31c39ddb40036c19a84a071",
+      "bytes": 46835
+    },
+    "provenance/annotation_jobs/cal-en-quality-032-citations-v3/attempt-0/stdin.json": {
+      "sha256": "2a0dd895698d86ed8e441778d7d87c1e5934ce51df5fe5a18159409cceabf8e7",
+      "bytes": 114441
+    },
+    "provenance/annotation_jobs/cal-en-quality-036-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "30041fb3beda98c3d2e583ebcfbe47871225bcb4a575765dce9354ec00177005",
+      "bytes": 13511
+    },
+    "provenance/annotation_jobs/cal-en-quality-036-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "d54244e68eb3cef5f2ffb30f570c5adff49c562a6b7d8ebc78412f1cfc767053",
+      "bytes": 25961
+    },
+    "provenance/annotation_jobs/cal-en-quality-036-citations-v3/attempt-0/input.json": {
+      "sha256": "1622c31bcde4eaddbef6991587b0a226f0bb8b795ed75a6b9bfbea06aea42ce0",
+      "bytes": 38323
+    },
+    "provenance/annotation_jobs/cal-en-quality-036-citations-v3/attempt-0/invocation.json": {
+      "sha256": "ea7e33998eba3fcf80dfe8eb3b2b1fc1b08f93075be82d8502ea384cbd87131c",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-en-quality-036-citations-v3/attempt-0/output.json": {
+      "sha256": "6e19dbb9f84a3c9fd79cb1f011ef7427664bee6945a80bd98e1a73f6c2176d70",
+      "bytes": 3477
+    },
+    "provenance/annotation_jobs/cal-en-quality-036-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-quality-036-citations-v3/attempt-0/provenance.json": {
+      "sha256": "7b0093ddba02a7c627c9185bdef319130271ff55778f25f7dfdd5f67a66850cb",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-en-quality-036-citations-v3/attempt-0/schema.json": {
+      "sha256": "1cdde1f384563ec0970a2ac65fe5154d6a4f1a61f31c39ddb40036c19a84a071",
+      "bytes": 46835
+    },
+    "provenance/annotation_jobs/cal-en-quality-036-citations-v3/attempt-0/stdin.json": {
+      "sha256": "ee2ce4a25e03cbf65b9d1e73e1794edce70fbd9ad9638998d5b42da6cf975850",
+      "bytes": 115259
+    },
+    "provenance/annotation_jobs/cal-en-units-000-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "d7a3e9dcdfc771f8a327f9611895d304640e08f66d86ff590a072aee2bbc06ef",
+      "bytes": 23777
+    },
+    "provenance/annotation_jobs/cal-en-units-000-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "494f64b44ef9cc93464cac5ca31a19157c49ec5b7bf94bc27ac28344b9d7aed5",
+      "bytes": 19489
+    },
+    "provenance/annotation_jobs/cal-en-units-000-citations-v3/attempt-0/input.json": {
+      "sha256": "512aa6bcb3e12d7e21abf61f283ef4dc598204282c0ff3344f940491c707afa1",
+      "bytes": 26591
+    },
+    "provenance/annotation_jobs/cal-en-units-000-citations-v3/attempt-0/invocation.json": {
+      "sha256": "6231bd32a45e754f3c2bdcf8372614d45451bc851876c2bad84b015f27487e42",
+      "bytes": 3813
+    },
+    "provenance/annotation_jobs/cal-en-units-000-citations-v3/attempt-0/output.json": {
+      "sha256": "4a14e292ccdef965d79a8ddf4e77af85164160d96734ce5946641c897296da6f",
+      "bytes": 2485
+    },
+    "provenance/annotation_jobs/cal-en-units-000-citations-v3/attempt-0/prompt.json": {
+      "sha256": "b08cec20b495327f056cc44bd41b2278d64787495226d4b56aef9ee84256f1a8",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-units-000-citations-v3/attempt-0/provenance.json": {
+      "sha256": "28388fc8ce920d767d80a7142e1791147f4ae84d6caf9fae1c7b0b332bdd58b4",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-en-units-000-citations-v3/attempt-0/schema.json": {
+      "sha256": "834aa464859bb9b63c5b90e2c94bd1fff4d2f68603c2856a25a2d4c436d403db",
+      "bytes": 18929
+    },
+    "provenance/annotation_jobs/cal-en-units-000-citations-v3/attempt-0/stdin.json": {
+      "sha256": "06d4a6bf49832026ebbc8fcd6866e0c0a84e7fc20171b8e6ebf4e3f461a7dc07",
+      "bytes": 67683
+    },
+    "provenance/annotation_jobs/cal-en-units-004-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "231493b9b7dd3214edc8164a8bd97b671a8c8e0485f34e62cb7b044ad557112a",
+      "bytes": 16037
+    },
+    "provenance/annotation_jobs/cal-en-units-004-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "8ece02350b2e8da72da7d384d0f410584aebeecb01311b88d4c7e3eeed2c117a",
+      "bytes": 19989
+    },
+    "provenance/annotation_jobs/cal-en-units-004-citations-v3/attempt-0/input.json": {
+      "sha256": "43af18a4886d5692f54afb9087eb5bd1a66f6b8da259add3977ef29be5c9f09b",
+      "bytes": 26048
+    },
+    "provenance/annotation_jobs/cal-en-units-004-citations-v3/attempt-0/invocation.json": {
+      "sha256": "79b86ff71f2a8d844c847481c7379178cd343556a8bbf588598a3d2966da7bd6",
+      "bytes": 3814
+    },
+    "provenance/annotation_jobs/cal-en-units-004-citations-v3/attempt-0/output.json": {
+      "sha256": "3309a0f3ed62852130e13c1a7904dc2d01943724445c52050bef80803e6fe52a",
+      "bytes": 2539
+    },
+    "provenance/annotation_jobs/cal-en-units-004-citations-v3/attempt-0/prompt.json": {
+      "sha256": "fd9e6cdb9543f19e1ebed27da2ea88a7890f0e71c4329dd08804f0743e74ea30",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-units-004-citations-v3/attempt-0/provenance.json": {
+      "sha256": "643fcf4df15c275694eb16b38abae273eb34dc1235b7712a52e7a9befd6bd217",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-en-units-004-citations-v3/attempt-0/schema.json": {
+      "sha256": "f48ace6712e76716e7362902c859e82a5ff296d7e9567ba94d14a9e71c0cec2b",
+      "bytes": 16855
+    },
+    "provenance/annotation_jobs/cal-en-units-004-citations-v3/attempt-0/stdin.json": {
+      "sha256": "0e693f34cb4561c577d26e4f6fcc56d59c74ff40464885d87b433d6b288e8536",
+      "bytes": 65352
+    },
+    "provenance/annotation_jobs/cal-en-units-008-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "1f1efd6aa77f9581808ff620e59ad057574d23011249abfe0f67ab45a44bf73a",
+      "bytes": 20615
+    },
+    "provenance/annotation_jobs/cal-en-units-008-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "e6de84cda4baf5b9b6b981281e483612fe27bd1488ecd1c8e99ea79bcefbbf27",
+      "bytes": 21383
+    },
+    "provenance/annotation_jobs/cal-en-units-008-citations-v3/attempt-0/input.json": {
+      "sha256": "e8088508d70d0ff810192aa9c249e6d7d33dd380a20f8c5d42349255088affc0",
+      "bytes": 29853
+    },
+    "provenance/annotation_jobs/cal-en-units-008-citations-v3/attempt-0/invocation.json": {
+      "sha256": "e1fc38536fd28dcfe48c2a3a62988247e81509e4aa0791dabb2caa257ae16f8c",
+      "bytes": 3815
+    },
+    "provenance/annotation_jobs/cal-en-units-008-citations-v3/attempt-0/output.json": {
+      "sha256": "2bddb6e9d1b190c8de91d66b166c2a1514f6f83fada2069ca618a78a0be55b06",
+      "bytes": 3077
+    },
+    "provenance/annotation_jobs/cal-en-units-008-citations-v3/attempt-0/prompt.json": {
+      "sha256": "3ad7c60980fd7ef50fb645ccce373c6af6b799c1638f8bf1411273e7a217318e",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-en-units-008-citations-v3/attempt-0/provenance.json": {
+      "sha256": "d8ef68b3fd82c7b44223b0bc912aaf6ec98ebfa81decc19771ae52df10038f00",
+      "bytes": 935
+    },
+    "provenance/annotation_jobs/cal-en-units-008-citations-v3/attempt-0/schema.json": {
+      "sha256": "dd4e0a894dc7071409e7dbcdd66639b9048728a72ea1ec33f7e31526689973f2",
+      "bytes": 25151
+    },
+    "provenance/annotation_jobs/cal-en-units-008-citations-v3/attempt-0/stdin.json": {
+      "sha256": "cd12a5a263858869ff228f4b40e9a1b96d56fd037b38c4a2fe91f0bad27358b1",
+      "bytes": 79679
+    },
+    "provenance/annotation_jobs/cal-en-units-012-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "be7795244018361122cc5845e1b890968208c06fb3d550aeba93614e66eb1c42",
+      "bytes": 22933
+    },
+    "provenance/annotation_jobs/cal-en-units-012-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "9de654c786fe76f44d59f2330597d785a52415e9ab293e41391981eaf648d469",
+      "bytes": 25405
+    },
+    "provenance/annotation_jobs/cal-en-units-012-citations-v3/attempt-0/input.json": {
+      "sha256": "f37219f9d856d982e6614615ffc060004f86882c70830d18ea92de5a2ba4b428",
+      "bytes": 35994
+    },
+    "provenance/annotation_jobs/cal-en-units-012-citations-v3/attempt-0/invocation.json": {
+      "sha256": "8f78f2bed05aead75e920d267b3e353ff885600a03a9462e9a80f98ae57522ba",
+      "bytes": 3815
+    },
+    "provenance/annotation_jobs/cal-en-units-012-citations-v3/attempt-0/output.json": {
+      "sha256": "3e60ec030a74fa4f234d4974135205dd2309d35acd99c0157eee2e76b5c55417",
+      "bytes": 3586
+    },
+    "provenance/annotation_jobs/cal-en-units-012-citations-v3/attempt-0/prompt.json": {
+      "sha256": "a92393893d6bd4ad9ed01f9df9b4ae23e811c0578fc17062349132bdd03955a4",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-en-units-012-citations-v3/attempt-0/provenance.json": {
+      "sha256": "ae6c315666c2d7122c7ab80f2b4166ae2228b4139bfacb589ed0ac07d5dff1ee",
+      "bytes": 935
+    },
+    "provenance/annotation_jobs/cal-en-units-012-citations-v3/attempt-0/schema.json": {
+      "sha256": "5759881e434aba248d616e4ca4b71c6dd1c502543b64a3d5ca0d98095fdf2a21",
+      "bytes": 31373
+    },
+    "provenance/annotation_jobs/cal-en-units-012-citations-v3/attempt-0/stdin.json": {
+      "sha256": "c6b272026c94d1684e61ae03412dff9d007f6a55e6fbc450812e47c54dc42743",
+      "bytes": 96682
+    },
+    "provenance/annotation_jobs/cal-en-units-016-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "c055a30c97cb2cca651fa1193332038a0a3df43d0a3b6be448a889ef1a647977",
+      "bytes": 22618
+    },
+    "provenance/annotation_jobs/cal-en-units-016-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "92f6d4fbca984c70d96b89e020f5381d578b40f378ede7950a091b70a5677175",
+      "bytes": 24325
+    },
+    "provenance/annotation_jobs/cal-en-units-016-citations-v3/attempt-0/input.json": {
+      "sha256": "42295da11abc94d0ebcc663a32e8f5eaed40a4095d191439b876d5ef4b121ac6",
+      "bytes": 32447
+    },
+    "provenance/annotation_jobs/cal-en-units-016-citations-v3/attempt-0/invocation.json": {
+      "sha256": "931a0df305b6604dfa79164379a39b9e4de1d84dd8a91a2087843ac537250a77",
+      "bytes": 3814
+    },
+    "provenance/annotation_jobs/cal-en-units-016-citations-v3/attempt-0/output.json": {
+      "sha256": "8946d25750a64649a633c30db99207f73ef6901e1200dcc0f9392887e9875155",
+      "bytes": 3181
+    },
+    "provenance/annotation_jobs/cal-en-units-016-citations-v3/attempt-0/prompt.json": {
+      "sha256": "184001867579340fb0ca216c996ae749e2e124e37e5e86f41951176c45588742",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-en-units-016-citations-v3/attempt-0/provenance.json": {
+      "sha256": "397b8a05d4f92cb0031965b66699ba068e95845e785cbf15572d784bc27e4b25",
+      "bytes": 935
+    },
+    "provenance/annotation_jobs/cal-en-units-016-citations-v3/attempt-0/schema.json": {
+      "sha256": "e06495ca6faed35409ebbec7fd50bd617fcc376f2768cd0d0ee5c0e860e40244",
+      "bytes": 27225
+    },
+    "provenance/annotation_jobs/cal-en-units-016-citations-v3/attempt-0/stdin.json": {
+      "sha256": "72a70314136ae57c0fd3da8fc4263c1bb3b76759313f70fcc71097aaeef428bc",
+      "bytes": 87495
+    },
+    "provenance/annotation_jobs/cal-en-units-020-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "1080116cc727fe4d0213decdc4d807fe6217dfff42f6cb6cdde38f1031c2b5ed",
+      "bytes": 16764
+    },
+    "provenance/annotation_jobs/cal-en-units-020-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "b163c653c59f90860778a04ec5087d69333bd7bf91088d7e30c21fbc9d406a02",
+      "bytes": 23472
+    },
+    "provenance/annotation_jobs/cal-en-units-020-citations-v3/attempt-0/input.json": {
+      "sha256": "113e9176ba928666c37c79dc05db1ac99e30b853a5da421643317d5f26fff41c",
+      "bytes": 30343
+    },
+    "provenance/annotation_jobs/cal-en-units-020-citations-v3/attempt-0/invocation.json": {
+      "sha256": "a5ef58344859e0344a2d539dae3477610c8386bc1e5a4ad55213f86c15143ee1",
+      "bytes": 3814
+    },
+    "provenance/annotation_jobs/cal-en-units-020-citations-v3/attempt-0/output.json": {
+      "sha256": "1996dff1f77126a83246df13c1a9b76c275de21e9eabe5ec8f33eb143b4f543f",
+      "bytes": 2466
+    },
+    "provenance/annotation_jobs/cal-en-units-020-citations-v3/attempt-0/prompt.json": {
+      "sha256": "b08cec20b495327f056cc44bd41b2278d64787495226d4b56aef9ee84256f1a8",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-units-020-citations-v3/attempt-0/provenance.json": {
+      "sha256": "fa64f671dedee1efb06a70565c86c3a9491d7b5e9b61738809e507a9061519eb",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-en-units-020-citations-v3/attempt-0/schema.json": {
+      "sha256": "9dbbeed7d50468945269c74928575d0c3e3c489212c18d166004484882a65127",
+      "bytes": 18929
+    },
+    "provenance/annotation_jobs/cal-en-units-020-citations-v3/attempt-0/stdin.json": {
+      "sha256": "415d76014b85d0e9c9a977d44783dfd249791dab03bfb7e48b05d85767249d8c",
+      "bytes": 75414
+    },
+    "provenance/annotation_jobs/cal-en-units-024-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "5edf59892047e49ad17a9bd9dcc67d5b2309052233368926cb432b31ad1c4b1e",
+      "bytes": 21670
+    },
+    "provenance/annotation_jobs/cal-en-units-024-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "597098f948c13dcb284fc5b52bb93d17030416e32068e1afddb5806edb6f524f",
+      "bytes": 21533
+    },
+    "provenance/annotation_jobs/cal-en-units-024-citations-v3/attempt-0/input.json": {
+      "sha256": "fc1750302ac65be4a2962f697cd17d90bcaf77c72200604b9d3e76f3b502759d",
+      "bytes": 30342
+    },
+    "provenance/annotation_jobs/cal-en-units-024-citations-v3/attempt-0/invocation.json": {
+      "sha256": "64492974dfcf0bc2c59ffa98fb39aad69ec05a8f1199406d6e561458777d31c5",
+      "bytes": 3815
+    },
+    "provenance/annotation_jobs/cal-en-units-024-citations-v3/attempt-0/output.json": {
+      "sha256": "7e9c94481c4b276d0cb2fcaae56ed23c7b5e5feb19231918eb5ff45e40154924",
+      "bytes": 3464
+    },
+    "provenance/annotation_jobs/cal-en-units-024-citations-v3/attempt-0/prompt.json": {
+      "sha256": "0932746bdda38f8f288b10ad49416efaf81361381459880daf75b6d8e7f5735b",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-en-units-024-citations-v3/attempt-0/provenance.json": {
+      "sha256": "f9ef16c873e2e18d7f6a0c5d598c0e40a2fd08fd6895a53422bdb01ab545512d",
+      "bytes": 935
+    },
+    "provenance/annotation_jobs/cal-en-units-024-citations-v3/attempt-0/schema.json": {
+      "sha256": "c6708104799a4afb608c0db0d25f338c23d661051a853e27923630cf7bef9fe5",
+      "bytes": 29299
+    },
+    "provenance/annotation_jobs/cal-en-units-024-citations-v3/attempt-0/stdin.json": {
+      "sha256": "abd174c9c9b36dfdba41fd5183a7130684b8c59715343cec5bfb788be23808dc",
+      "bytes": 84878
+    },
+    "provenance/annotation_jobs/cal-en-units-028-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "4e28d8e935f2d2cf2d23419f8c37c5a2ee59826504bcff53b160ee62f482a290",
+      "bytes": 8113
+    },
+    "provenance/annotation_jobs/cal-en-units-028-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "b783ea09b42b2a8c96275a32683ad50975956cdd46d2f323d389246f5991786a",
+      "bytes": 21242
+    },
+    "provenance/annotation_jobs/cal-en-units-028-citations-v3/attempt-0/input.json": {
+      "sha256": "1f96c87979ba26e2de137439e66f8dde0c97bffcc9d8325af11c52caa3caf729",
+      "bytes": 25609
+    },
+    "provenance/annotation_jobs/cal-en-units-028-citations-v3/attempt-0/invocation.json": {
+      "sha256": "d87020a66108d2b4dfcecf0fe7491c0a5c36c41350fd4815b235a2659ec5b7e9",
+      "bytes": 3814
+    },
+    "provenance/annotation_jobs/cal-en-units-028-citations-v3/attempt-0/output.json": {
+      "sha256": "9e084aa2b9fe5d6fce74bf0956201f7b46d4d336fbeb5c3b4def91b1f2041f1d",
+      "bytes": 1172
+    },
+    "provenance/annotation_jobs/cal-en-units-028-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-en-units-028-citations-v3/attempt-0/provenance.json": {
+      "sha256": "d3098ab00f548ab6f8b0736d40d9db3e85c35fe969eda6f020b26caacc75e757",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-en-units-028-citations-v3/attempt-0/schema.json": {
+      "sha256": "caf3d4ffed8e88298f3318163b7fb6783b260afcf3de1b8b373eb087d7e6e952",
+      "bytes": 8559
+    },
+    "provenance/annotation_jobs/cal-en-units-028-citations-v3/attempt-0/stdin.json": {
+      "sha256": "597807a7d4991542e32118ecd78b6b678de666019dfedd8606e13194ccf7df9a",
+      "bytes": 57046
+    },
+    "provenance/annotation_jobs/cal-en-units-032-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "6c7474cec8362b9c7aecbbe37c3b5c953a59a080baa9efa3b75eef63753d0e90",
+      "bytes": 22937
+    },
+    "provenance/annotation_jobs/cal-en-units-032-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "db9f8d3ffee083ae81827275218afd5d3ef70ffcac2446c8615f5cb079776f26",
+      "bytes": 25674
+    },
+    "provenance/annotation_jobs/cal-en-units-032-citations-v3/attempt-0/input.json": {
+      "sha256": "78cf1bc3169c547e756c36bb0b4a5606be26984ed1b8eea58c8024c988fb683c",
+      "bytes": 33881
+    },
+    "provenance/annotation_jobs/cal-en-units-032-citations-v3/attempt-0/invocation.json": {
+      "sha256": "1fdaa629ef6a09908e31d5f046815874b035464ab229ef6b1af6a2e6c1dedd96",
+      "bytes": 3814
+    },
+    "provenance/annotation_jobs/cal-en-units-032-citations-v3/attempt-0/output.json": {
+      "sha256": "6a9952b299fb1451c8689ed687185f4d4a6c3b01a09e18c0359cd9f753d6afc2",
+      "bytes": 3180
+    },
+    "provenance/annotation_jobs/cal-en-units-032-citations-v3/attempt-0/prompt.json": {
+      "sha256": "0932746bdda38f8f288b10ad49416efaf81361381459880daf75b6d8e7f5735b",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-en-units-032-citations-v3/attempt-0/provenance.json": {
+      "sha256": "e33b8b9069ae9e208f94a190b032aa136eeb92f0cb028547dcdc966dac0fb329",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-en-units-032-citations-v3/attempt-0/schema.json": {
+      "sha256": "73412cdcb74e32d2b47e07f3e0c074679aecc4208b665c4320b5ebf15d814c42",
+      "bytes": 29299
+    },
+    "provenance/annotation_jobs/cal-en-units-032-citations-v3/attempt-0/stdin.json": {
+      "sha256": "345b74888027ebab120e7e7b6f2996d9b6f949afb9e4dcff571f846cabdd8f66",
+      "bytes": 92558
+    },
+    "provenance/annotation_jobs/cal-en-units-036-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "afcec45f1a5ac7eb2c16b12bdb8c72adf098d569f8b60e2d61e621d65381459c",
+      "bytes": 16746
+    },
+    "provenance/annotation_jobs/cal-en-units-036-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "e58eabf79ead638a46eaf46da15b9600657d8d89ae19a3cf2c69227cd9be9a85",
+      "bytes": 22778
+    },
+    "provenance/annotation_jobs/cal-en-units-036-citations-v3/attempt-0/input.json": {
+      "sha256": "e78fc8f77862522c328e98347245a26a46c3a7c3297ed23131aff328840139ef",
+      "bytes": 30710
+    },
+    "provenance/annotation_jobs/cal-en-units-036-citations-v3/attempt-0/invocation.json": {
+      "sha256": "4f293365d31658628539d585fb883082b12fa628b930397af18bb919d5be8679",
+      "bytes": 3814
+    },
+    "provenance/annotation_jobs/cal-en-units-036-citations-v3/attempt-0/output.json": {
+      "sha256": "97335148b95942c08ba824a3218090887b380a72168bf14de4a0aa040ab42ea1",
+      "bytes": 2613
+    },
+    "provenance/annotation_jobs/cal-en-units-036-citations-v3/attempt-0/prompt.json": {
+      "sha256": "19894739f5f6026854c6e4688e1b5ed298995e1dffa92bab6987aac6b2dc4db5",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-en-units-036-citations-v3/attempt-0/provenance.json": {
+      "sha256": "56f47619468337d412cfc15b63b9a9594ab0ab90e87eb0917df654703efaa3d6",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-en-units-036-citations-v3/attempt-0/schema.json": {
+      "sha256": "1f7704b24c3f456390ad5a5c9d07e8226d8d2c8c4d11a7b9b0e38efbe22aae5d",
+      "bytes": 21003
+    },
+    "provenance/annotation_jobs/cal-en-units-036-citations-v3/attempt-0/stdin.json": {
+      "sha256": "674b6d90c6845fd494faca193a7ad3f31330f1c8159ee7c053b77a98241d62aa",
+      "bytes": 77367
+    },
+    "provenance/annotation_jobs/cal-ja-quality-000-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "208fee15a748276ea804940330b5c29f960b3a2257e865098ae40ca034fc2f94",
+      "bytes": 18650
+    },
+    "provenance/annotation_jobs/cal-ja-quality-000-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "588fb4019edae2a83c4fee3294d364bb250213a68c1e1976eb2276c104541c66",
+      "bytes": 58558
+    },
+    "provenance/annotation_jobs/cal-ja-quality-000-citations-v3/attempt-0/input.json": {
+      "sha256": "1908306da0f1aca86508d064bf9812f9617f74d2241a86f584edcd6cd923bd21",
+      "bytes": 80416
+    },
+    "provenance/annotation_jobs/cal-ja-quality-000-citations-v3/attempt-0/invocation.json": {
+      "sha256": "ec2ed2b4a943d111703b9ccf684c1bfc56a0b8351b4f595ff70cc548b82612d3",
+      "bytes": 3820
+    },
+    "provenance/annotation_jobs/cal-ja-quality-000-citations-v3/attempt-0/output.json": {
+      "sha256": "e2059982a8d1ac109a98a541fdfbb9ae0a18318608ea44928c15e9c6df6ca9a0",
+      "bytes": 2923
+    },
+    "provenance/annotation_jobs/cal-ja-quality-000-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-quality-000-citations-v3/attempt-0/provenance.json": {
+      "sha256": "394b8296684c2a11239fa4ba2ad40e636cc38413d58f43c2a892a7e0c5f6fbf6",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-ja-quality-000-citations-v3/attempt-0/schema.json": {
+      "sha256": "b9689d7f09902490c173ae36f936a78bf3291fd1a1e1db2aeb9b8bd5f1f35b67",
+      "bytes": 46897
+    },
+    "provenance/annotation_jobs/cal-ja-quality-000-citations-v3/attempt-0/stdin.json": {
+      "sha256": "5ba6a65058e5e5e4e16af4dcb90a7dc74e33850ccd80b514fcb02788602eae15",
+      "bytes": 190451
+    },
+    "provenance/annotation_jobs/cal-ja-quality-004-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "e256c6ba8c6d133428bf3a41769c854b8f359332cde8ef0c6e0e3e41ae01dece",
+      "bytes": 33719
+    },
+    "provenance/annotation_jobs/cal-ja-quality-004-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "666bacf65c275aa357564a646a7a95e91862bb6ab8e9bbc7ae1780ddff70f088",
+      "bytes": 66444
+    },
+    "provenance/annotation_jobs/cal-ja-quality-004-citations-v3/attempt-0/input.json": {
+      "sha256": "fa3531f50adbaecba079aa2635425034a9bb8dbd7f9128a2dabdd4f7f2d1b2f8",
+      "bytes": 93339
+    },
+    "provenance/annotation_jobs/cal-ja-quality-004-citations-v3/attempt-0/invocation.json": {
+      "sha256": "b9bcf80060804821aefa520f41292ef078e67cee99417236485d11bee4d20589",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-ja-quality-004-citations-v3/attempt-0/output.json": {
+      "sha256": "44af994242dcdae24f94dd49fd7f5e3b64e52151464bd26e0753458fce2f8037",
+      "bytes": 3626
+    },
+    "provenance/annotation_jobs/cal-ja-quality-004-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-quality-004-citations-v3/attempt-0/provenance.json": {
+      "sha256": "59683522f2e45dc791e63496d8b3c35fcf47378fbce49dfafd27c5d360bd1db9",
+      "bytes": 935
+    },
+    "provenance/annotation_jobs/cal-ja-quality-004-citations-v3/attempt-0/schema.json": {
+      "sha256": "1a85cbcf78966d34cbbdaf0b4bb04a625ac6e312dd4edf1515981fc304eb71c3",
+      "bytes": 47083
+    },
+    "provenance/annotation_jobs/cal-ja-quality-004-citations-v3/attempt-0/stdin.json": {
+      "sha256": "6913259d24d964b282666bde16d39b7048bdd4faab732b9af2b36da85c5ced1f",
+      "bytes": 211586
+    },
+    "provenance/annotation_jobs/cal-ja-quality-008-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "b79103b5daf4cfb761dd9d0cdbe570318014bacae0471281fff2d245fdffa291",
+      "bytes": 31097
+    },
+    "provenance/annotation_jobs/cal-ja-quality-008-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "82b393ebd6fba9668347cb7363e774587ca822068d66e1b02f50a73d11846ab9",
+      "bytes": 67707
+    },
+    "provenance/annotation_jobs/cal-ja-quality-008-citations-v3/attempt-0/input.json": {
+      "sha256": "7f568dcfd8096a2f7397a70f02a9fadd3e873161f4ac11ce11ac186bab38b963",
+      "bytes": 96385
+    },
+    "provenance/annotation_jobs/cal-ja-quality-008-citations-v3/attempt-0/invocation.json": {
+      "sha256": "4bb45fd6a4e9d5f97ac8a7c61d44a6568e265e8826370ea9d0cfafa997b7a656",
+      "bytes": 3820
+    },
+    "provenance/annotation_jobs/cal-ja-quality-008-citations-v3/attempt-0/output.json": {
+      "sha256": "dfdcafd276f94ec458b174094765cc457f3e3b9ef4757d6ad4058b7b5ddcfa66",
+      "bytes": 3660
+    },
+    "provenance/annotation_jobs/cal-ja-quality-008-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-quality-008-citations-v3/attempt-0/provenance.json": {
+      "sha256": "116f1c5ac7efee1a5eaafe32637b4a933a061a25a03fe0a35d365f13262f9350",
+      "bytes": 935
+    },
+    "provenance/annotation_jobs/cal-ja-quality-008-citations-v3/attempt-0/schema.json": {
+      "sha256": "cf639417477524907a3288d73f4f90516d072c81fa8d482550c07f2331ac87b4",
+      "bytes": 47083
+    },
+    "provenance/annotation_jobs/cal-ja-quality-008-citations-v3/attempt-0/stdin.json": {
+      "sha256": "3828d894274529570f1ba9b6640800954f9e4ecda765cff58ecee920fa728310",
+      "bytes": 215841
+    },
+    "provenance/annotation_jobs/cal-ja-quality-012-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "b9dbaea6955cfb8f1cf7faf6c0f0e2fad667fee5ef0f94fd7f958435a276d287",
+      "bytes": 20318
+    },
+    "provenance/annotation_jobs/cal-ja-quality-012-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "f7088c6ba675b76ac66b14c318342f9fd6712fe9ae74197e03354cba2d1f929f",
+      "bytes": 70504
+    },
+    "provenance/annotation_jobs/cal-ja-quality-012-citations-v3/attempt-0/input.json": {
+      "sha256": "5ff826b26319f3d8eeffe609251fe71b66f92b15f1242130108fe2fd36786f05",
+      "bytes": 104373
+    },
+    "provenance/annotation_jobs/cal-ja-quality-012-citations-v3/attempt-0/invocation.json": {
+      "sha256": "14e27f40a19ccbe5b029ce0a768cb179df5a37857259d535e09c1e373724b622",
+      "bytes": 3818
+    },
+    "provenance/annotation_jobs/cal-ja-quality-012-citations-v3/attempt-0/output.json": {
+      "sha256": "24724ad18fbb360447fe42cc9b8a138c4322c66bcba9226352626d65eeeba18d",
+      "bytes": 3878
+    },
+    "provenance/annotation_jobs/cal-ja-quality-012-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-quality-012-citations-v3/attempt-0/provenance.json": {
+      "sha256": "0430edc48dc68be8b85fa46ff6ab3b2f10de5b2d73a30516699f7dd7827ba9b8",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-ja-quality-012-citations-v3/attempt-0/schema.json": {
+      "sha256": "745c1199fe1fa9926034878ac13fb11380aa1fa406082c38c7d2af1b720f01e8",
+      "bytes": 47207
+    },
+    "provenance/annotation_jobs/cal-ja-quality-012-citations-v3/attempt-0/stdin.json": {
+      "sha256": "be0794eb3b606956532f4b0c5baa05e78c49f353d7ffa4a1b42c10d3cac2bf58",
+      "bytes": 227176
+    },
+    "provenance/annotation_jobs/cal-ja-quality-016-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "ed6b7dfd002a46a0e4defcfe0afdce272dbd8383b7280eab9f051cb052cb1e0e",
+      "bytes": 20055
+    },
+    "provenance/annotation_jobs/cal-ja-quality-016-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "b91d06e2a382a669b44f6bb6e2f0d0900d708bd5f5266e64a95084d02b78149f",
+      "bytes": 72657
+    },
+    "provenance/annotation_jobs/cal-ja-quality-016-citations-v3/attempt-0/input.json": {
+      "sha256": "20eb136ec8484dcea40253ff97b2a91043b6593d99de14f8c804081579c5385c",
+      "bytes": 102077
+    },
+    "provenance/annotation_jobs/cal-ja-quality-016-citations-v3/attempt-0/invocation.json": {
+      "sha256": "3f8bff1911137655e3e0f3c22b156c8c6ec2494014f9941c98ae77a200a4bbb5",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-ja-quality-016-citations-v3/attempt-0/output.json": {
+      "sha256": "9fd212d9dea532fb35b13e6f77278a1548ff36872c8414b3f10f116bd4db1ac0",
+      "bytes": 3555
+    },
+    "provenance/annotation_jobs/cal-ja-quality-016-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-quality-016-citations-v3/attempt-0/provenance.json": {
+      "sha256": "6dbdbde1fc588697496e3bf19cc8121261d5ead1dc5386cf98b131044ccf68c4",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-ja-quality-016-citations-v3/attempt-0/schema.json": {
+      "sha256": "00a444950f75e1743c01393bb8e1b264476a750bdc8b99773ca9d03b146d90e8",
+      "bytes": 47207
+    },
+    "provenance/annotation_jobs/cal-ja-quality-016-citations-v3/attempt-0/stdin.json": {
+      "sha256": "726ce0c19a53aa77f109c124203fd74889c33b94017326251d96b8482e2ce45c",
+      "bytes": 226833
+    },
+    "provenance/annotation_jobs/cal-ja-quality-020-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "ed4e6a6c57ddfc24ab3cf407377008a60ac5b4b5d0bf99fd6694d3ab58782b17",
+      "bytes": 20197
+    },
+    "provenance/annotation_jobs/cal-ja-quality-020-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "0d3de49d8542b1b8a8b0d0ba5ecbbbab1bad289f209ab311b79d4c1875a1a0af",
+      "bytes": 60112
+    },
+    "provenance/annotation_jobs/cal-ja-quality-020-citations-v3/attempt-0/input.json": {
+      "sha256": "fc8df1874c97aa93dad4aa4ad29abf770c396d09dfa076348bd00f63bc5a7dba",
+      "bytes": 87461
+    },
+    "provenance/annotation_jobs/cal-ja-quality-020-citations-v3/attempt-0/invocation.json": {
+      "sha256": "0214cf85b714f7e824fc0bfbfcda80cfc47f59afc34a52bed742273582c9f61a",
+      "bytes": 3820
+    },
+    "provenance/annotation_jobs/cal-ja-quality-020-citations-v3/attempt-0/output.json": {
+      "sha256": "3c160bbaf610e228a6a298e8e8c9ff6a57f8031fd4f06bf1e2c0ad1513ec3161",
+      "bytes": 3214
+    },
+    "provenance/annotation_jobs/cal-ja-quality-020-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-quality-020-citations-v3/attempt-0/provenance.json": {
+      "sha256": "69e88d79938a5c90204c916d628082f95c2285538defab8b42cfa75c5ee61dd2",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-ja-quality-020-citations-v3/attempt-0/schema.json": {
+      "sha256": "0a76f8e984091446e4854c5e5c9312d8079df9bbb560f2bdb1716df875b84dae",
+      "bytes": 47021
+    },
+    "provenance/annotation_jobs/cal-ja-quality-020-citations-v3/attempt-0/stdin.json": {
+      "sha256": "dda41c47ae68d752813938778898a1a45da3e5403d2ddcaf264060f9eab534e6",
+      "bytes": 199338
+    },
+    "provenance/annotation_jobs/cal-ja-quality-024-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "4a6115327ea391651037a120130374f4fb5b9ec5e467e56a3c887def298a06d7",
+      "bytes": 19365
+    },
+    "provenance/annotation_jobs/cal-ja-quality-024-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "8a2d1ed7d95862898f2e37516ea29102b1c067c5ab5d678df7a2a186d4a60262",
+      "bytes": 54095
+    },
+    "provenance/annotation_jobs/cal-ja-quality-024-citations-v3/attempt-0/input.json": {
+      "sha256": "356082027087a004ff400775fd440edc26a3ccaa5fb0812d97e7f08d8a9d6043",
+      "bytes": 71495
+    },
+    "provenance/annotation_jobs/cal-ja-quality-024-citations-v3/attempt-0/invocation.json": {
+      "sha256": "035d02e6baa6b3f3c57088ef1c37205835b08a1bc7aa8d1d9ed4b4b2c9a85d3e",
+      "bytes": 3820
+    },
+    "provenance/annotation_jobs/cal-ja-quality-024-citations-v3/attempt-0/output.json": {
+      "sha256": "6831870f22ba37de51bb696dd013a684b48259a0fcfc56c946ec7a029fde4456",
+      "bytes": 3333
+    },
+    "provenance/annotation_jobs/cal-ja-quality-024-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-quality-024-citations-v3/attempt-0/provenance.json": {
+      "sha256": "64684fe0ca2e91c9224a8c989bcf7e92dd1794bba1a61c2b09f890c10dcb0f50",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-ja-quality-024-citations-v3/attempt-0/schema.json": {
+      "sha256": "cbd31027c7e08519183ff162956ce6ba37461f82ef33e0b8af8caa931da1030f",
+      "bytes": 46773
+    },
+    "provenance/annotation_jobs/cal-ja-quality-024-citations-v3/attempt-0/stdin.json": {
+      "sha256": "c4ab78adbf3767e4df3ab87570b910776773e79cb40e74ebf1f8484a576ab5c1",
+      "bytes": 176745
+    },
+    "provenance/annotation_jobs/cal-ja-quality-028-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "cc26c2e917bdd95a827ebf8209e56f3e7184554a8bb1dbd34c463272b8fc8b96",
+      "bytes": 29489
+    },
+    "provenance/annotation_jobs/cal-ja-quality-028-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "37370d4fe0913a253c660249f730babaead87bab5a39fbfb2fd464d20262690e",
+      "bytes": 63715
+    },
+    "provenance/annotation_jobs/cal-ja-quality-028-citations-v3/attempt-0/input.json": {
+      "sha256": "e070a8a4b4658b93c53469eeebcfca80e25cbd11e77d465093a10c6775d020c5",
+      "bytes": 97973
+    },
+    "provenance/annotation_jobs/cal-ja-quality-028-citations-v3/attempt-0/invocation.json": {
+      "sha256": "a8ca49f780e2c0c5954dbec26e3ef4e2cd9ab4588ed1c45abd22391bb818695b",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-ja-quality-028-citations-v3/attempt-0/output.json": {
+      "sha256": "7a26f327aea1a57a59d67d512dda02225f975a3002b36e4184af9abb66668fcc",
+      "bytes": 3645
+    },
+    "provenance/annotation_jobs/cal-ja-quality-028-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-quality-028-citations-v3/attempt-0/provenance.json": {
+      "sha256": "b9b26a5014c873a39f300ffa48eae35567a55f68124b26b5f309774e17e745f8",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-ja-quality-028-citations-v3/attempt-0/schema.json": {
+      "sha256": "e7f4f765843cce7f9733fbf197de6337b0d4671ae11c429d5f6b5d6b31a526ed",
+      "bytes": 47145
+    },
+    "provenance/annotation_jobs/cal-ja-quality-028-citations-v3/attempt-0/stdin.json": {
+      "sha256": "f61f12906a4031799153d385d91a9dab5d5f652e2465968a48441fd465103c99",
+      "bytes": 213855
+    },
+    "provenance/annotation_jobs/cal-ja-quality-032-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "cf23c9e667b1d77c0632eddd550fb7e9b7fa5254e5b11b590053ad633eb262bf",
+      "bytes": 18177
+    },
+    "provenance/annotation_jobs/cal-ja-quality-032-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "23e8682a6e4c442a6040f7b7e4c96bcb25d5e346338d5641b95c9bc2bdc61f15",
+      "bytes": 54396
+    },
+    "provenance/annotation_jobs/cal-ja-quality-032-citations-v3/attempt-0/input.json": {
+      "sha256": "4f8c4fe205a5a6c9f28359510f3daa004742eea94a42ccba7304fe1c31477c57",
+      "bytes": 83507
+    },
+    "provenance/annotation_jobs/cal-ja-quality-032-citations-v3/attempt-0/invocation.json": {
+      "sha256": "c97bef1effcb63a58450cdb9d980f1330704ae79e0ffaa6333285485f832b49e",
+      "bytes": 3820
+    },
+    "provenance/annotation_jobs/cal-ja-quality-032-citations-v3/attempt-0/output.json": {
+      "sha256": "a4d91528e1b4588a30167bfca5aa6fcd98ec1e7f036a25d4e4d7c4f39f8e0f14",
+      "bytes": 3369
+    },
+    "provenance/annotation_jobs/cal-ja-quality-032-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-quality-032-citations-v3/attempt-0/provenance.json": {
+      "sha256": "b15e96b40fa944226f945173064bd3dcc01e79cdd2f94e87cd684c56089f8bfa",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-ja-quality-032-citations-v3/attempt-0/schema.json": {
+      "sha256": "7533f996f9cb08267aae7df90dee84a9423888b6075ad37308ab27e09fbebb44",
+      "bytes": 46897
+    },
+    "provenance/annotation_jobs/cal-ja-quality-032-citations-v3/attempt-0/stdin.json": {
+      "sha256": "b2c95d041c3704e115660e64addd1a1723a21f68c6a36f9023a52ed137d7c4f1",
+      "bytes": 189602
+    },
+    "provenance/annotation_jobs/cal-ja-quality-036-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "2c77fe5fbfd9b9c572330a0a562123a6bcd60ebb8afc3d555bbefa482b747c53",
+      "bytes": 28780
+    },
+    "provenance/annotation_jobs/cal-ja-quality-036-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "fe82d4cfa5be9804f627bc55db466c4248281f59a5645cef0d70d4a13ade5c5c",
+      "bytes": 57570
+    },
+    "provenance/annotation_jobs/cal-ja-quality-036-citations-v3/attempt-0/input.json": {
+      "sha256": "972ecc7edceabba264299ee49235428719da83ac0570f27b11d13e3f0150eb56",
+      "bytes": 84346
+    },
+    "provenance/annotation_jobs/cal-ja-quality-036-citations-v3/attempt-0/invocation.json": {
+      "sha256": "75ae0ffbc269f7eccedf15d503d177940ea7d22a0d3198c36ed011fb44bbcca4",
+      "bytes": 3819
+    },
+    "provenance/annotation_jobs/cal-ja-quality-036-citations-v3/attempt-0/output.json": {
+      "sha256": "0924b07e4054c180a15c8868d708d886935cae382f5d7a4c24f57934ee8042ae",
+      "bytes": 3965
+    },
+    "provenance/annotation_jobs/cal-ja-quality-036-citations-v3/attempt-0/prompt.json": {
+      "sha256": "770c229816f5e0e2de90f0a8a8471afd94afcfb0c5afb36a26cb6dbfd6aa97a4",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-quality-036-citations-v3/attempt-0/provenance.json": {
+      "sha256": "943aca098b51a8fe3bccd9aa14627a49e1b0bef74b9fd8fccdb969d181b0aac6",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-ja-quality-036-citations-v3/attempt-0/schema.json": {
+      "sha256": "7533f996f9cb08267aae7df90dee84a9423888b6075ad37308ab27e09fbebb44",
+      "bytes": 46897
+    },
+    "provenance/annotation_jobs/cal-ja-quality-036-citations-v3/attempt-0/stdin.json": {
+      "sha256": "60b6661b53f42e2210a5ceaa8fda7e06f8a3c6319daeab99d2a6d7f84b0233a4",
+      "bytes": 193457
+    },
+    "provenance/annotation_jobs/cal-ja-units-000-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "931e5c6f8d0945068653d680226439db3ac3cdefaf811d9334852dabeae3b1f5",
+      "bytes": 34327
+    },
+    "provenance/annotation_jobs/cal-ja-units-000-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "dc132600ec3cf4d892db7c179413c642eddae4a0aaa1784980ed5062a1afdbff",
+      "bytes": 49662
+    },
+    "provenance/annotation_jobs/cal-ja-units-000-citations-v3/attempt-0/input.json": {
+      "sha256": "0ab38b8ee1ac5eef4708a5b5e7567db750fa3b77837946b8ce1c038739e5df26",
+      "bytes": 57437
+    },
+    "provenance/annotation_jobs/cal-ja-units-000-citations-v3/attempt-0/invocation.json": {
+      "sha256": "f643657275ab2aab3e17cbec8f6b370de5a4823864dbfbc627cf48dbc73749b7",
+      "bytes": 3815
+    },
+    "provenance/annotation_jobs/cal-ja-units-000-citations-v3/attempt-0/output.json": {
+      "sha256": "2fbdc38f537a9e8d6a08d87882559a769897c0f5f305cf6d6b2641139a4621ae",
+      "bytes": 2722
+    },
+    "provenance/annotation_jobs/cal-ja-units-000-citations-v3/attempt-0/prompt.json": {
+      "sha256": "3ad7c60980fd7ef50fb645ccce373c6af6b799c1638f8bf1411273e7a217318e",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-ja-units-000-citations-v3/attempt-0/provenance.json": {
+      "sha256": "ca4a74d7c6882b2d2b8b219b8b02315d2a8304972f51ade15b8014263fefa18d",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-ja-units-000-citations-v3/attempt-0/schema.json": {
+      "sha256": "6e2e0aea8f18810562b0f05a59b222f79961f0639b3f10de61ae0ec4b2f69a7b",
+      "bytes": 25151
+    },
+    "provenance/annotation_jobs/cal-ja-units-000-citations-v3/attempt-0/stdin.json": {
+      "sha256": "4f6059ad8c1c6e65d560058d096324afc6fd53a049b02cb804dd5f354a81a5c0",
+      "bytes": 135546
+    },
+    "provenance/annotation_jobs/cal-ja-units-004-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "4a9885589e6777a7869078eca5f646b0b9ffbf83b040379dae993fcc00219685",
+      "bytes": 76281
+    },
+    "provenance/annotation_jobs/cal-ja-units-004-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "266cdd1301969b82a1482e4f4c408412ca56a2d41fd86a39f83c03d71c522505",
+      "bytes": 53719
+    },
+    "provenance/annotation_jobs/cal-ja-units-004-citations-v3/attempt-0/input.json": {
+      "sha256": "0b329a735ae71632eaa16d6f7fccc6c13a99ab59ea66f3f42903329280a46c7d",
+      "bytes": 68395
+    },
+    "provenance/annotation_jobs/cal-ja-units-004-citations-v3/attempt-0/invocation.json": {
+      "sha256": "3f973db971aaf31181c3e405e83fd6e9ded3aed54d6cbe40950f634a7dd13778",
+      "bytes": 3814
+    },
+    "provenance/annotation_jobs/cal-ja-units-004-citations-v3/attempt-0/output.json": {
+      "sha256": "44f802d4fbf8bc37e7d6444949fa1300a6ccda7610a42feed4338c1d5b1acba0",
+      "bytes": 5524
+    },
+    "provenance/annotation_jobs/cal-ja-units-004-citations-v3/attempt-0/prompt.json": {
+      "sha256": "54556c03d07e1dce0ffcd263743b62fdb4dcb234e39c94eb2eb06080f498d707",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-ja-units-004-citations-v3/attempt-0/provenance.json": {
+      "sha256": "4a50c69c289f5a948625b2db89a0399f3fe6d0f1c7a59b55daf141d5c54101ed",
+      "bytes": 935
+    },
+    "provenance/annotation_jobs/cal-ja-units-004-citations-v3/attempt-0/schema.json": {
+      "sha256": "8525d4939f3bd6e0dcb245497f0692572048844e0b7cb0bcdb63472df0612baf",
+      "bytes": 43817
+    },
+    "provenance/annotation_jobs/cal-ja-units-004-citations-v3/attempt-0/stdin.json": {
+      "sha256": "f51f80f777132927d1cbb062eef3602e3500bdeab07448529ee804b9adebeb48",
+      "bytes": 171085
+    },
+    "provenance/annotation_jobs/cal-ja-units-008-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "706028c63c9b52af2d415cd0cda75cb35b20932d4e750038f7ef5a8fd426420a",
+      "bytes": 52147
+    },
+    "provenance/annotation_jobs/cal-ja-units-008-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "ad3bc0ec01bf919d03262a57de7b1d8735c0b19f1f32f05fcb1f8639020a3140",
+      "bytes": 53556
+    },
+    "provenance/annotation_jobs/cal-ja-units-008-citations-v3/attempt-0/input.json": {
+      "sha256": "7c574927fff6bcb7387e166570a38310e0999884718f4a6b250a789e3694a5ab",
+      "bytes": 66558
+    },
+    "provenance/annotation_jobs/cal-ja-units-008-citations-v3/attempt-0/invocation.json": {
+      "sha256": "8b0e1c13030fdfea1b825ffbba004000542af1116d5b5faa814bd8732f237d0f",
+      "bytes": 3813
+    },
+    "provenance/annotation_jobs/cal-ja-units-008-citations-v3/attempt-0/output.json": {
+      "sha256": "597e19ed95d74d0c3b41e386179abc9aacba4af53093da1f937dac2709f010d4",
+      "bytes": 4765
+    },
+    "provenance/annotation_jobs/cal-ja-units-008-citations-v3/attempt-0/prompt.json": {
+      "sha256": "ea3764dc4310dc2b65c6487ef092be20fbf4274b5109b27540e0c2b5f454d2c7",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-ja-units-008-citations-v3/attempt-0/provenance.json": {
+      "sha256": "f0c46fbdd1093515431928d8e8372eec60def2908005575a2d9820bc47691b3f",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-ja-units-008-citations-v3/attempt-0/schema.json": {
+      "sha256": "90ed861c7b8ae55c36a5ad036d06a30a0cf52f9b8e1b3bee540026c0e1ff7343",
+      "bytes": 37595
+    },
+    "provenance/annotation_jobs/cal-ja-units-008-citations-v3/attempt-0/stdin.json": {
+      "sha256": "6839976cc6b8ce2f23d970f571b4b857ddb3b336e49a2030d8409807e7f0b602",
+      "bytes": 162245
+    },
+    "provenance/annotation_jobs/cal-ja-units-012-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "aa1f35f53eeb31c70c770ec9341357e012f000d17f2fc457159406beb12d653c",
+      "bytes": 64087
+    },
+    "provenance/annotation_jobs/cal-ja-units-012-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "f5dc1fe0798ded23cb0208d0cd05a4dc9c49551d11a08b60b54c707eafdc924c",
+      "bytes": 54507
+    },
+    "provenance/annotation_jobs/cal-ja-units-012-citations-v3/attempt-0/input.json": {
+      "sha256": "cfd28a85782e18a589264420f2447cd031f80d83cc276d2988f08fb4a4fda92e",
+      "bytes": 67531
+    },
+    "provenance/annotation_jobs/cal-ja-units-012-citations-v3/attempt-0/invocation.json": {
+      "sha256": "380384b12bc0714e976b7e63946d1c03fd334ede3b7992b54c85b47d5d2e592a",
+      "bytes": 3814
+    },
+    "provenance/annotation_jobs/cal-ja-units-012-citations-v3/attempt-0/output.json": {
+      "sha256": "69524448db84ba4b23758f05c942292fa0a12409e33e0b7fac10485b6da30984",
+      "bytes": 6205
+    },
+    "provenance/annotation_jobs/cal-ja-units-012-citations-v3/attempt-0/prompt.json": {
+      "sha256": "a962542693843063e5bd229c45ec917c11e8f029f61952a6ff55f995bb00cac6",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-ja-units-012-citations-v3/attempt-0/provenance.json": {
+      "sha256": "f8a2c712a066bee22c7ccf4f51004836d349e68041e348f73fa0f2007f76e337",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-ja-units-012-citations-v3/attempt-0/schema.json": {
+      "sha256": "f448cfa2248a48f577e268b6da6047b305c8687613405aa1843b81c430cbefb7",
+      "bytes": 47965
+    },
+    "provenance/annotation_jobs/cal-ja-units-012-citations-v3/attempt-0/stdin.json": {
+      "sha256": "cb96d4716c35a9ccb05008f58a766bc9dd8a16c3638f14dc1dd0cb62ebd819a3",
+      "bytes": 175569
+    },
+    "provenance/annotation_jobs/cal-ja-units-016-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "319e95c974bb1b2dd96e7cf1752e1e7bfebbbccf6b4c3cab5788009bf14dbc55",
+      "bytes": 53853
+    },
+    "provenance/annotation_jobs/cal-ja-units-016-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "48f7cf42453aa850406b502b9b7e6f7e06c9425d383b061d94ecf2a6b1223b7f",
+      "bytes": 55351
+    },
+    "provenance/annotation_jobs/cal-ja-units-016-citations-v3/attempt-0/input.json": {
+      "sha256": "8980bc1ce07e591d87d2a7ac9d589aec1fea6fb71ed9d7fb6baf41ceb45f01f9",
+      "bytes": 67936
+    },
+    "provenance/annotation_jobs/cal-ja-units-016-citations-v3/attempt-0/invocation.json": {
+      "sha256": "3534c9f4c2c07ddd728242f2fc27b91c49635725e156b0dd46d1f5ab35f3a979",
+      "bytes": 3813
+    },
+    "provenance/annotation_jobs/cal-ja-units-016-citations-v3/attempt-0/output.json": {
+      "sha256": "7ee2bea8d506e9a3d7ffe4ecc7bc6e9a31da5cc0ec6c26991544c3a1ffe917a7",
+      "bytes": 5444
+    },
+    "provenance/annotation_jobs/cal-ja-units-016-citations-v3/attempt-0/prompt.json": {
+      "sha256": "54556c03d07e1dce0ffcd263743b62fdb4dcb234e39c94eb2eb06080f498d707",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-ja-units-016-citations-v3/attempt-0/provenance.json": {
+      "sha256": "318f5a6b43fcccc2b95b2e7734347f24f5fb1edef60114b9448396a7eb9685cc",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-ja-units-016-citations-v3/attempt-0/schema.json": {
+      "sha256": "fb438ec80ebaa92a9f464e16273b6f8b2e29ab795a18def78e974241d8e5299f",
+      "bytes": 43817
+    },
+    "provenance/annotation_jobs/cal-ja-units-016-citations-v3/attempt-0/stdin.json": {
+      "sha256": "f9f2b507dffdf57a217c801003533dafd80e53efc33df17d33de615e428156bd",
+      "bytes": 172254
+    },
+    "provenance/annotation_jobs/cal-ja-units-020-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "a95f1e6b052820b661d7ac340a6510c938b1ae3eac0a4395b66f6e1f62b1c7ac",
+      "bytes": 28663
+    },
+    "provenance/annotation_jobs/cal-ja-units-020-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "476b73d075ed3ba777488f8684608ca8c0caefe19c06fb7a59df66e68cb649f8",
+      "bytes": 48208
+    },
+    "provenance/annotation_jobs/cal-ja-units-020-citations-v3/attempt-0/input.json": {
+      "sha256": "e1d96900043107fb0ad68ca920e8fb0391dda942b7a8b79821a3bab3b6687f92",
+      "bytes": 54817
+    },
+    "provenance/annotation_jobs/cal-ja-units-020-citations-v3/attempt-0/invocation.json": {
+      "sha256": "dd3624925cdf1cd3f5075f82e4c5c61a19ee598b9936fbfbbf57d034c2a96222",
+      "bytes": 3814
+    },
+    "provenance/annotation_jobs/cal-ja-units-020-citations-v3/attempt-0/output.json": {
+      "sha256": "91d5ae6e6398ef5fc6f434c967923ae0d17926e7e2978aa565fca6a1eeb3a320",
+      "bytes": 2254
+    },
+    "provenance/annotation_jobs/cal-ja-units-020-citations-v3/attempt-0/prompt.json": {
+      "sha256": "b08cec20b495327f056cc44bd41b2278d64787495226d4b56aef9ee84256f1a8",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-units-020-citations-v3/attempt-0/provenance.json": {
+      "sha256": "8226ad8828ccf9ea7aedc95d2908baf324f116e547ce544764a5963ca2040642",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-ja-units-020-citations-v3/attempt-0/schema.json": {
+      "sha256": "4aeb1ae1ef1258108b8e0f40adefa4186cc17340c195f56d33482b101c9d5394",
+      "bytes": 18929
+    },
+    "provenance/annotation_jobs/cal-ja-units-020-citations-v3/attempt-0/stdin.json": {
+      "sha256": "5fe6715a9dea5b4b323684673d02e44b5a52f8c2ee2f908abc273b98c193d5af",
+      "bytes": 124632
+    },
+    "provenance/annotation_jobs/cal-ja-units-024-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "f79c18fc362b406587beb7c22a5ad61eb5ec7514f68e9ef469e5427c438954c2",
+      "bytes": 22608
+    },
+    "provenance/annotation_jobs/cal-ja-units-024-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "024757b6364e6bd462265d52c3151fa0ef6214fb71d1513021f47e21f4b380c3",
+      "bytes": 47359
+    },
+    "provenance/annotation_jobs/cal-ja-units-024-citations-v3/attempt-0/input.json": {
+      "sha256": "3d6b69eb95328359dac7819deda10df8d94b2ad3eb7e6b1441ebbb8078742101",
+      "bytes": 52631
+    },
+    "provenance/annotation_jobs/cal-ja-units-024-citations-v3/attempt-0/invocation.json": {
+      "sha256": "6bf8b0cadf8d150c0b8447df3f2a6f159ab38ca33741ddbb4cdbe9901de9b58f",
+      "bytes": 3814
+    },
+    "provenance/annotation_jobs/cal-ja-units-024-citations-v3/attempt-0/output.json": {
+      "sha256": "26205909053cd8cdd0665d1e099497b6420e8e0c7017b18d99c02ad99de812c0",
+      "bytes": 1623
+    },
+    "provenance/annotation_jobs/cal-ja-units-024-citations-v3/attempt-0/prompt.json": {
+      "sha256": "239c1017ebdc0799e26cd7523ce6ac9ead4e0f15734c4d3eb23f995b9da79acf",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-units-024-citations-v3/attempt-0/provenance.json": {
+      "sha256": "36c379d3d2e14025989caa97f9cbd46e0cec32b0997a517c3614ed5164a45769",
+      "bytes": 933
+    },
+    "provenance/annotation_jobs/cal-ja-units-024-citations-v3/attempt-0/schema.json": {
+      "sha256": "e6a60bb8ee781460af0b408b8288764fd4bc6252f099655029bfb2f7893ff361",
+      "bytes": 10633
+    },
+    "provenance/annotation_jobs/cal-ja-units-024-citations-v3/attempt-0/stdin.json": {
+      "sha256": "6b6db5e020eaf97a977f90f15f804ca213cca43bc291da601984a3103f8fd3cd",
+      "bytes": 112473
+    },
+    "provenance/annotation_jobs/cal-ja-units-028-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "1551d9b806d88c062a442478cf7893f601614f9f3df0487a5b5be4151d467f02",
+      "bytes": 54867
+    },
+    "provenance/annotation_jobs/cal-ja-units-028-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "83eb12212cdb22f8f87098d71219413224684e4149aeb7d7611004fab0c510b6",
+      "bytes": 51714
+    },
+    "provenance/annotation_jobs/cal-ja-units-028-citations-v3/attempt-0/input.json": {
+      "sha256": "bcf6364ec106fa84fad9964a5855adbfac81eeb3f897ca85d01efa29eb0838d7",
+      "bytes": 65185
+    },
+    "provenance/annotation_jobs/cal-ja-units-028-citations-v3/attempt-0/invocation.json": {
+      "sha256": "618ff45c4e419d2a70337efc85675f37360992a4bb8692272b35aba90f23deee",
+      "bytes": 3815
+    },
+    "provenance/annotation_jobs/cal-ja-units-028-citations-v3/attempt-0/output.json": {
+      "sha256": "b94d499d1268f96863dbbb2c0761306fe94694a6a38912ba839f8f06c1aad2ec",
+      "bytes": 6056
+    },
+    "provenance/annotation_jobs/cal-ja-units-028-citations-v3/attempt-0/prompt.json": {
+      "sha256": "967cad25d87f532c99a01e8f9fe9775a10ef129c828a6ffd4701447fdd4bdb2a",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-ja-units-028-citations-v3/attempt-0/provenance.json": {
+      "sha256": "4aca3baf0b6ac47fb53c0b657ddf9059c99d07345e1ffbfee30bc3edc274fb57",
+      "bytes": 936
+    },
+    "provenance/annotation_jobs/cal-ja-units-028-citations-v3/attempt-0/schema.json": {
+      "sha256": "544393ecf11f746c21df7e2918d4f58fc97a2b13626cd6267fec7b823553805e",
+      "bytes": 50039
+    },
+    "provenance/annotation_jobs/cal-ja-units-028-citations-v3/attempt-0/stdin.json": {
+      "sha256": "32905ab83977b2fd40986ed5fe2040c0ba0fb34c5035da381bbaca6528727840",
+      "bytes": 172710
+    },
+    "provenance/annotation_jobs/cal-ja-units-032-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "fbddc8e931f3a708366f028576406ab6749109358c9d819b9e45e70643646902",
+      "bytes": 23569
+    },
+    "provenance/annotation_jobs/cal-ja-units-032-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "233b18e9c86f29fb813511ecd81c7f63b6859aa810da302ba240b7459b783795",
+      "bytes": 45362
+    },
+    "provenance/annotation_jobs/cal-ja-units-032-citations-v3/attempt-0/input.json": {
+      "sha256": "d353a0300168e1f2de34a9c17c6a7d73a28743d7f2c8c532d464e8e4d16d6602",
+      "bytes": 52409
+    },
+    "provenance/annotation_jobs/cal-ja-units-032-citations-v3/attempt-0/invocation.json": {
+      "sha256": "6eb42d7cb1a9dd4d3e03141d0a6c94a40d00171dd8f9468a3729b6e189f05170",
+      "bytes": 3812
+    },
+    "provenance/annotation_jobs/cal-ja-units-032-citations-v3/attempt-0/output.json": {
+      "sha256": "304937b9ec695e8572146370ff1eb4a92492d27001b0d903e1603dc8299be9de",
+      "bytes": 2184
+    },
+    "provenance/annotation_jobs/cal-ja-units-032-citations-v3/attempt-0/prompt.json": {
+      "sha256": "8fd2dd44575d5943065d082908297015355ced6d90ceea1fce7397f2fd6ce185",
+      "bytes": 2574
+    },
+    "provenance/annotation_jobs/cal-ja-units-032-citations-v3/attempt-0/provenance.json": {
+      "sha256": "9840f3faca08f091db80445ac1e851538e289b15f798c953ae708b763ee35a09",
+      "bytes": 932
+    },
+    "provenance/annotation_jobs/cal-ja-units-032-citations-v3/attempt-0/schema.json": {
+      "sha256": "f4bdea06591bed156763ebdae76a28086c6e5654adc4d9477243a77f5f43a14c",
+      "bytes": 14781
+    },
+    "provenance/annotation_jobs/cal-ja-units-032-citations-v3/attempt-0/stdin.json": {
+      "sha256": "d3d5c124dda2940cc379998f107c67cc36314d7b95bd1c2414daf411328eb2e9",
+      "bytes": 114818
+    },
+    "provenance/annotation_jobs/cal-ja-units-036-citations-v3/attempt-0/canonical_output.json": {
+      "sha256": "1a99537e6721856fe8aff875b775b41b14fa6950ae7536df3dc2a7c5ac1bc37f",
+      "bytes": 49103
+    },
+    "provenance/annotation_jobs/cal-ja-units-036-citations-v3/attempt-0/citation_binding.json": {
+      "sha256": "caf67a57e339c02430a50cc391cc3ad67f2257aa2cd94738daeab4b7207ce3cd",
+      "bytes": 49795
+    },
+    "provenance/annotation_jobs/cal-ja-units-036-citations-v3/attempt-0/input.json": {
+      "sha256": "461f53ae8f47049543899c0716b0f2c5f87347a24319236210936eec79bae298",
+      "bytes": 62192
+    },
+    "provenance/annotation_jobs/cal-ja-units-036-citations-v3/attempt-0/invocation.json": {
+      "sha256": "8502db5785172943a9a65e557d486fb19c55da9c4c0cb1209ea453d90b66f23d",
+      "bytes": 3814
+    },
+    "provenance/annotation_jobs/cal-ja-units-036-citations-v3/attempt-0/output.json": {
+      "sha256": "7738c7cff6229c0bf8c39684bf64cf35534fe15b5c4086c1104da87f18b9453b",
+      "bytes": 4113
+    },
+    "provenance/annotation_jobs/cal-ja-units-036-citations-v3/attempt-0/prompt.json": {
+      "sha256": "0932746bdda38f8f288b10ad49416efaf81361381459880daf75b6d8e7f5735b",
+      "bytes": 2575
+    },
+    "provenance/annotation_jobs/cal-ja-units-036-citations-v3/attempt-0/provenance.json": {
+      "sha256": "ab11e2351ee6f70ac3f134cf8d2958e19ea6e5e958b978181202881299654937",
+      "bytes": 934
+    },
+    "provenance/annotation_jobs/cal-ja-units-036-citations-v3/attempt-0/schema.json": {
+      "sha256": "58b4bbcf6fe641c8306e55064d8db5d1db07d3b4cf1aa9f9239a76c3be6d7555",
+      "bytes": 29299
+    },
+    "provenance/annotation_jobs/cal-ja-units-036-citations-v3/attempt-0/stdin.json": {
+      "sha256": "79665d24eab64cbcf43aa056adf604062f492b6ea1486a90325912ffe316f9fb",
+      "bytes": 144998
+    },
+    "provenance/baselines/cal_en_0582e50cbef3f46a26bdcf54.json": {
+      "sha256": "72e0cc280ed7df25ee94c280ee9b6e4565a02e57fc0ae2a0f11684c8fa394946",
+      "bytes": 36822
+    },
+    "provenance/baselines/cal_en_1014da42ab0cc969221d0198.json": {
+      "sha256": "801f7ec3393c2ceca419d51d4deb7ac09344fdc8b75f0bab0f3a34c078017b25",
+      "bytes": 37928
+    },
+    "provenance/baselines/cal_en_173d494e3aff26b18287a733.json": {
+      "sha256": "34cea79653234c332be0734bf00aaa715b9cd4d533d1fd4438a173720bc27c33",
+      "bytes": 53541
+    },
+    "provenance/baselines/cal_en_20ed6e9746469dc526c32bb0.json": {
+      "sha256": "fa70c507bace942d83fb01b34e6321e8229a1289e75b5c2bf4b6bb261e241852",
+      "bytes": 42498
+    },
+    "provenance/baselines/cal_en_523bdfc2b6d035bd89bfdeb4.json": {
+      "sha256": "68abd9423cedc04b24f983c31e49728483cf1ec420383bc706562043fac06c32",
+      "bytes": 47875
+    },
+    "provenance/baselines/cal_en_5b3502dab63dd2eb70a3bb3c.json": {
+      "sha256": "f3a35ff6b64e9dc39f46cbc35353922a49b20c63ca88c0e5baa038555585b724",
+      "bytes": 37709
+    },
+    "provenance/baselines/cal_en_67e72600f3c09f9e8cd843d6.json": {
+      "sha256": "1f9c9d8456e65f21757af335b2a4f89b4e0b042a6e8edb9eda02233c9d46c571",
+      "bytes": 44357
+    },
+    "provenance/baselines/cal_en_748a1913df890799a8a4c53e.json": {
+      "sha256": "486c39bc9cd60fc5be4995189932749cb5a657f1a2cd72205cbfb7502326d94a",
+      "bytes": 48571
+    },
+    "provenance/baselines/cal_en_7d77399f3fa6437a7ac334d0.json": {
+      "sha256": "385e7c553aad5d974bc76e580c7404d3bd6195d6b363b14a6d7ef72d6bce6ce3",
+      "bytes": 44947
+    },
+    "provenance/baselines/cal_en_7f6db95afc7eb1d8338367d3.json": {
+      "sha256": "0c0ea1afdbf221026047817c1902c80b862b410322f7e82ed212fe57c1f42609",
+      "bytes": 33091
+    },
+    "provenance/baselines/cal_en_8d7e70f8aae0982e7c541054.json": {
+      "sha256": "7f452223d1fc30a68deab8e0b94db64dd74ae1110849b87ff73c2d124b7cc91a",
+      "bytes": 41790
+    },
+    "provenance/baselines/cal_en_990135ecfbae94072157e25e.json": {
+      "sha256": "0c59fbd5f206ca7538a236bd116fcc08e975990ef4fb7ed48a1ea49e828c464d",
+      "bytes": 51448
+    },
+    "provenance/baselines/cal_en_b5f2207556bcd37e7e840599.json": {
+      "sha256": "213917b4be37aa66022b1d8f116846f986d37b9088eed781fb1e9f585267bc82",
+      "bytes": 31370
+    },
+    "provenance/baselines/cal_en_beacdbf19981034ccfe1fcca.json": {
+      "sha256": "c8f8e184b1ce671cc67b38604a2c550123038dfb607c98b7dfc7316f1a9c350b",
+      "bytes": 44011
+    },
+    "provenance/baselines/cal_en_c3bb619a09d253e6451a48e3.json": {
+      "sha256": "c315093996b02ee30f2a4f240f77602a96689dc4cb1aa0dbae39c33fc6123650",
+      "bytes": 57141
+    },
+    "provenance/baselines/cal_en_cfd70a0dc39769dab4217df5.json": {
+      "sha256": "942ebf120c881059ba8bb8eb38e99ab691db2178d5f1a5e692a36ca7d291af2a",
+      "bytes": 41462
+    },
+    "provenance/baselines/cal_en_d6b6cf12988c49bd1a6e9833.json": {
+      "sha256": "e9bc12a6a2f84868f56badfca7fadc95bc8d1e9ba3fa8023dc7ab17b83a4ac37",
+      "bytes": 39017
+    },
+    "provenance/baselines/cal_en_d749822f641dfb25b8b19fbc.json": {
+      "sha256": "c81a15cc0e986f6572013de3dc706feeac80b0eaa4764994402ca6a08dccc2b8",
+      "bytes": 49561
+    },
+    "provenance/baselines/cal_en_e7671f1eaede6b44ec72a39d.json": {
+      "sha256": "d6faa756013106092335da695d46594976eafc90379a3f9a4fff20383ecca74c",
+      "bytes": 41927
+    },
+    "provenance/baselines/cal_en_e989dcd6a3debe2613f2a599.json": {
+      "sha256": "c555f0d2c7c65fcf3631d8fc2fe28fd84a43fbc65b03d813b515d2212ed2491b",
+      "bytes": 38644
+    },
+    "provenance/baselines/cal_ja_04f30b1c8c8c22d8d604b4ef.json": {
+      "sha256": "44794eae4978233e5b12653b8f6a30506c77c0e980b54a72af21325bb286a473",
+      "bytes": 98646
+    },
+    "provenance/baselines/cal_ja_10c22fc3275f4c84758b9cfb.json": {
+      "sha256": "a2b16acdb910cdcf1206dfec32c0e79148fdbe5ca4ef128d51a2d597a14f72f4",
+      "bytes": 100777
+    },
+    "provenance/baselines/cal_ja_1b3eeda8324d7593c7d644c0.json": {
+      "sha256": "a3fa2cf37c3c0676343523e0f7a2d8889b6d6a8c2990ee0e07248881822edbb7",
+      "bytes": 105312
+    },
+    "provenance/baselines/cal_ja_21680c889778d9cfa97e9a96.json": {
+      "sha256": "07c022a72fbeceb7e95c3969b7607e7aed1e95feede6dfd19c302bdc6071c915",
+      "bytes": 111840
+    },
+    "provenance/baselines/cal_ja_21b83f993e7ff674762c4a06.json": {
+      "sha256": "515720f6bbaeb838993942441be58aa808e8895fbcfd00bce9b2e207d32bdd30",
+      "bytes": 105654
+    },
+    "provenance/baselines/cal_ja_316f3bdd38e560d99f5f2e37.json": {
+      "sha256": "150547a278cbff1e9ec50aa297472ba7a7cdb612b3de6daa25846fdca0e8b9ae",
+      "bytes": 100614
+    },
+    "provenance/baselines/cal_ja_37b557ff58099be7d8324f2a.json": {
+      "sha256": "2e7e713df368db77bc3f53c4503575e18e394a83395d34b14023a4edb10c7f32",
+      "bytes": 103637
+    },
+    "provenance/baselines/cal_ja_4409dfb365eec9e73aeac563.json": {
+      "sha256": "fe4b17c114996209ff5fd70479580405ee51901aec9dbaafed7c3766487390cc",
+      "bytes": 96248
+    },
+    "provenance/baselines/cal_ja_4434a7d81489062f26a9ef53.json": {
+      "sha256": "9210db91c2da5421ecce91c8d871808e1071ef8953a1cfa618b286644789f8bc",
+      "bytes": 104672
+    },
+    "provenance/baselines/cal_ja_55c0899795ced0ba25f5cfca.json": {
+      "sha256": "08f1f82c2eee491b1c8d72c0bd0698136c31d82ca9fbcae14b962b0cb910f2fc",
+      "bytes": 108559
+    },
+    "provenance/baselines/cal_ja_688e200d116e7f81be2ba68d.json": {
+      "sha256": "cab0863910413bd779fa1a367791673ec10241d5eaf4006c11701c6b54f9688b",
+      "bytes": 89994
+    },
+    "provenance/baselines/cal_ja_6bb75b8fa6e22144b137ebc6.json": {
+      "sha256": "dadd92a8766aa3d11131c2a109bf479f7d33c9174e789f88eb36e853bf15e819",
+      "bytes": 106667
+    },
+    "provenance/baselines/cal_ja_729cce6675f1556b22f620d3.json": {
+      "sha256": "9272b590fff61fb1a00c6d8eb1f2dba9121f03924a76ec6091c437e9d787ea0b",
+      "bytes": 94148
+    },
+    "provenance/baselines/cal_ja_7aab67a2dfc534c0f28c528b.json": {
+      "sha256": "ac307b4155bc566c41aa8fd8e9f4560b03799630b4177f580890324c3768a93d",
+      "bytes": 105911
+    },
+    "provenance/baselines/cal_ja_971a02ba7a2d02ca7538e86e.json": {
+      "sha256": "6b35bf9a6b710a8a40e00fb327d37e118ca66bdc1ca22d34b2ac2005da24269f",
+      "bytes": 91890
+    },
+    "provenance/baselines/cal_ja_a1a408d88465270c3f51a17d.json": {
+      "sha256": "cd61929f91e2e1112e5135070ba2d298610934b2d64daea1ac00d91e4665e095",
+      "bytes": 101759
+    },
+    "provenance/baselines/cal_ja_acbe1c76f8601a04aefa2041.json": {
+      "sha256": "89821e667632e8064fd999cf78ea74292d6e9fb9c03a482088eb28b062d21e2a",
+      "bytes": 105083
+    },
+    "provenance/baselines/cal_ja_bb14e9adeb558ff63fd00fa4.json": {
+      "sha256": "8a93a74fbf1ecfcfbf14a9520d810e7394d315566baa7002d5355872e716a395",
+      "bytes": 100702
+    },
+    "provenance/baselines/cal_ja_c80ab64b76de340570a6d557.json": {
+      "sha256": "a9b4647ea057c4bb13e0255441e0432a2ad0b90634a4732813f92cb280e17e19",
+      "bytes": 98070
+    },
+    "provenance/baselines/cal_ja_e9a4a5919f7bfce3644c0779.json": {
+      "sha256": "c866cd8a57ab4de02b780d794ec8201d12b856f91078f56b0fed318dce321542",
+      "bytes": 106102
+    },
+    "provenance/cal/all_annotations.seal.json": {
+      "sha256": "f555b434e981924e8118159018106b2d8337cf33cffef580f880978b1011de61",
+      "bytes": 956
+    },
+    "provenance/cal/en/manifest.json": {
+      "sha256": "a15070c53dd781486bb6ba33feb66e9178dbe49fa2b28146a81344021304e136",
+      "bytes": 30793
+    },
+    "provenance/cal/en/report.private.json": {
+      "sha256": "ad96796d42ea5a69f9baa85c8ebb70cd79b573bb674adb30f7d6c32f80875d47",
+      "bytes": 6472676
+    },
+    "provenance/cal/ja/manifest.json": {
+      "sha256": "2d3be5132132e2870f8610299e50e1a37a4fb65ceb88a1b72a87df77f2127dea",
+      "bytes": 30158
+    },
+    "provenance/cal/ja/report.private.json": {
+      "sha256": "d8f64f30f7c2b4254aead1098089162a5d83fda41e451ba943ef2e705541f35d",
+      "bytes": 8549828
+    },
+    "provenance/cal/protocol.json": {
+      "sha256": "3f39418bccba1278e600f72e3a4757eaa250f4d44f63542f0f696956b5037bce",
+      "bytes": 22843
+    },
+    "provenance/document_attributions.json": {
+      "sha256": "c7e4594679b2654636416c261163f7b36e988190c89cd5ed447e707a296ce2c6",
+      "bytes": 343935
+    },
+    "provenance/frozen_files/configs/lab_cuda_graph_off_runtime_v1.json": {
+      "sha256": "d18d6efe8b769a0ddb081ca41d1f4d63fa7a0b6551fd2bbfeea1a77d8b7fb0d5",
+      "bytes": 2161
+    },
+    "provenance/frozen_files/configs/phase11_bilingual_assets_v2.json": {
+      "sha256": "20f5b1eaf77b70cf3721728f5c4708be14b38efe04e71a29134bc8152f21e64b",
+      "bytes": 4702
+    },
+    "provenance/frozen_files/configs/phase11_bilingual_baseline_graph_off_v3.yaml": {
+      "sha256": "b1915edaec42c5c451857fdf6ec5c7a92418d0206f2d112eebd58986c646d1cf",
+      "bytes": 490
+    },
+    "provenance/frozen_files/configs/phase11_bilingual_initial_en_v1.yaml": {
+      "sha256": "3f5bd3fd4f1f836f478cae9ba00916025d803196c2b7afcd130fd62223e6a3a2",
+      "bytes": 747
+    },
+    "provenance/frozen_files/configs/phase11_bilingual_initial_ja_v1.yaml": {
+      "sha256": "fcae343daf7adc7f0f68e17896b32cb3da0237265a5102d7b871eda55889525d",
+      "bytes": 802
+    },
+    "provenance/frozen_files/configs/phase11_semantic_prompts_en_v12.yaml": {
+      "sha256": "c14b4f567a9b2daba98b67d3142d05ebc1e1e95192a8f4e503583a0790b8a13f",
+      "bytes": 7414
+    },
+    "provenance/frozen_files/configs/phase11_semantic_prompts_ja_v12.yaml": {
+      "sha256": "121a6b455d957b6b3bb7e54e30aa92373549e33d92251e619907f12c05a73acf",
+      "bytes": 7476
+    },
+    "provenance/frozen_files/data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json": {
+      "sha256": "acadda5c012105a454b07ee95d406a217fe0aab8f498f3988bf44de36ebade65",
+      "bytes": 748
+    },
+    "provenance/frozen_files/data/manifests/phase11_gpu_generation_manifest.json": {
+      "sha256": "97dfc573ac14ccd71424785c44fd0a7645dd227f17bb6b1cb1ac5d6b4fb7689e",
+      "bytes": 7770
+    },
+    "provenance/protocol_text/ai_quality_protocol.md.txt": {
+      "sha256": "a8c3f145a682702bb756b6aa3068aea4e13d77fdfd9c34650bbc8ad59db1a83a",
+      "bytes": 12884
+    },
+    "provenance/protocol_text/order_quality_rubric.md.txt": {
+      "sha256": "11118d7840e616edb5ff2b999ce5b239a141c2747751e2cca13d26d10d040b79",
+      "bytes": 6183
+    },
+    "provenance/protocol_text/phase11_statistical_plan.md.txt": {
+      "sha256": "225a9210c6226abf623cdbd993f6894a6485396059fe2163c48129f4624d2a1a",
+      "bytes": 7260
+    },
+    "published_results/01_order_vs_repeat.pdf": {
+      "sha256": "e3bd995b14731274ccd8018055b82205939179425812f9245f4d5d5b7373d3a4",
+      "bytes": 9902
+    },
+    "published_results/01_order_vs_repeat.png": {
+      "sha256": "3e8940171885d804eaff50d3510ee2ad600710bc4d2fb9bbe74e8d24ad03b1dd",
+      "bytes": 33157
+    },
+    "published_results/01_order_vs_repeat.svg": {
+      "sha256": "7f345fcd8f7fb8764cecb81bb1aa3b139e813f947674d8f0a297f73bd7124994",
+      "bytes": 8962
+    },
+    "published_results/02_quality_and_missingness.pdf": {
+      "sha256": "06cdc167fe9048caf3abe664ca9318dfa56234e47268eb35a40e4170efd3ead2",
+      "bytes": 11769
+    },
+    "published_results/02_quality_and_missingness.png": {
+      "sha256": "d0f30c618d5d8b339aa87ac812f8d65346f6ce567bf66a3d30f824332a661f55",
+      "bytes": 47757
+    },
+    "published_results/02_quality_and_missingness.svg": {
+      "sha256": "c8b1dea903a49a6946f5fff708e153e0fe6da23f2e82c432ff4b3f7ae03ba695",
+      "bytes": 24007
+    },
+    "published_results/03_collection_cost.pdf": {
+      "sha256": "3c9802ce3a83986d15826c68b9fa51868fe2f9d9c691b7a29474e14b2c6be4e3",
+      "bytes": 14144
+    },
+    "published_results/03_collection_cost.png": {
+      "sha256": "dbd01e7428dbc89eceb48b6b809f22a0c728a6921eff508a31163d948882305d",
+      "bytes": 30864
+    },
+    "published_results/03_collection_cost.svg": {
+      "sha256": "03960c19c9b849d5ab0e2c19175cedb3e2565f784e01b36f86b9d18dd7018899",
+      "bytes": 8076
+    },
+    "published_results/04_threshold_sensitivity.pdf": {
+      "sha256": "c175becff2c89d5c11a733f3ededf2be0c8e7481fa48326c1d12f15d1b6a4b46",
+      "bytes": 9058
+    },
+    "published_results/04_threshold_sensitivity.png": {
+      "sha256": "786947980843205af954862f055ffbe2de02a40d4823f4dcfa9f627d2f0b93ad",
+      "bytes": 58304
+    },
+    "published_results/04_threshold_sensitivity.svg": {
+      "sha256": "4a485fe4b3933f5bd997404b0609557637c87827d09c96e0303177a5da601ae8",
+      "bytes": 15903
+    },
+    "published_results/artifact_manifest.json": {
+      "sha256": "4a1f97ca1216a4fc843244b290c0602f04ec17d562a9ee50e3adf8a85530df65",
+      "bytes": 1862
+    },
+    "published_results/cal_summary.json": {
+      "sha256": "a01e7218d36dfbb95ebec9a5ec44392760a7dfb2b490d1ab5330013ff472c97a",
+      "bytes": 18058
+    },
+    "published_results/collection_cost.csv": {
+      "sha256": "fadac1309497a04f733737a9b0ad26a2695aabb9f8f76c8fb8836532563f1f02",
+      "bytes": 710
+    },
+    "published_results/primary_comparison.csv": {
+      "sha256": "a64426b83dd57fc7edefca1a5054d9261002752308d0a2a2592152d83463ea09",
+      "bytes": 221
+    },
+    "published_results/quality_and_operational_cost.csv": {
+      "sha256": "67e660676f2f852e8b8b4bf7cc4bcc33143c76257877b3e29374e034cb212272",
+      "bytes": 1341
+    },
+    "published_results/threshold_sensitivity.csv": {
+      "sha256": "076c2b9e7ab6cd2589d387e7a88d45f3834665c75e8b8dee105e6aa07c7bd2ba",
+      "bytes": 380
+    },
+    "qa_summary.csv": {
+      "sha256": "90d0ce996cb39b9cc19b4632ba1434c908859275e68668f4d39b716ca4c281a7",
+      "bytes": 9755
+    },
+    "source_manifest.json": {
+      "sha256": "af361aa75729f11ddbc55bbdc6f409ca10001251c8414a911f16c61fa66c1cfa",
+      "bytes": 647903
+    },
+    "trials.jsonl": {
+      "sha256": "609d518c9c6cd53dca8fb6ab6c2a2d70a32f1e49617a448a8415ee75af827e5d",
+      "bytes": 2886509
+    },
+    "verify_materials.py": {
+      "sha256": "916db4fb731db2f18a5e4cbc25daaa5d47017f1d937f99a69f8eb6731ebb2ef4",
+      "bytes": 39024
+    }
+  },
+  "self_reference_excluded": true,
+  "encoding": "UTF-8; exact copies retain their original bytes"
+}

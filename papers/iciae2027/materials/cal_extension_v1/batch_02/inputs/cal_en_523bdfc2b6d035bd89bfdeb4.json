@@ -1,0 +1,745 @@
+{
+  "qa_key": "cal_en_523bdfc2b6d035bd89bfdeb4",
+  "cohort": "cal",
+  "language": "en",
+  "analysis_role": "cal",
+  "source_qa_split": "development",
+  "record_id": "clapnq:c508d78:train:-1729923543484435760:answerable",
+  "document_group_id": "clapnq-title:great pyramid of giza",
+  "qa_source": {
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "gold_passage_ids": [
+      "860267530_1290-2177"
+    ],
+    "is_answerable": true,
+    "provided_passage": null,
+    "question": "facts about the great pyramid of giza built",
+    "record_id": "clapnq:c508d78:train:-1729923543484435760:answerable",
+    "reference_answers": [
+      "Initially at 146.5 metres ( 481 feet ) , the Great Pyramid was the tallest man - made structure in the world for more than 3,800 years. Originally, the Great Pyramid was covered by casing stones that formed a smooth outer surface; what is seen today is the underlying core structure. Some of the casing stones that once covered the structure can still be seen around the base. Most accepted construction hypotheses are based on the idea that it was built by moving huge stones from a quarry and dragging and lifting them into place.",
+      "Initially at 146.5 metres ( 481 feet ) , the Great Pyramid was the tallest man - made structure in the world for more than 3,800 years. It was originally covered by casing stones, some of which can still be found near the base, that formed a smooth outer surface."
+    ],
+    "research_split": "development",
+    "selected_sentences_by_reference": [
+      [
+        "Initially at 146.5 metres ( 481 feet ) , the Great Pyramid was the tallest man - made structure in the world for more than 3,800 years .",
+        "Originally , the Great Pyramid was covered by casing stones that formed a smooth outer surface ; what is seen today is the underlying core structure .",
+        "Some of the casing stones that once covered the structure can still be seen around the base .",
+        "Most accepted construction hypotheses are based on the idea that it was built by moving huge stones from a quarry and dragging and lifting them into place ."
+      ],
+      [
+        "Initially at 146.5 metres ( 481 feet ) , the Great Pyramid was the tallest man - made structure in the world for more than 3,800 years .",
+        "Originally , the Great Pyramid was covered by casing stones that formed a smooth outer surface ; what is seen today is the underlying core structure .",
+        "Some of the casing stones that once covered the structure can still be seen around the base ."
+      ]
+    ],
+    "source_dataset": "CLAPNQ",
+    "source_id": "-1729923543484435760",
+    "source_line_index": 1580,
+    "source_record_sha256": "5ddc6face5417ced74dab6697f362d3cdb19e21c5c47ce96f7cf52f055997e7c",
+    "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+    "source_split": "train",
+    "source_title": "Great Pyramid of Giza"
+  },
+  "source_selection": {
+    "record_id": "clapnq:c508d78:train:-1729923543484435760:answerable",
+    "question": "facts about the great pyramid of giza built",
+    "document_group_id": "clapnq-title:great pyramid of giza"
+  },
+  "question": "facts about the great pyramid of giza built",
+  "used_documents": [
+    {
+      "passage_id": "860267530_2178-2803",
+      "title": "Great Pyramid of Giza",
+      "text": "There are three known chambers inside the Great Pyramid . The lowest chamber is cut into the bedrock upon which the pyramid was built and was unfinished . The so - called Queen 's Chamber and King 's Chamber are higher up within the pyramid structure . The main part of the Giza complex is a setting of buildings that included two mortuary temples in honour of Khufu ( one close to the pyramid and one near the Nile ) , three smaller pyramids for Khufu 's wives , an even smaller `` satellite '' pyramid , a raised causeway connecting the two temples , and small mastaba tombs surrounding the pyramid for nobles . Transparent",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "860267530_2178-2803",
+        "parent_text_sha256": "8748659c5d957e202d9ddcd12b1d71cf50f7f41016d75ad83ca87b4dd28f6737",
+        "passage_id": "860267530_2178-2803",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 159,
+          "end": 625,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "8748659c5d957e202d9ddcd12b1d71cf50f7f41016d75ad83ca87b4dd28f6737",
+        "title": "Great Pyramid of Giza",
+        "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "8748659c5d957e202d9ddcd12b1d71cf50f7f41016d75ad83ca87b4dd28f6737",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 625
+      }
+    },
+    {
+      "passage_id": "860267530_1290-2177",
+      "title": "Great Pyramid of Giza",
+      "text": "Based on a mark in an interior chamber naming the work gang and a reference to fourth dynasty Egyptian Pharaoh Khufu , Egyptologists believe that the pyramid was built as a tomb over a 10 to 20 - year period concluding around 2560 BC . Initially at 146.5 metres ( 481 feet ) , the Great Pyramid was the tallest man - made structure in the world for more than 3,800 years . Originally , the Great Pyramid was covered by casing stones that formed a smooth outer surface ; what is seen today is the underlying core structure . Some of the casing stones that once covered the structure can still be seen around the base . There have been varying scientific and alternative theories about the Great Pyramid 's construction techniques . Most accepted construction hypotheses are based on the idea that it was built by moving huge stones from a quarry and dragging and lifting them into place .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "860267530_1290-2177",
+        "parent_text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+        "passage_id": "860267530_1290-2177",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 218,
+          "end": 887,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+        "title": "Great Pyramid of Giza",
+        "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 887
+      }
+    },
+    {
+      "passage_id": "860267530_3241-3983",
+      "title": "Great Pyramid of Giza",
+      "text": "It is believed the pyramid was built as a tomb for Fourth Dynasty Egyptian pharaoh Khufu ( often Hellenicised as `` Cheops '' ) and was constructed over a 20 - year period . Khufu 's vizier , Hemiunu ( also called Hemon ) , is believed by some to be the architect of the Great Pyramid . It is thought that , at construction , the Great Pyramid was originally 280 Egyptian cubits tall ( 146.5 metres ( 480.6 ft ) ) , but with erosion and absence of its pyramidion , its present height is 138.8 metres ( 455.4 ft ) . Each base side was 440 cubits , 230.4 metres ( 755.9 ft ) long . The mass of the pyramid is estimated at 5.9 million tonnes . The volume , including an internal hillock , is roughly 2,500,000 cubic metres ( 88,000,000 cu ft ) .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "860267530_3241-3983",
+        "parent_text_sha256": "d70ad71b3578169c7961a81feb0c68fae62d2a97aeeb65b720863a87f55c7381",
+        "passage_id": "860267530_3241-3983",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 220,
+          "end": 742,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "d70ad71b3578169c7961a81feb0c68fae62d2a97aeeb65b720863a87f55c7381",
+        "title": "Great Pyramid of Giza",
+        "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "d70ad71b3578169c7961a81feb0c68fae62d2a97aeeb65b720863a87f55c7381",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 742
+      }
+    },
+    {
+      "passage_id": "804150900_65477-66360",
+      "title": "Ancient Egypt",
+      "text": "The earliest preserved ancient Egyptian temples , such as those at Giza , consist of single , enclosed halls with roof slabs supported by columns . In the New Kingdom , architects added the pylon , the open courtyard , and the enclosed hypostyle hall to the front of the temple 's sanctuary , a style that was standard until the Greco - Roman period . The earliest and most popular tomb architecture in the Old Kingdom was the mastaba , a flat - roofed rectangular structure of mudbrick or stone built over an underground burial chamber . The step pyramid of Djoser is a series of stone mastabas stacked on top of each other . Pyramids were built during the Old and Middle Kingdoms , but most later rulers abandoned them in favor of less conspicuous rock - cut tombs . The Twenty - fifth dynasty was a notable exception , as all Twenty - fifth dynasty pharaohs constructed pyramids .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "804150900_65477-66360",
+        "parent_text_sha256": "6c7bec705a1640183d3d3f7501f4a830ce7bbdc4bfecd0c8ecfea5b4448117ef",
+        "passage_id": "804150900_65477-66360",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 251,
+          "end": 883,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "6c7bec705a1640183d3d3f7501f4a830ce7bbdc4bfecd0c8ecfea5b4448117ef",
+        "title": "Ancient Egypt",
+        "source_url": "https://en.wikipedia.org/wiki/Ancient_Egypt",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Ancient_Egypt?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "6c7bec705a1640183d3d3f7501f4a830ce7bbdc4bfecd0c8ecfea5b4448117ef",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 883
+      }
+    },
+    {
+      "passage_id": "860267530_86-978",
+      "title": "Great Pyramid of Giza",
+      "text": "The Great Pyramid of Giza Owner Khufu Location Giza pyramid complex , Giza , Egypt Coordinates 29 ° 58 ′ 45.03 '' N 31 ° 08 ′ 03.69 '' E ﻿ / ﻿ 29.9791750 ° N 31.1343583 ° E ﻿ / 29.9791750 ; 31.1343583 Coordinates : 29 ° 58 ′ 45.03 '' N 31 ° 08 ′ 03.69 '' E ﻿ / ﻿ 29.9791750 ° N 31.1343583 ° E ﻿ / 29.9791750 ; 31.1343583 Ancient name Khufu 's Horizon Architect Hemiunu Constructed c. 2580 -- 2560 BC ( 4th dynasty ) Type True pyramid Height 146.7 metres ( 481 ft ) or 280 cubits ( ancient ) 138.8 metres ( 455 ft ) ( contemporary ) Base 230.34 metres ( 756 ft ) or 440 cubits Volume 2,583,283 cubic metres ( 91,227,778 cu ft ) Slope 51 ° 52 ' ± 2 ' UNESCO World Heritage Site Criteria Cultural : ( i ) , ( iii ) , ( vi ) Reference 86 - 002 Inscription 1979 ( 3rd Session ) Location of Great Pyramid of Giza Related media on Wikimedia Commons ( edit on Wikidata )",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "860267530_86-978",
+        "parent_text_sha256": "07eec754dc115c63f437d763135c2bef6c417178ae9295d66cfb37d2b1c3e42f",
+        "passage_id": "860267530_86-978",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 280,
+          "end": 862,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "07eec754dc115c63f437d763135c2bef6c417178ae9295d66cfb37d2b1c3e42f",
+        "title": "Great Pyramid of Giza",
+        "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "07eec754dc115c63f437d763135c2bef6c417178ae9295d66cfb37d2b1c3e42f",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 862
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "860267530_1290-2177",
+      "title": "Great Pyramid of Giza",
+      "text": "Based on a mark in an interior chamber naming the work gang and a reference to fourth dynasty Egyptian Pharaoh Khufu , Egyptologists believe that the pyramid was built as a tomb over a 10 to 20 - year period concluding around 2560 BC . Initially at 146.5 metres ( 481 feet ) , the Great Pyramid was the tallest man - made structure in the world for more than 3,800 years . Originally , the Great Pyramid was covered by casing stones that formed a smooth outer surface ; what is seen today is the underlying core structure . Some of the casing stones that once covered the structure can still be seen around the base . There have been varying scientific and alternative theories about the Great Pyramid 's construction techniques . Most accepted construction hypotheses are based on the idea that it was built by moving huge stones from a quarry and dragging and lifting them into place .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "860267530_1290-2177",
+        "parent_text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+        "passage_id": "860267530_1290-2177",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 218,
+          "end": 887,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+        "title": "Great Pyramid of Giza",
+        "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 887
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "The Great Pyramid of Giza was constructed over a 20-year period concluding around 2560 BC. It was built as a tomb for Fourth Dynasty Egyptian pharaoh Khufu and was originally 280 Egyptian cubits tall, which is approximately 146.5 meters. The pyramid's mass is estimated at 5.9 million tonnes, and its volume is roughly 2,500,000 cubic meters.",
+    "answer_sha256": "ac36b769ccce24477e254c05723f4f3585e84a0ea17b1afe202500a5915fbeb2",
+    "quality": {
+      "annotation_id": "Q-af43cd050c45b554552f",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-af43cd050c45b554552f",
+        "candidate_sha256": "d15e4ed7ea4f84932aa393a733182e1df3b174ef0d4943fa3a33a0a8f35a5b23",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Give relevant, supported facts about the Great Pyramid's construction, such as its approximate date, duration, purpose and original dimensions.",
+        "reason": "The broad request is substantively answered with construction timing, purpose and physical dimensions. Actual passages support the approximate completion date, explicitly give a twenty-year construction period, and supply the stated height, mass and approximate volume. The reference emphasizes other facts, but these are not an exclusive checklist for this open-ended question. No major factual error is established.",
+        "evidence": [
+          {
+            "passage_id": "860267530_1290-2177",
+            "quote": "Based on a mark in an interior chamber naming the work gang and a reference to fourth dynasty Egyptian Pharaoh Khufu , Egyptologists believe that the pyramid was built as a tomb over a 10 to 20 - year period concluding around 2560 BC . Initially at 146.5 metres ( 481 feet ) , the Great Pyramid was the tallest man - made structure in the world for more than 3,800 years . Originally , the Great Pyramid was covered by casing stones that formed a smooth outer surface ; what is seen today is the underlying core structure . Some of the casing stones that once covered the structure can still be seen around the base . There have been varying scientific and alternative theories about the Great Pyramid 's construction techniques . Most accepted construction hypotheses are based on the idea that it was built by moving huge stones from a quarry and dragging and lifting them into place ."
+          },
+          {
+            "passage_id": "860267530_3241-3983",
+            "quote": "It is believed the pyramid was built as a tomb for Fourth Dynasty Egyptian pharaoh Khufu ( often Hellenicised as `` Cheops '' ) and was constructed over a 20 - year period . Khufu 's vizier , Hemiunu ( also called Hemon ) , is believed by some to be the architect of the Great Pyramid . It is thought that , at construction , the Great Pyramid was originally 280 Egyptian cubits tall ( 146.5 metres ( 480.6 ft ) ) , but with erosion and absence of its pyramidion , its present height is 138.8 metres ( 455.4 ft ) . Each base side was 440 cubits , 230.4 metres ( 755.9 ft ) long . The mass of the pyramid is estimated at 5.9 million tonnes . The volume , including an internal hillock , is roughly 2,500,000 cubic metres ( 88,000,000 cu ft ) ."
+          }
+        ],
+        "elapsed_seconds": 11.501334971253527,
+        "confirmed_at_utc": "2026-11-08T07:38:37.971014+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_02/en/baseline/523bdfc2b6d035bd89bfdeb4/record.json",
+      "sha256": "68abd9423cedc04b24f983c31e49728483cf1ec420383bc706562043fac06c32"
+    },
+    "copy": "provenance/baselines/cal_en_523bdfc2b6d035bd89bfdeb4.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "The Great Pyramid of Giza was constructed over a 20-year period concluding around 2560 BC [3241-3983][1290-2177]. It was built as a tomb for Fourth Dynasty Egyptian pharaoh Khufu [3241-3983]. Originally, the pyramid was 280 Egyptian cubits tall, which is approximately 146.5 meters [3241-3983]. The pyramid's mass is estimated at 5.9 million tonnes [3241-3983], and its volume is roughly 2,500,000 cubic meters [3241-3983].",
+    "answer_sha256": "e67e4581df505bc2dddb39d678df64bacd142d49a92e1018170c2fcab5e3fcaf",
+    "quality": {
+      "annotation_id": "Q-62de50b2f6b565190199",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-62de50b2f6b565190199",
+        "candidate_sha256": "72582cb874f0ec8640db23c1ca62b6c62ada68f73383180e4d19f80d359d05e8",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Provide relevant facts about the Great Pyramid's construction and original characteristics, such as its construction period, association with Khufu, and original size.",
+        "reason": "The broad question is substantively answered with construction, purpose, and size facts supported by actual context. One actual passage gives the twenty-year account and the stated dimensions, mass, and approximate volume; another supplies the approximate completion date. Small numerical variations elsewhere do not materially conflict with these approximate figures. The reference's additional facts are not an exclusive checklist.",
+        "evidence": [
+          {
+            "passage_id": "860267530_1290-2177",
+            "quote": "Based on a mark in an interior chamber naming the work gang and a reference to fourth dynasty Egyptian Pharaoh Khufu , Egyptologists believe that the pyramid was built as a tomb over a 10 to 20 - year period concluding around 2560 BC . Initially at 146.5 metres ( 481 feet ) , the Great Pyramid was the tallest man - made structure in the world for more than 3,800 years . Originally , the Great Pyramid was covered by casing stones that formed a smooth outer surface ; what is seen today is the underlying core structure . Some of the casing stones that once covered the structure can still be seen around the base . There have been varying scientific and alternative theories about the Great Pyramid 's construction techniques . Most accepted construction hypotheses are based on the idea that it was built by moving huge stones from a quarry and dragging and lifting them into place ."
+          },
+          {
+            "passage_id": "860267530_3241-3983",
+            "quote": "It is believed the pyramid was built as a tomb for Fourth Dynasty Egyptian pharaoh Khufu ( often Hellenicised as `` Cheops '' ) and was constructed over a 20 - year period . Khufu 's vizier , Hemiunu ( also called Hemon ) , is believed by some to be the architect of the Great Pyramid . It is thought that , at construction , the Great Pyramid was originally 280 Egyptian cubits tall ( 146.5 metres ( 480.6 ft ) ) , but with erosion and absence of its pyramidion , its present height is 138.8 metres ( 455.4 ft ) . Each base side was 440 cubits , 230.4 metres ( 755.9 ft ) long . The mass of the pyramid is estimated at 5.9 million tonnes . The volume , including an internal hillock , is roughly 2,500,000 cubic metres ( 88,000,000 cu ft ) ."
+          }
+        ],
+        "elapsed_seconds": 9.001342736999504,
+        "confirmed_at_utc": "2026-11-08T07:36:05.625157+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "The Great Pyramid of Giza was constructed over a 20-year period concluding around 2560 BC."
+    },
+    {
+      "claim_id": "c2",
+      "text": "It was built as a tomb for Fourth Dynasty Egyptian pharaoh Khufu and was originally 280 Egyptian cubits tall, which is approximately 146.5 meters."
+    },
+    {
+      "claim_id": "c3",
+      "text": "The pyramid's mass is estimated at 5.9 million tonnes, and its volume is roughly 2,500,000 cubic meters."
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "The Great Pyramid of Giza was constructed over a 20-year period concluding around 2560 BC."
+      },
+      {
+        "claim_id": "c2",
+        "text": "It was built as a tomb for Fourth Dynasty Egyptian pharaoh Khufu and was originally 280 Egyptian cubits tall, which is approximately 146.5 meters."
+      },
+      {
+        "claim_id": "c3",
+        "text": "The pyramid's mass is estimated at 5.9 million tonnes, and its volume is roughly 2,500,000 cubic meters."
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-v1",
+    "normalized_prose": "The Great Pyramid of Giza was constructed over a 20-year period concluding around 2560 BC. It was built as a tomb for Fourth Dynasty Egyptian pharaoh Khufu and was originally 280 Egyptian cubits tall, which is approximately 146.5 meters. The pyramid's mass is estimated at 5.9 million tonnes, and its volume is roughly 2,500,000 cubic meters.",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 238
+      },
+      {
+        "start": 238,
+        "end": 342
+      }
+    ]
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "860267530_1290-2177",
+          "860267530_2178-2803",
+          "860267530_86-978",
+          "860267530_3241-3983",
+          "804150900_65477-66360"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "860267530_2178-2803",
+          "860267530_1290-2177",
+          "860267530_3241-3983",
+          "804150900_65477-66360",
+          "860267530_86-978"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "860267530_2178-2803",
+          "860267530_1290-2177",
+          "860267530_3241-3983",
+          "804150900_65477-66360",
+          "860267530_86-978"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "804150900_65477-66360",
+          "860267530_86-978",
+          "860267530_2178-2803",
+          "860267530_3241-3983",
+          "860267530_1290-2177"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "860267530_86-978",
+          "860267530_3241-3983",
+          "804150900_65477-66360",
+          "860267530_1290-2177",
+          "860267530_2178-2803"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "860267530_2178-2803",
+          "860267530_1290-2177",
+          "860267530_3241-3983",
+          "804150900_65477-66360",
+          "860267530_86-978"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "860267530_2178-2803",
+          "860267530_1290-2177",
+          "860267530_3241-3983",
+          "804150900_65477-66360",
+          "860267530_86-978"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "860267530_86-978",
+          "804150900_65477-66360",
+          "860267530_3241-3983",
+          "860267530_1290-2177",
+          "860267530_2178-2803"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "860267530_2178-2803",
+          "860267530_1290-2177",
+          "860267530_3241-3983",
+          "804150900_65477-66360",
+          "860267530_86-978"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "en",
+    "record_id": "clapnq:c508d78:train:-1729923543484435760:answerable",
+    "document_group_id": "clapnq-title:great pyramid of giza",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_02/en/report.private.json",
+    "sha256": "ad96796d42ea5a69f9baa85c8ebb70cd79b573bb674adb30f7d6c32f80875d47"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "804150900_65477-66360",
+      "text": "The earliest preserved ancient Egyptian temples , such as those at Giza , consist of single , enclosed halls with roof slabs supported by columns . In the New Kingdom , architects added the pylon , the open courtyard , and the enclosed hypostyle hall to the front of the temple 's sanctuary , a style that was standard until the Greco - Roman period . The earliest and most popular tomb architecture in the Old Kingdom was the mastaba , a flat - roofed rectangular structure of mudbrick or stone built over an underground burial chamber . The step pyramid of Djoser is a series of stone mastabas stacked on top of each other . Pyramids were built during the Old and Middle Kingdoms , but most later rulers abandoned them in favor of less conspicuous rock - cut tombs . The Twenty - fifth dynasty was a notable exception , as all Twenty - fifth dynasty pharaohs constructed pyramids .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "804150900_65477-66360",
+        "parent_text_sha256": "6c7bec705a1640183d3d3f7501f4a830ce7bbdc4bfecd0c8ecfea5b4448117ef",
+        "passage_id": "804150900_65477-66360",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 251,
+          "end": 883,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "6c7bec705a1640183d3d3f7501f4a830ce7bbdc4bfecd0c8ecfea5b4448117ef",
+        "title": "Ancient Egypt",
+        "source_url": "https://en.wikipedia.org/wiki/Ancient_Egypt",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Ancient_Egypt?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "860267530_1290-2177",
+      "text": "Based on a mark in an interior chamber naming the work gang and a reference to fourth dynasty Egyptian Pharaoh Khufu , Egyptologists believe that the pyramid was built as a tomb over a 10 to 20 - year period concluding around 2560 BC . Initially at 146.5 metres ( 481 feet ) , the Great Pyramid was the tallest man - made structure in the world for more than 3,800 years . Originally , the Great Pyramid was covered by casing stones that formed a smooth outer surface ; what is seen today is the underlying core structure . Some of the casing stones that once covered the structure can still be seen around the base . There have been varying scientific and alternative theories about the Great Pyramid 's construction techniques . Most accepted construction hypotheses are based on the idea that it was built by moving huge stones from a quarry and dragging and lifting them into place .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "860267530_1290-2177",
+        "parent_text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+        "passage_id": "860267530_1290-2177",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 218,
+          "end": 887,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+        "title": "Great Pyramid of Giza",
+        "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "860267530_2178-2803",
+      "text": "There are three known chambers inside the Great Pyramid . The lowest chamber is cut into the bedrock upon which the pyramid was built and was unfinished . The so - called Queen 's Chamber and King 's Chamber are higher up within the pyramid structure . The main part of the Giza complex is a setting of buildings that included two mortuary temples in honour of Khufu ( one close to the pyramid and one near the Nile ) , three smaller pyramids for Khufu 's wives , an even smaller `` satellite '' pyramid , a raised causeway connecting the two temples , and small mastaba tombs surrounding the pyramid for nobles . Transparent",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "860267530_2178-2803",
+        "parent_text_sha256": "8748659c5d957e202d9ddcd12b1d71cf50f7f41016d75ad83ca87b4dd28f6737",
+        "passage_id": "860267530_2178-2803",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 159,
+          "end": 625,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "8748659c5d957e202d9ddcd12b1d71cf50f7f41016d75ad83ca87b4dd28f6737",
+        "title": "Great Pyramid of Giza",
+        "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "860267530_3241-3983",
+      "text": "It is believed the pyramid was built as a tomb for Fourth Dynasty Egyptian pharaoh Khufu ( often Hellenicised as `` Cheops '' ) and was constructed over a 20 - year period . Khufu 's vizier , Hemiunu ( also called Hemon ) , is believed by some to be the architect of the Great Pyramid . It is thought that , at construction , the Great Pyramid was originally 280 Egyptian cubits tall ( 146.5 metres ( 480.6 ft ) ) , but with erosion and absence of its pyramidion , its present height is 138.8 metres ( 455.4 ft ) . Each base side was 440 cubits , 230.4 metres ( 755.9 ft ) long . The mass of the pyramid is estimated at 5.9 million tonnes . The volume , including an internal hillock , is roughly 2,500,000 cubic metres ( 88,000,000 cu ft ) .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "860267530_3241-3983",
+        "parent_text_sha256": "d70ad71b3578169c7961a81feb0c68fae62d2a97aeeb65b720863a87f55c7381",
+        "passage_id": "860267530_3241-3983",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 220,
+          "end": 742,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "d70ad71b3578169c7961a81feb0c68fae62d2a97aeeb65b720863a87f55c7381",
+        "title": "Great Pyramid of Giza",
+        "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "860267530_86-978",
+      "text": "The Great Pyramid of Giza Owner Khufu Location Giza pyramid complex , Giza , Egypt Coordinates 29 ° 58 ′ 45.03 '' N 31 ° 08 ′ 03.69 '' E ﻿ / ﻿ 29.9791750 ° N 31.1343583 ° E ﻿ / 29.9791750 ; 31.1343583 Coordinates : 29 ° 58 ′ 45.03 '' N 31 ° 08 ′ 03.69 '' E ﻿ / ﻿ 29.9791750 ° N 31.1343583 ° E ﻿ / 29.9791750 ; 31.1343583 Ancient name Khufu 's Horizon Architect Hemiunu Constructed c. 2580 -- 2560 BC ( 4th dynasty ) Type True pyramid Height 146.7 metres ( 481 ft ) or 280 cubits ( ancient ) 138.8 metres ( 455 ft ) ( contemporary ) Base 230.34 metres ( 756 ft ) or 440 cubits Volume 2,583,283 cubic metres ( 91,227,778 cu ft ) Slope 51 ° 52 ' ± 2 ' UNESCO World Heritage Site Criteria Cultural : ( i ) , ( iii ) , ( vi ) Reference 86 - 002 Inscription 1979 ( 3rd Session ) Location of Great Pyramid of Giza Related media on Wikimedia Commons ( edit on Wikidata )",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "860267530_86-978",
+        "parent_text_sha256": "07eec754dc115c63f437d763135c2bef6c417178ae9295d66cfb37d2b1c3e42f",
+        "passage_id": "860267530_86-978",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 280,
+          "end": 862,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "07eec754dc115c63f437d763135c2bef6c417178ae9295d66cfb37d2b1c3e42f",
+        "title": "Great Pyramid of Giza",
+        "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "860267530_1290-2177": {
+      "embedding_token_budget": 512,
+      "language": "en",
+      "parent_passage_id": "860267530_1290-2177",
+      "parent_text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+      "passage_id": "860267530_1290-2177",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 218,
+        "end": 887,
+        "start": 0
+      },
+      "source_dataset": "CLAPNQ",
+      "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+      "text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+      "title": "Great Pyramid of Giza",
+      "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+      "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+      "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+      "contributors_history_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza?action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+        "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "860267530_1290-2177",
+      "text": "Based on a mark in an interior chamber naming the work gang and a reference to fourth dynasty Egyptian Pharaoh Khufu , Egyptologists believe that the pyramid was built as a tomb over a 10 to 20 - year period concluding around 2560 BC . Initially at 146.5 metres ( 481 feet ) , the Great Pyramid was the tallest man - made structure in the world for more than 3,800 years . Originally , the Great Pyramid was covered by casing stones that formed a smooth outer surface ; what is seen today is the underlying core structure . Some of the casing stones that once covered the structure can still be seen around the base . There have been varying scientific and alternative theories about the Great Pyramid 's construction techniques . Most accepted construction hypotheses are based on the idea that it was built by moving huge stones from a quarry and dragging and lifting them into place .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "860267530_1290-2177",
+        "parent_text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+        "passage_id": "860267530_1290-2177",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 218,
+          "end": 887,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "62537d961e17c437174ca5797db33e87f41372d4a18aeaa8357a3a7fc853d68a",
+        "title": "Great Pyramid of Giza",
+        "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ]
+}

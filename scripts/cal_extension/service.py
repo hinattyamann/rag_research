@@ -264,12 +264,13 @@ class Workflow:
                     self.stage = "waiting_gpu"
                     authorization = read(self.config["plan"])["close_vscode_authorized"]
                     close_after = datetime.fromisoformat(self.config.get("vscode_close_not_before_utc", "2000-01-01T00:00:00+00:00")).timestamp()
-                    if authorization and time.time() >= close_after and not (self.state / "vscode_close.json").exists():
+                    close_receipt = self.state / self.config.get("vscode_close_receipt", "vscode_close.json")
+                    if authorization and time.time() >= close_after and not close_receipt.exists():
                         try:
                             result = close_vscode_window()
                         except Exception as failure:
                             result = {"error": type(failure).__name__ + ": " + str(failure)}
-                        self.common.write(self.state / "vscode_close.json", {"at_utc": utc_now(), **result})
+                        self.common.write(close_receipt, {"at_utc": utc_now(), **result})
                         self.heartbeat(event=True)
                 self.heartbeat()
                 if time.monotonic() - start >= min(maximum, policy["maximum_wait_seconds"]):
@@ -356,7 +357,7 @@ class Workflow:
                 self.stage = "finalizing"
                 self.heartbeat(event=True)
                 command = [self.config["cpu_python"], str(Path(self.config["helper_dir"]) / "materials.py"),
-                           "--finish", str(self.state / "config.json")]
+                           "--finish", self.config.get("workflow_config_path", str(self.state / "config.json"))]
                 self.common.run_owned(command, cwd=self.config["checkout"], receipt=self.state / "finalize.json",
                                       timeout=3600, heartbeat=self.heartbeat)
                 complete = all((Path(p).parent / "steps/export.json").exists() and

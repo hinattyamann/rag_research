@@ -1,5 +1,7 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-11-09 10:43 JST: [Cal拡張の資料出力復旧v2](cal_extension_recovery_v2.md)。元Helper/Batch Config/Protocolを保ち独立Helperへ配置し、Corpus/Parent Map/親子本文Hash・連続Spanを検証する出典解決と資料内だけの再検証を追加する。全選定120問の事前点検、実Batch 02の抽出/検証、既存4293/旧2785ファイル不変、全1425 Test/6 Skip・Ruffを確認済み。失敗した非推論の出力だけを明示再実行し、成功済みReceiptやモデル/採点要求を再送しない。イベントGit共有・GPU対策・最終資料化を引き継ぎ、実稼働は状態資料で確認する。
+
 2026-11-06 17:31 JST Cal拡張の実行前準備: ユーザーは11/14収集終了目安・同条件の日英均等追加収集から論文用資料のGit共有までを委任し、VS Code終了を許可した。未使用の日本語元Calibrationは64 Groupのため、事前通知した件数を日英各60・計120問（20問/言語×3 Batch）へ確定。既存80問と新集合を分け、元f0b7c71/Release・科学的条件を固定する。現在は新規研究Native0で準備/検証中。既存Calだけを使う読取専用の資料抽出・科学的オフライン検証、人工日英2 CLIの引用選択/全slot/Tool0を確認した。詳細は[Protocol](cal_extension_protocol_v1.md)。稼働開始後の現在地はdocs/cal_extension_status.mdとdata/manifests/cal_extension_status_v1.jsonを正本とし、原稿Branch/DOCXは変更しない。
 
 2026-11-06 14:41 JST 執筆実装更新: 日英対訳入力を77単位へ拡張し、検証済み方策/具体例を読む2表を加えて計5表とした。生成Manifestを取込Commit・2資料Tree・Manifest Hash・本文Digestへ結合。実DOCX照合3検査/Ruffと両版全14ページの描画確認を実施し、各7ページの初稿2を完成した。公式原本/未編集パッケージ部品/既存成果を保持した。研究用src/設定/依存/Runは変更せず、新規推論/再採点0。[原稿到達点](../papers/iciae2027/notes/draft_status.md)を参照。

@@ -4,6 +4,7 @@ import argparse
 import csv
 import hashlib
 import importlib.util
+import inspect
 import json
 import os
 import shutil
@@ -75,6 +76,15 @@ def verifier_text(original):
         text = text.replace(before, after)
     text = text.replace('def close(a, b, name):\n',
         'def close(a, b, name):\n    a = None if a == "" else a\n    b = None if b == "" else b\n')
+    provenance = load_module(Path(__file__).with_name("provenance.py"), "extension_parent_provenance")
+    anchor = '                for d in corpus.values():\n'
+    if text.count(anchor) != 1:
+        raise ValueError("Original verifier corpus contract changed")
+    text = text.replace(anchor, '                verify_parent_sources(q)\n' + anchor)
+    anchor = '\ndef main():\n'
+    if text.count(anchor) != 1:
+        raise ValueError("Original verifier entrypoint contract changed")
+    text = text.replace(anchor, '\n' + inspect.getsource(provenance.verify_parent_sources) + '\n' + anchor)
     return text
 
 
@@ -132,7 +142,8 @@ def export_batch(config, *, destination=None):
         for key in ["assets", "prompts", "baseline_prompts", "baseline_config", "identity_manifest", "auxiliary_model_manifest"]:
             export.copy(export.fixed / cfg[key], "provenance/frozen_files/" + cfg[key])
         export.copy(export.fixed / cfg["execution"]["runtime_spec"], "provenance/frozen_files/" + cfg["execution"]["runtime_spec"])
-    export.document_sources(assets)
+    provenance = load_module(Path(__file__).with_name("provenance.py"), "extension_parent_provenance")
+    provenance.document_sources(export, assets)
     unavailable = []
     for qa in export.qa_inputs:
         for reference in qa["qa_source"].get("reference_corpus_mapping", []):

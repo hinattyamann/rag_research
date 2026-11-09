@@ -1,5 +1,6 @@
 """Regression checks for unattended collection boundaries and export integrity."""
 
+import hashlib
 import importlib.util
 import json
 import sys
@@ -159,3 +160,64 @@ def test_deployment_refuses_any_existing_research_record(tmp_path):
     config.write_text(json.dumps({"batches": [str(batch)]}))
     with pytest.raises(ValueError, match="after any research record"):
         deploy.deploy(config)
+
+
+def parent_fixture(tmp_path):
+    provenance = module("provenance")
+    body = "first part second part"
+    parent_hash = provenance.digest(body)
+    rows = []
+    for pid, text, start in [("child-1", "first part ", 0), ("child-2", "second part", 11)]:
+        rows.append({"passage_id": pid, "text": text, "text_sha256": provenance.digest(text),
+            "parent_passage_id": "original-parent", "parent_text_sha256": parent_hash,
+            "title": "Example source", "language": "en", "source_char_span": {"start": start, "end": start + len(text)}})
+    parent = {"parent_passage_id": "original-parent", "parent_text_sha256": parent_hash,
+              "child_passage_ids": ["child-1", "child-2"]}
+    def asset(name, values):
+        path = tmp_path / name
+        path.write_text("".join(json.dumps(v) + "\n" for v in values))
+        return {"path": name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+    spec = {"corpus": asset("corpus.jsonl", rows), "parent_map": asset("parents.jsonl", [parent])}
+    empty = {"corpus": asset("empty.jsonl", []), "parent_map": asset("empty-parents.jsonl", [])}
+    return provenance, rows, parent, {"datasets": {"en": spec, "ja": empty}}
+
+
+def test_split_gold_parent_reconstructed_without_aliasing_child_ids(tmp_path):
+    provenance, rows, parent, assets = parent_fixture(tmp_path)
+    metadata, bodies = provenance.selected_sources(tmp_path, assets,
+        {"en": {"original-parent", "child-1"}, "ja": set()}, lambda p, role: {"role": role})
+    assert bodies["en", "original-parent"] == "first part second part"
+    assert metadata["en", "original-parent"]["child_passage_ids"] == ["child-1", "child-2"]
+    assert metadata["en", "child-1"]["passage_id"] == "child-1"
+    qa = {"corpus_documents": [{"passage_id": pid, "text": text, "source_metadata": metadata[lang, pid]}
+                               for (lang, pid), text in bodies.items()]}
+    provenance.verify_parent_sources(qa)
+    qa["corpus_documents"][0]["text"] += "tampered"
+    with pytest.raises(ValueError, match="provenance differs|checksum differs"):
+        provenance.verify_parent_sources(qa)
+
+
+@pytest.mark.parametrize("fault", ["gap", "checksum", "missing-child", "wrong-parent"])
+def test_invalid_parent_provenance_is_not_silently_filled(tmp_path, fault):
+    provenance, rows, parent, assets = parent_fixture(tmp_path)
+    if fault == "gap":
+        rows[1]["source_char_span"]["start"] += 1
+    elif fault == "checksum":
+        parent["parent_text_sha256"] = "0" * 64
+    elif fault == "wrong-parent":
+        rows[1]["parent_passage_id"] = "different-parent"
+    else:
+        rows.pop()
+    for key, values in [("corpus", rows), ("parent_map", [parent])]:
+        spec = assets["datasets"]["en"][key]
+        path = tmp_path / spec["path"]
+        path.write_text("".join(json.dumps(v) + "\n" for v in values))
+        spec["sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+    with pytest.raises(ValueError, match="Parent|parent"):
+        provenance.selected_sources(tmp_path, assets, {"en": {"original-parent"}, "ja": set()}, lambda p, role: {})
+
+
+def test_missing_id_does_not_fabricate_provenance(tmp_path):
+    provenance, rows, parent, assets = parent_fixture(tmp_path)
+    with pytest.raises(ValueError, match="Missing selected passage provenance"):
+        provenance.selected_sources(tmp_path, assets, {"en": {"unknown"}, "ja": set()}, lambda p, role: {})

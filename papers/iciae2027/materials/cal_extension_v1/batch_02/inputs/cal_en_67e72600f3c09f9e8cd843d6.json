@@ -1,0 +1,792 @@
+{
+  "qa_key": "cal_en_67e72600f3c09f9e8cd843d6",
+  "cohort": "cal",
+  "language": "en",
+  "analysis_role": "cal",
+  "source_qa_split": "development",
+  "record_id": "clapnq:c508d78:train:-6479921317466279753:answerable",
+  "document_group_id": "clapnq-title:origin of replication",
+  "qa_source": {
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "gold_passage_ids": [
+      "824676688_2122-2925"
+    ],
+    "is_answerable": true,
+    "provided_passage": null,
+    "question": "why origins of replication in dna are usually at-rich",
+    "record_id": "clapnq:c508d78:train:-6479921317466279753:answerable",
+    "reference_answers": [
+      "The genome of E. coli consists of a single circular DNA molecule of approximately 4.6 x 10 nucleotide pairs . In E. coli , the origin of replication -- oriC -- consists of three A -- T rich 13 - mer repeats and four 9 - mer repeats .",
+      "The origin of replication, oriC, consists of three AT rich 13 - mer repeats and four 9 - mer repeats. Ten to 20 monomers of the replication initiator protein DnaA bind to the 9 - mer repeats , and the DNA coils around this protein complex forming a protein core. This coiling stimulates the AT rich region in the 13 - mer sequence to unwind , allowing the helicase loader DnaC to load the replicative helicase DnaB to each of the two unwound DNA strands ."
+    ],
+    "research_split": "development",
+    "selected_sentences_by_reference": [
+      [
+        "The genome of E. coli consists of a single circular DNA molecule of approximately 4.6 x 10 nucleotide pairs .",
+        "In E. coli , the origin of replication -- oriC -- consists of three A -- T rich 13 - mer repeats and four 9 - mer repeats ."
+      ],
+      [
+        "In E. coli , the origin of replication -- oriC -- consists of three A -- T rich 13 - mer repeats and four 9 - mer repeats .",
+        "Ten to 20 monomers of the replication initiator protein DnaA bind to the 9 - mer repeats , and the DNA coils around this protein complex forming a protein core .",
+        "This coiling stimulates the AT rich region in the 13 - mer sequence to unwind , allowing the helicase loader DnaC to load the replicative helicase DnaB to each of the two unwound DNA strands ."
+      ]
+    ],
+    "source_dataset": "CLAPNQ",
+    "source_id": "-6479921317466279753",
+    "source_line_index": 289,
+    "source_record_sha256": "bbdcd81b5fb77b1f75f17e3b20d0360d26166436bfc61a1407cec30fefcedbd8",
+    "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+    "source_split": "train",
+    "source_title": "Origin of replication"
+  },
+  "source_selection": {
+    "record_id": "clapnq:c508d78:train:-6479921317466279753:answerable",
+    "question": "why origins of replication in dna are usually at-rich",
+    "document_group_id": "clapnq-title:origin of replication"
+  },
+  "question": "why origins of replication in dna are usually at-rich",
+  "used_documents": [
+    {
+      "passage_id": "824676688_1320-1991",
+      "title": "Origin of replication",
+      "text": "Most bacteria have a single circular molecule of DNA , and typically only a single origin of replication per circular chromosome . Most archaea have a single circular molecule of DNA , and several origins of replication along this circular chromosome . Eukaryotes often have multiple origins of replication on each linear chromosome that initiate at different times ( replication timing ) , with up to 100,000 present in a single human cell . Having many origins of replication helps to speed the duplication of their ( usually ) much larger store of genetic material . The segment of DNA that is copied starting from each unique replication origin is called a replicon .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "824676688_1320-1991",
+        "parent_text_sha256": "41d4c960d3f276ee022cb75511c27d68fc746ddedabdcb04bb4b45ea9d8d80c4",
+        "passage_id": "824676688_1320-1991",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 158,
+          "end": 671,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "41d4c960d3f276ee022cb75511c27d68fc746ddedabdcb04bb4b45ea9d8d80c4",
+        "title": "Origin of replication",
+        "source_url": "https://en.wikipedia.org/wiki/Origin_of_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Origin_of_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "41d4c960d3f276ee022cb75511c27d68fc746ddedabdcb04bb4b45ea9d8d80c4",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 671
+      }
+    },
+    {
+      "passage_id": "825062638_27903-28366",
+      "title": "DNA replication",
+      "text": "ATP builds up when the cell is in a rich medium , triggering DNA replication once the cell has reached a specific size . ATP competes with ADP to bind to DnaA , and the DnaA - ATP complex is able to initiate replication . A certain number of DnaA proteins are also required for DNA replication -- each time the origin is copied , the number of binding sites for DnaA doubles , requiring the synthesis of more DnaA to enable another initiation of replication . See",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "825062638_27903-28366",
+        "parent_text_sha256": "1c374ea900d7148091468ab8e11f09748bf7fd628bb4caf8a4599f3474b6a8a0",
+        "passage_id": "825062638_27903-28366",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 127,
+          "end": 463,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "1c374ea900d7148091468ab8e11f09748bf7fd628bb4caf8a4599f3474b6a8a0",
+        "title": "DNA replication",
+        "source_url": "https://en.wikipedia.org/wiki/DNA_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/DNA_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "1c374ea900d7148091468ab8e11f09748bf7fd628bb4caf8a4599f3474b6a8a0",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 463
+      }
+    },
+    {
+      "passage_id": "825062638_25508-26824",
+      "title": "DNA replication",
+      "text": "By firing of replication origins , controlled spatially and temporally , the formation of replication foci is regulated . D.A. Jackson et al. ( 1998 ) revealed that neighboring origins fire simultaneously in mammalian cells . Spatial juxtaposition of replication sites brings clustering of replication forks . The clustering do rescue of stalled replication forks and favors normal progress of replication forks . Progress of replication forks is inhibited by many factors ; collision with proteins or with complexes binding strongly on DNA , deficiency of dNTPs , nicks on template DNAs and so on . If replication forks stall and the remaining sequences from the stalled forks are not replicated , the daughter strands have nick obtained un-replicated sites . The un-replicated sites on one parent 's strand hold the other strand together but not daughter strands . Therefore , the resulting sister chromatids can not separate from each other and can not divide into 2 daughter cells . When neighboring origins fire and a fork from one origin is stalled , fork from other origin access on an opposite direction of the stalled fork and duplicate the un-replicated sites . As other mechanism of the rescue there is application of dormant replication origins that excess origins do n't fire in normal DNA replication .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "825062638_25508-26824",
+        "parent_text_sha256": "72e13d3801943c12191d155cd826db47801174db0695a151eef86ce7f3c59eb7",
+        "passage_id": "825062638_25508-26824",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 339,
+          "end": 1316,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "72e13d3801943c12191d155cd826db47801174db0695a151eef86ce7f3c59eb7",
+        "title": "DNA replication",
+        "source_url": "https://en.wikipedia.org/wiki/DNA_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/DNA_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "72e13d3801943c12191d155cd826db47801174db0695a151eef86ce7f3c59eb7",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 1316
+      }
+    },
+    {
+      "passage_id": "829955941_3847-4288",
+      "title": "Eukaryotic DNA replication",
+      "text": "DNA replication is initiated from specific sequences called origins of replication , and eukaryotic cells have multiple replication origins . To initiate DNA replication , multiple replicative proteins assemble on and dissociate from these replicative origins . The individual factors described below work together to direct the formation of the pre-replication complex ( pre-RC ) , a key intermediate in the replication initiation process .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "829955941_3847-4288",
+        "parent_text_sha256": "7208afdb545a704f002cd4fb58cb766cc6db3bc5450ea7078ac7165dca3ab8df",
+        "passage_id": "829955941_3847-4288",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 104,
+          "end": 441,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "7208afdb545a704f002cd4fb58cb766cc6db3bc5450ea7078ac7165dca3ab8df",
+        "title": "Eukaryotic DNA replication",
+        "source_url": "https://en.wikipedia.org/wiki/Eukaryotic_DNA_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Eukaryotic_DNA_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "7208afdb545a704f002cd4fb58cb766cc6db3bc5450ea7078ac7165dca3ab8df",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 441
+      }
+    },
+    {
+      "passage_id": "829955941_54815-55671",
+      "title": "Eukaryotic DNA replication",
+      "text": "Prokaryotic DNA Replication Eukaryotic DNA replication Occurs inside the cytoplasm Occurs inside the nucleus Only one origin of replication per molecule of DNA Have many origins of replication in each chromosome Origin of replication is about 100 - 200 or more nucleotides in length Each origin of replication is formed of about 150 nucleotides Replication occurs at one point in each chromosome Replication occurs at several points simultaneously in each chromosome Only one replication fork is formed Multiple replication forks are formed simultaneously in each chromosome Only have one origin of replication Has multiple origins of replication Initiation is carried out by protein DnaA and DnaB Initiation is carried out by the Origin Recognition Complex Topoisomerase is needed Topoisomerase is needed Replication is very rapid Replication is very slow",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "829955941_54815-55671",
+        "parent_text_sha256": "8869d1d5de4a708e5475d04d239a6c8b9da51b8481e180933d3a91a28a1a630c",
+        "passage_id": "829955941_54815-55671",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 209,
+          "end": 856,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "8869d1d5de4a708e5475d04d239a6c8b9da51b8481e180933d3a91a28a1a630c",
+        "title": "Eukaryotic DNA replication",
+        "source_url": "https://en.wikipedia.org/wiki/Eukaryotic_DNA_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Eukaryotic_DNA_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "8869d1d5de4a708e5475d04d239a6c8b9da51b8481e180933d3a91a28a1a630c",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 856
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "824676688_2122-2925",
+      "title": "Origin of replication",
+      "text": "The genome of E. coli consists of a single circular DNA molecule of approximately 4.6 x 10 nucleotide pairs . DNA replication typically begins at a single origin of replication . In E. coli , the origin of replication -- oriC -- consists of three A -- T rich 13 - mer repeats and four 9 - mer repeats . Ten to 20 monomers of the replication initiator protein DnaA bind to the 9 - mer repeats , and the DNA coils around this protein complex forming a protein core . This coiling stimulates the AT rich region in the 13 - mer sequence to unwind , allowing the helicase loader DnaC to load the replicative helicase DnaB to each of the two unwound DNA strands . The helicase DnaB forms the basis of the primosome , a complex of enzymes to which DNA polymerase III is recruited before replication can occur .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "824676688_2122-2925",
+        "parent_text_sha256": "e0fb04c04e800cbba6da1ec6b9126c68b0d34c506bbb85660ac25af5ddcbbfce",
+        "passage_id": "824676688_2122-2925",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 221,
+          "end": 803,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "e0fb04c04e800cbba6da1ec6b9126c68b0d34c506bbb85660ac25af5ddcbbfce",
+        "title": "Origin of replication",
+        "source_url": "https://en.wikipedia.org/wiki/Origin_of_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Origin_of_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "e0fb04c04e800cbba6da1ec6b9126c68b0d34c506bbb85660ac25af5ddcbbfce",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 803
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "The origins of replication in DNA are usually at-rich because they are composed of specific sequences of nucleotides, typically about 100-200 or more nucleotides in length. These sequences are rich in adenine (A) and thymine (T) bases, which form hydrogen bonds easily and are complementary to guanine (G) and cytosine (C) bases. This rich content of A-T pairs facilitates the initiation of DNA replication by proteins like DnaA and DnaB, which recognize and bind to these sequences. The passages indicate that eukaryotic cells have multiple replication origins, and these origins are often at-rich, aiding in the rapid duplication of their larger genetic material.",
+    "answer_sha256": "68761625bb73ded3ad160677b526aeb35fafcaf7711a2d90ff93fd7452f1a04a",
+    "quality": {
+      "annotation_id": "Q-9ec0a34c0e9ed3eef5cc",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-9ec0a34c0e9ed3eef5cc",
+        "candidate_sha256": "87218c1a0236366330b47754e81ced3c7f116017e852e1464ffd928ccd441a58",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "uncertain",
+          "context_support": "fail"
+        },
+        "essential_points": "Explain the relationship between AT richness, origin unwinding, and initiation, rather than merely describing origin length or multiplicity.",
+        "reason": "Actual evidence supports some background about origin lengths, initiation proteins, and multiple origins, but none supports the asserted hydrogen-bond explanation, base complementarity, or AT-specific recognition. The answer does not explain AT-rich-region unwinding. Reference-only evidence e0018 describes that unwinding and subsequent helicase loading, but cannot establish actual-context support. The supplied evidence does not resolve the correctness of every additional biochemical assertion.",
+        "evidence": [
+          {
+            "passage_id": "824676688_1320-1991",
+            "quote": "Most bacteria have a single circular molecule of DNA , and typically only a single origin of replication per circular chromosome . Most archaea have a single circular molecule of DNA , and several origins of replication along this circular chromosome . Eukaryotes often have multiple origins of replication on each linear chromosome that initiate at different times ( replication timing ) , with up to 100,000 present in a single human cell . Having many origins of replication helps to speed the duplication of their ( usually ) much larger store of genetic material . The segment of DNA that is copied starting from each unique replication origin is called a replicon ."
+          },
+          {
+            "passage_id": "829955941_3847-4288",
+            "quote": "DNA replication is initiated from specific sequences called origins of replication , and eukaryotic cells have multiple replication origins . To initiate DNA replication , multiple replicative proteins assemble on and dissociate from these replicative origins . The individual factors described below work together to direct the formation of the pre-replication complex ( pre-RC ) , a key intermediate in the replication initiation process ."
+          },
+          {
+            "passage_id": "829955941_54815-55671",
+            "quote": "Prokaryotic DNA Replication Eukaryotic DNA replication Occurs inside the cytoplasm Occurs inside the nucleus Only one origin of replication per molecule of DNA Have many origins of replication in each chromosome Origin of replication is about 100 - 200 or more nucleotides in length Each origin of replication is formed of about 150 nucleotides Replication occurs at one point in each chromosome Replication occurs at several points simultaneously in each chromosome Only one replication fork is formed Multiple replication forks are formed simultaneously in each chromosome Only have one origin of replication Has multiple origins of replication Initiation is carried out by protein DnaA and DnaB Initiation is carried out by the Origin Recognition Complex Topoisomerase is needed Topoisomerase is needed Replication is very rapid Replication is very slow"
+          },
+          {
+            "passage_id": "824676688_2122-2925",
+            "quote": "The genome of E. coli consists of a single circular DNA molecule of approximately 4.6 x 10 nucleotide pairs . DNA replication typically begins at a single origin of replication . In E. coli , the origin of replication -- oriC -- consists of three A -- T rich 13 - mer repeats and four 9 - mer repeats . Ten to 20 monomers of the replication initiator protein DnaA bind to the 9 - mer repeats , and the DNA coils around this protein complex forming a protein core . This coiling stimulates the AT rich region in the 13 - mer sequence to unwind , allowing the helicase loader DnaC to load the replicative helicase DnaB to each of the two unwound DNA strands . The helicase DnaB forms the basis of the primosome , a complex of enzymes to which DNA polymerase III is recruited before replication can occur ."
+          }
+        ],
+        "elapsed_seconds": 8.50118392900913,
+        "confirmed_at_utc": "2026-11-08T07:36:39.739997+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_02/en/baseline/67e72600f3c09f9e8cd843d6/record.json",
+      "sha256": "1f9c9d8456e65f21757af335b2a4f89b4e0b042a6e8edb9eda02233c9d46c571"
+    },
+    "copy": "provenance/baselines/cal_en_67e72600f3c09f9e8cd843d6.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "The provided documents do not state that origins of replication are AT-rich or explain why they would be. They indicate origins are specific sequences about 100-200 nucleotides long [829955941_54815-55671]. Initiation is carried out by proteins like DnaA in prokaryotes or the Origin Recognition Complex in eukaryotes [825062638_27903-28366, 829955941_54815-55671]. Eukaryotic cells have multiple origins to speed duplication of larger genetic material [824676688_1320-1991].",
+    "answer_sha256": "c43d6d7bd4dbe7ae912a1b7dda6500c1b2bb1e44f209eb5c732c2821fe09f2c1",
+    "quality": {
+      "annotation_id": "Q-7387134e087fbf530d20",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-7387134e087fbf530d20",
+        "candidate_sha256": "dd1b6405d3370f91d9a9839010438544bf2049fea0ee1f1b85af125e64c2ae51",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Explain how AT-rich origin regions relate to DNA unwinding and the loading of replication machinery.",
+        "reason": "The answer does not explain the role of AT-rich regions in replication initiation. Reference-only evidence describes their unwinding and subsequent helicase loading. The actual context lacks that explanation, so the stated limitation is accurate and the supplementary facts are supported, but the essential question remains unanswered.",
+        "evidence": [
+          {
+            "passage_id": "824676688_1320-1991",
+            "quote": "Most bacteria have a single circular molecule of DNA , and typically only a single origin of replication per circular chromosome . Most archaea have a single circular molecule of DNA , and several origins of replication along this circular chromosome . Eukaryotes often have multiple origins of replication on each linear chromosome that initiate at different times ( replication timing ) , with up to 100,000 present in a single human cell . Having many origins of replication helps to speed the duplication of their ( usually ) much larger store of genetic material . The segment of DNA that is copied starting from each unique replication origin is called a replicon ."
+          },
+          {
+            "passage_id": "829955941_3847-4288",
+            "quote": "DNA replication is initiated from specific sequences called origins of replication , and eukaryotic cells have multiple replication origins . To initiate DNA replication , multiple replicative proteins assemble on and dissociate from these replicative origins . The individual factors described below work together to direct the formation of the pre-replication complex ( pre-RC ) , a key intermediate in the replication initiation process ."
+          },
+          {
+            "passage_id": "829955941_54815-55671",
+            "quote": "Prokaryotic DNA Replication Eukaryotic DNA replication Occurs inside the cytoplasm Occurs inside the nucleus Only one origin of replication per molecule of DNA Have many origins of replication in each chromosome Origin of replication is about 100 - 200 or more nucleotides in length Each origin of replication is formed of about 150 nucleotides Replication occurs at one point in each chromosome Replication occurs at several points simultaneously in each chromosome Only one replication fork is formed Multiple replication forks are formed simultaneously in each chromosome Only have one origin of replication Has multiple origins of replication Initiation is carried out by protein DnaA and DnaB Initiation is carried out by the Origin Recognition Complex Topoisomerase is needed Topoisomerase is needed Replication is very rapid Replication is very slow"
+          },
+          {
+            "passage_id": "824676688_2122-2925",
+            "quote": "The genome of E. coli consists of a single circular DNA molecule of approximately 4.6 x 10 nucleotide pairs . DNA replication typically begins at a single origin of replication . In E. coli , the origin of replication -- oriC -- consists of three A -- T rich 13 - mer repeats and four 9 - mer repeats . Ten to 20 monomers of the replication initiator protein DnaA bind to the 9 - mer repeats , and the DNA coils around this protein complex forming a protein core . This coiling stimulates the AT rich region in the 13 - mer sequence to unwind , allowing the helicase loader DnaC to load the replicative helicase DnaB to each of the two unwound DNA strands . The helicase DnaB forms the basis of the primosome , a complex of enzymes to which DNA polymerase III is recruited before replication can occur ."
+          }
+        ],
+        "elapsed_seconds": 8.001318705501035,
+        "confirmed_at_utc": "2026-11-08T07:33:27.340145+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "The origins of replication in DNA are usually at-rich because they are composed of specific sequences of nucleotides, typically about 100-200 or more nucleotides in length."
+    },
+    {
+      "claim_id": "c2",
+      "text": "These sequences are rich in adenine (A) and thymine (T) bases, which form hydrogen bonds easily and are complementary to guanine (G) and cytosine (C) bases."
+    },
+    {
+      "claim_id": "c3",
+      "text": "This rich content of A-T pairs facilitates the initiation of DNA replication by proteins like DnaA and DnaB, which recognize and bind to these sequences."
+    },
+    {
+      "claim_id": "c4",
+      "text": "The passages indicate that eukaryotic cells have multiple replication origins, and these origins are often at-rich, aiding in the rapid duplication of their larger genetic material."
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "The origins of replication in DNA are usually at-rich because they are composed of specific sequences of nucleotides, typically about 100-200 or more nucleotides in length."
+      },
+      {
+        "claim_id": "c2",
+        "text": "These sequences are rich in adenine (A) and thymine (T) bases, which form hydrogen bonds easily and are complementary to guanine (G) and cytosine (C) bases."
+      },
+      {
+        "claim_id": "c3",
+        "text": "This rich content of A-T pairs facilitates the initiation of DNA replication by proteins like DnaA and DnaB, which recognize and bind to these sequences."
+      },
+      {
+        "claim_id": "c4",
+        "text": "The passages indicate that eukaryotic cells have multiple replication origins, and these origins are often at-rich, aiding in the rapid duplication of their larger genetic material."
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-v1",
+    "normalized_prose": "The origins of replication in DNA are usually at-rich because they are composed of specific sequences of nucleotides, typically about 100-200 or more nucleotides in length. These sequences are rich in adenine (A) and thymine (T) bases, which form hydrogen bonds easily and are complementary to guanine (G) and cytosine (C) bases. This rich content of A-T pairs facilitates the initiation of DNA replication by proteins like DnaA and DnaB, which recognize and bind to these sequences. The passages indicate that eukaryotic cells have multiple replication origins, and these origins are often at-rich, aiding in the rapid duplication of their larger genetic material.",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 173
+      },
+      {
+        "start": 173,
+        "end": 330
+      },
+      {
+        "start": 330,
+        "end": 484
+      },
+      {
+        "start": 484,
+        "end": 665
+      }
+    ]
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "824676688_1320-1991",
+          "825062638_27903-28366",
+          "825062638_25508-26824",
+          "829955941_3847-4288",
+          "829955941_54815-55671"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "824676688_1320-1991",
+          "825062638_27903-28366",
+          "825062638_25508-26824",
+          "829955941_3847-4288",
+          "829955941_54815-55671"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "829955941_54815-55671",
+          "825062638_27903-28366",
+          "829955941_3847-4288",
+          "824676688_1320-1991",
+          "825062638_25508-26824"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "824676688_1320-1991",
+          "825062638_27903-28366",
+          "825062638_25508-26824",
+          "829955941_3847-4288",
+          "829955941_54815-55671"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "824676688_1320-1991",
+          "825062638_27903-28366",
+          "825062638_25508-26824",
+          "829955941_3847-4288",
+          "829955941_54815-55671"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "824676688_1320-1991",
+          "825062638_27903-28366",
+          "825062638_25508-26824",
+          "829955941_3847-4288",
+          "829955941_54815-55671"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "829955941_54815-55671",
+          "825062638_27903-28366",
+          "825062638_25508-26824",
+          "824676688_1320-1991",
+          "829955941_3847-4288"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "829955941_54815-55671",
+          "829955941_3847-4288",
+          "825062638_25508-26824",
+          "825062638_27903-28366",
+          "824676688_1320-1991"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {
+      "shuffle_3": "shuffle_1"
+    },
+    "unique_order_count": 4
+  },
+  "statistical_comparison": {
+    "language": "en",
+    "record_id": "clapnq:c508d78:train:-6479921317466279753:answerable",
+    "document_group_id": "clapnq-title:origin of replication",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 4,
+      "valid_trials": 4,
+      "valid_pairs": 6,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_02/en/report.private.json",
+    "sha256": "ad96796d42ea5a69f9baa85c8ebb70cd79b573bb674adb30f7d6c32f80875d47"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "824676688_1320-1991",
+      "text": "Most bacteria have a single circular molecule of DNA , and typically only a single origin of replication per circular chromosome . Most archaea have a single circular molecule of DNA , and several origins of replication along this circular chromosome . Eukaryotes often have multiple origins of replication on each linear chromosome that initiate at different times ( replication timing ) , with up to 100,000 present in a single human cell . Having many origins of replication helps to speed the duplication of their ( usually ) much larger store of genetic material . The segment of DNA that is copied starting from each unique replication origin is called a replicon .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "824676688_1320-1991",
+        "parent_text_sha256": "41d4c960d3f276ee022cb75511c27d68fc746ddedabdcb04bb4b45ea9d8d80c4",
+        "passage_id": "824676688_1320-1991",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 158,
+          "end": 671,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "41d4c960d3f276ee022cb75511c27d68fc746ddedabdcb04bb4b45ea9d8d80c4",
+        "title": "Origin of replication",
+        "source_url": "https://en.wikipedia.org/wiki/Origin_of_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Origin_of_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "824676688_2122-2925",
+      "text": "The genome of E. coli consists of a single circular DNA molecule of approximately 4.6 x 10 nucleotide pairs . DNA replication typically begins at a single origin of replication . In E. coli , the origin of replication -- oriC -- consists of three A -- T rich 13 - mer repeats and four 9 - mer repeats . Ten to 20 monomers of the replication initiator protein DnaA bind to the 9 - mer repeats , and the DNA coils around this protein complex forming a protein core . This coiling stimulates the AT rich region in the 13 - mer sequence to unwind , allowing the helicase loader DnaC to load the replicative helicase DnaB to each of the two unwound DNA strands . The helicase DnaB forms the basis of the primosome , a complex of enzymes to which DNA polymerase III is recruited before replication can occur .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "824676688_2122-2925",
+        "parent_text_sha256": "e0fb04c04e800cbba6da1ec6b9126c68b0d34c506bbb85660ac25af5ddcbbfce",
+        "passage_id": "824676688_2122-2925",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 221,
+          "end": 803,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "e0fb04c04e800cbba6da1ec6b9126c68b0d34c506bbb85660ac25af5ddcbbfce",
+        "title": "Origin of replication",
+        "source_url": "https://en.wikipedia.org/wiki/Origin_of_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Origin_of_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "825062638_25508-26824",
+      "text": "By firing of replication origins , controlled spatially and temporally , the formation of replication foci is regulated . D.A. Jackson et al. ( 1998 ) revealed that neighboring origins fire simultaneously in mammalian cells . Spatial juxtaposition of replication sites brings clustering of replication forks . The clustering do rescue of stalled replication forks and favors normal progress of replication forks . Progress of replication forks is inhibited by many factors ; collision with proteins or with complexes binding strongly on DNA , deficiency of dNTPs , nicks on template DNAs and so on . If replication forks stall and the remaining sequences from the stalled forks are not replicated , the daughter strands have nick obtained un-replicated sites . The un-replicated sites on one parent 's strand hold the other strand together but not daughter strands . Therefore , the resulting sister chromatids can not separate from each other and can not divide into 2 daughter cells . When neighboring origins fire and a fork from one origin is stalled , fork from other origin access on an opposite direction of the stalled fork and duplicate the un-replicated sites . As other mechanism of the rescue there is application of dormant replication origins that excess origins do n't fire in normal DNA replication .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "825062638_25508-26824",
+        "parent_text_sha256": "72e13d3801943c12191d155cd826db47801174db0695a151eef86ce7f3c59eb7",
+        "passage_id": "825062638_25508-26824",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 339,
+          "end": 1316,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "72e13d3801943c12191d155cd826db47801174db0695a151eef86ce7f3c59eb7",
+        "title": "DNA replication",
+        "source_url": "https://en.wikipedia.org/wiki/DNA_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/DNA_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "825062638_27903-28366",
+      "text": "ATP builds up when the cell is in a rich medium , triggering DNA replication once the cell has reached a specific size . ATP competes with ADP to bind to DnaA , and the DnaA - ATP complex is able to initiate replication . A certain number of DnaA proteins are also required for DNA replication -- each time the origin is copied , the number of binding sites for DnaA doubles , requiring the synthesis of more DnaA to enable another initiation of replication . See",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "825062638_27903-28366",
+        "parent_text_sha256": "1c374ea900d7148091468ab8e11f09748bf7fd628bb4caf8a4599f3474b6a8a0",
+        "passage_id": "825062638_27903-28366",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 127,
+          "end": 463,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "1c374ea900d7148091468ab8e11f09748bf7fd628bb4caf8a4599f3474b6a8a0",
+        "title": "DNA replication",
+        "source_url": "https://en.wikipedia.org/wiki/DNA_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/DNA_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "829955941_3847-4288",
+      "text": "DNA replication is initiated from specific sequences called origins of replication , and eukaryotic cells have multiple replication origins . To initiate DNA replication , multiple replicative proteins assemble on and dissociate from these replicative origins . The individual factors described below work together to direct the formation of the pre-replication complex ( pre-RC ) , a key intermediate in the replication initiation process .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "829955941_3847-4288",
+        "parent_text_sha256": "7208afdb545a704f002cd4fb58cb766cc6db3bc5450ea7078ac7165dca3ab8df",
+        "passage_id": "829955941_3847-4288",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 104,
+          "end": 441,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "7208afdb545a704f002cd4fb58cb766cc6db3bc5450ea7078ac7165dca3ab8df",
+        "title": "Eukaryotic DNA replication",
+        "source_url": "https://en.wikipedia.org/wiki/Eukaryotic_DNA_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Eukaryotic_DNA_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "829955941_54815-55671",
+      "text": "Prokaryotic DNA Replication Eukaryotic DNA replication Occurs inside the cytoplasm Occurs inside the nucleus Only one origin of replication per molecule of DNA Have many origins of replication in each chromosome Origin of replication is about 100 - 200 or more nucleotides in length Each origin of replication is formed of about 150 nucleotides Replication occurs at one point in each chromosome Replication occurs at several points simultaneously in each chromosome Only one replication fork is formed Multiple replication forks are formed simultaneously in each chromosome Only have one origin of replication Has multiple origins of replication Initiation is carried out by protein DnaA and DnaB Initiation is carried out by the Origin Recognition Complex Topoisomerase is needed Topoisomerase is needed Replication is very rapid Replication is very slow",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "829955941_54815-55671",
+        "parent_text_sha256": "8869d1d5de4a708e5475d04d239a6c8b9da51b8481e180933d3a91a28a1a630c",
+        "passage_id": "829955941_54815-55671",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 209,
+          "end": 856,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "8869d1d5de4a708e5475d04d239a6c8b9da51b8481e180933d3a91a28a1a630c",
+        "title": "Eukaryotic DNA replication",
+        "source_url": "https://en.wikipedia.org/wiki/Eukaryotic_DNA_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Eukaryotic_DNA_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "824676688_2122-2925": {
+      "embedding_token_budget": 512,
+      "language": "en",
+      "parent_passage_id": "824676688_2122-2925",
+      "parent_text_sha256": "e0fb04c04e800cbba6da1ec6b9126c68b0d34c506bbb85660ac25af5ddcbbfce",
+      "passage_id": "824676688_2122-2925",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 221,
+        "end": 803,
+        "start": 0
+      },
+      "source_dataset": "CLAPNQ",
+      "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+      "text_sha256": "e0fb04c04e800cbba6da1ec6b9126c68b0d34c506bbb85660ac25af5ddcbbfce",
+      "title": "Origin of replication",
+      "source_url": "https://en.wikipedia.org/wiki/Origin_of_replication",
+      "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+      "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+      "contributors_history_url": "https://en.wikipedia.org/wiki/Origin_of_replication?action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+        "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "824676688_2122-2925",
+      "text": "The genome of E. coli consists of a single circular DNA molecule of approximately 4.6 x 10 nucleotide pairs . DNA replication typically begins at a single origin of replication . In E. coli , the origin of replication -- oriC -- consists of three A -- T rich 13 - mer repeats and four 9 - mer repeats . Ten to 20 monomers of the replication initiator protein DnaA bind to the 9 - mer repeats , and the DNA coils around this protein complex forming a protein core . This coiling stimulates the AT rich region in the 13 - mer sequence to unwind , allowing the helicase loader DnaC to load the replicative helicase DnaB to each of the two unwound DNA strands . The helicase DnaB forms the basis of the primosome , a complex of enzymes to which DNA polymerase III is recruited before replication can occur .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "824676688_2122-2925",
+        "parent_text_sha256": "e0fb04c04e800cbba6da1ec6b9126c68b0d34c506bbb85660ac25af5ddcbbfce",
+        "passage_id": "824676688_2122-2925",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 221,
+          "end": 803,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "e0fb04c04e800cbba6da1ec6b9126c68b0d34c506bbb85660ac25af5ddcbbfce",
+        "title": "Origin of replication",
+        "source_url": "https://en.wikipedia.org/wiki/Origin_of_replication",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Origin_of_replication?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ]
+}

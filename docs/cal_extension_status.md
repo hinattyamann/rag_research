@@ -1,8 +1,8 @@
 # Cal追加収集の自動実行状況
 
-更新: 2026-11-08T08:01:26.984212+00:00
+更新: 2026-11-09T01:43:30.718499+00:00
 
-工程: **failed** / Batch: batch_02
+工程: **recovery_validated** / Batch: batch_02
 
 予定: 英語60問・日本語60問、計120問。20問ずつの日英Batchを3回。
 収集終了目安: 2026-11-14 23:59 JST。結果の向き/有意差による追加・停止はしない。
@@ -10,7 +10,7 @@
 | Batch | 初回成功 | 初回失敗 | 書換え成功 | 書換え失敗 | 処理中等 | 採点封印 | 資料 |
 |---|---:|---:|---:|---:|---:|---|---|
 | batch_01 | 40 | 0 | 38 | 2 | 0 | True | True |
-| batch_02 | 40 | 0 | 40 | 0 | 0 | True | False |
+| batch_02 | 40 | 0 | 40 | 0 | 0 | True | True |
 | batch_03 | 0 | 0 | 0 | 0 | 0 | False | False |
 
 選定数、生成成功数、完全比較数は別。拒否/Token超過を0や成功へ補完しない。
@@ -18,5 +18,3 @@ Git反映は開始・5問ずつの日英処理完了・工程切替・停止・�
 CLIは匿名採点のときだけ使用。収集/集計/描画/Git反映では起動しない。
 実データ・図表・説明・検証入口: papers/iciae2027/materials/cal_extension_v1/。
 既存Main/Cal/原稿は別管理で保持。ノートPCはこのBranchをFetchして確認し、収集を二重起動しない。
-
-停止理由: ValueError: Subprocess failed; preserve receipt/log: /home/uchida/デスクトップ/code/rag_research/.tools/cal-extension-v1/batch_02/steps/export.json

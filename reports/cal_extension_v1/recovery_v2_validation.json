@@ -1,0 +1,76 @@
+{
+  "verified_at_utc": "2026-11-09T01:41:39.980605+00:00",
+  "failure_at_utc": "2026-11-08T08:01:26.870397+00:00",
+  "failure_stage": "batch_02/offline_writing_export",
+  "cause": "Original English Gold parent ID was split into two child passages; exporter only indexed child IDs",
+  "no_data_lost": true,
+  "new_inference_calls_during_repair": 0,
+  "new_annotation_calls_during_repair": 0,
+  "existing_research_and_annotation_files_rechecked_unchanged": 4293,
+  "original_main_cal_files_rechecked_unchanged": 2785,
+  "original_controller_config_and_protocols_unchanged": true,
+  "condition_sha256": "c01efa41304147a6973f401a352b4cfaf8bc23c289e32fec680a6e57d3b4d5cd",
+  "all_preselected_sources_preflight": {
+    "selected_qa_checked": {
+      "en": 60,
+      "ja": 60
+    },
+    "gold_ids_checked": {
+      "en": 60,
+      "ja": 98
+    },
+    "reconstructed_parents": [
+      {
+        "language": "en",
+        "passage_id": "830268006_10409-12873",
+        "sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+        "child_passage_ids": [
+          "21285419333013253506675306384_0-1820",
+          "21285419333013253506675306384_1820-2464"
+        ]
+      }
+    ],
+    "new_inference_calls": 0,
+    "new_annotation_calls": 0
+  },
+  "batch_02_offline_verification": {
+    "status": "passed",
+    "qa": 40,
+    "strata": 2,
+    "comparable_qa": {
+      "cal/en": 14,
+      "cal/ja": 14
+    },
+    "planned_trials": 357,
+    "candidate_stage_assignments": 80,
+    "annotation_jobs": 40,
+    "policy_slots": 440,
+    "observed_policy_outcomes": 437,
+    "cases": 2,
+    "artifact_files": 510,
+    "semantic_audit": "recomputed",
+    "route_costs": "recomputed",
+    "published_tables": "matched",
+    "bootstrap": "original implementation/version/seed/replicates and exact result retained; not regenerated with a different RNG",
+    "original_run_access_required": false,
+    "new_inference_calls": 0,
+    "new_annotation_calls": 0,
+    "all_data_reads_confined_to_materials": true
+  },
+  "protected_snapshot_sha256": "4a93b1c9b59ffdcd84d052616de25ce05a0decbf4695c3e8237c58906eab443e",
+  "implementation_scope": "Derived writing export, embedded offline parent verifier, explicit separate recovery config; frozen inference and grading unchanged",
+  "failed_receipt_and_elapsed_time_preserved": true,
+  "remaining_qa": {
+    "en": 20,
+    "ja": 20
+  },
+  "service_restarted": false,
+  "validation": {
+    "regression_tests_passed": 18,
+    "full_tests_passed": 1425,
+    "full_tests_skipped": 6,
+    "full_test_seconds": 44.46,
+    "ruff": "passed",
+    "sandbox_socket_limitation_resolved_by_host_full_run": true
+  }
+}

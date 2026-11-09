@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "reliable",
+      "reason": "書類作成・提出手続・相談という主要業務と、不服申立て代理に必要な特定行政書士の条件を説明している。3000種類という補足も含め、実使用文書e0001が直接支持しており、Referenceのみに依存していない。重大な誤りや条件の脱落はない。",
+      "evidence": ["e0001"],
+      "essential_points": "官公署提出書類や権利義務・事実証明に関する書類の作成、提出の代理・代行、関連相談を説明し、不服申立て代理には特定行政書士の付記が必要という条件を示す。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "実使用文書e0007の地方別一覧を集計すれば43県、都道府県全体では47と求められる。総数の明記がないという説明自体は正しいが、それを理由に数字を答えられないとする結論は不適切で、質問への回答を欠く。Reference側のe0011は内訳を明記するが、判定は実使用一覧からの集計でも成立する。",
+      "evidence": ["e0007", "e0011"],
+      "essential_points": "県のみなら43県、都・道・府も含む意味なら47都道府県と、数と数える範囲を示す。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a002": {
+      "label": "unreliable",
+      "reason": "実使用文書e0013には、濡らして細かく切った新聞紙で埃の飛散を抑えて集める方法や、掃除機・雑巾・モップ・空気清浄機による除去方法がある。Referenceだけでなく実使用Contextに回答材料があり、情報不足として全面的に拒否するのは誤りである。",
+      "evidence": ["e0013"],
+      "essential_points": "埃を舞い散らせずに集める工夫と、床・高所・空気中などの状況に応じた具体的な除去方法を説明する。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "実使用文書には1927年の除夜の鐘中継、日本のFM実験放送から本放送への推移、デジタル放送やネット配信の開始時期があり、範囲を明示して歴史を説明できる。候補はその説明を一切せず、必須要点を欠く。Referenceの初期史は実使用Contextで確認できず、通史として十分かは不確かなので、情報不足という判断自体の正誤と支持はuncertainとする。",
+      "evidence": ["e0019", "e0021", "e0022"],
+      "essential_points": "ラジオ放送の歴史を、年代と出来事を挙げて説明する。実使用資料で説明可能な中継放送、FM放送、デジタル放送・ネット配信の変遷を示し、資料で確認できない範囲を明示する。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "uncertain",
+        "context_support": "uncertain"
+      }
+    }
+  }
+}

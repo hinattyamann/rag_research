@@ -1,0 +1,557 @@
+{
+  "version": "fixed-v23-cal-extension-v1",
+  "batch_id": "batch_02",
+  "configs": {
+    "en": {
+      "schema_version": 1,
+      "study_version": "fixed-v23-extension-batch_02-en",
+      "purpose": "phase11-bilingual-calibration-candidate",
+      "status": "candidate_not_frozen",
+      "baseline_config": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+      "prompts": "configs/phase11_semantic_prompts_en_v12.yaml",
+      "quality_rubric_version": "order-quality-pilot-v1",
+      "data": {
+        "split": "development",
+        "answerable_only": true,
+        "record_ids": [
+          "clapnq:c508d78:train:6396820347469316986:answerable",
+          "clapnq:c508d78:train:-1729923543484435760:answerable",
+          "clapnq:c508d78:train:-7470274770113344150:answerable",
+          "clapnq:c508d78:train:-6479921317466279753:answerable",
+          "clapnq:c508d78:train:-9157509020448635605:answerable",
+          "clapnq:c508d78:train:8580041794137858963:answerable",
+          "clapnq:c508d78:dev:-6581378808316587097:answerable",
+          "clapnq:c508d78:dev:-3590849776680080342:answerable",
+          "clapnq:c508d78:train:3585604837364348037:answerable",
+          "clapnq:c508d78:train:273836563771446299:answerable",
+          "clapnq:c508d78:train:4046273788012018858:answerable",
+          "clapnq:c508d78:train:5062340874389163810:answerable",
+          "clapnq:c508d78:train:2965302259064024817:answerable",
+          "clapnq:c508d78:train:6438698312001115417:answerable",
+          "clapnq:c508d78:train:6007917538066280414:answerable",
+          "clapnq:c508d78:train:8031154658741289819:answerable",
+          "clapnq:c508d78:train:4195409782983409749:answerable",
+          "clapnq:c508d78:train:-8024366706810351468:answerable",
+          "clapnq:c508d78:train:-8402235505568929376:answerable",
+          "clapnq:c508d78:train:4811930485529804655:answerable"
+        ]
+      },
+      "identity_manifest": "data/manifests/phase11_gpu_generation_manifest.json",
+      "auxiliary_runtime": {
+        "context_tokens": 12288,
+        "temperature": 0.2,
+        "seed": 42,
+        "threads": 6,
+        "batch_tokens": 128,
+        "repack": false,
+        "timeout_seconds": 1200,
+        "startup_timeout_seconds": 120
+      },
+      "tasks": {
+        "extract_claims": {
+          "max_output_tokens": 3072
+        },
+        "verify_claims": {
+          "max_output_tokens": 6144
+        },
+        "rewrite_answer": {
+          "max_output_tokens": 6144
+        }
+      },
+      "trials": {
+        "order_conditions": [
+          "original",
+          "reversed",
+          "shuffle_1",
+          "shuffle_2",
+          "shuffle_3"
+        ],
+        "shuffle_seed": 42,
+        "same_order_total_trials": 5,
+        "share_original_first_trial": true,
+        "execution_order_seed": 43,
+        "generation_seed_policy": "same_fixed_seed_for_every_trial",
+        "deduplicate_order_permutations": true,
+        "repeated_prompt_result_cache": false,
+        "regenerate_claims_per_trial": false,
+        "regenerate_answer_per_trial": false,
+        "repack_or_truncate_per_trial": false
+      },
+      "decision": {
+        "score": "supported_claims_divided_by_fixed_claims",
+        "threshold": 0.7,
+        "accept_when": "score_greater_than_or_equal_to_threshold",
+        "unscorable_action": "keep_initial_answer_with_separate_fallback_status",
+        "no_claims_score": null,
+        "sensitivity_thresholds": [
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "bare_refusal_policy": "rewrite_once"
+      },
+      "rewrite": {
+        "input_document_order": "original_used_context",
+        "include_initial_answer": true,
+        "include_judge_feedback": false,
+        "reuse_one_candidate_across_trials": true,
+        "retrieve_again": false,
+        "maximum_answer_candidates": 2,
+        "failure_action": "keep_initial_answer_with_rewrite_failed_status"
+      },
+      "errors": {
+        "automatic_retries": 0,
+        "input_overflow_action": "record_error_without_truncating",
+        "preserve_failed_attempts": true,
+        "resume_only_missing_trials": true,
+        "reject_protocol_hash_mismatch": true
+      },
+      "quality": {
+        "annotator": "Codex_AI",
+        "human_reviewed": false,
+        "internal_judge_is_quality_truth": false,
+        "llm_labels_are_final": false,
+        "hide": [
+          "condition",
+          "score",
+          "decision",
+          "answer_stage",
+          "judge_claims",
+          "judge_reasons"
+        ],
+        "outcomes": [
+          "reliable",
+          "unreliable",
+          "indeterminate"
+        ],
+        "save_reasons_and_evidence": true
+      },
+      "costs": {
+        "separate_collection_route_and_offline_costs": true,
+        "charge_reused_candidates_to_each_operational_route": true
+      },
+      "output_constraints": "thinking_json_passage_ids_v3",
+      "auxiliary_model_manifest": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+      "sampling": {
+        "version": "auxiliary-sampling-v1",
+        "top_k": 20,
+        "top_p": 0.95,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "repeat_last_n": 64,
+        "reasoning_budget_tokens": 4096,
+        "final_json_grammar": true,
+        "final_json_grammar_mode": "closing_tag_root_v3",
+        "reasoning_prefill_mode": "chatml_think_suffix_v1"
+      },
+      "execution": {
+        "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+        "gpu_layers": 99,
+        "device": "CUDA0",
+        "require_full_offload": true
+      },
+      "phase12_allowed": false,
+      "execution_scope": "fixed_v23_calibration_v1",
+      "language": "en",
+      "assets": "configs/phase11_bilingual_assets_v2.json",
+      "baseline_prompts": "configs/phase11_bilingual_initial_en_v1.yaml",
+      "verification_mode": "claimwise-v1",
+      "main_limits": {
+        "maximum_completion_attempts": 1660,
+        "maximum_new_qa_per_stage_session": 5,
+        "stop_on_any_task_error": true,
+        "automatic_refill": false
+      },
+      "analysis_split": "calibration"
+    },
+    "ja": {
+      "schema_version": 1,
+      "study_version": "fixed-v23-extension-batch_02-ja",
+      "purpose": "phase11-bilingual-calibration-candidate",
+      "status": "candidate_not_frozen",
+      "baseline_config": "configs/phase11_bilingual_baseline_graph_off_v3.yaml",
+      "prompts": "configs/phase11_semantic_prompts_ja_v12.yaml",
+      "quality_rubric_version": "order-quality-pilot-v1",
+      "data": {
+        "split": "calibration",
+        "answerable_only": true,
+        "record_ids": [
+          "whrja:02e85c8:answered:949",
+          "whrja:02e85c8:answered:624",
+          "whrja:02e85c8:answered:184",
+          "whrja:02e85c8:answered:748",
+          "whrja:02e85c8:answered:753",
+          "whrja:02e85c8:answered:643",
+          "whrja:02e85c8:answered:890",
+          "whrja:02e85c8:answered:1026",
+          "whrja:02e85c8:answered:946",
+          "whrja:02e85c8:answered:388",
+          "whrja:02e85c8:answered:345",
+          "whrja:02e85c8:answered:483",
+          "whrja:02e85c8:answered:918",
+          "whrja:02e85c8:answered:592",
+          "whrja:02e85c8:answered:560",
+          "whrja:02e85c8:answered:822",
+          "whrja:02e85c8:answered:452",
+          "whrja:02e85c8:answered:833",
+          "whrja:02e85c8:answered:545",
+          "whrja:02e85c8:answered:471"
+        ]
+      },
+      "identity_manifest": "data/manifests/phase11_gpu_generation_manifest.json",
+      "auxiliary_runtime": {
+        "context_tokens": 12288,
+        "temperature": 0.2,
+        "seed": 42,
+        "threads": 6,
+        "batch_tokens": 128,
+        "repack": false,
+        "timeout_seconds": 1200,
+        "startup_timeout_seconds": 120
+      },
+      "tasks": {
+        "extract_claims": {
+          "max_output_tokens": 3072
+        },
+        "verify_claims": {
+          "max_output_tokens": 6144
+        },
+        "rewrite_answer": {
+          "max_output_tokens": 6144
+        }
+      },
+      "trials": {
+        "order_conditions": [
+          "original",
+          "reversed",
+          "shuffle_1",
+          "shuffle_2",
+          "shuffle_3"
+        ],
+        "shuffle_seed": 42,
+        "same_order_total_trials": 5,
+        "share_original_first_trial": true,
+        "execution_order_seed": 43,
+        "generation_seed_policy": "same_fixed_seed_for_every_trial",
+        "deduplicate_order_permutations": true,
+        "repeated_prompt_result_cache": false,
+        "regenerate_claims_per_trial": false,
+        "regenerate_answer_per_trial": false,
+        "repack_or_truncate_per_trial": false
+      },
+      "decision": {
+        "score": "supported_claims_divided_by_fixed_claims",
+        "threshold": 0.7,
+        "accept_when": "score_greater_than_or_equal_to_threshold",
+        "unscorable_action": "keep_initial_answer_with_separate_fallback_status",
+        "no_claims_score": null,
+        "sensitivity_thresholds": [
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "bare_refusal_policy": "rewrite_once"
+      },
+      "rewrite": {
+        "input_document_order": "original_used_context",
+        "include_initial_answer": true,
+        "include_judge_feedback": false,
+        "reuse_one_candidate_across_trials": true,
+        "retrieve_again": false,
+        "maximum_answer_candidates": 2,
+        "failure_action": "keep_initial_answer_with_rewrite_failed_status"
+      },
+      "errors": {
+        "automatic_retries": 0,
+        "input_overflow_action": "record_error_without_truncating",
+        "preserve_failed_attempts": true,
+        "resume_only_missing_trials": true,
+        "reject_protocol_hash_mismatch": true
+      },
+      "quality": {
+        "annotator": "Codex_AI",
+        "human_reviewed": false,
+        "internal_judge_is_quality_truth": false,
+        "llm_labels_are_final": false,
+        "hide": [
+          "condition",
+          "score",
+          "decision",
+          "answer_stage",
+          "judge_claims",
+          "judge_reasons"
+        ],
+        "outcomes": [
+          "reliable",
+          "unreliable",
+          "indeterminate"
+        ],
+        "save_reasons_and_evidence": true
+      },
+      "costs": {
+        "separate_collection_route_and_offline_costs": true,
+        "charge_reused_candidates_to_each_operational_route": true
+      },
+      "output_constraints": "thinking_json_passage_ids_v3",
+      "auxiliary_model_manifest": "data/manifests/phase11_auxiliary_qwen35_9b_q6_manifest_v1.json",
+      "sampling": {
+        "version": "auxiliary-sampling-v1",
+        "top_k": 20,
+        "top_p": 0.95,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "repeat_last_n": 64,
+        "reasoning_budget_tokens": 4096,
+        "final_json_grammar": true,
+        "final_json_grammar_mode": "closing_tag_root_v3",
+        "reasoning_prefill_mode": "chatml_think_suffix_v1"
+      },
+      "execution": {
+        "runtime_spec": "configs/lab_cuda_graph_off_runtime_v1.json",
+        "gpu_layers": 99,
+        "device": "CUDA0",
+        "require_full_offload": true
+      },
+      "phase12_allowed": false,
+      "execution_scope": "fixed_v23_calibration_v1",
+      "language": "ja",
+      "assets": "configs/phase11_bilingual_assets_v2.json",
+      "baseline_prompts": "configs/phase11_bilingual_initial_ja_v1.yaml",
+      "verification_mode": "claimwise-v1",
+      "main_limits": {
+        "maximum_completion_attempts": 1660,
+        "maximum_new_qa_per_stage_session": 5,
+        "stop_on_any_task_error": true,
+        "automatic_refill": false
+      },
+      "analysis_split": "calibration"
+    }
+  },
+  "source_splits": {
+    "en": "development",
+    "ja": "calibration"
+  },
+  "original_release_sha256": "2daaff4a8ec97304cf08e82ce47e3881d42be93bf277d8fd5a081b84b14edbb8",
+  "plan_sha256": "1bbbc1b61f0150159093db162473e64d9136e2bdfdec4e74ba790f6f55e67f9f",
+  "selection": {
+    "en": [
+      {
+        "record_id": "clapnq:c508d78:train:6396820347469316986:answerable",
+        "document_group_id": "clapnq-title:easter island",
+        "selection_rank_sha256": "06f37578df7bf0ac8456216459f3536506b3bf800a56a5e22dec35a22a816426"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-1729923543484435760:answerable",
+        "document_group_id": "clapnq-title:great pyramid of giza",
+        "selection_rank_sha256": "07384f81dd38e748a66bb3424298e07fda1f52ba339fe90f6b21a002897048c7"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-7470274770113344150:answerable",
+        "document_group_id": "clapnq-title:colosseum",
+        "selection_rank_sha256": "0743eb4b3a483141488bd7df32acdb99756bf9ac433dd092f0f95ef7a026d60a"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-6479921317466279753:answerable",
+        "document_group_id": "clapnq-title:origin of replication",
+        "selection_rank_sha256": "07558c93d153b4482ffecc9bf46f3b3103c5b9b703a622b91980997b7b9fa697"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-9157509020448635605:answerable",
+        "document_group_id": "clapnq-title:national colours of australia",
+        "selection_rank_sha256": "0762f579fe7d46b7e4d6bff6bc388f8624969c3d0aea445c1e927c64772caa7d"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:8580041794137858963:answerable",
+        "document_group_id": "clapnq-title:highschool of the dead",
+        "selection_rank_sha256": "07b3a7cf5e2344dc19f85dc855da139186bb6f0af09682d4bc60e7baf15fdec3"
+      },
+      {
+        "record_id": "clapnq:c508d78:dev:-6581378808316587097:answerable",
+        "document_group_id": "clapnq-title:subsistence agriculture",
+        "selection_rank_sha256": "07e5cafd4527cad03af20ed340d90a2490e53468dd0bef0010a3f7b36b79091c"
+      },
+      {
+        "record_id": "clapnq:c508d78:dev:-3590849776680080342:answerable",
+        "document_group_id": "clapnq-title:friends",
+        "selection_rank_sha256": "07fc94b00024eff8683a42a0ef381e89900b8bfce1010e5897a9d85d034847af"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:3585604837364348037:answerable",
+        "document_group_id": "clapnq-title:third world",
+        "selection_rank_sha256": "08444382d3e7782628690582a83cc3fb6ef54555822ff1804496aa516fa4c8cc"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:273836563771446299:answerable",
+        "document_group_id": "clapnq-title:think globally, act locally",
+        "selection_rank_sha256": "08448535253a4566e1d75aacd04433b24f77878f279ccc02cc667cc3558ce6ed"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:4046273788012018858:answerable",
+        "document_group_id": "clapnq-title:soviet union in world war ii",
+        "selection_rank_sha256": "08996489aba377776b936984e8f7f90f9bb13be4be11d6420c11358f3cdc1eac"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:5062340874389163810:answerable",
+        "document_group_id": "clapnq-title:above-the-line deduction",
+        "selection_rank_sha256": "08a93c13c4640263b97cee2baec577ff69a5cc4604cc601296dbd3804fba8f38"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:2965302259064024817:answerable",
+        "document_group_id": "clapnq-title:minnesota twins",
+        "selection_rank_sha256": "08d69000dc53ce457e5a26106355051e12d6192151b62693e33ae4469fc944d7"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:6438698312001115417:answerable",
+        "document_group_id": "clapnq-title:constitution of the united kingdom",
+        "selection_rank_sha256": "08ddb8d8203c3a69bc167b810af15bf6fe82685c8bcd4e88b9fb94cc8aeb4136"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:6007917538066280414:answerable",
+        "document_group_id": "clapnq-title:parthenon",
+        "selection_rank_sha256": "08e0ae23b2d933bc112306a59fe9c1aea7bedff63c96bd167a61037df552b57d"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:8031154658741289819:answerable",
+        "document_group_id": "clapnq-title:cell wall",
+        "selection_rank_sha256": "093ef1bb1203cb055598de2bd3d99abbc4616473234c3a66de6528d08006ff54"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:4195409782983409749:answerable",
+        "document_group_id": "clapnq-title:call of duty: black ops iii",
+        "selection_rank_sha256": "094ef4a245dbc078f642c751918f7af81841791d59d54944ee5f59b75fd2214a"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+        "document_group_id": "clapnq-title:the twelve spies",
+        "selection_rank_sha256": "09a75bd0dc18f92c2815994abdc064b33328a8b25f4408221006a7e51435670a"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:-8402235505568929376:answerable",
+        "document_group_id": "clapnq-title:dan scott",
+        "selection_rank_sha256": "09b334895ed4b88b35f78baa090f7e85c54fcbb4a8452e0985d4187059a0574a"
+      },
+      {
+        "record_id": "clapnq:c508d78:train:4811930485529804655:answerable",
+        "document_group_id": "clapnq-title:groundling",
+        "selection_rank_sha256": "09b3ef1819006246b70064cdf11c0ed68496a300fbeb261876bf4d804a78d4c4"
+      }
+    ],
+    "ja": [
+      {
+        "record_id": "whrja:02e85c8:answered:949",
+        "document_group_id": "whrja-group:785610ca4dffb59a68f18cb6",
+        "selection_rank_sha256": "6c889bae639584646b37282e205ed868094a5d8eb4929ba5a3bf1235349d9379"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:624",
+        "document_group_id": "whrja-group:99859055b14d910084a01d43",
+        "selection_rank_sha256": "6dad370ee90eba9f440ce061d47b2bb5ce0bc2b786522ebf335aeab142955099"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:184",
+        "document_group_id": "whrja-group:2ac9ca12e69ae8db0b57b6b5",
+        "selection_rank_sha256": "6ee8e11326db657a83e024c928ce2aef637ed2cb36cc64934f6e5fe5524c02b2"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:748",
+        "document_group_id": "whrja-group:efbe472e789d44eda7d1cc9d",
+        "selection_rank_sha256": "6f821993b793d3cfc338aa129090bcfa6314ed18233142c09fe09d5de8313c93"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:753",
+        "document_group_id": "whrja-group:fd5a2e831e98c1e2a1b40a60",
+        "selection_rank_sha256": "7077e89d2868a95a32bbc82fad4c64ba6735850650cb09acf58ade64450bd76e"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:643",
+        "document_group_id": "whrja-group:3df2f51925de3e1e53b6fe6c",
+        "selection_rank_sha256": "773937b93fbe61ec3809cef5908031c6195609d640501622806adab67d987b8e"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:890",
+        "document_group_id": "whrja-group:b11224474d5342bcb2a82e66",
+        "selection_rank_sha256": "77e7c315e8f70ac46096a47c9c1fbf279d20b927237c5a01f369f1fb822ad7e3"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:1026",
+        "document_group_id": "whrja-group:f21dbb92be55660bde1ba42d",
+        "selection_rank_sha256": "7c06bf6fe367af0fa53fc1b745f94f71d57ea4d5d4547a35c83fe51117d8180d"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:946",
+        "document_group_id": "whrja-group:11ebd271051e2881a050febd",
+        "selection_rank_sha256": "7c40956d587ced5020516be3acb5574e1aaacfd2aa91aa93f1b8ab1306eb7cbd"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:388",
+        "document_group_id": "whrja-group:e353ba8da3d4e2aa4c9d3cae",
+        "selection_rank_sha256": "83a5fd232d0d1df88ebc5f4d151131ae7c59b6fc61b5fe22d9e460fdef499656"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:345",
+        "document_group_id": "whrja-group:29892fc44a4848429aa4c59f",
+        "selection_rank_sha256": "8b93298418cb390b61f786e2dccf1efabc32a072f79d0b291bf0610486de7d78"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:483",
+        "document_group_id": "whrja-group:b565d067079c1ce048ac2b5b",
+        "selection_rank_sha256": "9413877f6eb455dcea2fca4c335397df16dc650df79ab17235f7e98b7c9c4e1a"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:918",
+        "document_group_id": "whrja-group:eeb9ec3713434ba3f3d11b70",
+        "selection_rank_sha256": "95c45fa7d4355f3d7bf75edf46d2615e3e05720527f1d9a536ed6a9af33003f2"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:592",
+        "document_group_id": "whrja-group:90155da32303c0d08524a081",
+        "selection_rank_sha256": "96be99c54bd1cc0a9710a8bf72ad9f06e3655cf0c2abd25d6d71cfc4e914a012"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:560",
+        "document_group_id": "whrja-group:4d96f15938d505bb179b7774",
+        "selection_rank_sha256": "98b902568b6b014f58f5a273071d54f8d70f96ef7f568aa2fb5849d9e5dcb975"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:822",
+        "document_group_id": "whrja-group:ba3ea06c1d8cdcd73d5c8abc",
+        "selection_rank_sha256": "9e0b4c81f63013cdfb1006e2b8c4bb26fcbc4d68e687590576f74f7ef25c0ad6"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:452",
+        "document_group_id": "whrja-group:1cd6fccc3b96603db759660f",
+        "selection_rank_sha256": "a32f05551810d475416b10c8ffb1814b40518b7addc4d31e36ffeb542036833f"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:833",
+        "document_group_id": "whrja-group:9d2e45a2df363590590be536",
+        "selection_rank_sha256": "a4b5b854219543224b2f2fbcbb49486e91e2c9097d6364b28532eb2e01f2bac3"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:545",
+        "document_group_id": "whrja-group:a29bd329dda248cbe5cf8e8a",
+        "selection_rank_sha256": "a8979ef85639a537b04516f46f51dc6de74025e586622047f5ce6e72e1981275"
+      },
+      {
+        "record_id": "whrja:02e85c8:answered:471",
+        "document_group_id": "whrja-group:d37004abcca22f653b631aa1",
+        "selection_rank_sha256": "abe90893e0c9071d9075674f43068699801bdd8b27a7af434e5a7aafb21577e1"
+      }
+    ]
+  },
+  "maximum_calls_per_language": 1660,
+  "session_wall_seconds": 43200,
+  "total_wall_seconds": 259200,
+  "automatic_retries": 0,
+  "purpose": "additional_confirmation_not_tuning",
+  "phase12_allowed": false,
+  "inputs": {
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/cal-extension-authoring-v1/data/manifests/cal_extension_plan_v1.json": "1bbbc1b61f0150159093db162473e64d9136e2bdfdec4e74ba790f6f55e67f9f",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_development/fixed-v23-main-v1/all_annotations.seal.json": "f572ca7427d33b3fdb3f87d29aedf26b19376466ced099970f132cc1e2a6e848",
+    "/home/uchida/デスクトップ/code/rag_research/.tools/worktrees/fixed-v23-study-v1/data/runs/bilingual_calibration/fixed-v23-cal-v1/all_annotations.seal.json": "67902300ef6d2eac951cf89942fdc6d7f3e8f3ab7f4421c85d9176e4ac0848e3"
+  }
+}

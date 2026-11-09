@@ -1,0 +1,731 @@
+{
+  "qa_key": "cal_en_0582e50cbef3f46a26bdcf54",
+  "cohort": "cal",
+  "language": "en",
+  "analysis_role": "cal",
+  "source_qa_split": "development",
+  "record_id": "clapnq:c508d78:train:5062340874389163810:answerable",
+  "document_group_id": "clapnq-title:above-the-line deduction",
+  "qa_source": {
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "gold_passage_ids": [
+      "791074244_984-1834"
+    ],
+    "is_answerable": true,
+    "provided_passage": null,
+    "question": "an above the line deduction refers to a deduction for agi",
+    "record_id": "clapnq:c508d78:train:5062340874389163810:answerable",
+    "reference_answers": [
+      "In the United States tax law, an above-the-line deduction is a deduction that the Internal Revenue Service allows taxpayers to subtract from their gross income in arriving at ``adjusted gross income'', AGI for the taxable year. A taxpayer's gross income minus their above-the-line deductions equals the adjusted gross income. A taxpayer's gross income minus their above-the-line deductions equals the adjusted gross income."
+    ],
+    "research_split": "development",
+    "selected_sentences_by_reference": [
+      [
+        "In the United States tax law , an above - the - line deduction is a deduction that the Internal Revenue Service allows a taxpayer to subtract from his or her gross income in arriving at `` adjusted gross income '' for the taxable year .",
+        "A taxpayer 's gross income minus his or her above - the - line deductions is equal to the adjusted gross income .",
+        "Because these deductions are taken before adjusted gross income is calculated , they are designated `` above - the - line . ''",
+        "Thus , those deductions allowed in computing `` taxable income '' under section 63 of the IRC are `` below the line deductions '' ( thus , adjusted gross income represents `` the line '' ) ."
+      ]
+    ],
+    "source_dataset": "CLAPNQ",
+    "source_id": "5062340874389163810",
+    "source_line_index": 699,
+    "source_record_sha256": "7fef762e29be4878bf0d8519295d93faff3fdf6064c8d6075279d2f8a5350340",
+    "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+    "source_split": "train",
+    "source_title": "Above-the-line deduction"
+  },
+  "source_selection": {
+    "record_id": "clapnq:c508d78:train:5062340874389163810:answerable",
+    "question": "an above the line deduction refers to a deduction for agi",
+    "document_group_id": "clapnq-title:above-the-line deduction"
+  },
+  "question": "an above the line deduction refers to a deduction for agi",
+  "used_documents": [
+    {
+      "passage_id": "791074244_984-1834",
+      "title": "Above-the-line deduction",
+      "text": "In the United States tax law , an above - the - line deduction is a deduction that the Internal Revenue Service allows a taxpayer to subtract from his or her gross income in arriving at `` adjusted gross income '' for the taxable year . These deductions are set forth in Internal Revenue Code Section 62 . A taxpayer 's gross income minus his or her above - the - line deductions is equal to the adjusted gross income . Because these deductions are taken before adjusted gross income is calculated , they are designated `` above - the - line . '' Thus , those deductions allowed in computing `` taxable income '' under section 63 of the IRC are `` below the line deductions '' ( thus , adjusted gross income represents `` the line '' ) . Above - the - line deductions may be more valuable to high income taxpayers than below - the - line deductions .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_984-1834",
+        "parent_text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+        "passage_id": "791074244_984-1834",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 221,
+          "end": 850,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 850
+      }
+    },
+    {
+      "passage_id": "791074244_1963-3402",
+      "title": "Above-the-line deduction",
+      "text": "Above - the - line deductions are generally more advantageous for a high income taxpayer than so - called below - the - line deductions . Below the line deductions are subtracted from a taxpayer 's adjusted gross income . Above - the - line deductions may also be subject to income - sensitive phaseouts or limitations , e.g. , MAGI limits on Tuition and Fees deduction on line 34 . Certain below the line deductions are also phased out for high income taxpayers pursuant to Internal Revenue Code Section 68 . Medical and dental expenses are below the line deductions pursuant to Internal Revenue Code Section 67 . These expenses may only be deducted , however , to the extent they exceed 10 % ( 7.5 % for 65 and over ) of a taxpayer 's AGI . ( Accordingly , if a taxpayer had an adjusted gross income of $100,000 and medical expenses of $11,000 , he or she would only be entitled to deduct the amount by which these expenses exceed 10 % of $100,000 , or $10,000 . Because these expenses exceed $10,000 by $1,000 , the taxpayer is only entitled to a $1,000 deduction . Above - the - line deductions are also preferred because they can be taken by ALL taxpayers regardless of whether they take standard or itemized deductions ( see attached tax ladder ) . Moreover , they are desirable because they reduce adjusted gross income ( AGI ) . Generally , the smaller the AGI , the greater the percentage of deductibility of itemized deductions .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_1963-3402",
+        "parent_text_sha256": "375ecbaae4076a0d36dce5443980dd5f8ef360f1138b00c41f42d7f05c85402f",
+        "passage_id": "791074244_1963-3402",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 390,
+          "end": 1439,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "375ecbaae4076a0d36dce5443980dd5f8ef360f1138b00c41f42d7f05c85402f",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "375ecbaae4076a0d36dce5443980dd5f8ef360f1138b00c41f42d7f05c85402f",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 1439
+      }
+    },
+    {
+      "passage_id": "791074244_866-983",
+      "title": "Above-the-line deduction",
+      "text": "Above the line deductions are also known as `` adjustments to income '' and are shown on lines 23 - 36 of Form 1040 .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_866-983",
+        "parent_text_sha256": "d1d0b497d49e5a77e60e039859e5dd4888772c59802762df68a45a8627e92efe",
+        "passage_id": "791074244_866-983",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 35,
+          "end": 117,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "d1d0b497d49e5a77e60e039859e5dd4888772c59802762df68a45a8627e92efe",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "d1d0b497d49e5a77e60e039859e5dd4888772c59802762df68a45a8627e92efe",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 117
+      }
+    },
+    {
+      "passage_id": "791074244_4342-4456",
+      "title": "Above-the-line deduction",
+      "text": "Internal Revenue Code Sections 62 states that the following items are allowable as above - the - line deductions :",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_4342-4456",
+        "parent_text_sha256": "9ee3187cde649cfea492a1782eea285a95aa2d89fd51ef3421c1c9d421bbaf94",
+        "passage_id": "791074244_4342-4456",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 30,
+          "end": 114,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "9ee3187cde649cfea492a1782eea285a95aa2d89fd51ef3421c1c9d421bbaf94",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "9ee3187cde649cfea492a1782eea285a95aa2d89fd51ef3421c1c9d421bbaf94",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 114
+      }
+    },
+    {
+      "passage_id": "791074244_5631-5846",
+      "title": "Above-the-line deduction",
+      "text": "Adjusted gross income ( AGI ) = Gross Income IRC ( 61 ) ( a ) - Above the line Deductions ( 62 ) ( a ) Taxable income = AGI - Personal Exemptions ( 151 ) - Standard Deduction 63 ( c ) or Itemized Deductions 63 ( d )",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_5631-5846",
+        "parent_text_sha256": "52630262ca1d6bc6f634b7de13b8f87182809a0612b5990b1f95c94aa2b195a1",
+        "passage_id": "791074244_5631-5846",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 71,
+          "end": 215,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "52630262ca1d6bc6f634b7de13b8f87182809a0612b5990b1f95c94aa2b195a1",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "52630262ca1d6bc6f634b7de13b8f87182809a0612b5990b1f95c94aa2b195a1",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 215
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "791074244_984-1834",
+      "title": "Above-the-line deduction",
+      "text": "In the United States tax law , an above - the - line deduction is a deduction that the Internal Revenue Service allows a taxpayer to subtract from his or her gross income in arriving at `` adjusted gross income '' for the taxable year . These deductions are set forth in Internal Revenue Code Section 62 . A taxpayer 's gross income minus his or her above - the - line deductions is equal to the adjusted gross income . Because these deductions are taken before adjusted gross income is calculated , they are designated `` above - the - line . '' Thus , those deductions allowed in computing `` taxable income '' under section 63 of the IRC are `` below the line deductions '' ( thus , adjusted gross income represents `` the line '' ) . Above - the - line deductions may be more valuable to high income taxpayers than below - the - line deductions .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_984-1834",
+        "parent_text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+        "passage_id": "791074244_984-1834",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 221,
+          "end": 850,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 850
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "[791074244_984-1834] An above-the-line deduction refers to a deduction for gross income in the context of the Internal Revenue Service's rules, which are subtracted before calculating adjusted gross income. This deduction is not dependent on adjusted gross income and can be claimed by all taxpayers regardless of their itemized deductions.",
+    "answer_sha256": "6d81c7aaa56c3478a98035766bb3275e5fe5d76545097cf6b819e2adbdf3973c",
+    "quality": {
+      "annotation_id": "Q-23b3a4b6a44e1ead0a9a",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-23b3a4b6a44e1ead0a9a",
+        "candidate_sha256": "33b657efe5f8e1aa56345dc35a45e7acef4fca8722c8afd7d93aa9173a6cbab3",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "Above-the-line deductions are subtracted from gross income to calculate AGI and are available regardless of itemization, subject to applicable eligibility and income limitations.",
+        "reason": "The core definition is supported by actual evidence e0019, and availability regardless of itemization is supported by e0020. However, the unqualified assertion that the deduction is independent of adjusted gross income conflicts with e0020's explicit income-sensitive phaseouts and MAGI limitations. This material error makes the full answer unreliable without relying on reference-only evidence.",
+        "evidence": [
+          {
+            "passage_id": "791074244_984-1834",
+            "quote": "In the United States tax law , an above - the - line deduction is a deduction that the Internal Revenue Service allows a taxpayer to subtract from his or her gross income in arriving at `` adjusted gross income '' for the taxable year . These deductions are set forth in Internal Revenue Code Section 62 . A taxpayer 's gross income minus his or her above - the - line deductions is equal to the adjusted gross income . Because these deductions are taken before adjusted gross income is calculated , they are designated `` above - the - line . '' Thus , those deductions allowed in computing `` taxable income '' under section 63 of the IRC are `` below the line deductions '' ( thus , adjusted gross income represents `` the line '' ) . Above - the - line deductions may be more valuable to high income taxpayers than below - the - line deductions ."
+          },
+          {
+            "passage_id": "791074244_1963-3402",
+            "quote": "Above - the - line deductions are generally more advantageous for a high income taxpayer than so - called below - the - line deductions . Below the line deductions are subtracted from a taxpayer 's adjusted gross income . Above - the - line deductions may also be subject to income - sensitive phaseouts or limitations , e.g. , MAGI limits on Tuition and Fees deduction on line 34 . Certain below the line deductions are also phased out for high income taxpayers pursuant to Internal Revenue Code Section 68 . Medical and dental expenses are below the line deductions pursuant to Internal Revenue Code Section 67 . These expenses may only be deducted , however , to the extent they exceed 10 % ( 7.5 % for 65 and over ) of a taxpayer 's AGI . ( Accordingly , if a taxpayer had an adjusted gross income of $100,000 and medical expenses of $11,000 , he or she would only be entitled to deduct the amount by which these expenses exceed 10 % of $100,000 , or $10,000 . Because these expenses exceed $10,000 by $1,000 , the taxpayer is only entitled to a $1,000 deduction . Above - the - line deductions are also preferred because they can be taken by ALL taxpayers regardless of whether they take standard or itemized deductions ( see attached tax ladder ) . Moreover , they are desirable because they reduce adjusted gross income ( AGI ) . Generally , the smaller the AGI , the greater the percentage of deductibility of itemized deductions ."
+          }
+        ],
+        "elapsed_seconds": 8.50118392900913,
+        "confirmed_at_utc": "2026-11-08T07:36:39.739997+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_02/en/baseline/0582e50cbef3f46a26bdcf54/record.json",
+      "sha256": "72e0cc280ed7df25ee94c280ee9b6e4565a02e57fc0ae2a0f11684c8fa394946"
+    },
+    "copy": "provenance/baselines/cal_en_0582e50cbef3f46a26bdcf54.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "An above-the-line deduction refers to a deduction that the Internal Revenue Service allows a taxpayer to subtract from his or her gross income in arriving at `` adjusted gross income '' [791074244_984-1834]. Adjusted gross income ( AGI ) is calculated as Gross Income minus Above the line Deductions [791074244_5631-5846]. However, these deductions may be subject to income - sensitive phaseouts or limitations , e.g. , MAGI limits [791074244_1963-3402].",
+    "answer_sha256": "30c5a1d359ab0393f8ada4c399ee683ff4f3e186aed1026d89eaa9399f57bc3e",
+    "quality": {
+      "annotation_id": "Q-e93ca540621e79bec03f",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-e93ca540621e79bec03f",
+        "candidate_sha256": "4fedbe999ad2301801fdf7751b348256c357bac32b76cd1a253b4b7b2f2f68c6",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "An above-the-line deduction is subtracted from gross income to calculate adjusted gross income: AGI equals gross income minus above-the-line deductions.",
+        "reason": "Actual context directly supports the definition, the AGI calculation, and the possibility of income-sensitive limitations. The answer addresses the requested relationship accurately and preserves the qualification on limitations. Reference material corroborates the definition but does not substitute for actual-context support.",
+        "evidence": [
+          {
+            "passage_id": "791074244_984-1834",
+            "quote": "In the United States tax law , an above - the - line deduction is a deduction that the Internal Revenue Service allows a taxpayer to subtract from his or her gross income in arriving at `` adjusted gross income '' for the taxable year . These deductions are set forth in Internal Revenue Code Section 62 . A taxpayer 's gross income minus his or her above - the - line deductions is equal to the adjusted gross income . Because these deductions are taken before adjusted gross income is calculated , they are designated `` above - the - line . '' Thus , those deductions allowed in computing `` taxable income '' under section 63 of the IRC are `` below the line deductions '' ( thus , adjusted gross income represents `` the line '' ) . Above - the - line deductions may be more valuable to high income taxpayers than below - the - line deductions ."
+          },
+          {
+            "passage_id": "791074244_1963-3402",
+            "quote": "Above - the - line deductions are generally more advantageous for a high income taxpayer than so - called below - the - line deductions . Below the line deductions are subtracted from a taxpayer 's adjusted gross income . Above - the - line deductions may also be subject to income - sensitive phaseouts or limitations , e.g. , MAGI limits on Tuition and Fees deduction on line 34 . Certain below the line deductions are also phased out for high income taxpayers pursuant to Internal Revenue Code Section 68 . Medical and dental expenses are below the line deductions pursuant to Internal Revenue Code Section 67 . These expenses may only be deducted , however , to the extent they exceed 10 % ( 7.5 % for 65 and over ) of a taxpayer 's AGI . ( Accordingly , if a taxpayer had an adjusted gross income of $100,000 and medical expenses of $11,000 , he or she would only be entitled to deduct the amount by which these expenses exceed 10 % of $100,000 , or $10,000 . Because these expenses exceed $10,000 by $1,000 , the taxpayer is only entitled to a $1,000 deduction . Above - the - line deductions are also preferred because they can be taken by ALL taxpayers regardless of whether they take standard or itemized deductions ( see attached tax ladder ) . Moreover , they are desirable because they reduce adjusted gross income ( AGI ) . Generally , the smaller the AGI , the greater the percentage of deductibility of itemized deductions ."
+          },
+          {
+            "passage_id": "791074244_5631-5846",
+            "quote": "Adjusted gross income ( AGI ) = Gross Income IRC ( 61 ) ( a ) - Above the line Deductions ( 62 ) ( a ) Taxable income = AGI - Personal Exemptions ( 151 ) - Standard Deduction 63 ( c ) or Itemized Deductions 63 ( d )"
+          }
+        ],
+        "elapsed_seconds": 9.001342736999504,
+        "confirmed_at_utc": "2026-11-08T07:36:05.625157+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "An above-the-line deduction refers to a deduction for gross income in the context of the Internal Revenue Service's rules, which are subtracted before calculating adjusted gross income."
+    },
+    {
+      "claim_id": "c2",
+      "text": "This deduction is not dependent on adjusted gross income and can be claimed by all taxpayers regardless of their itemized deductions."
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "An above-the-line deduction refers to a deduction for gross income in the context of the Internal Revenue Service's rules, which are subtracted before calculating adjusted gross income."
+      },
+      {
+        "claim_id": "c2",
+        "text": "This deduction is not dependent on adjusted gross income and can be claimed by all taxpayers regardless of their itemized deductions."
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-v1",
+    "normalized_prose": "An above-the-line deduction refers to a deduction for gross income in the context of the Internal Revenue Service's rules, which are subtracted before calculating adjusted gross income. This deduction is not dependent on adjusted gross income and can be claimed by all taxpayers regardless of their itemized deductions.",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 186
+      },
+      {
+        "start": 186,
+        "end": 319
+      }
+    ]
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "791074244_984-1834",
+          "791074244_1963-3402",
+          "791074244_866-983",
+          "791074244_4342-4456",
+          "791074244_5631-5846"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "791074244_984-1834",
+          "791074244_1963-3402",
+          "791074244_866-983",
+          "791074244_4342-4456",
+          "791074244_5631-5846"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "791074244_984-1834",
+          "791074244_1963-3402",
+          "791074244_866-983",
+          "791074244_4342-4456",
+          "791074244_5631-5846"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "791074244_5631-5846",
+          "791074244_866-983",
+          "791074244_4342-4456",
+          "791074244_1963-3402",
+          "791074244_984-1834"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "791074244_1963-3402",
+          "791074244_5631-5846",
+          "791074244_866-983",
+          "791074244_984-1834",
+          "791074244_4342-4456"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "791074244_4342-4456",
+          "791074244_5631-5846",
+          "791074244_984-1834",
+          "791074244_866-983",
+          "791074244_1963-3402"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "791074244_5631-5846",
+          "791074244_4342-4456",
+          "791074244_866-983",
+          "791074244_1963-3402",
+          "791074244_984-1834"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "791074244_984-1834",
+          "791074244_1963-3402",
+          "791074244_866-983",
+          "791074244_4342-4456",
+          "791074244_5631-5846"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "791074244_984-1834",
+          "791074244_1963-3402",
+          "791074244_866-983",
+          "791074244_4342-4456",
+          "791074244_5631-5846"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "en",
+    "record_id": "clapnq:c508d78:train:5062340874389163810:answerable",
+    "document_group_id": "clapnq-title:above-the-line deduction",
+    "comparable": true,
+    "increment": 0.6,
+    "partial_pair_increment_exploratory": 0.6,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 6,
+      "rate": 0.6
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_02/en/report.private.json",
+    "sha256": "ad96796d42ea5a69f9baa85c8ebb70cd79b573bb674adb30f7d6c32f80875d47"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "791074244_1963-3402",
+      "text": "Above - the - line deductions are generally more advantageous for a high income taxpayer than so - called below - the - line deductions . Below the line deductions are subtracted from a taxpayer 's adjusted gross income . Above - the - line deductions may also be subject to income - sensitive phaseouts or limitations , e.g. , MAGI limits on Tuition and Fees deduction on line 34 . Certain below the line deductions are also phased out for high income taxpayers pursuant to Internal Revenue Code Section 68 . Medical and dental expenses are below the line deductions pursuant to Internal Revenue Code Section 67 . These expenses may only be deducted , however , to the extent they exceed 10 % ( 7.5 % for 65 and over ) of a taxpayer 's AGI . ( Accordingly , if a taxpayer had an adjusted gross income of $100,000 and medical expenses of $11,000 , he or she would only be entitled to deduct the amount by which these expenses exceed 10 % of $100,000 , or $10,000 . Because these expenses exceed $10,000 by $1,000 , the taxpayer is only entitled to a $1,000 deduction . Above - the - line deductions are also preferred because they can be taken by ALL taxpayers regardless of whether they take standard or itemized deductions ( see attached tax ladder ) . Moreover , they are desirable because they reduce adjusted gross income ( AGI ) . Generally , the smaller the AGI , the greater the percentage of deductibility of itemized deductions .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_1963-3402",
+        "parent_text_sha256": "375ecbaae4076a0d36dce5443980dd5f8ef360f1138b00c41f42d7f05c85402f",
+        "passage_id": "791074244_1963-3402",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 390,
+          "end": 1439,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "375ecbaae4076a0d36dce5443980dd5f8ef360f1138b00c41f42d7f05c85402f",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "791074244_4342-4456",
+      "text": "Internal Revenue Code Sections 62 states that the following items are allowable as above - the - line deductions :",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_4342-4456",
+        "parent_text_sha256": "9ee3187cde649cfea492a1782eea285a95aa2d89fd51ef3421c1c9d421bbaf94",
+        "passage_id": "791074244_4342-4456",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 30,
+          "end": 114,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "9ee3187cde649cfea492a1782eea285a95aa2d89fd51ef3421c1c9d421bbaf94",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "791074244_5631-5846",
+      "text": "Adjusted gross income ( AGI ) = Gross Income IRC ( 61 ) ( a ) - Above the line Deductions ( 62 ) ( a ) Taxable income = AGI - Personal Exemptions ( 151 ) - Standard Deduction 63 ( c ) or Itemized Deductions 63 ( d )",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_5631-5846",
+        "parent_text_sha256": "52630262ca1d6bc6f634b7de13b8f87182809a0612b5990b1f95c94aa2b195a1",
+        "passage_id": "791074244_5631-5846",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 71,
+          "end": 215,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "52630262ca1d6bc6f634b7de13b8f87182809a0612b5990b1f95c94aa2b195a1",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "791074244_866-983",
+      "text": "Above the line deductions are also known as `` adjustments to income '' and are shown on lines 23 - 36 of Form 1040 .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_866-983",
+        "parent_text_sha256": "d1d0b497d49e5a77e60e039859e5dd4888772c59802762df68a45a8627e92efe",
+        "passage_id": "791074244_866-983",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 35,
+          "end": 117,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "d1d0b497d49e5a77e60e039859e5dd4888772c59802762df68a45a8627e92efe",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "791074244_984-1834",
+      "text": "In the United States tax law , an above - the - line deduction is a deduction that the Internal Revenue Service allows a taxpayer to subtract from his or her gross income in arriving at `` adjusted gross income '' for the taxable year . These deductions are set forth in Internal Revenue Code Section 62 . A taxpayer 's gross income minus his or her above - the - line deductions is equal to the adjusted gross income . Because these deductions are taken before adjusted gross income is calculated , they are designated `` above - the - line . '' Thus , those deductions allowed in computing `` taxable income '' under section 63 of the IRC are `` below the line deductions '' ( thus , adjusted gross income represents `` the line '' ) . Above - the - line deductions may be more valuable to high income taxpayers than below - the - line deductions .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_984-1834",
+        "parent_text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+        "passage_id": "791074244_984-1834",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 221,
+          "end": 850,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "791074244_984-1834": {
+      "embedding_token_budget": 512,
+      "language": "en",
+      "parent_passage_id": "791074244_984-1834",
+      "parent_text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+      "passage_id": "791074244_984-1834",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 221,
+        "end": 850,
+        "start": 0
+      },
+      "source_dataset": "CLAPNQ",
+      "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+      "text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+      "title": "Above-the-line deduction",
+      "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+      "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+      "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+      "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+        "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "791074244_984-1834",
+      "text": "In the United States tax law , an above - the - line deduction is a deduction that the Internal Revenue Service allows a taxpayer to subtract from his or her gross income in arriving at `` adjusted gross income '' for the taxable year . These deductions are set forth in Internal Revenue Code Section 62 . A taxpayer 's gross income minus his or her above - the - line deductions is equal to the adjusted gross income . Because these deductions are taken before adjusted gross income is calculated , they are designated `` above - the - line . '' Thus , those deductions allowed in computing `` taxable income '' under section 63 of the IRC are `` below the line deductions '' ( thus , adjusted gross income represents `` the line '' ) . Above - the - line deductions may be more valuable to high income taxpayers than below - the - line deductions .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "791074244_984-1834",
+        "parent_text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+        "passage_id": "791074244_984-1834",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 221,
+          "end": 850,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "8b2c78db6e3aae9584721755a3da704e3a3b291f0bbe548d5ca0ab925d39d83b",
+        "title": "Above-the-line deduction",
+        "source_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Above-the-line_deduction?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ]
+}

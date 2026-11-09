@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "reliable",
+      "reason": "Actual-context evidence e0002 supports every claim: Abby witnessed the shooting, sent accusations, and told Lucas, who subsequently attacked Dan and accused him of killing Keith. The affirmative answer satisfies the question without requiring reference-only material.",
+      "evidence": ["e0002"],
+      "essential_points": "Yes. Abby witnessed the shooting and told Lucas, who confronted Dan about killing Keith.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "The blanket refusal omits information available in the actual context. Evidence e0007 supplies the later events identified by the reference: the group visits a mall and police station before reaching a supposedly safe elementary school. Actual evidence e0008 additionally establishes that the manga remained unfinished, allowing a qualified answer about its ending.",
+      "evidence": ["e0007", "e0008"],
+      "essential_points": "Describe the group's eventual arrival at a supposedly safe elementary school after the mall and police station; qualify that the manga remained unfinished.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "fail"
+      }
+    },
+    "a002": {
+      "label": "unreliable",
+      "reason": "Actual evidence supports some background about origin lengths, initiation proteins, and multiple origins, but none supports the asserted hydrogen-bond explanation, base complementarity, or AT-specific recognition. The answer does not explain AT-rich-region unwinding. Reference-only evidence e0018 describes that unwinding and subsequent helicase loading, but cannot establish actual-context support. The supplied evidence does not resolve the correctness of every additional biochemical assertion.",
+      "evidence": ["e0013", "e0016", "e0017", "e0018"],
+      "essential_points": "Explain the relationship between AT richness, origin unwinding, and initiation, rather than merely describing origin length or multiplicity.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "uncertain",
+        "context_support": "fail"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "The core definition is supported by actual evidence e0019, and availability regardless of itemization is supported by e0020. However, the unqualified assertion that the deduction is independent of adjusted gross income conflicts with e0020's explicit income-sensitive phaseouts and MAGI limitations. This material error makes the full answer unreliable without relying on reference-only evidence.",
+      "evidence": ["e0019", "e0020"],
+      "essential_points": "Above-the-line deductions are subtracted from gross income to calculate AGI and are available regardless of itemization, subject to applicable eligibility and income limitations.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    }
+  }
+}

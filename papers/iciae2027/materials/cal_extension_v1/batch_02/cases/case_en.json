@@ -1,0 +1,1377 @@
+{
+  "case_id": "case_en",
+  "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+  "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+  "language": "en",
+  "cohort": "cal",
+  "input_path": "inputs/cal_en_20ed6e9746469dc526c32bb0.json",
+  "post_outcome_explanatory_selection": true,
+  "selection_rule": "First lexicographic QA with order variation if any, otherwise first selected QA; not a frequency sample",
+  "trials": [
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "trial_id": "repeat_3",
+      "document_ids": [
+        "788644867_6464-6858",
+        "827918213_5348-6213",
+        "788644867_1309-1972",
+        "788644867_6859-7260",
+        "827918213_7256-8456"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "20ed6e9746469dc526c32bb0/repeat_3.json",
+      "json_schema_sha256": "495b84a6c89bb6e210ffc5d0b9e15fc05abeba01fe2fbee7bb2acecc9b632a63",
+      "result_sha256": "d9315691b24a9cabf3096cd9c667f9e5a49342558cd8cc2fa5511e589bd492c0",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "According to the passages, God made the Israelites wander in the desert for 40 years as a punishment for their lack of faith."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The Israelites refused to enter the Promised Land after the spies' report, saying it was inhabited by giants and too difficult to conquer."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This disbelief in God's ability to help them resulted in a decree that the entire generation would wander in the wilderness until they died, except for Joshua and Caleb who had brought back a positive report."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passages 788644867_6464-6858 and 827918213_5348-6213 confirm God decreed 40 years wandering due to lack of faith/unwillingness.",
+          "evidence": [
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            },
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources attribute the 'giants' report to spies, not Israelites who refused.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Passages 788644867_1309-1972 and 788644867_6464-6858 confirm disbelief caused the decree, affecting the generation except Joshua and Caleb who reported.",
+          "evidence": [
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            },
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5753,
+        "output_tokens": 11711,
+        "elapsed_seconds": 223.166872765054,
+        "generation_seconds": 223.10929961805232,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4242,
+          "elapsed_seconds": 80.76918239798397,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4178,
+          "elapsed_seconds": 79.62228903407231,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1925,
+          "output_tokens": 3291,
+          "elapsed_seconds": 62.77540133299772,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "d9315691b24a9cabf3096cd9c667f9e5a49342558cd8cc2fa5511e589bd492c0",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "trial_id": "repeat_2",
+      "document_ids": [
+        "788644867_6464-6858",
+        "827918213_5348-6213",
+        "788644867_1309-1972",
+        "788644867_6859-7260",
+        "827918213_7256-8456"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "20ed6e9746469dc526c32bb0/repeat_2.json",
+      "json_schema_sha256": "495b84a6c89bb6e210ffc5d0b9e15fc05abeba01fe2fbee7bb2acecc9b632a63",
+      "result_sha256": "052a46b7aa4b701a352531f6b112320481cacc0c65c5a4138a42fc6594aa8abe",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "According to the passages, God made the Israelites wander in the desert for 40 years as a punishment for their lack of faith."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The Israelites refused to enter the Promised Land after the spies' report, saying it was inhabited by giants and too difficult to conquer."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This disbelief in God's ability to help them resulted in a decree that the entire generation would wander in the wilderness until they died, except for Joshua and Caleb who had brought back a positive report."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passages 788644867_6464-6858 and 827918213_5348-6213 confirm God decreed 40 years wandering due to lack of faith/unwillingness.",
+          "evidence": [
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            },
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources attribute the 'giants' report to spies, not Israelites who refused.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Passages 788644867_1309-1972 and 788644867_6464-6858 confirm disbelief caused the decree, affecting the generation except Joshua and Caleb who reported.",
+          "evidence": [
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            },
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5753,
+        "output_tokens": 11711,
+        "elapsed_seconds": 223.13638596981764,
+        "generation_seconds": 223.09274261409882,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4242,
+          "elapsed_seconds": 80.8137485239422,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4178,
+          "elapsed_seconds": 79.60690642090049,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1925,
+          "output_tokens": 3291,
+          "elapsed_seconds": 62.71573102497496,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "052a46b7aa4b701a352531f6b112320481cacc0c65c5a4138a42fc6594aa8abe",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "trial_id": "original",
+      "document_ids": [
+        "788644867_6464-6858",
+        "827918213_5348-6213",
+        "788644867_1309-1972",
+        "788644867_6859-7260",
+        "827918213_7256-8456"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "20ed6e9746469dc526c32bb0/original.json",
+      "json_schema_sha256": "495b84a6c89bb6e210ffc5d0b9e15fc05abeba01fe2fbee7bb2acecc9b632a63",
+      "result_sha256": "c3ffce1bcd793957578a3f35266180374acf9822883d3092854671b3e39dd156",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "According to the passages, God made the Israelites wander in the desert for 40 years as a punishment for their lack of faith."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The Israelites refused to enter the Promised Land after the spies' report, saying it was inhabited by giants and too difficult to conquer."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This disbelief in God's ability to help them resulted in a decree that the entire generation would wander in the wilderness until they died, except for Joshua and Caleb who had brought back a positive report."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passages 788644867_6464-6858 and 827918213_5348-6213 confirm God decreed 40 years wandering due to lack of faith/unwillingness.",
+          "evidence": [
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            },
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources attribute the 'giants' report to spies, not Israelites who refused.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Passages 788644867_1309-1972 and 788644867_6464-6858 confirm disbelief caused the decree, affecting the generation except Joshua and Caleb who reported.",
+          "evidence": [
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            },
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5753,
+        "output_tokens": 11711,
+        "elapsed_seconds": 223.10307240101974,
+        "generation_seconds": 223.07068074890412,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4242,
+          "elapsed_seconds": 80.76276208204217,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4178,
+          "elapsed_seconds": 79.61860436899588,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1925,
+          "output_tokens": 3291,
+          "elapsed_seconds": 62.7217059499817,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "c3ffce1bcd793957578a3f35266180374acf9822883d3092854671b3e39dd156",
+      "shared_original_not_two_calls": true
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "trial_id": "shuffle_1",
+      "document_ids": [
+        "788644867_6464-6858",
+        "827918213_7256-8456",
+        "788644867_1309-1972",
+        "827918213_5348-6213",
+        "788644867_6859-7260"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "20ed6e9746469dc526c32bb0/shuffle_1.json",
+      "json_schema_sha256": "495b84a6c89bb6e210ffc5d0b9e15fc05abeba01fe2fbee7bb2acecc9b632a63",
+      "result_sha256": "1189d2824e928a8f03199177c43c25e17bcfef3903a9d2a900e3a201336dc88b",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "According to the passages, God made the Israelites wander in the desert for 40 years as a punishment for their lack of faith."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The Israelites refused to enter the Promised Land after the spies' report, saying it was inhabited by giants and too difficult to conquer."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This disbelief in God's ability to help them resulted in a decree that the entire generation would wander in the wilderness until they died, except for Joshua and Caleb who had brought back a positive report."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passages 827918213_5348-6213 and 788644867_1309-1972 explicitly link the 40-year wandering to punishment for lack of faith.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            },
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Sources 5348-6213 and 1309-1972 confirm refusal after report citing giants and impossibility.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            },
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Passages 788644867_1309-1972 and 788644867_6464-6858 confirm the disbelief caused the decree, the wandering until death, and the exception for Joshua and Caleb.",
+          "evidence": [
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            },
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5753,
+        "output_tokens": 12696,
+        "elapsed_seconds": 241.76705734804273,
+        "generation_seconds": 241.73512926208787,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4238,
+          "elapsed_seconds": 80.65708937705494,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4214,
+          "elapsed_seconds": 80.31023082602769,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1925,
+          "output_tokens": 4244,
+          "elapsed_seconds": 80.79973714496009,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "1189d2824e928a8f03199177c43c25e17bcfef3903a9d2a900e3a201336dc88b",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "trial_id": "repeat_5",
+      "document_ids": [
+        "788644867_6464-6858",
+        "827918213_5348-6213",
+        "788644867_1309-1972",
+        "788644867_6859-7260",
+        "827918213_7256-8456"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "20ed6e9746469dc526c32bb0/repeat_5.json",
+      "json_schema_sha256": "495b84a6c89bb6e210ffc5d0b9e15fc05abeba01fe2fbee7bb2acecc9b632a63",
+      "result_sha256": "07c14d1f489c1e4ecc04cadf35e947bac8786e24342648990d57d2bd658aa531",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "According to the passages, God made the Israelites wander in the desert for 40 years as a punishment for their lack of faith."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The Israelites refused to enter the Promised Land after the spies' report, saying it was inhabited by giants and too difficult to conquer."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This disbelief in God's ability to help them resulted in a decree that the entire generation would wander in the wilderness until they died, except for Joshua and Caleb who had brought back a positive report."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passages 788644867_6464-6858 and 827918213_5348-6213 confirm God decreed 40 years wandering due to lack of faith/unwillingness.",
+          "evidence": [
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            },
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources attribute the 'giants' report to spies, not Israelites who refused.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Passages 788644867_1309-1972 and 788644867_6464-6858 confirm disbelief caused the decree, affecting the generation except Joshua and Caleb who reported.",
+          "evidence": [
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            },
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5753,
+        "output_tokens": 11711,
+        "elapsed_seconds": 223.09283405495808,
+        "generation_seconds": 223.06132907199208,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4242,
+          "elapsed_seconds": 80.73884121899027,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4178,
+          "elapsed_seconds": 79.61742238001898,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1925,
+          "output_tokens": 3291,
+          "elapsed_seconds": 62.73657045594882,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "07c14d1f489c1e4ecc04cadf35e947bac8786e24342648990d57d2bd658aa531",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "trial_id": "shuffle_2",
+      "document_ids": [
+        "788644867_6859-7260",
+        "827918213_7256-8456",
+        "827918213_5348-6213",
+        "788644867_6464-6858",
+        "788644867_1309-1972"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "20ed6e9746469dc526c32bb0/shuffle_2.json",
+      "json_schema_sha256": "495b84a6c89bb6e210ffc5d0b9e15fc05abeba01fe2fbee7bb2acecc9b632a63",
+      "result_sha256": "aff72a9ddc67d1c8ec281cf2e1682a0f61a2dfbc2abee6fed4b2494cc3ec5fec",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "According to the passages, God made the Israelites wander in the desert for 40 years as a punishment for their lack of faith."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The Israelites refused to enter the Promised Land after the spies' report, saying it was inhabited by giants and too difficult to conquer."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This disbelief in God's ability to help them resulted in a decree that the entire generation would wander in the wilderness until they died, except for Joshua and Caleb who had brought back a positive report."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Sources 827918213_5348-6213 and 788644867_1309-1972 explicitly state God/Yahweh decreed 40 years wandering as punishment for loss of faith.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            },
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources state spies reported giants and people refused, but do not explicitly record Israelites saying it was inhabited by giants.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Sources 788644867_1309-1972 and 788644867_6464-6858 confirm the decree, disbelief cause, death of generation, and Joshua/Caleb exception.",
+          "evidence": [
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            },
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5753,
+        "output_tokens": 12494,
+        "elapsed_seconds": 237.79916071810294,
+        "generation_seconds": 237.76678118505515,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4244,
+          "elapsed_seconds": 80.74392771604471,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4184,
+          "elapsed_seconds": 79.75663772004191,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1925,
+          "output_tokens": 4066,
+          "elapsed_seconds": 77.29859528201632,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "aff72a9ddc67d1c8ec281cf2e1682a0f61a2dfbc2abee6fed4b2494cc3ec5fec",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "trial_id": "repeat_4",
+      "document_ids": [
+        "788644867_6464-6858",
+        "827918213_5348-6213",
+        "788644867_1309-1972",
+        "788644867_6859-7260",
+        "827918213_7256-8456"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "20ed6e9746469dc526c32bb0/repeat_4.json",
+      "json_schema_sha256": "495b84a6c89bb6e210ffc5d0b9e15fc05abeba01fe2fbee7bb2acecc9b632a63",
+      "result_sha256": "0205320791807389a4ae3da7ad613549fb3e1e76f6e94e70199ef0dd0fa73cce",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "According to the passages, God made the Israelites wander in the desert for 40 years as a punishment for their lack of faith."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The Israelites refused to enter the Promised Land after the spies' report, saying it was inhabited by giants and too difficult to conquer."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This disbelief in God's ability to help them resulted in a decree that the entire generation would wander in the wilderness until they died, except for Joshua and Caleb who had brought back a positive report."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passages 788644867_6464-6858 and 827918213_5348-6213 confirm God decreed 40 years wandering due to lack of faith/unwillingness.",
+          "evidence": [
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            },
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources attribute the 'giants' report to spies, not Israelites who refused.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Passages 788644867_1309-1972 and 788644867_6464-6858 confirm disbelief caused the decree, affecting the generation except Joshua and Caleb who reported.",
+          "evidence": [
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            },
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5753,
+        "output_tokens": 11711,
+        "elapsed_seconds": 223.11631259613205,
+        "generation_seconds": 223.08519022515975,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4242,
+          "elapsed_seconds": 80.75092790904455,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4178,
+          "elapsed_seconds": 79.63362256600522,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1925,
+          "output_tokens": 3291,
+          "elapsed_seconds": 62.731762121082284,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "0205320791807389a4ae3da7ad613549fb3e1e76f6e94e70199ef0dd0fa73cce",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "trial_id": "reversed",
+      "document_ids": [
+        "827918213_7256-8456",
+        "788644867_6859-7260",
+        "788644867_1309-1972",
+        "827918213_5348-6213",
+        "788644867_6464-6858"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "20ed6e9746469dc526c32bb0/reversed.json",
+      "json_schema_sha256": "495b84a6c89bb6e210ffc5d0b9e15fc05abeba01fe2fbee7bb2acecc9b632a63",
+      "result_sha256": "07a35c31b21004eef49a95c091b3f28db67787dd8eb53d8cc0e7fe8ae2dd2385",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "According to the passages, God made the Israelites wander in the desert for 40 years as a punishment for their lack of faith."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The Israelites refused to enter the Promised Land after the spies' report, saying it was inhabited by giants and too difficult to conquer."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This disbelief in God's ability to help them resulted in a decree that the entire generation would wander in the wilderness until they died, except for Joshua and Caleb who had brought back a positive report."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passage 827918213_5348-6213 states Yahweh decreed punishment for loss of faith by wandering 40 years.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 827918213_5348-6213 confirms Israelites refused after spies reported giants; Source 788644867_1309-1972 confirms people persuaded land was not possible.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            },
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 788644867_1309-1972 links disbelief to decree, exception, and report. Source 788644867_6464-6858 confirms entire generation death.",
+          "evidence": [
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            },
+            {
+              "passage_id": "788644867_6464-6858",
+              "quote": "This was considered a grave sin by God . Corresponding to the 40 days that the spies toured the land , their God decreed that the Israelites would wander in the wilderness for 40 years as a result of their unwillingness to take the land . Moreover , the entire generation of men who left Egypt during the Exodus would die in the desert , save for Joshua and Caleb who did not slander the land ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5753,
+        "output_tokens": 12677,
+        "elapsed_seconds": 241.4490567779867,
+        "generation_seconds": 241.41748258308508,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4200,
+          "elapsed_seconds": 79.97805855399929,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4239,
+          "elapsed_seconds": 80.75815898505971,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1925,
+          "output_tokens": 4238,
+          "elapsed_seconds": 80.7128392389277,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "07a35c31b21004eef49a95c091b3f28db67787dd8eb53d8cc0e7fe8ae2dd2385",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "trial_id": "shuffle_3",
+      "document_ids": [
+        "788644867_6859-7260",
+        "788644867_1309-1972",
+        "827918213_5348-6213",
+        "788644867_6464-6858",
+        "827918213_7256-8456"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "20ed6e9746469dc526c32bb0/shuffle_3.json",
+      "json_schema_sha256": "495b84a6c89bb6e210ffc5d0b9e15fc05abeba01fe2fbee7bb2acecc9b632a63",
+      "result_sha256": "295797104e5fdf03c441b13ae6e46b91f250688c42d2d24cd22a4052791903ac",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "According to the passages, God made the Israelites wander in the desert for 40 years as a punishment for their lack of faith."
+        },
+        {
+          "claim_id": "c2",
+          "text": "The Israelites refused to enter the Promised Land after the spies' report, saying it was inhabited by giants and too difficult to conquer."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This disbelief in God's ability to help them resulted in a decree that the entire generation would wander in the wilderness until they died, except for Joshua and Caleb who had brought back a positive report."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passages 827918213_5348-6213 and 788644867_1309-1972 explicitly link the 40-year wandering decree to punishment for loss of faith/little faith.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            },
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "not_supported",
+          "reason": "Sources attribute 'giants' report to spies, not Israelites' speech; 'too difficult' inferred from 'not possible' but attribution differs.",
+          "evidence": [
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            },
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Sources 788644867_1309-1972 and 827918213_5348-6213 confirm disbelief in God's help caused the decree to wander, with Joshua and Caleb as exceptions.",
+          "evidence": [
+            {
+              "passage_id": "788644867_1309-1972",
+              "quote": "When ten of the twelve spies showed little faith in the doom and gloom report they gave about the land , they were slandering what they believed God had promised them . They did not believe that God could help them , and the people as a whole were persuaded that it was not possible to take the land . As a result , the entire nation was made to wander in the desert for 40 years , until almost the entire generation of men had died . Joshua and Caleb were the two spies who brought back a good report and believed that God would help them succeed . They were the only men from their generation permitted to go into the Promised Land after the time of wandering ."
+            },
+            {
+              "passage_id": "827918213_5348-6213",
+              "quote": "The Israelites set out from Sinai . The people murmur against God and are punished by fire ; Moses complains of their stubbornness and is ordered to choose seventy elders to assist him in the government of the people . Miriam and Aaron insult Moses at Hazeroth , which angers God ; Miriam is punished with leprosy and is shut out of camp for seven days , at the end of which the Israelites proceed to the desert of Paran on the border of Canaan . Twelve spies are sent out into Canaan and come back to report to Moses . Joshua and Caleb , two of the spies , report that the land is abundant and is `` flowing with milk and honey '' , but the other spies say that it is inhabited by giants , and the Israelites refuse to enter the land . Yahweh decrees that the Israelites will be punished for their loss of faith by having to wander in the wilderness for 40 years ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 5753,
+        "output_tokens": 11255,
+        "elapsed_seconds": 214.46349496091716,
+        "generation_seconds": 214.43207773705944,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 2802,
+          "elapsed_seconds": 53.47908631898463,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1914,
+          "output_tokens": 4210,
+          "elapsed_seconds": 80.19066472991835,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1925,
+          "output_tokens": 4243,
+          "elapsed_seconds": 80.79374391201418,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "295797104e5fdf03c441b13ae6e46b91f250688c42d2d24cd22a4052791903ac",
+      "shared_original_not_two_calls": false
+    }
+  ],
+  "policy_outcomes": [
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "route": "no_repair",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "f31b903661fe80fc20ce3c366be378d9b1dfb3a84c5dc560748af2beca6533cb",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "1->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 1,
+      "recorded_completion_attempts": 1,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 1143,
+      "output_tokens": 96,
+      "summed_step_seconds": 0.8854615669697523,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "route": "always_rewrite",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "5a2eae980b2e71a45e95d22692edeaf65a5d45a437ea5f804ea9ed6cfe3eb50e",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "1->0",
+      "missed_improvement": false,
+      "harmful_rewrite": true,
+      "completion_attempts": 2,
+      "recorded_completion_attempts": 2,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 2737,
+      "output_tokens": 4686,
+      "summed_step_seconds": 89.04796788096428,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "route": "original",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "5a2eae980b2e71a45e95d22692edeaf65a5d45a437ea5f804ea9ed6cfe3eb50e",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "1->0",
+      "missed_improvement": false,
+      "harmful_rewrite": true,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8490,
+      "output_tokens": 16397,
+      "summed_step_seconds": 312.15154401399195,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "route": "reversed",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "f31b903661fe80fc20ce3c366be378d9b1dfb3a84c5dc560748af2beca6533cb",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "1->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 4,
+      "recorded_completion_attempts": 4,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 6896,
+      "output_tokens": 12773,
+      "summed_step_seconds": 242.33502207696438,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "route": "shuffle_1",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "f31b903661fe80fc20ce3c366be378d9b1dfb3a84c5dc560748af2beca6533cb",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "1->0",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 4,
+      "recorded_completion_attempts": 4,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 6896,
+      "output_tokens": 12792,
+      "summed_step_seconds": 242.6530226470204,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "route": "shuffle_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "5a2eae980b2e71a45e95d22692edeaf65a5d45a437ea5f804ea9ed6cfe3eb50e",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "1->0",
+      "missed_improvement": false,
+      "harmful_rewrite": true,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8490,
+      "output_tokens": 17180,
+      "summed_step_seconds": 326.84763233107515,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "route": "shuffle_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "5a2eae980b2e71a45e95d22692edeaf65a5d45a437ea5f804ea9ed6cfe3eb50e",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "1->0",
+      "missed_improvement": false,
+      "harmful_rewrite": true,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8490,
+      "output_tokens": 15941,
+      "summed_step_seconds": 303.51196657388937,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "route": "repeat_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "5a2eae980b2e71a45e95d22692edeaf65a5d45a437ea5f804ea9ed6cfe3eb50e",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "1->0",
+      "missed_improvement": false,
+      "harmful_rewrite": true,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8490,
+      "output_tokens": 16397,
+      "summed_step_seconds": 312.18485758278985,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "route": "repeat_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "5a2eae980b2e71a45e95d22692edeaf65a5d45a437ea5f804ea9ed6cfe3eb50e",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "1->0",
+      "missed_improvement": false,
+      "harmful_rewrite": true,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8490,
+      "output_tokens": 16397,
+      "summed_step_seconds": 312.2153443780262,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "route": "repeat_4",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "5a2eae980b2e71a45e95d22692edeaf65a5d45a437ea5f804ea9ed6cfe3eb50e",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "1->0",
+      "missed_improvement": false,
+      "harmful_rewrite": true,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8490,
+      "output_tokens": 16397,
+      "summed_step_seconds": 312.16478420910425,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_20ed6e9746469dc526c32bb0",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+      "route": "repeat_5",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "5a2eae980b2e71a45e95d22692edeaf65a5d45a437ea5f804ea9ed6cfe3eb50e",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "1->0",
+      "missed_improvement": false,
+      "harmful_rewrite": true,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 8490,
+      "output_tokens": 16397,
+      "summed_step_seconds": 312.1413056679303,
+      "incomplete": false
+    }
+  ]
+}

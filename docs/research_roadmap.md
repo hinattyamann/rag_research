@@ -1,5 +1,7 @@
 # 研究のフェーズ・現在地・次に行うこと
 
+2026-11-09 10:43 JST Cal拡張の復旧準備: 追加80/120問（日英各40）は収集・全採点封印・解析済み。11/8 17:01にBatch 02の執筆資料出力が英語Gold親ID/検索用子IDの対応不足で停止していた。固定Parent Mapと本文Hashで親を復元する別Helperを作り、全120問の出典・実Batch 02の510資料をオフライン検証した。既存4293/旧Main・Cal2785ファイル不変、修復中生成/採点0、全1425 Test/6 Skip・Ruff成功。科学的条件は不変。[復旧仕様/証拠/残工程](cal_extension_recovery_v2.md)を参照。実際の稼働はdocs/cal_extension_status.mdを正本とする。
+
 2026-11-06 17:31 JST Cal拡張の実行前準備: ユーザーは11/14収集終了目安・同条件の日英均等追加収集から論文用資料のGit共有までを委任し、VS Code終了を許可した。未使用の日本語元Calibrationは64 Groupのため、事前通知した件数を日英各60・計120問（20問/言語×3 Batch）へ確定。既存80問と新集合を分け、元f0b7c71/Release・科学的条件を固定する。現在は新規研究Native0で準備/検証中。既存Calだけを使う読取専用の資料抽出・科学的オフライン検証、人工日英2 CLIの引用選択/全slot/Tool0を確認した。詳細は[Protocol](cal_extension_protocol_v1.md)。稼働開始後の現在地はdocs/cal_extension_status.mdとdata/manifests/cal_extension_status_v1.jsonを正本とし、原稿Branch/DOCXは変更しない。
 
 2026-11-06 14:41 JST 現データ本文初稿完成（以下の受領待ち記録を更新）: ユーザー指定fb6b8e9を、未変更aff72fdからFetch後0/2を確認して早送りした。既存80問資料と出典監査の両--audit-open検証に通過し、具体例・質問別変動・改善見逃し/有害選択・84採点Jobの設定と出典未確定を日英原稿へ反映した。初稿2は77単位・7章・2図・5表・11文献、各7ページ、英語要旨216語。専用3検査/Ruffと全14ページ表示確認を実施。Main/Cal別の結果・欠測/分母・後日取得本文/候補oldid/実Serving版ID不明を保持し、元資料/公開成果/研究条件・旧Gate11/Phase12は不変、新規研究推論/再採点0。[受領判断](../papers/iciae2027/notes/notebook_provenance_review_20261106.md)と[原稿到達点・残件](../papers/iciae2027/notes/draft_status.md)を参照。次は著者情報確定・主張/文献の最終照合・教員レビュー。追加検証は別Protocol/集合で完成後に両版へ追記し、提出は未実施。

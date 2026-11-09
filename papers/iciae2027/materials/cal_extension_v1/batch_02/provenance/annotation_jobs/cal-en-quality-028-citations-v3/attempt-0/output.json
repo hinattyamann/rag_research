@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "reliable",
+      "reason": "The answer identifies the required leader, Joseph Stalin. Actual context names him as General Secretary during the Soviet war effort and links him to the wartime Soviet regime. The reference's account of his direction of the final campaign agrees with this identification; its additional details are not required.",
+      "evidence": ["e0000", "e0003"],
+      "essential_points": "Identify Joseph Stalin as the Soviet Union's leader at the end of World War II.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "The refusal is contradicted by actual context: Abby Brown witnessed the shooting, sent accusations to Dan, and told Lucas, who then accused Dan of killing Keith. These facts directly answer the question without needing reference-only material.",
+      "evidence": ["e0008"],
+      "essential_points": "Yes. Abby Brown witnessed Dan killing Keith and told Lucas, who confronted Dan.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a002": {
+      "label": "reliable",
+      "reason": "Actual context supports the explanation throughout: loss of faith and refusal to enter after the spies' report led to forty years of wandering, with Joshua and Caleb excepted from the condemned generation. The reference overlaps actual context and is not needed to supply support.",
+      "evidence": ["e0013", "e0014", "e0015"],
+      "essential_points": "The forty years punished the Israelites' lack of faith and refusal to enter the promised land after the spies' discouraging report.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "The answer accurately reports that the actual passages lack the explanation, but it does not answer the question. Reference-only evidence establishes that TC means Twin Cities and reflects the effort to represent Minneapolis and St. Paul without alienating either city's fans; that evidence does not occur in actual context.",
+      "evidence": ["e0024"],
+      "essential_points": "TC stands for Twin Cities, Minneapolis and St. Paul. The team retained this cap insignia while adopting a name intended to represent both cities.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    }
+  }
+}
