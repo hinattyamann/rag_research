@@ -1,13 +1,12 @@
 """Build paired Word manuscripts from the retained ICIAE template and public results.
 
 Run explicitly after synchronizing draft_content.json with any manual Word edits.
-This script performs no model inference or research reanalysis.
+This script renders separately verified analysis; it performs no model inference or grading.
 """
 
 from __future__ import annotations
 
 import argparse
-import csv
 import hashlib
 import json
 import re
@@ -24,8 +23,6 @@ W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 R = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 NS = {"w": W}
 TEMPLATE_HASH = "d8e16e91295692e10abab92847abf3e11fa7a66949ff71b31388466949877391"
-EXTENSION = PAPER / "materials/cal_extension_v1"
-STRATA = (("main", "en"), ("main", "ja"), ("cal", "en"), ("cal", "ja"), ("ext", "en"), ("ext", "ja"))
 
 
 def tag(local: str) -> str:
@@ -44,30 +41,8 @@ def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def rows(filename: str) -> list[dict[str, str]]:
-    with (ROOT / "reports/fixed_v23_order_study_v1" / filename).open(
-        encoding="utf-8", newline=""
-    ) as stream:
-        records = list(csv.DictReader(stream))
-    with (EXTENSION / "pooled" / filename).open(encoding="utf-8", newline="") as stream:
-        for record in csv.DictReader(stream):
-            assert record["cohort"] == "cal_extension", "Unexpected extension population"
-            records.append({**record, "cohort": "ext"})
-    return records
-
-
-def policy_rows() -> list[dict[str, str]]:
-    materials = PAPER / "materials/fixed_v23_v1"
-    with (materials / "policy_outcomes.csv").open(encoding="utf-8", newline="") as stream:
-        records = list(csv.DictReader(stream))
-    for batch in ("batch_01", "batch_02", "batch_03"):
-        with (EXTENSION / batch / "policy_outcomes.csv").open(
-            encoding="utf-8", newline=""
-        ) as stream:
-            for record in csv.DictReader(stream):
-                assert record["cohort"] == "cal", "Unexpected extension batch population"
-                records.append({**record, "cohort": "ext"})
-    return records
+def pooled_results() -> dict:
+    return json.loads((PAPER / "notes/pooled_results_v1.json").read_text(encoding="utf-8"))
 
 
 def make_figures() -> None:
@@ -78,67 +53,68 @@ def make_figures() -> None:
     from matplotlib import font_manager
     from matplotlib.patches import FancyArrowPatch, Rectangle
 
-    candidates = [Path("C:/Windows/Fonts/yumin.ttf"), Path("C:/Windows/Fonts/YuMincho.ttc")]
-    for font in candidates:
+    for font in (Path("C:/Windows/Fonts/yumin.ttf"), Path("C:/Windows/Fonts/YuMincho.ttc")):
         if font.exists():
             font_manager.fontManager.addfont(str(font))
     plt.rcParams.update({"font.size": 9, "axes.unicode_minus": False, "svg.fonttype": "path"})
     folder = PAPER / "figures"
-    data = rows("primary_comparison.csv")
+    data = pooled_results()
+    estimates = [
+        {"mean": row["mean_increment"], "ci95": row["ci95"]} for row in data["primary"]
+    ] + [data["ja_minus_en"]]
     for lang in ("en", "ja"):
         plt.rcParams["font.family"] = "Yu Mincho" if lang == "ja" else "Times New Roman"
-        fig, ax = plt.subplots(figsize=(3.35, 2.25), layout="constrained")
-        for index, row in enumerate(data):
-            mean, low, high = (
-                float(row[k]) * 100 for k in ("mean_increment", "ci95_low", "ci95_high")
-            )
+        fig, ax = plt.subplots(figsize=(3.35, 2.1), layout="constrained")
+        for index, row in enumerate(estimates):
+            mean = row["mean"] * 100
+            low, high = (value * 100 for value in row["ci95"])
             ax.errorbar(
                 mean,
-                len(data) - 1 - index,
+                2 - index,
                 xerr=[[mean - low], [high - mean]],
                 fmt="o",
-                color="#1f4e79",
+                color="#1f4e79" if index < 2 else "#555555",
                 capsize=3,
                 markersize=4,
             )
         ax.set_yticks(
-            range(len(data)),
-            [f"{r['cohort'].capitalize()} {r['language'].upper()}" for r in reversed(data)],
+            [2, 1, 0],
+            ["English", "Japanese", "Japanese − English"]
+            if lang == "en"
+            else ["英語", "日本語", "日本語 − 英語"],
         )
-        ax.set_xlabel("Excess disagreement D (pp)" if lang == "en" else "判断不一致の増分 D（pp）")
-        ax.set_xlim(-1, 25)
-        ax.set_ylim(-0.5, len(data) - 0.5)
+        ax.set_xlabel(
+            "Excess disagreement / difference (pp)"
+            if lang == "en"
+            else "判断不一致の増分・日英差（pp）"
+        )
+        ax.set_xlim(-8, 16)
+        ax.set_ylim(-0.6, 2.6)
         ax.axvline(0, color="0.5", linewidth=0.8)
         ax.spines[["top", "right"]].set_visible(False)
-        for ext in ("png", "svg"):
-            fig.savefig(folder / f"order_increment_{lang}.{ext}", dpi=360)
+        for extension in ("png", "svg"):
+            fig.savefig(folder / f"order_increment_{lang}.{extension}", dpi=360)
         plt.close(fig)
-
-        # This intervention is unchanged by adding questions. Retain its reviewed
-        # bytes during a results refresh; construct it only when absent.
-        if all((folder / f"experimental_design_{lang}.{ext}").exists() for ext in ("png", "svg")):
-            continue
-
         labels = (
             [
                 "Question + used evidence + initial answer A",
-                "Freeze evidence text and answer sentences",
+                "Fix evidence text and answer sentences",
                 "Original / reversed / 3 shuffles\nOriginal order repeated 5 times",
-                "Support score F and accept / rewrite decision",
-                "Select A or common rewrite B\nB uses original evidence and A",
-                "Join sealed external AI labels\nCompare quality and route cost",
+                "Evaluate sentence support\nRetain A or request a rewrite",
+                "Select A or the same rewrite B\nB uses original evidence and A",
+                "Compare selected-answer quality\nand computation cost",
             ]
             if lang == "en"
             else [
                 "質問 ＋ 実使用根拠 ＋ 初回回答 A",
                 "根拠本文と回答の文を固定",
                 "元順序・逆順・シャッフル3種\n元順序を5回反復",
-                "支持スコア F と採用・書換え判断",
-                "A または共通の書換え B を選択\nB の入力は元順序の根拠と A",
-                "封印済みの外部AIラベルを結合\n品質と経路費用を比較",
+                "文の支持を評価\nAを採用 または 書換えを要求",
+                "A または 共通の書換え B を選択\nBの入力は元順序の根拠とA",
+                "選択回答の品質と計算費用を比較",
             ]
         )
-        fig, ax = plt.subplots(figsize=(3.35, 3.0), layout="constrained")
+        fig, ax = plt.subplots(figsize=(3.35, 2.85), layout="constrained")
         ax.set_xlim(0, 1)
         ax.set_ylim(0, 6)
         ax.axis("off")
@@ -149,8 +125,8 @@ def make_figures() -> None:
                     (0.025, y), 0.95, 0.78, facecolor="#f2f4f5", edgecolor="0.35", linewidth=0.7
                 )
             )
-            ax.text(0.5, y + 0.39, label, ha="center", va="center", fontsize=8.6)
-            if index < len(labels) - 1:
+            ax.text(0.5, y + 0.39, label, ha="center", va="center", fontsize=8.5)
+            if index < 5:
                 ax.add_patch(
                     FancyArrowPatch(
                         (0.5, y - 0.01),
@@ -160,153 +136,132 @@ def make_figures() -> None:
                         color="0.3",
                     )
                 )
-        for ext in ("png", "svg"):
-            fig.savefig(folder / f"experimental_design_{lang}.{ext}", dpi=360)
+        for extension in ("png", "svg"):
+            fig.savefig(folder / f"experimental_design_{lang}.{extension}", dpi=360)
         plt.close(fig)
 
 
 def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[int]]:
-    primary = rows("primary_comparison.csv")
-    quality = rows("quality_and_operational_cost.csv")
-    materials = PAPER / "materials/fixed_v23_v1"
-    if key == "order_quality":
-        summary = json.loads((PAPER / "notes/order_effects_v1.json").read_text(encoding="utf-8"))
-        extension_summary = json.loads(
-            (PAPER / "notes/extension_results_v1.json").read_text(encoding="utf-8")
-        )
-        values = []
-        for row in summary["strata"] + extension_summary["strata"]:
-            counts = row["classification_counts"]
-            values.append(
-                [
-                    f"{row['cohort'].capitalize()} {row['language'].upper()}",
-                    str(row["comparable_qa"]),
-                    str(row["decision_change_qa"]),
-                    str(counts["decision_change_same_binary_quality"]),
-                    str(counts["decision_change_quality_changes"]),
-                    str(counts["decision_change_quality_unknown"]),
-                ]
-            )
-        return (
-            ["Cohort", "n", "Var.", "Same Y", "Diff. Y", "Y?"]
-            if lang == "en"
-            else ["区分", "n", "変動", "同Y", "異Y", "Y?"],
-            values,
-            [1250, 350, 650, 900, 900, 769],
-        )
-    if key == "selection":
-        policies = policy_rows()
-        values = []
-        for cohort, language in STRATA:
-            observed = [
-                r
-                for r in policies
-                if (r["cohort"], r["language"], r["policy_state"]) == (cohort, language, "observed")
+    result = pooled_results()
+    if key == "development":
+        values = (
+            [
+                ["Synthetic", "EN", "12", "Relations, scope, uncertainty"],
+                ["Synthetic", "JA", "15", "Relations, scope, uncertainty"],
+                ["Saved QA", "EN", "15", "Previously observed errors (42 sentences)"],
             ]
-            original = [r for r in observed if r["route"] == "original"]
-            always = [r for r in observed if r["route"] == "always_rewrite"]
-            values.append(
-                [
-                    f"{cohort.capitalize()} {language.upper()}",
-                    str(sum(r["quality_transition"] != "unknown" for r in original)),
-                    str(sum(r["missed_improvement"] == "True" for r in original)),
-                    str(sum(r["harmful_rewrite"] == "True" for r in original)),
-                    str(sum(r["harmful_rewrite"] == "True" for r in always)),
-                ]
-            )
-        return (
-            (
-                ["Cohort", "Pairs", "OE miss", "OE harm", "AR harm"]
-                if lang == "en"
-                else ["区分", "組数", "OE miss", "OE harm", "AR harm"]
-            ),
-            values,
-            [1250, 650, 1000, 1000, 919],
+            if lang == "en"
+            else [
+                ["人工例", "EN", "12", "関係・範囲・不確実性"],
+                ["人工例", "JA", "15", "関係・範囲・不確実性"],
+                ["保存QA", "EN", "15", "既知の誤り（42文）"],
+            ]
         )
+        headers = (
+            ["Data", "Lang.", "n", "Purpose"] if lang == "en" else ["種類", "言語", "数", "用途"]
+        )
+        return headers, values, [1000, 750, 400, 2669]
+    if key == "primary":
+        values = [
+            [
+                row["language"].upper(),
+                f"{row['comparable_qa']}/{row['selected_qa']}",
+                f"{row['mean_increment'] * 100:.2f}",
+                f"[{row['ci95'][0] * 100:.2f}, {row['ci95'][1] * 100:.2f}]",
+            ]
+            for row in result["primary"]
+        ]
+        headers = (
+            ["Language", "n", "D (pp)", "95% CI (pp)"]
+            if lang == "en"
+            else ["言語", "n", "D (pp)", "95%区間 (pp)"]
+        )
+        return headers, values, [1000, 750, 850, 2219]
+    if key == "quality":
+        values = []
+        for language in ("en", "ja"):
+            row = [language.upper()]
+            for route in ("no_repair", "original", "always_rewrite"):
+                policy = next(
+                    r
+                    for r in result["quality"]
+                    if r["language"] == language and r["route"] == route
+                )
+                row.append(
+                    "/".join(
+                        str(policy[k])
+                        for k in ("reliable", "unreliable", "indeterminate", "missing")
+                    )
+                )
+            values.append(row)
+        headers = ["Language", "NR", "OE", "AR"] if lang == "en" else ["言語", "NR", "OE", "AR"]
+        return headers, values, [1000, 1273, 1273, 1273]
+    if key == "selection":
+        values = [
+            [
+                r["language"].upper(),
+                str(r["known_pairs"]),
+                str(r["transitions"]["0->1"]),
+                str(r["oe_missed_improvements"]),
+                str(r["transitions"]["1->0"]),
+                str(r["oe_harmful_rewrites"]),
+            ]
+            for r in result["selection"]
+        ]
+        headers = (
+            ["Lang.", "Pairs", "0→1", "OE miss", "1→0", "OE harm"]
+            if lang == "en"
+            else ["言語", "組数", "0→1", "OE見逃し", "1→0", "OE有害"]
+        )
+        return headers, values, [650, 600, 600, 1100, 600, 1269]
     if key == "cases":
         values = []
-        for identifier, language, orders in [
-            ("case_01", "EN", ("original", "shuffle_3")),
-            ("case_02", "JA", ("original", "shuffle_2")),
-        ]:
-            case = json.loads(
-                (materials / "cases" / (identifier + ".json")).read_text(encoding="utf-8")
-            )
+        for number, orders in (
+            (1, ("original", "shuffle_3")),
+            (2, ("original", "shuffle_2")),
+            (3, ("original", "reversed")),
+        ):
+            file = PAPER / "materials/fixed_v23_v1/cases" / f"case_{number:02d}.json"
+            case = json.loads(file.read_text(encoding="utf-8"))
             for order in orders:
                 trial = next(t for t in case["trials"] if t["trial_id"] == order)
                 policy = next(p for p in case["policy_outcomes"] if p["route"] == order)
                 choice = "A" if policy["selected_stage"] == "initial" else "B"
                 values.append(
-                    [language, order, f"{trial['score']:.2f}", f"{choice} / {policy['quality_y']}"]
-                )
-        return (
-            (
-                ["Case", "Order", "F", "Chosen / Y"]
-                if lang == "en"
-                else ["例", "順序", "F", "選択 / Y"]
-            ),
-            values,
-            [750, 1300, 850, 1919],
-        )
-    if key == "primary":
-        headers = (
-            ["Cohort", "n", "D (pp)", "95% CI (pp)"]
-            if lang == "en"
-            else ["区分", "n", "D (pp)", "95%区間 (pp)"]
-        )
-        values = [
-            [
-                f"{r['cohort'].capitalize()} {r['language'].upper()}",
-                f"{r['comparable_qa']}/{r['selected_qa']}",
-                f"{float(r['mean_increment']) * 100:.2f}",
-                f"[{float(r['ci95_low']) * 100:.2f}, {float(r['ci95_high']) * 100:.2f}]",
-            ]
-            for r in primary
-        ]
-        return headers, values, [1100, 650, 850, 2219]
-    values = []
-    for cohort, language in STRATA:
-        label = f"{cohort.capitalize()} {language.upper()}"
-        quality_row = [label]
-        for route, short in [("no_repair", "NR"), ("original", "OE"), ("always_rewrite", "AR")]:
-            r = next(
-                r
-                for r in quality
-                if (r["cohort"], r["language"], r["route"]) == (cohort, language, route)
-            )
-            if key == "quality":
-                quality_row.append(
-                    "/".join(r[k] for k in ("reliable", "unreliable", "indeterminate"))
-                )
-            elif route != "no_repair":
-                values.append(
                     [
-                        label,
-                        short,
-                        r["native_attempts_sum"],
-                        str(int(r["input_tokens_sum"]) + int(r["output_tokens_sum"])),
+                        str(number),
+                        order,
+                        f"{trial['score']:.2f}",
+                        f"{choice} / {policy['quality_y']}",
                     ]
                 )
-        if key == "quality":
-            values.append(quality_row)
-    if key == "quality":
-        return (
-            (["Cohort", "NR", "OE", "AR"] if lang == "en" else ["区分", "NR", "OE", "AR"]),
-            values,
-            [1250, 1189, 1190, 1190],
-        )
-    return (
-        (
-            ["Cohort", "Route", "Calls", "Tokens"]
+        headers = (
+            ["Case", "Order", "F", "Selected / Y"]
             if lang == "en"
-            else ["区分", "方策", "呼出し", "トークン"]
-        ),
-        values,
-        [1350, 700, 850, 1919],
-    )
+            else ["例", "順序", "F", "選択 / Y"]
+        )
+        return headers, values, [650, 1350, 850, 1969]
+    if key == "cost":
+        values = [
+            [
+                r["language"].upper(),
+                "OE" if r["route"] == "original" else "AR",
+                str(r["calls"]),
+                f"{r['input_tokens'] + r['output_tokens']:,}",
+            ]
+            for r in result["quality"]
+            if r["route"] != "no_repair"
+        ]
+        headers = (
+            ["Language", "Policy", "Calls", "Tokens"]
+            if lang == "en"
+            else ["言語", "方策", "呼出し", "トークン"]
+        )
+        return headers, values, [1000, 850, 850, 2119]
+    raise ValueError(f"Unknown table: {key}")
 
 
-def build(content: dict, lang: str) -> dict:
+def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
     template = PAPER / "templates/official/ICIAE2027_template.docx"
     assert sha(template.read_bytes()) == TEMPLATE_HASH, "Official template hash changed"
     with ZipFile(template) as z:
@@ -424,6 +379,14 @@ def build(content: dict, lang: str) -> dict:
             for node in props.findall("w:widowControl", NS):
                 props.remove(node)
             props.append(element("widowControl", val="true"))
+        if kind == "excerpt":
+            for node in props.findall("w:ind", NS):
+                props.remove(node)
+            props.append(element("ind", left="120", right="60"))
+            props.append(element("keepLines"))
+            for node in props.findall("w:spacing", NS):
+                props.remove(node)
+            props.append(element("spacing", before="60", after="60"))
         if lang == "ja":
             props.append(element("snapToGrid", val="false"))
             spacing = props.find("w:spacing", NS)
@@ -527,6 +490,8 @@ def build(content: dict, lang: str) -> dict:
             p = paragraph(block[lang], kind)
             if block.get("keep_together"):
                 p.find("w:pPr", NS).append(element("keepLines"))
+            if block.get("keep_with_next"):
+                p.find("w:pPr", NS).append(element("keepNext"))
     for ref in content["references"]:
         if ref["id"] == content.get("reference_column_break_before", {}).get(lang):
             p = E.SubElement(body, tag("p"))
@@ -586,7 +551,7 @@ def build(content: dict, lang: str) -> dict:
         if name not in editable and sha(parts[name]) == digest
     ]
     assert len(preserved) == len(set(original) - editable), "Preserve-only package part changed"
-    output = HERE / f"iciae2027_manuscript_{lang}.docx"
+    output = (output_dir or HERE).resolve() / f"iciae2027_manuscript_{lang}.docx"
     with ZipFile(output, "w", ZIP_DEFLATED) as z:
         for name, data in parts.items():
             z.writestr(name, data)
@@ -612,6 +577,11 @@ def main() -> None:
     parser.add_argument(
         "--refresh-figures", action="store_true", help="Explicitly redraw the two retained figures"
     )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        help="Stage both DOCX and their build manifest in a separate directory for review",
+    )
     args = parser.parse_args()
     if not args.build:
         parser.error("Use --build only after synchronizing source with Word edits")
@@ -631,8 +601,16 @@ def main() -> None:
     ]
     if args.refresh_figures or not all(path.exists() for path in required_figures):
         make_figures()
-    results = [build(content, lang) for lang in ("en", "ja")]
-    assert results[0]["tables"] == results[1]["tables"]
+    if args.output_dir:
+        args.output_dir = args.output_dir.resolve()
+        args.output_dir.mkdir(parents=True, exist_ok=True)
+    results = [build(content, lang, args.output_dir) for lang in ("en", "ja")]
+    assert {k: v for k, v in results[0]["tables"].items() if k != "development"} == {
+        k: v for k, v in results[1]["tables"].items() if k != "development"
+    }
+    assert [r[1:3] for r in results[0]["tables"]["development"]] == [
+        r[1:3] for r in results[1]["tables"]["development"]
+    ]
     report = {
         "version": content["version"],
         "evidence_commit": content["evidence_commit"],
@@ -660,7 +638,12 @@ def main() -> None:
         "block_count": len(ids),
         "documents": results,
     }
-    (PAPER / "notes/draft_build_manifest.json").write_text(
+    report_path = (
+        (args.output_dir / "draft_build_manifest.json")
+        if args.output_dir
+        else (PAPER / "notes/draft_build_manifest.json")
+    )
+    report_path.write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     print(

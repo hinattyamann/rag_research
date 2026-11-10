@@ -1,8 +1,8 @@
 """Validate actual paired Word artifacts against source text and published data."""
 
-import csv
 import hashlib
 import json
+import os
 import re
 from pathlib import Path
 from xml.etree import ElementTree as ET
@@ -16,6 +16,10 @@ ROOT = PAPER.parent.parent
 NS = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
 REL = "http://schemas.openxmlformats.org/package/2006/relationships"
 CONTENT = json.loads((HERE / "draft_content.json").read_text(encoding="utf-8"))
+DOCX_DIR = Path(os.environ.get("ICIAE_DOCX_DIR", str(HERE)))
+BUILD_MANIFEST = Path(
+    os.environ.get("ICIAE_BUILD_MANIFEST", str(PAPER / "notes/draft_build_manifest.json"))
+)
 EXTENSION = PAPER / "materials/cal_extension_v1"
 
 
@@ -34,8 +38,8 @@ def table_rows(table):
 
 @pytest.mark.parametrize("lang", ["en", "ja"])
 def test_word_text_references_and_tables_match_evidence(lang):
-    """Read the emitted ZIP independently of the builder and inspect all content."""
-    with ZipFile(HERE / f"iciae2027_manuscript_{lang}.docx") as package:
+    """Check actual emitted OOXML independently of the rendering code."""
+    with ZipFile(DOCX_DIR / f"iciae2027_manuscript_{lang}.docx") as package:
         document = ET.fromstring(package.read("word/document.xml"))
         relations = ET.fromstring(package.read("word/_rels/document.xml.rels"))
     paragraphs = [text(p) for p in document.findall("w:body/w:p", NS)]
@@ -56,116 +60,55 @@ def test_word_text_references_and_tables_match_evidence(lang):
     ]
     assert citation_runs == [f"({i})" for i in range(1, len(CONTENT["references"]) + 1)]
     assert not any("Preparation of Papers" in p or "Click here" in p for p in paragraphs)
+    assert not re.search(r"\b(?:Main|Cal|Ext)\b", " ".join(paragraphs))
     tables = document.findall("w:body/w:tbl", NS)
     keys = [b["key"] for b in CONTENT["blocks"] if b["type"] == "table"]
-    assert keys == ["primary", "quality", "selection", "order_quality", "cases", "cost"]
+    assert keys == ["development", "primary", "quality", "selection", "cases", "cost"]
     assert len(tables) == len(keys)
-    by_key = dict(zip(keys, tables, strict=True))
-    primary = table_rows(by_key["primary"])[1:]
-    with (ROOT / "reports/fixed_v23_order_study_v1/primary_comparison.csv").open(
-        encoding="utf-8", newline=""
-    ) as stream:
-        records = list(csv.DictReader(stream))
-    with (EXTENSION / "pooled/primary_comparison.csv").open(
-        encoding="utf-8", newline=""
-    ) as stream:
-        records.extend({**r, "cohort": "ext"} for r in csv.DictReader(stream))
-    assert [r[0] for r in primary] == [
-        "Main EN", "Main JA", "Cal EN", "Cal JA", "Ext EN", "Ext JA"
-    ]
-    for actual, expected in zip(primary, records, strict=True):
-        assert actual[0] == expected["cohort"].capitalize() + " " + expected["language"].upper()
-        assert actual[1] == f"{expected['comparable_qa']}/{expected['selected_qa']}"
-        assert float(actual[2]) == round(100 * float(expected["mean_increment"]), 2)
-        interval = [float(x) for x in re.findall(r"\d+\.\d+", actual[3])]
-        assert interval == [
-            round(100 * float(expected[key]), 2) for key in ("ci95_low", "ci95_high")
+    actual = {key: table_rows(table)[1:] for key, table in zip(keys, tables, strict=True)}
+    audit = json.loads((PAPER / "notes/pooled_results_v1.json").read_text(encoding="utf-8"))
+    assert [row[1:3] for row in actual["development"]] == [["EN", "12"], ["JA", "15"], ["EN", "15"]]
+    for row, expected in zip(actual["primary"], audit["primary"], strict=True):
+        assert row[0] == expected["language"].upper()
+        assert row[1] == f"{expected['comparable_qa']}/{expected['selected_qa']}"
+        assert float(row[2]) == round(expected["mean_increment"] * 100, 2)
+        assert [float(v) for v in re.findall(r"-?\d+\.\d+", row[3])] == [
+            round(value * 100, 2) for value in expected["ci95"]
         ]
-    with (ROOT / "reports/fixed_v23_order_study_v1/quality_and_operational_cost.csv").open(
-        encoding="utf-8", newline=""
-    ) as stream:
-        routes = {
-            (r["cohort"].capitalize() + " " + r["language"].upper(), r["route"]): r
-            for r in csv.DictReader(stream)
-        }
-    with (EXTENSION / "pooled/quality_and_operational_cost.csv").open(
-        encoding="utf-8", newline=""
-    ) as stream:
-        routes.update(
-            {("Ext " + r["language"].upper(), r["route"]): r for r in csv.DictReader(stream)}
-        )
-    route_names = {"NR": "no_repair", "OE": "original", "AR": "always_rewrite"}
-    assert len(table_rows(by_key["quality"])[1:]) == 6
-    assert len(table_rows(by_key["cost"])[1:]) == 12
-    for actual in table_rows(by_key["quality"])[1:]:
-        for column, short in enumerate(("NR", "OE", "AR"), 1):
-            expected = routes[(actual[0], route_names[short])]
-            assert actual[column].split("/") == [
-                expected[key] for key in ("reliable", "unreliable", "indeterminate")
+    routes = {(r["language"].upper(), r["route"]): r for r in audit["quality"]}
+    assert len(actual["quality"]) == 2
+    for row in actual["quality"]:
+        for column, route in enumerate(("no_repair", "original", "always_rewrite"), 1):
+            expected = routes[(row[0], route)]
+            assert [int(v) for v in row[column].split("/")] == [
+                expected[k] for k in ("reliable", "unreliable", "indeterminate", "missing")
             ]
-    for actual in table_rows(by_key["cost"])[1:]:
-        expected = routes[(actual[0], route_names[actual[1]])]
-        assert actual[2] == expected["native_attempts_sum"]
-        assert int(actual[3]) == int(expected["input_tokens_sum"]) + int(
-            expected["output_tokens_sum"]
+    for row, expected in zip(actual["selection"], audit["selection"], strict=True):
+        assert row[0] == expected["language"].upper()
+        assert [int(v) for v in row[1:]] == [
+            expected["known_pairs"],
+            expected["transitions"]["0->1"],
+            expected["oe_missed_improvements"],
+            expected["transitions"]["1->0"],
+            expected["oe_harmful_rewrites"],
+        ]
+    assert len(actual["cost"]) == 4
+    for row in actual["cost"]:
+        expected = routes[(row[0], "original" if row[1] == "OE" else "always_rewrite")]
+        assert int(row[2]) == expected["calls"]
+        assert int(row[3].replace(",", "")) == expected["input_tokens"] + expected["output_tokens"]
+    assert len(actual["cases"]) == 6
+    for row in actual["cases"]:
+        case = json.loads(
+            (PAPER / f"materials/fixed_v23_v1/cases/case_{int(row[0]):02d}.json").read_text(
+                encoding="utf-8"
+            )
         )
-    material_root = PAPER / "materials/fixed_v23_v1"
-    with (material_root / "policy_outcomes.csv").open(encoding="utf-8", newline="") as stream:
-        policies = list(csv.DictReader(stream))
-    for batch in ("batch_01", "batch_02", "batch_03"):
-        with (EXTENSION / batch / "policy_outcomes.csv").open(
-            encoding="utf-8", newline=""
-        ) as stream:
-            policies.extend({**r, "cohort": "ext"} for r in csv.DictReader(stream))
-    assert len(table_rows(by_key["selection"])[1:]) == 6
-    for actual in table_rows(by_key["selection"])[1:]:
-        original = [
-            r
-            for r in policies
-            if r["cohort"].capitalize() + " " + r["language"].upper() == actual[0]
-            and r["route"] == "original"
-            and r["policy_state"] == "observed"
-        ]
-        always = [
-            r
-            for r in policies
-            if r["cohort"].capitalize() + " " + r["language"].upper() == actual[0]
-            and r["route"] == "always_rewrite"
-            and r["policy_state"] == "observed"
-        ]
-        assert [int(v) for v in actual[1:]] == [
-            sum(r["quality_transition"] != "unknown" for r in original),
-            sum(r["missed_improvement"] == "True" for r in original),
-            sum(r["harmful_rewrite"] == "True" for r in original),
-            sum(r["harmful_rewrite"] == "True" for r in always),
-        ]
-    effects = json.loads((PAPER / "notes/order_effects_v1.json").read_text(encoding="utf-8"))
-    extension_effects = json.loads(
-        (PAPER / "notes/extension_results_v1.json").read_text(encoding="utf-8")
-    )
-    for actual, expected in zip(
-        table_rows(by_key["order_quality"])[1:],
-        effects["strata"] + extension_effects["strata"],
-        strict=True,
-    ):
-        counts = expected["classification_counts"]
-        assert actual[0] == expected["cohort"].capitalize() + " " + expected["language"].upper()
-        assert [int(v) for v in actual[1:]] == [
-            expected["comparable_qa"],
-            expected["decision_change_qa"],
-            counts["decision_change_same_binary_quality"],
-            counts["decision_change_quality_changes"],
-            counts["decision_change_quality_unknown"],
-        ]
-    case_rows = table_rows(by_key["cases"])[1:]
-    for actual in case_rows:
-        case_id = "case_01" if actual[0] == "EN" else "case_02"
-        case = json.loads((material_root / "cases" / f"{case_id}.json").read_text(encoding="utf-8"))
-        trial = next(t for t in case["trials"] if t["trial_id"] == actual[1])
-        policy = next(p for p in case["policy_outcomes"] if p["route"] == actual[1])
-        assert float(actual[2]) == round(trial["score"], 2)
+        trial = next(t for t in case["trials"] if t["trial_id"] == row[1])
+        policy = next(p for p in case["policy_outcomes"] if p["route"] == row[1])
+        assert float(row[2]) == round(trial["score"], 2)
         assert (
-            actual[3]
+            row[3]
             == ("A" if policy["selected_stage"] == "initial" else "B") + f" / {policy['quality_y']}"
         )
 
@@ -173,7 +116,7 @@ def test_word_text_references_and_tables_match_evidence(lang):
 def test_pair_and_frozen_evidence_integrity():
     assert len(CONTENT["blocks"]) == len({b["id"] for b in CONTENT["blocks"]})
     tables = []
-    manifest = json.loads((PAPER / "notes/draft_build_manifest.json").read_text(encoding="utf-8"))
+    manifest = json.loads(BUILD_MANIFEST.read_text(encoding="utf-8"))
     digest = hashlib.sha256(
         json.dumps(CONTENT, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
     ).hexdigest()
@@ -211,7 +154,7 @@ def test_pair_and_frozen_evidence_integrity():
             ".//w:sectPr", NS
         )
         for lang, document_manifest in zip(("en", "ja"), manifest["documents"], strict=True):
-            file = HERE / f"iciae2027_manuscript_{lang}.docx"
+            file = DOCX_DIR / f"iciae2027_manuscript_{lang}.docx"
             assert hashlib.sha256(file.read_bytes()).hexdigest() == document_manifest["sha256"]
             with ZipFile(file) as draft:
                 root = ET.fromstring(draft.read("word/document.xml"))
@@ -223,7 +166,9 @@ def test_pair_and_frozen_evidence_integrity():
                 for name in original.namelist():
                     if name not in editable:
                         assert draft.read(name) == original.read(name), name
-    assert tables[0] == tables[1]
+    # Development-purpose prose is translated; all numeric result cells match.
+    assert tables[0][1:] == tables[1][1:]
+    assert [r[1:3] for r in tables[0][0]] == [r[1:3] for r in tables[1][0]]
     result_dir = ROOT / "reports/fixed_v23_order_study_v1"
     frozen = json.loads((result_dir / "artifact_manifest.json").read_text(encoding="utf-8"))
     for file, digest in frozen["files"].items():
@@ -240,14 +185,38 @@ def test_pair_and_frozen_evidence_integrity():
 def test_case_excerpt_wording_is_present_in_both_actual_documents():
     excerpts = json.loads((PAPER / "notes/case_excerpts_v1.json").read_text(encoding="utf-8"))
     for lang in ("en", "ja"):
-        with ZipFile(HERE / f"iciae2027_manuscript_{lang}.docx") as package:
+        with ZipFile(DOCX_DIR / f"iciae2027_manuscript_{lang}.docx") as package:
             document = ET.fromstring(package.read("word/document.xml"))
         paragraphs = [text(p) for p in document.findall("w:body/w:p", NS)]
-        expected = display_text(
-            next(b[lang] for b in CONTENT["blocks"] if b["id"] == "case-ja-excerpts")
-        )
-        assert expected in paragraphs
+        quoted_blocks = [
+            b
+            for b in CONTENT["blocks"]
+            if b["id"] in {"case-ja-excerpts", "case-ja-A", "case-ja-B"}
+        ]
+        expected = " ".join(display_text(b[lang]) for b in quoted_blocks)
+        assert all(display_text(b[lang]) in paragraphs for b in quoted_blocks)
         for quote in excerpts["quotes"]:
             value = quote["original_ja" if lang == "ja" else "translation_en"]
             quoted = f"「{value}」" if lang == "ja" else f'"{value}"'
             assert quoted in expected
+
+
+def test_extended_output_excerpts_are_literal_saved_answer_slices():
+    blocks = {b["id"]: b for b in CONTENT["blocks"]}
+    for number, lang, mappings in (
+        (1, "en", {"case-en-A": "A", "case-en-B": "B"}),
+        (2, "ja", {"case-ja-A": "A", "case-ja-B": "B"}),
+    ):
+        case = json.loads(
+            (PAPER / f"materials/fixed_v23_v1/cases/case_{number:02d}.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        source = json.loads(
+            (PAPER / "materials/fixed_v23_v1" / case["input_path"]).read_text(encoding="utf-8")
+        )
+        for block_id, stage in mappings.items():
+            pattern = r"“([^”]+)”" if lang == "en" else r"「([^」]+)」"
+            quotes = re.findall(pattern, blocks[block_id][lang])
+            assert quotes
+            assert all(quote in source[stage]["answer"] for quote in quotes)

@@ -1,5 +1,5 @@
 {
-  "version": "draft-4-2026-11-10",
+  "version": "draft-5-2026-11-10",
   "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
   "extension_evidence_commit": "7beb396febd2842248af53a8ec39eda9fc153153",
   "evidence_trees": {
@@ -7,7 +7,7 @@
     "provenance_audit_v1": "2e9bc4cdd1a6eeb97698d426e291a6b604023ebd",
     "cal_extension_v1": "0cc2339a73efff938db8766269ea7b9daeb32852"
   },
-  "content_digest": "012487205426ee9b70036f567d1ee88ae091e428012945bb1aeaf316b3fb395a",
+  "content_digest": "49c7765d9a13c71de429ea98023e37d3fe66c94832e5015d3b244db79cf339f2",
   "evidence_packages": {
     "fixed_v23_v1": "ce831a133d00e3756287655eb53115a546383288cc5756e75f260cae8595f6bd",
     "provenance_audit_v1": "e305c4ff4aeff858221f4ca4ab35f7c21e0d8b4884857d95d9ac0a3593be530b",
@@ -16,284 +16,145 @@
   "derived_evidence": {
     "notes/order_effects_v1.json": "e4c0057acf54eb1f57d8dd17641ef278239d252271133ff9b50de0a7bb21e92d",
     "notes/case_excerpts_v1.json": "1a6a7a03e172789584be0fa81ea1cd30c9d5721e4a972bad8a6eb0c855ca90bb",
-    "notes/extension_results_v1.json": "1a446cfef1fb9285c20909b67fbe30e335e3dfcdacf5742bbef2cd45c4dcd911"
+    "notes/extension_results_v1.json": "1a446cfef1fb9285c20909b67fbe30e335e3dfcdacf5742bbef2cd45c4dcd911",
+    "notes/pooled_results_v1.json": "2ee7993500ba0a21c403d6077fef89ace97b975bc13613cccdab82867a03e807"
   },
   "template_sha256": "d8e16e91295692e10abab92847abf3e11fa7a66949ff71b31388466949877391",
-  "block_count": 83,
+  "block_count": 82,
   "documents": [
     {
       "language": "en",
-      "output": "papers\\iciae2027\\manuscript\\iciae2027_manuscript_en.docx",
-      "sha256": "639501062005d70ece18db9263fa12ea2b07f9bea70be652bcb653e8bb5ee8bd",
+      "output": "papers/iciae2027/manuscript/iciae2027_manuscript_en.docx",
+      "sha256": "67ed408d84a0f7b9337f050249c51677c747ad40d3209b7cf5c0ba86fb6d36b0",
       "tables": {
+        "development": [
+          [
+            "Synthetic",
+            "EN",
+            "12",
+            "Relations, scope, uncertainty"
+          ],
+          [
+            "Synthetic",
+            "JA",
+            "15",
+            "Relations, scope, uncertainty"
+          ],
+          [
+            "Saved QA",
+            "EN",
+            "15",
+            "Previously observed errors (42 sentences)"
+          ]
+        ],
         "primary": [
           [
-            "Main EN",
-            "16/20",
-            "8.75",
-            "[0.00, 18.75]"
+            "EN",
+            "80/100",
+            "8.25",
+            "[4.50, 12.50]"
           ],
           [
-            "Main JA",
-            "13/20",
-            "4.62",
-            "[0.00, 13.85]"
-          ],
-          [
-            "Cal EN",
-            "16/20",
-            "12.50",
-            "[5.00, 22.50]"
-          ],
-          [
-            "Cal JA",
-            "12/20",
-            "8.33",
-            "[0.00, 20.00]"
-          ],
-          [
-            "Ext EN",
-            "48/60",
-            "6.67",
-            "[2.08, 12.08]"
-          ],
-          [
-            "Ext JA",
-            "43/60",
-            "9.30",
-            "[4.19, 14.88]"
+            "JA",
+            "68/100",
+            "8.24",
+            "[4.12, 12.65]"
           ]
         ],
         "quality": [
           [
-            "Main EN",
-            "9/11/0",
-            "12/8/0",
-            "14/6/0"
+            "EN",
+            "31/65/4/0",
+            "51/43/6/0",
+            "63/33/4/0"
           ],
           [
-            "Main JA",
-            "5/13/1",
-            "10/9/0",
-            "14/5/0"
-          ],
-          [
-            "Cal EN",
-            "6/14/0",
-            "9/10/1",
-            "10/8/2"
-          ],
-          [
-            "Cal JA",
-            "4/16/0",
-            "6/14/0",
-            "9/10/1"
-          ],
-          [
-            "Ext EN",
-            "16/40/4",
-            "30/25/5",
-            "39/19/2"
-          ],
-          [
-            "Ext JA",
-            "12/44/4",
-            "25/27/8",
-            "32/23/5"
+            "JA",
+            "21/73/5/1",
+            "41/50/8/1",
+            "55/38/6/1"
           ]
         ],
         "selection": [
           [
-            "Main EN",
-            "20",
-            "3",
-            "0",
+            "EN",
+            "93",
+            "32",
+            "11",
+            "2",
             "1"
           ],
           [
-            "Main JA",
-            "17",
-            "4",
-            "0",
-            "0"
-          ],
-          [
-            "Cal EN",
-            "18",
-            "2",
-            "0",
-            "0"
-          ],
-          [
-            "Cal JA",
-            "18",
-            "3",
-            "0",
-            "0"
-          ],
-          [
-            "Ext EN",
-            "55",
-            "6",
-            "1",
-            "1"
-          ],
-          [
-            "Ext JA",
-            "49",
-            "6",
-            "0",
-            "2"
-          ]
-        ],
-        "order_quality": [
-          [
-            "Main EN",
-            "16",
-            "3",
-            "1",
-            "2",
-            "0"
-          ],
-          [
-            "Main JA",
+            "JA",
+            "84",
+            "31",
             "13",
-            "1",
-            "1",
-            "0",
-            "0"
-          ],
-          [
-            "Cal EN",
-            "16",
-            "5",
-            "4",
-            "1",
-            "0"
-          ],
-          [
-            "Cal JA",
-            "12",
             "2",
-            "1",
-            "1",
             "0"
-          ],
-          [
-            "Ext EN",
-            "48",
-            "6",
-            "0",
-            "4",
-            "2"
-          ],
-          [
-            "Ext JA",
-            "43",
-            "9",
-            "1",
-            "6",
-            "2"
           ]
         ],
         "cases": [
           [
-            "EN",
+            "1",
             "original",
             "0.33",
             "B / 1"
           ],
           [
-            "EN",
+            "1",
             "shuffle_3",
             "1.00",
             "A / 0"
           ],
           [
-            "JA",
+            "2",
             "original",
             "0.75",
             "A / 0"
           ],
           [
-            "JA",
+            "2",
             "shuffle_2",
             "0.50",
             "B / 1"
+          ],
+          [
+            "3",
+            "original",
+            "0.67",
+            "B / 0"
+          ],
+          [
+            "3",
+            "reversed",
+            "1.00",
+            "A / 0"
           ]
         ],
         "cost": [
           [
-            "Main EN",
+            "EN",
             "OE",
-            "69",
-            "299015"
+            "364",
+            "1,669,032"
           ],
           [
-            "Main EN",
+            "EN",
             "AR",
-            "40",
-            "142641"
+            "200",
+            "706,586"
           ],
           [
-            "Main JA",
+            "JA",
             "OE",
-            "90",
-            "562335"
+            "467",
+            "2,964,849"
           ],
           [
-            "Main JA",
+            "JA",
             "AR",
-            "38",
-            "196117"
-          ],
-          [
-            "Cal EN",
-            "OE",
-            "72",
-            "331177"
-          ],
-          [
-            "Cal EN",
-            "AR",
-            "40",
-            "140048"
-          ],
-          [
-            "Cal JA",
-            "OE",
-            "77",
-            "462762"
-          ],
-          [
-            "Cal JA",
-            "AR",
-            "40",
-            "195180"
-          ],
-          [
-            "Ext EN",
-            "OE",
-            "223",
-            "1038840"
-          ],
-          [
-            "Ext EN",
-            "AR",
-            "120",
-            "423897"
-          ],
-          [
-            "Ext JA",
-            "OE",
-            "300",
-            "1939752"
-          ],
-          [
-            "Ext JA",
-            "AR",
-            "120",
-            "601200"
+            "198",
+            "992,497"
           ]
         ]
       },
@@ -327,12 +188,12 @@
           "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
         },
         "word/document.xml": {
-          "bytes": 168553,
-          "sha256": "8317a19514822bd6bb916060c0e079c7b3ae26e3be74e780498e386643c946bb"
+          "bytes": 129835,
+          "sha256": "a57ed3ab0c495e0efd9280008fd3298277dce70d43938796ec66040bb3d14f52"
         },
         "word/_rels/document.xml.rels": {
-          "bytes": 5103,
-          "sha256": "80c2e50a7284c6f272606416120fa6a0fc2248d6e85ffa036df34bc63ee7edae"
+          "bytes": 5026,
+          "sha256": "b66b34e3cf1b7c40a164d6f108069e57cb956df007773c32a1bfbcadd1f494c8"
         },
         "word/footnotes.xml": {
           "bytes": 2821,
@@ -411,288 +272,148 @@
           "sha256": "80482f86e196171d66001e0e74d1900408a3aaf2463e54005d251b5f2db9a0b0"
         },
         "word/media/experimental_design_en.png": {
-          "bytes": 97098,
-          "sha256": "b2bb0de03c14d31ae867353dca49b7d0094b3b01e843d8793e5072aacc0d002f"
+          "bytes": 101703,
+          "sha256": "653751ae65413cb070744216aeebaa4f6c2c7e89eefee7f499fcceb3b450dfba"
         },
         "word/media/order_increment_en.png": {
-          "bytes": 44238,
-          "sha256": "bc063ebea4e0d84c4fcefc014948879c0c1321673320a263dde628379bfabfcf"
+          "bytes": 35373,
+          "sha256": "3a0ead9cbb019f3c6009551258709aa9a9ddf9cf0ecb3ca13ccb3a45a0809455"
         }
       }
     },
     {
       "language": "ja",
-      "output": "papers\\iciae2027\\manuscript\\iciae2027_manuscript_ja.docx",
-      "sha256": "1bd3741a12cd2e49e6ccf44e6375250df20b9cce5fe2159fc2d22a665eb89829",
+      "output": "papers/iciae2027/manuscript/iciae2027_manuscript_ja.docx",
+      "sha256": "8844454d8b858c614cdf6ace1318c7f0ef45c33f1645c5b8227394342164b83d",
       "tables": {
+        "development": [
+          [
+            "人工例",
+            "EN",
+            "12",
+            "関係・範囲・不確実性"
+          ],
+          [
+            "人工例",
+            "JA",
+            "15",
+            "関係・範囲・不確実性"
+          ],
+          [
+            "保存QA",
+            "EN",
+            "15",
+            "既知の誤り（42文）"
+          ]
+        ],
         "primary": [
           [
-            "Main EN",
-            "16/20",
-            "8.75",
-            "[0.00, 18.75]"
+            "EN",
+            "80/100",
+            "8.25",
+            "[4.50, 12.50]"
           ],
           [
-            "Main JA",
-            "13/20",
-            "4.62",
-            "[0.00, 13.85]"
-          ],
-          [
-            "Cal EN",
-            "16/20",
-            "12.50",
-            "[5.00, 22.50]"
-          ],
-          [
-            "Cal JA",
-            "12/20",
-            "8.33",
-            "[0.00, 20.00]"
-          ],
-          [
-            "Ext EN",
-            "48/60",
-            "6.67",
-            "[2.08, 12.08]"
-          ],
-          [
-            "Ext JA",
-            "43/60",
-            "9.30",
-            "[4.19, 14.88]"
+            "JA",
+            "68/100",
+            "8.24",
+            "[4.12, 12.65]"
           ]
         ],
         "quality": [
           [
-            "Main EN",
-            "9/11/0",
-            "12/8/0",
-            "14/6/0"
+            "EN",
+            "31/65/4/0",
+            "51/43/6/0",
+            "63/33/4/0"
           ],
           [
-            "Main JA",
-            "5/13/1",
-            "10/9/0",
-            "14/5/0"
-          ],
-          [
-            "Cal EN",
-            "6/14/0",
-            "9/10/1",
-            "10/8/2"
-          ],
-          [
-            "Cal JA",
-            "4/16/0",
-            "6/14/0",
-            "9/10/1"
-          ],
-          [
-            "Ext EN",
-            "16/40/4",
-            "30/25/5",
-            "39/19/2"
-          ],
-          [
-            "Ext JA",
-            "12/44/4",
-            "25/27/8",
-            "32/23/5"
+            "JA",
+            "21/73/5/1",
+            "41/50/8/1",
+            "55/38/6/1"
           ]
         ],
         "selection": [
           [
-            "Main EN",
-            "20",
-            "3",
-            "0",
+            "EN",
+            "93",
+            "32",
+            "11",
+            "2",
             "1"
           ],
           [
-            "Main JA",
-            "17",
-            "4",
-            "0",
-            "0"
-          ],
-          [
-            "Cal EN",
-            "18",
-            "2",
-            "0",
-            "0"
-          ],
-          [
-            "Cal JA",
-            "18",
-            "3",
-            "0",
-            "0"
-          ],
-          [
-            "Ext EN",
-            "55",
-            "6",
-            "1",
-            "1"
-          ],
-          [
-            "Ext JA",
-            "49",
-            "6",
-            "0",
-            "2"
-          ]
-        ],
-        "order_quality": [
-          [
-            "Main EN",
-            "16",
-            "3",
-            "1",
-            "2",
-            "0"
-          ],
-          [
-            "Main JA",
+            "JA",
+            "84",
+            "31",
             "13",
-            "1",
-            "1",
-            "0",
-            "0"
-          ],
-          [
-            "Cal EN",
-            "16",
-            "5",
-            "4",
-            "1",
-            "0"
-          ],
-          [
-            "Cal JA",
-            "12",
             "2",
-            "1",
-            "1",
             "0"
-          ],
-          [
-            "Ext EN",
-            "48",
-            "6",
-            "0",
-            "4",
-            "2"
-          ],
-          [
-            "Ext JA",
-            "43",
-            "9",
-            "1",
-            "6",
-            "2"
           ]
         ],
         "cases": [
           [
-            "EN",
+            "1",
             "original",
             "0.33",
             "B / 1"
           ],
           [
-            "EN",
+            "1",
             "shuffle_3",
             "1.00",
             "A / 0"
           ],
           [
-            "JA",
+            "2",
             "original",
             "0.75",
             "A / 0"
           ],
           [
-            "JA",
+            "2",
             "shuffle_2",
             "0.50",
             "B / 1"
+          ],
+          [
+            "3",
+            "original",
+            "0.67",
+            "B / 0"
+          ],
+          [
+            "3",
+            "reversed",
+            "1.00",
+            "A / 0"
           ]
         ],
         "cost": [
           [
-            "Main EN",
+            "EN",
             "OE",
-            "69",
-            "299015"
+            "364",
+            "1,669,032"
           ],
           [
-            "Main EN",
+            "EN",
             "AR",
-            "40",
-            "142641"
+            "200",
+            "706,586"
           ],
           [
-            "Main JA",
+            "JA",
             "OE",
-            "90",
-            "562335"
+            "467",
+            "2,964,849"
           ],
           [
-            "Main JA",
+            "JA",
             "AR",
-            "38",
-            "196117"
-          ],
-          [
-            "Cal EN",
-            "OE",
-            "72",
-            "331177"
-          ],
-          [
-            "Cal EN",
-            "AR",
-            "40",
-            "140048"
-          ],
-          [
-            "Cal JA",
-            "OE",
-            "77",
-            "462762"
-          ],
-          [
-            "Cal JA",
-            "AR",
-            "40",
-            "195180"
-          ],
-          [
-            "Ext EN",
-            "OE",
-            "223",
-            "1038840"
-          ],
-          [
-            "Ext EN",
-            "AR",
-            "120",
-            "423897"
-          ],
-          [
-            "Ext JA",
-            "OE",
-            "300",
-            "1939752"
-          ],
-          [
-            "Ext JA",
-            "AR",
-            "120",
-            "601200"
+            "198",
+            "992,497"
           ]
         ]
       },
@@ -726,12 +447,12 @@
           "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
         },
         "word/document.xml": {
-          "bytes": 182666,
-          "sha256": "f0a339727dd518e6fa6d5982503ff2bb9b03e33ea9eac695afd2ed648d149648"
+          "bytes": 140588,
+          "sha256": "c3768c45fc7365f90ccdcf6ed7def5c3738bf7ebfc73eac88f8c33ba1f2440df"
         },
         "word/_rels/document.xml.rels": {
-          "bytes": 5103,
-          "sha256": "810abdfe3ca09baffad59db54bc3d41d5b2a95e22ca0a99642396538185c5aeb"
+          "bytes": 5026,
+          "sha256": "09a74f7fc7142d859fd3016bfb4e231fd47ff61fbf54da894d72dfedc99ff98b"
         },
         "word/footnotes.xml": {
           "bytes": 2821,
@@ -810,12 +531,12 @@
           "sha256": "80482f86e196171d66001e0e74d1900408a3aaf2463e54005d251b5f2db9a0b0"
         },
         "word/media/experimental_design_ja.png": {
-          "bytes": 142849,
-          "sha256": "c52009b985d6aae3a7414ef722ea64981c7b14207bcc6a2fca52dce7c06d0608"
+          "bytes": 138468,
+          "sha256": "3a431094cec38104edcaa3904f79b311347a39c4e6eebc55ea53324b1c739722"
         },
         "word/media/order_increment_ja.png": {
-          "bytes": 48372,
-          "sha256": "036fdda44f5e9ebc7a1a49f0e888b2e8f54c375095b34a8b39cea9a9c4c072d5"
+          "bytes": 37969,
+          "sha256": "cb6d4323b804bd13a369a94ded3266630407640ad280314c63cce011e8dd0eda"
         }
       }
     }

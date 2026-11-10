@@ -16,6 +16,8 @@
 |---|---|
 | [notes/submission_requirements.md](notes/submission_requirements.md) | 公式投稿条件、書式、未確認事項、提出前チェック |
 | [notes/draft_status.md](notes/draft_status.md) | 初稿の到達点、確認内容、研究室資料受領後の更新箇所 |
+| [notes/draft5_revision_status.md](notes/draft5_revision_status.md) | 対話を反映した全面改稿、200問の事後統合、確認と残件 |
+| [notes/pooled_analysis_readme.md](notes/pooled_analysis_readme.md) | 200問の事後統合集計の定義と再現手順 |
 | [notes/draft4_revision_status.md](notes/draft4_revision_status.md) | 追加120問を反映した初稿4の変更箇所、確認内容、残件 |
 | [notes/extension_results_readme.md](notes/extension_results_readme.md) | 追加集合の検証・集計手順、分母と旧集合との区別 |
 | [notes/draft3_revision_status.md](notes/draft3_revision_status.md) | 初稿3の品質レビュー補強対応、事後集計・原文抜粋の履歴 |
@@ -37,32 +39,13 @@
 | [references/](references/) | 書誌・引用箇所・主張と出典の照合資料 |
 | [submission/](submission/) | 確認済みの提出PDF、提出日時・受付番号等の記録 |
 
-2026年11月10日、**既存80問と別途計画した追加120問を反映し、日英同内容の初稿4へ更新した**。
-全選定200問・主比較可能148問を扱い、旧Main/Calと追加集合Extは別集計する。
-83対訳単位・7章・2図・6表・14文献を収録し、章構成は保持した。
-Word描画出力は英語8ページ・日本語8ページ、英語要旨232語。検査・表示確認の到達点は[初稿4の更新記録](notes/draft4_revision_status.md)を参照する。
-[英語初稿](manuscript/iciae2027_manuscript_en.docx)と[日本語初稿](manuscript/iciae2027_manuscript_ja.docx)を一組で管理する。
-公式テンプレートの原本は未編集で保持し、例文を実際の研究本文へ置き換えた。提出PDF・投稿は未実施。
-追加集合の方法・分母・主結果・品質・費用・意味監査を反映し、要旨・考察・結論を推敲した。欠測・AI採点・時期/手順差・出典未確定は本文へ残す。
-著者情報は未確定欄とし、教員レビュー等は [初稿の残件](notes/draft_status.md)へ記録した。
-日本語版は英語版と同じ内容の忠実な翻訳とし、独自の補足・省略・別の説明を加えない。
-ユーザーへの詳しい解説は会話や執筆メモで行い、両言語の論文本体から分ける。
-公式の英語・4～8ページ等の提出条件は英語版に適用し、日本語版のページ数・体裁は理解しやすさに合わせる。
-
-## 執筆に使う研究成果
-
-研究工程の正本は引き続き [研究ロードマップ](../../docs/research_roadmap.md)。
-実験条件は [研究計画](../../docs/rag_research_plan.md)・[実装計画](../../docs/rag_implementation_plan.md)を参照する。
-
-- 解析・図表の正本: [固定v23の成果](../../reports/fixed_v23_order_study_v1/)
-- [結果説明資料](../../reports/fixed_v23_order_study_v1/results_brief.md)
-- [執筆前工程の完了確認](../../data/manifests/fixed_v23_prewriting_completion_v1.json)
-- 追加120問の正本: [Cal拡張資料](materials/cal_extension_v1/README.md)と[集計案内](notes/extension_results_readme.md)
-
-既存のMain/Calは集合別に記述し、比較欠測、AI採点、人手未確認、停止規則・採点入力方式の事後変更、
-外的中断の費用不明を本文へ残す。旧Gate11未通過・Phase12未実施を変更しない。
-追加検証は別Protocol・別成果として管理し、採点封印と解析が完了した結果だけを原稿へ取り込む。
-今回の改稿は、研究室PCで完了した追加120問の確定資料を取り込むもので、新規推論・再採点・新しい区間推定を行わない。
+2026年11月10日、**対話で合意した5項目を反映して日英同内容の初稿5へ全面改稿した**。
+200問を一つの固定構成の評価実験として説明し、主比較は英語80問・日本語68問。統合集計は事後解析と明記する。
+82対訳単位・7章・2図・6表・14文献、日英各7ページ、英語要旨217語。
+評価器開発の主要診断データを追加し、不要な開発記録を削除し、具体例3件に実出力と選択結果を示した。
+[変更と検証](notes/draft5_revision_status.md)と[再現案内](notes/pooled_analysis_readme.md)を参照する。
+新規推論・再採点は0だが、新たな統合区間3本を計算した。元条件・保存ラベル・旧集計・元資料は保持する。
+著者情報・教員確認・提出は未実施。以下の作業分担と投稿前確認を継続する。
 
 ## ノートPCと研究室PCの分担
 
@@ -78,7 +61,7 @@ DOCXは差分統合が難しいため、同じ原稿ファイルを両PCで同�
 ## 次に行うこと
 
 1. タイトル、著者順、全所属の英語表記、責任著者とメールアドレスを確定する。
-2. 更新した両初稿を読み、追加集合と既存集合の違い、具体例・分母・出典未確定を含め、主張・引用をレビューする。
+2. 更新した両初稿を読み、事後統合の扱い、具体例・分母・出典未確定を含め、主張・引用をレビューする。
 3. 方法・結果・限界を両言語で並行して更新し、数値・主張・引用の対応と教員確認を行う。
 4. 追加検証や訂正は両版へ反映し、既存集合との違いと対応を明記する。
 5. 提出用英語PDFの4～8ページ・文字・段組・図表・引用・URLを全ページ確認し、日本語版との内容の一致も確認する。

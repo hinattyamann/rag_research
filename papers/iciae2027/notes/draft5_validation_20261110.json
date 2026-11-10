@@ -1,0 +1,419 @@
+{
+  "version": "draft-5-2026-11-10",
+  "recorded_at_jst": "2026-11-10T17:18:40.874542+09:00",
+  "analysis_commit": "592e3c2a0d0bf4e8c39b789d7f7c5f73bbbe5aa3",
+  "content_digest": "49c7765d9a13c71de429ea98023e37d3fe66c94832e5015d3b244db79cf339f2",
+  "paired_blocks": 82,
+  "chapter_count": 7,
+  "figure_count": 2,
+  "table_count": 6,
+  "reference_count": 14,
+  "abstract_words": 217,
+  "documents": [
+    {
+      "language": "en",
+      "path": "papers/iciae2027/manuscript/iciae2027_manuscript_en.docx",
+      "sha256": "67ed408d84a0f7b9337f050249c51677c747ad40d3209b7cf5c0ba86fb6d36b0",
+      "pages": 7,
+      "all_pages_visually_reviewed": true,
+      "reviewed_page_sha256": [
+        "98e339ce7a04c50b374f69b6d6d71d00d2d6bf0e026fe0edfe18d7748afd343c",
+        "f75febfa50ef77bf7ff587c3ea5125920bcd29045297e62e5a41ffdd25725878",
+        "29d144748caacc9fa8bba5d45f8ffbcd5224ee1938f62e704d36c4f1b70bf583",
+        "d1b7ce1d05bf6c001f03001f6c17d3e445ba2221c26818da5ce3341486dc2889",
+        "be5ba6b1959d7782dc11f076cdae6e0539300910a63c25374bad674077621e38",
+        "1bd51ec4fd6892820dba47f7a9f18676e977d8b5031fa49891bb554c87afdc67",
+        "110d41e2f4e6108387030f332fdb3ada6c6630b2f39733cd1e77ed8d2ce0f683"
+      ],
+      "review_method": "Root viewed all 14 release pages at 140dpi; final reference-only changes retain identical pixels on pages 1–6, and both final page 7 images were viewed again",
+      "major_layout_defects": false
+    },
+    {
+      "language": "ja",
+      "path": "papers/iciae2027/manuscript/iciae2027_manuscript_ja.docx",
+      "sha256": "8844454d8b858c614cdf6ace1318c7f0ef45c33f1645c5b8227394342164b83d",
+      "pages": 7,
+      "all_pages_visually_reviewed": true,
+      "reviewed_page_sha256": [
+        "32bf47651ffb5874b01f4765a15164d4daf14c042deade13230a19c03ad1997d",
+        "93de37b241b764b79dd1a10b1bfd3f3dfe7a88c3393ded74328bc59ad161e15b",
+        "e1ef199e590e08e0d684d7d1e711132ed60f73dd370519fb74340d600f7b56de",
+        "91a8bf772d6cfeffa3917a67c4c7cfcc14f0638fb8500676dda53832daf62b76",
+        "225885c737171aa772724d0fdafa68c18711429067d7dcb321e5a2ad1c6ba973",
+        "33cdcd1a7914acb13346bec3a403161d09b9bcf90cb68dd7f848082af73e648b",
+        "02892097906f3bdab40b9e16ea1f96abc1e1e58a18b600b221403ad07085160e"
+      ],
+      "review_method": "Root viewed all 14 release pages at 140dpi; final reference-only changes retain identical pixels on pages 1–6, and both final page 7 images were viewed again",
+      "major_layout_defects": false
+    }
+  ],
+  "selected_qa": 200,
+  "comparable_qa": 148,
+  "primary": [
+    {
+      "language": "en",
+      "selected_qa": 100,
+      "comparable_qa": 80,
+      "excluded_qa": 20,
+      "exclusion_reasons": {
+        "invalid_or_unscorable_trials": 20
+      },
+      "mean_order_rate": 0.08249999999999999,
+      "mean_repeat_rate": 0.0,
+      "mean_increment": 0.08249999999999999,
+      "ci95": [
+        0.045,
+        0.125
+      ],
+      "decision_change_qa": 14,
+      "classification_counts": {
+        "no_decision_change": 66,
+        "decision_change_same_binary_quality": 5,
+        "decision_change_quality_changes": 7,
+        "decision_change_quality_unknown": 2
+      },
+      "initial_failures": 0,
+      "rewrite_failures": 0,
+      "rewrite_not_run": 0
+    },
+    {
+      "language": "ja",
+      "selected_qa": 100,
+      "comparable_qa": 68,
+      "excluded_qa": 32,
+      "exclusion_reasons": {
+        "invalid_or_unscorable_trials": 31,
+        "baseline_unavailable": 1
+      },
+      "mean_order_rate": 0.08235294117647059,
+      "mean_repeat_rate": 0.0,
+      "mean_increment": 0.08235294117647059,
+      "ci95": [
+        0.041176470588235294,
+        0.12647058823529414
+      ],
+      "decision_change_qa": 12,
+      "classification_counts": {
+        "no_decision_change": 56,
+        "decision_change_same_binary_quality": 3,
+        "decision_change_quality_changes": 7,
+        "decision_change_quality_unknown": 2
+      },
+      "initial_failures": 1,
+      "rewrite_failures": 4,
+      "rewrite_not_run": 1
+    }
+  ],
+  "ja_minus_en": {
+    "mean": -0.00014705882352940292,
+    "ci95": [
+      -0.05955882352941177,
+      0.05985294117647058
+    ]
+  },
+  "statistics": {
+    "numpy_version": "2.5.3",
+    "repetitions": 10000,
+    "seed": 42,
+    "rng": "SeedSequence(42).spawn(2), en then ja",
+    "bootstrap_unit": "document_group_id within language",
+    "quantile": "linear 2.5/97.5 percentiles",
+    "estimand": "QA-weighted empirical mixture conditional on comparability"
+  },
+  "table_values": {
+    "en": {
+      "development": [
+        [
+          "Synthetic",
+          "EN",
+          "12",
+          "Relations, scope, uncertainty"
+        ],
+        [
+          "Synthetic",
+          "JA",
+          "15",
+          "Relations, scope, uncertainty"
+        ],
+        [
+          "Saved QA",
+          "EN",
+          "15",
+          "Previously observed errors (42 sentences)"
+        ]
+      ],
+      "primary": [
+        [
+          "EN",
+          "80/100",
+          "8.25",
+          "[4.50, 12.50]"
+        ],
+        [
+          "JA",
+          "68/100",
+          "8.24",
+          "[4.12, 12.65]"
+        ]
+      ],
+      "quality": [
+        [
+          "EN",
+          "31/65/4/0",
+          "51/43/6/0",
+          "63/33/4/0"
+        ],
+        [
+          "JA",
+          "21/73/5/1",
+          "41/50/8/1",
+          "55/38/6/1"
+        ]
+      ],
+      "selection": [
+        [
+          "EN",
+          "93",
+          "32",
+          "11",
+          "2",
+          "1"
+        ],
+        [
+          "JA",
+          "84",
+          "31",
+          "13",
+          "2",
+          "0"
+        ]
+      ],
+      "cases": [
+        [
+          "1",
+          "original",
+          "0.33",
+          "B / 1"
+        ],
+        [
+          "1",
+          "shuffle_3",
+          "1.00",
+          "A / 0"
+        ],
+        [
+          "2",
+          "original",
+          "0.75",
+          "A / 0"
+        ],
+        [
+          "2",
+          "shuffle_2",
+          "0.50",
+          "B / 1"
+        ],
+        [
+          "3",
+          "original",
+          "0.67",
+          "B / 0"
+        ],
+        [
+          "3",
+          "reversed",
+          "1.00",
+          "A / 0"
+        ]
+      ],
+      "cost": [
+        [
+          "EN",
+          "OE",
+          "364",
+          "1,669,032"
+        ],
+        [
+          "EN",
+          "AR",
+          "200",
+          "706,586"
+        ],
+        [
+          "JA",
+          "OE",
+          "467",
+          "2,964,849"
+        ],
+        [
+          "JA",
+          "AR",
+          "198",
+          "992,497"
+        ]
+      ]
+    },
+    "ja": {
+      "development": [
+        [
+          "人工例",
+          "EN",
+          "12",
+          "関係・範囲・不確実性"
+        ],
+        [
+          "人工例",
+          "JA",
+          "15",
+          "関係・範囲・不確実性"
+        ],
+        [
+          "保存QA",
+          "EN",
+          "15",
+          "既知の誤り（42文）"
+        ]
+      ],
+      "primary": [
+        [
+          "EN",
+          "80/100",
+          "8.25",
+          "[4.50, 12.50]"
+        ],
+        [
+          "JA",
+          "68/100",
+          "8.24",
+          "[4.12, 12.65]"
+        ]
+      ],
+      "quality": [
+        [
+          "EN",
+          "31/65/4/0",
+          "51/43/6/0",
+          "63/33/4/0"
+        ],
+        [
+          "JA",
+          "21/73/5/1",
+          "41/50/8/1",
+          "55/38/6/1"
+        ]
+      ],
+      "selection": [
+        [
+          "EN",
+          "93",
+          "32",
+          "11",
+          "2",
+          "1"
+        ],
+        [
+          "JA",
+          "84",
+          "31",
+          "13",
+          "2",
+          "0"
+        ]
+      ],
+      "cases": [
+        [
+          "1",
+          "original",
+          "0.33",
+          "B / 1"
+        ],
+        [
+          "1",
+          "shuffle_3",
+          "1.00",
+          "A / 0"
+        ],
+        [
+          "2",
+          "original",
+          "0.75",
+          "A / 0"
+        ],
+        [
+          "2",
+          "shuffle_2",
+          "0.50",
+          "B / 1"
+        ],
+        [
+          "3",
+          "original",
+          "0.67",
+          "B / 0"
+        ],
+        [
+          "3",
+          "reversed",
+          "1.00",
+          "A / 0"
+        ]
+      ],
+      "cost": [
+        [
+          "EN",
+          "OE",
+          "364",
+          "1,669,032"
+        ],
+        [
+          "EN",
+          "AR",
+          "200",
+          "706,586"
+        ],
+        [
+          "JA",
+          "OE",
+          "467",
+          "2,964,849"
+        ],
+        [
+          "JA",
+          "AR",
+          "198",
+          "992,497"
+        ]
+      ]
+    }
+  },
+  "checks": {
+    "command": "uv run --no-sync python -X utf8 -m pytest papers/iciae2027/manuscript -q",
+    "passed": 27,
+    "elapsed_seconds": 3.92,
+    "ruff_command": "uv run --no-sync ruff check .",
+    "ruff_passed": true,
+    "original_evidence_and_research_files_unchanged": true,
+    "reviewed_staged_and_canonical_docx_hashes_equal": true,
+    "result_block_numeric_multisets_match_between_languages": true,
+    "source_bytes_equal_fixed_git_blobs_and_bound_to_lf": true,
+    "no_page_number_fields": true,
+    "template_section_and_preserved_parts": "passed by actual OOXML artifact tests",
+    "full_research_pytest_rerun": false,
+    "scope": "Manuscript/analysis tests only; earlier Windows research-suite portability failures are not claimed fixed"
+  },
+  "scientific_changes": {
+    "new_post_hoc_pooled_analysis": true,
+    "new_distinct_confidence_intervals": 3,
+    "new_model_inference_calls": 0,
+    "new_annotation_calls": 0,
+    "original_threshold_model_inputs_labels_missingness_and_intervals_preserved": true
+  },
+  "human_reviewed_labels": false,
+  "submitted": false,
+  "remaining": [
+    "author read-through and supervisor review",
+    "author information",
+    "reviewer access and citation check",
+    "author-complete English PDF and submission"
+  ]
+}

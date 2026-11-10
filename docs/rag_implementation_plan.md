@@ -1,5 +1,7 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-11-10 17:04 JST 執筆実装改訂: derive_pooled_results.pyで全200問のcanonical trial_plan・保存判断・選択Yを照合し、事後統合の点推定・文書Group Bootstrap区間・品質/費用/意味/閾値集計を新規派生JSONへ保存した。原稿生成を言語別2行の結果と開発診断表・3具体例へ更新し、日英82単位と2図6表を再生成。開いている原稿を保全して一組を検査する--output-dirと作業用検査先を追加した。原稿27検査/Ruff、両7頁の全14頁描画確認。研究用src/scripts/configs/tests・依存・元資料・旧集計は不変。[再現](../papers/iciae2027/notes/pooled_analysis_readme.md)と[検証](../papers/iciae2027/notes/draft5_validation_20261110.json)参照。
+
 2026-11-10 11:12 JST 執筆実装更新: derive_extension_results.pyで封印済み3Batchをcanonical trial_planに照合し、新規集合だけの記述集計を追加。生成器を6区分へ拡張し、図2と5表へExtを追記、図1と元成果・科学的src/設定/依存は保持。実DOCX全セル・日英対応・全資料Hashを検査する。保存済みBootstrap区間を再利用し新推定は行わない。[再現案内](../papers/iciae2027/notes/extension_results_readme.md)参照。
 
 2026-11-06 18:00 JST 執筆実装更新: manuscript/derive_order_effects.pyと派生JSONを追加し、canonical trial_planで順序群を照合。実DOCX6表/83対訳単位/13引用と原文抜粋の来歴を検査し、生成Manifestへ派生JSONのcanonical Hashを結合した。18検査/Ruff・全16頁確認成功。図は明示再描画時のみ更新し、元図/研究用src/設定/依存/資料は不変。[記述集計](../papers/iciae2027/notes/order_effects_readme.md)を参照。
