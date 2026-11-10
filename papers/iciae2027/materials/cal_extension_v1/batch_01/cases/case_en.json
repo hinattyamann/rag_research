@@ -1,0 +1,1333 @@
+{
+  "case_id": "case_en",
+  "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+  "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+  "language": "en",
+  "cohort": "cal",
+  "input_path": "inputs/cal_en_8a8505e4e47195cb61b7a0ac.json",
+  "post_outcome_explanatory_selection": true,
+  "selection_rule": "First lexicographic QA with order variation if any, otherwise first selected QA; not a frequency sample",
+  "trials": [
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "trial_id": "repeat_4",
+      "document_ids": [
+        "811309063_996-1779",
+        "849075446_56964-57298",
+        "811309063_3478-4123",
+        "843174929_8563-9035",
+        "854138543_44029-44296"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "8a8505e4e47195cb61b7a0ac/repeat_4.json",
+      "json_schema_sha256": "36071c9317dd2476c56778a6c25c4e9068284dae8fd3cc8e575e47e357556c26",
+      "result_sha256": "03fdd493afe04e207c55133bb67990ce3955628a339374752b1748d36206d5c5",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The purpose of a court of appeals is to hear appeals from trial courts or other lower tribunals."
+        },
+        {
+          "claim_id": "c2",
+          "text": "It reviews the decisions made by the lower courts to determine if there was an error that justifies overturning the verdict."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This process is not automatic; only a small proportion of trial court decisions result in appeals."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 811309063_996-1779 defines a court of appeals as empowered to hear an appeal of a trial court or other lower tribunal, matching the claim.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Passages 811309063_996-1779 and 811309063_3478-4123 confirm hearing lower court appeals and finding errors to upset verdicts.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            },
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 811309063_3478-4123 states appellate court must find error to upset verdict, concluding only a small proportion of trial decisions result in appeals.",
+          "evidence": [
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 4745,
+        "output_tokens": 12640,
+        "elapsed_seconds": 239.99519597087055,
+        "generation_seconds": 239.9291108540492,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1581,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.8194576719543,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1585,
+          "output_tokens": 4234,
+          "elapsed_seconds": 80.32979310699739,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1579,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.84594519191887,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "03fdd493afe04e207c55133bb67990ce3955628a339374752b1748d36206d5c5",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "trial_id": "reversed",
+      "document_ids": [
+        "854138543_44029-44296",
+        "843174929_8563-9035",
+        "811309063_3478-4123",
+        "849075446_56964-57298",
+        "811309063_996-1779"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "8a8505e4e47195cb61b7a0ac/reversed.json",
+      "json_schema_sha256": "36071c9317dd2476c56778a6c25c4e9068284dae8fd3cc8e575e47e357556c26",
+      "result_sha256": "88fc8f1fba151cf78984604867c2b7a43ad01ba71bd6aa8047a1ac0c5beb80c0",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The purpose of a court of appeals is to hear appeals from trial courts or other lower tribunals."
+        },
+        {
+          "claim_id": "c2",
+          "text": "It reviews the decisions made by the lower courts to determine if there was an error that justifies overturning the verdict."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This process is not automatic; only a small proportion of trial court decisions result in appeals."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passage 811309063_996-1779 defines a court of appeals as empowered to hear an appeal of a trial court or other lower tribunal, matching the claim's subject, and",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 811309063_996-1779 defines court of appeals as hearing appeals of lower tribunals. Source 811309063_3478-4123 states appellate courts find errors justifi",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            },
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "contradicted",
+          "reason": "Source states appeal is 'as of right' (automatic), conflicting with claim's 'not automatic'. Second detail supported by source.",
+          "evidence": [
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 4745,
+        "output_tokens": 12635,
+        "elapsed_seconds": 239.9927224838175,
+        "generation_seconds": 239.95790023508016,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1581,
+          "output_tokens": 4208,
+          "elapsed_seconds": 79.9088363549672,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1585,
+          "output_tokens": 4241,
+          "elapsed_seconds": 80.56689477793407,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1579,
+          "output_tokens": 4186,
+          "elapsed_seconds": 79.51699135091621,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "88fc8f1fba151cf78984604867c2b7a43ad01ba71bd6aa8047a1ac0c5beb80c0",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "trial_id": "original",
+      "document_ids": [
+        "811309063_996-1779",
+        "849075446_56964-57298",
+        "811309063_3478-4123",
+        "843174929_8563-9035",
+        "854138543_44029-44296"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "8a8505e4e47195cb61b7a0ac/original.json",
+      "json_schema_sha256": "36071c9317dd2476c56778a6c25c4e9068284dae8fd3cc8e575e47e357556c26",
+      "result_sha256": "16ba1fb3b2662b4ad78d372fff929372270f8d2b5e372a0533a6841ac3f4f383",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The purpose of a court of appeals is to hear appeals from trial courts or other lower tribunals."
+        },
+        {
+          "claim_id": "c2",
+          "text": "It reviews the decisions made by the lower courts to determine if there was an error that justifies overturning the verdict."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This process is not automatic; only a small proportion of trial court decisions result in appeals."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 811309063_996-1779 defines a court of appeals as empowered to hear an appeal of a trial court or other lower tribunal, matching the claim.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Passages 811309063_996-1779 and 811309063_3478-4123 confirm hearing lower court appeals and finding errors to upset verdicts.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            },
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 811309063_3478-4123 states appellate court must find error to upset verdict, concluding only a small proportion of trial decisions result in appeals.",
+          "evidence": [
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 4745,
+        "output_tokens": 12640,
+        "elapsed_seconds": 239.8894047359936,
+        "generation_seconds": 239.8560645490652,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1581,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.75584669900127,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1585,
+          "output_tokens": 4234,
+          "elapsed_seconds": 80.31373803201132,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1579,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.81982000498101,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "16ba1fb3b2662b4ad78d372fff929372270f8d2b5e372a0533a6841ac3f4f383",
+      "shared_original_not_two_calls": true
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "trial_id": "shuffle_2",
+      "document_ids": [
+        "854138543_44029-44296",
+        "849075446_56964-57298",
+        "843174929_8563-9035",
+        "811309063_996-1779",
+        "811309063_3478-4123"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "8a8505e4e47195cb61b7a0ac/shuffle_2.json",
+      "json_schema_sha256": "36071c9317dd2476c56778a6c25c4e9068284dae8fd3cc8e575e47e357556c26",
+      "result_sha256": "59dceb6dcbb9b3bb9bad31849d03f5de42ad5076bec149a0982794cbb55b8daa",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The purpose of a court of appeals is to hear appeals from trial courts or other lower tribunals."
+        },
+        {
+          "claim_id": "c2",
+          "text": "It reviews the decisions made by the lower courts to determine if there was an error that justifies overturning the verdict."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This process is not automatic; only a small proportion of trial court decisions result in appeals."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 811309063_996-1779 defines court of appeals as empowered to hear an appeal of a trial court or other lower tribunal.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 811309063_3478-4123 states appellate courts must find errors justifying upsetting verdicts. Source 811309063_996-1779 defines appellate courts hearing上诉s",
+          "evidence": [
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            },
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 811309063_3478-4123 explicitly states 'only a small proportion of trial court decisions result in appeals' and notes cost/error requirements implying non",
+          "evidence": [
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 4745,
+        "output_tokens": 12130,
+        "elapsed_seconds": 230.70298725599423,
+        "generation_seconds": 230.66979796101805,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1581,
+          "output_tokens": 3682,
+          "elapsed_seconds": 70.24838507699315,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1585,
+          "output_tokens": 4241,
+          "elapsed_seconds": 80.58003347599879,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1579,
+          "output_tokens": 4207,
+          "elapsed_seconds": 79.8745687030023,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "59dceb6dcbb9b3bb9bad31849d03f5de42ad5076bec149a0982794cbb55b8daa",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "trial_id": "repeat_2",
+      "document_ids": [
+        "811309063_996-1779",
+        "849075446_56964-57298",
+        "811309063_3478-4123",
+        "843174929_8563-9035",
+        "854138543_44029-44296"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "8a8505e4e47195cb61b7a0ac/repeat_2.json",
+      "json_schema_sha256": "36071c9317dd2476c56778a6c25c4e9068284dae8fd3cc8e575e47e357556c26",
+      "result_sha256": "3b8deed626d9f069573f44ea6409c96a99b032194d37572fbcbdcfd84e66c98a",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The purpose of a court of appeals is to hear appeals from trial courts or other lower tribunals."
+        },
+        {
+          "claim_id": "c2",
+          "text": "It reviews the decisions made by the lower courts to determine if there was an error that justifies overturning the verdict."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This process is not automatic; only a small proportion of trial court decisions result in appeals."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 811309063_996-1779 defines a court of appeals as empowered to hear an appeal of a trial court or other lower tribunal, matching the claim.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Passages 811309063_996-1779 and 811309063_3478-4123 confirm hearing lower court appeals and finding errors to upset verdicts.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            },
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 811309063_3478-4123 states appellate court must find error to upset verdict, concluding only a small proportion of trial decisions result in appeals.",
+          "evidence": [
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 4745,
+        "output_tokens": 12640,
+        "elapsed_seconds": 239.64263234403916,
+        "generation_seconds": 239.6025673559634,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1581,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.49822574108839,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1585,
+          "output_tokens": 4234,
+          "elapsed_seconds": 80.33313825295772,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1579,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.81126834999304,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "3b8deed626d9f069573f44ea6409c96a99b032194d37572fbcbdcfd84e66c98a",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "trial_id": "repeat_3",
+      "document_ids": [
+        "811309063_996-1779",
+        "849075446_56964-57298",
+        "811309063_3478-4123",
+        "843174929_8563-9035",
+        "854138543_44029-44296"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "8a8505e4e47195cb61b7a0ac/repeat_3.json",
+      "json_schema_sha256": "36071c9317dd2476c56778a6c25c4e9068284dae8fd3cc8e575e47e357556c26",
+      "result_sha256": "fe5166d25c8abbca0aaea7d366f0da4e18e261c43412ffbaa2fc9862efc1b1ac",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The purpose of a court of appeals is to hear appeals from trial courts or other lower tribunals."
+        },
+        {
+          "claim_id": "c2",
+          "text": "It reviews the decisions made by the lower courts to determine if there was an error that justifies overturning the verdict."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This process is not automatic; only a small proportion of trial court decisions result in appeals."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 811309063_996-1779 defines a court of appeals as empowered to hear an appeal of a trial court or other lower tribunal, matching the claim.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Passages 811309063_996-1779 and 811309063_3478-4123 confirm hearing lower court appeals and finding errors to upset verdicts.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            },
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 811309063_3478-4123 states appellate court must find error to upset verdict, concluding only a small proportion of trial decisions result in appeals.",
+          "evidence": [
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 4745,
+        "output_tokens": 12640,
+        "elapsed_seconds": 239.91902648983523,
+        "generation_seconds": 239.88631805591285,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1581,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.78521656699013,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1585,
+          "output_tokens": 4234,
+          "elapsed_seconds": 80.34414912294596,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1579,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.78966079989914,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "fe5166d25c8abbca0aaea7d366f0da4e18e261c43412ffbaa2fc9862efc1b1ac",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "trial_id": "repeat_5",
+      "document_ids": [
+        "811309063_996-1779",
+        "849075446_56964-57298",
+        "811309063_3478-4123",
+        "843174929_8563-9035",
+        "854138543_44029-44296"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "8a8505e4e47195cb61b7a0ac/repeat_5.json",
+      "json_schema_sha256": "36071c9317dd2476c56778a6c25c4e9068284dae8fd3cc8e575e47e357556c26",
+      "result_sha256": "a2fc688bffbaa1bfcc1544d27575a720c1071360c28955de4e6c97ed8cc65622",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The purpose of a court of appeals is to hear appeals from trial courts or other lower tribunals."
+        },
+        {
+          "claim_id": "c2",
+          "text": "It reviews the decisions made by the lower courts to determine if there was an error that justifies overturning the verdict."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This process is not automatic; only a small proportion of trial court decisions result in appeals."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 811309063_996-1779 defines a court of appeals as empowered to hear an appeal of a trial court or other lower tribunal, matching the claim.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Passages 811309063_996-1779 and 811309063_3478-4123 confirm hearing lower court appeals and finding errors to upset verdicts.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            },
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 811309063_3478-4123 states appellate court must find error to upset verdict, concluding only a small proportion of trial decisions result in appeals.",
+          "evidence": [
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 4745,
+        "output_tokens": 12640,
+        "elapsed_seconds": 239.8885892899707,
+        "generation_seconds": 239.85607436206192,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1581,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.75453233392909,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1585,
+          "output_tokens": 4234,
+          "elapsed_seconds": 80.33304673701059,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1579,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.80101021903101,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "a2fc688bffbaa1bfcc1544d27575a720c1071360c28955de4e6c97ed8cc65622",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "trial_id": "shuffle_3",
+      "document_ids": [
+        "811309063_996-1779",
+        "854138543_44029-44296",
+        "811309063_3478-4123",
+        "843174929_8563-9035",
+        "849075446_56964-57298"
+      ],
+      "score": 0.6666666666666666,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "8a8505e4e47195cb61b7a0ac/shuffle_3.json",
+      "json_schema_sha256": "36071c9317dd2476c56778a6c25c4e9068284dae8fd3cc8e575e47e357556c26",
+      "result_sha256": "0bb79e025ed32ee248e03b893f42dc68f211a031f33004ce2fb0d2d1dadb2fb3",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The purpose of a court of appeals is to hear appeals from trial courts or other lower tribunals."
+        },
+        {
+          "claim_id": "c2",
+          "text": "It reviews the decisions made by the lower courts to determine if there was an error that justifies overturning the verdict."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This process is not automatic; only a small proportion of trial court decisions result in appeals."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passage 811309063_996-1779 defines court of appeals as empowered to hear appeal of trial court or other lower tribunal, matching claim details exactly.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Source 811309063_996-1779 defines court of appeals hearing lower tribunal appeals. Source 811309063_3478-4123 states appellate court finds error justifying upse",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            },
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "contradicted",
+          "reason": "Source states appeals are 'as of right' (automatic access) while claim says 'not automatic'.",
+          "evidence": [
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 4745,
+        "output_tokens": 11520,
+        "elapsed_seconds": 218.59106883092318,
+        "generation_seconds": 218.55729420797434,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1581,
+          "output_tokens": 3575,
+          "elapsed_seconds": 67.75308082194533,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1585,
+          "output_tokens": 3764,
+          "elapsed_seconds": 71.41296926897485,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1579,
+          "output_tokens": 4181,
+          "elapsed_seconds": 79.425018740003,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "0bb79e025ed32ee248e03b893f42dc68f211a031f33004ce2fb0d2d1dadb2fb3",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "trial_id": "shuffle_1",
+      "document_ids": [
+        "811309063_996-1779",
+        "811309063_3478-4123",
+        "849075446_56964-57298",
+        "854138543_44029-44296",
+        "843174929_8563-9035"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "8a8505e4e47195cb61b7a0ac/shuffle_1.json",
+      "json_schema_sha256": "36071c9317dd2476c56778a6c25c4e9068284dae8fd3cc8e575e47e357556c26",
+      "result_sha256": "8c9161e10c1cc8dc9013e63eb78c2c3c2c2f966ab843978611af0482aad7a216",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "The purpose of a court of appeals is to hear appeals from trial courts or other lower tribunals."
+        },
+        {
+          "claim_id": "c2",
+          "text": "It reviews the decisions made by the lower courts to determine if there was an error that justifies overturning the verdict."
+        },
+        {
+          "claim_id": "c3",
+          "text": "This process is not automatic; only a small proportion of trial court decisions result in appeals."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Passage 811309063_996-1779 defines a court of appeals as empowered to hear appeals from trial courts or other lower tribunals, matching the claim's subject and.",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "label": "supported",
+          "reason": "Passage 811309063_3478-4123 states appellate courts must find error to justify upsetting verdicts. Passage 811309063_996-1779 defines them as hearing appeals of",
+          "evidence": [
+            {
+              "passage_id": "811309063_996-1779",
+              "quote": "An appellate court , commonly called an appeals court , court of appeals ( American English ) , appeal court ( British English ) , court of second instance or second instance court , is any court of law that is empowered to hear an appeal of a trial court or other lower tribunal . In most jurisdictions , the court system is divided into at least three levels : the trial court , which initially hears cases and reviews evidence and testimony to determine the facts of the case ; at least one intermediate appellate court ; and a supreme court ( or court of last resort ) which primarily reviews the decisions of the intermediate courts . A jurisdiction 's supreme court is that jurisdiction 's highest appellate court . Appellate courts nationwide can operate under varying rules ."
+            },
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "label": "supported",
+          "reason": "Source 811309063_3478-4123 states court must find error to upset verdict, leading to only small proportion of decisions resulting in appeals.",
+          "evidence": [
+            {
+              "passage_id": "811309063_3478-4123",
+              "quote": "In most U.S. states , and in U.S. federal courts , parties before the court are allowed one appeal as of right . This means that a party who is unsatisfied with the outcome of a trial may bring an appeal to contest that outcome . However , appeals may be costly , and the appellate court must find an error on the part of the court below that justifies upsetting the verdict . Therefore , only a small proportion of trial court decisions result in appeals . Some appellate courts , particularly supreme courts , have the power of discretionary review , meaning that they can decide whether they will hear an appeal brought in a particular case ."
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 3,
+        "input_tokens": 4745,
+        "output_tokens": 12338,
+        "elapsed_seconds": 234.3413983018836,
+        "generation_seconds": 234.3076487709768,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1581,
+          "output_tokens": 4206,
+          "elapsed_seconds": 79.85735467891209,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1585,
+          "output_tokens": 3929,
+          "elapsed_seconds": 74.6452972489642,
+          "error_code": null,
+          "cost_incomplete": false
+        },
+        {
+          "completion_attempted": true,
+          "input_tokens": 1579,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.83874637400731,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "8c9161e10c1cc8dc9013e63eb78c2c3c2c2f966ab843978611af0482aad7a216",
+      "shared_original_not_two_calls": false
+    }
+  ],
+  "policy_outcomes": [
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "route": "no_repair",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "704efb4e57d5cb7d9bf0307627c0041119879a8368b64bd5f0406a2008c3dd64",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "indeterminate",
+      "quality_y": null,
+      "quality_transition": "unknown",
+      "missed_improvement": null,
+      "harmful_rewrite": null,
+      "completion_attempts": 1,
+      "recorded_completion_attempts": 1,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 852,
+      "output_tokens": 64,
+      "summed_step_seconds": 0.638514501042664,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "route": "always_rewrite",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "6c04ceace49257585755629132451b62f2cf3437db3e142b75bbcedb6b871e23",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "indeterminate",
+      "quality_y": null,
+      "quality_transition": "unknown",
+      "missed_improvement": null,
+      "harmful_rewrite": null,
+      "completion_attempts": 2,
+      "recorded_completion_attempts": 2,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 2121,
+      "output_tokens": 4536,
+      "summed_step_seconds": 85.7789580069948,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "route": "original",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "704efb4e57d5cb7d9bf0307627c0041119879a8368b64bd5f0406a2008c3dd64",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "indeterminate",
+      "quality_y": null,
+      "quality_transition": "unknown",
+      "missed_improvement": null,
+      "harmful_rewrite": null,
+      "completion_attempts": 4,
+      "recorded_completion_attempts": 4,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 5597,
+      "output_tokens": 12704,
+      "summed_step_seconds": 240.5282634400064,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "route": "reversed",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "6c04ceace49257585755629132451b62f2cf3437db3e142b75bbcedb6b871e23",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "indeterminate",
+      "quality_y": null,
+      "quality_transition": "unknown",
+      "missed_improvement": null,
+      "harmful_rewrite": null,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 6866,
+      "output_tokens": 17171,
+      "summed_step_seconds": 325.77202469378244,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "route": "shuffle_1",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "704efb4e57d5cb7d9bf0307627c0041119879a8368b64bd5f0406a2008c3dd64",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "indeterminate",
+      "quality_y": null,
+      "quality_transition": "unknown",
+      "missed_improvement": null,
+      "harmful_rewrite": null,
+      "completion_attempts": 4,
+      "recorded_completion_attempts": 4,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 5597,
+      "output_tokens": 12402,
+      "summed_step_seconds": 234.98025700589642,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "route": "shuffle_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "704efb4e57d5cb7d9bf0307627c0041119879a8368b64bd5f0406a2008c3dd64",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "indeterminate",
+      "quality_y": null,
+      "quality_transition": "unknown",
+      "missed_improvement": null,
+      "harmful_rewrite": null,
+      "completion_attempts": 4,
+      "recorded_completion_attempts": 4,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 5597,
+      "output_tokens": 12194,
+      "summed_step_seconds": 231.34184596000705,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "route": "shuffle_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "6c04ceace49257585755629132451b62f2cf3437db3e142b75bbcedb6b871e23",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "indeterminate",
+      "quality_y": null,
+      "quality_transition": "unknown",
+      "missed_improvement": null,
+      "harmful_rewrite": null,
+      "completion_attempts": 5,
+      "recorded_completion_attempts": 5,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 6866,
+      "output_tokens": 16056,
+      "summed_step_seconds": 304.37037104088813,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "route": "repeat_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "704efb4e57d5cb7d9bf0307627c0041119879a8368b64bd5f0406a2008c3dd64",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "indeterminate",
+      "quality_y": null,
+      "quality_transition": "unknown",
+      "missed_improvement": null,
+      "harmful_rewrite": null,
+      "completion_attempts": 4,
+      "recorded_completion_attempts": 4,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 5597,
+      "output_tokens": 12704,
+      "summed_step_seconds": 240.28149104805198,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "route": "repeat_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "704efb4e57d5cb7d9bf0307627c0041119879a8368b64bd5f0406a2008c3dd64",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "indeterminate",
+      "quality_y": null,
+      "quality_transition": "unknown",
+      "missed_improvement": null,
+      "harmful_rewrite": null,
+      "completion_attempts": 4,
+      "recorded_completion_attempts": 4,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 5597,
+      "output_tokens": 12704,
+      "summed_step_seconds": 240.55788519384805,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "route": "repeat_4",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "704efb4e57d5cb7d9bf0307627c0041119879a8368b64bd5f0406a2008c3dd64",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "indeterminate",
+      "quality_y": null,
+      "quality_transition": "unknown",
+      "missed_improvement": null,
+      "harmful_rewrite": null,
+      "completion_attempts": 4,
+      "recorded_completion_attempts": 4,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 5597,
+      "output_tokens": 12704,
+      "summed_step_seconds": 240.63405467488337,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_8a8505e4e47195cb61b7a0ac",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+      "route": "repeat_5",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "704efb4e57d5cb7d9bf0307627c0041119879a8368b64bd5f0406a2008c3dd64",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "indeterminate",
+      "quality_y": null,
+      "quality_transition": "unknown",
+      "missed_improvement": null,
+      "harmful_rewrite": null,
+      "completion_attempts": 4,
+      "recorded_completion_attempts": 4,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 5597,
+      "output_tokens": 12704,
+      "summed_step_seconds": 240.52744799398351,
+      "incomplete": false
+    }
+  ]
+}

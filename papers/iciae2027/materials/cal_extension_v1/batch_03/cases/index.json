@@ -1,0 +1,2045 @@
+{
+  "cases": [
+    {
+      "case_id": "case_en",
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "language": "en",
+      "cohort": "cal",
+      "input_path": "inputs/cal_en_59da2fa71ce30a4854652b43.json",
+      "post_outcome_explanatory_selection": true,
+      "selection_rule": "First lexicographic QA with order variation if any, otherwise first selected QA; not a frequency sample",
+      "trials": [
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "trial_id": "shuffle_3",
+          "document_ids": [
+            "821422942_133-444",
+            "864105695_1997-2464",
+            "864105695_186-627",
+            "864105695_75-185",
+            "864105695_628-1228"
+          ],
+          "score": 0.0,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "59da2fa71ce30a4854652b43/shuffle_3.json",
+          "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+          "result_sha256": "c4acc991b4591a8d3e865c18f9c63ce09e85b2587d1e6710db77f41f70ea59be",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "contradicted",
+              "reason": "Sources state Irwin played Mr. Noodle, not brother Mister Noodle; Jeter replaced Irwin as Mister Noodle.",
+              "evidence": [
+                {
+                  "passage_id": "864105695_186-627",
+                  "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+                },
+                {
+                  "passage_id": "864105695_628-1228",
+                  "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 1,
+            "input_tokens": 1533,
+            "output_tokens": 4203,
+            "elapsed_seconds": 79.83261499204673,
+            "generation_seconds": 79.78734845784493,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 1533,
+              "output_tokens": 4203,
+              "elapsed_seconds": 79.83261499204673,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "c4acc991b4591a8d3e865c18f9c63ce09e85b2587d1e6710db77f41f70ea59be",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "trial_id": "repeat_2",
+          "document_ids": [
+            "864105695_186-627",
+            "864105695_75-185",
+            "864105695_1997-2464",
+            "864105695_628-1228",
+            "821422942_133-444"
+          ],
+          "score": 0.0,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "59da2fa71ce30a4854652b43/repeat_2.json",
+          "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+          "result_sha256": "32de144dd8994f43d28956d69744f7cceada00abc17a40cfa4a834491b21b3f5",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "contradicted",
+              "reason": "Passage 186-627 states Irwin played 'Mr. Noodle', while Passage 628-1228 states he played 'Mister Noodle' (the brother). These are distinct characters per the 1",
+              "evidence": [
+                {
+                  "passage_id": "864105695_186-627",
+                  "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+                },
+                {
+                  "passage_id": "864105695_628-1228",
+                  "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 1,
+            "input_tokens": 1533,
+            "output_tokens": 4230,
+            "elapsed_seconds": 80.31178119289689,
+            "generation_seconds": 80.30144203081727,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 1533,
+              "output_tokens": 4230,
+              "elapsed_seconds": 80.31178119289689,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "32de144dd8994f43d28956d69744f7cceada00abc17a40cfa4a834491b21b3f5",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "trial_id": "shuffle_2",
+          "document_ids": [
+            "864105695_628-1228",
+            "821422942_133-444",
+            "864105695_1997-2464",
+            "864105695_75-185",
+            "864105695_186-627"
+          ],
+          "score": 0.0,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "59da2fa71ce30a4854652b43/shuffle_2.json",
+          "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+          "result_sha256": "d3f1be5e011d47ade5a424122a0d2f80aa6b82f24f64a23daa948eccb964e735",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "contradicted",
+              "reason": "Source 75-185 states Bill Irwin portrayed Mr. Noodle, not his brother Mister Noodle; Source 628-1228 implies Irwin played Mister Noodle before Jeter replaced.",
+              "evidence": [
+                {
+                  "passage_id": "864105695_75-185",
+                  "quote": "Mr. Noodle Sesame Street character Mr. Noodle in Elmo 's World Portrayed by Bill Irwin Information Gender Male"
+                },
+                {
+                  "passage_id": "864105695_628-1228",
+                  "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 1,
+            "input_tokens": 1533,
+            "output_tokens": 4223,
+            "elapsed_seconds": 80.17128309281543,
+            "generation_seconds": 80.16185289504938,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 1533,
+              "output_tokens": 4223,
+              "elapsed_seconds": 80.17128309281543,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "d3f1be5e011d47ade5a424122a0d2f80aa6b82f24f64a23daa948eccb964e735",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "trial_id": "shuffle_1",
+          "document_ids": [
+            "864105695_628-1228",
+            "821422942_133-444",
+            "864105695_186-627",
+            "864105695_75-185",
+            "864105695_1997-2464"
+          ],
+          "score": 0.0,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "59da2fa71ce30a4854652b43/shuffle_1.json",
+          "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+          "result_sha256": "e1fe2637f35d79a1c8c7712a2abd592a7a509fcc824928cce5cc60a7cb4033de",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "contradicted",
+              "reason": "Sources conflict on actor-character mapping; one says Irwin played Mr. Noodle, another implies he played Mister Noodle.",
+              "evidence": [
+                {
+                  "passage_id": "864105695_75-185",
+                  "quote": "Mr. Noodle Sesame Street character Mr. Noodle in Elmo 's World Portrayed by Bill Irwin Information Gender Male"
+                },
+                {
+                  "passage_id": "864105695_628-1228",
+                  "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 1,
+            "input_tokens": 1533,
+            "output_tokens": 4201,
+            "elapsed_seconds": 79.7103757369332,
+            "generation_seconds": 79.70070702489465,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 1533,
+              "output_tokens": 4201,
+              "elapsed_seconds": 79.7103757369332,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "e1fe2637f35d79a1c8c7712a2abd592a7a509fcc824928cce5cc60a7cb4033de",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "trial_id": "repeat_5",
+          "document_ids": [
+            "864105695_186-627",
+            "864105695_75-185",
+            "864105695_1997-2464",
+            "864105695_628-1228",
+            "821422942_133-444"
+          ],
+          "score": 0.0,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "59da2fa71ce30a4854652b43/repeat_5.json",
+          "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+          "result_sha256": "01f2fee23d817245020a188691251ae6c2305d3bc2b92ef52f854e6ac60daf54",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "contradicted",
+              "reason": "Passage 186-627 states Irwin played 'Mr. Noodle', while Passage 628-1228 states he played 'Mister Noodle' (the brother). These are distinct characters per the 1",
+              "evidence": [
+                {
+                  "passage_id": "864105695_186-627",
+                  "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+                },
+                {
+                  "passage_id": "864105695_628-1228",
+                  "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 1,
+            "input_tokens": 1533,
+            "output_tokens": 4230,
+            "elapsed_seconds": 80.32187148486264,
+            "generation_seconds": 80.31190962088294,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 1533,
+              "output_tokens": 4230,
+              "elapsed_seconds": 80.32187148486264,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "01f2fee23d817245020a188691251ae6c2305d3bc2b92ef52f854e6ac60daf54",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "trial_id": "original",
+          "document_ids": [
+            "864105695_186-627",
+            "864105695_75-185",
+            "864105695_1997-2464",
+            "864105695_628-1228",
+            "821422942_133-444"
+          ],
+          "score": 0.0,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "59da2fa71ce30a4854652b43/original.json",
+          "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+          "result_sha256": "e955ae9985e5cb782bd8f27b304785c7616ce7dd92370aa03baf659907075d0b",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "contradicted",
+              "reason": "Passage 186-627 states Irwin played 'Mr. Noodle', while Passage 628-1228 states he played 'Mister Noodle' (the brother). These are distinct characters per the 1",
+              "evidence": [
+                {
+                  "passage_id": "864105695_186-627",
+                  "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+                },
+                {
+                  "passage_id": "864105695_628-1228",
+                  "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 1,
+            "input_tokens": 1533,
+            "output_tokens": 4230,
+            "elapsed_seconds": 80.31124586006626,
+            "generation_seconds": 80.30112233501859,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 1533,
+              "output_tokens": 4230,
+              "elapsed_seconds": 80.31124586006626,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "e955ae9985e5cb782bd8f27b304785c7616ce7dd92370aa03baf659907075d0b",
+          "shared_original_not_two_calls": true
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "trial_id": "reversed",
+          "document_ids": [
+            "821422942_133-444",
+            "864105695_628-1228",
+            "864105695_1997-2464",
+            "864105695_75-185",
+            "864105695_186-627"
+          ],
+          "score": 1.0,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "59da2fa71ce30a4854652b43/reversed.json",
+          "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+          "result_sha256": "fcd2ab456112d944450b982fca355dd599a80a675b6bddc8ab48ddbbc4d23d55",
+          "decision": "accept",
+          "action": "keep_initial",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "supported",
+              "reason": "Source 628-1228 states Irwin played Mr. Noodle's brother Mister Noodle before Jeter replaced him.",
+              "evidence": [
+                {
+                  "passage_id": "864105695_628-1228",
+                  "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 1,
+            "input_tokens": 1533,
+            "output_tokens": 4188,
+            "elapsed_seconds": 79.45046463096514,
+            "generation_seconds": 79.44062959589064,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 1533,
+              "output_tokens": 4188,
+              "elapsed_seconds": 79.45046463096514,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "fcd2ab456112d944450b982fca355dd599a80a675b6bddc8ab48ddbbc4d23d55",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "trial_id": "repeat_4",
+          "document_ids": [
+            "864105695_186-627",
+            "864105695_75-185",
+            "864105695_1997-2464",
+            "864105695_628-1228",
+            "821422942_133-444"
+          ],
+          "score": 0.0,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "59da2fa71ce30a4854652b43/repeat_4.json",
+          "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+          "result_sha256": "fe391b1a4132b72385c0b8acbec9bd743535b33fa95f6259a4651437476b3c95",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "contradicted",
+              "reason": "Passage 186-627 states Irwin played 'Mr. Noodle', while Passage 628-1228 states he played 'Mister Noodle' (the brother). These are distinct characters per the 1",
+              "evidence": [
+                {
+                  "passage_id": "864105695_186-627",
+                  "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+                },
+                {
+                  "passage_id": "864105695_628-1228",
+                  "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 1,
+            "input_tokens": 1533,
+            "output_tokens": 4230,
+            "elapsed_seconds": 80.35611408017576,
+            "generation_seconds": 80.34635341307148,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 1533,
+              "output_tokens": 4230,
+              "elapsed_seconds": 80.35611408017576,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "fe391b1a4132b72385c0b8acbec9bd743535b33fa95f6259a4651437476b3c95",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "trial_id": "repeat_3",
+          "document_ids": [
+            "864105695_186-627",
+            "864105695_75-185",
+            "864105695_1997-2464",
+            "864105695_628-1228",
+            "821422942_133-444"
+          ],
+          "score": 0.0,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "59da2fa71ce30a4854652b43/repeat_3.json",
+          "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+          "result_sha256": "368efd74d2211b82156e28659729533316357c6e656908b120192521722e21dc",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "contradicted",
+              "reason": "Passage 186-627 states Irwin played 'Mr. Noodle', while Passage 628-1228 states he played 'Mister Noodle' (the brother). These are distinct characters per the 1",
+              "evidence": [
+                {
+                  "passage_id": "864105695_186-627",
+                  "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+                },
+                {
+                  "passage_id": "864105695_628-1228",
+                  "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 1,
+            "input_tokens": 1533,
+            "output_tokens": 4230,
+            "elapsed_seconds": 80.33828937099315,
+            "generation_seconds": 80.32869216008112,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 1533,
+              "output_tokens": 4230,
+              "elapsed_seconds": 80.33828937099315,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "368efd74d2211b82156e28659729533316357c6e656908b120192521722e21dc",
+          "shared_original_not_two_calls": false
+        }
+      ],
+      "policy_outcomes": [
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "route": "no_repair",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "initial",
+          "selected_answer_sha256": "d9fbc930b3b8ba4e1b7ad6dfe147f05ccf0be0075b32da3038585b7ac4f1b36d",
+          "rewrite_requested": false,
+          "fallback": null,
+          "quality_status": "unreliable",
+          "quality_y": 0,
+          "quality_transition": "0->1",
+          "missed_improvement": true,
+          "harmful_rewrite": false,
+          "completion_attempts": 1,
+          "recorded_completion_attempts": 1,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 831,
+          "output_tokens": 37,
+          "summed_step_seconds": 0.444250161992386,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "route": "always_rewrite",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "reliable",
+          "quality_y": 1,
+          "quality_transition": "0->1",
+          "missed_improvement": false,
+          "harmful_rewrite": false,
+          "completion_attempts": 2,
+          "recorded_completion_attempts": 2,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 2054,
+          "output_tokens": 4454,
+          "summed_step_seconds": 84.02431721007451,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "route": "original",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "reliable",
+          "quality_y": 1,
+          "quality_transition": "0->1",
+          "missed_improvement": false,
+          "harmful_rewrite": false,
+          "completion_attempts": 3,
+          "recorded_completion_attempts": 3,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 3587,
+          "output_tokens": 8684,
+          "summed_step_seconds": 164.3361967841629,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "route": "reversed",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "initial",
+          "selected_answer_sha256": "d9fbc930b3b8ba4e1b7ad6dfe147f05ccf0be0075b32da3038585b7ac4f1b36d",
+          "rewrite_requested": false,
+          "fallback": null,
+          "quality_status": "unreliable",
+          "quality_y": 0,
+          "quality_transition": "0->1",
+          "missed_improvement": true,
+          "harmful_rewrite": false,
+          "completion_attempts": 2,
+          "recorded_completion_attempts": 2,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 2364,
+          "output_tokens": 4225,
+          "summed_step_seconds": 79.89534850697964,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "route": "shuffle_1",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "reliable",
+          "quality_y": 1,
+          "quality_transition": "0->1",
+          "missed_improvement": false,
+          "harmful_rewrite": false,
+          "completion_attempts": 3,
+          "recorded_completion_attempts": 3,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 3587,
+          "output_tokens": 8655,
+          "summed_step_seconds": 163.73532666102983,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "route": "shuffle_2",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "reliable",
+          "quality_y": 1,
+          "quality_transition": "0->1",
+          "missed_improvement": false,
+          "harmful_rewrite": false,
+          "completion_attempts": 3,
+          "recorded_completion_attempts": 3,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 3587,
+          "output_tokens": 8677,
+          "summed_step_seconds": 164.19623401691206,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "route": "shuffle_3",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "reliable",
+          "quality_y": 1,
+          "quality_transition": "0->1",
+          "missed_improvement": false,
+          "harmful_rewrite": false,
+          "completion_attempts": 3,
+          "recorded_completion_attempts": 3,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 3587,
+          "output_tokens": 8657,
+          "summed_step_seconds": 163.85756591614336,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "route": "repeat_2",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "reliable",
+          "quality_y": 1,
+          "quality_transition": "0->1",
+          "missed_improvement": false,
+          "harmful_rewrite": false,
+          "completion_attempts": 3,
+          "recorded_completion_attempts": 3,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 3587,
+          "output_tokens": 8684,
+          "summed_step_seconds": 164.33673211699352,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "route": "repeat_3",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "reliable",
+          "quality_y": 1,
+          "quality_transition": "0->1",
+          "missed_improvement": false,
+          "harmful_rewrite": false,
+          "completion_attempts": 3,
+          "recorded_completion_attempts": 3,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 3587,
+          "output_tokens": 8684,
+          "summed_step_seconds": 164.36324029508978,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "route": "repeat_4",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "reliable",
+          "quality_y": 1,
+          "quality_transition": "0->1",
+          "missed_improvement": false,
+          "harmful_rewrite": false,
+          "completion_attempts": 3,
+          "recorded_completion_attempts": 3,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 3587,
+          "output_tokens": 8684,
+          "summed_step_seconds": 164.3810650042724,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+          "cohort": "cal",
+          "language": "en",
+          "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+          "route": "repeat_5",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "reliable",
+          "quality_y": 1,
+          "quality_transition": "0->1",
+          "missed_improvement": false,
+          "harmful_rewrite": false,
+          "completion_attempts": 3,
+          "recorded_completion_attempts": 3,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 3587,
+          "output_tokens": 8684,
+          "summed_step_seconds": 164.34682240895927,
+          "incomplete": false
+        }
+      ]
+    },
+    {
+      "case_id": "case_ja",
+      "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+      "record_id": "whrja:02e85c8:answered:511",
+      "language": "ja",
+      "cohort": "cal",
+      "input_path": "inputs/cal_ja_7cb24e630cde87734dcd7e1c.json",
+      "post_outcome_explanatory_selection": true,
+      "selection_rule": "First lexicographic QA with order variation if any, otherwise first selected QA; not a frequency sample",
+      "trials": [
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "trial_id": "repeat_3",
+          "document_ids": [
+            "62140494316782455077420531643_34595-35488",
+            "77333489118002544406049112959_0-821",
+            "29797275621430404600408944239_14420-15232",
+            "69421786893977090645045364892_54924-55890",
+            "77333489118002544406049112959_1761-2583"
+          ],
+          "score": 0.5,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "7cb24e630cde87734dcd7e1c/repeat_3.json",
+          "json_schema_sha256": "931237f40299b9026d00e9bef481416ba147547c1d576c2e10e69493b8026025",
+          "result_sha256": "23a7f85e354ffe514e97c43b02fcbf77d0abe1754cd8f4432dc1f284fa9057ca",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。"
+            },
+            {
+              "claim_id": "c2",
+              "text": "Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。"
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "not_supported",
+              "reason": "文書はインダクティブ充電が非接触充電を可能とし（Passage 0-821）、通信は機器識別のためと記述しており、単方向通信がケーブルなし充電の理由とはならない。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_0-821",
+                  "quote": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。"
+                },
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            },
+            {
+              "claim_id": "c2",
+              "label": "supported",
+              "reason": "文書「Qi (ワイヤレス給電)」の記述と一致する。受電側から送電側への通信により異物検知が可能であることが明記されている。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 2,
+            "input_tokens": 7488,
+            "output_tokens": 8273,
+            "elapsed_seconds": 160.60302932281047,
+            "generation_seconds": 160.5331583430525,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 3750,
+              "output_tokens": 4264,
+              "elapsed_seconds": 82.81326084583998,
+              "error_code": null,
+              "cost_incomplete": false
+            },
+            {
+              "completion_attempted": true,
+              "input_tokens": 3738,
+              "output_tokens": 4009,
+              "elapsed_seconds": 77.7897684769705,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "23a7f85e354ffe514e97c43b02fcbf77d0abe1754cd8f4432dc1f284fa9057ca",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "trial_id": "original",
+          "document_ids": [
+            "62140494316782455077420531643_34595-35488",
+            "77333489118002544406049112959_0-821",
+            "29797275621430404600408944239_14420-15232",
+            "69421786893977090645045364892_54924-55890",
+            "77333489118002544406049112959_1761-2583"
+          ],
+          "score": 0.5,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "7cb24e630cde87734dcd7e1c/original.json",
+          "json_schema_sha256": "931237f40299b9026d00e9bef481416ba147547c1d576c2e10e69493b8026025",
+          "result_sha256": "ca1dca34194ac15b69095e885b14dafc11076a881737986f1972b77206f70ad1",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。"
+            },
+            {
+              "claim_id": "c2",
+              "text": "Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。"
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "not_supported",
+              "reason": "文書はインダクティブ充電が非接触充電を可能とし（Passage 0-821）、通信は機器識別のためと記述しており、単方向通信がケーブルなし充電の理由とはならない。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_0-821",
+                  "quote": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。"
+                },
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            },
+            {
+              "claim_id": "c2",
+              "label": "supported",
+              "reason": "文書「Qi (ワイヤレス給電)」の記述と一致する。受電側から送電側への通信により異物検知が可能であることが明記されている。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 2,
+            "input_tokens": 7488,
+            "output_tokens": 8273,
+            "elapsed_seconds": 160.4149002530612,
+            "generation_seconds": 160.37930815690197,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 3750,
+              "output_tokens": 4264,
+              "elapsed_seconds": 82.70447741704993,
+              "error_code": null,
+              "cost_incomplete": false
+            },
+            {
+              "completion_attempted": true,
+              "input_tokens": 3738,
+              "output_tokens": 4009,
+              "elapsed_seconds": 77.71042283601128,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "ca1dca34194ac15b69095e885b14dafc11076a881737986f1972b77206f70ad1",
+          "shared_original_not_two_calls": true
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "trial_id": "repeat_4",
+          "document_ids": [
+            "62140494316782455077420531643_34595-35488",
+            "77333489118002544406049112959_0-821",
+            "29797275621430404600408944239_14420-15232",
+            "69421786893977090645045364892_54924-55890",
+            "77333489118002544406049112959_1761-2583"
+          ],
+          "score": 0.5,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "7cb24e630cde87734dcd7e1c/repeat_4.json",
+          "json_schema_sha256": "931237f40299b9026d00e9bef481416ba147547c1d576c2e10e69493b8026025",
+          "result_sha256": "ff4dfea911ef6b0758dc1b3fb362b3970c9a8cf6d2fc127dfdda47a2b98c9090",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。"
+            },
+            {
+              "claim_id": "c2",
+              "text": "Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。"
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "not_supported",
+              "reason": "文書はインダクティブ充電が非接触充電を可能とし（Passage 0-821）、通信は機器識別のためと記述しており、単方向通信がケーブルなし充電の理由とはならない。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_0-821",
+                  "quote": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。"
+                },
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            },
+            {
+              "claim_id": "c2",
+              "label": "supported",
+              "reason": "文書「Qi (ワイヤレス給電)」の記述と一致する。受電側から送電側への通信により異物検知が可能であることが明記されている。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 2,
+            "input_tokens": 7488,
+            "output_tokens": 8273,
+            "elapsed_seconds": 160.49823854514398,
+            "generation_seconds": 160.4666034579277,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 3750,
+              "output_tokens": 4264,
+              "elapsed_seconds": 82.71903018513694,
+              "error_code": null,
+              "cost_incomplete": false
+            },
+            {
+              "completion_attempted": true,
+              "input_tokens": 3738,
+              "output_tokens": 4009,
+              "elapsed_seconds": 77.77920836000703,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "ff4dfea911ef6b0758dc1b3fb362b3970c9a8cf6d2fc127dfdda47a2b98c9090",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "trial_id": "repeat_2",
+          "document_ids": [
+            "62140494316782455077420531643_34595-35488",
+            "77333489118002544406049112959_0-821",
+            "29797275621430404600408944239_14420-15232",
+            "69421786893977090645045364892_54924-55890",
+            "77333489118002544406049112959_1761-2583"
+          ],
+          "score": 0.5,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "7cb24e630cde87734dcd7e1c/repeat_2.json",
+          "json_schema_sha256": "931237f40299b9026d00e9bef481416ba147547c1d576c2e10e69493b8026025",
+          "result_sha256": "fb2aef70c633f50556f692d8013b5eb01ec8c4c4813ab67105f58b03033a8b3e",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。"
+            },
+            {
+              "claim_id": "c2",
+              "text": "Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。"
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "not_supported",
+              "reason": "文書はインダクティブ充電が非接触充電を可能とし（Passage 0-821）、通信は機器識別のためと記述しており、単方向通信がケーブルなし充電の理由とはならない。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_0-821",
+                  "quote": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。"
+                },
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            },
+            {
+              "claim_id": "c2",
+              "label": "supported",
+              "reason": "文書「Qi (ワイヤレス給電)」の記述と一致する。受電側から送電側への通信により異物検知が可能であることが明記されている。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 2,
+            "input_tokens": 7488,
+            "output_tokens": 8273,
+            "elapsed_seconds": 160.4962657908909,
+            "generation_seconds": 160.46485454402864,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 3750,
+              "output_tokens": 4264,
+              "elapsed_seconds": 82.71344683202915,
+              "error_code": null,
+              "cost_incomplete": false
+            },
+            {
+              "completion_attempted": true,
+              "input_tokens": 3738,
+              "output_tokens": 4009,
+              "elapsed_seconds": 77.78281895886175,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "fb2aef70c633f50556f692d8013b5eb01ec8c4c4813ab67105f58b03033a8b3e",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "trial_id": "shuffle_2",
+          "document_ids": [
+            "77333489118002544406049112959_0-821",
+            "29797275621430404600408944239_14420-15232",
+            "62140494316782455077420531643_34595-35488",
+            "69421786893977090645045364892_54924-55890",
+            "77333489118002544406049112959_1761-2583"
+          ],
+          "score": 0.5,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "7cb24e630cde87734dcd7e1c/shuffle_2.json",
+          "json_schema_sha256": "931237f40299b9026d00e9bef481416ba147547c1d576c2e10e69493b8026025",
+          "result_sha256": "d1a781dea61f8ff6ba187d231e9eeb8f3ab4d518b47c49f702b48f710d31c8c8",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。"
+            },
+            {
+              "claim_id": "c2",
+              "text": "Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。"
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "not_supported",
+              "reason": "Causal link between one-way communication and cable-less charging is unsupported; documents cite inductive charging.",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_0-821",
+                  "quote": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。"
+                },
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            },
+            {
+              "claim_id": "c2",
+              "label": "supported",
+              "reason": "Document 77333489118002544406049112959_1761-2583 explicitly states the packet sending mechanism and foreign object detection logic for Qi standard.",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 2,
+            "input_tokens": 7488,
+            "output_tokens": 6781,
+            "elapsed_seconds": 132.05050729308277,
+            "generation_seconds": 132.01791991991922,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 3750,
+              "output_tokens": 4237,
+              "elapsed_seconds": 82.25819604704157,
+              "error_code": null,
+              "cost_incomplete": false
+            },
+            {
+              "completion_attempted": true,
+              "input_tokens": 3738,
+              "output_tokens": 2544,
+              "elapsed_seconds": 49.79231124604121,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "d1a781dea61f8ff6ba187d231e9eeb8f3ab4d518b47c49f702b48f710d31c8c8",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "trial_id": "shuffle_1",
+          "document_ids": [
+            "77333489118002544406049112959_1761-2583",
+            "62140494316782455077420531643_34595-35488",
+            "69421786893977090645045364892_54924-55890",
+            "77333489118002544406049112959_0-821",
+            "29797275621430404600408944239_14420-15232"
+          ],
+          "score": 0.5,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "7cb24e630cde87734dcd7e1c/shuffle_1.json",
+          "json_schema_sha256": "931237f40299b9026d00e9bef481416ba147547c1d576c2e10e69493b8026025",
+          "result_sha256": "06055bdc04ac83cda04c254f521818a7e3edffe58a0ab4ef4b9928627a15746f",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。"
+            },
+            {
+              "claim_id": "c2",
+              "text": "Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。"
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "not_supported",
+              "reason": "通信方向は文書で確認できるが、ケーブルなし充電の理由は電磁誘導であり、単方向通信によるものではないと明記されていない。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_0-821",
+                  "quote": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。"
+                },
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            },
+            {
+              "claim_id": "c2",
+              "label": "supported",
+              "reason": "Source 77333489118002544406049112959_1761-2583 explicitly states receiver sends packets to identify Qi devices vs foreign objects.",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 2,
+            "input_tokens": 7488,
+            "output_tokens": 8483,
+            "elapsed_seconds": 164.238374090055,
+            "generation_seconds": 164.207866020035,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 3750,
+              "output_tokens": 4249,
+              "elapsed_seconds": 82.42361034313217,
+              "error_code": null,
+              "cost_incomplete": false
+            },
+            {
+              "completion_attempted": true,
+              "input_tokens": 3738,
+              "output_tokens": 4234,
+              "elapsed_seconds": 81.81476374692284,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "06055bdc04ac83cda04c254f521818a7e3edffe58a0ab4ef4b9928627a15746f",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "trial_id": "shuffle_3",
+          "document_ids": [
+            "77333489118002544406049112959_1761-2583",
+            "69421786893977090645045364892_54924-55890",
+            "77333489118002544406049112959_0-821",
+            "29797275621430404600408944239_14420-15232",
+            "62140494316782455077420531643_34595-35488"
+          ],
+          "score": 0.5,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "7cb24e630cde87734dcd7e1c/shuffle_3.json",
+          "json_schema_sha256": "931237f40299b9026d00e9bef481416ba147547c1d576c2e10e69493b8026025",
+          "result_sha256": "8bb00bb160ab93c6905483b2247c5a2ad23c2b9a6a8eaf5a510df7894c2e85cc",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。"
+            },
+            {
+              "claim_id": "c2",
+              "text": "Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。"
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "not_supported",
+              "reason": "Qi/WPC and one-way communication details supported, but causal link to no-cable charging attributed to communication rather than induction per sources.",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                },
+                {
+                  "passage_id": "77333489118002544406049112959_0-821",
+                  "quote": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。"
+                }
+              ]
+            },
+            {
+              "claim_id": "c2",
+              "label": "supported",
+              "reason": "Source 77333489118002544406049112959_1761-2583 explicitly states the packet sending mechanism for foreign object detection.",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 2,
+            "input_tokens": 7488,
+            "output_tokens": 7537,
+            "elapsed_seconds": 146.40274646086618,
+            "generation_seconds": 146.37065398483537,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 3750,
+              "output_tokens": 4245,
+              "elapsed_seconds": 82.33803801378235,
+              "error_code": null,
+              "cost_incomplete": false
+            },
+            {
+              "completion_attempted": true,
+              "input_tokens": 3738,
+              "output_tokens": 3292,
+              "elapsed_seconds": 64.06470844708383,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "8bb00bb160ab93c6905483b2247c5a2ad23c2b9a6a8eaf5a510df7894c2e85cc",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "trial_id": "reversed",
+          "document_ids": [
+            "77333489118002544406049112959_1761-2583",
+            "69421786893977090645045364892_54924-55890",
+            "29797275621430404600408944239_14420-15232",
+            "77333489118002544406049112959_0-821",
+            "62140494316782455077420531643_34595-35488"
+          ],
+          "score": 1.0,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "7cb24e630cde87734dcd7e1c/reversed.json",
+          "json_schema_sha256": "931237f40299b9026d00e9bef481416ba147547c1d576c2e10e69493b8026025",
+          "result_sha256": "a6fd0237c69a2f53d4ba93353e11df830a17db8b71fdf3ece472713d6dd8d088",
+          "decision": "accept",
+          "action": "keep_initial",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。"
+            },
+            {
+              "claim_id": "c2",
+              "text": "Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。"
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "supported",
+              "reason": "Documents confirm Qi standard by WPC, one-way comms (recv->trans), and wireless charging capability.",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                },
+                {
+                  "passage_id": "77333489118002544406049112959_0-821",
+                  "quote": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。"
+                }
+              ]
+            },
+            {
+              "claim_id": "c2",
+              "label": "supported",
+              "reason": "文書 1 は、受電側が電力を受け取っている限りパケットを送り返し、送電側が機器か異物かを判断できると明記している。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 2,
+            "input_tokens": 7488,
+            "output_tokens": 7616,
+            "elapsed_seconds": 148.02324494882487,
+            "generation_seconds": 147.99112521810457,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 3750,
+              "output_tokens": 4238,
+              "elapsed_seconds": 82.24027539091185,
+              "error_code": null,
+              "cost_incomplete": false
+            },
+            {
+              "completion_attempted": true,
+              "input_tokens": 3738,
+              "output_tokens": 3378,
+              "elapsed_seconds": 65.78296955791302,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "a6fd0237c69a2f53d4ba93353e11df830a17db8b71fdf3ece472713d6dd8d088",
+          "shared_original_not_two_calls": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "trial_id": "repeat_5",
+          "document_ids": [
+            "62140494316782455077420531643_34595-35488",
+            "77333489118002544406049112959_0-821",
+            "29797275621430404600408944239_14420-15232",
+            "69421786893977090645045364892_54924-55890",
+            "77333489118002544406049112959_1761-2583"
+          ],
+          "score": 0.5,
+          "status": "ok",
+          "error_code": null,
+          "error": null,
+          "task_file": "7cb24e630cde87734dcd7e1c/repeat_5.json",
+          "json_schema_sha256": "931237f40299b9026d00e9bef481416ba147547c1d576c2e10e69493b8026025",
+          "result_sha256": "3a3470d5567ca51b481de0c49cef8eb023719c0065fc71e3a4dfe25d9cec4c64",
+          "decision": "rewrite",
+          "action": "rewrite_requested",
+          "in_order_group": false,
+          "in_repeat_group": false,
+          "fixed_claims": [
+            {
+              "claim_id": "c1",
+              "text": "ワイヤレス充電は、Qi（チー）というワイヤレス・パワー・コンソーシアムによって策定されたインターフェース規格を使用して、受電側から送電側への単方向通信が行われるため、ケーブルなしで充電できるのです。"
+            },
+            {
+              "claim_id": "c2",
+              "text": "Qi規格では、受電側が電力を受け取っている限り定期的にパケットを送り返すことで、送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できます。"
+            }
+          ],
+          "verdicts": [
+            {
+              "claim_id": "c1",
+              "label": "not_supported",
+              "reason": "文書はインダクティブ充電が非接触充電を可能とし（Passage 0-821）、通信は機器識別のためと記述しており、単方向通信がケーブルなし充電の理由とはならない。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_0-821",
+                  "quote": "Qi\nステータス\nActive\n初版\n2008年 (2008)\n最新版\n2\n2023年1月\n組織\nワイヤレス・パワー・コンソーシアム\nドメイン\nインダクティブ充電\nウェブサイト\nwirelesspowerconsortium.com\nQi（チー、発音 [tʃiː] CHEE; 「気」, 簡体字中国語: 气; 繁体字中国語: 氣, に由来）は、インダクティブ充電（非接触充電）を使用したワイヤレス電力伝送のインターフェース規格。この規格により、スマートフォンなどの互換性のあるデバイスは、Qi充電パッドに置くとバッテリーを充電できるようになり、最大4 cmの距離でも効果的に充電できる。\n概要\n初期のQi(v 1.0)は、古くから実用化されていた「電磁誘導方式」を元にしている。これは、2つの隣接するコイルの片方に電流を流すと発生する磁束を媒介して、隣接したもう片方に起電力が発生する電磁誘導の原理を用いたものである。この方式によるワイヤレス給電システムは過去に幾つか実用化されていたが、独自開発のものが多く、異企業間での機器の相互利用が出来ない状態が続いていた。\nそのような欠点を解消するため、2008年にWPCが立ち上げられ、企業間での相互利用を可能とする国際標準規格を策定する事となり、2010年7月に『最大5Wの低電力向け』Qi規格（Volume I Low Power）の策定を完了した。使用する周波数帯は110kHzから205kHzまでの間と定められている。これはAirFuel AllianceのPMA規格(100kHzから200kHz)とほぼ一緒であり、受電側から送電側へのデータ通信はハードウエアレベルで互換性があるために両方を統合することも可能である。\nWPCではQi規格(v 1.1)からQ値の低い磁界共振を一部取り入れて受電側だけを共振させるという広義の電磁誘導であり、同時に広義の磁界共振ともいえる構成となっている。"
+                },
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            },
+            {
+              "claim_id": "c2",
+              "label": "supported",
+              "reason": "文書「Qi (ワイヤレス給電)」の記述と一致する。受電側から送電側への通信により異物検知が可能であることが明記されている。",
+              "evidence": [
+                {
+                  "passage_id": "77333489118002544406049112959_1761-2583",
+                  "quote": "充電台（送電側）と携帯機器（受電側）との間では受電側から送電側への単方向通信が行われる。パッシブRFIDタグと同様の後方散乱変調を利用しており、受電側での負荷を変動させることによる2値ASKとなっている。通信速度は2kbpsで、1オクテットにつきスタートビット(1)、パリティビット(ODD)、ストップビット(0)それぞれ1ビットを伴う。\n受電側は電力を受け取っている限り定期的にパケットを送り返すことになっており、これにより送電側は充電面上にあるものがQi対応機器なのかそれ以外の異物なのかを判断できる。通信の内容は受電量の必要量に対する差分、送電停止要求、受電中の電力、携帯機器の充電率が主であるが、充電開始時には受電側の識別情報が送られ、機器固有の情報が送られる場合もある。\n策定団体\nワイヤレスパワーコンソーシアムは2008年12月17日設立で、事務局はアメリカ合衆国ニュージャージー州のIEEE-ISTOに置かれている。2022年6月22日時点で351社が会員となっている。\n正会員（Regular membership）\n仕様策定をはじめとするコンソーシアム運営全般に責任を負う企業。業界ごとに定数があり、順次拡大しているが現在のところ最大25企業が正会員となる。\n採用会員（Adopter membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、が制限される。\n準会員（Associate membership）\n正会員に対して・取締役会の選挙における議決権、・WPC仕様の作業草案へのアクセス、・Qi認定製品データベースに製品登録が制限される。\nワイヤレスパワーコンソーシアム正会員企業\n業界(定数)\n企業\nワイヤレス給電(5)\nConvenientPower, Fulton Innovation, PowerbyProxi, クアルコム, ロバート・ボッシュ\n半導体(8)\n"
+                }
+              ]
+            }
+          ],
+          "judge_task_present": true,
+          "cost": {
+            "completion_attempted": true,
+            "completion_attempts_recorded": 2,
+            "input_tokens": 7488,
+            "output_tokens": 8273,
+            "elapsed_seconds": 160.58933992986567,
+            "generation_seconds": 160.55726994993165,
+            "cost_incomplete": false
+          },
+          "native_subtask_costs": [
+            {
+              "completion_attempted": true,
+              "input_tokens": 3750,
+              "output_tokens": 4264,
+              "elapsed_seconds": 82.77318096300587,
+              "error_code": null,
+              "cost_incomplete": false
+            },
+            {
+              "completion_attempted": true,
+              "input_tokens": 3738,
+              "output_tokens": 4009,
+              "elapsed_seconds": 77.8161589668598,
+              "error_code": null,
+              "cost_incomplete": false
+            }
+          ],
+          "task_result_sha256": "3a3470d5567ca51b481de0c49cef8eb023719c0065fc71e3a4dfe25d9cec4c64",
+          "shared_original_not_two_calls": false
+        }
+      ],
+      "policy_outcomes": [
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "route": "no_repair",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "initial",
+          "selected_answer_sha256": "e8ba1b86223dbeaff111b90d32cbbfe803a2e8a0f053c2ae0ff9aef9f627c6fa",
+          "rewrite_requested": false,
+          "fallback": null,
+          "quality_status": "unreliable",
+          "quality_y": 0,
+          "quality_transition": "unknown",
+          "missed_improvement": null,
+          "harmful_rewrite": null,
+          "completion_attempts": 1,
+          "recorded_completion_attempts": 1,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 3535,
+          "output_tokens": 119,
+          "summed_step_seconds": 1.5866586900083348,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "route": "always_rewrite",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "27a3058449cb25eaa60d2101c78d4539b44b540a7186324e4c5c3ebeef6cff99",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "indeterminate",
+          "quality_y": null,
+          "quality_transition": "unknown",
+          "missed_improvement": null,
+          "harmful_rewrite": null,
+          "completion_attempts": 2,
+          "recorded_completion_attempts": 2,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 6949,
+          "output_tokens": 3180,
+          "summed_step_seconds": 61.11717460199725,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "route": "original",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "27a3058449cb25eaa60d2101c78d4539b44b540a7186324e4c5c3ebeef6cff99",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "indeterminate",
+          "quality_y": null,
+          "quality_transition": "unknown",
+          "missed_improvement": null,
+          "harmful_rewrite": null,
+          "completion_attempts": 4,
+          "recorded_completion_attempts": 4,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 14437,
+          "output_tokens": 11453,
+          "summed_step_seconds": 221.5326290250523,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "route": "reversed",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "initial",
+          "selected_answer_sha256": "e8ba1b86223dbeaff111b90d32cbbfe803a2e8a0f053c2ae0ff9aef9f627c6fa",
+          "rewrite_requested": false,
+          "fallback": null,
+          "quality_status": "unreliable",
+          "quality_y": 0,
+          "quality_transition": "unknown",
+          "missed_improvement": null,
+          "harmful_rewrite": null,
+          "completion_attempts": 3,
+          "recorded_completion_attempts": 3,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 11023,
+          "output_tokens": 7735,
+          "summed_step_seconds": 149.61045780882705,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "route": "shuffle_1",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "27a3058449cb25eaa60d2101c78d4539b44b540a7186324e4c5c3ebeef6cff99",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "indeterminate",
+          "quality_y": null,
+          "quality_transition": "unknown",
+          "missed_improvement": null,
+          "harmful_rewrite": null,
+          "completion_attempts": 4,
+          "recorded_completion_attempts": 4,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 14437,
+          "output_tokens": 11663,
+          "summed_step_seconds": 225.3561028620461,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "route": "shuffle_2",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "27a3058449cb25eaa60d2101c78d4539b44b540a7186324e4c5c3ebeef6cff99",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "indeterminate",
+          "quality_y": null,
+          "quality_transition": "unknown",
+          "missed_improvement": null,
+          "harmful_rewrite": null,
+          "completion_attempts": 4,
+          "recorded_completion_attempts": 4,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 14437,
+          "output_tokens": 9961,
+          "summed_step_seconds": 193.16823606507387,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "route": "shuffle_3",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "27a3058449cb25eaa60d2101c78d4539b44b540a7186324e4c5c3ebeef6cff99",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "indeterminate",
+          "quality_y": null,
+          "quality_transition": "unknown",
+          "missed_improvement": null,
+          "harmful_rewrite": null,
+          "completion_attempts": 4,
+          "recorded_completion_attempts": 4,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 14437,
+          "output_tokens": 10717,
+          "summed_step_seconds": 207.52047523285728,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "route": "repeat_2",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "27a3058449cb25eaa60d2101c78d4539b44b540a7186324e4c5c3ebeef6cff99",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "indeterminate",
+          "quality_y": null,
+          "quality_transition": "unknown",
+          "missed_improvement": null,
+          "harmful_rewrite": null,
+          "completion_attempts": 4,
+          "recorded_completion_attempts": 4,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 14437,
+          "output_tokens": 11453,
+          "summed_step_seconds": 221.613994562882,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "route": "repeat_3",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "27a3058449cb25eaa60d2101c78d4539b44b540a7186324e4c5c3ebeef6cff99",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "indeterminate",
+          "quality_y": null,
+          "quality_transition": "unknown",
+          "missed_improvement": null,
+          "harmful_rewrite": null,
+          "completion_attempts": 4,
+          "recorded_completion_attempts": 4,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 14437,
+          "output_tokens": 11453,
+          "summed_step_seconds": 221.72075809480157,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "route": "repeat_4",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "27a3058449cb25eaa60d2101c78d4539b44b540a7186324e4c5c3ebeef6cff99",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "indeterminate",
+          "quality_y": null,
+          "quality_transition": "unknown",
+          "missed_improvement": null,
+          "harmful_rewrite": null,
+          "completion_attempts": 4,
+          "recorded_completion_attempts": 4,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 14437,
+          "output_tokens": 11453,
+          "summed_step_seconds": 221.61596731713507,
+          "incomplete": false
+        },
+        {
+          "qa_key": "cal_ja_7cb24e630cde87734dcd7e1c",
+          "cohort": "cal",
+          "language": "ja",
+          "record_id": "whrja:02e85c8:answered:511",
+          "route": "repeat_5",
+          "policy_state": "observed",
+          "alias_of": null,
+          "selected_stage": "rewritten",
+          "selected_answer_sha256": "27a3058449cb25eaa60d2101c78d4539b44b540a7186324e4c5c3ebeef6cff99",
+          "rewrite_requested": true,
+          "fallback": null,
+          "quality_status": "indeterminate",
+          "quality_y": null,
+          "quality_transition": "unknown",
+          "missed_improvement": null,
+          "harmful_rewrite": null,
+          "completion_attempts": 4,
+          "recorded_completion_attempts": 4,
+          "unknown_outcome_steps": 0,
+          "input_tokens": 14437,
+          "output_tokens": 11453,
+          "summed_step_seconds": 221.70706870185677,
+          "incomplete": false
+        }
+      ]
+    }
+  ]
+}

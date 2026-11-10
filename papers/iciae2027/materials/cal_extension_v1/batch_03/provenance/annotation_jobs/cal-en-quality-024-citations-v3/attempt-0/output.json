@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "unreliable",
+      "reason": "Actual context explicitly supplies both filming locations, contradicting the claim that the passages contain insufficient information. The refusal omits the requested answer; reference-only evidence is unnecessary.",
+      "evidence": ["e0003"],
+      "essential_points": "Identify Field's Market in West Hills, California, for Season 1 and the warehouse market in Santa Rosa, California, for Season 2.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "The answer restricts the question to one species inside the park, omitting brown trout, rainbow trout and whitefish explicitly present in actual context. Actual context describes cutthroat trout as abundant, without establishing the answer's primary-species ranking. The reference-only document establishes additional downstream species but does not support that ranking.",
+      "evidence": ["e0006", "e0011"],
+      "essential_points": "Identify the river's fish types with adequate breadth, including cutthroat, rainbow and brown trout and whitefish, rather than restricting the answer to one park species.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "uncertain",
+        "context_support": "fail"
+      }
+    },
+    "a002": {
+      "label": "reliable",
+      "reason": "Actual context supports the common wild-horse terminology, all six states, Nevada's majority of North American mustangs, and the BLM management and protection statements. The answer addresses the US location question; the reference's Canadian locations and holding-facility count are unnecessary.",
+      "evidence": ["e0012", "e0013", "e0015"],
+      "essential_points": "Locate free-roaming mustangs in the western United States, especially Nevada, with populations in California, Oregon, Utah, Montana and Wyoming.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "The answer substantively identifies four fish types, and actual context supports its first two sentences. However, the final sentence relocates the description of large browns and rainbows from the reach ending at Mallard's Rest to the Paradise Valley reach beginning there. Actual context supports rainbow dominance and brown presence in the latter reach, but not that size qualification there. The reference-only document cannot supply this missing support.",
+      "evidence": ["e0018", "e0020"],
+      "essential_points": "Identify Yellowstone cutthroat trout, rainbow trout, brown trout and whitefish, while preserving the geographic scope of supporting descriptions.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "uncertain",
+        "context_support": "fail"
+      }
+    }
+  }
+}

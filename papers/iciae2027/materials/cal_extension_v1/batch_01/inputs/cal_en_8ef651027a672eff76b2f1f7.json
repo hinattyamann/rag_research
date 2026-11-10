@@ -1,0 +1,747 @@
+{
+  "qa_key": "cal_en_8ef651027a672eff76b2f1f7",
+  "cohort": "cal",
+  "language": "en",
+  "analysis_role": "cal",
+  "source_qa_split": "development",
+  "record_id": "clapnq:c508d78:train:-2619341853819375368:answerable",
+  "document_group_id": "clapnq-title:life in a northern town",
+  "qa_source": {
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "gold_passage_ids": [
+      "832663263_2594-3149"
+    ],
+    "is_answerable": true,
+    "provided_passage": null,
+    "question": "where was dream academy life in a northern town filmed",
+    "record_id": "clapnq:c508d78:train:-2619341853819375368:answerable",
+    "reference_answers": [
+      "Two different music videos were made for the song. The first was filmed in Hebden Bridge in West Yorkshire, England. The second was filmed in and around Newcastle upon Tyne with some scenes filmed in Manchester in the UK and in Aliquippa, Pennsylvania, United States, using footage of the now - closed LTV Steel and Duquesne Light facilities. The video featured footage from one of their first TV appearances, on The Tube.",
+      "The first video was filmed in Hebden Bridge in West Yorkshire, England. The second was filmed in and around Newcastle upon Tyne with some scenes filmed in Manchester in the UK and in Aliquippa, Pennsylvania, United States."
+    ],
+    "research_split": "development",
+    "selected_sentences_by_reference": [
+      [
+        "Two different music videos were made for the song .",
+        "The first was made in 1984 and filmed in Hebden Bridge in West Yorkshire , England .",
+        "The second was filmed in 1985 and was directed by Leslie Libman and Larry Williams .",
+        "It was filmed in and around Newcastle upon Tyne with some scenes filmed in Manchester in the UK and in Aliquippa , Pennsylvania , United States , using footage of the now - closed LTV Steel and Duquesne Light facilities .",
+        "The video featured footage from one of their first TV appearances , on The Tube ."
+      ],
+      [
+        "Two different music videos were made for the song .",
+        "The first was made in 1984 and filmed in Hebden Bridge in West Yorkshire , England .",
+        "The second was filmed in 1985 and was directed by Leslie Libman and Larry Williams .",
+        "It was filmed in and around Newcastle upon Tyne with some scenes filmed in Manchester in the UK and in Aliquippa , Pennsylvania , United States , using footage of the now - closed LTV Steel and Duquesne Light facilities .",
+        "The video featured footage from one of their first TV appearances , on The Tube ."
+      ]
+    ],
+    "source_dataset": "CLAPNQ",
+    "source_id": "-2619341853819375368",
+    "source_line_index": 607,
+    "source_record_sha256": "83c1c405c1f21273f526c9541523cc720113a49ac793c6a0ab55c268da21fff3",
+    "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+    "source_split": "train",
+    "source_title": "Life in a Northern Town"
+  },
+  "source_selection": {
+    "record_id": "clapnq:c508d78:train:-2619341853819375368:answerable",
+    "question": "where was dream academy life in a northern town filmed",
+    "document_group_id": "clapnq-title:life in a northern town"
+  },
+  "question": "where was dream academy life in a northern town filmed",
+  "used_documents": [
+    {
+      "passage_id": "843557883_14171-15896",
+      "title": "Forrest Gump",
+      "text": "Filming began in August 1993 and ended in December of that year . Although most of the film is set in Alabama , filming took place mainly in and around Beaufort , South Carolina , as well as parts of coastal Virginia and North Carolina , including a running shot on the Blue Ridge Parkway . Downtown portions of the fictional town of Greenbow were filmed in Varnville , South Carolina . The scene of Forrest running through Vietnam while under fire was filmed on Fripp Island , South Carolina . Additional filming took place on the Biltmore Estate in Asheville , North Carolina , and along the Blue Ridge Parkway near Boone , North Carolina . The most notable place was Grandfather Mountain where a part of the road is named `` Forrest Gump Curve '' . The Gump family home set was built along the Combahee River near Yemassee , South Carolina , and the nearby land was used to film Curran 's home as well as some of the Vietnam scenes . Over 20 palmetto trees were planted to improve the Vietnam scenes . Forrest Gump narrated his life 's story at the southern edge of Chippewa Square in Savannah , Georgia , as he sat at a bus stop bench . There were other scenes filmed in and around the Savannah area as well , including a running shot on the Richard V. Woods Memorial Bridge in Beaufort while he was being interviewed by the press , and on West Bay Street in Savannah . Most of the college campus scenes were filmed in Los Angeles at the University of Southern California . The lighthouse that Forrest runs across to reach the Atlantic Ocean the first time is the Marshall Point Lighthouse in Port Clyde , Maine . Additional scenes were filmed in Arizona , Utah 's Monument Valley , and Montana 's Glacier National Park .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "843557883_14171-15896",
+        "parent_text_sha256": "e07a5095ebf5e3d458ce4d00d8bc04c802684674b14f95ba49e96ad77fd08ae2",
+        "passage_id": "843557883_14171-15896",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 436,
+          "end": 1725,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "e07a5095ebf5e3d458ce4d00d8bc04c802684674b14f95ba49e96ad77fd08ae2",
+        "title": "Forrest Gump",
+        "source_url": "https://en.wikipedia.org/wiki/Forrest_Gump",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Forrest_Gump?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "e07a5095ebf5e3d458ce4d00d8bc04c802684674b14f95ba49e96ad77fd08ae2",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 1725
+      }
+    },
+    {
+      "passage_id": "832663263_708-1048",
+      "title": "Life in a Northern Town",
+      "text": "`` Life in a Northern Town '' is a song by English group the Dream Academy . The song is the lead single from their self - titled debut studio album The Dream Academy , released in 1985 . The song was written as an elegy to British folk musician Nick Drake , who died in 1974 , and the single 's record sleeve includes a dedication to him .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "832663263_708-1048",
+        "parent_text_sha256": "bb588987115ca63a2efad2a290d1a32f047a5acf22bc7e556c392445da884019",
+        "passage_id": "832663263_708-1048",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 88,
+          "end": 340,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "bb588987115ca63a2efad2a290d1a32f047a5acf22bc7e556c392445da884019",
+        "title": "Life in a Northern Town",
+        "source_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "bb588987115ca63a2efad2a290d1a32f047a5acf22bc7e556c392445da884019",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 340
+      }
+    },
+    {
+      "passage_id": "834232060_20704-21117",
+      "title": "History of education in the United States",
+      "text": "After the Revolution , northern states especially emphasized education and rapidly established public schools . By the year 1870 , all states had tax - subsidized elementary schools . The US population had one of the highest literacy rates in the world at the time . Private academies also flourished in the towns across the country , but rural areas ( where most people lived ) had few schools before the 1880s .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "834232060_20704-21117",
+        "parent_text_sha256": "8151517a0e77a489624dada42a2a95d1ca5f092c8ca276b550975314e1a1f045",
+        "passage_id": "834232060_20704-21117",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 98,
+          "end": 413,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "8151517a0e77a489624dada42a2a95d1ca5f092c8ca276b550975314e1a1f045",
+        "title": "History of education in the United States",
+        "source_url": "https://en.wikipedia.org/wiki/History_of_education_in_the_United_States",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/History_of_education_in_the_United_States?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "8151517a0e77a489624dada42a2a95d1ca5f092c8ca276b550975314e1a1f045",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 413
+      }
+    },
+    {
+      "passage_id": "832663263_90-707",
+      "title": "Life in a Northern Town",
+      "text": "`` Life in a Northern Town '' Single by The Dream Academy from the album The Dream Academy Released March 1985 ( UK and World ) November 1985 ( USA ) Format Vinyl record ( 7 '' and 12 `` ) cassette tape CD Recorded 1984 Genre Baroque pop Length 4 : 19 Label Warner Bros . Blanco y Negro Songwriter ( s ) Gilbert Gabriel Nick Laird - Clowes Producer ( s ) David Gilmour , Nick Laird - Clowes , George Nicholson The Dream Academy singles chronology `` Life in a Northern Town '' ( 1985 ) `` The Edge Of Forever '' ( 1985 ) `` Life in a Northern Town '' ( 1985 ) `` The Edge Of Forever '' ( 1985 ) Audio sample file help",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "832663263_90-707",
+        "parent_text_sha256": "20f2fe8c11117818078688d649511cb2e5525d1d77f81c43743b39d194f0ad9f",
+        "passage_id": "832663263_90-707",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 160,
+          "end": 617,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "20f2fe8c11117818078688d649511cb2e5525d1d77f81c43743b39d194f0ad9f",
+        "title": "Life in a Northern Town",
+        "source_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "20f2fe8c11117818078688d649511cb2e5525d1d77f81c43743b39d194f0ad9f",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 617
+      }
+    },
+    {
+      "passage_id": "802167108_41380-41771",
+      "title": "List of Diary of a Wimpy Kid characters",
+      "text": "Lenwood Heath only appears in The Last Straw . He is a rebellious teenager , who was Greg 's father 's arch - enemy for about three months before he was sent to military academy . This resulted in him becoming a fine young man who works at the movie theater . In the Dog Days film , he is portrayed by Tom Stevens , and is seen working as a lifeguard at the pool the Heffleys are attending .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "802167108_41380-41771",
+        "parent_text_sha256": "2fd3f92f377c96931679f6f04870aa8fa3979cb61351a98ac3f62ee5ae6c268f",
+        "passage_id": "802167108_41380-41771",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 113,
+          "end": 391,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "2fd3f92f377c96931679f6f04870aa8fa3979cb61351a98ac3f62ee5ae6c268f",
+        "title": "List of Diary of a Wimpy Kid characters",
+        "source_url": "https://en.wikipedia.org/wiki/List_of_Diary_of_a_Wimpy_Kid_characters",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/List_of_Diary_of_a_Wimpy_Kid_characters?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "2fd3f92f377c96931679f6f04870aa8fa3979cb61351a98ac3f62ee5ae6c268f",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 391
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "832663263_2594-3149",
+      "title": "Life in a Northern Town",
+      "text": "Two different music videos were made for the song . The first was made in 1984 and filmed in Hebden Bridge in West Yorkshire , England . It was directed by Tim Pope . The second was filmed in 1985 and was directed by Leslie Libman and Larry Williams . It was filmed in and around Newcastle upon Tyne with some scenes filmed in Manchester in the UK and in Aliquippa , Pennsylvania , United States , using footage of the now - closed LTV Steel and Duquesne Light facilities . The video featured footage from one of their first TV appearances , on The Tube .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "832663263_2594-3149",
+        "parent_text_sha256": "1cc68ac0c1948d81bc5ee4553dc9f36429612f72135e011ce80e8979a45927bc",
+        "passage_id": "832663263_2594-3149",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 144,
+          "end": 555,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "1cc68ac0c1948d81bc5ee4553dc9f36429612f72135e011ce80e8979a45927bc",
+        "title": "Life in a Northern Town",
+        "source_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "1cc68ac0c1948d81bc5ee4553dc9f36429612f72135e011ce80e8979a45927bc",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 555
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "The retrieved passages do not provide enough information to answer this question.",
+    "answer_sha256": "026c8afd2644427e5226a244418a9c1d8e0c1abf28d23ef152bc605d46406acd",
+    "quality": {
+      "annotation_id": "Q-8c8d8e7f4e57f9d8ebd6",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-8c8d8e7f4e57f9d8ebd6",
+        "candidate_sha256": "6ca825c90bd86a9d194dfa611a92894f1a844a8addde6c25d2683e2fb40336cc",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Identify Hebden Bridge, West Yorkshire, for the first video, and Newcastle upon Tyne, Manchester, and Aliquippa, Pennsylvania, for the second.",
+        "reason": "The answer accurately reports that the actual context lacks filming locations, but it does not answer where either video was filmed. Reference-only evidence supplies those locations; it is not actual-context support.",
+        "evidence": [
+          {
+            "passage_id": "832663263_708-1048",
+            "quote": "`` Life in a Northern Town '' is a song by English group the Dream Academy . The song is the lead single from their self - titled debut studio album The Dream Academy , released in 1985 . The song was written as an elegy to British folk musician Nick Drake , who died in 1974 , and the single 's record sleeve includes a dedication to him ."
+          },
+          {
+            "passage_id": "832663263_90-707",
+            "quote": "`` Life in a Northern Town '' Single by The Dream Academy from the album The Dream Academy Released March 1985 ( UK and World ) November 1985 ( USA ) Format Vinyl record ( 7 '' and 12 `` ) cassette tape CD Recorded 1984 Genre Baroque pop Length 4 : 19 Label Warner Bros . Blanco y Negro Songwriter ( s ) Gilbert Gabriel Nick Laird - Clowes Producer ( s ) David Gilmour , Nick Laird - Clowes , George Nicholson The Dream Academy singles chronology `` Life in a Northern Town '' ( 1985 ) `` The Edge Of Forever '' ( 1985 ) `` Life in a Northern Town '' ( 1985 ) `` The Edge Of Forever '' ( 1985 ) Audio sample file help"
+          },
+          {
+            "passage_id": "832663263_2594-3149",
+            "quote": "Two different music videos were made for the song . The first was made in 1984 and filmed in Hebden Bridge in West Yorkshire , England . It was directed by Tim Pope . The second was filmed in 1985 and was directed by Leslie Libman and Larry Williams . It was filmed in and around Newcastle upon Tyne with some scenes filmed in Manchester in the UK and in Aliquippa , Pennsylvania , United States , using footage of the now - closed LTV Steel and Duquesne Light facilities . The video featured footage from one of their first TV appearances , on The Tube ."
+          }
+        ],
+        "elapsed_seconds": 6.500857647246448,
+        "confirmed_at_utc": "2026-11-07T10:32:03.424369+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_01/en/baseline/8ef651027a672eff76b2f1f7/record.json",
+      "sha256": "2a0dad6e099d865bb442681f9c48233fe919035914d06c43c5cc5bc586d2dbe2"
+    },
+    "copy": "provenance/baselines/cal_en_8ef651027a672eff76b2f1f7.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "According to the provided documents, 'Life in a Northern Town' is a song by the Dream Academy [p2] and a single release [p4], with no information provided regarding filming locations.",
+    "answer_sha256": "a2367aa41ad6b78c0019aa50b051dd69560d904db569313b6b7f78fd80b5b10f",
+    "quality": {
+      "annotation_id": "Q-4c1280e016c9011d5062",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-4c1280e016c9011d5062",
+        "candidate_sha256": "1b09a929d74ae98abdf8a40576f02df918a63332deb6a268419c45de553fb444",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Identify Hebden Bridge, West Yorkshire, for the first music video, and Newcastle upon Tyne, Manchester, and Aliquippa, Pennsylvania, for the second.",
+        "reason": "The actual context supports the song and single descriptions and contains no relevant filming locations, so the answer accurately describes its evidence limitations. However, it does not answer where the videos were filmed. Reference-only evidence supplies those locations and establishes the missing essential content.",
+        "evidence": [
+          {
+            "passage_id": "832663263_708-1048",
+            "quote": "`` Life in a Northern Town '' is a song by English group the Dream Academy . The song is the lead single from their self - titled debut studio album The Dream Academy , released in 1985 . The song was written as an elegy to British folk musician Nick Drake , who died in 1974 , and the single 's record sleeve includes a dedication to him ."
+          },
+          {
+            "passage_id": "832663263_90-707",
+            "quote": "`` Life in a Northern Town '' Single by The Dream Academy from the album The Dream Academy Released March 1985 ( UK and World ) November 1985 ( USA ) Format Vinyl record ( 7 '' and 12 `` ) cassette tape CD Recorded 1984 Genre Baroque pop Length 4 : 19 Label Warner Bros . Blanco y Negro Songwriter ( s ) Gilbert Gabriel Nick Laird - Clowes Producer ( s ) David Gilmour , Nick Laird - Clowes , George Nicholson The Dream Academy singles chronology `` Life in a Northern Town '' ( 1985 ) `` The Edge Of Forever '' ( 1985 ) `` Life in a Northern Town '' ( 1985 ) `` The Edge Of Forever '' ( 1985 ) Audio sample file help"
+          },
+          {
+            "passage_id": "832663263_2594-3149",
+            "quote": "Two different music videos were made for the song . The first was made in 1984 and filmed in Hebden Bridge in West Yorkshire , England . It was directed by Tim Pope . The second was filmed in 1985 and was directed by Leslie Libman and Larry Williams . It was filmed in and around Newcastle upon Tyne with some scenes filmed in Manchester in the UK and in Aliquippa , Pennsylvania , United States , using footage of the now - closed LTV Steel and Duquesne Light facilities . The video featured footage from one of their first TV appearances , on The Tube ."
+          }
+        ],
+        "elapsed_seconds": 11.001358888490358,
+        "confirmed_at_utc": "2026-11-07T10:35:52.003291+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [],
+  "extraction_audit": {
+    "claims": [],
+    "unit_version": "verbatim-sentence-units-v1",
+    "normalized_prose": "The retrieved passages do not provide enough information to answer this question.",
+    "exclusion": "standalone_refusal",
+    "spans": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "802167108_41380-41771",
+          "832663263_90-707",
+          "834232060_20704-21117",
+          "832663263_708-1048",
+          "843557883_14171-15896"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "843557883_14171-15896",
+          "832663263_708-1048",
+          "834232060_20704-21117",
+          "832663263_90-707",
+          "802167108_41380-41771"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "843557883_14171-15896",
+          "834232060_20704-21117",
+          "802167108_41380-41771",
+          "832663263_90-707",
+          "832663263_708-1048"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "843557883_14171-15896",
+          "832663263_708-1048",
+          "834232060_20704-21117",
+          "832663263_90-707",
+          "802167108_41380-41771"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "802167108_41380-41771",
+          "832663263_90-707",
+          "843557883_14171-15896",
+          "834232060_20704-21117",
+          "832663263_708-1048"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "843557883_14171-15896",
+          "832663263_708-1048",
+          "834232060_20704-21117",
+          "832663263_90-707",
+          "802167108_41380-41771"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "843557883_14171-15896",
+          "832663263_708-1048",
+          "834232060_20704-21117",
+          "832663263_90-707",
+          "802167108_41380-41771"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "802167108_41380-41771",
+          "832663263_708-1048",
+          "843557883_14171-15896",
+          "834232060_20704-21117",
+          "832663263_90-707"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "843557883_14171-15896",
+          "832663263_708-1048",
+          "834232060_20704-21117",
+          "832663263_90-707",
+          "802167108_41380-41771"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "en",
+    "record_id": "clapnq:c508d78:train:-2619341853819375368:answerable",
+    "document_group_id": "clapnq-title:life in a northern town",
+    "comparable": false,
+    "increment": null,
+    "partial_pair_increment_exploratory": null,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 0,
+      "valid_pairs": 0,
+      "disagreeing_pairs": 0,
+      "rate": null
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 0,
+      "valid_pairs": 0,
+      "disagreeing_pairs": 0,
+      "rate": null
+    },
+    "reason": "invalid_or_unscorable_trials"
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_01/en/report.private.json",
+    "sha256": "3fa2aa584d70ba579ffd09dd514a2f2895b3c0b3c619fe8a52d14a9dff8aef8c"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "802167108_41380-41771",
+      "text": "Lenwood Heath only appears in The Last Straw . He is a rebellious teenager , who was Greg 's father 's arch - enemy for about three months before he was sent to military academy . This resulted in him becoming a fine young man who works at the movie theater . In the Dog Days film , he is portrayed by Tom Stevens , and is seen working as a lifeguard at the pool the Heffleys are attending .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "802167108_41380-41771",
+        "parent_text_sha256": "2fd3f92f377c96931679f6f04870aa8fa3979cb61351a98ac3f62ee5ae6c268f",
+        "passage_id": "802167108_41380-41771",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 113,
+          "end": 391,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "2fd3f92f377c96931679f6f04870aa8fa3979cb61351a98ac3f62ee5ae6c268f",
+        "title": "List of Diary of a Wimpy Kid characters",
+        "source_url": "https://en.wikipedia.org/wiki/List_of_Diary_of_a_Wimpy_Kid_characters",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/List_of_Diary_of_a_Wimpy_Kid_characters?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "832663263_2594-3149",
+      "text": "Two different music videos were made for the song . The first was made in 1984 and filmed in Hebden Bridge in West Yorkshire , England . It was directed by Tim Pope . The second was filmed in 1985 and was directed by Leslie Libman and Larry Williams . It was filmed in and around Newcastle upon Tyne with some scenes filmed in Manchester in the UK and in Aliquippa , Pennsylvania , United States , using footage of the now - closed LTV Steel and Duquesne Light facilities . The video featured footage from one of their first TV appearances , on The Tube .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "832663263_2594-3149",
+        "parent_text_sha256": "1cc68ac0c1948d81bc5ee4553dc9f36429612f72135e011ce80e8979a45927bc",
+        "passage_id": "832663263_2594-3149",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 144,
+          "end": 555,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "1cc68ac0c1948d81bc5ee4553dc9f36429612f72135e011ce80e8979a45927bc",
+        "title": "Life in a Northern Town",
+        "source_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "832663263_708-1048",
+      "text": "`` Life in a Northern Town '' is a song by English group the Dream Academy . The song is the lead single from their self - titled debut studio album The Dream Academy , released in 1985 . The song was written as an elegy to British folk musician Nick Drake , who died in 1974 , and the single 's record sleeve includes a dedication to him .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "832663263_708-1048",
+        "parent_text_sha256": "bb588987115ca63a2efad2a290d1a32f047a5acf22bc7e556c392445da884019",
+        "passage_id": "832663263_708-1048",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 88,
+          "end": 340,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "bb588987115ca63a2efad2a290d1a32f047a5acf22bc7e556c392445da884019",
+        "title": "Life in a Northern Town",
+        "source_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "832663263_90-707",
+      "text": "`` Life in a Northern Town '' Single by The Dream Academy from the album The Dream Academy Released March 1985 ( UK and World ) November 1985 ( USA ) Format Vinyl record ( 7 '' and 12 `` ) cassette tape CD Recorded 1984 Genre Baroque pop Length 4 : 19 Label Warner Bros . Blanco y Negro Songwriter ( s ) Gilbert Gabriel Nick Laird - Clowes Producer ( s ) David Gilmour , Nick Laird - Clowes , George Nicholson The Dream Academy singles chronology `` Life in a Northern Town '' ( 1985 ) `` The Edge Of Forever '' ( 1985 ) `` Life in a Northern Town '' ( 1985 ) `` The Edge Of Forever '' ( 1985 ) Audio sample file help",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "832663263_90-707",
+        "parent_text_sha256": "20f2fe8c11117818078688d649511cb2e5525d1d77f81c43743b39d194f0ad9f",
+        "passage_id": "832663263_90-707",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 160,
+          "end": 617,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "20f2fe8c11117818078688d649511cb2e5525d1d77f81c43743b39d194f0ad9f",
+        "title": "Life in a Northern Town",
+        "source_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "834232060_20704-21117",
+      "text": "After the Revolution , northern states especially emphasized education and rapidly established public schools . By the year 1870 , all states had tax - subsidized elementary schools . The US population had one of the highest literacy rates in the world at the time . Private academies also flourished in the towns across the country , but rural areas ( where most people lived ) had few schools before the 1880s .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "834232060_20704-21117",
+        "parent_text_sha256": "8151517a0e77a489624dada42a2a95d1ca5f092c8ca276b550975314e1a1f045",
+        "passage_id": "834232060_20704-21117",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 98,
+          "end": 413,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "8151517a0e77a489624dada42a2a95d1ca5f092c8ca276b550975314e1a1f045",
+        "title": "History of education in the United States",
+        "source_url": "https://en.wikipedia.org/wiki/History_of_education_in_the_United_States",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/History_of_education_in_the_United_States?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "843557883_14171-15896",
+      "text": "Filming began in August 1993 and ended in December of that year . Although most of the film is set in Alabama , filming took place mainly in and around Beaufort , South Carolina , as well as parts of coastal Virginia and North Carolina , including a running shot on the Blue Ridge Parkway . Downtown portions of the fictional town of Greenbow were filmed in Varnville , South Carolina . The scene of Forrest running through Vietnam while under fire was filmed on Fripp Island , South Carolina . Additional filming took place on the Biltmore Estate in Asheville , North Carolina , and along the Blue Ridge Parkway near Boone , North Carolina . The most notable place was Grandfather Mountain where a part of the road is named `` Forrest Gump Curve '' . The Gump family home set was built along the Combahee River near Yemassee , South Carolina , and the nearby land was used to film Curran 's home as well as some of the Vietnam scenes . Over 20 palmetto trees were planted to improve the Vietnam scenes . Forrest Gump narrated his life 's story at the southern edge of Chippewa Square in Savannah , Georgia , as he sat at a bus stop bench . There were other scenes filmed in and around the Savannah area as well , including a running shot on the Richard V. Woods Memorial Bridge in Beaufort while he was being interviewed by the press , and on West Bay Street in Savannah . Most of the college campus scenes were filmed in Los Angeles at the University of Southern California . The lighthouse that Forrest runs across to reach the Atlantic Ocean the first time is the Marshall Point Lighthouse in Port Clyde , Maine . Additional scenes were filmed in Arizona , Utah 's Monument Valley , and Montana 's Glacier National Park .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "843557883_14171-15896",
+        "parent_text_sha256": "e07a5095ebf5e3d458ce4d00d8bc04c802684674b14f95ba49e96ad77fd08ae2",
+        "passage_id": "843557883_14171-15896",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 436,
+          "end": 1725,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "e07a5095ebf5e3d458ce4d00d8bc04c802684674b14f95ba49e96ad77fd08ae2",
+        "title": "Forrest Gump",
+        "source_url": "https://en.wikipedia.org/wiki/Forrest_Gump",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Forrest_Gump?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "832663263_2594-3149": {
+      "embedding_token_budget": 512,
+      "language": "en",
+      "parent_passage_id": "832663263_2594-3149",
+      "parent_text_sha256": "1cc68ac0c1948d81bc5ee4553dc9f36429612f72135e011ce80e8979a45927bc",
+      "passage_id": "832663263_2594-3149",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 144,
+        "end": 555,
+        "start": 0
+      },
+      "source_dataset": "CLAPNQ",
+      "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+      "text_sha256": "1cc68ac0c1948d81bc5ee4553dc9f36429612f72135e011ce80e8979a45927bc",
+      "title": "Life in a Northern Town",
+      "source_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town",
+      "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+      "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+      "contributors_history_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town?action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+        "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "832663263_2594-3149",
+      "text": "Two different music videos were made for the song . The first was made in 1984 and filmed in Hebden Bridge in West Yorkshire , England . It was directed by Tim Pope . The second was filmed in 1985 and was directed by Leslie Libman and Larry Williams . It was filmed in and around Newcastle upon Tyne with some scenes filmed in Manchester in the UK and in Aliquippa , Pennsylvania , United States , using footage of the now - closed LTV Steel and Duquesne Light facilities . The video featured footage from one of their first TV appearances , on The Tube .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "832663263_2594-3149",
+        "parent_text_sha256": "1cc68ac0c1948d81bc5ee4553dc9f36429612f72135e011ce80e8979a45927bc",
+        "passage_id": "832663263_2594-3149",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 144,
+          "end": 555,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "1cc68ac0c1948d81bc5ee4553dc9f36429612f72135e011ce80e8979a45927bc",
+        "title": "Life in a Northern Town",
+        "source_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Life_in_a_Northern_Town?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ]
+}

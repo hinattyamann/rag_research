@@ -1,0 +1,2821 @@
+{
+  "scope": "new sealed complete extension batches only; excludes old Main/Cal",
+  "completed_batches": [
+    "batch_01",
+    "batch_02",
+    "batch_03"
+  ],
+  "planned_qa": 120,
+  "included_selected_qa": 120,
+  "uncollected_or_unsealed_qa": 0,
+  "statistics": {
+    "version": "qa-increment-document-group-bootstrap-v1",
+    "numpy_version": "2.5.3",
+    "repetitions": 10000,
+    "seed": 42,
+    "rng": "SeedSequence(seed).spawn(2) in en,ja order",
+    "quantile": "linear_percentile_2.5_97.5",
+    "estimand": "QA-weighted complete-comparison increment, conditional on comparability",
+    "languages": {
+      "en": {
+        "selected_qa_count": 60,
+        "selected_document_groups": 60,
+        "comparable_qa_count": 48,
+        "missing_qa_count": 12,
+        "comparable_document_groups": 48,
+        "mean_increment": 0.06666666666666667,
+        "ci95": [
+          0.020833333333333332,
+          0.12083333333333333
+        ],
+        "ci_status": "available"
+      },
+      "ja": {
+        "selected_qa_count": 60,
+        "selected_document_groups": 60,
+        "comparable_qa_count": 43,
+        "missing_qa_count": 17,
+        "comparable_document_groups": 43,
+        "mean_increment": 0.09302325581395349,
+        "ci95": [
+          0.04186046511627906,
+          0.14883720930232558
+        ],
+        "ci_status": "available"
+      }
+    },
+    "ja_minus_en": {
+      "mean": 0.02635658914728682,
+      "ci95": [
+        -0.04883720930232557,
+        0.10155038759689924
+      ]
+    },
+    "qa": [
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:dev:-3590849776680080342:answerable",
+        "document_group_id": "clapnq-title:friends",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:dev:-6581378808316587097:answerable",
+        "document_group_id": "clapnq-title:subsistence agriculture",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:dev:1688288076551153504:answerable",
+        "document_group_id": "clapnq-title:guy's grocery games",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:dev:1748177535249649888:answerable",
+        "document_group_id": "clapnq-title:list of diary of a wimpy kid characters",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:dev:1897426264536254359:answerable",
+        "document_group_id": "clapnq-title:new amsterdam",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:dev:3800568474599943409:answerable",
+        "document_group_id": "clapnq-title:mustang",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:dev:4088290661268897018:answerable",
+        "document_group_id": "clapnq-title:court of appeals of the philippines",
+        "comparable": true,
+        "increment": 0.6,
+        "partial_pair_increment_exploratory": 0.6,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 6,
+          "rate": 0.6
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:dev:825713187881645325:answerable",
+        "document_group_id": "clapnq-title:dead sea",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-1077268850320597688:answerable",
+        "document_group_id": "clapnq-title:acts of the apostles",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-1729923543484435760:answerable",
+        "document_group_id": "clapnq-title:great pyramid of giza",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-1781279705336481949:answerable",
+        "document_group_id": "clapnq-title:foul ball",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-2619341853819375368:answerable",
+        "document_group_id": "clapnq-title:life in a northern town",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-2795650974172775315:answerable",
+        "document_group_id": "clapnq-title:celtic music",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-2988423735175025305:answerable",
+        "document_group_id": "clapnq-title:red coat (pretty little liars)",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-3749177814501001596:answerable",
+        "document_group_id": "clapnq-title:barrett m82",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-5220264934011134798:answerable",
+        "document_group_id": "clapnq-title:beth (song)",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-5431175315239443030:answerable",
+        "document_group_id": "clapnq-title:catawba river",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-5912327246881931315:answerable",
+        "document_group_id": "clapnq-title:titanic ii",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-6479921317466279753:answerable",
+        "document_group_id": "clapnq-title:origin of replication",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 4,
+          "valid_trials": 4,
+          "valid_pairs": 6,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-7046188315681934491:answerable",
+        "document_group_id": "clapnq-title:history of the pittsburgh pirates",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-7470274770113344150:answerable",
+        "document_group_id": "clapnq-title:colosseum",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-7737524045131103528:answerable",
+        "document_group_id": "clapnq-title:log horizon",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-7768981697819247700:answerable",
+        "document_group_id": "clapnq-title:princess fiona",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-8024366706810351468:answerable",
+        "document_group_id": "clapnq-title:the twelve spies",
+        "comparable": true,
+        "increment": 0.6,
+        "partial_pair_increment_exploratory": 0.6,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 6,
+          "rate": 0.6
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-8062809459390959673:answerable",
+        "document_group_id": "clapnq-title:separation of church and state in the united states",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-8402235505568929376:answerable",
+        "document_group_id": "clapnq-title:dan scott",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-8956266160858224023:answerable",
+        "document_group_id": "clapnq-title:industrial revolution",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-9157509020448635605:answerable",
+        "document_group_id": "clapnq-title:national colours of australia",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 4,
+          "valid_trials": 4,
+          "valid_pairs": 6,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:-9217111645848091265:answerable",
+        "document_group_id": "clapnq-title:chola dynasty",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:1298473356907262315:answerable",
+        "document_group_id": "clapnq-title:rollin' (limp bizkit song)",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:1689449386353198859:answerable",
+        "document_group_id": "clapnq-title:2016 atlanta falcons season",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:2670263968390861782:answerable",
+        "document_group_id": "clapnq-title:first transcontinental railroad",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:273836563771446299:answerable",
+        "document_group_id": "clapnq-title:think globally, act locally",
+        "comparable": true,
+        "increment": 0.6,
+        "partial_pair_increment_exploratory": 0.6,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 6,
+          "rate": 0.6
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:2769891724589562860:answerable",
+        "document_group_id": "clapnq-title:spanish–american war",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:2839799694676987689:answerable",
+        "document_group_id": "clapnq-title:dine and dash",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:2965302259064024817:answerable",
+        "document_group_id": "clapnq-title:minnesota twins",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:3585604837364348037:answerable",
+        "document_group_id": "clapnq-title:third world",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:4046273788012018858:answerable",
+        "document_group_id": "clapnq-title:soviet union in world war ii",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:4195409782983409749:answerable",
+        "document_group_id": "clapnq-title:call of duty: black ops iii",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:4237032561027244584:answerable",
+        "document_group_id": "clapnq-title:coureur des bois",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 4,
+          "valid_trials": 4,
+          "valid_pairs": 6,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:4811930485529804655:answerable",
+        "document_group_id": "clapnq-title:groundling",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 4,
+          "valid_trials": 4,
+          "valid_pairs": 6,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+        "document_group_id": "clapnq-title:mr. noodle",
+        "comparable": true,
+        "increment": 0.4,
+        "partial_pair_increment_exploratory": 0.4,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 4,
+          "rate": 0.4
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:5035135110024786818:answerable",
+        "document_group_id": "clapnq-title:pluto (mythology)",
+        "comparable": true,
+        "increment": 0.4,
+        "partial_pair_increment_exploratory": 0.4,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 4,
+          "rate": 0.4
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:5062340874389163810:answerable",
+        "document_group_id": "clapnq-title:above-the-line deduction",
+        "comparable": true,
+        "increment": 0.6,
+        "partial_pair_increment_exploratory": 0.6,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 6,
+          "rate": 0.6
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:5411741647237125341:answerable",
+        "document_group_id": "clapnq-title:star wars: the force awakens",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:562267940317886300:answerable",
+        "document_group_id": "clapnq-title:battle of hampton roads",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:5733787053155245501:answerable",
+        "document_group_id": "clapnq-title:matthew 5:22",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:5973133297880755732:answerable",
+        "document_group_id": "clapnq-title:right of children to free and compulsory education act, 2009",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:6007917538066280414:answerable",
+        "document_group_id": "clapnq-title:parthenon",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:6024288240639443811:answerable",
+        "document_group_id": "clapnq-title:maritime lien",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:6350575950900222585:answerable",
+        "document_group_id": "clapnq-title:mercedes-benz stadium",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:6396820347469316986:answerable",
+        "document_group_id": "clapnq-title:easter island",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:6438698312001115417:answerable",
+        "document_group_id": "clapnq-title:constitution of the united kingdom",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:6444449308928916806:answerable",
+        "document_group_id": "clapnq-title:yellowstone river",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:7732774843336374617:answerable",
+        "document_group_id": "clapnq-title:penny board",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:8031154658741289819:answerable",
+        "document_group_id": "clapnq-title:cell wall",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:8103354363860237577:answerable",
+        "document_group_id": "clapnq-title:to kill a mockingbird",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:8580041794137858963:answerable",
+        "document_group_id": "clapnq-title:highschool of the dead",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:8658816831446727938:answerable",
+        "document_group_id": "clapnq-title:scottish premier league",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "en",
+        "record_id": "clapnq:c508d78:train:8686797710880303142:answerable",
+        "document_group_id": "clapnq-title:white house",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:1002",
+        "document_group_id": "whrja-group:4ebc33bccf75568168100eb6",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:1026",
+        "document_group_id": "whrja-group:f21dbb92be55660bde1ba42d",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:1028",
+        "document_group_id": "whrja-group:734686031682d11519a0f09d",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:1029",
+        "document_group_id": "whrja-group:986a9703c3cf2c84815ae780",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:1057",
+        "document_group_id": "whrja-group:b972c233f63dadb32f06d4b0",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 4,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:1074",
+        "document_group_id": "whrja-group:9be6364ca291f8892286b311",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:1168",
+        "document_group_id": "whrja-group:88b84edf1437aa33445efc26",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:1185",
+        "document_group_id": "whrja-group:e9aa363e39b7b6d5d3d19193",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:1225",
+        "document_group_id": "whrja-group:41a35d8d81faba46c2a75ec1",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:1247",
+        "document_group_id": "whrja-group:c63d18ea117577411d4eeb91",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:1276",
+        "document_group_id": "whrja-group:649c51f8f9478fba1f2afe0c",
+        "comparable": true,
+        "increment": 0.4,
+        "partial_pair_increment_exploratory": 0.4,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 4,
+          "rate": 0.4
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:139",
+        "document_group_id": "whrja-group:d2e30be817f1942d855e0a7d",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:182",
+        "document_group_id": "whrja-group:f8fee5de895ed83e71ede05a",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:184",
+        "document_group_id": "whrja-group:2ac9ca12e69ae8db0b57b6b5",
+        "comparable": true,
+        "increment": 0.4,
+        "partial_pair_increment_exploratory": 0.4,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 4,
+          "rate": 0.4
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:228",
+        "document_group_id": "whrja-group:fae8bba7561f4ed4a7d5ba3f",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 4,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:235",
+        "document_group_id": "whrja-group:a48179d1ccd63ae20a6fcfc4",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:306",
+        "document_group_id": "whrja-group:70a48eb1cf2b67ab402e8636",
+        "comparable": true,
+        "increment": 0.4,
+        "partial_pair_increment_exploratory": 0.4,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 4,
+          "rate": 0.4
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:345",
+        "document_group_id": "whrja-group:29892fc44a4848429aa4c59f",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:388",
+        "document_group_id": "whrja-group:e353ba8da3d4e2aa4c9d3cae",
+        "comparable": true,
+        "increment": 0.4,
+        "partial_pair_increment_exploratory": 0.4,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 4,
+          "rate": 0.4
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:404",
+        "document_group_id": "whrja-group:a172f7f4916f020db9e01fe0",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:452",
+        "document_group_id": "whrja-group:1cd6fccc3b96603db759660f",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:461",
+        "document_group_id": "whrja-group:86168389a9c05b28e6708d4d",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:471",
+        "document_group_id": "whrja-group:d37004abcca22f653b631aa1",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:483",
+        "document_group_id": "whrja-group:b565d067079c1ce048ac2b5b",
+        "comparable": true,
+        "increment": 0.6,
+        "partial_pair_increment_exploratory": 0.6,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 6,
+          "rate": 0.6
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:486",
+        "document_group_id": "whrja-group:7098ed740cfe8536ee6d595e",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:498",
+        "document_group_id": "whrja-group:a90849e2ad006652f8cff8fc",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:502",
+        "document_group_id": "whrja-group:c32682a8a4d2d1c503491402",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:511",
+        "document_group_id": "whrja-group:673d941f612ad62a019213db",
+        "comparable": true,
+        "increment": 0.4,
+        "partial_pair_increment_exploratory": 0.4,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 4,
+          "rate": 0.4
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:545",
+        "document_group_id": "whrja-group:a29bd329dda248cbe5cf8e8a",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:558",
+        "document_group_id": "whrja-group:583dc1acb02369d50e4919e5",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:560",
+        "document_group_id": "whrja-group:4d96f15938d505bb179b7774",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:568",
+        "document_group_id": "whrja-group:ac11900ee2af3292404fab94",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:570",
+        "document_group_id": "whrja-group:c5e8a5e10e0c90ab96dfe9c3",
+        "comparable": true,
+        "increment": 0.4,
+        "partial_pair_increment_exploratory": 0.4,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 4,
+          "rate": 0.4
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:592",
+        "document_group_id": "whrja-group:90155da32303c0d08524a081",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:603",
+        "document_group_id": "whrja-group:7d23ed341c46d4115006a0c6",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:616",
+        "document_group_id": "whrja-group:144505330b176e39b42c8ed6",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:624",
+        "document_group_id": "whrja-group:99859055b14d910084a01d43",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:629",
+        "document_group_id": "whrja-group:5be5a1d227ceefdf9827f96c",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:643",
+        "document_group_id": "whrja-group:3df2f51925de3e1e53b6fe6c",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:666",
+        "document_group_id": "whrja-group:f8183306c9ee19469accaf05",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:668",
+        "document_group_id": "whrja-group:3b224a3404705977b986ed7d",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:686",
+        "document_group_id": "whrja-group:40cf87227ca612c51a0a4c69",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:691",
+        "document_group_id": "whrja-group:a6a1e1c02aaabd84f3b2e98b",
+        "comparable": true,
+        "increment": 0.4,
+        "partial_pair_increment_exploratory": 0.4,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 4,
+          "rate": 0.4
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:748",
+        "document_group_id": "whrja-group:efbe472e789d44eda7d1cc9d",
+        "comparable": true,
+        "increment": 0.6,
+        "partial_pair_increment_exploratory": 0.6,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 6,
+          "rate": 0.6
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:753",
+        "document_group_id": "whrja-group:fd5a2e831e98c1e2a1b40a60",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:784",
+        "document_group_id": "whrja-group:07f97674844214c82052346b",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:797",
+        "document_group_id": "whrja-group:1246f51143842d27fdbfd085",
+        "comparable": false,
+        "increment": null,
+        "partial_pair_increment_exploratory": null,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 0,
+          "valid_pairs": 0,
+          "disagreeing_pairs": 0,
+          "rate": null
+        },
+        "reason": "invalid_or_unscorable_trials"
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:802",
+        "document_group_id": "whrja-group:3f6222814c47aa6981b1bc01",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:806",
+        "document_group_id": "whrja-group:eca449b5d871e7041cc8f334",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:822",
+        "document_group_id": "whrja-group:ba3ea06c1d8cdcd73d5c8abc",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:833",
+        "document_group_id": "whrja-group:9d2e45a2df363590590be536",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:880",
+        "document_group_id": "whrja-group:144ee6df300bd98453371fc7",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 4,
+          "valid_trials": 4,
+          "valid_pairs": 6,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:890",
+        "document_group_id": "whrja-group:b11224474d5342bcb2a82e66",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:893",
+        "document_group_id": "whrja-group:8ac91ba3ff889010fc92498b",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:918",
+        "document_group_id": "whrja-group:eeb9ec3713434ba3f3d11b70",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:946",
+        "document_group_id": "whrja-group:11ebd271051e2881a050febd",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:949",
+        "document_group_id": "whrja-group:785610ca4dffb59a68f18cb6",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:962",
+        "document_group_id": "whrja-group:ce14eb446582cd58cac80f8f",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:967",
+        "document_group_id": "whrja-group:0ddf08423df0b8c38c2d9cfd",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 4,
+          "valid_trials": 4,
+          "valid_pairs": 6,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      },
+      {
+        "language": "ja",
+        "record_id": "whrja:02e85c8:answered:994",
+        "document_group_id": "whrja-group:19f5b54c3223153413c6792a",
+        "comparable": true,
+        "increment": 0.0,
+        "partial_pair_increment_exploratory": 0.0,
+        "order": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "repeat": {
+          "planned_trials": 5,
+          "valid_trials": 5,
+          "valid_pairs": 10,
+          "disagreeing_pairs": 0,
+          "rate": 0.0
+        },
+        "reason": null
+      }
+    ],
+    "gate11_passed": false,
+    "phase12_allowed": false
+  },
+  "conditional_on_completed_batches": false,
+  "stopping_not_based_on_effect": true
+}

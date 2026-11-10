@@ -1,0 +1,44 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "supported",
+      "reason": "Across all five supplied documents, none states that replication origins are AT-rich or explains AT enrichment.",
+      "evidence": ["e0000", "e0001", "e0002", "e0003", "e0004"]
+    },
+    "a001": {
+      "label": "not_supported",
+      "reason": "The documents identify origins as specific sequences, but the length comparison gives prokaryotic origins as 100–200 or more nucleotides and eukaryotic origins as about 150. The unit drops the open-ended qualification and generalizes the prokaryotic range.",
+      "evidence": ["e0003", "e0004"]
+    },
+    "a002": {
+      "label": "supported",
+      "reason": "The comparison assigns DnaA and DnaB to prokaryotic initiation and the Origin Recognition Complex to eukaryotic initiation, supporting the named examples.",
+      "evidence": ["e0004"]
+    },
+    "a003": {
+      "label": "supported",
+      "reason": "The document explicitly connects multiple eukaryotic replication origins with faster duplication of their usually larger store of genetic material.",
+      "evidence": ["e0000"]
+    },
+    "a004": {
+      "label": "ambiguous",
+      "reason": "One passage explicitly describes plant walls as rigid and made of cellulose. Other passages describe primary walls as flexible and attribute tissue rigidity to turgor pressure together with wall structure rather than wall stiffness. Structural support is established, but the unqualified characterization of the wall itself as rigid is unclear across these descriptions.",
+      "evidence": ["e0010", "e0013", "e0014"]
+    },
+    "a005": {
+      "label": "not_supported",
+      "reason": "The documents discuss tensile strength and tissue rigidity arising from turgor pressure together with wall structure, but do not establish the claimed resistance to external pressures or the complete causal explanation.",
+      "evidence": ["e0014"]
+    },
+    "a006": {
+      "label": "supported",
+      "reason": "The document explains that flexible walls bend and explicitly illustrates that flexibility with wilting stems and leaves and seaweeds bending in water currents.",
+      "evidence": ["e0014"]
+    },
+    "a007": {
+      "label": "not_supported",
+      "reason": "The documents do not establish that cells without walls could neither maintain shape nor move, or that these asserted capabilities are essential for survival and function. Examples of flexible walls bending do not establish this counterfactual.",
+      "evidence": ["e0014"]
+    }
+  }
+}

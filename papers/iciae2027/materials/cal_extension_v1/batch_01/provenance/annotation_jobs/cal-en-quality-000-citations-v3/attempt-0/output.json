@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "unreliable",
+      "reason": "The answer accurately reports that the actual context lacks filming locations, but it does not answer where either video was filmed. Reference-only evidence supplies those locations; it is not actual-context support.",
+      "evidence": ["e0001", "e0003", "e0005"],
+      "essential_points": "Identify Hebden Bridge, West Yorkshire, for the first video, and Newcastle upon Tyne, Manchester, and Aliquippa, Pennsylvania, for the second.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "reliable",
+      "reason": "The actual context supports identifying Becky, Mike Brand's wife nicknamed Beck, and explains her frequent calls during practices. The answer directly satisfies the question without a material error. Reference-only evidence is unnecessary.",
+      "evidence": ["e0006"],
+      "essential_points": "Identify Becky, nicknamed Beck, Mike Brand's wife, whose calls during practices inspired the song.",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a002": {
+      "label": "indeterminate",
+      "reason": "The actual context supports the answer's general explanation of appellate courts. However, the question specifies no jurisdiction, while the reference-only material concerns the Philippines and expects particular institutional review responsibilities. This unresolved scope ambiguity prevents a definite judgment of essential completeness.",
+      "evidence": ["e0012", "e0014", "e0017"],
+      "essential_points": "Explain review of lower-court decisions on appeal; if the Philippine Court of Appeals is intended, identify its specific review responsibilities, including relevant agency and labor decisions.",
+      "criteria": {
+        "essential_answer": "uncertain",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "The actual documents concern English football records and support the stated lack of Scottish scoring information. Nevertheless, the answer provides none of the requested scorers or totals. Reference-only evidence establishes the missing answer content and cannot supply actual-context support.",
+      "evidence": ["e0018", "e0021", "e0023"],
+      "essential_points": "Identify Jimmy McGrory's overall Scottish top-flight record of 408 goals and distinguish Kris Boyd's SPL-era record of 167 goals.",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    }
+  }
+}

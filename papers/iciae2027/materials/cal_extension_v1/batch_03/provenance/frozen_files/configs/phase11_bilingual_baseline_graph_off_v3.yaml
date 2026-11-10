@@ -1,0 +1,23 @@
+schema_version: 1
+purpose: phase11-bilingual-baseline-candidate
+retrieval:
+  kind: hybrid
+  candidate_count: 50
+  rrf_constant: 60
+  top_k: 5
+generation:
+  context_tokens: 4096
+  max_output_tokens: 512
+  passage_tokens: 1024
+  temperature: 0.0
+  seed: 42
+  threads: 6
+  batch_tokens: 128
+  repack: false
+  timeout_seconds: 300
+  startup_timeout_seconds: 120
+execution:
+  runtime_spec: configs/lab_cuda_graph_off_runtime_v1.json
+  gpu_layers: 99
+  device: CUDA0
+  require_full_offload: true

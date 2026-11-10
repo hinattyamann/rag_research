@@ -1,0 +1,1151 @@
+{
+  "qa_key": "cal_ja_e7cc73b0ee3bbe75d5ce195d",
+  "cohort": "cal",
+  "language": "ja",
+  "analysis_role": "cal",
+  "source_qa_split": "calibration",
+  "record_id": "whrja:02e85c8:answered:802",
+  "document_group_id": "whrja-group:3f6222814c47aa6981b1bc01",
+  "qa_source": {
+    "answerability_scope": "human_answer_in_source_not_verified_common_corpus_coverage",
+    "corpus_answerability": "not_annotated_no_relabel_from_body_or_quote_availability",
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "document_group_id": "whrja-group:3f6222814c47aa6981b1bc01",
+    "gold_parent_ids": [
+      "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00"
+    ],
+    "gold_passage_ids": [
+      "54867862118943927358699658443_1697-2519",
+      "54867862118943927358699658443_833-1697"
+    ],
+    "gold_passage_ids_scope": "verified_literal_quote_overlap_children_only_not_metric_gold",
+    "gold_passage_mapping_status": "audited_cited_article_and_source_reference_markup_mapping_v2",
+    "gold_relevance_unit": "available_cited_source_article",
+    "is_answerable": true,
+    "language": "ja",
+    "provided_passage": null,
+    "question": "国内総生産(GDP)の値はどうやって計算すればいいのか",
+    "record_id": "whrja:02e85c8:answered:802",
+    "reference_answer_sentences": [
+      {
+        "citations": [
+          0,
+          1
+        ],
+        "text": "国内総生産（GDP）として実際の経済の単純化したモデルを考えた場合に、国内総生産は「GDP = C + I + G + X - IM」で表せます。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "Ｉは企業による投資支出、Cは家計による支出は消費支出、Gは政府による支出となります。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "これに海外への輸出入の影響を追加するため、輸出額のX、輸入額のIMとなります。"
+      }
+    ],
+    "reference_answers": [
+      "国内総生産（GDP）として実際の経済の単純化したモデルを考えた場合に、国内総生産は「GDP = C + I + G + X - IM」で表せます。Ｉは企業による投資支出、Cは家計による支出は消費支出、Gは政府による支出となります。これに海外への輸出入の影響を追加するため、輸出額のX、輸入額のIMとなります。"
+    ],
+    "reference_corpus_mapping": [
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "54867862118943927358699658443_833-1697"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "verified_source_reference_markup",
+          "projection_policy": "source-html-reference-superscript-exact-body-projection-v1",
+          "request_journal_sha256": "f58abc363ac02a07d9e0f43150de6e10f5995fb8fb623124129a3dc3b0abec1b",
+          "source_html_sha256": "654900782abb4a4e6db57c2457a3dbfcc009f0a095999db188345b657d1fd254",
+          "spans": [
+            {
+              "end": 1357,
+              "omitted_reference_markup": [
+                {
+                  "html_end": 8991,
+                  "html_start": 8834,
+                  "marker_html_sha256": "16aae6bdca41e5f445b4f3d3cade35b3d1068286eeb01402abd0fc714a823a48",
+                  "marker_id": 11,
+                  "marker_text": "[9]"
+                }
+              ],
+              "source_span_sha256": "79ce0f5438376b20f7ba967ba33c0abd1272590cc01f3b4bfaa8f415f5c77cf5",
+              "start": 1314
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "raw_article_status": "ok",
+        "reference_index": 0,
+        "source_reference_unit_id": "jawiki-page:3585"
+      },
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0,
+          1,
+          2
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "54867862118943927358699658443_1697-2519"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "whitespace_only",
+          "spans": [
+            {
+              "end": 2108,
+              "source_span_sha256": "de3f0b2ff027168933882d8f977af9b86629cf28fded24d71b65924b84b2ca44",
+              "start": 1831
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "raw_article_status": "ok",
+        "reference_index": 1,
+        "source_reference_unit_id": "jawiki-page:3585"
+      }
+    ],
+    "reference_corpus_metadata_offline_only": true,
+    "reference_evidence": [
+      {
+        "cited_by_answer_sentence_indices": [
+          0
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "国内総生産の定義\n国内総生産を定義するために、実際の経済を単純化したモデルを与える[9] 。",
+        "reference_index": 0,
+        "title": "国内総生産",
+        "url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E5%86%85%E7%B7%8F%E7%94%9F%E7%94%A3"
+      },
+      {
+        "cited_by_answer_sentence_indices": [
+          0,
+          1,
+          2
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "企業による支出は投資支出と呼ばれ、Ｉで表される。家計による支出は消費支出と呼ばれ、Ｃで表される。また政府による支出はＧで表される。\n輸出入がない場合、ＧＤＰを国内で一定期間の間に最終財・サービスに対して行われた支出の総額ともみなせ、次が成立する事がわかる：\n GDP = C + I + G\n輸出入がある場合、国内総生産額であるＧＤＰのうち、輸出額Ｘ分だけ海外へと漏れ出る。 また国内の総支出Ｃ＋Ｉ＋Ｇの一部は輸入に使われたものである。 従って輸入額をＩＭとすると、以上の議論より、次が成立する事がわかる：\n GDP = C + I + G + X - IM",
+        "reference_index": 1,
+        "title": "国内総生産",
+        "url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E5%86%85%E7%B7%8F%E7%94%9F%E7%94%A3"
+      }
+    ],
+    "research_split": "calibration",
+    "selected_sentences_by_reference": [
+      [
+        "国内総生産の定義\n国内総生産を定義するために、実際の経済を単純化したモデルを与える[9] 。",
+        "企業による支出は投資支出と呼ばれ、Ｉで表される。家計による支出は消費支出と呼ばれ、Ｃで表される。また政府による支出はＧで表される。\n輸出入がない場合、ＧＤＰを国内で一定期間の間に最終財・サービスに対して行われた支出の総額ともみなせ、次が成立する事がわかる：\n GDP = C + I + G\n輸出入がある場合、国内総生産額であるＧＤＰのうち、輸出額Ｘ分だけ海外へと漏れ出る。 また国内の総支出Ｃ＋Ｉ＋Ｇの一部は輸入に使われたものである。 従って輸入額をＩＭとすると、以上の議論より、次が成立する事がわかる：\n GDP = C + I + G + X - IM"
+      ]
+    ],
+    "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+    "source_id": "802",
+    "source_line_index": 549,
+    "source_record_sha256": "15b453e23ac8f5ad35b13f9072d17a4471aca819a08c960162ff09479e28ba94",
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "source_split": "answered",
+    "source_title": "国内総生産",
+    "unavailable_cited_reference_ids": []
+  },
+  "source_selection": {
+    "record_id": "whrja:02e85c8:answered:802",
+    "question": "国内総生産(GDP)の値はどうやって計算すればいいのか",
+    "document_group_id": "whrja-group:3f6222814c47aa6981b1bc01"
+  },
+  "question": "国内総生産(GDP)の値はどうやって計算すればいいのか",
+  "used_documents": [
+    {
+      "passage_id": "54867862118943927358699658443_0-833",
+      "title": "国内総生産",
+      "text": "国別GDP（2016年） 上段がMERベース、下段がPPPベース。単位は10億ドル。名目ベースでは先進国の値が高く、PPPベースではインドや中華人民共和国などの新興国やアフリカなどの発展途上国の値が高く表示されやすいことが読み取れる。\n国内総生産（こくないそうせいさん、英:Gross Domestic Product、略称:GDP、独:Bruttoinlandsprodukt、略称:BIP）は、一定期間内に国内で産み出された物やサービスの付加価値の合計のことである。その国内領土に居住する経済主体を基準にした数値で「居住者たる生産者による国内生産活動の結果、生み出された付加価値の総額」をいう。\n以前は、景気を測る指標として国民総生産 (こくみんそうせいさん、英:Gross National Product、略称:GNP)が用いられていたが、1993SNAの導入に伴い、“Gross National Income (GNI、国民総所得)”が新たに導入され、GNPの概念はなくなり、現在はGDPが重視されている。\nなお、GDPは “国内”のため、日本企業が海外で生産した付加価値は含まないのに対して、GNPは“国民”のため、国内に限らず、海外での所得も含んでいる。\nまた、世界の総生産の合計は、世界総生産 (英:Gross World Product、略称:GWP)と呼ぶ。\n概要\nフローとストックのダイアグラム\n国内総生産は「ストック」に対する「フロー」を表す指標であり、経済を総合的に把握する統計である国民経済計算の中の一指標で、GDPの伸び率が実質経済成長率に値する。\n経済学用語のフロー、ストックはフローとストックを参照\n原則として国内総生産には市場で取引された財やサービスの生産のみが計上される。市場で取引されない活動は、GDPには含まれない。このため、家事労働やボランティア活動などは国内総生産には計上されない。この点は、国民総生産でも同じである。",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_0-833",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 489,
+          "end": 833,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "4276fa24e1b86a75871f07b064d4e1b6d4f35292010095266ec57f679d700fb6",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "4276fa24e1b86a75871f07b064d4e1b6d4f35292010095266ec57f679d700fb6",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 833
+      }
+    },
+    {
+      "passage_id": "54867862118943927358699658443_4995-5841",
+      "title": "国内総生産",
+      "text": "世界銀行が公表するGDPは、国際比較プログラムの計算法による購買力平価（PPP）で比較したもので、一般的な為替レートを使う計算法とは異なる。購買力平価によるGDPは、先進国のGDPが低めに算出されるため、2017年の国際間の順位は中華人民共和国が1位であり、アメリカ合衆国が2位、インドが3位となる。\n関連指標\n実質国内総生産\n以上で説明した国内総生産（名目GDP）は、経済状況のみならず、インフレによる価格変動によっても変化してしまう。そこで価格変動の影響を排除した国内総生産も定義されており、これを実質国内総生産（実質GDP）と呼ぶ。\n価格変動の影響を排除するため、実質GDPではある年（例えば2001年）を基準年として定め、基準年における最終財・サービスの価格を使って現在の国内総生産を計算する。\n厳密には以下の通りである。最終財・サービスiの基準年における価格がPiで、今年の価格がQiとする。またiは今年Xi個売れたとする。\nこのとき、今年の実質GDPは\n実質GDP = Σi PiXi\nにより定義される。ここで和Σiは全ての最終財・サービスを渡る。\n一方今年の名目GDPは\n名目GDP = Σi QiXi\nである。\n以上で述べた実質GDPの値は、基準年の選び方に依存してしまう。従って現在では基準年の選び方の影響を排除するために、「連鎖」という方法で補正した定義を用いて実質GDPを計算している。\nGDPの変化（経済成長率）に関しては経済成長を参照。\n一人当たり国内総生産\n国内総生産をその国の人口で割った値を一人当たりGDPと呼ぶ。\n国ごとに人口が違うので、国ごとの経済状況を比較するには、通常の国内総生産ではなく一人当たり国内総生産を使う必要がある。国内総生産には名目と実質があるため、一人当たりGDPも一人当たり名目国内総生産と一人当たり実質GDPがある。\n現在の国別一人当たりGDPについては国の国内総生産順リスト (一人当り為替レート)を参照。\n国内総生産デフレーター\n",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_4995-5841",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 492,
+          "end": 5841,
+          "start": 4995
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "6cc30dc5d47b43edcea59c4fc98f25d487bf0547ed9b02d5c47594eeaf7d5a29",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "6cc30dc5d47b43edcea59c4fc98f25d487bf0547ed9b02d5c47594eeaf7d5a29",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 846
+      }
+    },
+    {
+      "passage_id": "54867862118943927358699658443_12301-12653",
+      "title": "国内総生産",
+      "text": "発表時期は1、4、7、10月に速報値、次月の2、5、8、11月に改定値、さらに3、6、9、12月に確定値が発表される。\n→「アメリカ合衆国の経済」および「アメリカ合衆国の経済史」を参照\n脚注\n注釈\n出典\n関連項目\n国民経済計算\n各国のGDPリスト（全ての国・地域対象）\n各国の名目GDPリスト\n各国の一人当たり名目GDPリスト\n各国の実質GDPリスト\n各国の一人当たり実質GDPリスト\n国の国内総生産の動態（全ての国・地域対象）\n域内総生産順リスト（全ての国・地域対象）\n国民総生産 (GNP)\n国民総所得 (GNI)\n国民総幸福量 (GNH)\n県民経済計算\n日本の年間商品販売額一覧\n外部リンク\nGross domestic product (GDP) - OECD\n内閣府 国民経済計算（GDP統計）",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_12301-12653",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 216,
+          "end": 12653,
+          "start": 12301
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "21939d0bb16c4502dd284a6994525eefbb8f8dc7042fecc15624eef855e4cacf",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "21939d0bb16c4502dd284a6994525eefbb8f8dc7042fecc15624eef855e4cacf",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 352
+      }
+    },
+    {
+      "passage_id": "54867862118943927358699658443_3247-4144",
+      "title": "国内総生産",
+      "text": "その国内領土に居住する経済主体を対象とする概念である「国内」を基準とする国内総生産（GDP）に対し、当該国の居住者主体を対象とする概念である「国民」を基準とする国民総生産（GNP）がある。「国民総生産」でいう「国民」とは当該国の居住者主体を対象とする経済的な概念であり国籍とは関係がない。個人の場合、主として当該領土内に6か月以上の期間居住しているすべての人を含む一方、一般に国外に2年以上居住する人は非居住者として扱われる。\n「国の実体経済」を表す指標としては、国民総生産（GNP）よりも国内総生産（GDP）が重視されるようになった。1980年代頃までは国の経済の規模・成長を測るものさしとして国民総生産（GNP）がよく用いられたが、これは外国に住む国民の生産量も含む一方で、国内で経済活動をする外国人の生産量は含まないという点が、時代が下るにつれて進展していった経済のグローバル化に伴い、国家を単位とする経済指標としては実態に即さなくなったと考えられるためである。\n国連の1993SNA等ではGNPの概念そのものがなくなっており、それに代わる概念として国民総所得（Gross National Income ＝ GNI）が導入されている。国内総生産を推計する体系を国民経済計算（体系）と呼ぶように、国民概念がもともと利用されてきたが、国内の経済活動状況を判断する基準としては国内総生産を使用することが一般的となった。日本でも1993年から国民総生産に替わって国内総生産を使用するようになっている。\n問題点\n国内総生産は各国の経済力を示す一番重要な指標であるが、計算方法を公開していない推計値であると山内竜介はしている。日本の国内総生産を公表する内閣府は非公開の理由を、「国家機密に当たる」としていると山内竜介は主張する。また、山内竜介によれば計算数式は毎年改良されるので、どれほど客観性、継続性があるか明らかではない。\nどのように基礎統計を用いて国民経済計算を作成するかなどは内閣府によってある程度公開されている。日本はそうでも、北朝鮮は自己申告であるため、真実であるかどうかはわからない。",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_3247-4144",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 4144,
+          "start": 3247
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "12e4fcd71187dd1d4df00e9ffb0b878d661084db43faa38a1369a57a91e1db3f",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "12e4fcd71187dd1d4df00e9ffb0b878d661084db43faa38a1369a57a91e1db3f",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 897
+      }
+    },
+    {
+      "passage_id": "54867862118943927358699658443_833-1697",
+      "title": "国内総生産",
+      "text": "こうした取り扱いの例外として、持ち家の家賃など帰属計算が行われるものがある。\n国民経済計算の帰属家賃の説明を参照\nまた、今期新たに生産されたのでない財（例：古美術品）の取引、最終財の原材料となる中間財の取引は算入されない。地下経済なども計上されないことが一般的であったが、2014年以降、EU圏内では麻薬取引や売春サービスも計上し始めている。オーストラリアに本部を置き、米国、メキシコ、オランダ、ベルギーなどに支部を持つ経済平和研究所によると、GDPは「幸福度と国富の関連性」を誤って表現する問題指標であり、より良い測定方法が必要であるとしている。具体的な問題点としては、GDPには犯罪経済などが含まれていることが挙げられる。\n国連統計委員会が勧告を出し、統計設計、財の概念の設定などは勧告に沿って行われる。直近の勧告としては、68SNA、93SNA、2008SNAがある。\n日本の国内総生産は、内閣府（2001年の中央省庁再編以前は経済企画庁）が推計し、速報値や改定値として発表しているが、その詳細な計算方法については他国同様、公開されていない。\n経済モデル\n国内総生産の定義\n国内総生産を定義するために、実際の経済を単純化したモデルを与える 。なお、ここで説明するGDPは名目GDPと呼ばれるもので、実質GDPとは異なる。\n支出面\n国内には家計、企業、政府の三種類の経済部門があり、それとは別に外国という経済部門がある。\nまた生産物市場、生産要素市場、金融市場の三種類の市場がある。\n企業が財・サービスを生産するために別の企業から購入する財・サービスを中間財・サービスといい、それ以外の財・サービスを最終財・サービスという。\n生産物市場は企業および外国が自身の最終財・サービスを売るための市場で、各経済部門はこの市場から財・サービスを買い取る。\n中間生産物は、別の（中間ないし最終）財・サービスを作るための要素として使われるので、「二重カウント」を避けるため、国内総生産には企業が中間生産物を売ることで得た金は含まれない。\n",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_833-1697",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 1697,
+          "start": 833
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "aa7ac8efb801deca5e9e01a62d5f9e13d95c5a219794fa2d292f20f3bd1cdebe",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "aa7ac8efb801deca5e9e01a62d5f9e13d95c5a219794fa2d292f20f3bd1cdebe",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 864
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "54867862118943927358699658443_1697-2519",
+      "title": "国内総生産",
+      "text": "企業によって生産された最終財・サービスは、誰かが自身のお金を支出して買い取るか、あるいは生産した企業が在庫として抱え込む。在庫は「将来、販売する為の商品」であるから、企業の将来への投資支出の一種とみなせる。従って生産された最終財・サービスは最終的に誰かの支出となる。\n企業による支出は投資支出と呼ばれ、Ｉで表される。家計による支出は消費支出と呼ばれ、Ｃで表される。また政府による支出はＧで表される。\n輸出入がない場合、ＧＤＰを国内で一定期間の間に最終財・サービスに対して行われた支出の総額ともみなせ、次が成立する事がわかる：\nGDP = C + I + G\n輸出入がある場合、国内総生産額であるＧＤＰのうち、輸出額Ｘ分だけ海外へと漏れ出る。 また国内の総支出Ｃ＋Ｉ＋Ｇの一部は輸入に使われたものである。 従って輸入額をＩＭとすると、以上の議論より、次が成立する事がわかる：\nGDP = C + I + G + X - IM\n要素市場および金融市場は国内総生産（GDP）を定義する際、直接的には使用しないが、モデルの全体像を捉えやすくするため、説明する。生産要素市場は企業が労働、資本といった生産要素を家計から購入するための市場で、生産要素に対する対価として賃金、利潤、利子、賃料などの形で企業から家計に金が流れ込む。\n金融市場は、銀行間取引市場、証券市場および外国為替市場などの総称で、金融市場には家計から民間貯蓄が流れ込み、外国からは外国貸付や株式購入により金が流れ込む。\n企業は銀行借入や株式発行により、金融市場から資金を調達し、政府は政府借入により金融市場から資金を調達する。\nそして外国は外国借入や株式売却により金融市場から資金を調達する。\n三面等価の原理\n→詳細は「三面等価の原則」を参照\n上では、企業が財・サービスの市場で自身の最終財・サービスを売り、その対価として得た金額として国内総生産を定義した。これを支出による定義と呼ぶ。\n",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_1697-2519",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 493,
+          "end": 2519,
+          "start": 1697
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "6686aa688798aba5b9b52a80eb8e44df24776a551506d0e7dba2c26c184d9661",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "6686aa688798aba5b9b52a80eb8e44df24776a551506d0e7dba2c26c184d9661",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 822
+      }
+    },
+    {
+      "passage_id": "54867862118943927358699658443_833-1697",
+      "title": "国内総生産",
+      "text": "こうした取り扱いの例外として、持ち家の家賃など帰属計算が行われるものがある。\n国民経済計算の帰属家賃の説明を参照\nまた、今期新たに生産されたのでない財（例：古美術品）の取引、最終財の原材料となる中間財の取引は算入されない。地下経済なども計上されないことが一般的であったが、2014年以降、EU圏内では麻薬取引や売春サービスも計上し始めている。オーストラリアに本部を置き、米国、メキシコ、オランダ、ベルギーなどに支部を持つ経済平和研究所によると、GDPは「幸福度と国富の関連性」を誤って表現する問題指標であり、より良い測定方法が必要であるとしている。具体的な問題点としては、GDPには犯罪経済などが含まれていることが挙げられる。\n国連統計委員会が勧告を出し、統計設計、財の概念の設定などは勧告に沿って行われる。直近の勧告としては、68SNA、93SNA、2008SNAがある。\n日本の国内総生産は、内閣府（2001年の中央省庁再編以前は経済企画庁）が推計し、速報値や改定値として発表しているが、その詳細な計算方法については他国同様、公開されていない。\n経済モデル\n国内総生産の定義\n国内総生産を定義するために、実際の経済を単純化したモデルを与える 。なお、ここで説明するGDPは名目GDPと呼ばれるもので、実質GDPとは異なる。\n支出面\n国内には家計、企業、政府の三種類の経済部門があり、それとは別に外国という経済部門がある。\nまた生産物市場、生産要素市場、金融市場の三種類の市場がある。\n企業が財・サービスを生産するために別の企業から購入する財・サービスを中間財・サービスといい、それ以外の財・サービスを最終財・サービスという。\n生産物市場は企業および外国が自身の最終財・サービスを売るための市場で、各経済部門はこの市場から財・サービスを買い取る。\n中間生産物は、別の（中間ないし最終）財・サービスを作るための要素として使われるので、「二重カウント」を避けるため、国内総生産には企業が中間生産物を売ることで得た金は含まれない。\n",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_833-1697",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 1697,
+          "start": 833
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "aa7ac8efb801deca5e9e01a62d5f9e13d95c5a219794fa2d292f20f3bd1cdebe",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "aa7ac8efb801deca5e9e01a62d5f9e13d95c5a219794fa2d292f20f3bd1cdebe",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 864
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "国内総生産（GDP）の計算方法は以下の通りです。\n\nまず、一定期間内に国内で産み出された物やサービスの付加価値の合計を計算します。これは、国内領土に居住する経済主体を基準にした数値で、居住者たる生産者による国内生産活動の結果、生み出された付加価値の総額を指します。\n\nGDPの計算には、支出面と生産面の2つの視点があります。支出面では、家計、企業、政府、外国の4つの経済部門の支出を加算します。一方、生産面では、企業が財やサービスを生産するために購入する中間財やサービス、そして最終財やサービスを加算します。\n\nただし、中間財やサービスは含まれません。また、家事労働やボランティア活動などは国内総生産には計上されません。この点は、国民総生産でも同じです。\n\nさらに、価格変動の影響を排除した国内総生産（実質GDP）も定義されています。これは、ある年（例：2001年）を基準年として、基準年における最終財・サービスの価格を使って現在の国内総生産を計算します。",
+    "answer_sha256": "e665c121fb2b7d2c3ba9f6f426eee6557c83c2de094e3a4c85b1d05a366ac2c6",
+    "quality": {
+      "annotation_id": "Q-7ca28949f118edd2ff54",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-7ca28949f118edd2ff54",
+        "candidate_sha256": "0aa283f4bc205a7eaf2db268ae08a4e991c1a8524893e7ed5d0ae7780f3baaa3",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "国内で生み出された付加価値を重複なく合計する。支出面ではGDP＝消費C＋投資I＋政府支出G＋輸出X−輸入IMとし、中間財を二重計上しない。",
+        "reason": "付加価値の合計という定義と実質GDPの基本説明は実使用Contextのe0019・e0020に支持される。しかし、生産面で中間財と最終財を加算するという説明は、中間財を二重計上しないとする実使用Contextのe0023に反し、回答内の中間財は含まれないという説明とも矛盾する。支出面も輸入控除を説明せず、正しい計算手順を示せていない。e0024は参照専用根拠であり、必要な支出式の確認にのみ用い、実使用Contextの支持とは扱っていない。",
+        "evidence": [
+          {
+            "passage_id": "54867862118943927358699658443_0-833",
+            "quote": "国別GDP（2016年） 上段がMERベース、下段がPPPベース。単位は10億ドル。名目ベースでは先進国の値が高く、PPPベースではインドや中華人民共和国などの新興国やアフリカなどの発展途上国の値が高く表示されやすいことが読み取れる。\n国内総生産（こくないそうせいさん、英:Gross Domestic Product、略称:GDP、独:Bruttoinlandsprodukt、略称:BIP）は、一定期間内に国内で産み出された物やサービスの付加価値の合計のことである。その国内領土に居住する経済主体を基準にした数値で「居住者たる生産者による国内生産活動の結果、生み出された付加価値の総額」をいう。\n以前は、景気を測る指標として国民総生産 (こくみんそうせいさん、英:Gross National Product、略称:GNP)が用いられていたが、1993SNAの導入に伴い、“Gross National Income (GNI、国民総所得)”が新たに導入され、GNPの概念はなくなり、現在はGDPが重視されている。\nなお、GDPは “国内”のため、日本企業が海外で生産した付加価値は含まないのに対して、GNPは“国民”のため、国内に限らず、海外での所得も含んでいる。\nまた、世界の総生産の合計は、世界総生産 (英:Gross World Product、略称:GWP)と呼ぶ。\n概要\nフローとストックのダイアグラム\n国内総生産は「ストック」に対する「フロー」を表す指標であり、経済を総合的に把握する統計である国民経済計算の中の一指標で、GDPの伸び率が実質経済成長率に値する。\n経済学用語のフロー、ストックはフローとストックを参照\n原則として国内総生産には市場で取引された財やサービスの生産のみが計上される。市場で取引されない活動は、GDPには含まれない。このため、家事労働やボランティア活動などは国内総生産には計上されない。この点は、国民総生産でも同じである。"
+          },
+          {
+            "passage_id": "54867862118943927358699658443_4995-5841",
+            "quote": "世界銀行が公表するGDPは、国際比較プログラムの計算法による購買力平価（PPP）で比較したもので、一般的な為替レートを使う計算法とは異なる。購買力平価によるGDPは、先進国のGDPが低めに算出されるため、2017年の国際間の順位は中華人民共和国が1位であり、アメリカ合衆国が2位、インドが3位となる。\n関連指標\n実質国内総生産\n以上で説明した国内総生産（名目GDP）は、経済状況のみならず、インフレによる価格変動によっても変化してしまう。そこで価格変動の影響を排除した国内総生産も定義されており、これを実質国内総生産（実質GDP）と呼ぶ。\n価格変動の影響を排除するため、実質GDPではある年（例えば2001年）を基準年として定め、基準年における最終財・サービスの価格を使って現在の国内総生産を計算する。\n厳密には以下の通りである。最終財・サービスiの基準年における価格がPiで、今年の価格がQiとする。またiは今年Xi個売れたとする。\nこのとき、今年の実質GDPは\n実質GDP = Σi PiXi\nにより定義される。ここで和Σiは全ての最終財・サービスを渡る。\n一方今年の名目GDPは\n名目GDP = Σi QiXi\nである。\n以上で述べた実質GDPの値は、基準年の選び方に依存してしまう。従って現在では基準年の選び方の影響を排除するために、「連鎖」という方法で補正した定義を用いて実質GDPを計算している。\nGDPの変化（経済成長率）に関しては経済成長を参照。\n一人当たり国内総生産\n国内総生産をその国の人口で割った値を一人当たりGDPと呼ぶ。\n国ごとに人口が違うので、国ごとの経済状況を比較するには、通常の国内総生産ではなく一人当たり国内総生産を使う必要がある。国内総生産には名目と実質があるため、一人当たりGDPも一人当たり名目国内総生産と一人当たり実質GDPがある。\n現在の国別一人当たりGDPについては国の国内総生産順リスト (一人当り為替レート)を参照。\n国内総生産デフレーター\n"
+          },
+          {
+            "passage_id": "54867862118943927358699658443_833-1697",
+            "quote": "こうした取り扱いの例外として、持ち家の家賃など帰属計算が行われるものがある。\n国民経済計算の帰属家賃の説明を参照\nまた、今期新たに生産されたのでない財（例：古美術品）の取引、最終財の原材料となる中間財の取引は算入されない。地下経済なども計上されないことが一般的であったが、2014年以降、EU圏内では麻薬取引や売春サービスも計上し始めている。オーストラリアに本部を置き、米国、メキシコ、オランダ、ベルギーなどに支部を持つ経済平和研究所によると、GDPは「幸福度と国富の関連性」を誤って表現する問題指標であり、より良い測定方法が必要であるとしている。具体的な問題点としては、GDPには犯罪経済などが含まれていることが挙げられる。\n国連統計委員会が勧告を出し、統計設計、財の概念の設定などは勧告に沿って行われる。直近の勧告としては、68SNA、93SNA、2008SNAがある。\n日本の国内総生産は、内閣府（2001年の中央省庁再編以前は経済企画庁）が推計し、速報値や改定値として発表しているが、その詳細な計算方法については他国同様、公開されていない。\n経済モデル\n国内総生産の定義\n国内総生産を定義するために、実際の経済を単純化したモデルを与える 。なお、ここで説明するGDPは名目GDPと呼ばれるもので、実質GDPとは異なる。\n支出面\n国内には家計、企業、政府の三種類の経済部門があり、それとは別に外国という経済部門がある。\nまた生産物市場、生産要素市場、金融市場の三種類の市場がある。\n企業が財・サービスを生産するために別の企業から購入する財・サービスを中間財・サービスといい、それ以外の財・サービスを最終財・サービスという。\n生産物市場は企業および外国が自身の最終財・サービスを売るための市場で、各経済部門はこの市場から財・サービスを買い取る。\n中間生産物は、別の（中間ないし最終）財・サービスを作るための要素として使われるので、「二重カウント」を避けるため、国内総生産には企業が中間生産物を売ることで得た金は含まれない。\n"
+          },
+          {
+            "passage_id": "54867862118943927358699658443_1697-2519",
+            "quote": "企業によって生産された最終財・サービスは、誰かが自身のお金を支出して買い取るか、あるいは生産した企業が在庫として抱え込む。在庫は「将来、販売する為の商品」であるから、企業の将来への投資支出の一種とみなせる。従って生産された最終財・サービスは最終的に誰かの支出となる。\n企業による支出は投資支出と呼ばれ、Ｉで表される。家計による支出は消費支出と呼ばれ、Ｃで表される。また政府による支出はＧで表される。\n輸出入がない場合、ＧＤＰを国内で一定期間の間に最終財・サービスに対して行われた支出の総額ともみなせ、次が成立する事がわかる：\nGDP = C + I + G\n輸出入がある場合、国内総生産額であるＧＤＰのうち、輸出額Ｘ分だけ海外へと漏れ出る。 また国内の総支出Ｃ＋Ｉ＋Ｇの一部は輸入に使われたものである。 従って輸入額をＩＭとすると、以上の議論より、次が成立する事がわかる：\nGDP = C + I + G + X - IM\n要素市場および金融市場は国内総生産（GDP）を定義する際、直接的には使用しないが、モデルの全体像を捉えやすくするため、説明する。生産要素市場は企業が労働、資本といった生産要素を家計から購入するための市場で、生産要素に対する対価として賃金、利潤、利子、賃料などの形で企業から家計に金が流れ込む。\n金融市場は、銀行間取引市場、証券市場および外国為替市場などの総称で、金融市場には家計から民間貯蓄が流れ込み、外国からは外国貸付や株式購入により金が流れ込む。\n企業は銀行借入や株式発行により、金融市場から資金を調達し、政府は政府借入により金融市場から資金を調達する。\nそして外国は外国借入や株式売却により金融市場から資金を調達する。\n三面等価の原理\n→詳細は「三面等価の原則」を参照\n上では、企業が財・サービスの市場で自身の最終財・サービスを売り、その対価として得た金額として国内総生産を定義した。これを支出による定義と呼ぶ。\n"
+          }
+        ],
+        "elapsed_seconds": 9.001240016776137,
+        "confirmed_at_utc": "2026-11-09T22:04:59.892569+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/ja/baseline/e7cc73b0ee3bbe75d5ce195d/record.json",
+      "sha256": "284a672da8241bba7bda77e6c411711949dd25ea4aecc4a67a00b0f2fec8d381"
+    },
+    "copy": "provenance/baselines/cal_ja_e7cc73b0ee3bbe75d5ce195d.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "国内総生産（GDP）は、一定期間内に国内で産み出された物やサービスの付加価値の合計です [p1]。\n\n計算には主に 2 つの視点があります：\n1. 支出面：家計、企業、政府、外国の経済部門の支出を加算します [p5]。\n2. 生産面：企業が財・サービスを生産するために購入する中間財は二重カウントを避けるため含まれず、最終財・サービスの付加価値が対象となります [p5]。\n\n価格変動の影響を排除した実質 GDP は、ある年（例えば 2001 年）を基準年として、その年の価格で現在の生産量を計算します [p2]。家事労働やボランティア活動は市場取引がないため計上されません [p1]。\n\nなお、日本の国内総生産の詳細な計算方法は内閣府によって推計されており、詳細は公開されていません [p4]。",
+    "answer_sha256": "b7346abe88f348b45b9742097c3ba6da5efe470dffebe609820c303b41d6bfcf",
+    "quality": {
+      "annotation_id": "Q-8f0d2be35da7cb02bc15",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-8f0d2be35da7cb02bc15",
+        "candidate_sha256": "6a008cd414f447ab7247ee66e4182ea06d08fce9f33cc6691e37fb4826b04445",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "GDPを求める具体的な集計方法を説明すること。支出面ではGDP＝消費＋投資＋政府支出＋輸出－輸入とし、各項目と輸入控除を明示すること。",
+        "reason": "Referenceのみのe0021は、消費・投資・政府支出に輸出を加え、輸入を差し引く計算を示す。候補の支出面の説明は輸入控除を欠き、各部門の支出を単純加算するため、計算方法として重要な不足・誤りがある。実使用文書e0020は経済部門を列挙するが、その単純加算を支持しない。定義や実質GDPの説明は実使用文書e0016・e0017に支持される。",
+        "evidence": [
+          {
+            "passage_id": "54867862118943927358699658443_0-833",
+            "quote": "国別GDP（2016年） 上段がMERベース、下段がPPPベース。単位は10億ドル。名目ベースでは先進国の値が高く、PPPベースではインドや中華人民共和国などの新興国やアフリカなどの発展途上国の値が高く表示されやすいことが読み取れる。\n国内総生産（こくないそうせいさん、英:Gross Domestic Product、略称:GDP、独:Bruttoinlandsprodukt、略称:BIP）は、一定期間内に国内で産み出された物やサービスの付加価値の合計のことである。その国内領土に居住する経済主体を基準にした数値で「居住者たる生産者による国内生産活動の結果、生み出された付加価値の総額」をいう。\n以前は、景気を測る指標として国民総生産 (こくみんそうせいさん、英:Gross National Product、略称:GNP)が用いられていたが、1993SNAの導入に伴い、“Gross National Income (GNI、国民総所得)”が新たに導入され、GNPの概念はなくなり、現在はGDPが重視されている。\nなお、GDPは “国内”のため、日本企業が海外で生産した付加価値は含まないのに対して、GNPは“国民”のため、国内に限らず、海外での所得も含んでいる。\nまた、世界の総生産の合計は、世界総生産 (英:Gross World Product、略称:GWP)と呼ぶ。\n概要\nフローとストックのダイアグラム\n国内総生産は「ストック」に対する「フロー」を表す指標であり、経済を総合的に把握する統計である国民経済計算の中の一指標で、GDPの伸び率が実質経済成長率に値する。\n経済学用語のフロー、ストックはフローとストックを参照\n原則として国内総生産には市場で取引された財やサービスの生産のみが計上される。市場で取引されない活動は、GDPには含まれない。このため、家事労働やボランティア活動などは国内総生産には計上されない。この点は、国民総生産でも同じである。"
+          },
+          {
+            "passage_id": "54867862118943927358699658443_4995-5841",
+            "quote": "世界銀行が公表するGDPは、国際比較プログラムの計算法による購買力平価（PPP）で比較したもので、一般的な為替レートを使う計算法とは異なる。購買力平価によるGDPは、先進国のGDPが低めに算出されるため、2017年の国際間の順位は中華人民共和国が1位であり、アメリカ合衆国が2位、インドが3位となる。\n関連指標\n実質国内総生産\n以上で説明した国内総生産（名目GDP）は、経済状況のみならず、インフレによる価格変動によっても変化してしまう。そこで価格変動の影響を排除した国内総生産も定義されており、これを実質国内総生産（実質GDP）と呼ぶ。\n価格変動の影響を排除するため、実質GDPではある年（例えば2001年）を基準年として定め、基準年における最終財・サービスの価格を使って現在の国内総生産を計算する。\n厳密には以下の通りである。最終財・サービスiの基準年における価格がPiで、今年の価格がQiとする。またiは今年Xi個売れたとする。\nこのとき、今年の実質GDPは\n実質GDP = Σi PiXi\nにより定義される。ここで和Σiは全ての最終財・サービスを渡る。\n一方今年の名目GDPは\n名目GDP = Σi QiXi\nである。\n以上で述べた実質GDPの値は、基準年の選び方に依存してしまう。従って現在では基準年の選び方の影響を排除するために、「連鎖」という方法で補正した定義を用いて実質GDPを計算している。\nGDPの変化（経済成長率）に関しては経済成長を参照。\n一人当たり国内総生産\n国内総生産をその国の人口で割った値を一人当たりGDPと呼ぶ。\n国ごとに人口が違うので、国ごとの経済状況を比較するには、通常の国内総生産ではなく一人当たり国内総生産を使う必要がある。国内総生産には名目と実質があるため、一人当たりGDPも一人当たり名目国内総生産と一人当たり実質GDPがある。\n現在の国別一人当たりGDPについては国の国内総生産順リスト (一人当り為替レート)を参照。\n国内総生産デフレーター\n"
+          },
+          {
+            "passage_id": "54867862118943927358699658443_833-1697",
+            "quote": "こうした取り扱いの例外として、持ち家の家賃など帰属計算が行われるものがある。\n国民経済計算の帰属家賃の説明を参照\nまた、今期新たに生産されたのでない財（例：古美術品）の取引、最終財の原材料となる中間財の取引は算入されない。地下経済なども計上されないことが一般的であったが、2014年以降、EU圏内では麻薬取引や売春サービスも計上し始めている。オーストラリアに本部を置き、米国、メキシコ、オランダ、ベルギーなどに支部を持つ経済平和研究所によると、GDPは「幸福度と国富の関連性」を誤って表現する問題指標であり、より良い測定方法が必要であるとしている。具体的な問題点としては、GDPには犯罪経済などが含まれていることが挙げられる。\n国連統計委員会が勧告を出し、統計設計、財の概念の設定などは勧告に沿って行われる。直近の勧告としては、68SNA、93SNA、2008SNAがある。\n日本の国内総生産は、内閣府（2001年の中央省庁再編以前は経済企画庁）が推計し、速報値や改定値として発表しているが、その詳細な計算方法については他国同様、公開されていない。\n経済モデル\n国内総生産の定義\n国内総生産を定義するために、実際の経済を単純化したモデルを与える 。なお、ここで説明するGDPは名目GDPと呼ばれるもので、実質GDPとは異なる。\n支出面\n国内には家計、企業、政府の三種類の経済部門があり、それとは別に外国という経済部門がある。\nまた生産物市場、生産要素市場、金融市場の三種類の市場がある。\n企業が財・サービスを生産するために別の企業から購入する財・サービスを中間財・サービスといい、それ以外の財・サービスを最終財・サービスという。\n生産物市場は企業および外国が自身の最終財・サービスを売るための市場で、各経済部門はこの市場から財・サービスを買い取る。\n中間生産物は、別の（中間ないし最終）財・サービスを作るための要素として使われるので、「二重カウント」を避けるため、国内総生産には企業が中間生産物を売ることで得た金は含まれない。\n"
+          },
+          {
+            "passage_id": "54867862118943927358699658443_1697-2519",
+            "quote": "企業によって生産された最終財・サービスは、誰かが自身のお金を支出して買い取るか、あるいは生産した企業が在庫として抱え込む。在庫は「将来、販売する為の商品」であるから、企業の将来への投資支出の一種とみなせる。従って生産された最終財・サービスは最終的に誰かの支出となる。\n企業による支出は投資支出と呼ばれ、Ｉで表される。家計による支出は消費支出と呼ばれ、Ｃで表される。また政府による支出はＧで表される。\n輸出入がない場合、ＧＤＰを国内で一定期間の間に最終財・サービスに対して行われた支出の総額ともみなせ、次が成立する事がわかる：\nGDP = C + I + G\n輸出入がある場合、国内総生産額であるＧＤＰのうち、輸出額Ｘ分だけ海外へと漏れ出る。 また国内の総支出Ｃ＋Ｉ＋Ｇの一部は輸入に使われたものである。 従って輸入額をＩＭとすると、以上の議論より、次が成立する事がわかる：\nGDP = C + I + G + X - IM\n要素市場および金融市場は国内総生産（GDP）を定義する際、直接的には使用しないが、モデルの全体像を捉えやすくするため、説明する。生産要素市場は企業が労働、資本といった生産要素を家計から購入するための市場で、生産要素に対する対価として賃金、利潤、利子、賃料などの形で企業から家計に金が流れ込む。\n金融市場は、銀行間取引市場、証券市場および外国為替市場などの総称で、金融市場には家計から民間貯蓄が流れ込み、外国からは外国貸付や株式購入により金が流れ込む。\n企業は銀行借入や株式発行により、金融市場から資金を調達し、政府は政府借入により金融市場から資金を調達する。\nそして外国は外国借入や株式売却により金融市場から資金を調達する。\n三面等価の原理\n→詳細は「三面等価の原則」を参照\n上では、企業が財・サービスの市場で自身の最終財・サービスを売り、その対価として得た金額として国内総生産を定義した。これを支出による定義と呼ぶ。\n"
+          }
+        ],
+        "elapsed_seconds": 15.002115013485309,
+        "confirmed_at_utc": "2026-11-09T22:05:59.982881+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "国内総生産（GDP）の計算方法は以下の通りです。"
+    },
+    {
+      "claim_id": "c2",
+      "text": "まず、一定期間内に国内で産み出された物やサービスの付加価値の合計を計算します。"
+    },
+    {
+      "claim_id": "c3",
+      "text": "これは、国内領土に居住する経済主体を基準にした数値で、居住者たる生産者による国内生産活動の結果、生み出された付加価値の総額を指します。"
+    },
+    {
+      "claim_id": "c4",
+      "text": "GDPの計算には、支出面と生産面の2つの視点があります。"
+    },
+    {
+      "claim_id": "c5",
+      "text": "支出面では、家計、企業、政府、外国の4つの経済部門の支出を加算します。"
+    },
+    {
+      "claim_id": "c6",
+      "text": "一方、生産面では、企業が財やサービスを生産するために購入する中間財やサービス、そして最終財やサービスを加算します。"
+    },
+    {
+      "claim_id": "c7",
+      "text": "ただし、中間財やサービスは含まれません。"
+    },
+    {
+      "claim_id": "c8",
+      "text": "また、家事労働やボランティア活動などは国内総生産には計上されません。"
+    },
+    {
+      "claim_id": "c9",
+      "text": "この点は、国民総生産でも同じです。"
+    },
+    {
+      "claim_id": "c10",
+      "text": "さらに、価格変動の影響を排除した国内総生産（実質GDP）も定義されています。"
+    },
+    {
+      "claim_id": "c11",
+      "text": "これは、ある年（例：2001年）を基準年として、基準年における最終財・サービスの価格を使って現在の国内総生産を計算します。"
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "国内総生産（GDP）の計算方法は以下の通りです。"
+      },
+      {
+        "claim_id": "c2",
+        "text": "まず、一定期間内に国内で産み出された物やサービスの付加価値の合計を計算します。"
+      },
+      {
+        "claim_id": "c3",
+        "text": "これは、国内領土に居住する経済主体を基準にした数値で、居住者たる生産者による国内生産活動の結果、生み出された付加価値の総額を指します。"
+      },
+      {
+        "claim_id": "c4",
+        "text": "GDPの計算には、支出面と生産面の2つの視点があります。"
+      },
+      {
+        "claim_id": "c5",
+        "text": "支出面では、家計、企業、政府、外国の4つの経済部門の支出を加算します。"
+      },
+      {
+        "claim_id": "c6",
+        "text": "一方、生産面では、企業が財やサービスを生産するために購入する中間財やサービス、そして最終財やサービスを加算します。"
+      },
+      {
+        "claim_id": "c7",
+        "text": "ただし、中間財やサービスは含まれません。"
+      },
+      {
+        "claim_id": "c8",
+        "text": "また、家事労働やボランティア活動などは国内総生産には計上されません。"
+      },
+      {
+        "claim_id": "c9",
+        "text": "この点は、国民総生産でも同じです。"
+      },
+      {
+        "claim_id": "c10",
+        "text": "さらに、価格変動の影響を排除した国内総生産（実質GDP）も定義されています。"
+      },
+      {
+        "claim_id": "c11",
+        "text": "これは、ある年（例：2001年）を基準年として、基準年における最終財・サービスの価格を使って現在の国内総生産を計算します。"
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-ja-v1",
+    "normalized_prose": "国内総生産（GDP）の計算方法は以下の通りです。 まず、一定期間内に国内で産み出された物やサービスの付加価値の合計を計算します。これは、国内領土に居住する経済主体を基準にした数値で、居住者たる生産者による国内生産活動の結果、生み出された付加価値の総額を指します。 GDPの計算には、支出面と生産面の2つの視点があります。支出面では、家計、企業、政府、外国の4つの経済部門の支出を加算します。一方、生産面では、企業が財やサービスを生産するために購入する中間財やサービス、そして最終財やサービスを加算します。 ただし、中間財やサービスは含まれません。また、家事労働やボランティア活動などは国内総生産には計上されません。この点は、国民総生産でも同じです。 さらに、価格変動の影響を排除した国内総生産（実質GDP）も定義されています。これは、ある年（例：2001年）を基準年として、基準年における最終財・サービスの価格を使って現在の国内総生産を計算します。",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 25
+      },
+      {
+        "start": 25,
+        "end": 64
+      },
+      {
+        "start": 64,
+        "end": 132
+      },
+      {
+        "start": 132,
+        "end": 160
+      },
+      {
+        "start": 160,
+        "end": 195
+      },
+      {
+        "start": 195,
+        "end": 253
+      },
+      {
+        "start": 253,
+        "end": 273
+      },
+      {
+        "start": 273,
+        "end": 307
+      },
+      {
+        "start": 307,
+        "end": 325
+      },
+      {
+        "start": 325,
+        "end": 363
+      },
+      {
+        "start": 363,
+        "end": 424
+      }
+    ],
+    "unclosed_delimiters": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "54867862118943927358699658443_12301-12653",
+          "54867862118943927358699658443_0-833",
+          "54867862118943927358699658443_3247-4144",
+          "54867862118943927358699658443_4995-5841",
+          "54867862118943927358699658443_833-1697"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "54867862118943927358699658443_0-833",
+          "54867862118943927358699658443_4995-5841",
+          "54867862118943927358699658443_12301-12653",
+          "54867862118943927358699658443_3247-4144",
+          "54867862118943927358699658443_833-1697"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "54867862118943927358699658443_833-1697",
+          "54867862118943927358699658443_3247-4144",
+          "54867862118943927358699658443_12301-12653",
+          "54867862118943927358699658443_4995-5841",
+          "54867862118943927358699658443_0-833"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "54867862118943927358699658443_0-833",
+          "54867862118943927358699658443_4995-5841",
+          "54867862118943927358699658443_12301-12653",
+          "54867862118943927358699658443_3247-4144",
+          "54867862118943927358699658443_833-1697"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "54867862118943927358699658443_833-1697",
+          "54867862118943927358699658443_3247-4144",
+          "54867862118943927358699658443_4995-5841",
+          "54867862118943927358699658443_0-833",
+          "54867862118943927358699658443_12301-12653"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "54867862118943927358699658443_0-833",
+          "54867862118943927358699658443_4995-5841",
+          "54867862118943927358699658443_12301-12653",
+          "54867862118943927358699658443_3247-4144",
+          "54867862118943927358699658443_833-1697"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "54867862118943927358699658443_0-833",
+          "54867862118943927358699658443_4995-5841",
+          "54867862118943927358699658443_12301-12653",
+          "54867862118943927358699658443_3247-4144",
+          "54867862118943927358699658443_833-1697"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "54867862118943927358699658443_0-833",
+          "54867862118943927358699658443_4995-5841",
+          "54867862118943927358699658443_12301-12653",
+          "54867862118943927358699658443_3247-4144",
+          "54867862118943927358699658443_833-1697"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "54867862118943927358699658443_833-1697",
+          "54867862118943927358699658443_0-833",
+          "54867862118943927358699658443_12301-12653",
+          "54867862118943927358699658443_4995-5841",
+          "54867862118943927358699658443_3247-4144"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "ja",
+    "record_id": "whrja:02e85c8:answered:802",
+    "document_group_id": "whrja-group:3f6222814c47aa6981b1bc01",
+    "comparable": true,
+    "increment": 0.0,
+    "partial_pair_increment_exploratory": 0.0,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_03/ja/report.private.json",
+    "sha256": "ef51adc02fb2abcf10c5e74670fd115bb927642040a37bc5ac514f40a67c1cad"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "54867862118943927358699658443_0-833",
+      "text": "国別GDP（2016年） 上段がMERベース、下段がPPPベース。単位は10億ドル。名目ベースでは先進国の値が高く、PPPベースではインドや中華人民共和国などの新興国やアフリカなどの発展途上国の値が高く表示されやすいことが読み取れる。\n国内総生産（こくないそうせいさん、英:Gross Domestic Product、略称:GDP、独:Bruttoinlandsprodukt、略称:BIP）は、一定期間内に国内で産み出された物やサービスの付加価値の合計のことである。その国内領土に居住する経済主体を基準にした数値で「居住者たる生産者による国内生産活動の結果、生み出された付加価値の総額」をいう。\n以前は、景気を測る指標として国民総生産 (こくみんそうせいさん、英:Gross National Product、略称:GNP)が用いられていたが、1993SNAの導入に伴い、“Gross National Income (GNI、国民総所得)”が新たに導入され、GNPの概念はなくなり、現在はGDPが重視されている。\nなお、GDPは “国内”のため、日本企業が海外で生産した付加価値は含まないのに対して、GNPは“国民”のため、国内に限らず、海外での所得も含んでいる。\nまた、世界の総生産の合計は、世界総生産 (英:Gross World Product、略称:GWP)と呼ぶ。\n概要\nフローとストックのダイアグラム\n国内総生産は「ストック」に対する「フロー」を表す指標であり、経済を総合的に把握する統計である国民経済計算の中の一指標で、GDPの伸び率が実質経済成長率に値する。\n経済学用語のフロー、ストックはフローとストックを参照\n原則として国内総生産には市場で取引された財やサービスの生産のみが計上される。市場で取引されない活動は、GDPには含まれない。このため、家事労働やボランティア活動などは国内総生産には計上されない。この点は、国民総生産でも同じである。",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_0-833",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 489,
+          "end": 833,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "4276fa24e1b86a75871f07b064d4e1b6d4f35292010095266ec57f679d700fb6",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "54867862118943927358699658443_12301-12653",
+      "text": "発表時期は1、4、7、10月に速報値、次月の2、5、8、11月に改定値、さらに3、6、9、12月に確定値が発表される。\n→「アメリカ合衆国の経済」および「アメリカ合衆国の経済史」を参照\n脚注\n注釈\n出典\n関連項目\n国民経済計算\n各国のGDPリスト（全ての国・地域対象）\n各国の名目GDPリスト\n各国の一人当たり名目GDPリスト\n各国の実質GDPリスト\n各国の一人当たり実質GDPリスト\n国の国内総生産の動態（全ての国・地域対象）\n域内総生産順リスト（全ての国・地域対象）\n国民総生産 (GNP)\n国民総所得 (GNI)\n国民総幸福量 (GNH)\n県民経済計算\n日本の年間商品販売額一覧\n外部リンク\nGross domestic product (GDP) - OECD\n内閣府 国民経済計算（GDP統計）",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_12301-12653",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 216,
+          "end": 12653,
+          "start": 12301
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "21939d0bb16c4502dd284a6994525eefbb8f8dc7042fecc15624eef855e4cacf",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "54867862118943927358699658443_1697-2519",
+      "text": "企業によって生産された最終財・サービスは、誰かが自身のお金を支出して買い取るか、あるいは生産した企業が在庫として抱え込む。在庫は「将来、販売する為の商品」であるから、企業の将来への投資支出の一種とみなせる。従って生産された最終財・サービスは最終的に誰かの支出となる。\n企業による支出は投資支出と呼ばれ、Ｉで表される。家計による支出は消費支出と呼ばれ、Ｃで表される。また政府による支出はＧで表される。\n輸出入がない場合、ＧＤＰを国内で一定期間の間に最終財・サービスに対して行われた支出の総額ともみなせ、次が成立する事がわかる：\nGDP = C + I + G\n輸出入がある場合、国内総生産額であるＧＤＰのうち、輸出額Ｘ分だけ海外へと漏れ出る。 また国内の総支出Ｃ＋Ｉ＋Ｇの一部は輸入に使われたものである。 従って輸入額をＩＭとすると、以上の議論より、次が成立する事がわかる：\nGDP = C + I + G + X - IM\n要素市場および金融市場は国内総生産（GDP）を定義する際、直接的には使用しないが、モデルの全体像を捉えやすくするため、説明する。生産要素市場は企業が労働、資本といった生産要素を家計から購入するための市場で、生産要素に対する対価として賃金、利潤、利子、賃料などの形で企業から家計に金が流れ込む。\n金融市場は、銀行間取引市場、証券市場および外国為替市場などの総称で、金融市場には家計から民間貯蓄が流れ込み、外国からは外国貸付や株式購入により金が流れ込む。\n企業は銀行借入や株式発行により、金融市場から資金を調達し、政府は政府借入により金融市場から資金を調達する。\nそして外国は外国借入や株式売却により金融市場から資金を調達する。\n三面等価の原理\n→詳細は「三面等価の原則」を参照\n上では、企業が財・サービスの市場で自身の最終財・サービスを売り、その対価として得た金額として国内総生産を定義した。これを支出による定義と呼ぶ。\n",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_1697-2519",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 493,
+          "end": 2519,
+          "start": 1697
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "6686aa688798aba5b9b52a80eb8e44df24776a551506d0e7dba2c26c184d9661",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "54867862118943927358699658443_3247-4144",
+      "text": "その国内領土に居住する経済主体を対象とする概念である「国内」を基準とする国内総生産（GDP）に対し、当該国の居住者主体を対象とする概念である「国民」を基準とする国民総生産（GNP）がある。「国民総生産」でいう「国民」とは当該国の居住者主体を対象とする経済的な概念であり国籍とは関係がない。個人の場合、主として当該領土内に6か月以上の期間居住しているすべての人を含む一方、一般に国外に2年以上居住する人は非居住者として扱われる。\n「国の実体経済」を表す指標としては、国民総生産（GNP）よりも国内総生産（GDP）が重視されるようになった。1980年代頃までは国の経済の規模・成長を測るものさしとして国民総生産（GNP）がよく用いられたが、これは外国に住む国民の生産量も含む一方で、国内で経済活動をする外国人の生産量は含まないという点が、時代が下るにつれて進展していった経済のグローバル化に伴い、国家を単位とする経済指標としては実態に即さなくなったと考えられるためである。\n国連の1993SNA等ではGNPの概念そのものがなくなっており、それに代わる概念として国民総所得（Gross National Income ＝ GNI）が導入されている。国内総生産を推計する体系を国民経済計算（体系）と呼ぶように、国民概念がもともと利用されてきたが、国内の経済活動状況を判断する基準としては国内総生産を使用することが一般的となった。日本でも1993年から国民総生産に替わって国内総生産を使用するようになっている。\n問題点\n国内総生産は各国の経済力を示す一番重要な指標であるが、計算方法を公開していない推計値であると山内竜介はしている。日本の国内総生産を公表する内閣府は非公開の理由を、「国家機密に当たる」としていると山内竜介は主張する。また、山内竜介によれば計算数式は毎年改良されるので、どれほど客観性、継続性があるか明らかではない。\nどのように基礎統計を用いて国民経済計算を作成するかなどは内閣府によってある程度公開されている。日本はそうでも、北朝鮮は自己申告であるため、真実であるかどうかはわからない。",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_3247-4144",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 4144,
+          "start": 3247
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "12e4fcd71187dd1d4df00e9ffb0b878d661084db43faa38a1369a57a91e1db3f",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "54867862118943927358699658443_4995-5841",
+      "text": "世界銀行が公表するGDPは、国際比較プログラムの計算法による購買力平価（PPP）で比較したもので、一般的な為替レートを使う計算法とは異なる。購買力平価によるGDPは、先進国のGDPが低めに算出されるため、2017年の国際間の順位は中華人民共和国が1位であり、アメリカ合衆国が2位、インドが3位となる。\n関連指標\n実質国内総生産\n以上で説明した国内総生産（名目GDP）は、経済状況のみならず、インフレによる価格変動によっても変化してしまう。そこで価格変動の影響を排除した国内総生産も定義されており、これを実質国内総生産（実質GDP）と呼ぶ。\n価格変動の影響を排除するため、実質GDPではある年（例えば2001年）を基準年として定め、基準年における最終財・サービスの価格を使って現在の国内総生産を計算する。\n厳密には以下の通りである。最終財・サービスiの基準年における価格がPiで、今年の価格がQiとする。またiは今年Xi個売れたとする。\nこのとき、今年の実質GDPは\n実質GDP = Σi PiXi\nにより定義される。ここで和Σiは全ての最終財・サービスを渡る。\n一方今年の名目GDPは\n名目GDP = Σi QiXi\nである。\n以上で述べた実質GDPの値は、基準年の選び方に依存してしまう。従って現在では基準年の選び方の影響を排除するために、「連鎖」という方法で補正した定義を用いて実質GDPを計算している。\nGDPの変化（経済成長率）に関しては経済成長を参照。\n一人当たり国内総生産\n国内総生産をその国の人口で割った値を一人当たりGDPと呼ぶ。\n国ごとに人口が違うので、国ごとの経済状況を比較するには、通常の国内総生産ではなく一人当たり国内総生産を使う必要がある。国内総生産には名目と実質があるため、一人当たりGDPも一人当たり名目国内総生産と一人当たり実質GDPがある。\n現在の国別一人当たりGDPについては国の国内総生産順リスト (一人当り為替レート)を参照。\n国内総生産デフレーター\n",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_4995-5841",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 492,
+          "end": 5841,
+          "start": 4995
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "6cc30dc5d47b43edcea59c4fc98f25d487bf0547ed9b02d5c47594eeaf7d5a29",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "54867862118943927358699658443_833-1697",
+      "text": "こうした取り扱いの例外として、持ち家の家賃など帰属計算が行われるものがある。\n国民経済計算の帰属家賃の説明を参照\nまた、今期新たに生産されたのでない財（例：古美術品）の取引、最終財の原材料となる中間財の取引は算入されない。地下経済なども計上されないことが一般的であったが、2014年以降、EU圏内では麻薬取引や売春サービスも計上し始めている。オーストラリアに本部を置き、米国、メキシコ、オランダ、ベルギーなどに支部を持つ経済平和研究所によると、GDPは「幸福度と国富の関連性」を誤って表現する問題指標であり、より良い測定方法が必要であるとしている。具体的な問題点としては、GDPには犯罪経済などが含まれていることが挙げられる。\n国連統計委員会が勧告を出し、統計設計、財の概念の設定などは勧告に沿って行われる。直近の勧告としては、68SNA、93SNA、2008SNAがある。\n日本の国内総生産は、内閣府（2001年の中央省庁再編以前は経済企画庁）が推計し、速報値や改定値として発表しているが、その詳細な計算方法については他国同様、公開されていない。\n経済モデル\n国内総生産の定義\n国内総生産を定義するために、実際の経済を単純化したモデルを与える 。なお、ここで説明するGDPは名目GDPと呼ばれるもので、実質GDPとは異なる。\n支出面\n国内には家計、企業、政府の三種類の経済部門があり、それとは別に外国という経済部門がある。\nまた生産物市場、生産要素市場、金融市場の三種類の市場がある。\n企業が財・サービスを生産するために別の企業から購入する財・サービスを中間財・サービスといい、それ以外の財・サービスを最終財・サービスという。\n生産物市場は企業および外国が自身の最終財・サービスを売るための市場で、各経済部門はこの市場から財・サービスを買い取る。\n中間生産物は、別の（中間ないし最終）財・サービスを作るための要素として使われるので、「二重カウント」を避けるため、国内総生産には企業が中間生産物を売ることで得た金は含まれない。\n",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_833-1697",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 1697,
+          "start": 833
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "aa7ac8efb801deca5e9e01a62d5f9e13d95c5a219794fa2d292f20f3bd1cdebe",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "54867862118943927358699658443_1697-2519": {
+      "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "54867862118943927358699658443_1697-2519",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 493,
+        "end": 2519,
+        "start": 1697
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+      "text_sha256": "6686aa688798aba5b9b52a80eb8e44df24776a551506d0e7dba2c26c184d9661",
+      "title": "国内総生産",
+      "wikipedia_page_id": 3585,
+      "wikipedia_revision_id": 98463226,
+      "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    },
+    "54867862118943927358699658443_833-1697": {
+      "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "54867862118943927358699658443_833-1697",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 498,
+        "end": 1697,
+        "start": 833
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+      "text_sha256": "aa7ac8efb801deca5e9e01a62d5f9e13d95c5a219794fa2d292f20f3bd1cdebe",
+      "title": "国内総生産",
+      "wikipedia_page_id": 3585,
+      "wikipedia_revision_id": 98463226,
+      "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "54867862118943927358699658443_1697-2519",
+      "text": "企業によって生産された最終財・サービスは、誰かが自身のお金を支出して買い取るか、あるいは生産した企業が在庫として抱え込む。在庫は「将来、販売する為の商品」であるから、企業の将来への投資支出の一種とみなせる。従って生産された最終財・サービスは最終的に誰かの支出となる。\n企業による支出は投資支出と呼ばれ、Ｉで表される。家計による支出は消費支出と呼ばれ、Ｃで表される。また政府による支出はＧで表される。\n輸出入がない場合、ＧＤＰを国内で一定期間の間に最終財・サービスに対して行われた支出の総額ともみなせ、次が成立する事がわかる：\nGDP = C + I + G\n輸出入がある場合、国内総生産額であるＧＤＰのうち、輸出額Ｘ分だけ海外へと漏れ出る。 また国内の総支出Ｃ＋Ｉ＋Ｇの一部は輸入に使われたものである。 従って輸入額をＩＭとすると、以上の議論より、次が成立する事がわかる：\nGDP = C + I + G + X - IM\n要素市場および金融市場は国内総生産（GDP）を定義する際、直接的には使用しないが、モデルの全体像を捉えやすくするため、説明する。生産要素市場は企業が労働、資本といった生産要素を家計から購入するための市場で、生産要素に対する対価として賃金、利潤、利子、賃料などの形で企業から家計に金が流れ込む。\n金融市場は、銀行間取引市場、証券市場および外国為替市場などの総称で、金融市場には家計から民間貯蓄が流れ込み、外国からは外国貸付や株式購入により金が流れ込む。\n企業は銀行借入や株式発行により、金融市場から資金を調達し、政府は政府借入により金融市場から資金を調達する。\nそして外国は外国借入や株式売却により金融市場から資金を調達する。\n三面等価の原理\n→詳細は「三面等価の原則」を参照\n上では、企業が財・サービスの市場で自身の最終財・サービスを売り、その対価として得た金額として国内総生産を定義した。これを支出による定義と呼ぶ。\n",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_1697-2519",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 493,
+          "end": 2519,
+          "start": 1697
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "6686aa688798aba5b9b52a80eb8e44df24776a551506d0e7dba2c26c184d9661",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "54867862118943927358699658443_833-1697",
+      "text": "こうした取り扱いの例外として、持ち家の家賃など帰属計算が行われるものがある。\n国民経済計算の帰属家賃の説明を参照\nまた、今期新たに生産されたのでない財（例：古美術品）の取引、最終財の原材料となる中間財の取引は算入されない。地下経済なども計上されないことが一般的であったが、2014年以降、EU圏内では麻薬取引や売春サービスも計上し始めている。オーストラリアに本部を置き、米国、メキシコ、オランダ、ベルギーなどに支部を持つ経済平和研究所によると、GDPは「幸福度と国富の関連性」を誤って表現する問題指標であり、より良い測定方法が必要であるとしている。具体的な問題点としては、GDPには犯罪経済などが含まれていることが挙げられる。\n国連統計委員会が勧告を出し、統計設計、財の概念の設定などは勧告に沿って行われる。直近の勧告としては、68SNA、93SNA、2008SNAがある。\n日本の国内総生産は、内閣府（2001年の中央省庁再編以前は経済企画庁）が推計し、速報値や改定値として発表しているが、その詳細な計算方法については他国同様、公開されていない。\n経済モデル\n国内総生産の定義\n国内総生産を定義するために、実際の経済を単純化したモデルを与える 。なお、ここで説明するGDPは名目GDPと呼ばれるもので、実質GDPとは異なる。\n支出面\n国内には家計、企業、政府の三種類の経済部門があり、それとは別に外国という経済部門がある。\nまた生産物市場、生産要素市場、金融市場の三種類の市場がある。\n企業が財・サービスを生産するために別の企業から購入する財・サービスを中間財・サービスといい、それ以外の財・サービスを最終財・サービスという。\n生産物市場は企業および外国が自身の最終財・サービスを売るための市場で、各経済部門はこの市場から財・サービスを買い取る。\n中間生産物は、別の（中間ないし最終）財・サービスを作るための要素として使われるので、「二重カウント」を避けるため、国内総生産には企業が中間生産物を売ることで得た金は含まれない。\n",
+      "source_metadata": {
+        "article_text_sha256": "3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:3585:98463226:3ee9b54d88727e305b7644268acc7018ecce7a2bd03c2b7cfd3a551b5acedb00",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "54867862118943927358699658443_833-1697",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 1697,
+          "start": 833
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226",
+        "text_sha256": "aa7ac8efb801deca5e9e01a62d5f9e13d95c5a219794fa2d292f20f3bd1cdebe",
+        "title": "国内総生産",
+        "wikipedia_page_id": 3585,
+        "wikipedia_revision_id": 98463226,
+        "wikipedia_revision_timestamp_utc": "2023-12-14T09:06:24Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98463226&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ]
+}

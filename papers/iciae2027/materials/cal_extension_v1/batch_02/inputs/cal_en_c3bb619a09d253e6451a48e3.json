@@ -1,0 +1,825 @@
+{
+  "qa_key": "cal_en_c3bb619a09d253e6451a48e3",
+  "cohort": "cal",
+  "language": "en",
+  "analysis_role": "cal",
+  "source_qa_split": "development",
+  "record_id": "clapnq:c508d78:train:-8402235505568929376:answerable",
+  "document_group_id": "clapnq-title:dan scott",
+  "qa_source": {
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "gold_passage_ids": [
+      "830268006_10409-12873"
+    ],
+    "is_answerable": true,
+    "provided_passage": null,
+    "question": "does anyone find out that dan killed keith",
+    "record_id": "clapnq:c508d78:train:-8402235505568929376:answerable",
+    "reference_answers": [
+      "Dan Scott still sees messages everywhere calling him a murderer , and wonders if it is all in his head . Dan continues to receive text messages and notes accusing him of killing his brother from Abby Brown. Dan thentries to explain why he killed Keith. Lucas walks in on Dan and his mother kissing and attacks Dan , shouting that he killed Keith.",
+      "Dan sees messages everywhere calling him a murderer and wonders if it is all in his head.  Dan discovers that the person sending the letters is Abby Brown, a student who witnessed the shooting.  Dan then visits Abby and her mother and tries to explain why he killed Keith, saying, `` Karen was mine; she was supposed to be mine''."
+    ],
+    "research_split": "development",
+    "selected_sentences_by_reference": [
+      [
+        "However , he still sees messages everywhere calling him a murderer , and wonders if it is all in his head .",
+        "Dan and Karen begin to come together romantically , attending the school prom together as chaperones , but Dan continues to receive text messages and notes accusing him of killing his brother .",
+        "Dan discovers that the person sending the messages is Abby Brown , a student who witnessed the shooting .",
+        "Dan then visits Abby and her mother and tries to explain why he killed Keith , saying `` Karen was mine , she was supposed to be mine '' .",
+        "Lucas walks in on Dan and his mother kissing and attacks Dan , shouting that he killed Keith , but Karen refuses to believe him ."
+      ],
+      [
+        "However , he still sees messages everywhere calling him a murderer , and wonders if it is all in his head .",
+        "Dan discovers that the person sending the messages is Abby Brown , a student who witnessed the shooting .",
+        "Dan then visits Abby and her mother and tries to explain why he killed Keith , saying `` Karen was mine , she was supposed to be mine '' ."
+      ]
+    ],
+    "source_dataset": "CLAPNQ",
+    "source_id": "-8402235505568929376",
+    "source_line_index": 691,
+    "source_record_sha256": "4a63507915c7367c0beea2cc7dbd3f19516b692f298465fb5926d43eb328a4e9",
+    "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+    "source_split": "train",
+    "source_title": "Dan Scott"
+  },
+  "source_selection": {
+    "record_id": "clapnq:c508d78:train:-8402235505568929376:answerable",
+    "question": "does anyone find out that dan killed keith",
+    "document_group_id": "clapnq-title:dan scott"
+  },
+  "question": "does anyone find out that dan killed keith",
+  "used_documents": [
+    {
+      "passage_id": "22041901013934637398734073701_0-1943",
+      "title": "Dan Scott",
+      "text": "Dan survives the fire , but the dealership is destroyed . Dan at first thinks it was Lucas who tried to kill him when he remembers seeing him in the fire , but it is revealed that Lucas saved him . Wanting access to the fire investigation , Dan runs for mayor of Tree Hill . His family - based campaign includes having Deb pretend to love him in exchange for a final divorce . This ploy works and Dan is elected mayor . As mayor , Dan gains access to CCTV showing Keith buying the whisky used to drug Dan , and when Keith returns to town Dan has him arrested on suspicion of his attempted murder . Although the police release Keith due to lack of evidence , Dan still believes that Keith was the perpetrator , and things become worse when Keith announces that he is going to marry Karen and adopt Lucas . One day at Tree Hill High , Jimmy Edwards takes a gun to school and fires it , causing a lock down . Keith persuades Dan as mayor to let him go into the school to talk to Jimmy , but Jimmy commits suicide by shooting himself in front of Keith . Dan then gets into the school , picks up the gun and shoots Keith , killing him . Jimmy gets the blame for Keith 's death as it is assumed that he shot Keith before turning the gun on himself . Dan convinces himself that Keith deserved what he got as he started the war with Dan . Nevertheless , Dan becomes haunted , seeing visions of Keith as a child everywhere , and this has a profound effect on him . Realizing he has to change his ways he tries to get closer to Nathan , telling his son that he is proud of him and that he loves him . Haley then gives Dan a second chance by inviting him to her and Nathan 's second wedding . At the ceremony Deb tells Dan that it was her , not Keith , who tried to kill him in the fire . Dan goes to Keith 's grave and breaks down . Dan then apologizes to Karen for how he treated her and Lucas and she reveals that she is pregnant with Keith 's child .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "830268006_8293-10390",
+        "parent_text_sha256": "6894efe07ba9de4bca67c09c24ddb2fec83fadc71cfc2e96dda7966834ea87f1",
+        "passage_id": "22041901013934637398734073701_0-1943",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 496,
+          "end": 1943,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "afb4d3dadc2cd97d02c8c403e01d35dcf061c860aa28d763e2b85323c9f6d25b",
+        "title": "Dan Scott",
+        "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "afb4d3dadc2cd97d02c8c403e01d35dcf061c860aa28d763e2b85323c9f6d25b",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 1943
+      }
+    },
+    {
+      "passage_id": "836631991_2254-2857",
+      "title": "The Decembrist",
+      "text": "Elsewhere , Red meets with Berlin and reveals to him that his daughter Zoe ( Scottie Thompson ) is in fact alive , and he presents her to him , thus making their feud pointless , as Berlin believed that Red killed her . Red asks Berlin who told him the lie ; he reveals the person 's identity as The Decembrist . Red and Berlin hunt down several people in order to find out The Decembrist 's true identity . They eventually find a name : Alan Fitch ( Alan Alda ) , an associate of Red 's . After finding out who it is , Berlin decides to hunt him down and kill him , something Red is not keen on doing .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "836631991_2254-2857",
+        "parent_text_sha256": "28721b3a0ef911d1ff86bdc664e9d83ee8ce5b50b83c4320c391906c85aec6a0",
+        "passage_id": "836631991_2254-2857",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 167,
+          "end": 603,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "28721b3a0ef911d1ff86bdc664e9d83ee8ce5b50b83c4320c391906c85aec6a0",
+        "title": "The Decembrist",
+        "source_url": "https://en.wikipedia.org/wiki/The_Decembrist",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/The_Decembrist?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "28721b3a0ef911d1ff86bdc664e9d83ee8ce5b50b83c4320c391906c85aec6a0",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 603
+      }
+    },
+    {
+      "passage_id": "21285419333013253506675306384_0-1820",
+      "title": "Dan Scott",
+      "text": "Dan tries to make amends for Keith 's death by looking after Karen . However , he still sees messages everywhere calling him a murderer , and wonders if it is all in his head . Meanwhile , Nathan is in deep debt and asks Dan to help him . Dan refuses and Nathan goes to a loan shark , Daunte , instead . Daunte forces Nathan to shave points in a basketball game and then demands that Nathan lose the State Championship . On discovering the trouble that Nathan is in , Dan confronts Daunte and offers to pay him off , but Daunte gets Dan to back down by threatening Nathan , Lucas , the pregnant Haley and Karen . When the Ravens win the State Championship , Daunte runs Haley over and crashes into a construction site . Nathan pulls Daunte out of the car and beats him , before realizing he is dead . Dan takes the fall for Nathan and is arrested . Dan plans to plead guilty to Daunte 's murder in order to be punished for Keith 's death , but the coroner 's report shows that Daunte was already dead when Nathan pulled him out of the car . Dan is released and the experience brings him and Karen closer together , as Karen admires what Dan was willing to do for his son . Dan and Karen begin to come together romantically , attending the school prom together as chaperones , but Dan continues to receive text messages and notes accusing him of killing his brother . Dan discovers that the person sending the messages is Abby Brown , a student who witnessed the shooting . Dan then visits Abby and her mother and tries to explain why he killed Keith , saying `` Karen was mine , she was supposed to be mine '' . Abby leaves Tree Hill for good , but not before telling Lucas what she knows . Lucas walks in on Dan and his mother kissing and attacks Dan , shouting that he killed Keith , but Karen refuses to believe him .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "830268006_10409-12873",
+        "parent_text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+        "passage_id": "21285419333013253506675306384_0-1820",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 473,
+          "end": 1820,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "92901060df49ec44d053a0438b317379a47703c4f01112fd98789d4208292416",
+        "title": "Dan Scott",
+        "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "92901060df49ec44d053a0438b317379a47703c4f01112fd98789d4208292416",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 1820
+      }
+    },
+    {
+      "passage_id": "809042294_8430-8841",
+      "title": "Time Stands Still (Degrassi: The Next Generation)",
+      "text": "After a while , the lockdown ends and students are released from school . Jay assures Alex that they will be fine and that nobody will find out , though Alex is very regretful of her involvement . Spinner meets up with them and is filled with guilt and regret , telling Jay they need to know who did it , and how they could have killed Jimmy . Jay tells him not to tell anyone , and that it would be all right .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "809042294_8430-8841",
+        "parent_text_sha256": "d4527ff5f1116bec718aef2846aac857397b3b51c9be85813eab6c5a00b4e4eb",
+        "passage_id": "809042294_8430-8841",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 108,
+          "end": 411,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "d4527ff5f1116bec718aef2846aac857397b3b51c9be85813eab6c5a00b4e4eb",
+        "title": "Time Stands Still (Degrassi: The Next Generation)",
+        "source_url": "https://en.wikipedia.org/wiki/Time_Stands_Still_%28Degrassi%3A_The_Next_Generation%29",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Time_Stands_Still_%28Degrassi%3A_The_Next_Generation%29?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "d4527ff5f1116bec718aef2846aac857397b3b51c9be85813eab6c5a00b4e4eb",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 411
+      }
+    },
+    {
+      "passage_id": "830268006_19754-20757",
+      "title": "Dan Scott",
+      "text": "Dan burns down his diner and returns to Tree Hill and asks Haley for a place to stay , initially resistant , she offers him money , but he says that he does n't want money . He moves into Nathan and Haley 's house to the delight of Jamie who is excited to spend time with him . Nathan tells him that he is going to Europe and that when he comes back he wants him to be gone . When Nathan does not return from Europe , Haley and Jamie blame Dan . He rents out the sound stage from Julian and uses it to find Nathan . Dan , Julian and Chris Keller save Nathan . However , Dan is shot while rescuing Nathan and dies in the hospital surrounded by Nathan , Haley , Deb , Jamie and Lydia . When he dies , he sees a vision of his brother Keith , who brings him to the hallway where Dan shot Keith and he tells him that he forgives him . When Keith goes into the light , Dan asks him `` I know where you 're going , but what about me ? '' and Keith says `` Do n't worry little brother , You 're my plus one . ''",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "830268006_19754-20757",
+        "parent_text_sha256": "9631a312c79d6d38f79725e22126a15915b8db2bc97f733d1a5494f3ea6118b5",
+        "passage_id": "830268006_19754-20757",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 279,
+          "end": 1003,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "9631a312c79d6d38f79725e22126a15915b8db2bc97f733d1a5494f3ea6118b5",
+        "title": "Dan Scott",
+        "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "9631a312c79d6d38f79725e22126a15915b8db2bc97f733d1a5494f3ea6118b5",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 1003
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "21285419333013253506675306384_0-1820",
+      "title": "Dan Scott",
+      "text": "Dan tries to make amends for Keith 's death by looking after Karen . However , he still sees messages everywhere calling him a murderer , and wonders if it is all in his head . Meanwhile , Nathan is in deep debt and asks Dan to help him . Dan refuses and Nathan goes to a loan shark , Daunte , instead . Daunte forces Nathan to shave points in a basketball game and then demands that Nathan lose the State Championship . On discovering the trouble that Nathan is in , Dan confronts Daunte and offers to pay him off , but Daunte gets Dan to back down by threatening Nathan , Lucas , the pregnant Haley and Karen . When the Ravens win the State Championship , Daunte runs Haley over and crashes into a construction site . Nathan pulls Daunte out of the car and beats him , before realizing he is dead . Dan takes the fall for Nathan and is arrested . Dan plans to plead guilty to Daunte 's murder in order to be punished for Keith 's death , but the coroner 's report shows that Daunte was already dead when Nathan pulled him out of the car . Dan is released and the experience brings him and Karen closer together , as Karen admires what Dan was willing to do for his son . Dan and Karen begin to come together romantically , attending the school prom together as chaperones , but Dan continues to receive text messages and notes accusing him of killing his brother . Dan discovers that the person sending the messages is Abby Brown , a student who witnessed the shooting . Dan then visits Abby and her mother and tries to explain why he killed Keith , saying `` Karen was mine , she was supposed to be mine '' . Abby leaves Tree Hill for good , but not before telling Lucas what she knows . Lucas walks in on Dan and his mother kissing and attacks Dan , shouting that he killed Keith , but Karen refuses to believe him .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "830268006_10409-12873",
+        "parent_text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+        "passage_id": "21285419333013253506675306384_0-1820",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 473,
+          "end": 1820,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "92901060df49ec44d053a0438b317379a47703c4f01112fd98789d4208292416",
+        "title": "Dan Scott",
+        "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "92901060df49ec44d053a0438b317379a47703c4f01112fd98789d4208292416",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 1820
+      }
+    },
+    {
+      "passage_id": "21285419333013253506675306384_1820-2464",
+      "title": "Dan Scott",
+      "text": " Lucas then goes to the police , but Dan has got there first and told them that Lucas is just trying to sabotage Dan 's relationship with Karen . On learning from Haley that Deb has a gun , Lucas steals the gun and confronts Dan in front of Karen , causing her to collapse . Lucas fires a warning shot to make Dan leave , before rushing the unconscious Karen to hospital . After learning from Deb that Dan killed Keith , Nathan confronts Dan and tells him that he will never be a part of his grandson 's life . After Karen 's daughter is born by c - section , Dan visits his new niece in the hospital , before turning himself in to the police .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "830268006_10409-12873",
+        "parent_text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+        "passage_id": "21285419333013253506675306384_1820-2464",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 165,
+          "end": 2464,
+          "start": 1820
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "ea7ddbd1621bead7c7d75a38235d4f4863c7f5f454e9763058541de600262086",
+        "title": "Dan Scott",
+        "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      },
+      "actual_text_sha256": "ea7ddbd1621bead7c7d75a38235d4f4863c7f5f454e9763058541de600262086",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 644
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "The retrieved passages do not provide enough information to answer this question.",
+    "answer_sha256": "026c8afd2644427e5226a244418a9c1d8e0c1abf28d23ef152bc605d46406acd",
+    "quality": {
+      "annotation_id": "Q-a541f78c13de7e872f5d",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-a541f78c13de7e872f5d",
+        "candidate_sha256": "6cbba428d6d829a64349fa6de0420f69b669237f4b506f50540bae4d4e5607f8",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "Yes. Abby Brown witnessed Dan killing Keith and told Lucas, who confronted Dan.",
+        "reason": "The refusal is contradicted by actual context: Abby Brown witnessed the shooting, sent accusations to Dan, and told Lucas, who then accused Dan of killing Keith. These facts directly answer the question without needing reference-only material.",
+        "evidence": [
+          {
+            "passage_id": "21285419333013253506675306384_0-1820",
+            "quote": "Dan tries to make amends for Keith 's death by looking after Karen . However , he still sees messages everywhere calling him a murderer , and wonders if it is all in his head . Meanwhile , Nathan is in deep debt and asks Dan to help him . Dan refuses and Nathan goes to a loan shark , Daunte , instead . Daunte forces Nathan to shave points in a basketball game and then demands that Nathan lose the State Championship . On discovering the trouble that Nathan is in , Dan confronts Daunte and offers to pay him off , but Daunte gets Dan to back down by threatening Nathan , Lucas , the pregnant Haley and Karen . When the Ravens win the State Championship , Daunte runs Haley over and crashes into a construction site . Nathan pulls Daunte out of the car and beats him , before realizing he is dead . Dan takes the fall for Nathan and is arrested . Dan plans to plead guilty to Daunte 's murder in order to be punished for Keith 's death , but the coroner 's report shows that Daunte was already dead when Nathan pulled him out of the car . Dan is released and the experience brings him and Karen closer together , as Karen admires what Dan was willing to do for his son . Dan and Karen begin to come together romantically , attending the school prom together as chaperones , but Dan continues to receive text messages and notes accusing him of killing his brother . Dan discovers that the person sending the messages is Abby Brown , a student who witnessed the shooting . Dan then visits Abby and her mother and tries to explain why he killed Keith , saying `` Karen was mine , she was supposed to be mine '' . Abby leaves Tree Hill for good , but not before telling Lucas what she knows . Lucas walks in on Dan and his mother kissing and attacks Dan , shouting that he killed Keith , but Karen refuses to believe him ."
+          }
+        ],
+        "elapsed_seconds": 9.501263790007215,
+        "confirmed_at_utc": "2026-11-08T07:37:51.927597+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_02/en/baseline/c3bb619a09d253e6451a48e3/record.json",
+      "sha256": "c315093996b02ee30f2a4f240f77602a96689dc4cb1aa0dbae39c33fc6123650"
+    },
+    "copy": "provenance/baselines/cal_en_c3bb619a09d253e6451a48e3.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "Yes, people find out that Dan killed Keith. Abby Brown witnessed the shooting and sent messages accusing him [21285419333013253506675306384_0-1820]. Additionally, Lucas attacks Dan and shouts that he killed Keith [21285419333013253506675306384_0-1820].",
+    "answer_sha256": "57b8bff6b57dd84f10889c7f5e7a05142350a68b24c8aada260de0723f08d469",
+    "quality": {
+      "annotation_id": "Q-a3f338ec925776579d75",
+      "status": "reliable",
+      "y": 1,
+      "annotation": {
+        "annotation_id": "Q-a3f338ec925776579d75",
+        "candidate_sha256": "665a5b3b7eba87fcf0082e3c429e291ef419eee12112ee9eeb4dfce816a1fd6e",
+        "label": "reliable",
+        "criteria": {
+          "essential_answer": "pass",
+          "no_major_error": "pass",
+          "context_support": "pass"
+        },
+        "essential_points": "Yes. Abby witnessed the shooting and told Lucas, who confronted Dan about killing Keith.",
+        "reason": "Actual-context evidence e0002 supports every claim: Abby witnessed the shooting, sent accusations, and told Lucas, who subsequently attacked Dan and accused him of killing Keith. The affirmative answer satisfies the question without requiring reference-only material.",
+        "evidence": [
+          {
+            "passage_id": "21285419333013253506675306384_0-1820",
+            "quote": "Dan tries to make amends for Keith 's death by looking after Karen . However , he still sees messages everywhere calling him a murderer , and wonders if it is all in his head . Meanwhile , Nathan is in deep debt and asks Dan to help him . Dan refuses and Nathan goes to a loan shark , Daunte , instead . Daunte forces Nathan to shave points in a basketball game and then demands that Nathan lose the State Championship . On discovering the trouble that Nathan is in , Dan confronts Daunte and offers to pay him off , but Daunte gets Dan to back down by threatening Nathan , Lucas , the pregnant Haley and Karen . When the Ravens win the State Championship , Daunte runs Haley over and crashes into a construction site . Nathan pulls Daunte out of the car and beats him , before realizing he is dead . Dan takes the fall for Nathan and is arrested . Dan plans to plead guilty to Daunte 's murder in order to be punished for Keith 's death , but the coroner 's report shows that Daunte was already dead when Nathan pulled him out of the car . Dan is released and the experience brings him and Karen closer together , as Karen admires what Dan was willing to do for his son . Dan and Karen begin to come together romantically , attending the school prom together as chaperones , but Dan continues to receive text messages and notes accusing him of killing his brother . Dan discovers that the person sending the messages is Abby Brown , a student who witnessed the shooting . Dan then visits Abby and her mother and tries to explain why he killed Keith , saying `` Karen was mine , she was supposed to be mine '' . Abby leaves Tree Hill for good , but not before telling Lucas what she knows . Lucas walks in on Dan and his mother kissing and attacks Dan , shouting that he killed Keith , but Karen refuses to believe him ."
+          }
+        ],
+        "elapsed_seconds": 8.50118392900913,
+        "confirmed_at_utc": "2026-11-08T07:36:39.739997+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [],
+  "extraction_audit": {
+    "claims": [],
+    "unit_version": "verbatim-sentence-units-v1",
+    "normalized_prose": "The retrieved passages do not provide enough information to answer this question.",
+    "exclusion": "standalone_refusal",
+    "spans": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "830268006_19754-20757",
+          "809042294_8430-8841",
+          "21285419333013253506675306384_0-1820",
+          "836631991_2254-2857",
+          "22041901013934637398734073701_0-1943"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "22041901013934637398734073701_0-1943",
+          "836631991_2254-2857",
+          "21285419333013253506675306384_0-1820",
+          "809042294_8430-8841",
+          "830268006_19754-20757"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "22041901013934637398734073701_0-1943",
+          "836631991_2254-2857",
+          "21285419333013253506675306384_0-1820",
+          "809042294_8430-8841",
+          "830268006_19754-20757"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "22041901013934637398734073701_0-1943",
+          "836631991_2254-2857",
+          "21285419333013253506675306384_0-1820",
+          "809042294_8430-8841",
+          "830268006_19754-20757"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "836631991_2254-2857",
+          "809042294_8430-8841",
+          "21285419333013253506675306384_0-1820",
+          "830268006_19754-20757",
+          "22041901013934637398734073701_0-1943"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "809042294_8430-8841",
+          "836631991_2254-2857",
+          "21285419333013253506675306384_0-1820",
+          "22041901013934637398734073701_0-1943",
+          "830268006_19754-20757"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "21285419333013253506675306384_0-1820",
+          "22041901013934637398734073701_0-1943",
+          "809042294_8430-8841",
+          "830268006_19754-20757",
+          "836631991_2254-2857"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "22041901013934637398734073701_0-1943",
+          "836631991_2254-2857",
+          "21285419333013253506675306384_0-1820",
+          "809042294_8430-8841",
+          "830268006_19754-20757"
+        ]
+      },
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "22041901013934637398734073701_0-1943",
+          "836631991_2254-2857",
+          "21285419333013253506675306384_0-1820",
+          "809042294_8430-8841",
+          "830268006_19754-20757"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "en",
+    "record_id": "clapnq:c508d78:train:-8402235505568929376:answerable",
+    "document_group_id": "clapnq-title:dan scott",
+    "comparable": false,
+    "increment": null,
+    "partial_pair_increment_exploratory": null,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 0,
+      "valid_pairs": 0,
+      "disagreeing_pairs": 0,
+      "rate": null
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 0,
+      "valid_pairs": 0,
+      "disagreeing_pairs": 0,
+      "rate": null
+    },
+    "reason": "invalid_or_unscorable_trials"
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_02/en/report.private.json",
+    "sha256": "ad96796d42ea5a69f9baa85c8ebb70cd79b573bb674adb30f7d6c32f80875d47"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "21285419333013253506675306384_0-1820",
+      "text": "Dan tries to make amends for Keith 's death by looking after Karen . However , he still sees messages everywhere calling him a murderer , and wonders if it is all in his head . Meanwhile , Nathan is in deep debt and asks Dan to help him . Dan refuses and Nathan goes to a loan shark , Daunte , instead . Daunte forces Nathan to shave points in a basketball game and then demands that Nathan lose the State Championship . On discovering the trouble that Nathan is in , Dan confronts Daunte and offers to pay him off , but Daunte gets Dan to back down by threatening Nathan , Lucas , the pregnant Haley and Karen . When the Ravens win the State Championship , Daunte runs Haley over and crashes into a construction site . Nathan pulls Daunte out of the car and beats him , before realizing he is dead . Dan takes the fall for Nathan and is arrested . Dan plans to plead guilty to Daunte 's murder in order to be punished for Keith 's death , but the coroner 's report shows that Daunte was already dead when Nathan pulled him out of the car . Dan is released and the experience brings him and Karen closer together , as Karen admires what Dan was willing to do for his son . Dan and Karen begin to come together romantically , attending the school prom together as chaperones , but Dan continues to receive text messages and notes accusing him of killing his brother . Dan discovers that the person sending the messages is Abby Brown , a student who witnessed the shooting . Dan then visits Abby and her mother and tries to explain why he killed Keith , saying `` Karen was mine , she was supposed to be mine '' . Abby leaves Tree Hill for good , but not before telling Lucas what she knows . Lucas walks in on Dan and his mother kissing and attacks Dan , shouting that he killed Keith , but Karen refuses to believe him .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "830268006_10409-12873",
+        "parent_text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+        "passage_id": "21285419333013253506675306384_0-1820",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 473,
+          "end": 1820,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "92901060df49ec44d053a0438b317379a47703c4f01112fd98789d4208292416",
+        "title": "Dan Scott",
+        "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "21285419333013253506675306384_1820-2464",
+      "text": " Lucas then goes to the police , but Dan has got there first and told them that Lucas is just trying to sabotage Dan 's relationship with Karen . On learning from Haley that Deb has a gun , Lucas steals the gun and confronts Dan in front of Karen , causing her to collapse . Lucas fires a warning shot to make Dan leave , before rushing the unconscious Karen to hospital . After learning from Deb that Dan killed Keith , Nathan confronts Dan and tells him that he will never be a part of his grandson 's life . After Karen 's daughter is born by c - section , Dan visits his new niece in the hospital , before turning himself in to the police .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "830268006_10409-12873",
+        "parent_text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+        "passage_id": "21285419333013253506675306384_1820-2464",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 165,
+          "end": 2464,
+          "start": 1820
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "ea7ddbd1621bead7c7d75a38235d4f4863c7f5f454e9763058541de600262086",
+        "title": "Dan Scott",
+        "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "22041901013934637398734073701_0-1943",
+      "text": "Dan survives the fire , but the dealership is destroyed . Dan at first thinks it was Lucas who tried to kill him when he remembers seeing him in the fire , but it is revealed that Lucas saved him . Wanting access to the fire investigation , Dan runs for mayor of Tree Hill . His family - based campaign includes having Deb pretend to love him in exchange for a final divorce . This ploy works and Dan is elected mayor . As mayor , Dan gains access to CCTV showing Keith buying the whisky used to drug Dan , and when Keith returns to town Dan has him arrested on suspicion of his attempted murder . Although the police release Keith due to lack of evidence , Dan still believes that Keith was the perpetrator , and things become worse when Keith announces that he is going to marry Karen and adopt Lucas . One day at Tree Hill High , Jimmy Edwards takes a gun to school and fires it , causing a lock down . Keith persuades Dan as mayor to let him go into the school to talk to Jimmy , but Jimmy commits suicide by shooting himself in front of Keith . Dan then gets into the school , picks up the gun and shoots Keith , killing him . Jimmy gets the blame for Keith 's death as it is assumed that he shot Keith before turning the gun on himself . Dan convinces himself that Keith deserved what he got as he started the war with Dan . Nevertheless , Dan becomes haunted , seeing visions of Keith as a child everywhere , and this has a profound effect on him . Realizing he has to change his ways he tries to get closer to Nathan , telling his son that he is proud of him and that he loves him . Haley then gives Dan a second chance by inviting him to her and Nathan 's second wedding . At the ceremony Deb tells Dan that it was her , not Keith , who tried to kill him in the fire . Dan goes to Keith 's grave and breaks down . Dan then apologizes to Karen for how he treated her and Lucas and she reveals that she is pregnant with Keith 's child .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "830268006_8293-10390",
+        "parent_text_sha256": "6894efe07ba9de4bca67c09c24ddb2fec83fadc71cfc2e96dda7966834ea87f1",
+        "passage_id": "22041901013934637398734073701_0-1943",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 496,
+          "end": 1943,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "afb4d3dadc2cd97d02c8c403e01d35dcf061c860aa28d763e2b85323c9f6d25b",
+        "title": "Dan Scott",
+        "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "809042294_8430-8841",
+      "text": "After a while , the lockdown ends and students are released from school . Jay assures Alex that they will be fine and that nobody will find out , though Alex is very regretful of her involvement . Spinner meets up with them and is filled with guilt and regret , telling Jay they need to know who did it , and how they could have killed Jimmy . Jay tells him not to tell anyone , and that it would be all right .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "809042294_8430-8841",
+        "parent_text_sha256": "d4527ff5f1116bec718aef2846aac857397b3b51c9be85813eab6c5a00b4e4eb",
+        "passage_id": "809042294_8430-8841",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 108,
+          "end": 411,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "d4527ff5f1116bec718aef2846aac857397b3b51c9be85813eab6c5a00b4e4eb",
+        "title": "Time Stands Still (Degrassi: The Next Generation)",
+        "source_url": "https://en.wikipedia.org/wiki/Time_Stands_Still_%28Degrassi%3A_The_Next_Generation%29",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Time_Stands_Still_%28Degrassi%3A_The_Next_Generation%29?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "830268006_10409-12873",
+      "text": "Dan tries to make amends for Keith 's death by looking after Karen . However , he still sees messages everywhere calling him a murderer , and wonders if it is all in his head . Meanwhile , Nathan is in deep debt and asks Dan to help him . Dan refuses and Nathan goes to a loan shark , Daunte , instead . Daunte forces Nathan to shave points in a basketball game and then demands that Nathan lose the State Championship . On discovering the trouble that Nathan is in , Dan confronts Daunte and offers to pay him off , but Daunte gets Dan to back down by threatening Nathan , Lucas , the pregnant Haley and Karen . When the Ravens win the State Championship , Daunte runs Haley over and crashes into a construction site . Nathan pulls Daunte out of the car and beats him , before realizing he is dead . Dan takes the fall for Nathan and is arrested . Dan plans to plead guilty to Daunte 's murder in order to be punished for Keith 's death , but the coroner 's report shows that Daunte was already dead when Nathan pulled him out of the car . Dan is released and the experience brings him and Karen closer together , as Karen admires what Dan was willing to do for his son . Dan and Karen begin to come together romantically , attending the school prom together as chaperones , but Dan continues to receive text messages and notes accusing him of killing his brother . Dan discovers that the person sending the messages is Abby Brown , a student who witnessed the shooting . Dan then visits Abby and her mother and tries to explain why he killed Keith , saying `` Karen was mine , she was supposed to be mine '' . Abby leaves Tree Hill for good , but not before telling Lucas what she knows . Lucas walks in on Dan and his mother kissing and attacks Dan , shouting that he killed Keith , but Karen refuses to believe him . Lucas then goes to the police , but Dan has got there first and told them that Lucas is just trying to sabotage Dan 's relationship with Karen . On learning from Haley that Deb has a gun , Lucas steals the gun and confronts Dan in front of Karen , causing her to collapse . Lucas fires a warning shot to make Dan leave , before rushing the unconscious Karen to hospital . After learning from Deb that Dan killed Keith , Nathan confronts Dan and tells him that he will never be a part of his grandson 's life . After Karen 's daughter is born by c - section , Dan visits his new niece in the hospital , before turning himself in to the police .",
+      "source_metadata": {
+        "language": "en",
+        "parent_passage_id": "830268006_10409-12873",
+        "parent_text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "title": "Dan Scott",
+        "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+        "transformation": "Exact concatenation of frozen child spans, checked against original parent SHA-256; offline Reference only",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        },
+        "passage_id": "830268006_10409-12873",
+        "text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+        "provenance_kind": "original_parent_reconstructed_from_fixed_children",
+        "child_passage_ids": [
+          "21285419333013253506675306384_0-1820",
+          "21285419333013253506675306384_1820-2464"
+        ],
+        "parent_map_entry": {
+          "child_passage_ids": [
+            "21285419333013253506675306384_0-1820",
+            "21285419333013253506675306384_1820-2464"
+          ],
+          "parent_passage_id": "830268006_10409-12873",
+          "parent_text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce"
+        },
+        "parent_map_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/parent_map.jsonl",
+          "sha256": "bc2f9a29aa8238e141abce6843681ccb4a6f7a0219389d0eddf10801fc9f24c3"
+        }
+      }
+    },
+    {
+      "passage_id": "830268006_19754-20757",
+      "text": "Dan burns down his diner and returns to Tree Hill and asks Haley for a place to stay , initially resistant , she offers him money , but he says that he does n't want money . He moves into Nathan and Haley 's house to the delight of Jamie who is excited to spend time with him . Nathan tells him that he is going to Europe and that when he comes back he wants him to be gone . When Nathan does not return from Europe , Haley and Jamie blame Dan . He rents out the sound stage from Julian and uses it to find Nathan . Dan , Julian and Chris Keller save Nathan . However , Dan is shot while rescuing Nathan and dies in the hospital surrounded by Nathan , Haley , Deb , Jamie and Lydia . When he dies , he sees a vision of his brother Keith , who brings him to the hallway where Dan shot Keith and he tells him that he forgives him . When Keith goes into the light , Dan asks him `` I know where you 're going , but what about me ? '' and Keith says `` Do n't worry little brother , You 're my plus one . ''",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "830268006_19754-20757",
+        "parent_text_sha256": "9631a312c79d6d38f79725e22126a15915b8db2bc97f733d1a5494f3ea6118b5",
+        "passage_id": "830268006_19754-20757",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 279,
+          "end": 1003,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "9631a312c79d6d38f79725e22126a15915b8db2bc97f733d1a5494f3ea6118b5",
+        "title": "Dan Scott",
+        "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    },
+    {
+      "passage_id": "836631991_2254-2857",
+      "text": "Elsewhere , Red meets with Berlin and reveals to him that his daughter Zoe ( Scottie Thompson ) is in fact alive , and he presents her to him , thus making their feud pointless , as Berlin believed that Red killed her . Red asks Berlin who told him the lie ; he reveals the person 's identity as The Decembrist . Red and Berlin hunt down several people in order to find out The Decembrist 's true identity . They eventually find a name : Alan Fitch ( Alan Alda ) , an associate of Red 's . After finding out who it is , Berlin decides to hunt him down and kill him , something Red is not keen on doing .",
+      "source_metadata": {
+        "embedding_token_budget": 512,
+        "language": "en",
+        "parent_passage_id": "836631991_2254-2857",
+        "parent_text_sha256": "28721b3a0ef911d1ff86bdc664e9d83ee8ce5b50b83c4320c391906c85aec6a0",
+        "passage_id": "836631991_2254-2857",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 167,
+          "end": 603,
+          "start": 0
+        },
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "text_sha256": "28721b3a0ef911d1ff86bdc664e9d83ee8ce5b50b83c4320c391906c85aec6a0",
+        "title": "The Decembrist",
+        "source_url": "https://en.wikipedia.org/wiki/The_Decembrist",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/The_Decembrist?action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "830268006_10409-12873": {
+      "language": "en",
+      "parent_passage_id": "830268006_10409-12873",
+      "parent_text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+      "source_dataset": "CLAPNQ",
+      "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+      "title": "Dan Scott",
+      "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+      "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+      "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+      "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+      "transformation": "Exact concatenation of frozen child spans, checked against original parent SHA-256; offline Reference only",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+        "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+      },
+      "passage_id": "830268006_10409-12873",
+      "text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+      "provenance_kind": "original_parent_reconstructed_from_fixed_children",
+      "child_passage_ids": [
+        "21285419333013253506675306384_0-1820",
+        "21285419333013253506675306384_1820-2464"
+      ],
+      "parent_map_entry": {
+        "child_passage_ids": [
+          "21285419333013253506675306384_0-1820",
+          "21285419333013253506675306384_1820-2464"
+        ],
+        "parent_passage_id": "830268006_10409-12873",
+        "parent_text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce"
+      },
+      "parent_map_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/parent_map.jsonl",
+        "sha256": "bc2f9a29aa8238e141abce6843681ccb4a6f7a0219389d0eddf10801fc9f24c3"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "830268006_10409-12873",
+      "text": "Dan tries to make amends for Keith 's death by looking after Karen . However , he still sees messages everywhere calling him a murderer , and wonders if it is all in his head . Meanwhile , Nathan is in deep debt and asks Dan to help him . Dan refuses and Nathan goes to a loan shark , Daunte , instead . Daunte forces Nathan to shave points in a basketball game and then demands that Nathan lose the State Championship . On discovering the trouble that Nathan is in , Dan confronts Daunte and offers to pay him off , but Daunte gets Dan to back down by threatening Nathan , Lucas , the pregnant Haley and Karen . When the Ravens win the State Championship , Daunte runs Haley over and crashes into a construction site . Nathan pulls Daunte out of the car and beats him , before realizing he is dead . Dan takes the fall for Nathan and is arrested . Dan plans to plead guilty to Daunte 's murder in order to be punished for Keith 's death , but the coroner 's report shows that Daunte was already dead when Nathan pulled him out of the car . Dan is released and the experience brings him and Karen closer together , as Karen admires what Dan was willing to do for his son . Dan and Karen begin to come together romantically , attending the school prom together as chaperones , but Dan continues to receive text messages and notes accusing him of killing his brother . Dan discovers that the person sending the messages is Abby Brown , a student who witnessed the shooting . Dan then visits Abby and her mother and tries to explain why he killed Keith , saying `` Karen was mine , she was supposed to be mine '' . Abby leaves Tree Hill for good , but not before telling Lucas what she knows . Lucas walks in on Dan and his mother kissing and attacks Dan , shouting that he killed Keith , but Karen refuses to believe him . Lucas then goes to the police , but Dan has got there first and told them that Lucas is just trying to sabotage Dan 's relationship with Karen . On learning from Haley that Deb has a gun , Lucas steals the gun and confronts Dan in front of Karen , causing her to collapse . Lucas fires a warning shot to make Dan leave , before rushing the unconscious Karen to hospital . After learning from Deb that Dan killed Keith , Nathan confronts Dan and tells him that he will never be a part of his grandson 's life . After Karen 's daughter is born by c - section , Dan visits his new niece in the hospital , before turning himself in to the police .",
+      "source_metadata": {
+        "language": "en",
+        "parent_passage_id": "830268006_10409-12873",
+        "parent_text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+        "source_dataset": "CLAPNQ",
+        "source_revision": "c508d78d8c5c2eecbf172fcf5f789004206e11fb",
+        "title": "Dan Scott",
+        "source_url": "https://en.wikipedia.org/wiki/Dan_Scott",
+        "source_url_precision": "title-based attribution URL; original Wikipedia revision not recorded by the CLAPNQ passage asset",
+        "license": "CC-BY-SA-3.0 (Natural Questions lineage); dataset annotations Apache-2.0",
+        "contributors_history_url": "https://en.wikipedia.org/wiki/Dan_Scott?action=history",
+        "transformation": "Exact concatenation of frozen child spans, checked against original parent SHA-256; offline Reference only",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/passages.jsonl",
+          "sha256": "4fc7a6c5ce51af3405438448b1aabfdb9842d9d8119a13ca364f90e82d7f6b3f"
+        },
+        "passage_id": "830268006_10409-12873",
+        "text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce",
+        "provenance_kind": "original_parent_reconstructed_from_fixed_children",
+        "child_passage_ids": [
+          "21285419333013253506675306384_0-1820",
+          "21285419333013253506675306384_1820-2464"
+        ],
+        "parent_map_entry": {
+          "child_passage_ids": [
+            "21285419333013253506675306384_0-1820",
+            "21285419333013253506675306384_1820-2464"
+          ],
+          "parent_passage_id": "830268006_10409-12873",
+          "parent_text_sha256": "c1a2c90ad28e49663f3e16733f61b7e61b31dc087d4b4736db5902afd40600ce"
+        },
+        "parent_map_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/clapnq/c508d78-e5-passages-v1/parent_map.jsonl",
+          "sha256": "bc2f9a29aa8238e141abce6843681ccb4a6f7a0219389d0eddf10801fc9f24c3"
+        }
+      }
+    }
+  ]
+}

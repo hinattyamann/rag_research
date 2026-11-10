@@ -1,0 +1,915 @@
+{
+  "case_id": "case_en",
+  "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+  "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+  "language": "en",
+  "cohort": "cal",
+  "input_path": "inputs/cal_en_59da2fa71ce30a4854652b43.json",
+  "post_outcome_explanatory_selection": true,
+  "selection_rule": "First lexicographic QA with order variation if any, otherwise first selected QA; not a frequency sample",
+  "trials": [
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "trial_id": "shuffle_3",
+      "document_ids": [
+        "821422942_133-444",
+        "864105695_1997-2464",
+        "864105695_186-627",
+        "864105695_75-185",
+        "864105695_628-1228"
+      ],
+      "score": 0.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "59da2fa71ce30a4854652b43/shuffle_3.json",
+      "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+      "result_sha256": "c4acc991b4591a8d3e865c18f9c63ce09e85b2587d1e6710db77f41f70ea59be",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "contradicted",
+          "reason": "Sources state Irwin played Mr. Noodle, not brother Mister Noodle; Jeter replaced Irwin as Mister Noodle.",
+          "evidence": [
+            {
+              "passage_id": "864105695_186-627",
+              "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+            },
+            {
+              "passage_id": "864105695_628-1228",
+              "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 1,
+        "input_tokens": 1533,
+        "output_tokens": 4203,
+        "elapsed_seconds": 79.83261499204673,
+        "generation_seconds": 79.78734845784493,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1533,
+          "output_tokens": 4203,
+          "elapsed_seconds": 79.83261499204673,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "c4acc991b4591a8d3e865c18f9c63ce09e85b2587d1e6710db77f41f70ea59be",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "trial_id": "repeat_2",
+      "document_ids": [
+        "864105695_186-627",
+        "864105695_75-185",
+        "864105695_1997-2464",
+        "864105695_628-1228",
+        "821422942_133-444"
+      ],
+      "score": 0.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "59da2fa71ce30a4854652b43/repeat_2.json",
+      "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+      "result_sha256": "32de144dd8994f43d28956d69744f7cceada00abc17a40cfa4a834491b21b3f5",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "contradicted",
+          "reason": "Passage 186-627 states Irwin played 'Mr. Noodle', while Passage 628-1228 states he played 'Mister Noodle' (the brother). These are distinct characters per the 1",
+          "evidence": [
+            {
+              "passage_id": "864105695_186-627",
+              "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+            },
+            {
+              "passage_id": "864105695_628-1228",
+              "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 1,
+        "input_tokens": 1533,
+        "output_tokens": 4230,
+        "elapsed_seconds": 80.31178119289689,
+        "generation_seconds": 80.30144203081727,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1533,
+          "output_tokens": 4230,
+          "elapsed_seconds": 80.31178119289689,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "32de144dd8994f43d28956d69744f7cceada00abc17a40cfa4a834491b21b3f5",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "trial_id": "shuffle_2",
+      "document_ids": [
+        "864105695_628-1228",
+        "821422942_133-444",
+        "864105695_1997-2464",
+        "864105695_75-185",
+        "864105695_186-627"
+      ],
+      "score": 0.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "59da2fa71ce30a4854652b43/shuffle_2.json",
+      "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+      "result_sha256": "d3f1be5e011d47ade5a424122a0d2f80aa6b82f24f64a23daa948eccb964e735",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "contradicted",
+          "reason": "Source 75-185 states Bill Irwin portrayed Mr. Noodle, not his brother Mister Noodle; Source 628-1228 implies Irwin played Mister Noodle before Jeter replaced.",
+          "evidence": [
+            {
+              "passage_id": "864105695_75-185",
+              "quote": "Mr. Noodle Sesame Street character Mr. Noodle in Elmo 's World Portrayed by Bill Irwin Information Gender Male"
+            },
+            {
+              "passage_id": "864105695_628-1228",
+              "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 1,
+        "input_tokens": 1533,
+        "output_tokens": 4223,
+        "elapsed_seconds": 80.17128309281543,
+        "generation_seconds": 80.16185289504938,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1533,
+          "output_tokens": 4223,
+          "elapsed_seconds": 80.17128309281543,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "d3f1be5e011d47ade5a424122a0d2f80aa6b82f24f64a23daa948eccb964e735",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "trial_id": "shuffle_1",
+      "document_ids": [
+        "864105695_628-1228",
+        "821422942_133-444",
+        "864105695_186-627",
+        "864105695_75-185",
+        "864105695_1997-2464"
+      ],
+      "score": 0.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "59da2fa71ce30a4854652b43/shuffle_1.json",
+      "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+      "result_sha256": "e1fe2637f35d79a1c8c7712a2abd592a7a509fcc824928cce5cc60a7cb4033de",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "contradicted",
+          "reason": "Sources conflict on actor-character mapping; one says Irwin played Mr. Noodle, another implies he played Mister Noodle.",
+          "evidence": [
+            {
+              "passage_id": "864105695_75-185",
+              "quote": "Mr. Noodle Sesame Street character Mr. Noodle in Elmo 's World Portrayed by Bill Irwin Information Gender Male"
+            },
+            {
+              "passage_id": "864105695_628-1228",
+              "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 1,
+        "input_tokens": 1533,
+        "output_tokens": 4201,
+        "elapsed_seconds": 79.7103757369332,
+        "generation_seconds": 79.70070702489465,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1533,
+          "output_tokens": 4201,
+          "elapsed_seconds": 79.7103757369332,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "e1fe2637f35d79a1c8c7712a2abd592a7a509fcc824928cce5cc60a7cb4033de",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "trial_id": "repeat_5",
+      "document_ids": [
+        "864105695_186-627",
+        "864105695_75-185",
+        "864105695_1997-2464",
+        "864105695_628-1228",
+        "821422942_133-444"
+      ],
+      "score": 0.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "59da2fa71ce30a4854652b43/repeat_5.json",
+      "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+      "result_sha256": "01f2fee23d817245020a188691251ae6c2305d3bc2b92ef52f854e6ac60daf54",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "contradicted",
+          "reason": "Passage 186-627 states Irwin played 'Mr. Noodle', while Passage 628-1228 states he played 'Mister Noodle' (the brother). These are distinct characters per the 1",
+          "evidence": [
+            {
+              "passage_id": "864105695_186-627",
+              "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+            },
+            {
+              "passage_id": "864105695_628-1228",
+              "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 1,
+        "input_tokens": 1533,
+        "output_tokens": 4230,
+        "elapsed_seconds": 80.32187148486264,
+        "generation_seconds": 80.31190962088294,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1533,
+          "output_tokens": 4230,
+          "elapsed_seconds": 80.32187148486264,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "01f2fee23d817245020a188691251ae6c2305d3bc2b92ef52f854e6ac60daf54",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "trial_id": "original",
+      "document_ids": [
+        "864105695_186-627",
+        "864105695_75-185",
+        "864105695_1997-2464",
+        "864105695_628-1228",
+        "821422942_133-444"
+      ],
+      "score": 0.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "59da2fa71ce30a4854652b43/original.json",
+      "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+      "result_sha256": "e955ae9985e5cb782bd8f27b304785c7616ce7dd92370aa03baf659907075d0b",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "contradicted",
+          "reason": "Passage 186-627 states Irwin played 'Mr. Noodle', while Passage 628-1228 states he played 'Mister Noodle' (the brother). These are distinct characters per the 1",
+          "evidence": [
+            {
+              "passage_id": "864105695_186-627",
+              "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+            },
+            {
+              "passage_id": "864105695_628-1228",
+              "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 1,
+        "input_tokens": 1533,
+        "output_tokens": 4230,
+        "elapsed_seconds": 80.31124586006626,
+        "generation_seconds": 80.30112233501859,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1533,
+          "output_tokens": 4230,
+          "elapsed_seconds": 80.31124586006626,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "e955ae9985e5cb782bd8f27b304785c7616ce7dd92370aa03baf659907075d0b",
+      "shared_original_not_two_calls": true
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "trial_id": "reversed",
+      "document_ids": [
+        "821422942_133-444",
+        "864105695_628-1228",
+        "864105695_1997-2464",
+        "864105695_75-185",
+        "864105695_186-627"
+      ],
+      "score": 1.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "59da2fa71ce30a4854652b43/reversed.json",
+      "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+      "result_sha256": "fcd2ab456112d944450b982fca355dd599a80a675b6bddc8ab48ddbbc4d23d55",
+      "decision": "accept",
+      "action": "keep_initial",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "supported",
+          "reason": "Source 628-1228 states Irwin played Mr. Noodle's brother Mister Noodle before Jeter replaced him.",
+          "evidence": [
+            {
+              "passage_id": "864105695_628-1228",
+              "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 1,
+        "input_tokens": 1533,
+        "output_tokens": 4188,
+        "elapsed_seconds": 79.45046463096514,
+        "generation_seconds": 79.44062959589064,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1533,
+          "output_tokens": 4188,
+          "elapsed_seconds": 79.45046463096514,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "fcd2ab456112d944450b982fca355dd599a80a675b6bddc8ab48ddbbc4d23d55",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "trial_id": "repeat_4",
+      "document_ids": [
+        "864105695_186-627",
+        "864105695_75-185",
+        "864105695_1997-2464",
+        "864105695_628-1228",
+        "821422942_133-444"
+      ],
+      "score": 0.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "59da2fa71ce30a4854652b43/repeat_4.json",
+      "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+      "result_sha256": "fe391b1a4132b72385c0b8acbec9bd743535b33fa95f6259a4651437476b3c95",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "contradicted",
+          "reason": "Passage 186-627 states Irwin played 'Mr. Noodle', while Passage 628-1228 states he played 'Mister Noodle' (the brother). These are distinct characters per the 1",
+          "evidence": [
+            {
+              "passage_id": "864105695_186-627",
+              "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+            },
+            {
+              "passage_id": "864105695_628-1228",
+              "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 1,
+        "input_tokens": 1533,
+        "output_tokens": 4230,
+        "elapsed_seconds": 80.35611408017576,
+        "generation_seconds": 80.34635341307148,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1533,
+          "output_tokens": 4230,
+          "elapsed_seconds": 80.35611408017576,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "fe391b1a4132b72385c0b8acbec9bd743535b33fa95f6259a4651437476b3c95",
+      "shared_original_not_two_calls": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "trial_id": "repeat_3",
+      "document_ids": [
+        "864105695_186-627",
+        "864105695_75-185",
+        "864105695_1997-2464",
+        "864105695_628-1228",
+        "821422942_133-444"
+      ],
+      "score": 0.0,
+      "status": "ok",
+      "error_code": null,
+      "error": null,
+      "task_file": "59da2fa71ce30a4854652b43/repeat_3.json",
+      "json_schema_sha256": "6af9b051bdc7d034e9dfb8e82946d8fdb4f1de1b2fe5d226b0196fd75b5e351b",
+      "result_sha256": "368efd74d2211b82156e28659729533316357c6e656908b120192521722e21dc",
+      "decision": "rewrite",
+      "action": "rewrite_requested",
+      "in_order_group": false,
+      "in_repeat_group": false,
+      "fixed_claims": [
+        {
+          "claim_id": "c1",
+          "text": "Bill Irwin plays Mr. Noodle's brother Mister Noodle on Sesame Street."
+        }
+      ],
+      "verdicts": [
+        {
+          "claim_id": "c1",
+          "label": "contradicted",
+          "reason": "Passage 186-627 states Irwin played 'Mr. Noodle', while Passage 628-1228 states he played 'Mister Noodle' (the brother). These are distinct characters per the 1",
+          "evidence": [
+            {
+              "passage_id": "864105695_186-627",
+              "quote": "Mr. Noodle and his siblings -- Mr. Noodle 's brother Mister Noodle , Ms Noodle , and Miss Noodle -- are characters who appear in the `` Elmo 's World '' segments during the educational children 's television program Sesame Street . Mr. Noodle was played by Broadway actor Bill Irwin , who had previously worked with Arlene Sherman , executive producer of Sesame Street and co-creator of `` Elmo 's World '' , in short films for the program ."
+            },
+            {
+              "passage_id": "864105695_628-1228",
+              "quote": "When Irwin became unavailable , Sherman asked Michael Jeter , who was her friend , to replace Irwin as Mr. Noodle 's brother Mister Noodle , which he accepted enthusiastically , calling it his favorite role in twenty years . Jeter was in the role beginning in 2000 , until his death in 2003 . Kristin Chenoweth played Mr. Noodle 's sister Ms. Noodle , and Sarah Jones played Mr. Noodle 's other sister Miss Noodle . As of January 2017 , Daveed Diggs and comedian Daniel Koren , have played two more of Mr. Noodle 's brothers . Five actors playing members of the Noodle family have won Tonys . Michael"
+            }
+          ]
+        }
+      ],
+      "judge_task_present": true,
+      "cost": {
+        "completion_attempted": true,
+        "completion_attempts_recorded": 1,
+        "input_tokens": 1533,
+        "output_tokens": 4230,
+        "elapsed_seconds": 80.33828937099315,
+        "generation_seconds": 80.32869216008112,
+        "cost_incomplete": false
+      },
+      "native_subtask_costs": [
+        {
+          "completion_attempted": true,
+          "input_tokens": 1533,
+          "output_tokens": 4230,
+          "elapsed_seconds": 80.33828937099315,
+          "error_code": null,
+          "cost_incomplete": false
+        }
+      ],
+      "task_result_sha256": "368efd74d2211b82156e28659729533316357c6e656908b120192521722e21dc",
+      "shared_original_not_two_calls": false
+    }
+  ],
+  "policy_outcomes": [
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "route": "no_repair",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "d9fbc930b3b8ba4e1b7ad6dfe147f05ccf0be0075b32da3038585b7ac4f1b36d",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 1,
+      "recorded_completion_attempts": 1,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 831,
+      "output_tokens": 37,
+      "summed_step_seconds": 0.444250161992386,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "route": "always_rewrite",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 2,
+      "recorded_completion_attempts": 2,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 2054,
+      "output_tokens": 4454,
+      "summed_step_seconds": 84.02431721007451,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "route": "original",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 3,
+      "recorded_completion_attempts": 3,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 3587,
+      "output_tokens": 8684,
+      "summed_step_seconds": 164.3361967841629,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "route": "reversed",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "initial",
+      "selected_answer_sha256": "d9fbc930b3b8ba4e1b7ad6dfe147f05ccf0be0075b32da3038585b7ac4f1b36d",
+      "rewrite_requested": false,
+      "fallback": null,
+      "quality_status": "unreliable",
+      "quality_y": 0,
+      "quality_transition": "0->1",
+      "missed_improvement": true,
+      "harmful_rewrite": false,
+      "completion_attempts": 2,
+      "recorded_completion_attempts": 2,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 2364,
+      "output_tokens": 4225,
+      "summed_step_seconds": 79.89534850697964,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "route": "shuffle_1",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 3,
+      "recorded_completion_attempts": 3,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 3587,
+      "output_tokens": 8655,
+      "summed_step_seconds": 163.73532666102983,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "route": "shuffle_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 3,
+      "recorded_completion_attempts": 3,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 3587,
+      "output_tokens": 8677,
+      "summed_step_seconds": 164.19623401691206,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "route": "shuffle_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 3,
+      "recorded_completion_attempts": 3,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 3587,
+      "output_tokens": 8657,
+      "summed_step_seconds": 163.85756591614336,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "route": "repeat_2",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 3,
+      "recorded_completion_attempts": 3,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 3587,
+      "output_tokens": 8684,
+      "summed_step_seconds": 164.33673211699352,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "route": "repeat_3",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 3,
+      "recorded_completion_attempts": 3,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 3587,
+      "output_tokens": 8684,
+      "summed_step_seconds": 164.36324029508978,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "route": "repeat_4",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 3,
+      "recorded_completion_attempts": 3,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 3587,
+      "output_tokens": 8684,
+      "summed_step_seconds": 164.3810650042724,
+      "incomplete": false
+    },
+    {
+      "qa_key": "cal_en_59da2fa71ce30a4854652b43",
+      "cohort": "cal",
+      "language": "en",
+      "record_id": "clapnq:c508d78:train:4887703811831610706:answerable",
+      "route": "repeat_5",
+      "policy_state": "observed",
+      "alias_of": null,
+      "selected_stage": "rewritten",
+      "selected_answer_sha256": "fb739b9ca4aa0ac32567d4f0a16cd4c4244f31785230994a5193108b0962a257",
+      "rewrite_requested": true,
+      "fallback": null,
+      "quality_status": "reliable",
+      "quality_y": 1,
+      "quality_transition": "0->1",
+      "missed_improvement": false,
+      "harmful_rewrite": false,
+      "completion_attempts": 3,
+      "recorded_completion_attempts": 3,
+      "unknown_outcome_steps": 0,
+      "input_tokens": 3587,
+      "output_tokens": 8684,
+      "summed_step_seconds": 164.34682240895927,
+      "incomplete": false
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "unreliable",
+      "reason": "女優歴を一切説明しておらず、質問への必須要点を満たさない。ただし、実使用Contextの全5文書には対象者の女優歴がなく、情報不足という説明自体は妥当である。参照回答にはデビューや出演歴があるが、引用対象の氏名は武田玲奈で質問表記と異なり、実使用Contextの支持にも代用できない。",
+      "evidence": ["e0000", "e0001", "e0002", "e0003", "e0004"],
+      "essential_points": "対象人物を確認し、女優デビューの時期・作品と、その後の主な出演歴を説明すること。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a001": {
+      "label": "reliable",
+      "reason": "国土交通省の外局という位置づけと、観光立国に向けた観光地形成・国際観光振興という主要業務を説明しており、質問に実質的に答えている。回答の全事実主張は実使用Contextのe0005で支持される。参照回答の詳細な業務例をすべて列挙する必要はない。",
+      "evidence": ["e0005"],
+      "essential_points": "観光立国の実現に向け、観光地の形成や国際観光の振興などを担当する行政機関であること。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a002": {
+      "label": "reliable",
+      "reason": "11か国という数と列挙した国名は、実使用Contextのe0012の国家一覧と一致する。追加のASEAN加盟国数も、2005年時点という限定を含めe0014で支持される。参照回答にある地域概念の差異は、この一般的な国数の質問への回答に必須ではない。",
+      "evidence": ["e0012", "e0014"],
+      "essential_points": "東南アジアに属する国家は11か国であること。地域の国数とASEANの加盟国数を混同しないこと。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "開催運営の説明が中心で、首脳が国際的な政治・経済課題を議論するという主要な活動内容を説明していない。この必須内容は参照資料のe0023・e0024で確認できるが、実使用Contextの代用とはしていない。また、加盟国の追加まで議長国の権限とする説明は、全参加国の支持が必要で招待国の決定とは異なるとする実使用Contextのe0018に反する。常に3日間開催すると読める説明も、実使用Contextのe0022にある2日間の開催例と整合しない。",
+      "evidence": ["e0018", "e0022", "e0023", "e0024"],
+      "essential_points": "主要国の首脳が国際的な政治・経済課題を議論し、世界的な課題への対応を進める会議であることを説明し、議長国の運営権限と加盟国追加の条件を区別すること。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    }
+  }
+}

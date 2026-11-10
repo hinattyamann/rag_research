@@ -1,0 +1,84 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "Q-867a610686a5cf8486bf",
+      "candidate_sha256": "c54eda9e6c29558c2d07e5980696e8e04993de1cb163fdd3edac8dc416e87765",
+      "label": "reliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      },
+      "essential_points": "Season 1 was filmed at Field's Market in West Hills, California; Season 2 used a warehouse market in Santa Rosa, California.",
+      "reason": "Actual context e0003 directly supports both filming locations and their season assignments. The answer satisfies the reference's essential content without relying on reference-only evidence.",
+      "evidence": [
+        {
+          "passage_id": "835484083_14477-14943",
+          "quote": "Season 1 was shot inside of an actual grocery store , Field 's Market in West Hills , California. ( 1 ) For Season 2 , the market was built in a 15,500 square foot warehouse in Santa Rosa , CA . It was built over two weeks and stocked with over $700,000 of food . After each episode , the perishable items were donated to local food banks and local farmers ; non-perishable items are being kept in the event Food Network ordered another season beyond Season 3. ( 2 )"
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-f1471e5c5224cdc15d69",
+      "candidate_sha256": "c342c8af638e1b07bc53acccd682ddc16b4d940d38314f618e786057ce2c80be",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      },
+      "essential_points": "For the 2016 season described in the supplied materials, the Falcons lost Super Bowl LI to the New England Patriots, 28–34.",
+      "reason": "Actual context e0008 identifies the New England Patriots as the opponent in the Falcons' 28–34 Super Bowl loss and states that Atlanta won its Divisional Round game. It also places their previous Super Bowl appearance 18 years earlier. The candidate incorrectly says Atlanta lost to itself and confuses a championship-game milestone with a Super Bowl appearance. Its cited actual passage e0006 concerns the Panthers losing the division title, not these claims.",
+      "evidence": [
+        {
+          "passage_id": "842991259_13576-13893",
+          "quote": "In the 2016 season , the Panthers regressed on their 15 -- 1 record from 2015 , posting a 6 -- 10 record and a last - place finish in the NFC South , missing the playoffs for the first time since 2012 , and losing the division title to the second - seeded Falcons , who went on to represent the NFC in Super Bowl LI ."
+        },
+        {
+          "passage_id": "831663068_1252-2053",
+          "quote": "The Falcons defeated the Seattle Seahawks 36 -- 20 in the Divisional Round to advance to the NFC Championship Game for the first time since 2012 . In the NFC Championship game , they defeated the Green Bay Packers , 44 -- 21 , to reach Super Bowl LI , where they faced the New England Patriots . The game marked the Falcons ' second Super Bowl appearance ; they had competed in Super Bowl XXXIII 18 years earlier . Reaching overtime for the first time in Super Bowl history , the Falcons lost 28 -- 34 , after leading 28 -- 3 midway through the third quarter . Although it ended in defeat , the 2016 Falcons season was one of the most successful in team history , being only their second Super Bowl appearance since the conception of the franchise and quarterback Matt Ryan becoming the 2016 NFL MVP ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-c394f18a5dc944644947",
+      "candidate_sha256": "fe24a42e636b09d0076871b8226ed55b4d2925170064f9e6f40e1a3ee62b94cf",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "uncertain",
+        "context_support": "fail"
+      },
+      "essential_points": "Raca most commonly refers to Aramaic reka, literally empty one and probably meaning empty headed or foolish.",
+      "reason": "Actual context e0014 supports the core meaning, Aramaic derivation, and disagreement over severity. However, it distinguishes moros meaning godless from a similar Greek word meaning apostate, which Albright and Mann conjecture was intended. The answer extends moros itself to apostasy and blurs that distinction. That added semantic claim lacks actual-context support; reference-only evidence is not used to supply it.",
+      "evidence": [
+        {
+          "passage_id": "803863499_3291-4247",
+          "quote": "The word Raca is original to the Greek manuscript ; however , it is not a Greek word . The most common view is that it is a reference to the Aramaic word reka , which literally means `` empty one '' , but probably meant `` empty headed , '' or `` foolish . '' Scholars seem divided on how grievous an insult it was . Hill feels it was very , France thinks it was a minor slur . The word translated as fool is the Greek moros , which has a similar meaning to the Aramaic reka . However moros also was used to mean godless , and thus could be much more severe a term than reka . It is very similar to the Greek word for apostate , and Albright and Mann feel that this word was originally intended , but the current version is a typo . Read Ref. ; The reading of godless can explain why the punishment is more severe . Jesus uses the term himself in Bibleref Matthew 23 : 17 ; ( sticking the tribute were ? ) Nomenclature ; when he is deriding the Pharisees ."
+        }
+      ]
+    },
+    {
+      "annotation_id": "Q-140817b04ac4fab959a2",
+      "candidate_sha256": "347526bc8ebcedbe0b0ce7eb8fc0b5b4ffcb5a4f08f499486fdfc48b3d1a3b3c",
+      "label": "unreliable",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      },
+      "essential_points": "Explain free and compulsory elementary education for ages 6–14, government responsibility for admission, attendance and completion, and school standards; qualify the private-school quota with the minority-institution exemption.",
+      "reason": "Actual context e0019 supports the education entitlement and government obligations. Actual context e0022 supports school norms and the reimbursed 25% quota, but explicitly exempts minority institutions. The answer states the private-school mandate without that material exception, overstating its scope. The failure is established by actual context rather than reference-only evidence.",
+      "evidence": [
+        {
+          "passage_id": "847772287_4120-4700",
+          "quote": "The RTE Act provides for the right of children to free and compulsory education till completion of elementary education in a neighbourhood school . It clarifies that ' compulsory education ' means obligation of the appropriate government to provide free elementary education and ensure compulsory admission , attendance and completion of elementary education to every child in the six to fourteen age group . ' Free ' means that no child shall be liable to pay any kind of fee or charges or expenses which may prevent him or her from pursuing and completing elementary education ."
+        },
+        {
+          "passage_id": "847772287_8764-9706",
+          "quote": "The Act makes education a fundamental right of every child between the ages of 6 and 14 and specifies minimum norms in elementary schools . It requires all private schools ( except the minority institutions ) to reserve 25 % of seats for the poor and other categories of children ( to be reimbursed by the state as part of the public - private partnership plan ) . Children are admitted in to private schools based on caste - based reservations . See Page 9 and Point no 4 of This Document . It also prohibits all unrecognised schools from practice , and makes provisions for no donation or capitation fees and no interview of the child or parent for admission . The Act also provides that no child shall be held back , expelled , or required to pass a board examination until the completion of elementary education . There is also a provision for special training of school drop - outs to bring them up to par with students of the same age ."
+        }
+      ]
+    }
+  ]
+}

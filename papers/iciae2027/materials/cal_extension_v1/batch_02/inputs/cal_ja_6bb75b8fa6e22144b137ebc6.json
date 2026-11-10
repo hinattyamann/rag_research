@@ -1,0 +1,941 @@
+{
+  "qa_key": "cal_ja_6bb75b8fa6e22144b137ebc6",
+  "cohort": "cal",
+  "language": "ja",
+  "analysis_role": "cal",
+  "source_qa_split": "calibration",
+  "record_id": "whrja:02e85c8:answered:483",
+  "document_group_id": "whrja-group:b565d067079c1ce048ac2b5b",
+  "qa_source": {
+    "answerability_scope": "human_answer_in_source_not_verified_common_corpus_coverage",
+    "corpus_answerability": "not_annotated_no_relabel_from_body_or_quote_availability",
+    "dataset_type": "normal",
+    "derivation": null,
+    "derived_from_id": null,
+    "document_group_id": "whrja-group:b565d067079c1ce048ac2b5b",
+    "gold_parent_ids": [
+      "jawiki:6833:98600943:499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e"
+    ],
+    "gold_passage_ids": [
+      "4575919904893712163081368198_722-1459"
+    ],
+    "gold_passage_ids_scope": "verified_literal_quote_overlap_children_only_not_metric_gold",
+    "gold_passage_mapping_status": "audited_cited_article_and_source_reference_markup_mapping_v2",
+    "gold_relevance_unit": "available_cited_source_article",
+    "is_answerable": true,
+    "language": "ja",
+    "provided_passage": null,
+    "question": "何故、新幹線は早く移動できるの？",
+    "record_id": "whrja:02e85c8:answered:483",
+    "reference_answer_sentences": [
+      {
+        "citations": [
+          0
+        ],
+        "text": "新幹線が早く移動できる理由は、新幹線が高速度での都市間輸送を前提としており、在来線と異なる規格を採用するなど、様々な技術的特徴があるからです。"
+      },
+      {
+        "citations": [
+          0
+        ],
+        "text": "走行する車両も空力や低騒音に配慮した、流線形の外形を採用し高出力のモーターを搭載した専用の電車が用いられています。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "また、新幹線では動力を編成各車両に分散させる「動力分散方式」が採用されています。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "動力分散方式を採用することで、加減速性能の向上・軽量化・軌道への負荷軽減といった利点が追求されています。"
+      },
+      {
+        "citations": [
+          1
+        ],
+        "text": "加えて、高速走行を行うため、列車編成内における電動車の比率が極力大きくされています。"
+      }
+    ],
+    "reference_answers": [
+      "新幹線が早く移動できる理由は、新幹線が高速度での都市間輸送を前提としており、在来線と異なる規格を採用するなど、様々な技術的特徴があるからです。走行する車両も空力や低騒音に配慮した、流線形の外形を採用し高出力のモーターを搭載した専用の電車が用いられています。また、新幹線では動力を編成各車両に分散させる「動力分散方式」が採用されています。動力分散方式を採用することで、加減速性能の向上・軽量化・軌道への負荷軽減といった利点が追求されています。加えて、高速走行を行うため、列車編成内における電動車の比率が極力大きくされています。"
+    ],
+    "reference_corpus_mapping": [
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          0,
+          1
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [
+          "4575919904893712163081368198_722-1459"
+        ],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": "exact",
+          "spans": [
+            {
+              "end": 1231,
+              "source_span_sha256": "e1ceec085952f29eab873a9a98dd8bbaed52d7eeb8a4bc03a877f4ee118c6d06",
+              "start": 1097
+            }
+          ],
+          "status": "located"
+        },
+        "parent_passage_id": "jawiki:6833:98600943:499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "raw_article_status": "ok",
+        "reference_index": 0,
+        "source_reference_unit_id": "jawiki-page:6833"
+      },
+      {
+        "body_available": true,
+        "cited": true,
+        "cited_by_answer_sentence_indices": [
+          2,
+          3,
+          4
+        ],
+        "has_human_summary_not_literal_source": false,
+        "literal_overlap_child_ids": [],
+        "literal_quote_audit": {
+          "ambiguous_location": false,
+          "mode": null,
+          "projection_policy": "source-html-reference-superscript-exact-body-projection-v1",
+          "request_journal_sha256": "c53805f602d394a6d309aaa0fc50e92c5dcdc845d69e0c3250f2c8ae8e179dc0",
+          "source_html_sha256": "f73bcda00fb6376cdfac750bed3088c13e8c5935611f7d5f89702f7cf14d1458",
+          "spans": [],
+          "status": "not_located"
+        },
+        "parent_passage_id": "jawiki:6833:98600943:499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "raw_article_status": "ok",
+        "reference_index": 1,
+        "source_reference_unit_id": "jawiki-page:6833"
+      }
+    ],
+    "reference_corpus_metadata_offline_only": true,
+    "reference_evidence": [
+      {
+        "cited_by_answer_sentence_indices": [
+          0,
+          1
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "高速度での都市間輸送を前提としており、在来線と異なる規格（軌間・線形・架線電圧など）を採用するなど、様々な技術的特徴がある（#主要技術参照）。走行する車両も空力や低騒音に配慮した、流線形の外形を採用し高出力のモーターを搭載した専用の電車（新幹線車両）が用いられている。",
+        "reference_index": 0,
+        "title": "新幹線",
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%B9%B9%E7%B7%9A"
+      },
+      {
+        "cited_by_answer_sentence_indices": [
+          2,
+          3,
+          4
+        ],
+        "human_summary_not_literal_source": null,
+        "quote": "新幹線では、動力を編成各車両に分散させる「動力分散方式」が採用されている。動力分散方式を採用することにより、電車方式と同様の、加減速性能の向上・軽量化・軌道への負荷軽減といった利点が追求されている。高速走行を行うため、列車編成内における電動車（動力車）の比率（MT比）が極力大きくされている。",
+        "reference_index": 1,
+        "title": "新幹線",
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%B9%B9%E7%B7%9A"
+      }
+    ],
+    "research_split": "calibration",
+    "selected_sentences_by_reference": [
+      [
+        "高速度での都市間輸送を前提としており、在来線と異なる規格（軌間・線形・架線電圧など）を採用するなど、様々な技術的特徴がある（#主要技術参照）。走行する車両も空力や低騒音に配慮した、流線形の外形を採用し高出力のモーターを搭載した専用の電車（新幹線車両）が用いられている。",
+        "新幹線では、動力を編成各車両に分散させる「動力分散方式」が採用されている。動力分散方式を採用することにより、電車方式と同様の、加減速性能の向上・軽量化・軌道への負荷軽減といった利点が追求されている。高速走行を行うため、列車編成内における電動車（動力車）の比率（MT比）が極力大きくされている。"
+      ]
+    ],
+    "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+    "source_id": "483",
+    "source_line_index": 327,
+    "source_record_sha256": "3f8d9e118d3a2993c96fe3b814d5fd746b3929cc3b5bbc3df9b066f4b56b78af",
+    "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+    "source_split": "answered",
+    "source_title": "新幹線",
+    "unavailable_cited_reference_ids": []
+  },
+  "source_selection": {
+    "record_id": "whrja:02e85c8:answered:483",
+    "question": "何故、新幹線は早く移動できるの？",
+    "document_group_id": "whrja-group:b565d067079c1ce048ac2b5b"
+  },
+  "question": "何故、新幹線は早く移動できるの？",
+  "used_documents": [
+    {
+      "passage_id": "33141198305546658598587488601_108018-108783",
+      "title": "日本",
+      "text": "また、アジアにおいて最も早く鉄道を導入した国の一つであり、世界初の高速鉄道である新幹線を導入し、私鉄による鉄道網が全国を網羅している。また、高度経済成長以降、モータリゼーションが進み、道路網・高速自動車専用道路網が発達している。2010年代以降、高度経済成長期に作られたインフラが老朽化するなど問題も起きている。\n鉄道\n明治維新以降、1872年10月14日の新橋駅（のちの汐留駅） - 横浜駅間の開通を皮切りに、国策として全国に鉄道網が急速に敷設され、日本国有鉄道（国鉄）や他の数多くの私鉄へと発展した。1942年には世界初の海底鉄道トンネルである関門鉄道トンネルが開通した。1970年代までに私鉄、国鉄ともに多くの路線が電化され、世界に例を見ない規模で分刻み・秒単位のスケジュールで運行され、その規模、技術、運営ノウハウ共に世界最高水準と言われる。\n1964年に日本国有鉄道（現在のJR）によって導入された新幹線は、都市間を結ぶ世界初の高速鉄道として空路に並ぶ地位を築いた。\n戦後に東海道本線の輸送がひっ迫した事が東海道新幹線計画の契機となった。新幹線は秒単位という世界に類を見ない定時性で運行され、2016年度は年間13万本が運行して、1列車あたりの平均遅延時間は24秒だった。これは、地震や豪雨、大雪などの自然災害による遅延も含めたもので、平常時は秒単位での定時運行が実現されている。在来線と規格が異なるので全国を網羅はしていないが、北海道・北陸・九州の各地で整備が続く。\n日本の新幹線\n東海道新幹線\n山陽新幹線\n東北新幹線\n九州新幹線\n北海道新幹線\n上越新幹線\n北陸新幹線\n西九州新幹線\n山形新幹線（ミニ新幹線）\n秋田新幹線（ミニ新幹線）\n（建設中）中央新幹線\n都市圏では、これら普通鉄道に地下鉄やモノレールなどが加わる。",
+      "source_metadata": {
+        "article_text_sha256": "94ced07bc8455a7890dd708c6b0c60698a8cba3adf62ba7cf783d9d8e202e3e0",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:4821051:98602554:94ced07bc8455a7890dd708c6b0c60698a8cba3adf62ba7cf783d9d8e202e3e0",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "33141198305546658598587488601_108018-108783",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 474,
+          "end": 108783,
+          "start": 108018
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98602554",
+        "text_sha256": "c1d495a13bb4e89f84965e076ecd42fa78ab0129a712af23f7b0778b78ae2a42",
+        "title": "日本",
+        "wikipedia_page_id": 4821051,
+        "wikipedia_revision_id": 98602554,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T23:58:02Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98602554&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "c1d495a13bb4e89f84965e076ecd42fa78ab0129a712af23f7b0778b78ae2a42",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 765
+      }
+    },
+    {
+      "passage_id": "12740858394056375480120668558_0-846",
+      "title": "高速鉄道",
+      "text": "日本の東海道新幹線。世界初の高速鉄道である。\nヨーロッパの高速鉄道網\n東アジアの高速鉄道網\n西アジアの高速鉄道\n310–350 km/h 270-300 km/h 240–260 km/h 200–230 km/h 200 km/h未満 建設中\n高速鉄道（こうそくてつどう、英: high-speed rail）とは、200 km/h程度以上の速度で走行できる鉄道を指す。特化した車両と専用軌道とを統合したシステムを用い、従来の鉄道よりも著しく高速で運用される交通機関である。\n本稿では、磁気浮上式鉄道（リニアモーターカー）のうち高速輸送を目的としたものも高速鉄道に含める。\n高速鉄道の定義\n列車の営業最高速度は技術革新に伴い常に向上を続けているため、世界で広く適用される一つの標準定義というものはなく、多くの定義が用いられている。\n新幹線と高速鉄道\n世界で最初の高速鉄道とされる日本の新幹線鉄道は、1970年（昭和45年）に制定された全国新幹線鉄道整備法第2条で「その主たる区間を列車が200 km/h以上の高速度で走行できる幹線鉄道」と定義されている。\n現在では「日本の高速鉄道システム」として固有名詞化しているが、元々「新幹線」は高速度運行を目的とした「新しい幹線鉄道」を意味する普通名詞である。\n日本においては、この法を根拠に長らく高速鉄道の基準を200 km/hとしてきた。\n国際鉄道連合による解釈\n国際鉄道連合 (UIC) は、高速鉄道の定義は使われる基準によって様々であるとした上で、いずれの定義でも高速鉄道は\n専用の高速新線は250 km/hを超える設計速度\n高規格化された在来線は200 km/hもしくは220 km/hにも至る設計速度\nで建設されたインフラ、特別に設計された車両、運用、など「システム」を構成する全ての要素のコンビネーションによってもたらされるものであるとしている。\n最高速度\n試験走行（有人）での最高速度\n超電導リニア - 有人試験走行で世界最高速車両\n",
+      "source_metadata": {
+        "article_text_sha256": "d882b83f5a2b3cfac196755392fb2dfd411d5706bae0f2b74ab6d617a5c6cc5f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:83209:98348645:d882b83f5a2b3cfac196755392fb2dfd411d5706bae0f2b74ab6d617a5c6cc5f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "12740858394056375480120668558_0-846",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 491,
+          "end": 846,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98348645",
+        "text_sha256": "4974c3a39e4fed1d32b98c74c982ed74ac8cf2ad506ee25b8d11eaf26383465d",
+        "title": "高速鉄道",
+        "wikipedia_page_id": 83209,
+        "wikipedia_revision_id": 98348645,
+        "wikipedia_revision_timestamp_utc": "2023-12-05T11:22:51Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98348645&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "4974c3a39e4fed1d32b98c74c982ed74ac8cf2ad506ee25b8d11eaf26383465d",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 846
+      }
+    },
+    {
+      "passage_id": "4575919904893712163081368198_58800-59601",
+      "title": "新幹線",
+      "text": "高速バスは「定時性・速度では劣るが、時間・経路・発着地の柔軟性と価格で優れている」という性質がある。\nそのため、長距離区間では不利となるが、中距離区間や、大都市間を初めとする区間では、夜行バスで格安で移動できることから、高速道路の整備が進んだ1980年代ごろから人気となっている。また、都心部（東京の新宿や渋谷、名古屋の栄、大阪の梅田や難波、広島の紙屋町、福岡の天神など）やテーマパーク（TDRやUSJなど）に直接乗り入れており、新幹線駅間以外でも競合している。\nしかし、上述のように性質が大きく異なるため、「速さを取るか、安さを取るか」という直接的な競合というよりは、発着地、所要時間といった利用者のニーズで使い分けられている。例えば、目的地が遠く、早朝に到着する必要がある場合は、より早い時間に到着する高速バスが有利となる。早朝から（あるいは夜間の）在来線特急との乗り継ぎを要する場合はさらに高速バスが有利となる。\nその一方、在来線特急との乗り継ぎが現実的でない地域では、新幹線駅との接続に高速バスが用いられる場合もあり（B&Sみやざき等）、高速バスが競合ではなく補完の役割を担う場合もある。\nその他\n政治の影響\n→詳細は「鉄道と政治 § 新幹線と政治」を参照\n新幹線の建設に関しては、その開業効果が大きいことから、沿線の利害に関係することとして建設時よりさまざまな政治介入がなされてきたといわれる。\n最も古い話では、東海道新幹線の建設時に起こった京都駅の設置是非をめぐる問題や、大野伴睦の介入による岐阜羽島駅の設置騒動がある。ただし岐阜羽島駅の設置には、関ヶ原の降雪対策という政治的な影響力とは別の理由もあり、政治力のみで設置されたわけではないと言われている。\nまた逆に、一度は着工された駅新設が、その新設を争点とした選挙での県知事交代によって凍結に追い込まれた、滋賀県の南びわ湖駅の例もある。\n",
+      "source_metadata": {
+        "article_text_sha256": "499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6833:98600943:499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "4575919904893712163081368198_58800-59601",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 59601,
+          "start": 58800
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943",
+        "text_sha256": "8abed70bb2c40f2a90d712ce5275efb968d38e78cf3be8cf9b846409f31cc751",
+        "title": "新幹線",
+        "wikipedia_page_id": 6833,
+        "wikipedia_revision_id": 98600943,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T18:13:39Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "8abed70bb2c40f2a90d712ce5275efb968d38e78cf3be8cf9b846409f31cc751",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 801
+      }
+    },
+    {
+      "passage_id": "4575919904893712163081368198_61941-62646",
+      "title": "新幹線",
+      "text": "これはロングレールの多用によりレールの継ぎ目が少ないことや、在来線車両よりも歯数比が低く、同じ速度であれば電動機がより低速で回転することなどに起因している。\n走行音の発生源としては車輪や架線、車体前面や側面・上面の突起物による風切り音（空力音）があるが、300 km/h近くなると空力音がその大半を占めるようになる。そのため高速走行には「新幹線車両」で述べたような空力音対策が必要とされる。\nトンネル突入の際、圧縮された空気により、退出側の坑口周辺ですさまじい騒音が発生する。トンネル微気圧波による騒音であり、圧縮波とも呼ばれている（通称「トンネルドン」）。上記に同じく、対策が必要とされる。\n列車ダイヤ\n新幹線については、異常時を除き午前0時から午前6時までの列車の運転を営業・非営業列車を問わず実施しておらず、保線作業のための時間に充てられている。このため、始発列車に使われる車両は、前日の深夜に整備済みの編成を車両基地から駅に回送し、そのまま夜間滞泊させる場合が多い。ただし、北海道新幹線の青函トンネル界隈の区間では、在来線と共用しており、在来線の貨物列車は午前0時から午前6時までの間にも運転されている。また、在来線に直通する山形新幹線及び秋田新幹線の在来線区間（福島駅 - 新庄駅間、盛岡駅 - 秋田駅間）では運行時間帯の制約がなく、この時間帯にも運転される列車がある。\n営業主体の根拠\n法律面では新幹線の営業主体を特定していないが、運営がJRグループに継承されている理由としては、\n新幹線の経営には莫大な費用がかかり、それを負担できる資本力があるのは旧国鉄の業務を継承したJR各社しか存在しない。\n",
+      "source_metadata": {
+        "article_text_sha256": "499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6833:98600943:499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "4575919904893712163081368198_61941-62646",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 450,
+          "end": 62646,
+          "start": 61941
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943",
+        "text_sha256": "03eed81ea9d4b3edda0e9e9b1cd4d275a6884e2d5c3b7f1a4a4d40ec4d6a167b",
+        "title": "新幹線",
+        "wikipedia_page_id": 6833,
+        "wikipedia_revision_id": 98600943,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T18:13:39Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "03eed81ea9d4b3edda0e9e9b1cd4d275a6884e2d5c3b7f1a4a4d40ec4d6a167b",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 705
+      }
+    },
+    {
+      "passage_id": "11779881529674061834599990362_5685-6436",
+      "title": "北海道新幹線",
+      "text": "北海道新幹線のうち青函トンネル（全長：53.85 km、海底部：23.30 km）を含む新中小国信号場 - 木古内駅間の82.1 km区間は青函共用走行区間であり、北海道新幹線と在来線（海峡線）が線路や設備を共用している。青函共用走行区間は、新幹線と在来線が共用するレール、在来線専用レール、新幹線専用レールの3本が敷設されている三線軌条区間であり、この区間特有の装置である限界支障報知装置やレール破断検知装置、車軸検知式き電区分制御装置が設置されている。また、青函トンネル内において高速走行する新幹線と貨物列車がすれ違う際の圧力変動がコンテナに影響を与えることを防ぐため、青函共用層区間では新幹線列車の最高速度が140 km/hに制限されている。このうち、青函トンネル区間では最高速度が160 km/hに引き上げられ、2020年度の年末年始以降、ゴールデンウィークやお盆、年末年始の貨物列車の本数が少ない特定時期において、始発から午後3時半頃までの列車に限って「時間帯区分方式」によって青函トンネル内で最高速度210 km/h走行が行われている。なお、共用走行区間のうち青函トンネル以外の明かり区間では、三線軌条の除雪が十分にできない状態で高速走行した場合に車両への着雪が増加し、安定輸送に影響を及ぼす可能性があるため、さらなる高速化には慎重な検討が必要とされている。\n新幹線列車が200 km/h以上で高速走行する際には、営業列車の走行前に確認車による確認が必要になる。通常の新幹線路線では6時間程度の間合いが確保できるが、青函共用走行区間では夜間も貨物列車が走行するため、短い時間しか間合いを確保できない。そこで、確認車の速度を90 km/hから120 km/hに引き上げた高速確認車を開発した。",
+      "source_metadata": {
+        "article_text_sha256": "4befad8fec1835a5a97326f34b3e62d58c3e61710b4591004e36b7ae488cb9fa",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:65356:98517792:4befad8fec1835a5a97326f34b3e62d58c3e61710b4591004e36b7ae488cb9fa",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "11779881529674061834599990362_5685-6436",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 485,
+          "end": 6436,
+          "start": 5685
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98517792",
+        "text_sha256": "0a38f6c91076e06f465fc32cd45a7ff42083554d19bbe1de6d88d55c9cb24b2e",
+        "title": "北海道新幹線",
+        "wikipedia_page_id": 65356,
+        "wikipedia_revision_id": 98517792,
+        "wikipedia_revision_timestamp_utc": "2023-12-18T17:57:34Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98517792&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "0a38f6c91076e06f465fc32cd45a7ff42083554d19bbe1de6d88d55c9cb24b2e",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 751
+      }
+    }
+  ],
+  "gold_documents": [
+    {
+      "passage_id": "4575919904893712163081368198_722-1459",
+      "title": "新幹線",
+      "text": "その後国鉄時代には山陽本線の線増区間として建設された山陽新幹線の開業を経て、全国新幹線鉄道整備法に基づく基本計画を根拠として東北・上越の各新幹線が開業した。国鉄分割民営化により国鉄の事業がJRに移行した後は、北陸・九州（鹿児島ルート）・北海道・西九州（九州〈西九州ルート〉の一部）の4路線が開業し、加えて従来のJR線（在来線）と新幹線とで直通運転を行うミニ新幹線（法令上は標準軌の在来線。詳細後述）として山形・秋田の2路線が開業しており、新幹線網の拡大は半世紀にわたって続けられている。2023年（令和5年）現在も北海道・北陸・中央の各新幹線が建設中である。\n2023年（令和5年）の時点で、フル規格8路線（合計2,830 km）とミニ新幹線2路線（合計276 km）が営業中で、2015年度（平成27年度）の年間利用者数は3億6000万人に上る。\n高速度での都市間輸送を前提としており、在来線と異なる規格（軌間・線形・架線電圧など）を採用するなど、様々な技術的特徴がある（#主要技術参照）。走行する車両も空力や低騒音に配慮した、流線形の外形を採用し高出力のモーターを搭載した専用の電車（新幹線車両）が用いられている。こうした技術投入の結果、定時性が極めて高く、年間13万本以上の列車が運転される東海道新幹線でも平均遅延時間は24秒に留まる（2016年度）。また50年以上に渡る新幹線の歴史の中で、車両や線路の施設や設備の異常、運行側の不手際等に起因する乗客等の死亡事故は一度も発生していない（#安全性参照）。\n建設\n新幹線建設の計画（建設を開始すべき新幹線鉄道の路線を定める基本計画）は全国新幹線鉄道整備法第4条の規定に基づき国土交通大臣が決定するものと定められている。\n",
+      "source_metadata": {
+        "article_text_sha256": "499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6833:98600943:499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "4575919904893712163081368198_722-1459",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 470,
+          "end": 1459,
+          "start": 722
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943",
+        "text_sha256": "0ee2f8c9906d76f8b51a29cadc09af6132f2a4377139f85b51e68f2e2d636bbb",
+        "title": "新幹線",
+        "wikipedia_page_id": 6833,
+        "wikipedia_revision_id": 98600943,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T18:13:39Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      },
+      "actual_text_sha256": "0ee2f8c9906d76f8b51a29cadc09af6132f2a4377139f85b51e68f2e2d636bbb",
+      "corpus_character_span": {
+        "start": 0,
+        "end": 737
+      }
+    }
+  ],
+  "A": {
+    "status": "ok",
+    "answer": "新幹線は早く移動できるのは、高速鉄道の特性と新幹線の設計速度が200 km/h以上であるためです。また、新幹線は世界初の高速鉄道として、270-300 km/hの速度で走行し、秒単位の定時性で運行されています。そのため、新幹線は非常に高速で移動することができます。",
+    "answer_sha256": "e3c51d3462a2c1c4fb7aabd0684e62493cef506f792ca0c634720efc1473280b",
+    "quality": {
+      "annotation_id": "Q-eedfbaa04b744a0a393a",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-eedfbaa04b744a0a393a",
+        "candidate_sha256": "39fde6bb0cb9a0911dd28fd0bae0d2a2a296c37703f3094f6e1387af17283e18",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "uncertain",
+          "context_support": "fail"
+        },
+        "essential_points": "高速走行に適した車両と軌道の設計など、新幹線の高速移動を可能にする具体的な技術的理由を説明すること。",
+        "reason": "高速鉄道の定義や速度、定時性を述べるだけで、高速移動を可能にする車両・軌道などの具体的な仕組みを説明していない。実使用文書e0020には専用車両と専用軌道を統合する説明があるが、回答には反映されていない。同文書の270-300 km/hは複数地域の鉄道網に続く速度区分であり、新幹線の走行速度と特定できない。e0019は世界初という位置付けと定時性を支持する。参考資料のみのe0024は空力設計や高出力モーターを説明するが、実使用Contextの支持には代用しない。速度範囲自体の事実上の正否は供給資料だけでは断定しない。",
+        "evidence": [
+          {
+            "passage_id": "12740858394056375480120668558_0-846",
+            "quote": "日本の東海道新幹線。世界初の高速鉄道である。\nヨーロッパの高速鉄道網\n東アジアの高速鉄道網\n西アジアの高速鉄道\n310–350 km/h 270-300 km/h 240–260 km/h 200–230 km/h 200 km/h未満 建設中\n高速鉄道（こうそくてつどう、英: high-speed rail）とは、200 km/h程度以上の速度で走行できる鉄道を指す。特化した車両と専用軌道とを統合したシステムを用い、従来の鉄道よりも著しく高速で運用される交通機関である。\n本稿では、磁気浮上式鉄道（リニアモーターカー）のうち高速輸送を目的としたものも高速鉄道に含める。\n高速鉄道の定義\n列車の営業最高速度は技術革新に伴い常に向上を続けているため、世界で広く適用される一つの標準定義というものはなく、多くの定義が用いられている。\n新幹線と高速鉄道\n世界で最初の高速鉄道とされる日本の新幹線鉄道は、1970年（昭和45年）に制定された全国新幹線鉄道整備法第2条で「その主たる区間を列車が200 km/h以上の高速度で走行できる幹線鉄道」と定義されている。\n現在では「日本の高速鉄道システム」として固有名詞化しているが、元々「新幹線」は高速度運行を目的とした「新しい幹線鉄道」を意味する普通名詞である。\n日本においては、この法を根拠に長らく高速鉄道の基準を200 km/hとしてきた。\n国際鉄道連合による解釈\n国際鉄道連合 (UIC) は、高速鉄道の定義は使われる基準によって様々であるとした上で、いずれの定義でも高速鉄道は\n専用の高速新線は250 km/hを超える設計速度\n高規格化された在来線は200 km/hもしくは220 km/hにも至る設計速度\nで建設されたインフラ、特別に設計された車両、運用、など「システム」を構成する全ての要素のコンビネーションによってもたらされるものであるとしている。\n最高速度\n試験走行（有人）での最高速度\n超電導リニア - 有人試験走行で世界最高速車両\n"
+          },
+          {
+            "passage_id": "33141198305546658598587488601_108018-108783",
+            "quote": "また、アジアにおいて最も早く鉄道を導入した国の一つであり、世界初の高速鉄道である新幹線を導入し、私鉄による鉄道網が全国を網羅している。また、高度経済成長以降、モータリゼーションが進み、道路網・高速自動車専用道路網が発達している。2010年代以降、高度経済成長期に作られたインフラが老朽化するなど問題も起きている。\n鉄道\n明治維新以降、1872年10月14日の新橋駅（のちの汐留駅） - 横浜駅間の開通を皮切りに、国策として全国に鉄道網が急速に敷設され、日本国有鉄道（国鉄）や他の数多くの私鉄へと発展した。1942年には世界初の海底鉄道トンネルである関門鉄道トンネルが開通した。1970年代までに私鉄、国鉄ともに多くの路線が電化され、世界に例を見ない規模で分刻み・秒単位のスケジュールで運行され、その規模、技術、運営ノウハウ共に世界最高水準と言われる。\n1964年に日本国有鉄道（現在のJR）によって導入された新幹線は、都市間を結ぶ世界初の高速鉄道として空路に並ぶ地位を築いた。\n戦後に東海道本線の輸送がひっ迫した事が東海道新幹線計画の契機となった。新幹線は秒単位という世界に類を見ない定時性で運行され、2016年度は年間13万本が運行して、1列車あたりの平均遅延時間は24秒だった。これは、地震や豪雨、大雪などの自然災害による遅延も含めたもので、平常時は秒単位での定時運行が実現されている。在来線と規格が異なるので全国を網羅はしていないが、北海道・北陸・九州の各地で整備が続く。\n日本の新幹線\n東海道新幹線\n山陽新幹線\n東北新幹線\n九州新幹線\n北海道新幹線\n上越新幹線\n北陸新幹線\n西九州新幹線\n山形新幹線（ミニ新幹線）\n秋田新幹線（ミニ新幹線）\n（建設中）中央新幹線\n都市圏では、これら普通鉄道に地下鉄やモノレールなどが加わる。"
+          },
+          {
+            "passage_id": "4575919904893712163081368198_722-1459",
+            "quote": "その後国鉄時代には山陽本線の線増区間として建設された山陽新幹線の開業を経て、全国新幹線鉄道整備法に基づく基本計画を根拠として東北・上越の各新幹線が開業した。国鉄分割民営化により国鉄の事業がJRに移行した後は、北陸・九州（鹿児島ルート）・北海道・西九州（九州〈西九州ルート〉の一部）の4路線が開業し、加えて従来のJR線（在来線）と新幹線とで直通運転を行うミニ新幹線（法令上は標準軌の在来線。詳細後述）として山形・秋田の2路線が開業しており、新幹線網の拡大は半世紀にわたって続けられている。2023年（令和5年）現在も北海道・北陸・中央の各新幹線が建設中である。\n2023年（令和5年）の時点で、フル規格8路線（合計2,830 km）とミニ新幹線2路線（合計276 km）が営業中で、2015年度（平成27年度）の年間利用者数は3億6000万人に上る。\n高速度での都市間輸送を前提としており、在来線と異なる規格（軌間・線形・架線電圧など）を採用するなど、様々な技術的特徴がある（#主要技術参照）。走行する車両も空力や低騒音に配慮した、流線形の外形を採用し高出力のモーターを搭載した専用の電車（新幹線車両）が用いられている。こうした技術投入の結果、定時性が極めて高く、年間13万本以上の列車が運転される東海道新幹線でも平均遅延時間は24秒に留まる（2016年度）。また50年以上に渡る新幹線の歴史の中で、車両や線路の施設や設備の異常、運行側の不手際等に起因する乗客等の死亡事故は一度も発生していない（#安全性参照）。\n建設\n新幹線建設の計画（建設を開始すべき新幹線鉄道の路線を定める基本計画）は全国新幹線鉄道整備法第4条の規定に基づき国土交通大臣が決定するものと定められている。\n"
+          }
+        ],
+        "elapsed_seconds": 9.001330188504653,
+        "confirmed_at_utc": "2026-11-08T07:53:44.021075+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    },
+    "source": {
+      "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_02/ja/baseline/6bb75b8fa6e22144b137ebc6/record.json",
+      "sha256": "dadd92a8766aa3d11131c2a109bf479f7d33c9174e789f88eb36e853bf15e819"
+    },
+    "copy": "provenance/baselines/cal_ja_6bb75b8fa6e22144b137ebc6.json"
+  },
+  "B": {
+    "status": "ok",
+    "answer": "新幹線は早く移動できるのは、高速鉄道の定義である「200 km/h程度以上の速度で走行できる鉄道」に該当し、主たる区間を列車が200 km/h以上の高速度で走行できる幹線鉄道と定義されているためです [p2]。また、東アジアの高速鉄道網では270-300 km/hの速度帯も存在します [p2]。さらに、新幹線は「秒単位という世界に類を見ない定時性で運行され」ており、2016年度は平均遅延時間が24秒だったため、効率的な移動が可能となっています [p1]。",
+    "answer_sha256": "07e0cccdf4c0f6438424d6dd566649e9b55d0ceea319e27bf11c8134fb79b64c",
+    "quality": {
+      "annotation_id": "Q-5579297d0305f33bda5f",
+      "status": "unreliable",
+      "y": 0,
+      "annotation": {
+        "annotation_id": "Q-5579297d0305f33bda5f",
+        "candidate_sha256": "e78af62afb3d4c0009409a85846d5249bc09ff970be076828b090f4cf7be2fb4",
+        "label": "unreliable",
+        "criteria": {
+          "essential_answer": "fail",
+          "no_major_error": "fail",
+          "context_support": "fail"
+        },
+        "essential_points": "専用車両や軌道など、高速走行を可能にする技術・設備を理由として説明すること。",
+        "reason": "速度の定義は実使用Contextのe0023、平均遅延24秒はe0022に支持される。しかし、高速鉄道と定義されていることを高速走行できる原因としており、定義と原因を取り違えている。実使用Contextのe0023には専用車両と専用軌道を統合したシステムという説明があるが、回答はそれを示さず、速度区分と定時性の紹介に終始している。参照資料のみのe0027は技術的要因という必要内容の確認に用いたもので、回答の因果説明を支持する根拠ではない。",
+        "evidence": [
+          {
+            "passage_id": "33141198305546658598587488601_108018-108783",
+            "quote": "また、アジアにおいて最も早く鉄道を導入した国の一つであり、世界初の高速鉄道である新幹線を導入し、私鉄による鉄道網が全国を網羅している。また、高度経済成長以降、モータリゼーションが進み、道路網・高速自動車専用道路網が発達している。2010年代以降、高度経済成長期に作られたインフラが老朽化するなど問題も起きている。\n鉄道\n明治維新以降、1872年10月14日の新橋駅（のちの汐留駅） - 横浜駅間の開通を皮切りに、国策として全国に鉄道網が急速に敷設され、日本国有鉄道（国鉄）や他の数多くの私鉄へと発展した。1942年には世界初の海底鉄道トンネルである関門鉄道トンネルが開通した。1970年代までに私鉄、国鉄ともに多くの路線が電化され、世界に例を見ない規模で分刻み・秒単位のスケジュールで運行され、その規模、技術、運営ノウハウ共に世界最高水準と言われる。\n1964年に日本国有鉄道（現在のJR）によって導入された新幹線は、都市間を結ぶ世界初の高速鉄道として空路に並ぶ地位を築いた。\n戦後に東海道本線の輸送がひっ迫した事が東海道新幹線計画の契機となった。新幹線は秒単位という世界に類を見ない定時性で運行され、2016年度は年間13万本が運行して、1列車あたりの平均遅延時間は24秒だった。これは、地震や豪雨、大雪などの自然災害による遅延も含めたもので、平常時は秒単位での定時運行が実現されている。在来線と規格が異なるので全国を網羅はしていないが、北海道・北陸・九州の各地で整備が続く。\n日本の新幹線\n東海道新幹線\n山陽新幹線\n東北新幹線\n九州新幹線\n北海道新幹線\n上越新幹線\n北陸新幹線\n西九州新幹線\n山形新幹線（ミニ新幹線）\n秋田新幹線（ミニ新幹線）\n（建設中）中央新幹線\n都市圏では、これら普通鉄道に地下鉄やモノレールなどが加わる。"
+          },
+          {
+            "passage_id": "12740858394056375480120668558_0-846",
+            "quote": "日本の東海道新幹線。世界初の高速鉄道である。\nヨーロッパの高速鉄道網\n東アジアの高速鉄道網\n西アジアの高速鉄道\n310–350 km/h 270-300 km/h 240–260 km/h 200–230 km/h 200 km/h未満 建設中\n高速鉄道（こうそくてつどう、英: high-speed rail）とは、200 km/h程度以上の速度で走行できる鉄道を指す。特化した車両と専用軌道とを統合したシステムを用い、従来の鉄道よりも著しく高速で運用される交通機関である。\n本稿では、磁気浮上式鉄道（リニアモーターカー）のうち高速輸送を目的としたものも高速鉄道に含める。\n高速鉄道の定義\n列車の営業最高速度は技術革新に伴い常に向上を続けているため、世界で広く適用される一つの標準定義というものはなく、多くの定義が用いられている。\n新幹線と高速鉄道\n世界で最初の高速鉄道とされる日本の新幹線鉄道は、1970年（昭和45年）に制定された全国新幹線鉄道整備法第2条で「その主たる区間を列車が200 km/h以上の高速度で走行できる幹線鉄道」と定義されている。\n現在では「日本の高速鉄道システム」として固有名詞化しているが、元々「新幹線」は高速度運行を目的とした「新しい幹線鉄道」を意味する普通名詞である。\n日本においては、この法を根拠に長らく高速鉄道の基準を200 km/hとしてきた。\n国際鉄道連合による解釈\n国際鉄道連合 (UIC) は、高速鉄道の定義は使われる基準によって様々であるとした上で、いずれの定義でも高速鉄道は\n専用の高速新線は250 km/hを超える設計速度\n高規格化された在来線は200 km/hもしくは220 km/hにも至る設計速度\nで建設されたインフラ、特別に設計された車両、運用、など「システム」を構成する全ての要素のコンビネーションによってもたらされるものであるとしている。\n最高速度\n試験走行（有人）での最高速度\n超電導リニア - 有人試験走行で世界最高速車両\n"
+          },
+          {
+            "passage_id": "4575919904893712163081368198_722-1459",
+            "quote": "その後国鉄時代には山陽本線の線増区間として建設された山陽新幹線の開業を経て、全国新幹線鉄道整備法に基づく基本計画を根拠として東北・上越の各新幹線が開業した。国鉄分割民営化により国鉄の事業がJRに移行した後は、北陸・九州（鹿児島ルート）・北海道・西九州（九州〈西九州ルート〉の一部）の4路線が開業し、加えて従来のJR線（在来線）と新幹線とで直通運転を行うミニ新幹線（法令上は標準軌の在来線。詳細後述）として山形・秋田の2路線が開業しており、新幹線網の拡大は半世紀にわたって続けられている。2023年（令和5年）現在も北海道・北陸・中央の各新幹線が建設中である。\n2023年（令和5年）の時点で、フル規格8路線（合計2,830 km）とミニ新幹線2路線（合計276 km）が営業中で、2015年度（平成27年度）の年間利用者数は3億6000万人に上る。\n高速度での都市間輸送を前提としており、在来線と異なる規格（軌間・線形・架線電圧など）を採用するなど、様々な技術的特徴がある（#主要技術参照）。走行する車両も空力や低騒音に配慮した、流線形の外形を採用し高出力のモーターを搭載した専用の電車（新幹線車両）が用いられている。こうした技術投入の結果、定時性が極めて高く、年間13万本以上の列車が運転される東海道新幹線でも平均遅延時間は24秒に留まる（2016年度）。また50年以上に渡る新幹線の歴史の中で、車両や線路の施設や設備の異常、運行側の不手際等に起因する乗客等の死亡事故は一度も発生していない（#安全性参照）。\n建設\n新幹線建設の計画（建設を開始すべき新幹線鉄道の路線を定める基本計画）は全国新幹線鉄道整備法第4条の規定に基づき国土交通大臣が決定するものと定められている。\n"
+          }
+        ],
+        "elapsed_seconds": 15.501974284503376,
+        "confirmed_at_utc": "2026-11-08T07:47:49.295472+00:00",
+        "annotator": "Codex AI (リサーチャー01)"
+      }
+    }
+  },
+  "fixed_claims": [
+    {
+      "claim_id": "c1",
+      "text": "新幹線は早く移動できるのは、高速鉄道の特性と新幹線の設計速度が200 km/h以上であるためです。"
+    },
+    {
+      "claim_id": "c2",
+      "text": "また、新幹線は世界初の高速鉄道として、270-300 km/hの速度で走行し、秒単位の定時性で運行されています。"
+    },
+    {
+      "claim_id": "c3",
+      "text": "そのため、新幹線は非常に高速で移動することができます。"
+    }
+  ],
+  "extraction_audit": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "新幹線は早く移動できるのは、高速鉄道の特性と新幹線の設計速度が200 km/h以上であるためです。"
+      },
+      {
+        "claim_id": "c2",
+        "text": "また、新幹線は世界初の高速鉄道として、270-300 km/hの速度で走行し、秒単位の定時性で運行されています。"
+      },
+      {
+        "claim_id": "c3",
+        "text": "そのため、新幹線は非常に高速で移動することができます。"
+      }
+    ],
+    "unit_version": "verbatim-sentence-units-ja-v1",
+    "normalized_prose": "新幹線は早く移動できるのは、高速鉄道の特性と新幹線の設計速度が200 km/h以上であるためです。また、新幹線は世界初の高速鉄道として、270-300 km/hの速度で走行し、秒単位の定時性で運行されています。そのため、新幹線は非常に高速で移動することができます。",
+    "exclusion": null,
+    "spans": [
+      {
+        "start": 0,
+        "end": 49
+      },
+      {
+        "start": 49,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 132
+      }
+    ],
+    "unclosed_delimiters": []
+  },
+  "trial_plan": {
+    "trials": [
+      {
+        "trial_id": "repeat_5",
+        "document_ids": [
+          "33141198305546658598587488601_108018-108783",
+          "12740858394056375480120668558_0-846",
+          "4575919904893712163081368198_58800-59601",
+          "4575919904893712163081368198_61941-62646",
+          "11779881529674061834599990362_5685-6436"
+        ]
+      },
+      {
+        "trial_id": "repeat_2",
+        "document_ids": [
+          "33141198305546658598587488601_108018-108783",
+          "12740858394056375480120668558_0-846",
+          "4575919904893712163081368198_58800-59601",
+          "4575919904893712163081368198_61941-62646",
+          "11779881529674061834599990362_5685-6436"
+        ]
+      },
+      {
+        "trial_id": "shuffle_1",
+        "document_ids": [
+          "11779881529674061834599990362_5685-6436",
+          "4575919904893712163081368198_61941-62646",
+          "12740858394056375480120668558_0-846",
+          "4575919904893712163081368198_58800-59601",
+          "33141198305546658598587488601_108018-108783"
+        ]
+      },
+      {
+        "trial_id": "shuffle_2",
+        "document_ids": [
+          "4575919904893712163081368198_58800-59601",
+          "11779881529674061834599990362_5685-6436",
+          "12740858394056375480120668558_0-846",
+          "33141198305546658598587488601_108018-108783",
+          "4575919904893712163081368198_61941-62646"
+        ]
+      },
+      {
+        "trial_id": "shuffle_3",
+        "document_ids": [
+          "11779881529674061834599990362_5685-6436",
+          "4575919904893712163081368198_58800-59601",
+          "33141198305546658598587488601_108018-108783",
+          "4575919904893712163081368198_61941-62646",
+          "12740858394056375480120668558_0-846"
+        ]
+      },
+      {
+        "trial_id": "repeat_4",
+        "document_ids": [
+          "33141198305546658598587488601_108018-108783",
+          "12740858394056375480120668558_0-846",
+          "4575919904893712163081368198_58800-59601",
+          "4575919904893712163081368198_61941-62646",
+          "11779881529674061834599990362_5685-6436"
+        ]
+      },
+      {
+        "trial_id": "original",
+        "document_ids": [
+          "33141198305546658598587488601_108018-108783",
+          "12740858394056375480120668558_0-846",
+          "4575919904893712163081368198_58800-59601",
+          "4575919904893712163081368198_61941-62646",
+          "11779881529674061834599990362_5685-6436"
+        ]
+      },
+      {
+        "trial_id": "repeat_3",
+        "document_ids": [
+          "33141198305546658598587488601_108018-108783",
+          "12740858394056375480120668558_0-846",
+          "4575919904893712163081368198_58800-59601",
+          "4575919904893712163081368198_61941-62646",
+          "11779881529674061834599990362_5685-6436"
+        ]
+      },
+      {
+        "trial_id": "reversed",
+        "document_ids": [
+          "11779881529674061834599990362_5685-6436",
+          "4575919904893712163081368198_61941-62646",
+          "4575919904893712163081368198_58800-59601",
+          "12740858394056375480120668558_0-846",
+          "33141198305546658598587488601_108018-108783"
+        ]
+      }
+    ],
+    "order_group": [
+      "original",
+      "reversed",
+      "shuffle_1",
+      "shuffle_2",
+      "shuffle_3"
+    ],
+    "repeat_group": [
+      "original",
+      "repeat_2",
+      "repeat_3",
+      "repeat_4",
+      "repeat_5"
+    ],
+    "duplicate_order_aliases": {},
+    "unique_order_count": 5
+  },
+  "statistical_comparison": {
+    "language": "ja",
+    "record_id": "whrja:02e85c8:answered:483",
+    "document_group_id": "whrja-group:b565d067079c1ce048ac2b5b",
+    "comparable": true,
+    "increment": 0.6,
+    "partial_pair_increment_exploratory": 0.6,
+    "order": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 6,
+      "rate": 0.6
+    },
+    "repeat": {
+      "planned_trials": 5,
+      "valid_trials": 5,
+      "valid_pairs": 10,
+      "disagreeing_pairs": 0,
+      "rate": 0.0
+    },
+    "reason": null
+  },
+  "failure": null,
+  "report_source": {
+    "path": ".tools/worktrees/cal-extension-runtime-v1/data/runs/bilingual_calibration/fixed-v23-extension-batch_02/ja/report.private.json",
+    "sha256": "d8f64f30f7c2b4254aead1098089162a5d83fda41e451ba943ef2e705541f35d"
+  },
+  "attribution_note": "See references_and_attributions.md and per-document source_metadata; Reference/Gold is offline evaluation material, not generation context.",
+  "corpus_documents": [
+    {
+      "passage_id": "11779881529674061834599990362_5685-6436",
+      "text": "北海道新幹線のうち青函トンネル（全長：53.85 km、海底部：23.30 km）を含む新中小国信号場 - 木古内駅間の82.1 km区間は青函共用走行区間であり、北海道新幹線と在来線（海峡線）が線路や設備を共用している。青函共用走行区間は、新幹線と在来線が共用するレール、在来線専用レール、新幹線専用レールの3本が敷設されている三線軌条区間であり、この区間特有の装置である限界支障報知装置やレール破断検知装置、車軸検知式き電区分制御装置が設置されている。また、青函トンネル内において高速走行する新幹線と貨物列車がすれ違う際の圧力変動がコンテナに影響を与えることを防ぐため、青函共用層区間では新幹線列車の最高速度が140 km/hに制限されている。このうち、青函トンネル区間では最高速度が160 km/hに引き上げられ、2020年度の年末年始以降、ゴールデンウィークやお盆、年末年始の貨物列車の本数が少ない特定時期において、始発から午後3時半頃までの列車に限って「時間帯区分方式」によって青函トンネル内で最高速度210 km/h走行が行われている。なお、共用走行区間のうち青函トンネル以外の明かり区間では、三線軌条の除雪が十分にできない状態で高速走行した場合に車両への着雪が増加し、安定輸送に影響を及ぼす可能性があるため、さらなる高速化には慎重な検討が必要とされている。\n新幹線列車が200 km/h以上で高速走行する際には、営業列車の走行前に確認車による確認が必要になる。通常の新幹線路線では6時間程度の間合いが確保できるが、青函共用走行区間では夜間も貨物列車が走行するため、短い時間しか間合いを確保できない。そこで、確認車の速度を90 km/hから120 km/hに引き上げた高速確認車を開発した。",
+      "source_metadata": {
+        "article_text_sha256": "4befad8fec1835a5a97326f34b3e62d58c3e61710b4591004e36b7ae488cb9fa",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:65356:98517792:4befad8fec1835a5a97326f34b3e62d58c3e61710b4591004e36b7ae488cb9fa",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "11779881529674061834599990362_5685-6436",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 485,
+          "end": 6436,
+          "start": 5685
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98517792",
+        "text_sha256": "0a38f6c91076e06f465fc32cd45a7ff42083554d19bbe1de6d88d55c9cb24b2e",
+        "title": "北海道新幹線",
+        "wikipedia_page_id": 65356,
+        "wikipedia_revision_id": 98517792,
+        "wikipedia_revision_timestamp_utc": "2023-12-18T17:57:34Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98517792&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "12740858394056375480120668558_0-846",
+      "text": "日本の東海道新幹線。世界初の高速鉄道である。\nヨーロッパの高速鉄道網\n東アジアの高速鉄道網\n西アジアの高速鉄道\n310–350 km/h 270-300 km/h 240–260 km/h 200–230 km/h 200 km/h未満 建設中\n高速鉄道（こうそくてつどう、英: high-speed rail）とは、200 km/h程度以上の速度で走行できる鉄道を指す。特化した車両と専用軌道とを統合したシステムを用い、従来の鉄道よりも著しく高速で運用される交通機関である。\n本稿では、磁気浮上式鉄道（リニアモーターカー）のうち高速輸送を目的としたものも高速鉄道に含める。\n高速鉄道の定義\n列車の営業最高速度は技術革新に伴い常に向上を続けているため、世界で広く適用される一つの標準定義というものはなく、多くの定義が用いられている。\n新幹線と高速鉄道\n世界で最初の高速鉄道とされる日本の新幹線鉄道は、1970年（昭和45年）に制定された全国新幹線鉄道整備法第2条で「その主たる区間を列車が200 km/h以上の高速度で走行できる幹線鉄道」と定義されている。\n現在では「日本の高速鉄道システム」として固有名詞化しているが、元々「新幹線」は高速度運行を目的とした「新しい幹線鉄道」を意味する普通名詞である。\n日本においては、この法を根拠に長らく高速鉄道の基準を200 km/hとしてきた。\n国際鉄道連合による解釈\n国際鉄道連合 (UIC) は、高速鉄道の定義は使われる基準によって様々であるとした上で、いずれの定義でも高速鉄道は\n専用の高速新線は250 km/hを超える設計速度\n高規格化された在来線は200 km/hもしくは220 km/hにも至る設計速度\nで建設されたインフラ、特別に設計された車両、運用、など「システム」を構成する全ての要素のコンビネーションによってもたらされるものであるとしている。\n最高速度\n試験走行（有人）での最高速度\n超電導リニア - 有人試験走行で世界最高速車両\n",
+      "source_metadata": {
+        "article_text_sha256": "d882b83f5a2b3cfac196755392fb2dfd411d5706bae0f2b74ab6d617a5c6cc5f",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:83209:98348645:d882b83f5a2b3cfac196755392fb2dfd411d5706bae0f2b74ab6d617a5c6cc5f",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "12740858394056375480120668558_0-846",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 491,
+          "end": 846,
+          "start": 0
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98348645",
+        "text_sha256": "4974c3a39e4fed1d32b98c74c982ed74ac8cf2ad506ee25b8d11eaf26383465d",
+        "title": "高速鉄道",
+        "wikipedia_page_id": 83209,
+        "wikipedia_revision_id": 98348645,
+        "wikipedia_revision_timestamp_utc": "2023-12-05T11:22:51Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98348645&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "33141198305546658598587488601_108018-108783",
+      "text": "また、アジアにおいて最も早く鉄道を導入した国の一つであり、世界初の高速鉄道である新幹線を導入し、私鉄による鉄道網が全国を網羅している。また、高度経済成長以降、モータリゼーションが進み、道路網・高速自動車専用道路網が発達している。2010年代以降、高度経済成長期に作られたインフラが老朽化するなど問題も起きている。\n鉄道\n明治維新以降、1872年10月14日の新橋駅（のちの汐留駅） - 横浜駅間の開通を皮切りに、国策として全国に鉄道網が急速に敷設され、日本国有鉄道（国鉄）や他の数多くの私鉄へと発展した。1942年には世界初の海底鉄道トンネルである関門鉄道トンネルが開通した。1970年代までに私鉄、国鉄ともに多くの路線が電化され、世界に例を見ない規模で分刻み・秒単位のスケジュールで運行され、その規模、技術、運営ノウハウ共に世界最高水準と言われる。\n1964年に日本国有鉄道（現在のJR）によって導入された新幹線は、都市間を結ぶ世界初の高速鉄道として空路に並ぶ地位を築いた。\n戦後に東海道本線の輸送がひっ迫した事が東海道新幹線計画の契機となった。新幹線は秒単位という世界に類を見ない定時性で運行され、2016年度は年間13万本が運行して、1列車あたりの平均遅延時間は24秒だった。これは、地震や豪雨、大雪などの自然災害による遅延も含めたもので、平常時は秒単位での定時運行が実現されている。在来線と規格が異なるので全国を網羅はしていないが、北海道・北陸・九州の各地で整備が続く。\n日本の新幹線\n東海道新幹線\n山陽新幹線\n東北新幹線\n九州新幹線\n北海道新幹線\n上越新幹線\n北陸新幹線\n西九州新幹線\n山形新幹線（ミニ新幹線）\n秋田新幹線（ミニ新幹線）\n（建設中）中央新幹線\n都市圏では、これら普通鉄道に地下鉄やモノレールなどが加わる。",
+      "source_metadata": {
+        "article_text_sha256": "94ced07bc8455a7890dd708c6b0c60698a8cba3adf62ba7cf783d9d8e202e3e0",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:4821051:98602554:94ced07bc8455a7890dd708c6b0c60698a8cba3adf62ba7cf783d9d8e202e3e0",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "33141198305546658598587488601_108018-108783",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 474,
+          "end": 108783,
+          "start": 108018
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98602554",
+        "text_sha256": "c1d495a13bb4e89f84965e076ecd42fa78ab0129a712af23f7b0778b78ae2a42",
+        "title": "日本",
+        "wikipedia_page_id": 4821051,
+        "wikipedia_revision_id": 98602554,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T23:58:02Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98602554&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "4575919904893712163081368198_58800-59601",
+      "text": "高速バスは「定時性・速度では劣るが、時間・経路・発着地の柔軟性と価格で優れている」という性質がある。\nそのため、長距離区間では不利となるが、中距離区間や、大都市間を初めとする区間では、夜行バスで格安で移動できることから、高速道路の整備が進んだ1980年代ごろから人気となっている。また、都心部（東京の新宿や渋谷、名古屋の栄、大阪の梅田や難波、広島の紙屋町、福岡の天神など）やテーマパーク（TDRやUSJなど）に直接乗り入れており、新幹線駅間以外でも競合している。\nしかし、上述のように性質が大きく異なるため、「速さを取るか、安さを取るか」という直接的な競合というよりは、発着地、所要時間といった利用者のニーズで使い分けられている。例えば、目的地が遠く、早朝に到着する必要がある場合は、より早い時間に到着する高速バスが有利となる。早朝から（あるいは夜間の）在来線特急との乗り継ぎを要する場合はさらに高速バスが有利となる。\nその一方、在来線特急との乗り継ぎが現実的でない地域では、新幹線駅との接続に高速バスが用いられる場合もあり（B&Sみやざき等）、高速バスが競合ではなく補完の役割を担う場合もある。\nその他\n政治の影響\n→詳細は「鉄道と政治 § 新幹線と政治」を参照\n新幹線の建設に関しては、その開業効果が大きいことから、沿線の利害に関係することとして建設時よりさまざまな政治介入がなされてきたといわれる。\n最も古い話では、東海道新幹線の建設時に起こった京都駅の設置是非をめぐる問題や、大野伴睦の介入による岐阜羽島駅の設置騒動がある。ただし岐阜羽島駅の設置には、関ヶ原の降雪対策という政治的な影響力とは別の理由もあり、政治力のみで設置されたわけではないと言われている。\nまた逆に、一度は着工された駅新設が、その新設を争点とした選挙での県知事交代によって凍結に追い込まれた、滋賀県の南びわ湖駅の例もある。\n",
+      "source_metadata": {
+        "article_text_sha256": "499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6833:98600943:499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "4575919904893712163081368198_58800-59601",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 498,
+          "end": 59601,
+          "start": 58800
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943",
+        "text_sha256": "8abed70bb2c40f2a90d712ce5275efb968d38e78cf3be8cf9b846409f31cc751",
+        "title": "新幹線",
+        "wikipedia_page_id": 6833,
+        "wikipedia_revision_id": 98600943,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T18:13:39Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "4575919904893712163081368198_61941-62646",
+      "text": "これはロングレールの多用によりレールの継ぎ目が少ないことや、在来線車両よりも歯数比が低く、同じ速度であれば電動機がより低速で回転することなどに起因している。\n走行音の発生源としては車輪や架線、車体前面や側面・上面の突起物による風切り音（空力音）があるが、300 km/h近くなると空力音がその大半を占めるようになる。そのため高速走行には「新幹線車両」で述べたような空力音対策が必要とされる。\nトンネル突入の際、圧縮された空気により、退出側の坑口周辺ですさまじい騒音が発生する。トンネル微気圧波による騒音であり、圧縮波とも呼ばれている（通称「トンネルドン」）。上記に同じく、対策が必要とされる。\n列車ダイヤ\n新幹線については、異常時を除き午前0時から午前6時までの列車の運転を営業・非営業列車を問わず実施しておらず、保線作業のための時間に充てられている。このため、始発列車に使われる車両は、前日の深夜に整備済みの編成を車両基地から駅に回送し、そのまま夜間滞泊させる場合が多い。ただし、北海道新幹線の青函トンネル界隈の区間では、在来線と共用しており、在来線の貨物列車は午前0時から午前6時までの間にも運転されている。また、在来線に直通する山形新幹線及び秋田新幹線の在来線区間（福島駅 - 新庄駅間、盛岡駅 - 秋田駅間）では運行時間帯の制約がなく、この時間帯にも運転される列車がある。\n営業主体の根拠\n法律面では新幹線の営業主体を特定していないが、運営がJRグループに継承されている理由としては、\n新幹線の経営には莫大な費用がかかり、それを負担できる資本力があるのは旧国鉄の業務を継承したJR各社しか存在しない。\n",
+      "source_metadata": {
+        "article_text_sha256": "499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6833:98600943:499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "4575919904893712163081368198_61941-62646",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 450,
+          "end": 62646,
+          "start": 61941
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943",
+        "text_sha256": "03eed81ea9d4b3edda0e9e9b1cd4d275a6884e2d5c3b7f1a4a4d40ec4d6a167b",
+        "title": "新幹線",
+        "wikipedia_page_id": 6833,
+        "wikipedia_revision_id": 98600943,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T18:13:39Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    },
+    {
+      "passage_id": "4575919904893712163081368198_722-1459",
+      "text": "その後国鉄時代には山陽本線の線増区間として建設された山陽新幹線の開業を経て、全国新幹線鉄道整備法に基づく基本計画を根拠として東北・上越の各新幹線が開業した。国鉄分割民営化により国鉄の事業がJRに移行した後は、北陸・九州（鹿児島ルート）・北海道・西九州（九州〈西九州ルート〉の一部）の4路線が開業し、加えて従来のJR線（在来線）と新幹線とで直通運転を行うミニ新幹線（法令上は標準軌の在来線。詳細後述）として山形・秋田の2路線が開業しており、新幹線網の拡大は半世紀にわたって続けられている。2023年（令和5年）現在も北海道・北陸・中央の各新幹線が建設中である。\n2023年（令和5年）の時点で、フル規格8路線（合計2,830 km）とミニ新幹線2路線（合計276 km）が営業中で、2015年度（平成27年度）の年間利用者数は3億6000万人に上る。\n高速度での都市間輸送を前提としており、在来線と異なる規格（軌間・線形・架線電圧など）を採用するなど、様々な技術的特徴がある（#主要技術参照）。走行する車両も空力や低騒音に配慮した、流線形の外形を採用し高出力のモーターを搭載した専用の電車（新幹線車両）が用いられている。こうした技術投入の結果、定時性が極めて高く、年間13万本以上の列車が運転される東海道新幹線でも平均遅延時間は24秒に留まる（2016年度）。また50年以上に渡る新幹線の歴史の中で、車両や線路の施設や設備の異常、運行側の不手際等に起因する乗客等の死亡事故は一度も発生していない（#安全性参照）。\n建設\n新幹線建設の計画（建設を開始すべき新幹線鉄道の路線を定める基本計画）は全国新幹線鉄道整備法第4条の規定に基づき国土交通大臣が決定するものと定められている。\n",
+      "source_metadata": {
+        "article_text_sha256": "499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6833:98600943:499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "4575919904893712163081368198_722-1459",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 470,
+          "end": 1459,
+          "start": 722
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943",
+        "text_sha256": "0ee2f8c9906d76f8b51a29cadc09af6132f2a4377139f85b51e68f2e2d636bbb",
+        "title": "新幹線",
+        "wikipedia_page_id": 6833,
+        "wikipedia_revision_id": 98600943,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T18:13:39Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ],
+  "gold_passage_source_metadata": {
+    "4575919904893712163081368198_722-1459": {
+      "article_text_sha256": "499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+      "embedding_token_budget": 512,
+      "language": "ja",
+      "parent_passage_id": "jawiki:6833:98600943:499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+      "parent_relevance_unit": "source_article",
+      "passage_id": "4575919904893712163081368198_722-1459",
+      "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+      "source_char_span": {
+        "embedding_input_tokens": 470,
+        "end": 1459,
+        "start": 722
+      },
+      "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+      "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+      "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943",
+      "text_sha256": "0ee2f8c9906d76f8b51a29cadc09af6132f2a4377139f85b51e68f2e2d636bbb",
+      "title": "新幹線",
+      "wikipedia_page_id": 6833,
+      "wikipedia_revision_id": 98600943,
+      "wikipedia_revision_timestamp_utc": "2023-12-25T18:13:39Z",
+      "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+      "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943&action=history",
+      "transformation": "Existing contiguous character-span passage; no new text normalization",
+      "corpus_source": {
+        "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+        "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+      }
+    }
+  },
+  "gold_corpus_documents": [
+    {
+      "passage_id": "4575919904893712163081368198_722-1459",
+      "text": "その後国鉄時代には山陽本線の線増区間として建設された山陽新幹線の開業を経て、全国新幹線鉄道整備法に基づく基本計画を根拠として東北・上越の各新幹線が開業した。国鉄分割民営化により国鉄の事業がJRに移行した後は、北陸・九州（鹿児島ルート）・北海道・西九州（九州〈西九州ルート〉の一部）の4路線が開業し、加えて従来のJR線（在来線）と新幹線とで直通運転を行うミニ新幹線（法令上は標準軌の在来線。詳細後述）として山形・秋田の2路線が開業しており、新幹線網の拡大は半世紀にわたって続けられている。2023年（令和5年）現在も北海道・北陸・中央の各新幹線が建設中である。\n2023年（令和5年）の時点で、フル規格8路線（合計2,830 km）とミニ新幹線2路線（合計276 km）が営業中で、2015年度（平成27年度）の年間利用者数は3億6000万人に上る。\n高速度での都市間輸送を前提としており、在来線と異なる規格（軌間・線形・架線電圧など）を採用するなど、様々な技術的特徴がある（#主要技術参照）。走行する車両も空力や低騒音に配慮した、流線形の外形を採用し高出力のモーターを搭載した専用の電車（新幹線車両）が用いられている。こうした技術投入の結果、定時性が極めて高く、年間13万本以上の列車が運転される東海道新幹線でも平均遅延時間は24秒に留まる（2016年度）。また50年以上に渡る新幹線の歴史の中で、車両や線路の施設や設備の異常、運行側の不手際等に起因する乗客等の死亡事故は一度も発生していない（#安全性参照）。\n建設\n新幹線建設の計画（建設を開始すべき新幹線鉄道の路線を定める基本計画）は全国新幹線鉄道整備法第4条の規定に基づき国土交通大臣が決定するものと定められている。\n",
+      "source_metadata": {
+        "article_text_sha256": "499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "embedding_token_budget": 512,
+        "language": "ja",
+        "parent_passage_id": "jawiki:6833:98600943:499d6555ec0647df4263b030606e2df8d9e3652f1b18d29a19658ef1b3163e5e",
+        "parent_relevance_unit": "source_article",
+        "passage_id": "4575919904893712163081368198_722-1459",
+        "passage_version": "e5-token-bounded-contiguous-char-spans-v1",
+        "source_char_span": {
+          "embedding_input_tokens": 470,
+          "end": 1459,
+          "start": 722
+        },
+        "source_dataset": "baobab-trees/wikipedia-human-retrieval-ja",
+        "source_revision": "02e85c83a64f345aee62fba3a35af99c075a331f",
+        "source_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943",
+        "text_sha256": "0ee2f8c9906d76f8b51a29cadc09af6132f2a4377139f85b51e68f2e2d636bbb",
+        "title": "新幹線",
+        "wikipedia_page_id": 6833,
+        "wikipedia_revision_id": 98600943,
+        "wikipedia_revision_timestamp_utc": "2023-12-25T18:13:39Z",
+        "license": "CC-BY-SA-4.0; Wikipedia contributors; see oldid and page history",
+        "contributors_history_url": "https://ja.wikipedia.org/w/index.php?oldid=98600943&action=history",
+        "transformation": "Existing contiguous character-span passage; no new text normalization",
+        "corpus_source": {
+          "path": ".tools/worktrees/cal-extension-runtime-v1/data/processed/wikipedia_human_retrieval_ja/02e85c8-e5-passages-v1/passages.jsonl",
+          "sha256": "f8fb57adc4eff5816e8f80c58efe588a9113d8040ef2e690e8df430576fd87df"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "a000": {
+      "label": "unreliable",
+      "reason": "実使用Contextのe0002で煙突に押しつぶされるのはジャックの友人であり、ジャックの死因を支持していない。参照専用のe0005ではジャックは極寒の海水で力尽き、ローズは救助される。回答は死因を取り違え、ローズの生還も説明していない。",
+      "evidence": ["e0002", "e0005"],
+      "essential_points": "沈没後、ジャックはローズを浮かせて極寒の海中で力尽き、ローズは救助されて生き延びるという結末。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a001": {
+      "label": "unreliable",
+      "reason": "書類作成・提出・相談という主要業務は実使用Contextのe0007で支持される。しかし冒頭で行政不服申立ての代理を行政書士一般の業務として無限定に述べている。後続文も「これらの他に」として同じ業務を追加しており、特定行政書士に限るという重要な制限を明確にしていない。この一般化は実使用Contextのe0007・e0010に反する。参照専用資料に依存しない判定である。",
+      "evidence": ["e0007", "e0010"],
+      "essential_points": "官公署提出書類や権利義務・事実証明書類の作成、提出の代理・代行、作成に伴う相談。行政不服申立ての代理等は特定行政書士に限られる。",
+      "criteria": {
+        "essential_answer": "pass",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    },
+    "a002": {
+      "label": "unreliable",
+      "reason": "実使用Contextのe0012は、列挙した三寺と華蔵寺についての説明を支持する。しかし質問は吉良上野介本人が眠る寺を求めており、回答は関連する菩提寺を列挙するだけで該当寺を特定していない。参照専用のe0017は本人の墓が萬昌院功運寺にあることを示すが、これは実使用Contextによる墓所の支持とは区別した。",
+      "evidence": ["e0012", "e0017"],
+      "essential_points": "吉良上野介本人の墓がある菩提寺として萬昌院功運寺を特定すること。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "pass",
+        "context_support": "pass"
+      }
+    },
+    "a003": {
+      "label": "unreliable",
+      "reason": "実使用Contextのe0019には、けあらしが蒸気霧の別称であること、冷気と温かい水面による発生機構、発生しやすい季節・天候・時間帯が明記されている。十分な情報がないという判断はこの実使用Contextに反し、答えられる質問への不適切な回答拒否である。参照専用資料を使わずに失敗を確認できる。",
+      "evidence": ["e0019"],
+      "essential_points": "冷気が温かい水面上に流れ込み、水蒸気を含む暖気が冷却されて凝縮する。特に放射冷却で冷え込む晩秋から冬の、晴れて風が弱い朝に発生しやすい。",
+      "criteria": {
+        "essential_answer": "fail",
+        "no_major_error": "fail",
+        "context_support": "fail"
+      }
+    }
+  }
+}
