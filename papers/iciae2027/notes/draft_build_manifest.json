@@ -1,18 +1,22 @@
 {
-  "version": "draft-3-2026-11-06",
+  "version": "draft-4-2026-11-10",
   "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
+  "extension_evidence_commit": "7beb396febd2842248af53a8ec39eda9fc153153",
   "evidence_trees": {
     "fixed_v23_v1": "5fb236667f6e4411a730187dc1e6ce80f27c710f",
-    "provenance_audit_v1": "2e9bc4cdd1a6eeb97698d426e291a6b604023ebd"
+    "provenance_audit_v1": "2e9bc4cdd1a6eeb97698d426e291a6b604023ebd",
+    "cal_extension_v1": "0cc2339a73efff938db8766269ea7b9daeb32852"
   },
-  "content_digest": "6b6b85a3ac3b5325ef938305d8e4fb69b29222f7c295ae51a4d6f9f07e9fdd53",
+  "content_digest": "012487205426ee9b70036f567d1ee88ae091e428012945bb1aeaf316b3fb395a",
   "evidence_packages": {
     "fixed_v23_v1": "ce831a133d00e3756287655eb53115a546383288cc5756e75f260cae8595f6bd",
-    "provenance_audit_v1": "e305c4ff4aeff858221f4ca4ab35f7c21e0d8b4884857d95d9ac0a3593be530b"
+    "provenance_audit_v1": "e305c4ff4aeff858221f4ca4ab35f7c21e0d8b4884857d95d9ac0a3593be530b",
+    "cal_extension_v1": "ad8f7f831ebefa5f018fa997cbc39b3410944cd0ad63c913bcfcf013ba8a95f8"
   },
   "derived_evidence": {
     "notes/order_effects_v1.json": "e4c0057acf54eb1f57d8dd17641ef278239d252271133ff9b50de0a7bb21e92d",
-    "notes/case_excerpts_v1.json": "1a6a7a03e172789584be0fa81ea1cd30c9d5721e4a972bad8a6eb0c855ca90bb"
+    "notes/case_excerpts_v1.json": "1a6a7a03e172789584be0fa81ea1cd30c9d5721e4a972bad8a6eb0c855ca90bb",
+    "notes/extension_results_v1.json": "1a446cfef1fb9285c20909b67fbe30e335e3dfcdacf5742bbef2cd45c4dcd911"
   },
   "template_sha256": "d8e16e91295692e10abab92847abf3e11fa7a66949ff71b31388466949877391",
   "block_count": 83,
@@ -20,32 +24,44 @@
     {
       "language": "en",
       "output": "papers\\iciae2027\\manuscript\\iciae2027_manuscript_en.docx",
-      "sha256": "09712e34ef0da7e5faf81bcad700799f3b551d44c13c101aa43dff4fe60088d6",
+      "sha256": "639501062005d70ece18db9263fa12ea2b07f9bea70be652bcb653e8bb5ee8bd",
       "tables": {
         "primary": [
           [
             "Main EN",
-            "16",
+            "16/20",
             "8.75",
             "[0.00, 18.75]"
           ],
           [
             "Main JA",
-            "13",
+            "13/20",
             "4.62",
             "[0.00, 13.85]"
           ],
           [
             "Cal EN",
-            "16",
+            "16/20",
             "12.50",
             "[5.00, 22.50]"
           ],
           [
             "Cal JA",
-            "12",
+            "12/20",
             "8.33",
             "[0.00, 20.00]"
+          ],
+          [
+            "Ext EN",
+            "48/60",
+            "6.67",
+            "[2.08, 12.08]"
+          ],
+          [
+            "Ext JA",
+            "43/60",
+            "9.30",
+            "[4.19, 14.88]"
           ]
         ],
         "quality": [
@@ -72,6 +88,18 @@
             "4/16/0",
             "6/14/0",
             "9/10/1"
+          ],
+          [
+            "Ext EN",
+            "16/40/4",
+            "30/25/5",
+            "39/19/2"
+          ],
+          [
+            "Ext JA",
+            "12/44/4",
+            "25/27/8",
+            "32/23/5"
           ]
         ],
         "selection": [
@@ -102,6 +130,20 @@
             "3",
             "0",
             "0"
+          ],
+          [
+            "Ext EN",
+            "55",
+            "6",
+            "1",
+            "1"
+          ],
+          [
+            "Ext JA",
+            "49",
+            "6",
+            "0",
+            "2"
           ]
         ],
         "order_quality": [
@@ -136,6 +178,22 @@
             "1",
             "1",
             "0"
+          ],
+          [
+            "Ext EN",
+            "48",
+            "6",
+            "0",
+            "4",
+            "2"
+          ],
+          [
+            "Ext JA",
+            "43",
+            "9",
+            "1",
+            "6",
+            "2"
           ]
         ],
         "cases": [
@@ -212,6 +270,30 @@
             "AR",
             "40",
             "195180"
+          ],
+          [
+            "Ext EN",
+            "OE",
+            "223",
+            "1038840"
+          ],
+          [
+            "Ext EN",
+            "AR",
+            "120",
+            "423897"
+          ],
+          [
+            "Ext JA",
+            "OE",
+            "300",
+            "1939752"
+          ],
+          [
+            "Ext JA",
+            "AR",
+            "120",
+            "601200"
           ]
         ]
       },
@@ -245,12 +327,12 @@
           "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
         },
         "word/document.xml": {
-          "bytes": 147401,
-          "sha256": "1b392f6d1dd4fd9406df906bc8b16b1387ffd49adc49704b215a5dfb89ec82ab"
+          "bytes": 168553,
+          "sha256": "8317a19514822bd6bb916060c0e079c7b3ae26e3be74e780498e386643c946bb"
         },
         "word/_rels/document.xml.rels": {
-          "bytes": 4825,
-          "sha256": "c27dffa098c8b4f4fd91d9e9c6edbe64f1983e4ac9380b3af34ca80d5c7330e2"
+          "bytes": 5103,
+          "sha256": "80c2e50a7284c6f272606416120fa6a0fc2248d6e85ffa036df34bc63ee7edae"
         },
         "word/footnotes.xml": {
           "bytes": 2821,
@@ -333,40 +415,52 @@
           "sha256": "b2bb0de03c14d31ae867353dca49b7d0094b3b01e843d8793e5072aacc0d002f"
         },
         "word/media/order_increment_en.png": {
-          "bytes": 36742,
-          "sha256": "82e6d7bc610152b80673c31e8d74013b7fafd0c759450f3008ca4d7863140a4e"
+          "bytes": 44238,
+          "sha256": "bc063ebea4e0d84c4fcefc014948879c0c1321673320a263dde628379bfabfcf"
         }
       }
     },
     {
       "language": "ja",
       "output": "papers\\iciae2027\\manuscript\\iciae2027_manuscript_ja.docx",
-      "sha256": "c107b5b769b2e406189f39cc8abdb2e8c5b65ef088cc232bc2a6516f4eba5cf3",
+      "sha256": "1bd3741a12cd2e49e6ccf44e6375250df20b9cce5fe2159fc2d22a665eb89829",
       "tables": {
         "primary": [
           [
             "Main EN",
-            "16",
+            "16/20",
             "8.75",
             "[0.00, 18.75]"
           ],
           [
             "Main JA",
-            "13",
+            "13/20",
             "4.62",
             "[0.00, 13.85]"
           ],
           [
             "Cal EN",
-            "16",
+            "16/20",
             "12.50",
             "[5.00, 22.50]"
           ],
           [
             "Cal JA",
-            "12",
+            "12/20",
             "8.33",
             "[0.00, 20.00]"
+          ],
+          [
+            "Ext EN",
+            "48/60",
+            "6.67",
+            "[2.08, 12.08]"
+          ],
+          [
+            "Ext JA",
+            "43/60",
+            "9.30",
+            "[4.19, 14.88]"
           ]
         ],
         "quality": [
@@ -393,6 +487,18 @@
             "4/16/0",
             "6/14/0",
             "9/10/1"
+          ],
+          [
+            "Ext EN",
+            "16/40/4",
+            "30/25/5",
+            "39/19/2"
+          ],
+          [
+            "Ext JA",
+            "12/44/4",
+            "25/27/8",
+            "32/23/5"
           ]
         ],
         "selection": [
@@ -423,6 +529,20 @@
             "3",
             "0",
             "0"
+          ],
+          [
+            "Ext EN",
+            "55",
+            "6",
+            "1",
+            "1"
+          ],
+          [
+            "Ext JA",
+            "49",
+            "6",
+            "0",
+            "2"
           ]
         ],
         "order_quality": [
@@ -457,6 +577,22 @@
             "1",
             "1",
             "0"
+          ],
+          [
+            "Ext EN",
+            "48",
+            "6",
+            "0",
+            "4",
+            "2"
+          ],
+          [
+            "Ext JA",
+            "43",
+            "9",
+            "1",
+            "6",
+            "2"
           ]
         ],
         "cases": [
@@ -533,6 +669,30 @@
             "AR",
             "40",
             "195180"
+          ],
+          [
+            "Ext EN",
+            "OE",
+            "223",
+            "1038840"
+          ],
+          [
+            "Ext EN",
+            "AR",
+            "120",
+            "423897"
+          ],
+          [
+            "Ext JA",
+            "OE",
+            "300",
+            "1939752"
+          ],
+          [
+            "Ext JA",
+            "AR",
+            "120",
+            "601200"
           ]
         ]
       },
@@ -566,12 +726,12 @@
           "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
         },
         "word/document.xml": {
-          "bytes": 160675,
-          "sha256": "aa745ad5ae99d9abc4e544ab9642a054e2572b73ec0cb2f987707ab76435a99c"
+          "bytes": 182666,
+          "sha256": "f0a339727dd518e6fa6d5982503ff2bb9b03e33ea9eac695afd2ed648d149648"
         },
         "word/_rels/document.xml.rels": {
-          "bytes": 4825,
-          "sha256": "4d58f049c2859331dabfb80fe73915e5db283d3dd1c2a6429bb113e1ac6c98a7"
+          "bytes": 5103,
+          "sha256": "810abdfe3ca09baffad59db54bc3d41d5b2a95e22ca0a99642396538185c5aeb"
         },
         "word/footnotes.xml": {
           "bytes": 2821,
@@ -654,8 +814,8 @@
           "sha256": "c52009b985d6aae3a7414ef722ea64981c7b14207bcc6a2fca52dce7c06d0608"
         },
         "word/media/order_increment_ja.png": {
-          "bytes": 39560,
-          "sha256": "bdbc903a8f6257be1041153f638e9dd221ecb83d8eeda799f3b83ef8cc478aa2"
+          "bytes": 48372,
+          "sha256": "036fdda44f5e9ebc7a1a49f0e888b2e8f54c375095b34a8b39cea9a9c4c072d5"
         }
       }
     }

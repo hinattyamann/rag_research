@@ -16,7 +16,9 @@
 |---|---|
 | [notes/submission_requirements.md](notes/submission_requirements.md) | 公式投稿条件、書式、未確認事項、提出前チェック |
 | [notes/draft_status.md](notes/draft_status.md) | 初稿の到達点、確認内容、研究室資料受領後の更新箇所 |
-| [notes/draft3_revision_status.md](notes/draft3_revision_status.md) | 品質レビューへの補強対応、事後集計・原文抜粋と未解決事項 |
+| [notes/draft4_revision_status.md](notes/draft4_revision_status.md) | 追加120問を反映した初稿4の変更箇所、確認内容、残件 |
+| [notes/extension_results_readme.md](notes/extension_results_readme.md) | 追加集合の検証・集計手順、分母と旧集合との区別 |
+| [notes/draft3_revision_status.md](notes/draft3_revision_status.md) | 初稿3の品質レビュー補強対応、事後集計・原文抜粋の履歴 |
 | [notes/order_effects_readme.md](notes/order_effects_readme.md) | 保存済み順序試行から品質/費用へ対応する記述集計の再現手順 |
 | [notes/supervisor_readiness_review_20261106.md](notes/supervisor_readiness_review_20261106.md) | 教員に提示できる完成度かのレビュー結果と、投稿前の改善優先順位 |
 | [notes/notebook_provenance_review_20261106.md](notes/notebook_provenance_review_20261106.md) | 出典補足の受領検証、執筆可能との判断、未解決事項と本文への反映 |
@@ -26,6 +28,7 @@
 | [notes/lab_pc_provenance_audit_prompt.md](notes/lab_pc_provenance_audit_prompt.md) | 未取得3点の原因・回復可能性と元ログを追加調査する依頼文 |
 | [materials/provenance_audit_v1/](materials/provenance_audit_v1/README.md) | 日本語歴史版の補足回復・84採点Job・英語版候補の追加調査。未解決と証拠は[引継ぎ](notes/provenance_audit_handoff.md)参照 |
 | [materials/](materials/) | 既存Main/Calの[80問資料集](materials/fixed_v23_v1/README.md)。検証・取込は[引継ぎ](notes/materials_handoff.md)を参照 |
+| [materials/cal_extension_v1/](materials/cal_extension_v1/README.md) | 別途計画した追加120問の封印済み入力・採点・解析・図表・検証入口。既存Main/Calと別管理 |
 | [templates/official/](templates/official/) | 配布元から取得した未編集のWordテンプレートと募集要項PDF |
 | [templates/official_sources.json](templates/official_sources.json) | 取得元URL、取得日時、ファイルサイズ、SHA-256、確認方法 |
 | [manuscript/](manuscript/) | Word論文本体一組。提出用 `iciae2027_manuscript_en.docx`、理解用 `iciae2027_manuscript_ja.docx` |
@@ -34,10 +37,13 @@
 | [references/](references/) | 書誌・引用箇所・主張と出典の照合資料 |
 | [submission/](submission/) | 確認済みの提出PDF、提出日時・受付番号等の記録 |
 
-2026年11月6日、検証済みの研究室資料と出典監査を反映し、**既存80問に基づく日英同内容の本文初稿を補強した（初稿3、各8ページ）**。
+2026年11月10日、**既存80問と別途計画した追加120問を反映し、日英同内容の初稿4へ更新した**。
+全選定200問・主比較可能148問を扱い、旧Main/Calと追加集合Extは別集計する。
+83対訳単位・7章・2図・6表・14文献を収録し、章構成は保持した。
+Word描画出力は英語8ページ・日本語8ページ、英語要旨232語。検査・表示確認の到達点は[初稿4の更新記録](notes/draft4_revision_status.md)を参照する。
 [英語初稿](manuscript/iciae2027_manuscript_en.docx)と[日本語初稿](manuscript/iciae2027_manuscript_ja.docx)を一組で管理する。
 公式テンプレートの原本は未編集で保持し、例文を実際の研究本文へ置き換えた。提出PDF・投稿は未実施。
-具体例・QA別分析・採点来歴を加筆し、欠測・分母の違い・出典未確定を本文へ残した。
+追加集合の方法・分母・主結果・品質・費用・意味監査を反映し、要旨・考察・結論を推敲した。欠測・AI採点・時期/手順差・出典未確定は本文へ残す。
 著者情報は未確定欄とし、教員レビュー等は [初稿の残件](notes/draft_status.md)へ記録した。
 日本語版は英語版と同じ内容の忠実な翻訳とし、独自の補足・省略・別の説明を加えない。
 ユーザーへの詳しい解説は会話や執筆メモで行い、両言語の論文本体から分ける。
@@ -51,11 +57,12 @@
 - 解析・図表の正本: [固定v23の成果](../../reports/fixed_v23_order_study_v1/)
 - [結果説明資料](../../reports/fixed_v23_order_study_v1/results_brief.md)
 - [執筆前工程の完了確認](../../data/manifests/fixed_v23_prewriting_completion_v1.json)
+- 追加120問の正本: [Cal拡張資料](materials/cal_extension_v1/README.md)と[集計案内](notes/extension_results_readme.md)
 
 既存のMain/Calは集合別に記述し、比較欠測、AI採点、人手未確認、停止規則・採点入力方式の事後変更、
 外的中断の費用不明を本文へ残す。旧Gate11未通過・Phase12未実施を変更しない。
 追加検証は別Protocol・別成果として管理し、採点封印と解析が完了した結果だけを原稿へ取り込む。
-今回、追加実験を開始したり、その件数・対象・条件を確定したりしていない。
+今回の改稿は、研究室PCで完了した追加120問の確定資料を取り込むもので、新規推論・再採点・新しい区間推定を行わない。
 
 ## ノートPCと研究室PCの分担
 
@@ -71,7 +78,7 @@ DOCXは差分統合が難しいため、同じ原稿ファイルを両PCで同�
 ## 次に行うこと
 
 1. タイトル、著者順、全所属の英語表記、責任著者とメールアドレスを確定する。
-2. 作成済みの両初稿を読み、具体例・分母・出典未確定を含め、構成・主張・引用をレビューする。既存資料の受領・照合・本文反映は完了した。
+2. 更新した両初稿を読み、追加集合と既存集合の違い、具体例・分母・出典未確定を含め、主張・引用をレビューする。
 3. 方法・結果・限界を両言語で並行して更新し、数値・主張・引用の対応と教員確認を行う。
 4. 追加検証や訂正は両版へ反映し、既存集合との違いと対応を明記する。
 5. 提出用英語PDFの4～8ページ・文字・段組・図表・引用・URLを全ページ確認し、日本語版との内容の一致も確認する。

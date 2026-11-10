@@ -1,5 +1,11 @@
 # 原稿掲載用の図表
 
+2026年11月10日の初稿4では、図2をMain/Calの旧4区分とExtの追加2区分へ拡張した。
+Extは新規3バッチだけの統合で、既存80問と合算していない。
+追加の正本は[封印済み追加資料](../materials/cal_extension_v1/README.md)のpooled/primary_comparison.csv。
+旧値と保存済み区間は変更せず、掲載図の寸法を3.35×2.25インチとした。
+図1は初稿3のPNG/SVG bytesを保持した。日英各8頁の最終描画で両図の可読性を確認した。
+
 掲載用に編集した図表をこのフォルダへ保存する。
 解析・元図の正本は [固定v23の成果](../../../reports/fixed_v23_order_study_v1/) に保持し、上書きしない。
 2026年11月5日の初稿1では、experimental_design_en/ja（実験設計図）とorder_increment_en/ja（主要増分図）をPNG/SVGで保存した。

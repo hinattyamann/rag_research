@@ -1,5 +1,7 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-11-10 11:12 JST 執筆実装更新: derive_extension_results.pyで封印済み3Batchをcanonical trial_planに照合し、新規集合だけの記述集計を追加。生成器を6区分へ拡張し、図2と5表へExtを追記、図1と元成果・科学的src/設定/依存は保持。実DOCX全セル・日英対応・全資料Hashを検査する。保存済みBootstrap区間を再利用し新推定は行わない。[再現案内](../papers/iciae2027/notes/extension_results_readme.md)参照。
+
 2026-11-06 18:00 JST 執筆実装更新: manuscript/derive_order_effects.pyと派生JSONを追加し、canonical trial_planで順序群を照合。実DOCX6表/83対訳単位/13引用と原文抜粋の来歴を検査し、生成Manifestへ派生JSONのcanonical Hashを結合した。18検査/Ruff・全16頁確認成功。図は明示再描画時のみ更新し、元図/研究用src/設定/依存/資料は不変。[記述集計](../papers/iciae2027/notes/order_effects_readme.md)を参照。
 
 2026-11-06 14:41 JST 執筆実装更新: 日英対訳入力を77単位へ拡張し、検証済み方策/具体例を読む2表を加えて計5表とした。生成Manifestを取込Commit・2資料Tree・Manifest Hash・本文Digestへ結合。実DOCX照合3検査/Ruffと両版全14ページの描画確認を実施し、各7ページの初稿2を完成した。公式原本/未編集パッケージ部品/既存成果を保持した。研究用src/設定/依存/Runは変更せず、新規推論/再採点0。[原稿到達点](../papers/iciae2027/notes/draft_status.md)を参照。

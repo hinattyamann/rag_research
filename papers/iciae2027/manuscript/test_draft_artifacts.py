@@ -16,6 +16,7 @@ ROOT = PAPER.parent.parent
 NS = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
 REL = "http://schemas.openxmlformats.org/package/2006/relationships"
 CONTENT = json.loads((HERE / "draft_content.json").read_text(encoding="utf-8"))
+EXTENSION = PAPER / "materials/cal_extension_v1"
 
 
 def text(node):
@@ -65,8 +66,16 @@ def test_word_text_references_and_tables_match_evidence(lang):
         encoding="utf-8", newline=""
     ) as stream:
         records = list(csv.DictReader(stream))
+    with (EXTENSION / "pooled/primary_comparison.csv").open(
+        encoding="utf-8", newline=""
+    ) as stream:
+        records.extend({**r, "cohort": "ext"} for r in csv.DictReader(stream))
+    assert [r[0] for r in primary] == [
+        "Main EN", "Main JA", "Cal EN", "Cal JA", "Ext EN", "Ext JA"
+    ]
     for actual, expected in zip(primary, records, strict=True):
-        assert actual[1] == expected["comparable_qa"]
+        assert actual[0] == expected["cohort"].capitalize() + " " + expected["language"].upper()
+        assert actual[1] == f"{expected['comparable_qa']}/{expected['selected_qa']}"
         assert float(actual[2]) == round(100 * float(expected["mean_increment"]), 2)
         interval = [float(x) for x in re.findall(r"\d+\.\d+", actual[3])]
         assert interval == [
@@ -79,7 +88,15 @@ def test_word_text_references_and_tables_match_evidence(lang):
             (r["cohort"].capitalize() + " " + r["language"].upper(), r["route"]): r
             for r in csv.DictReader(stream)
         }
+    with (EXTENSION / "pooled/quality_and_operational_cost.csv").open(
+        encoding="utf-8", newline=""
+    ) as stream:
+        routes.update(
+            {("Ext " + r["language"].upper(), r["route"]): r for r in csv.DictReader(stream)}
+        )
     route_names = {"NR": "no_repair", "OE": "original", "AR": "always_rewrite"}
+    assert len(table_rows(by_key["quality"])[1:]) == 6
+    assert len(table_rows(by_key["cost"])[1:]) == 12
     for actual in table_rows(by_key["quality"])[1:]:
         for column, short in enumerate(("NR", "OE", "AR"), 1):
             expected = routes[(actual[0], route_names[short])]
@@ -95,6 +112,12 @@ def test_word_text_references_and_tables_match_evidence(lang):
     material_root = PAPER / "materials/fixed_v23_v1"
     with (material_root / "policy_outcomes.csv").open(encoding="utf-8", newline="") as stream:
         policies = list(csv.DictReader(stream))
+    for batch in ("batch_01", "batch_02", "batch_03"):
+        with (EXTENSION / batch / "policy_outcomes.csv").open(
+            encoding="utf-8", newline=""
+        ) as stream:
+            policies.extend({**r, "cohort": "ext"} for r in csv.DictReader(stream))
+    assert len(table_rows(by_key["selection"])[1:]) == 6
     for actual in table_rows(by_key["selection"])[1:]:
         original = [
             r
@@ -117,8 +140,13 @@ def test_word_text_references_and_tables_match_evidence(lang):
             sum(r["harmful_rewrite"] == "True" for r in always),
         ]
     effects = json.loads((PAPER / "notes/order_effects_v1.json").read_text(encoding="utf-8"))
+    extension_effects = json.loads(
+        (PAPER / "notes/extension_results_v1.json").read_text(encoding="utf-8")
+    )
     for actual, expected in zip(
-        table_rows(by_key["order_quality"])[1:], effects["strata"], strict=True
+        table_rows(by_key["order_quality"])[1:],
+        effects["strata"] + extension_effects["strata"],
+        strict=True,
     ):
         counts = expected["classification_counts"]
         assert actual[0] == expected["cohort"].capitalize() + " " + expected["language"].upper()
@@ -151,6 +179,7 @@ def test_pair_and_frozen_evidence_integrity():
     ).hexdigest()
     assert digest == manifest["content_digest"]
     assert manifest["evidence_trees"] == CONTENT["evidence_trees"]
+    assert manifest["extension_evidence_commit"] == CONTENT["extension_evidence_commit"]
     for name, value in manifest["evidence_packages"].items():
         assert (
             hashlib.sha256(
@@ -199,6 +228,13 @@ def test_pair_and_frozen_evidence_integrity():
     frozen = json.loads((result_dir / "artifact_manifest.json").read_text(encoding="utf-8"))
     for file, digest in frozen["files"].items():
         assert hashlib.sha256((result_dir / file).read_bytes()).hexdigest() == digest
+    extension_manifest = json.loads(
+        (EXTENSION / "artifact_manifest.json").read_text(encoding="utf-8")
+    )
+    for file, entry in extension_manifest["files"].items():
+        contents = (EXTENSION / file).read_bytes()
+        assert len(contents) == entry["bytes"]
+        assert hashlib.sha256(contents).hexdigest() == entry["sha256"], file
 
 
 def test_case_excerpt_wording_is_present_in_both_actual_documents():

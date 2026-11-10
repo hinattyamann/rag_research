@@ -24,6 +24,8 @@ W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 R = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 NS = {"w": W}
 TEMPLATE_HASH = "d8e16e91295692e10abab92847abf3e11fa7a66949ff71b31388466949877391"
+EXTENSION = PAPER / "materials/cal_extension_v1"
+STRATA = (("main", "en"), ("main", "ja"), ("cal", "en"), ("cal", "ja"), ("ext", "en"), ("ext", "ja"))
 
 
 def tag(local: str) -> str:
@@ -46,7 +48,26 @@ def rows(filename: str) -> list[dict[str, str]]:
     with (ROOT / "reports/fixed_v23_order_study_v1" / filename).open(
         encoding="utf-8", newline=""
     ) as stream:
-        return list(csv.DictReader(stream))
+        records = list(csv.DictReader(stream))
+    with (EXTENSION / "pooled" / filename).open(encoding="utf-8", newline="") as stream:
+        for record in csv.DictReader(stream):
+            assert record["cohort"] == "cal_extension", "Unexpected extension population"
+            records.append({**record, "cohort": "ext"})
+    return records
+
+
+def policy_rows() -> list[dict[str, str]]:
+    materials = PAPER / "materials/fixed_v23_v1"
+    with (materials / "policy_outcomes.csv").open(encoding="utf-8", newline="") as stream:
+        records = list(csv.DictReader(stream))
+    for batch in ("batch_01", "batch_02", "batch_03"):
+        with (EXTENSION / batch / "policy_outcomes.csv").open(
+            encoding="utf-8", newline=""
+        ) as stream:
+            for record in csv.DictReader(stream):
+                assert record["cohort"] == "cal", "Unexpected extension batch population"
+                records.append({**record, "cohort": "ext"})
+    return records
 
 
 def make_figures() -> None:
@@ -66,29 +87,37 @@ def make_figures() -> None:
     data = rows("primary_comparison.csv")
     for lang in ("en", "ja"):
         plt.rcParams["font.family"] = "Yu Mincho" if lang == "ja" else "Times New Roman"
-        fig, ax = plt.subplots(figsize=(3.35, 1.9), layout="constrained")
+        fig, ax = plt.subplots(figsize=(3.35, 2.25), layout="constrained")
         for index, row in enumerate(data):
             mean, low, high = (
                 float(row[k]) * 100 for k in ("mean_increment", "ci95_low", "ci95_high")
             )
             ax.errorbar(
                 mean,
-                3 - index,
+                len(data) - 1 - index,
                 xerr=[[mean - low], [high - mean]],
                 fmt="o",
                 color="#1f4e79",
                 capsize=3,
                 markersize=4,
             )
-        ax.set_yticks(range(4), ["Cal JA", "Cal EN", "Main JA", "Main EN"])
+        ax.set_yticks(
+            range(len(data)),
+            [f"{r['cohort'].capitalize()} {r['language'].upper()}" for r in reversed(data)],
+        )
         ax.set_xlabel("Excess disagreement D (pp)" if lang == "en" else "判断不一致の増分 D（pp）")
         ax.set_xlim(-1, 25)
-        ax.set_ylim(-0.5, 3.5)
+        ax.set_ylim(-0.5, len(data) - 0.5)
         ax.axvline(0, color="0.5", linewidth=0.8)
         ax.spines[["top", "right"]].set_visible(False)
         for ext in ("png", "svg"):
             fig.savefig(folder / f"order_increment_{lang}.{ext}", dpi=360)
         plt.close(fig)
+
+        # This intervention is unchanged by adding questions. Retain its reviewed
+        # bytes during a results refresh; construct it only when absent.
+        if all((folder / f"experimental_design_{lang}.{ext}").exists() for ext in ("png", "svg")):
+            continue
 
         labels = (
             [
@@ -142,8 +171,11 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
     materials = PAPER / "materials/fixed_v23_v1"
     if key == "order_quality":
         summary = json.loads((PAPER / "notes/order_effects_v1.json").read_text(encoding="utf-8"))
+        extension_summary = json.loads(
+            (PAPER / "notes/extension_results_v1.json").read_text(encoding="utf-8")
+        )
         values = []
-        for row in summary["strata"]:
+        for row in summary["strata"] + extension_summary["strata"]:
             counts = row["classification_counts"]
             values.append(
                 [
@@ -163,10 +195,9 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
             [1250, 350, 650, 900, 900, 769],
         )
     if key == "selection":
-        with (materials / "policy_outcomes.csv").open(encoding="utf-8", newline="") as stream:
-            policies = list(csv.DictReader(stream))
+        policies = policy_rows()
         values = []
-        for cohort, language in [("main", "en"), ("main", "ja"), ("cal", "en"), ("cal", "ja")]:
+        for cohort, language in STRATA:
             observed = [
                 r
                 for r in policies
@@ -226,15 +257,15 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
         values = [
             [
                 f"{r['cohort'].capitalize()} {r['language'].upper()}",
-                r["comparable_qa"],
+                f"{r['comparable_qa']}/{r['selected_qa']}",
                 f"{float(r['mean_increment']) * 100:.2f}",
                 f"[{float(r['ci95_low']) * 100:.2f}, {float(r['ci95_high']) * 100:.2f}]",
             ]
             for r in primary
         ]
-        return headers, values, [1250, 380, 850, 2339]
+        return headers, values, [1100, 650, 850, 2219]
     values = []
-    for cohort, language in [("main", "en"), ("main", "ja"), ("cal", "en"), ("cal", "ja")]:
+    for cohort, language in STRATA:
         label = f"{cohort.capitalize()} {language.upper()}"
         quality_row = [label]
         for route, short in [("no_repair", "NR"), ("original", "OE"), ("always_rewrite", "AR")]:
@@ -605,6 +636,7 @@ def main() -> None:
     report = {
         "version": content["version"],
         "evidence_commit": content["evidence_commit"],
+        "extension_evidence_commit": content["extension_evidence_commit"],
         "evidence_trees": content.get("evidence_trees", {}),
         "content_digest": sha(
             json.dumps(content, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()

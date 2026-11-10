@@ -18,9 +18,13 @@
 | 11 | [Qwen2.5-3B-Instruct-GGUF](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF) | 公式モデルカード。実ファイルの量子化・Revision/Hashは保存済み生成モデルManifestに従う |
 | 12 | [Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B) | 公式モデルカード。Q6_K実ファイルはUnsloth提供の保存済みManifestに対応し、公式モデルカードを量子化ファイルの配布元と誤認しない |
 | 13 | [保存資料と事後分析の固定スナップショット](https://github.com/hinattyamann/rag_research/tree/92ae5525a3a6a0e1046924b5d77f470a31098ad0/papers/iciae2027) | 2026年11月6日更新。自研究の資料で、関連研究の新規性の根拠ではない。元2資料は同日検証済みと同じTreeを保持し、事後記述集計と原文抜粋を追加した。末尾の資料同定段落から参照する。Wordの表示URLはRepository名まで、Hyperlink遷移先は固定Commitの論文フォルダ。無制限の公開アクセスは未確認 |
+| 14 | [追加120問の固定スナップショット](https://github.com/hinattyamann/rag_research/tree/7beb396febd2842248af53a8ec39eda9fc153153/papers/iciae2027/materials/cal_extension_v1) | 2026年11月10日追加。自研究の別計画の追加Protocol、封印済み3Batch、追加集合のみの統合、オフライン検証器。Fetchした資料の全体/子検証に通過し、Tree0cc2339を保全。旧資料の文献13とは別に本文末尾で引用する。Wordの表示URLはRepository名、遷移先は固定Commit。第三者アクセスの保証や公開設定変更はしていない |
 
 書誌本文とURLは日英原稿で共通とし、本文の引用番号は出現順の上付き丸括弧にした。
 著者名と文献題名は翻訳せず、原書誌の識別に使う。
 関連研究の具体的な数値は本研究の結果表へ混ぜていない。
 
 初稿3の文献13は元2資料と保存入力の事後記述分析を含む92ae552へ更新した。引用英訳は推敲したが元日本語/文字区間は不変。無制限の公開アクセスを確認済みとは扱わない。本文の引用は日英で出現順1〜13。
+
+初稿4は既存文献1〜13を保持し、追加資料の同定用として14を加えた。日英の出現順は1〜14で共通。
+関連研究の新しい主張や文献の追加調査を行った改稿ではなく、自研究の検証済み追加結果を反映した。

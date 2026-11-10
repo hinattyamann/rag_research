@@ -7,8 +7,10 @@
 | `iciae2027_manuscript_en.docx` | 公式テンプレートを用いた提出用英語本文の正本 |
 | `iciae2027_manuscript_ja.docx` | 全本文に対応する理解用日本語原稿の正本 |
 
-2026年11月6日、研究室から受け取った80問資料と出典監査を検証し、現データの本文初稿を補強した（初稿3）。
-Word描画では各8ページ、英語要旨230語。7章・2図・6表・13文献を収録した。
+2026年11月10日、既存Main/Calの80問に、別途計画・収集・採点封印した追加120問を反映した（初稿4）。
+全選定200問、主比較可能148問。追加集合Extは英語60問・日本語60問、主比較可能48問・43問で、旧Main/Calとは別集計する。
+83対訳単位・7章・2図・6表・14文献を収録し、章構成は保持した。
+Word描画出力は英語8ページ・日本語8ページ、英語要旨232語。全体検査・全ページ表示確認の到達点は[初稿4の更新記録](../notes/draft4_revision_status.md)を正本とする。
 著者情報・教員レビュー・提出は別工程であり、[到達点・残件](../notes/draft_status.md)を参照する。
 従来の単一ファイル名 `iciae2027_manuscript.docx` は使用しない。
 
@@ -30,13 +32,15 @@ Wordの一時ロックファイルはGitへ追加しない。
 
 [draft_content.json](draft_content.json)は83単位のIDで日英を対応付けた生成入力。
 [build_draft.py](build_draft.py)は未編集の公式テンプレートを使い、公開CSV・検証済み資料集の方策表/具体例に基づく全表と掲載図を両版へ反映する。
-資料の取込元Commit・2資料Tree・Manifest Hash・本文Digestは[生成記録](../notes/draft_build_manifest.json)へ結び付ける。
+資料の取込元Commit・3資料Tree・Manifest Hash・本文Digestは[生成記録](../notes/draft_build_manifest.json)へ結び付ける。
 Word正本を直接編集したときは生成入力も同期し、同期前に再生成して手動編集を上書きしない。
 生成前には対象のWord文書を閉じ、両版を同じ作業単位で更新する。
 
 ```powershell
+uv run python papers/iciae2027/manuscript/derive_order_effects.py --check
+uv run python papers/iciae2027/manuscript/derive_extension_results.py --check
 uv run --with python-docx python papers/iciae2027/manuscript/build_draft.py --build
-uv run pytest papers/iciae2027/manuscript/test_draft_artifacts.py -q
+uv run pytest papers/iciae2027/manuscript -q
 uv run ruff check papers/iciae2027/manuscript
 ```
 
@@ -44,5 +48,7 @@ uv run ruff check papers/iciae2027/manuscript
 意味の一致を機械検査だけで保証しない。翻訳を読み合わせ、更新後はWord/PDF描画と全ページの表示確認も行う。
 実験・GPU推論・外部再採点はこの生成処理に含めない。
 
-初稿3は[レビュー対応](../notes/draft3_revision_status.md)を参照。追加の表4は事後記述集計で、先にderive_order_effects.py --checkで保存資料との一致を確認する。
-通常のbuildは掲載図を保持する。図を意図して描き直す場合のみ--refresh-figuresを指定し、元成果と両版の表示を再確認する。
+初稿4は[更新記録](../notes/draft4_revision_status.md)と[追加資料の集計案内](../notes/extension_results_readme.md)を参照。
+表4の順序判断と品質の対応は事後記述集計で、旧集合とExtの派生結果をそれぞれ保存資料へ照合する。
+初稿3の[レビュー対応](../notes/draft3_revision_status.md)は履歴として保持する。
+通常のbuildは掲載図を保持する。結果図2を意図して描き直す場合のみ--refresh-figuresを指定し、元成果と両版の表示を再確認する。実験設計図は存在する場合に保持する。
