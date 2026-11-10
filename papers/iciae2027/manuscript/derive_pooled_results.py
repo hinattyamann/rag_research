@@ -65,7 +65,7 @@ def derive():
     for package in packages:
         for name in ("qa_summary.csv", "trials.jsonl", "policy_outcomes.csv"):
             file = package / name
-            hashes[str(file.relative_to(PAPER))] = hashlib.sha256(file.read_bytes()).hexdigest()
+            hashes[file.relative_to(PAPER).as_posix()] = hashlib.sha256(file.read_bytes()).hexdigest()
         trials = defaultdict(dict)
         for line in (package / "trials.jsonl").read_text(encoding="utf-8").splitlines():
             trial = json.loads(line)
@@ -192,7 +192,7 @@ def derive():
         original_semantics = []
         for name in ("main", "cal"):
             file = packages[0] / "analysis" / f"{name}.private.json"
-            hashes[str(file.relative_to(PAPER))] = hashlib.sha256(file.read_bytes()).hexdigest()
+            hashes[file.relative_to(PAPER).as_posix()] = hashlib.sha256(file.read_bytes()).hexdigest()
             original_semantics.append(
                 json.loads(file.read_text(encoding="utf-8"))["semantics"][language]
             )

@@ -26,6 +26,7 @@ def test_pooled_reproduces_saved_data_and_every_source_hash(result):
     assert result == saved
     assert result["post_hoc"] is True
     assert result["new_inference_calls"] == result["new_annotation_calls"] == 0
+    assert all("\\" not in relative for relative in result["source_sha256"])
     for relative, digest in result["source_sha256"].items():
         assert hashlib.sha256((PAPER / relative).read_bytes()).hexdigest() == digest, relative
 
