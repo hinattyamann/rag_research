@@ -79,9 +79,9 @@ def make_figures() -> None:
             )
         ax.set_yticks(
             [2, 1, 0],
-            ["English", "Japanese", "Japanese − English"]
+            ["English (n=80)", "Japanese (n=68)", "Japanese − English"]
             if lang == "en"
-            else ["英語", "日本語", "日本語 − 英語"],
+            else ["英語（n=80）", "日本語（n=68）", "日本語 − 英語"],
         )
         ax.set_xlabel(
             "Excess disagreement / difference (pp)"
@@ -100,7 +100,7 @@ def make_figures() -> None:
                 "Question + used evidence + initial answer A",
                 "Fix evidence text and answer sentences",
                 "Original / reversed / 3 shuffles\nOriginal order repeated 5 times",
-                "Evaluate sentence support\nRetain A or request a rewrite",
+                "Evaluate sentence support F\nF ≥ 0.7: retain A; otherwise rewrite",
                 "Select A or the same rewrite B\nB uses original evidence and A",
                 "Compare selected-answer quality\nand computation cost",
             ]
@@ -109,7 +109,7 @@ def make_figures() -> None:
                 "質問 ＋ 実使用根拠 ＋ 初回回答 A",
                 "根拠本文と回答の文を固定",
                 "元順序・逆順・シャッフル3種\n元順序を5回反復",
-                "文の支持を評価\nAを採用 または 書換えを要求",
+                "文の支持スコア F を評価\nF ≥ 0.7：Aを採用、未満：書換え",
                 "A または 共通の書換え B を選択\nBの入力は元順序の根拠とA",
                 "選択回答の品質と計算費用を比較",
             ]
@@ -143,77 +143,235 @@ def make_figures() -> None:
 
 def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[int]]:
     result = pooled_results()
+    if key == "configuration":
+        rows = [
+            (
+                "Collection stages (questions)",
+                "収集段階（問数）",
+                "40 + 40 + 120 = 200",
+                "40 + 40 + 120 = 200",
+            ),
+            (
+                "Source partitions",
+                "元データの分割",
+                "EN: Development 100; JA: Development 20, Calibration 80",
+                "EN：Development 100、JA：Development 20・Calibration 80",
+            ),
+            (
+                "Retrieval",
+                "検索",
+                "50 candidates; RRF constant 60; top-k 5",
+                "候補50、RRF定数60、top-k 5",
+            ),
+            (
+                "Initial generation",
+                "初回生成",
+                "Context 4096; temperature 0; output limit 512",
+                "文脈4096、温度0、出力上限512",
+            ),
+            (
+                "Evaluation and rewriting",
+                "評価・書換え",
+                "Context 12288; temperature 0.2; batch 128; prompt version 12",
+                "文脈12288、温度0.2、バッチ128、プロンプト第12版",
+            ),
+            (
+                "Task and reasoning limits",
+                "タスク・推論上限",
+                "6144 total; 4096 for reasoning",
+                "タスク全体6144、うち推論4096",
+            ),
+            (
+                "Trial plan per question",
+                "質問ごとの試行",
+                "5 orders; 5 repetitions; first trial shared; at most 9 trials",
+                "順序5条件、反復5回、最初の試行を共用、最大9試行",
+            ),
+            (
+                "Seeds",
+                "シード",
+                "Generation/shuffles 42; execution order 43",
+                "生成・シャッフル42、実行順43",
+            ),
+            (
+                "Decision thresholds",
+                "判断閾値",
+                "Operating 0.7; audit 0.5, 0.6, 0.7, 0.8, 0.9",
+                "運用0.7、監査0.5・0.6・0.7・0.8・0.9",
+            ),
+            (
+                "Bootstrap",
+                "ブートストラップ",
+                "10000 document-group resamples; seed 42; 95% interval",
+                "文書グループを10000回復元抽出、シード42、95%区間",
+            ),
+        ]
+        values = [[r[0 if lang == "en" else 1], r[2 if lang == "en" else 3]] for r in rows]
+        return (["Setting", "Value"] if lang == "en" else ["設定", "値"]), values, [1600, 3219]
     if key == "development":
         values = (
             [
-                ["Synthetic", "EN", "12", "Relations, scope, uncertainty"],
-                ["Synthetic", "JA", "15", "Relations, scope, uncertainty"],
-                ["Saved QA", "EN", "15", "Previously observed errors (42 sentences)"],
+                ["Synthetic EN", "12 cases", "Relations, scope, uncertainty"],
+                ["Synthetic JA", "15 cases", "Relations, scope, uncertainty"],
+                ["Saved EN QA", "15 questions / 42 sentences", "Previously observed errors"],
+                ["Support recall", "57/58 (98.3%)", "Original + reversed evidence"],
+                ["Non-support specificity", "14/16 (87.5%)", "Target ≥90%"],
             ]
             if lang == "en"
             else [
-                ["人工例", "EN", "12", "関係・範囲・不確実性"],
-                ["人工例", "JA", "15", "関係・範囲・不確実性"],
-                ["保存QA", "EN", "15", "既知の誤り（42文）"],
+                ["人工例 EN", "12例", "関係・範囲・不確実性"],
+                ["人工例 JA", "15例", "関係・範囲・不確実性"],
+                ["保存QA EN", "15問 / 42文", "既知の誤り"],
+                ["支持の再現率", "57/58 (98.3%)", "元順序＋逆順"],
+                ["非支持の特異度", "14/16 (87.5%)", "目標 ≥90%"],
             ]
         )
         headers = (
-            ["Data", "Lang.", "n", "Purpose"] if lang == "en" else ["種類", "言語", "数", "用途"]
-        )
-        return headers, values, [1000, 750, 400, 2669]
-    if key == "primary":
-        values = [
-            [
-                row["language"].upper(),
-                f"{row['comparable_qa']}/{row['selected_qa']}",
-                f"{row['mean_increment'] * 100:.2f}",
-                f"[{row['ci95'][0] * 100:.2f}, {row['ci95'][1] * 100:.2f}]",
-            ]
-            for row in result["primary"]
-        ]
-        headers = (
-            ["Language", "n", "D (pp)", "95% CI (pp)"]
+            ["Diagnostic", "Size / result", "Purpose / condition"]
             if lang == "en"
-            else ["言語", "n", "D (pp)", "95%区間 (pp)"]
+            else ["診断", "規模 / 結果", "用途 / 条件"]
         )
-        return headers, values, [1000, 750, 850, 2219]
+        return headers, values, [1550, 1450, 1819]
+    if key == "primary":
+        labels = [
+            ("Selected questions", "選定問数"),
+            ("Comparable questions", "比較可能問数"),
+            ("Excluded refusals", "除外：拒否"),
+            ("Missing initial answers", "初回回答の欠測"),
+            ("Failed rewrites", "書換え失敗"),
+            ("Order-varying / comparable", "判断変動 / 比較可能"),
+            ("Mean O (%)", "平均O (%)"),
+            ("Mean R (%)", "平均R (%)"),
+            ("Mean D (pp)", "平均D (pp)"),
+            ("95% interval for D (pp)", "Dの95%区間 (pp)"),
+        ]
+        columns = []
+        for r in result["primary"]:
+            columns.append(
+                [
+                    str(r["selected_qa"]),
+                    str(r["comparable_qa"]),
+                    str(r["exclusion_reasons"].get("invalid_or_unscorable_trials", 0)),
+                    str(r["initial_failures"]),
+                    str(r["rewrite_failures"]),
+                    f"{r['decision_change_qa']}/{r['comparable_qa']}",
+                    f"{r['mean_order_rate'] * 100:.2f}",
+                    f"{r['mean_repeat_rate'] * 100:.2f}",
+                    f"{r['mean_increment'] * 100:.2f}",
+                    f"[{r['ci95'][0] * 100:.2f}, {r['ci95'][1] * 100:.2f}]",
+                ]
+            )
+        values = [
+            [label[lang == "ja"], columns[0][i], columns[1][i]] for i, label in enumerate(labels)
+        ]
+        return (
+            (["Measure", "EN", "JA"] if lang == "en" else ["指標", "EN", "JA"]),
+            values,
+            [2350, 1234, 1235],
+        )
     if key == "quality":
         values = []
         for language in ("en", "ja"):
-            row = [language.upper()]
             for route in ("no_repair", "original", "always_rewrite"):
                 policy = next(
                     r
                     for r in result["quality"]
                     if r["language"] == language and r["route"] == route
                 )
-                row.append(
-                    "/".join(
+                values.append(
+                    [
+                        language.upper(),
+                        {"no_repair": "NR", "original": "OE", "always_rewrite": "AR"}[route],
+                    ]
+                    + [
                         str(policy[k])
                         for k in ("reliable", "unreliable", "indeterminate", "missing")
-                    )
+                    ]
                 )
-            values.append(row)
-        headers = ["Language", "NR", "OE", "AR"] if lang == "en" else ["言語", "NR", "OE", "AR"]
-        return headers, values, [1000, 1273, 1273, 1273]
+        headers = (
+            ["Lang.", "Policy", "Y=1", "Y=0", "Unclear", "Missing"]
+            if lang == "en"
+            else ["言語", "方策", "Y=1", "Y=0", "判定不能", "欠測"]
+        )
+        return headers, values, [650, 650, 650, 650, 1050, 1169]
     if key == "selection":
+        labels = [
+            ("Known A/B pairs", "判定可能なA/B"),
+            ("Y(A)=0 → Y(B)=0", "Y(A)=0 → Y(B)=0"),
+            ("Y(A)=0 → Y(B)=1", "Y(A)=0 → Y(B)=1"),
+            ("Y(A)=1 → Y(B)=0", "Y(A)=1 → Y(B)=0"),
+            ("Y(A)=1 → Y(B)=1", "Y(A)=1 → Y(B)=1"),
+            ("OE missed / 0→1", "OE見逃し / 0→1"),
+            ("OE harmful / 1→0", "OE有害選択 / 1→0"),
+        ]
+        columns = []
+        for r in result["selection"]:
+            columns.append(
+                [str(r["known_pairs"])]
+                + [str(r["transitions"][k]) for k in ("0->0", "0->1", "1->0", "1->1")]
+                + [
+                    f"{r['oe_missed_improvements']}/{r['transitions']['0->1']}",
+                    f"{r['oe_harmful_rewrites']}/{r['transitions']['1->0']}",
+                ]
+            )
+        values = [
+            [label[lang == "ja"], columns[0][i], columns[1][i]] for i, label in enumerate(labels)
+        ]
+        return (
+            (
+                ["Transition / selection", "EN", "JA"]
+                if lang == "en"
+                else ["遷移 / 選択", "EN", "JA"]
+            ),
+            values,
+            [2819, 1000, 1000],
+        )
+    if key == "order_quality":
+        labels = [
+            ("Order-varying decisions", "順序で判断が変動"),
+            ("Both Y=0 and Y=1 selected", "Y=0とY=1の両方を選択"),
+            ("Same known binary Y", "同じ既知二値Y"),
+            ("Includes indeterminate Y", "判定不能Yを含む"),
+            ("Route tokens vary", "経路トークン数が変動"),
+        ]
+        columns = []
+        for r in result["primary"]:
+            c = r["classification_counts"]
+            varying = [
+                q
+                for q in result["questions"]
+                if q["language"] == r["language"]
+                and q["comparable"]
+                and q["decision_varies_in_valid_orders"]
+            ]
+            token_varying = sum(
+                q["known_route_cost_range"]["recorded_input_plus_output_tokens"]["max"]
+                > q["known_route_cost_range"]["recorded_input_plus_output_tokens"]["min"]
+                for q in varying
+            )
+            columns.append(
+                [
+                    r["decision_change_qa"],
+                    c["decision_change_quality_changes"],
+                    c["decision_change_same_binary_quality"],
+                    c["decision_change_quality_unknown"],
+                    token_varying,
+                ]
+            )
         values = [
             [
-                r["language"].upper(),
-                str(r["known_pairs"]),
-                str(r["transitions"]["0->1"]),
-                str(r["oe_missed_improvements"]),
-                str(r["transitions"]["1->0"]),
-                str(r["oe_harmful_rewrites"]),
+                label[lang == "ja"],
+                str(columns[0][i]),
+                str(columns[1][i]),
+                str(columns[0][i] + columns[1][i]),
             ]
-            for r in result["selection"]
+            for i, label in enumerate(labels)
         ]
-        headers = (
-            ["Lang.", "Pairs", "0→1", "OE miss", "1→0", "OE harm"]
-            if lang == "en"
-            else ["言語", "組数", "0→1", "OE見逃し", "1→0", "OE有害"]
+        return (
+            (["Outcome", "EN", "JA", "Total"] if lang == "en" else ["結果", "EN", "JA", "計"]),
+            values,
+            [2619, 650, 650, 900],
         )
-        return headers, values, [650, 600, 600, 1100, 600, 1269]
     if key == "cases":
         values = []
         for number, orders in (
@@ -227,11 +385,14 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
                 trial = next(t for t in case["trials"] if t["trial_id"] == order)
                 policy = next(p for p in case["policy_outcomes"] if p["route"] == order)
                 choice = "A" if policy["selected_stage"] == "initial" else "B"
+                sentences = len(trial["fixed_claims"])
+                supported = sum(v["label"] == "supported" for v in trial["verdicts"])
+                assert abs(supported / sentences - trial["score"]) < 1e-12
                 values.append(
                     [
                         str(number),
                         order,
-                        f"{trial['score']:.2f}",
+                        f"{supported}/{sentences}",
                         f"{choice} / {policy['quality_y']}",
                     ]
                 )
@@ -242,22 +403,59 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
         )
         return headers, values, [650, 1350, 850, 1969]
     if key == "cost":
+        ar_tokens = {
+            r["language"]: r["input_tokens"] + r["output_tokens"]
+            for r in result["quality"]
+            if r["route"] == "always_rewrite"
+        }
         values = [
             [
                 r["language"].upper(),
                 "OE" if r["route"] == "original" else "AR",
                 str(r["calls"]),
                 f"{r['input_tokens'] + r['output_tokens']:,}",
+                f"{(r['input_tokens'] + r['output_tokens']) / ar_tokens[r['language']]:.2f}",
             ]
             for r in result["quality"]
             if r["route"] != "no_repair"
         ]
         headers = (
-            ["Language", "Policy", "Calls", "Tokens"]
+            ["Lang.", "Policy", "Calls", "Tokens", "Tokens / AR"]
             if lang == "en"
-            else ["言語", "方策", "呼出し", "トークン"]
+            else ["言語", "方策", "呼出し", "トークン", "AR比"]
         )
-        return headers, values, [1000, 850, 850, 2119]
+        return headers, values, [650, 650, 650, 1719, 1150]
+    if key == "semantics":
+        values = [
+            [
+                r["language"].upper(),
+                str(r["false_support_observations"]),
+                str(r["negative_sentence_trial_observations"]),
+                f"{100 * r['false_support_observations'] / r['negative_sentence_trial_observations']:.1f}%",
+            ]
+            for r in result["semantics"]
+        ]
+        headers = (
+            ["Lang.", "False support", "External negatives", "Rate"]
+            if lang == "en"
+            else ["言語", "誤支持", "外部の非支持", "割合"]
+        )
+        return headers, values, [650, 1450, 1669, 1050]
+    if key == "thresholds":
+        values = [
+            [f"{t:.1f}"]
+            + [
+                f"{next(r['mean_increment'] for r in result['thresholds'] if r['language'] == language and r['threshold'] == t) * 100:.2f}"
+                for language in ("en", "ja")
+            ]
+            for t in (0.5, 0.6, 0.7, 0.8, 0.9)
+        ]
+        headers = (
+            ["Threshold", "EN D (pp)", "JA D (pp)"]
+            if lang == "en"
+            else ["閾値", "EN D (pp)", "JA D (pp)"]
+        )
+        return headers, values, [1219, 1800, 1800]
     raise ValueError(f"Unknown table: {key}")
 
 
@@ -442,7 +640,7 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
                 tr_props.append(element("cantSplit"))
                 if index == 0:
                     tr_props.append(element("tblHeader"))
-                for text, width in zip(row, widths, strict=True):
+                for column, (text, width) in enumerate(zip(row, widths, strict=True)):
                     tc = E.SubElement(tr, tag("tc"))
                     tc_props = E.SubElement(tc, tag("tcPr"))
                     tc_props.append(element("tcW", w=str(width), type="dxa"))
@@ -451,9 +649,18 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
                         tc_props.append(element("shd", fill="E7E6E6", val="clear"))
                     p = E.SubElement(tc, tag("p"))
                     pp = E.SubElement(p, tag("pPr"))
-                    pp.append(element("jc", val="center"))
+                    narrative_column = column == 0 and block["key"] in {
+                        "configuration",
+                        "primary",
+                        "selection",
+                        "order_quality",
+                    }
+                    narrative_column |= block["key"] == "configuration" and column == 1
+                    pp.append(element("jc", val="left" if index and narrative_column else "center"))
                     pp.append(element("spacing", before="20", after="20"))
-                    if index < len(values):
+                    if index == 0 or (
+                        (len(values) <= 7 or block["key"] == "primary") and index < len(values)
+                    ):
                         pp.append(element("keepNext"))
                     if lang == "ja":
                         pp.append(element("snapToGrid", val="false"))
@@ -605,12 +812,12 @@ def main() -> None:
         args.output_dir = args.output_dir.resolve()
         args.output_dir.mkdir(parents=True, exist_ok=True)
     results = [build(content, lang, args.output_dir) for lang in ("en", "ja")]
-    assert {k: v for k, v in results[0]["tables"].items() if k != "development"} == {
-        k: v for k, v in results[1]["tables"].items() if k != "development"
-    }
-    assert [r[1:3] for r in results[0]["tables"]["development"]] == [
-        r[1:3] for r in results[1]["tables"]["development"]
-    ]
+
+    def numeric(cells):
+        return [re.findall(r"\d+(?:\.\d+)?", " ".join(row)) for row in cells]
+
+    for key, rows in results[0]["tables"].items():
+        assert numeric(rows) == numeric(results[1]["tables"][key]), key
     report = {
         "version": content["version"],
         "evidence_commit": content["evidence_commit"],

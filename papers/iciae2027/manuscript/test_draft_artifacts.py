@@ -63,40 +63,109 @@ def test_word_text_references_and_tables_match_evidence(lang):
     assert not re.search(r"\b(?:Main|Cal|Ext)\b", " ".join(paragraphs))
     tables = document.findall("w:body/w:tbl", NS)
     keys = [b["key"] for b in CONTENT["blocks"] if b["type"] == "table"]
-    assert keys == ["development", "primary", "quality", "selection", "cases", "cost"]
+    assert keys == [
+        "configuration",
+        "development",
+        "primary",
+        "quality",
+        "selection",
+        "order_quality",
+        "cases",
+        "cost",
+        "semantics",
+        "thresholds",
+    ]
     assert len(tables) == len(keys)
     actual = {key: table_rows(table)[1:] for key, table in zip(keys, tables, strict=True)}
     audit = json.loads((PAPER / "notes/pooled_results_v1.json").read_text(encoding="utf-8"))
-    assert [row[1:3] for row in actual["development"]] == [["EN", "12"], ["JA", "15"], ["EN", "15"]]
-    for row, expected in zip(actual["primary"], audit["primary"], strict=True):
-        assert row[0] == expected["language"].upper()
-        assert row[1] == f"{expected['comparable_qa']}/{expected['selected_qa']}"
-        assert float(row[2]) == round(expected["mean_increment"] * 100, 2)
-        assert [float(v) for v in re.findall(r"-?\d+\.\d+", row[3])] == [
+    assert [re.findall(r"\d+(?:\.\d+)?", row[1]) for row in actual["development"]] == [
+        ["12"],
+        ["15"],
+        ["15", "42"],
+        ["57", "58", "98.3"],
+        ["14", "16", "87.5"],
+    ]
+    for column, expected in enumerate(audit["primary"], 1):
+        cells = [row[column] for row in actual["primary"]]
+        assert [int(c) for c in cells[:5]] == [
+            expected["selected_qa"],
+            expected["comparable_qa"],
+            expected["exclusion_reasons"].get("invalid_or_unscorable_trials", 0),
+            expected["initial_failures"],
+            expected["rewrite_failures"],
+        ]
+        assert cells[5] == f"{expected['decision_change_qa']}/{expected['comparable_qa']}"
+        assert [float(c) for c in cells[6:9]] == [
+            round(expected[k] * 100, 2)
+            for k in ("mean_order_rate", "mean_repeat_rate", "mean_increment")
+        ]
+        assert [float(v) for v in re.findall(r"-?\d+\.\d+", cells[9])] == [
             round(value * 100, 2) for value in expected["ci95"]
         ]
+    assert sum(map(int, actual["primary"][0][1:])) == audit["selected_qa"]
+    assert sum(map(int, actual["primary"][1][1:])) == audit["comparable_qa"]
+    difference = display_text(
+        next(b[lang] for b in CONTENT["blocks"] if b["id"] == "table-primary")
+    )
+    for v in [audit["ja_minus_en"]["mean"], *audit["ja_minus_en"]["ci95"]]:
+        assert f"{v * 100:.2f}".replace("-", "−") in difference
     routes = {(r["language"].upper(), r["route"]): r for r in audit["quality"]}
-    assert len(actual["quality"]) == 2
+    assert len(actual["quality"]) == 6
     for row in actual["quality"]:
-        for column, route in enumerate(("no_repair", "original", "always_rewrite"), 1):
-            expected = routes[(row[0], route)]
-            assert [int(v) for v in row[column].split("/")] == [
-                expected[k] for k in ("reliable", "unreliable", "indeterminate", "missing")
-            ]
-    for row, expected in zip(actual["selection"], audit["selection"], strict=True):
-        assert row[0] == expected["language"].upper()
-        assert [int(v) for v in row[1:]] == [
-            expected["known_pairs"],
-            expected["transitions"]["0->1"],
-            expected["oe_missed_improvements"],
-            expected["transitions"]["1->0"],
-            expected["oe_harmful_rewrites"],
+        expected = routes[
+            (row[0], {"NR": "no_repair", "OE": "original", "AR": "always_rewrite"}[row[1]])
         ]
+        assert [int(v) for v in row[2:]] == [
+            expected[k] for k in ("reliable", "unreliable", "indeterminate", "missing")
+        ]
+        assert sum(int(v) for v in row[2:]) == 100
+    for column, expected in enumerate(audit["selection"], 1):
+        cells = [r[column] for r in actual["selection"]]
+        assert [int(c) for c in cells[:5]] == [expected["known_pairs"]] + [
+            expected["transitions"][k] for k in ("0->0", "0->1", "1->0", "1->1")
+        ]
+        assert sum(int(c) for c in cells[1:5]) == int(cells[0])
+        assert cells[5] == f"{expected['oe_missed_improvements']}/{expected['transitions']['0->1']}"
+        assert cells[6] == f"{expected['oe_harmful_rewrites']}/{expected['transitions']['1->0']}"
+    for column, language in enumerate(("en", "ja"), 1):
+        varying = [
+            q
+            for q in audit["questions"]
+            if q["language"] == language
+            and q["comparable"]
+            and q["decision_varies_in_valid_orders"]
+        ]
+        assert [int(r[column]) for r in actual["order_quality"]] == [len(varying)] + [
+            sum(q["classification"] == k for q in varying)
+            for k in (
+                "decision_change_quality_changes",
+                "decision_change_same_binary_quality",
+                "decision_change_quality_unknown",
+            )
+        ] + [
+            sum(
+                q["known_route_cost_range"]["recorded_input_plus_output_tokens"]["max"]
+                > q["known_route_cost_range"]["recorded_input_plus_output_tokens"]["min"]
+                for q in varying
+            )
+        ]
+    assert [int(r[3]) for r in actual["order_quality"]] == [
+        sum(map(int, r[1:3])) for r in actual["order_quality"]
+    ]
+    assert sum(int(r[3]) for r in actual["order_quality"][1:4]) == int(
+        actual["order_quality"][0][3]
+    )
     assert len(actual["cost"]) == 4
     for row in actual["cost"]:
         expected = routes[(row[0], "original" if row[1] == "OE" else "always_rewrite")]
         assert int(row[2]) == expected["calls"]
         assert int(row[3].replace(",", "")) == expected["input_tokens"] + expected["output_tokens"]
+        ar = routes[(row[0], "always_rewrite")]
+        assert float(row[4]) == round(
+            (expected["input_tokens"] + expected["output_tokens"])
+            / (ar["input_tokens"] + ar["output_tokens"]),
+            2,
+        )
     assert len(actual["cases"]) == 6
     for row in actual["cases"]:
         case = json.loads(
@@ -106,11 +175,30 @@ def test_word_text_references_and_tables_match_evidence(lang):
         )
         trial = next(t for t in case["trials"] if t["trial_id"] == row[1])
         policy = next(p for p in case["policy_outcomes"] if p["route"] == row[1])
-        assert float(row[2]) == round(trial["score"], 2)
+        numerator, denominator = map(int, row[2].split("/"))
+        assert denominator == len(trial["fixed_claims"])
+        assert numerator == sum(v["label"] == "supported" for v in trial["verdicts"])
+        assert numerator / denominator == pytest.approx(trial["score"])
         assert (
             row[3]
             == ("A" if policy["selected_stage"] == "initial" else "B") + f" / {policy['quality_y']}"
         )
+    for row, expected in zip(actual["semantics"], audit["semantics"], strict=True):
+        assert row[0] == expected["language"].upper()
+        assert list(map(int, row[1:3])) == [
+            expected["false_support_observations"],
+            expected["negative_sentence_trial_observations"],
+        ]
+        assert row[3] == f"{100 * int(row[1]) / int(row[2]):.1f}%"
+    assert len(actual["thresholds"]) == 5
+    for row in actual["thresholds"]:
+        for column, language in enumerate(("en", "ja"), 1):
+            expected = next(
+                r
+                for r in audit["thresholds"]
+                if r["language"] == language and r["threshold"] == float(row[0])
+            )
+            assert float(row[column]) == round(expected["mean_increment"] * 100, 2)
 
 
 def test_pair_and_frozen_evidence_integrity():
@@ -166,9 +254,12 @@ def test_pair_and_frozen_evidence_integrity():
                 for name in original.namelist():
                     if name not in editable:
                         assert draft.read(name) == original.read(name), name
-    # Development-purpose prose is translated; all numeric result cells match.
-    assert tables[0][1:] == tables[1][1:]
-    assert [r[1:3] for r in tables[0][0]] == [r[1:3] for r in tables[1][0]]
+
+    # Labels and captions are translated; every row retains the same numbers.
+    def numbers(table):
+        return [re.findall(r"\d+(?:\.\d+)?", " ".join(row)) for row in table]
+
+    assert [numbers(t) for t in tables[0]] == [numbers(t) for t in tables[1]]
     result_dir = ROOT / "reports/fixed_v23_order_study_v1"
     frozen = json.loads((result_dir / "artifact_manifest.json").read_text(encoding="utf-8"))
     for file, digest in frozen["files"].items():

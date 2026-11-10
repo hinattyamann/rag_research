@@ -1,5 +1,5 @@
 {
-  "version": "draft-5-2026-11-10",
+  "version": "draft-6-2026-11-10",
   "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
   "extension_evidence_commit": "7beb396febd2842248af53a8ec39eda9fc153153",
   "evidence_trees": {
@@ -7,7 +7,7 @@
     "provenance_audit_v1": "2e9bc4cdd1a6eeb97698d426e291a6b604023ebd",
     "cal_extension_v1": "0cc2339a73efff938db8766269ea7b9daeb32852"
   },
-  "content_digest": "49c7765d9a13c71de429ea98023e37d3fe66c94832e5015d3b244db79cf339f2",
+  "content_digest": "bd17fe431c960665a0201c1d06e6e7d0b3491e8a97eb0ff0c29cf3fa211b0475",
   "evidence_packages": {
     "fixed_v23_v1": "ce831a133d00e3756287655eb53115a546383288cc5756e75f260cae8595f6bd",
     "provenance_audit_v1": "e305c4ff4aeff858221f4ca4ab35f7c21e0d8b4884857d95d9ac0a3593be530b",
@@ -20,114 +20,288 @@
     "notes/pooled_results_v1.json": "2ee7993500ba0a21c403d6077fef89ace97b975bc13613cccdab82867a03e807"
   },
   "template_sha256": "d8e16e91295692e10abab92847abf3e11fa7a66949ff71b31388466949877391",
-  "block_count": 82,
+  "block_count": 86,
   "documents": [
     {
       "language": "en",
       "output": "papers/iciae2027/manuscript/iciae2027_manuscript_en.docx",
-      "sha256": "67ed408d84a0f7b9337f050249c51677c747ad40d3209b7cf5c0ba86fb6d36b0",
+      "sha256": "9b25896948693d65c8a4a4e56c6251fb93c0867ba6708d49d5c8f5f0ee9417af",
       "tables": {
+        "configuration": [
+          [
+            "Collection stages (questions)",
+            "40 + 40 + 120 = 200"
+          ],
+          [
+            "Source partitions",
+            "EN: Development 100; JA: Development 20, Calibration 80"
+          ],
+          [
+            "Retrieval",
+            "50 candidates; RRF constant 60; top-k 5"
+          ],
+          [
+            "Initial generation",
+            "Context 4096; temperature 0; output limit 512"
+          ],
+          [
+            "Evaluation and rewriting",
+            "Context 12288; temperature 0.2; batch 128; prompt version 12"
+          ],
+          [
+            "Task and reasoning limits",
+            "6144 total; 4096 for reasoning"
+          ],
+          [
+            "Trial plan per question",
+            "5 orders; 5 repetitions; first trial shared; at most 9 trials"
+          ],
+          [
+            "Seeds",
+            "Generation/shuffles 42; execution order 43"
+          ],
+          [
+            "Decision thresholds",
+            "Operating 0.7; audit 0.5, 0.6, 0.7, 0.8, 0.9"
+          ],
+          [
+            "Bootstrap",
+            "10000 document-group resamples; seed 42; 95% interval"
+          ]
+        ],
         "development": [
           [
-            "Synthetic",
-            "EN",
-            "12",
+            "Synthetic EN",
+            "12 cases",
             "Relations, scope, uncertainty"
           ],
           [
-            "Synthetic",
-            "JA",
-            "15",
+            "Synthetic JA",
+            "15 cases",
             "Relations, scope, uncertainty"
           ],
           [
-            "Saved QA",
-            "EN",
-            "15",
-            "Previously observed errors (42 sentences)"
+            "Saved EN QA",
+            "15 questions / 42 sentences",
+            "Previously observed errors"
+          ],
+          [
+            "Support recall",
+            "57/58 (98.3%)",
+            "Original + reversed evidence"
+          ],
+          [
+            "Non-support specificity",
+            "14/16 (87.5%)",
+            "Target ≥90%"
           ]
         ],
         "primary": [
           [
-            "EN",
-            "80/100",
-            "8.25",
-            "[4.50, 12.50]"
+            "Selected questions",
+            "100",
+            "100"
           ],
           [
-            "JA",
-            "68/100",
-            "8.24",
+            "Comparable questions",
+            "80",
+            "68"
+          ],
+          [
+            "Excluded refusals",
+            "20",
+            "31"
+          ],
+          [
+            "Missing initial answers",
+            "0",
+            "1"
+          ],
+          [
+            "Failed rewrites",
+            "0",
+            "4"
+          ],
+          [
+            "Order-varying / comparable",
+            "14/80",
+            "12/68"
+          ],
+          [
+            "Mean O (%)",
+            "8.25",
+            "8.24"
+          ],
+          [
+            "Mean R (%)",
+            "0.00",
+            "0.00"
+          ],
+          [
+            "Mean D (pp)",
+            "8.25",
+            "8.24"
+          ],
+          [
+            "95% interval for D (pp)",
+            "[4.50, 12.50]",
             "[4.12, 12.65]"
           ]
         ],
         "quality": [
           [
             "EN",
-            "31/65/4/0",
-            "51/43/6/0",
-            "63/33/4/0"
+            "NR",
+            "31",
+            "65",
+            "4",
+            "0"
+          ],
+          [
+            "EN",
+            "OE",
+            "51",
+            "43",
+            "6",
+            "0"
+          ],
+          [
+            "EN",
+            "AR",
+            "63",
+            "33",
+            "4",
+            "0"
           ],
           [
             "JA",
-            "21/73/5/1",
-            "41/50/8/1",
-            "55/38/6/1"
-          ]
-        ],
-        "selection": [
-          [
-            "EN",
-            "93",
-            "32",
-            "11",
-            "2",
+            "NR",
+            "21",
+            "73",
+            "5",
             "1"
           ],
           [
             "JA",
-            "84",
+            "OE",
+            "41",
+            "50",
+            "8",
+            "1"
+          ],
+          [
+            "JA",
+            "AR",
+            "55",
+            "38",
+            "6",
+            "1"
+          ]
+        ],
+        "selection": [
+          [
+            "Known A/B pairs",
+            "93",
+            "84"
+          ],
+          [
+            "Y(A)=0 → Y(B)=0",
             "31",
-            "13",
+            "34"
+          ],
+          [
+            "Y(A)=0 → Y(B)=1",
+            "32",
+            "31"
+          ],
+          [
+            "Y(A)=1 → Y(B)=0",
             "2",
-            "0"
+            "2"
+          ],
+          [
+            "Y(A)=1 → Y(B)=1",
+            "28",
+            "17"
+          ],
+          [
+            "OE missed / 0→1",
+            "11/32",
+            "13/31"
+          ],
+          [
+            "OE harmful / 1→0",
+            "1/2",
+            "0/2"
+          ]
+        ],
+        "order_quality": [
+          [
+            "Order-varying decisions",
+            "14",
+            "12",
+            "26"
+          ],
+          [
+            "Both Y=0 and Y=1 selected",
+            "7",
+            "7",
+            "14"
+          ],
+          [
+            "Same known binary Y",
+            "5",
+            "3",
+            "8"
+          ],
+          [
+            "Includes indeterminate Y",
+            "2",
+            "2",
+            "4"
+          ],
+          [
+            "Route tokens vary",
+            "14",
+            "12",
+            "26"
           ]
         ],
         "cases": [
           [
             "1",
             "original",
-            "0.33",
+            "1/3",
             "B / 1"
           ],
           [
             "1",
             "shuffle_3",
-            "1.00",
+            "3/3",
             "A / 0"
           ],
           [
             "2",
             "original",
-            "0.75",
+            "3/4",
             "A / 0"
           ],
           [
             "2",
             "shuffle_2",
-            "0.50",
+            "2/4",
             "B / 1"
           ],
           [
             "3",
             "original",
-            "0.67",
+            "2/3",
             "B / 0"
           ],
           [
             "3",
             "reversed",
-            "1.00",
+            "3/3",
             "A / 0"
           ]
         ],
@@ -136,25 +310,70 @@
             "EN",
             "OE",
             "364",
-            "1,669,032"
+            "1,669,032",
+            "2.36"
           ],
           [
             "EN",
             "AR",
             "200",
-            "706,586"
+            "706,586",
+            "1.00"
           ],
           [
             "JA",
             "OE",
             "467",
-            "2,964,849"
+            "2,964,849",
+            "2.99"
           ],
           [
             "JA",
             "AR",
             "198",
-            "992,497"
+            "992,497",
+            "1.00"
+          ]
+        ],
+        "semantics": [
+          [
+            "EN",
+            "344",
+            "719",
+            "47.8%"
+          ],
+          [
+            "JA",
+            "339",
+            "715",
+            "47.4%"
+          ]
+        ],
+        "thresholds": [
+          [
+            "0.5",
+            "7.08",
+            "3.09"
+          ],
+          [
+            "0.6",
+            "8.08",
+            "6.62"
+          ],
+          [
+            "0.7",
+            "8.25",
+            "8.24"
+          ],
+          [
+            "0.8",
+            "9.50",
+            "7.65"
+          ],
+          [
+            "0.9",
+            "11.00",
+            "9.41"
           ]
         ]
       },
@@ -188,8 +407,8 @@
           "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
         },
         "word/document.xml": {
-          "bytes": 129835,
-          "sha256": "a57ed3ab0c495e0efd9280008fd3298277dce70d43938796ec66040bb3d14f52"
+          "bytes": 190023,
+          "sha256": "b5f7e59272578765f43bf6fd563a9731059c540892db0789129feccc1272f8ca"
         },
         "word/_rels/document.xml.rels": {
           "bytes": 5026,
@@ -272,121 +491,295 @@
           "sha256": "80482f86e196171d66001e0e74d1900408a3aaf2463e54005d251b5f2db9a0b0"
         },
         "word/media/experimental_design_en.png": {
-          "bytes": 101703,
-          "sha256": "653751ae65413cb070744216aeebaa4f6c2c7e89eefee7f499fcceb3b450dfba"
+          "bytes": 103465,
+          "sha256": "9d8d236c2ff12741609092a0d235c881eb7f35c42ff3b9c4f5b82539145ed9c4"
         },
         "word/media/order_increment_en.png": {
-          "bytes": 35373,
-          "sha256": "3a0ead9cbb019f3c6009551258709aa9a9ddf9cf0ecb3ca13ccb3a45a0809455"
+          "bytes": 40944,
+          "sha256": "d5ed7990cb79e78b0c0a96bfbf22283ae26df296d51add6ae771788e28f46741"
         }
       }
     },
     {
       "language": "ja",
       "output": "papers/iciae2027/manuscript/iciae2027_manuscript_ja.docx",
-      "sha256": "8844454d8b858c614cdf6ace1318c7f0ef45c33f1645c5b8227394342164b83d",
+      "sha256": "651a648172633b72985e1ec890199d29546868a90882524baa6f881127b178fe",
       "tables": {
+        "configuration": [
+          [
+            "収集段階（問数）",
+            "40 + 40 + 120 = 200"
+          ],
+          [
+            "元データの分割",
+            "EN：Development 100、JA：Development 20・Calibration 80"
+          ],
+          [
+            "検索",
+            "候補50、RRF定数60、top-k 5"
+          ],
+          [
+            "初回生成",
+            "文脈4096、温度0、出力上限512"
+          ],
+          [
+            "評価・書換え",
+            "文脈12288、温度0.2、バッチ128、プロンプト第12版"
+          ],
+          [
+            "タスク・推論上限",
+            "タスク全体6144、うち推論4096"
+          ],
+          [
+            "質問ごとの試行",
+            "順序5条件、反復5回、最初の試行を共用、最大9試行"
+          ],
+          [
+            "シード",
+            "生成・シャッフル42、実行順43"
+          ],
+          [
+            "判断閾値",
+            "運用0.7、監査0.5・0.6・0.7・0.8・0.9"
+          ],
+          [
+            "ブートストラップ",
+            "文書グループを10000回復元抽出、シード42、95%区間"
+          ]
+        ],
         "development": [
           [
-            "人工例",
-            "EN",
-            "12",
+            "人工例 EN",
+            "12例",
             "関係・範囲・不確実性"
           ],
           [
-            "人工例",
-            "JA",
-            "15",
+            "人工例 JA",
+            "15例",
             "関係・範囲・不確実性"
           ],
           [
-            "保存QA",
-            "EN",
-            "15",
-            "既知の誤り（42文）"
+            "保存QA EN",
+            "15問 / 42文",
+            "既知の誤り"
+          ],
+          [
+            "支持の再現率",
+            "57/58 (98.3%)",
+            "元順序＋逆順"
+          ],
+          [
+            "非支持の特異度",
+            "14/16 (87.5%)",
+            "目標 ≥90%"
           ]
         ],
         "primary": [
           [
-            "EN",
-            "80/100",
-            "8.25",
-            "[4.50, 12.50]"
+            "選定問数",
+            "100",
+            "100"
           ],
           [
-            "JA",
-            "68/100",
-            "8.24",
+            "比較可能問数",
+            "80",
+            "68"
+          ],
+          [
+            "除外：拒否",
+            "20",
+            "31"
+          ],
+          [
+            "初回回答の欠測",
+            "0",
+            "1"
+          ],
+          [
+            "書換え失敗",
+            "0",
+            "4"
+          ],
+          [
+            "判断変動 / 比較可能",
+            "14/80",
+            "12/68"
+          ],
+          [
+            "平均O (%)",
+            "8.25",
+            "8.24"
+          ],
+          [
+            "平均R (%)",
+            "0.00",
+            "0.00"
+          ],
+          [
+            "平均D (pp)",
+            "8.25",
+            "8.24"
+          ],
+          [
+            "Dの95%区間 (pp)",
+            "[4.50, 12.50]",
             "[4.12, 12.65]"
           ]
         ],
         "quality": [
           [
             "EN",
-            "31/65/4/0",
-            "51/43/6/0",
-            "63/33/4/0"
+            "NR",
+            "31",
+            "65",
+            "4",
+            "0"
+          ],
+          [
+            "EN",
+            "OE",
+            "51",
+            "43",
+            "6",
+            "0"
+          ],
+          [
+            "EN",
+            "AR",
+            "63",
+            "33",
+            "4",
+            "0"
           ],
           [
             "JA",
-            "21/73/5/1",
-            "41/50/8/1",
-            "55/38/6/1"
-          ]
-        ],
-        "selection": [
-          [
-            "EN",
-            "93",
-            "32",
-            "11",
-            "2",
+            "NR",
+            "21",
+            "73",
+            "5",
             "1"
           ],
           [
             "JA",
-            "84",
+            "OE",
+            "41",
+            "50",
+            "8",
+            "1"
+          ],
+          [
+            "JA",
+            "AR",
+            "55",
+            "38",
+            "6",
+            "1"
+          ]
+        ],
+        "selection": [
+          [
+            "判定可能なA/B",
+            "93",
+            "84"
+          ],
+          [
+            "Y(A)=0 → Y(B)=0",
             "31",
-            "13",
+            "34"
+          ],
+          [
+            "Y(A)=0 → Y(B)=1",
+            "32",
+            "31"
+          ],
+          [
+            "Y(A)=1 → Y(B)=0",
             "2",
-            "0"
+            "2"
+          ],
+          [
+            "Y(A)=1 → Y(B)=1",
+            "28",
+            "17"
+          ],
+          [
+            "OE見逃し / 0→1",
+            "11/32",
+            "13/31"
+          ],
+          [
+            "OE有害選択 / 1→0",
+            "1/2",
+            "0/2"
+          ]
+        ],
+        "order_quality": [
+          [
+            "順序で判断が変動",
+            "14",
+            "12",
+            "26"
+          ],
+          [
+            "Y=0とY=1の両方を選択",
+            "7",
+            "7",
+            "14"
+          ],
+          [
+            "同じ既知二値Y",
+            "5",
+            "3",
+            "8"
+          ],
+          [
+            "判定不能Yを含む",
+            "2",
+            "2",
+            "4"
+          ],
+          [
+            "経路トークン数が変動",
+            "14",
+            "12",
+            "26"
           ]
         ],
         "cases": [
           [
             "1",
             "original",
-            "0.33",
+            "1/3",
             "B / 1"
           ],
           [
             "1",
             "shuffle_3",
-            "1.00",
+            "3/3",
             "A / 0"
           ],
           [
             "2",
             "original",
-            "0.75",
+            "3/4",
             "A / 0"
           ],
           [
             "2",
             "shuffle_2",
-            "0.50",
+            "2/4",
             "B / 1"
           ],
           [
             "3",
             "original",
-            "0.67",
+            "2/3",
             "B / 0"
           ],
           [
             "3",
             "reversed",
-            "1.00",
+            "3/3",
             "A / 0"
           ]
         ],
@@ -395,25 +788,70 @@
             "EN",
             "OE",
             "364",
-            "1,669,032"
+            "1,669,032",
+            "2.36"
           ],
           [
             "EN",
             "AR",
             "200",
-            "706,586"
+            "706,586",
+            "1.00"
           ],
           [
             "JA",
             "OE",
             "467",
-            "2,964,849"
+            "2,964,849",
+            "2.99"
           ],
           [
             "JA",
             "AR",
             "198",
-            "992,497"
+            "992,497",
+            "1.00"
+          ]
+        ],
+        "semantics": [
+          [
+            "EN",
+            "344",
+            "719",
+            "47.8%"
+          ],
+          [
+            "JA",
+            "339",
+            "715",
+            "47.4%"
+          ]
+        ],
+        "thresholds": [
+          [
+            "0.5",
+            "7.08",
+            "3.09"
+          ],
+          [
+            "0.6",
+            "8.08",
+            "6.62"
+          ],
+          [
+            "0.7",
+            "8.25",
+            "8.24"
+          ],
+          [
+            "0.8",
+            "9.50",
+            "7.65"
+          ],
+          [
+            "0.9",
+            "11.00",
+            "9.41"
           ]
         ]
       },
@@ -447,8 +885,8 @@
           "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
         },
         "word/document.xml": {
-          "bytes": 140588,
-          "sha256": "c3768c45fc7365f90ccdcf6ed7def5c3738bf7ebfc73eac88f8c33ba1f2440df"
+          "bytes": 204875,
+          "sha256": "0d296c785372d9715ae9a3d60012c1ad523b08bfe254f510ca5f3e12aabe0fab"
         },
         "word/_rels/document.xml.rels": {
           "bytes": 5026,
@@ -531,12 +969,12 @@
           "sha256": "80482f86e196171d66001e0e74d1900408a3aaf2463e54005d251b5f2db9a0b0"
         },
         "word/media/experimental_design_ja.png": {
-          "bytes": 138468,
-          "sha256": "3a431094cec38104edcaa3904f79b311347a39c4e6eebc55ea53324b1c739722"
+          "bytes": 140786,
+          "sha256": "e91d4c4f80566ff58219e386be53be8de8a39fd3d443c06b95e773c2d2cb1c3f"
         },
         "word/media/order_increment_ja.png": {
-          "bytes": 37969,
-          "sha256": "cb6d4323b804bd13a369a94ded3266630407640ad280314c63cce011e8dd0eda"
+          "bytes": 44280,
+          "sha256": "2ebbe2c21eb5b4e99089c18795cbe1ae231f272c94749916280182faa169d295"
         }
       }
     }

@@ -1,5 +1,7 @@
 # RAG自己評価の順序感度・修復判断分析の実装計画
 
+2026-11-11 00:08 JST 図表改稿: 日英初稿6へ更新し、本文の結果数値と図表の対応を点検した。表を6→10へ整理し、対象/除外/失敗・全A/B遷移・判断変動26問の品質内訳・意味監査・5閾値の結果を掲載。品質を別列、選択を件数/分母、具体例Fを支持文数/固定文数へ変更し、図に閾値とnを明記。86対訳単位・2図10表・日英各8頁。原稿27検査/Ruffと全16頁確認済み。元の研究条件・ラベル・資料・統合集計・区間は不変、新規推論/再採点/区間計算0。[反映と残件](../papers/iciae2027/notes/draft6_revision_status.md)参照。次は著者の図表確認・教員確認・著者情報と最終PDF。
+
 2026-11-10 17:04 JST 執筆実装改訂: derive_pooled_results.pyで全200問のcanonical trial_plan・保存判断・選択Yを照合し、事後統合の点推定・文書Group Bootstrap区間・品質/費用/意味/閾値集計を新規派生JSONへ保存した。原稿生成を言語別2行の結果と開発診断表・3具体例へ更新し、日英82単位と2図6表を再生成。開いている原稿を保全して一組を検査する--output-dirと作業用検査先を追加した。原稿27検査/Ruff、両7頁の全14頁描画確認。研究用src/scripts/configs/tests・依存・元資料・旧集計は不変。[再現](../papers/iciae2027/notes/pooled_analysis_readme.md)と[検証](../papers/iciae2027/notes/draft5_validation_20261110.json)参照。
 
 2026-11-10 11:12 JST 執筆実装更新: derive_extension_results.pyで封印済み3Batchをcanonical trial_planに照合し、新規集合だけの記述集計を追加。生成器を6区分へ拡張し、図2と5表へExtを追記、図1と元成果・科学的src/設定/依存は保持。実DOCX全セル・日英対応・全資料Hashを検査する。保存済みBootstrap区間を再利用し新推定は行わない。[再現案内](../papers/iciae2027/notes/extension_results_readme.md)参照。

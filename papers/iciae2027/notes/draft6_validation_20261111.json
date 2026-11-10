@@ -1,0 +1,790 @@
+{
+  "version": "draft-6-2026-11-10",
+  "recorded_at_jst": "2026-11-11T00:10:15.636485+09:00",
+  "baseline_commit": "ec580ae458bc58eba690bbc8e124e6bddc32ba7e",
+  "content_digest": "bd17fe431c960665a0201c1d06e6e7d0b3491e8a97eb0ff0c29cf3fa211b0475",
+  "paired_blocks": 86,
+  "chapter_count": 7,
+  "figure_count": 2,
+  "table_count": 10,
+  "reference_count": 14,
+  "abstract_words": 217,
+  "documents": [
+    {
+      "language": "en",
+      "path": "papers/iciae2027/manuscript/iciae2027_manuscript_en.docx",
+      "sha256": "9b25896948693d65c8a4a4e56c6251fb93c0867ba6708d49d5c8f5f0ee9417af",
+      "pages": 8,
+      "all_pages_visually_reviewed": true,
+      "reviewed_page_sha256": [
+        "98e339ce7a04c50b374f69b6d6d71d00d2d6bf0e026fe0edfe18d7748afd343c",
+        "48bfc3afbf812fd94492e76e91557d28a7808bb7ee3ebd1004485f01ed58d75f",
+        "a252ef6f5c343955adedb145e72fb6cc1bcc73662be675124a84393d81b76e42",
+        "d6646f9f499d61ed453ef0229f367452e43d448c58d1e6541cb229d6e0781adc",
+        "b1309c2e1d982b7988cd9955cb2ed379640dba0b40dc031a89c4a4e053596170",
+        "d3110ece5b84bbd64bca5bbccbbf9413adb56878421ada9f5e338f71028c0c79",
+        "0ad4d9424f8d47d9f59582f21bb75738f46090dcd48f263d57cb38588ad4e404",
+        "00df991b133d3c95cc1eb417d2acc434c7612de2615fe31033ca506f1c1225e6"
+      ],
+      "major_layout_defects": false
+    },
+    {
+      "language": "ja",
+      "path": "papers/iciae2027/manuscript/iciae2027_manuscript_ja.docx",
+      "sha256": "651a648172633b72985e1ec890199d29546868a90882524baa6f881127b178fe",
+      "pages": 8,
+      "all_pages_visually_reviewed": true,
+      "reviewed_page_sha256": [
+        "32bf47651ffb5874b01f4765a15164d4daf14c042deade13230a19c03ad1997d",
+        "390e41349f530c32038f45842b816a4bb4b93e33b5a727a36d00e8851fa71ca7",
+        "eaebd91f51da61faaa40d0edf28c24374bb89c6b307b6803cfe6f35c259c8de9",
+        "1fa1ca08b5ff8531a7a15f75053b32efd519a587a4ba65fcac5d28ccfc871858",
+        "746b033bee7000dcce0dc08a124c65efc23738c5b9dd0c0540551c3b6f8286fa",
+        "ae7ab44ffbe493fb511e06313b15142a6425df26512bcb45134dd7dc667e5fb3",
+        "28a40ddc825523c25c400dbaf17514e07a7bc37ef3e963d5fce4ab40b37939df",
+        "7f99b0caadc4a7f614321cc50eee95d2a8124287f06e9a9eb88bc260e513635e"
+      ],
+      "major_layout_defects": false
+    }
+  ],
+  "selected_qa": 200,
+  "comparable_qa": 148,
+  "table_values": {
+    "en": {
+      "configuration": [
+        [
+          "Collection stages (questions)",
+          "40 + 40 + 120 = 200"
+        ],
+        [
+          "Source partitions",
+          "EN: Development 100; JA: Development 20, Calibration 80"
+        ],
+        [
+          "Retrieval",
+          "50 candidates; RRF constant 60; top-k 5"
+        ],
+        [
+          "Initial generation",
+          "Context 4096; temperature 0; output limit 512"
+        ],
+        [
+          "Evaluation and rewriting",
+          "Context 12288; temperature 0.2; batch 128; prompt version 12"
+        ],
+        [
+          "Task and reasoning limits",
+          "6144 total; 4096 for reasoning"
+        ],
+        [
+          "Trial plan per question",
+          "5 orders; 5 repetitions; first trial shared; at most 9 trials"
+        ],
+        [
+          "Seeds",
+          "Generation/shuffles 42; execution order 43"
+        ],
+        [
+          "Decision thresholds",
+          "Operating 0.7; audit 0.5, 0.6, 0.7, 0.8, 0.9"
+        ],
+        [
+          "Bootstrap",
+          "10000 document-group resamples; seed 42; 95% interval"
+        ]
+      ],
+      "development": [
+        [
+          "Synthetic EN",
+          "12 cases",
+          "Relations, scope, uncertainty"
+        ],
+        [
+          "Synthetic JA",
+          "15 cases",
+          "Relations, scope, uncertainty"
+        ],
+        [
+          "Saved EN QA",
+          "15 questions / 42 sentences",
+          "Previously observed errors"
+        ],
+        [
+          "Support recall",
+          "57/58 (98.3%)",
+          "Original + reversed evidence"
+        ],
+        [
+          "Non-support specificity",
+          "14/16 (87.5%)",
+          "Target ≥90%"
+        ]
+      ],
+      "primary": [
+        [
+          "Selected questions",
+          "100",
+          "100"
+        ],
+        [
+          "Comparable questions",
+          "80",
+          "68"
+        ],
+        [
+          "Excluded refusals",
+          "20",
+          "31"
+        ],
+        [
+          "Missing initial answers",
+          "0",
+          "1"
+        ],
+        [
+          "Failed rewrites",
+          "0",
+          "4"
+        ],
+        [
+          "Order-varying / comparable",
+          "14/80",
+          "12/68"
+        ],
+        [
+          "Mean O (%)",
+          "8.25",
+          "8.24"
+        ],
+        [
+          "Mean R (%)",
+          "0.00",
+          "0.00"
+        ],
+        [
+          "Mean D (pp)",
+          "8.25",
+          "8.24"
+        ],
+        [
+          "95% interval for D (pp)",
+          "[4.50, 12.50]",
+          "[4.12, 12.65]"
+        ]
+      ],
+      "quality": [
+        [
+          "EN",
+          "NR",
+          "31",
+          "65",
+          "4",
+          "0"
+        ],
+        [
+          "EN",
+          "OE",
+          "51",
+          "43",
+          "6",
+          "0"
+        ],
+        [
+          "EN",
+          "AR",
+          "63",
+          "33",
+          "4",
+          "0"
+        ],
+        [
+          "JA",
+          "NR",
+          "21",
+          "73",
+          "5",
+          "1"
+        ],
+        [
+          "JA",
+          "OE",
+          "41",
+          "50",
+          "8",
+          "1"
+        ],
+        [
+          "JA",
+          "AR",
+          "55",
+          "38",
+          "6",
+          "1"
+        ]
+      ],
+      "selection": [
+        [
+          "Known A/B pairs",
+          "93",
+          "84"
+        ],
+        [
+          "Y(A)=0 → Y(B)=0",
+          "31",
+          "34"
+        ],
+        [
+          "Y(A)=0 → Y(B)=1",
+          "32",
+          "31"
+        ],
+        [
+          "Y(A)=1 → Y(B)=0",
+          "2",
+          "2"
+        ],
+        [
+          "Y(A)=1 → Y(B)=1",
+          "28",
+          "17"
+        ],
+        [
+          "OE missed / 0→1",
+          "11/32",
+          "13/31"
+        ],
+        [
+          "OE harmful / 1→0",
+          "1/2",
+          "0/2"
+        ]
+      ],
+      "order_quality": [
+        [
+          "Order-varying decisions",
+          "14",
+          "12",
+          "26"
+        ],
+        [
+          "Both Y=0 and Y=1 selected",
+          "7",
+          "7",
+          "14"
+        ],
+        [
+          "Same known binary Y",
+          "5",
+          "3",
+          "8"
+        ],
+        [
+          "Includes indeterminate Y",
+          "2",
+          "2",
+          "4"
+        ],
+        [
+          "Route tokens vary",
+          "14",
+          "12",
+          "26"
+        ]
+      ],
+      "cases": [
+        [
+          "1",
+          "original",
+          "1/3",
+          "B / 1"
+        ],
+        [
+          "1",
+          "shuffle_3",
+          "3/3",
+          "A / 0"
+        ],
+        [
+          "2",
+          "original",
+          "3/4",
+          "A / 0"
+        ],
+        [
+          "2",
+          "shuffle_2",
+          "2/4",
+          "B / 1"
+        ],
+        [
+          "3",
+          "original",
+          "2/3",
+          "B / 0"
+        ],
+        [
+          "3",
+          "reversed",
+          "3/3",
+          "A / 0"
+        ]
+      ],
+      "cost": [
+        [
+          "EN",
+          "OE",
+          "364",
+          "1,669,032",
+          "2.36"
+        ],
+        [
+          "EN",
+          "AR",
+          "200",
+          "706,586",
+          "1.00"
+        ],
+        [
+          "JA",
+          "OE",
+          "467",
+          "2,964,849",
+          "2.99"
+        ],
+        [
+          "JA",
+          "AR",
+          "198",
+          "992,497",
+          "1.00"
+        ]
+      ],
+      "semantics": [
+        [
+          "EN",
+          "344",
+          "719",
+          "47.8%"
+        ],
+        [
+          "JA",
+          "339",
+          "715",
+          "47.4%"
+        ]
+      ],
+      "thresholds": [
+        [
+          "0.5",
+          "7.08",
+          "3.09"
+        ],
+        [
+          "0.6",
+          "8.08",
+          "6.62"
+        ],
+        [
+          "0.7",
+          "8.25",
+          "8.24"
+        ],
+        [
+          "0.8",
+          "9.50",
+          "7.65"
+        ],
+        [
+          "0.9",
+          "11.00",
+          "9.41"
+        ]
+      ]
+    },
+    "ja": {
+      "configuration": [
+        [
+          "収集段階（問数）",
+          "40 + 40 + 120 = 200"
+        ],
+        [
+          "元データの分割",
+          "EN：Development 100、JA：Development 20・Calibration 80"
+        ],
+        [
+          "検索",
+          "候補50、RRF定数60、top-k 5"
+        ],
+        [
+          "初回生成",
+          "文脈4096、温度0、出力上限512"
+        ],
+        [
+          "評価・書換え",
+          "文脈12288、温度0.2、バッチ128、プロンプト第12版"
+        ],
+        [
+          "タスク・推論上限",
+          "タスク全体6144、うち推論4096"
+        ],
+        [
+          "質問ごとの試行",
+          "順序5条件、反復5回、最初の試行を共用、最大9試行"
+        ],
+        [
+          "シード",
+          "生成・シャッフル42、実行順43"
+        ],
+        [
+          "判断閾値",
+          "運用0.7、監査0.5・0.6・0.7・0.8・0.9"
+        ],
+        [
+          "ブートストラップ",
+          "文書グループを10000回復元抽出、シード42、95%区間"
+        ]
+      ],
+      "development": [
+        [
+          "人工例 EN",
+          "12例",
+          "関係・範囲・不確実性"
+        ],
+        [
+          "人工例 JA",
+          "15例",
+          "関係・範囲・不確実性"
+        ],
+        [
+          "保存QA EN",
+          "15問 / 42文",
+          "既知の誤り"
+        ],
+        [
+          "支持の再現率",
+          "57/58 (98.3%)",
+          "元順序＋逆順"
+        ],
+        [
+          "非支持の特異度",
+          "14/16 (87.5%)",
+          "目標 ≥90%"
+        ]
+      ],
+      "primary": [
+        [
+          "選定問数",
+          "100",
+          "100"
+        ],
+        [
+          "比較可能問数",
+          "80",
+          "68"
+        ],
+        [
+          "除外：拒否",
+          "20",
+          "31"
+        ],
+        [
+          "初回回答の欠測",
+          "0",
+          "1"
+        ],
+        [
+          "書換え失敗",
+          "0",
+          "4"
+        ],
+        [
+          "判断変動 / 比較可能",
+          "14/80",
+          "12/68"
+        ],
+        [
+          "平均O (%)",
+          "8.25",
+          "8.24"
+        ],
+        [
+          "平均R (%)",
+          "0.00",
+          "0.00"
+        ],
+        [
+          "平均D (pp)",
+          "8.25",
+          "8.24"
+        ],
+        [
+          "Dの95%区間 (pp)",
+          "[4.50, 12.50]",
+          "[4.12, 12.65]"
+        ]
+      ],
+      "quality": [
+        [
+          "EN",
+          "NR",
+          "31",
+          "65",
+          "4",
+          "0"
+        ],
+        [
+          "EN",
+          "OE",
+          "51",
+          "43",
+          "6",
+          "0"
+        ],
+        [
+          "EN",
+          "AR",
+          "63",
+          "33",
+          "4",
+          "0"
+        ],
+        [
+          "JA",
+          "NR",
+          "21",
+          "73",
+          "5",
+          "1"
+        ],
+        [
+          "JA",
+          "OE",
+          "41",
+          "50",
+          "8",
+          "1"
+        ],
+        [
+          "JA",
+          "AR",
+          "55",
+          "38",
+          "6",
+          "1"
+        ]
+      ],
+      "selection": [
+        [
+          "判定可能なA/B",
+          "93",
+          "84"
+        ],
+        [
+          "Y(A)=0 → Y(B)=0",
+          "31",
+          "34"
+        ],
+        [
+          "Y(A)=0 → Y(B)=1",
+          "32",
+          "31"
+        ],
+        [
+          "Y(A)=1 → Y(B)=0",
+          "2",
+          "2"
+        ],
+        [
+          "Y(A)=1 → Y(B)=1",
+          "28",
+          "17"
+        ],
+        [
+          "OE見逃し / 0→1",
+          "11/32",
+          "13/31"
+        ],
+        [
+          "OE有害選択 / 1→0",
+          "1/2",
+          "0/2"
+        ]
+      ],
+      "order_quality": [
+        [
+          "順序で判断が変動",
+          "14",
+          "12",
+          "26"
+        ],
+        [
+          "Y=0とY=1の両方を選択",
+          "7",
+          "7",
+          "14"
+        ],
+        [
+          "同じ既知二値Y",
+          "5",
+          "3",
+          "8"
+        ],
+        [
+          "判定不能Yを含む",
+          "2",
+          "2",
+          "4"
+        ],
+        [
+          "経路トークン数が変動",
+          "14",
+          "12",
+          "26"
+        ]
+      ],
+      "cases": [
+        [
+          "1",
+          "original",
+          "1/3",
+          "B / 1"
+        ],
+        [
+          "1",
+          "shuffle_3",
+          "3/3",
+          "A / 0"
+        ],
+        [
+          "2",
+          "original",
+          "3/4",
+          "A / 0"
+        ],
+        [
+          "2",
+          "shuffle_2",
+          "2/4",
+          "B / 1"
+        ],
+        [
+          "3",
+          "original",
+          "2/3",
+          "B / 0"
+        ],
+        [
+          "3",
+          "reversed",
+          "3/3",
+          "A / 0"
+        ]
+      ],
+      "cost": [
+        [
+          "EN",
+          "OE",
+          "364",
+          "1,669,032",
+          "2.36"
+        ],
+        [
+          "EN",
+          "AR",
+          "200",
+          "706,586",
+          "1.00"
+        ],
+        [
+          "JA",
+          "OE",
+          "467",
+          "2,964,849",
+          "2.99"
+        ],
+        [
+          "JA",
+          "AR",
+          "198",
+          "992,497",
+          "1.00"
+        ]
+      ],
+      "semantics": [
+        [
+          "EN",
+          "344",
+          "719",
+          "47.8%"
+        ],
+        [
+          "JA",
+          "339",
+          "715",
+          "47.4%"
+        ]
+      ],
+      "thresholds": [
+        [
+          "0.5",
+          "7.08",
+          "3.09"
+        ],
+        [
+          "0.6",
+          "8.08",
+          "6.62"
+        ],
+        [
+          "0.7",
+          "8.25",
+          "8.24"
+        ],
+        [
+          "0.8",
+          "9.50",
+          "7.65"
+        ],
+        [
+          "0.9",
+          "11.00",
+          "9.41"
+        ]
+      ]
+    }
+  },
+  "checks": {
+    "command": "uv run --no-sync python -X utf8 -m pytest papers/iciae2027/manuscript -q",
+    "passed": 27,
+    "elapsed_seconds": 4.06,
+    "scope": "Canonical paired Word manuscripts and manuscript analysis suite",
+    "ruff_command": "uv run --no-sync ruff check .",
+    "ruff_passed": true,
+    "all_actual_word_cells_checked_against_saved_results": true,
+    "quality_row_and_transition_totals_and_selection_denominators_checked": true,
+    "all_five_thresholds_and_semantic_observation_denominators_checked": true,
+    "result_block_numeric_multisets_match_between_languages": true,
+    "table_numbers_and_cross_references_match": true,
+    "all_six_example_scores_match_integer_verdict_counts": true,
+    "original_research_files_data_annotations_and_pooled_results_unchanged": true,
+    "reviewed_staged_and_canonical_docx_hashes_equal": true,
+    "no_page_number_fields": true,
+    "full_research_pytest_rerun": false
+  },
+  "review_method": "Root viewed all 16 pages at 140 dpi. The final bibliography-only change preserves identical image hashes on 15 pages; the changed English page 8 was viewed again. EN pages 1–3 also match the directly viewed en-publish images.",
+  "numeric_coverage_audit": "notes/table_figure_numeric_audit_20261110.md",
+  "scientific_changes": {
+    "new_inference_calls": 0,
+    "new_annotation_calls": 0,
+    "new_confidence_intervals": 0,
+    "experimental_parameters_saved_labels_missingness_and_intervals_preserved": true
+  },
+  "human_reviewed_labels": false,
+  "submitted": false,
+  "remaining": [
+    "author read-through of tables and figures",
+    "supervisor review and author information",
+    "reviewer access and final English PDF check",
+    "submission only on explicit instruction"
+  ]
+}

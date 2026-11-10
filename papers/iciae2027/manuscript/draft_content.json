@@ -1,5 +1,5 @@
 {
-  "version": "draft-5-2026-11-10",
+  "version": "draft-6-2026-11-10",
   "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
   "title": {
     "en": "Evidence Order Sensitivity in RAG Evaluation and Its Effects on Answer Selection, Quality, and Cost",
@@ -101,21 +101,21 @@
     {
       "id": "design-inputs",
       "type": "p",
-      "en": "For question i, we generate an initial answer A_i and retain the evidence actually supplied to the generator. We fix the evidence text, titles, identifiers, and deterministically segmented answer sentences. The order conditions are original, reversed, and three seeded shuffles. The repetition control evaluates the original order five times. Its first trial is shared with the order conditions, giving at most nine logical trials per question. Duplicate permutations are omitted from the order comparison. Every repetition invokes the model rather than reusing a cached result.",
-      "ja": "質問iごとに初回回答A_iを生成し、生成器に実際に渡した根拠を保存する。根拠本文・タイトル・識別子と、決定的な規則で分割した回答の文を固定する。順序条件は元順序、逆順、シードを固定した三つのシャッフルである。反復対照では元順序を5回評価する。最初の試行を順序条件と共用するため、質問ごとの論理試行は最大9回となる。重複する順列は順序比較から除く。反復ではキャッシュした結果を使わず、毎回モデルを呼び出す。"
-    },
-    {
-      "id": "design-control",
-      "type": "p",
-      "en": "Trial execution order is randomized with seed 43; shuffle and generation seeds are 42. We do not retrieve again, regenerate A_i, resegment its sentences, or truncate evidence between trials. Reference answers and reference evidence are reserved for external quality assessment and are not supplied as gold information to the internal evaluator or rewriter. Fig. 1 summarizes the procedure.",
-      "ja": "試行の実行順はシード43で無作為化し、シャッフルと生成のシードは42とする。試行間で再検索、A_iの再生成、文の再分割、根拠の切詰めは行わない。参照回答と参照根拠は外部品質採点用とし、内部評価器や書換え器へ正解情報として渡さない。図1に手順を示す。"
+      "en": "For question i, we generate an initial answer A_i and retain the evidence actually supplied to the generator. We fix the evidence text, titles, identifiers, and deterministically segmented answer sentences. The order conditions are original, reversed, and three seeded shuffles. The repetition control evaluates the original order five times. Its first trial is shared with the order conditions, giving at most nine logical trials per question. Duplicate permutations are omitted from the order comparison. Every repetition invokes the model rather than reusing a cached result. Fig. 1 summarizes the procedure.",
+      "ja": "質問iごとに初回回答A_iを生成し、生成器に実際に渡した根拠を保存する。根拠本文・タイトル・識別子と、決定的な規則で分割した回答の文を固定する。順序条件は元順序、逆順、シードを固定した三つのシャッフルである。反復対照では元順序を5回評価する。最初の試行を順序条件と共用するため、質問ごとの論理試行は最大9回となる。重複する順列は順序比較から除く。反復ではキャッシュした結果を使わず、毎回モデルを呼び出す。図1に手順を示す。"
     },
     {
       "id": "figure-design",
       "type": "figure",
-      "en": "Fig. 1. Fixed inputs, evidence-order evaluation, and selection between shared answers.",
-      "ja": "図1 入力の固定、根拠順序の評価、共通回答間の選択。",
+      "en": "Fig. 1. Fixed inputs and shared-answer selection. The first trial is shared between the order and repetition groups. The score rule applies to scorable answers; Section 3.2 describes refusals and failures.",
+      "ja": "図1 入力の固定と共通回答の選択。順序群と反復群で最初の試行を共用する。スコアの規則は採点可能な回答に適用し、拒否と失敗の扱いは3.2節に示す。",
       "key": "design"
+    },
+    {
+      "id": "design-control",
+      "type": "p",
+      "en": "Trial execution order is randomized with seed 43; shuffle and generation seeds are 42. We do not retrieve again, regenerate A_i, resegment its sentences, or truncate evidence between trials. Reference answers and reference evidence are reserved for external quality assessment and are not supplied as gold information to the internal evaluator or rewriter.",
+      "ja": "試行の実行順はシード43で無作為化し、シャッフルと生成のシードは42とする。試行間で再検索、A_iの再生成、文の再分割、根拠の切詰めは行わない。参照回答と参照根拠は外部品質採点用とし、内部評価器や書換え器へ正解情報として渡さない。"
     },
     {
       "id": "h32-decision",
@@ -198,14 +198,14 @@
     {
       "id": "setting-data",
       "type": "p",
-      "en": "English questions come from CLAPNQ[[8]] and Japanese questions from wikipedia-human-retrieval-ja[[9]]. We use fixed dataset revisions c508d78 and 02e85c8, respectively, with document-group partitions and frozen retrieval corpora. The evaluation sample contains 100 answerable questions per language. English questions use the project Development partition; Japanese questions use 20 from Development and 80 from Calibration. Both partitions serve evaluation after the configuration is fixed. The languages differ in questions, reference structure, and corpus; they are not a parallel bilingual set.",
-      "ja": "英語の質問にはCLAPNQ[[8]]、日本語にはwikipedia-human-retrieval-ja[[9]]を用いる。データセット版はそれぞれc508d78と02e85c8に固定し、文書グループによる分割と固定検索コーパスを用いる。評価対象は、各言語の回答可能な100問である。英語は本プロジェクトのDevelopment分割、日本語はDevelopmentから20問とCalibrationから80問を用いる。両分割とも構成固定後の評価に使う。言語間では質問、参照構造、コーパスが異なり、対訳の二言語集合ではない。"
+      "en": "Answerable English questions come from CLAPNQ[[8]] and answerable Japanese questions from wikipedia-human-retrieval-ja[[9]], using fixed revisions c508d78 and 02e85c8. We use document-group partitions and frozen retrieval corpora. Table 1 lists the sample sizes and source partitions, all used for evaluation after configuration fixation. The languages differ in questions, reference structure, and corpus; they are not a parallel bilingual set.",
+      "ja": "回答可能な質問を、英語はCLAPNQ[[8]]、日本語はwikipedia-human-retrieval-ja[[9]]から取得し、版をそれぞれc508d78と02e85c8に固定する。文書グループによる分割と固定検索コーパスを用いる。表1に標本数と元データの分割を示し、全て構成固定後の評価に用いる。言語間では質問、参照構造、コーパスが異なり、対訳の二言語集合ではない。"
     },
     {
       "id": "setting-selection",
       "type": "p",
-      "en": "Questions were selected by seeded identifier hashes, one per document group, excluding recorded previous use and previously selected groups. The 200 questions were collected in stages of 40, 40, and a later planned 120, with the evaluator, prompts, and threshold unchanged. The later 120 were planned after the earlier results and fixed before their collection. Failures were not replaced.",
-      "ja": "シード付き識別子ハッシュで文書グループごとに1問を選び、記録済みの過去利用と選定済みグループを除外した。200問は40問、40問、その後に計画した120問の段階で収集し、評価器・プロンプト・閾値は変更していない。後の120問は先行結果を確認してから計画し、その収集前に固定した。失敗を別の質問で補充していない。"
+      "en": "Questions were selected by seeded identifier hashes, one per document group, excluding recorded previous use and previously selected groups. The staged collection in Table 1 kept the evaluator, prompts, and threshold unchanged. The final 120 questions were planned after the earlier results and fixed before collection. Failures were not replaced.",
+      "ja": "シード付き識別子ハッシュで文書グループごとに1問を選び、記録済みの過去利用と選定済みグループを除外した。表1の段階的収集を通して、評価器・プロンプト・閾値は変更していない。最後の120問は先行結果を確認してから計画し、収集前に固定した。失敗を別の質問で補充していない。"
     },
     {
       "id": "h42-runtime",
@@ -216,14 +216,21 @@
     {
       "id": "setting-retrieval",
       "type": "p",
-      "en": "Hybrid retrieval combines BM25 and multilingual-e5-small embeddings[[10]], using 50 candidates, reciprocal-rank fusion constant 60, and top-k=5. Initial generation uses Qwen2.5-3B-Instruct Q4_K_M[[11]], context 4096 tokens, temperature 0, and output limit 512 tokens. Evidence is fixed after packing into that initial input.",
-      "ja": "ハイブリッド検索はBM25とmultilingual-e5-smallの埋込み[[10]]を組み合わせ、候補数50、逆順位融合の定数60、top-k=5とする。初回生成にはQwen2.5-3B-Instruct Q4_K_M[[11]]を用い、文脈4096トークン、温度0、出力上限512トークンとする。その初回入力への組込み後に根拠を固定する。"
+      "en": "Hybrid retrieval combines BM25 and multilingual-e5-small embeddings[[10]] through reciprocal-rank fusion. Initial generation uses Qwen2.5-3B-Instruct Q4_K_M[[11]]. Table 1 lists numerical settings. Evidence is fixed after packing into the initial input.",
+      "ja": "ハイブリッド検索は、BM25とmultilingual-e5-smallの埋込み[[10]]を逆順位融合で組み合わせる。初回生成にはQwen2.5-3B-Instruct Q4_K_M[[11]]を用いる。数値設定を表1に示す。初回入力への組込み後に根拠を固定する。"
     },
     {
       "id": "setting-model",
       "type": "p",
-      "en": "The internal evaluator and rewriter use Qwen3.5-9B Q6_K[[12]] with language-specific prompt version 12. Context is 12288 tokens, temperature 0.2, seed 42, batch size 128 tokens, and reasoning budget 4096 within a 6144-token task limit. CUDA uses full offload with graphs disabled. Thus the initial generator and internal evaluator are different models; evaluation is internal to the RAG system rather than self-grading by the initial generator.",
-      "ja": "内部評価器と書換え器にはQwen3.5-9B Q6_K[[12]]と、言語別のプロンプト第12版を用いる。文脈12288トークン、温度0.2、シード42、バッチサイズ128トークンとし、タスク上限6144トークンの中に推論予算4096トークンを設ける。CUDAへ全層をオフロードし、グラフを無効化する。したがって初回生成器と内部評価器は異なるモデルであり、ここでの評価は初回生成器による自己採点ではなく、RAGシステム内部の評価を指す。"
+      "en": "The internal evaluator and rewriter use Qwen3.5-9B Q6_K[[12]] with language-specific prompts. CUDA uses full offload with graphs disabled. The initial generator and internal evaluator are different models: evaluation is internal to the RAG system rather than self-grading by the initial generator.",
+      "ja": "内部評価器と書換え器にはQwen3.5-9B Q6_K[[12]]と言語別のプロンプトを用いる。CUDAへ全層をオフロードし、グラフを無効化する。初回生成器と内部評価器は異なるモデルであり、ここでの評価は初回生成器による自己採点ではなく、RAGシステム内部の評価を指す。"
+    },
+    {
+      "id": "table-configuration",
+      "type": "table",
+      "key": "configuration",
+      "en": "Table 1. Sample and numerical settings. EN/JA: English/Japanese. Context, output, reasoning, and batch units are tokens. Three Japanese reference article bodies were unavailable.",
+      "ja": "表1 標本と数値設定。EN/JA：英語/日本語。文脈・出力・推論・バッチの単位はトークン。日本語の参照記事本文3件は利用不能であった。"
     },
     {
       "id": "h43-development",
@@ -234,21 +241,21 @@
     {
       "id": "setting-development",
       "type": "p",
-      "en": "Before collecting the 200 questions, we examined candidate models, prompts, and inference settings using development diagnostics. The core sets comprise synthetic English and Japanese cases and saved English question-answer traces (Table 1). The synthetic cases test relations, temporal and numerical scope, and qualified statements. The 15 saved questions come from earlier CLAPNQ runs and contain 42 fixed sentences, including 5 with ambiguous expected labels; they include previously observed errors. Two of these questions also appear in the initial bilingual diagnostic suite. Expected labels were AI-authored and not human-verified.",
-      "ja": "200問を収集する前に、開発用の診断を用いてモデル・プロンプト・推論設定の候補を検討した。主要な集合は、日英の人工例と保存済みの英語質問・回答記録からなる（表1）。人工例は、関係、時間・数値の範囲、限定付きの記述を確認する。保存済み15問は過去のCLAPNQ実行に由来し、期待ラベルが曖昧な5文を含む42固定文からなり、過去に観測した誤りを含む。このうち2問は初期の日英診断にも含まれる。期待ラベルはAIが作成し、人手では確認していない。"
+      "en": "Before collecting the 200 questions, we examined candidate models, prompts, and inference settings using development diagnostics (Table 2). Synthetic cases test relations, temporal and numerical scope, and qualified statements. Saved English question-answer traces come from earlier CLAPNQ runs and include previously observed errors. Expected labels were AI-authored and not human-verified.",
+      "ja": "200問を収集する前に、開発診断を用いてモデル・プロンプト・推論設定の候補を検討した（表2）。人工例は、関係、時間・数値の範囲、限定付きの記述を確認する。保存済みの英語質問・回答記録は過去のCLAPNQ実行に由来し、過去に観測した誤りを含む。期待ラベルはAIが作成し、人手では確認していない。"
     },
     {
       "id": "table-development",
       "type": "table",
-      "en": "Table 1. Core development diagnostics used before fixation. n denotes synthetic cases or saved questions.",
-      "ja": "表1 固定前に用いた主要な開発診断。nは人工例数または保存質問数。",
+      "en": "Table 2. Development data and fixed-evaluator diagnostics. Saved data include 5 ambiguous sentences and 2 questions reused in the initial bilingual diagnostic. Rates exclude ambiguous labels and pool original/reversed evidence. Expected labels are human-unverified AI labels.",
+      "ja": "表2 開発データと固定評価器の診断。保存データには曖昧な5文と、初期の日英診断でも用いた2問を含む。再現率と特異度は曖昧ラベルを除き、元順序/逆順を合わせる。期待ラベルは人手未確認のAIラベル。",
       "key": "development"
     },
     {
       "id": "setting-fixation",
       "type": "p",
-      "en": "We fixed the configuration with a complete saved run of the 15-question diagnostic[[13]]. Across original and reversed evidence, support recall was 57/58 (98.3%) and non-support specificity 14/16 (87.5%), below the original 90% specificity target. The experiment therefore examines an evaluator with known semantic errors. The 200 evaluation questions were collected after this choice, without retuning the evaluator or threshold on their outcomes.",
-      "ja": "15問の診断を完了した保存実行を持つ構成を固定した[[13]]。元順序と逆順の観測では、支持の再現率57/58（98.3%）、非支持の特異度14/16（87.5%）であり、当初の特異度目標90%を下回った。したがって、本実験は既知の意味誤りを持つ評価器の挙動を調べる。200問はこの選択後に収集し、その結果を用いて評価器や閾値を再調整していない。"
+      "en": "We fixed a configuration with a complete run of the saved-question diagnostic[[13]]. Its non-support specificity was 87.5%, below the original 90% target (Table 2). The experiment therefore examines an evaluator with known semantic errors. The 200 evaluation questions were collected after this choice, without retuning the evaluator or threshold on their outcomes.",
+      "ja": "保存質問の診断を完了した実行を持つ構成を固定した[[13]]。非支持の特異度は87.5%で、当初の目標90%を下回った（表2）。したがって、本実験は既知の意味誤りを持つ評価器の挙動を調べる。200問はこの選択後に収集し、その結果を用いて評価器や閾値を再調整していない。"
     },
     {
       "id": "h44-assessment",
@@ -283,21 +290,14 @@
     {
       "id": "result-primary",
       "type": "p",
-      "en": "Complete comparisons are available for 80 English and 68 Japanese questions (Table 2). The 52 exclusions comprise 51 refusals without scorable sentences and one missing initial answer. Among comparable questions, no repetition pair disagrees. Mean excess disagreement is 8.25 percentage points (pp) in English and 8.24 pp in Japanese; both bootstrap intervals exclude zero (Fig. 2). Decisions vary across evidence orders for 14/80 English and 12/68 Japanese questions.",
-      "ja": "英語80問・日本語68問で完全比較が可能であった（表2）。除外52問は採点可能な文のない拒否51問と初回回答の欠測1問である。比較可能な質問では、反復ペアの不一致はなかった。判断不一致の平均増分は英語8.25ポイント（pp）、日本語8.24 ppで、両ブートストラップ区間が0を上回った（図2）。根拠順序間で判断が変わったのは英語14/80問、日本語12/68問であった。"
-    },
-    {
-      "id": "figure-order",
-      "type": "figure",
-      "en": "Fig. 2. Post-hoc pooled excess disagreement and Japanese-minus-English difference with document-group bootstrap 95% intervals.",
-      "ja": "図2 事後統合による判断不一致の増分・日英差と文書グループ・ブートストラップ95%区間。",
-      "key": "order"
+      "en": "Complete comparisons are available for 80 English and 68 Japanese questions (Table 3). The 52 exclusions comprise 51 refusals without scorable sentences and one missing initial answer. Among comparable questions, no repetition pair disagrees. Mean excess disagreement is 8.25 percentage points (pp) in English and 8.24 pp in Japanese; both bootstrap intervals exclude zero (Fig. 2). Decisions vary across evidence orders for 14/80 English and 12/68 Japanese questions.",
+      "ja": "英語80問・日本語68問で完全比較が可能であった（表3）。除外52問は採点可能な文のない拒否51問と初回回答の欠測1問である。比較可能な質問では、反復ペアの不一致はなかった。判断不一致の平均増分は英語8.25ポイント（pp）、日本語8.24 ppで、両ブートストラップ区間が0を上回った（図2）。根拠順序間で判断が変わったのは英語14/80問、日本語12/68問であった。"
     },
     {
       "id": "table-primary",
       "type": "table",
-      "en": "Table 2. Post-hoc pooled order sensitivity. n is comparable/selected questions.",
-      "ja": "表2 事後統合による順序感度。nは比較可能問数/選定問数。",
+      "en": "Table 3. Population and sensitivity: 52 exclusions, 148/200 comparable questions. O/R: order/repetition disagreement; D=O−R in percentage points (pp). JA−EN D: −0.01 pp [−5.96, 5.99] (95% interval). Failed rewrites retain A.",
+      "ja": "表3 対象と感度。除外52問、比較可能148/200問。O/R：順序間/反復間の不一致率、D=O−Rは百分率の差 (pp)。JA−ENのD：−0.01 pp［−5.96, 5.99］（95%区間）。書換え失敗時はAを保持。",
       "key": "primary"
     },
     {
@@ -307,42 +307,56 @@
       "ja": "日本語平均−英語平均は−0.01 ppで、95%区間は［−5.96, 5.99］ppであった。各言語のデータセットで感度を観測したが、両者の差は確立しなかった。"
     },
     {
+      "id": "figure-order",
+      "type": "figure",
+      "en": "Fig. 2. Post-hoc pooled excess disagreement and Japanese-minus-English difference with document-group bootstrap 95% intervals.",
+      "ja": "図2 事後統合による判断不一致の増分・日英差と文書グループ・ブートストラップ95%区間。",
+      "key": "order"
+    },
+    {
       "id": "h52-quality",
       "type": "h2",
       "en": "5.2 Selected-answer quality",
       "ja": "5.2 選択回答の品質"
     },
     {
-      "id": "result-quality",
-      "type": "p",
-      "en": "Table 3 reports quality for all 200 selected questions. OE returns 51 reliable English and 41 reliable Japanese answers, more than NR (31 and 21) but fewer than AR (63 and 55). Japanese policies each have one missing delivery from the initial-answer failure. Indeterminate labels remain separate from unreliable answers.",
-      "ja": "表3に全選定200問の品質を示す。OEの良好回答数は英語51件・日本語41件で、NRの31件・21件より多いが、ARの63件・55件より少なかった。日本語の各方策には、初回回答の失敗による最終回答の欠測が1件ある。判定不能ラベルは不良回答と区別する。"
-    },
-    {
       "id": "table-quality",
       "type": "table",
-      "en": "Table 3. Reliable/unreliable/indeterminate/missing counts per policy; 100 selected questions per language.",
-      "ja": "表3 方策別の良好/不良/判定不能/欠測の件数。各言語100問を選定。",
+      "en": "Table 4. Quality counts per 100 questions. NR/OE/AR: no rewriting/original-order evaluation/always rewriting. Y=1: reliable; Y=0: unreliable. Unclear and missing are separate.",
+      "ja": "表4 各100問の品質件数。NR/OE/AR：書換えなし/元順序評価/常時書換え。Y=1：良好、Y=0：不良。判定不能と欠測を分ける。",
       "key": "quality"
+    },
+    {
+      "id": "result-quality",
+      "type": "p",
+      "en": "Table 4 reports quality for all 200 selected questions. OE returns 51 reliable English and 41 reliable Japanese answers, more than NR (31 and 21) but fewer than AR (63 and 55). Japanese policies each have one missing delivery from the initial-answer failure. Indeterminate labels remain separate from unreliable answers.",
+      "ja": "表4に全選定200問の品質を示す。OEの良好回答数は英語51件・日本語41件で、NRの31件・21件より多いが、ARの63件・55件より少なかった。日本語の各方策には、初回回答の失敗による最終回答の欠測が1件ある。判定不能ラベルは不良回答と区別する。"
     },
     {
       "id": "result-transitions",
       "type": "p",
-      "en": "Known A/B quality transitions are available for 93 English and 84 Japanese questions (Table 4). Rewriting improves 32 English and 31 Japanese answers from Y=0 to Y=1, while degrading two in each language from Y=1 to Y=0. OE misses 11/32 English and 13/31 Japanese possible improvements, and selects one harmful English rewrite. Thus evaluation avoids some harmful changes but also rejects some useful rewrites.",
-      "ja": "A/Bの品質遷移が判定可能なのは英語93問・日本語84問である（表4）。書換えによってY=0からY=1へ改善したのは英語32問・日本語31問で、Y=1からY=0へ悪化したのは各言語2問であった。OEは改善可能例の英語11/32問・日本語13/31問を見逃し、英語では有害な書換え1件を選んだ。したがって評価は一部の有害変更を避ける一方で、有用な書換えの一部も棄却した。"
+      "en": "Known A/B quality transitions are available for 93 English and 84 Japanese questions (Table 5). Rewriting improves 32 English and 31 Japanese answers from Y=0 to Y=1, while degrading two in each language from Y=1 to Y=0. OE misses 11/32 English and 13/31 Japanese possible improvements, and selects one harmful English rewrite. Thus evaluation avoids some harmful changes but also rejects some useful rewrites.",
+      "ja": "A/Bの品質遷移が判定可能なのは英語93問・日本語84問である（表5）。書換えによってY=0からY=1へ改善したのは英語32問・日本語31問で、Y=1からY=0へ悪化したのは各言語2問であった。OEは改善可能例の英語11/32問・日本語13/31問を見逃し、英語では有害な書換え1件を選んだ。したがって評価は一部の有害変更を避ける一方で、有用な書換えの一部も棄却した。"
     },
     {
       "id": "table-selection",
       "type": "table",
-      "en": "Table 4. Known binary A/B transitions and OE selection. AR selects every successful rewrite.",
-      "ja": "表4 既知二値A/B遷移とOEの選択。ARは成功した書換えを全て選ぶ。",
+      "en": "Table 5. Known A/B quality transitions (1: reliable; 0: unreliable). The four transitions partition known pairs. OE selection rows show events/eligible transitions; AR selects every successful B.",
+      "ja": "表5 既知A/B品質遷移（1：良好、0：不良）。4遷移の合計が判定可能組数。OEの選択行は該当件数/対象遷移数、ARは成功したBを全て選ぶ。",
       "key": "selection"
     },
     {
       "id": "result-order-quality",
       "type": "p",
-      "en": "Among the 26 comparable questions with order-dependent decisions, 14 select both Y=0 and Y=1 answers across orders, 8 retain one binary label, and 4 include indeterminate selected quality. The last group is unresolved rather than unchanged. Reordering can therefore alter quality, leave the measured label unchanged, or produce an outcome that the available labels cannot resolve.",
-      "ja": "比較可能な質問のうち順序で判断が変わった26問では、14問で順序間にY=0とY=1の両回答が選ばれ、8問では同じ二値ラベルを保ち、4問では選択品質に判定不能を含んだ。最後の群は品質不変ではなく未確定である。したがって並べ替えは品質を変える場合、測定ラベルを変えない場合、利用可能なラベルでは結果を確定できない場合がある。"
+      "en": "Among the 26 questions with order-dependent decisions, selected binary quality changes for 14, stays the same for 8, and is unresolved for 4 (Table 6). An unresolved outcome is not evidence of unchanged quality.",
+      "ja": "順序で判断が変わった26問では、選択回答の二値品質が変わったのは14問、同じなのは8問、未確定は4問であった（表6）。未確定は品質が変わらないことの証拠ではない。"
+    },
+    {
+      "id": "table-order-quality",
+      "type": "table",
+      "key": "order_quality",
+      "en": "Table 6. Outcomes among 26 order-varying questions. Three quality categories partition the questions (1: reliable; 0: unreliable). Token variation is a separate property of the same questions.",
+      "ja": "表6 順序で判断が変わった26問の結果。品質3区分の合計が対象問数となる（1：良好、0：不良）。トークン数の変動は同じ質問の別の性質。"
     },
     {
       "id": "h53-cases",
@@ -353,8 +367,8 @@
     {
       "id": "case-selection",
       "type": "p",
-      "en": "Table 5 links three cases to their selection results. A is the initial answer and B the shared rewrite. The displayed orders share the same evidence content and A/B candidates. The cases were selected after inspecting outcomes. Quoted outputs are excerpts; the Japanese case is translated into English.",
-      "ja": "表5に三つの例と選択結果を対応付ける。Aは初回回答、Bは共通書換えである。表示した順序間で根拠の内容とA/B候補は同じである。例は結果確認後に選定した。引用した出力は抜粋であり、英語の例は日本語へ訳して示す。",
+      "en": "Table 7 links three cases to their selection results. A is the initial answer and B the shared rewrite. The displayed orders share the same evidence content and A/B candidates. The cases were selected after inspecting outcomes. Quoted outputs are excerpts; the Japanese case is translated into English.",
+      "ja": "表7に三つの例と選択結果を対応付ける。Aは初回回答、Bは共通書換えである。表示した順序間で根拠の内容とA/B候補は同じである。例は結果確認後に選定した。引用した出力は抜粋であり、英語の例は日本語へ訳して示す。",
       "keep_with_next": true,
       "keep_together": true
     },
@@ -422,8 +436,8 @@
     {
       "id": "table-cases",
       "type": "table",
-      "en": "Table 5. Evidence order, score F, and selected answer/AI quality label for Cases 1–3. Scores are rounded.",
-      "ja": "表5 例1～3の根拠順序、スコアF、選択回答/AI品質ラベル。スコアは丸めて表示。",
+      "en": "Table 7. Selection in Cases 1–3. F: supported/all fixed sentences; F≥0.7 retains A, otherwise selects B. Y=1/0: reliable/unreliable. Shuffles are seeded permutations of the same evidence.",
+      "ja": "表7 例1～3の選択。F：支持文数/全固定文数。F≥0.7ならA、未満ならBを選ぶ。Y=1/0：良好/不良。シャッフルは同じ根拠のシード付き並べ替え。",
       "key": "cases"
     },
     {
@@ -435,21 +449,21 @@
     {
       "id": "result-cost",
       "type": "p",
-      "en": "OE uses 364 calls and 1,669,032 tokens in English, compared with AR's 200 calls and 706,586 tokens (Table 6). Japanese OE uses 467 calls and 2,964,849 tokens, compared with 198 calls and 992,497 tokens for AR. OE therefore uses 2.36 and 2.99 times the tokens while returning fewer reliable answers. Here the cost of checking support outweighs the calls saved by selectively rewriting.",
-      "ja": "英語ではOEが364回・1,669,032トークン、ARが200回・706,586トークンを使った（表6）。日本語ではOEが467回・2,964,849トークン、ARが198回・992,497トークンを使った。したがってOEは2.36倍・2.99倍のトークンを使いながら、良好回答数は少なかった。この構成では、支持を確認する費用が、選択的な書換えで節約した呼出しを上回った。"
+      "en": "Table 8 reports route calls and input/output token totals. OE uses 2.36 times AR’s tokens in English and 2.99 times in Japanese, while returning fewer reliable answers. Here the cost of checking support outweighs the computation saved by selectively rewriting.",
+      "ja": "表8に経路の呼出し回数と入出力トークン数の合計を示す。OEはARに対し英語で2.36倍、日本語で2.99倍のトークンを使いながら、良好回答数は少なかった。この構成では、支持を確認する費用が、選択的な書換えで節約した計算量を上回った。"
     },
     {
       "id": "table-cost",
       "type": "table",
-      "en": "Table 6. Reconstructed OE/AR route costs. English covers 100 deliveries; Japanese covers 99. The interrupted request is excluded because its final cost is unknown.",
-      "ja": "表6 再構成したOE/AR経路費用。英語100回答・日本語99回答が対象。中断要求は最終費用が不明なため含めない。",
+      "en": "Table 8. Route totals including initial generation: 100 EN/99 JA deliveries. OE/AR: original-order evaluation/always rewriting. Tokens sum input and output; ratios compare within language. One interrupted JA request has unknown cost and is excluded. All-condition collection and offline grading are separate.",
+      "ja": "表8 初回生成を含む経路合計。EN100回答/JA99回答。OE/AR：元順序評価/常時書換え。トークンは入出力合計、比は言語内の比較。JAの中断要求1件は費用不明のため含めず、全条件の収集・オフライン採点は別。",
       "key": "cost"
     },
     {
       "id": "result-cost-scope",
       "type": "p",
-      "en": "These are route totals for returning answers, not the cost of collecting all orders or performing external assessment. The interrupted Japanese request adds an unknown amount to actual collection cost. Tokens measure recorded computation rather than monetary charges or end-to-end latency. All 26 decision-varying questions also show variation in recorded route tokens across orders.",
-      "ja": "これは回答を返す経路の合計であり、全順序の収集費用や外部採点費用ではない。中断した日本語要求により、実際の収集費用には不明分が加わる。トークン数は記録された計算量であり、金銭的料金やサービス全体の遅延を測ったものではない。また、判断が変わった26問全てで、順序間の記録経路トークン数も変わった。"
+      "en": "Tokens measure recorded computation, not monetary charges or end-to-end latency. The interrupted request adds unknown actual collection cost. All 26 decision-varying questions also vary in recorded route tokens across orders (Table 6).",
+      "ja": "トークン数は記録された計算量であり、金銭的料金やサービス全体の遅延ではない。中断要求により実際の収集費用には不明分が加わる。また、判断変動26問全てで、順序間の記録経路トークン数も変わった（表6）。"
     },
     {
       "id": "h55-audit",
@@ -460,14 +474,28 @@
     {
       "id": "result-semantics",
       "type": "p",
-      "en": "Among sentence-by-trial observations externally labeled non-supported, the internal evaluator assigns support to 344/719 (47.8%) in English and 339/715 (47.4%) in Japanese. These repeated observations measure disagreement with the external AI labels. The evaluator can be stable across repetitions while still disagreeing about evidence support.",
-      "ja": "外部で非支持とされた文×試行の観測に対し、内部評価器が支持と判定したのは英語344/719（47.8%）、日本語339/715（47.4%）であった。この反復観測は外部AIラベルとの不一致を測る。評価器は反復間で安定していても、根拠による支持について異なる判断をし得る。"
+      "en": "The internal evaluator assigns support to 47.8% of externally non-supported sentence-by-trial observations in English and 47.4% in Japanese (Table 9). The evaluator can be stable across repetitions while disagreeing with the external AI support labels.",
+      "ja": "外部で非支持とされた文×試行の観測に内部評価器が支持を付けた割合は、英語47.8%、日本語47.4%であった（表9）。評価器は反復間で安定していても、外部AIの支持ラベルと異なる判断をし得る。"
+    },
+    {
+      "id": "table-semantics",
+      "type": "table",
+      "key": "semantics",
+      "en": "Table 9. Internal support judgments for externally non-supported sentence-by-trial observations. Denominators count repeated observations, not questions. External AI labels are human-unverified.",
+      "ja": "表9 外部で非支持とされた文×試行に対する内部の支持判定。分母は反復観測数であり質問数ではない。外部AIラベルは人手未確認。"
     },
     {
       "id": "result-thresholds",
       "type": "p",
-      "en": "Across the five predefined thresholds, mean excess disagreement ranges from 7.08 to 11.00 pp in English and 3.09 to 9.41 pp in Japanese. All point estimates are positive, although their magnitude depends on the threshold. This sensitivity analysis reports point estimates and does not change the operating threshold.",
-      "ja": "既定の5閾値での判断不一致の平均増分は、英語7.08～11.00 pp、日本語3.09～9.41 ppであった。全ての点推定は正だが、大きさは閾値に依存する。この感度分析は点推定を報告し、運用閾値は変更しない。"
+      "en": "Mean excess disagreement ranges from 7.08 to 11.00 pp in English and 3.09 to 9.41 pp in Japanese across predefined thresholds (Table 10). All point estimates are positive, while their magnitude depends on the threshold.",
+      "ja": "既定の閾値での判断不一致の平均増分は、英語7.08～11.00 pp、日本語3.09～9.41 ppであった（表10）。全ての点推定は正だが、大きさは閾値に依存する。"
+    },
+    {
+      "id": "table-thresholds",
+      "type": "table",
+      "key": "thresholds",
+      "en": "Table 10. Mean D in percentage points for the same 80 EN/68 JA comparable questions. Operating threshold: 0.7. Point estimates only; no threshold-specific intervals.",
+      "ja": "表10 同じ比較可能EN80問/JA68問の平均D（百分率の差）。運用閾値：0.7。点推定のみで、閾値別の区間は付さない。"
     },
     {
       "id": "h1-discussion",
@@ -605,8 +633,7 @@
     "notes/pooled_results_v1.json"
   ],
   "reference_column_break_before": {
-    "en": 8,
-    "ja": 8
+    "en": 8
   },
   "extension_evidence_commit": "7beb396febd2842248af53a8ec39eda9fc153153"
 }
