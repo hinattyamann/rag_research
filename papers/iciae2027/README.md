@@ -16,6 +16,7 @@
 |---|---|
 | [notes/submission_requirements.md](notes/submission_requirements.md) | 公式投稿条件、書式、未確認事項、提出前チェック |
 | [notes/draft_status.md](notes/draft_status.md) | 初稿の到達点、確認内容、研究室資料受領後の更新箇所 |
+| [notes/draft7_revision_status.md](notes/draft7_revision_status.md) | PDFの指摘への対応、短い表題・表注、考察の再構成と検証 |
 | [notes/draft6_revision_status.md](notes/draft6_revision_status.md) | 図表の数値網羅性・分母・単位・可読性の改善、確認と残件 |
 | [notes/draft5_revision_status.md](notes/draft5_revision_status.md) | 対話を反映した全面改稿、200問の事後統合、確認と残件 |
 | [notes/pooled_analysis_readme.md](notes/pooled_analysis_readme.md) | 200問の事後統合集計の定義と再現手順 |
@@ -40,11 +41,11 @@
 | [references/](references/) | 書誌・引用箇所・主張と出典の照合資料 |
 | [submission/](submission/) | 確認済みの提出PDF、提出日時・受付番号等の記録 |
 
-2026年11月11日、**図表と本文数値を照合し、日英同内容の初稿6へ更新した**。
+2026年11月11日、**PDFのマーカーを検討し、日英同内容の初稿7へ更新した**。
 200問を一つの固定構成の評価実験として説明し、主比較は英語80問・日本語68問。統合集計は事後解析と明記する。
-86対訳単位・7章・2図・10表・14文献、日英各8ページ、英語要旨217語。
-初稿5の説明方針を継承し、設定・除外・判断変動の品質内訳・意味監査・閾値別結果を表へ掲載した。品質表の列と選択の分母も明確にした。
-[変更と検証](notes/draft6_revision_status.md)と[再現案内](notes/pooled_analysis_readme.md)を参照する。
+90対訳単位・7章・2図・10表・14文献、日英各8ページ、英語要旨217語。
+短い表題と必要な表注を分け、不要な開発履歴・重複記述を削除した。第6章は結果の解釈、回答選択と費用への示唆、今後の検証を述べる3節へ再構成した。
+[変更と検証](notes/draft7_revision_status.md)と[再現案内](notes/pooled_analysis_readme.md)を参照する。
 今回の新規推論・再採点・新しい区間計算は0。初稿5の事後統合と区間を保持し、元条件・保存ラベル・元資料は変更していない。
 著者情報・教員確認・提出は未実施。以下の作業分担と投稿前確認を継続する。
 

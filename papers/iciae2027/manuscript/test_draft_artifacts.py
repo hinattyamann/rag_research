@@ -46,6 +46,8 @@ def test_word_text_references_and_tables_match_evidence(lang):
     assert CONTENT["title"][lang] in paragraphs
     for block in CONTENT["blocks"]:
         assert display_text(block[lang]) in paragraphs, block["id"]
+        if block.get("notes"):
+            assert display_text(block["notes"][lang]) in paragraphs, block["id"]
     assert len(document.findall(".//w:drawing", NS)) == 2
     ids = [r.attrib["Id"] for r in relations]
     assert len(ids) == len(set(ids))
@@ -105,7 +107,7 @@ def test_word_text_references_and_tables_match_evidence(lang):
     assert sum(map(int, actual["primary"][0][1:])) == audit["selected_qa"]
     assert sum(map(int, actual["primary"][1][1:])) == audit["comparable_qa"]
     difference = display_text(
-        next(b[lang] for b in CONTENT["blocks"] if b["id"] == "table-primary")
+        next(b["notes"][lang] for b in CONTENT["blocks"] if b["id"] == "table-primary")
     )
     for v in [audit["ja_minus_en"]["mean"], *audit["ja_minus_en"]["ci95"]]:
         assert f"{v * 100:.2f}".replace("-", "−") in difference

@@ -1,5 +1,5 @@
 {
-  "version": "draft-6-2026-11-10",
+  "version": "draft-7-2026-11-11",
   "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
   "extension_evidence_commit": "7beb396febd2842248af53a8ec39eda9fc153153",
   "evidence_trees": {
@@ -7,7 +7,7 @@
     "provenance_audit_v1": "2e9bc4cdd1a6eeb97698d426e291a6b604023ebd",
     "cal_extension_v1": "0cc2339a73efff938db8766269ea7b9daeb32852"
   },
-  "content_digest": "bd17fe431c960665a0201c1d06e6e7d0b3491e8a97eb0ff0c29cf3fa211b0475",
+  "content_digest": "b9152981306910282f986d037f9f697116732615757371ccd2876e940a5056b2",
   "evidence_packages": {
     "fixed_v23_v1": "ce831a133d00e3756287655eb53115a546383288cc5756e75f260cae8595f6bd",
     "provenance_audit_v1": "e305c4ff4aeff858221f4ca4ab35f7c21e0d8b4884857d95d9ac0a3593be530b",
@@ -20,21 +20,17 @@
     "notes/pooled_results_v1.json": "2ee7993500ba0a21c403d6077fef89ace97b975bc13613cccdab82867a03e807"
   },
   "template_sha256": "d8e16e91295692e10abab92847abf3e11fa7a66949ff71b31388466949877391",
-  "block_count": 86,
+  "block_count": 90,
   "documents": [
     {
       "language": "en",
       "output": "papers/iciae2027/manuscript/iciae2027_manuscript_en.docx",
-      "sha256": "9b25896948693d65c8a4a4e56c6251fb93c0867ba6708d49d5c8f5f0ee9417af",
+      "sha256": "3bd23bc887d4065b0b25f9443976b797cd75ded43db046cf0f36e68d01a0b0ac",
       "tables": {
         "configuration": [
           [
-            "Collection stages (questions)",
-            "40 + 40 + 120 = 200"
-          ],
-          [
-            "Source partitions",
-            "EN: Development 100; JA: Development 20, Calibration 80"
+            "Evaluation questions",
+            "EN 100; JA 100; total 200"
           ],
           [
             "Retrieval",
@@ -93,7 +89,7 @@
           [
             "Non-support specificity",
             "14/16 (87.5%)",
-            "Target ≥90%"
+            "Original + reversed evidence"
           ]
         ],
         "primary": [
@@ -128,12 +124,12 @@
             "12/68"
           ],
           [
-            "Mean O (%)",
+            "Order disagreement O (%)",
             "8.25",
             "8.24"
           ],
           [
-            "Mean R (%)",
+            "Repetition disagreement R (%)",
             "0.00",
             "0.00"
           ],
@@ -407,8 +403,8 @@
           "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
         },
         "word/document.xml": {
-          "bytes": 190023,
-          "sha256": "b5f7e59272578765f43bf6fd563a9731059c540892db0789129feccc1272f8ca"
+          "bytes": 192841,
+          "sha256": "e0954e07d14c2527081dcfd2ed78a0f3a0c39bd45f00321816f0d39ddaaedc68"
         },
         "word/_rels/document.xml.rels": {
           "bytes": 5026,
@@ -503,16 +499,12 @@
     {
       "language": "ja",
       "output": "papers/iciae2027/manuscript/iciae2027_manuscript_ja.docx",
-      "sha256": "651a648172633b72985e1ec890199d29546868a90882524baa6f881127b178fe",
+      "sha256": "5da7957f1e23a2258f19ff155c0e18870bd7015331ef6a3de685fb756bd41e21",
       "tables": {
         "configuration": [
           [
-            "収集段階（問数）",
-            "40 + 40 + 120 = 200"
-          ],
-          [
-            "元データの分割",
-            "EN：Development 100、JA：Development 20・Calibration 80"
+            "評価対象の質問",
+            "EN 100、JA 100、計200問"
           ],
           [
             "検索",
@@ -571,7 +563,7 @@
           [
             "非支持の特異度",
             "14/16 (87.5%)",
-            "目標 ≥90%"
+            "元順序＋逆順"
           ]
         ],
         "primary": [
@@ -606,12 +598,12 @@
             "12/68"
           ],
           [
-            "平均O (%)",
+            "順序間不一致 O (%)",
             "8.25",
             "8.24"
           ],
           [
-            "平均R (%)",
+            "反復間不一致 R (%)",
             "0.00",
             "0.00"
           ],
@@ -885,8 +877,8 @@
           "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
         },
         "word/document.xml": {
-          "bytes": 204875,
-          "sha256": "0d296c785372d9715ae9a3d60012c1ad523b08bfe254f510ca5f3e12aabe0fab"
+          "bytes": 208814,
+          "sha256": "1ff23144ced7e48b009b625d62c0066f35d8db9cb94d7fd3937aa08f4abd059d"
         },
         "word/_rels/document.xml.rels": {
           "bytes": 5026,

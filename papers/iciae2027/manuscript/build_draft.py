@@ -146,16 +146,10 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
     if key == "configuration":
         rows = [
             (
-                "Collection stages (questions)",
-                "収集段階（問数）",
-                "40 + 40 + 120 = 200",
-                "40 + 40 + 120 = 200",
-            ),
-            (
-                "Source partitions",
-                "元データの分割",
-                "EN: Development 100; JA: Development 20, Calibration 80",
-                "EN：Development 100、JA：Development 20・Calibration 80",
+                "Evaluation questions",
+                "評価対象の質問",
+                "EN 100; JA 100; total 200",
+                "EN 100、JA 100、計200問",
             ),
             (
                 "Retrieval",
@@ -215,7 +209,7 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
                 ["Synthetic JA", "15 cases", "Relations, scope, uncertainty"],
                 ["Saved EN QA", "15 questions / 42 sentences", "Previously observed errors"],
                 ["Support recall", "57/58 (98.3%)", "Original + reversed evidence"],
-                ["Non-support specificity", "14/16 (87.5%)", "Target ≥90%"],
+                ["Non-support specificity", "14/16 (87.5%)", "Original + reversed evidence"],
             ]
             if lang == "en"
             else [
@@ -223,7 +217,7 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
                 ["人工例 JA", "15例", "関係・範囲・不確実性"],
                 ["保存QA EN", "15問 / 42文", "既知の誤り"],
                 ["支持の再現率", "57/58 (98.3%)", "元順序＋逆順"],
-                ["非支持の特異度", "14/16 (87.5%)", "目標 ≥90%"],
+                ["非支持の特異度", "14/16 (87.5%)", "元順序＋逆順"],
             ]
         )
         headers = (
@@ -240,8 +234,8 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
             ("Missing initial answers", "初回回答の欠測"),
             ("Failed rewrites", "書換え失敗"),
             ("Order-varying / comparable", "判断変動 / 比較可能"),
-            ("Mean O (%)", "平均O (%)"),
-            ("Mean R (%)", "平均R (%)"),
+            ("Order disagreement O (%)", "順序間不一致 O (%)"),
+            ("Repetition disagreement R (%)", "反復間不一致 R (%)"),
             ("Mean D (pp)", "平均D (pp)"),
             ("95% interval for D (pp)", "Dの95%区間 (pp)"),
         ]
@@ -585,6 +579,13 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
             for node in props.findall("w:spacing", NS):
                 props.remove(node)
             props.append(element("spacing", before="60", after="60"))
+        if kind == "table_note":
+            for name in ("ind", "jc", "spacing"):
+                for node in props.findall(f"w:{name}", NS):
+                    props.remove(node)
+            props.append(element("jc", val="left"))
+            props.append(element("spacing", before="40", after="100"))
+            props.append(element("keepLines"))
         if lang == "ja":
             props.append(element("snapToGrid", val="false"))
             spacing = props.find("w:spacing", NS)
@@ -658,13 +659,20 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
                     narrative_column |= block["key"] == "configuration" and column == 1
                     pp.append(element("jc", val="left" if index and narrative_column else "center"))
                     pp.append(element("spacing", before="20", after="20"))
-                    if index == 0 or (
-                        (len(values) <= 7 or block["key"] == "primary") and index < len(values)
+                    if (
+                        index == 0
+                        or (index == len(values) and block.get("notes"))
+                        or (
+                            (len(values) <= 7 or block["key"] in {"configuration", "primary"})
+                            and index < len(values)
+                        )
                     ):
                         pp.append(element("keepNext"))
                     if lang == "ja":
                         pp.append(element("snapToGrid", val="false"))
                     add_text(p, text, 20, index == 0)
+            if block.get("notes"):
+                paragraph(block["notes"][lang], "table_note")
         elif kind == "figure":
             from docx import Document
             from docx.shared import Mm
