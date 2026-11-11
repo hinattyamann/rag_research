@@ -1,5 +1,5 @@
 {
-  "version": "draft-7-2026-11-11",
+  "version": "draft-8-2026-11-11",
   "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
   "title": {
     "en": "Evidence Order Sensitivity in RAG Evaluation and Its Effects on Answer Selection, Quality, and Cost",
@@ -23,8 +23,8 @@
     {
       "id": "abstract",
       "type": "p",
-      "en": "An internal evaluator in retrieval augmented generation (RAG) can decide whether to retain an answer or request a rewrite. We investigate whether changing only the order of evidence changes this decision and the quality and cost of the selected answer. For each question, we fix the evidence, initial answer, and answer sentences, and compare evidence permutations with repeated evaluation of the original order. A single common rewrite separates answer selection from rewrite generation. After fixing the evaluator and experimental parameters, we collected 100 English and 100 Japanese questions in stages. A post-hoc pooled analysis includes 80 English and 68 Japanese questions with complete comparisons. Mean excess decision disagreement is 8.25 percentage points in English (95% document-group bootstrap interval 4.50–12.50) and 8.24 in Japanese (4.12–12.65). The language-difference interval includes zero. Evidence order changes decisions for 26 questions; the selected answer's binary quality label changes for 14, remains unchanged for 8, and is unresolved for 4. External AI assessment labels 51 English and 41 Japanese answers reliable under original-order evaluation, compared with 63 and 55 under always rewriting, while using 2.36 and 2.99 times the recorded tokens. Under this fixed configuration, evidence order affects answer selection, and internal evaluation adds cost without yielding the most reliable answers. Human-unverified AI labels, excluded refusals, and different source datasets limit the interpretation.",
-      "ja": "検索拡張生成（RAG）の内部評価器は、回答を採用するか書換えを要求するかを判断できる。本研究では、根拠の順序だけを変えると、この判断と、選択される回答の品質・費用が変わるかを調べる。質問ごとに根拠、初回回答、回答の文を固定し、根拠の並べ替えを元順序の反復評価と比較する。一つの共通書換え回答を用い、回答の選択と書換え生成を分離する。評価器と実験パラメータを固定した後、英語100問・日本語100問を段階的に収集した。事後統合解析では、完全比較が可能な英語80問・日本語68問を対象とする。判断不一致の平均増分は英語8.25ポイント（95%文書グループ・ブートストラップ区間4.50～12.50）、日本語8.24ポイント（4.12～12.65）であり、日英差の区間は0を含む。根拠順序で判断が変わった26問のうち、選択回答の二値品質ラベルも変わったのは14問、変わらなかったのは8問、未確定は4問であった。外部AI採点による元順序評価での良好回答数は英語51件・日本語41件で、常時書換えの63件・55件より少なく、記録トークン数は2.36倍・2.99倍であった。この固定構成では、根拠順序が回答選択に影響し、内部評価は費用を加える一方で良好回答数を最大化しなかった。人手未確認のAIラベル、拒否回答の除外、異なる元データセットが結果の解釈を制約する。"
+      "en": "An internal evaluator in retrieval augmented generation (RAG) can decide whether to retain an answer or request a rewrite. We investigate whether changing only the order of evidence changes this decision and the quality and cost of the selected answer. For each question, we fix the evidence, initial answer, and answer sentences, and compare evidence permutations with repeated evaluation of the original order. A single common rewrite separates answer selection from rewrite generation. After fixing the evaluator and experimental parameters, we collected 100 English and 100 Japanese questions in stages. A post-hoc pooled analysis includes 80 English and 68 Japanese questions with complete comparisons. Mean excess decision disagreement is 8.25 percentage points in English (95% document-group bootstrap interval 4.50–12.50) and 8.24 in Japanese (4.12–12.65). The language-difference interval includes zero. Evidence order changes decisions for 26 questions; the selected answer's binary quality label changes for 14, remains unchanged for 8, and is unresolved for 4. External AI assessment labels 51 English and 41 Japanese answers reliable under original-order evaluation, compared with 63 and 55 under always rewriting. Original-order evaluation uses 2.36 and 2.99 times as many recorded tokens as always rewriting in English and Japanese, respectively. Under this fixed configuration, evidence order affects answer selection, and internal evaluation adds cost without yielding the most reliable answers. Human-unverified AI labels, excluded refusals, and different source datasets limit the interpretation.",
+      "ja": "検索拡張生成（RAG）の内部評価器は、回答を採用するか書換えを要求するかを判断できる。本研究では、根拠の順序だけを変えると、この判断と、選択される回答の品質・費用が変わるかを調べる。質問ごとに根拠、初回回答、回答の文を固定し、根拠の並べ替えを元順序の反復評価と比較する。一つの共通書換え回答を用い、回答の選択と書換え生成を分離する。評価器と実験パラメータを固定した後、英語100問・日本語100問を段階的に収集した。事後統合解析では、完全比較が可能な英語80問・日本語68問を対象とする。判断不一致の平均増分は英語8.25ポイント（95%文書グループ・ブートストラップ区間4.50～12.50）、日本語8.24ポイント（4.12～12.65）であり、日英差の区間は0を含む。根拠順序で判断が変わった26問のうち、選択回答の二値品質ラベルも変わったのは14問、変わらなかったのは8問、未確定は4問であった。外部AI採点による元順序評価での良好回答数は英語51件・日本語41件で、常時書換えの63件・55件より少なかった。元順序評価の記録トークン数は、常時書換えに対して英語で2.36倍、日本語で2.99倍であった。この固定構成では、根拠順序が回答選択に影響し、内部評価は費用を加える一方で良好回答数を最大化しなかった。人手未確認のAIラベル、拒否回答の除外、異なる元データセットが結果の解釈を制約する。"
     },
     {
       "id": "keywords",
@@ -105,17 +105,17 @@
       "ja": "質問iごとに初回回答A_iを生成し、生成器に実際に渡した根拠を保存する。根拠本文・タイトル・識別子と、決定的な規則で分割した回答の文を固定する。順序条件は元順序、逆順、シードを固定した三つのシャッフルである。反復対照では元順序を5回評価する。最初の試行を順序条件と共用するため、質問ごとの論理試行は最大9回となる。重複する順列は順序比較から除く。反復ではキャッシュした結果を使わず、毎回モデルを呼び出す。図1に手順を示す。"
     },
     {
+      "id": "design-control",
+      "type": "p",
+      "en": "Trial execution order is randomized with seed 43; shuffle and generation seeds are 42. We do not retrieve again, regenerate A_i, resegment its sentences, or truncate evidence between trials. Reference answers and reference evidence are reserved for external quality assessment and are not supplied as gold information to the internal evaluator or rewriter.",
+      "ja": "試行の実行順はシード43で無作為化し、シャッフルと生成のシードは42とする。試行間で再検索、A_iの再生成、文の再分割、根拠の切詰めは行わない。参照回答と参照根拠は外部品質採点用とし、内部評価器や書換え器へ正解情報として渡さない。"
+    },
+    {
       "id": "figure-design",
       "type": "figure",
       "en": "Fig. 1. Evidence-order evaluation and selection between shared answer candidates.",
       "ja": "図1 根拠提示順序の評価と共通回答候補の選択手順",
       "key": "design"
-    },
-    {
-      "id": "design-control",
-      "type": "p",
-      "en": "Trial execution order is randomized with seed 43; shuffle and generation seeds are 42. We do not retrieve again, regenerate A_i, resegment its sentences, or truncate evidence between trials. Reference answers and reference evidence are reserved for external quality assessment and are not supplied as gold information to the internal evaluator or rewriter.",
-      "ja": "試行の実行順はシード43で無作為化し、シャッフルと生成のシードは42とする。試行間で再検索、A_iの再生成、文の再分割、根拠の切詰めは行わない。参照回答と参照根拠は外部品質採点用とし、内部評価器や書換え器へ正解情報として渡さない。"
     },
     {
       "id": "h32-decision",
@@ -144,7 +144,7 @@
     {
       "id": "design-rewrite",
       "type": "p",
-      "en": "For each question, a single rewrite B_i is generated from the question, original-order evidence, and A_i. It receives neither the evaluator's score and feedback nor reordered evidence. Every condition selects A_i or this same B_i. A failed rewrite falls back to A_i and retains its attempted computation cost. We compare no rewriting (NR), original-order evaluation followed by its decision (OE), and always rewriting (AR), alongside the other evaluation orders.",
+      "en": "For each question, a single rewrite B_i is generated from the question, original-order evidence, and A_i. The rewriter receives no evaluator scores, feedback, or reordered evidence. Every condition selects A_i or this same B_i. A failed rewrite falls back to A_i and retains its attempted computation cost. We compare no rewriting (NR), original-order evaluation followed by its decision (OE), and always rewriting (AR), alongside the other evaluation orders.",
       "ja": "質問ごとに、質問、元順序の根拠、A_iから一つの書換え回答B_iを生成する。評価器のスコア・フィードバックや、並べ替えた根拠は渡さない。各条件はA_iまたはこの同じB_iを選ぶ。書換えに失敗した場合はA_iへ戻し、試行に費やした計算費用を残す。書換えなし（NR）、元順序評価の判断に従う方策（OE）、常時書換え（AR）を、他の評価順序とともに比較する。"
     },
     {
@@ -174,8 +174,8 @@
     {
       "id": "design-quality",
       "type": "p",
-      "en": "External AI assessment assigns Y=1 when an answer covers the essential points, contains no major factual error, and has its factual claims supported by the used evidence. Definite failures receive Y=0; unresolved cases remain indeterminate. Candidate labels are shared across routes. Selecting A when Y(A)=0 and Y(B)=1 is a missed improvement; selecting B when Y(A)=1 and Y(B)=0 is harmful rewriting. These transition counts require a successful B and known binary labels for both answers.",
-      "ja": "外部AI採点では、必須要点に答え、重大な事実誤りがなく、事実主張が実使用根拠に支持される回答をY=1とする。明確な失敗をY=0、解消できない例を判定不能とする。候補のラベルは経路間で共用する。Y(A)=0かつY(B)=1なのにAを選ぶ場合は改善の見逃し、Y(A)=1かつY(B)=0なのにBを選ぶ場合は有害な書換えである。この遷移集計には、Bの生成成功と両候補の既知二値ラベルを必要とする。"
+      "en": "External AI assessment assigns Y=1 when an answer covers the essential points, contains no major factual error, and has its factual claims supported by the used evidence. Definite failures receive Y=0; unresolved cases remain indeterminate. Y is used only to assess outcomes; rewrite decisions use F. Candidate labels are shared across routes. Selecting A when Y(A)=0 and Y(B)=1 is a missed improvement; selecting B when Y(A)=1 and Y(B)=0 is harmful rewriting. These transition counts require a successful B and known binary labels for both answers.",
+      "ja": "外部AI採点では、必須要点に答え、重大な事実誤りがなく、事実主張が実使用根拠に支持される回答をY=1とする。明確な失敗をY=0、解消できない例を判定不能とする。Yは結果の品質評価のみに用い、書換え判断にはFを用いる。候補のラベルは経路間で共用する。Y(A)=0かつY(B)=1なのにAを選ぶ場合は改善の見逃し、Y(A)=1かつY(B)=0なのにBを選ぶ場合は有害な書換えである。この遷移集計には、Bの生成成功と両候補の既知二値ラベルを必要とする。"
     },
     {
       "id": "design-cost",
@@ -214,6 +214,17 @@
       "ja": "4.2 検索とモデル構成"
     },
     {
+      "id": "table-configuration",
+      "type": "table",
+      "key": "configuration",
+      "en": "Table 1. Evaluation sample and experimental parameters.",
+      "ja": "表1 評価対象と実験パラメータ",
+      "notes": {
+        "en": "Note. EN/JA denote English/Japanese. Context, output, reasoning, and batch sizes are in tokens.",
+        "ja": "注：EN/JAは英語/日本語を示す。文脈・出力・推論・バッチの単位はトークン。"
+      }
+    },
+    {
       "id": "setting-retrieval",
       "type": "p",
       "en": "Hybrid retrieval combines BM25 and multilingual-e5-small embeddings[[10]] through reciprocal-rank fusion. Initial generation uses Qwen2.5-3B-Instruct Q4_K_M[[11]]. Table 1 lists numerical settings. Evidence is fixed after packing into the initial input.",
@@ -226,27 +237,10 @@
       "ja": "内部評価器と書換え器にはQwen3.5-9B Q6_K[[12]]と言語別のプロンプトを用いる。CUDAへ全層をオフロードし、グラフを無効化する。初回生成器と内部評価器は異なるモデルであり、ここでの評価は初回生成器による自己採点ではなく、RAGシステム内部の評価を指す。"
     },
     {
-      "id": "table-configuration",
-      "type": "table",
-      "key": "configuration",
-      "en": "Table 1. Evaluation sample and experimental parameters.",
-      "ja": "表1 評価対象と実験パラメータ",
-      "notes": {
-        "en": "Note. EN/JA denote English/Japanese. Context, output, reasoning, and batch sizes are in tokens.",
-        "ja": "注：EN/JAは英語/日本語を示す。文脈・出力・推論・バッチの単位はトークン。"
-      }
-    },
-    {
       "id": "h43-development",
       "type": "h2",
       "en": "4.3 Evaluator development and fixation",
       "ja": "4.3 評価器の開発と固定"
-    },
-    {
-      "id": "setting-development",
-      "type": "p",
-      "en": "Before collecting the 200 questions, we examined candidate models, prompts, and inference settings using development diagnostics (Table 2). Synthetic cases test relations, temporal and numerical scope, and qualified statements. Saved English question-answer traces come from earlier CLAPNQ runs and include previously observed errors. Expected labels were AI-authored and not human-verified.",
-      "ja": "200問を収集する前に、開発診断を用いてモデル・プロンプト・推論設定の候補を検討した（表2）。人工例は、関係、時間・数値の範囲、限定付きの記述を確認する。保存済みの英語質問・回答記録は過去のCLAPNQ実行に由来し、過去に観測した誤りを含む。期待ラベルはAIが作成し、人手では確認していない。"
     },
     {
       "id": "table-development",
@@ -255,9 +249,15 @@
       "ja": "表2 開発診断データと評価器の性能",
       "key": "development",
       "notes": {
-        "en": "Note. Rates pool original and reversed evidence after excluding 5 sentences with ambiguous expected labels.",
-        "ja": "注：再現率と特異度は、期待ラベルが曖昧な5文を除き、元順序と逆順を合わせた値。"
+        "en": "Note. Rates pool original and reversed evidence after excluding 5 sentences with ambiguous expected labels. Non-support combines contradicted and unsupported labels.",
+        "ja": "注：再現率と特異度は、期待ラベルが曖昧な5文を除き、元順序と逆順を合わせた値。非支持は矛盾と支持不足をまとめた区分である。"
       }
+    },
+    {
+      "id": "setting-development",
+      "type": "p",
+      "en": "Before collecting the 200 questions, we examined candidate models, prompts, and inference settings using development diagnostics (Table 2). Synthetic cases test relations, temporal and numerical scope, and qualified statements. Saved English question-answer traces come from earlier CLAPNQ runs and include previously observed errors. Expected labels were AI-authored and not human-verified.",
+      "ja": "200問を収集する前に、開発診断を用いてモデル・プロンプト・推論設定の候補を検討した（表2）。人工例は、関係、時間・数値の範囲、限定付きの記述を確認する。保存済みの英語質問・回答記録は過去のCLAPNQ実行に由来し、過去に観測した誤りを含む。期待ラベルはAIが作成し、人手では確認していない。"
     },
     {
       "id": "setting-fixation",
@@ -278,10 +278,21 @@
       "ja": "外部AI採点には、匿名化した質問、候補回答、参照、実使用根拠を用いる。文の支持判定には実使用根拠だけを使う。条件名・スコア・判断・回答段階・内部説明を隠し、ラベルを確定してから内部結果に対応付ける。採点器の指定はgpt-6.1-sol、推論強度highであり、人手による判定は実施していない。日本語の参照記事本文3件は利用できなかった。"
     },
     {
+      "id": "table-primary",
+      "type": "table",
+      "en": "Table 3. Evaluation sample and sensitivity to evidence order.",
+      "ja": "表3 評価対象の内訳と根拠提示順序への感度",
+      "key": "primary",
+      "notes": {
+        "en": "Note. D=O−R; pp: percentage points. JA−EN: −0.01 pp [−5.96, 5.99] (95% interval). Failed rewrites use A.",
+        "ja": "注：D=O−R、ppは百分率の差。JA−EN：−0.01 pp［−5.96, 5.99］（95%区間）。書換え失敗時はAを保持。"
+      }
+    },
+    {
       "id": "setting-failures",
       "type": "p",
-      "en": "One Japanese initial answer and four Japanese rewrites failed the length constraint. Failed rewrites retain the initial answer. Collection stages differed in length-failure stopping rules and citation-entry procedures for AI assessment; the grading rubric was unchanged. Archived question-level inputs and labels are available[[14]].",
-      "ja": "日本語の初回回答1件と書換え4件が長さ制約で失敗し、書換え失敗時は初回回答を保持する。収集段階によって長さ失敗時の停止処理とAI採点の引用入力方式に違いがあるが、採点基準は同じである。質問別の入力とラベルは保存資料で参照できる[[14]]。"
+      "en": "One Japanese initial answer and four Japanese rewrites failed the length constraint. Failed rewrites retain the initial answer. Collection stages differed in length-failure stopping rules and citation-entry procedures for AI assessment; the grading rubric was unchanged. Question-level inputs and AI labels are available in the archived repository[[14]].",
+      "ja": "日本語の初回回答1件と書換え4件が長さ制約で失敗し、書換え失敗時は初回回答を保持する。収集段階によって長さ失敗時の停止処理とAI採点の引用入力方式に違いがあるが、採点基準は同じである。質問別の入力とAIラベルはアーカイブした公開リポジトリで参照できる[[14]]。"
     },
     {
       "id": "h1-results",
@@ -300,17 +311,6 @@
       "type": "p",
       "en": "Complete comparisons are available for 80 English and 68 Japanese questions (Table 3). The 52 exclusions comprise 51 refusals without scorable sentences and one missing initial answer. Among comparable questions, no repetition pair disagrees. Mean excess disagreement is 8.25 percentage points (pp) in English and 8.24 pp in Japanese; both bootstrap intervals exclude zero (Fig. 2). Decisions vary across evidence orders for 14/80 English and 12/68 Japanese questions.",
       "ja": "英語80問・日本語68問で完全比較が可能であった（表3）。除外52問は採点可能な文のない拒否51問と初回回答の欠測1問である。比較可能な質問では、反復ペアの不一致はなかった。判断不一致の平均増分は英語8.25ポイント（pp）、日本語8.24 ppで、両ブートストラップ区間が0を上回った（図2）。根拠順序間で判断が変わったのは英語14/80問、日本語12/68問であった。"
-    },
-    {
-      "id": "table-primary",
-      "type": "table",
-      "en": "Table 3. Evaluation sample and sensitivity to evidence order.",
-      "ja": "表3 評価対象の内訳と根拠提示順序への感度",
-      "key": "primary",
-      "notes": {
-        "en": "Note. D=O−R; pp: percentage points. JA−EN: −0.01 pp [−5.96, 5.99] (95% interval). Failed rewrites use A.",
-        "ja": "注：D=O−R、ppは百分率の差。JA−EN：−0.01 pp［−5.96, 5.99］（95%区間）。書換え失敗時はAを保持。"
-      }
     },
     {
       "id": "result-language",
@@ -361,8 +361,8 @@
       "ja": "表5 書換え前後の品質遷移と元順序評価の選択",
       "key": "selection",
       "notes": {
-        "en": "Note. Both candidate labels are known (1: reliable; 0: unreliable). OE selection rows show events/eligible transitions.",
-        "ja": "注：両候補の二値ラベルが既知の例を集計（1：良好、0：不良）。OE選択行は該当件数/対象遷移数。"
+        "en": "Note. Both labels are known (1: reliable; 0: unreliable). OE missed counts A selections among 0→1 pairs; OE harmful counts B selections among 1→0 pairs. Each denominator is the corresponding pair count.",
+        "ja": "注：両ラベルが既知の例を集計（1：良好、0：不良）。OE見逃しは0→1の組でAを選んだ件数、OE有害選択は1→0の組でBを選んだ件数。各分母は対応する組の総数。"
       }
     },
     {
@@ -378,8 +378,8 @@
       "en": "Table 6. Quality and token variation among questions with order-dependent decisions.",
       "ja": "表6 順序で判断が変わった質問の品質とトークン数の変動",
       "notes": {
-        "en": "Note. Values count questions. The three quality categories are mutually exclusive; token variation is counted separately.",
-        "ja": "注：値は質問数。品質の3区分は排他的であり、トークン数の変動は別に集計する。"
+        "en": "Note. Values count questions. Same Y means both A and B have Y=0 (EN 3; JA 2) or both have Y=1 (EN 2; JA 1). The three quality categories are mutually exclusive; token variation is counted separately.",
+        "ja": "注：値は質問数。同じYはAとBがともにY=0（EN 3問・JA 2問）、またはともにY=1（EN 2問・JA 1問）を指す。品質の3区分は排他的であり、トークン数の変動は別に集計する。"
       }
     },
     {
@@ -440,6 +440,17 @@
       "ja": "A：「蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。」[…]「蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。」"
     },
     {
+      "id": "table-cases",
+      "type": "table",
+      "en": "Table 7. Evidence order and answer selection in the three examples.",
+      "ja": "表7 三つの具体例における根拠順序と回答選択",
+      "key": "cases",
+      "notes": {
+        "en": "Note. F is supported/all fixed sentences. Y=1/0 denotes reliable/unreliable.",
+        "ja": "注：Fは支持文数/全固定文数、Y=1/0は良好/不良を示す。"
+      }
+    },
+    {
       "id": "case-ja-B",
       "type": "excerpt",
       "en": "B: “Other species of Lepidoptera are called moths, but dividing Lepidoptera into butterflies and moths is not a natural classification” […] \"The terms for both butterflies and moths are of Chinese origin.\"",
@@ -456,17 +467,6 @@
       "type": "p",
       "en": "Case 3 asks “where did the idea of fried green tomatoes come from”. A states, “There is no mention of fried green tomatoes or their origin.” B similarly states, “None of the provided documents mention the origin of fried green tomatoes.” Both report a gap in the retrieved information rather than answer the origin question, receiving Y(A)=Y(B)=0. Original order selects B at F=2/3; reversing the order retains A at F=1. The selected text changes, while the quality label stays Y=0.",
       "ja": "例3の質問は「フライド・グリーン・トマトのアイデアはどこから生まれたのか」である。Aは「フライド・グリーン・トマトやその起源への言及はない。」と述べ、Bも「提示された文書のいずれにも、フライド・グリーン・トマトの起源への言及はない。」と述べる。両者は検索情報の不足を述べ、問われた起源に答えていないため、Y(A)=Y(B)=0とされた。元順序はF=2/3でBを選び、逆順はF=1でAを採用した。選択文章は変わったが、品質ラベルはY=0のままであった。"
-    },
-    {
-      "id": "table-cases",
-      "type": "table",
-      "en": "Table 7. Evidence order and answer selection in the three examples.",
-      "ja": "表7 三つの具体例における根拠順序と回答選択",
-      "key": "cases",
-      "notes": {
-        "en": "Note. F is supported/all fixed sentences. Y=1/0 denotes reliable/unreliable.",
-        "ja": "注：Fは支持文数/全固定文数、Y=1/0は良好/不良を示す。"
-      }
     },
     {
       "id": "h54-cost",
@@ -504,6 +504,12 @@
       "ja": "外部で非支持とされた文×試行の観測に内部評価器が支持を付けた割合は、英語47.8%、日本語47.4%であった（表9）。評価器は反復間で安定していても、外部AIの支持ラベルと異なる判断をし得る。"
     },
     {
+      "id": "result-thresholds",
+      "type": "p",
+      "en": "Mean excess disagreement ranges from 7.08 to 11.00 pp in English and 3.09 to 9.41 pp in Japanese across predefined thresholds (Table 10). All point estimates are positive, while their magnitude depends on the threshold.",
+      "ja": "既定の閾値での判断不一致の平均増分は、英語7.08～11.00 pp、日本語3.09～9.41 ppであった（表10）。全ての点推定は正だが、大きさは閾値に依存する。"
+    },
+    {
       "id": "table-semantics",
       "type": "table",
       "key": "semantics",
@@ -513,12 +519,6 @@
         "en": "Note. The denominator counts externally non-supported sentence-by-trial observations; false support means the internal evaluator assigns support.",
         "ja": "注：分母は外部AIが非支持とした文×試行の観測数。誤支持は内部評価器が支持と判定した観測を示す。"
       }
-    },
-    {
-      "id": "result-thresholds",
-      "type": "p",
-      "en": "Mean excess disagreement ranges from 7.08 to 11.00 pp in English and 3.09 to 9.41 pp in Japanese across predefined thresholds (Table 10). All point estimates are positive, while their magnitude depends on the threshold.",
-      "ja": "既定の閾値での判断不一致の平均増分は、英語7.08～11.00 pp、日本語3.09～9.41 ppであった（表10）。全ての点推定は正だが、大きさは閾値に依存する。"
     },
     {
       "id": "table-thresholds",

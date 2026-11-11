@@ -324,7 +324,7 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
         labels = [
             ("Order-varying decisions", "順序で判断が変動"),
             ("Both Y=0 and Y=1 selected", "Y=0とY=1の両方を選択"),
-            ("Same known binary Y", "同じ既知二値Y"),
+            ("A and B have the same Y", "AとBが同じY"),
             ("Includes indeterminate Y", "判定不能Yを含む"),
             ("Route tokens vary", "経路トークン数が変動"),
         ]

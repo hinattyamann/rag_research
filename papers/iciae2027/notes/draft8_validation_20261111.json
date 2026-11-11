@@ -1,0 +1,160 @@
+{
+  "version": "draft-8-2026-11-11",
+  "recorded_at_jst": "2026-11-11T14:13:05.697469+09:00",
+  "baseline_commit": "80fa47023b1681735de489fd0f67360216d19f32",
+  "content_digest": "ca204ddc02e9cc37588f6271173bf7ae4ba3260c4dd37a250d23d233beb7b030",
+  "paired_blocks": 90,
+  "chapter_count": 7,
+  "figure_count": 2,
+  "table_count": 10,
+  "reference_count": 14,
+  "abstract_words": 227,
+  "keyword_count": 5,
+  "documents": [
+    {
+      "language": "en",
+      "path": "papers/iciae2027/manuscript/iciae2027_manuscript_en.docx",
+      "sha256": "e184456147c75ded2c549cba2f1e49c90f0017507801cbe97debda76d57ddfe7",
+      "pages": 8,
+      "pdf_sha256": "d8545f882cc6db89f29f0d88043393514682b9ee222203f321b0d53e22b6266f",
+      "all_pages_visually_reviewed": true,
+      "reviewed_page_sha256": [
+        "b3ac4bd758c828226641b40cf9b63889788df7f1cb85c584cc55d4bcd94f3ba6",
+        "9e7ed219574fa19d3903b2fba9f12c43cc2607124dea54737fe3bf4ff3e5c024",
+        "4e471039dd9646b3c9c3e1fc5e034ee5b0c35c04784f7cf0ea60a1a13ea82ce3",
+        "dd6c2142858d34891a583a75dbae7d3905be271ebf21888bacabfbc82c8fe543",
+        "f979362884c5a1a9363084aeb98ccfbc822665a7a7f6468f10abbb57d223663a",
+        "914f722ec400a662e40f57860ebbb00c962e29909dad6ee87193870054f28c30",
+        "b1e8460e2932228a2951b6c65f43167c8d03b922432f6e29b76ea94df79b44e6",
+        "36d1d53fa414ac69ea3830c4b2010615e19e97698212eb3c87e87fc635ebe65b"
+      ],
+      "major_layout_defects": false
+    },
+    {
+      "language": "ja",
+      "path": "papers/iciae2027/manuscript/iciae2027_manuscript_ja.docx",
+      "sha256": "efefec4aefbfb7d0861583722a2fee4a5ec04b63e7dfe7820756f83361b9bc1c",
+      "pages": 8,
+      "pdf_sha256": "73446284ca2c40d740eeeaf977246d6f8457ede671f3a944b293eaa692a9ef57",
+      "all_pages_visually_reviewed": true,
+      "reviewed_page_sha256": [
+        "e8783bdb91bab00aefd9652acb801afec8884c2c281d4af3f817273c5eb1e155",
+        "380106bec1c4fe236d3699619b85d70b819073380c1c620b23a210d727bcb6ea",
+        "8dc5124d568d1cfb2c7f95b520170ba9896d3365c229b12a258220df39c844ab",
+        "63e301c00f6b128fef1cfc70e0d8412815bc28cf4968e7c0e9b3ae34ee066683",
+        "1b486a6d2fb1d4c85c2ac507aaaceec8f2dbc33ba17b3e96f68245b09e3a9165",
+        "8d7cd9d8a8b41f0427439d11de9b56f896cf054c667157c255a70d33a2968866",
+        "6c61288da5f466996d098085e098ee7ad652ee520112f7dd78ce9414b13056e3",
+        "43ee920b2cbd24f0c40ab17ea289523dbe287e2fbe7fbfbe0a8740d8433aa50d"
+      ],
+      "major_layout_defects": false
+    }
+  ],
+  "checks": {
+    "command": "uv run --no-sync python -X utf8 -m pytest papers/iciae2027/manuscript -q",
+    "passed": 27,
+    "elapsed_seconds_staged": 7.27,
+    "ruff_passed": true,
+    "canonical_and_reviewed_staged_docx_hashes_equal": true,
+    "official_template_sections_identical": true,
+    "no_page_number_fields": true,
+    "no_tracked_changes_or_comments": true,
+    "all_reference_hyperlinks_present_in_pdf": true,
+    "all_table_cells_and_excerpts_match_saved_evidence": true,
+    "result_and_note_numeric_multisets_match_between_languages": true,
+    "experimental_files_raw_evidence_figures_and_statistics_unchanged": true,
+    "full_research_pytest_rerun": false,
+    "elapsed_seconds_canonical": 4.66,
+    "canonical_tests_passed": 27
+  },
+  "independent_raw_count_audit": {
+    "comparable_en_ja": [
+      80,
+      68
+    ],
+    "order_varying_en_ja": [
+      14,
+      12
+    ],
+    "transitions_00_01_10_11": {
+      "en": [
+        31,
+        32,
+        2,
+        28
+      ],
+      "ja": [
+        34,
+        31,
+        2,
+        17
+      ]
+    },
+    "OE_missed_en_ja": [
+      11,
+      13
+    ],
+    "OE_harmful_en_ja": [
+      1,
+      0
+    ],
+    "same_Y_00_en_ja": [
+      3,
+      2
+    ],
+    "same_Y_11_en_ja": [
+      2,
+      1
+    ],
+    "all_six_policy_quality_and_cost_totals_match": true
+  },
+  "official_requirements": {
+    "checked_on_jst": "2026-11-11",
+    "submission_url": "https://www2.ia-engineers.org/iciae2027/paper-submission/",
+    "author_guidelines_url": "https://www2.ia-engineers.org/conference/index.php/iciae/iciae2027/about/submissions",
+    "account_url": "https://www2.ia-engineers.org/conference/index.php/iciae/iciae2027/user/account",
+    "current_template_sha256": "d8e16e91295692e10abab92847abf3e11fa7a66949ff71b31388466949877391",
+    "language": "English",
+    "format": "PDF",
+    "pages": "4-8 including figures and tables",
+    "abstract": "fewer than 300 words",
+    "keywords": "3-5",
+    "deadline_date": "2026-11-20",
+    "deadline_time_zone": "not stated in checked public sources",
+    "account_required_fields": [
+      "username",
+      "password",
+      "repeat_password",
+      "first_name",
+      "last_name",
+      "affiliation",
+      "email"
+    ]
+  },
+  "public_repository": {
+    "made_public_by": "user",
+    "changed_by_agent": false,
+    "unauthenticated_http_status": {
+      "https://github.com/hinattyamann/rag_research": 200,
+      "https://github.com/hinattyamann/rag_research/tree/f0b7c71c4375a617c7142c67e3aa0610f73edb14": 200,
+      "https://github.com/hinattyamann/rag_research/tree/592e3c2/papers/iciae2027": 200
+    }
+  },
+  "scientific_changes": {
+    "new_inference_calls": 0,
+    "new_annotation_calls": 0,
+    "new_confidence_intervals": 0,
+    "parameters_labels_missingness_and_intervals_preserved": true
+  },
+  "supervisor_review_ready": true,
+  "submission_ready": false,
+  "human_reviewed_labels": false,
+  "submitted": false,
+  "email_sent": false,
+  "remaining": [
+    "supervisor review and submission approval",
+    "author names/order and formal affiliations/address/contact",
+    "final English PDF after filling author information",
+    "login-only submission form instructions"
+  ]
+}
