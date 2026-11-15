@@ -101,7 +101,7 @@ def make_figures() -> None:
                 "Fix evidence text and answer sentences",
                 "Original / reversed / 3 shuffles\nOriginal order repeated 5 times",
                 "Evaluate sentence support F\nF ≥ 0.7: retain A; otherwise rewrite",
-                "Select A or the same rewrite B\nB uses original evidence and A",
+                "Select A or A rewritten as B\nShared B uses original evidence and A",
                 "Compare selected-answer quality\nand computation cost",
             ]
             if lang == "en"
@@ -110,7 +110,7 @@ def make_figures() -> None:
                 "根拠本文と回答の文を固定",
                 "元順序・逆順・シャッフル3種\n元順序を5回反復",
                 "文の支持スコア F を評価\nF ≥ 0.7：Aを採用、未満：書換え",
-                "A または 共通の書換え B を選択\nBの入力は元順序の根拠とA",
+                "A または Aを書き換えたBを選択\n共通のBは元順序の根拠とAから生成",
                 "選択回答の品質と計算費用を比較",
             ]
         )
