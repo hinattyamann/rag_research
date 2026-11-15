@@ -506,9 +506,12 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
             props.append(element("b"))
         if superscript or subscript:
             props.append(element("vertAlign", val="superscript" if superscript else "subscript"))
-        node = E.SubElement(run, tag("t"))
-        node.set("{http://www.w3.org/XML/1998/namespace}space", "preserve")
-        node.text = text
+        for line_index, line in enumerate(text.split("\n")):
+            if line_index:
+                E.SubElement(run, tag("br"))
+            node = E.SubElement(run, tag("t"))
+            node.set("{http://www.w3.org/XML/1998/namespace}space", "preserve")
+            node.text = line
         return run
 
     def add_text(p: E._Element, text: str, size: int = 20, bold: bool = False) -> None:
@@ -599,6 +602,8 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
     paragraph(content["title"][lang], "title")
     paragraph(content["authors"][lang], "author")
     paragraph(content["affiliation"][lang], "affiliation")
+    if corresponding_author := content.get("corresponding_author"):
+        paragraph(corresponding_author[lang], "affiliation")
     body.append(first_carrier)
     relations = E.fromstring(parts["word/_rels/document.xml.rels"])
     rel_ns = "http://schemas.openxmlformats.org/package/2006/relationships"

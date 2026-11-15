@@ -37,6 +37,32 @@ def table_rows(table):
 
 
 @pytest.mark.parametrize("lang", ["en", "ja"])
+def test_author_metadata_preserves_order_line_breaks_and_correspondence(lang):
+    """A literal newline in w:t would silently lose the affiliation line break."""
+    with ZipFile(DOCX_DIR / f"iciae2027_manuscript_{lang}.docx") as package:
+        document = ET.fromstring(package.read("word/document.xml"))
+    metadata = []
+    for paragraph in document.findall("w:body/w:p", NS)[:4]:
+        parts = []
+        for node in paragraph.iter():
+            if node.tag == f"{{{NS['w']}}}t":
+                parts.append(node.text or "")
+            elif node.tag == f"{{{NS['w']}}}br":
+                parts.append("\n")
+        metadata.append("".join(parts))
+    assert metadata == [
+        CONTENT[key][lang]
+        for key in ("title", "authors", "affiliation", "corresponding_author")
+    ]
+    assert metadata[1] == "Hinata Uchida*, Lovic Gauthier"
+    assert metadata[2].splitlines() == [
+        "Information System Course, National Institute of Technology, Ariake College",
+        "Higashi-Hagio 150, Omuta, Fukuoka 836-8585 (JAPAN)",
+    ]
+    assert "Hinata Uchida, s59025@ga.ariake-nct.ac.jp" in metadata[3]
+
+
+@pytest.mark.parametrize("lang", ["en", "ja"])
 def test_word_text_references_and_tables_match_evidence(lang):
     """Check actual emitted OOXML independently of the rendering code."""
     with ZipFile(DOCX_DIR / f"iciae2027_manuscript_{lang}.docx") as package:
