@@ -476,7 +476,11 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
         "h2": find_p("Structure"),
         "abstract_heading": find_p("Abstract"),
         "keywords": find_p("Keywords:"),
+        "references_heading": next(
+            p for p in reversed(paras) if "".join(p.itertext()) == "References"
+        ),
     }
+    references_title = next(b[lang] for b in content["blocks"] if b["id"] == "references-heading")
     first_carrier = next(deepcopy(p) for p in paras if p.find("w:pPr/w:sectPr", NS) is not None)
     for child in list(first_carrier):
         if child.tag != tag("pPr"):
@@ -514,10 +518,18 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
             node.text = line
         return run
 
-    def add_text(p: E._Element, text: str, size: int = 20, bold: bool = False) -> None:
-        for token in re.split(r"(\[\[\d+\]\]|[ABFmsDORΣ]_(?:it|i))", text):
+    def add_text(
+        p: E._Element,
+        text: str,
+        size: int = 20,
+        bold: bool = False,
+        superscript_star: bool = False,
+    ) -> None:
+        for token in re.split(r"(\[\[\d+\]\]|[ABFmsDORΣ]_(?:it|i)|\*)", text):
             if re.fullmatch(r"\[\[\d+\]\]", token):
                 add_run(p, f"({token[2:-2]})", size, superscript=True)
+            elif token == "*" and superscript_star:
+                add_run(p, token, size, superscript=True)
             elif re.fullmatch(r"[ABFmsDORΣ]_(?:it|i)", token):
                 base, sub = token.split("_")
                 add_run(p, base, size, bold)
@@ -527,12 +539,19 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
 
     def paragraph(text: str, kind: str = "p", parent: E._Element | None = None) -> E._Element:
         p = E.SubElement(body if parent is None else parent, tag("p"))
-        pattern = patterns.get(kind, patterns["p"])
+        is_references_heading = kind == "h1" and text == references_title
+        pattern = (
+            patterns["references_heading"]
+            if is_references_heading
+            else patterns.get(kind, patterns["p"])
+        )
         props = deepcopy(pattern.find("w:pPr", NS))
         if props is None:
             props = element("pPr")
         for node in list(props):
-            if node.tag in (tag("sectPr"), tag("numPr"), tag("pBdr"), tag("rPr")):
+            if node.tag in (tag("sectPr"), tag("numPr"), tag("rPr")) or (
+                node.tag == tag("pBdr") and not is_references_heading
+            ):
                 props.remove(node)
         p.append(props)
         heading = kind in ("h1", "h2", "abstract_heading")
@@ -596,11 +615,14 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
                 spacing = E.SubElement(props, tag("spacing"))
             spacing.set(tag("line"), "300")
             spacing.set(tag("lineRule"), "atLeast")
-        add_text(p, text, size, heading or kind == "title")
+        add_text(p, text, size, heading or kind == "title", superscript_star=kind == "author")
         return p
 
+    paragraph("", "author")
     paragraph(content["title"][lang], "title")
+    paragraph("", "author")
     paragraph(content["authors"][lang], "author")
+    paragraph("", "author")
     paragraph(content["affiliation"][lang], "affiliation")
     if corresponding_author := content.get("corresponding_author"):
         paragraph(corresponding_author[lang], "affiliation")
@@ -870,7 +892,7 @@ def main() -> None:
         json.dumps(
             {
                 "blocks": len(ids),
-                "abstract_words": len(
+                "abstract_words_whitespace_split": len(
                     next(b["en"] for b in content["blocks"] if b["id"] == "abstract").split()
                 ),
                 "outputs": [{k: r[k] for k in ("language", "output", "sha256")} for r in results],

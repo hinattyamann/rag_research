@@ -41,8 +41,10 @@ def test_author_metadata_preserves_order_line_breaks_and_correspondence(lang):
     """A literal newline in w:t would silently lose the affiliation line break."""
     with ZipFile(DOCX_DIR / f"iciae2027_manuscript_{lang}.docx") as package:
         document = ET.fromstring(package.read("word/document.xml"))
+    paragraphs = document.findall("w:body/w:p", NS)
+    nonempty = [paragraph for paragraph in paragraphs if text(paragraph)]
     metadata = []
-    for paragraph in document.findall("w:body/w:p", NS)[:4]:
+    for paragraph in nonempty[:4]:
         parts = []
         for node in paragraph.iter():
             if node.tag == f"{{{NS['w']}}}t":
@@ -51,8 +53,7 @@ def test_author_metadata_preserves_order_line_breaks_and_correspondence(lang):
                 parts.append("\n")
         metadata.append("".join(parts))
     assert metadata == [
-        CONTENT[key][lang]
-        for key in ("title", "authors", "affiliation", "corresponding_author")
+        CONTENT[key][lang] for key in ("title", "authors", "affiliation", "corresponding_author")
     ]
     assert metadata[1] == "Hinata Uchida*, Lovic Gauthier"
     assert metadata[2].splitlines() == [
@@ -60,6 +61,16 @@ def test_author_metadata_preserves_order_line_breaks_and_correspondence(lang):
         "Higashi-Hagio 150, Omuta, Fukuoka 836-8585 (JAPAN)",
     ]
     assert "Hinata Uchida, s59025@ga.ariake-nct.ac.jp" in metadata[3]
+    author_index = paragraphs.index(nonempty[1])
+    assert not text(paragraphs[0])
+    assert not text(paragraphs[author_index - 1])
+    assert not text(paragraphs[author_index + 1])
+    markers = [
+        text(run)
+        for run in nonempty[1].findall("w:r", NS)
+        if run.find("w:rPr/w:vertAlign[@w:val='superscript']", NS) is not None
+    ]
+    assert markers == ["*"]
 
 
 @pytest.mark.parametrize("lang", ["en", "ja"])
@@ -85,9 +96,23 @@ def test_word_text_references_and_tables_match_evidence(lang):
         text(r)
         for r in document.findall("w:body/w:p/w:r", NS)
         if r.find("w:rPr/w:vertAlign[@w:val='superscript']", NS) is not None
+        and re.fullmatch(r"\(\d+\)", text(r))
     ]
     assert citation_runs == [f"({i})" for i in range(1, len(CONTENT["references"]) + 1)]
     assert not any("Preparation of Papers" in p or "Click here" in p for p in paragraphs)
+    reference_heading = next(
+        p
+        for p in document.findall("w:body/w:p", NS)
+        if text(p) == ("References" if lang == "en" else "参考文献")
+    )
+    with ZipFile(PAPER / "templates/official/ICIAE2027_template.docx") as template:
+        template_xml = ET.fromstring(template.read("word/document.xml"))
+    template_heading = next(
+        p for p in reversed(template_xml.findall("w:body/w:p", NS)) if text(p) == "References"
+    )
+    assert ET.tostring(reference_heading.find("w:pPr/w:pBdr", NS)) == ET.tostring(
+        template_heading.find("w:pPr/w:pBdr", NS)
+    )
     assert not re.search(r"\b(?:Main|Cal|Ext)\b", " ".join(paragraphs))
     tables = document.findall("w:body/w:tbl", NS)
     keys = [b["key"] for b in CONTENT["blocks"] if b["type"] == "table"]
