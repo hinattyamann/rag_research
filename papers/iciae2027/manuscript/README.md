@@ -1,5 +1,7 @@
 # 論文本体
 
+2026年11月16日、図表配置と著者欄下の空行を修正した初稿14へ更新した。[全図表の位置・要旨の対応・最終検証](../notes/draft14_validation_20261116.json)を参照する。図2と表1・2・8を見出しや本文より上に置き、表4の手動空白を削除した。責任著者欄下に公式の2空行を復元し、要旨は全情報を保持して230語に整理した。教員の投稿承認・投稿は未完了。以下の初稿13以前の記録は履歴として残す。
+
 2026年11月16日、参考文献を監査した初稿13へ更新した。[全14件の出典と引用目的](../notes/reference_audit_20261116.json)と[最終検証](../notes/draft13_validation_20261116.json)を参照する。文献13のリンクを診断成績のある固定報告へ訂正し、13・14が本研究の資料と分かる表記にした。本文・図表・数値は保持し、英語8頁・日本語9頁・要旨257語、全14リンクと最終英語版の公式書式を再確認した。教員の投稿承認・投稿は未完了。以下の初稿12の記録は書式・対訳修正の履歴として残す。
 
 2026年11月16日、表4の段末配置・全表外枠の位置と日英対訳を修正した初稿12へ更新した。Wordから直接出力した日英PDFも保存した。[修正内容と確認](../notes/draft12_revision_status.md)を参照する。[初稿11の書式確認](../notes/draft11_revision_status.md)、[正式著者情報](../notes/draft10_revision_status.md)と教員の[指摘と修正の対応](../notes/draft9_revision_status.md)、[初稿8](../notes/draft8_revision_status.md)、[初稿7](../notes/draft7_revision_status.md)と[PDF指摘の採否](../notes/marked_pdf_review_20261111.md)は履歴として保持する。
@@ -11,7 +13,7 @@
 | [iciae2027_manuscript_ja.docx](iciae2027_manuscript_ja.docx) | 全本文に対応する理解用日本語版の正本 |
 | [iciae2027_manuscript_ja.pdf](iciae2027_manuscript_ja.pdf) | 理解用日本語版から出力した確認済み9ページPDF |
 
-現在は提出用英語8ページ・理解用日本語9ページ、英語要旨はWord標準計測で257語（空白区切りでは255語）、91対訳単位・7章・2図・10表・14文献。本文・図表・表注・文献題名まで対訳を確認し、表4を段末へ、表外枠を段内へ調整した。両PDFの全14文献のリンクを確認済み。教員の再確認・投稿承認と投稿は未完了。ページ番号は公式テンプレートに従い追加していない。
+現在は提出用英語8ページ・理解用日本語9ページ、英語要旨はWord標準230語（空白区切り228語）、92対訳単位・7章・2図・10表・14文献。本文・図表・表注・文献の対応を確認し、英語の全図表を段頭9件・段末3件へ配置した。要旨以外の文章は内容と順序を保ち、品質遷移説明の冒頭1文だけを別段落にした。両PDFの全14文献リンクを確認済み。教員の再確認・投稿承認と投稿は未完了。ページ番号は公式テンプレートに従い追加していない。
 
 本文は英語100問・日本語100問を一つの固定評価器の実験として扱い、Main・Cal・Extの呼称を使わない。主比較可能なのは英語80問・日本語68問であり、段階的収集を結果確認後に統合した事後解析である。[統合集計の定義と再現](../notes/pooled_analysis_readme.md)と[結果JSON](../notes/pooled_results_v1.json)を参照する。元資料と旧集計は変更していない。
 
@@ -24,12 +26,15 @@ uv run python papers/iciae2027/manuscript/derive_pooled_results.py --check
 uv run --with lxml --with python-docx python papers/iciae2027/manuscript/build_draft.py --build
 uv run python -X utf8 -m pytest papers/iciae2027/manuscript -q
 uv run ruff check .
+uv run --with pymupdf --with pdfplumber python papers/iciae2027/manuscript/check_pdf_layout.py
 ```
 
 図1・図2を意図して再描画する場合は--refresh-figuresを付ける。生成前に更新先Wordを閉じる。先に別ディレクトリで表示確認する場合は--output-dirを指定でき、日英DOCXと専用のdraft_build_manifest.jsonがそこへ出力される。原稿検査は環境変数ICIAE_DOCX_DIRとICIAE_BUILD_MANIFESTで、その作業用の一組も検査できる。
 
-生成後はWordの［ファイル］→［エクスポート］→［PDF/XPSの作成］で日英PDFも更新し、全ページの本文・図表・段組・改ページ・文献リンクを確認する。原稿変更後は既存PDFをそのまま提出用に使わず再出力する。PNGは内部QA用とし、教員の承認後に英語PDFをsubmissionへ提出用コピーとして保存する。現在の[生成Manifest](../notes/draft_build_manifest.json)と[最終検証](../notes/draft12_validation_20261116.json)で正本のHashを追跡できる。
+生成後はWordの［ファイル］→［エクスポート］→［PDF/XPSの作成］で日英PDFも更新し、全ページの本文・図表・段組・改ページ・文献リンクを確認する。原稿変更後は既存PDFをそのまま提出用に使わず再出力する。PNGは内部QA用とし、教員の承認後に英語PDFをsubmissionへ提出用コピーとして保存する。現在の[生成Manifest](../notes/draft_build_manifest.json)と[最終検証](../notes/draft14_validation_20261116.json)で正本のHashを追跡できる。
 
 編集後の最後の工程として、最終英語Wordと提出対象PDFを現行の公式要項・テンプレートへ再照合し、提出可否と残件を確認する。語数・ページ数・著者欄・用紙/余白/段組/フォント・図表と注・引用と文献リンク・全ページ表示の結果を、確認したファイルのHashとともに検証記録へ保存する。
 
 初稿4以前の到達点・旧集合別集計は[履歴](../notes/draft4_revision_status.md)として残す。[対話の合意事項](../notes/dialogue_revision_policy_20261110.md)と[構成](outline.md)は次の改稿時にも参照する。同じDOCXを複数PCで同時に編集せず、Commit・通常Push後に受取側でFetch・Pullする。
+
+全図表の配置は画像・表本体・キャプション・表注を一群として確認する。段頭ではその上に本文や節見出しがなく、段末では注の後に本文がないことを、全12件について実際の英語PDFで確認する。図の上に数行の本文がある状態や、表の上に節見出しがある状態を段頭扱いしない。check_pdf_layout.pyはこの配置と、責任著者欄から要旨への間隔、要旨全文とKeywordsの左段内収録を検査する。コード内の数値許容差は検査用であり、学会が認めた余白寸法ではない。日本語版は理解用として表示を確認し、提出用の配置制約は英語版へ適用する。

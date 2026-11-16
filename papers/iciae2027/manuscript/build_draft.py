@@ -633,6 +633,9 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
     paragraph(content["affiliation"][lang], "affiliation")
     if corresponding_author := content.get("corresponding_author"):
         paragraph(corresponding_author[lang], "affiliation")
+    # Restore the two blank lines below the corresponding author in the official template.
+    paragraph("", "author")
+    paragraph("", "author")
     body.append(first_carrier)
     relations = E.fromstring(parts["word/_rels/document.xml.rels"])
     rel_ns = "http://schemas.openxmlformats.org/package/2006/relationships"

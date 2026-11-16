@@ -1,5 +1,5 @@
 {
-  "version": "draft-13-2026-11-16",
+  "version": "draft-14-2026-11-16",
   "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
   "title": {
     "en": "Evidence Order Sensitivity in RAG Evaluation and Its Effects on Answer Selection, Quality, and Cost",
@@ -27,8 +27,8 @@
     {
       "id": "abstract",
       "type": "p",
-      "en": "Large language models (LLMs) can answer questions using retrieved evidence in retrieval-augmented generation (RAG). An internal evaluator can then retain an answer or request a rewrite. We investigate whether changing only evidence order changes this decision and the quality and cost of the selected answer. For each question, we fix the evidence, initial answer, and answer sentences, and compare evaluations of evidence permutations with repeated evaluation of the original order. Using a single common rewrite separates answer selection from rewrite generation. After fixing the evaluator and experimental parameters, we collected 100 English and 100 Japanese questions in stages. A post-hoc pooled analysis includes 80 English and 68 Japanese questions with complete comparisons. Mean excess decision disagreement is 8.25 percentage points in English (95% document-group bootstrap interval 4.50–12.50) and 8.24 in Japanese (4.12–12.65), while the confidence interval for the difference between languages includes zero. Among the 26 questions with order-dependent decisions, the selected answer's binary quality label differs for 14 cases, remains unchanged for 8, and is unresolved for 4. External AI assessment labels 51 English and 41 Japanese answers reliable under original-order evaluation, compared with 63 and 55 under always rewriting. Moreover, original-order evaluation uses 2.36 and 2.99 times as many recorded tokens as always rewriting in English and Japanese, respectively. Under this fixed configuration, evidence order affects answer selection, and internal evaluation adds cost without yielding the most reliable answers. However, the interpretation of these findings is limited by AI labels without human verification, the exclusion of refusals, and differences between the source datasets.",
-      "ja": "大規模言語モデル（LLM）は、検索拡張生成（RAG）において検索した根拠を用いて質問に回答できる。その後、内部評価器が回答の採用または書換えを判断できる。本研究では、根拠順序だけを変えると、この判断と選択回答の品質・費用が変わるかを調べる。質問ごとに根拠、初回回答、回答の文を固定し、根拠の並べ替えに対する評価を元順序の反復評価と比較する。一つの共通書換え回答を用いることで、回答選択と書換え生成を分離する。評価器と実験パラメータを固定した後、英語100問・日本語100問を段階的に収集した。事後統合解析では、完全比較が可能な英語80問・日本語68問を対象とする。判断不一致の平均増分は英語8.25ポイント（95%文書グループ・ブートストラップ区間4.50～12.50）、日本語8.24ポイント（4.12～12.65）であり、言語間の差の信頼区間は0を含む。順序によって判断が変わった26問のうち、選択回答の二値品質ラベルが異なったのは14問、同じであったのは8問、未確定は4問であった。外部AI採点による元順序評価での良好回答数は英語51件・日本語41件で、常時書換えでは63件・55件であった。さらに、元順序評価の記録トークン数は、常時書換えに対して英語で2.36倍、日本語で2.99倍であった。この固定構成では、根拠順序が回答選択に影響し、内部評価は費用を加える一方で良好回答数を最大化しなかった。ただし、人手未確認のAIラベル、拒否回答の除外、元データセット間の違いが、これらの結果の解釈を制約する。"
+      "en": "Large language models (LLMs) can answer questions using retrieved evidence in retrieval-augmented generation (RAG). An internal evaluator can then retain an answer or request a rewrite. We investigate whether evidence order alone changes this decision and the selected answer's quality and cost. Fixing each question's evidence, initial answer, and answer sentences, we compare evaluations of evidence permutations with repeated original-order evaluation. A shared rewrite separates answer selection from rewrite generation. With the evaluator and parameters fixed, we collected 100 English and 100 Japanese questions in stages. A post-hoc pooled analysis covers 80 English and 68 Japanese questions with complete comparisons. Mean excess decision disagreement is 8.25 percentage points in English (95% document-group bootstrap interval 4.50–12.50) and 8.24 in Japanese (4.12–12.65); the confidence interval for the language difference includes zero. Among 26 questions with order-dependent decisions, selected binary quality labels change for 14, remain unchanged for 8, and are unresolved for 4. External AI assessment labels 51 English and 41 Japanese answers reliable under original-order evaluation, versus 63 and 55 under always rewriting. Original-order evaluation uses 2.36 and 2.99 times as many recorded tokens as always rewriting in English and Japanese, respectively. Under this fixed configuration, evidence order affects answer selection, and internal evaluation adds cost without yielding the most reliable answers. Interpretation is limited by AI labels without human verification, excluded refusals, and differences between the source datasets.",
+      "ja": "大規模言語モデル（LLM）は、検索拡張生成（RAG）において検索した根拠を用いて質問に回答できる。その後、内部評価器が回答の採用または書換えを判断できる。本研究では、根拠順序だけでこの判断と選択回答の品質・費用が変わるかを調べる。質問ごとの根拠、初回回答、回答の文を固定し、根拠の並べ替えに対する評価を元順序の反復評価と比較する。一つの共通書換え回答により、回答選択と書換え生成を分離する。評価器とパラメータを固定して、英語100問・日本語100問を段階的に収集した。事後統合解析では、完全比較が可能な英語80問・日本語68問を対象とする。判断不一致の平均増分は英語8.25ポイント（95%文書グループ・ブートストラップ区間4.50～12.50）、日本語8.24ポイント（4.12～12.65）であり、言語間の差の信頼区間は0を含む。順序によって判断が変わった26問のうち、選択回答の二値品質ラベルが変わったのは14問、同じであったのは8問、未確定は4問であった。外部AI採点による元順序評価での良好回答数は英語51件・日本語41件で、常時書換えでは63件・55件であった。元順序評価の記録トークン数は、常時書換えに対して英語で2.36倍、日本語で2.99倍であった。この固定構成では、根拠順序が回答選択に影響し、内部評価は費用を加える一方で良好回答数を最大化しなかった。人手未確認のAIラベル、拒否回答の除外、元データセット間の違いが解釈を制約する。"
     },
     {
       "id": "keywords",
@@ -219,12 +219,6 @@
       "ja": "シード付き識別子ハッシュを用い、文書グループごとに1問を選定した。過去に利用したと記録されている質問と、選定済みのグループは除外した。評価用の質問を収集する前に、評価器・プロンプト・閾値を固定した。"
     },
     {
-      "id": "h42-runtime",
-      "type": "h2",
-      "en": "4.2 Retrieval and model configuration",
-      "ja": "4.2 検索とモデル構成"
-    },
-    {
       "id": "table-configuration",
       "type": "table",
       "key": "configuration",
@@ -234,6 +228,12 @@
         "en": "Note. EN/JA denote English/Japanese. Token units apply to Context, Output, Batch, and both Task and reasoning limits in the generation and evaluation settings.",
         "ja": "注。EN/JAは英語/日本語を示す。生成・評価設定にある文脈、出力、バッチ、タスク・推論上限の値はトークン単位である。"
       }
+    },
+    {
+      "id": "h42-runtime",
+      "type": "h2",
+      "en": "4.2 Retrieval and model configuration",
+      "ja": "4.2 検索とモデル構成"
     },
     {
       "id": "setting-retrieval",
@@ -248,12 +248,6 @@
       "ja": "内部評価器と書換え器にはQwen3.5-9B Q6_K[[12]]と言語別のプロンプトを用いる。CUDAへ全層をオフロードする設定とし、グラフを無効化する。したがって、一つのLLMが初回回答を生成し、別のLLMがその回答を評価して書換え回答を生成する。この評価器はRAGシステムの回答選択処理に組み込まれているため、内部評価器と呼ぶ。"
     },
     {
-      "id": "h43-development",
-      "type": "h2",
-      "en": "4.3 Evaluator development and fixation",
-      "ja": "4.3 評価器の開発と固定"
-    },
-    {
       "id": "table-development",
       "type": "table",
       "en": "Table 2. Development diagnostics and evaluator performance.",
@@ -263,6 +257,12 @@
         "en": "Note. Support recall and Non-support specificity pool original and reversed evidence for Saved EN QA, excluding 5 sentences with ambiguous expected labels. Non-support combines contradicted and unsupported labels.",
         "ja": "注。支持の再現率と非支持の特異度は、保存QA ENの元順序と逆順の結果を合わせ、期待ラベルが曖昧な5文を除いた値である。非支持は矛盾と支持なしのラベルをまとめた区分である。"
       }
+    },
+    {
+      "id": "h43-development",
+      "type": "h2",
+      "en": "4.3 Evaluator development and fixation",
+      "ja": "4.3 評価器の開発と固定"
     },
     {
       "id": "setting-development",
@@ -324,17 +324,17 @@
       "ja": "英語80問・日本語68問で完全比較が可能であった（表3）。除外52問は採点可能な文のない拒否51問と初回回答の欠測1問である。比較可能な質問では、反復ペアの不一致はなかった。判断不一致の平均増分は英語8.25ポイント（pp）、日本語8.24 ppで、両方のブートストラップ区間は0を含まなかった（図2）。根拠順序間で判断が変わったのは英語14/80問、日本語12/68問であった。"
     },
     {
-      "id": "result-language",
-      "type": "p",
-      "en": "The Japanese-minus-English difference is −0.01 pp, with a 95% interval of [−5.96, 5.99] pp. These data show sensitivity in each language dataset but do not establish a difference between them.",
-      "ja": "日本語平均−英語平均は−0.01 ppで、95%区間は［−5.96, 5.99］ppであった。各言語のデータセットで感度を観測したが、両者の差は確立しなかった。"
-    },
-    {
       "id": "figure-order",
       "type": "figure",
       "en": "Fig. 2. Excess decision disagreement and language difference with 95% bootstrap intervals.",
       "ja": "図2 判断不一致の増分と日英差および95%ブートストラップ区間",
       "key": "order"
+    },
+    {
+      "id": "result-language",
+      "type": "p",
+      "en": "The Japanese-minus-English difference is −0.01 pp, with a 95% interval of [−5.96, 5.99] pp. These data show sensitivity in each language dataset but do not establish a difference between them.",
+      "ja": "日本語平均−英語平均は−0.01 ppで、95%区間は［−5.96, 5.99］ppであった。各言語のデータセットで感度を観測したが、両者の差は確立しなかった。"
     },
     {
       "id": "h52-quality",
@@ -349,6 +349,12 @@
       "ja": "表4に全選定200問の品質を示す。OEの良好回答数は英語51件・日本語41件で、NRの31件・21件より多いが、ARの63件・55件より少なかった。各方策において、日本語の1問は初回回答の生成失敗により最終回答が欠測している。判定不能ラベルは不良回答と区別する。"
     },
     {
+      "id": "result-pairs",
+      "type": "p",
+      "en": "Known A/B quality transitions are available for 93 English and 84 Japanese questions (Table 5).",
+      "ja": "A/Bの品質遷移が判定可能なのは英語93問・日本語84問である（表5）。"
+    },
+    {
       "id": "table-quality",
       "type": "table",
       "en": "Table 4. Selected-answer quality by policy.",
@@ -357,9 +363,6 @@
       "notes": {
         "en": "Note. Each row counts 100 questions. NR/OE/AR denote no rewriting/original-order evaluation/always rewriting. Y=1/0 count reliable/unreliable answers. Unclear and Missing count indeterminate labels and absent answers.",
         "ja": "注。各行は100問を集計する。NR/OE/ARは書換えなし/元順序評価/常時書換えを示す。Y=1/0は良好/不良回答数を示す。判定不能と欠測は未確定ラベル数と回答がない件数を示す。"
-      },
-      "caption_spacing_before": {
-        "en": 1800
       }
     },
     {
@@ -376,8 +379,15 @@
     {
       "id": "result-transitions",
       "type": "p",
-      "en": "Known A/B quality transitions are available for 93 English and 84 Japanese questions (Table 5). Rewriting improves 32 English and 31 Japanese answers from Y=0 to Y=1, while degrading two in each language from Y=1 to Y=0. OE misses 11/32 English and 13/31 Japanese possible improvements, and selects one harmful English rewrite. Thus evaluation avoids some harmful changes but also rejects some useful rewrites.",
-      "ja": "A/Bの品質遷移が判定可能なのは英語93問・日本語84問である（表5）。書換えによってY=0からY=1へ改善したのは英語32問・日本語31問で、Y=1からY=0へ悪化したのは各言語2問であった。OEは改善可能例の英語11/32問・日本語13/31問を見逃し、英語では有害な書換え1件を選んだ。したがって評価は一部の有害変更を避ける一方で、有用な書換えの一部も棄却した。"
+      "en": "Rewriting improves 32 English and 31 Japanese answers from Y=0 to Y=1, while degrading two in each language from Y=1 to Y=0. OE misses 11/32 English and 13/31 Japanese possible improvements, and selects one harmful English rewrite. Thus evaluation avoids some harmful changes but also rejects some useful rewrites.",
+      "ja": "書換えによってY=0からY=1へ改善したのは英語32問・日本語31問で、Y=1からY=0へ悪化したのは各言語2問であった。OEは改善可能例の英語11/32問・日本語13/31問を見逃し、英語では有害な書換え1件を選んだ。したがって評価は一部の有害変更を避ける一方で、有用な書換えの一部も棄却した。"
+    },
+    {
+      "id": "result-order-quality",
+      "type": "p",
+      "en": "Among the 26 questions with order-dependent decisions, selected binary quality changes for 14, stays the same for 8, and is unresolved for 4 (Table 6). An unresolved outcome is not evidence of unchanged quality.",
+      "ja": "順序で判断が変わった26問では、選択回答の二値品質が変わったのは14問、同じなのは8問、未確定は4問であった（表6）。未確定は品質が変わらないことの証拠ではない。",
+      "keep_together": true
     },
     {
       "id": "table-order-quality",
@@ -389,13 +399,6 @@
         "en": "Note. Values count questions. The three quality rows partition the 26 questions in the first row. Same Y includes both Y=0 (EN 3, JA 2) and both Y=1 (EN 2, JA 1). Route tokens vary counts questions with different token costs across orders.",
         "ja": "注。値は質問数を示す。品質の3行は先頭行の26問を区分する。同じYには、ともにY=0（EN 3問、JA 2問）と、ともにY=1（EN 2問、JA 1問）を含む。経路トークン数が変動の行は、順序間でトークン費用が異なる質問数を示す。"
       }
-    },
-    {
-      "id": "result-order-quality",
-      "type": "p",
-      "en": "Among the 26 questions with order-dependent decisions, selected binary quality changes for 14, stays the same for 8, and is unresolved for 4 (Table 6). An unresolved outcome is not evidence of unchanged quality.",
-      "ja": "順序で判断が変わった26問では、選択回答の二値品質が変わったのは14問、同じなのは8問、未確定は4問であった（表6）。未確定は品質が変わらないことの証拠ではない。",
-      "keep_together": true
     },
     {
       "id": "h53-cases",
@@ -484,12 +487,6 @@
       "ja": "例3の質問は「フライド・グリーン・トマトのアイデアはどこから生まれたのか」である。Aは「フライド・グリーン・トマトやその起源への言及はない。」と述べ、Bも「提示された文書のいずれにも、フライド・グリーン・トマトの起源への言及はない。」と述べる。両者は検索情報の不足を述べ、問われた起源に答えていないため、Y(A)=Y(B)=0とされた。元順序はF=2/3でBを選び、逆順はF=1でAを採用した。選択文章は変わったが、品質ラベルはY=0のままであった。"
     },
     {
-      "id": "h54-cost",
-      "type": "h2",
-      "en": "5.4 Computational cost",
-      "ja": "5.4 計算費用"
-    },
-    {
       "id": "table-cost",
       "type": "table",
       "en": "Table 8. Model calls and tokens by answer policy.",
@@ -499,6 +496,12 @@
         "en": "Note. Calls and Tokens give totals including initial generation for 100 EN/99 JA answers. Token totals include input and output. Tokens / AR uses the same language's AR total. The interrupted Japanese request's unknown cost is excluded.",
         "ja": "注。呼出し回数とトークン数の列はEN100回答/JA99回答について初回生成を含む合計を示す。トークン数列は入出力トークンを集計する。AR比列は同じ言語のARの合計を基準とする。日本語中断要求の不明費用は除外する。"
       }
+    },
+    {
+      "id": "h54-cost",
+      "type": "h2",
+      "en": "5.4 Computational cost",
+      "ja": "5.4 計算費用"
     },
     {
       "id": "result-cost",
