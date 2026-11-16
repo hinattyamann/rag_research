@@ -28,4 +28,6 @@ uv run ruff check .
 
 生成後はWordの［ファイル］→［エクスポート］→［PDF/XPSの作成］で日英PDFも更新し、全ページの本文・図表・段組・改ページ・文献リンクを確認する。原稿変更後は既存PDFをそのまま提出用に使わず再出力する。PNGは内部QA用とし、教員の承認後に英語PDFをsubmissionへ提出用コピーとして保存する。現在の[生成Manifest](../notes/draft_build_manifest.json)と[最終検証](../notes/draft12_validation_20261116.json)で正本のHashを追跡できる。
 
+編集後の最後の工程として、最終英語Wordと提出対象PDFを現行の公式要項・テンプレートへ再照合し、提出可否と残件を確認する。語数・ページ数・著者欄・用紙/余白/段組/フォント・図表と注・引用と文献リンク・全ページ表示の結果を、確認したファイルのHashとともに検証記録へ保存する。
+
 初稿4以前の到達点・旧集合別集計は[履歴](../notes/draft4_revision_status.md)として残す。[対話の合意事項](../notes/dialogue_revision_policy_20261110.md)と[構成](outline.md)は次の改稿時にも参照する。同じDOCXを複数PCで同時に編集せず、Commit・通常Push後に受取側でFetch・Pullする。
