@@ -358,7 +358,7 @@ def test_case_excerpt_wording_is_present_in_both_actual_documents():
         assert all(display_text(b[lang]) in paragraphs for b in quoted_blocks)
         for quote in excerpts["quotes"]:
             value = quote["original_ja" if lang == "ja" else "translation_en"]
-            quoted = f"「{value}」" if lang == "ja" else f'"{value}"'
+            quoted = f"「{value}」" if lang == "ja" else f"“{value}”"
             assert quoted in expected
 
 

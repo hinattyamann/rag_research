@@ -1,5 +1,5 @@
 {
-  "version": "draft-14-2026-11-16",
+  "version": "draft-15-2026-11-16",
   "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
   "title": {
     "en": "Evidence Order Sensitivity in RAG Evaluation and Its Effects on Answer Selection, Quality, and Cost",
@@ -93,8 +93,8 @@
     {
       "id": "related-rag",
       "type": "p",
-      "en": "ConsJudge trains RAG evaluators using consistency across evaluation dimensions[[5]], and RAGVUE diagnoses retrieval, reasoning, and grounding[[6]]. Evidence-locked selection studies rules over fixed candidates[[7]]. We examine how reordering evidence changes decisions between fixed answers and affects their quality and cost.",
-      "ja": "ConsJudgeは評価観点間の一貫性を用いてRAG評価器を学習させ[[5]]、RAGVUEは検索、推論、根拠付けを診断する[[6]]。根拠を固定した選択に関する研究は、固定候補に対する規則を扱っている[[7]]。本研究では、根拠の並べ替えが固定回答間の選択判断をどう変え、その品質と費用にどう影響するかを調べる。"
+      "en": "ConsJudge trains RAG evaluators using consistency across evaluation dimensions[[5]], and RAGVUE diagnoses retrieval, reasoning, and grounding[[6]]. Zhang et al. compare selection rules over frozen candidates, including quality and cost[[7]]. Their intervention changes the selection rule. We instead keep the rule and answer candidates fixed, vary only the evidence order presented to the evaluator, and compare against same-seed repetitions. This isolates the effect of evidence order on accept-or-rewrite decisions and their consequences for selected-answer quality and cost.",
+      "ja": "ConsJudgeは評価観点間の判断の一貫性を用いてRAG評価器を学習し[[5]]、RAGVUEは検索・推論・根拠付けを診断する[[6]]。Zhangらは固定候補に対する選択規則を品質・費用も含めて比較する[[7]]。その介入では選択規則を変える。本研究では規則と回答候補を固定し、評価器へ提示する根拠順序だけを変えて、同一シードでの反復と比較する。これにより、根拠順序が採用・書換え判断と、その結果としての選択回答の品質・費用へ及ぼす影響を切り分ける。"
     },
     {
       "id": "h1-design",
@@ -117,8 +117,8 @@
     {
       "id": "design-control",
       "type": "p",
-      "en": "Trial execution order is randomized with seed 43, and both shuffling and generation are set to seed 42. We keep retrieval results, A_i, its sentence segmentation, and the packed evidence fixed between trials. Reference answers and reference evidence are reserved for external quality assessment and are not supplied as gold information to the internal evaluator or rewriter.",
-      "ja": "試行の実行順はシード43で無作為化し、シャッフルと生成はいずれもシード42とする。試行間で検索結果、A_i、その文分割、入力へ組み込んだ根拠を固定する。参照回答と参照根拠は外部品質採点用とし、内部評価器や書換え器へ正解情報として渡さない。"
+      "en": "Trial execution order is randomized with seed 43; shuffling uses seed 42, and each generation call resets the seed to 42.",
+      "ja": "試行の実行順はシード43で無作為化する。並べ替えにはシード42を用い、生成呼出しごとにシードを42へ戻す。"
     },
     {
       "id": "figure-design",
@@ -126,6 +126,12 @@
       "en": "Fig. 1. Evidence-order evaluation and selection between shared answer candidates.",
       "ja": "図1 根拠提示順序の評価と共通回答候補の選択手順",
       "key": "design"
+    },
+    {
+      "id": "design-control-interpretation",
+      "type": "p",
+      "en": "Repetitions therefore test repeatability with the same input and seed, not variation across sampling seeds. Retrieval results, A_i, sentence segmentation, and packed evidence stay fixed. Reference answers and reference evidence are reserved for external assessment, not supplied as gold information to the evaluator or rewriter.",
+      "ja": "したがって反復は同一入力・同一シードでの再現性を調べるもので、サンプリングシード間の変動を調べるものではない。検索結果、A_i、文分割、入力に収めた根拠は固定する。参照回答と参照根拠は外部採点用に保持し、評価器や書換え器に正解情報として渡さない。"
     },
     {
       "id": "h32-decision",
@@ -136,8 +142,8 @@
     {
       "id": "design-score",
       "type": "p",
-      "en": "The evaluator labels each fixed answer sentence as supported, contradicted, or unsupported by the evidence. If m_i is the number of sentences and s_it the number labeled supported in trial t, the support score is",
-      "ja": "評価器は、固定した回答の各文を、根拠による支持あり、根拠との矛盾、根拠による支持なしに分類する。文数をm_i、試行tで支持ありと判定した文数をs_itとすると、支持スコアは次のようになる。"
+      "en": "Each evaluation trial makes one LLM call per fixed sentence, supplying the question, full initial answer, target sentence, and evidence. Support requires evidence for every detail of the target; the answer itself is not evidence. Each sentence is labeled supported, contradicted, or unsupported. For m_i fixed sentences and s_it supported sentences in trial t, the score is",
+      "ja": "各評価試行では固定文ごとにLLMを1回呼び出し、質問、初回回答全文、対象文、根拠を渡す。支持とするには対象文の全詳細を裏付ける根拠が必要で、回答自体は根拠としない。各文を支持あり・矛盾・支持なしに分類する。固定文数をm_i、試行tで支持ありと判定した文数をs_itとすると、スコアは次式となる。"
     },
     {
       "id": "equation-score",
@@ -173,8 +179,8 @@
     {
       "id": "equation-increment",
       "type": "equation",
-      "en": "D_i = O_i − R_i,     mean D = (Σ_i D_i) / n            (2)",
-      "ja": "D_i = O_i − R_i,     平均D = (Σ_i D_i) / n            (2)"
+      "en": "D_i = O_i − R_i,     D̄ = (Σ_i D_i) / n            (2)",
+      "ja": "D_i = O_i − R_i,     D̄ = (Σ_i D_i) / n            (2)"
     },
     {
       "id": "design-statistics",
@@ -209,14 +215,8 @@
     {
       "id": "setting-data",
       "type": "p",
-      "en": "We use 100 answerable English questions from CLAPNQ[[8]] and 100 answerable Japanese questions from wikipedia-human-retrieval-ja[[9]], with revisions fixed to c508d78 and 02e85c8. The evaluation uses document-group partitions and frozen retrieval corpora. The languages differ in questions, reference structure, and corpus; they are not translation pairs.",
-      "ja": "回答可能な質問を、英語はCLAPNQ[[8]]、日本語はwikipedia-human-retrieval-ja[[9]]から各100問用い、版をそれぞれc508d78と02e85c8に固定する。文書グループによる分割と固定検索コーパスを用いる。言語間では質問、参照構造、コーパスが異なり、翻訳対ではない。"
-    },
-    {
-      "id": "setting-selection",
-      "type": "p",
-      "en": "We selected questions using seeded identifier hashes, choosing one question per document group. Questions recorded as previously used and groups already selected were excluded. The evaluator, prompts, and threshold were fixed before collecting the evaluation questions.",
-      "ja": "シード付き識別子ハッシュを用い、文書グループごとに1問を選定した。過去に利用したと記録されている質問と、選定済みのグループは除外した。評価用の質問を収集する前に、評価器・プロンプト・閾値を固定した。"
+      "en": "We use 100 answerable English questions from CLAPNQ[[8]] and 100 answerable Japanese questions from wikipedia-human-retrieval-ja[[9]], with revisions fixed to c508d78 and 02e85c8. The evaluation uses document-group partitions and frozen retrieval corpora.",
+      "ja": "回答可能な質問を、英語はCLAPNQ[[8]]、日本語はwikipedia-human-retrieval-ja[[9]]から各100問用い、版をそれぞれc508d78と02e85c8に固定する。文書グループによる分割と固定検索コーパスを用いる。"
     },
     {
       "id": "table-configuration",
@@ -228,6 +228,18 @@
         "en": "Note. EN/JA denote English/Japanese. Token units apply to Context, Output, Batch, and both Task and reasoning limits in the generation and evaluation settings.",
         "ja": "注。EN/JAは英語/日本語を示す。生成・評価設定にある文脈、出力、バッチ、タスク・推論上限の値はトークン単位である。"
       }
+    },
+    {
+      "id": "setting-language-scope",
+      "type": "p",
+      "en": "The languages differ in questions, reference structure, and corpus; they are not translation pairs.",
+      "ja": "言語間では質問、参照構造、コーパスが異なり、翻訳対ではない。"
+    },
+    {
+      "id": "setting-selection",
+      "type": "p",
+      "en": "We selected questions using seeded identifier hashes, choosing one question per document group. Questions recorded as previously used and groups already selected were excluded. The evaluator, prompts, and threshold were fixed before collecting the evaluation questions.",
+      "ja": "シード付き識別子ハッシュを用い、文書グループごとに1問を選定した。過去に利用したと記録されている質問と、選定済みのグループは除外した。評価用の質問を収集する前に、評価器・プロンプト・閾値を固定した。"
     },
     {
       "id": "h42-runtime",
@@ -244,8 +256,8 @@
     {
       "id": "setting-model",
       "type": "p",
-      "en": "The internal evaluator and rewriter use Qwen3.5-9B Q6_K[[12]] with language-specific prompts. CUDA is configured to use full offload with graphs disabled. Thus one LLM generates the initial answer, and a second LLM evaluates it and generates the rewrite. We call the evaluator internal because it is part of the RAG system's answer-selection process.",
-      "ja": "内部評価器と書換え器にはQwen3.5-9B Q6_K[[12]]と言語別のプロンプトを用いる。CUDAへ全層をオフロードする設定とし、グラフを無効化する。したがって、一つのLLMが初回回答を生成し、別のLLMがその回答を評価して書換え回答を生成する。この評価器はRAGシステムの回答選択処理に組み込まれているため、内部評価器と呼ぶ。"
+      "en": "The internal evaluator and rewriter use Qwen3.5-9B Q6_K[[12]] with language-specific prompts. CUDA is configured to use full offload with graphs disabled.",
+      "ja": "内部評価器と書換え器にはQwen3.5-9B Q6_K[[12]]と言語別のプロンプトを用いる。CUDAへ全層をオフロードする設定とし、グラフを無効化する。"
     },
     {
       "id": "table-development",
@@ -257,6 +269,12 @@
         "en": "Note. Support recall and Non-support specificity pool original and reversed evidence for Saved EN QA, excluding 5 sentences with ambiguous expected labels. Non-support combines contradicted and unsupported labels.",
         "ja": "注。支持の再現率と非支持の特異度は、保存QA ENの元順序と逆順の結果を合わせ、期待ラベルが曖昧な5文を除いた値である。非支持は矛盾と支持なしのラベルをまとめた区分である。"
       }
+    },
+    {
+      "id": "setting-model-roles",
+      "type": "p",
+      "en": "Thus one LLM generates the initial answer, and a second LLM evaluates it and generates the rewrite. We call the evaluator internal because it is part of the RAG system's answer-selection process.",
+      "ja": "したがって、一つのLLMが初回回答を生成し、別のLLMがその回答を評価して書換え回答を生成する。この評価器はRAGシステムの回答選択処理に組み込まれているため、内部評価器と呼ぶ。"
     },
     {
       "id": "h43-development",
@@ -285,8 +303,8 @@
     {
       "id": "setting-assessment",
       "type": "p",
-      "en": "External AI assessment uses anonymized questions, candidate answers, references, and the evidence actually used to generate the answers. Sentence-support assessment uses only the actual evidence. Condition names, scores, decisions, answer stage, and internal explanations are hidden; labels are sealed before joining them to internal outcomes. The assessor is configured as gpt-6.1-sol with high reasoning effort. No human adjudication was performed. The bodies of three Japanese reference articles were unavailable.",
-      "ja": "外部AI採点には、匿名化した質問、候補回答、参照情報、回答生成に実際に使った根拠を用いる。文の支持判定には実使用根拠だけを使う。条件名、スコア、判断、回答段階、内部説明を隠し、ラベルを確定してから内部結果に対応付ける。採点器はgpt-6.1-sol、推論強度はhighに設定した。人手による判定は実施していない。日本語の参照記事本文3件は利用できなかった。"
+      "en": "External AI assessment uses anonymized questions, candidate answers, references, and the evidence actually used to generate the answers. Sentence-support assessment uses only the actual evidence.",
+      "ja": "外部AI採点には、匿名化した質問、候補回答、参照情報、回答生成に実際に使った根拠を用いる。文の支持判定には実使用根拠だけを使う。"
     },
     {
       "id": "table-primary",
@@ -298,6 +316,12 @@
         "en": "Note. Mean D is the mean of O_i−R_i, in percentage points (pp). Its Japanese-minus-English difference is −0.01 pp with 95% interval [−5.96, 5.99]. Failed rewrites return the initial answer A.",
         "ja": "注。平均DはO_i−R_iの平均であり、ポイント（pp）で示す。その日本語平均−英語平均は−0.01 pp、95%区間は［−5.96, 5.99］である。書換えに失敗した場合は初回回答Aを返す。"
       }
+    },
+    {
+      "id": "setting-assessment-limits",
+      "type": "p",
+      "en": "Condition names, scores, decisions, answer stage, and internal explanations are hidden; labels are sealed before joining them to internal outcomes. The assessor is configured as gpt-6.1-sol with high reasoning effort. No human adjudication was performed. The bodies of three Japanese reference articles were unavailable.",
+      "ja": "条件名、スコア、判断、回答段階、内部説明を隠し、ラベルを確定してから内部結果に対応付ける。採点器はgpt-6.1-sol、推論強度はhighに設定した。人手による判定は実施していない。日本語の参照記事本文3件は利用できなかった。"
     },
     {
       "id": "setting-failures",
@@ -320,8 +344,8 @@
     {
       "id": "result-primary",
       "type": "p",
-      "en": "Complete comparisons are available for 80 English and 68 Japanese questions (Table 3). The 52 exclusions comprise 51 refusals without scorable sentences and one missing initial answer. Among comparable questions, no repetition pair disagrees. Mean excess disagreement is 8.25 percentage points (pp) in English and 8.24 pp in Japanese; both bootstrap intervals exclude zero (Fig. 2). Decisions vary across evidence orders for 14/80 English and 12/68 Japanese questions.",
-      "ja": "英語80問・日本語68問で完全比較が可能であった（表3）。除外52問は採点可能な文のない拒否51問と初回回答の欠測1問である。比較可能な質問では、反復ペアの不一致はなかった。判断不一致の平均増分は英語8.25ポイント（pp）、日本語8.24 ppで、両方のブートストラップ区間は0を含まなかった（図2）。根拠順序間で判断が変わったのは英語14/80問、日本語12/68問であった。"
+      "en": "Complete comparisons are available for 80 English and 68 Japanese questions (Table 3). The 52 exclusions comprise 51 refusals without scorable sentences and one missing initial answer. Among comparable questions, no repetition pair disagrees.",
+      "ja": "英語80問・日本語68問で完全比較が可能であった（表3）。除外52問は採点可能な文のない拒否51問と初回回答の欠測1問である。比較可能な質問では、反復ペアの不一致はなかった。"
     },
     {
       "id": "figure-order",
@@ -329,6 +353,12 @@
       "en": "Fig. 2. Excess decision disagreement and language difference with 95% bootstrap intervals.",
       "ja": "図2 判断不一致の増分と日英差および95%ブートストラップ区間",
       "key": "order"
+    },
+    {
+      "id": "result-primary-rates",
+      "type": "p",
+      "en": "Mean excess disagreement is 8.25 pp in English and 8.24 pp in Japanese; both bootstrap intervals exclude zero (Fig. 2). Decisions vary across evidence orders for 14/80 English and 12/68 Japanese questions.",
+      "ja": "判断不一致の平均増分は英語8.25 pp、日本語8.24 ppで、両方のブートストラップ区間は0を含まなかった（図2）。根拠順序間で判断が変わったのは英語14/80問、日本語12/68問であった。"
     },
     {
       "id": "result-language",
@@ -345,8 +375,8 @@
     {
       "id": "result-quality",
       "type": "p",
-      "en": "Table 4 reports quality for all 200 selected questions. OE returns 51 reliable English and 41 reliable Japanese answers, more than NR (31 and 21) but fewer than AR (63 and 55). For each policy, one Japanese question has no resulting answer because of an initial-answer generation failure. Indeterminate labels remain separate from unreliable answers.",
-      "ja": "表4に全選定200問の品質を示す。OEの良好回答数は英語51件・日本語41件で、NRの31件・21件より多いが、ARの63件・55件より少なかった。各方策において、日本語の1問は初回回答の生成失敗により最終回答が欠測している。判定不能ラベルは不良回答と区別する。"
+      "en": "Table 4 covers all 200 questions. OE returns 51 reliable English and 41 reliable Japanese answers, exceeding NR (31 and 21) but trailing AR (63 and 55). One Japanese question has no answer under any policy because initial generation failed. Indeterminate labels remain separate from unreliable answers.",
+      "ja": "表4は全200問を対象とする。OEの良好回答は英語51件・日本語41件で、NR（31件・21件）より多く、AR（63件・55件）より少ない。日本語の1問は初回生成の失敗により全方策で回答が欠測している。判定不能ラベルは不良回答と区別する。"
     },
     {
       "id": "result-pairs",
@@ -361,8 +391,8 @@
       "ja": "表4 回答方策別の選択回答の品質",
       "key": "quality",
       "notes": {
-        "en": "Note. Each row counts 100 questions. NR/OE/AR denote no rewriting/original-order evaluation/always rewriting. Y=1/0 count reliable/unreliable answers. Unclear and Missing count indeterminate labels and absent answers.",
-        "ja": "注。各行は100問を集計する。NR/OE/ARは書換えなし/元順序評価/常時書換えを示す。Y=1/0は良好/不良回答数を示す。判定不能と欠測は未確定ラベル数と回答がない件数を示す。"
+        "en": "Note. Each row covers 100 questions. NR: no rewriting; OE: original-order evaluation; AR: always rewriting. Y=1: reliable; Y=0: unreliable; Unclear: indeterminate; Missing: absent.",
+        "ja": "注。各行は100問を集計する。NR：書換えなし、OE：元順序評価、AR：常時書換え。Y=1：良好、Y=0：不良、判定不能：品質を確定できない回答、欠測：回答なし。"
       }
     },
     {
@@ -459,19 +489,19 @@
     {
       "id": "case-ja-excerpts",
       "type": "excerpt",
-      "en": "Evidence: \"The terms for both butterflies and moths are of Chinese origin.\"",
+      "en": "Evidence: “The terms for both butterflies and moths are of Chinese origin.”",
       "ja": "根拠：「この蝶と蛾に関しては漢語である。」"
     },
     {
       "id": "case-ja-A",
       "type": "excerpt",
-      "en": "A: “Butterflies are bilaterally symmetrical, and a shape whose ends spread out is sometimes named by likening it to a butterfly with its wings open.” […] \"Moths are often called by a Chinese-derived term because their characteristics differ from those of butterflies.\"",
+      "en": "A: “Butterflies are bilaterally symmetrical, and a shape whose ends spread out is sometimes named by likening it to a butterfly with its wings open.” […] “Moths are often called by a Chinese-derived term because their characteristics differ from those of butterflies.”",
       "ja": "A：「蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。」[…]「蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。」"
     },
     {
       "id": "case-ja-B",
       "type": "excerpt",
-      "en": "B: “Other species of Lepidoptera are called moths, but dividing Lepidoptera into butterflies and moths is not a natural classification” […] \"The terms for both butterflies and moths are of Chinese origin.\"",
+      "en": "B: “Other species of Lepidoptera are called moths, but dividing Lepidoptera into butterflies and moths is not a natural classification” […] “The terms for both butterflies and moths are of Chinese origin.”",
       "ja": "B：「その他のチョウ目の種はガ（蛾）と呼ばれるが、チョウ目をチョウとガに分けるのは自然な分類ではない」[…]「この蝶と蛾に関しては漢語である」"
     },
     {
@@ -564,8 +594,8 @@
     {
       "id": "discussion-order",
       "type": "p",
-      "en": "The repetition control shows that repeatability under one input is insufficient to establish that answer selection is robust to changes in evidence order. Here, the evaluator gave consistent decisions for the original evidence order, yet changed decisions after reordering the same content. This suggests that the observed instability comes from how the evidence is presented.",
-      "ja": "反復対照は、一つの入力で判断が再現することだけでは、根拠順序の変化に対する回答選択の頑健性を確認できないことを示す。本実験の評価器は元順序では判断が一致したが、同じ内容を並べ替えると判断が変わった。この結果は、観測された不安定さが根拠の提示方法に由来することを示唆する。"
+      "en": "The evaluator repeated its original-order decisions under the same input and seed, yet changed decisions when evidence order changed. Repeatability under these fixed conditions therefore does not establish robustness to evidence order. The result concerns presentation changes under a fixed sampling seed; sensitivity across different seeds remains untested.",
+      "ja": "評価器は同一入力・同一シードでは元順序の判断を繰り返したが、根拠順序を変えると判断が変わった。したがって、この固定条件での再現性だけでは根拠順序への頑健性は確認できない。この結果は固定したサンプリングシードの下での提示方法の変更に関するもので、異なるシード間での感度は未検証である。"
     },
     {
       "id": "discussion-support",
@@ -631,89 +661,95 @@
   "references": [
     {
       "id": 1,
-      "text": "P. Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, Advances in Neural Information Processing Systems, Vol. 33, 2020.",
-      "url": "https://arxiv.org/abs/2005.11401",
-      "text_ja": "P. Lewisほか，知識集約型の自然言語処理タスクのための検索拡張生成，Advances in Neural Information Processing Systems，第33巻，2020年。"
+      "text": "P. Lewis et al. : “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks”, Advances in Neural Information Processing Systems, Vol. 33, pp. 9459–9474, 2020.",
+      "url": "https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html",
+      "text_ja": "P. Lewisほか：「知識集約型の自然言語処理タスクのための検索拡張生成」，Advances in Neural Information Processing Systems，第33巻，9459–9474頁，2020年。",
+      "display_url": "NeurIPS 2020 proceedings",
+      "display_url_ja": "NeurIPS 2020公式会議録"
     },
     {
       "id": 2,
-      "text": "N. F. Liu et al., Lost in the Middle: How Language Models Use Long Contexts, Transactions of the Association for Computational Linguistics, Vol. 12, pp. 157–173, 2024.",
+      "text": "N. F. Liu et al. : “Lost in the Middle: How Language Models Use Long Contexts”, Transactions of the Association for Computational Linguistics, Vol. 12, pp. 157–173, 2024.",
       "url": "https://doi.org/10.1162/tacl_a_00638",
-      "text_ja": "N. F. Liuほか，中間に埋もれる情報：言語モデルは長い文脈をどのように利用するか，Transactions of the Association for Computational Linguistics，第12巻，157–173頁，2024年。"
+      "text_ja": "N. F. Liuほか：「中間に埋もれる情報：言語モデルは長い文脈をどのように利用するか」，Transactions of the Association for Computational Linguistics，第12巻，157–173頁，2024年。"
     },
     {
       "id": 3,
-      "text": "P. Wang et al., Large Language Models are not Fair Evaluators, Proceedings of ACL 2024 (Volume 1: Long Papers), pp. 9440–9450, 2024.",
+      "text": "P. Wang et al. : “Large Language Models are not Fair Evaluators”, Proceedings of ACL 2024 (Volume 1: Long Papers), pp. 9440–9450, 2024.",
       "url": "https://doi.org/10.18653/v1/2024.acl-long.511",
-      "text_ja": "P. Wangほか，大規模言語モデルは公平な評価器ではない，ACL 2024会議録（第1巻：長編論文），9440–9450頁，2024年。"
+      "text_ja": "P. Wangほか：「大規模言語モデルは公平な評価器ではない」，ACL 2024会議録（第1巻：長編論文），9440–9450頁，2024年。"
     },
     {
       "id": 4,
-      "text": "L. Shi et al., Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge, Proceedings of IJCNLP-AACL 2025, pp. 292–314, 2025.",
+      "text": "L. Shi et al. : “Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge”, Proceedings of IJCNLP-AACL 2025, pp. 292–314, 2025.",
       "url": "https://doi.org/10.18653/v1/2025.ijcnlp-long.18",
-      "text_ja": "L. Shiほか，評価器を評価する：LLMを評価器として用いる際の位置バイアスに関する体系的研究，IJCNLP-AACL 2025会議録，292–314頁，2025年。"
+      "text_ja": "L. Shiほか：「評価器を評価する：LLMを評価器として用いる際の位置バイアスに関する体系的研究」，IJCNLP-AACL 2025会議録，292–314頁，2025年。"
     },
     {
       "id": 5,
-      "text": "S. Liu et al., Judge as A Judge: Improving the Evaluation of Retrieval-Augmented Generation through the Judge-Consistency of Large Language Models, Findings of ACL 2025, pp. 5788–5807, 2025.",
+      "text": "S. Liu et al. : “Judge as A Judge: Improving the Evaluation of Retrieval-Augmented Generation through the Judge-Consistency of Large Language Models”, Findings of ACL 2025, pp. 5788–5807, 2025.",
       "url": "https://doi.org/10.18653/v1/2025.findings-acl.301",
-      "text_ja": "S. Liuほか，評価器を評価器として使う：大規模言語モデルの評価判断の一貫性を通じた検索拡張生成の評価の改善，Findings of ACL 2025，5788–5807頁，2025年。"
+      "text_ja": "S. Liuほか：「評価器を評価器として使う：大規模言語モデルの評価判断の一貫性を通じた検索拡張生成の評価の改善」，Findings of ACL 2025，5788–5807頁，2025年。"
     },
     {
       "id": 6,
-      "text": "K. Murugaraj, S. Lamsiyah, and M. Theobald, RAGVUE: A Diagnostic View for Explainable and Automated Evaluation of Retrieval-Augmented Generation, Proceedings of EACL 2026 System Demonstrations, pp. 512–526, 2026.",
+      "text": "K. Murugaraj, S. Lamsiyah, and M. Theobald : “RAGVUE: A Diagnostic View for Explainable and Automated Evaluation of Retrieval-Augmented Generation”, Proceedings of EACL 2026 System Demonstrations, pp. 512–526, 2026.",
       "url": "https://aclanthology.org/2026.eacl-demo.35/",
-      "text_ja": "K. Murugaraj，S. Lamsiyah，M. Theobald，RAGVUE：検索拡張生成の説明可能な自動評価のための診断的視点，EACL 2026システムデモンストレーション会議録，512–526頁，2026年。"
+      "text_ja": "K. Murugaraj，S. Lamsiyah，M. Theobald：「RAGVUE：検索拡張生成の説明可能な自動評価のための診断的視点」，EACL 2026システムデモンストレーション会議録，512–526頁，2026年。"
     },
     {
       "id": 7,
-      "text": "Y. Zhang, D. Goel, and H. Ahmad, When the Judge Should Not Decide: Evidence-Locked, Non-Compensatory Selection Bounds LLM-Judge Failure in Reasoning Pipelines, arXiv:2608.07813v2, author preprint, 2026.",
+      "text": "Y. Zhang, D. Goel, and H. Ahmad : “When the Judge Should Not Decide: Evidence-Locked, Non-Compensatory Selection Bounds LLM-Judge Failure in Reasoning Pipelines”, arXiv:2608.07813v2, author preprint, 2026.",
       "url": "https://arxiv.org/abs/2608.07813v2",
-      "text_ja": "Y. Zhang，D. Goel，H. Ahmad，評価器が決めるべきでない場合：根拠を固定した非補償型の選択により推論パイプラインにおけるLLM評価器の失敗を制限する，arXiv:2608.07813v2，著者プレプリント，2026年。"
+      "text_ja": "Y. Zhang，D. Goel，H. Ahmad：「評価器が決めるべきでない場合：根拠を固定した非補償型の選択により推論パイプラインにおけるLLM評価器の失敗を制限する」，arXiv:2608.07813v2，著者プレプリント，2026年。"
     },
     {
       "id": 8,
-      "text": "S. Rosenthal, A. Sil, R. Florian, and S. Roukos, CLAPNQ: Cohesive Long-form Answers from Passages in Natural Questions for RAG systems, Transactions of the Association for Computational Linguistics, Vol. 13, pp. 53–72, 2025.",
+      "text": "S. Rosenthal, A. Sil, R. Florian, and S. Roukos : “CLAPNQ: Cohesive Long-form Answers from Passages in Natural Questions for RAG systems”, Transactions of the Association for Computational Linguistics, Vol. 13, pp. 53–72, 2025.",
       "url": "https://doi.org/10.1162/tacl_a_00729",
-      "text_ja": "S. Rosenthal，A. Sil，R. Florian，S. Roukos，CLAPNQ：RAGシステムのためのNatural Questionsの文章から作る一貫した長文回答，Transactions of the Association for Computational Linguistics，第13巻，53–72頁，2025年。"
+      "text_ja": "S. Rosenthal，A. Sil，R. Florian，S. Roukos：「CLAPNQ：RAGシステムのためのNatural Questionsの文章から作る一貫した長文回答」，Transactions of the Association for Computational Linguistics，第13巻，53–72頁，2025年。"
     },
     {
       "id": 9,
-      "text": "Baobab, Inc., wikipedia-human-retrieval-ja, dataset card. Accessed November 4, 2026.",
+      "text": "Baobab, Inc. : “wikipedia-human-retrieval-ja”, dataset card. Accessed November 4, 2026.",
       "url": "https://huggingface.co/datasets/baobab-trees/wikipedia-human-retrieval-ja",
-      "text_ja": "Baobab, Inc.，wikipedia-human-retrieval-ja，データセットカード。2026年11月4日閲覧。"
+      "text_ja": "Baobab, Inc.：「wikipedia-human-retrieval-ja」，データセットカード。2026年11月4日閲覧。"
     },
     {
       "id": 10,
-      "text": "intfloat, multilingual-e5-small, model card. Accessed November 4, 2026.",
+      "text": "intfloat : “multilingual-e5-small”, model card. Accessed November 4, 2026.",
       "url": "https://huggingface.co/intfloat/multilingual-e5-small",
-      "text_ja": "intfloat，multilingual-e5-small，モデルカード。2026年11月4日閲覧。"
+      "text_ja": "intfloat：「multilingual-e5-small」，モデルカード。2026年11月4日閲覧。"
     },
     {
       "id": 11,
-      "text": "Qwen Team, Qwen2.5-3B-Instruct-GGUF, model card. Accessed November 4, 2026.",
+      "text": "Qwen Team : “Qwen2.5-3B-Instruct-GGUF”, model card. Accessed November 4, 2026.",
       "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF",
-      "text_ja": "Qwen Team，Qwen2.5-3B-Instruct-GGUF，モデルカード。2026年11月4日閲覧。"
+      "text_ja": "Qwen Team：「Qwen2.5-3B-Instruct-GGUF」，モデルカード。2026年11月4日閲覧。",
+      "display_url": "Model card",
+      "display_url_ja": "モデルカード"
     },
     {
       "id": 12,
-      "text": "Qwen Team, Qwen3.5-9B, model card. Accessed November 4, 2026.",
+      "text": "Qwen Team : “Qwen3.5-9B”, model card. Accessed November 4, 2026.",
       "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
-      "text_ja": "Qwen Team，Qwen3.5-9B，モデルカード。2026年11月4日閲覧。"
+      "text_ja": "Qwen Team：「Qwen3.5-9B」，モデルカード。2026年11月4日閲覧。"
     },
     {
       "id": 13,
-      "text": "rag_research project, Development diagnostic report for the fixed evaluator, repository snapshot 592e3c2, 2026.",
+      "text": "rag_research project : “Development diagnostic report for the fixed evaluator”, repository snapshot 592e3c2, 2026.",
       "url": "https://github.com/hinattyamann/rag_research/blob/592e3c2a0d0bf4e8c39b789d7f7c5f73bbbe5aa3/data/manifests/phase11_known_trace_direct_result_v12_v2.json",
-      "display_url": "https://github.com/hinattyamann/rag_research",
-      "text_ja": "rag_researchプロジェクト，固定評価器の開発診断報告，リポジトリのスナップショット592e3c2，2026年。"
+      "display_url": "Development diagnostic report",
+      "text_ja": "rag_researchプロジェクト：「固定評価器の開発診断報告」，リポジトリのスナップショット592e3c2，2026年。",
+      "display_url_ja": "開発診断報告"
     },
     {
       "id": 14,
-      "text": "rag_research project, Archived evaluation inputs, AI annotations, and pooled descriptive analysis, repository snapshot 592e3c2, 2026.",
+      "text": "rag_research project : “Archived evaluation inputs, AI annotations, and pooled descriptive analysis”, repository snapshot 592e3c2, 2026.",
       "url": "https://github.com/hinattyamann/rag_research/tree/592e3c2/papers/iciae2027",
-      "display_url": "https://github.com/hinattyamann/rag_research",
-      "text_ja": "rag_researchプロジェクト，アーカイブした評価入力，AI注釈，統合した記述的解析，リポジトリのスナップショット592e3c2，2026年。"
+      "display_url": "Evaluation archive",
+      "text_ja": "rag_researchプロジェクト：「アーカイブした評価入力，AI注釈，統合した記述的解析」，リポジトリのスナップショット592e3c2，2026年。",
+      "display_url_ja": "評価資料アーカイブ"
     }
   ],
   "evidence_trees": {

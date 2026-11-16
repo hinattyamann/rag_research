@@ -166,8 +166,8 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
             (
                 "Evaluation and rewriting",
                 "評価・書換え",
-                "Context 12288; temperature 0.2; batch 128; prompt version 12",
-                "文脈12288、温度0.2、バッチ128、プロンプト第12版",
+                "Context 12288; temperature 0.2; batch 128",
+                "文脈12288、温度0.2、バッチ128",
             ),
             (
                 "Task and reasoning limits",
@@ -622,7 +622,12 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
                 spacing = E.SubElement(props, tag("spacing"))
             spacing.set(tag("line"), "300")
             spacing.set(tag("lineRule"), "atLeast")
-        add_text(p, text, size, heading or kind == "title", superscript_star=kind == "author")
+        excerpt_label = re.match(r"^(A: |B: |Evidence: |根拠：|A：|B：)", text)
+        if kind == "excerpt" and excerpt_label:
+            add_run(p, excerpt_label.group(), size, bold=True)
+            add_text(p, text[excerpt_label.end() :], size)
+        else:
+            add_text(p, text, size, heading or kind == "title", superscript_star=kind == "author")
         return p
 
     paragraph("", "author")
@@ -768,7 +773,7 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
         link = E.SubElement(
             p, tag("hyperlink"), {f"{{{R}}}id": relation("hyperlink", ref["url"], True)}
         )
-        add_run(link, ref.get("display_url", ref["url"]))
+        add_run(link, ref.get(f"display_url_{lang}", ref.get("display_url", ref["url"])))
     body.append(last_section)
     assert original_sections == [E.tostring(s) for s in document.findall(".//w:sectPr", NS)], (
         "Section contract changed"
