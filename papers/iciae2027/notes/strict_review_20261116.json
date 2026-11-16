@@ -1,0 +1,131 @@
+{
+  "reviewed_at_jst": "2026-11-16 11:30 JST",
+  "review_type": "Independent critical review of the current English submission manuscript; not an official conference decision",
+  "baseline_branch": "paper/iciae2027",
+  "baseline_commit": "ed737459aa2121f327ee0264087c0e74825d2035",
+  "version": "draft-14-2026-11-16",
+  "scope_ja": "提出用英語Wordの構造、同じHashに対応する保存済みWord出力PDF全8頁の表示、現行公式要項・再取得したテンプレート、14参考文献の書誌と引用目的、200問の保存資料と集計を確認。原稿・元ラベル・研究条件は変更せず、新規推論・再採点は行っていない。原著全14件の全頁精読や、新しい人手による研究品質ラベルの確定は実施していない。日本語版全体の翻訳審査は今回の対象外。",
+  "verdict_ja": "重要な説明補強と品質判定の検証を要する。主要数値の不一致や致命的なレイアウト破綻は見つからなかったが、無修正で投稿してよいとの判定にはしない。査読者の立場ではMajor revision相当。これは学会の採否予測や公式判定ではない。",
+  "artifacts": {
+    "english_docx": {
+      "path": "papers/iciae2027/manuscript/iciae2027_manuscript_en.docx",
+      "sha256": "eb24a94c5b9574c5d8b244605a4cc1399006c5b637307f709d6120f45829f437"
+    },
+    "english_pdf": {
+      "path": "papers/iciae2027/manuscript/iciae2027_manuscript_en.pdf",
+      "sha256": "a2c11166c9381c763986fd5c4d9de5ed9ca7feb4615a1805023fc09ec1096bef",
+      "pages": 8
+    },
+    "official_template": {
+      "url": "https://www2.ia-engineers.org/iciae2027/wp-content/uploads/ICIAE2027_template.docx",
+      "sha256": "d8e16e91295692e10abab92847abf3e11fa7a66949ff71b31388466949877391",
+      "fresh_download_matches_stored_original": true
+    }
+  },
+  "verified": {
+    "git_fetch_and_upstream_comparison": "passed; 0 local-only / 0 remote-only commits before review",
+    "submission_requirements": "English PDF; 4-8 pages; initial deadline 2026-11-20; live URL annotations; all authors to be entered in submission system",
+    "official_urls": [
+      "https://www2.ia-engineers.org/iciae2027/paper-submission/",
+      "https://www2.ia-engineers.org/conference/index.php/iciae/iciae2027/about/submissions"
+    ],
+    "geometry": "Both DOCX sections match official pgSz/pgMar/cols/docGrid: A4, top/bottom approximately 25 mm, left/right approximately 16 mm, body two columns with approximately 8 mm gap",
+    "typography": "DOCX title 16 pt, authors/affiliation 10.5 pt, main text 10 pt, chapter headings 12 pt, section headings 10 pt; Times New Roman for main text; PDF fonts embedded",
+    "abstract": "228 whitespace-separated words independently observed; 230 words under the previously recorded Word count. Both under 300. Five comma-separated keywords below abstract in first left column.",
+    "figures_tables": "All 2 figures and 10 tables inspected with captions and notes; 9 top / 3 bottom groups; automated layout audit passed",
+    "rendering": "All 8 pages rasterized and visually inspected. No missing text, clipped figure/table, overlap or broken glyph found. Existing Word-export PDF used; DOCX was not re-exported in this review. Artifact hashes match draft14 validation.",
+    "small_edge_protrusions": "A non-whitespace character-box scan found several line-final punctuation boxes approximately 0.2-0.9 mm beyond nominal column edges, e.g. p6 Table 7 note and p8 reference 9. No table-border overflow or visible clipping. Not classified as a definite format violation; check Word punctuation handling if seeking strict geometric containment.",
+    "docx_pdf_text": "All 92 English source blocks present in PDF after whitespace/citation/subscript normalization; actual DOCX/source consistency also checked by manuscript tests",
+    "tracked_changes_and_comments": "No w:ins, w:del or commentRangeStart in English document.xml",
+    "reference_numbers": "14 cited references; citation order and parenthesized superscripts consistent; all 14 intended PDF hyperlink destinations present",
+    "material_checks": "fixed_v23_v1 verify_materials.py --audit-open passed: 80 QA, 1043 artifact files. cal_extension_v1 verify_collection.py --audit-open passed: 120 QA, all 3 batches and 510 artifact files per batch. Semantic and route-cost aggregates recomputed by validators.",
+    "pooled_reproduction": "derive_pooled_results.py --check passed; 80 EN + 68 JA comparable; D 8.25/8.235294 pp; intervals [4.50,12.50]/[4.117647,12.647059]; JA-EN [-5.955882,5.985294] pp",
+    "tests": "uv run python -X utf8 -m pytest papers/iciae2027/manuscript -q: 29 passed in 5.61s; uv run ruff check .: passed",
+    "important_correct_qualifications": "Post-hoc pooling, non-paired languages, exclusions, unresolved quality, absent human adjudication and fixed-configuration scope are already disclosed. Unknown quality is not silently treated as failure or unchanged quality. No claim of established language equivalence."
+  },
+  "findings": [
+    {
+      "id": "R1",
+      "priority": "high",
+      "location": "pp.2-3 Sections 3.2, 3.3, 4.2 and Table 1; p.7 Table 8",
+      "issue_ja": "評価器の実行単位が説明されていない。実装は1固定文につき1回の独立要求で、1評価trialが1 LLM callではない。本文のlabels each fixed answer sentenceだけでは、全文章を一括判定する方式にも読める。これは本論文の費用結論を理解・再現するための主要情報である。",
+      "evidence": ["configs/phase11_semantic_candidate_v23.yaml: verification_mode=claimwise-v1", "src/rag_research/evaluation/claimwise.py: payloads, atomic_steps", "Table 8: OE calls EN364/JA467; AR EN200/JA198"],
+      "recommendation_ja": "3.2へ1文1call・各callに渡す質問/固定回答/根拠・全詳細支持の基準・決定的文分割を短く明記。1trialにm_i回の呼出しが必要であること、評価の入力とreasoning tokenの反復が費用に寄与することを説明する。Table 1のprompt version 12は外部読者には特定不能なので、日英promptとモデル/runtime/sampling固定版への具体的な補足資料導線を設ける。",
+      "requires_new_inference": false
+    },
+    {
+      "id": "R2",
+      "priority": "high",
+      "location": "p.6 Section 5.3 Case 1; pp.4,7-8 external assessment, semantic audit and conclusions",
+      "issue_ja": "品質に関する中心的証拠が人手未確認のAIラベルに依存する。特にCase 1では、Aの特定増派への因果帰属を不支持とする一方、BのThis escalation was driven byという直前の同じ増派を指し得る表現を一般的説明として支持しており、その区別が読者に自明ではない。",
+      "evidence": ["materials/fixed_v23_v1/inputs/cal_en_f94093f2dcb620bdcf4bdb09.json: A/B quality annotations and used_documents", "A annotation Q-244abe4ac673611ed4b1: unsupported specific adviser-increase causal attribution", "B annotation Q-6aea11affe5ea98daa28: adviser details and containment rationale accepted"],
+      "recommendation_ja": "この例を人手確認の優先対象とする。可能なら本文例3件と順序で選択品質が変わる14件、および基準となる対照例を匿名化して確認し、AIとの不一致を記録する。実施できない場合、AIが異なるラベルを付した事例という範囲を保ち、Bが客観的に正しい実証例であるかのような説明を避ける。旧ラベルを黙って変更せず、新しい監査と元結果を区別する。",
+      "interpretation_limit_ja": "これはラベルの誤りを確定した指摘ではない。人手検証を行わなくても、内部判断そのものの順序依存という主結果は保存された判断から直接確認できる。"
+    },
+    {
+      "id": "R3",
+      "priority": "medium",
+      "location": "p.2 Section 3.1; p.7 Section 6.1",
+      "issue_ja": "同順序反復の意味をより限定する必要がある。temperature=0.2でも毎trialでseed=42を固定しているため、R=0は新しい乱数seedを用いた一般的な生成ゆらぎがないことを示さない。",
+      "evidence": ["configs/phase11_semantic_candidate_v23.yaml: generation_seed_policy=same_fixed_seed_for_every_trial; repeated_prompt_result_cache=false"],
+      "recommendation_ja": "同一prompt・同一seed・同一runtime条件の再実行対照であると明記する。固定乱数下で提示順序を変えた影響という解釈は妥当であり、対照自体を無効とはしない。複数seedでの一般化は未検証と明記する。"
+    },
+    {
+      "id": "R4",
+      "priority": "medium",
+      "location": "p.3 Section 3.3; p.4 Section 4.4; p.8 Section 6.3",
+      "issue_ja": "post-hoc pooledと収集手順差は記載されているが、何を統合したか・区間が何に条件付きかが短すぎる。収集段階や注釈手順差はdocument-group bootstrapで解消されない。",
+      "evidence": ["notes/pooled_analysis_readme.md", "manuscript/derive_pooled_results.py", "保存CSV再集計: 5収集区分のEN D=8.75,12.50,5.88,12.86,2.35 pp; JA D=4.62,8.33,7.50,14.29,6.15 pp。全て正の点推定であり、統合で符号を反転させた証拠はない。"],
+      "recommendation_ja": "既存80問と追加120問を結果確認後に統合したこと、グループ重複がないこと、CIは比較可能な今回の混合標本・固定seed/model/AIラベルに条件付きであることを明記する。段階別n/D/除外数を補足資料へまとめて直接参照する。本文へ内部管理名を大量に戻す必要はない。"
+    },
+    {
+      "id": "R5",
+      "priority": "medium",
+      "location": "pp.3,7 Sections 3.3, 5.4, Table 8",
+      "issue_ja": "共有済み処理の記録から各方策の必要経路を再構成したtoken/call費用であり、別々に稼働した各方策のend-to-end時間や金銭費用ではない。その測定方法が本文では暗黙的で、input/outputの合計だけでは高費用の内訳も読めない。",
+      "recommendation_ja": "費用を保存済みcall記録からの経路再構成と明記し、初回生成・評価・書換え、およびinput/output/reasoningの内訳を補足する。Table 8にNRを加えるとTable 4との三方策比較が揃う。9B evaluator/rewriter共通で初回も共有なので、OE対AR比較をモデルサイズ差だけを理由に不公平とは判定しない。",
+      "additional_evidence": {"NR_EN_calls": 100, "NR_EN_tokens": 126311, "NR_JA_delivered_calls": 99, "NR_JA_delivered_tokens": 331764},
+      "interpretation_limit_ja": "Table 8はJA99回答が対象と既に注記され、中断要求の未知費用も明記済み。現在の比率計算が誤りとの指摘ではない。"
+    },
+    {
+      "id": "R6",
+      "priority": "medium",
+      "location": "p.2 Related Work",
+      "issue_ja": "引用文献の選択は関連しているが、最も近い研究との差分の説明が薄い。特に文献7は固定候補・judge選択・品質/費用・judgeを使わない方式との比較を既に扱うため、その部分だけでは独自性を説明しきれない。",
+      "primary_source": "https://arxiv.org/html/2608.07813v2",
+      "recommendation_ja": "本稿の差分を、初回生成後の評価器への根拠順序のみの操作、同一seed反復対照、共通A/Bへの選択伝播という組合せとして、文献3/4/7と対応させて明示する。参考文献を数合わせで増やす必要はない。"
+    },
+    {
+      "id": "R7",
+      "priority": "medium",
+      "location": "p.8 References",
+      "issue_ja": "公式テンプレートの書誌例は著者 : 題名を引用符で囲む形式だが、現稿はカンマ区切りで題名の引用符がない。文献1は刊行版を掲げながらページ範囲を欠き、リンクはarXiv版。",
+      "recommendation_ja": "書誌を公式の著者・題名・刊行情報の形式へ統一し、文献1をNeurIPS刊行版の完全書誌と公式リンクで整える。タイトルの引用符・コロンの差を直ちに不受理となる明文化された条件とは断定しないが、厳密なテンプレート準拠なら修正する。",
+      "primary_source": "https://proceedings.nips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html"
+    },
+    {
+      "id": "R8",
+      "priority": "low",
+      "location": "pp.2,5-6,8 equations, case presentation and reference display",
+      "issue_ja": "可読性の改善余地。式2のmean Dは平均記号として不統一、6頁は具体例の長い引用がページを占める一方で方法説明が薄い。文献11のURLはGG/UFで折り返され、13/14は同じroot URL表示でクリック先の違いが紙面から分かりにくい。",
+      "recommendation_ja": "式2をDの平均記号など一貫した数式表記へ統一。例の必要な対照箇所を残して短縮し、R1/R3/R4の説明スペースに回す。URLの表示と固定snapshotの区別を読みやすくする。図表位置を動かす場合は8頁上限と全12図表の段頭/段末を再検証する。"
+    }
+  ],
+  "reference_audit": {
+    "counts": {"peer_reviewed": 7, "preprint": 1, "provider_cards": 4, "own_artifacts": 2},
+    "fabrication_or_clear_miscitation_found": false,
+    "notes_ja": "1のRAG定義、2の長文脈の位置効果、3/4の候補順序バイアス、5のConsJudge、6のRAGVUE、7の固定候補選択、8/9のデータ、10-12のモデル、13/14の自研究資料は引用目的と整合。文献7のv2 HTMLは3著者であり、他版・二次サイトの5著者表記を根拠に現稿を誤りとはしない。モデル/データカードは使用資源の特定に適切だが、査読済み研究証拠とは別。自研究資料も外部の独立した妥当性検証ではない。",
+    "public_access": "Direct HTTP GET succeeded for 12/14 destinations, including both fixed GitHub snapshots. References 2 and 8 returned 403 from publisher DOI targets; both records/content verified via ACL Anthology. Not classified as dead links.",
+    "alternative_primary_urls": {"2": "https://aclanthology.org/2024.tacl-1.9/", "8": "https://aclanthology.org/2025.tacl-1.3/"}
+  },
+  "completion_and_remaining": {
+    "manuscript_modified": false,
+    "research_conditions_modified": false,
+    "new_inference_calls": 0,
+    "new_annotation_calls": 0,
+    "new_statistical_claims_added_to_manuscript": false,
+    "supervisor_submission_approval": "not confirmed; repository records pending",
+    "submission": "not performed",
+    "remaining_ja": "まずR1/R3/R4/R5の本文説明とR7の書誌を整える。R2の人手検証範囲・例の扱いを決める。変更時は英日を対応更新し、英語Wordから再出力した実提出PDFを再確認する。ログイン後の容量・匿名化等の追加条件、締切時刻/タイムゾーンは今回未確認。"
+  }
+}
