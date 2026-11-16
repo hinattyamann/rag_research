@@ -1,5 +1,5 @@
 {
-  "version": "draft-11-2026-11-16",
+  "version": "draft-12-2026-11-16",
   "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
   "title": {
     "en": "Evidence Order Sensitivity in RAG Evaluation and Its Effects on Answer Selection, Quality, and Cost",
@@ -46,7 +46,7 @@
       "id": "intro-context",
       "type": "p",
       "en": "A large language model (LLM) generates text in response to an input and can serve as an answer generator or evaluator. Retrieval-augmented generation (RAG) combines an LLM with retrieved information to answer questions using external sources as evidence[[1]]. A RAG-based system may also evaluate its initial answer and request a rewrite when the evidence appears insufficient. In this setting, the evaluator determines which answer is returned and whether additional computation is performed.",
-      "ja": "大規模言語モデル（LLM）は入力に応じて文章を生成し、回答生成器や評価器として利用できる。検索拡張生成（RAG）はLLMと検索した情報を組み合わせ、外部の情報源を根拠として質問に答える[[1]]。RAGを用いるシステムは初回回答を評価し、根拠が不十分と判断した場合に書換えを要求することもできる。この構成では、評価器が返却する回答と追加計算の有無を決める。"
+      "ja": "大規模言語モデル（LLM）は入力に応じて文章を生成し、回答生成器や評価器として利用できる。検索拡張生成（RAG）はLLMと検索した情報を組み合わせ、外部の情報源を根拠として質問に答える[[1]]。RAGを用いるシステムは初回回答を評価し、根拠が不十分と判断した場合に書換えを要求することもできる。この構成では、評価器がシステムの返す回答と追加計算の有無を決める。"
     },
     {
       "id": "intro-problem",
@@ -94,7 +94,7 @@
       "id": "related-rag",
       "type": "p",
       "en": "ConsJudge trains RAG evaluators using consistency across evaluation dimensions[[5]], and RAGVUE diagnoses retrieval, reasoning, and grounding[[6]]. Evidence-locked selection studies rules over fixed candidates[[7]]. We examine how reordering evidence changes decisions between fixed answers and affects their quality and cost.",
-      "ja": "ConsJudgeは評価観点間の一貫性を用いてRAG評価器を学習し[[5]]、RAGVUEは検索、推論、根拠付けを診断する[[6]]。根拠を固定した選択に関する研究は、固定候補に対する規則を扱っている[[7]]。本研究では、根拠の並べ替えが固定回答間の選択判断をどう変え、その品質と費用にどう影響するかを調べる。"
+      "ja": "ConsJudgeは評価観点間の一貫性を用いてRAG評価器を学習させ[[5]]、RAGVUEは検索、推論、根拠付けを診断する[[6]]。根拠を固定した選択に関する研究は、固定候補に対する規則を扱っている[[7]]。本研究では、根拠の並べ替えが固定回答間の選択判断をどう変え、その品質と費用にどう影響するかを調べる。"
     },
     {
       "id": "h1-design",
@@ -137,7 +137,7 @@
       "id": "design-score",
       "type": "p",
       "en": "The evaluator labels each fixed answer sentence as supported, contradicted, or unsupported by the evidence. If m_i is the number of sentences and s_it the number labeled supported in trial t, the support score is",
-      "ja": "評価器は、固定した回答の各文を、根拠による支持・矛盾・支持不足に分類する。文数をm_i、試行tで支持と判定した文数をs_itとし、支持スコアを次のように定義する。"
+      "ja": "評価器は、固定した回答の各文を、根拠による支持あり、根拠との矛盾、根拠による支持なしに分類する。文数をm_i、試行tで支持ありと判定した文数をs_itとすると、支持スコアは次のようになる。"
     },
     {
       "id": "equation-score",
@@ -155,7 +155,7 @@
       "id": "design-rewrite",
       "type": "p",
       "en": "For each question, a single rewrite B_i is generated from the question, original-order evidence, and A_i. The rewriter receives no evaluator scores, feedback, or reordered evidence. Every condition selects A_i or this same B_i. If rewriting fails, the system returns A_i but keeps the computational cost of the attempted rewrite. We compare no rewriting (NR), original-order evaluation followed by its decision (OE), and always rewriting (AR), alongside the other evaluation orders.",
-      "ja": "質問ごとに、質問、元順序の根拠、A_iから一つの書換え回答B_iを生成する。評価器のスコア・フィードバックや、並べ替えた根拠は渡さない。各条件はA_iまたはこの同じB_iを選ぶ。書換えに失敗した場合、システムはA_iを返し、書換えの試行に費やした計算費用を計上する。書換えなし（NR）、元順序評価の判断に従う方策（OE）、常時書換え（AR）を、他の評価順序とともに比較する。"
+      "ja": "質問ごとに、質問、元順序の根拠、A_iから一つの書換え回答B_iを生成する。書換え器には評価器のスコア、フィードバック、並べ替えた根拠を渡さない。各条件はA_iまたはこの同じB_iを選ぶ。書換えに失敗した場合、システムはA_iを返すが、書換えの試行に費やした計算費用を計上する。書換えなし（NR）、元順序で評価してその判断に従う方策（OE）、常時書換え（AR）を、他の評価順序とともに比較する。"
     },
     {
       "id": "h33-outcomes",
@@ -168,13 +168,13 @@
       "type": "p",
       "keep_with_next": true,
       "en": "Within each question, O_i is the proportion of unordered pairs of valid order-condition decisions that disagree, and R_i is the corresponding proportion for repetitions. For example, two accept and three rewrite decisions give 6 disagreements among 10 pairs, or O_i=0.6. The question-level excess and its mean are",
-      "ja": "質問内で、有効な順序条件の判断の非順序対のうち不一致となる割合をO_i、反復間の対応する割合をR_iとする。例えば、採用2回・書換え3回なら、10対のうち6対が不一致となり、O_i=0.6である。質問ごとの増分とその平均を次のように定義する。"
+      "ja": "質問ごとに、有効な順序条件の判断から作る、順序を区別しない組のうち、不一致となる組の割合をO_iとし、反復に対する対応する割合をR_iとする。例えば、採用2回・書換え3回なら、10組のうち6組が不一致となり、O_i=0.6である。質問ごとの増分とその平均は次のようになる。"
     },
     {
       "id": "equation-increment",
       "type": "equation",
       "en": "D_i = O_i − R_i,     mean D = (Σ_i D_i) / n            (2)",
-      "ja": "D_i = O_i − R_i,     mean D = (Σ_i D_i) / n            (2)"
+      "ja": "D_i = O_i − R_i,     平均D = (Σ_i D_i) / n            (2)"
     },
     {
       "id": "design-statistics",
@@ -198,7 +198,7 @@
       "id": "h1-settings",
       "type": "h1",
       "en": "4 Experimental Settings",
-      "ja": "4 実験条件"
+      "ja": "4 実験設定"
     },
     {
       "id": "h41-data",
@@ -257,11 +257,11 @@
       "id": "table-development",
       "type": "table",
       "en": "Table 2. Development diagnostics and evaluator performance.",
-      "ja": "表2 開発診断データと評価器の性能",
+      "ja": "表2 開発時の診断と評価器の性能",
       "key": "development",
       "notes": {
         "en": "Note. Support recall and Non-support specificity pool original and reversed evidence for Saved EN QA, excluding 5 sentences with ambiguous expected labels. Non-support combines contradicted and unsupported labels.",
-        "ja": "注。支持の再現率と非支持の特異度の行は、保存QA ENの元順序と逆順の結果を合わせ、期待ラベルが曖昧な5文を除いた値である。非支持は矛盾と支持不足をまとめた区分である。"
+        "ja": "注。支持の再現率と非支持の特異度は、保存QA ENの元順序と逆順の結果を合わせ、期待ラベルが曖昧な5文を除いた値である。非支持は矛盾と支持なしのラベルをまとめた区分である。"
       }
     },
     {
@@ -286,17 +286,17 @@
       "id": "setting-assessment",
       "type": "p",
       "en": "External AI assessment uses anonymized questions, candidate answers, references, and the evidence actually used to generate the answers. Sentence-support assessment uses only the actual evidence. Condition names, scores, decisions, answer stage, and internal explanations are hidden; labels are sealed before joining them to internal outcomes. The assessor is configured as gpt-6.1-sol with high reasoning effort. No human adjudication was performed. The bodies of three Japanese reference articles were unavailable.",
-      "ja": "外部AI採点には、匿名化した質問、候補回答、参照、回答生成に実際に使った根拠を用いる。文の支持判定には実使用根拠だけを使う。条件名・スコア・判断・回答段階・内部説明を隠し、ラベルを確定してから内部結果に対応付ける。採点器の指定はgpt-6.1-sol、推論強度highであり、人手による判定は実施していない。日本語の参照記事本文3件は利用できなかった。"
+      "ja": "外部AI採点には、匿名化した質問、候補回答、参照情報、回答生成に実際に使った根拠を用いる。文の支持判定には実使用根拠だけを使う。条件名、スコア、判断、回答段階、内部説明を隠し、ラベルを確定してから内部結果に対応付ける。採点器はgpt-6.1-sol、推論強度はhighに設定した。人手による判定は実施していない。日本語の参照記事本文3件は利用できなかった。"
     },
     {
       "id": "table-primary",
       "type": "table",
       "en": "Table 3. Evaluation sample and sensitivity to evidence order.",
-      "ja": "表3 評価対象の内訳と根拠提示順序への感度",
+      "ja": "表3 評価対象と根拠提示順序への感度",
       "key": "primary",
       "notes": {
         "en": "Note. Mean D is the mean of O_i−R_i, in percentage points (pp). Its Japanese-minus-English difference is −0.01 pp with 95% interval [−5.96, 5.99]. Failed rewrites return the initial answer A.",
-        "ja": "注。平均D行はO_i−R_iの平均をポイント（pp）で示す。その日本語平均−英語平均は−0.01 pp、95%区間は［−5.96, 5.99］である。書換え失敗行の例では初回回答Aを返す。"
+        "ja": "注。平均DはO_i−R_iの平均であり、ポイント（pp）で示す。その日本語平均−英語平均は−0.01 pp、95%区間は［−5.96, 5.99］である。書換えに失敗した場合は初回回答Aを返す。"
       }
     },
     {
@@ -321,7 +321,7 @@
       "id": "result-primary",
       "type": "p",
       "en": "Complete comparisons are available for 80 English and 68 Japanese questions (Table 3). The 52 exclusions comprise 51 refusals without scorable sentences and one missing initial answer. Among comparable questions, no repetition pair disagrees. Mean excess disagreement is 8.25 percentage points (pp) in English and 8.24 pp in Japanese; both bootstrap intervals exclude zero (Fig. 2). Decisions vary across evidence orders for 14/80 English and 12/68 Japanese questions.",
-      "ja": "英語80問・日本語68問で完全比較が可能であった（表3）。除外52問は採点可能な文のない拒否51問と初回回答の欠測1問である。比較可能な質問では、反復ペアの不一致はなかった。判断不一致の平均増分は英語8.25ポイント（pp）、日本語8.24 ppで、両ブートストラップ区間が0を上回った（図2）。根拠順序間で判断が変わったのは英語14/80問、日本語12/68問であった。"
+      "ja": "英語80問・日本語68問で完全比較が可能であった（表3）。除外52問は採点可能な文のない拒否51問と初回回答の欠測1問である。比較可能な質問では、反復ペアの不一致はなかった。判断不一致の平均増分は英語8.25ポイント（pp）、日本語8.24 ppで、両方のブートストラップ区間は0を含まなかった（図2）。根拠順序間で判断が変わったのは英語14/80問、日本語12/68問であった。"
     },
     {
       "id": "result-language",
@@ -343,6 +343,12 @@
       "ja": "5.2 選択回答の品質"
     },
     {
+      "id": "result-quality",
+      "type": "p",
+      "en": "Table 4 reports quality for all 200 selected questions. OE returns 51 reliable English and 41 reliable Japanese answers, more than NR (31 and 21) but fewer than AR (63 and 55). For each policy, one Japanese question has no resulting answer because of an initial-answer generation failure. Indeterminate labels remain separate from unreliable answers.",
+      "ja": "表4に全選定200問の品質を示す。OEの良好回答数は英語51件・日本語41件で、NRの31件・21件より多いが、ARの63件・55件より少なかった。各方策において、日本語の1問は初回回答の生成失敗により最終回答が欠測している。判定不能ラベルは不良回答と区別する。"
+    },
+    {
       "id": "table-quality",
       "type": "table",
       "en": "Table 4. Selected-answer quality by policy.",
@@ -350,20 +356,11 @@
       "key": "quality",
       "notes": {
         "en": "Note. Each row counts 100 questions. NR/OE/AR denote no rewriting/original-order evaluation/always rewriting. Y=1/0 count reliable/unreliable answers. Unclear and Missing count indeterminate labels and absent answers.",
-        "ja": "注。各行は100問を集計する。NR/OE/ARは書換えなし/元順序評価/常時書換えを示す。Y=1/0列は良好/不良回答数、判定不能と欠測の列は未確定ラベル数と回答がない件数を示す。"
+        "ja": "注。各行は100問を集計する。NR/OE/ARは書換えなし/元順序評価/常時書換えを示す。Y=1/0は良好/不良回答数を示す。判定不能と欠測は未確定ラベル数と回答がない件数を示す。"
+      },
+      "caption_spacing_before": {
+        "en": 1800
       }
-    },
-    {
-      "id": "result-quality",
-      "type": "p",
-      "en": "Table 4 reports quality for all 200 selected questions. OE returns 51 reliable English and 41 reliable Japanese answers, more than NR (31 and 21) but fewer than AR (63 and 55). For each policy, one Japanese question has no resulting answer because of an initial-answer generation failure. Indeterminate labels remain separate from unreliable answers.",
-      "ja": "表4に全選定200問の品質を示す。OEの良好回答数は英語51件・日本語41件で、NRの31件・21件より多いが、ARの63件・55件より少なかった。各方策において、日本語の1問は初回回答の生成失敗により最終回答が欠測している。判定不能ラベルは不良回答と区別する。"
-    },
-    {
-      "id": "result-transitions",
-      "type": "p",
-      "en": "Known A/B quality transitions are available for 93 English and 84 Japanese questions (Table 5). Rewriting improves 32 English and 31 Japanese answers from Y=0 to Y=1, while degrading two in each language from Y=1 to Y=0. OE misses 11/32 English and 13/31 Japanese possible improvements, and selects one harmful English rewrite. Thus evaluation avoids some harmful changes but also rejects some useful rewrites.",
-      "ja": "A/Bの品質遷移が判定可能なのは英語93問・日本語84問である（表5）。書換えによってY=0からY=1へ改善したのは英語32問・日本語31問で、Y=1からY=0へ悪化したのは各言語2問であった。OEは改善可能例の英語11/32問・日本語13/31問を見逃し、英語では有害な書換え1件を選んだ。したがって評価は一部の有害変更を避ける一方で、有用な書換えの一部も棄却した。"
     },
     {
       "id": "table-selection",
@@ -377,10 +374,10 @@
       }
     },
     {
-      "id": "result-order-quality",
+      "id": "result-transitions",
       "type": "p",
-      "en": "Among the 26 questions with order-dependent decisions, selected binary quality changes for 14, stays the same for 8, and is unresolved for 4 (Table 6). An unresolved outcome is not evidence of unchanged quality.",
-      "ja": "順序で判断が変わった26問では、選択回答の二値品質が変わったのは14問、同じなのは8問、未確定は4問であった（表6）。未確定は品質が変わらないことの証拠ではない。"
+      "en": "Known A/B quality transitions are available for 93 English and 84 Japanese questions (Table 5). Rewriting improves 32 English and 31 Japanese answers from Y=0 to Y=1, while degrading two in each language from Y=1 to Y=0. OE misses 11/32 English and 13/31 Japanese possible improvements, and selects one harmful English rewrite. Thus evaluation avoids some harmful changes but also rejects some useful rewrites.",
+      "ja": "A/Bの品質遷移が判定可能なのは英語93問・日本語84問である（表5）。書換えによってY=0からY=1へ改善したのは英語32問・日本語31問で、Y=1からY=0へ悪化したのは各言語2問であった。OEは改善可能例の英語11/32問・日本語13/31問を見逃し、英語では有害な書換え1件を選んだ。したがって評価は一部の有害変更を避ける一方で、有用な書換えの一部も棄却した。"
     },
     {
       "id": "table-order-quality",
@@ -390,8 +387,15 @@
       "ja": "表6 順序で判断が変わった質問の品質とトークン数の変動",
       "notes": {
         "en": "Note. Values count questions. The three quality rows partition the 26 questions in the first row. Same Y includes both Y=0 (EN 3, JA 2) and both Y=1 (EN 2, JA 1). Route tokens vary counts questions with different token costs across orders.",
-        "ja": "注。値は質問数を示す。品質の3行は先頭行の26問を区分する。同じYには、ともにY=0（EN 3問、JA 2問）と、ともにY=1（EN 2問、JA 1問）を含む。トークン数が変動の行は、順序間でトークン費用が異なる質問数を示す。"
+        "ja": "注。値は質問数を示す。品質の3行は先頭行の26問を区分する。同じYには、ともにY=0（EN 3問、JA 2問）と、ともにY=1（EN 2問、JA 1問）を含む。経路トークン数が変動の行は、順序間でトークン費用が異なる質問数を示す。"
       }
+    },
+    {
+      "id": "result-order-quality",
+      "type": "p",
+      "en": "Among the 26 questions with order-dependent decisions, selected binary quality changes for 14, stays the same for 8, and is unresolved for 4 (Table 6). An unresolved outcome is not evidence of unchanged quality.",
+      "ja": "順序で判断が変わった26問では、選択回答の二値品質が変わったのは14問、同じなのは8問、未確定は4問であった（表6）。未確定は品質が変わらないことの証拠ではない。",
+      "keep_together": true
     },
     {
       "id": "h53-cases",
@@ -418,25 +422,36 @@
       "id": "case-en-A",
       "type": "excerpt",
       "en": "A: “The United States escalated its role in the Vietnam War due to the escalation of military advisers ordered to the Republic of Vietnam in 1964, bringing the total American troop level to 21,000. This increase was a direct response to the growing conflict and the need to support South Vietnam against North Vietnam's communist domination.”",
-      "ja": "A：「米国は、1964年にベトナム共和国への軍事顧問団の派遣を増やし、米軍の総数を21,000人とすることにより、ベトナム戦争への関与を拡大した。この増員は、拡大する紛争と、北ベトナムの共産主義的支配に対抗して南ベトナムを支援する必要性への直接の対応であった。」"
+      "ja": "A：「米国は、1964年にベトナム共和国への派遣を命じられた軍事顧問団が増員されたため、ベトナム戦争への関与を拡大し、米軍の総数は21,000人となった。この増員は、拡大する紛争と、北ベトナムの共産主義的支配に対抗して南ベトナムを支援する必要性への直接の対応であった。」"
     },
     {
       "id": "case-en-B",
       "type": "excerpt",
       "en": "B: “The United States escalated its role in the Vietnam War by ordering 5,000 additional military advisers to the Republic of Vietnam on July 27, 1964, bringing total American troop levels to 21,000” […] “This escalation was driven by an incentive to end growing communist domination in Vietnam and prevent a chain of neighbouring countries adopting the same ideology, which would change the balance of power throughout Southeast Asia”",
-      "ja": "B：「米国は、1964年7月27日にベトナム共和国への軍事顧問団を5,000人増やし、米軍の総数を21,000人とすることで、ベトナム戦争への関与を拡大した」[…]「この関与拡大の動機は、ベトナムで拡大する共産主義的支配を終わらせ、近隣諸国が連鎖的に同じ思想を採用して東南アジア全体の勢力均衡を変える事態を防ぐことであった」"
+      "ja": "B：「米国は、1964年7月27日にベトナム共和国へ5,000人の軍事顧問団を追加派遣するよう命じ、米軍の総数を21,000人とすることで、ベトナム戦争への関与を拡大した」[…]「この関与拡大の動機は、ベトナムで拡大する共産主義的支配を終わらせ、近隣諸国が連鎖的に同じ思想を採用して東南アジア全体の勢力均衡を変える事態を防ぐことであった」"
     },
     {
       "id": "case-en-result",
       "type": "p",
       "en": "The external assessor judges A's attribution of that specific increase unsupported (Y=0), while accepting B's broader explanation and supported adviser details (Y=1). Original-order evaluation selects B at F=1/3. Under shuffle_3 it retains A at F=1: the selected answer changes from B (Y=1) to A (Y=0).",
-      "ja": "外部採点器は、当該の増員に対するAの原因説明を支持不足（Y=0）とし、Bのより全般的な説明と根拠のある顧問団の詳細を良好（Y=1）とした。元順序評価はF=1/3でBを選ぶが、shuffle_3ではF=1でAを採用する。選択回答はB（Y=1）からA（Y=0）へ変わった。"
+      "ja": "外部採点器は、当該の増員に対するAの原因説明には根拠による支持がない（Y=0）と判定し、Bのより全般的な説明と根拠に支持された顧問団の詳細を受け入れた（Y=1）。元順序評価はF=1/3でBを選ぶ。シャッフル3ではF=1でAを採用し、選択回答はB（Y=1）からA（Y=0）へ変わる。"
     },
     {
       "id": "case-ja",
       "type": "p",
       "en": "Case 2 asks “What's the difference between moths and butterflies?” A starts with the Rhopalocera distinction, then mixes a figurative use of “butterfly” with biology and adds a naming explanation. The relevant evidence and outputs are:",
       "ja": "例2の質問は「蛾と蝶の違いってなんすか。」である。AはRhopaloceraによる区別から始めるが、その後で「蝶」の比喩的用法を生物の説明に混在させ、名称の説明を加えている。該当する根拠と出力は次のとおりである。"
+    },
+    {
+      "id": "table-cases",
+      "type": "table",
+      "en": "Table 7. Evidence order and answer selection in the three examples.",
+      "ja": "表7 三つの具体例における根拠順序と回答選択",
+      "key": "cases",
+      "notes": {
+        "en": "Note. F gives supported sentences / all fixed answer sentences. Selected / Y gives the chosen candidate (A initial, B rewrite) and external quality label (1 reliable, 0 unreliable).",
+        "ja": "注。F列は支持と判定した文数/固定した全回答文数を示す。選択 / Y列は選んだ候補（Aは初回、Bは書換え）と外部品質ラベル（1は良好、0は不良）を示す。"
+      }
     },
     {
       "id": "case-ja-excerpts",
@@ -451,17 +466,6 @@
       "ja": "A：「蝶は左右対称で、その各端が広がっている形状を蝶が羽を開いた姿に例えて呼称することがあります。」[…]「蛾はその特徴がチョウと異なるため、漢語で呼ばれることが多いです。」"
     },
     {
-      "id": "table-cases",
-      "type": "table",
-      "en": "Table 7. Evidence order and answer selection in the three examples.",
-      "ja": "表7 三つの具体例における根拠順序と回答選択",
-      "key": "cases",
-      "notes": {
-        "en": "Note. F gives supported sentences / all fixed answer sentences. Selected / Y gives the chosen candidate (A initial, B rewrite) and external quality label (1 reliable, 0 unreliable).",
-        "ja": "注。F列は支持と判定した文数/固定した全回答文数を示す。選択 / Y列は選んだ候補（Aは初回、Bは書換え）と外部品質ラベル（1は良好、0は不良）を示す。"
-      }
-    },
-    {
       "id": "case-ja-B",
       "type": "excerpt",
       "en": "B: “Other species of Lepidoptera are called moths, but dividing Lepidoptera into butterflies and moths is not a natural classification” […] \"The terms for both butterflies and moths are of Chinese origin.\"",
@@ -471,7 +475,7 @@
       "id": "case-ja-result",
       "type": "p",
       "en": "The evidence states facts about the names of butterflies and moths but does not give a causal relationship between those names and the insects' biological differences. A receives Y=0; B explains the classification and naming without this causal claim and receives Y=1. Original-order evaluation retains A at F=3/4, whereas shuffle_2 selects B at F=2/4. The selected answer changes from A (Y=0) to B (Y=1).",
-      "ja": "根拠は蝶と蛾の名称についての事実を述べているが、その名称と昆虫としての生物学的な違いとの因果関係は示していない。AはY=0、Bはこの因果を加えず分類と名称を説明してY=1とされた。元順序評価はF=3/4でAを採用する一方、shuffle_2はF=2/4でBを選ぶ。選択回答はA（Y=0）からB（Y=1）へ変わった。"
+      "ja": "根拠は蝶と蛾の名称についての事実を述べているが、その名称と昆虫としての生物学的な違いとの因果関係は示していない。AはY=0とされる。Bはこの因果関係を主張せずに分類と名称を説明し、Y=1とされる。元順序評価はF=3/4でAを採用する一方、シャッフル2ではF=2/4でBを選ぶ。選択回答はA（Y=0）からB（Y=1）へ変わる。"
     },
     {
       "id": "case-equal",
@@ -486,12 +490,6 @@
       "ja": "5.4 計算費用"
     },
     {
-      "id": "result-cost",
-      "type": "p",
-      "en": "Table 8 reports route calls and input/output token totals. OE uses 2.36 times as many tokens as AR in English and 2.99 times as many in Japanese, while returning fewer reliable answers. Here the cost of checking support outweighs the computation saved by selectively rewriting.",
-      "ja": "表8に経路の呼出し回数と入出力トークン数の合計を示す。OEはARに対し英語で2.36倍、日本語で2.99倍のトークンを使いながら、良好回答数は少なかった。この構成では、支持を確認する費用が、選択的な書換えで節約した計算量を上回った。"
-    },
-    {
       "id": "table-cost",
       "type": "table",
       "en": "Table 8. Model calls and tokens by answer policy.",
@@ -503,6 +501,12 @@
       }
     },
     {
+      "id": "result-cost",
+      "type": "p",
+      "en": "Table 8 reports route calls and input/output token totals. OE uses 2.36 times as many tokens as AR in English and 2.99 times as many in Japanese, while returning fewer reliable answers. Here the cost of checking support outweighs the computation saved by selectively rewriting.",
+      "ja": "表8に経路の呼出し回数と入出力トークン数の合計を示す。OEはARに対し英語で2.36倍、日本語で2.99倍のトークンを使いながら、良好回答数は少なかった。この構成では、支持を確認する費用が、選択的な書換えで節約した計算量を上回った。"
+    },
+    {
       "id": "h55-audit",
       "type": "h2",
       "en": "5.5 Semantic audit and threshold sensitivity",
@@ -512,7 +516,7 @@
       "id": "result-semantics",
       "type": "p",
       "en": "The internal evaluator assigns support to 47.8% of sentence-by-trial observations that were not supported externally in English and 47.4% in Japanese (Table 9). The evaluator can be stable across repetitions while disagreeing with the external AI support labels.",
-      "ja": "外部で非支持とされた文×試行の観測に内部評価器が支持を付けた割合は、英語47.8%、日本語47.4%であった（表9）。評価器は反復間で安定していても、外部AIの支持ラベルと異なる判断をし得る。"
+      "ja": "外部で非支持とされた文と試行の各組の観測に対し、内部評価器が支持ありと判定した割合は、英語47.8%、日本語47.4%であった（表9）。評価器は反復間で安定していても、外部AIの支持ラベルと異なる判断をし得る。"
     },
     {
       "id": "result-thresholds",
@@ -525,10 +529,10 @@
       "type": "table",
       "key": "semantics",
       "en": "Table 9. Internal false-support judgments relative to external AI labels.",
-      "ja": "表9 外部AIラベルに対する内部評価器の誤支持",
+      "ja": "表9 外部AIラベルに対する内部の誤支持判定",
       "notes": {
         "en": "Note. The External negatives column counts sentence-by-trial observations labeled non-supported by external AI. False support counts those labeled supported internally. Rate is False support / External negatives.",
-        "ja": "注。外部の非支持列は外部AIが非支持とした文×試行の観測数、誤支持列はそのうち内部で支持と判定した観測数を示す。割合列は誤支持/外部の非支持である。"
+        "ja": "注。外部の非支持列は、外部AIが非支持と判定した文と試行の各組の観測数を示す。誤支持列は、そのうち内部で支持ありと判定した観測数を示す。割合は誤支持/外部の非支持である。"
       }
     },
     {
@@ -594,13 +598,13 @@
       "id": "discussion-validation",
       "type": "p",
       "en": "The primary sensitivity analysis covers scorable initial answers, leaving refusals unmeasured. Quality labels lack human adjudication. Human review and comparisons across evaluator performance levels and generation seeds would test generality. Including refusals in the sensitivity measure would broaden coverage.",
-      "ja": "順序感度の主比較は採点可能な初回回答を対象とし、拒否回答は測定できていない。品質ラベルも人手では確認していない。人手判定と、評価器の性能水準や生成シードを変えた比較により、一般性を検証できる。拒否回答を含む感度指標によって対象を広げられる。"
+      "ja": "順序感度の主解析は採点可能な初回回答を対象とし、拒否回答は測定対象に含まれていない。品質ラベルには人手による判定がない。人手による確認と、評価器の性能水準および生成シードを変えた比較により、一般性を検証できる。拒否回答を感度指標に含めることで対象範囲を広げられる。"
     },
     {
       "id": "discussion-language",
       "type": "p",
       "en": "The language-difference interval includes zero, with questions and references differing by language. Matched bilingual questions and comparable evidence lengths would help isolate language effects. Matching generator and rewriter sizes and budgets would help isolate the rewrite instruction's effect.",
-      "ja": "日英差の区間は0を含み、質問と参照は言語間で異なる。対訳質問と同程度の根拠長を用いれば、言語の影響を切り分けやすくなる。生成器と書換え器の規模や予算をそろえれば、書換え指示の効果を切り分けやすくなる。"
+      "ja": "日英差の区間は0を含み、質問と参照は言語間で異なる。対応する日英質問と同程度の根拠長を用いれば、言語の影響を切り分けやすくなる。生成器と書換え器の規模や予算をそろえれば、書換え指示の効果を切り分けやすくなる。"
     },
     {
       "id": "h1-conclusion",
@@ -625,74 +629,88 @@
     {
       "id": 1,
       "text": "P. Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, Advances in Neural Information Processing Systems, Vol. 33, 2020.",
-      "url": "https://arxiv.org/abs/2005.11401"
+      "url": "https://arxiv.org/abs/2005.11401",
+      "text_ja": "P. Lewisほか，知識集約型の自然言語処理タスクのための検索拡張生成，Advances in Neural Information Processing Systems，第33巻，2020年。"
     },
     {
       "id": 2,
       "text": "N. F. Liu et al., Lost in the Middle: How Language Models Use Long Contexts, Transactions of the Association for Computational Linguistics, Vol. 12, pp. 157–173, 2024.",
-      "url": "https://doi.org/10.1162/tacl_a_00638"
+      "url": "https://doi.org/10.1162/tacl_a_00638",
+      "text_ja": "N. F. Liuほか，中間に埋もれる情報：言語モデルは長い文脈をどのように利用するか，Transactions of the Association for Computational Linguistics，第12巻，157–173頁，2024年。"
     },
     {
       "id": 3,
       "text": "P. Wang et al., Large Language Models are not Fair Evaluators, Proceedings of ACL 2024 (Volume 1: Long Papers), pp. 9440–9450, 2024.",
-      "url": "https://doi.org/10.18653/v1/2024.acl-long.511"
+      "url": "https://doi.org/10.18653/v1/2024.acl-long.511",
+      "text_ja": "P. Wangほか，大規模言語モデルは公平な評価器ではない，ACL 2024会議録（第1巻：長編論文），9440–9450頁，2024年。"
     },
     {
       "id": 4,
       "text": "L. Shi et al., Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge, Proceedings of IJCNLP-AACL 2025, pp. 292–314, 2025.",
-      "url": "https://doi.org/10.18653/v1/2025.ijcnlp-long.18"
+      "url": "https://doi.org/10.18653/v1/2025.ijcnlp-long.18",
+      "text_ja": "L. Shiほか，評価器を評価する：LLMを評価器として用いる際の位置バイアスに関する体系的研究，IJCNLP-AACL 2025会議録，292–314頁，2025年。"
     },
     {
       "id": 5,
       "text": "S. Liu et al., Judge as A Judge: Improving the Evaluation of Retrieval-Augmented Generation through the Judge-Consistency of Large Language Models, Findings of ACL 2025, pp. 5788–5807, 2025.",
-      "url": "https://doi.org/10.18653/v1/2025.findings-acl.301"
+      "url": "https://doi.org/10.18653/v1/2025.findings-acl.301",
+      "text_ja": "S. Liuほか，評価器を評価器として使う：大規模言語モデルの評価判断の一貫性を通じた検索拡張生成の評価の改善，Findings of ACL 2025，5788–5807頁，2025年。"
     },
     {
       "id": 6,
       "text": "K. Murugaraj, S. Lamsiyah, and M. Theobald, RAGVUE: A Diagnostic View for Explainable and Automated Evaluation of Retrieval-Augmented Generation, Proceedings of EACL 2026 System Demonstrations, pp. 512–526, 2026.",
-      "url": "https://aclanthology.org/2026.eacl-demo.35/"
+      "url": "https://aclanthology.org/2026.eacl-demo.35/",
+      "text_ja": "K. Murugaraj，S. Lamsiyah，M. Theobald，RAGVUE：検索拡張生成の説明可能な自動評価のための診断的視点，EACL 2026システムデモンストレーション会議録，512–526頁，2026年。"
     },
     {
       "id": 7,
       "text": "Y. Zhang, D. Goel, and H. Ahmad, When the Judge Should Not Decide: Evidence-Locked, Non-Compensatory Selection Bounds LLM-Judge Failure in Reasoning Pipelines, arXiv:2608.07813v2, author preprint, 2026.",
-      "url": "https://arxiv.org/abs/2608.07813v2"
+      "url": "https://arxiv.org/abs/2608.07813v2",
+      "text_ja": "Y. Zhang，D. Goel，H. Ahmad，評価器が決めるべきでない場合：根拠を固定した非補償型の選択により推論パイプラインにおけるLLM評価器の失敗を制限する，arXiv:2608.07813v2，著者プレプリント，2026年。"
     },
     {
       "id": 8,
       "text": "S. Rosenthal, A. Sil, R. Florian, and S. Roukos, CLAPNQ: Cohesive Long-form Answers from Passages in Natural Questions for RAG systems, Transactions of the Association for Computational Linguistics, Vol. 13, pp. 53–72, 2025.",
-      "url": "https://doi.org/10.1162/tacl_a_00729"
+      "url": "https://doi.org/10.1162/tacl_a_00729",
+      "text_ja": "S. Rosenthal，A. Sil，R. Florian，S. Roukos，CLAPNQ：RAGシステムのためのNatural Questionsの文章から作る一貫した長文回答，Transactions of the Association for Computational Linguistics，第13巻，53–72頁，2025年。"
     },
     {
       "id": 9,
       "text": "Baobab, Inc., wikipedia-human-retrieval-ja, dataset card. Accessed November 4, 2026.",
-      "url": "https://huggingface.co/datasets/baobab-trees/wikipedia-human-retrieval-ja"
+      "url": "https://huggingface.co/datasets/baobab-trees/wikipedia-human-retrieval-ja",
+      "text_ja": "Baobab, Inc.，wikipedia-human-retrieval-ja，データセットカード。2026年11月4日閲覧。"
     },
     {
       "id": 10,
       "text": "intfloat, multilingual-e5-small, model card. Accessed November 4, 2026.",
-      "url": "https://huggingface.co/intfloat/multilingual-e5-small"
+      "url": "https://huggingface.co/intfloat/multilingual-e5-small",
+      "text_ja": "intfloat，multilingual-e5-small，モデルカード。2026年11月4日閲覧。"
     },
     {
       "id": 11,
       "text": "Qwen Team, Qwen2.5-3B-Instruct-GGUF, model card. Accessed November 4, 2026.",
-      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF"
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF",
+      "text_ja": "Qwen Team，Qwen2.5-3B-Instruct-GGUF，モデルカード。2026年11月4日閲覧。"
     },
     {
       "id": 12,
       "text": "Qwen Team, Qwen3.5-9B, model card. Accessed November 4, 2026.",
-      "url": "https://huggingface.co/Qwen/Qwen3.5-9B"
+      "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+      "text_ja": "Qwen Team，Qwen3.5-9B，モデルカード。2026年11月4日閲覧。"
     },
     {
       "id": 13,
       "text": "Development diagnostics and fixed evaluator configuration, repository snapshot f0b7c71, 2026.",
       "url": "https://github.com/hinattyamann/rag_research/tree/f0b7c71c4375a617c7142c67e3aa0610f73edb14",
-      "display_url": "https://github.com/hinattyamann/rag_research"
+      "display_url": "https://github.com/hinattyamann/rag_research",
+      "text_ja": "開発時の診断と固定した評価器の設定，リポジトリのスナップショットf0b7c71，2026年。"
     },
     {
       "id": 14,
       "text": "Archived evaluation inputs, AI annotations, and pooled descriptive analysis, repository snapshot 592e3c2, 2026.",
       "url": "https://github.com/hinattyamann/rag_research/tree/592e3c2/papers/iciae2027",
-      "display_url": "https://github.com/hinattyamann/rag_research"
+      "display_url": "https://github.com/hinattyamann/rag_research",
+      "text_ja": "アーカイブした評価入力，AI注釈，統合した記述的解析，リポジトリのスナップショット592e3c2，2026年。"
     }
   ],
   "evidence_trees": {

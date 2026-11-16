@@ -385,7 +385,14 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
                 values.append(
                     [
                         str(number),
-                        order,
+                        {
+                            "original": "元順序",
+                            "reversed": "逆順",
+                            "shuffle_2": "シャッフル2",
+                            "shuffle_3": "シャッフル3",
+                        }[order]
+                        if lang == "ja"
+                        else order,
                         f"{supported}/{sentences}",
                         f"{choice} / {policy['quality_y']}",
                     ]
@@ -647,11 +654,15 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
         if kind == "table":
             cap = paragraph(block[lang], "caption")
             cap.find("w:pPr", NS).append(element("keepNext"))
+            if spacing_before := block.get("caption_spacing_before", {}).get(lang):
+                cap.find("w:pPr/w:spacing", NS).set(tag("before"), str(spacing_before))
             headers, values, widths = data_table(block["key"], lang)
             table_snapshot[block["key"]] = values
             tbl = E.SubElement(body, tag("tbl"))
             props = E.SubElement(tbl, tag("tblPr"))
             props.append(element("tblW", w=str(sum(widths)), type="dxa"))
+            props.append(element("jc", val="left"))
+            props.append(element("tblInd", w="55", type="dxa"))
             props.append(element("tblLayout", type="fixed"))
             borders = E.SubElement(props, tag("tblBorders"))
             for name in ("top", "left", "bottom", "right", "insideH", "insideV"):
@@ -741,7 +752,8 @@ def build(content: dict, lang: str, output_dir: Path | None = None) -> dict:
             pp.append(element("spacing", before="0", after="0", line="1", lineRule="exact"))
             run = E.SubElement(p, tag("r"))
             E.SubElement(run, tag("br"), {tag("type"): "column"})
-        p = paragraph(f"({ref['id']}) {ref['text']} ")
+        ref_text = ref.get(f"text_{lang}", ref["text"])
+        p = paragraph(f"({ref['id']}) {ref_text} ")
         props = p.find("w:pPr", NS)
         for node in props.findall("w:ind", NS):
             props.remove(node)

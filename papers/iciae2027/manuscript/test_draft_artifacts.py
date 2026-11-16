@@ -92,6 +92,9 @@ def test_word_text_references_and_tables_match_evidence(lang):
         r.attrib["Target"] for r in relations if r.attrib.get("Type", "").endswith("/hyperlink")
     ]
     assert links == [r["url"] for r in CONTENT["references"]]
+    for reference in CONTENT["references"]:
+        reference_text = reference.get(f"text_{lang}", reference["text"])
+        assert any(p.startswith(f"({reference['id']}) {reference_text} ") for p in paragraphs)
     citation_runs = [
         text(r)
         for r in document.findall("w:body/w:p/w:r", NS)
@@ -226,8 +229,14 @@ def test_word_text_references_and_tables_match_evidence(lang):
                 encoding="utf-8"
             )
         )
-        trial = next(t for t in case["trials"] if t["trial_id"] == row[1])
-        policy = next(p for p in case["policy_outcomes"] if p["route"] == row[1])
+        order = {
+            "元順序": "original",
+            "逆順": "reversed",
+            "シャッフル2": "shuffle_2",
+            "シャッフル3": "shuffle_3",
+        }.get(row[1], row[1])
+        trial = next(t for t in case["trials"] if t["trial_id"] == order)
+        policy = next(p for p in case["policy_outcomes"] if p["route"] == order)
         numerator, denominator = map(int, row[2].split("/"))
         assert denominator == len(trial["fixed_claims"])
         assert numerator == sum(v["label"] == "supported" for v in trial["verdicts"])
@@ -256,6 +265,14 @@ def test_word_text_references_and_tables_match_evidence(lang):
 
 def test_pair_and_frozen_evidence_integrity():
     assert len(CONTENT["blocks"]) == len({b["id"] for b in CONTENT["blocks"]})
+    for block in CONTENT["blocks"]:
+        assert block["en"] and block["ja"]
+        assert re.findall(r"\[\[\d+\]\]", block["en"]) == re.findall(
+            r"\[\[\d+\]\]", block["ja"]
+        )
+        if "notes" in block:
+            assert set(block["notes"]) == {"en", "ja"}
+    assert all(reference["text_ja"] for reference in CONTENT["references"])
     tables = []
     manifest = json.loads(BUILD_MANIFEST.read_text(encoding="utf-8"))
     digest = hashlib.sha256(
