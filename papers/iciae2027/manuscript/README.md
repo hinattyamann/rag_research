@@ -1,5 +1,7 @@
 # 論文本体
 
+2026年11月16日、参考文献を監査した初稿13へ更新した。[全14件の出典と引用目的](../notes/reference_audit_20261116.json)と[最終検証](../notes/draft13_validation_20261116.json)を参照する。文献13のリンクを診断成績のある固定報告へ訂正し、13・14が本研究の資料と分かる表記にした。本文・図表・数値は保持し、英語8頁・日本語9頁・要旨257語、全14リンクと最終英語版の公式書式を再確認した。教員の投稿承認・投稿は未完了。以下の初稿12の記録は書式・対訳修正の履歴として残す。
+
 2026年11月16日、表4の段末配置・全表外枠の位置と日英対訳を修正した初稿12へ更新した。Wordから直接出力した日英PDFも保存した。[修正内容と確認](../notes/draft12_revision_status.md)を参照する。[初稿11の書式確認](../notes/draft11_revision_status.md)、[正式著者情報](../notes/draft10_revision_status.md)と教員の[指摘と修正の対応](../notes/draft9_revision_status.md)、[初稿8](../notes/draft8_revision_status.md)、[初稿7](../notes/draft7_revision_status.md)と[PDF指摘の採否](../notes/marked_pdf_review_20261111.md)は履歴として保持する。
 
 | ファイル | 用途 |

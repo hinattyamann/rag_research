@@ -1,0 +1,346 @@
+{
+  "recorded_at_jst": "2026-11-16 10:01 JST",
+  "version": "draft-13-2026-11-16",
+  "scope_ja": "現稿14件の実在性・書誌・本文の引用目的・公開アクセスを確認した監査。網羅的な文献レビューや査読通過の保証ではない。引用に必要な原典抄録・該当節・提供者カード・固定資料を確認し、全原著の全頁精読を完了した記録とはしない。",
+  "counts": {
+    "references": 14,
+    "peer_reviewed_publications": 7,
+    "author_preprints": 1,
+    "provider_cards": 4,
+    "own_research_artifacts": 2
+  },
+  "fabricated_references_found": 0,
+  "uncited_references_found": 0,
+  "irrelevant_to_current_citation_purpose_found": 0,
+  "entries": [
+    {
+      "id": 1,
+      "bibliography_en": "P. Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, Advances in Neural Information Processing Systems, Vol. 33, 2020.",
+      "bibliography_ja": "P. Lewisほか，知識集約型の自然言語処理タスクのための検索拡張生成，Advances in Neural Information Processing Systems，第33巻，2020年。",
+      "url": "https://arxiv.org/abs/2005.11401",
+      "primary_verification_url": "https://proceedings.neurips.cc/paper/2020/hash/6b493230-Abstract.html",
+      "source_type": "peer_reviewed_publication",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "intro-context",
+      "role_and_scope_ja": "RAGの定義と外部情報を使う生成の背景。NeurIPS 2020の公式会議録と原著抄録が支持する。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 2,
+      "bibliography_en": "N. F. Liu et al., Lost in the Middle: How Language Models Use Long Contexts, Transactions of the Association for Computational Linguistics, Vol. 12, pp. 157–173, 2024.",
+      "bibliography_ja": "N. F. Liuほか，中間に埋もれる情報：言語モデルは長い文脈をどのように利用するか，Transactions of the Association for Computational Linguistics，第12巻，157–173頁，2024年。",
+      "url": "https://doi.org/10.1162/tacl_a_00638",
+      "primary_verification_url": "https://aclanthology.org/2024.tacl-1.9/",
+      "source_type": "peer_reviewed_publication",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "related-context",
+      "role_and_scope_ja": "関連情報の位置によって長文脈の利用が変化する先行研究。初回生成後の評価器への根拠順序操作と区別できている。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 3,
+      "bibliography_en": "P. Wang et al., Large Language Models are not Fair Evaluators, Proceedings of ACL 2024 (Volume 1: Long Papers), pp. 9440–9450, 2024.",
+      "bibliography_ja": "P. Wangほか，大規模言語モデルは公平な評価器ではない，ACL 2024会議録（第1巻：長編論文），9440–9450頁，2024年。",
+      "url": "https://doi.org/10.18653/v1/2024.acl-long.511",
+      "primary_verification_url": "https://aclanthology.org/2024.acl-long.511/",
+      "source_type": "peer_reviewed_publication",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "related-judges",
+      "role_and_scope_ja": "候補回答の提示順に対するLLM評価器の位置バイアス。根拠順序の効果と同一の実験だとは記述していない。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 4,
+      "bibliography_en": "L. Shi et al., Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge, Proceedings of IJCNLP-AACL 2025, pp. 292–314, 2025.",
+      "bibliography_ja": "L. Shiほか，評価器を評価する：LLMを評価器として用いる際の位置バイアスに関する体系的研究，IJCNLP-AACL 2025会議録，292–314頁，2025年。",
+      "url": "https://doi.org/10.18653/v1/2025.ijcnlp-long.18",
+      "primary_verification_url": "https://aclanthology.org/2025.ijcnlp-long.18/",
+      "source_type": "peer_reviewed_publication",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "related-judges",
+      "role_and_scope_ja": "ペア比較とリスト比較の反復安定性・位置の一貫性。公式抄録の指標と一致し、反復対照を置く動機に対応する。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 5,
+      "bibliography_en": "S. Liu et al., Judge as A Judge: Improving the Evaluation of Retrieval-Augmented Generation through the Judge-Consistency of Large Language Models, Findings of ACL 2025, pp. 5788–5807, 2025.",
+      "bibliography_ja": "S. Liuほか，評価器を評価器として使う：大規模言語モデルの評価判断の一貫性を通じた検索拡張生成の評価の改善，Findings of ACL 2025，5788–5807頁，2025年。",
+      "url": "https://doi.org/10.18653/v1/2025.findings-acl.301",
+      "primary_verification_url": "https://aclanthology.org/2025.findings-acl.301/",
+      "source_type": "peer_reviewed_publication",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "related-rag",
+      "role_and_scope_ja": "評価観点の組合せを変えた判断の一貫性を利用してConsJudgeを学習する研究。原著3節の一貫性得点と学習の説明に対応する。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 6,
+      "bibliography_en": "K. Murugaraj, S. Lamsiyah, and M. Theobald, RAGVUE: A Diagnostic View for Explainable and Automated Evaluation of Retrieval-Augmented Generation, Proceedings of EACL 2026 System Demonstrations, pp. 512–526, 2026.",
+      "bibliography_ja": "K. Murugaraj，S. Lamsiyah，M. Theobald，RAGVUE：検索拡張生成の説明可能な自動評価のための診断的視点，EACL 2026システムデモンストレーション会議録，512–526頁，2026年。",
+      "url": "https://aclanthology.org/2026.eacl-demo.35/",
+      "primary_verification_url": "https://aclanthology.org/2026.eacl-demo.35/",
+      "source_type": "peer_reviewed_publication",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "related-rag",
+      "role_and_scope_ja": "RAGVUEによる検索・推論・根拠付けの診断。原著5〜6節と抄録が支持する。システムデモ論文であり、主会議の長編論文とは区別する。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 7,
+      "bibliography_en": "Y. Zhang, D. Goel, and H. Ahmad, When the Judge Should Not Decide: Evidence-Locked, Non-Compensatory Selection Bounds LLM-Judge Failure in Reasoning Pipelines, arXiv:2608.07813v2, author preprint, 2026.",
+      "bibliography_ja": "Y. Zhang，D. Goel，H. Ahmad，評価器が決めるべきでない場合：根拠を固定した非補償型の選択により推論パイプラインにおけるLLM評価器の失敗を制限する，arXiv:2608.07813v2，著者プレプリント，2026年。",
+      "url": "https://arxiv.org/abs/2608.07813v2",
+      "primary_verification_url": "https://arxiv.org/html/2608.07813v2",
+      "source_type": "author_preprint",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "related-rag",
+      "role_and_scope_ja": "同一の固定候補集合に対して選択規則を比較する研究。公開本文3節と5節が支持する。候補固定や下流影響自体を本研究だけの新規性とはしていない。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 8,
+      "bibliography_en": "S. Rosenthal, A. Sil, R. Florian, and S. Roukos, CLAPNQ: Cohesive Long-form Answers from Passages in Natural Questions for RAG systems, Transactions of the Association for Computational Linguistics, Vol. 13, pp. 53–72, 2025.",
+      "bibliography_ja": "S. Rosenthal，A. Sil，R. Florian，S. Roukos，CLAPNQ：RAGシステムのためのNatural Questionsの文章から作る一貫した長文回答，Transactions of the Association for Computational Linguistics，第13巻，53–72頁，2025年。",
+      "url": "https://doi.org/10.1162/tacl_a_00729",
+      "primary_verification_url": "https://aclanthology.org/2025.tacl-1.3/",
+      "source_type": "peer_reviewed_publication",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "setting-data",
+      "role_and_scope_ja": "英語データCLAPNQの出典。TACL 2025版の著者・巻13・53〜72頁・DOIと一致し、RAG向け長文QAデータの性質も一致する。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 9,
+      "bibliography_en": "Baobab, Inc., wikipedia-human-retrieval-ja, dataset card. Accessed November 4, 2026.",
+      "bibliography_ja": "Baobab, Inc.，wikipedia-human-retrieval-ja，データセットカード。2026年11月4日閲覧。",
+      "url": "https://huggingface.co/datasets/baobab-trees/wikipedia-human-retrieval-ja",
+      "primary_verification_url": "https://huggingface.co/datasets/baobab-trees/wikipedia-human-retrieval-ja",
+      "source_type": "provider_card",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "setting-data",
+      "role_and_scope_ja": "実使用の日本語QAデータの配布者資料。カードは訓練した作業者によるWikipedia検索・回答構築を記述し、Baobabの収集・検査・整形の担当を確認できる。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 10,
+      "bibliography_en": "intfloat, multilingual-e5-small, model card. Accessed November 4, 2026.",
+      "bibliography_ja": "intfloat，multilingual-e5-small，モデルカード。2026年11月4日閲覧。",
+      "url": "https://huggingface.co/intfloat/multilingual-e5-small",
+      "primary_verification_url": "https://huggingface.co/intfloat/multilingual-e5-small",
+      "source_type": "provider_card",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "setting-retrieval",
+      "role_and_scope_ja": "実使用の埋め込みモデルmultilingual-e5-smallの提供者カード。モデルの識別を支える引用であり、本実験のRRF設定値の根拠は固定設定にある。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 11,
+      "bibliography_en": "Qwen Team, Qwen2.5-3B-Instruct-GGUF, model card. Accessed November 4, 2026.",
+      "bibliography_ja": "Qwen Team，Qwen2.5-3B-Instruct-GGUF，モデルカード。2026年11月4日閲覧。",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF",
+      "primary_verification_url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF",
+      "source_type": "provider_card",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "setting-retrieval",
+      "role_and_scope_ja": "初回生成に使用したQwen2.5-3B-Instructの公式GGUFカード。Q4_K_Mの配布・使用例があり、実ファイルの版とHashは保存済みManifestで管理する。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 12,
+      "bibliography_en": "Qwen Team, Qwen3.5-9B, model card. Accessed November 4, 2026.",
+      "bibliography_ja": "Qwen Team，Qwen3.5-9B，モデルカード。2026年11月4日閲覧。",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+      "primary_verification_url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+      "source_type": "provider_card",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "setting-model",
+      "role_and_scope_ja": "評価・書換えに使う基盤モデルQwen3.5-9Bの公式カード。実際のQ6_K GGUFはUnslothの固定版であり、公式カードがその量子化ファイルの配布元であるとは扱わない。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 13,
+      "bibliography_en": "rag_research project, Development diagnostic report for the fixed evaluator, repository snapshot 592e3c2, 2026.",
+      "bibliography_ja": "rag_researchプロジェクト，固定評価器の開発診断報告，リポジトリのスナップショット592e3c2，2026年。",
+      "url": "https://github.com/hinattyamann/rag_research/blob/592e3c2a0d0bf4e8c39b789d7f7c5f73bbbe5aa3/data/manifests/phase11_known_trace_direct_result_v12_v2.json",
+      "primary_verification_url": "https://github.com/hinattyamann/rag_research/blob/592e3c2a0d0bf4e8c39b789d7f7c5f73bbbe5aa3/data/manifests/phase11_known_trace_direct_result_v12_v2.json",
+      "source_type": "own_research_artifact",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "setting-fixation",
+      "role_and_scope_ja": "本研究自身の開発診断記録。保存済みJSONの支持57/58・非支持14/16・元実行Commit・Candidate identityを確認できる。独立した先行研究や本番精度保証には使わない。",
+      "supports_current_cited_statement_within_stated_scope": true
+    },
+    {
+      "id": 14,
+      "bibliography_en": "rag_research project, Archived evaluation inputs, AI annotations, and pooled descriptive analysis, repository snapshot 592e3c2, 2026.",
+      "bibliography_ja": "rag_researchプロジェクト，アーカイブした評価入力，AI注釈，統合した記述的解析，リポジトリのスナップショット592e3c2，2026年。",
+      "url": "https://github.com/hinattyamann/rag_research/tree/592e3c2/papers/iciae2027",
+      "primary_verification_url": "https://github.com/hinattyamann/rag_research/tree/592e3c2/papers/iciae2027",
+      "source_type": "own_research_artifact",
+      "exists": true,
+      "metadata_consistent": true,
+      "citation_block": "setting-failures",
+      "role_and_scope_ja": "本研究自身の再現用アーカイブ。固定Commitに200問のinputs JSON、AI注釈、統合集計が存在する。独立した追試や外部の人手検証とは扱わない。",
+      "supports_current_cited_statement_within_stated_scope": true
+    }
+  ],
+  "corrections": [
+    {
+      "id": 13,
+      "problem_ja": "元実行Commit f0b7c71は評価器のコード・設定を保存するが、後に確定した57/58等の診断結果はまだ収録していない。リンク存在だけの確認では引用文の支持を確認できなかった。",
+      "resolution_ja": "診断結果を収録した固定Commit 592e3c2のJSONファイルへ直接リンクし、題名と日英表記を診断報告に合わせた。実行Commit自体は変更していない。"
+    },
+    {
+      "id": 14,
+      "problem_ja": "自分たちの資料であることを参考文献中でも明示すると、独立した関連研究との混同を避けられる。",
+      "resolution_ja": "13・14の提供者をrag_research projectと明記した。14の固定アーカイブ先は保持した。"
+    }
+  ],
+  "qualification_ja": [
+    "7は査読採録済みと確認できない著者プレプリント。v1を転載した一部二次サイトには5著者が載るが、引用対象v2のarXiv原典・本文は3著者で、現稿と一致する。",
+    "9〜12はデータや実装資産の出典であり、性能や研究の新規性の独立した証明ではない。",
+    "13・14は再現性と自己報告数値の確認先。先行研究数や第三者による妥当性確認に加算しない。",
+    "2・8の出版社ページは自動アクセスにHTTP403を返す場合がある。DOI登録とACL Anthologyの正式書誌・公開原著を照合して実在性を確認した。",
+    "12のQ6_KはUnsloth固定版3885219b6810b007914f3a7950a8d1b469d598a5のQwen3.5-9B-Q6_K.gguf。公開APIでファイルの存在を確認し、保存Manifestの配布者・版と照合した。"
+  ],
+  "public_access_checks": [
+    {
+      "id": 9,
+      "url": "https://huggingface.co/datasets/baobab-trees/wikipedia-human-retrieval-ja",
+      "status": 200,
+      "bytes": 897311,
+      "final_url": "https://huggingface.co/datasets/baobab-trees/wikipedia-human-retrieval-ja"
+    },
+    {
+      "id": 10,
+      "url": "https://huggingface.co/intfloat/multilingual-e5-small",
+      "status": 200,
+      "bytes": 7234247,
+      "final_url": "https://huggingface.co/intfloat/multilingual-e5-small"
+    },
+    {
+      "id": 11,
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF",
+      "status": 200,
+      "bytes": 254582,
+      "final_url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF"
+    },
+    {
+      "id": 12,
+      "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+      "status": 200,
+      "bytes": 634844,
+      "final_url": "https://huggingface.co/Qwen/Qwen3.5-9B"
+    },
+    {
+      "id": 13,
+      "url": "https://github.com/hinattyamann/rag_research/tree/f0b7c71c4375a617c7142c67e3aa0610f73edb14",
+      "status": 200,
+      "bytes": 374497,
+      "final_url": "https://github.com/hinattyamann/rag_research/tree/f0b7c71c4375a617c7142c67e3aa0610f73edb14"
+    },
+    {
+      "id": 14,
+      "url": "https://github.com/hinattyamann/rag_research/tree/592e3c2/papers/iciae2027",
+      "status": 200,
+      "bytes": 225959,
+      "final_url": "https://github.com/hinattyamann/rag_research/tree/592e3c2/papers/iciae2027"
+    },
+    {
+      "id": 13,
+      "url": "https://raw.githubusercontent.com/hinattyamann/rag_research/592e3c2/data/manifests/phase11_known_trace_direct_result_v12_v2.json",
+      "status": 200,
+      "bytes": 94125,
+      "final_url": "https://raw.githubusercontent.com/hinattyamann/rag_research/592e3c2/data/manifests/phase11_known_trace_direct_result_v12_v2.json",
+      "diagnostic": {
+        "semantic_adoption_version": "support-binary-v2",
+        "healthy": true,
+        "supported_denominator": 58,
+        "negative_denominator": 16,
+        "supported_correct": 57,
+        "negative_correct": 14,
+        "exact_correct": 68,
+        "missing_outcomes": 0,
+        "false_support_count": 2,
+        "missed_support_count": 1,
+        "C_NS_confusion_count": 3,
+        "ambiguous_unit_conditions_retained_in_F": 10,
+        "unique_supported_units": 29,
+        "unique_negative_units": 8,
+        "supported_groups": 13,
+        "negative_groups": 6,
+        "supported_recall": 0.9827586206896551,
+        "negative_specificity": 0.875,
+        "three_label_accuracy": 0.918918918918919,
+        "binary_accuracy": 0.9594594594594594,
+        "coverage_passed": true,
+        "passed": false,
+        "group_bootstrap": {
+          "unit": "document_group",
+          "groups": 14,
+          "repetitions": 10000,
+          "seed": 42,
+          "metrics": {
+            "supported_recall": {
+              "ci95": [
+                0.9285714285714286,
+                1.0
+              ],
+              "valid_replicates": 10000,
+              "missing_class_replicates": 0
+            },
+            "negative_specificity": {
+              "ci95": [
+                0.6666666666666666,
+                1.0
+              ],
+              "valid_replicates": 9996,
+              "missing_class_replicates": 4
+            }
+          },
+          "conditional_on_observed_groups_not_population_error_guarantee": true
+        }
+      },
+      "fixed_execution_commit": "f0b7c71c4375a617c7142c67e3aa0610f73edb14"
+    },
+    {
+      "id": 14,
+      "url": "https://raw.githubusercontent.com/hinattyamann/rag_research/592e3c2/papers/iciae2027/notes/pooled_results_v1.json",
+      "status": 200,
+      "bytes": 854151,
+      "final_url": "https://raw.githubusercontent.com/hinattyamann/rag_research/592e3c2/papers/iciae2027/notes/pooled_results_v1.json"
+    },
+    {
+      "id": 12,
+      "url": "https://huggingface.co/api/models/unsloth/Qwen3.5-9B-GGUF/revision/3885219b6810b007914f3a7950a8d1b469d598a5",
+      "status": 200,
+      "bytes": 11149,
+      "final_url": "https://huggingface.co/api/models/unsloth/Qwen3.5-9B-GGUF/revision/3885219b6810b007914f3a7950a8d1b469d598a5",
+      "file_present": true
+    },
+    {
+      "id": 13,
+      "url": "https://github.com/hinattyamann/rag_research/blob/592e3c2a0d0bf4e8c39b789d7f7c5f73bbbe5aa3/data/manifests/phase11_known_trace_direct_result_v12_v2.json",
+      "status": 200,
+      "exact_final_citation_url_checked": true
+    }
+  ],
+  "canonical_artifact_sha256": {
+    "iciae2027_manuscript_en.docx": "1ae2e7b880b8e521ff8a103f8ab17d03cc19e8b2547c85a704abee7eb76ca216",
+    "iciae2027_manuscript_en.pdf": "8f3bdfb05b9ccda91f9248ff7e3140d0361bf72a1485c115913ad64d7e7b2d67",
+    "iciae2027_manuscript_ja.docx": "0965164fbfc105bc5243f41c4fd7eaa2735b512d0d8830891ef4995f7aafca24",
+    "iciae2027_manuscript_ja.pdf": "97f588e0cf5b1091194c791f708a799b7c45292d3ca9a21d508ac099995208da"
+  }
+}
