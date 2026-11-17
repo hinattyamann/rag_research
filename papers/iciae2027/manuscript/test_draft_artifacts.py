@@ -198,13 +198,12 @@ def test_word_text_references_and_tables_match_evidence(lang):
                 "decision_change_same_binary_quality",
                 "decision_change_quality_unknown",
             )
-        ] + [
-            sum(
-                q["known_route_cost_range"]["recorded_input_plus_output_tokens"]["max"]
-                > q["known_route_cost_range"]["recorded_input_plus_output_tokens"]["min"]
-                for q in varying
-            )
         ]
+        assert all(
+            q["known_route_cost_range"]["recorded_input_plus_output_tokens"]["max"]
+            > q["known_route_cost_range"]["recorded_input_plus_output_tokens"]["min"]
+            for q in varying
+        )  # The corresponding cost result is now stated in the body.
     assert [int(r[3]) for r in actual["order_quality"]] == [
         sum(map(int, r[1:3])) for r in actual["order_quality"]
     ]

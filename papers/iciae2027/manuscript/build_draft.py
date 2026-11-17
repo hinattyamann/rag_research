@@ -170,6 +170,12 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
                 "文脈12288、温度0.2、バッチ128",
             ),
             (
+                "Prompts",
+                "プロンプト",
+                "Fixed by language for evaluation and rewriting",
+                "評価・書換え用に言語別で固定",
+            ),
+            (
                 "Task and reasoning limits",
                 "タスク・推論上限",
                 "6144 total; 4096 for reasoning",
@@ -326,30 +332,16 @@ def data_table(key: str, lang: str) -> tuple[list[str], list[list[str]], list[in
             ("Both Y=0 and Y=1 selected", "Y=0とY=1の両方を選択"),
             ("A and B have the same Y", "AとBが同じY"),
             ("Includes indeterminate Y", "判定不能Yを含む"),
-            ("Route tokens vary", "経路トークン数が変動"),
         ]
         columns = []
         for r in result["primary"]:
             c = r["classification_counts"]
-            varying = [
-                q
-                for q in result["questions"]
-                if q["language"] == r["language"]
-                and q["comparable"]
-                and q["decision_varies_in_valid_orders"]
-            ]
-            token_varying = sum(
-                q["known_route_cost_range"]["recorded_input_plus_output_tokens"]["max"]
-                > q["known_route_cost_range"]["recorded_input_plus_output_tokens"]["min"]
-                for q in varying
-            )
             columns.append(
                 [
                     r["decision_change_qa"],
                     c["decision_change_quality_changes"],
                     c["decision_change_same_binary_quality"],
                     c["decision_change_quality_unknown"],
-                    token_varying,
                 ]
             )
         values = [
