@@ -1,0 +1,61 @@
+{
+  "before_version": "draft-16-2026-11-17",
+  "after_version": "draft-17-2026-11-17",
+  "changes": [
+    {
+      "id": "abstract",
+      "before": {
+        "id": "abstract",
+        "type": "p",
+        "en": "Large language models (LLMs) can answer questions using external evidence through retrieval-augmented generation (RAG). An internal evaluator can then retain an answer or request a rewrite. We investigate whether evidence order alone changes this decision and the selected answer's quality and cost. Fixing each question's evidence, initial answer, and answer sentences, we compare evaluations of evidence permutations with repeated original-order evaluations. We generate one rewrite per question; all conditions select between the same initial answer and rewrite, keeping rewrite content fixed. With fixed evaluator settings, we collected 100 English and 100 Japanese questions in stages. A post-hoc pooled analysis covered 80 English and 68 Japanese questions with complete comparisons. Mean excess decision disagreement is 8.25 percentage points in English (95% document-group bootstrap interval 4.50–12.50) and 8.24 in Japanese (4.12–12.65); the confidence interval for the language difference includes zero. Among 26 questions with order-dependent decisions, selected binary quality labels change for 14, remain unchanged for 8, and are unresolved for 4. External AI assessment labels 51 English and 41 Japanese answers reliable under original-order evaluation, versus 63 and 55 under always rewriting. Original-order evaluation uses 2.36 and 2.99 times as many recorded tokens as always rewriting in English and Japanese, respectively. Under this fixed configuration, evidence order affects answer selection, and internal evaluation adds cost without yielding the most reliable answers. Interpretation is limited by AI labels without human verification, excluded refusals, and differences between the source datasets.",
+        "ja": "大規模言語モデル（LLM）は、検索拡張生成（RAG）を通じて外部の根拠を用い、質問に回答できる。その後、内部評価器が回答の採用または書換えを判断できる。本研究では、根拠順序だけでこの判断と選択回答の品質・費用が変わるかを調べる。質問ごとの根拠、初回回答、回答の文を固定し、根拠の並べ替えに対する評価を元順序の反復評価と比較する。質問ごとに書換え回答を一つ生成し、全条件で同じ初回回答と書換え回答から選択することで、書換え内容を固定する。評価器の設定を固定して、英語100問・日本語100問を段階的に収集した。完全比較が可能な英語80問・日本語68問を事後統合解析の対象とした。判断不一致の平均増分は英語8.25ポイント（95%文書グループ・ブートストラップ区間4.50～12.50）、日本語8.24ポイント（4.12～12.65）であり、言語間の差の信頼区間は0を含む。順序によって判断が変わった26問のうち、選択回答の二値品質ラベルが変わったのは14問、同じであったのは8問、未確定は4問であった。外部AI採点による元順序評価での良好回答数は英語51件・日本語41件で、常時書換えでは63件・55件であった。元順序評価の記録トークン数は、常時書換えに対して英語で2.36倍、日本語で2.99倍であった。この固定構成では根拠順序が回答選択に影響し、内部評価は費用を加える一方で良好回答数を最大化しなかった。人手未確認のAIラベル、拒否回答の除外、元データセット間の違いが解釈を制約する。"
+      },
+      "after": {
+        "id": "abstract",
+        "type": "p",
+        "en": "Retrieval-augmented generation (RAG) lets large language models (LLMs) answer questions using external evidence, while an internal evaluator can retain their answers or request a rewrite. However, this decision may depend on evidence order. To investigate this possibility, we fix each question's evidence, initial answer, and sentences, then compare reordered-evidence evaluations with repeated original-order evaluations. To isolate selection effects, we generate one rewrite per question for all conditions to share. Using fixed evaluator settings, we collected 100 English and 100 Japanese questions in stages; of these, 80 and 68 provided complete comparisons for post-hoc pooled analysis. This analysis finds mean excess decision disagreement of 8.25 percentage points in English (95% document-group bootstrap interval 4.50–12.50) and 8.24 in Japanese (4.12–12.65), with the language-difference interval including zero. Examining the quality consequences for 26 questions with order-dependent decisions, we find that selected binary labels change for 14, remain unchanged for 8, and are unresolved for 4. Comparing policies, external AI assessment labels 51 English and 41 Japanese answers reliable under original-order evaluation, versus 63 and 55 under always rewriting. Despite returning fewer reliable answers, original-order evaluation uses 2.36 and 2.99 times as many recorded tokens as always rewriting, respectively. Together, these results indicate that evidence order affects selection and that evaluation adds cost without maximizing reliable answers under this configuration. However, AI labels without human verification, excluded refusals, and dataset differences limit this interpretation.",
+        "ja": "検索拡張生成（RAG）は大規模言語モデル（LLM）が外部の根拠を用いて質問に答えることを可能にし、内部評価器はその回答を採用するか書換えを要求できる。しかし、この判断は根拠順序に依存する可能性がある。この可能性を調べるため、質問ごとの根拠、初回回答、文を固定し、根拠を並べ替えた評価と元順序の反復評価を比較する。選択の影響を切り分けるため、質問ごとに書換え回答を一つ生成し、全条件で共用する。評価器の設定を固定して英語100問・日本語100問を段階的に収集し、そのうち完全比較が可能な80問・68問を事後統合解析に用いた。この解析による判断不一致の平均増分は英語8.25ポイント（95%文書グループ・ブートストラップ区間4.50～12.50）、日本語8.24ポイント（4.12～12.65）であり、言語間の差の区間は0を含む。順序によって判断が変わった26問の品質への影響を調べると、選択された二値ラベルが変わったのは14問、同じであったのは8問、未確定は4問であった。方策を比較すると、外部AI採点が良好と判定した回答数は元順序評価で英語51件・日本語41件、常時書換えで63件・55件であった。元順序評価は良好回答数が少ないにもかかわらず、常時書換えのそれぞれ2.36倍・2.99倍の記録トークンを使用する。これらの結果を合わせると、この構成では根拠順序が選択に影響し、評価は良好回答数を最大化せずに費用を加えることが示される。ただし、人手未確認のAIラベル、拒否回答の除外、データセット間の違いがこの解釈を制約する。"
+      }
+    },
+    {
+      "id": "design-control-interpretation",
+      "before": {
+        "id": "design-control-interpretation",
+        "type": "p",
+        "en": "Repetitions therefore test repeatability with the same input and seed, not variation across sampling seeds. Across these trials, retrieval results, A_i, sentence segmentation, and packed evidence stay fixed. Furthermore, reference answers and reference evidence are reserved for external assessment, not supplied as gold information to the evaluator or rewriter.",
+        "ja": "したがって反復は同一入力・同一シードでの再現性を調べるもので、サンプリングシード間の変動を調べるものではない。これらの試行を通じて、検索結果、A_i、文分割、入力に収めた根拠は固定する。さらに、参照回答と参照根拠は外部採点用に保持し、評価器や書換え器に正解情報として渡さない。"
+      },
+      "after": {
+        "id": "design-control-interpretation",
+        "type": "p",
+        "en": "Across all trials, retrieval results, A_i, sentence segmentation, and packed evidence content stay fixed. The repetition control also keeps the original evidence order and seed unchanged. It therefore tests repeatability with identical inputs and seed, rather than variation across sampling seeds. Reference answers and reference evidence are reserved for external assessment, not supplied as gold information to the evaluator or rewriter.",
+        "ja": "全試行を通じて、検索結果、A_i、文分割、入力に収めた根拠の内容を固定する。反復対照では、さらに元の根拠順序とシードも変えない。したがって、反復対照はサンプリングシード間の変動ではなく、同一入力・同一シードでの再現性を調べる。参照回答と参照根拠は外部採点用に保持し、評価器や書換え器に正解情報として渡さない。"
+      }
+    },
+    {
+      "id": "table-order-quality",
+      "before": {
+        "id": "table-order-quality",
+        "type": "table",
+        "key": "order_quality",
+        "en": "Table 6. Selected-answer quality among questions with order-dependent decisions.",
+        "ja": "表6 順序によって判断が変わった質問の選択回答品質",
+        "notes": {
+          "en": "Note. Values represent question counts. The three quality categories partition the 26 questions in the first row. Same Y includes both Y=0 (EN 3, JA 2) and both Y=1 (EN 2, JA 1).",
+          "ja": "注。値は質問数を示す。三つの品質分類は最初の行の26問を分割する。同じYには両方Y=0（EN 3問、JA 2問）と両方Y=1（EN 2問、JA 1問）を含む。"
+        }
+      },
+      "after": {
+        "id": "table-order-quality",
+        "type": "table",
+        "key": "order_quality",
+        "en": "Table 6. Selected-answer quality among questions with order-dependent decisions.",
+        "ja": "表6 順序によって判断が変わった質問の選択回答品質",
+        "notes": {
+          "en": "Note. Excluding the header, rows 2–4 partition row 1's 26 questions: changed quality (14), unchanged quality (8), and indeterminate quality (4). Same Y includes both Y=0 (EN 3, JA 2) and both Y=1 (EN 2, JA 1).",
+          "ja": "注。見出しを除く第2～4行は、第1行の26問を品質変化あり（14問）、品質変化なし（8問）、品質判定不能（4問）に分類する。同じYには両方Y=0（EN 3問、JA 2問）と両方Y=1（EN 2問、JA 1問）を含む。"
+        }
+      }
+    }
+  ]
+}
