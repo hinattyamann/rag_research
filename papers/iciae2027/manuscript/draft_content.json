@@ -1,5 +1,5 @@
 {
-  "version": "draft-17-2026-11-17",
+  "version": "draft-18-2026-11-19",
   "evidence_commit": "92ae5525a3a6a0e1046924b5d77f470a31098ad0",
   "title": {
     "en": "Evidence Order Sensitivity in RAG Evaluation and Its Effects on Answer Selection, Quality, and Cost",
@@ -57,8 +57,8 @@
     {
       "id": "intro-questions",
       "type": "p",
-      "en": "We address three questions. RQ1 asks whether decision disagreement across evidence orders exceeds disagreement across repetitions of the original order. RQ2 asks how these decisions affect the quality and computational cost of selecting between a fixed initial answer and a common rewrite. RQ-L asks whether the observed sensitivity differs between the English and Japanese datasets. This last comparison is descriptive because the questions are not translation pairs.",
-      "ja": "本研究では三つの問いを扱う。RQ1は、根拠順序間の判断不一致が元順序の反復間の不一致を上回るかを問う。RQ2は、固定した初回回答と共通書換え回答を選ぶ際、その判断が品質と計算費用にどう影響するかを問う。RQ-Lは、英語と日本語のデータセットで観測された感度が異なるかを問う。最後の比較は、質問が翻訳対ではないため記述的な比較である。"
+      "en": "We address three questions. RQ1 asks whether decision disagreement across evidence orders exceeds disagreement across repetitions of the original order. RQ2 asks how these decisions affect the quality of the returned answer and the computational cost. For each initial answer, we attempt a single rewrite and use the resulting candidate whenever a condition requests rewriting. RQ-L asks whether the observed sensitivity differs between the English and Japanese datasets. This comparison is descriptive because differences between the datasets prevent us from isolating the effect of language.",
+      "ja": "本研究では三つの問いを扱う。RQ1は、根拠順序間の判断不一致が元順序の反復間の不一致を上回るかを問う。RQ2は、こうした判断が返却する回答の品質と計算費用にどう影響するかを問う。初回回答ごとに一度だけ書換えを試み、書換えを要求する条件では同じ書換え候補を使う。RQ-Lは、英語と日本語のデータセットで観測された感度が異なるかを問う。データセット間の違いにより言語そのものの効果を切り分けられないため、この比較は記述的なものである。"
     },
     {
       "id": "intro-contribution",
@@ -111,7 +111,7 @@
     {
       "id": "design-inputs",
       "type": "p",
-      "en": "For question i, we generate an initial answer A_i and retain the evidence actually supplied to the generator. Then, we fix the evidence text, titles, identifiers, and deterministically segmented answer sentences. With these inputs fixed, we vary only the order of the evidence presented to the evaluator. We compare five evidence orders: the original order, its reverse, and three seeded shuffles. The repetition control evaluates the original order five times. The first of these evaluations is used in both the order comparison and the repetition control, resulting in at most nine evaluation trials per question. Duplicate permutations are omitted from the order comparison. Every repetition invokes the evaluator LLM. Fig. 1 summarizes the procedure.",
+      "en": "For a given question i, we generate an initial answer A_i and retain the evidence actually supplied to the generator. Then, we fix the evidence text, titles, identifiers, and deterministically segmented answer sentences. With these inputs fixed, we vary only the order of the evidence presented to the evaluator. We compare five evidence orders: the original order, its reverse, and three seeded shuffles. The repetition control evaluates the original order five times. The first of these evaluations is used in both the order comparison and the repetition control, resulting in at most nine evaluation trials per question. Duplicate permutations are omitted from the order comparison. Every repetition invokes the evaluator LLM. Fig. 1 summarizes the procedure.",
       "ja": "質問iごとに初回回答A_iを生成し、生成器に実際に渡した根拠を保存する。次に、根拠本文・タイトル・識別子と、決定的な規則で分割した回答の文を固定する。これらの入力を固定したうえで、評価器に提示する根拠の順序だけを変更する。元順序、その逆順、シードを固定した三つのシャッフルという5種類の根拠順序を比較する。反復対照では元順序を5回評価する。その最初の評価を順序比較と反復対照の両方で使うため、質問ごとの評価試行は最大9回となる。重複する順列は順序比較から除く。反復では毎回評価器のLLMを呼び出す。図1に手順を示す。"
     },
     {
@@ -232,8 +232,8 @@
     {
       "id": "setting-language-scope",
       "type": "p",
-      "en": "The languages differ in questions, reference structure, and corpus; they are not translation pairs.",
-      "ja": "言語間では質問、参照構造、コーパスが異なり、翻訳対ではない。"
+      "en": "The languages differ in their questions, reference structures, and corpora, so they are not translation pairs.",
+      "ja": "英語と日本語のデータセットでは、質問、参照資料の構成、コーパスが異なるため、両者の質問は翻訳対をなさない。"
     },
     {
       "id": "setting-selection",
